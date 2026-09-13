@@ -2,7 +2,7 @@
 
 VSM Harness Index maps and compares real agent harnesses according to the organizational functions described by the [VSM Harness Profile](../vsm-harness-profile/PROFILE.md).
 
-This is an organizational comparison, not a ranking and not a harness specification. The discovery cohort is adapted from [Best of Agent Harnesses](SOURCES.md) under CC BY-SA 4.0; detailed assessments use project evidence and may revise its provisional VSM interpretation.
+This is an organizational comparison, not a ranking and not a harness specification. The discovery cohort is adapted from [Best of Agent Harnesses](SOURCES.md) under CC BY-SA 4.0; fingerprints are independently reconstructed from pinned primary project sources.
 
 ## VSM TL;DR
 
@@ -19,28 +19,23 @@ fingerprints, newest first; one non-agentic candidate is excluded. Included rows
 
 ## Scope
 
-The current cohort contains 82 candidates: 81 with an autonomous decision/action loop in the standard documented setup and one retained NO AGENTIC VSM exclusion. Four entries currently have detailed evidence-backed assessments. Catalog coverage is not evidence depth; new assessments should replace catalog-only hypotheses with primary-source findings.
+The current cohort contains 82 candidates: 81 with an autonomous decision/action loop in the standard documented setup and one retained NO AGENTIC VSM exclusion. Every fingerprint records a pinned review ref and review date in the catalog.
 
 ## Repository data flow
 
 ```text
-source catalog --> data/catalog.psv ---------------------> TLDR.md
-                         ^                                  ^
-assess-vsm-harness --> assessments + evidence --> entries -+
+primary project sources --> data/catalog.psv --> TLDR.md
 ```
 
-The JSON format is internal to this index and is not a harness specification. CSVs are derived and must be reproducible. Human-readable entry pages carry context that flat tables cannot. All new or refreshed assessments must use `vsm-skills/skills/assess-vsm-harness`.
+`data/catalog.psv` is the single source of truth and `TLDR.md` is its reproducible projection. All new or refreshed reviews must use `vsm-skills/skills/assess-vsm-harness`.
 
 ## Contents
 
 - [METHODOLOGY.md](METHODOLOGY.md) — index-specific publication rules; assessment logic lives in `vsm-skills`
 - [SOURCES.md](SOURCES.md) — discovery provenance, modifications, and license attribution
 - [TLDR.md](TLDR.md) — newest-first, six-system VSM fingerprint index
-- [data/catalog.psv](data/catalog.psv) — ordered discovery cohort and provisional TL;DR
-- [entries/](entries/) — human-readable mappings and citations
-- [data/assessments/](data/assessments/) — current synchronized evidence artifacts
-- `vsm-skills/skills/assess-vsm-harness/scripts/upsert_harness.py` — validates assessment artifacts and regenerates internal CSV projections
-- [scripts/render_readme.py](scripts/render_readme.py) — regenerates the TLDR projection
+- [data/catalog.psv](data/catalog.psv) — ordered discovery cohort and reviewed TL;DR
+- [scripts/render_tldr.py](scripts/render_tldr.py) — regenerates the TLDR projection
 - [CONTRIBUTING.md](CONTRIBUTING.md) — how to add or update an entry
 
 ## License

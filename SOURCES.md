@@ -15,18 +15,15 @@ Changes made by VSM Harness Index:
 - retained projects marked as owning an agent loop (`autonomy_rank > 0`);
 - excluded the source's evaluation category from this operational cohort;
 - sorted the cohort by GitHub repository creation timestamp;
-- added AgentLite from its primary repository because it was already under detailed
-  assessment and absent from the source catalog;
+- added AgentLite from its primary repository because it is an in-scope harness absent from the source catalog;
 - replaced editorial rankings and descriptions with original, autonomy-centered VSM
   TL;DR analysis;
 - retained all 81 discovery rows at the reviewed revision, producing 82
   candidates after the local addition; the autonomy TLDR excludes candidates whose
-  standard distribution does not establish a first-party decision/action loop.
+  standard distribution does not establish an autonomous decision/action loop.
 
 The adapted `data/catalog.psv` dataset and its rendered TL;DR table are made
-available under CC BY-SA 4.0. This does not relicense linked projects, detailed
-assessment evidence, software, or other repository content.
+available under CC BY-SA 4.0. This does not relicense linked projects, software, or other repository content.
 
-The catalog is a discovery source, not evidence sufficient for a detailed VSM
-assessment. Project documentation and source remain the preferred evidence for
-structural-affordance or observed-current claims.
+The upstream catalog is used only for discovery. Each published fingerprint is
+reconstructed from project documentation and source at the pinned review ref.

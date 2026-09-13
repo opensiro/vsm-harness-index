@@ -16,16 +16,13 @@ ALLOWED = {
     "S5": ("S5 · A:", "S5 · C:", "S5 · P:", "S5: —", "S5: ?"),
 }
 
-def main() -> int:
-    repo = Path(__file__).resolve().parents[1]
-    with (repo / "data" / "catalog.psv").open(encoding="utf-8", newline="") as handle:
-        rows = list(csv.DictReader(handle, delimiter="|"))
+def validate_rows(rows: list[dict[str, str]]) -> int:
     positions = [int(row["catalog_position"]) for row in rows]
     if positions != sorted(positions) or len(positions) != len(set(positions)):
         raise SystemExit("catalog_position must be unique and ascending")
     included = 0
     for row in rows:
-        label = f'{row["catalog_position"]}:{row["harness_id"]}'
+        label = f"{row['catalog_position']}:{row['harness_id']}"
         value = row["vsm_tldr"].replace("\\n", "\n")
         status = row["tldr_status"]
         if status == "excluded-no-agentic-vsm":
@@ -43,7 +40,16 @@ def main() -> int:
         for system, line in zip(SYSTEMS, lines, strict=True):
             if not any(line == prefix or line.startswith(prefix + " ") for prefix in ALLOWED[system]):
                 raise SystemExit(f"{label}: invalid {system} line: {line!r}")
+    return included
+
+
+def main() -> int:
+    repo = Path(__file__).resolve().parents[1]
+    with (repo / "data" / "catalog.psv").open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle, delimiter="|"))
+    included = validate_rows(rows)
     print(f"validated {included} included fingerprints in catalog order")
     return 0
+
 if __name__ == "__main__":
     raise SystemExit(main())

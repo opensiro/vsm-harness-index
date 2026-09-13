@@ -9,15 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          path: vsm-harness-index
-      - uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository_owner }}/vsm-skills
-          path: vsm-skills
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: >-
-          python vsm-harness-index/scripts/check_index.py
-          --upserter vsm-skills/skills/assess-vsm-harness/scripts/upsert_harness.py
+      - run: python scripts/check_index.py
