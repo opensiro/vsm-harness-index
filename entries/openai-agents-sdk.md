@@ -9,19 +9,19 @@
 - **Reviewed at:** 2026-09-12
 - **Evidence scope:** official SDK documentation and release page; no deployed application behavior was observed
 
-## Structural affordance mapping
+## Evidence mapping
 
-| Function/property | Status | Basis | Evidence and reasoning |
-| --- | --- | --- | --- |
-| S1 | + | structural | [Agents and Runner](https://openai.github.io/openai-agents-python/) provide tool-using operational loops that act until final output, and agents can be composed as tools or handoff targets. This establishes operational capability at the framework boundary. |
-| S2 | +- | structural | [Agent orchestration](https://openai.github.io/openai-agents-python/multi_agent/) documents manager-owned specialists, handoffs, code orchestration, and parallel execution. These coordinate work, but damping of application-specific collisions and oscillation is not supplied as a whole organizational function. |
-| S3 | +- | structural | The [Runner lifecycle](https://openai.github.io/openai-agents-python/running_agents/) provides turn limits and execution control, while [usage tracking](https://openai.github.io/openai-agents-python/usage/) and guardrails contribute current regulation. Portfolio resource bargaining and whole-system operational authority remain application-defined. |
-| S3* | +- | structural | The orchestration guide documents an evaluator-agent loop that can test worker output. This can contribute to S3* when configured with sufficiently independent evidence and control. [Tracing](https://openai.github.io/openai-agents-python/tracing/) alone is observability, not independent audit, and the SDK does not establish the needed independence by default. |
-| S4 | ? | unknown | Tools could sense an environment and applications can build future-oriented intelligence, but the reviewed framework evidence does not establish an outside-and-then organizational function. |
-| S5 | +- | inferred | Instructions, guardrails, approvals, and application code can encode constraints. The [human-in-the-loop flow](https://openai.github.io/openai-agents-python/human_in_the_loop/) exposes approval authority, but identity and closure of S3–S4 tension remain with the application and its people. |
-| Recursion | +- | inferred | Nested agents-as-tools and handoffs support composition. The evidence does not show that a nested agent is a viable operational system with its own environment, autonomy, and metasystem. |
-| Escalation | +- | structural | [Human-in-the-loop interruptions](https://openai.github.io/openai-agents-python/human_in_the_loop/) can pause tool actions for approval or rejection across nested runs. Trigger policy and recipient authority are application-defined, and no general algedonic path is established. |
-| Local autonomy | +- | structural | Agents can choose tools, handoffs, and actions within instructions, but autonomy boundaries and parent-level cohesion depend on application design. |
+| Function/property | Basis | Evidence and reasoning |
+| --- | --- | --- |
+| S1 | structural | [Agents and Runner](https://openai.github.io/openai-agents-python/) provide tool-using operational loops that act until final output, and agents can be composed as tools or handoff targets. This establishes operational capability at the framework boundary. |
+| S2 | structural | [Agent orchestration](https://openai.github.io/openai-agents-python/multi_agent/) documents manager-owned specialists, handoffs, code orchestration, and parallel execution. These coordinate work, but damping of application-specific collisions and oscillation is not supplied as a whole organizational function. |
+| S3 | structural | The [Runner lifecycle](https://openai.github.io/openai-agents-python/running_agents/) provides turn limits and execution control, while [usage tracking](https://openai.github.io/openai-agents-python/usage/) and guardrails contribute current regulation. Portfolio resource bargaining and whole-system operational authority remain application-defined. |
+| S3* | structural | The orchestration guide documents an evaluator-agent loop that can test worker output. This can contribute to S3* when configured with sufficiently independent evidence and control. [Tracing](https://openai.github.io/openai-agents-python/tracing/) alone is observability, not independent audit, and the SDK does not establish the needed independence by default. |
+| S4 | unknown | Tools could sense an environment and applications can build future-oriented intelligence, but the reviewed framework evidence does not establish an outside-and-then organizational function. |
+| S5 | inferred | Instructions, guardrails, approvals, and application code can encode constraints. The [human-in-the-loop flow](https://openai.github.io/openai-agents-python/human_in_the_loop/) exposes approval authority, but identity and closure of S3–S4 tension remain with the application and its people. |
+| Recursion | inferred | Nested agents-as-tools and handoffs support composition. The evidence does not show that a nested agent is a viable operational system with its own environment, autonomy, and metasystem. |
+| Escalation | structural | [Human-in-the-loop interruptions](https://openai.github.io/openai-agents-python/human_in_the_loop/) can pause tool actions for approval or rejection across nested runs. Trigger policy and recipient authority are application-defined, and no general algedonic path is established. |
+| Local autonomy | structural | Agents can choose tools, handoffs, and actions within instructions, but autonomy boundaries and parent-level cohesion depend on application design. |
 
 ## Interpretation
 

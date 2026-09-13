@@ -85,11 +85,8 @@ def main() -> int:
         for name in ("harnesses.csv", "harness-metrics.csv"):
             if (repo / "data" / name).read_bytes() != (output / name).read_bytes():
                 raise SystemExit(f"data/{name} is stale; regenerate with assess-vsm-harness")
-    readme = (repo / "README.md").read_text(encoding="utf-8")
     tldr = (repo / "TLDR.md").read_text(encoding="utf-8")
     renderer = load_renderer(repo / "scripts" / "render_readme.py")
-    if renderer.render_readme(repo, readme) != readme:
-        raise SystemExit("README scored assessments are stale; run scripts/render_readme.py")
     if renderer.render_tldr_document(repo) != tldr:
         raise SystemExit("TLDR.md is stale; run scripts/render_readme.py")
     entries = sorted((repo / "entries").glob("*.md"))

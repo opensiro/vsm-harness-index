@@ -1,6 +1,6 @@
 # Contributing an assessment
 
-The index follows a source-to-projection workflow. Do not hand-author scores independently from the assessment evidence.
+The index follows a source-to-projection workflow. Do not hand-author derived comparison data independently from the assessment evidence.
 
 ## Required workflow
 
@@ -20,13 +20,13 @@ The index follows a source-to-projection workflow. Do not hand-author scores ind
      data/assessments/<slug>/<assessment>.json --output-dir data
    ```
 
-6. Regenerate the README and newest-first TL;DR projections:
+6. Regenerate the newest-first TL;DR projection:
 
    ```bash
    python scripts/render_readme.py
    ```
 
-7. Add or update `entries/<slug>.md` and its qualitative README comparison row.
+7. Add or update `entries/<slug>.md` with the qualitative mapping and evidence.
 8. Run:
 
    ```bash
@@ -48,8 +48,7 @@ The index follows a source-to-projection workflow. Do not hand-author scores ind
 - Cite every positive or partial mapping.
 - Keep `unknown` distinct from zero and `no`.
 - Do not infer S3* from logging, S4 from planning, S5 from prompting, or recursion from nesting.
-- Preserve raw sub-scores so percentages can be reconstructed.
-- Reassess compared harnesses with the same rubric version when a scoring change is material.
+- Reassess compared harnesses with the same rubric version when a classification change is material.
 
 Catalog-only TL;DR rows are source-derived hypotheses, not completed assessments.
 The current JSON structure is an internal index artifact, not a required harness
