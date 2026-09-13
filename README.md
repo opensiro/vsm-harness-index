@@ -6,8 +6,16 @@ This is an organizational comparison, not a ranking and not a harness specificat
 
 ## VSM TL;DR
 
-Browse the separate [VSM TL;DR catalog](TLDR.md): 75 autonomy-centered
-fingerprints, newest first; seven non-agentic wrappers are excluded. Included rows have explicit S1, S2, S3, S3*, S4, and S5 fields.
+Browse the separate [VSM TL;DR catalog](TLDR.md): 81 autonomy-centered
+fingerprints, newest first; one non-agentic candidate is excluded. Included rows have explicit S1, S2, S3, S3*, S4, and S5 fields.
+
+| Symbol | State | Meaning |
+| --- | --- | --- |
+| `A` | Agent-owned | Ready agent-owned enactment is available through the standard documented setup. |
+| `C` | Composable | A first-party primitive is supplied, but the developer must compose the agent, authority, or feedback loop. |
+| `P` | Parent-assisted | Runtime closure returns a parent identity or ultimate-policy decision to subsequent operation; valid only for S5. |
+| `—` | No supplied path | The review boundary supports no material first-party path; this is not proof that one can never be built. |
+| `?` | Unknown | The reviewed primary evidence is insufficient to establish the state. |
 
 ## Structural affordance
 
@@ -40,7 +48,7 @@ No current scored assessments yet.
 
 ## Scope
 
-The current cohort contains all 81 loop-owning, non-evaluation entries available in the pinned source plus one documented local addition. Four entries currently have detailed structural-affordance assessments. Catalog coverage is not evidence depth; new assessments should replace source-derived hypotheses with primary-source findings.
+The current cohort contains 82 candidates: 81 with an autonomous decision/action loop in the standard documented setup and one retained NO AGENTIC VSM exclusion. Four entries currently have detailed structural-affordance assessments. Catalog coverage is not evidence depth; new assessments should replace catalog-only hypotheses with primary-source findings.
 
 ## Repository data flow
 

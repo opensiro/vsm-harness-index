@@ -40,7 +40,7 @@ the same sort before positions are regenerated.
 
 Review catalog candidates by ascending `catalog_position`, beginning at position 1. Record the pinned `review_ref` and `reviewed_at` boundary before assigning categorical autonomy states. After the forward pass, compare each fingerprint with all later positions and retain the most informative evidenced distinction. Display order may remain newest-first; it does not change review order.
 
-`tldr_status: excluded-no-agentic-vsm` records candidates whose standard distribution does not establish a first-party autonomous decision/action loop. Excluded candidates remain in the discovery catalog but are not rendered as fingerprints.
+`tldr_status: excluded-no-agentic-vsm` records candidates whose standard documented setup does not establish an autonomous decision/action loop. A documented core runtime dependency may carry that loop; an optional third-party plugin or merely compatible API may not. Excluded candidates remain in the discovery catalog but are not rendered as fingerprints.
 
 ## Published statuses
 
