@@ -1,0 +1,157 @@
+{
+  "schema_version": "vsm-assessment/v1",
+  "assessment_id": "openai-agents-sdk-docs-2026-09-13",
+  "generated_at": "2026-09-13T00:00:00+03:00",
+  "snapshot": {
+    "project_name": "OpenAI Agents SDK",
+    "repository": "https://github.com/openai/openai-agents-python",
+    "ref": "documentation snapshot; release series around v0.22.x; commit not pinned",
+    "dirty": null,
+    "assessment_mode": "affordance",
+    "assessment_frames": [
+      "structural_affordance"
+    ],
+    "rubric_version": "vsm-assessment/v2"
+  },
+  "harness": {
+    "harness_id": "openai-agents-sdk",
+    "introduced_year": 2025,
+    "catalog_position": 50,
+    "harness_kind": "framework",
+    "execution_model": "agent runner with tools, handoffs, and agents-as-tools",
+    "state_mode": "run context and application-managed state",
+    "tool_mode": "function tools, hosted tools, and agents-as-tools",
+    "human_gate": "interruptible approval flow",
+    "audit_independence": "application-defined"
+  },
+  "summary": {
+    "ai_native_class": "AI-NATIVE",
+    "verdict": "AFFORDANCE MAPPED",
+    "recommended_topology": "not assessed",
+    "maturity_stage": "not assessed (affordance frame)",
+    "vsm_tldr": "S1 · A: Runner executes tool-using agents until final output or a configured run boundary.\nS2 · C: Handoffs and agents-as-tools let developers compose delegation and transfer of control.\nS3: —\nS3* · C: Evaluator-agent loops require developer-supplied independence, authority, and corrective feedback.\nS4: —\nS5: —"
+  },
+  "target_projection": null,
+  "metrics": [],
+  "functions": [
+    {
+      "function": "S1",
+      "assessment_frame": "structural_affordance",
+      "status": "+",
+      "basis": "structural",
+      "confidence": "high",
+      "evidence_refs": [
+        "agents-runner"
+      ]
+    },
+    {
+      "function": "S2",
+      "assessment_frame": "structural_affordance",
+      "status": "+-",
+      "basis": "structural",
+      "confidence": "high",
+      "evidence_refs": [
+        "orchestration"
+      ]
+    },
+    {
+      "function": "S3",
+      "assessment_frame": "structural_affordance",
+      "status": "+-",
+      "basis": "structural",
+      "confidence": "medium",
+      "evidence_refs": [
+        "runner-lifecycle"
+      ]
+    },
+    {
+      "function": "S3*",
+      "assessment_frame": "structural_affordance",
+      "status": "+-",
+      "basis": "structural",
+      "confidence": "medium",
+      "evidence_refs": [
+        "orchestration",
+        "tracing"
+      ]
+    },
+    {
+      "function": "S4",
+      "assessment_frame": "structural_affordance",
+      "status": "?",
+      "basis": "unknown",
+      "confidence": "medium",
+      "evidence_refs": [
+        "agents-runner"
+      ]
+    },
+    {
+      "function": "S5",
+      "assessment_frame": "structural_affordance",
+      "status": "+-",
+      "basis": "inferred",
+      "confidence": "medium",
+      "evidence_refs": [
+        "human-in-loop"
+      ]
+    },
+    {
+      "function": "Recursion",
+      "assessment_frame": "structural_affordance",
+      "status": "+-",
+      "basis": "inferred",
+      "confidence": "medium",
+      "evidence_refs": [
+        "orchestration"
+      ]
+    },
+    {
+      "function": "Escalation",
+      "assessment_frame": "structural_affordance",
+      "status": "+-",
+      "basis": "structural",
+      "confidence": "high",
+      "evidence_refs": [
+        "human-in-loop"
+      ]
+    }
+  ],
+  "compute": [],
+  "pathologies": [],
+  "evidence": [
+    {
+      "id": "agents-runner",
+      "claim": "Agents and Runner provide tool-using operational loops.",
+      "source": "https://openai.github.io/openai-agents-python/",
+      "observed_at": "2026-09-12"
+    },
+    {
+      "id": "orchestration",
+      "claim": "Documented orchestration includes manager-owned specialists, handoffs, and agents-as-tools.",
+      "source": "https://openai.github.io/openai-agents-python/multi_agent/",
+      "observed_at": "2026-09-12"
+    },
+    {
+      "id": "runner-lifecycle",
+      "claim": "Runner lifecycle provides bounded execution control.",
+      "source": "https://openai.github.io/openai-agents-python/running_agents/",
+      "observed_at": "2026-09-12"
+    },
+    {
+      "id": "tracing",
+      "claim": "Tracing provides observability but does not establish independent audit by itself.",
+      "source": "https://openai.github.io/openai-agents-python/tracing/",
+      "observed_at": "2026-09-12"
+    },
+    {
+      "id": "human-in-loop",
+      "claim": "Human-in-the-loop flows pause tool actions for approval or rejection.",
+      "source": "https://openai.github.io/openai-agents-python/human_in_the_loop/",
+      "observed_at": "2026-09-12"
+    }
+  ],
+  "caveats": [
+    "Structural affordance only; no deployed behavior was observed.",
+    "The documentation snapshot is not pinned to an exact commit."
+  ]
+}
