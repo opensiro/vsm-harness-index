@@ -47,10 +47,16 @@ def render_rankings(repo: Path) -> str:
     for position, catalog, assessment, _ in data(repo):
         states = vector(assessment)
         rows.append((sum(s == "A" for s in states[1:]), sum(s == "A" for s in states), sum(s == "C" for s in states), sum(s == "P" for s in states), sum(s == "?" for s in states), position, catalog, states))
-    rows.sort(key=lambda r: (-r[0], -r[1], r[4], r[5]))
-    lines = ["# VSM Harness Autonomy Rankings", "", "This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. No fractional weights are assigned to C, P, or ?.", "", "| Rank | Harness | Agent-owned | Metasystem A | C | P | ? | Vector |", "| ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |"]
-    for rank, row in enumerate(rows, 1):
+    rows.sort(key=lambda r: (-r[0], -r[1], r[5]))
+    lines = ["# VSM Harness Autonomy Rankings", "", "This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted or tie-breaking scores.", "", "| Rank | Harness | Agent-owned | Metasystem A | C | P | ? | Vector |", "| ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |"]
+    rank = 0
+    previous_key = None
+    for row in rows:
         meta_a, total_a, c_count, p_count, unknown, _, catalog, states = row
+        key = (meta_a, total_a)
+        if key != previous_key:
+            rank += 1
+            previous_key = key
         label = f"[{escape(catalog['project_name'])}]({catalog['repository']})"
         lines.append(f"| {rank} | {label} | {total_a}/6 | {meta_a}/5 | {c_count} | {p_count} | {unknown} | `{' '.join(states)}` |")
     lines.append("")
