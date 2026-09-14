@@ -1,0 +1,4 @@
+catalog_position|harness_id|signature
+1|rasa|Stateful dialogue action selection is agent-owned, while no distinct agent-owned metasystemic function is established at this repository boundary.
+2|botpress|Code-generating agents compose multiple typed tools inside one operational loop; that tool composition is not cross-S1 coordination.
+3|n8n|A workflow-embedded AI Agent can expose another agent as a tool, but parent-child delegation remains operational decomposition rather than S2.

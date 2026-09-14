@@ -1,65 +1,63 @@
-# Indexing policy
+# Indexing methodology
 
-`vsm-harness-index` does not maintain a second VSM methodology. It applies:
+`vsm-harness-index` does not define VSM. It applies:
 
-1. [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md) for the meaning of organizational functions;
-2. [`assess-vsm-harness`](https://github.com/opensiro/vsm-skills/tree/main/skills/assess-vsm-harness) for evidence collection, confidence, and TL;DR reconstruction;
-3. this document only for index-specific publication rules.
+1. [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md) for organizational semantics;
+2. [`assess-vsm-harness`](https://github.com/opensiro/vsm-skills/tree/main/skills/assess-vsm-harness) for repository evidence and autonomy classification;
+3. the ordered synthesis procedure in `vsm-skills/SYNTHESIS.md` for cohort-relative signatures;
+4. this document for publication and migration rules.
 
-## Entry boundary
+## Artifact separation
 
-Each entry assesses a named harness at a pinned tag or commit where possible. A framework, a deployed application, and the vendor organization are different systems-in-focus and must not be mixed.
+Three artifact classes are intentionally separate.
 
-The index uses an agent-autonomy lens: it asks which autonomous agent absorbs
-variety and holds each VSM decision right. Deterministic framework mechanisms and
-human gates are supporting infrastructure, not autonomous enactment by themselves.
+**Assessment.** `assessments/<harness_id>.md` is repository-relative and revision-relative. It stores the review boundary, repository architecture, VSM mappings, evidence, uncertainty, and autonomy states.
 
-Reviews distinguish observed current behavior, the standard distribution boundary,
-and any named target projection while preparing evidence. The published index retains
-only the categorical autonomy fingerprint so readers do not have to reconcile parallel
-symbol, score, or artifact systems.
+**Signature.** `data/signatures.psv` is cohort-relative. It may change when the ordered cohort changes. It cannot change an assessment state or introduce a repository claim absent from the assessment.
 
-## Discovery cohort
+**Ranking.** `RANKINGS.md` is deterministic. It counts recorded autonomy states and never substitutes a numerical maturity model for the categorical evidence.
 
-The catalog may use a curated secondary source to discover candidates and form a
-reproducible review queue. Each TL;DR fingerprint must then be independently
-reconstructed from primary project sources at the pinned `review_ref`.
+## Review boundary
 
-The current cohort is adapted from the pinned source documented in
-[`SOURCES.md`](SOURCES.md). It retains loop-owning, non-evaluation projects and sorts
-them by GitHub repository creation timestamp, with repository name as the tie-breaker.
-That timestamp is a reproducible ordering proxy; it is not the date when autonomous
-functionality first appeared. Local additions must identify their provenance and join
-the same sort before positions are regenerated.
+Each assessment names one harness at a pinned commit where possible. Framework, deployed application, vendor organization, and a child agent are different systems-in-focus and must not be silently mixed.
 
-## TL;DR review order and evidence
+Use the standard documented distribution. Generic extensibility does not earn a positive autonomy state merely because custom code could implement a VSM function.
 
-Review catalog candidates by ascending `catalog_position`, beginning at position 1. Record the pinned `review_ref` and `reviewed_at` boundary before assigning categorical autonomy states. After the forward pass, compare each fingerprint with all later positions and retain the most informative evidenced distinction. Display order may remain newest-first; it does not change review order.
+## Function before autonomy
 
-`tldr_status: excluded-no-agentic-vsm` records candidates whose standard documented setup does not establish an autonomous decision/action loop. A documented core runtime dependency may carry that loop; an optional third-party plugin or merely compatible API may not. Excluded candidates remain in the discovery catalog but are not rendered as fingerprints.
+For every S1, S2, S3, S3*, S4, and S5 claim:
 
-## Published autonomy states
+1. establish the organizational function from behavior and relationships;
+2. identify the responsible actor/mechanism;
+3. identify the relevant decision right or feedback path;
+4. determine runtime ownership;
+5. only then assign `A/C/P/—/?`.
 
-| State | Index meaning |
-| --- | --- |
-| `A` | Ready agent-owned enactment is available through the standard documented setup. |
-| `C` | A first-party primitive is supplied, but the developer must compose the agent, authority, or feedback loop. |
-| `P` | Parent-assisted runtime closure returns an identity or ultimate-policy decision to subsequent operation; valid only for S5. |
-| `—` | No material first-party path is supplied inside the review boundary; this does not claim that one can never be built. |
-| `?` | The reviewed primary evidence cannot establish the state. |
+In particular, delegation is not S2 without interference regulation among operations; a manager is not S3 without whole-system current authority; a routine verifier is not S3*; planning/learning/event reaction is not S4 without external-and-prospective adaptation; and static policy text is not S5 closure.
 
-Every positive assertion requires a primary source. Missing documentation remains
-`?`. `A / C / P / — / ?` is the only published comparison notation.
+## Ordered migration and synthesis
 
-## Data ownership
+The discovery cohort is ordered by `catalog_position`. Detailed assessments must be rebuilt in ascending order. During migration, completed assessments MUST form a contiguous prefix `1..N`.
 
-- `data/catalog.psv` is the single source of truth for cohort provenance, chronology, review refs, review dates, statuses, and fingerprints.
-- `TLDR.md` is the generated newest-first public projection.
+After assessment `N` is complete, compare it with completed assessments `1..N-1` and record the smallest informative evidence-backed architectural distinction in `data/signatures.psv`. Identical autonomy vectors are valid. Never alter a state to manufacture signature uniqueness.
 
-Neither file is a harness manifest, VSM standard, score, or benchmark leaderboard.
+## Ranking semantics
 
-## Review rule
+The ranking reports:
 
-A contribution must use the same assessment method across harnesses it compares,
-identify evidence coverage, and keep unavailable evidence distinct from absence.
-Longitudinal comparisons must pin reviewed refs and review dates.
+- total agent-owned functions: count of `A` across S1, S2, S3, S3*, S4, S5;
+- metasystem agent ownership: count of `A` across S2, S3, S3*, S4, S5;
+- counts of `C`, `P`, and `?`;
+- the categorical vector.
+
+Sort by metasystem `A`, then total `A`, then catalog order for stable display. Harnesses with equal `(metasystem A, total A)` receive the same rank. Counts of `C`, `P`, and `?` are descriptive only: evidence completeness must not become an autonomy tie-breaker. No fractional weights are assigned. This is autonomy coverage, not product quality or viability.
+
+## Evidence and uncertainty
+
+Positive `A/C/P` claims require primary evidence. `?` means evidence is insufficient. `—` is narrower: no material first-party path is supplied within the reviewed standard-distribution boundary; it is not a universal impossibility claim.
+
+Pinned refs and review dates make longitudinal reassessment possible. Absence of documentation is not proof of absence.
+
+## Migration note
+
+The legacy `vsm_tldr` field in `data/catalog.psv` is retained temporarily as historical migration input and is not authoritative for v2. It should be removed after the full ordered assessment corpus has been rebuilt and validated.

@@ -1,59 +1,57 @@
 #!/usr/bin/env python3
-"""Validate the standalone catalog and its rendered TLDR projection."""
-
+"""Validate registry, assessments, signatures, and generated views."""
 from __future__ import annotations
-
 import csv
-import importlib.util
 from pathlib import Path
+from validate_tldr import load_assessments, validate_assessment
+from render_tldr import render_tldr, render_rankings
 
-from validate_tldr import validate_rows
 
-
-def load_renderer(path: Path):
-    spec = importlib.util.spec_from_file_location("render_tldr", path)
-    if spec is None or spec.loader is None:
-        raise RuntimeError(f"cannot load renderer: {path}")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+def read_psv(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle, delimiter="|"))
 
 
 def main() -> int:
     repo = Path(__file__).resolve().parents[1]
-    with (repo / "data" / "catalog.psv").open(encoding="utf-8", newline="") as handle:
-        catalog = list(csv.DictReader(handle, delimiter="|"))
+    catalog = read_psv(repo / "data" / "catalog.psv")
     positions = [int(row["catalog_position"]) for row in catalog]
     if positions != list(range(1, len(catalog) + 1)):
-        raise SystemExit("catalog positions must be ordered, unique, and contiguous from 1")
+        raise SystemExit("catalog positions must be contiguous from 1")
     if len({row["harness_id"] for row in catalog}) != len(catalog):
         raise SystemExit("catalog harness_id values must be unique")
-    if len({row["repository"] for row in catalog}) != len(catalog):
-        raise SystemExit("catalog repositories must be unique")
-    sort_keys = [(row["repository_created_at"], row["repository"]) for row in catalog]
-    if sort_keys != sorted(sort_keys):
-        raise SystemExit("catalog must be sorted by repository_created_at and repository")
-    included = [row for row in catalog if row.get("tldr_status") == "included"]
-    excluded = [row for row in catalog if row.get("tldr_status") == "excluded-no-agentic-vsm"]
-    if len(included) + len(excluded) != len(catalog):
-        raise SystemExit("every catalog row must have a recognized tldr_status")
-    if any(row["vsm_tldr"] for row in excluded):
-        raise SystemExit("excluded catalog rows must not carry fingerprints")
-    tldrs = [row["vsm_tldr"] for row in included]
-    if len(set(tldrs)) != len(tldrs):
-        raise SystemExit("included catalog VSM TL;DR values must be unique")
-    if any(len(row.get("review_ref", "")) != 40 for row in catalog):
-        raise SystemExit("every catalog row must pin a 40-character review_ref")
-    if any(not row.get("reviewed_at") for row in catalog):
-        raise SystemExit("every catalog row must record reviewed_at")
-    validate_rows(catalog)
-    tldr = (repo / "TLDR.md").read_text(encoding="utf-8")
-    renderer = load_renderer(repo / "scripts" / "render_tldr.py")
-    if renderer.render_tldr_document(repo) != tldr:
-        raise SystemExit("TLDR.md is stale; run scripts/render_tldr.py")
-    print(f"Validated {len(included)} included and {len(excluded)} excluded catalog row(s)")
-    return 0
+    by_id = {row["harness_id"]: row for row in catalog}
 
+    assessments = load_assessments(repo / "assessments")
+    completed = []
+    for harness_id, assessment in assessments.items():
+        validate_assessment(assessment)
+        if harness_id not in by_id:
+            raise SystemExit(f"unknown assessment: {harness_id}")
+        source = by_id[harness_id]
+        for key in ("project_name", "repository", "review_ref"):
+            if assessment[key] != source[key]:
+                raise SystemExit(f"{harness_id}: {key} differs from catalog")
+        completed.append(int(source["catalog_position"]))
+    completed.sort()
+    if completed != list(range(1, len(completed) + 1)):
+        raise SystemExit("assessment migration must be a contiguous catalog prefix")
+
+    signatures = read_psv(repo / "data" / "signatures.psv")
+    signature_ids = [row["harness_id"] for row in signatures]
+    included = [h for h, row in assessments.items() if row["status"] == "included"]
+    if set(signature_ids) != set(included):
+        raise SystemExit("signatures must cover exactly included assessments")
+    for row in signatures:
+        if int(row["catalog_position"]) != int(by_id[row["harness_id"]]["catalog_position"]):
+            raise SystemExit(f"{row['harness_id']}: signature position mismatch")
+
+    generated = {repo / "TLDR.md": render_tldr(repo), repo / "RANKINGS.md": render_rankings(repo)}
+    for path, expected in generated.items():
+        if not path.exists() or path.read_text(encoding="utf-8") != expected:
+            raise SystemExit(f"{path.name} is stale; run scripts/render_tldr.py")
+    print(f"Validated {len(assessments)} assessment(s) across {len(catalog)} candidates")
+    return 0
 
 if __name__ == "__main__":
     raise SystemExit(main())

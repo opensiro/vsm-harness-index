@@ -2,28 +2,23 @@
 
 ## Discovery catalog
 
-`data/catalog.psv` is adapted from **Best of Agent Harnesses**, created by Ryan
-Alberts and contributors:
+`data/catalog.psv` is adapted from **Best of Agent Harnesses**, created by Ryan Alberts and contributors:
 
 - source: <https://github.com/RyanAlberts/best-of-Agent-Harnesses>
 - source file: `harnesses.json`
 - reviewed revision: `e75e16efa8784f74c01c9004989c38b75ce7debd`
-- license: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+- license: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Changes made by VSM Harness Index:
+The discovery source is used only to form the review cohort and provenance. The index retained in-scope agent-loop projects, excluded the source evaluation category, sorts by GitHub repository creation time, and adds AgentLite as a documented local addition.
 
-- retained projects marked as owning an agent loop (`autonomy_rank > 0`);
-- excluded the source's evaluation category from this operational cohort;
-- sorted the cohort by GitHub repository creation timestamp;
-- added AgentLite from its primary repository because it is an in-scope harness absent from the source catalog;
-- replaced editorial rankings and descriptions with original, autonomy-centered VSM
-  TL;DR analysis;
-- retained all 81 discovery rows at the reviewed revision, producing 82
-  candidates after the local addition; the autonomy TLDR excludes candidates whose
-  standard distribution does not establish an autonomous decision/action loop.
+## Assessments
 
-The adapted `data/catalog.psv` dataset and its rendered TL;DR table are made
-available under CC BY-SA 4.0. This does not relicense linked projects, software, or other repository content.
+Every `assessments/<harness_id>.md` file is independently reconstructed from the named project's primary sources at its pinned `review_ref`. The upstream discovery descriptions and rankings are not used as VSM evidence.
 
-The upstream catalog is used only for discovery. Each published fingerprint is
-reconstructed from project documentation and source at the pinned review ref.
+Assessment prose and `data/signatures.psv` are original VSM Harness Index analysis and follow the repository's Apache 2.0 license. Linked projects and quoted or referenced source material retain their own terms.
+
+## Generated comparative views
+
+`TLDR.md` and `RANKINGS.md` combine the adapted discovery cohort metadata with original assessment-derived analysis. They are distributed under CC BY-SA 4.0 together with the adapted `data/catalog.psv` dataset. This does not relicense linked projects or their software.
+
+During the v2 migration, the legacy `vsm_tldr` column in `data/catalog.psv` is retained only as historical migration material. New assessments must be rebuilt from pinned primary sources rather than copied from that column.
