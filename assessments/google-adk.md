@@ -1,6 +1,6 @@
 ---
 harness_id: google-adk
-project_name: Google Agent Development Kit
+project_name: Google ADK
 repository: https://github.com/google/adk-python
 review_ref: 460715b6c62c8e9ab00931c502381ee0364e39b6
 reviewed_at: 2026-09-14
@@ -13,7 +13,7 @@ autonomy_s4: ?
 autonomy_s5: ?
 ---
 
-# Google Agent Development Kit
+# Google ADK
 
 ## Review boundary
 Google ADK Python at the pinned revision, including the graph workflow runtime, Task API and standard multi-agent composition. Vertex/hosted control planes are outside the system-in-focus.

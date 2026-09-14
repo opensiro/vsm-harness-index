@@ -1,6 +1,6 @@
 ---
 harness_id: openai-agents-sdk
-project_name: OpenAI Agents SDK Python
+project_name: OpenAI Agents SDK
 repository: https://github.com/openai/openai-agents-python
 review_ref: fbd2dbcaaf74a2c447c6d3fa9d5645d83fd7e292
 reviewed_at: 2026-09-14
@@ -13,7 +13,7 @@ autonomy_s4: ?
 autonomy_s5: ?
 ---
 
-# OpenAI Agents SDK Python
+# OpenAI Agents SDK
 
 ## Review boundary
 OpenAI Agents SDK Python at the pinned revision as a framework for text/sandbox/realtime/voice agents and multi-agent workflows.

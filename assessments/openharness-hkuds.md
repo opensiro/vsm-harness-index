@@ -1,6 +1,6 @@
 ---
 harness_id: openharness-hkuds
-project_name: OpenHarness HKUDS
+project_name: OpenHarness (HKUDS)
 repository: https://github.com/HKUDS/OpenHarness
 review_ref: 9b2efd795c6aa09f88b0c257d269a9e518da6ae7
 reviewed_at: 2026-09-14
@@ -13,7 +13,7 @@ autonomy_s4: ?
 autonomy_s5: ?
 ---
 
-# OpenHarness HKUDS
+# OpenHarness (HKUDS)
 
 ## Review boundary
 HKUDS/OpenHarness at the pinned revision, including core agent loop, governance and standard swarm/team primitives; roadmap-only ClawTeam integration is excluded.
