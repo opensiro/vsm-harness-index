@@ -50,7 +50,7 @@ The ranking reports:
 - counts of `C`, `P`, and `?`;
 - the categorical vector.
 
-Sort first by metasystem `A`, then total `A`, then fewer unknowns, then catalog order. No fractional weights are assigned to `C` or `P`. This is autonomy coverage, not product quality or viability.
+Sort by metasystem `A`, then total `A`, then catalog order for stable display. Harnesses with equal `(metasystem A, total A)` receive the same rank. Counts of `C`, `P`, and `?` are descriptive only: evidence completeness must not become an autonomy tie-breaker. No fractional weights are assigned. This is autonomy coverage, not product quality or viability.
 
 ## Evidence and uncertainty
 
