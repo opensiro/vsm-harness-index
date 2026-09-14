@@ -19,25 +19,27 @@ autonomy_s5: ?
 Oh My Pi at the pinned revision as a coding-agent harness including first-class subagents, peer communication and the separate advisor-model role.
 
 ## Repository architecture
-OMP supplies IDE/LSP/debugger/code-execution tools, first-class subagents in isolated worktrees, typed result return, peer IRC messaging, an Agent Hub, and an advisor model that observes every main-agent turn from its own model/context and can inject notes, concerns or hard blockers.
+OMP supplies IDE/LSP/debugger/code-execution tools, first-class subagents in isolated worktrees, typed result return, peer communication, an Agent Hub, and an optional advisor subsystem that reviews primary-agent updates using separate agent/tool state.
 
 ## Primary evidence
-- `README.md`: isolated subagent fan-out, peer IRC coordination example, Agent Hub; dedicated advisor on a separate model/context observing every turn and injecting corrective feedback/blockers.
+- `README.md`: isolated subagent fan-out, peer coordination, Agent Hub and advisor capability.
+- `docs/advisor-watchdog.md`: each advisor is a full agent with its own `Agent` instance and distinct `ToolSession`; it receives primary transcript deltas, can independently inspect the workspace with read/grep/glob (or explicitly granted tools), and injects advice back into the primary transcript.
+- `docs/advisor-watchdog.md`: `concern` and `blocker` severities can interrupt/steer live work or trigger a follow-up turn, while advisor messages are filtered from subsequent advisor input to avoid self-review.
 
 ## Operational model
-Coding/subagents are S1. Worktree isolation deterministically prevents some collisions; peer messaging exposes an agent-level coordination path. The advisor is a distinct observer with separate context/model and a direct corrective channel into the operating agent.
+Coding/subagents are S1. Worktree isolation deterministically prevents some collisions; peer communication exposes an agent-level coordination path. The advisor is a distinct observer with separate runtime/tool context and an explicit corrective channel into the operating agent.
 
 ## S1 — Operations
 `A`: coding agents autonomously use the rich tool/IDE surface to produce outcomes. Confidence: high.
 
 ## S2 — Coordination
-`C`: first-party peer messaging plus isolated subagent workspaces expose a concrete coordination path among operational agents, but a general mutual-adjustment protocol/authority still depends on the composed task/constraints. Confidence: medium-high.
+`C`: first-party peer communication plus isolated subagent workspaces expose a concrete coordination path among operational agents, but a general mutual-adjustment protocol/authority still depends on the composed task/constraints. Confidence: medium-high.
 
 ## S3 — Inside-and-now control
 `?`: Agent Hub and parent control do not prove autonomous whole-system resource/accountability authority.
 
 ## S3* — Complementary audit
-`A`: the advisor is a separate agent/model with its own context, observes the main agent's turns independently, can raise concerns/hard blockers, and feeds them directly back so the operating agent course-corrects. This is complementary audit beyond ordinary logging/QA. Confidence: high.
+`A`: a separate advisor agent with its own agent/tool session independently reviews primary transcript updates, can inspect workspace reality, and feeds `concern`/`blocker` findings back through a steering path that can alter subsequent primary-agent operation. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
 `?`: no distinct external/prospective adaptation role coupled to S3 is verified.

@@ -19,19 +19,22 @@ autonomy_s5: ?
 AgentVerse at the pinned revision, covering its task-solving and simulation frameworks for multiple LLM agents.
 
 ## Repository architecture
-The repository explicitly deploys multiple LLM-based agents for collaborative task solving and environment simulation. Examples include software roles exchanging artifacts/feedback and classroom interaction where students wait for a professor-selected turn.
+The repository explicitly deploys multiple LLM-based agents for collaborative task solving and environment simulation. The simulation environment supplies pluggable order rules that determine which agents may speak on a turn.
 
 ## Primary evidence
-- `README.md`: automatic multi-agent task-solving systems; simulation environments; collaborative software example; explicit turn-taking classroom protocol and iterative tester/reviewer feedback example.
+- `README.md`: multi-agent task-solving/simulation and a configured environment with bounded dialogue turns, sequential order and shared visibility.
+- `agentverse/environments/simulation_env/rules/base.py`: the environment asks the order rule for the index of the next agent to speak.
+- `agentverse/environments/simulation_env/rules/order/sequential.py`: a first-party round-robin conversation order.
+- `agentverse/environments/simulation_env/rules/order/random.py` and `order/concurrent.py`: alternative first-party turn-selection/concurrency policies.
 
 ## Operational model
-Role agents are S1 units. Environment/conversation protocols can constrain who interacts when and therefore expose a genuine coordination path rather than mere tool routing.
+Role agents are S1 units. Environment/order protocols specifically constrain who interacts when and therefore expose a coordination path rather than mere tool routing.
 
 ## S1 — Operations
 `A`: role agents autonomously perform bounded task/environment actions. Confidence: high.
 
 ## S2 — Coordination
-`C`: first-party environment/conversation protocols expose turn-taking and interaction constraints that can damp collisions among S1 units, but the concrete coordinator/authority and feedback closure remain scenario-composed. Confidence: medium.
+`C`: first-party environment/order protocols expose turn-taking and interaction constraints that can damp collisions among S1 units, but the selected rule and wider coordination policy remain scenario-composed. Confidence: high.
 
 ## S3 — Inside-and-now control
 `?`: chief/manager roles in examples do not establish a general autonomous whole-system resource/accountability regulator.

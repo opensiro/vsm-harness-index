@@ -41,6 +41,8 @@ The discovery cohort is ordered by `catalog_position`. Detailed assessments must
 
 After assessment `N` is complete, compare it with completed assessments `1..N-1` and record the smallest informative evidence-backed architectural distinction in `data/signatures.psv`. Identical autonomy vectors are valid. Never alter a state to manufacture signature uniqueness.
 
+Public presentation order is separate from synthesis order. `TLDR.md` is displayed newest-first using `repository_created_at`; changing display order does not change `catalog_position`, assessment meaning, or sequential signature ancestry.
+
 ## Ranking semantics
 
 The ranking reports:
@@ -50,7 +52,9 @@ The ranking reports:
 - counts of `C`, `P`, and `?`;
 - the categorical vector.
 
-Sort by metasystem `A`, then total `A`, then catalog order for stable display. Harnesses with equal `(metasystem A, total A)` receive the same rank. Counts of `C`, `P`, and `?` are descriptive only: evidence completeness must not become an autonomy tie-breaker. No fractional weights are assigned. This is autonomy coverage, not product quality or viability.
+Rank by metasystem `A`, then total `A`. Harnesses with equal `(metasystem A, total A)` receive the same rank. Within the same rank, public presentation is newest-first by GitHub repository creation time. Freshness is presentation-only and never changes the rank key. Counts of `C`, `P`, and `?` are descriptive only: evidence completeness must not become an autonomy tie-breaker. No fractional weights are assigned. This is autonomy coverage, not product quality or viability.
+
+The public `Year` column is the year of GitHub repository creation (`repository_created_at`). It is used because that field is available consistently for the whole cohort; it should not be interpreted as the year of conceptual invention or first stable release.
 
 ## Evidence and uncertainty
 
@@ -60,4 +64,4 @@ Pinned refs and review dates make longitudinal reassessment possible. Absence of
 
 ## Migration note
 
-The legacy `vsm_tldr` field in `data/catalog.psv` is retained temporarily as historical migration input and is not authoritative for v2. It should be removed after the full ordered assessment corpus has been rebuilt and validated.
+The legacy `vsm_tldr` field in `data/catalog.psv` is retained temporarily as historical migration input and is not authoritative for v1. It should be removed after the full ordered assessment corpus has been rebuilt and validated.
