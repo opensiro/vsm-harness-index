@@ -1,38 +1,35 @@
 # Contributing an assessment
 
-The index follows a source-to-projection workflow. Do not hand-author derived comparison data independently from the assessment evidence.
+The index uses an assessment-first workflow. Do not hand-author a TLDR classification independently from repository evidence.
 
 ## Required workflow
 
-1. Check out [vsm-harness-profile](https://github.com/opensiro/vsm-harness-profile), [vsm-skills](https://github.com/opensiro/vsm-skills), and [vsm-harness-index](https://github.com/opensiro/vsm-harness-index) as siblings.
-2. Add or refresh the discovery row in `data/catalog.psv`, retaining source
-   provenance and sorting by `repository_created_at`, then repository URL.
-3. Generate its reviewed TL;DR in chronological order and compare it with all
-   lower positions. `harness_id` is stable; `catalog_position` is a derived ordinal
-   and shifts when an older repository is backfilled.
-4. Reconstruct the fingerprint from pinned primary project sources using the assessment skill.
-5. Regenerate the newest-first TL;DR projection:
+1. Check out `vsm-harness-profile`, `vsm-skills`, and `vsm-harness-index` as siblings.
+2. Confirm or add the discovery row in `data/catalog.psv`; preserve provenance, exact `review_ref`, `reviewed_at`, and chronological ordering.
+3. Process candidates in ascending `catalog_position`. During migration, assessments must form a contiguous prefix from position 1.
+4. Use `assess-vsm-harness` to write `assessments/<harness_id>.md` from pinned primary evidence.
+5. Only after the assessment is complete, compare it with all earlier completed assessments and add its cohort-relative signature to `data/signatures.psv`.
+6. Run `python scripts/render_tldr.py` to regenerate `TLDR.md` and `RANKINGS.md`.
+7. Run `python scripts/check_index.py`.
 
-   ```bash
-   python scripts/render_tldr.py
-   ```
+## Assessment requirements
 
-6. Run:
+- State system-in-focus, purpose, environment, standard-distribution boundary, recursion level, exact ref, and review date.
+- Describe enough repository architecture to preserve why the VSM mapping was made.
+- Map the organizational function before classifying agent ownership.
+- Record primary evidence, basis, confidence, and caveats for material positive claims.
+- Keep agent decision rights separate from deterministic support mechanisms and configuration-time authorship.
+- Keep unknown evidence (`?`) distinct from a reviewed no-path result (`—`).
+- Do not infer S2 from delegation, S3 from a manager label, S3* from routine verification, S4 from planning or learning alone, S5 from prompts/policies alone, or recursion from nesting.
 
-   ```bash
-   python scripts/check_index.py
-   ```
+## Signature requirements
 
-## Review requirements
+A signature is a derived comparison artifact, not repository evidence. Preserve the assessment vector exactly and describe the smallest informative architectural distinction relative to earlier catalog positions. Duplicate vectors are allowed.
 
-- Record the review date and exact ref, and keep the standard-distribution boundary explicit.
-- Keep catalog positions ordered, unique, and contiguous from 1.
-- Write all six TL;DR systems in canonical order; use `—` when no
-  autonomy-centered claim is asserted, without implying proven absence.
-- Confirm that S1 contains an autonomous agent decision/action loop supported by
-  harness state, tools, delegation, or feedback—not merely a model call or workflow.
-- Prefer maintainer documentation, source, traces, and observable behaviour.
-- Support every positive or composable mapping with primary project evidence.
-- Keep `unknown` distinct from zero and `no`.
-- Do not infer S3* from logging, S4 from planning, S5 from prompting, or recursion from nesting.
-- Reassess compared harnesses with the same method when a classification change is material.
+## Ranking requirements
+
+Do not manually score harnesses. `RANKINGS.md` is generated deterministically from recorded states and measures only out-of-box agent ownership coverage.
+
+## Migration
+
+The old `vsm_tldr` column remains temporarily in `data/catalog.psv` for history. Do not use it as evidence for a new assessment; rebuild each row from its pinned primary sources.
