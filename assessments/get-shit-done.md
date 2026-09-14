@@ -13,7 +13,7 @@ autonomy_s4: ?
 autonomy_s5: ?
 ---
 
-# get-shit-done
+# GSD
 
 ## Review boundary
 GSD Core at the pinned revision as a context/spec-driven development system driving coding agents through Discuss→Plan→Execute→Verify→Ship.
@@ -23,8 +23,8 @@ Fresh-context researchers/planners/checkers/executors/verifiers perform separate
 
 ## Primary evidence
 - `README.md`: phase loop, fresh subagents, parallel execution and verification.
-- `docs/explanation/the-phase-loop.md`: separate plan-checker/executors/verifier, verification coverage and fix-plan feedback.
-- `docs/how-to/verify-and-ship.md`: UAT/debug/fix loop; verification status; content fingerprints over implementation/planning files and stale-on-change behavior.
+- `docs/explanation/the-phase-loop.md`: separate plan-checker/executors/verifier, explicit post-execution verifier stage, verification coverage and fix-plan feedback.
+- `docs/how-to/verify-and-ship.md`: UAT/debug/fix loop, verification status, content fingerprints over implementation/planning files and stale-on-change behavior.
 
 ## Operational model
 Executors are S1 units. Phase-wave decomposition and orchestrator merging are workflow/task decomposition rather than S2. The post-execution verifier is a distinct fresh-context audit role with direct access to covered artifacts and a corrective path.

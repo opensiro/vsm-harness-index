@@ -19,19 +19,20 @@ autonomy_s5: ?
 OpenHive at the pinned revision as the colony runtime: persistent Queen plus dynamically spawned worker clones, shared ledger/plan, recovery and human Sentinel.
 
 ## Repository architecture
-Hive describes “one loop controlling many loops.” The Queen pilots a unit of work, systematizes it, fans out worker clones, and converges them through a shared tracker ledger and persistent task plan. The runtime supplies crash recovery, cost enforcement, observability and out-of-band HITL.
+Hive describes “one loop controlling many loops.” The Queen pilots work, fans out worker clones, and converges them through a shared tracker ledger, persistent task plan, event bus and reminder hub.
 
 ## Primary evidence
-- `README.md`: Queen/worker colony architecture; shared tracker ledger and persistent plan; runtime fan-out/converge loop; recovery/cost/HITL; adaptive reflexion/memory/skills.
+- `README.md`: Queen/worker colony architecture, shared tracker ledger and persistent plan, fan-out/converge loop, recovery/cost/HITL.
+- `docs/key_concepts/coordination.md`: defines the tracker as the colony's shared source-of-truth ledger; workers upsert results, the Queen queries/validates progress, the event bus returns worker reports, and reminders keep the Queen aware of in-flight workers to avoid double-dispatch.
 
 ## Operational model
-Queen and workers perform S1 work. Unlike pure parent→child delegation, workers operate concurrently against a shared task ledger/plan and the agent-owned colony loop uses that shared state to converge work and determine further fan-out/completion.
+Queen and workers perform S1 work. Unlike pure parent→child delegation, workers operate concurrently against a shared task ledger/plan and the agent-owned colony loop uses fresh shared state and reports to converge work and determine further fan-out/completion.
 
 ## S1 — Operations
 `A`: Queen/workers autonomously perform outcome-producing business-process work. Confidence: high.
 
 ## S2 — Coordination
-`A`: the standard colony supplies agent-owned coordination through the persistent shared ledger/plan and Queen-driven convergence of concurrent worker loops, providing a concrete mutual-adjustment/task-ownership path rather than simple one-shot delegation. Confidence: medium-high.
+`A`: the standard colony supplies agent-owned coordination through its shared ledger/plan, worker-report event path and Queen-driven convergence, providing concrete task-ownership and fleet-awareness mechanisms rather than simple one-shot delegation. Confidence: high.
 
 ## S3 — Inside-and-now control
 `?`: the Queen is a persistent lead, but reviewed evidence does not separate routing/convergence from stronger whole-system resource/accountability authority sufficiently for S3.

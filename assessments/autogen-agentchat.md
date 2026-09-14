@@ -22,8 +22,9 @@ AutoGen AgentChat at the pinned revision. Microsoft Agent Framework is its succe
 AutoGen supplies autonomous tool-using agents plus AgentChat group-chat/team patterns over a message/event runtime. The framework includes participant selection, handoffs and group conversations in addition to simple parent-to-agent-tool delegation.
 
 ## Primary evidence
-- `README.md`: autonomous multi-agent applications; AgentChat group chats; message/event runtime; multi-agent orchestration and AgentTool example.
-- AgentChat documentation referenced by the repository supplies selector/group/swarm patterns as first-party standard behavior.
+- `README.md`: autonomous multi-agent applications, AgentChat group chats, message/event runtime and AgentTool examples.
+- `python/packages/autogen-agentchat/src/autogen_agentchat/teams/_group_chat/_selector_group_chat.py`: `SelectorGroupChat` owns candidate filtering, selector behavior, repeated-speaker policy and selection attempts at the pinned ref.
+- `python/docs/src/user-guide/agentchat-user-guide/selector-group-chat.ipynb`: first-party examples configure participant sets and `candidate_func` to constrain who may act next on each group-chat turn.
 
 ## Operational model
 Individual assistants are S1 units. In group/team patterns, selection/handoff protocols determine which autonomous participant holds the next conversational/action right, preventing uncontrolled simultaneous action and providing feedback from the shared team interaction.
@@ -32,7 +33,7 @@ Individual assistants are S1 units. In group/team patterns, selection/handoff pr
 `A`: stateful agents choose tools/actions and incorporate returned results. Confidence: high.
 
 ## S2 — Coordination
-`A`: first-party selector/group-chat/swarm patterns can autonomously regulate turn/control transfer among S1 agents, a concrete coordination decision right rather than mere task decomposition. Confidence: medium-high.
+`A`: first-party selector/group-chat patterns autonomously regulate turn/control transfer among S1 agents, a concrete coordination decision right rather than mere task decomposition. Confidence: high.
 
 ## S3 — Inside-and-now control
 `—`: team orchestration does not establish a whole-system resource/accountability regulator with S3 authority.
