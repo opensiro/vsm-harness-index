@@ -2,8 +2,8 @@
 
 `vsm-harness-index` does not maintain a second VSM methodology. It applies:
 
-1. `vsm-harness-profile/PROFILE.md` for the meaning of organizational functions;
-2. `vsm-skills/skills/assess-vsm-harness` for evidence collection, confidence, and TL;DR reconstruction;
+1. [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md) for the meaning of organizational functions;
+2. [`assess-vsm-harness`](https://github.com/opensiro/vsm-skills/tree/main/skills/assess-vsm-harness) for evidence collection, confidence, and TL;DR reconstruction;
 3. this document only for index-specific publication rules.
 
 ## Entry boundary

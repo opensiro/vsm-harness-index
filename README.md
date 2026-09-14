@@ -1,6 +1,6 @@
 # VSM Harness Index
 
-VSM Harness Index maps and compares real agent harnesses according to the organizational functions described by the [VSM Harness Profile](../vsm-harness-profile/PROFILE.md).
+VSM Harness Index maps and compares real agent harnesses according to the organizational functions described by the [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md).
 
 This is an organizational comparison, not a ranking and not a harness specification. The discovery cohort is adapted from [Best of Agent Harnesses](SOURCES.md) under CC BY-SA 4.0; fingerprints are independently reconstructed from pinned primary project sources.
 
@@ -27,7 +27,7 @@ The current cohort contains 82 candidates: 81 with an autonomous decision/action
 primary project sources --> data/catalog.psv --> TLDR.md
 ```
 
-`data/catalog.psv` is the single source of truth and `TLDR.md` is its reproducible projection. All new or refreshed reviews must use `vsm-skills/skills/assess-vsm-harness`.
+`data/catalog.psv` is the single source of truth and `TLDR.md` is its reproducible projection. All new or refreshed reviews must use [`assess-vsm-harness`](https://github.com/opensiro/vsm-skills/tree/main/skills/assess-vsm-harness).
 
 ## Contents
 
@@ -40,4 +40,4 @@ primary project sources --> data/catalog.psv --> TLDR.md
 
 ## License
 
-No repository-wide license has been selected. The adapted discovery dataset and its rendered TL;DR table are available under CC BY-SA 4.0 as documented in [SOURCES.md](SOURCES.md). Do not assume that license applies to other repository content.
+Repository code and original documentation are licensed under [Apache License 2.0](LICENSE). The adapted discovery dataset in `data/catalog.psv` and its generated `TLDR.md` projection are licensed under [CC BY-SA 4.0](LICENSES/CC-BY-SA-4.0.txt); attribution and modifications are documented in [SOURCES.md](SOURCES.md). Linked projects retain their own terms.

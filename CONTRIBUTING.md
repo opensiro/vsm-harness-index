@@ -4,7 +4,7 @@ The index follows a source-to-projection workflow. Do not hand-author derived co
 
 ## Required workflow
 
-1. Check out `vsm-harness-profile`, `vsm-skills`, and `vsm-harness-index` as siblings.
+1. Check out [vsm-harness-profile](https://github.com/opensiro/vsm-harness-profile), [vsm-skills](https://github.com/opensiro/vsm-skills), and [vsm-harness-index](https://github.com/opensiro/vsm-harness-index) as siblings.
 2. Add or refresh the discovery row in `data/catalog.psv`, retaining source
    provenance and sorting by `repository_created_at`, then repository URL.
 3. Generate its reviewed TL;DR in chronological order and compare it with all
