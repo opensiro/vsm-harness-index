@@ -1,54 +1,64 @@
 #!/usr/bin/env python3
-"""Validate categorical VSM/OSM autonomy fingerprints in catalog order."""
-
+"""Parse and validate standalone harness assessments."""
 from __future__ import annotations
-
-import csv
 from pathlib import Path
 
-SYSTEMS = ("S1", "S2", "S3", "S3*", "S4", "S5")
-ALLOWED = {
-    "S1": ("S1 · A:", "S1 · C:", "S1: ?"),
-    "S2": ("S2 · A:", "S2 · C:", "S2: —", "S2: ?"),
-    "S3": ("S3 · A:", "S3 · C:", "S3: —", "S3: ?"),
-    "S3*": ("S3* · A:", "S3* · C:", "S3*: —", "S3*: ?"),
-    "S4": ("S4 · A:", "S4 · C:", "S4: —", "S4: ?"),
-    "S5": ("S5 · A:", "S5 · C:", "S5 · P:", "S5: —", "S5: ?"),
-}
+SYSTEM_KEYS = ("s1", "s2", "s3", "s3_star", "s4", "s5")
+ALLOWED = {"A", "C", "P", "—", "?"}
 
-def validate_rows(rows: list[dict[str, str]]) -> int:
-    positions = [int(row["catalog_position"]) for row in rows]
-    if positions != sorted(positions) or len(positions) != len(set(positions)):
-        raise SystemExit("catalog_position must be unique and ascending")
-    included = 0
-    for row in rows:
-        label = f"{row['catalog_position']}:{row['harness_id']}"
-        value = row["vsm_tldr"].replace("\\n", "\n")
-        status = row["tldr_status"]
-        if status == "excluded-no-agentic-vsm":
-            if value:
-                raise SystemExit(f"{label}: excluded row has a fingerprint")
-            continue
-        if status != "included":
-            raise SystemExit(f"{label}: unknown tldr_status {status!r}")
-        included += 1
-        if len(value) > 420:
-            raise SystemExit(f"{label}: fingerprint is {len(value)} characters")
-        lines = value.splitlines()
-        if len(lines) != 6:
-            raise SystemExit(f"{label}: expected six lines, got {len(lines)}")
-        for system, line in zip(SYSTEMS, lines, strict=True):
-            if not any(line == prefix or line.startswith(prefix + " ") for prefix in ALLOWED[system]):
-                raise SystemExit(f"{label}: invalid {system} line: {line!r}")
-    return included
+
+def parse_assessment(path: Path) -> dict[str, str]:
+    text = path.read_text(encoding="utf-8")
+    if not text.startswith("---\n"):
+        raise ValueError(f"{path}: missing frontmatter")
+    parts = text.split("---\n", 2)
+    if len(parts) < 3:
+        raise ValueError(f"{path}: malformed frontmatter")
+    row: dict[str, str] = {}
+    for line in parts[1].splitlines():
+        if ":" in line:
+            key, value = line.split(":", 1)
+            row[key.strip()] = value.strip()
+    row["path"] = str(path)
+    return row
+
+
+def load_assessments(directory: Path) -> dict[str, dict[str, str]]:
+    rows: dict[str, dict[str, str]] = {}
+    for path in sorted(directory.glob("*.md")):
+        row = parse_assessment(path)
+        harness_id = row.get("harness_id", "")
+        if not harness_id or harness_id in rows:
+            raise ValueError(f"{path}: missing or duplicate harness_id")
+        rows[harness_id] = row
+    return rows
+
+
+def vector(row: dict[str, str]) -> list[str]:
+    return [row.get(f"autonomy_{key}", "") for key in SYSTEM_KEYS]
+
+
+def validate_assessment(row: dict[str, str]) -> None:
+    for key in ("harness_id", "project_name", "repository", "review_ref", "reviewed_at", "status"):
+        if not row.get(key):
+            raise ValueError(f"{row.get('path')}: missing {key}")
+    if len(row["review_ref"]) != 40:
+        raise ValueError(f"{row['harness_id']}: review_ref must be 40 characters")
+    states = vector(row)
+    if any(state not in ALLOWED for state in states):
+        raise ValueError(f"{row['harness_id']}: invalid autonomy state")
+    if any(state == "P" for state in states[:-1]):
+        raise ValueError(f"{row['harness_id']}: P is valid only for S5")
+    if row["status"] == "included" and states[0] != "A":
+        raise ValueError(f"{row['harness_id']}: included harness must establish S1 · A")
 
 
 def main() -> int:
     repo = Path(__file__).resolve().parents[1]
-    with (repo / "data" / "catalog.psv").open(encoding="utf-8", newline="") as handle:
-        rows = list(csv.DictReader(handle, delimiter="|"))
-    included = validate_rows(rows)
-    print(f"validated {included} included fingerprints in catalog order")
+    rows = load_assessments(repo / "assessments")
+    for row in rows.values():
+        validate_assessment(row)
+    print(f"Validated {len(rows)} standalone assessment(s)")
     return 0
 
 if __name__ == "__main__":
