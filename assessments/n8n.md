@@ -3,49 +3,50 @@ harness_id: n8n
 project_name: n8n
 repository: https://github.com/n8n-io/n8n
 review_ref: 4169b55bf3b3e6c255d7361642bc5243bd04345a
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # n8n
 
 ## Review boundary
-n8n at the pinned revision, focusing on its first-party AI Agent node and agent-as-tool orchestration path inside a workflow. Generic workflow automation outside the agent loop is supporting infrastructure.
+n8n at the pinned revision, focusing on the first-party AI Agent node, Agent Tool, fallback-model and Guardrails surfaces. Generic deterministic workflow automation is supporting infrastructure unless an autonomous actor owns the organizational decision right.
 
 ## Repository architecture
-The `AI Agent` node is documented in source as generating an action plan, executing it, and using external tools. It accepts model, memory, tools, and output-parser subnodes. `AI Agent Tool` exposes an agent as a tool for an orchestrator pattern, allowing a parent operational agent to delegate bounded work.
+The AI Agent generates an action plan, executes it and uses connected tools/model/memory/output-parser subnodes. AI Agent Tool exposes the same plan-and-execute behavior as a callable tool for an orchestrator pattern. One agent can also have a primary and fallback model. The separate Guardrails node validates/sanitizes text against builder-configured policies and thresholds.
 
 ## Primary evidence
-- `packages/@n8n/nodes-langchain/nodes/agents/Agent/Agent.node.ts`: AI Agent description, external tools, model/memory/tool inputs, and orchestrator-pattern relation to Agent Tool.
-- `packages/@n8n/nodes-langchain/nodes/agents/Agent/AgentTool.node.ts`: first-party AI Agent Tool with the same plan-and-execute agent behavior.
-All evidence is read at the pinned `review_ref`.
+- `packages/@n8n/nodes-langchain/nodes/agents/Agent/Agent.node.ts`: plan-and-execute agent, external tools and explicit Agent Tool relation for an orchestrator pattern.
+- `packages/@n8n/nodes-langchain/nodes/agents/Agent/Agent.node.ts`: fallback-model example explicitly remains one agent; the second model is a retry provider, not another agent.
+- `packages/@n8n/nodes-langchain/nodes/agents/Agent/AgentTool.node.ts`: callable child agent retains the same plan-and-execute behavior.
+- `packages/@n8n/nodes-langchain/nodes/Guardrails/description.ts`: policy checks/sanitization for jailbreak, NSFW, PII, secrets, topical alignment and URLs are configured by the workflow builder.
 
 ## Operational model
-An AI Agent node is an S1 unit: it plans and acts with tools inside a workflow. An Agent Tool can be invoked by a parent agent, but parent→child delegation is task decomposition unless an additional mechanism regulates interference among autonomous operational units.
+An AI Agent node is one S1. Agent Tool permits parent→child task delegation. Workflow edges, guardrails and fallback providers constrain or route operation but do not become autonomous metasystem actors.
 
 ## S1 — Operations
-`A`: the AI Agent owns bounded plan/action/tool selection and executes against workflow inputs and returned tool results. Basis: explicit/structural. Confidence: high.
+`A`: the AI Agent owns bounded planning/action/tool selection and incorporates returned results. Confidence: high.
 
 ## S2 — Coordination
-`—`: Agent Tool delegation and workflow routing assign or sequence work but do not establish anti-oscillation or conflict regulation among autonomous S1 units. Basis: structural. Confidence: medium.
+`—`: Agent Tool and orchestrator patterns assign/delegate bounded work; deterministic workflow routing and model fallback do not regulate interference among peer autonomous S1s. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: workflow/runtime controls exist, but no verified autonomous whole-system regulator with authority over shared resources, commitments, or priorities is established.
+`—`: workflow execution controls and guardrails do not provide an autonomous actor with a whole-system current view and authority over shared resources, commitments and priorities. Confidence: high.
 
 ## S3* — Complementary audit
-`?`: validation, execution records, and workflow diagnostics are not enough to establish an independent complementary audit function.
+`—`: Guardrails validate configured text policies on the normal workflow path; execution records/tests are diagnostics. No separate independent audit actor with complementary reality access and corrective closure is supplied. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`?`: agent planning and workflow adaptation do not by themselves establish an external-and-prospective intelligence loop.
+`—`: planning, model selection/fallback and ordinary workflow reactions do not establish a distinct external-and-prospective intelligence function coupled to S3. Confidence: high.
 
 ## S5 — Policy and identity
-`?`: system messages, workflow configuration, permissions, and parent-agent instructions constrain operation without proving runtime identity or ultimate-policy closure.
+`—`: system prompts, workflow topology, guardrail rules/thresholds and permissions are parent-authored configuration, not agent-owned ultimate policy. Confidence: high.
 
 ## Recursion, variety, escalation
-An agent exposed as a tool is nested delegation, not automatically a recursive viable system. Tools amplify local action variety while workflow configuration and subnode contracts attenuate it.
+An agent exposed as a tool is nested operational delegation, not recursive viability. Guardrails attenuate input/output variety and fallback models improve S1 reliability without creating metasystem closure.

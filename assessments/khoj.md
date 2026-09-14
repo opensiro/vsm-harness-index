@@ -3,48 +3,49 @@ harness_id: khoj
 project_name: Khoj
 repository: https://github.com/khoj-ai/khoj
 review_ref: ae229ca894c0b80ad84664afcfdde523b5e87057
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Khoj
 
 ## Review boundary
-Khoj at the pinned revision, focusing on its first-party personal agents. Hosting, channel adapters, search infrastructure, and scheduled delivery are supporting mechanisms unless they participate in an autonomous organizational function.
+Khoj at the pinned revision as one configured personal agent using conversation history, private knowledge, internet information and user-enabled capabilities. Hosting, retrieval services and channel adapters are supporting infrastructure.
 
 ## Repository architecture
-The repository presents Khoj as a personal AI app whose agents can be configured with knowledge, persona, chat model, and tools. Agents retrieve private documents and internet context, use tools toward user goals, and can participate in scheduled research/newsletter work.
+Conversation/provider modules build one personal-agent interaction loop. The personality prompt explicitly frames Khoj or a custom `{name}` as a personal agent, supplies past conversation and user documents as context, and exposes retrieval/media/data capabilities. Custom identity instructions are injected from builder/user-provided `{bio}`.
 
 ## Primary evidence
-- `README.md`: agent creation with custom knowledge/persona/model/tools; internet/document retrieval; automated research and notifications.
-All evidence is read at the pinned `review_ref`.
+- `src/khoj/processor/conversation/prompts.py`: default and custom personal-agent system prompts, conversation/document context, internet/image/data capabilities and externally supplied custom `bio` instructions.
+- `src/khoj/processor/conversation/`: provider-specific implementations plus shared prompt/utils infrastructure support the same conversation-agent boundary.
+- Repository source search at the pinned boundary did not establish a first-party multi-S1 coordination, independent verifier/auditor, whole-system regulator or policy-closure subsystem.
 
 ## Operational model
-A configured Khoj personal agent is the operational S1: it absorbs task variety by selecting retrieval and tool use from conversational/task context. The reviewed boundary does not establish multiple interacting S1 units requiring a distinct coordination function.
+The configured personal agent is one S1. Retrieval, internet access, conversation memory and content-generation capabilities increase that operation's variety; they are not separate viable operations by themselves.
 
 ## S1 — Operations
-`A`: the agent owns bounded retrieval/action choices and produces user-facing outcomes. Basis: explicit/structural. Confidence: high.
+`A`: the personal agent selects and combines available knowledge/retrieval/capabilities to produce user-facing outcomes. Confidence: high.
 
 ## S2 — Coordination
-`—`: no material first-party anti-oscillation or collision-regulation path among autonomous S1 units is established at this boundary. Confidence: medium.
+`—`: no material first-party mutual-adjustment path among autonomous operational agents is supplied at this boundary. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: administration and runtime controls do not by themselves establish an autonomous whole-system regulator.
+`—`: runtime/admin infrastructure does not provide an autonomous whole-system regulator with authority over multiple S1 commitments/resources. Confidence: high.
 
 ## S3* — Complementary audit
-`?`: no sufficiently independent audit channel was verified.
+`—`: no sufficiently independent first-party verifier/audit actor with complementary access and corrective feedback was found. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`?`: internet access, scheduled research, and notifications sense external information but do not by themselves prove a future-oriented adaptation loop coupled to S3.
+`—`: web retrieval, current-date/location context and scheduled/research-style operation expose environmental information to S1, but no distinct future-oriented intelligence function generates adaptation options and couples them into S3. Confidence: high.
 
 ## S5 — Policy and identity
-`?`: persona/configuration constrain agents without proving runtime ultimate-policy closure.
+`—`: the agent's name/persona/instructions are supplied by static prompt/configuration (`bio`) rather than agent-owned ultimate identity/policy authority. Confidence: high.
 
 ## Recursion, variety, escalation
-Custom agents enlarge operational variety through tools and knowledge. Multiple configured agents are not assumed to be a recursive viable system without evidence of their own metasystemic closure.
+Knowledge and retrieval attenuate a large information environment into task context. Multiple configured personal agents are not assumed recursively viable without their own metasystem closure.
