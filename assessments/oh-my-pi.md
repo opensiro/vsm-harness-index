@@ -1,6 +1,6 @@
 ---
 harness_id: oh-my-pi
-project_name: Oh My Pi
+project_name: oh-my-pi
 repository: https://github.com/can1357/oh-my-pi
 review_ref: 165cede8400d833382177a4dfd2901271c9f0a2c
 reviewed_at: 2026-09-14
@@ -13,7 +13,7 @@ autonomy_s4: ?
 autonomy_s5: ?
 ---
 
-# Oh My Pi
+# oh-my-pi
 
 ## Review boundary
 Oh My Pi at the pinned revision as a coding-agent harness including first-class subagents, peer communication and the separate advisor-model role.

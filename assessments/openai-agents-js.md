@@ -1,6 +1,6 @@
 ---
 harness_id: openai-agents-js
-project_name: OpenAI Agents SDK JS/TS
+project_name: OpenAI Agents SDK for JavaScript
 repository: https://github.com/openai/openai-agents-js
 review_ref: 8831eae9d34365f9a397cbd52ae0366f304e1a96
 reviewed_at: 2026-09-14
@@ -13,7 +13,7 @@ autonomy_s4: ?
 autonomy_s5: ?
 ---
 
-# OpenAI Agents SDK JS/TS
+# OpenAI Agents SDK for JavaScript
 
 ## Review boundary
 OpenAI Agents SDK JavaScript/TypeScript at the pinned revision as a framework for text/sandbox/realtime agents and multi-agent workflows.

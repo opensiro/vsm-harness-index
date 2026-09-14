@@ -1,6 +1,6 @@
 ---
 harness_id: open-harness
-project_name: Open Harness
+project_name: open-harness
 repository: https://github.com/MaxGfeller/open-harness
 review_ref: 026e8d9cb8f184cdeac2054b489ec20972ba8681
 reviewed_at: 2026-09-14
@@ -13,7 +13,7 @@ autonomy_s4: ?
 autonomy_s5: ?
 ---
 
-# Open Harness
+# open-harness
 
 ## Review boundary
 MaxGfeller/OpenHarness at the pinned revision as a general-purpose agent library built on Vercel AI SDK.

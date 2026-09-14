@@ -1,6 +1,6 @@
 ---
 harness_id: goose
-project_name: goose
+project_name: Goose
 repository: https://github.com/aaif-goose/goose
 review_ref: 50666ae0b9a51e260b52b7efbab2e4e020346e94
 reviewed_at: 2026-09-14
@@ -13,7 +13,7 @@ autonomy_s4: ?
 autonomy_s5: ?
 ---
 
-# goose
+# Goose
 
 ## Review boundary
 Goose at the pinned revision as the local general-purpose agent across desktop/CLI/API. MCP extensions and external provider agents remain environment/tool dependencies.

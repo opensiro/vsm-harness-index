@@ -2,3 +2,81 @@ catalog_position|harness_id|signature
 1|rasa|Stateful dialogue action selection is agent-owned, while no distinct agent-owned metasystemic function is established at this repository boundary.
 2|botpress|Code-generating agents compose multiple typed tools inside one operational loop; that tool composition is not cross-S1 coordination.
 3|n8n|A workflow-embedded AI Agent can expose another agent as a tool, but parent-child delegation remains operational decomposition rather than S2.
+4|khoj|A persistent personal agent combines private-document retrieval, web context, tools, and scheduled research without establishing a separate metasystemic layer.
+5|agno|A broad agent-platform runtime exposes teams, memory, scheduling, approvals, and observability, but the team semantics remain insufficiently specific for positive S2.
+6|langchain|The core framework supplies tool-using agents while explicitly outsourcing advanced orchestration to LangGraph, keeping the assessed boundary at S1.
+7|llama-index|The harness is distinguished by data-centric retrieval and query-engine composition; its workflow layer is under-specified as coordination among autonomous S1s.
+8|langflow|Visual multi-agent flow composition is first-party, but authored graph structure is not promoted to S2 without evidence of mutual adjustment.
+9|semantic-kernel|The SDK exposes collaborating-agent and process patterns across multiple languages, yet orchestration labels alone do not establish Beer-style S2.
+10|autogpt|A goal-driven visual block workflow can run on schedules or triggers, but deterministic workflow structure remains support for one operational agent loop.
+11|flowise|Agentflow visually composes agentic and deterministic components; the repository does not show enough interaction semantics to classify that composition as S2.
+12|dify|ReAct/function-calling agents sit inside authored visual workflows, so workflow branching is treated as deterministic support rather than agent-owned coordination.
+13|agentverse|Environment and conversation protocols expose turn-taking constraints among multiple role agents, yielding a composable S2 path rather than simple delegation.
+14|aider|One coding agent closes a tight edit-Git-lint-test-fix loop; those checks remain operational feedback rather than independent S3*.
+15|gpt-researcher|Planner fan-out, parallel crawlers, and publisher fan-in form research task decomposition, not a coordination layer among interacting S1 units.
+16|vercel-ai|ToolLoopAgent makes the model-tool-result cycle explicit and portable, but the primitive remains a single operational loop with parent-supplied stop and approval rules.
+17|continue|The coding agent is delivered through CLI and IDE surfaces around one workspace-oriented operational loop, with no distinct metasystemic actor established.
+18|anythingllm|Workspace agents combine memory, web/document tools, schedules, and no-code Agent Flows, while the flow semantics remain too generic for positive S2.
+19|metagpt|Role-specialized software agents follow an SOP-driven company process, but project-manager assignment and staged artifacts are not sufficient evidence of S2 or S3.
+20|open-interpreter|A Codex-derived local coding harness emphasizes sandboxed tool execution and harness switching while remaining a single agent operational loop.
+21|langgraph|Durable state, graph transitions, interrupts, and subgraphs are treated as generic runtime mechanisms; they do not by themselves instantiate S2, S3, S4, or S5.
+22|autogen-agentchat|Selector, group-chat, and swarm protocols autonomously regulate who acts next among multiple participants, providing explicit agent-owned S2.
+23|chatdev|A configurable simulated-company topology sequences conversational roles, but the standard repository evidence does not distinguish coordination from centralized routing strongly enough for S2.
+24|letta|Persistent memory and identity let one stateful agent maintain continuity across sessions, but persistence alone is not S4 or S5.
+25|ailice|Dynamic agent construction through an interactive call tree expands one agent's task decomposition; parent-child result integration is not peer coordination.
+26|crewai|Crews combine role agents, delegation, collaboration, and event-driven Flows, but the reviewed evidence does not isolate a concrete anti-oscillation decision right.
+27|openagents|The IDE/control environment explicitly keeps stop, steer, approve, review, and acceptance authority with the human owner, limiting autonomous metasystem claims.
+28|agentlite|A manager chooses workers, falls back, and integrates results, but this is task routing rather than S2 and lacks whole-system S3 authority.
+29|r2r|An agentic RAG loop selects retrieval, content, graph, and web-search tools; multimodal retrieval amplifies one S1 rather than creating a metasystem.
+30|openhands|The control center runs coding agents across multiple backends and automations, but dispatching isolated conversations remains operational routing rather than S2.
+31|praisonai|AgentFlow adds route, parallel, loop, verification, and self-correction primitives, yet graph control is not enough to prove agent-owned metasystem functions.
+32|stagehand|A browser agent autonomously executes goals through self-healing observation/action primitives, distinguishing adaptive browser operation from organizational adaptation.
+33|swe-agent|The harness maximizes model agency through a configurable agent-computer interface, while remaining a single software-engineering S1.
+34|agent-zero|Focused subagents can receive research, coding, analysis, or review tasks, but that hierarchy remains delegation rather than autonomous coordination.
+35|pydantic-ai|Typed agents can compose memory, subagents, planning, and an advisor capability, but the core repository does not establish the independence or coordination semantics needed for metasystem positives.
+36|cline|A coding agent reacts to compiler, test, and server feedback and exposes SDK teams/hooks, but teams and review hooks are not promoted without stronger organizational evidence.
+37|eliza|A plugin-rich persistent AgentRuntime exposes actions, providers, evaluators, services, events, and schedules; component labels are not treated as VSM functions by themselves.
+38|agent-squad|Classifier routing, supervisor delegation, and shared context organize specialists, but selecting who receives a task is not yet evidence of S2 mutual adjustment.
+39|mastra|Autonomous agents run inside deterministic graph workflows with suspend/resume and eval support; graph execution and evals remain supporting mechanisms.
+40|beeai-framework|The documented main-agent-to-specialist HandoffTool pattern is explicit delegation, so multi-agent workflow support does not automatically become S2.
+41|goose|A local general-purpose agent gains broad capability through MCP extensions and provider choice while remaining one operational S1.
+42|superagentx|Autonomous workflows include retries, persistence, audit data, and a human-approval governance agent, but governance remains parent-controlled rather than S5.
+43|browser-use|A standard browser agent independently turns a task into browser actions until completion, with no separate organizational layer evidenced.
+44|roo-code|Specialized Code, Architect, Ask, Debug, and custom modes alter one coding-agent role; mode specialization is not a multi-S1 organization.
+45|smolagents|CodeAgent expresses actions as executable code inside configurable sandboxes, giving a compact S1 implementation without a supplied metasystem.
+46|cloudflare-agents|Persistent Durable Object agents add state, scheduling, subagents, workflows, and tracing, but those runtime primitives remain composition rather than agent-owned metasystem functions.
+47|langgraph-bigtool|Semantic retrieval attenuates a very large tool catalog before action, making tool-selection variety management the distinctive mechanism inside one S1.
+48|openmanus|The stable distribution is a general-purpose single-agent path; its documented multi-agent flow is explicitly unstable and therefore excluded from OOB metasystem claims.
+49|kilo-code|Fully autonomous CLI execution combines coding, terminal, browser, MCP, and self-checking modes without turning mode selection or review into separate VSM functions.
+50|openai-agents-sdk|Handoffs, agents-as-tools, guardrails, sessions, HITL, and tracing are all explicit, but delegation and normal validation are not promoted to S2 or S3*.
+51|google-adk|A graph workflow runtime and Task API expose rich multi-agent hierarchy and collaboration, while the reviewed evidence remains too generic to establish Beer-style coordination.
+52|codex|First-party spawn_agent tooling creates bounded child coding workers, but child spawning and result return are classified as task decomposition rather than S2.
+53|gemini-cli|A terminal agent combines built-in tools, MCP, checkpointing, and headless automation; repeated workflow invocations remain separate S1 runs.
+54|microsoft-agent-framework|Graph workflows expose sequential, concurrent, handoff, and group-collaboration patterns, but their organizational semantics remain under-specified for positive S2.
+55|opencode|Build/plan agents plus a general subagent provide specialization and delegation, while user mode switching and child invocation remain below the S2 threshold.
+56|agentsilex|A first-party evaluation framework exposes trajectory, response, and LLM-as-judge checks as a composable complementary-audit path, while independence and corrective authority remain developer-supplied.
+57|deerflow|A super-agent delegates to isolated subagents with memory, sandboxes, skills, and schedules; the hierarchy is operational fan-out rather than S2.
+58|strands-agents|Lifecycle controls, steering, multi-agent patterns, hooks, guardrails, and evals are broad primitives, but none is specific enough in the reviewed evidence to prove a metasystem function.
+59|crush|A terminal coding agent combines LSP, MCP, sessions, and provider switching around one operational loop with no distinct metasystemic actor.
+60|openai-agents-js|The JavaScript SDK mirrors handoffs, agents-as-tools, guardrails, HITL, sessions, and tracing; delegation and normal validation remain non-metasystemic under the stricter rules.
+62|claude-agent-sdk|The SDK wraps a Claude Code session with tools, permissions, MCP, and hooks; hooks constrain one S1 but do not establish independent audit or policy closure.
+63|qwen-code|The coding harness explicitly ships SubAgents, Agent Teams, workflows, skills, hooks, and unattended mode, but team topology alone remains insufficient for positive S2.
+64|hermes-agent|A persistent agent can create skills, curate memory, schedule work, and spawn subagents; its closed learning loop is explicitly not treated as S4.
+65|deepagents|An opinionated long-horizon harness bundles planning, context management, memory, skills, HITL, and isolated subagents, while subagent use remains delegation.
+66|mirothinker|Long-horizon research scales hundreds of environment interactions and post-training, but trajectory refinement and training are not counted as runtime S4.
+67|pi|A provider-neutral coding runtime combines tool calling, state, telemetry, and sandbox patterns around one S1 without a supplied metasystem.
+68|repomaster|The system autonomously discovers, configures, and executes relevant external repositories through specialized backends, while its multi-agent orchestration semantics remain under-specified.
+69|youtu-agent|A meta-agent can generate tools and workflows and training can improve future behavior, but generation and learning are not promoted to S2 or S4 without the required organizational loops.
+70|agentrl|Distributed rollout, actor, reference, and task-manager workers are classified as training compute roles rather than VSM operational units; RL is not runtime S4.
+71|openclaw|A trusted local Gateway supplies sessions, routing, deterministic policy, channels, and device nodes around swappable agent harnesses, keeping control-plane regulation non-agentic.
+72|oh-my-pi|Peer messaging and isolated worktrees expose composable S2, while a separate advisor model with its own context can inject concerns or hard blockers as agent-owned S3*.
+73|hive|A persistent Queen coordinates concurrent workers through a shared ledger and plan, making colony-wide convergence an explicit agent-owned S2 rather than simple delegation.
+74|open-harness|A TypeScript agent framework adds resumable/background subagents and session middleware, while those subagents remain delegated operational workers.
+75|symphony|The specification explicitly defines the system as a deterministic scheduler/runner whose orchestrator owns dispatch, retries, concurrency, and reconciliation around autonomous coding S1s.
+76|looptroop|Ticket work is decomposed into isolated beads with planning councils, repeated fix/test loops, and final verification, but orchestration and worktree isolation remain non-agentic coordination support.
+77|talon|Persistent goals, heartbeats, dreams, triggers, and event routing enable ongoing autonomous work, but external-event reaction is explicitly not classified as S4.
+78|openharness-hkuds|A lightweight harness combines tool loops, governance, memory, and first-party swarm/team primitives, while team/task semantics remain insufficiently specific for positive S2.
+79|claw-code-agent|Persistent team messages plus dependency-aware task state expose a composable worker-coordination path beyond simple nested delegation, yielding S2 C.
+80|autoharness|A deterministic multi-stage governance pipeline wraps the agent loop with risk checks, permissions, sanitization, audit, budgets, and constitutions rather than autonomous metasystem actors.
+81|proliferate|Multiple native coding agents run in isolated worktrees with delegated subagents and recurring workflows; isolation and delegation remain operational support rather than S2.
+82|get-shit-done|Fresh-context verifier agents independently compare goals, decisions, plans, summaries, and implementation artifacts, with drift fingerprints and corrective plans providing agent-owned S3*.
