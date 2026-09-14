@@ -45,7 +45,7 @@ It is **not** a product-quality, maturity, or VSM-viability ranking. `C`, `P`, a
 
 The discovery cohort remains in `data/catalog.psv`. The legacy `vsm_tldr` column is retained temporarily as migration history but is no longer authoritative for v2. Standalone assessments are rebuilt from pinned primary evidence in ascending catalog order. The validator requires completed assessments to form a contiguous prefix `1..N`.
 
-The v2 migration currently starts at position 1; the generated TLDR and rankings intentionally include only completed assessments.
+The v2 migration currently covers positions `1..3` (Rasa, Botpress, n8n). The generated TLDR and rankings intentionally include only completed assessments.
 
 ## Validation
 
