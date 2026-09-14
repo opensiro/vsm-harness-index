@@ -77,6 +77,6 @@ catalog_position|harness_id|signature
 77|talon|Persistent goals, heartbeats, dreams, triggers, and event routing enable ongoing autonomous work, but external-event reaction is explicitly not classified as S4.
 78|openharness-hkuds|A lightweight harness combines tool loops, governance, memory, and first-party swarm/team primitives, while team/task semantics remain insufficiently specific for positive S2.
 79|claw-code-agent|Persistent team messages plus dependency-aware task state expose a composable worker-coordination path beyond simple nested delegation, yielding S2 C.
-80|autoharness|A deterministic multi-stage governance pipeline wraps the agent loop with risk checks, permissions, sanitization, audit, budgets, and constitutions rather than autonomous metasystem actors.
+80|autoharness|Mailbox-based swarm protocols expose composable cross-agent coordination, while a built-in adversarial Verification agent provides a complementary audit path; both still require composed closure.
 81|proliferate|Multiple native coding agents run in isolated worktrees with delegated subagents and recurring workflows; isolation and delegation remain operational support rather than S2.
 82|get-shit-done|Fresh-context verifier agents independently compare goals, decisions, plans, summaries, and implementation artifacts, with drift fingerprints and corrective plans providing agent-owned S3*.
