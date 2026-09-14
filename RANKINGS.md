@@ -9,7 +9,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 1 | [oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 2/6 | 1/5 | 1 | 0 | 3 | `A C ? A ? ?` |
 | 1 | [Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023 | 2/6 | 1/5 | 0 | 0 | 1 | `A A — ? — —` |
 | 2 | [Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 2 | [AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 0 | 0 | 4 | `A ? ? ? ? —` |
+| 2 | [AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 2 | `A C ? C ? —` |
 | 2 | [claw-code-agent](https://github.com/HarnessLab/claw-code-agent) | 2026 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
 | 2 | [OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
 | 2 | [Talon](https://github.com/dylanneve1/talon) | 2026 | 1/6 | 0/5 | 0 | 0 | 3 | `A — ? ? — ?` |
