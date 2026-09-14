@@ -1,6 +1,6 @@
 # VSM Harness TL;DR
 
-Cohort-relative signatures from standalone assessments in catalog order.
+Cohort-relative signatures derived from standalone assessments in ascending catalog order.
 
 | Harness | S1 | S2 | S3 | S3* | S4 | S5 | Signature |
 | --- | --- | --- | --- | --- | --- | --- | --- |
