@@ -3,47 +3,48 @@ harness_id: google-adk
 project_name: Google ADK
 repository: https://github.com/google/adk-python
 review_ref: 460715b6c62c8e9ab00931c502381ee0364e39b6
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
-autonomy_s2: ?
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s2: —
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Google ADK
 
 ## Review boundary
-Google ADK Python at the pinned revision, including the graph workflow runtime, Task API and standard multi-agent composition. Vertex/hosted control planes are outside the system-in-focus.
+Deep review of the pinned ADK workflow-agent implementation, with sequential/parallel/loop composition tested against VSM functional criteria rather than mapped from orchestration vocabulary.
 
 ## Repository architecture
-ADK 2.0 supplies autonomous agents, a graph workflow runtime with routing/fan-out/fan-in/loops/retry/state/HITL, structured agent-to-agent task delegation, multi-agent hierarchies and tool confirmation.
+Google ADK provides autonomous agents plus workflow agents that compose child agents in sequential, parallel, and iterative execution structures. `ParallelAgent` executes sub-agents concurrently and merges their events into the parent invocation context. This is execution topology and task decomposition; the reviewed primitive does not regulate interference among autonomous operational units.
 
 ## Primary evidence
-- `README.md`: workflow runtime, Task API, modular multi-agent systems, tools, confirmation and agent/workflow quickstarts.
+- `src/google/adk/agents/parallel_agent.py`: starts configured sub-agents concurrently, isolates invocation branches, collects their events, and completes after the branches finish.
+- Workflow-agent composition determines execution order/concurrency but does not expose an autonomous organizational regulator over shared S1 constraints.
 
 ## Operational model
-Agents are S1 units. Workflow edges and Task API delegation structure execution, but the high-level evidence does not establish whether group interactions include the mutual-adjustment/conflict-dampening relation required for S2.
+An ADK agent performs model/tool work; workflow agents arrange child execution and aggregate outputs according to application-defined structure.
 
 ## S1 — Operations
-`A`: standard agents autonomously use tools and produce bounded outcomes. Confidence: high.
+`A`: agents can autonomously select tools/actions and iterate from session/task feedback inside configured bounds. Confidence: high.
 
 ## S2 — Coordination
-`?`: multi-agent hierarchy and collaboration are first-party, but routing/delegation alone is insufficient and no specific anti-oscillation decision right was verified.
+`—`: sequential/parallel/loop workflow structure and fan-out/fan-in are not sufficient evidence of interference regulation, anti-oscillation, or mutual constraint management among autonomous S1 units. The shallow `S2=C` interpretation is removed.
 
 ## S3 — Inside-and-now control
-`?`: workflow control does not prove autonomous whole-system resource/accountability authority.
+`—`: workflow parents control execution topology, not whole-system current resources, priorities, capacity and commitments across multiple S1 units.
 
 ## S3* — Complementary audit
-`?`: development evaluation/debugging is not enough to establish sufficiently independent runtime audit.
+`—`: no distinct complementary audit channel with separate access/authority was established in the reviewed boundary.
 
 ## S4 — Outside-and-then intelligence
-`?`: dynamic workflows/planning are not prospective environmental adaptation.
+`—`: workflow iteration and task planning concern present execution rather than prospective environment intelligence that changes organizational capability/strategy.
 
 ## S5 — Policy and identity
-`?`: confirmation/instructions remain parent-owned.
+`—`: instructions, tools, workflow topology and policies are application/developer supplied rather than owned by an autonomous ultimate policy function.
 
 ## Recursion, variety, escalation
-Nested workflows and agent hierarchies are composition, not automatically recursive viability.
+Workflow agents provide recursive composition and substantial operational variety, but the metasystem remains application-supplied.

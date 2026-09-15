@@ -3,14 +3,14 @@ harness_id: stagehand
 project_name: Stagehand
 repository: https://github.com/browserbase/stagehand
 review_ref: b771930d2b4d858e5bd9670203c66260b385a8fa
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Stagehand
@@ -19,14 +19,14 @@ autonomy_s5: ?
 Stagehand at the pinned revision as the browser-agent SDK and execution environment, not Browserbase as an organization.
 
 ## Repository architecture
-Stagehand exposes agent-optimized browser observation/action/extraction, self-healing primitives, context reduction and autonomous goal execution through its agent/session surface. It adapts browser actions when sites change.
+Stagehand exposes agent-optimized browser observation/action/extraction, self-healing primitives, context reduction and autonomous goal execution through `agent().execute()`.
 
 ## Primary evidence
-- `README.md`: SDK for browser agents; agent-optimized context; self-healing `act/observe/extract`; browser automation/runtime behavior.
-- First-party SDK/docs expose autonomous goal execution that navigates/clicks/types until the browser goal is completed.
+- `packages/docs/v3/references/agent.mdx`: `AgentInstance.execute()` runs one autonomous browser agent with a high-level instruction, bounded steps, browser page, tool set, callbacks and cancellation.
+- The reviewed agent surface supports DOM/hybrid/CUA action modes and iterative multi-step execution, but does not introduce a separate organizational layer.
 
 ## Operational model
-A browser agent executing a goal is S1. Self-healing and DOM/context mechanisms support that one operation rather than coordinate multiple S1 units.
+A browser agent executing a goal is S1. Self-healing, callbacks, context reduction, action modes and execution limits all support or constrain that same operation.
 
 ## S1 — Operations
 `A`: a standard browser agent autonomously chooses browser actions toward a goal. Confidence: high.
@@ -35,16 +35,16 @@ A browser agent executing a goal is S1. Self-healing and DOM/context mechanisms 
 `—`: no material multi-S1 coordination path is supplied at this boundary.
 
 ## S3 — Inside-and-now control
-`?`: execution/security controls are runtime mechanisms, not autonomous whole-system regulation.
+`—`: max-step, abort, callback and execution controls regulate one S1 runtime rather than current commitments/resources across an organization.
 
 ## S3* — Complementary audit
-`?`: observability is not independent audit.
+`—`: callbacks and observability do not instantiate a distinct independent audit/corrective channel.
 
 ## S4 — Outside-and-then intelligence
-`?`: self-healing reacts to changed pages locally; it does not establish future-oriented environmental adaptation coupled to S3.
+`—`: self-healing reacts to changed pages during the current browser task; it is operational adaptation, not a prospective environment-to-S3 intelligence function.
 
 ## S5 — Policy and identity
-`?`: policy/security configuration remains parent-owned.
+`—`: system prompts, tools, models, modes and execution policy remain parent configured.
 
 ## Recursion, variety, escalation
-Browser context and self-healing amplify one S1's environmental variety; no recursion is established.
+Browser context and self-healing amplify one S1's environmental variety; no recursive viable subsystem is established.

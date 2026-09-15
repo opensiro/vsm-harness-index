@@ -3,47 +3,49 @@ harness_id: praisonai
 project_name: PraisonAI
 repository: https://github.com/MervinPraison/PraisonAI
 review_ref: 43a106db26d399d312370f8eeca949a5ba135c5b
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
-autonomy_s2: ?
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s2: —
+autonomy_s3: C
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # PraisonAI
 
 ## Review boundary
-PraisonAI at the pinned revision as an agent/multi-agent framework with AgentFlow graph primitives, autonomous loops and managed execution options.
+PraisonAI at the pinned revision as an agent/multi-agent framework with autonomous agents, `AgentTeam`, AgentFlow, and selectable team execution modes.
 
 ## Repository architecture
-PraisonAI provides autonomous agents, tools/MCP, guardrails/approval/hooks/sandbox, configurable execution/reflection and AgentFlow graph primitives such as route, parallel, loop and repeat. It supports multi-agent teams and task handoffs.
+PraisonAI provides autonomous agents, tools/MCP, guardrails, approval/hooks/sandbox, AgentFlow graph primitives, and multi-agent team execution. The TypeScript team runtime exposes sequential/parallel execution plus an optional `hierarchical` process backed by a synthetic Manager agent.
 
 ## Primary evidence
-- `README.md`: autonomous/self-improving agents; workflow handoffs/verification/self-correction; five-layer stack; `AgentFlow`, routing/parallel/loops and harness controls.
+- `src/praisonai-ts/src/agent/team.ts`: `AgentTeam` dispatches team execution and reaches the hierarchical manager path when `process: 'hierarchical'` is selected.
+- `src/praisonai-ts/src/agent/team-manager.ts`: the Manager receives the status of every real task, chooses the next task and assignee, can re-delegate failed work, and can stop the team run.
+- Python parity is implemented by `src/praisonai-agents/praisonaiagents/process/process.py::Process.hierarchical` at the reviewed product boundary.
 
 ## Operational model
-Individual agents are S1. AgentFlow structures who runs when, but graph routing and delegation are not by themselves Beer-style mutual-adjustment among S1 units.
+Individual agents are S1. Sequential, parallel, route, loop, and graph primitives structure execution but are not themselves Beer-style coordination. The optional hierarchical Manager is stronger: it reasons over current team-wide task state and owns assignment/reassignment and completion decisions.
 
 ## S1 — Operations
 `A`: agents autonomously reason, choose tools and execute bounded tasks. Confidence: high.
 
 ## S2 — Coordination
-`?`: first-party multi-agent routing exists, but reviewed evidence does not isolate a specific anti-oscillation/conflict-regulation decision right from generic workflow control.
+`—`: reviewed team modes route/delegate work; no distinct mutual-adjustment or conflict-dampening function among autonomous S1 units is established.
 
 ## S3 — Inside-and-now control
-`?`: graph/managed execution does not establish an autonomous whole-system resource/accountability regulator.
+`C`: the first-party hierarchical Manager sees all task statuses, selects work/assignees, re-delegates failures and may terminate the team run. That is current whole-team regulation, but it is an explicitly selected process rather than closed/default ownership.
 
 ## S3* — Complementary audit
-`?`: verification/checking primitives may challenge outputs, but independence and alternative access to operational reality are not established.
+`—`: verification/reflection/self-correction paths are normal production checking and do not establish a distinct complementary audit channel with independent corrective authority.
 
 ## S4 — Outside-and-then intelligence
-`?`: reflection/self-improvement language is insufficient without a verified external/prospective adaptation loop.
+`—`: reflection, planning and self-improvement language remains current-task/internal adaptation; no distinct prospective environment-to-S3 intelligence loop is established.
 
 ## S5 — Policy and identity
-`?`: guardrails/approval/configuration remain parent-supplied constraints.
+`—`: guardrails, prompts, approvals, process mode and team policy remain developer/user supplied.
 
 ## Recursion, variety, escalation
-Graph/team composition and nested agents are not automatically recursive viable systems.
+Team nesting and graph composition increase operational variety; they do not independently establish recursive viable systems.

@@ -3,47 +3,49 @@ harness_id: eliza
 project_name: Eliza
 repository: https://github.com/elizaOS/eliza
 review_ref: 5b183d21ff25a8c3e43af9a284a38b5ff487ded9
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
-autonomy_s2: ?
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s2: —
+autonomy_s3: C
+autonomy_s3_star: C
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Eliza
 
 ## Review boundary
-elizaOS/eliza at the pinned revision, including its core `AgentRuntime`, app hosting and first-party plugins; bootable OS distributions are separate.
+elizaOS/eliza at the pinned revision, including core `AgentRuntime` and the first-party agent-orchestrator plugin; bootable OS distributions are separate.
 
 ## Repository architecture
-The monorepo contains an autonomous-agent runtime, message loop, memory/state, actions/providers/evaluators/services/events, scheduled workflows and coding-agent orchestration. Plugins extend operational capabilities and evaluators.
+Core runtime agents are S1. The optional agent-orchestrator plugin adds durable coding tasks, parent-planner control of coding subagents, task/session lifecycle, task-scoped rooms, plan/diff/usage/recovery state and a validation gate before a subagent completion can become final.
 
 ## Primary evidence
-- `README.md`: autonomous-agent framework; `AgentRuntime` message loop/state; plugin actions/providers/evaluators/services/events; scheduled workflows and coding-agent orchestration.
+- `plugins/plugin-agent-orchestrator/docs/SUBAGENT_FLOW_AND_PARITY.md`: planner creates tasks, spawns ACP coding subagents, receives events, can send follow-ups, and durable `task_complete` enters `validating` rather than `done`.
+- The same document explicitly describes the topology as hub-and-spoke: subagents do not talk to each other and multiple subagents are unsynchronized.
+- `plugins/plugin-agent-orchestrator/src/evaluators/sub-agent-completion.ts`: a response-handler evaluator accepts/rejects completion evidence, distinguishes provisional/unverified output, and can route control back toward planner follow-up rather than relaying an invalid completion.
 
 ## Operational model
-Runtime agents are S1. Platform orchestration/evaluator plugin points may support metasystemic functions, but component names alone are not evidence of their VSM role.
+Runtime agents are S1. The orchestrator plugin is opt-in and supplies team-level current regulation plus a distinct completion-verification path, therefore those functions are `C` rather than default `A`.
 
 ## S1 — Operations
 `A`: standard runtime agents choose actions and use plugin capabilities toward outcomes. Confidence: high.
 
 ## S2 — Coordination
-`?`: coding-agent orchestration is first-party but the evidence does not establish anti-oscillation among autonomous S1s.
+`—`: the reviewed orchestrator explicitly uses unsynchronized hub-and-spoke subagents with no direct peer mutual-adjustment channel.
 
 ## S3 — Inside-and-now control
-`?`: app/platform orchestration is not proven agent-owned whole-system regulation.
+`C`: the parent planner/orchestrator owns durable task/session state, spawning, mid-flight steering, lifecycle/recovery and completion-state transitions across coding workers. This is current team regulation, but only when the first-party orchestrator plugin is enabled.
 
 ## S3* — Complementary audit
-`?`: “evaluators” are plugin/runtime components; sufficient independence and alternative access to operational reality are not established by the label.
+`C`: completion enters a separate `validating` state and a dedicated evaluator checks completion/failure evidence before relay or follow-up, giving a composable complementary verification path with corrective routing.
 
 ## S4 — Outside-and-then intelligence
-`?`: scheduled workflows/environment connectors do not prove prospective adaptation.
+`—`: schedules, connectors, memory and coding plans do not establish a distinct prospective environment-to-S3 intelligence loop.
 
 ## S5 — Policy and identity
-`?`: runtime/plugin configuration does not establish legitimate ultimate-policy closure.
+`—`: character, plugin enablement, approval presets and task policy remain operator/developer supplied.
 
 ## Recursion, variety, escalation
-Plugins and application targets expand operational variety; agent/workflow nesting is not automatically recursion.
+The orchestrator adds durable hierarchy and verification, but subagent nesting is explicitly absent at the pinned ref and no recursive viable-system closure is established.

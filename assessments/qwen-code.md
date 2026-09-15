@@ -3,47 +3,50 @@ harness_id: qwen-code
 project_name: Qwen Code
 repository: https://github.com/QwenLM/qwen-code
 review_ref: 01aa4f267fd4f76a47a391a858f86c855aceb0ba
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
-autonomy_s2: ?
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s2: A
+autonomy_s3: A
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Qwen Code
 
 ## Review boundary
-Qwen Code at the pinned revision across its terminal/editor/SDK agent harness and standard SubAgents/Agent Teams features.
+Deep review of the pinned coding-agent runtime with special attention to first-party Agent Teams. The positive S2/S3 classifications come from actual team decision rights and shared coordination state, not from subagent terminology alone.
 
 ## Repository architecture
-Qwen Code ships an autonomous coding agent with auto-memory, skills, subagents, agent teams, dynamic workflows, hooks, MCP, sandbox/worktrees and headless operation. It also provides built-in review/batch/loop/bugfix skills and an evaluation harness.
+Qwen Code ships a terminal coding agent, isolated subagents and a richer Agent Teams subsystem. A model-driven team lead can create the team and task board, spawn teammates, create and assign tasks, receive reports, reassign ownership and shut down workers. Teammates share the task board, can claim newly available work, create tasks, update ownership/status and directly message peers. `TeamManager` maintains the runtime substrate—mail delivery, idle detection, lifecycle and automatic claiming—around those agent-owned decisions.
 
 ## Primary evidence
-- `README.md`: agentic out of the box; SubAgents/Agent Teams/Dynamic Workflows; hooks/skills/sandbox; headless mode; evaluation section.
+- `packages/core/src/tools/team-create.ts`: the lead agent is instructed to create teams/tasks, spawn teammates, assign work, receive reports and shut the team down.
+- `packages/core/src/tools/team-create.ts`: teammates are instructed to inspect the shared task list, claim unassigned/unblocked work, create new tasks, mark completion and communicate with peers/team lead.
+- `packages/core/src/agents/team/tasks.ts`: persistent shared task board supports ownership, task claiming, dependencies/blocking and concurrency-safe updates; ownership conflicts are actively rejected.
+- `packages/core/src/agents/team/TeamManager.ts`: central runtime bridges team events, priority messages, idle state and auto-claim while preserving the agent-driven task/message control surface.
 
 ## Operational model
-Coding agents/subagents perform S1 work. The README establishes team topology but does not specify a concrete Beer-style coordination decision right distinct from delegation/workflow control.
+The lead agent decomposes project work into shared commitments and delegates to autonomous teammates. Teammates mutually adjust through peer messages, task ownership, dependency state and claiming. The lead can reshape current team commitments through assignments/reassignments and team lifecycle decisions.
 
 ## S1 — Operations
-`A`: standard agents autonomously act on code/tools with optional unattended mode. Confidence: high.
+`A`: individual coding agents autonomously select tools/actions and perform useful workspace work. Confidence: high.
 
 ## S2 — Coordination
-`?`: Agent Teams are first-party, but evidence is insufficient to distinguish mutual adjustment/conflict regulation from delegation/dynamic workflow routing.
+`A`: teammates have first-party peer communication plus a shared dependency/ownership task board and can autonomously claim/update work. These mechanisms explicitly manage cross-agent dependencies, ownership conflicts and blocked/unblocked work rather than merely fan out tasks. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: team/workflow control does not prove whole-system resource/accountability authority.
+`A`: the autonomous team lead owns the current team task structure, creates and assigns commitments, can change ownership, receives team-wide progress/reports and controls teammate lifecycle. This provides whole-team current regulation over operational commitments. Confidence: high.
 
 ## S3* — Complementary audit
-`?`: `/review` and evaluation are operational/developer evaluation paths; sufficient independence and corrective authority are not established.
+`—`: read-only/review-capable teammates can be configured, but no default independent complementary audit channel with distinct authority is established.
 
 ## S4 — Outside-and-then intelligence
-`?`: auto-memory/skills and self-iteration do not by themselves establish S4.
+`—`: Auto-Memory/Auto-Skills and task planning may improve future operation, but the reviewed team/runtime boundary does not establish a separate prospective environmental-intelligence function responsible for adapting system strategy/capability.
 
 ## S5 — Policy and identity
-`?`: hooks/rules/permissions remain configured constraints.
+`—`: team mission, policies, permissions, agent definitions and ultimate authority remain externally supplied.
 
 ## Recursion, variety, escalation
-Subagents/teams are composition and do not automatically establish recursive viability.
+Qwen Code closes S2 and S3 around multiple coding S1s out of the box. It therefore belongs with the strongest current metasystem implementations in the reviewed cohort, while S3*, S4 and S5 remain open.

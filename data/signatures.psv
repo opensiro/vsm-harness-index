@@ -19,26 +19,26 @@ catalog_position|harness_id|signature
 18|anythingllm|Workspace agents can invoke builder-authored Agent Flows of API, LLM and web steps, but deterministic flow composition expands S1 procedure without establishing S2-S5.
 19|metagpt|Default MGX TeamLeader routing is not S2 by itself; its whole-team current plan, progress feedback and authority to close, reset and replace commitments establish agent-owned S3.
 20|open-interpreter|Opt-in MultiAgentV2 exposes ongoing team communication as composable S2, while a distinct Guardian approval-review session with deny/interrupt authority exposes composable S3*.
-21|langgraph|Durable state, graph transitions, interrupts, and subgraphs are treated as generic runtime mechanisms; they do not by themselves instantiate S2, S3, S4, or S5.
-22|autogen-agentchat|Selector, group-chat, and swarm protocols autonomously regulate who acts next among multiple participants, providing explicit agent-owned S2.
-23|chatdev|A configurable simulated-company topology sequences conversational roles, but the standard repository evidence does not distinguish coordination from centralized routing strongly enough for S2.
-24|letta|Persistent memory and identity let one stateful agent maintain continuity across sessions, but persistence alone is not S4 or S5.
-25|ailice|Dynamic agent construction through an interactive call tree expands one agent's task decomposition; parent-child result integration is not peer coordination.
-26|crewai|Crews combine role agents, delegation, collaboration, and event-driven Flows, but the reviewed evidence does not isolate a concrete anti-oscillation decision right.
-27|openagents|The IDE/control environment explicitly keeps stop, steer, approve, review, and acceptance authority with the human owner, limiting autonomous metasystem claims.
-28|agentlite|A manager chooses workers, falls back, and integrates results, but this is task routing rather than S2 and lacks whole-system S3 authority.
-29|r2r|An agentic RAG loop selects retrieval, content, graph, and web-search tools; multimodal retrieval amplifies one S1 rather than creating a metasystem.
-30|openhands|The control center runs coding agents across multiple backends and automations, but dispatching isolated conversations remains operational routing rather than S2.
-31|praisonai|AgentFlow adds route, parallel, loop, verification, and self-correction primitives, yet graph control is not enough to prove agent-owned metasystem functions.
-32|stagehand|A browser agent autonomously executes goals through self-healing observation/action primitives, distinguishing adaptive browser operation from organizational adaptation.
-33|swe-agent|The harness maximizes model agency through a configurable agent-computer interface, while remaining a single software-engineering S1.
-34|agent-zero|Focused subagents can receive research, coding, analysis, or review tasks, but that hierarchy remains delegation rather than autonomous coordination.
-35|pydantic-ai|Typed agents can compose memory, subagents, planning, and an advisor capability, but the core repository does not establish the independence or coordination semantics needed for metasystem positives.
-36|cline|A coding agent reacts to compiler, test, and server feedback and exposes SDK teams/hooks, but teams and review hooks are not promoted without stronger organizational evidence.
-37|eliza|A plugin-rich persistent AgentRuntime exposes actions, providers, evaluators, services, events, and schedules; component labels are not treated as VSM functions by themselves.
-38|agent-squad|Classifier routing, supervisor delegation, and shared context organize specialists, but selecting who receives a task is not yet evidence of S2 mutual adjustment.
-39|mastra|Autonomous agents run inside deterministic graph workflows with suspend/resume and eval support; graph execution and evals remain supporting mechanisms.
-40|beeai-framework|The documented main-agent-to-specialist HandoffTool pattern is explicit delegation, so multi-agent workflow support does not automatically become S2.
+21|langgraph|Low-level graph durability, interrupts and state are S1/runtime infrastructure; no reviewed metasystemic decision right is owned at the harness boundary.
+22|autogen-agentchat|Magentic-One's loop/stall detection supplies S2 while its whole-team facts/plan/progress ledger plus reset/replan authority supplies S3; the same regulator is not S3*.
+23|chatdev|Configurable majority-vote execution provides composable S2 conflict resolution; DAG/cycle orchestration remains authored workflow rather than S3.
+24|letta|Default compaction-triggered reflection launches a distinct autonomous background reviewer that corrects parent memory/skills, establishing S3* without S2/S3/S4/S5 closure.
+25|ailice|IACT subprocessor calls are hierarchical S1 delegation and result integration; no independent coordination, regulation, audit, intelligence or policy function is established.
+26|crewai|Crew delegation, optional hierarchical management and planning remain task orchestration; the OSS hallucination guardrail is a no-op, leaving metasystemic functions unowned.
+27|openagents|The product makes supervision/review an owner/operator control surface; the former assurance swarm is retired, so topology/evidence machinery does not establish autonomous metasystem ownership.
+28|agentlite|ManagerAgent selects and synchronously delegates to workers; manager naming and fallback are not S2/S3, and no complementary audit channel is supplied.
+29|r2r|Research mode exposes an optional dedicated critique/second-opinion model as composable S3*, while retrieval/web sensing remains current-task S1 work rather than S4.
+30|openhands|Agent Canvas is an operator control/dispatch surface around coding S1s; backend choice, automations and confirmations do not instantiate autonomous S2-S5.
+31|praisonai|An optional hierarchical Manager sees every task status, chooses assignees, re-delegates failures and can stop the team run, exposing composable S3 current regulation without S2 closure.
+32|stagehand|One browser S1 autonomously executes multi-step goals through DOM/hybrid/CUA tools; self-healing, callbacks and limits remain operational support rather than a metasystem.
+33|swe-agent|One coding S1 owns each repository trajectory, while optional RetryAgent reviewer/chooser loops can score or compare completed attempts and force retry/selection, exposing composable S3*.
+34|agent-zero|Persistent subordinate contexts, parallel jobs and review-shaped prompts remain generic parent-child delegation; no dedicated S2-S5 organizational decision right is supplied.
+35|pydantic-ai|Core multi-agent paths are delegation, programmatic hand-off or authored graph control; shared limits/cancellation constrain operations without closing a metasystem function.
+36|cline|Optional persistent team mode adds peer mailboxes and dependency-aware task state as S2, coordinator-wide progress/task regulation as S3, and reviewed outcome fragments that gate finalization as S3*; all are composable rather than default.
+37|eliza|The optional agent-orchestrator plugin supplies durable parent-planner task/session regulation as S3 and a separate completion-validation evaluator with corrective routing as S3*; subagents remain explicitly unsynchronized, so no S2.
+38|agent-squad|Optional SupervisorAgent actively mediates information among otherwise unaware specialists and chooses necessary contacts, exposing composable S2 without a persistent S3 control ledger.
+39|mastra|The optional supervisor/network path regulates current primitive selection as composable S3, while task-completion scorers can independently block completion and feed corrective feedback into further iterations as composable S3*.
+40|beeai-framework|Main-agent HandoffTool specialists and RequirementAgent constraints remain operational delegation/policy support; no separate S2-S5 organizational function is established.
 41|goose|A local general-purpose agent gains broad capability through MCP extensions and provider choice while remaining one operational S1.
 42|superagentx|Autonomous workflows include retries, persistence, audit data, and a human-approval governance agent, but governance remains parent-controlled rather than S5.
 43|browser-use|A standard browser agent independently turns a task into browser actions until completion, with no separate organizational layer evidenced.
@@ -52,15 +52,15 @@ catalog_position|harness_id|signature
 51|google-adk|A graph workflow runtime and Task API expose rich multi-agent hierarchy and collaboration, while the reviewed evidence remains too generic to establish Beer-style coordination.
 52|codex|First-party spawn_agent tooling creates bounded child coding workers, but child spawning and result return are classified as task decomposition rather than S2.
 53|gemini-cli|A terminal agent combines built-in tools, MCP, checkpointing, and headless automation; repeated workflow invocations remain separate S1 runs.
-54|microsoft-agent-framework|Graph workflows expose sequential, concurrent, handoff, and group-collaboration patterns, but their organizational semantics remain under-specified for positive S2.
+54|microsoft-agent-framework|Magentic's loop/stall regulation supplies agent-owned S2, while its whole-team facts/plan/progress state plus reset/replan authority supplies agent-owned S3.
 55|opencode|Build/plan agents plus a general subagent provide specialization and delegation, while user mode switching and child invocation remain below the S2 threshold.
 56|agentsilex|A first-party evaluation framework exposes trajectory, response, and LLM-as-judge checks as a composable complementary-audit path, while independence and corrective authority remain developer-supplied.
 57|deerflow|A super-agent delegates to isolated subagents with memory, sandboxes, skills, and schedules; the hierarchy is operational fan-out rather than S2.
-58|strands-agents|Lifecycle controls, steering, multi-agent patterns, hooks, guardrails, and evals are broad primitives, but none is specific enough in the reviewed evidence to prove a metasystem function.
+58|strands-agents|Swarm peer handoffs include configurable repetitive-handoff detection, exposing composable S2 anti-oscillation control while higher metasystem functions remain application-supplied.
 59|crush|A terminal coding agent combines LSP, MCP, sessions, and provider switching around one operational loop with no distinct metasystemic actor.
 60|openai-agents-js|The JavaScript SDK mirrors handoffs, agents-as-tools, guardrails, HITL, sessions, and tracing; delegation and normal validation remain non-metasystemic under the stricter rules.
 62|claude-agent-sdk|The SDK wraps a Claude Code session with tools, permissions, MCP, and hooks; hooks constrain one S1 but do not establish independent audit or policy closure.
-63|qwen-code|The coding harness explicitly ships SubAgents, Agent Teams, workflows, skills, hooks, and unattended mode, but team topology alone remains insufficient for positive S2.
+63|qwen-code|Agent Teams combine peer messaging, a shared dependency/ownership task board, autonomous task claiming, and lead assignment/reassignment, establishing agent-owned S2 coordination and S3 current regulation.
 64|hermes-agent|A persistent agent can create skills, curate memory, schedule work, and spawn subagents; its closed learning loop is explicitly not treated as S4.
 65|deepagents|An opinionated long-horizon harness bundles planning, context management, memory, skills, HITL, and isolated subagents, while subagent use remains delegation.
 66|mirothinker|Long-horizon research scales hundreds of environment interactions and post-training, but trajectory refinement and training are not counted as runtime S4.

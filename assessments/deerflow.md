@@ -3,47 +3,49 @@ harness_id: deerflow
 project_name: DeerFlow
 repository: https://github.com/bytedance/deer-flow
 review_ref: 6f81daefff2035d76d41e45d021626f022885372
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # DeerFlow
 
 ## Review boundary
-DeerFlow 2.0 at the pinned revision as the standard super-agent harness; the 1.x deep-research branch is explicitly separate.
+Deep review of the pinned lead-agent/subagent runtime. Lead/subagent hierarchy, concurrency controls and guardrails are tested as operational mechanisms rather than assumed to be metasystem functions.
 
 ## Repository architecture
-DeerFlow orchestrates subagents, memory, sandboxes and skills, with session goals, context compaction, scheduled tasks and tracing integrations. A lead/root harness delegates bounded work to subagents.
+DeerFlow provides a long-horizon lead agent that can browse, code, create artifacts and delegate bounded investigations to subagents. The runtime constrains subagent execution and integrates returned findings, but the reviewed implementation is a hierarchical task-execution structure rather than a separate coordination/control metasystem.
 
 ## Primary evidence
-- `README.md`: super-agent harness; subagents/memory/sandbox/skills; session goals, context management, scheduling and tracing; explicit 1.x/2.0 boundary.
+- `backend/packages/harness/deerflow/agents/lead_agent/agent.py`: constructs the lead-agent operational path and its tool/subagent capabilities.
+- First-party subagent/task paths impose execution/concurrency constraints and return delegated results to the lead agent.
+- Guardrails and runtime limits constrain operational behavior; they do not establish agent-owned whole-system regulation.
 
 ## Operational model
-Root and subagents perform S1 work. The documented subagent topology is hierarchical delegation and result integration.
+The lead agent advances a research/creation objective through tools and may delegate scoped work to sandboxed subagents, consuming their findings in the parent trajectory.
 
 ## S1 — Operations
-`A`: agents autonomously use tools/skills/sandboxes toward outcomes. Confidence: high.
+`A`: lead and delegated agents autonomously perform useful tool-using operational work. Confidence: high.
 
 ## S2 — Coordination
-`—`: subagent orchestration/delegation does not establish peer mutual adjustment or anti-oscillation.
+`—`: lead-to-subagent delegation, concurrency limits and result integration do not constitute a dedicated mechanism for regulating interference or oscillation among autonomous S1 units. The shallow `S2=A` interpretation is removed.
 
 ## S3 — Inside-and-now control
-`?`: lead/root control does not prove whole-system resource/accountability authority.
+`—`: current task supervision and concurrency caps are runtime constraints rather than whole-system authority over organizational resources/capacity/commitments.
 
 ## S3* — Complementary audit
-`?`: tracing/replay support evidence but are not independent audit.
+`—`: no distinct complementary audit channel with separate organizational access/authority was established.
 
 ## S4 — Outside-and-then intelligence
-`?`: memory/scheduled work/environment search do not establish prospective adaptation coupled to S3.
+`—`: long-horizon task research still serves the current objective; no separate prospective intelligence function that changes future organizational capability/strategy was established.
 
 ## S5 — Policy and identity
-`?`: session goals/configuration remain parent-owned.
+`—`: goals, tools, guardrails and delegation policy remain externally configured.
 
 ## Recursion, variety, escalation
-Subagents and runtime caps constrain delegated operational variety; hierarchy is not recursion.
+Sandboxed subagents increase operational variety and depth while leaving metasystem closure to the application.

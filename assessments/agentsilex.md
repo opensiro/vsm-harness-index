@@ -3,50 +3,48 @@ harness_id: agentsilex
 project_name: AgentSilex
 repository: https://github.com/howl-anderson/agentsilex
 review_ref: cd529f2838151fd8a4f0d6b7054a45d829b3f78d
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
+autonomy_s3: —
 autonomy_s3_star: C
-autonomy_s4: ?
+autonomy_s4: —
 autonomy_s5: —
 ---
 
 # AgentSilex
 
 ## Review boundary
-AgentSilex at the pinned revision as a minimal agent framework with handoffs, agents-as-tools, tracing and a first-party evaluation framework.
+Deep review of the pinned compact agent loop and first-party evaluation package. Evaluation is classified as S3* only where it forms a separately composable review path rather than ordinary validation inside the same operational step.
 
 ## Repository architecture
-Agents use tools/sessions and can hand off to specialist subagents. The framework includes OpenTelemetry traces and a dedicated evaluation package with tool-trajectory, response-matching and LLM-as-judge evaluators. HITL is roadmap-only at this revision.
+AgentSilex implements a small autonomous agent loop and a distinct evaluation subsystem. The evaluation package can assess agent responses/trajectories, including model-based evaluator logic, and can be composed around operational runs. This exposes a complementary audit capability, but organizational independence, access boundaries and corrective authority are supplied by the application using it.
 
 ## Primary evidence
-- `README.md`: single/multi-agent execution, handoffs, agents-as-tools, tracing, evaluation framework and roadmap status.
-- `src/agentsilex/evaluation/__init__.py`: exports `AgentEvaluator`, `ToolTrajectoryEvaluator` and response evaluators as first-party evaluation primitives.
-- `src/agentsilex/evaluation/metric_evaluators/__init__.py`: exports `LLMJudgeEvaluator`, rubric-based evaluation and judge verdicts.
-- `demo/eval_weather_agent.py`: composes an agent evaluator with an explicit `LLMJudgeEvaluator` threshold.
+- `src/agentsilex/evaluation/agent_evaluator.py`: defines agent evaluation behavior separate from the operational action loop and supports evaluator-driven assessment of agent outcomes.
+- The evaluation package can be instantiated/composed independently of the worker agent, but the repository does not force an independent deployment/authority relationship.
 
 ## Operational model
-Agents are S1. Handoffs route/delegate work. The evaluation framework creates a distinct first-party path for judging trajectories/results, but independence and corrective authority are not closed out of the box.
+The worker agent selects tools/actions and iterates from results. A separate evaluator component may inspect the resulting behavior/output and produce an assessment for application-level use.
 
 ## S1 — Operations
-`A`: agents autonomously choose tools/actions toward tasks. Confidence: high.
+`A`: the core agent autonomously selects tools and reacts to execution results within configured bounds. Confidence: high.
 
 ## S2 — Coordination
-`—`: documented handoffs are routing/delegation, not anti-oscillation among peer S1 units.
+`—`: no mechanism was found for regulating interference or shared constraints among multiple autonomous S1 units.
 
 ## S3 — Inside-and-now control
-`?`: no autonomous whole-system regulator verified.
+`—`: the evaluator does not manage whole-system current resources, priorities or commitments.
 
 ## S3* — Complementary audit
-`C`: first-party evaluation explicitly exposes trajectory/result judging including LLM-as-judge, a complementary evidence path; a developer must still compose sufficient evaluator independence, alternative reality access where needed, and corrective feedback/authority. Confidence: high.
+`C`: the first-party evaluator framework provides a separately composable review channel over agent behavior/results. It can serve complementary audit, but independence, privileged access, escalation and corrective authority must be established by the developer/application, so it is composable rather than agent-owned. Confidence: medium-high.
 
 ## S4 — Outside-and-then intelligence
-`?`: no prospective environment/adaptation loop verified.
+`—`: evaluation of completed/current trajectories does not by itself provide prospective environmental intelligence or adaptation of future system capability.
 
 ## S5 — Policy and identity
-`—`: HITL/guardrails are not shipped at this revision and no runtime ultimate-policy closure is supplied.
+`—`: evaluation criteria and agent policy are externally configured rather than autonomously owned as ultimate identity/policy.
 
 ## Recursion, variety, escalation
-Specialist handoffs are operational decomposition, not recursion.
+AgentSilex exposes a useful S3* construction primitive, but the application must close the organizational independence and response loop.

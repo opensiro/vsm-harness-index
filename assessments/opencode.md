@@ -3,47 +3,48 @@ harness_id: opencode
 project_name: OpenCode
 repository: https://github.com/anomalyco/opencode
 review_ref: 95daf90670b7c039c436c85537da5fbfe2205b41
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # OpenCode
 
 ## Review boundary
-OpenCode at the pinned revision as the coding-agent runtime with build/plan modes and the built-in `general` subagent.
+Deep review of the pinned built-in task/subagent mechanism and coding-agent runtime. Delegation to a general subagent is not mapped to S2 without a distinct coordination responsibility.
 
 ## Repository architecture
-OpenCode ships build and read-only plan agents that the user switches between, plus a general subagent for complex search and multistep tasks that can be invoked internally or explicitly.
+OpenCode provides autonomous coding agents and a built-in task tool that invokes a selected subagent in a child session for scoped work. The parent supplies the task, the child executes in its own agent context, and the result returns to the caller. This is hierarchical operational decomposition rather than peer coordination.
 
 ## Primary evidence
-- `README.md`: coding-agent product; build/plan agents; built-in general subagent and its complex-search/multistep role.
+- `packages/opencode/src/tool/task.ts`: selects a subagent, creates/uses a child session, passes the delegated description/context and returns the subagent result to the parent execution.
+- The task tool structures delegation but does not implement interference regulation across autonomous operational units.
 
 ## Operational model
-The active coding agent and delegated general subagent perform S1 work. User switching and parent→subagent invocation are specialization/delegation.
+A primary coding agent executes repository work through tools and can delegate bounded exploration or multistep work to a specialist/general subagent before resuming from the returned result.
 
 ## S1 — Operations
-`A`: standard agents autonomously perform bounded coding/search work. Confidence: high.
+`A`: coding agents autonomously choose tools/actions and iterate against repository/tool feedback. Confidence: high.
 
 ## S2 — Coordination
-`—`: subagent invocation and user mode switching do not establish mutual adjustment among S1s.
+`—`: the task/subagent primitive is parent-to-child delegation. No first-party mechanism was found whose responsibility is regulating interference, oscillation or shared constraints among multiple autonomous S1 units. The shallow `S2=A` interpretation is removed.
 
 ## S3 — Inside-and-now control
-`?`: parent agent does not evidence whole-system resource/accountability authority.
+`—`: parent session control over delegated work is not whole-system current regulation of shared organizational resources/capacity/commitments.
 
 ## S3* — Complementary audit
-`?`: plan/read-only role is not sufficiently independent complementary audit.
+`—`: no distinct complementary audit channel was established.
 
 ## S4 — Outside-and-then intelligence
-`?`: planning is not S4.
+`—`: exploration/planning is directed at the present coding objective rather than prospective environment intelligence.
 
 ## S5 — Policy and identity
-`?`: permissions/agent choice remain parent-owned.
+`—`: agents, modes, tools and policies remain user/developer configured.
 
 ## Recursion, variety, escalation
-The general subagent extends operational variety; delegation is not recursion.
+Child sessions and subagents provide recursive specialization without supplying S2–S5 organizational closure.

@@ -3,47 +3,49 @@ harness_id: mirothinker
 project_name: MiroThinker
 repository: https://github.com/MiroMindAI/MiroThinker
 review_ref: 1c4253f6774bf40314271a827304b842100e054c
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
+autonomy_s3: —
+autonomy_s3_star: —
 autonomy_s4: —
-autonomy_s5: ?
+autonomy_s5: —
 ---
 
 # MiroThinker
 
 ## Review boundary
-MiroThinker at the pinned revision as a deep-research/search agent and its open research harness, not the model-training organization.
+Deep review of the pinned MiroFlow agent orchestration path, including main/sub-agent execution, duplicate-query rollback and the surrounding research/training framing. Internal loop protection and research breadth are not promoted to metasystem functions without the corresponding organizational responsibility.
 
 ## Repository architecture
-MiroThinker performs long-horizon research with hundreds of tool/environment interactions, external information acquisition and stepwise trajectory refinement. Training/post-training improves the agent family across releases.
+MiroThinker contains a long-horizon research agent and optional sub-agents exposed as tools to the main agent. `Orchestrator` owns the model/tool turn loop for both main and delegated agents, including tool execution, context management, retry/rollback and duplicate-query suppression. Subagents receive bounded task descriptions and return their final answers to the main trajectory.
 
 ## Primary evidence
-- `README.md`: deep research agent, long-chain tasks, high tool-call budgets, interactive agent-environment scaling, benchmark/evaluation and training descriptions.
+- `apps/miroflow-agent/src/core/orchestrator.py`: coordinates model calls, tool execution and sub-agent sessions and exposes delegated subagents to the main agent.
+- The same orchestrator tracks duplicate queries and repeated format/refusal failures and rolls back the current agent turn when necessary.
+- These rollback mechanisms stabilize one operational trajectory/subtask rather than regulate interference among independent S1 units.
 
 ## Operational model
-The research agent is one S1 interacting extensively with the web/tool environment. Training infrastructure is outside the runtime organizational loop being assessed.
+The main research agent performs long evidence-gathering tool loops and may invoke specialized sub-agents for bounded subtasks, then integrates their returned results.
 
 ## S1 — Operations
-`A`: the agent autonomously searches/tools/reasons toward research outcomes. Confidence: high.
+`A`: research agents autonomously choose search/tool actions and iterate from evidence/results. Confidence: high.
 
 ## S2 — Coordination
-`—`: no multi-S1 coordination function established.
+`—`: subagents are invoked as operational capabilities and return results to the main agent. Duplicate-query and rollback protections operate inside individual agent loops, not between autonomous S1 units.
 
 ## S3 — Inside-and-now control
-`?`: no autonomous whole-system regulator verified.
+`—`: orchestration of current turns/subtasks does not establish whole-system regulation of shared resources, capacities or commitments.
 
 ## S3* — Complementary audit
-`?`: step-verifiable research/evaluation does not establish independent runtime audit.
+`—`: rollback/format checking is ordinary execution control, not a distinct complementary audit channel.
 
 ## S4 — Outside-and-then intelligence
-`—`: environment feedback refines the current trajectory and offline/post-training improves future policies, but no distinct S4 function generates strategic adaptation options and couples them to S3. Training ≠ S4.
+`—`: broad external research is performed to answer the current task; post-training/trajectory refinement is not a runtime prospective intelligence function governing future organizational adaptation.
 
 ## S5 — Policy and identity
-`?`: research objective/policy remains parent-supplied.
+`—`: models, prompts, tools and organizational topology remain externally configured.
 
 ## Recursion, variety, escalation
-Interactive scaling amplifies one S1's environmental variety; no recursion is established.
+MiroThinker can scale operational research variety through specialist agents and long trajectories, while the reviewed harness remains centered on S1 execution.

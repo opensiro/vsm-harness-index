@@ -3,14 +3,14 @@ harness_id: ailice
 project_name: AIlice
 repository: https://github.com/myshell-ai/AIlice
 review_ref: 63a22105cdf8c0d297af332010f46e4153bbc1ec
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # AIlice
@@ -19,31 +19,32 @@ autonomy_s5: ?
 AIlice at the pinned revision as an autonomous general-purpose agent using the Interactive Agents Call Tree architecture.
 
 ## Repository architecture
-AIlice decomposes complex tasks into dynamically constructed agents, integrates returned results, uses environment modules/MCP tools and advertises fault tolerance and self-expansion capabilities.
+AIlice recursively decomposes work into dynamically created processors/agents, invokes tools/environment modules and integrates child results back into the calling processor.
 
 ## Primary evidence
-- `README.md`: autonomous general-purpose agent; IACT dynamic agent decomposition; result integration; environment modules; self-expansion roadmap/capabilities.
+- `ailice/core/AProcessor.py`: each processor owns the ordinary model/tool loop; `EvalCall` creates or reuses a named subprocessor, forwards a task to it, waits for the result and transfers referenced variables/results between parent and child contexts.
+- The pinned processor implementation therefore exposes hierarchical call-tree decomposition and result integration, not an independent organizational regulator or reviewer.
 
 ## Operational model
-The root/task agents and dynamically created agents perform operational work. Parent-child call-tree decomposition and result aggregation do not establish S2 without an additional interference-regulation relation.
+Root and child processors are operational S1 units. Parent-child calls delegate bounded work and aggregate results; nesting does not by itself create metasystemic functions.
 
 ## S1 — Operations
-`A`: agent loops autonomously choose tools/subtasks and produce task outcomes. Confidence: high.
+`A`: processors autonomously choose tools/subtasks and produce task outcomes inside their delegated scopes. Confidence: high.
 
 ## S2 — Coordination
-`—`: IACT decomposition/integration is hierarchical task decomposition, not verified anti-oscillation among peer S1 units.
+`—`: IACT parent-child delegation and result integration do not establish peer anti-oscillation or shared-resource conflict regulation.
 
 ## S3 — Inside-and-now control
-`?`: root-agent control does not prove whole-system resource/accountability authority.
+`—`: the root processor can decompose and call children, but no reviewed mechanism gives it whole-system resource, priority and accountability authority beyond ordinary task delegation.
 
 ## S3* — Complementary audit
-`?`: fault tolerance is not an independent audit channel.
+`—`: fault handling and child result integration stay on the operational path; no distinct independent reviewer/auditor compares claims against evidence and returns corrective findings.
 
 ## S4 — Outside-and-then intelligence
-`?`: self-expansion/self-evolution claims do not establish a standard closed external/prospective adaptation function at this revision.
+`—`: web/tool use and self-expansion claims remain current-task capabilities at this revision; no separate prospective environmental intelligence loop shapes future organizational posture.
 
 ## S5 — Policy and identity
-`?`: no verified runtime ultimate-policy closure.
+`—`: prompts, modules, permissions and ultimate goals remain parent/runtime supplied.
 
 ## Recursion, variety, escalation
-Dynamically constructed agents are nested workers, not automatically recursively viable systems.
+Dynamically constructed child processors are nested workers. Recursive viability would require local metasystemic closure that the call tree does not itself provide.
