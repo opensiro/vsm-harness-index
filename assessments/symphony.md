@@ -3,12 +3,12 @@ harness_id: symphony
 project_name: Symphony
 repository: https://github.com/openai/symphony
 review_ref: e0ccc83720a42a600a53b61c5f8d3e518bebe1db
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
-autonomy_s3_star: ?
+autonomy_s3_star: —
 autonomy_s4: —
 autonomy_s5: —
 ---
@@ -38,7 +38,7 @@ Coding-agent runs are S1. Symphony’s coordination/orchestrator layers are dete
 `—`: the spec’s orchestrator owns scheduling/retry/state as deterministic code, not an autonomous S3 actor.
 
 ## S3* — Complementary audit
-`?`: proof-of-work/CI/review evidence may support external checking, but the standard spec does not establish a sufficiently independent autonomous audit agent with corrective closure.
+`—`: proof-of-work, logs, CI/review surfaces and reconciliation can expose evidence about a run, but the standard service does not supply a distinct autonomous complementary-audit actor with alternative operational access and corrective authority.
 
 ## S4 — Outside-and-then intelligence
 `—`: tracker polling is current-work sensing, not strategic prospective adaptation.
