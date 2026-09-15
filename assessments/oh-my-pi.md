@@ -3,14 +3,14 @@ harness_id: oh-my-pi
 project_name: oh-my-pi
 repository: https://github.com/can1357/oh-my-pi
 review_ref: 165cede8400d833382177a4dfd2901271c9f0a2c
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: C
-autonomy_s3: ?
+autonomy_s3: —
 autonomy_s3_star: A
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # oh-my-pi
@@ -36,16 +36,16 @@ Coding/subagents are S1. Worktree isolation deterministically prevents some coll
 `C`: first-party peer communication plus isolated subagent workspaces expose a concrete coordination path among operational agents, but a general mutual-adjustment protocol/authority still depends on the composed task/constraints. Confidence: medium-high.
 
 ## S3 — Inside-and-now control
-`?`: Agent Hub and parent control do not prove autonomous whole-system resource/accountability authority.
+`—`: Agent Hub and parent/subagent controls expose execution management but do not give an autonomous actor whole-system resource, priority and accountability authority in the S3 sense.
 
 ## S3* — Complementary audit
 `A`: a separate advisor agent with its own agent/tool session independently reviews primary transcript updates, can inspect workspace reality, and feeds `concern`/`blocker` findings back through a steering path that can alter subsequent primary-agent operation. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`?`: no distinct external/prospective adaptation role coupled to S3 is verified.
+`—`: no reviewed mechanism models relevant external future change and develops adaptation options coupled to present operations; planning/search alone do not qualify.
 
 ## S5 — Policy and identity
-`?`: rules/permissions remain parent-authored.
+`—`: rules, permissions, prompts and ultimate task authority remain parent/user authored rather than agent-owned policy closure.
 
 ## Recursion, variety, escalation
 Subagents are operational workers. Peer messaging and advisor feedback add metasystemic paths without proving recursive viability of child agents.
