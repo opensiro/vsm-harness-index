@@ -22,21 +22,65 @@ Open an issue whose title starts with `[Harness suggestion]`. Include the primar
 
 Useful optional material includes links to first-party architecture docs, runtime code, policy/control paths, tests, or other primary evidence.
 
-### Correct an assessment
+### Request an assessment re-review
 
-Open an issue whose title starts with `[Assessment correction]` if you find stronger primary evidence or disagree with a VSM mapping. Include the harness, affected function (`S1`, `S2`, `S3`, `S3*`, `S4`, or `S5`), current interpretation, proposed interpretation, and exact primary evidence.
+Open an issue whose title starts with `[Assessment re-review]` when you find stronger primary evidence, disagree with a VSM mapping, or want an existing harness reassessed after a relevant upstream change.
 
-Do not edit generated rankings as the primary fix.
+A request must identify:
+
+- the harness and current assessment;
+- the affected function or functions (`S1`, `S2`, `S3`, `S3*`, `S4`, `S5`);
+- the current interpretation or vector being challenged;
+- the exact primary evidence path(s) and pinned revision;
+- why the current mapping may be incomplete, inconsistent, or stale;
+- the proposed interpretation if you have one. A final replacement state is optional at issue-opening time.
+
+There are two re-review kinds:
+
+1. **Same-ref correction.** Re-evaluate the existing assessment at the same `review_ref`. This is appropriate when the evidence was missed or interpreted incorrectly. `data/catalog.psv` does not change.
+2. **New-ref reassessment.** Re-evaluate a newer upstream commit because relevant architecture or runtime behavior changed. Update the catalog `review_ref` and `pinned_at` only after the new assessment boundary is accepted; the assessment's own `reviewed_at` records when the reassessment was performed.
+
+Do not edit generated rankings as the primary fix and do not open a ranking-only PR.
+
+### Claim a re-review as a contributor
+
+A contributor may claim an open `[Assessment re-review]` issue in a comment. The contributor's PR should:
+
+1. reproduce the current mapping from the pinned evidence rather than starting from the requested replacement grade;
+2. inspect the strongest first-party implementation/docs/tests for the disputed function;
+3. perform an adversarial recheck that actively looks for evidence against the proposed change;
+4. update the standalone assessment only where the evidence changes the interpretation;
+5. update the catalog ref/pin date only for a **new-ref reassessment**;
+6. re-check the changed harness's cohort-relative signature and any later signatures whose distinction depends on it;
+7. regenerate `TLDR.md` and `RANKINGS.md`;
+8. run `python scripts/check_index.py`.
+
+The issue author and implementation contributor may be the same person. The final merge review should still independently verify the disputed VSM function rather than treating the issue's proposed grade as authoritative.
+
+## Re-review acceptance contract
+
+A re-review is complete only when the reviewer can answer all of the following from primary evidence:
+
+1. **Function:** is the VSM function actually present at the declared system boundary?
+2. **Actor:** which actor or mechanism performs it?
+3. **Decision right / feedback path:** what authority or complementary access makes the mapping material?
+4. **Ownership:** is the mapped function agent-owned (`A`), deliberately composable (`C`), parent-governed for S5 (`P`), absent in the reviewed standard distribution (`—`), or still unresolved (`?`)?
+5. **Closure:** is the path actually closed in the standard distribution or merely exposed as a primitive/configuration surface?
+6. **Counter-evidence:** what code, tests, defaults, or boundary facts argue against the proposed state?
+
+For disputed positive metasystem mappings, apply the negative rules strictly: delegation is not S2 without interference regulation; a manager is not S3 without whole-system current authority; routine verification is not S3* without materially complementary and sufficiently independent access; planning/learning/event reaction is not S4 without external-and-prospective adaptation; static policy/config is not S5 closure.
+
+If the re-review cannot distinguish between two states after the strongest available primary evidence has been inspected, prefer `?` over forced certainty.
 
 ## Maintainer / full assessment workflow
 
 The detailed workflow below applies when creating or integrating an assessment rather than merely suggesting a candidate.
 
 1. Check out `vsm-harness-profile`, `vsm-skills`, and `vsm-harness-index` as siblings.
-2. Confirm or add the discovery row in `data/catalog.psv`; preserve provenance, exact `review_ref`, `reviewed_at`, and chronological ordering.
-3. Process candidates in ascending `catalog_position`. During migration, assessments must form a contiguous prefix from position 1.
-4. Use `assess-vsm-harness` to write `assessments/<harness_id>.md` from pinned primary evidence.
-5. Only after the assessment is complete, compare it with all earlier completed assessments and add its cohort-relative signature to `data/signatures.psv`.
+2. Confirm or add the discovery row in `data/catalog.psv`; preserve provenance, exact `review_ref`, `pinned_at`, and chronological ordering.
+3. Use `assess-vsm-harness` to write `assessments/<harness_id>.md` from pinned primary evidence.
+4. Only after the assessment is complete, compare it with all earlier completed assessments and add or update its cohort-relative signature in `data/signatures.psv`.
+5. If an existing assessment changes, inspect later signatures for dependency on the changed distinction; update only those whose cohort-relative statement is no longer true.
 6. Run `python scripts/render_tldr.py` to regenerate `TLDR.md` and `RANKINGS.md`.
 7. Run `python scripts/check_index.py`.
 
@@ -60,6 +104,6 @@ A signature is a derived comparison artifact, not repository evidence. Preserve 
 
 Do not manually score harnesses. `RANKINGS.md` is generated deterministically from recorded states and measures only out-of-box agent ownership coverage.
 
-## Migration
+## Catalog role
 
-The old `vsm_tldr` column remains temporarily in `data/catalog.psv` for history. Do not use it as evidence for a new assessment; rebuild each row from its pinned primary sources.
+`data/catalog.psv` is the discovery/order/provenance registry. It stores repository identity, chronology, source membership, and the pinned review boundary (`review_ref`, `pinned_at`). VSM classifications and assessment review dates belong only in standalone assessments and generated views, never in the catalog registry.

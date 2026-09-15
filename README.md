@@ -13,6 +13,8 @@ assessments/<harness_id>.md
         └── deterministic states → RANKINGS.md
 ```
 
+`data/catalog.psv` is deliberately separate from those artifacts. It is the discovery/order/provenance registry and contains no VSM grades.
+
 ## Assessments
 
 An assessment is the primary research artifact. It describes the reviewed GitHub repository, review boundary, operational model, evidence for each VSM function, evidence gaps, recursion/variety context, and the out-of-box autonomy states `A/C/P/—/?`.
@@ -108,11 +110,26 @@ not `A → C`. It is still possible to refactor an existing autonomous harness i
 
 These transformations never preserve assessment states automatically. Every fork or configured downstream harness is a separate system-in-focus and must be assessed from its own reviewed evidence. Specializing a constructor path into a ready autonomous role can change `C` to `A`; wiring S5 to an actual parent authority can change `C` to `P`; extracting a fixed autonomous role into a reusable extension point can change `A` to `C`. These transitions describe changes in ownership and closure, not a monotonic maturity progression.
 
-## Migration
+## Corrections and re-reviews
 
-The discovery cohort remains in `data/catalog.psv`. The legacy `vsm_tldr` column is retained temporarily as migration history but is no longer authoritative for v2. Standalone assessments are rebuilt from pinned primary evidence in ascending catalog order. The validator requires completed assessments to form a contiguous prefix `1..N`.
+Assessment corrections are normal contributions. Open an `[Assessment re-review]` issue when stronger first-party evidence may change a mapping, or when a newer upstream revision materially changes the harness.
 
-The v2 migration currently covers positions `1..3` (Rasa, Botpress, n8n). The generated TLDR and rankings intentionally include only completed assessments.
+- **Same-ref correction:** re-evaluate the existing pinned commit; the catalog row does not change.
+- **New-ref reassessment:** pin a newer commit; update the catalog `review_ref`/`pinned_at` only when the new assessment boundary is accepted.
+
+The issue should identify the disputed VSM function, current interpretation, exact primary evidence, counter-evidence, and the reason re-review is needed. A proposed replacement grade is optional and is never authoritative. Contributors may claim the issue and submit the assessment change as a normal PR; final review should independently re-check the disputed function.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full acceptance contract.
+
+## Continuous index
+
+The historical ordered deep-review migration through catalog position 82 is complete. New candidates now follow the continuous lifecycle:
+
+```text
+discover → queue → pin → assess → admit → regenerate → validate
+```
+
+`data/catalog.psv` now contains only discovery/order/provenance fields. Historical compact `vsm_tldr` classifications were removed because they duplicated and could contradict the authoritative standalone assessments.
 
 ## Validation
 

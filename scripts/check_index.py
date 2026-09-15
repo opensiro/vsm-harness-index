@@ -6,10 +6,27 @@ from pathlib import Path
 from validate_tldr import load_assessments, validate_assessment
 from render_tldr import render_tldr, render_rankings
 
+CATALOG_FIELDS = [
+    "catalog_position",
+    "harness_id",
+    "project_name",
+    "repository",
+    "repository_created_at",
+    "source_membership",
+    "review_ref",
+    "pinned_at",
+]
+
 
 def read_psv(path: Path) -> list[dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as handle:
-        return list(csv.DictReader(handle, delimiter="|"))
+        reader = csv.DictReader(handle, delimiter="|")
+        if path.name == "catalog.psv" and reader.fieldnames != CATALOG_FIELDS:
+            raise SystemExit(
+                "catalog schema mismatch: expected discovery/order/provenance fields only; "
+                f"got {reader.fieldnames}"
+            )
+        return list(reader)
 
 
 def main() -> int:
@@ -35,7 +52,7 @@ def main() -> int:
         completed.append(int(source["catalog_position"]))
     completed.sort()
     if completed != list(range(1, len(completed) + 1)):
-        raise SystemExit("assessment migration must be a contiguous catalog prefix")
+        raise SystemExit("completed assessments must form a contiguous catalog prefix")
 
     signatures = read_psv(repo / "data" / "signatures.psv")
     signature_ids = [row["harness_id"] for row in signatures]

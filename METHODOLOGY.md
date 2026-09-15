@@ -5,7 +5,7 @@
 1. [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md) for organizational semantics;
 2. [`assess-vsm-harness`](https://github.com/opensiro/vsm-skills/tree/main/skills/assess-vsm-harness) for repository evidence and autonomy classification;
 3. the ordered synthesis procedure in `vsm-skills/SYNTHESIS.md` for cohort-relative signatures;
-4. this document for publication and migration rules.
+4. this document for publication, continuous indexing, and reassessment rules.
 
 ## Artifact separation
 
@@ -13,9 +13,11 @@ Three artifact classes are intentionally separate.
 
 **Assessment.** `assessments/<harness_id>.md` is repository-relative and revision-relative. It stores the review boundary, repository architecture, VSM mappings, evidence, uncertainty, and autonomy states.
 
-**Signature.** `data/signatures.psv` is cohort-relative. It may change when the ordered cohort changes. It cannot change an assessment state or introduce a repository claim absent from the assessment.
+**Signature.** `data/signatures.psv` is cohort-relative. It may change when the ordered cohort changes or when an earlier assessment is corrected. It cannot change an assessment state or introduce a repository claim absent from the assessment.
 
 **Ranking.** `RANKINGS.md` is deterministic. It counts recorded autonomy states and never substitutes a numerical maturity model for the categorical evidence.
+
+`data/catalog.psv` is separate from all three: it is the discovery/order/provenance registry. It contains repository identity, chronology, source membership, and pinned review-boundary metadata (`review_ref`, `pinned_at`), not VSM classifications.
 
 ## Review boundary
 
@@ -35,13 +37,34 @@ For every S1, S2, S3, S3*, S4, and S5 claim:
 
 In particular, delegation is not S2 without interference regulation among operations; a manager is not S3 without whole-system current authority; a routine verifier is not S3*; planning/learning/event reaction is not S4 without external-and-prospective adaptation; and static policy text is not S5 closure.
 
-## Ordered migration and synthesis
+## Ordered synthesis and continuous indexing
 
-The discovery cohort is ordered by `catalog_position`. Detailed assessments must be rebuilt in ascending order. During migration, completed assessments MUST form a contiguous prefix `1..N`.
+The discovery cohort is ordered by `catalog_position`. New admitted harnesses are appended chronologically under the current continuous-index policy; existing positions are not renumbered merely because a project is reassessed.
 
-After assessment `N` is complete, compare it with completed assessments `1..N-1` and record the smallest informative evidence-backed architectural distinction in `data/signatures.psv`. Identical autonomy vectors are valid. Never alter a state to manufacture signature uniqueness.
+After a new assessment is complete, compare it with all earlier completed assessments and record the smallest informative evidence-backed architectural distinction in `data/signatures.psv`. Identical autonomy vectors are valid. Never alter a state to manufacture signature uniqueness.
+
+If an existing assessment changes, re-check its signature and later cohort-relative signatures whose distinguishing statement may depend on the changed assessment. The assessment itself remains repository-relative; the synthesis layer is allowed to change because its comparison set changed.
 
 Public presentation order is separate from synthesis order. `TLDR.md` is displayed newest-first using `repository_created_at`; changing display order does not change `catalog_position`, assessment meaning, or sequential signature ancestry.
+
+## Re-review and reassessment
+
+An existing assessment can be revisited in two ways:
+
+- **same-ref correction** — the pinned repository revision does not change; stronger evidence or a category-error correction changes the interpretation. The catalog row remains unchanged.
+- **new-ref reassessment** — a newer upstream commit materially changes the reviewed architecture or runtime behavior. The accepted reassessment updates the catalog `review_ref` and `pinned_at`; the standalone assessment records its own `reviewed_at`.
+
+A re-review request is evidence-led rather than grade-led. The proposed replacement state is advisory; the reviewer must independently re-establish the VSM function, decision right, ownership, standard-distribution closure, and counter-evidence.
+
+For disputed positive metasystem claims, the re-review must actively try to falsify the claim. In particular:
+
+- S2 requires a real interference/oscillation problem among operational units plus a regulating mechanism or actor;
+- S3 requires current-whole authority, not merely task decomposition or result aggregation;
+- S3* requires materially complementary and sufficiently independent access to operational reality plus a path for findings to affect control;
+- S4 requires external-and-prospective distinctions, adaptation options, and coupling back to present capability;
+- S5 requires legitimate ultimate authority or an operational parent-governed closure path, not static policy text.
+
+If the strongest available primary evidence cannot support either a positive state or a defensible no-path conclusion, use `?` rather than forcing certainty.
 
 ## Ranking semantics
 
@@ -62,6 +85,6 @@ Positive `A/C/P` claims require primary evidence. `?` means evidence is insuffic
 
 Pinned refs and review dates make longitudinal reassessment possible. Absence of documentation is not proof of absence.
 
-## Migration note
+## Historical migration
 
-The legacy `vsm_tldr` field in `data/catalog.psv` is retained temporarily as historical migration input and is not authoritative for v1. It should be removed after the full ordered assessment corpus has been rebuilt and validated.
+The original 1–82 ordered deep-review migration is complete. Legacy compact VSM text has been removed from `data/catalog.psv`; standalone assessments are the only repository-relative classification source of truth. Historical migration context remains available in Git history and the completed batch issues/PRs rather than in a second stale classification column.

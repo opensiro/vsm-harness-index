@@ -1,0 +1,122 @@
+name: Assessment re-review
+description: Challenge an existing VSM mapping or request reassessment at a newer pinned revision
+title: "[Assessment re-review] "
+labels: []
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when stronger primary evidence may change an existing assessment. The issue is an evidence request, not a vote on a preferred grade.
+
+  - type: input
+    id: harness
+    attributes:
+      label: Harness
+      description: Harness ID and project name as recorded in the index.
+      placeholder: "openharness-hkuds — OpenHarness (HKUDS)"
+    validations:
+      required: true
+
+  - type: input
+    id: assessment
+    attributes:
+      label: Current assessment
+      description: Link to the current assessment file.
+      placeholder: "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Re-review kind
+      options:
+        - Same-ref correction
+        - New-ref reassessment
+    validations:
+      required: true
+
+  - type: input
+    id: review_ref
+    attributes:
+      label: Pinned review ref
+      description: Exact 40-character commit SHA to inspect. For same-ref corrections, use the assessment's current review_ref.
+      placeholder: "0123456789abcdef0123456789abcdef01234567"
+    validations:
+      required: true
+
+  - type: input
+    id: functions
+    attributes:
+      label: Affected VSM function(s)
+      description: One or more of S1, S2, S3, S3*, S4, S5.
+      placeholder: "S2"
+    validations:
+      required: true
+
+  - type: input
+    id: current
+    attributes:
+      label: Current interpretation
+      description: Current state/vector or the specific claim being challenged.
+      placeholder: "S2=C in vector A C A A — —"
+    validations:
+      required: true
+
+  - type: textarea
+    id: challenge
+    attributes:
+      label: Why re-review is needed
+      description: Explain the suspected category error, missed evidence, changed upstream behavior, or boundary problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Primary evidence
+      description: Exact first-party file paths, tests, docs, or implementation paths at the pinned ref, with a concise explanation of what each proves.
+      placeholder: |
+        - `src/.../file.py`: ...
+        - `tests/.../test_file.py`: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: counterevidence
+    attributes:
+      label: Counter-evidence / uncertainty
+      description: Evidence that argues against your preferred interpretation, or questions that remain unresolved.
+    validations:
+      required: true
+
+  - type: input
+    id: proposed
+    attributes:
+      label: Proposed interpretation (optional)
+      description: A proposed replacement state or alternatives. Leave blank if the purpose is only to request independent re-review.
+      placeholder: "S2=A or S2=—; current C appears inconsistent"
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Contribution intent
+      options:
+        - I can submit the re-review PR
+        - I can provide additional evidence but not the PR
+        - Requesting maintainer/community review
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Evidence checks
+      options:
+        - label: I am using primary first-party evidence, not only README wording or third-party summaries.
+          required: true
+        - label: I understand that component names such as manager, verifier, planner, or policy are not sufficient VSM evidence by themselves.
+          required: true
+        - label: I understand that the final grade may differ from the interpretation proposed in this issue.
+          required: true
