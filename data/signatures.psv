@@ -60,7 +60,7 @@ catalog_position|harness_id|signature
 59|crush|A terminal coding agent combines LSP, MCP, sessions, and provider switching around one operational loop with no distinct metasystemic actor.
 60|openai-agents-js|The JavaScript SDK mirrors handoffs, agents-as-tools, guardrails, HITL, sessions, and tracing; delegation and normal validation remain non-metasystemic under the stricter rules.
 62|claude-agent-sdk|The SDK wraps a Claude Code session with tools, permissions, MCP, and hooks; hooks constrain one S1 but do not establish independent audit or policy closure.
-63|qwen-code|The coding harness explicitly ships SubAgents, Agent Teams, workflows, skills, hooks, and unattended mode, but team topology alone remains insufficient for positive S2.
+63|qwen-code|Agent Teams combine peer messaging, a shared dependency/ownership task board, autonomous task claiming, and lead assignment/reassignment, establishing agent-owned S2 coordination and S3 current regulation.
 64|hermes-agent|A persistent agent can create skills, curate memory, schedule work, and spawn subagents; its closed learning loop is explicitly not treated as S4.
 65|deepagents|An opinionated long-horizon harness bundles planning, context management, memory, skills, HITL, and isolated subagents, while subagent use remains delegation.
 66|mirothinker|Long-horizon research scales hundreds of environment interactions and post-training, but trajectory refinement and training are not counted as runtime S4.
