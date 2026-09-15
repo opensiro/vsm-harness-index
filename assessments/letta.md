@@ -1,49 +1,53 @@
 ---
 harness_id: letta
 project_name: Letta
-repository: https://github.com/letta-ai/letta
-review_ref: 5bcdd177d70fa2b31a754cfcd801e77b2e1ab16a
-reviewed_at: 2026-09-14
+repository: https://github.com/letta-ai/letta-code
+review_ref: 5bc853fd6fd69f00c115e320316fa4c0654a3dfb
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: A
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Letta
 
 ## Review boundary
-Letta at the pinned revision, including the repository's stated stateful-agent product boundary while recognizing that current harness source has moved to `letta-code`.
+Letta at the pinned `letta-code` revision. The former `letta-ai/letta` repository now acts as a landing/source-redirect boundary and explicitly points current harness/runtime development to `letta-ai/letta-code`; the deep review therefore follows that first-party source relocation rather than assessing the landing repository as the runtime.
 
 ## Repository architecture
-Letta provides stateful agents with persistent memory, identity and conversations across sessions/channels. The repository points current harness/runtime source to a separate first-party repository.
+Letta Code runs persistent tool-using agents, supports child/subagent execution and includes a built-in background reflection subsystem. Reflection receives completed conversation material in a separate agent context and can update the primary agent's durable memory and reusable skills.
 
 ## Primary evidence
-- `README.md`: stateful agents with memory; persistent identity/conversation; terminal/server/channels/SDK; explicit source-repository boundary.
+- `src/agent/subagents/manager.ts`: first-party subagent process manager supports child launch, parallel/background execution, lifecycle reporting and inherited permission boundaries; these are delegation/runtime mechanics rather than S2 by themselves.
+- `src/agent/subagents/builtin/reflection.md`: a distinct background reflection agent explicitly reviews conversations that already happened, prioritizes mistakes/corrections, contradictions and durable learnings, and edits memory/skills for the primary agent.
+- `src/cli/helpers/reflection-launcher.ts`: launches, serializes and retries reflection work, maintains a separate reflection worktree and integrates completed reflection changes into the parent memory state.
+- `src/cli/helpers/memory-reminder.ts`: default reflection settings use `trigger: "compaction-event"` with `merge: "auto"`, making the reflection path a standard automatic behavior rather than only a user-composed optional reviewer.
+- Reflection/subagent tests in the pinned tree exercise built-in reflection prompts, worktree completion/integration and memory-change handling.
 
 ## Operational model
-A persistent Letta agent is S1. Memory changes its local context over time but does not by itself create S4 or a separate metasystem.
+The primary coding agent and delegated subagents perform S1 work. Child launch and parallel work are hierarchical delegation. Separately, the reflection agent receives a retrospective view of primary-agent behavior, evaluates it from another context and can commit corrective changes to the state that shapes future primary-agent behavior.
 
 ## S1 — Operations
-`A`: stateful agents own bounded tool/action decisions across persistent interactions. Confidence: high.
+`A`: the primary agent owns model/tool action decisions and can delegate bounded work to first-party subagents. Confidence: high.
 
 ## S2 — Coordination
-`—`: no material multi-S1 anti-oscillation path is established in the reviewed repository boundary.
+`—`: subagent launch, parallel execution and lifecycle tracking do not establish an autonomous anti-oscillation/shared-resource coordination decision right among peer S1 units.
 
 ## S3 — Inside-and-now control
-`?`: persistence/server management is not agent-owned whole-system regulation.
+`—`: the subagent manager schedules/delegates tasks but does not own whole-system current priorities, resources and commitments as a superior regulator.
 
 ## S3* — Complementary audit
-`?`: no independent audit path verified.
+`A`: the default compaction-triggered reflection path launches a distinct autonomous background reviewer over already-completed primary-agent conversations. It searches for mistakes, contradictions and durable corrections and has an automatic integration path into parent memory/skills. This is a separate complementary audit/correction loop rather than ordinary self-reflection inside the S1 turn. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`?`: learning/memory improvement over time is insufficient without external prospective adaptation coupled to S3.
+`—`: reflection is retrospective internal learning from the agent's own conversations. It does not establish a distinct outside-and-then environmental intelligence function coupled to strategic adaptation.
 
 ## S5 — Policy and identity
-`?`: persistent agent identity is a stored property; evidence does not show legitimate ultimate-policy closure.
+`—`: reflection may maintain memory/persona/skills, but ultimate identity, policy and authority remain constrained by parent/runtime configuration; editable memory is not legitimate S5 closure.
 
 ## Recursion, variety, escalation
-Persistent memory amplifies temporal S1 variety; channels and multiple agents do not alone establish recursion.
+Subagents enlarge operational variety, while reflection supplies a metasystemic audit relation. Neither automatically makes each child a recursively viable system.
