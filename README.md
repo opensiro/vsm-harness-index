@@ -41,6 +41,17 @@ It is **not** a product-quality, maturity, or VSM-viability ranking. `C`, `P`, a
 | `—` | No material first-party path is supplied inside the reviewed boundary. |
 | `?` | Primary evidence is insufficient for a positive or defensible no-path conclusion. |
 
+### Interpreting `A` and `C`
+
+`A` and `C` represent different product trade-offs, not a universal better/worse ordering.
+
+- `A` is more useful when the adopter wants the VSM function to operate autonomously out of the box. This is often desirable in applied harnesses whose operational domain is already known and bounded, for example coding, research, chemistry, finance, or another domain-specific agent system.
+- `C` can be more useful when the adopter wants to compose, replace, or specialize the responsible role themselves. This is often desirable in base, platform, or governance harnesses that expose a first-party decision/feedback path but deliberately leave the final autonomous role or closure loop to the application builder.
+
+Accordingly, a harness with more `A` states is not necessarily a better platform, and a harness with more `C` states is not necessarily less capable. `A` measures ready agent-owned autonomy at the reviewed boundary; `C` measures a supported composition path for that function. The preferred state depends on whether the system is intended to provide an opinionated autonomous organization or reusable organizational primitives.
+
+This distinction is especially important when comparing applied harnesses with reusable substrates. An applied chemistry harness may reasonably aim to provide autonomous domain roles out of the box, while a general-purpose orchestration or governance harness may intentionally expose composable control primitives so that the adopter can define domain authority, policy, and closure.
+
 ## Migration
 
 The discovery cohort remains in `data/catalog.psv`. The legacy `vsm_tldr` column is retained temporarily as migration history but is no longer authoritative for v2. Standalone assessments are rebuilt from pinned primary evidence in ascending catalog order. The validator requires completed assessments to form a contiguous prefix `1..N`.
