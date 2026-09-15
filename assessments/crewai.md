@@ -3,47 +3,49 @@ harness_id: crewai
 project_name: CrewAI
 repository: https://github.com/crewAIInc/crewAI
 review_ref: 894898f84c4ac0a89f24bf7bee6c381eb0e67f51
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
-autonomy_s2: ?
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s2: —
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # CrewAI
 
 ## Review boundary
-CrewAI OSS at the pinned revision. The commercial Crew Control Plane is outside the assessed system except as an explicit boundary marker.
+CrewAI OSS at the pinned revision. CrewAI's commercial control-plane capabilities are outside this assessment unless present in the open-source runtime itself.
 
 ## Repository architecture
-CrewAI provides role-based autonomous agents in Crews plus event-driven Flows. Crews support autonomous decision-making, delegation and collaboration; Flows provide authored execution/state control.
+CrewAI provides role-based autonomous agents in Crews plus authored Flows. The default crew process is sequential; an optional hierarchical process creates or accepts a manager agent whose primary first-party authority is delegation to worker agents.
 
 ## Primary evidence
-- `README.md`: Crews, role-based agents, dynamic task delegation/collaboration, event-driven Flows and explicit commercial-control-plane boundary.
+- `lib/crewai/src/crewai/crew.py`: `process` defaults to `Process.sequential`; `_run_hierarchical_process()` explicitly creates a manager and then executes the authored task list. `_create_manager_agent()` gives the manager delegation tools over the configured agents. Planning, RPM limits, callbacks, memory and checkpoints are separately parent-configured runtime facilities.
+- `lib/crewai/src/crewai/tasks/hallucination_guardrail.py`: the open-source `HallucinationGuardrail` is explicitly a placeholder/no-op; absent an injected hook it warns that premium hallucination detection was skipped and returns the task output as valid.
+- First-party hierarchical-process documentation marks the manager process as an explicit opt-in rather than the default execution mode.
 
 ## Operational model
-Role agents are S1. Crews provide collaboration primitives, but delegation/collaboration language alone does not prove a concrete anti-oscillation decision right.
+Role agents are S1. Sequential and hierarchical processes arrange task execution; the hierarchical manager selects/delegates work through agent tools, but manager naming and a chain of command do not themselves establish Beer-style S2 or S3.
 
 ## S1 — Operations
-`A`: role agents autonomously execute bounded tasks with tools/context. Confidence: high.
+`A`: role agents autonomously execute bounded tasks with tools and context. Confidence: high.
 
 ## S2 — Coordination
-`?`: autonomous collaboration is first-party, but reviewed evidence does not isolate mutual-adjustment/conflict-regulation semantics from delegation and workflow routing.
+`—`: delegation, sequential task execution and optional hierarchical assignment do not evidence an autonomous anti-oscillation/shared-resource coordination decision right among independently interacting S1 units.
 
 ## S3 — Inside-and-now control
-`?`: manager/control-plane concepts do not establish agent-owned whole-system current regulation in OSS.
+`—`: the optional manager delegates configured tasks, while rate limits, planning, callbacks and checkpoints remain application/runtime controls. No reviewed OSS path gives the manager a whole-system current regulator's authority over priorities, resources and commitments with closed feedback.
 
 ## S3* — Complementary audit
-`?`: observability/review is not sufficiently independent audit by itself.
+`—`: task guardrails/evaluators do not establish an independent standard runtime audit channel, and the named OSS hallucination guardrail is explicitly a no-op by default.
 
 ## S4 — Outside-and-then intelligence
-`?`: no verified S4↔S3 prospective adaptation loop.
+`—`: Crew planning and knowledge/research facilities serve current task execution; no distinct prospective external-intelligence loop feeding future organizational adaptation is established.
 
 ## S5 — Policy and identity
-`?`: roles/goals/guardrails are developer-supplied.
+`—`: roles, goals, process choice, guardrails, security settings and ultimate task policy remain developer/parent supplied.
 
 ## Recursion, variety, escalation
-Crews can contain many autonomous roles, but team nesting is not sufficient evidence of recursive viability.
+Crews can contain multiple autonomous workers and a delegated manager, but that hierarchy is not sufficient evidence of recursive viable-system closure.
