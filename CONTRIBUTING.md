@@ -1,8 +1,32 @@
-# Contributing an assessment
+# Contributing to VSM Harness Index
 
-The index uses an assessment-first workflow. Do not hand-author a TLDR classification independently from repository evidence.
+VSM Harness Index uses an assessment-first workflow. Repository evidence is the source of truth; `TLDR.md` and `RANKINGS.md` are derived views.
 
-## Required workflow
+## Quick start
+
+You usually do **not** need to choose catalog order, invent a ranking, or design a batch yourself.
+
+### Review a queued batch
+
+1. Open the [review batch queue](https://github.com/opensiro/vsm-harness-index/issues?q=is%3Aissue+is%3Aopen+in%3Atitle+%22%5BIndex+batch%5D%22).
+2. Pick an unclaimed batch whose issue says it is ready for review.
+3. Comment that you are taking it, or ask to be assigned.
+4. Follow the exact repositories, pinned revisions, outputs, and acceptance checks in that issue.
+5. Submit one PR for the batch unless the issue says otherwise.
+
+A batch may be completed by a human contributor, a human using coding/research agents, or an autonomous agent. The acceptance contract is the same: pinned primary evidence, reviewable assessments, deterministic validation, and a normal PR.
+
+### Suggest a harness
+
+Use the **Suggest a harness** issue form. You only need to provide the repository and explain briefly why it belongs in an agent-harness index. Maintainers own catalog placement, provenance normalization, and batching.
+
+### Correct an assessment
+
+If you find stronger primary evidence or disagree with a VSM mapping, use the **Assessment evidence / classification correction** issue form. Point to the exact repository evidence and the affected function; do not edit generated rankings as the primary fix.
+
+## Maintainer / full assessment workflow
+
+The detailed workflow below applies when creating or integrating an assessment rather than merely suggesting a candidate.
 
 1. Check out `vsm-harness-profile`, `vsm-skills`, and `vsm-harness-index` as siblings.
 2. Confirm or add the discovery row in `data/catalog.psv`; preserve provenance, exact `review_ref`, `reviewed_at`, and chronological ordering.
@@ -11,6 +35,8 @@ The index uses an assessment-first workflow. Do not hand-author a TLDR classific
 5. Only after the assessment is complete, compare it with all earlier completed assessments and add its cohort-relative signature to `data/signatures.psv`.
 6. Run `python scripts/render_tldr.py` to regenerate `TLDR.md` and `RANKINGS.md`.
 7. Run `python scripts/check_index.py`.
+
+Do not hand-author a TLDR classification independently from repository evidence.
 
 ## Assessment requirements
 
