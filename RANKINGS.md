@@ -9,6 +9,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | [Hive](https://github.com/aden-hive/hive) | 2026 | 2/6 | 1/5 | 0 | 0 | 3 | `A A ? ? — ?` |
 | 2 | [oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 2/6 | 1/5 | 1 | 0 | 3 | `A C ? A ? ?` |
 | 2 | [Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023 | 2/6 | 1/5 | 0 | 0 | 1 | `A A — ? — —` |
+| 2 | [MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 3 | [Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 2 | `A C ? C ? —` |
 | 3 | [claw-code-agent](https://github.com/HarnessLab/claw-code-agent) | 2026 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
@@ -66,11 +67,10 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | [Letta](https://github.com/letta-ai/letta) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [ChatDev](https://github.com/OpenBMB/ChatDev) | 2023 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
 | 3 | [LangGraph](https://github.com/langchain-ai/langgraph) | 2023 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
-| 3 | [Open Interpreter](https://github.com/openinterpreter/openinterpreter) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | 2023 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [Continue](https://github.com/continuedev/continue) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Vercel AI SDK](https://github.com/vercel/ai) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
+| 3 | [Open Interpreter](https://github.com/openinterpreter/openinterpreter) | 2023 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
+| 3 | [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Continue](https://github.com/continuedev/continue) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Vercel AI SDK](https://github.com/vercel/ai) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [GPT Researcher](https://github.com/assafelovic/gpt-researcher) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [Aider](https://github.com/Aider-AI/aider) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [AgentVerse](https://github.com/OpenBMB/AgentVerse) | 2023 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
