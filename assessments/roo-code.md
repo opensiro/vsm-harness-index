@@ -3,47 +3,48 @@ harness_id: roo-code
 project_name: Roo Code
 repository: https://github.com/RooCodeInc/Roo-Code
 review_ref: b867ec9145750d0ae1ff7f02d35406e9bf2a0b16
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Roo Code
 
 ## Review boundary
-Roo Code at the pinned revision as the IDE coding-agent product and its specialized modes.
+Deep review of Roo Code at the pinned revision, including its first-party child-task mechanism. Delegation is evaluated separately from S2 coordination and S3 control.
 
 ## Repository architecture
-Roo Code generates/edits/debugs code, uses MCP, and exposes Code/Architect/Ask/Debug/custom modes. These modes specialize one agent workflow rather than establish interacting autonomous organizational units.
+Roo Code is an autonomous coding harness with modes, tools and explicit task delegation. `NewTaskTool` creates a child task in a selected mode and links it to the parent task so work can be decomposed and later returned. That is a genuine hierarchical execution primitive, but no separate metasystem function is evidenced for regulating interference among multiple autonomous S1 units.
 
 ## Primary evidence
-- `README.md`: AI-powered developer agent; code/refactor/debug tasks; MCP; specialized/custom modes.
+- `src/core/tools/NewTaskTool.ts`: creates delegated child tasks/modes, establishes the parent-child relationship and transfers scoped work into the child execution context.
+- `README.md`: documents autonomous coding/tool use and configurable modes that bound agent behavior.
 
 ## Operational model
-A coding-agent session is S1; modes alter its role/capabilities.
+A coding agent performs task work through tools and can split selected work into a child task running under another mode. The parent-child relationship structures decomposition and return of work.
 
 ## S1 — Operations
-`A`: the coding agent autonomously performs bounded repository work. Confidence: medium-high.
+`A`: the normal coding agent autonomously selects/executes tools and reacts to results inside configured permissions. Confidence: high.
 
 ## S2 — Coordination
-`—`: switching specialized modes does not establish coordination among autonomous S1s.
+`—`: `new_task` is parent-to-child delegation. The reviewed implementation does not show a distinct function that regulates conflicts, oscillation or shared constraints between multiple autonomous S1 units.
 
 ## S3 — Inside-and-now control
-`?`: no autonomous whole-system regulator verified.
+`—`: parent task ownership and child-task lifecycle do not establish whole-system current authority over resources/commitments across multiple S1 units.
 
 ## S3* — Complementary audit
-`?`: Debug/Review-like work remains operational specialization, not independent complementary audit.
+`—`: no independent/complementary audit path distinct from the normal operational hierarchy was established.
 
 ## S4 — Outside-and-then intelligence
-`?`: Architect planning is not S4.
+`—`: mode selection and task decomposition are current-task planning, not a separate prospective environment-intelligence/adaptation function.
 
 ## S5 — Policy and identity
-`?`: custom modes/instructions are parent-defined.
+`—`: modes, permissions, rules and task goals are configured by the user/developer. No autonomous ultimate policy/identity authority is present.
 
 ## Recursion, variety, escalation
-Modes amplify role variety inside one operational agent; no recursion is established.
+Child tasks provide recursive operational decomposition and can specialize behavior by mode. Under the profile this is not enough to infer any metasystem function.

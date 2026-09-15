@@ -3,47 +3,48 @@ harness_id: cloudflare-agents
 project_name: Cloudflare Agents
 repository: https://github.com/cloudflare/agents
 review_ref: 46760e635ce9599add0abbfe6c1a34af0d5d44f1
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Cloudflare Agents
 
 ## Review boundary
-Cloudflare Agents SDK at the pinned revision, including persistent agents, subagents, agent-as-tools and durable workflows.
+Deep review of the pinned Agents SDK, including durable state, scheduling, agent-to-agent/tool exposure and documented workflow/subagent composition.
 
 ## Repository architecture
-Each Agent is a persistent Durable Object with state/storage/lifecycle. The SDK includes chat agent loops, parent/child subagents, agent tools, scheduling, workflows with human approval, tracing/metrics and sandboxed code execution.
+Cloudflare Agents provides durable autonomous agent instances on Durable Objects with persistent state, scheduling and RPC/tool integration. Agents can be composed and exposed as callable tools, but the reviewed primitives are infrastructure and delegation mechanisms rather than a VSM metasystem above multiple S1 units.
 
 ## Primary evidence
-- `README.md`: persistent Agent lifecycle/state; subagents/agent-tools; scheduling/workflows/HITL; `@cloudflare/think` agentic loop; observability.
+- `packages/agents/src/agent-tools.ts`: exposes agents as callable tools/RPC targets and resolves agent identity/communication for operational composition.
+- `README.md`: documents persistent agents, scheduling, workflows and subagent patterns on Cloudflare's runtime.
 
 ## Operational model
-Persistent agent instances are S1 units. Parent/child/agent-as-tool relations are task composition; durable workflows route/control execution.
+An agent instance maintains durable state, receives events/messages, invokes model/tools and can call or expose other agents as part of an application-defined topology.
 
 ## S1 — Operations
-`A`: standard chat/think agents own bounded model/tool loops and persistent operational state. Confidence: high.
+`A`: first-party agent instances can autonomously execute model/tool behavior over persistent state and scheduled/event-driven work. Confidence: high.
 
 ## S2 — Coordination
-`—`: subagent/tool/workflow primitives shown do not specifically establish anti-oscillation among autonomous S1s; generic composition is insufficient for `C`.
+`—`: agent-to-agent calls, workflows and subagent composition provide communication/delegation, but no distinct function was found that regulates interference or shared constraints among autonomous S1 units.
 
 ## S3 — Inside-and-now control
-`?`: Durable Object lifecycle/scheduling is infrastructure, not autonomous S3 regulation.
+`—`: Durable Object lifecycle, routing and scheduling are runtime infrastructure. They do not establish whole-system managerial authority over operational commitments/resources in the VSM sense.
 
 ## S3* — Complementary audit
-`?`: tracing/metrics are evidence infrastructure, not independent audit.
+`—`: observability/state persistence does not create an independent complementary audit channel; no such first-party organizational function was established.
 
 ## S4 — Outside-and-then intelligence
-`?`: schedules/events and retries are not prospective adaptation.
+`—`: scheduling and event processing concern execution timing, not prospective environmental intelligence and adaptation of system capability.
 
 ## S5 — Policy and identity
-`?`: human approvals and workflow policy constrain actions but do not by themselves prove ultimate-policy/identity closure.
+`—`: topology, tools, prompts, access and policies are application/developer supplied. No autonomous ultimate policy/identity function is included.
 
 ## Recursion, variety, escalation
-Parent/child facets enable nested agents, but nested Durable Objects are not automatically recursively viable systems.
+The SDK can host recursive/multi-agent applications, but those applications must supply their own organizational closure; the SDK itself remains an S1-capable construction/runtime layer.
