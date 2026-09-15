@@ -3,47 +3,49 @@ harness_id: claude-agent-sdk
 project_name: Claude Agent SDK
 repository: https://github.com/anthropics/claude-agent-sdk-python
 review_ref: 37a52c9fb3f0271de017911914b0d42efea6267e
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Claude Agent SDK
 
 ## Review boundary
-Claude Agent SDK Python at the pinned revision, wrapping the bundled Claude Code CLI and its tool/permission/hook behavior.
+Deep review of the pinned Python SDK's agent definitions, hooks, permissions, MCP integration and subagent/session surfaces. Configurable callbacks and delegated specialists are not promoted to metasystem functions unless the SDK supplies the corresponding organizational responsibility.
 
 ## Repository architecture
-The SDK exposes interactive Claude Code agent sessions, Read/Write/Edit/Bash tools, custom MCP tools, permissions and Python hooks. It is primarily an SDK surface over one Claude Code operational agent.
+Claude Agent SDK exposes long-running Claude Code agent sessions with built-in/MCP tools, inline or filesystem agent definitions, permissions and lifecycle/tool hooks. Subagents have distinct transcripts and configured agent definitions, while hooks can block execution or add feedback. These are strong application control primitives around operational agents, but the reviewed SDK does not itself create a coordination, whole-system regulation or independent audit function.
 
 ## Primary evidence
-- `README.md`: bundled Claude Code CLI; `query`/`ClaudeSDKClient`; tools, permissions, custom MCP tools and hooks.
+- `src/claude_agent_sdk/types.py`: hook outputs can continue/stop/block execution and return tool-specific permission decisions or context.
+- `src/claude_agent_sdk/types.py` / SDK agent-definition surface: applications define specialist agents and their tool/instruction boundaries.
+- Subagent/session support preserves separate subagent transcripts, but delegation and transcript separation do not themselves regulate interference among autonomous S1 units.
 
 ## Operational model
-A Claude Code-backed session is S1. Hooks/permissions constrain the loop; tools are operational capabilities.
+A configured Claude agent receives a task, selects tools, acts through Claude Code/MCP capabilities and iterates. Applications may provide specialist agents and callbacks that constrain or observe execution.
 
 ## S1 — Operations
-`A`: Claude autonomously chooses available tools/actions within a session. Confidence: high.
+`A`: the normal SDK session supports autonomous tool selection/action over long-running coding or general tasks. Confidence: high.
 
 ## S2 — Coordination
-`—`: no first-party multi-S1 anti-oscillation relation is established by the reviewed SDK evidence.
+`—`: specialist/subagent invocation is delegation. No first-party mechanism was established whose responsibility is regulating interference, oscillation or shared constraints among multiple autonomous S1 units.
 
 ## S3 — Inside-and-now control
-`?`: permissions/hooks are runtime constraints, not autonomous whole-system regulation.
+`—`: permissions, hooks and parent/subagent lifecycle controls constrain execution but do not constitute whole-system current authority over multiple S1 resources, priorities and commitments.
 
 ## S3* — Complementary audit
-`?`: hooks can inspect/validate events but sufficient independent audit role/feedback closure is not supplied out of the box.
+`—`: hooks can observe or block operational events, but the hook callbacks and their authority are application-supplied. No autonomous, organizationally separate complementary audit channel is included by default.
 
 ## S4 — Outside-and-then intelligence
-`?`: no prospective environment/adaptation function verified.
+`—`: session state, hooks and specialist delegation concern current operation; no separate prospective environment-intelligence function that adapts future system capability was established.
 
 ## S5 — Policy and identity
-`?`: system prompts and permission policy are parent-defined.
+`—`: instructions, permissions, hooks and agent definitions remain developer/user-owned rather than an autonomous ultimate policy/identity authority.
 
 ## Recursion, variety, escalation
-Custom tools/MCP amplify one S1's variety; no recursion is established.
+The SDK supplies primitives from which richer organizations can be composed, while leaving S2–S5 closure to the application.

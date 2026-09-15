@@ -3,47 +3,50 @@ harness_id: youtu-agent
 project_name: Youtu-Agent
 repository: https://github.com/TencentCloudADP/youtu-agent
 review_ref: c2caa539f4c95ae1c39ed24dc8a99cb3651e1d5d
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
+autonomy_s3: —
+autonomy_s3_star: —
 autonomy_s4: —
-autonomy_s5: ?
+autonomy_s5: —
 ---
 
 # Youtu-Agent
 
 ## Review boundary
-Youtu-Agent at the pinned revision as the runtime/framework for autonomous agents plus its practice/RL and meta-agent generation modules.
+Deep review of the pinned SimpleAgent/Orchestrator and Agent Practice surfaces. Agent generation, task planning and training/practice components are not mapped to S2/S4 unless they implement the corresponding runtime organizational function.
 
 ## Repository architecture
-Youtu-Agent runs autonomous task agents and can generate tools/configurations through a meta-agent. Agent Practice accumulates experience through training-free optimization; Agent RL supplies end-to-end training infrastructure.
+Youtu-Agent provides tool-using simple agents, a planner-driven orchestrator over specialist workers, automatic agent/tool generation and an Agent Practice learning module. The chain orchestrator uses an LLM planner to produce a fixed ordered list of worker tasks and then executes those workers sequentially. At the pinned revision replanning is explicitly still a TODO. Practice/training components operate outside the runtime organization to improve policies/experience.
 
 ## Primary evidence
-- `README.md`: autonomous agent framework; Workflow/Meta-Agent generation; experience-based learning; Agent Practice and Agent RL pipelines.
+- `utu/agents/orchestrator_agent.py`: builds a planner plus configured worker agents and runs planned tasks one by one; the source explicitly lists `replan` as not yet implemented.
+- `utu/agents/orchestrator/chain.py`: an LLM router/planner creates a task list assigning each step to a worker, and `get_next_task` advances through that fixed plan.
+- `utu/meta/simple_agent_generator.py` and auto-generation docs: meta-agent functionality generates agent prompts/config/tooling from requirements.
+- Agent Practice / training-free GRPO machinery learns from rollouts outside the current runtime control loop.
 
 ## Operational model
-Task/meta agents perform S1 work. Auto-generation and training improve capabilities/configuration but do not by themselves supply runtime metasystem functions.
+A runtime agent chooses tools and reacts to results. In orchestrator mode an LLM decomposes the present request into sequential specialist tasks and returns their outputs through one task trajectory.
 
 ## S1 — Operations
-`A`: standard agents autonomously tool-use/research/analyze toward outcomes. Confidence: high.
+`A`: simple and worker agents autonomously choose tools/actions for bounded tasks. Confidence: high.
 
 ## S2 — Coordination
-`—`: workflow/meta-agent generation does not establish mutual adjustment among autonomous S1 units.
+`—`: the planner statically decomposes and sequences worker tasks; workers do not mutually regulate shared constraints or interference. Generated workflow primitives likewise require application-defined coordination. The shallow `S2=C` interpretation is removed.
 
 ## S3 — Inside-and-now control
-`?`: no autonomous whole-system regulator verified.
+`—`: the planner owns a current task plan and worker selection, but lacks the persistent whole-system progress/resource/commitment regulation, feedback-based reassignment or replanning required for S3.
 
 ## S3* — Complementary audit
-`?`: evaluation/verification is not shown as sufficiently independent runtime audit.
+`—`: no separate independent complementary audit channel over operational work was established.
 
 ## S4 — Outside-and-then intelligence
-`—`: experience optimization and RL alter future agent behavior, but learning/training alone is not an external-and-prospective S4 function coupled to S3.
+`—`: agent generation and training/practice can improve later behavior, but they are development/training mechanisms rather than a runtime prospective environmental-intelligence function governing adaptation. The shallow `S4=C` interpretation is removed.
 
 ## S5 — Policy and identity
-`?`: generated prompts/configurations and training objectives remain parent-defined.
+`—`: generated prompts/configuration, worker roster and overall mission/policy remain externally framed.
 
 ## Recursion, variety, escalation
-Meta-agent/tool generation amplifies operational capability; training pipelines are not recursive organizational levels.
+Youtu-Agent can generate and compose rich operational agents, but at the pinned runtime boundary S2–S5 remain application/development responsibilities.
