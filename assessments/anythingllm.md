@@ -3,47 +3,53 @@ harness_id: anythingllm
 project_name: AnythingLLM
 repository: https://github.com/Mintplex-Labs/anything-llm
 review_ref: 3a85d3e75490f09453de7e8c440b9463f4a82019
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
-autonomy_s2: ?
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s2: —
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # AnythingLLM
 
 ## Review boundary
-AnythingLLM at the pinned revision, focusing on built-in workspace agents and no-code Agent Flows. Multi-user permissioning is infrastructure, not agent-owned policy by default.
+AnythingLLM at the pinned revision, focusing on built-in workspace agents and the first-party no-code Agent Flow runtime. Multi-user permissioning and application administration are support infrastructure, not agent-owned organizational functions.
 
 ## Repository architecture
-AnythingLLM ships built-in/custom agents, web/document/tool access, memory, scheduled tasks, intelligent skill selection and a no-code Agent Flow builder. Server/frontend/collector services support the agent runtime.
+Workspace agents use retrieval and tools toward user tasks. Agent Flows are stored builder-authored step lists loaded and executed through `FlowExecutor`; the reviewed vocabulary includes start-variable initialization, API calls, LLM instructions and web scraping. Flows can be exposed back to an agent as callable tools.
 
 ## Primary evidence
-- `README.md`: built-in agents, tools/web access, memories, scheduled tasks, intelligent skill selection, custom agents and no-code Agent Flows.
+- `server/utils/agentFlows/index.js`: loads stored flow definitions, exposes them as agent-callable plugins and invokes `FlowExecutor` with caller variables.
+- `server/utils/agentFlows/executor.js`: executes authored flow steps and propagates variables/results through the flow runtime.
+- `server/utils/agentFlows/flowTypes.js`: defines concrete `start`, `apiCall`, `llmInstruction` and `webScraping` steps rather than an autonomous multi-S1 coordination protocol.
+- `server/__tests__/utils/agentFlows/index.test.js`: verifies flow definitions are loaded as tools, variables are filtered/merged and configured steps execute, confirming builder-defined semantics.
 
 ## Operational model
-Workspace agents are S1. Agent Flow composition may connect agentic work, but the reviewed evidence does not establish the specific interference-dampening relationship required for S2.
+Workspace agents are S1. Agent Flows amplify an S1 with reusable deterministic/LLM-backed procedures, but authored step execution does not itself create several autonomous operational units or a metasystem.
 
 ## S1 — Operations
-`A`: workspace agents autonomously select skills/tools toward user tasks. Confidence: high.
+`A`: workspace agents autonomously choose available skills/tools toward user tasks. Confidence: high.
 
 ## S2 — Coordination
-`?`: first-party agent-flow primitives exist, but workflow composition alone is insufficient to decide S2.
+`—`: Agent Flow sequences authored blocks/procedures; it does not evidence a coordination problem among multiple S1 units or regulation of their interference. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: multi-user/admin/runtime controls are not verified agent-owned whole-system regulation.
+`—`: flow execution, workspace administration and permissions do not supply an agent-owned whole-system view with authority over shared current commitments/resources. Confidence: high.
 
 ## S3* — Complementary audit
-`?`: no sufficiently independent audit role/path verified.
+`—`: no distinct sufficiently independent path inspects operational reality outside the normal flow and challenges routine claims. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`?`: schedules, web access and memories extend operation but do not prove prospective adaptation.
+`—`: web access, schedules and memory extend operational reach, but the reviewed runtime does not establish an external-and-prospective adaptation loop coupled to current control. Confidence: high.
 
 ## S5 — Policy and identity
-`?`: permissioning/custom-agent configuration is parent/platform-owned.
+`—`: flow definitions, workspace configuration, permissions and agent setup are user/platform authored rather than an agent-owned ultimate policy function. Confidence: high.
 
 ## Recursion, variety, escalation
-Tool/memory/model routing increases S1 variety. Agent-flow nesting is not automatically recursive viability.
+Flows can enter an agent's tool repertoire, but technical composition is not recursive viability. Variable schemas and step definitions attenuate execution variety at the application boundary.
+
+## Deep-review result
+`S2`, `S3`, `S3*`, `S4` and `S5` resolve from `?` to `—`; `S1 A` is confirmed with implementation and tests.
