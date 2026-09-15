@@ -1,7 +1,8 @@
 name: Assessment re-review
-about: Challenge an existing VSM mapping or request reassessment at a newer pinned revision
+description: Challenge an existing VSM mapping or request reassessment at a newer pinned revision
 title: "[Assessment re-review] "
 labels: []
+assignees: []
 body:
   - type: markdown
     attributes:
