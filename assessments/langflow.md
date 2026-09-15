@@ -3,10 +3,10 @@ harness_id: langflow
 project_name: Langflow
 repository: https://github.com/langflow-ai/langflow
 review_ref: 595cd72a2b2021f2375fa31109af02d20bb17648
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
-autonomy_s2: ?
+autonomy_s2: —
 autonomy_s3: ?
 autonomy_s3_star: ?
 autonomy_s4: ?
@@ -16,34 +16,39 @@ autonomy_s5: ?
 # Langflow
 
 ## Review boundary
-Langflow OSS at the pinned revision, focusing on deployed agent components and multi-agent flows. External observability services are not treated as endogenous VSM functions.
+Langflow OSS at the pinned revision, focusing on deployed agent components, graph execution and first-party agent-to-agent composition. The previous stored SHA was not resolvable upstream; this deep review explicitly repins the assessment to the current reproducible `main` HEAD shown above.
 
 ## Repository architecture
-Langflow is a visual platform for building/deploying agents and workflows. It includes agent/tool components, conversation management, retrieval, a visual flow graph, APIs and MCP exposure, and explicitly advertises multi-agent orchestration.
+Langflow supplies a visual/runtime graph for agents and tools. `AgentComponent` creates a tool-calling agent with model-call limits, retries, optional human tool approval and memory. `A2AAgentComponent` is a first-party Agent-to-Agent client that sends a message to another A2A agent and returns its reply.
 
 ## Primary evidence
-- `README.md`: visual agent/workflow builder; agent/tool ecosystem; multi-agent orchestration with conversation management and retrieval; API/MCP deployment.
+- `src/lfx/src/lfx/components/models_and_agents/agent.py`: `AgentComponent` wraps `create_agent`, tool retry, model-call limits, memory and optional human approval around one agent loop.
+- `src/lfx/src/lfx/components/models_and_agents/a2a_agent.py`: module docstring defines it as an A2A client that sends a message to a remote agent and returns its reply; runtime validates the card/endpoint, sends the message and returns the remote result.
+- `src/lfx/tests/unit/components/models_and_agents/test_a2a_agent.py` and backend A2A tests exercise that first-party RPC/delegation path.
 
 ## Operational model
-Agent components can be S1 units. The authored graph and conversation machinery constrain their interaction, but a graph edge or deterministic flow is not itself agentic S2.
+Each tool-calling agent can be an S1. A flow can invoke another agent through A2A or connect multiple components through an authored graph, but the standard relation evidenced here is request→remote-agent→reply or deterministic graph composition.
 
 ## S1 — Operations
-`A`: deployed agent components perform model-driven tool work inside flows. Confidence: high.
+`A`: the first-party Agent component owns model/tool decisions and iterates toward a task outcome. Confidence: high.
 
 ## S2 — Coordination
-`?`: multi-agent orchestration is a first-party capability, but the reviewed primary evidence does not show enough about mutual adjustment/collision regulation to distinguish S2 from authored routing.
+`—`: A2A is a callable remote-agent relation and visual graph edges are authored routing. Neither supplies a material first-party mechanism for mutual adjustment, collision regulation or anti-oscillation among autonomous peer S1s. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: flow execution/control does not establish an autonomous whole-system regulator.
+`?`: runtime/graph execution and call limits constrain work, but this pass did not establish an agent-owned whole-system regulator with authority over shared commitments/resources.
 
 ## S3* — Complementary audit
-`?`: observability integrations and playground inspection do not establish sufficiently independent audit.
+`?`: human tool approval, retries and observability are support mechanisms, not sufficient evidence of an independent audit actor with corrective closure.
 
 ## S4 — Outside-and-then intelligence
-`?`: retrieval and connected tools provide environment access but not a proven prospective adaptation loop.
+`?`: connected tools/retrieval expose environment information but do not by themselves establish a distinct prospective adaptation function coupled to S3.
 
 ## S5 — Policy and identity
-`?`: builder configuration and system instructions are not runtime ultimate policy.
+`?`: system prompts, approval configuration and flow topology remain builder/parent-authored.
 
 ## Recursion, variety, escalation
-Flows can compose agents and expose flows as tools, but composition/nesting is not automatically recursive viability.
+A2A and flow nesting expand operational variety but do not imply recursive viability.
+
+## Deep-review result
+`S2` resolves from `?` to `—`; the remaining unknowns stay unresolved pending stronger function-specific evidence.

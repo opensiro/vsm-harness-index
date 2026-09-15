@@ -5,10 +5,10 @@ catalog_position|harness_id|signature
 4|khoj|A configured personal agent combines conversation memory, private knowledge, web information and tools; its persona and capabilities remain one S1 with parent-authored identity.
 5|agno|Tasks mode gives an autonomous team leader a shared task board with ownership, dependencies, status, retry and reassignment controls, establishing agent-owned S2 coordination and S3 current regulation.
 6|langchain|The core framework supplies tool-using agents while explicitly outsourcing advanced orchestration to LangGraph, keeping the assessed boundary at S1.
-7|llama-index|The harness is distinguished by data-centric retrieval and query-engine composition; its workflow layer is under-specified as coordination among autonomous S1s.
-8|langflow|Visual multi-agent flow composition is first-party, but authored graph structure is not promoted to S2 without evidence of mutual adjustment.
-9|semantic-kernel|The SDK exposes collaborating-agent and process patterns across multiple languages, yet orchestration labels alone do not establish Beer-style S2.
-10|autogpt|A goal-driven visual block workflow can run on schedules or triggers, but deterministic workflow structure remains support for one operational agent loop.
+7|llama-index|LlamaIndex ships handoff, agent-as-tool orchestrator and DIY planner patterns; each is operational routing/decomposition rather than first-party S2 mutual adjustment.
+8|langflow|Langflow can call remote A2A agents and compose agent components in authored graphs, but those paths remain RPC/delegation and deterministic routing rather than S2.
+9|semantic-kernel|A dedicated GroupChatManager exposes next-agent, termination and result-selection decision points as a composable S2 path, while the autonomous coordination policy remains application-supplied.
+10|autogpt|A goal-driven block graph runs on schedules/triggers, while its dream pass consolidates internal memory; neither deterministic graph control nor learning-like memory maintenance establishes S4.
 11|flowise|Agentflow visually composes agentic and deterministic components; the repository does not show enough interaction semantics to classify that composition as S2.
 12|dify|ReAct/function-calling agents sit inside authored visual workflows, so workflow branching is treated as deterministic support rather than agent-owned coordination.
 13|agentverse|Environment and conversation protocols expose turn-taking constraints among multiple role agents, yielding a composable S2 path rather than simple delegation.
