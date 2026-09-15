@@ -31,13 +31,13 @@ catalog_position|harness_id|signature
 30|openhands|Agent Canvas is an operator control/dispatch surface around coding S1s; backend choice, automations and confirmations do not instantiate autonomous S2-S5.
 31|praisonai|An optional hierarchical Manager sees every task status, chooses assignees, re-delegates failures and can stop the team run, exposing composable S3 current regulation without S2 closure.
 32|stagehand|One browser S1 autonomously executes multi-step goals through DOM/hybrid/CUA tools; self-healing, callbacks and limits remain operational support rather than a metasystem.
-33|swe-agent|One software-engineering S1 owns the repository trajectory; retries, tests, hooks and benchmark evaluation remain execution/evaluation support rather than separate metasystem roles.
+33|swe-agent|One coding S1 owns each repository trajectory, while optional RetryAgent reviewer/chooser loops can score or compare completed attempts and force retry/selection, exposing composable S3*.
 34|agent-zero|Persistent subordinate contexts, parallel jobs and review-shaped prompts remain generic parent-child delegation; no dedicated S2-S5 organizational decision right is supplied.
 35|pydantic-ai|Core multi-agent paths are delegation, programmatic hand-off or authored graph control; shared limits/cancellation constrain operations without closing a metasystem function.
 36|cline|Optional persistent team mode adds peer mailboxes and dependency-aware task state as S2, coordinator-wide progress/task regulation as S3, and reviewed outcome fragments that gate finalization as S3*; all are composable rather than default.
 37|eliza|The optional agent-orchestrator plugin supplies durable parent-planner task/session regulation as S3 and a separate completion-validation evaluator with corrective routing as S3*; subagents remain explicitly unsynchronized, so no S2.
 38|agent-squad|Optional SupervisorAgent actively mediates information among otherwise unaware specialists and chooses necessary contacts, exposing composable S2 without a persistent S3 control ledger.
-39|mastra|The optional routing-agent network uses task history to choose subagents/workflows/tools, their order and completion, exposing composable S3 current regulation while deterministic workflows remain non-metasystemic.
+39|mastra|The optional supervisor/network path regulates current primitive selection as composable S3, while task-completion scorers can independently block completion and feed corrective feedback into further iterations as composable S3*.
 40|beeai-framework|Main-agent HandoffTool specialists and RequirementAgent constraints remain operational delegation/policy support; no separate S2-S5 organizational function is established.
 41|goose|A local general-purpose agent gains broad capability through MCP extensions and provider choice while remaining one operational S1.
 42|superagentx|Autonomous workflows include retries, persistence, audit data, and a human-approval governance agent, but governance remains parent-controlled rather than S5.
