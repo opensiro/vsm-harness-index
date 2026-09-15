@@ -1,9 +1,9 @@
 catalog_position|harness_id|signature
-1|rasa|Stateful dialogue action selection is agent-owned, while no distinct agent-owned metasystemic function is established at this repository boundary.
-2|botpress|Code-generating agents compose multiple typed tools inside one operational loop; that tool composition is not cross-S1 coordination.
-3|n8n|A workflow-embedded AI Agent can expose another agent as a tool, but parent-child delegation remains operational decomposition rather than S2.
-4|khoj|A persistent personal agent combines private-document retrieval, web context, tools, and scheduled research without establishing a separate metasystemic layer.
-5|agno|A broad agent-platform runtime exposes teams, memory, scheduling, approvals, and observability, but the team semantics remain insufficiently specific for positive S2.
+1|rasa|A single dialogue S1 selects actions through a deterministic policy ensemble; ticket locks, fallbacks and handoff paths constrain that operation without supplying an autonomous metasystem.
+2|botpress|One code-generating LLMz loop can orchestrate many typed tools, while sandboxing, traces and lifecycle hooks remain parent/runtime support rather than agent-owned metasystem functions.
+3|n8n|An AI Agent can delegate to Agent Tool children, use fallback models and pass configured Guardrails, but these remain task decomposition and deterministic support around S1.
+4|khoj|A configured personal agent combines conversation memory, private knowledge, web information and tools; its persona and capabilities remain one S1 with parent-authored identity.
+5|agno|Tasks mode gives an autonomous team leader a shared task board with ownership, dependencies, status, retry and reassignment controls, establishing agent-owned S2 coordination and S3 current regulation.
 6|langchain|The core framework supplies tool-using agents while explicitly outsourcing advanced orchestration to LangGraph, keeping the assessed boundary at S1.
 7|llama-index|The harness is distinguished by data-centric retrieval and query-engine composition; its workflow layer is under-specified as coordination among autonomous S1s.
 8|langflow|Visual multi-agent flow composition is first-party, but authored graph structure is not promoted to S2 without evidence of mutual adjustment.

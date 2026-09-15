@@ -3,49 +3,49 @@ harness_id: botpress
 project_name: Botpress
 repository: https://github.com/botpress/botpress
 review_ref: 7bf2906580ab86fe647d4fb109b8c3bdcaef9c57
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Botpress
 
 ## Review boundary
-Botpress repository at the pinned revision, with its first-party autonomous agent execution path as the system in focus. Positive claims are limited to standard repository capabilities rather than arbitrary bot code.
+The first-party LLMz runtime in the Botpress repository at the pinned revision, treated as one deployed production agent loop rather than arbitrary application code built around it.
 
 ## Repository architecture
-The repository includes the `llmz` TypeScript agent framework used by Botpress production agents. Its `execute()` path lets a model generate executable TypeScript, call typed tools, receive returned values, iterate, and terminate through typed exits. QuickJS provides isolated execution; chat mode feeds transcript/user input back into later turns.
+LLMz is a code-first TypeScript agent framework. `execute()` loops until an exit, user wait, or iteration limit; the model generates TypeScript, invokes typed tools in an isolated VM, consumes results, retries errors and preserves variables across iterations. Snapshots, forced/voluntary thinking and lifecycle hooks support the loop.
 
 ## Primary evidence
-- `packages/llmz/README.md`: describes LLMz as an AI agent framework powering Botpress production agents, autonomous Worker Mode, tool execution, returned values fed back to the model, iteration limits, snapshots, and traces.
-- `packages/cognitive/readme.md`: documents first-party model selection/fallback infrastructure, which supports execution but is not itself a VSM metasystem.
-All evidence is read at the pinned `review_ref`.
+- `packages/llmz/README.md`: LLMz production agent execution, autonomous worker mode, tools, iteration/snapshot/trace behavior.
+- `packages/llmz/CLAUDE.md`: one `execute()` loop, code generation/execution pipeline, error recovery, state persistence, snapshots and hooks.
+- `packages/llmz/CLAUDE.md`: `onTrace` monitoring, `onExit` validation/guardrails, `onBeforeExecution` security mutation, and `onIterationEnd` state augmentation are caller-supplied lifecycle hooks.
 
 ## Operational model
-One LLMz agent loop is the S1 unit. Generated code may coordinate several tools in one turn, but those tools are capabilities of that operational unit rather than independent S1 units by default.
+Generated code may orchestrate many tools in one turn, but those tools and subprograms are capabilities within one operational agent. Hook and sandbox infrastructure constrains that operation from outside the agent loop.
 
 ## S1 — Operations
-`A`: the agent chooses and executes code/tool actions, observes returned values, and can iterate to completion. Basis: explicit/structural. Confidence: high.
+`A`: the model-driven loop chooses/generated code and tool actions, incorporates returned values and iterates toward a typed exit. Confidence: high.
 
 ## S2 — Coordination
-`—`: multi-tool composition, workflow routing, and sequential execution do not establish regulation of interference among multiple autonomous S1 units at this boundary. Basis: structural. Confidence: medium.
+`—`: multi-tool orchestration inside generated code is intra-S1 composition. No first-party mutual-adjustment protocol among autonomous S1 units is supplied. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: sandbox limits, timeouts, hooks, and model fallback constrain execution, but no autonomous whole-system resource/commitment regulator is established.
+`—`: iteration limits, sandboxing, error handling and lifecycle hooks constrain one execution loop; they do not constitute an autonomous whole-system regulator over multiple operational units. Confidence: high.
 
 ## S3* — Complementary audit
-`?`: traces and LLM-based test utilities provide observability/evaluation support but do not establish sufficiently independent complementary runtime audit.
+`—`: traces are monitoring and hooks/exit validators are application-provided checks on the normal path. No separate sufficiently independent runtime auditor with alternative reality access and corrective authority is supplied. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`?`: reflection and repeated execution improve task handling but do not establish an external-and-prospective adaptation loop.
+`—`: reflection, retries and snapshot/resume adapt current execution but do not establish a distinct external/future-oriented intelligence loop coupled to S3. Confidence: high.
 
 ## S5 — Policy and identity
-`?`: instructions, hooks, exits, and execution constraints do not establish runtime identity or ultimate-policy closure.
+`—`: prompts, hooks, exits, limits and guardrails are parent-authored constraints. No agent-owned ultimate policy/identity closure is supplied. Confidence: high.
 
 ## Recursion, variety, escalation
-Tool calls and generated subprograms do not prove recursive viability. Typed tools and schemas attenuate environmental variety; generated code amplifies the action repertoire. Snapshots and abort/exit paths regulate execution without proving metasystemic ownership.
+Type schemas and sandbox boundaries attenuate tool/environment variety while generated code amplifies local action variety. Pausing, aborting and snapshots regulate S1 execution without demonstrating recursive viability.

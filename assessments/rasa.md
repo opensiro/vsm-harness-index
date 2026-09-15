@@ -3,53 +3,50 @@ harness_id: rasa
 project_name: Rasa
 repository: https://github.com/RasaHQ/rasa
 review_ref: 60a3cff9c08183760355b07bd60f5223d8916d6b
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Rasa
 
 ## Review boundary
-Classic Rasa Open Source as one deployed conversational assistant. Positive claims are limited to first-party runtime behavior at the pinned revision.
+Classic Rasa Open Source as one deployed conversational assistant at the pinned revision. The system-in-focus is the runtime dialogue assistant, not Rasa's developer organization or an external contact-center operation.
 
 ## Repository architecture
-The runtime combines Agent, MessageProcessor, DialogueStateTracker, trained policies, actions, channels, and stores. Agent prediction selects the next action from tracked dialogue state and execution returns events into that state.
+`Agent`/`MessageProcessor` drive a dialogue loop over `DialogueStateTracker`; multiple trained policies produce next-action predictions and `DefaultPolicyPredictionEnsemble` deterministically chooses a final prediction. Ticket locks serialize concurrent processing for the same conversation. Fallbacks, two-stage clarification, rules and human handoff are configured exception paths.
 
 ## Primary evidence
-- `rasa/core/agent.py`: `Agent.predict_next()` predicts the next action from a dialogue tracker.
-- `rasa/core/processor.py`: MessageProcessor owns tracked-state prediction and action execution paths.
-- `docs/docs/fallback-handoff.mdx`: fallback and handoff are documented exception paths.
-All evidence is read at `review_ref` above.
+- `rasa/core/agent.py` and `rasa/core/processor.py`: tracked dialogue state drives next-action prediction/execution.
+- `rasa/core/policies/ensemble.py`: policy predictions are combined by fixed confidence/priority and rejection rules into one final prediction.
+- `rasa/core/lock_store.py`: ticket locks deterministically serialize processing for a conversation id.
+- `docs/docs/fallback-handoff.mdx`: low-confidence fallback, two-stage fallback and eventual human handoff are configured through classifiers, rules, thresholds and actions.
 
 ## Operational model
-The dialogue loop is the S1 unit. Developer-authored training and configuration constrain it but are not runtime ownership.
+The dialogue assistant is one S1. Policy arbitration, locks and fallback mechanisms regulate execution inside that S1; they are not autonomous organizational actors above multiple S1 units.
 
 ## S1 — Operations
-`A`: the runtime dialogue loop owns bounded next-action selection and continues from returned events. Basis: structural. Confidence: high.
+`A`: the runtime owns bounded next-action selection from current dialogue state and continues from action/user events. Confidence: high.
 
 ## S2 — Coordination
-`—`: one dialogue S1 is in focus. Locks and routing are execution mechanics rather than cross-S1 anti-oscillation coordination. Basis: structural. Confidence: medium.
+`—`: no multiple autonomous operational units requiring agent-owned mutual adjustment are supplied at this boundary. Ticket locks serialize technical access to one conversation and policy ensembles arbitrate internal action predictions; neither is cross-S1 coordination. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: no verified autonomous whole-system regulator with shared-resource authority. Basis: unknown.
+`—`: the reviewed standard distribution supplies no autonomous whole-system regulator with a current view of multiple operations plus authority over their shared resources, commitments or priorities. Policy arbitration remains part of the S1 decision loop. Confidence: high.
 
 ## S3* — Complementary audit
-`?`: tracing and tests do not establish independent complementary audit. Basis: unknown.
+`—`: tests, diagnostics and fallback checks do not supply a sufficiently independent runtime auditor with complementary access to operational reality and a corrective channel. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`?`: training does not establish an autonomous external-and-prospective adaptation loop. Basis: unknown.
+`—`: training, NLU confidence, unexpected-message handling and fallback react to or learn from inputs but do not provide a distinct external-and-prospective intelligence function coupled back to S3. Confidence: high.
 
 ## S5 — Policy and identity
-`?`: configured rules and fallback do not establish runtime identity or ultimate-policy closure. Basis: unknown.
+`—`: domains, rules, thresholds and fallback/handoff policies are authored/configured by developers. No agent-owned ultimate identity/policy authority or S3–S4 closure is supplied. Confidence: high.
 
 ## Recursion, variety, escalation
-Nested actions do not prove recursion. Dialogue state attenuates history into prediction state; policies amplify it into an action repertoire.
-
-## Evidence gaps
-No first-party agent-owned S3, S3*, S4, or S5 function was established from the reviewed repository evidence. Future refreshes should test those functions directly rather than infer them from generic policies, tracing, training, or fallback behavior.
+Dialogue state and policy ensembles attenuate conversational variety into one action. Fallback/handoff escalates exceptions to configured actions or humans, but escalation alone does not create S5 or recursive viability.
