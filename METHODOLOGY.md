@@ -17,7 +17,7 @@ Three artifact classes are intentionally separate.
 
 **Ranking.** `RANKINGS.md` is deterministic. It counts recorded autonomy states and never substitutes a numerical maturity model for the categorical evidence.
 
-`data/catalog.psv` is separate from all three: it is the discovery/order/provenance registry. It contains repository identity, chronology, source membership, and pinned review-boundary metadata, not VSM classifications.
+`data/catalog.psv` is separate from all three: it is the discovery/order/provenance registry. It contains repository identity, chronology, source membership, and pinned review-boundary metadata (`review_ref`, `pinned_at`), not VSM classifications.
 
 ## Review boundary
 
@@ -52,7 +52,7 @@ Public presentation order is separate from synthesis order. `TLDR.md` is display
 An existing assessment can be revisited in two ways:
 
 - **same-ref correction** — the pinned repository revision does not change; stronger evidence or a category-error correction changes the interpretation. The catalog row remains unchanged.
-- **new-ref reassessment** — a newer upstream commit materially changes the reviewed architecture or runtime behavior. The accepted reassessment updates the catalog `review_ref` and `reviewed_at` together with the standalone assessment.
+- **new-ref reassessment** — a newer upstream commit materially changes the reviewed architecture or runtime behavior. The accepted reassessment updates the catalog `review_ref` and `pinned_at`; the standalone assessment records its own `reviewed_at`.
 
 A re-review request is evidence-led rather than grade-led. The proposed replacement state is advisory; the reviewer must independently re-establish the VSM function, decision right, ownership, standard-distribution closure, and counter-evidence.
 
