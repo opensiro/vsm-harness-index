@@ -3,47 +3,49 @@ harness_id: strands-agents
 project_name: Strands Agents
 repository: https://github.com/strands-agents/harness-sdk
 review_ref: 08ed4cfd3eb42ae9f668595e675d5f196eee7e44
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
-autonomy_s2: ?
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s2: C
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Strands Agents
 
 ## Review boundary
-Strands Agents harness SDK at the pinned revision across its Python/TypeScript agent loops and documented multi-agent/evaluation surfaces.
+Deep review of the pinned first-party multi-agent `Swarm` implementation. Peer handoff alone is not enough for S2; the positive composable classification comes from an explicit configurable anti-oscillation mechanism around peer transfers.
 
 ## Repository architecture
-Strands provides lifecycle controls, tools/MCP, multi-agent patterns, memory/sessions, guardrails, tracing, evals, hooks that can validate/redirect steps and steering handlers for self-correction.
+Strands Agents provides autonomous tool-using agents plus first-party Graph and Swarm multi-agent runtimes. The Swarm supports agent-driven handoffs, shared context, dynamic transfer among peers and runtime tracking of repeated handoffs. A configurable repetitive-handoff threshold can detect/limit oscillatory transfer patterns. Because this regulation is a configurable capability rather than an always-closed autonomous coordination policy, it is classified as composable S2.
 
 ## Primary evidence
-- `README.md`: agent loop, multi-agent patterns, lifecycle controls, guardrails/tracing/evals, hooks and steering handlers.
+- `strands-py/src/strands/multiagent/swarm.py`: defines Swarm nodes, peer transfer/handoff execution, shared multi-agent state and dynamic next-agent behavior.
+- The Swarm tracks handoff history/repetition and exposes a configurable repetitive-handoff threshold for preventing pathological transfer loops.
+- At the reviewed revision that regulation is configuration-dependent rather than sufficient evidence of an always-active agent-owned coordination function.
 
 ## Operational model
-Agents are S1. Multi-agent patterns are first-party, but the README does not specify enough of their interaction semantics to prove Beer S2. Evals/hooks are broad extensibility points rather than a clearly independent audit role.
+Autonomous agents perform specialized work and can transfer execution to peers within a shared swarm context. The swarm runtime can detect repetitive handoff patterns when configured and constrain continued oscillation.
 
 ## S1 — Operations
-`A`: the SDK supplies ready autonomous model/tool loops. Confidence: high.
+`A`: individual agents autonomously select tools/actions and produce operational results. Confidence: high.
 
 ## S2 — Coordination
-`?`: multi-agent patterns exist but no specific anti-oscillation decision right is established by the reviewed evidence.
+`C`: first-party Swarm primitives provide peer transfers plus a configurable mechanism specifically aimed at repetitive-handoff/oscillation control. This is more than delegation or static graph routing, but the developer must configure/close the regulation policy, so the function is composable rather than out-of-box agent-owned. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: lifecycle/budget controls are runtime constraints, not autonomous whole-system regulation.
+`—`: swarm runtime state and transfer selection do not establish a whole-system authority that regulates shared resources, capacity, priorities and commitments across S1 units.
 
 ## S3* — Complementary audit
-`?`: tracing/evals/hooks can support audit but sufficient independence and corrective closure are not supplied as an explicit standard role.
+`—`: no independent complementary audit channel distinct from normal swarm execution was established.
 
 ## S4 — Outside-and-then intelligence
-`?`: steering/self-correction is current-loop adaptation, not S4.
+`—`: dynamic handoff selection responds to current task state, not a prospective environment-intelligence function adapting future system capability.
 
 ## S5 — Policy and identity
-`?`: guardrails/budgets are configured constraints.
+`—`: swarm membership, thresholds, prompts, tools and policy are developer/application supplied.
 
 ## Recursion, variety, escalation
-Multi-agent patterns may compose nested actors, but recursion is not established by composition alone.
+Strands provides a real S2 construction primitive because it can regulate an identified multi-agent instability mode. It does not, at the reviewed boundary, close S3–S5.

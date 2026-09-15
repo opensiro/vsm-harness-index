@@ -3,47 +3,49 @@ harness_id: openai-agents-js
 project_name: OpenAI Agents SDK for JavaScript
 repository: https://github.com/openai/openai-agents-js
 review_ref: 8831eae9d34365f9a397cbd52ae0366f304e1a96
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # OpenAI Agents SDK for JavaScript
 
 ## Review boundary
-OpenAI Agents SDK JavaScript/TypeScript at the pinned revision as a framework for text/sandbox/realtime agents and multi-agent workflows.
+Deep review of the pinned JavaScript SDK handoff/composition model. Handoffs, managers, guardrails and evaluator-style application patterns are not mapped to VSM functions unless the SDK itself supplies the relevant organizational responsibility.
 
 ## Repository architecture
-Agents combine instructions, tools, guardrails and handoffs. Agents-as-tools/handoffs delegate tasks; sessions maintain history; HITL can pause runs; tracing records execution; sandbox agents support longer workspace tasks.
+The JavaScript Agents SDK provides autonomous tool-using agents, handoffs, agents-as-tools, sessions, guardrails and related runtime primitives. Its handoff guide explicitly defines handoffs as delegation/transfer of control to a specialist within the same run; manager-style composition keeps specialists behind the calling agent. These are application composition patterns, not built-in interference regulation or whole-system control.
 
 ## Primary evidence
-- `README.md`: agents, sandbox/realtime variants, agents-as-tools/handoffs, guardrails, HITL, sessions and tracing.
+- `docs/src/content/docs/guides/handoffs.mdx`: states that handoffs let an agent delegate part of a conversation to another agent and transfer control to the configured destination.
+- Handoffs stay within a single run; destination choice, authorization, filtering and topology remain application-defined.
+- The guide distinguishes handoffs from agents-as-tools/manager-style composition, confirming that these abstractions organize operational delegation rather than supplying an organizational metasystem.
 
 ## Operational model
-Individual agents are S1. Handoffs transfer task ownership rather than regulate mutual interference. Guardrails/tracing validate/observe normal execution.
+A JavaScript agent performs tool-using work and can either invoke specialists as tools or transfer the active run to a specialist via a handoff. Application code configures destinations, filters, guardrails and authority boundaries.
 
 ## S1 — Operations
-`A`: standard agents autonomously choose tools/actions toward outcomes. Confidence: high.
+`A`: agents autonomously choose tools/actions and execute text/voice tasks within configured run boundaries. Confidence: high.
 
 ## S2 — Coordination
-`—`: handoffs/agents-as-tools are delegation, not a supplied anti-oscillation function.
+`—`: handoffs transfer control and agents-as-tools delegate work; neither mechanism by itself regulates interference, oscillation or shared constraints among multiple autonomous S1 units. The shallow `S2=C` interpretation is removed.
 
 ## S3 — Inside-and-now control
-`?`: runner/session control is not autonomous whole-system regulation.
+`—`: manager-style composition remains task orchestration and does not establish whole-system authority over shared resources/capacity/commitments.
 
 ## S3* — Complementary audit
-`?`: guardrails/tracing do not establish sufficiently independent complementary audit out of the box.
+`—`: evaluator/guardrail patterns require application-defined placement and authority and, in the reviewed SDK boundary, are normal validation/composition rather than a supplied complementary audit channel. The shallow `S3*=C` interpretation is removed.
 
 ## S4 — Outside-and-then intelligence
-`?`: sandbox long-horizon work is not external/prospective adaptation.
+`—`: routing, session state and current-run orchestration do not provide a distinct prospective environment-intelligence function.
 
 ## S5 — Policy and identity
-`?`: generic HITL, guardrails and instructions do not establish ultimate-policy/identity closure.
+`—`: instructions, guardrails, handoff topology and application policy remain developer-owned.
 
 ## Recursion, variety, escalation
-Handoffs and agents-as-tools are compositional delegation, not recursion.
+The SDK can be used to construct richer organizations, but its first-party primitives do not close S2–S5 out of the box.

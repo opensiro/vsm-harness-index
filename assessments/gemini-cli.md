@@ -3,47 +3,48 @@ harness_id: gemini-cli
 project_name: Gemini CLI
 repository: https://github.com/google-gemini/gemini-cli
 review_ref: 9c1b0a610534d6f8120964cf2672c07807d8fc90
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Gemini CLI
 
 ## Review boundary
-Gemini CLI at the pinned revision as a terminal agent with built-in tools and automation integrations.
+Deep review of the pinned Gemini CLI subagent model and terminal-agent runtime. Specialist delegation is kept separate from VSM S2 coordination.
 
 ## Repository architecture
-Gemini CLI edits/query codebases, uses shell/files/web/Search/MCP tools, checkpoints sessions and runs non-interactively. GitHub Actions can invoke the same agent for PR review, issue triage and automated workflows.
+Gemini CLI is an autonomous terminal/coding agent with built-in and MCP tools. Its subagent mechanism creates specialized, isolated delegated workers with scoped prompts/tools and returns their results to the caller. The reviewed path does not supply a distinct peer-coordination or whole-system control function.
 
 ## Primary evidence
-- `README.md`: terminal agent, built-in tools, automation, checkpointing, context files and GitHub workflows.
+- `docs/core/subagents.md`: describes isolated specialist subagents invoked for delegated work and returning a result to the parent context.
+- Subagent definitions constrain role/tool/context boundaries; they do not establish an interference-regulation channel among multiple autonomous S1 units.
 
 ## Operational model
-One Gemini CLI agent is S1. GitHub workflow invocations are separate runs, not an autonomous multi-S1 organization.
+The main agent performs tool-using development work and may offload bounded subtasks to configured specialists before continuing from their returned output.
 
 ## S1 — Operations
-`A`: the agent autonomously selects tools/actions toward coding and operational tasks. Confidence: high.
+`A`: the terminal agent autonomously selects tools/actions and iterates from workspace/tool feedback. Confidence: high.
 
 ## S2 — Coordination
-`—`: no material multi-S1 anti-oscillation function is established.
+`—`: subagent invocation is delegation and result return. No mechanism was found for regulating conflicts, oscillation or shared constraints between autonomous operational units.
 
 ## S3 — Inside-and-now control
-`?`: checkpoint/runtime controls do not establish autonomous whole-system regulation.
+`—`: parent-child task ownership does not amount to whole-system current resource/capacity/commitment authority.
 
 ## S3* — Complementary audit
-`?`: PR-review workflows are application tasks and not a standard independent audit channel over another S1 organization.
+`—`: no organizationally separate complementary audit channel was established.
 
 ## S4 — Outside-and-then intelligence
-`?`: Search/web access is current-task sensing, not prospective adaptation.
+`—`: specialist selection and task reasoning concern current execution, not prospective environment intelligence and organizational adaptation.
 
 ## S5 — Policy and identity
-`?`: GEMINI.md and workflow configuration remain parent-authored.
+`—`: subagent definitions, permissions, prompts and tools remain developer/user supplied.
 
 ## Recursion, variety, escalation
-Tool/MCP integrations amplify one S1's variety; no recursion is established.
+Subagents add specialized operational variety and hierarchy, but no reviewed metasystem function is closed.
