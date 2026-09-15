@@ -14,11 +14,11 @@ catalog_position|harness_id|signature
 13|agentverse|Simulation rules regulate turn order, visibility and message interaction among multiple role agents, yielding composable S2; task manager/evaluator stages remain production control rather than S3 or S3*.
 14|aider|One coding S1 can split architect and editor roles and automatically lint/test/fix changes; the split and checks remain internal operational feedback rather than metasystem functions.
 15|gpt-researcher|A ChiefEditor graph sequences research roles and bounded fact-check revisions; fan-out/fan-in and mandatory same-state QA do not establish S2, S3 or independent S3*.
-16|vercel-ai|ToolLoopAgent makes the model-tool-result cycle explicit and portable, but the primitive remains a single operational loop with parent-supplied stop and approval rules.
-17|continue|The coding agent is delivered through CLI and IDE surfaces around one workspace-oriented operational loop, with no distinct metasystemic actor established.
-18|anythingllm|Workspace agents combine memory, web/document tools, schedules, and no-code Agent Flows, while the flow semantics remain too generic for positive S2.
-19|metagpt|Role-specialized software agents follow an SOP-driven company process, but project-manager assignment and staged artifacts are not sufficient evidence of S2 or S3.
-20|open-interpreter|A Codex-derived local coding harness emphasizes sandboxed tool execution and harness switching while remaining a single agent operational loop.
+16|vercel-ai|ToolLoopAgent is one explicit model-tool-result S1; prepare, stop, approval, provider and callback controls remain parent/runtime-owned, leaving no supplied autonomous metasystem function.
+17|continue|One workspace coding S1 loops over model-selected tools under runtime/user permission modes; those policies constrain operation rather than regulating a multi-S1 organization.
+18|anythingllm|Workspace agents can invoke builder-authored Agent Flows of API, LLM and web steps, but deterministic flow composition expands S1 procedure without establishing S2-S5.
+19|metagpt|Default MGX TeamLeader routing is not S2 by itself; its whole-team current plan, progress feedback and authority to close, reset and replace commitments establish agent-owned S3.
+20|open-interpreter|Opt-in MultiAgentV2 exposes ongoing team communication as composable S2, while a distinct Guardian approval-review session with deny/interrupt authority exposes composable S3*.
 21|langgraph|Durable state, graph transitions, interrupts, and subgraphs are treated as generic runtime mechanisms; they do not by themselves instantiate S2, S3, S4, or S5.
 22|autogen-agentchat|Selector, group-chat, and swarm protocols autonomously regulate who acts next among multiple participants, providing explicit agent-owned S2.
 23|chatdev|A configurable simulated-company topology sequences conversational roles, but the standard repository evidence does not distinguish coordination from centralized routing strongly enough for S2.
