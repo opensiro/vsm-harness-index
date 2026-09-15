@@ -23,6 +23,12 @@ def display_name(catalog: dict[str, str]) -> str:
     return catalog["project_name"]
 
 
+def anchored_label(catalog: dict[str, str]) -> str:
+    """Render a project link with a stable per-harness HTML anchor."""
+    anchor = f'<a id="{catalog["harness_id"]}"></a>'
+    return f"{anchor}[{escape(display_name(catalog))}]({catalog['repository']})"
+
+
 def year(catalog: dict[str, str]) -> str:
     return catalog["repository_created_at"][:4]
 
@@ -57,7 +63,7 @@ def render_tldr(repo: Path) -> str:
     ]
     for _, catalog, assessment, signature in rows:
         states = vector(assessment)
-        label = f"[{escape(display_name(catalog))}]({catalog['repository']})"
+        label = anchored_label(catalog)
         lines.append("| " + " | ".join([label, year(catalog), *states, escape(signature)]) + " |")
     lines += ["", "Assessments are repository-relative; signatures are cohort-relative and may change when the ordered cohort changes.", ""]
     return "\n".join(lines)
@@ -97,7 +103,7 @@ def render_rankings(repo: Path) -> str:
         if key != previous_key:
             rank += 1
             previous_key = key
-        label = f"[{escape(display_name(catalog))}]({catalog['repository']})"
+        label = anchored_label(catalog)
         lines.append(f"| {rank} | {label} | {year(catalog)} | {total_a}/6 | {meta_a}/5 | {c_count} | {p_count} | {unknown} | `{' '.join(states)}` |")
     lines.append("")
     return "\n".join(lines)
