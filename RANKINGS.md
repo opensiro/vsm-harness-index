@@ -71,11 +71,11 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | 2023 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
 | 3 | [Continue](https://github.com/continuedev/continue) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [Vercel AI SDK](https://github.com/vercel/ai) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [GPT Researcher](https://github.com/assafelovic/gpt-researcher) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Aider](https://github.com/Aider-AI/aider) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [AgentVerse](https://github.com/OpenBMB/AgentVerse) | 2023 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
-| 3 | [Dify](https://github.com/langgenius/dify) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Flowise](https://github.com/FlowiseAI/Flowise) | 2023 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
+| 3 | [GPT Researcher](https://github.com/assafelovic/gpt-researcher) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Aider](https://github.com/Aider-AI/aider) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [AgentVerse](https://github.com/OpenBMB/AgentVerse) | 2023 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 3 | [Dify](https://github.com/langgenius/dify) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Flowise](https://github.com/FlowiseAI/Flowise) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | 2023 | 1/6 | 0/5 | 0 | 0 | 3 | `A — ? ? — ?` |
 | 3 | [Semantic Kernel](https://github.com/microsoft/semantic-kernel) | 2023 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
 | 3 | [Langflow](https://github.com/langflow-ai/langflow) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
