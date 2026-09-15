@@ -4,6 +4,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 
 | Rank | Harness | Year | Agent-owned | Metasystem A | C | P | ? | Vector |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 1 | [Qwen Code](https://github.com/QwenLM/qwen-code) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 1 | [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 1 | [Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 1 | [Agno](https://github.com/agno-agi/agno) | 2022 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
@@ -21,15 +22,14 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | [Symphony](https://github.com/openai/symphony) | 2026 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 3 | [open-harness](https://github.com/MaxGfeller/open-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [OpenClaw](https://github.com/openclaw/openclaw) | 2025 | 1/6 | 0/5 | 0 | 0 | 3 | `A — ? ? ? —` |
-| 3 | [AgentRL](https://github.com/THUDM/AgentRL) | 2025 | 1/6 | 0/5 | 0 | 0 | 3 | `A — ? ? — ?` |
-| 3 | [Youtu-Agent](https://github.com/TencentCloudADP/youtu-agent) | 2025 | 1/6 | 0/5 | 0 | 0 | 3 | `A — ? ? — ?` |
-| 3 | [RepoMaster](https://github.com/QuantaAlpha/RepoMaster) | 2025 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [Pi](https://github.com/earendil-works/pi) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [MiroThinker](https://github.com/MiroMindAI/MiroThinker) | 2025 | 1/6 | 0/5 | 0 | 0 | 3 | `A — ? ? — ?` |
-| 3 | [Deep Agents](https://github.com/langchain-ai/deepagents) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 1/6 | 0/5 | 0 | 0 | 3 | `A — ? ? — ?` |
-| 3 | [Qwen Code](https://github.com/QwenLM/qwen-code) | 2025 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
+| 3 | [AgentRL](https://github.com/THUDM/AgentRL) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Youtu-Agent](https://github.com/TencentCloudADP/youtu-agent) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [RepoMaster](https://github.com/QuantaAlpha/RepoMaster) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Pi](https://github.com/earendil-works/pi) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [MiroThinker](https://github.com/MiroMindAI/MiroThinker) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Deep Agents](https://github.com/langchain-ai/deepagents) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [OpenAI Agents SDK for JavaScript](https://github.com/openai/openai-agents-js) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [Crush](https://github.com/charmbracelet/crush) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [Strands Agents](https://github.com/strands-agents/harness-sdk) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
