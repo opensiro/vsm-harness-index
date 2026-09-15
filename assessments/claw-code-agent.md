@@ -3,14 +3,14 @@ harness_id: claw-code-agent
 project_name: claw-code-agent
 repository: https://github.com/HarnessLab/claw-code-agent
 review_ref: 167571da895b2a1a9e36ecfae2876984cef65e0d
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: C
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # claw-code-agent
@@ -19,7 +19,7 @@ autonomy_s5: ?
 Claw Code Agent at the pinned revision as a local-model reimplementation of a coding-agent harness with nested delegation, persistent teams/messages and dependency-aware task execution.
 
 ## Repository architecture
-The harness has a full coding loop, child agents, Agent Manager lineage/groups, dependency-aware task execution, persistent task/plan runtime and a local team runtime with stored messages.
+The harness has a full coding loop, child agents, Agent Manager lineage/groups, dependency-aware task execution, persistent task/plan runtime and a local team runtime with stored messages. Its own parity checklist marks broader multi-agent orchestration as incomplete beyond those implemented primitives.
 
 ## Primary evidence
 - `README.md`: persisted teams/team messages plus local task/plan runtimes with plan sync and dependency-aware task execution.
@@ -36,16 +36,16 @@ Coding/child agents are S1. Delegation alone is operational decomposition, but t
 `C`: team message tools and dependency-aware task state specifically expose a coordination path among workers, while the repository itself marks broader orchestration/collaboration as incomplete; a general agent-owned mutual-adjustment policy must still be composed. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: Agent Manager/budgets/task runtime do not establish autonomous whole-system resource/accountability authority.
+`—`: Agent Manager lineage/groups, budgets, task-state summaries and dependency-aware delegation improve execution management, but the reviewed runtime does not give an autonomous actor a whole-system current view plus authority over shared resources/priorities beyond parent-task orchestration.
 
 ## S3* — Complementary audit
-`?`: diagnostics/history/testing are not sufficiently independent audit.
+`—`: diagnostics, transcript/file history and test tooling expose operational evidence but no distinct sufficiently independent autonomous complementary-audit role is supplied.
 
 ## S4 — Outside-and-then intelligence
-`?`: remote triggers/search/planning are not S4.
+`—`: search, remote triggers, planning, compaction and runtime adaptation concern current execution/context; no external-and-prospective intelligence loop is established.
 
 ## S5 — Policy and identity
-`?`: policy/budgets remain parent-authored.
+`—`: policy, budgets, prompts and permissions remain parent/application authored rather than agent-owned ultimate-policy closure.
 
 ## Recursion, variety, escalation
 Lineage/nested agents are explicitly tracked, but children do not demonstrate their own metasystemic closure.
