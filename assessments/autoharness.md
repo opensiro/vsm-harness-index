@@ -7,9 +7,9 @@ reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: C
-autonomy_s3: ?
+autonomy_s3: —
 autonomy_s3_star: C
-autonomy_s4: ?
+autonomy_s4: —
 autonomy_s5: —
 ---
 
@@ -30,7 +30,7 @@ Every tool call passes parse/validate, risk classification, permission check, ex
 - `autoharness/agents/builtin.py`: the built-in Verification agent is explicitly adversarial, runs build/tests/lint/type checks and edge-case probes, records observed outputs, and returns PASS/FAIL/PARTIAL.
 
 ## Operational model
-The model-driven AgentLoop is S1. The deterministic governance pipeline constrains operational variety but is not itself an autonomous metasystem. Separately, the standard distribution exposes cross-agent mailbox/protocol primitives and an explicit adversarial verifier role. Those are specific paths toward S2 and S3*, but they still require the application/coordinator to compose the authority and closure loop.
+The model-driven AgentLoop is S1. The deterministic governance pipeline constrains operational variety but is not itself an autonomous metasystem. Separately, the standard distribution exposes cross-agent mailbox/protocol primitives and an explicit adversarial verifier role. Those are specific constructor paths toward S2 and S3*, but they still require the application/coordinator to compose the authority and closure loop.
 
 ## S1 — Operations
 `A`: full AgentLoop autonomously reasons/uses tools under governance. Confidence: high.
@@ -39,13 +39,13 @@ The model-driven AgentLoop is S1. The deterministic governance pipeline constrai
 `C`: swarm mode supplies a first-party inter-agent mailbox and explicit coordination protocol messages, including plan-approval and shutdown handshakes. These are more than parent→child delegation, but the repository does not provide a general out-of-box agent-owned policy that resolves interference/oscillation across arbitrary S1s; the developer/coordinator still composes that closure. Confidence: high.
 
 ## S3 — Inside-and-now control
-`?`: turn governor, budgets and coordinator routing constrain execution, but the reviewed evidence does not establish an autonomous whole-system current regulator with authority over shared resources/commitments in the Beer S3 sense.
+`—`: the turn governor, budgets and Coordinator pattern regulate or route execution, but the standard evidence shows delegated workflow composition rather than an autonomous whole-system current regulator bargaining resources/priorities across independent S1s.
 
 ## S3* — Complementary audit
 `C`: AutoHarness ships a dedicated adversarial Verification agent with direct workspace/tool access and a documented post-implementation verification pattern. It can obtain complementary evidence by executing builds, tests, linters and adversarial probes rather than relying on the worker's report. However, invoking it and closing FAIL/PARTIAL results back into corrective execution remain application/coordinator-composed rather than an always-on independent audit loop. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`?`: model routing, diagnostics and adaptation-related hooks do not establish a distinct external/prospective intelligence function coupled back to S3.
+`—`: model routing, diagnostics, hooks and adaptation-related mechanisms do not establish an externally and prospectively oriented intelligence function coupled back to present operational control.
 
 ## S5 — Policy and identity
 `—`: the YAML constitution and permission/risk policy are explicitly parent-authored deterministic constraints, not agent-owned policy closure.
