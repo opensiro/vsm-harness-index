@@ -4,11 +4,12 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 
 | Rank | Harness | Year | Agent-owned | Metasystem A | C | P | ? | Vector |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 1 | [Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 1 | [Agno](https://github.com/agno-agi/agno) | 2022 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 2 | [GSD](https://github.com/open-gsd/gsd-core) | 2026 | 2/6 | 1/5 | 0 | 0 | 3 | `A — ? A ? ?` |
 | 2 | [Hive](https://github.com/aden-hive/hive) | 2026 | 2/6 | 1/5 | 0 | 0 | 3 | `A A ? ? — ?` |
 | 2 | [oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 2/6 | 1/5 | 1 | 0 | 3 | `A C ? A ? ?` |
-| 2 | [Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023 | 2/6 | 1/5 | 0 | 0 | 1 | `A A — ? — —` |
+| 2 | [Letta](https://github.com/letta-ai/letta) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 2 | [MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 3 | [Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 2 | `A C ? C ? —` |
@@ -58,15 +59,14 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | [SWE-agent](https://github.com/SWE-agent/SWE-agent) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [Stagehand](https://github.com/browserbase/stagehand) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [PraisonAI](https://github.com/MervinPraison/PraisonAI) | 2024 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [OpenHands](https://github.com/OpenHands/OpenHands) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [R2R](https://github.com/SciPhi-AI/R2R) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [AgentLite](https://github.com/SalesforceAIResearch/AgentLite) | 2024 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
-| 3 | [OpenAgents](https://github.com/OpenAgentsInc/openagents) | 2023 | 1/6 | 0/5 | 0 | 0 | 3 | `A ? — ? ? —` |
-| 3 | [CrewAI](https://github.com/crewAIInc/crewAI) | 2023 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [AIlice](https://github.com/myshell-ai/AIlice) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Letta](https://github.com/letta-ai/letta) | 2023 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [ChatDev](https://github.com/OpenBMB/ChatDev) | 2023 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [LangGraph](https://github.com/langchain-ai/langgraph) | 2023 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
+| 3 | [OpenHands](https://github.com/OpenHands/OpenHands) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [R2R](https://github.com/SciPhi-AI/R2R) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 3 | [AgentLite](https://github.com/SalesforceAIResearch/AgentLite) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [OpenAgents](https://github.com/OpenAgentsInc/openagents) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [CrewAI](https://github.com/crewAIInc/crewAI) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [AIlice](https://github.com/myshell-ai/AIlice) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [ChatDev](https://github.com/OpenBMB/ChatDev) | 2023 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 3 | [LangGraph](https://github.com/langchain-ai/langgraph) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [Open Interpreter](https://github.com/openinterpreter/openinterpreter) | 2023 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 3 | [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [Continue](https://github.com/continuedev/continue) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
