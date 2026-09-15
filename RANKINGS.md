@@ -39,16 +39,16 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [Google ADK](https://github.com/google/adk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [OpenManus](https://github.com/FoundationAgents/OpenManus) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [LangGraph BigTool](https://github.com/langchain-ai/langgraph-bigtool) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Cloudflare Agents](https://github.com/cloudflare/agents) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [smolagents](https://github.com/huggingface/smolagents) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Roo Code](https://github.com/RooCodeInc/Roo-Code) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Browser Use](https://github.com/browser-use/browser-use) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [SuperAgentX](https://github.com/superagentxai/superagentx) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Goose](https://github.com/aaif-goose/goose) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
+| 3 | [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [OpenManus](https://github.com/FoundationAgents/OpenManus) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [LangGraph BigTool](https://github.com/langchain-ai/langgraph-bigtool) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Cloudflare Agents](https://github.com/cloudflare/agents) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [smolagents](https://github.com/huggingface/smolagents) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Roo Code](https://github.com/RooCodeInc/Roo-Code) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Browser Use](https://github.com/browser-use/browser-use) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [SuperAgentX](https://github.com/superagentxai/superagentx) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Goose](https://github.com/aaif-goose/goose) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [BeeAI Framework](https://github.com/i-am-bee/beeai-framework) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [Mastra](https://github.com/mastra-ai/mastra) | 2024 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 3 | [Agent Squad](https://github.com/2FastLabs/agent-squad) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
