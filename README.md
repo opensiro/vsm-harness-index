@@ -41,16 +41,21 @@ It is **not** a product-quality, maturity, or VSM-viability ranking. `C`, `P`, a
 | `—` | No material first-party path is supplied inside the reviewed boundary. |
 | `?` | Primary evidence is insufficient for a positive or defensible no-path conclusion. |
 
-### Interpreting `A` and `C`
+### Interpreting `A`, `C`, and `P`
 
-`A` and `C` represent different product trade-offs, not a universal better/worse ordering.
+`A`, `C`, and `P` represent different ownership and product trade-offs, not a universal better/worse ordering.
 
 - `A` is more useful when the adopter wants the VSM function to operate autonomously out of the box. This is often desirable in applied harnesses whose operational domain is already known and bounded, for example coding, research, chemistry, finance, or another domain-specific agent system.
 - `C` can be more useful when the adopter wants to compose, replace, or specialize the responsible role themselves. This is often desirable in base, platform, or governance harnesses that expose a first-party decision/feedback path but deliberately leave the final autonomous role or closure loop to the application builder.
+- `P` is specific to S5 and is useful when ultimate policy or identity authority is intentionally retained by a parent system, human, institution, or higher recursion level. The closure path already exists at runtime, but the final decision right remains outside agent ownership.
 
-Accordingly, a harness with more `A` states is not necessarily a better platform, and a harness with more `C` states is not necessarily less capable. `A` measures ready agent-owned autonomy at the reviewed boundary; `C` measures a supported composition path for that function. The preferred state depends on whether the system is intended to provide an opinionated autonomous organization or reusable organizational primitives.
+Accordingly, a harness with more `A` states is not necessarily a better platform, and a harness with more `C` or `P` states is not necessarily less capable. `A` measures ready agent-owned autonomy at the reviewed boundary; `C` measures a supported composition path for that function; `P` measures an operational S5 closure path whose final authority belongs to a parent. The preferred state depends on whether the system is intended to provide an opinionated autonomous organization, reusable organizational primitives, or explicit higher-level policy authority.
 
-This distinction is especially important when comparing applied harnesses with reusable substrates. An applied chemistry harness may reasonably aim to provide autonomous domain roles out of the box, while a general-purpose orchestration or governance harness may intentionally expose composable control primitives so that the adopter can define domain authority, policy, and closure.
+`P` is not a weaker form of `A`, and it is not equivalent to `C`. With `C`, the adopter still needs to compose the autonomous role or closure loop. With `P`, the closure loop is already operational: the harness can detect or escalate an identity-level issue, transfer it to the designated parent authority, receive the decision, and continue under that decision. What remains outside the harness is the ultimate S5 authority itself.
+
+This distinction is especially important in high-stakes applied systems. A chemistry, healthcare, finance, or government harness may intentionally provide autonomous S1-S4 functions while keeping S5 closure with a scientist, clinician, institution, regulator, or other legitimate parent authority. In such a design, a vector ending in `P` may be preferable to one ending in `A` because preserving parent-owned policy and identity is an architectural requirement rather than an autonomy deficit.
+
+This is also why the states should not be read as a maturity ladder such as `— < C < P < A`. They describe different ownership arrangements for an established VSM function or path: autonomous ownership (`A`), composable ownership (`C`), and, for S5 only, parent-owned closure (`P`).
 
 ## Migration
 
