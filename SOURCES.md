@@ -15,6 +15,12 @@ The discovery source is used only to form the review cohort and provenance. The 
 
 For future append-only discovery, **Best of Agent Harnesses** is also useful as a machine-readable feed: the project publishes `harnesses.json`, `llms.txt`, and an MCP server for searching/comparing the maintained collection. These surfaces are discovery inputs only; a project still needs an independent pinned-revision assessment before entering this index.
 
+The GitHub topic **`agent-harness`** is an additional direct repository-discovery surface:
+
+- source: <https://github.com/topics/agent-harness>
+
+Topic membership is used for recall only. It does not establish that a repository is in scope, reviewable, or correctly described as a harness; every candidate still goes through normal deduplication, scope review, and pinned-revision assessment before entering the index.
+
 A second ecosystem reference used for recall is **Awesome Agent Harnesses** by NeuraLiying:
 
 - source: <https://github.com/NeuraLiying/Awesome-Agent-Harnesses>
