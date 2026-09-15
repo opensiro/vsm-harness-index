@@ -1,8 +1,10 @@
 ---
 harness_id: letta
 project_name: Letta
-repository: https://github.com/letta-ai/letta-code
-review_ref: 5bc853fd6fd69f00c115e320316fa4c0654a3dfb
+repository: https://github.com/letta-ai/letta
+review_ref: 5bcdd177d70fa2b31a754cfcd801e77b2e1ab16a
+runtime_repository: https://github.com/letta-ai/letta-code
+runtime_review_ref: 5bc853fd6fd69f00c115e320316fa4c0654a3dfb
 reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
@@ -16,17 +18,18 @@ autonomy_s5: —
 # Letta
 
 ## Review boundary
-Letta at the pinned `letta-code` revision. The former `letta-ai/letta` repository now acts as a landing/source-redirect boundary and explicitly points current harness/runtime development to `letta-ai/letta-code`; the deep review therefore follows that first-party source relocation rather than assessing the landing repository as the runtime.
+The catalog identity is pinned to `letta-ai/letta` at `5bcdd177d70fa2b31a754cfcd801e77b2e1ab16a`. At that revision the project explicitly acts as a landing/source-redirect boundary and points current harness/runtime development to the first-party `letta-ai/letta-code` repository. Runtime evidence is therefore separately pinned above to `5bc853fd6fd69f00c115e320316fa4c0654a3dfb` rather than treating the landing page as executable source.
 
 ## Repository architecture
 Letta Code runs persistent tool-using agents, supports child/subagent execution and includes a built-in background reflection subsystem. Reflection receives completed conversation material in a separate agent context and can update the primary agent's durable memory and reusable skills.
 
 ## Primary evidence
-- `src/agent/subagents/manager.ts`: first-party subagent process manager supports child launch, parallel/background execution, lifecycle reporting and inherited permission boundaries; these are delegation/runtime mechanics rather than S2 by themselves.
-- `src/agent/subagents/builtin/reflection.md`: a distinct background reflection agent explicitly reviews conversations that already happened, prioritizes mistakes/corrections, contradictions and durable learnings, and edits memory/skills for the primary agent.
-- `src/cli/helpers/reflection-launcher.ts`: launches, serializes and retries reflection work, maintains a separate reflection worktree and integrates completed reflection changes into the parent memory state.
-- `src/cli/helpers/memory-reminder.ts`: default reflection settings use `trigger: "compaction-event"` with `merge: "auto"`, making the reflection path a standard automatic behavior rather than only a user-composed optional reviewer.
-- Reflection/subagent tests in the pinned tree exercise built-in reflection prompts, worktree completion/integration and memory-change handling.
+- Catalog `review_ref`, `letta-ai/letta`: project source-relocation/landing boundary identifying `letta-code` as the current first-party runtime source.
+- Runtime `review_ref`, `letta-ai/letta-code` `5bc853fd6fd69f00c115e320316fa4c0654a3dfb`, `src/agent/subagents/manager.ts`: first-party subagent manager supports child launch, parallel/background execution, lifecycle reporting and inherited permission boundaries; these are delegation/runtime mechanics rather than S2 by themselves.
+- Runtime `src/agent/subagents/builtin/reflection.md`: a distinct background reflection agent explicitly reviews conversations that already happened, prioritizes mistakes/corrections, contradictions and durable learnings, and edits memory/skills for the primary agent.
+- Runtime `src/cli/helpers/reflection-launcher.ts`: launches, serializes and retries reflection work, maintains a separate reflection worktree and integrates completed reflection changes into the parent memory state.
+- Runtime `src/cli/helpers/memory-reminder.ts`: default reflection settings use `trigger: "compaction-event"` with `merge: "auto"`, making the reflection path a standard automatic behavior rather than only a user-composed optional reviewer.
+- Reflection/subagent tests in the pinned runtime tree exercise built-in reflection prompts, worktree completion/integration and memory-change handling.
 
 ## Operational model
 The primary coding agent and delegated subagents perform S1 work. Child launch and parallel work are hierarchical delegation. Separately, the reflection agent receives a retrospective view of primary-agent behavior, evaluates it from another context and can commit corrective changes to the state that shapes future primary-agent behavior.
