@@ -63,29 +63,27 @@ This is also why the states should not be read as a maturity ladder such as `—
 
 The properties can also describe how a harness is intentionally shaped for reuse.
 
-An **Autonomous harness** fixes one or more organizational roles as ready agent-owned behavior. This is valuable when the domain is sufficiently known that the harness can make useful decisions without requiring the adopter to design those roles first. Applied systems often move in this direction because the expected environment, tools, risks, and decision rights are narrower and can be encoded directly.
+A **Constructor harness** is primarily an upstream base platform. It intentionally exposes one or more organizational functions as composable `C` paths so downstream users can build their own autonomous or parent-governed harnesses on top. The constructor provides first-party interfaces, feedback channels, decision points, state transitions, or control hooks needed to realize a function, while leaving the concrete role, policy, model, authority, or closure logic to the adopter. In this sense, `C` is not an incomplete `A`; it can be the desired product surface of the base harness itself.
 
-A **Constructor harness** intentionally exposes one or more organizational functions as composable `C` paths rather than fixing their autonomous implementation. The harness provides the first-party interfaces, feedback channels, decision points, state transitions, or control hooks needed to realize the function, while allowing the adopter to supply the actual role, policy, model, authority, or closure logic. In this sense, `C` is not an incomplete `A`; it can be the desired product surface for a reusable base harness.
+An **Autonomous harness** is commonly a downstream specialization of that constructor surface. A team can fork or configure the constructor, choose concrete implementations for its open decision rights, and close selected `C` paths with ready agent-owned roles. When a constructor S3 interface receives a concrete autonomous regulator with the required whole-system view and authority, for example, that downstream harness may legitimately move from `S3=C` to `S3=A`.
 
-A fork of an autonomous or applied harness may therefore deliberately move selected functions from `A` to `C`. For example, an upstream harness may ship an autonomous S3 regulator, while a constructor-oriented fork replaces that fixed regulator with a stable regulation interface and explicit resource, priority, exception, and feedback contracts. The resulting autonomy score may decrease, but the fork can become more useful as a platform because the adopter gains control over who owns the decision right and how the function is implemented.
-
-A **Parent-governed harness** keeps S5 closure operational while locating ultimate identity or policy authority outside the agent-owned boundary. This is useful when the system should autonomously detect, escalate, suspend, resume, or apply policy decisions but must not itself become the legitimate source of those decisions. Parent governance is therefore a deliberate ownership design, especially in regulated or high-stakes deployments, rather than merely a fallback for missing autonomy.
+A **Parent-governed harness** is another downstream closure choice, specific to S5. Instead of replacing the constructor S5 path with an autonomous ultimate authority, the derived harness can wire that path to a scientist, clinician, institution, regulator, human operator, or higher recursion level. The resulting S5 may become `P`: the escalation and return path is operational, but legitimate ultimate authority remains outside the agent-owned boundary.
 
 `No-path` and `Unknown` should not be treated as product strategies in the same sense. `No-path` records that the reviewed standard distribution does not materially expose the VSM function at that boundary; a fork may add either an Autonomous, Constructor, or, for S5, Parent-governed path. `Unknown` records an evidence limitation and should be resolved by additional primary evidence rather than interpreted as either capability or absence.
 
-A common transformation path is therefore:
+The canonical relationship is therefore constructor-first:
 
 ```text
-Applied / autonomous harness
-        ↓ decompose selected decision rights
-Constructor fork
-        ↓ specialize roles, policies, models, and authority
-Domain-specific harness
-        ↓ close each function according to deployment needs
-Autonomous (`A`) and/or Parent-governed (`P`) deployment
+Constructor / base harness
+        ↓ fork or configure for a concrete domain and organization
+Applied / domain-specific harness
+        ↓ close each `C` composition point with a concrete owner
+Autonomous (`A`) and/or Parent-governed (`P`) harness
+        ↓ deploy
+Operational system
 ```
 
-For example, a constructor-oriented base may keep S1 as a working operational runtime while exposing metasystem functions as replaceable primitives:
+For example, a reusable constructor base may keep S1 as a working operational runtime while exposing metasystem functions as replaceable primitives:
 
 ```text
 S1   A   operational runtime remains ready
@@ -96,9 +94,19 @@ S4   C   environment / prospective-intelligence interface
 S5   C   policy / authority / escalation interface
 ```
 
-An adopter can then specialize those constructor paths into a domain-specific organization. A chemistry deployment might close S2-S4 with autonomous domain roles while closing S5 through a scientist or institution, producing an `A/P`-oriented applied system from the same reusable constructor base.
+Different users can fork the same constructor base and close those paths differently. A chemistry fork might implement autonomous chemistry-aware S2-S4 roles and connect S5 to a scientist or institution, producing something like `A A A A A P` if the evidence supports each function. A software-engineering fork could use different agents, tools, policies, and authority while inheriting the same constructor contracts. The value of the constructor is therefore that it standardizes where organizational decision rights and feedback paths exist without prescribing every downstream owner.
 
-This transformation does not preserve assessment states automatically. A fork is a separate system-in-focus and must be assessed from its own reviewed evidence. Turning an upstream autonomous role into an extension point can legitimately change a state from `A` to `C`; specializing a constructor path into a ready autonomous role can change `C` to `A`; wiring S5 to an actual parent authority can change `C` to `P`. These transitions describe changes in ownership and closure, not a monotonic maturity progression.
+The intended direction is thus usually:
+
+```text
+Constructor (`C`)
+        ↓ specialization
+Autonomous (`A`) or Parent-governed (`P`)
+```
+
+not `A → C`. It is still possible to refactor an existing autonomous harness into a constructor by extracting a fixed role behind a stable interface, but that is a reverse-engineering path for creating a reusable base, not the defining lifecycle of a Constructor harness.
+
+These transformations never preserve assessment states automatically. Every fork or configured downstream harness is a separate system-in-focus and must be assessed from its own reviewed evidence. Specializing a constructor path into a ready autonomous role can change `C` to `A`; wiring S5 to an actual parent authority can change `C` to `P`; extracting a fixed autonomous role into a reusable extension point can change `A` to `C`. These transitions describe changes in ownership and closure, not a monotonic maturity progression.
 
 ## Migration
 
