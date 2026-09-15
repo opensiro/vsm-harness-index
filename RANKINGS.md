@@ -50,13 +50,13 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | [SuperAgentX](https://github.com/superagentxai/superagentx) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [Goose](https://github.com/aaif-goose/goose) | 2024 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 3 | [BeeAI Framework](https://github.com/i-am-bee/beeai-framework) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 3 | [Mastra](https://github.com/mastra-ai/mastra) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
+| 3 | [Mastra](https://github.com/mastra-ai/mastra) | 2024 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 3 | [Agent Squad](https://github.com/2FastLabs/agent-squad) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 3 | [Eliza](https://github.com/elizaOS/eliza) | 2024 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 3 | [Cline](https://github.com/cline/cline) | 2024 | 1/6 | 0/5 | 3 | 0 | 0 | `A C C C — —` |
 | 3 | [Pydantic AI](https://github.com/pydantic/pydantic-ai) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [Agent Zero](https://github.com/agent0ai/agent-zero) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 3 | [SWE-agent](https://github.com/SWE-agent/SWE-agent) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [SWE-agent](https://github.com/SWE-agent/SWE-agent) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 3 | [Stagehand](https://github.com/browserbase/stagehand) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [PraisonAI](https://github.com/MervinPraison/PraisonAI) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 3 | [OpenHands](https://github.com/OpenHands/OpenHands) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
