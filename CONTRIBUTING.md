@@ -38,7 +38,7 @@ A request must identify:
 There are two re-review kinds:
 
 1. **Same-ref correction.** Re-evaluate the existing assessment at the same `review_ref`. This is appropriate when the evidence was missed or interpreted incorrectly. `data/catalog.psv` does not change.
-2. **New-ref reassessment.** Re-evaluate a newer upstream commit because relevant architecture or runtime behavior changed. Update the catalog `review_ref` and `reviewed_at` only after the new assessment boundary is accepted.
+2. **New-ref reassessment.** Re-evaluate a newer upstream commit because relevant architecture or runtime behavior changed. Update the catalog `review_ref` and `pinned_at` only after the new assessment boundary is accepted; the assessment's own `reviewed_at` records when the reassessment was performed.
 
 Do not edit generated rankings as the primary fix and do not open a ranking-only PR.
 
@@ -50,7 +50,7 @@ A contributor may claim an open `[Assessment re-review]` issue in a comment. The
 2. inspect the strongest first-party implementation/docs/tests for the disputed function;
 3. perform an adversarial recheck that actively looks for evidence against the proposed change;
 4. update the standalone assessment only where the evidence changes the interpretation;
-5. update the catalog ref/date only for a **new-ref reassessment**;
+5. update the catalog ref/pin date only for a **new-ref reassessment**;
 6. re-check the changed harness's cohort-relative signature and any later signatures whose distinction depends on it;
 7. regenerate `TLDR.md` and `RANKINGS.md`;
 8. run `python scripts/check_index.py`.
@@ -77,7 +77,7 @@ If the re-review cannot distinguish between two states after the strongest avail
 The detailed workflow below applies when creating or integrating an assessment rather than merely suggesting a candidate.
 
 1. Check out `vsm-harness-profile`, `vsm-skills`, and `vsm-harness-index` as siblings.
-2. Confirm or add the discovery row in `data/catalog.psv`; preserve provenance, exact `review_ref`, `reviewed_at`, and chronological ordering.
+2. Confirm or add the discovery row in `data/catalog.psv`; preserve provenance, exact `review_ref`, `pinned_at`, and chronological ordering.
 3. Use `assess-vsm-harness` to write `assessments/<harness_id>.md` from pinned primary evidence.
 4. Only after the assessment is complete, compare it with all earlier completed assessments and add or update its cohort-relative signature in `data/signatures.psv`.
 5. If an existing assessment changes, inspect later signatures for dependency on the changed distinction; update only those whose cohort-relative statement is no longer true.
@@ -106,4 +106,4 @@ Do not manually score harnesses. `RANKINGS.md` is generated deterministically fr
 
 ## Catalog role
 
-`data/catalog.psv` is the discovery/order/provenance registry. It stores repository identity, chronology, source membership, and the pinned review boundary. VSM classifications belong only in standalone assessments and generated views, never in the catalog registry.
+`data/catalog.psv` is the discovery/order/provenance registry. It stores repository identity, chronology, source membership, and the pinned review boundary (`review_ref`, `pinned_at`). VSM classifications and assessment review dates belong only in standalone assessments and generated views, never in the catalog registry.
