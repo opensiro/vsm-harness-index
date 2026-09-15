@@ -9,11 +9,11 @@ catalog_position|harness_id|signature
 8|langflow|Langflow can call remote A2A agents and compose agent components in authored graphs, but those paths remain RPC/delegation and deterministic routing rather than S2.
 9|semantic-kernel|A dedicated GroupChatManager exposes next-agent, termination and result-selection decision points as a composable S2 path, while the autonomous coordination policy remains application-supplied.
 10|autogpt|A goal-driven block graph runs on schedules/triggers, while its dream pass consolidates internal memory; neither deterministic graph control nor learning-like memory maintenance establishes S4.
-11|flowise|Agentflow visually composes agentic and deterministic components; the repository does not show enough interaction semantics to classify that composition as S2.
-12|dify|ReAct/function-calling agents sit inside authored visual workflows, so workflow branching is treated as deterministic support rather than agent-owned coordination.
-13|agentverse|Environment and conversation protocols expose turn-taking constraints among multiple role agents, yielding a composable S2 path rather than simple delegation.
-14|aider|One coding agent closes a tight edit-Git-lint-test-fix loop; those checks remain operational feedback rather than independent S3*.
-15|gpt-researcher|Planner fan-out, parallel crawlers, and publisher fan-in form research task decomposition, not a coordination layer among interacting S1 units.
+11|flowise|Agentflow combines tool-using Agent nodes with model-driven scenario routing, iteration and human-input nodes; these are operational and graph-control primitives rather than S2-S5 organizational functions.
+12|dify|Agent v2 runs inside an authored workflow with binding, output checks, failure handling and HITL; those controls remain node/runtime support around S1 rather than an autonomous metasystem.
+13|agentverse|Simulation rules regulate turn order, visibility and message interaction among multiple role agents, yielding composable S2; task manager/evaluator stages remain production control rather than S3 or S3*.
+14|aider|One coding S1 can split architect and editor roles and automatically lint/test/fix changes; the split and checks remain internal operational feedback rather than metasystem functions.
+15|gpt-researcher|A ChiefEditor graph sequences research roles and bounded fact-check revisions; fan-out/fan-in and mandatory same-state QA do not establish S2, S3 or independent S3*.
 16|vercel-ai|ToolLoopAgent makes the model-tool-result cycle explicit and portable, but the primitive remains a single operational loop with parent-supplied stop and approval rules.
 17|continue|The coding agent is delivered through CLI and IDE surfaces around one workspace-oriented operational loop, with no distinct metasystemic actor established.
 18|anythingllm|Workspace agents combine memory, web/document tools, schedules, and no-code Agent Flows, while the flow semantics remain too generic for positive S2.
