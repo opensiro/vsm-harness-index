@@ -8,7 +8,7 @@ You usually do **not** need to choose catalog order, invent a ranking, or design
 
 ### Review a queued batch
 
-1. Open the [review batch queue](https://github.com/opensiro/vsm-harness-index/issues?q=is%3Aissue+is%3Aopen+in%3Atitle+%22%5BIndex+batch%5D%22).
+1. Open the repository Issues page and look for an open issue whose title starts with `[Index batch]`.
 2. Pick an unclaimed batch whose issue says it is ready for review.
 3. Comment that you are taking it, or ask to be assigned.
 4. Follow the exact repositories, pinned revisions, outputs, and acceptance checks in that issue.
@@ -18,11 +18,15 @@ A batch may be completed by a human contributor, a human using coding/research a
 
 ### Suggest a harness
 
-Use the **Suggest a harness** issue form. You only need to provide the repository and explain briefly why it belongs in an agent-harness index. Maintainers own catalog placement, provenance normalization, and batching.
+Open an issue whose title starts with `[Harness suggestion]`. Include the primary repository URL and a short explanation of why it belongs in an agent-harness index. You do not need to know its VSM classification or catalog position. Maintainers own catalog placement, provenance normalization, and batching.
+
+Useful optional material includes links to first-party architecture docs, runtime code, policy/control paths, tests, or other primary evidence.
 
 ### Correct an assessment
 
-If you find stronger primary evidence or disagree with a VSM mapping, use the **Assessment evidence / classification correction** issue form. Point to the exact repository evidence and the affected function; do not edit generated rankings as the primary fix.
+Open an issue whose title starts with `[Assessment correction]` if you find stronger primary evidence or disagree with a VSM mapping. Include the harness, affected function (`S1`, `S2`, `S3`, `S3*`, `S4`, or `S5`), current interpretation, proposed interpretation, and exact primary evidence.
+
+Do not edit generated rankings as the primary fix.
 
 ## Maintainer / full assessment workflow
 
