@@ -68,15 +68,15 @@ catalog_position|harness_id|signature
 68|repomaster|The system autonomously discovers, configures, and executes relevant external repositories through specialized backends, while its multi-agent orchestration semantics remain under-specified.
 69|youtu-agent|A meta-agent can generate tools and workflows and training can improve future behavior, but generation and learning are not promoted to S2 or S4 without the required organizational loops.
 70|agentrl|Distributed rollout, actor, reference, and task-manager workers are classified as training compute roles rather than VSM operational units; RL is not runtime S4.
-71|openclaw|A trusted local Gateway supplies sessions, routing, deterministic policy, channels, and device nodes around swappable agent harnesses, keeping control-plane regulation non-agentic.
-72|oh-my-pi|Peer messaging and isolated worktrees expose composable S2, while a separate advisor model with its own context can inject concerns or hard blockers as agent-owned S3*.
-73|hive|A persistent Queen coordinates concurrent workers through a shared ledger and plan, making colony-wide convergence an explicit agent-owned S2 rather than simple delegation.
-74|open-harness|A TypeScript agent framework adds resumable/background subagents and session middleware, while those subagents remain delegated operational workers.
-75|symphony|The specification explicitly defines the system as a deterministic scheduler/runner whose orchestrator owns dispatch, retries, concurrency, and reconciliation around autonomous coding S1s.
-76|looptroop|Ticket work is decomposed into isolated beads with planning councils, repeated fix/test loops, and final verification, but orchestration and worktree isolation remain non-agentic coordination support.
-77|talon|Persistent goals, heartbeats, dreams, triggers, and event routing enable ongoing autonomous work, but external-event reaction is explicitly not classified as S4.
-78|openharness-hkuds|A lightweight harness combines tool loops, governance, memory, and first-party swarm/team primitives, while team/task semantics remain insufficiently specific for positive S2.
-79|claw-code-agent|Persistent team messages plus dependency-aware task state expose a composable worker-coordination path beyond simple nested delegation, yielding S2 C.
-80|autoharness|Mailbox-based swarm protocols expose composable cross-agent coordination, while a built-in adversarial Verification agent provides a complementary audit path; both still require composed closure.
+71|openclaw|Agent-visible session tools expose cross-session messaging plus status, ownership and lifecycle controls as composable S2/S3 primitives, while Gateway policy and ultimate authority remain runtime/operator-owned.
+72|oh-my-pi|Peer messaging and isolated worktrees expose composable S2, while a separate advisor model with its own context can independently inspect workspace reality and inject concerns or hard blockers as agent-owned S3*.
+73|hive|The persistent Queen uses a shared tracker, task plan and live worker reports to prevent duplicate dispatch, coordinate concurrent workers and regulate colony-wide commitments, establishing agent-owned S2 and S3.
+74|open-harness|Resumable/background subagents, races and middleware expand one operational hierarchy, but remain delegation/runtime support without a supplied S2-S5 metasystem function.
+75|symphony|A deterministic scheduler/runner owns issue claiming, isolated workspaces, bounded concurrency, retries and reconciliation around autonomous coding S1s, so the reviewed metasystem remains non-agentic.
+76|looptroop|A distinct post-execution verification phase can generate fresh whole-ticket tests and inspect persisted implementation artifacts, exposing composable S3* while planning/execution remain task-pipeline control.
+77|talon|Persistent goals, heartbeats, dreams, triggers and event routing enable ongoing autonomous work, but recurring/event-driven operation does not establish S2-S5 metasystem closure.
+78|openharness-hkuds|Coordinator mode gives a model-driven actor whole-task worker regulation and fresh-worker verification, establishing agent-owned S3 and S3* above composable mailbox/task S2 primitives.
+79|claw-code-agent|Persistent team messages plus dependency-aware task state expose a composable worker-coordination path beyond simple nested delegation, while broader orchestration remains incomplete.
+80|autoharness|Mailbox/swarm protocols expose composable S2 and a built-in adversarial Verification agent exposes composable S3*; constitution, audit logs and coordinator primitives do not close higher functions by themselves.
 81|proliferate|Multiple native coding agents run in isolated worktrees with delegated subagents and recurring workflows; isolation and delegation remain operational support rather than S2.
 82|get-shit-done|Fresh-context verifier agents independently compare goals, decisions, plans, summaries, and implementation artifacts, with drift fingerprints and corrective plans providing agent-owned S3*.

@@ -3,14 +3,14 @@ harness_id: open-harness
 project_name: open-harness
 repository: https://github.com/MaxGfeller/open-harness
 review_ref: 026e8d9cb8f184cdeac2054b489ec20972ba8681
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3: —
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # open-harness
@@ -25,7 +25,7 @@ The core provides Agent, Session, Conversation, middleware and tools. Sessions a
 - `README.md`: agent loop, sessions/middleware/tools and first-party subagents with nested delegation/background execution.
 
 ## Operational model
-Parent and subagents perform S1 work. Standard subagents are delegated executors; session/middleware mechanics support the loop.
+Parent and subagents perform S1 work. Standard subagents are delegated executors; session/middleware mechanics support each loop but do not close organizational metasystem functions across independent operations.
 
 ## S1 — Operations
 `A`: agents autonomously select/use tools toward bounded outcomes. Confidence: high.
@@ -34,16 +34,16 @@ Parent and subagents perform S1 work. Standard subagents are delegated executors
 `—`: subagent delegation/background execution does not establish an anti-oscillation relation among autonomous operations.
 
 ## S3 — Inside-and-now control
-`?`: session/middleware control is not autonomous whole-system regulation.
+`—`: sessions, middleware, retries, approvals and subagent lifecycle support individual runs; no standard autonomous actor has a whole-system current view plus authority over shared resources/commitments.
 
 ## S3* — Complementary audit
-`?`: no sufficiently independent audit role verified.
+`—`: middleware/events/tool approval expose checks and hooks, but no distinct sufficiently independent autonomous audit path is supplied.
 
 ## S4 — Outside-and-then intelligence
-`?`: no prospective adaptation function verified.
+`—`: compaction, retry, resumable sessions and background execution manage current execution/context rather than external-and-prospective adaptation.
 
 ## S5 — Policy and identity
-`?`: tool approval/configuration remains parent-owned.
+`—`: tools, approvals, prompts and model/configuration choices are application/parent supplied; no agent holds ultimate policy or identity authority.
 
 ## Recursion, variety, escalation
 Resumable/nested subagents are compositional workers, not automatically recursively viable systems.

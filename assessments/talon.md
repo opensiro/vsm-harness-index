@@ -3,14 +3,14 @@ harness_id: talon
 project_name: Talon
 repository: https://github.com/dylanneve1/talon
 review_ref: afae82e60540e49970d04401a25725fd7635ec96
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
 autonomy_s2: —
-autonomy_s3: ?
-autonomy_s3_star: ?
+autonomy_s3: —
+autonomy_s3_star: —
 autonomy_s4: —
-autonomy_s5: ?
+autonomy_s5: —
 ---
 
 # Talon
@@ -25,7 +25,7 @@ Talon routes chats to agent backends, offers MCP tools/skills/plugins, runs hear
 - `README.md`: frontend/backend architecture; heartbeat/dream agents, persistent goals, self-authored triggers, task table/event bus and per-chat serial dispatcher.
 
 ## Operational model
-Backend-powered agent sessions/background agents perform S1 work. Serial dispatch/event routing are deterministic support. Heartbeats/triggers react to conditions and advance current goals.
+Backend-powered agent sessions/background agents perform S1 work. Serial dispatch/event routing are deterministic support. Heartbeats/triggers react to conditions and advance current goals; dreams consolidate memory.
 
 ## S1 — Operations
 `A`: standard agent sessions/background runs autonomously use tools toward persistent goals. Confidence: high.
@@ -34,16 +34,16 @@ Backend-powered agent sessions/background agents perform S1 work. Serial dispatc
 `—`: per-chat serialization/event bus mechanically prevent execution collisions but do not constitute agent-owned S2 enactment.
 
 ## S3 — Inside-and-now control
-`?`: task table/lifecycle controller are runtime infrastructure, not autonomous whole-system regulation.
+`—`: task tables, lifecycle state, dispatcher and background scheduling expose current execution state but remain runtime infrastructure; no autonomous whole-system regulator with resource/commitment authority is supplied.
 
 ## S3* — Complementary audit
-`?`: dream/log/task views are not sufficiently independent audit.
+`—`: dreams, logs, task/event views and watcher state do not provide a sufficiently independent complementary audit path that challenges ordinary operational claims.
 
 ## S4 — Outside-and-then intelligence
 `—`: self-authored triggers and heartbeats react to external events/conditions, but event reaction alone does not model future environmental change or generate adaptation options coupled to S3. External trigger ≠ S4.
 
 ## S5 — Policy and identity
-`?`: goals/soul/personality/configuration do not establish legitimate ultimate-policy closure.
+`—`: persistent goals, soul/personality and configuration can shape behavior, but they are user/configuration authored and do not establish legitimate agent-owned ultimate-policy closure.
 
 ## Recursion, variety, escalation
 Concurrent chats/background tasks are runtime work units, not recursively viable systems.
