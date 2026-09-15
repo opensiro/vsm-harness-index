@@ -52,11 +52,11 @@ catalog_position|harness_id|signature
 51|google-adk|A graph workflow runtime and Task API expose rich multi-agent hierarchy and collaboration, while the reviewed evidence remains too generic to establish Beer-style coordination.
 52|codex|First-party spawn_agent tooling creates bounded child coding workers, but child spawning and result return are classified as task decomposition rather than S2.
 53|gemini-cli|A terminal agent combines built-in tools, MCP, checkpointing, and headless automation; repeated workflow invocations remain separate S1 runs.
-54|microsoft-agent-framework|Graph workflows expose sequential, concurrent, handoff, and group-collaboration patterns, but their organizational semantics remain under-specified for positive S2.
+54|microsoft-agent-framework|Magentic's loop/stall regulation supplies agent-owned S2, while its whole-team facts/plan/progress state plus reset/replan authority supplies agent-owned S3.
 55|opencode|Build/plan agents plus a general subagent provide specialization and delegation, while user mode switching and child invocation remain below the S2 threshold.
 56|agentsilex|A first-party evaluation framework exposes trajectory, response, and LLM-as-judge checks as a composable complementary-audit path, while independence and corrective authority remain developer-supplied.
 57|deerflow|A super-agent delegates to isolated subagents with memory, sandboxes, skills, and schedules; the hierarchy is operational fan-out rather than S2.
-58|strands-agents|Lifecycle controls, steering, multi-agent patterns, hooks, guardrails, and evals are broad primitives, but none is specific enough in the reviewed evidence to prove a metasystem function.
+58|strands-agents|Swarm peer handoffs include configurable repetitive-handoff detection, exposing composable S2 anti-oscillation control while higher metasystem functions remain application-supplied.
 59|crush|A terminal coding agent combines LSP, MCP, sessions, and provider switching around one operational loop with no distinct metasystemic actor.
 60|openai-agents-js|The JavaScript SDK mirrors handoffs, agents-as-tools, guardrails, HITL, sessions, and tracing; delegation and normal validation remain non-metasystemic under the stricter rules.
 62|claude-agent-sdk|The SDK wraps a Claude Code session with tools, permissions, MCP, and hooks; hooks constrain one S1 but do not establish independent audit or policy closure.

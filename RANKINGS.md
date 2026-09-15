@@ -4,6 +4,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 
 | Rank | Harness | Year | Agent-owned | Metasystem A | C | P | ? | Vector |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 1 | [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 1 | [Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 1 | [Agno](https://github.com/agno-agi/agno) | 2022 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 2 | [GSD](https://github.com/open-gsd/gsd-core) | 2026 | 2/6 | 1/5 | 0 | 0 | 3 | `A — ? A ? ?` |
@@ -29,16 +30,15 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | [Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 1/6 | 0/5 | 0 | 0 | 3 | `A — ? ? — ?` |
 | 3 | [Qwen Code](https://github.com/QwenLM/qwen-code) | 2025 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
 | 3 | [Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [OpenAI Agents SDK for JavaScript](https://github.com/openai/openai-agents-js) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Crush](https://github.com/charmbracelet/crush) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Strands Agents](https://github.com/strands-agents/harness-sdk) | 2025 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [DeerFlow](https://github.com/bytedance/deer-flow) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [AgentSilex](https://github.com/howl-anderson/agentsilex) | 2025 | 1/6 | 0/5 | 1 | 0 | 2 | `A — ? C ? —` |
-| 3 | [OpenCode](https://github.com/anomalyco/opencode) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | 2025 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
-| 3 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
-| 3 | [Google ADK](https://github.com/google/adk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
+| 3 | [OpenAI Agents SDK for JavaScript](https://github.com/openai/openai-agents-js) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Crush](https://github.com/charmbracelet/crush) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Strands Agents](https://github.com/strands-agents/harness-sdk) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 3 | [DeerFlow](https://github.com/bytedance/deer-flow) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [AgentSilex](https://github.com/howl-anderson/agentsilex) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 3 | [OpenCode](https://github.com/anomalyco/opencode) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 3 | [Google ADK](https://github.com/google/adk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | [OpenManus](https://github.com/FoundationAgents/OpenManus) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
