@@ -3,47 +3,55 @@ harness_id: metagpt
 project_name: MetaGPT
 repository: https://github.com/FoundationAgents/MetaGPT
 review_ref: 11cdf466d042aece04fc6cfd13b28e1a70341b1f
-reviewed_at: 2026-09-14
+reviewed_at: 2026-09-15
 status: included
 autonomy_s1: A
-autonomy_s2: ?
-autonomy_s3: ?
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s2: —
+autonomy_s3: A
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # MetaGPT
 
 ## Review boundary
-MetaGPT at the pinned revision, focusing on its software-company multi-agent runtime and materialized SOPs.
+MetaGPT at the pinned revision, focusing on the first-party software-company/MGX team runtime rather than the company metaphor or role names. The mapping is based on default TeamLeader behavior, shared team environment and current-plan regulation.
 
 ## Repository architecture
-MetaGPT creates role agents such as product manager, architect, project manager and engineer, and applies orchestrated SOPs to teams. Roles produce requirements, designs, code/tests and other artifacts in a staged software-company process.
+MetaGPT runs specialized role agents in a shared environment. In MGX, ordinary team communication is routed through a `TeamLeader`. The leader can assign role work, receive results, inspect team information and maintain/update the current plan. The default software-company entry point instantiates `TeamLeader` with product, architecture, engineering and data-analysis roles.
 
 ## Primary evidence
-- `README.md`: role-based software company, “Code = SOP(Team)”, carefully orchestrated SOPs, multi-agent tutorials/use cases.
+- `metagpt/software_company.py`: default MGX path hires `TeamLeader`, `ProductManager`, `Architect`, `Engineer2` and `DataAnalyst` before running the team.
+- `metagpt/environment/mgx/mgx_env.py`: ordinary member messages are handed to TeamLeader, while TeamLeader publications are routed to intended recipients.
+- `metagpt/roles/di/team_leader.py` and `metagpt/prompts/di/team_leader.py`: leader assigns work by expertise, tracks progress from feedback, finishes current tasks, resets/replaces plans and waits for prerequisite outputs.
+- `metagpt/strategy/planner.py`: `Planner` holds structured current/finished task state, validates plan updates, records progress and can regenerate the plan from feedback.
+- `tests/metagpt/roles/di/test_team_leader.py`: exercises requirement routing, result-driven specialist handoff, plan/progress updates and team-status responses.
+- `metagpt/team.py` and `metagpt/environment/base_env.py`: define the shared operational boundary, role registry, message delivery and concurrent role execution.
 
 ## Operational model
-Role agents perform distinct S1 work. SOPs/project-manager behavior route and sequence artifacts, but project management/delegation does not by itself establish Beer S2 or S3.
+Specialist roles are S1 units. The TeamLeader's assignment path is not counted as S2 merely because it moves work. Its stronger mapping is S3: it has a team-wide current plan/status view and agent-owned authority to regulate current commitments by assigning, finishing, resetting and replacing team work as results arrive.
 
 ## S1 — Operations
-`A`: specialized role agents autonomously produce operational artifacts. Confidence: high.
+`A`: specialized role agents autonomously produce requirements, designs, code, analyses and other operational artifacts. Confidence: high.
 
 ## S2 — Coordination
-`?`: explicit multi-agent orchestration exists, but reviewed evidence does not distinguish genuine anti-oscillation/mutual adjustment from authored SOP sequencing and delegation.
+`—`: the reviewed leader/SOP path primarily assigns and sequences work. No separate evidence shows a function that dampens destructive interference or oscillation among autonomous S1 units without centralizing their decisions. Confidence: medium-high.
 
 ## S3 — Inside-and-now control
-`?`: the “project manager” role name and assignment behavior do not prove whole-system current resource/accountability authority.
+`A`: the default TeamLeader has a whole-team current view through team information, routed feedback and a structured plan; it can regulate current commitments by assigning specialists, closing tasks, changing/resetting the plan and gating downstream work on prerequisite results. This goes beyond worker selection alone and is exercised by an autonomous shipped role. Confidence: high.
 
 ## S3* — Complementary audit
-`?`: testing/review roles are in the normal production SOP and are not automatically independent audit.
+`—`: review/testing inside the normal software-production path does not provide a materially independent alternative access channel to operational reality. Confidence: medium-high.
 
 ## S4 — Outside-and-then intelligence
-`?`: competitive analysis/planning artifacts do not establish a persistent external-and-prospective adaptation function coupled to S3.
+`—`: planning, product/competitive artifacts and replanning are project work; the reviewed runtime does not establish a distinct external-and-prospective adaptation loop in two-way conversation with S3. Confidence: medium-high.
 
 ## S5 — Policy and identity
-`?`: company roles/SOPs are authored configuration rather than verified runtime ultimate policy.
+`—`: role definitions, SOP, prompts, budget and team composition are parent/developer authored. No runtime agent holds legitimate ultimate identity/policy closure for the system-in-focus. Confidence: high.
 
 ## Recursion, variety, escalation
-Role teams amplify operational variety; “software company” metaphor is not evidence of VSM recursion by itself.
+Specialized roles increase operational variety, but the software-company hierarchy does not by itself prove recursive viable systems. TeamLeader routing amplifies current regulatory capacity while centralizing cross-role commitments.
+
+## Deep-review result
+`S2` resolves from `?` to `—`; `S3` resolves from `?` to `A`; `S3*`, `S4` and `S5` resolve from `?` to `—`; `S1 A` is confirmed. The key correction is function placement: centralized task routing is not S2, while whole-team current-plan authority satisfies S3.
