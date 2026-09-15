@@ -14,7 +14,7 @@ CATALOG_FIELDS = [
     "repository_created_at",
     "source_membership",
     "review_ref",
-    "reviewed_at",
+    "pinned_at",
 ]
 
 
