@@ -51,25 +51,20 @@ catalog_position|harness_id|signature
 50|openai-agents-sdk|Handoffs, agents-as-tools, guardrails, sessions, HITL, and tracing are all explicit, but delegation and normal validation are not promoted to S2 or S3*.
 51|google-adk|A graph workflow runtime and Task API expose rich multi-agent hierarchy and collaboration, while the reviewed evidence remains too generic to establish Beer-style coordination.
 52|codex|First-party spawn_agent tooling creates bounded child coding workers, but child spawning and result return are classified as task decomposition rather than S2.
-53|gemini-cli|A terminal agent combines built-in tools, MCP, checkpointing, and headless automation; repeated workflow invocations remain separate S1 runs.
 54|microsoft-agent-framework|Magentic's loop/stall regulation supplies agent-owned S2, while its whole-team facts/plan/progress state plus reset/replan authority supplies agent-owned S3.
 55|opencode|Build/plan agents plus a general subagent provide specialization and delegation, while user mode switching and child invocation remain below the S2 threshold.
 56|agentsilex|A first-party evaluation framework exposes trajectory, response, and LLM-as-judge checks as a composable complementary-audit path, while independence and corrective authority remain developer-supplied.
 57|deerflow|A super-agent delegates to isolated subagents with memory, sandboxes, skills, and schedules; the hierarchy is operational fan-out rather than S2.
 58|strands-agents|Swarm peer handoffs include configurable repetitive-handoff detection, exposing composable S2 anti-oscillation control while higher metasystem functions remain application-supplied.
-59|crush|A terminal coding agent combines LSP, MCP, sessions, and provider switching around one operational loop with no distinct metasystemic actor.
 60|openai-agents-js|The JavaScript SDK mirrors handoffs, agents-as-tools, guardrails, HITL, sessions, and tracing; delegation and normal validation remain non-metasystemic under the stricter rules.
 62|claude-agent-sdk|The SDK wraps a Claude Code session with tools, permissions, MCP, and hooks; hooks constrain one S1 but do not establish independent audit or policy closure.
-63|qwen-code|Agent Teams combine peer messaging, a shared dependency/ownership task board, autonomous task claiming, and lead assignment/reassignment, establishing agent-owned S2 coordination and S3 current regulation.
 64|hermes-agent|A persistent agent can create skills, curate memory, schedule work, and spawn subagents; its closed learning loop is explicitly not treated as S4.
-65|deepagents|An opinionated long-horizon harness bundles planning, context management, memory, skills, HITL, and isolated subagents, while subagent use remains delegation.
 66|mirothinker|Long-horizon research scales hundreds of environment interactions and post-training, but trajectory refinement and training are not counted as runtime S4.
 67|pi|A provider-neutral coding runtime combines tool calling, state, telemetry, and sandbox patterns around one S1 without a supplied metasystem.
 68|repomaster|The system autonomously discovers, configures, and executes relevant external repositories through specialized backends, while its multi-agent orchestration semantics remain under-specified.
 69|youtu-agent|A meta-agent can generate tools and workflows and training can improve future behavior, but generation and learning are not promoted to S2 or S4 without the required organizational loops.
 70|agentrl|Distributed rollout, actor, reference, and task-manager workers are classified as training compute roles rather than VSM operational units; RL is not runtime S4.
 71|openclaw|Agent-visible session tools expose cross-session messaging plus status, ownership and lifecycle controls as composable S2/S3 primitives, while Gateway policy and ultimate authority remain runtime/operator-owned.
-72|oh-my-pi|Peer messaging and isolated worktrees expose composable S2, while a separate advisor model with its own context can independently inspect workspace reality and inject concerns or hard blockers as agent-owned S3*.
 73|hive|The persistent Queen uses a shared tracker, task plan and live worker reports to prevent duplicate dispatch, coordinate concurrent workers and regulate colony-wide commitments, establishing agent-owned S2 and S3.
 74|open-harness|Resumable/background subagents, races and middleware expand one operational hierarchy, but remain delegation/runtime support without a supplied S2-S5 metasystem function.
 75|symphony|A deterministic scheduler/runner owns issue claiming, isolated workspaces, bounded concurrency, retries and reconciliation around autonomous coding S1s, so the reviewed metasystem remains non-agentic.
