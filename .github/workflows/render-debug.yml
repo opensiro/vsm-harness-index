@@ -1,0 +1,22 @@
+name: render-debug
+
+on:
+  push:
+    branches:
+      - r2-batch-1-parent-modes
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/render_tldr.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: generated-views
+          path: |
+            TLDR.md
+            RANKINGS.md
