@@ -4,6 +4,12 @@ project_name: AutoGPT
 repository: https://github.com/Significant-Gravitas/AutoGPT
 review_ref: 98381ab27f733468bfe1f9c4f4942b4b416d9a8b
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 98381ab27f733468bfe1f9c4f4942b4b416d9a8b
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
