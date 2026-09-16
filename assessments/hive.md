@@ -5,6 +5,12 @@ repository: https://github.com/aden-hive/hive
 review_ref: 0c387492067e8b7d3e1c803009169f202f30ed77
 reviewed_at: 2026-09-15
 status: included
+profile_version: 0.2.0
+assessment_procedure_version: 0.2.1
+last_checked_ref: 6193aea7eb064f7536dfedcbe9ff08ad954ac53b
+last_checked_at: 2026-09-16
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R1
 autonomy_s1: A
 autonomy_s2: A
 autonomy_s3: A
