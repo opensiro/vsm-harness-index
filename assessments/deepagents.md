@@ -1,51 +1,52 @@
 ---
 harness_id: deepagents
-project_name: Deep Agents
+project_name: DeepAgents
 repository: https://github.com/langchain-ai/deepagents
-review_ref: 9e7d62ff6e7131505995a706d717e01837aa8617
-reviewed_at: 2026-09-15
-status: included
+review_ref: 7f9e8ed3a555933902045792da9bb184950ee7b2
+reviewed_at: 2026-09-16
+status: proposed
 autonomy_s1: A
-autonomy_s2: —
-autonomy_s3: —
-autonomy_s3_star: —
+autonomy_s2: C
+autonomy_s3: C
+autonomy_s3_star: C
 autonomy_s4: —
-autonomy_s5: —
+autonomy_s5: P
 ---
 
-# Deep Agents
+# DeepAgents
 
 ## Review boundary
-Deep review of the pinned core subagent middleware and long-horizon agent stack. Isolated/forked subagents are evaluated as delegation unless a separate cross-S1 regulation function is present.
+Pinned middleware harness including blocking/async subagents, persistent background task lifecycle, HITL and rubric middleware.
 
 ## Repository architecture
-Deep Agents layers planning, filesystem/shell access, summarization, skills, memory and subagents onto an autonomous agent. Its core `task` middleware exposes declarative or compiled subagents. By default a subagent receives only the delegated task; optional fork mode continues parent context. The parent selects a specialist and consumes its result. This is intentionally context-isolated task decomposition, not mutual coordination among peer S1s.
+SubAgentMiddleware and AsyncSubAgentMiddleware manage delegated/background agents. Background identities/lifecycle/update/cancel/check regulate coexistence. RubricMiddleware grades after natural stop and can jump execution back to the model for correction.
 
 ## Primary evidence
-- `libs/deepagents/deepagents/middleware/subagents.py`: defines isolated/forked subagents exposed to the main agent through a `task` tool.
-- Subagent results are returned to the parent as a tool result/structured response; recursive delegation is explicitly bounded.
-- Tools, permissions, middleware, skills and HITL can differ per subagent but remain application-defined execution boundaries.
+- Pinned deep review established background task lifecycle, declarative subagent overrides, HITL interrupts and rubric correction loop at `review_ref`.
 
 ## Operational model
-A main long-horizon agent plans and acts through tools, delegating bounded tasks to specialist subagents when useful and incorporating their returned results into the parent trajectory.
+Primary/subagents perform S1 work; middleware supplies constructor-owned coordination/current control and optional post-stop audit/correction; HITL preserves parent authority.
 
 ## S1 — Operations
-`A`: agents autonomously choose tools/actions and perform filesystem/shell or other application work. Confidence: high.
+`A`: agents autonomously execute model/tool work. Confidence: high.
 
 ## S2 — Coordination
-`—`: isolated/forked `task` calls implement parent-to-child delegation and result return. No mechanism was established for regulating interference, oscillation or shared constraints among multiple autonomous S1 units. The shallow `S2=A` interpretation is removed.
+`C`: background identities/lifecycle/isolation/update/cancel/check regulate coexistence beyond delegation, but no autonomous coordinator owns the function. Confidence: high.
 
 ## S3 — Inside-and-now control
-`—`: parent delegation and middleware policy do not constitute whole-system current authority over multiple operational resources/capacity/commitments.
+`C`: permissions/interrupts/state repair/background lifecycle provide constructor-owned current regulation. Confidence: high.
 
 ## S3* — Complementary audit
-`—`: no first-party independent complementary audit channel with distinct authority was established.
+`C`: RubricMiddleware runs after natural stop and a structured grader can jump back to the model for correction. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`—`: planning, memory, summarization and skills improve current/recurring task execution but do not establish a distinct prospective environmental-intelligence function.
+`—`: no prospective environment-facing organizational adaptation function was established. Confidence: high.
 
 ## S5 — Policy and identity
-`—`: prompts, tools, skills, permissions and HITL remain application/developer supplied.
+`P`: `interrupt_on` injects human approval into selected decisions. Confidence: high.
 
 ## Recursion, variety, escalation
-Deep Agents provides strong recursive decomposition and context isolation while leaving metasystem closure outside the core harness.
+Background subagents amplify parallel variety; lifecycle controls attenuate it; rubric correction and HITL create distinct escalation paths.
+
+## Deep-review conclusion
+Signature at the pinned revision: `A C C C — P`. DeepAgents supplies substantial composable metasystem closure around autonomous agents.
