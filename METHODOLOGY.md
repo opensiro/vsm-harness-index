@@ -21,6 +21,8 @@ Three artifact classes are intentionally separate.
 
 `data/catalog.psv` is separate from all three: it is the discovery/order/provenance registry. It contains repository identity, chronology, source membership, and pinned review-boundary metadata (`review_ref`, `pinned_at`), not VSM classifications.
 
+Assessment lifecycle (`proposed` intake versus canonical admission) is defined in [`docs/assessment-lifecycle.md`](docs/assessment-lifecycle.md).
+
 ## Review boundary
 
 Each assessment names one harness at a pinned commit where possible. Framework, deployed application, vendor organization, and a child agent are different systems-in-focus and must not be silently mixed.
@@ -47,11 +49,15 @@ In particular, delegation is not S2 without interference regulation among operat
 
 ## Ordered synthesis and continuous indexing
 
-The discovery cohort is ordered by `catalog_position`. New admitted harnesses are appended chronologically under the current continuous-index policy; existing positions are not renumbered merely because a project is reassessed.
+The discovery cohort is ordered by stable `catalog_position`. That position is a discovery/order identifier, not a completion counter. Existing positions are never renumbered merely because a project is admitted, rejected, or reassessed.
 
-After a new assessment is complete, compare it with all earlier completed assessments and record the smallest informative evidence-backed architectural distinction in `data/signatures.psv`. Identical autonomy vectors are valid. Never alter a state to manufacture signature uniqueness.
+Admission is allowed to be **sparse** with respect to catalog order. A `status: proposed` assessment may remain unresolved at an earlier catalog position while later candidates are already canonical. Proposed artifacts are excluded from signatures, public comparison views, and reassessment history until admission resolves them to `included` or `excluded-no-agentic-vsm`.
 
-If an existing assessment changes, re-check its signature and later cohort-relative signatures whose distinguishing statement may depend on the changed assessment. The assessment itself remains repository-relative; the synthesis layer is allowed to change because its comparison set changed.
+Ordered synthesis considers the currently admitted assessments in ascending `catalog_position`. After a newly admitted `included` assessment is complete, compare it with all earlier admitted assessments and record the smallest informative evidence-backed architectural distinction in `data/signatures.psv`. Identical autonomy vectors are valid. Never alter a state to manufacture signature uniqueness.
+
+If an earlier catalog position is admitted after later positions already have signatures, re-synthesize the newly admitted harness and every later cohort-relative signature whose distinguishing statement may depend on the enlarged earlier comparison set. The repository-relative assessments themselves do not move or change merely because admission order differed from catalog order.
+
+If an existing canonical assessment changes, re-check its signature and later cohort-relative signatures whose distinguishing statement may depend on the changed assessment. The assessment itself remains repository-relative; the synthesis layer is allowed to change because its comparison set changed.
 
 Public presentation order is separate from synthesis order. `TLDR.md` is displayed newest-first using `repository_created_at`; changing display order does not change `catalog_position`, assessment meaning, or sequential signature ancestry.
 
