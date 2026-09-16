@@ -42,6 +42,24 @@ There are two re-review kinds:
 
 Do not edit generated rankings as the primary fix and do not open a ranking-only PR.
 
+### Work on a reassessment round
+
+Periodic longitudinal review is organized into dated reassessment rounds under `reassessments/`. A round has a frozen scope and cutoff date and may be split into multiple batch issues or PRs.
+
+For every harness assigned to a round batch:
+
+1. start from the currently accepted assessment and `review_ref`;
+2. inspect upstream changes through the round cutoff and record the newest exact `checked_ref` actually reviewed;
+3. decide whether those changes are VSM-relevant before rewriting the assessment;
+4. record exactly one round outcome: `no-upstream-change`, `no-material-change`, `reassessed-unchanged`, `reassessed-changed`, `same-ref-correction`, or `blocked`;
+5. append the event to `data/reassessment-history.psv`;
+6. update the round progress table;
+7. update the assessment freshness fields for every successfully checked harness;
+8. update `review_ref`, `reviewed_at`, catalog pinning, signatures, and generated views only where the accepted reassessment requires them;
+9. run `python scripts/check_index.py`.
+
+A round check is useful even when the assessment does not change. In that case `last_checked_ref` and `last_checked_at` advance while the accepted `review_ref` can remain unchanged.
+
 ### Claim a re-review as a contributor
 
 A contributor may claim an open `[Assessment re-review]` issue in a comment. The contributor's PR should:
@@ -51,9 +69,10 @@ A contributor may claim an open `[Assessment re-review]` issue in a comment. The
 3. perform an adversarial recheck that actively looks for evidence against the proposed change;
 4. update the standalone assessment only where the evidence changes the interpretation;
 5. update the catalog ref/pin date only for a **new-ref reassessment**;
-6. re-check the changed harness's cohort-relative signature and any later signatures whose distinction depends on it;
-7. regenerate `TLDR.md` and `RANKINGS.md`;
-8. run `python scripts/check_index.py`.
+6. if the work belongs to a reassessment round, append its longitudinal event and update freshness metadata;
+7. re-check the changed harness's cohort-relative signature and any later signatures whose distinction depends on it;
+8. regenerate `TLDR.md` and `RANKINGS.md` when canonical assessment data changes;
+9. run `python scripts/check_index.py`.
 
 The issue author and implementation contributor may be the same person. The final merge review should still independently verify the disputed VSM function rather than treating the issue's proposed grade as authoritative.
 
@@ -96,6 +115,19 @@ Do not hand-author a TLDR classification independently from repository evidence.
 - Keep unknown evidence (`?`) distinct from a reviewed no-path result (`—`).
 - Do not infer S2 from delegation, S3 from a manager label, S3* from routine verification, S4 from planning or learning alone, S5 from prompts/policies alone, or recursion from nesting.
 
+For a newly created baseline assessment, set `assessment_changed_at` equal to `reviewed_at`. Legacy baseline assessments may omit reassessment freshness metadata until first touched by a reassessment round.
+
+After the first round check, the complete freshness set is required:
+
+```yaml
+last_checked_ref: <40-character commit>
+last_checked_at: YYYY-MM-DD
+assessment_changed_at: YYYY-MM-DD
+last_reassessment_round: R1
+```
+
+`last_checked_*` describes verification freshness. `assessment_changed_at` describes the most recent material change to the canonical assessment. Do not advance `assessment_changed_at` for a `no-material-change` result.
+
 ## Signature requirements
 
 A signature is a derived comparison artifact, not repository evidence. Preserve the assessment vector exactly and describe the smallest informative architectural distinction relative to earlier catalog positions. Duplicate vectors are allowed.
@@ -107,3 +139,5 @@ Do not manually score harnesses. `RANKINGS.md` is generated deterministically fr
 ## Catalog role
 
 `data/catalog.psv` is the discovery/order/provenance registry. It stores repository identity, chronology, source membership, and the pinned review boundary (`review_ref`, `pinned_at`). VSM classifications and assessment review dates belong only in standalone assessments and generated views, never in the catalog registry.
+
+Longitudinal check history does not belong in the catalog either. Store it in `data/reassessment-history.psv`; the canonical assessment carries only its current boundary plus the latest freshness fields.
