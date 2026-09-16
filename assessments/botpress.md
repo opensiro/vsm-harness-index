@@ -4,6 +4,12 @@ project_name: Botpress
 repository: https://github.com/botpress/botpress
 review_ref: 7bf2906580ab86fe647d4fb109b8c3bdcaef9c57
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: e2fc160d1c14a08e27d4db15e368e01e6e7a588f
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
