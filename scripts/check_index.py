@@ -167,15 +167,20 @@ def main() -> int:
     completed = []
     for harness_id, assessment in assessments.items():
         validate_assessment(assessment)
+        source = by_id.get(harness_id)
         if assessment["status"] == "proposed":
-            if harness_id in by_id:
-                raise SystemExit(
-                    f"{harness_id}: proposed assessment is pre-admission and must not already have a catalog row"
-                )
+            # Proposed is an intake/review state, not a canonical completion.
+            # A proposal may exist before catalog insertion or after the candidate
+            # has been pinned/queued in catalog. When a catalog row exists, keep
+            # identity/ref metadata consistent, but exclude it from completed
+            # prefix, signatures, rankings, and reassessment history.
+            if source is not None:
+                for key in ("project_name", "repository", "review_ref"):
+                    if assessment[key] != source[key]:
+                        raise SystemExit(f"{harness_id}: proposed {key} differs from catalog")
             continue
-        if harness_id not in by_id:
+        if source is None:
             raise SystemExit(f"canonical assessment missing catalog row: {harness_id}")
-        source = by_id[harness_id]
         for key in ("project_name", "repository", "review_ref"):
             if assessment[key] != source[key]:
                 raise SystemExit(f"{harness_id}: {key} differs from catalog")
