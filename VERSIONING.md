@@ -31,13 +31,22 @@ The Methodology version identifies the procedural contract in `vsm-harness-skill
 - deterministic ranking projection;
 - validation rules for those procedures.
 
-Methodology `0.3.0` uses the publication symbols:
+Methodology `0.3.x` uses the publication symbols:
 
 ```text
 A  A(P)  C  C(P)  P  —  ?
 ```
 
 `A(P)` and `C(P)` are supported-mode notation for S3/S4/S5: the base `A` or `C` condition is established and a distinct first-party parent-governed mode for the same function is also operationally closed. Standalone `P` records a parent-governed S3/S4/S5 mode when no first-party `A` or `C` autonomous mode is established at the reviewed boundary.
+
+Methodology `0.3.1` clarifies the publication boundary without changing that state set:
+
+- S1 and S2 intentionally do not publish `P` because the assessment target is an autonomous AI agent harness rather than every human-owned organizational topology that can exist in a broader organization;
+- S3 and S4 permit parent modes as explicit supervisory/current-control and adaptation exceptions, including self-hosted and distributed OSS cases;
+- S3* does not publish the parent modifier in the `0.3.x` line;
+- S5 remains the canonical parent-governed case for identity / ultimate-policy authority at a legitimate parent recursion.
+
+This is a Methodology publication choice, not a claim that human-owned S1/S2/S3* arrangements are impossible in real organizations.
 
 Assessment front matter and reassessment history retain the compatibility field name `assessment_procedure_version`. Its value is the Methodology version as applied to that assessment/reassessment event. Likewise, `generated_assessment_procedure_version` is the immutable generation-time Methodology version for an assessment artifact.
 
@@ -65,18 +74,20 @@ If a stable external Index schema/API is later consumed independently of the rep
 
 ```text
 profile_version|methodology_version
-0.2.1|0.3.0
+0.2.1|0.3.1
 ```
 
 This file is compatibility/configuration infrastructure, not a second assessment database.
 
 Changing the active pair does not retroactively rewrite historical assessment provenance or an already-open reassessment round. A round remains frozen on the Profile/Methodology pair declared when it opened.
 
-Methodology `0.3.0` is a substantive classification change. Existing canonical assessments are not automatically rewritten to `A(P)`, `C(P)`, or S3/S4 `P`; they remain valid historical/current artifacts under their recorded Methodology until they are explicitly revalidated. A migration may be same-ref when the upstream repository boundary is unchanged, but the reviewer must re-establish the S3/S4/S5 function and every ownership mode from primary evidence.
+Methodology `0.3.0` introduced the substantive composite ownership notation. Existing canonical assessments are not automatically rewritten to `A(P)`, `C(P)`, or S3/S4 `P`; they remain valid historical/current artifacts under their recorded Methodology until they are explicitly revalidated. A migration may be same-ref when the upstream repository boundary is unchanged, but the reviewer must re-establish the S3/S4/S5 function and every ownership mode from primary evidence.
+
+Methodology `0.3.1` is a patch clarification of the allowed parent-mode boundary. It does not add a new vector migration by itself: correctly reviewed `0.3.0` vectors remain valid unless evidence review under the clarified boundary changes a conclusion. Current `assessment_procedure_version` advances only after normal successful revalidation.
 
 Immutable `generated_profile_version` / `generated_assessment_procedure_version` values never change during that migration. Only the current `profile_version` / `assessment_procedure_version` advance after successful revalidation.
 
-Frozen historical rounds remain frozen. In particular, R1 remains on Profile `0.2.0` / Methodology `0.2.1`; the active `0.2.1 / 0.3.0` contract must not silently rewrite that round.
+Frozen historical rounds remain frozen. In particular, R1 remains on Profile `0.2.0` / Methodology `0.2.1`; the active `0.2.1 / 0.3.1` contract must not silently rewrite that round.
 
 ## Generated views
 
@@ -88,7 +99,7 @@ They have no independent semantic versions:
 - RANKINGS depends on canonical assessment states and the Methodology ranking projection;
 - a particular checked-in result is identified by the Index Git revision containing it.
 
-Under Methodology `0.3.0`, ranking parses composite states by base ownership:
+Under Methodology `0.3.x`, ranking parses composite states by base ownership:
 
 ```text
 A(P) → A for agent-owned coverage
