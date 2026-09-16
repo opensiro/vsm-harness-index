@@ -66,6 +66,76 @@ For disputed positive metasystem claims, the re-review must actively try to fals
 
 If the strongest available primary evidence cannot support either a positive state or a defensible no-path conclusion, use `?` rather than forcing certainty.
 
+## Reassessment rounds
+
+Longitudinal reassessment is organized into dated **rounds**. A round is a bounded pass over harnesses that already have completed baseline assessments. Its purpose is to determine whether upstream development since the previous review has introduced, removed, or materially changed functionality relevant to the VSM assessment.
+
+The initial assessment is the baseline and is not itself a reassessment round. `R1` is the first longitudinal pass after that baseline.
+
+Each round records:
+
+- `round_id` — sequential identifier such as `R1`, `R2`, `R3`;
+- `opened_at` — date the round starts;
+- `cutoff_at` — upstream observation cutoff for the round;
+- `closed_at` — completion date when closed;
+- `scope` — the frozen catalog positions or harness IDs included in the round;
+- `status` — `open`, `in-progress`, or `complete`.
+
+The scope is frozen when the round starts. Harnesses admitted after the cutoff enter a later round rather than extending an active round indefinitely. A round may be executed through any number of batch issues or PRs; batches are operational units, while the round is the longitudinal unit of record.
+
+For every harness in scope, record the previously accepted `review_ref`, the newest upstream `checked_ref` inspected during the round, the inspection date, the outcome, changed VSM functions if any, and links to the relevant evidence or PR.
+
+A newer upstream commit does **not** by itself require rewriting the assessment. First determine whether changes since the accepted `review_ref` materially affect the organizational behavior represented by the current assessment.
+
+Allowed per-harness outcomes are:
+
+- **`no-upstream-change`** — the inspected upstream state has not advanced beyond the previously checked boundary;
+- **`no-material-change`** — upstream advanced, but no material VSM-relevant change was found; the current assessment remains valid;
+- **`reassessed-unchanged`** — relevant architecture or behavior changed enough to require a new-ref assessment, but the resulting categorical VSM states remain unchanged;
+- **`reassessed-changed`** — the accepted new-ref reassessment changes one or more material assessment claims, autonomy states, or review-boundary facts;
+- **`same-ref-correction`** — the upstream boundary is unchanged, but stronger evidence or a corrected interpretation changes the assessment;
+- **`blocked`** — the harness could not be reviewed reliably during the round; the reason must be recorded.
+
+A round is complete only when every harness in its frozen scope has an explicit outcome. Completion does not imply that every assessment changed; a healthy round may consist mostly of `no-upstream-change` and `no-material-change` results.
+
+The longitudinal invariant is: **every completed harness check states how far upstream the project was inspected, when that inspection occurred, and whether the inspection invalidated or changed the current assessment.**
+
+### Assessment freshness fields
+
+The standalone assessment remains the canonical current assessment, but after a harness first participates in a reassessment round its front matter also records freshness metadata:
+
+```yaml
+last_checked_ref: <40-character upstream commit inspected most recently>
+last_checked_at: YYYY-MM-DD
+assessment_changed_at: YYYY-MM-DD
+last_reassessment_round: R1
+```
+
+Their meanings are deliberately separate:
+
+- `review_ref` / `reviewed_at` identify the currently accepted assessment boundary and when that accepted assessment was performed;
+- `last_checked_ref` / `last_checked_at` identify the newest upstream state inspected, even when no assessment rewrite was necessary;
+- `assessment_changed_at` records the most recent date on which the canonical assessment materially changed, including accepted evidence, boundary, or VSM claims;
+- `last_reassessment_round` links the current freshness state back to the longitudinal round log.
+
+Therefore `last_checked_ref` may legitimately be newer than `review_ref`. This means the assessment is pinned to an older accepted boundary but has been explicitly rechecked against later upstream development and found still valid.
+
+For a new baseline assessment, `assessment_changed_at` should initially equal `reviewed_at`. Legacy baseline files may omit the new freshness fields until their first reassessment round; the first round that touches them must populate the complete freshness set.
+
+### Longitudinal history
+
+Reassessment history is append-only and is stored separately from the canonical assessment in `data/reassessment-history.psv`. Updating an assessment must never erase earlier round results.
+
+The history records, at minimum:
+
+```text
+round_id|harness_id|previous_review_ref|checked_ref|accepted_review_ref|checked_at|outcome|changed_functions|evidence
+```
+
+`accepted_review_ref` is the review boundary after that event. For `no-upstream-change` and `no-material-change`, it normally remains equal to the previous accepted `review_ref`; for an accepted new-ref reassessment it advances to the new assessment boundary.
+
+Round-level descriptions and scope are stored under `reassessments/`; see `reassessments/README.md` for the round template and tracking rules.
+
 ## Ranking semantics
 
 The ranking reports:
