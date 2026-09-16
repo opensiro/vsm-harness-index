@@ -64,7 +64,7 @@ catalog_position|harness_id|signature
 68|repomaster|The system autonomously discovers, configures, and executes relevant external repositories through specialized backends, while its multi-agent orchestration semantics remain under-specified.
 69|youtu-agent|A meta-agent can generate tools and workflows and training can improve future behavior, but generation and learning are not promoted to S2 or S4 without the required organizational loops.
 70|agentrl|Distributed rollout, actor, reference, and task-manager workers are classified as training compute roles rather than VSM operational units; RL is not runtime S4.
-71|openclaw|Agent-visible session tools expose cross-session messaging plus status, ownership and lifecycle controls as composable S2/S3 primitives, while Gateway policy and ultimate authority remain runtime/operator-owned.
+71|openclaw|Agent-visible session tools expose composable S2/S3 paths, while the host-scoped system-agent closes a distinct operator-approved S3 current-control mode for model/config/team/gateway/plugin mutations.
 73|hive|The persistent Queen uses a shared tracker, task plan and live worker reports to prevent duplicate dispatch, coordinate concurrent workers and regulate colony-wide commitments, establishing agent-owned S2 and S3.
 74|open-harness|Resumable/background subagents, races and middleware expand one operational hierarchy, but remain delegation/runtime support without a supplied S2-S5 metasystem function.
 75|symphony|A deterministic scheduler/runner owns issue claiming, isolated workspaces, bounded concurrency, retries and reconciliation around autonomous coding S1s, so the reviewed metasystem remains non-agentic.
@@ -74,4 +74,4 @@ catalog_position|harness_id|signature
 79|claw-code-agent|Persistent team messages plus dependency-aware task state expose a composable worker-coordination path beyond simple nested delegation, while broader orchestration remains incomplete.
 80|autoharness|Mailbox/swarm protocols expose composable S2 and a built-in adversarial Verification agent exposes composable S3*; constitution, audit logs and coordinator primitives do not close higher functions by themselves.
 81|proliferate|Dedicated review-only agents inspect trusted plan/code targets and feed structured pass/critique results into an auto-iterating parent revision loop, establishing agent-owned S3*; worktree isolation and child delegation remain operational support rather than S2/S3.
-82|get-shit-done|A fresh-context goal verifier distrusts executor summaries, inspects actual implementation, blocks phase completion on gaps, and closes findings through gap planning, re-execution, and re-verification, establishing agent-owned S3*; dependency waves remain conflict avoidance rather than S2.
+82|get-shit-done|Fresh parallel context subagents gather planning research independently from implementation, exposing a composable complementary-audit path without whole-system S3 authority.

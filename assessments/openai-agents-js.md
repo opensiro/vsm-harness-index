@@ -4,6 +4,12 @@ project_name: OpenAI Agents SDK for JavaScript
 repository: https://github.com/openai/openai-agents-js
 review_ref: 8831eae9d34365f9a397cbd52ae0366f304e1a96
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 58844c7fbcee33e4cf404bbd18350f30627b07e1
+last_checked_at: 2026-09-16
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

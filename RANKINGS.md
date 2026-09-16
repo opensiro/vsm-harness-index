@@ -19,7 +19,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="looptroop"></a>[LoopTroop](https://github.com/looptroop-ai/LoopTroop) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 4 | <a id="symphony"></a>[Symphony](https://github.com/openai/symphony) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="open-harness"></a>[open-harness](https://github.com/MaxGfeller/open-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 4 | <a id="openclaw"></a>[OpenClaw](https://github.com/openclaw/openclaw) | 2025 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
+| 4 | <a id="openclaw"></a>[OpenClaw](https://github.com/openclaw/openclaw) | 2025 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 4 | <a id="agentrl"></a>[AgentRL](https://github.com/THUDM/AgentRL) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="youtu-agent"></a>[Youtu-Agent](https://github.com/TencentCloudADP/youtu-agent) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="repomaster"></a>[RepoMaster](https://github.com/QuantaAlpha/RepoMaster) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
