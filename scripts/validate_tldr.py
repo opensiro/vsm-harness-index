@@ -3,6 +3,7 @@
 from __future__ import annotations
 from datetime import date
 from pathlib import Path
+import re
 
 SYSTEM_KEYS = ("s1", "s2", "s3", "s3_star", "s4", "s5")
 ALLOWED = {"A", "C", "P", "—", "?"}
@@ -12,6 +13,11 @@ FRESHNESS_KEYS = (
     "assessment_changed_at",
     "last_reassessment_round",
 )
+SPEC_PROVENANCE_KEYS = (
+    "profile_version",
+    "assessment_procedure_version",
+)
+SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$")
 
 
 def parse_assessment(path: Path) -> dict[str, str]:
@@ -68,6 +74,16 @@ def validate_assessment(row: dict[str, str]) -> None:
         raise ValueError(f"{row['harness_id']}: P is valid only for S5")
     if row["status"] == "included" and states[0] != "A":
         raise ValueError(f"{row['harness_id']}: included harness must establish S1 · A")
+
+    present_spec = [key for key in SPEC_PROVENANCE_KEYS if row.get(key)]
+    if present_spec and len(present_spec) != len(SPEC_PROVENANCE_KEYS):
+        missing = [key for key in SPEC_PROVENANCE_KEYS if not row.get(key)]
+        raise ValueError(
+            f"{row['harness_id']}: spec provenance metadata must be complete; missing {missing}"
+        )
+    for key in present_spec:
+        if not SEMVER_RE.fullmatch(row[key]):
+            raise ValueError(f"{row['harness_id']}: {key} must be a semantic version such as 0.2.0")
 
     present_freshness = [key for key in FRESHNESS_KEYS if row.get(key)]
     if present_freshness and len(present_freshness) != len(FRESHNESS_KEYS):
