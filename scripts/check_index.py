@@ -164,7 +164,6 @@ def main() -> int:
 
     assessments = load_assessments(repo / "assessments")
     canonical_assessments: dict[str, dict[str, str]] = {}
-    completed = []
     for harness_id, assessment in assessments.items():
         validate_assessment(assessment)
         source = by_id.get(harness_id)
@@ -181,10 +180,12 @@ def main() -> int:
             if assessment[key] != source[key]:
                 raise SystemExit(f"{harness_id}: {key} differs from catalog")
         canonical_assessments[harness_id] = assessment
-        completed.append(int(source["catalog_position"]))
-    completed.sort()
-    if completed != list(range(1, len(completed) + 1)):
-        raise SystemExit("completed canonical assessments must form a contiguous catalog prefix")
+
+    # Admission is intentionally sparse with respect to catalog_position. The
+    # catalog is an immutable discovery/order ledger, while proposed assessments
+    # can remain unresolved as later positions are admitted. If an earlier
+    # proposal is admitted later, cohort-relative signatures at later positions
+    # must be re-synthesized; repository-relative assessments do not move.
 
     reassessment_history = read_psv(repo / "data" / "reassessment-history.psv")
     validate_reassessment_history(reassessment_history, by_id, canonical_assessments)
