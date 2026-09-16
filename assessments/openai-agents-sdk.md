@@ -4,6 +4,12 @@ project_name: OpenAI Agents SDK
 repository: https://github.com/openai/openai-agents-python
 review_ref: fbd2dbcaaf74a2c447c6d3fa9d5645d83fd7e292
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 5f9899d584c5cfc879d3579352eb929fd4b34756
+last_checked_at: 2026-09-16
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
