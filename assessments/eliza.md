@@ -4,6 +4,12 @@ project_name: Eliza
 repository: https://github.com/elizaOS/eliza
 review_ref: 5b183d21ff25a8c3e43af9a284a38b5ff487ded9
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 4ec8130df99b89921ca39377f513ef8ef7c5fba7
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
@@ -37,6 +43,8 @@ Runtime agents are S1. The orchestrator plugin is opt-in and supplies team-level
 
 ## S3 — Inside-and-now control
 `C`: the parent planner/orchestrator owns durable task/session state, spawning, mid-flight steering, lifecycle/recovery and completion-state transitions across coding workers. This is current team regulation, but only when the first-party orchestrator plugin is enabled.
+
+R2 ownership-mode revalidation: the checked orchestrator now documents task-scoped rooms where live user messages can be forwarded to an active subagent, plus interaction/approval protocol surfaces. Those paths allow human intervention or additional input, but durable task creation, spawn/session control, recovery, follow-up routing and completion-state transitions remain on the planner/orchestrator path. The evidence does not establish a separate human/parent mode that closes the same whole-team S3 right, so S3 remains plain `C` rather than `C(P)`.
 
 ## S3* — Complementary audit
 `C`: completion enters a separate `validating` state and a dedicated evaluator checks completion/failure evidence before relay or follow-up, giving a composable complementary verification path with corrective routing.

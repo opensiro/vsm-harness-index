@@ -5,12 +5,12 @@ repository: https://github.com/HKUDS/OpenHarness
 review_ref: 9b2efd795c6aa09f88b0c257d269a9e518da6ae7
 reviewed_at: 2026-09-15
 status: included
-profile_version: 0.2.0
-assessment_procedure_version: 0.2.1
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
 last_checked_ref: 9b2efd795c6aa09f88b0c257d269a9e518da6ae7
-last_checked_at: 2026-09-16
+last_checked_at: 2026-09-17
 assessment_changed_at: 2026-09-16
-last_reassessment_round: R1
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: A
 autonomy_s3: A
@@ -46,6 +46,8 @@ Spawned workers are S1 units: each autonomous subprocess receives an outcome-ori
 
 ## S3 — Inside-and-now control
 `A`: coordinator mode gives a model-driven actor whole-task current context and explicit authority to allocate workers, sequence conflicting write-heavy work, stop/continue agents, synthesize current results and intervene on failures. The decisive current-regulation choices are coordinator-owned; task/subprocess machinery enforces their execution. Confidence: high.
+
+R2 ownership-mode revalidation: ordinary user messages can change requirements and thereby cause the coordinator to stop, redirect or continue workers, but the first-party current-control tools and the discretionary choice over which worker action to take remain on the model-driven coordinator path. The reviewed repository does not expose a separate parent mode that independently closes the same whole-task allocation/sequence/recovery right, so S3 remains plain `A` rather than `A(P)`.
 
 ## S3* — Complementary audit
 `A`: the coordinator workflow explicitly separates verification from implementation, instructs verification to prove behavior rather than rubber-stamp it, and recommends spawning a fresh worker so it can inspect code/tests with independent context; findings then steer corrective work through the coordinator. The fresh verifier owns the audit judgment while coordinator/task machinery closes the result into subsequent control. Confidence: high.

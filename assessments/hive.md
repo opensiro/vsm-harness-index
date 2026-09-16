@@ -5,12 +5,12 @@ repository: https://github.com/aden-hive/hive
 review_ref: 0c387492067e8b7d3e1c803009169f202f30ed77
 reviewed_at: 2026-09-15
 status: included
-profile_version: 0.2.0
-assessment_procedure_version: 0.2.1
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
 last_checked_ref: 6193aea7eb064f7536dfedcbe9ff08ad954ac53b
-last_checked_at: 2026-09-16
+last_checked_at: 2026-09-17
 assessment_changed_at: 2026-09-15
-last_reassessment_round: R1
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: A
 autonomy_s3: A
@@ -43,6 +43,8 @@ Queen and workers perform S1 work. Workers operate concurrently against shared c
 
 ## S3 — Inside-and-now control
 `A`: the persistent Queen has a colony-wide current view through the plan/tracker and explicit authority to assign/fan out work, inspect and validate worker progress/results, converge execution and escalate exceptions. This is ongoing whole-colony current regulation rather than a component merely named manager. Confidence: high.
+
+R2 ownership-mode revalidation: Sentinel is a first-party out-of-band human escalation channel. The Queen can park the loop for an approval, judgment call or missing credential and resume after the reply. That establishes reportable parent intervention, but the reviewed evidence does not establish a separate parent actor owning the Queen-level plan/tracker/assignment/convergence right itself. Generic escalation at an arbitrary decision point is therefore not enough to publish `A(P)` for S3.
 
 ## S3* — Complementary audit
 `—`: Queen-side validation uses the ordinary lead/control path and the human Sentinel is an escalation mechanism; the reviewed standard distribution does not establish a distinct sufficiently independent autonomous complementary-audit path.

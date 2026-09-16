@@ -4,6 +4,12 @@ project_name: Mastra
 repository: https://github.com/mastra-ai/mastra
 review_ref: 76cec9be889c0a6ae7f51fbf25356d5a06019351
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: ab0632ca5e1a76da1db23d37bf9a8704f7cea9e6
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
@@ -38,6 +44,8 @@ A normal Mastra agent is S1. Deterministic graph workflows do not create S2/S3. 
 
 ## S3 — Inside-and-now control
 `C`: the first-party supervisor/network path owns current selection and sequencing of subagents/workflows/tools using task history and completion state. That is composable current regulation, but not the default closed path for all agents.
+
+R2 ownership-mode revalidation: current supervisor APIs expose delegation/iteration hooks that can reject a delegation, modify prompts, add feedback or stop the supervisor loop, and Mastra also exposes human approval/suspension for tool calls. The former are caller-supplied extension callbacks and the latter gate individual tool execution. Neither evidence surface establishes a distinct first-party parent actor that owns and closes the supervisor's whole-task primitive-selection/sequencing right. Under the 0.3.1 threshold, generic hooks and tool approval are insufficient for `C(P)`, so S3 remains `C`.
 
 ## S3* — Complementary audit
 `C`: first-party task-completion scorers separately assess whether the supervisor's current result satisfies completion criteria; a failed verdict blocks completion, adds feedback and causes further iteration. The audit decision right is composable/configured rather than universally enabled.
