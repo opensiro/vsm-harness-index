@@ -4,6 +4,12 @@ project_name: claw-code-agent
 repository: https://github.com/HarnessLab/claw-code-agent
 review_ref: 167571da895b2a1a9e36ecfae2876984cef65e0d
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 167571da895b2a1a9e36ecfae2876984cef65e0d
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: C

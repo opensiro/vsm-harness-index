@@ -4,6 +4,12 @@ project_name: ChatDev
 repository: https://github.com/OpenBMB/ChatDev
 review_ref: 4fb2db0ea90375ce1059f44fe03ffbd191a7a169
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 4fb2db0ea90375ce1059f44fe03ffbd191a7a169
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: C
