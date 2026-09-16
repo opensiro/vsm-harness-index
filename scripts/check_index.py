@@ -4,7 +4,7 @@ from __future__ import annotations
 import csv
 from datetime import date
 from pathlib import Path
-from validate_tldr import load_assessments, validate_assessment
+from validate_tldr import SEMVER_RE, load_assessments, validate_assessment
 from render_tldr import render_tldr, render_rankings
 
 CATALOG_FIELDS = [
@@ -25,6 +25,8 @@ REASSESSMENT_FIELDS = [
     "checked_ref",
     "accepted_review_ref",
     "checked_at",
+    "profile_version",
+    "assessment_procedure_version",
     "outcome",
     "changed_functions",
     "evidence",
@@ -75,6 +77,8 @@ def validate_reassessment_history(
 
         if harness_id not in catalog or harness_id not in assessments:
             raise SystemExit(f"reassessment history references unknown or incomplete harness: {harness_id}")
+        if assessments[harness_id]["status"] == "proposed":
+            raise SystemExit(f"reassessment history cannot reference proposed assessment: {harness_id}")
         if not round_id.startswith("R") or not round_id[1:].isdigit():
             raise SystemExit(f"invalid reassessment round id: {round_id}")
         if row["outcome"] not in REASSESSMENT_OUTCOMES:
@@ -86,6 +90,11 @@ def validate_reassessment_history(
             date.fromisoformat(row["checked_at"])
         except ValueError as exc:
             raise SystemExit(f"{round_id}/{harness_id}: checked_at must be YYYY-MM-DD") from exc
+        for version_key in ("profile_version", "assessment_procedure_version"):
+            if not SEMVER_RE.fullmatch(row[version_key]):
+                raise SystemExit(
+                    f"{round_id}/{harness_id}: {version_key} must be a semantic version such as 0.2.0"
+                )
 
         previous = latest_event.get(harness_id)
         if previous and row["previous_review_ref"] != previous["accepted_review_ref"]:
@@ -128,6 +137,12 @@ def validate_reassessment_history(
             raise SystemExit(f"{harness_id}: last_checked_at differs from latest successful history event")
         if assessment["review_ref"] != event["accepted_review_ref"]:
             raise SystemExit(f"{harness_id}: canonical review_ref differs from latest successful reassessment ref")
+        if assessment.get("profile_version") != event["profile_version"]:
+            raise SystemExit(f"{harness_id}: profile_version differs from latest successful reassessment event")
+        if assessment.get("assessment_procedure_version") != event["assessment_procedure_version"]:
+            raise SystemExit(
+                f"{harness_id}: assessment_procedure_version differs from latest successful reassessment event"
+            )
 
     for harness_id, event in latest_event.items():
         if event["outcome"] != "blocked":
@@ -148,28 +163,43 @@ def main() -> int:
     by_id = {row["harness_id"]: row for row in catalog_rows}
 
     assessments = load_assessments(repo / "assessments")
-    completed = []
+    canonical_assessments: dict[str, dict[str, str]] = {}
     for harness_id, assessment in assessments.items():
         validate_assessment(assessment)
-        if harness_id not in by_id:
-            raise SystemExit(f"unknown assessment: {harness_id}")
-        source = by_id[harness_id]
+        source = by_id.get(harness_id)
+        if assessment["status"] == "proposed":
+            # Proposed is an intake/review artifact, not an admitted Index fact.
+            # It may coexist with an older catalog record while deep review
+            # updates the project label, repository target, or pinned ref. Cross-
+            # artifact equality is therefore intentionally deferred to admission,
+            # where the accepted proposal must update/agree with catalog atomically.
+            continue
+        if source is None:
+            raise SystemExit(f"canonical assessment missing catalog row: {harness_id}")
         for key in ("project_name", "repository", "review_ref"):
             if assessment[key] != source[key]:
                 raise SystemExit(f"{harness_id}: {key} differs from catalog")
-        completed.append(int(source["catalog_position"]))
-    completed.sort()
-    if completed != list(range(1, len(completed) + 1)):
-        raise SystemExit("completed assessments must form a contiguous catalog prefix")
+        canonical_assessments[harness_id] = assessment
+
+    # Admission is intentionally sparse with respect to catalog_position. The
+    # catalog is an immutable discovery/order ledger, while proposed assessments
+    # can remain unresolved as later positions are admitted. If an earlier
+    # proposal is admitted later, cohort-relative signatures at later positions
+    # must be re-synthesized; repository-relative assessments do not move.
 
     reassessment_history = read_psv(repo / "data" / "reassessment-history.psv")
-    validate_reassessment_history(reassessment_history, by_id, assessments)
+    validate_reassessment_history(reassessment_history, by_id, canonical_assessments)
 
     signatures = read_psv(repo / "data" / "signatures.psv")
-    signature_ids = [row["harness_id"] for row in signatures]
-    included = [h for h, row in assessments.items() if row["status"] == "included"]
-    if set(signature_ids) != set(included):
-        raise SystemExit("signatures must cover exactly included assessments")
+    signature_ids = {row["harness_id"] for row in signatures}
+    included = {h for h, row in canonical_assessments.items() if row["status"] == "included"}
+    if signature_ids != included:
+        signature_only = sorted(signature_ids - included)
+        missing_signatures = sorted(included - signature_ids)
+        raise SystemExit(
+            "signatures must cover exactly included canonical assessments; "
+            f"signature_only={signature_only}; missing_signatures={missing_signatures}"
+        )
     for row in signatures:
         if int(row["catalog_position"]) != int(by_id[row["harness_id"]]["catalog_position"]):
             raise SystemExit(f"{row['harness_id']}: signature position mismatch")
@@ -178,9 +208,10 @@ def main() -> int:
     for path, expected in generated.items():
         if not path.exists() or path.read_text(encoding="utf-8") != expected:
             raise SystemExit(f"{path.name} is stale; run scripts/render_tldr.py")
+    proposed_count = sum(1 for row in assessments.values() if row["status"] == "proposed")
     print(
-        f"Validated {len(assessments)} assessment(s), {len(reassessment_history)} reassessment event(s) "
-        f"across {len(catalog_rows)} candidates"
+        f"Validated {len(canonical_assessments)} canonical assessment(s), {proposed_count} proposed intake assessment(s), "
+        f"{len(reassessment_history)} reassessment event(s) across {len(catalog_rows)} catalog candidates"
     )
     return 0
 

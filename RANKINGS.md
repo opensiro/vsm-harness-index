@@ -6,13 +6,11 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | 1 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 1 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
-| 1 | <a id="qwen-code"></a>[Qwen Code](https://github.com/QwenLM/qwen-code) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 1 | <a id="microsoft-agent-framework"></a>[Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 1 | <a id="autogen-agentchat"></a>[Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 1 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 2 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 2 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
-| 2 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 2/6 | 1/5 | 1 | 0 | 0 | `A C — A — —` |
 | 2 | <a id="letta"></a>[Letta](https://github.com/letta-ai/letta) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 2 | <a id="metagpt"></a>[MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 3 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
@@ -27,16 +25,13 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="repomaster"></a>[RepoMaster](https://github.com/QuantaAlpha/RepoMaster) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="pi"></a>[Pi](https://github.com/earendil-works/pi) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="mirothinker"></a>[MiroThinker](https://github.com/MiroMindAI/MiroThinker) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 3 | <a id="deepagents"></a>[Deep Agents](https://github.com/langchain-ai/deepagents) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="claude-agent-sdk"></a>[Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="openai-agents-js"></a>[OpenAI Agents SDK for JavaScript](https://github.com/openai/openai-agents-js) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 3 | <a id="crush"></a>[Crush](https://github.com/charmbracelet/crush) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="strands-agents"></a>[Strands Agents](https://github.com/strands-agents/harness-sdk) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 3 | <a id="deerflow"></a>[DeerFlow](https://github.com/bytedance/deer-flow) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="agentsilex"></a>[AgentSilex](https://github.com/howl-anderson/agentsilex) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 3 | <a id="opencode"></a>[OpenCode](https://github.com/anomalyco/opencode) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 3 | <a id="gemini-cli"></a>[Gemini CLI](https://github.com/google-gemini/gemini-cli) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="codex"></a>[Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="google-adk"></a>[Google ADK](https://github.com/google/adk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 3 | <a id="openai-agents-sdk"></a>[OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
