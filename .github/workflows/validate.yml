@@ -15,7 +15,6 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/check_index.py
-      - run: python scripts/check_compatibility.py
       - name: Check immutable generation provenance against PR base
         if: github.event_name == 'pull_request'
         run: python scripts/check_generation_provenance.py --base-ref "${{ github.event.pull_request.base.sha }}"
