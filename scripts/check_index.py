@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate registry, assessments, reassessment history, signatures, and generated views."""
+"""Validate registry, assessments, reassessment history, signatures, generated views, and active contracts."""
 from __future__ import annotations
 import csv
 from datetime import date
@@ -16,6 +16,11 @@ CATALOG_FIELDS = [
     "source_membership",
     "review_ref",
     "pinned_at",
+]
+
+ACTIVE_CONTRACT_FIELDS = [
+    "profile_version",
+    "methodology_version",
 ]
 
 REASSESSMENT_FIELDS = [
@@ -50,12 +55,27 @@ def read_psv(path: Path) -> list[dict[str, str]]:
                 "catalog schema mismatch: expected discovery/order/provenance fields only; "
                 f"got {reader.fieldnames}"
             )
+        if path.name == "active-contract.psv" and reader.fieldnames != ACTIVE_CONTRACT_FIELDS:
+            raise SystemExit(
+                "active contract schema mismatch: "
+                f"expected {ACTIVE_CONTRACT_FIELDS}, got {reader.fieldnames}"
+            )
         if path.name == "reassessment-history.psv" and reader.fieldnames != REASSESSMENT_FIELDS:
             raise SystemExit(
                 "reassessment history schema mismatch: "
                 f"expected {REASSESSMENT_FIELDS}, got {reader.fieldnames}"
             )
         return list(reader)
+
+
+def validate_active_contract(rows: list[dict[str, str]]) -> dict[str, str]:
+    if len(rows) != 1:
+        raise SystemExit("active-contract.psv must contain exactly one active Profile/Methodology pair")
+    contract = rows[0]
+    for key in ACTIVE_CONTRACT_FIELDS:
+        if not SEMVER_RE.fullmatch(contract[key]):
+            raise SystemExit(f"active contract {key} must be a semantic version such as 0.2.0")
+    return contract
 
 
 def validate_reassessment_history(
@@ -154,6 +174,9 @@ def validate_reassessment_history(
 
 def main() -> int:
     repo = Path(__file__).resolve().parents[1]
+
+    active_contract = validate_active_contract(read_psv(repo / "data" / "active-contract.psv"))
+
     catalog_rows = read_psv(repo / "data" / "catalog.psv")
     positions = [int(row["catalog_position"]) for row in catalog_rows]
     if positions != list(range(1, len(catalog_rows) + 1)):
@@ -211,7 +234,8 @@ def main() -> int:
     proposed_count = sum(1 for row in assessments.values() if row["status"] == "proposed")
     print(
         f"Validated {len(canonical_assessments)} canonical assessment(s), {proposed_count} proposed intake assessment(s), "
-        f"{len(reassessment_history)} reassessment event(s) across {len(catalog_rows)} catalog candidates"
+        f"{len(reassessment_history)} reassessment event(s) across {len(catalog_rows)} catalog candidates; "
+        f"active Profile {active_contract['profile_version']} / Methodology {active_contract['methodology_version']}"
     )
     return 0
 
