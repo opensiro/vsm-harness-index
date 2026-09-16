@@ -1,0 +1,30 @@
+name: render-r2-batch2
+
+on:
+  push:
+    branches:
+      - r2-batch-2-positive-s3
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/render_tldr.py
+      - name: Commit generated views
+        run: |
+          if git diff --quiet -- TLDR.md RANKINGS.md; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add TLDR.md RANKINGS.md
+          git commit -m "Regenerate R2 batch 2 views"
+          git push origin HEAD:r2-batch-2-positive-s3
