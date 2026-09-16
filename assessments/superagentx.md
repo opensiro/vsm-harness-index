@@ -4,6 +4,12 @@ project_name: SuperAgentX
 repository: https://github.com/superagentxai/superagentx
 review_ref: 28f2759f20d2dba9fa184ca4fe6b50943388cfbc
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 28f2759f20d2dba9fa184ca4fe6b50943388cfbc
+last_checked_at: 2026-09-16
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
