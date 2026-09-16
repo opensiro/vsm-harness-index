@@ -4,6 +4,12 @@ project_name: LlamaIndex
 repository: https://github.com/run-llama/llama_index
 review_ref: 7169bcd0dca2e16aecc8e0247f34e50079d9c0d5
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: fd4a517ad6490f0c8464a13fdf133760b696434a
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

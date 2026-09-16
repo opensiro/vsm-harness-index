@@ -4,6 +4,12 @@ project_name: Semantic Kernel
 repository: https://github.com/microsoft/semantic-kernel
 review_ref: ca40aa7226531d28a721d0ca0e451d0aaf86dafc
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: ca40aa7226531d28a721d0ca0e451d0aaf86dafc
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: C

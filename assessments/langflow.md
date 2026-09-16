@@ -4,6 +4,12 @@ project_name: Langflow
 repository: https://github.com/langflow-ai/langflow
 review_ref: 595cd72a2b2021f2375fa31109af02d20bb17648
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 5621dcfd84e11108e4cc1ecb0c51f41053c4211c
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

@@ -4,6 +4,12 @@ project_name: LangChain
 repository: https://github.com/langchain-ai/langchain
 review_ref: 348c9dc572599947d2d7d33d6a5b8b936e92a1d4
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 5c1f28271295bb13034f4cf8964f74c117357d40
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
