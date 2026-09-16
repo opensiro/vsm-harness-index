@@ -4,6 +4,12 @@ project_name: Cline
 repository: https://github.com/cline/cline
 review_ref: cfe9cadab99617d5013bf89f07b079d105057791
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: d6d45664512852a56e59d3e8538c72a3adc94ae1
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: C
@@ -38,6 +44,8 @@ Coding agents are S1 units. Team mode is not the ordinary single-agent path, so 
 
 ## S3 — Inside-and-now control
 `C`: the coordinator/team runtime maintains current task ownership/dependencies, run status/progress, mission state and teammate lifecycle, enabling current commitment regulation at team scope; this is an optional team subsystem rather than the default single-agent path.
+
+R2 ownership-mode revalidation: the checked team runtime still makes teammate management lead-only (`team_spawn_teammate` / `team_shutdown_teammate`) and keeps team task/run/outcome state inside the first-party team subsystem. Cline also has user approval surfaces elsewhere, including recoverable session approvals, but the reviewed evidence does not show a distinct parent mode taking the team-level allocation/lifecycle/commitment right itself. Approval of an action or outcome review is therefore not enough to publish `C(P)` for S3.
 
 ## S3* — Complementary audit
 `C`: first-party reviewer composition plus explicit reviewed/rejected outcome fragments create a separate review path; finalization is gated on reviewed required sections. The audit role is composable rather than universally closed/default.
