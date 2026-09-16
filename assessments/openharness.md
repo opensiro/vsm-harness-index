@@ -2,7 +2,7 @@
 harness_id: openharness
 project_name: OpenHarness
 repository: https://github.com/HKUDS/OpenHarness
-review_ref: 9b2efd7
+review_ref: 9b2efd795c6aa09f88b0c257d269a9e518da6ae7
 reviewed_at: 2026-09-15
 status: proposed
 autonomy_s1: A
@@ -16,13 +16,13 @@ autonomy_s5: —
 # OpenHarness
 
 ## Review boundary
-Completed chat assessment of the pinned OpenHarness runtime. The original chat checkpoint recorded abbreviated ref `9b2efd7…`; this import preserves that known ref rather than fabricating a 40-character SHA.
+Completed chat assessment of the pinned OpenHarness runtime at the resolved immutable revision.
 
 ## Repository architecture
 The completed review established autonomous operational execution plus coordination/current-control and complementary-audit paths in the standard harness; no S4/S5 closure was established.
 
 ## Primary evidence
-- Completed 2026-09-15 chat review recorded signature `A C A A — —` and flagged S2 for a dedicated re-review issue (#39).
+- Completed 2026-09-15 chat review recorded signature `A C A A — —` at the pinned revision and flagged S2 for a dedicated re-review issue (#39).
 
 ## Operational model
 Autonomous operations are surrounded by runtime coordination/current-control and a separate evaluation/audit path; future adaptation and ultimate policy remain outside the demonstrated closure.
@@ -49,4 +49,4 @@ Autonomous operations are surrounded by runtime coordination/current-control and
 The completed review did not justify stronger recursion/S4/S5 claims; S2 remains explicitly subject to the recorded re-review.
 
 ## Deep-review conclusion
-Signature from the completed chat review: `A C A A — —`. The full immutable SHA should be restored from the original review evidence before treating this import as final canonical pin.
+Signature at the pinned revision: `A C A A — —`. S2 remains explicitly marked for the recorded re-review rather than being treated as newly proven.
