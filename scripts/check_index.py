@@ -77,6 +77,8 @@ def validate_reassessment_history(
 
         if harness_id not in catalog or harness_id not in assessments:
             raise SystemExit(f"reassessment history references unknown or incomplete harness: {harness_id}")
+        if assessments[harness_id]["status"] == "proposed":
+            raise SystemExit(f"reassessment history cannot reference proposed assessment: {harness_id}")
         if not round_id.startswith("R") or not round_id[1:].isdigit():
             raise SystemExit(f"invalid reassessment round id: {round_id}")
         if row["outcome"] not in REASSESSMENT_OUTCOMES:
@@ -161,28 +163,36 @@ def main() -> int:
     by_id = {row["harness_id"]: row for row in catalog_rows}
 
     assessments = load_assessments(repo / "assessments")
+    canonical_assessments: dict[str, dict[str, str]] = {}
     completed = []
     for harness_id, assessment in assessments.items():
         validate_assessment(assessment)
+        if assessment["status"] == "proposed":
+            if harness_id in by_id:
+                raise SystemExit(
+                    f"{harness_id}: proposed assessment is pre-admission and must not already have a catalog row"
+                )
+            continue
         if harness_id not in by_id:
-            raise SystemExit(f"unknown assessment: {harness_id}")
+            raise SystemExit(f"canonical assessment missing catalog row: {harness_id}")
         source = by_id[harness_id]
         for key in ("project_name", "repository", "review_ref"):
             if assessment[key] != source[key]:
                 raise SystemExit(f"{harness_id}: {key} differs from catalog")
+        canonical_assessments[harness_id] = assessment
         completed.append(int(source["catalog_position"]))
     completed.sort()
     if completed != list(range(1, len(completed) + 1)):
-        raise SystemExit("completed assessments must form a contiguous catalog prefix")
+        raise SystemExit("completed canonical assessments must form a contiguous catalog prefix")
 
     reassessment_history = read_psv(repo / "data" / "reassessment-history.psv")
-    validate_reassessment_history(reassessment_history, by_id, assessments)
+    validate_reassessment_history(reassessment_history, by_id, canonical_assessments)
 
     signatures = read_psv(repo / "data" / "signatures.psv")
     signature_ids = [row["harness_id"] for row in signatures]
-    included = [h for h, row in assessments.items() if row["status"] == "included"]
+    included = [h for h, row in canonical_assessments.items() if row["status"] == "included"]
     if set(signature_ids) != set(included):
-        raise SystemExit("signatures must cover exactly included assessments")
+        raise SystemExit("signatures must cover exactly included canonical assessments")
     for row in signatures:
         if int(row["catalog_position"]) != int(by_id[row["harness_id"]]["catalog_position"]):
             raise SystemExit(f"{row['harness_id']}: signature position mismatch")
@@ -191,9 +201,10 @@ def main() -> int:
     for path, expected in generated.items():
         if not path.exists() or path.read_text(encoding="utf-8") != expected:
             raise SystemExit(f"{path.name} is stale; run scripts/render_tldr.py")
+    proposed_count = sum(1 for row in assessments.values() if row["status"] == "proposed")
     print(
-        f"Validated {len(assessments)} assessment(s), {len(reassessment_history)} reassessment event(s) "
-        f"across {len(catalog_rows)} candidates"
+        f"Validated {len(canonical_assessments)} canonical assessment(s), {proposed_count} proposed intake assessment(s), "
+        f"{len(reassessment_history)} reassessment event(s) across {len(catalog_rows)} catalog candidates"
     )
     return 0
 
