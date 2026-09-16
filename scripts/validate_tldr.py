@@ -18,6 +18,10 @@ SPEC_PROVENANCE_KEYS = (
     "profile_version",
     "assessment_procedure_version",
 )
+GENERATION_PROVENANCE_KEYS = (
+    "generated_profile_version",
+    "generated_assessment_procedure_version",
+)
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$")
 
 
@@ -60,6 +64,17 @@ def require_iso_date(row: dict[str, str], key: str) -> None:
         raise ValueError(f"{row.get('harness_id')}: {key} must be YYYY-MM-DD") from exc
 
 
+def validate_version_pair(row: dict[str, str], keys: tuple[str, str], label: str) -> list[str]:
+    present = [key for key in keys if row.get(key)]
+    if present and len(present) != len(keys):
+        missing = [key for key in keys if not row.get(key)]
+        raise ValueError(f"{row['harness_id']}: {label} metadata must be complete; missing {missing}")
+    for key in present:
+        if not SEMVER_RE.fullmatch(row[key]):
+            raise ValueError(f"{row['harness_id']}: {key} must be a semantic version such as 0.2.0")
+    return present
+
+
 def validate_assessment(row: dict[str, str]) -> None:
     for key in ("harness_id", "project_name", "repository", "review_ref", "reviewed_at", "status"):
         if not row.get(key):
@@ -84,15 +99,12 @@ def validate_assessment(row: dict[str, str]) -> None:
     if row["status"] == "included" and states[0] != "A":
         raise ValueError(f"{row['harness_id']}: included harness must establish S1 · A")
 
-    present_spec = [key for key in SPEC_PROVENANCE_KEYS if row.get(key)]
-    if present_spec and len(present_spec) != len(SPEC_PROVENANCE_KEYS):
-        missing = [key for key in SPEC_PROVENANCE_KEYS if not row.get(key)]
+    present_spec = validate_version_pair(row, SPEC_PROVENANCE_KEYS, "spec provenance")
+    present_generation = validate_version_pair(row, GENERATION_PROVENANCE_KEYS, "generation provenance")
+    if present_generation and not present_spec:
         raise ValueError(
-            f"{row['harness_id']}: spec provenance metadata must be complete; missing {missing}"
+            f"{row['harness_id']}: generation provenance requires current Profile/procedure provenance"
         )
-    for key in present_spec:
-        if not SEMVER_RE.fullmatch(row[key]):
-            raise ValueError(f"{row['harness_id']}: {key} must be a semantic version such as 0.2.0")
 
     present_freshness = [key for key in FRESHNESS_KEYS if row.get(key)]
     if present_freshness and len(present_freshness) != len(FRESHNESS_KEYS):
