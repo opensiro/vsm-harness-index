@@ -4,6 +4,12 @@ project_name: Rasa
 repository: https://github.com/RasaHQ/rasa
 review_ref: 60a3cff9c08183760355b07bd60f5223d8916d6b
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 60a3cff9c08183760355b07bd60f5223d8916d6b
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

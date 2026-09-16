@@ -4,6 +4,12 @@ project_name: Khoj
 repository: https://github.com/khoj-ai/khoj
 review_ref: ae229ca894c0b80ad84664afcfdde523b5e87057
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: ae229ca894c0b80ad84664afcfdde523b5e87057
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
