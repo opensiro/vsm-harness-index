@@ -6,6 +6,12 @@ review_ref: 5bcdd177d70fa2b31a754cfcd801e77b2e1ab16a
 runtime_repository: https://github.com/letta-ai/letta-code
 runtime_review_ref: 5bc853fd6fd69f00c115e320316fa4c0654a3dfb
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 5bcdd177d70fa2b31a754cfcd801e77b2e1ab16a
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
