@@ -60,11 +60,13 @@ Use exactly one of:
 
 See `METHODOLOGY.md` for semantics.
 
+`blocked` is a historical round outcome, not a successful freshness check. It keeps `accepted_review_ref` equal to `previous_review_ref` and must not advance the assessment's `last_checked_*` or `last_reassessment_round` fields.
+
 ## Canonical assessment updates
 
 The round file and history are append-only historical records. `assessments/<harness_id>.md` remains the canonical current assessment.
 
-After a harness is checked in a round, update its front matter with the complete freshness set:
+After a successful round check (any outcome except `blocked`), update its front matter with the complete freshness set:
 
 ```yaml
 last_checked_ref: <40-character commit>
@@ -76,6 +78,8 @@ last_reassessment_round: R1
 `last_checked_*` advances on every successful longitudinal check. `assessment_changed_at` advances only when the canonical assessment materially changes. A `no-material-change` event can therefore advance `last_checked_at` while leaving `reviewed_at`, `review_ref`, and `assessment_changed_at` unchanged.
 
 If a new-ref reassessment is accepted, also update `review_ref`, `reviewed_at`, and the matching `data/catalog.psv` review boundary. If the accepted assessment materially changes, update `assessment_changed_at` to that reassessment date.
+
+For `reassessed-unchanged` and `reassessed-changed`, `accepted_review_ref` must equal the new `checked_ref` and must differ from `previous_review_ref`. For `same-ref-correction`, all three refs remain at the existing accepted boundary.
 
 ## History row
 
