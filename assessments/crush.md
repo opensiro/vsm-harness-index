@@ -2,50 +2,51 @@
 harness_id: crush
 project_name: Crush
 repository: https://github.com/charmbracelet/crush
-review_ref: 102f75616d0bbc25377c6b12a2b320fbd3b242a2
-reviewed_at: 2026-09-15
-status: included
+review_ref: 09fc6d11921ff8a31c89ccea5fc41fc9e58629f5
+reviewed_at: 2026-09-16
+status: proposed
 autonomy_s1: A
-autonomy_s2: —
-autonomy_s3: —
+autonomy_s2: C
+autonomy_s3: C
 autonomy_s3_star: —
 autonomy_s4: —
-autonomy_s5: —
+autonomy_s5: P
 ---
 
 # Crush
 
 ## Review boundary
-Deep review of the pinned core agent/session runtime. Internal naming such as `orchestration`, queues and subagent mode is evaluated at the functional boundary of one coding-agent runtime rather than treated as evidence of a multi-S1 metasystem.
+Pinned first-party coding agent including parallel agent tool, centralized permission service and hook-level approval behavior.
 
 ## Repository architecture
-Crush implements a session-based terminal coding agent that coordinates model calls, tool execution, messages, session state, token management, queuing and automatic summarization. The core `sessionAgent` also carries an `isSubAgent` mode, but the reviewed runtime remains one operational agent abstraction with session-local dispatch/state machinery rather than a separate organizational control layer.
+Crush can run parallel agents and centralizes permission decisions with one-shot/persistent grant/deny semantics, race-safe first resolution and exact-call hook approval.
 
 ## Primary evidence
-- `internal/agent/agent.go`: describes the package as the core orchestration layer for session-based AI agent functionality and coordinates conversations, tool execution, sessions, messages, summarization, queues and token management.
-- `sessionAgent` owns tools, prompts, session/message services, request queues/cancellation and an `isSubAgent` flag inside the same operational runtime.
-- Per-session mutex/queue/cancel handling serializes runtime requests; it is session execution infrastructure, not regulation among autonomous organizational S1s.
+- Pinned deep review established parallel-agent execution and centralized permission/approval service at `review_ref`.
 
 ## Operational model
-A session agent receives prompts, invokes the model, executes tools and maintains conversation/session state while runtime machinery queues or cancels concurrent requests and summarizes context as needed.
+Agents perform autonomous coding work while constructor/runtime permission machinery coordinates and regulates concurrent action; ultimate approval remains parent-owned.
 
 ## S1 — Operations
-`A`: the coding agent autonomously chooses tools/actions and iterates from repository/tool feedback. Confidence: high.
+`A`: coding agents autonomously select tools/actions. Confidence: high.
 
 ## S2 — Coordination
-`—`: session queues, dispatch serialization and subagent mode operate inside the runtime abstraction; no separate mechanism was found for regulating interference among multiple autonomous S1 units.
+`C`: parallel-agent runtime plus centralized permission resolution provide composable cross-agent coordination. Confidence: medium-high.
 
 ## S3 — Inside-and-now control
-`—`: request/session lifecycle management is infrastructure for an S1, not whole-system current authority over shared organizational resources/capacity/commitments.
+`C`: centralized permission service and exact-call approval hooks regulate current execution. Confidence: high.
 
 ## S3* — Complementary audit
-`—`: review-shaped prompts and normal checks remain inside operational work; no independent complementary audit channel was established.
+`—`: no independent complementary audit channel was established. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`—`: summarization/context management and task reasoning support current execution, not prospective environmental intelligence and organizational adaptation.
+`—`: no prospective organizational adaptation function was established. Confidence: high.
 
 ## S5 — Policy and identity
-`—`: prompts, models, tools and runtime policy are externally configured.
+`P`: grant/deny approval ultimately belongs to the parent/user policy boundary. Confidence: high.
 
 ## Recursion, variety, escalation
-Crush exposes a capable operational runtime and subagent-capable mode, but no reviewed S2–S5 organizational function is closed.
+Parallel agents amplify operational variety; permission serialization/race-safe resolution attenuate conflicting action and escalate unresolved authority.
+
+## Deep-review conclusion
+Signature at the pinned revision: `A C C — — P`. Crush combines autonomous coding with constructor-owned coordination/current control and parent-owned policy.
