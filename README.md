@@ -17,11 +17,11 @@ assessments/<harness_id>.md
 
 ## Assessments
 
-An assessment is the primary research artifact. It describes the reviewed GitHub repository, review boundary, operational model, evidence for each VSM function, evidence gaps, recursion/variety context, and the out-of-box autonomy states `A/C/P/—/?`.
+An assessment is the primary research artifact. It describes the reviewed GitHub repository, review boundary, operational model, evidence for each VSM function, evidence gaps, recursion/variety context, and the first-party ownership states `A/A(P)/C/C(P)/P/—/?`.
 
 Assessments are **repository-relative**: adding another harness must not change an existing assessment unless its own reviewed evidence changes.
 
-The VSM function definitions come only from [vsm-harness-profile](https://github.com/opensiro/vsm-harness-profile). The evidence/classification procedure comes from [`assess-vsm-harness`](https://github.com/opensiro/vsm-skills/tree/main/skills/assess-vsm-harness).
+The VSM function definitions come only from [vsm-harness-profile](https://github.com/opensiro/vsm-harness-profile). The evidence/classification procedure comes from [`assess-vsm-harness`](https://github.com/opensiro/vsm-harness-skills/tree/main/skills/assess-vsm-harness).
 
 ## TLDR signatures
 
@@ -29,60 +29,83 @@ The VSM function definitions come only from [vsm-harness-profile](https://github
 
 ## Rankings
 
-`RANKINGS.md` is a deterministic autonomy-coverage table derived from assessment states. It reports agent-owned functions, agent-owned metasystem functions, composable paths, parent-assisted closure, and unknowns.
+`RANKINGS.md` is a deterministic autonomy-coverage table derived from assessment states. It reports agent-owned functions, agent-owned metasystem functions, composable paths, supported parent-governed modes, and unknowns.
 
-It is **not** a product-quality, maturity, or VSM-viability ranking. `C`, `P`, and `?` receive no fractional score.
+It is **not** a product-quality, maturity, or VSM-viability ranking. `C`, parent-mode presence, and `?` receive no fractional score.
 
-## Autonomy states
+For ranking, `A(P)` has base state `A` and counts exactly like `A`; `C(P)` has base state `C` and counts exactly like `C`. The `(P)` modifier is descriptive and never increases the ranking key.
+
+## Autonomy / ownership states
 
 The categorical states also have product-facing properties. These properties describe how a harness exposes a VSM function to an adopter; they are not additional scores.
 
 | State | Property | Meaning |
 | --- | --- | --- |
 | `A` | **Autonomous** | Ready agent-owned enactment of the mapped VSM function. |
+| `A(P)` | **Autonomous + Parent mode** | `A` is established and the same S3/S4/S5 function also has a distinct first-party parent-governed mode that is operationally closed. |
 | `C` | **Constructor** | A first-party primitive specifically exposes the relevant decision/feedback path, but the autonomous role or closure loop still requires composition. |
-| `P` | **Parent-governed** | Parent-assisted runtime closure; valid only for S5. The closure path is operational, while ultimate authority remains with a parent system, human, institution, or higher recursion level. |
+| `C(P)` | **Constructor + Parent mode** | `C` is established and the same S3/S4/S5 function also has a distinct first-party parent-governed mode that is operationally closed. |
+| `P` | **Parent-governed** | For S3/S4/S5, the function is operationally closed through legitimate parent authority, while no first-party `A` or `C` autonomous mode is established at the reviewed boundary. |
 | `—` | **No-path** | No material first-party path is supplied inside the reviewed boundary. This is boundary-relative, not a claim that the function is impossible to add. |
 | `?` | **Unknown** | Primary evidence is insufficient for a positive or defensible no-path conclusion. |
 
-### Interpreting `A`, `C`, and `P`
+### Interpreting `A`, `C`, and parent modes
 
-`A`, `C`, and `P` represent different ownership and product trade-offs, not a universal better/worse ordering.
+The states represent ownership arrangements and supported first-party modes, not a universal better/worse ordering.
 
-- **Autonomous (`A`)** is more useful when the adopter wants the VSM function to operate autonomously out of the box. This is often desirable in applied harnesses whose operational domain is already known and bounded, for example coding, research, chemistry, finance, or another domain-specific agent system.
-- **Constructor (`C`)** can be more useful when the adopter wants to compose, replace, or specialize the responsible role themselves. This is often desirable in base, platform, or governance harnesses that expose a first-party decision/feedback path but deliberately leave the final autonomous role or closure loop to the application builder.
-- **Parent-governed (`P`)** is specific to S5 and is useful when ultimate policy or identity authority is intentionally retained by a parent system, human, institution, or higher recursion level. The closure path already exists at runtime, but the final decision right remains outside agent ownership.
+- **Autonomous (`A`)** is useful when the adopter wants the VSM function to operate autonomously through a first-party mode.
+- **Constructor (`C`)** is useful when the adopter wants to compose, replace, or specialize the responsible role themselves while retaining a first-party function-specific decision/feedback path.
+- **Parent-governed (`P`)** records an operational mode where the decisive right for S3, S4, or S5 belongs to a legitimate parent human, institution, higher recursion, or evidenced distributed parent arrangement and returns to govern subsequent operation.
+- **`A(P)` / `C(P)`** record that the harness supports both the base autonomous/constructor mode and a separately evidenced parent-governed mode for the same function.
 
-Accordingly, a harness with more `A` states is not necessarily a better platform, and a harness with more `C` or `P` states is not necessarily less capable. `A` measures ready agent-owned autonomy at the reviewed boundary; `C` measures a supported composition path for that function; `P` measures an operational S5 closure path whose final authority belongs to a parent. The preferred state depends on whether the system is intended to provide an opinionated autonomous organization, reusable organizational primitives, or explicit higher-level policy authority.
+`A(P)` and `C(P)` do **not** mean two actors simultaneously own one decisive right. They are multi-mode capability notation. A concrete deployment/run must still have one reconstructable owner for the relevant organizational decision at a time.
 
-`P` is not a weaker form of `A`, and it is not equivalent to `C`. With `C`, the adopter still needs to compose the autonomous role or closure loop. With `P`, the closure loop is already operational: the harness can detect or escalate an identity-level issue, transfer it to the designated parent authority, receive the decision, and continue under that decision. What remains outside the harness is the ultimate S5 authority itself.
+Accordingly, a self-hosted harness can legitimately expose operator-governed S3/S4/S5 modes without losing its autonomous mode. Conversely, a deliberately non-human organization such as a swarm can remain plain `A` for S3/S4/S5 when those functions close autonomously and no qualifying parent mode is established.
 
-This distinction is especially important in high-stakes applied systems. A chemistry, healthcare, finance, or government harness may intentionally provide autonomous S1-S4 functions while keeping S5 closure with a scientist, clinician, institution, regulator, or other legitimate parent authority. In such a design, a vector ending in `P` may be preferable to one ending in `A` because preserving parent-owned policy and identity is an architectural requirement rather than an autonomy deficit.
+The `(P)` modifier is not earned by generic human involvement. A stop button, approval hook, merge review, configuration file, dashboard, or extension point does not establish a parent-governed VSM function by itself. The assessment must first establish the actual S3/S4/S5 function and then reconstruct the parent-owned decisive right plus the return/closure path.
 
-This is also why the states should not be read as a maturity ladder such as `— < C < P < A`. They describe different ownership arrangements for an established VSM function or path: autonomous ownership (`A`), composable ownership (`C`), and, for S5 only, parent-owned closure (`P`). `—` and `?` are different cases: respectively no material first-party path inside the reviewed boundary, and insufficient evidence to classify that path.
+This is also why the states must not be read as a maturity ladder such as `— < C < P < A`. `A(P)` is not better than `A`, and `C(P)` is not halfway between `C` and `A`; the modifier exposes an additional supported ownership configuration.
+
+### Function-specific parent modes
+
+For **S3**, a parent mode requires a whole-system current view and a parent-owned decision over resources, commitments, priorities, constraints, accountability, synergy, or intervention whose result changes subsequent current operation.
+
+For **S4**, a parent mode requires an outside-and-then adaptation loop: external/prospective distinctions produce adaptation options, a parent owns the decisive adaptation judgment in that mode, and the result returns into current capability/S3.
+
+For **S5**, a parent mode remains identity/ultimate-policy specific: the issue reaches legitimate parent authority, that authority decides, and the decision returns to govern subsequent operation. `S5=A(P)` is possible when the harness genuinely exposes both an internally agent-owned S5 closure mode and a distinct parent-governed S5 mode; those are alternative ownership configurations, not simultaneous ultimate authorities.
+
+Methodology `0.3.0` deliberately does not apply `(P)` or standalone `P` to S2 or S3*.
 
 ### Harness properties and transformation
 
-The properties can also describe how a harness is intentionally shaped for reuse.
-
-A **Constructor harness** is primarily an upstream base platform. It intentionally exposes one or more organizational functions as composable `C` paths so downstream users can build their own autonomous or parent-governed harnesses on top. The constructor provides first-party interfaces, feedback channels, decision points, state transitions, or control hooks needed to realize a function, while leaving the concrete role, policy, model, authority, or closure logic to the adopter. In this sense, `C` is not an incomplete `A`; it can be the desired product surface of the base harness itself.
+A **Constructor harness** is primarily an upstream base platform. It intentionally exposes one or more organizational functions as composable `C` paths so downstream users can build their own autonomous or parent-governed harnesses on top. The constructor provides first-party interfaces, feedback channels, decision points, state transitions, or control hooks needed to realize a function, while leaving the concrete role, policy, model, authority, or closure logic to the adopter.
 
 An **Autonomous harness** is commonly a downstream specialization of that constructor surface. A team can fork or configure the constructor, choose concrete implementations for its open decision rights, and close selected `C` paths with ready agent-owned roles. When a constructor S3 interface receives a concrete autonomous regulator with the required whole-system view and authority, for example, that downstream harness may legitimately move from `S3=C` to `S3=A`.
 
-A **Parent-governed harness** is another downstream closure choice, specific to S5. Instead of replacing the constructor S5 path with an autonomous ultimate authority, the derived harness can wire that path to a scientist, clinician, institution, regulator, human operator, or higher recursion level. The resulting S5 may become `P`: the escalation and return path is operational, but legitimate ultimate authority remains outside the agent-owned boundary.
+A **Parent-governed mode** is another closure arrangement. A self-hosted or institutionally governed harness may wire an established S3, S4, or S5 path to an operator, maintainer arrangement, scientist, clinician, institution, regulator, or higher recursion. If the same standard distribution also retains an autonomous or constructor path, the resulting state may be `A(P)` or `C(P)` rather than replacing the base mode.
 
-`No-path` and `Unknown` should not be treated as product strategies in the same sense. `No-path` records that the reviewed standard distribution does not materially expose the VSM function at that boundary; a fork may add either an Autonomous, Constructor, or, for S5, Parent-governed path. `Unknown` records an evidence limitation and should be resolved by additional primary evidence rather than interpreted as either capability or absence.
+`No-path` and `Unknown` should not be treated as product strategies in the same sense. `No-path` records that the reviewed standard distribution does not materially expose the VSM function at that boundary; a fork may add Autonomous, Constructor, or qualifying parent-governed modes. `Unknown` records an evidence limitation and should be resolved by additional primary evidence rather than interpreted as either capability or absence.
 
-The canonical relationship is therefore constructor-first:
+The canonical relationship is therefore not a maturity chain but a set of ownership closures around an established function:
 
 ```text
-Constructor / base harness
-        ↓ fork or configure for a concrete domain and organization
-Applied / domain-specific harness
-        ↓ close each `C` composition point with a concrete owner
-Autonomous (`A`) and/or Parent-governed (`P`) harness
-        ↓ deploy
-Operational system
+Constructor (`C`)
+        ↓ compose autonomous owner
+Autonomous (`A`)
+
+Constructor (`C`)
+        + complete parent mode
+        ↓
+Constructor + Parent (`C(P)`)
+
+Autonomous (`A`)
+        + complete parent mode
+        ↓
+Autonomous + Parent (`A(P)`)
+
+Parent-only first-party closure
+        ↓
+Parent-governed (`P`)
 ```
 
 For example, a reusable constructor base may keep S1 as a working operational runtime while exposing metasystem functions as replaceable primitives:
@@ -96,19 +119,9 @@ S4   C   environment / prospective-intelligence interface
 S5   C   policy / authority / escalation interface
 ```
 
-Different users can fork the same constructor base and close those paths differently. A chemistry fork might implement autonomous chemistry-aware S2-S4 roles and connect S5 to a scientist or institution, producing something like `A A A A A P` if the evidence supports each function. A software-engineering fork could use different agents, tools, policies, and authority while inheriting the same constructor contracts. The value of the constructor is therefore that it standardizes where organizational decision rights and feedback paths exist without prescribing every downstream owner.
+A downstream self-hosted specialization might establish autonomous S3 while retaining a first-party operator mode, producing `S3=A(P)`. Another could leave the autonomous S4 role composable while shipping a complete operator-owned adaptation loop, producing `S4=C(P)`. A non-human specialization could instead close S3-S5 autonomously and remain plain `A` with no parent modifier.
 
-The intended direction is thus usually:
-
-```text
-Constructor (`C`)
-        ↓ specialization
-Autonomous (`A`) or Parent-governed (`P`)
-```
-
-not `A → C`. It is still possible to refactor an existing autonomous harness into a constructor by extracting a fixed role behind a stable interface, but that is a reverse-engineering path for creating a reusable base, not the defining lifecycle of a Constructor harness.
-
-These transformations never preserve assessment states automatically. Every fork or configured downstream harness is a separate system-in-focus and must be assessed from its own reviewed evidence. Specializing a constructor path into a ready autonomous role can change `C` to `A`; wiring S5 to an actual parent authority can change `C` to `P`; extracting a fixed autonomous role into a reusable extension point can change `A` to `C`. These transitions describe changes in ownership and closure, not a monotonic maturity progression.
+These transformations never preserve assessment states automatically. Every fork, configured downstream harness, or materially different standard-distribution mode is assessed from evidence at the declared boundary. Methodology `0.3.0` allows one assessment state to record multiple first-party ownership modes only when both belong to the reviewed standard distribution and both are independently evidenced.
 
 ## Corrections and re-reviews
 
