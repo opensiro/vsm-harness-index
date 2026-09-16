@@ -69,7 +69,7 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 68|repomaster|RepoMaster|https://github.com/QuantaAlpha/RepoMaster|2025-08-17T10:22:04Z|adapted-source|9cf59930102970d61d6eb2f702fd936d3cda7f11|2026-09-13
 69|youtu-agent|Youtu-Agent|https://github.com/TencentCloudADP/youtu-agent|2025-08-21T07:58:13Z|adapted-source|c2caa539f4c95ae1c39ed24dc8a99cb3651e1d5d|2026-09-13
 70|agentrl|AgentRL|https://github.com/THUDM/AgentRL|2025-09-10T11:37:54Z|adapted-source|6a73409d31ba695d383b978a8ad3ef400d90c054|2026-09-13
-71|openclaw|OpenClaw|https://github.com/openclaw/openclaw|2025-11-24T10:16:47Z|adapted-source|697bce4c40a5e80993adc62d26ce660943e0865e|2026-09-13
+71|openclaw|OpenClaw|https://github.com/openclaw/openclaw|2025-11-24T10:16:47Z|adapted-source|387da5edaa9d6c6cfcfc15e167fe2e46d8647d86|2026-09-16
 72|oh-my-pi|oh-my-pi|https://github.com/can1357/oh-my-pi|2025-12-31T14:01:28Z|adapted-source|165cede8400d833382177a4dfd2901271c9f0a2c|2026-09-13
 73|hive|Hive|https://github.com/aden-hive/hive|2026-01-12T00:04:22Z|adapted-source|0c387492067e8b7d3e1c803009169f202f30ed77|2026-09-13
 74|open-harness|open-harness|https://github.com/MaxGfeller/open-harness|2026-02-23T19:39:32Z|adapted-source|026e8d9cb8f184cdeac2054b489ec20972ba8681|2026-09-13
