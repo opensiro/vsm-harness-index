@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 """Parse and validate standalone harness assessments."""
 from __future__ import annotations
+from datetime import date
 from pathlib import Path
 
 SYSTEM_KEYS = ("s1", "s2", "s3", "s3_star", "s4", "s5")
 ALLOWED = {"A", "C", "P", "—", "?"}
+FRESHNESS_KEYS = (
+    "last_checked_ref",
+    "last_checked_at",
+    "assessment_changed_at",
+    "last_reassessment_round",
+)
 
 
 def parse_assessment(path: Path) -> dict[str, str]:
@@ -38,12 +45,22 @@ def vector(row: dict[str, str]) -> list[str]:
     return [row.get(f"autonomy_{key}", "") for key in SYSTEM_KEYS]
 
 
+def require_iso_date(row: dict[str, str], key: str) -> None:
+    value = row.get(key, "")
+    try:
+        date.fromisoformat(value)
+    except ValueError as exc:
+        raise ValueError(f"{row.get('harness_id')}: {key} must be YYYY-MM-DD") from exc
+
+
 def validate_assessment(row: dict[str, str]) -> None:
     for key in ("harness_id", "project_name", "repository", "review_ref", "reviewed_at", "status"):
         if not row.get(key):
             raise ValueError(f"{row.get('path')}: missing {key}")
     if len(row["review_ref"]) != 40:
         raise ValueError(f"{row['harness_id']}: review_ref must be 40 characters")
+    require_iso_date(row, "reviewed_at")
+
     states = vector(row)
     if any(state not in ALLOWED for state in states):
         raise ValueError(f"{row['harness_id']}: invalid autonomy state")
@@ -51,6 +68,24 @@ def validate_assessment(row: dict[str, str]) -> None:
         raise ValueError(f"{row['harness_id']}: P is valid only for S5")
     if row["status"] == "included" and states[0] != "A":
         raise ValueError(f"{row['harness_id']}: included harness must establish S1 · A")
+
+    present_freshness = [key for key in FRESHNESS_KEYS if row.get(key)]
+    if present_freshness and len(present_freshness) != len(FRESHNESS_KEYS):
+        missing = [key for key in FRESHNESS_KEYS if not row.get(key)]
+        raise ValueError(
+            f"{row['harness_id']}: reassessment freshness metadata must be complete; missing {missing}"
+        )
+    if present_freshness:
+        if len(row["last_checked_ref"]) != 40:
+            raise ValueError(f"{row['harness_id']}: last_checked_ref must be 40 characters")
+        require_iso_date(row, "last_checked_at")
+        require_iso_date(row, "assessment_changed_at")
+        if not row["last_reassessment_round"].startswith("R") or not row["last_reassessment_round"][1:].isdigit():
+            raise ValueError(f"{row['harness_id']}: last_reassessment_round must look like R1")
+        if row["assessment_changed_at"] > row["last_checked_at"]:
+            raise ValueError(
+                f"{row['harness_id']}: assessment_changed_at cannot be later than last_checked_at"
+            )
 
 
 def main() -> int:
