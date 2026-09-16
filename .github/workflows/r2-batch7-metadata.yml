@@ -1,0 +1,64 @@
+name: r2-batch7-metadata
+
+on:
+  push:
+    branches:
+      - r2-batch-7-s1-runtime-revalidation
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: r2-batch-7-s1-runtime-revalidation
+          fetch-depth: 0
+      - name: Record batch 7 lifecycle metadata
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          history = Path('data/reassessment-history.psv')
+          rows = [
+              'R2|rasa|60a3cff9c08183760355b07bd60f5223d8916d6b|60a3cff9c08183760355b07bd60f5223d8916d6b|60a3cff9c08183760355b07bd60f5223d8916d6b|2026-09-17|0.2.1|0.3.1|no-upstream-change|—|https://github.com/RasaHQ/rasa/blob/60a3cff9c08183760355b07bd60f5223d8916d6b/rasa/core/policies/ensemble.py ; https://github.com/RasaHQ/rasa/blob/60a3cff9c08183760355b07bd60f5223d8916d6b/rasa/core/lock_store.py',
+              'R2|botpress|7bf2906580ab86fe647d4fb109b8c3bdcaef9c57|e2fc160d1c14a08e27d4db15e368e01e6e7a588f|7bf2906580ab86fe647d4fb109b8c3bdcaef9c57|2026-09-17|0.2.1|0.3.1|no-material-change|—|https://github.com/botpress/botpress/compare/7bf2906580ab86fe647d4fb109b8c3bdcaef9c57...e2fc160d1c14a08e27d4db15e368e01e6e7a588f ; https://github.com/botpress/botpress/blob/e2fc160d1c14a08e27d4db15e368e01e6e7a588f/packages/llmz/README.md',
+              'R2|khoj|ae229ca894c0b80ad84664afcfdde523b5e87057|ae229ca894c0b80ad84664afcfdde523b5e87057|ae229ca894c0b80ad84664afcfdde523b5e87057|2026-09-17|0.2.1|0.3.1|no-upstream-change|—|https://github.com/khoj-ai/khoj/blob/ae229ca894c0b80ad84664afcfdde523b5e87057/src/khoj/processor/conversation/prompts.py',
+              'R2|flowise|9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb|9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb|9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb|2026-09-17|0.2.1|0.3.1|no-upstream-change|—|https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/packages/components/nodes/agentflow/Agent/Agent.ts ; https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/packages/components/nodes/agentflow/HumanInput/HumanInput.ts',
+              'R2|dify|43ac0fce5c87815a2a6c71e109ca12aa2d467710|9c6c48b50ba99512801873350702326a44dc62de|43ac0fce5c87815a2a6c71e109ca12aa2d467710|2026-09-17|0.2.1|0.3.1|no-material-change|—|https://github.com/langgenius/dify/compare/43ac0fce5c87815a2a6c71e109ca12aa2d467710...9c6c48b50ba99512801873350702326a44dc62de ; https://github.com/langgenius/dify/blob/9c6c48b50ba99512801873350702326a44dc62de/api/core/workflow/nodes/agent_v2/agent_node.py',
+          ]
+          text = history.read_text()
+          for row in rows:
+              if row.split('|', 3)[1] not in {line.split('|', 3)[1] for line in text.splitlines() if line.startswith('R2|')}:
+                  text = text.rstrip('\n') + '\n' + row + '\n'
+          history.write_text(text)
+
+          round_file = Path('reassessments/R2-2026-09-16.md')
+          marker = '\n## Completion\n'
+          round_rows = [
+              '| `rasa` | `60a3cff9c08183760355b07bd60f5223d8916d6b` | `60a3cff9c08183760355b07bd60f5223d8916d6b` | 2026-09-17 | 0.2.1 | 0.3.1 | no-upstream-change | — | [policy ensemble](https://github.com/RasaHQ/rasa/blob/60a3cff9c08183760355b07bd60f5223d8916d6b/rasa/core/policies/ensemble.py) |',
+              '| `botpress` | `7bf2906580ab86fe647d4fb109b8c3bdcaef9c57` | `e2fc160d1c14a08e27d4db15e368e01e6e7a588f` | 2026-09-17 | 0.2.1 | 0.3.1 | no-material-change | — | [upstream delta](https://github.com/botpress/botpress/compare/7bf2906580ab86fe647d4fb109b8c3bdcaef9c57...e2fc160d1c14a08e27d4db15e368e01e6e7a588f), [LLMz runtime](https://github.com/botpress/botpress/blob/e2fc160d1c14a08e27d4db15e368e01e6e7a588f/packages/llmz/README.md) |',
+              '| `khoj` | `ae229ca894c0b80ad84664afcfdde523b5e87057` | `ae229ca894c0b80ad84664afcfdde523b5e87057` | 2026-09-17 | 0.2.1 | 0.3.1 | no-upstream-change | — | [personal-agent prompts](https://github.com/khoj-ai/khoj/blob/ae229ca894c0b80ad84664afcfdde523b5e87057/src/khoj/processor/conversation/prompts.py) |',
+              '| `flowise` | `9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb` | `9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb` | 2026-09-17 | 0.2.1 | 0.3.1 | no-upstream-change | — | [Agentflow agent](https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/packages/components/nodes/agentflow/Agent/Agent.ts) |',
+              '| `dify` | `43ac0fce5c87815a2a6c71e109ca12aa2d467710` | `9c6c48b50ba99512801873350702326a44dc62de` | 2026-09-17 | 0.2.1 | 0.3.1 | no-material-change | — | [upstream delta](https://github.com/langgenius/dify/compare/43ac0fce5c87815a2a6c71e109ca12aa2d467710...9c6c48b50ba99512801873350702326a44dc62de), [Agent v2 runtime](https://github.com/langgenius/dify/blob/9c6c48b50ba99512801873350702326a44dc62de/api/core/workflow/nodes/agent_v2/agent_node.py) |',
+          ]
+          text = round_file.read_text()
+          if '`rasa` | `60a3cff9c08183760355b07bd60f5223d8916d6b`' not in text:
+              insertion = '\n' + '\n'.join(round_rows) + '\n'
+              if marker not in text:
+                  raise SystemExit('completion marker not found')
+              text = text.replace(marker, insertion + marker, 1)
+              round_file.write_text(text)
+          PY
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/reassessment-history.psv reassessments/R2-2026-09-16.md
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Record R2 batch 7 lifecycle metadata"
+          git push origin HEAD:r2-batch-7-s1-runtime-revalidation
