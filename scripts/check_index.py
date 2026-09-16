@@ -4,7 +4,7 @@ from __future__ import annotations
 import csv
 from datetime import date
 from pathlib import Path
-from validate_tldr import load_assessments, validate_assessment
+from validate_tldr import SEMVER_RE, load_assessments, validate_assessment
 from render_tldr import render_tldr, render_rankings
 
 CATALOG_FIELDS = [
@@ -25,6 +25,8 @@ REASSESSMENT_FIELDS = [
     "checked_ref",
     "accepted_review_ref",
     "checked_at",
+    "profile_version",
+    "assessment_procedure_version",
     "outcome",
     "changed_functions",
     "evidence",
@@ -86,6 +88,11 @@ def validate_reassessment_history(
             date.fromisoformat(row["checked_at"])
         except ValueError as exc:
             raise SystemExit(f"{round_id}/{harness_id}: checked_at must be YYYY-MM-DD") from exc
+        for version_key in ("profile_version", "assessment_procedure_version"):
+            if not SEMVER_RE.fullmatch(row[version_key]):
+                raise SystemExit(
+                    f"{round_id}/{harness_id}: {version_key} must be a semantic version such as 0.2.0"
+                )
 
         previous = latest_event.get(harness_id)
         if previous and row["previous_review_ref"] != previous["accepted_review_ref"]:
@@ -128,6 +135,12 @@ def validate_reassessment_history(
             raise SystemExit(f"{harness_id}: last_checked_at differs from latest successful history event")
         if assessment["review_ref"] != event["accepted_review_ref"]:
             raise SystemExit(f"{harness_id}: canonical review_ref differs from latest successful reassessment ref")
+        if assessment.get("profile_version") != event["profile_version"]:
+            raise SystemExit(f"{harness_id}: profile_version differs from latest successful reassessment event")
+        if assessment.get("assessment_procedure_version") != event["assessment_procedure_version"]:
+            raise SystemExit(
+                f"{harness_id}: assessment_procedure_version differs from latest successful reassessment event"
+            )
 
     for harness_id, event in latest_event.items():
         if event["outcome"] != "blocked":
