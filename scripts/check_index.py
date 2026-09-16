@@ -62,7 +62,8 @@ def validate_reassessment_history(
     assessments: dict[str, dict[str, str]],
 ) -> None:
     seen: set[tuple[str, str]] = set()
-    latest: dict[str, dict[str, str]] = {}
+    latest_event: dict[str, dict[str, str]] = {}
+    latest_successful: dict[str, dict[str, str]] = {}
 
     for row in rows:
         harness_id = row["harness_id"]
@@ -86,34 +87,54 @@ def validate_reassessment_history(
         except ValueError as exc:
             raise SystemExit(f"{round_id}/{harness_id}: checked_at must be YYYY-MM-DD") from exc
 
-        if row["outcome"] in {"no-upstream-change", "no-material-change"}:
-            if row["accepted_review_ref"] != row["previous_review_ref"]:
-                raise SystemExit(
-                    f"{round_id}/{harness_id}: unchanged outcome cannot advance accepted_review_ref"
-                )
-        if row["outcome"] == "same-ref-correction":
-            if row["checked_ref"] != row["previous_review_ref"] or row["accepted_review_ref"] != row["previous_review_ref"]:
-                raise SystemExit(
-                    f"{round_id}/{harness_id}: same-ref correction must keep the review boundary"
-                )
-
-        previous = latest.get(harness_id)
+        previous = latest_event.get(harness_id)
         if previous and row["previous_review_ref"] != previous["accepted_review_ref"]:
             raise SystemExit(
                 f"{round_id}/{harness_id}: previous_review_ref does not continue prior accepted boundary"
             )
-        latest[harness_id] = row
 
-    for harness_id, event in latest.items():
+        outcome = row["outcome"]
+        if outcome in {"no-upstream-change", "no-material-change", "blocked"}:
+            if row["accepted_review_ref"] != row["previous_review_ref"]:
+                raise SystemExit(
+                    f"{round_id}/{harness_id}: {outcome} cannot advance accepted_review_ref"
+                )
+        elif outcome == "same-ref-correction":
+            if row["checked_ref"] != row["previous_review_ref"] or row["accepted_review_ref"] != row["previous_review_ref"]:
+                raise SystemExit(
+                    f"{round_id}/{harness_id}: same-ref correction must keep the review boundary"
+                )
+        elif outcome in {"reassessed-unchanged", "reassessed-changed"}:
+            if row["accepted_review_ref"] != row["checked_ref"]:
+                raise SystemExit(
+                    f"{round_id}/{harness_id}: accepted new-ref reassessment must use checked_ref"
+                )
+            if row["accepted_review_ref"] == row["previous_review_ref"]:
+                raise SystemExit(
+                    f"{round_id}/{harness_id}: new-ref reassessment must advance the review boundary"
+                )
+
+        latest_event[harness_id] = row
+        if outcome != "blocked":
+            latest_successful[harness_id] = row
+
+    for harness_id, event in latest_successful.items():
         assessment = assessments[harness_id]
         if assessment.get("last_reassessment_round") != event["round_id"]:
-            raise SystemExit(f"{harness_id}: last_reassessment_round differs from history")
+            raise SystemExit(f"{harness_id}: last_reassessment_round differs from latest successful history event")
         if assessment.get("last_checked_ref") != event["checked_ref"]:
-            raise SystemExit(f"{harness_id}: last_checked_ref differs from history")
+            raise SystemExit(f"{harness_id}: last_checked_ref differs from latest successful history event")
         if assessment.get("last_checked_at") != event["checked_at"]:
-            raise SystemExit(f"{harness_id}: last_checked_at differs from history")
+            raise SystemExit(f"{harness_id}: last_checked_at differs from latest successful history event")
         if assessment["review_ref"] != event["accepted_review_ref"]:
-            raise SystemExit(f"{harness_id}: canonical review_ref differs from latest accepted reassessment ref")
+            raise SystemExit(f"{harness_id}: canonical review_ref differs from latest successful reassessment ref")
+
+    for harness_id, event in latest_event.items():
+        if event["outcome"] != "blocked":
+            continue
+        assessment = assessments[harness_id]
+        if assessment["review_ref"] != event["accepted_review_ref"]:
+            raise SystemExit(f"{harness_id}: blocked event cannot change canonical review_ref")
 
 
 def main() -> int:
