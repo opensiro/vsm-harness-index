@@ -75,7 +75,11 @@ def validate_assessment(row: dict[str, str]) -> None:
     states = vector(row)
     if any(state not in ALLOWED for state in states):
         raise ValueError(f"{row['harness_id']}: invalid autonomy state")
-    if any(state == "P" for state in states[:-1]):
+
+    # Proposed files are review artifacts. They may deliberately contain claims
+    # that admission is expected to reject or correct; strict semantic invariants
+    # apply once the assessment becomes canonical.
+    if row["status"] != "proposed" and any(state == "P" for state in states[:-1]):
         raise ValueError(f"{row['harness_id']}: P is valid only for S5")
     if row["status"] == "included" and states[0] != "A":
         raise ValueError(f"{row['harness_id']}: included harness must establish S1 · A")
