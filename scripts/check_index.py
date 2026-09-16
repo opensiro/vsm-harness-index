@@ -191,10 +191,15 @@ def main() -> int:
     validate_reassessment_history(reassessment_history, by_id, canonical_assessments)
 
     signatures = read_psv(repo / "data" / "signatures.psv")
-    signature_ids = [row["harness_id"] for row in signatures]
-    included = [h for h, row in canonical_assessments.items() if row["status"] == "included"]
-    if set(signature_ids) != set(included):
-        raise SystemExit("signatures must cover exactly included canonical assessments")
+    signature_ids = {row["harness_id"] for row in signatures}
+    included = {h for h, row in canonical_assessments.items() if row["status"] == "included"}
+    if signature_ids != included:
+        signature_only = sorted(signature_ids - included)
+        missing_signatures = sorted(included - signature_ids)
+        raise SystemExit(
+            "signatures must cover exactly included canonical assessments; "
+            f"signature_only={signature_only}; missing_signatures={missing_signatures}"
+        )
     for row in signatures:
         if int(row["catalog_position"]) != int(by_id[row["harness_id"]]["catalog_position"]):
             raise SystemExit(f"{row['harness_id']}: signature position mismatch")
