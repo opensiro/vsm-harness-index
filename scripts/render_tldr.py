@@ -15,6 +15,18 @@ def escape(value: str) -> str:
     return value.replace("|", "\\|").replace("\n", " ")
 
 
+def base_state(state: str) -> str:
+    if state == "A(P)":
+        return "A"
+    if state == "C(P)":
+        return "C"
+    return state
+
+
+def has_parent_mode(state: str) -> bool:
+    return state in {"A(P)", "C(P)", "P"}
+
+
 def display_name(catalog: dict[str, str]) -> str:
     # Public naming can evolve without changing the stable harness_id used by
     # assessments/signatures. GSD is the current project name for gsd-core.
@@ -73,11 +85,12 @@ def render_rankings(repo: Path) -> str:
     rows = []
     for position, catalog, assessment, _ in data(repo):
         states = vector(assessment)
+        bases = [base_state(s) for s in states]
         rows.append((
-            sum(s == "A" for s in states[1:]),
-            sum(s == "A" for s in states),
-            sum(s == "C" for s in states),
-            sum(s == "P" for s in states),
+            sum(s == "A" for s in bases[1:]),
+            sum(s == "A" for s in bases),
+            sum(s == "C" for s in bases),
+            sum(has_parent_mode(s) for s in states),
             sum(s == "?" for s in states),
             catalog["repository_created_at"],
             position,
@@ -90,9 +103,9 @@ def render_rankings(repo: Path) -> str:
     lines = [
         "# VSM Harness Autonomy Rankings",
         "",
-        "This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted scores. Within the same rank, newer repositories are displayed first.",
+        "This ranks first-party agent-owned mode coverage of VSM functions, not product quality or organizational viability. A(P) counts exactly like A and C(P) exactly like C for the ranking key; parent-mode presence and ? are descriptive only. Within the same rank, newer repositories are displayed first.",
         "",
-        "| Rank | Harness | Year | Agent-owned | Metasystem A | C | P | ? | Vector |",
+        "| Rank | Harness | Year | Agent-owned | Metasystem A | C | P modes | ? | Vector |",
         "| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     rank = 0
@@ -119,6 +132,7 @@ def main() -> int:
     else:
         for path, text in outputs.items(): path.write_text(text, encoding="utf-8")
     return 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())
