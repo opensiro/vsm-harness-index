@@ -77,8 +77,8 @@ def validate_assessment(row: dict[str, str]) -> None:
         raise ValueError(f"{row['harness_id']}: invalid autonomy state")
     if any(state == "P" for state in states[:-1]):
         raise ValueError(f"{row['harness_id']}: P is valid only for S5")
-    if row["status"] in {"included", "proposed"} and states[0] != "A":
-        raise ValueError(f"{row['harness_id']}: {row['status']} harness must establish S1 · A")
+    if row["status"] == "included" and states[0] != "A":
+        raise ValueError(f"{row['harness_id']}: included harness must establish S1 · A")
 
     present_spec = [key for key in SPEC_PROVENANCE_KEYS if row.get(key)]
     if present_spec and len(present_spec) != len(SPEC_PROVENANCE_KEYS):
