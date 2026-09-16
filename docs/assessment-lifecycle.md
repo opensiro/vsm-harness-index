@@ -17,7 +17,7 @@ A proposed assessment is **not canonical**:
 - it does not participate in reassessment history;
 - its VSM states remain reviewable evidence claims rather than admitted Index classifications.
 
-If a matching catalog row already exists, repository identity and `review_ref` must agree with that row.
+If a matching catalog row already exists, stable repository identity (`project_name`, `repository`) must agree with that row. The proposal may carry a newer `review_ref` produced by deep review; that ref becomes the catalog/canonical boundary only if admission accepts the assessment.
 
 ## Canonical assessment
 
@@ -33,7 +33,7 @@ or
 status: excluded-no-agentic-vsm
 ```
 
-Canonical assessments must have a matching catalog row. Included assessments participate in signatures and generated comparison views. Canonical assessments may enter longitudinal reassessment rounds.
+Canonical assessments must have a matching catalog row, and their accepted `review_ref` must match it. Included assessments participate in signatures and generated comparison views. Canonical assessments may enter longitudinal reassessment rounds.
 
 Version-aware canonical assessments should record:
 
