@@ -1,0 +1,64 @@
+name: r2-batch3-metadata
+
+on:
+  push:
+    branches:
+      - r2-batch-3-s3-parent-revalidation
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Append R2 batch 3 records
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          history = Path('data/reassessment-history.psv')
+          rows = [
+              'R2|hive|0c387492067e8b7d3e1c803009169f202f30ed77|6193aea7eb064f7536dfedcbe9ff08ad954ac53b|0c387492067e8b7d3e1c803009169f202f30ed77|2026-09-17|0.2.1|0.3.1|no-upstream-change|—|https://github.com/aden-hive/hive/blob/6193aea7eb064f7536dfedcbe9ff08ad954ac53b/docs/key_concepts/coordination.md ; https://github.com/aden-hive/hive/blob/6193aea7eb064f7536dfedcbe9ff08ad954ac53b/docs/key_concepts/queen.md',
+              'R2|openharness-hkuds|9b2efd795c6aa09f88b0c257d269a9e518da6ae7|9b2efd795c6aa09f88b0c257d269a9e518da6ae7|9b2efd795c6aa09f88b0c257d269a9e518da6ae7|2026-09-17|0.2.1|0.3.1|no-upstream-change|—|https://github.com/HKUDS/OpenHarness/blob/9b2efd795c6aa09f88b0c257d269a9e518da6ae7/src/openharness/coordinator/coordinator_mode.py',
+              'R2|cline|cfe9cadab99617d5013bf89f07b079d105057791|d6d45664512852a56e59d3e8538c72a3adc94ae1|cfe9cadab99617d5013bf89f07b079d105057791|2026-09-17|0.2.1|0.3.1|no-material-change|—|https://github.com/cline/cline/compare/cfe9cadab99617d5013bf89f07b079d105057791...d6d45664512852a56e59d3e8538c72a3adc94ae1 ; https://github.com/cline/cline/blob/d6d45664512852a56e59d3e8538c72a3adc94ae1/sdk/packages/core/src/extensions/tools/team/team-tools.ts',
+              'R2|eliza|5b183d21ff25a8c3e43af9a284a38b5ff487ded9|4ec8130df99b89921ca39377f513ef8ef7c5fba7|5b183d21ff25a8c3e43af9a284a38b5ff487ded9|2026-09-17|0.2.1|0.3.1|no-material-change|—|https://github.com/elizaOS/eliza/compare/5b183d21ff25a8c3e43af9a284a38b5ff487ded9...4ec8130df99b89921ca39377f513ef8ef7c5fba7 ; https://github.com/elizaOS/eliza/blob/4ec8130df99b89921ca39377f513ef8ef7c5fba7/plugins/plugin-agent-orchestrator/docs/SUBAGENT_FLOW_AND_PARITY.md',
+              'R2|mastra|76cec9be889c0a6ae7f51fbf25356d5a06019351|ab0632ca5e1a76da1db23d37bf9a8704f7cea9e6|76cec9be889c0a6ae7f51fbf25356d5a06019351|2026-09-17|0.2.1|0.3.1|no-material-change|—|https://github.com/mastra-ai/mastra/compare/76cec9be889c0a6ae7f51fbf25356d5a06019351...ab0632ca5e1a76da1db23d37bf9a8704f7cea9e6 ; https://github.com/mastra-ai/mastra/blob/ab0632ca5e1a76da1db23d37bf9a8704f7cea9e6/docs/src/content/en/reference/migrations/network-to-supervisor.mdx ; https://github.com/mastra-ai/mastra/blob/ab0632ca5e1a76da1db23d37bf9a8704f7cea9e6/docs/src/content/en/docs/agents/human-in-the-loop.mdx',
+          ]
+          text = history.read_text()
+          for row in rows:
+              key = '|'.join(row.split('|')[:2]) + '|'
+              if key not in text:
+                  text = text.rstrip('\n') + '\n' + row + '\n'
+          history.write_text(text)
+
+          round_file = Path('reassessments/R2-2026-09-16.md')
+          text = round_file.read_text()
+          table_rows = [
+              '| `hive` | `0c387492067e8b7d3e1c803009169f202f30ed77` | `6193aea7eb064f7536dfedcbe9ff08ad954ac53b` | 2026-09-17 | 0.2.1 | 0.3.1 | no-upstream-change | — | [Sentinel escalation and Queen control](https://github.com/aden-hive/hive/blob/6193aea7eb064f7536dfedcbe9ff08ad954ac53b/docs/key_concepts/coordination.md) |',
+              '| `openharness-hkuds` | `9b2efd795c6aa09f88b0c257d269a9e518da6ae7` | `9b2efd795c6aa09f88b0c257d269a9e518da6ae7` | 2026-09-17 | 0.2.1 | 0.3.1 | no-upstream-change | — | [coordinator current-control path](https://github.com/HKUDS/OpenHarness/blob/9b2efd795c6aa09f88b0c257d269a9e518da6ae7/src/openharness/coordinator/coordinator_mode.py) |',
+              '| `cline` | `cfe9cadab99617d5013bf89f07b079d105057791` | `d6d45664512852a56e59d3e8538c72a3adc94ae1` | 2026-09-17 | 0.2.1 | 0.3.1 | no-material-change | — | [upstream delta](https://github.com/cline/cline/compare/cfe9cadab99617d5013bf89f07b079d105057791...d6d45664512852a56e59d3e8538c72a3adc94ae1), [lead-only team tools](https://github.com/cline/cline/blob/d6d45664512852a56e59d3e8538c72a3adc94ae1/sdk/packages/core/src/extensions/tools/team/team-tools.ts) |',
+              '| `eliza` | `5b183d21ff25a8c3e43af9a284a38b5ff487ded9` | `4ec8130df99b89921ca39377f513ef8ef7c5fba7` | 2026-09-17 | 0.2.1 | 0.3.1 | no-material-change | — | [upstream delta](https://github.com/elizaOS/eliza/compare/5b183d21ff25a8c3e43af9a284a38b5ff487ded9...4ec8130df99b89921ca39377f513ef8ef7c5fba7), [orchestrator flow](https://github.com/elizaOS/eliza/blob/4ec8130df99b89921ca39377f513ef8ef7c5fba7/plugins/plugin-agent-orchestrator/docs/SUBAGENT_FLOW_AND_PARITY.md) |',
+              '| `mastra` | `76cec9be889c0a6ae7f51fbf25356d5a06019351` | `ab0632ca5e1a76da1db23d37bf9a8704f7cea9e6` | 2026-09-17 | 0.2.1 | 0.3.1 | no-material-change | — | [supervisor hooks](https://github.com/mastra-ai/mastra/blob/ab0632ca5e1a76da1db23d37bf9a8704f7cea9e6/docs/src/content/en/reference/migrations/network-to-supervisor.mdx), [tool-call HITL](https://github.com/mastra-ai/mastra/blob/ab0632ca5e1a76da1db23d37bf9a8704f7cea9e6/docs/src/content/en/docs/agents/human-in-the-loop.mdx) |',
+          ]
+          if '| `hive` |' not in text:
+              marker = '\n## Completion\n'
+              insertion = '\n'.join(table_rows) + '\n'
+              text = text.replace(marker, '\n' + insertion + marker, 1)
+              round_file.write_text(text)
+          PY
+      - name: Commit metadata
+        run: |
+          if git diff --quiet -- data/reassessment-history.psv reassessments/R2-2026-09-16.md; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/reassessment-history.psv reassessments/R2-2026-09-16.md
+          git commit -m "Record R2 batch 3 reassessment history"
+          git push origin HEAD:r2-batch-3-s3-parent-revalidation
