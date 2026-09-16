@@ -4,6 +4,12 @@ project_name: OpenHands
 repository: https://github.com/OpenHands/OpenHands
 review_ref: 28464621d879e3e9b3ceeae9d70a71d96da6212d
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: f2b0aacda17fc60ea2ea45cfdd2323c12b034b7d
+last_checked_at: 2026-09-16
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
