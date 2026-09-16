@@ -94,15 +94,15 @@ Allowed per-harness outcomes are:
 - **`reassessed-unchanged`** — relevant architecture or behavior changed enough to require a new-ref assessment, but the resulting categorical VSM states remain unchanged;
 - **`reassessed-changed`** — the accepted new-ref reassessment changes one or more material assessment claims, autonomy states, or review-boundary facts;
 - **`same-ref-correction`** — the upstream boundary is unchanged, but stronger evidence or a corrected interpretation changes the assessment;
-- **`blocked`** — the harness could not be reviewed reliably during the round; the reason must be recorded.
+- **`blocked`** — the harness could not be reviewed reliably during the round; the reason must be recorded. A blocked event does not advance the accepted review boundary or assessment freshness.
 
 A round is complete only when every harness in its frozen scope has an explicit outcome. Completion does not imply that every assessment changed; a healthy round may consist mostly of `no-upstream-change` and `no-material-change` results.
 
-The longitudinal invariant is: **every completed harness check states how far upstream the project was inspected, when that inspection occurred, and whether the inspection invalidated or changed the current assessment.**
+The longitudinal invariant is: **every completed harness check states how far upstream the project was inspected, when that inspection occurred, and whether the inspection invalidated or changed the current assessment.** A `blocked` event records an attempted round outcome, not a completed freshness check.
 
 ### Assessment freshness fields
 
-The standalone assessment remains the canonical current assessment, but after a harness first participates in a reassessment round its front matter also records freshness metadata:
+The standalone assessment remains the canonical current assessment, but after a harness first completes a successful reassessment check (any outcome except `blocked`) its front matter also records freshness metadata:
 
 ```yaml
 last_checked_ref: <40-character upstream commit inspected most recently>
@@ -114,13 +114,13 @@ last_reassessment_round: R1
 Their meanings are deliberately separate:
 
 - `review_ref` / `reviewed_at` identify the currently accepted assessment boundary and when that accepted assessment was performed;
-- `last_checked_ref` / `last_checked_at` identify the newest upstream state inspected, even when no assessment rewrite was necessary;
+- `last_checked_ref` / `last_checked_at` identify the newest upstream state successfully inspected, even when no assessment rewrite was necessary;
 - `assessment_changed_at` records the most recent date on which the canonical assessment materially changed, including accepted evidence, boundary, or VSM claims;
-- `last_reassessment_round` links the current freshness state back to the longitudinal round log.
+- `last_reassessment_round` links the current freshness state to the latest successful longitudinal round check.
 
 Therefore `last_checked_ref` may legitimately be newer than `review_ref`. This means the assessment is pinned to an older accepted boundary but has been explicitly rechecked against later upstream development and found still valid.
 
-For a new baseline assessment, `assessment_changed_at` should initially equal `reviewed_at`. Legacy baseline files may omit the new freshness fields until their first reassessment round; the first round that touches them must populate the complete freshness set.
+For a new baseline assessment, `assessment_changed_at` should initially equal `reviewed_at`. Legacy baseline files may omit the new freshness fields until their first successful reassessment check; the first successful round check must populate the complete freshness set.
 
 ### Longitudinal history
 
@@ -132,7 +132,7 @@ The history records, at minimum:
 round_id|harness_id|previous_review_ref|checked_ref|accepted_review_ref|checked_at|outcome|changed_functions|evidence
 ```
 
-`accepted_review_ref` is the review boundary after that event. For `no-upstream-change` and `no-material-change`, it normally remains equal to the previous accepted `review_ref`; for an accepted new-ref reassessment it advances to the new assessment boundary.
+`accepted_review_ref` is the review boundary after that event. For `no-upstream-change`, `no-material-change`, and `blocked`, it remains equal to the previous accepted `review_ref`; for an accepted new-ref reassessment it advances to the new assessment boundary. A `blocked` event remains in history but does not replace the assessment's latest successful freshness metadata.
 
 Round-level descriptions and scope are stored under `reassessments/`; see `reassessments/README.md` for the round template and tracking rules.
 
