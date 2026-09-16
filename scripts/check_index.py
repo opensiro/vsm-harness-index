@@ -169,15 +169,11 @@ def main() -> int:
         validate_assessment(assessment)
         source = by_id.get(harness_id)
         if assessment["status"] == "proposed":
-            # Proposed is an intake/review state, not a canonical completion.
-            # A proposal may exist before catalog insertion or after the candidate
-            # has been pinned/queued in catalog. If a catalog row exists, stable
-            # identity must agree, while the proposal may carry a newer review_ref
-            # that becomes canonical only if admission accepts it.
-            if source is not None:
-                for key in ("project_name", "repository"):
-                    if assessment[key] != source[key]:
-                        raise SystemExit(f"{harness_id}: proposed {key} differs from catalog")
+            # Proposed is an intake/review artifact, not an admitted Index fact.
+            # It may coexist with an older catalog record while deep review
+            # updates the project label, repository target, or pinned ref. Cross-
+            # artifact equality is therefore intentionally deferred to admission,
+            # where the accepted proposal must update/agree with catalog atomically.
             continue
         if source is None:
             raise SystemExit(f"canonical assessment missing catalog row: {harness_id}")
