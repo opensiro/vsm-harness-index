@@ -4,6 +4,12 @@ project_name: Strands Agents
 repository: https://github.com/strands-agents/harness-sdk
 review_ref: 08ed4cfd3eb42ae9f668595e675d5f196eee7e44
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: e7fd22b63f3988997a12fb962144a9663a27d071
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: C
