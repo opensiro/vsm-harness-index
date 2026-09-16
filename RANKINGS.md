@@ -6,7 +6,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | 1 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 2 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
-| 2 | <a id="microsoft-agent-framework"></a>[Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 2 | <a id="microsoft-agent-framework"></a>[Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | 2025 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 2 | <a id="autogen-agentchat"></a>[Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 2 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 3 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |

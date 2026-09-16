@@ -4,6 +4,12 @@ project_name: Agno
 repository: https://github.com/agno-agi/agno
 review_ref: 44219f8532e2fe6ce936850455f4b9a2567e4194
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: cbc10df7c7d377ce86f8d8f9c1e8c364fd94334d
+last_checked_at: 2026-09-16
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: A
@@ -38,7 +44,7 @@ Member agents are S1 units. The team leader is an agent-owned metasystem actor: 
 `A`: `TeamMode.tasks` provides an out-of-box agent-owned mutual-adjustment loop over a shared task board. The leader assigns ownership, prevents duplicate tasks, encodes dependencies, observes member outcomes and can retry/reassign/change the plan; dependency state prevents conflicting/premature execution. This goes beyond one-shot delegation. Confidence: high.
 
 ## S3 — Inside-and-now control
-`A`: the same leader has a current whole-team view of tasks, assignees, dependency/blocked state, results and failures, plus authority to create/reprioritize through dependencies, assign/reassign members, execute work, update status and decide overall completion. That is a concrete agent-owned current-control loop over shared operational commitments. Confidence: high.
+`A`: the same leader has a current whole-team view of tasks, assignees, dependency/blocked state, results and failures, plus authority to create/reprioritize through dependencies, assign/reassign members, execute work, update status and decide overall completion. That is a concrete agent-owned current-control loop over shared operational commitments. Human-in-the-loop paths pause member/tool execution and return the result to the team; they do not independently take ownership of the team-level assignment/plan/completion right, so no separate `(P)` mode is published. Confidence: high.
 
 ## S3* — Complementary audit
 `—`: Agno lets applications compose reviewer/critic members, but the standard team runtime does not supply a distinct sufficiently independent audit channel with alternative operational access and required corrective closure. Confidence: high.

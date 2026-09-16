@@ -4,6 +4,12 @@ project_name: MetaGPT
 repository: https://github.com/FoundationAgents/MetaGPT
 review_ref: 11cdf466d042aece04fc6cfd13b28e1a70341b1f
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 11cdf466d042aece04fc6cfd13b28e1a70341b1f
+last_checked_at: 2026-09-16
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
@@ -39,7 +45,7 @@ Specialist roles are S1 units. The TeamLeader's assignment path is not counted a
 `—`: the reviewed leader/SOP path primarily assigns and sequences work. No separate evidence shows a function that dampens destructive interference or oscillation among autonomous S1 units without centralizing their decisions. Confidence: medium-high.
 
 ## S3 — Inside-and-now control
-`A`: the default TeamLeader has a whole-team current view through team information, routed feedback and a structured plan; it can regulate current commitments by assigning specialists, closing tasks, changing/resetting the plan and gating downstream work on prerequisite results. This goes beyond worker selection alone and is exercised by an autonomous shipped role. Confidence: high.
+`A`: the default TeamLeader has a whole-team current view through team information, routed feedback and a structured plan; it can regulate current commitments by assigning specialists, closing tasks, changing/resetting the plan and gating downstream work on prerequisite results. This goes beyond worker selection alone and is exercised by an autonomous shipped role. Parent-authored roles, SOPs, prompts, budget and team composition constrain this loop but do not provide a separate first-party human/operator decision path over the same current whole-team commitments, so no `(P)` mode is published. Confidence: high.
 
 ## S3* — Complementary audit
 `—`: review/testing inside the normal software-production path does not provide a materially independent alternative access channel to operational reality. Confidence: medium-high.
