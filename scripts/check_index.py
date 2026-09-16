@@ -171,11 +171,11 @@ def main() -> int:
         if assessment["status"] == "proposed":
             # Proposed is an intake/review state, not a canonical completion.
             # A proposal may exist before catalog insertion or after the candidate
-            # has been pinned/queued in catalog. When a catalog row exists, keep
-            # identity/ref metadata consistent, but exclude it from completed
-            # prefix, signatures, rankings, and reassessment history.
+            # has been pinned/queued in catalog. If a catalog row exists, stable
+            # identity must agree, while the proposal may carry a newer review_ref
+            # that becomes canonical only if admission accepts it.
             if source is not None:
-                for key in ("project_name", "repository", "review_ref"):
+                for key in ("project_name", "repository"):
                     if assessment[key] != source[key]:
                         raise SystemExit(f"{harness_id}: proposed {key} differs from catalog")
             continue
