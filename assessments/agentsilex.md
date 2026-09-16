@@ -4,6 +4,12 @@ project_name: AgentSilex
 repository: https://github.com/howl-anderson/agentsilex
 review_ref: cd529f2838151fd8a4f0d6b7054a45d829b3f78d
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: cd529f2838151fd8a4f0d6b7054a45d829b3f78d
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

@@ -4,6 +4,12 @@ project_name: Open Interpreter
 repository: https://github.com/openinterpreter/openinterpreter
 review_ref: f110a7a85f43efc343f936f5bc504e01eb262550
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 5db50b2e93224dda720462f02fc2858cbd112eb5
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: C
