@@ -103,9 +103,9 @@ def render_rankings(repo: Path) -> str:
     lines = [
         "# VSM Harness Autonomy Rankings",
         "",
-        "This ranks first-party agent-owned mode coverage of VSM functions, not product quality or organizational viability. A(P) counts exactly like A and C(P) exactly like C for the ranking key; parent-mode presence and ? are descriptive only. Within the same rank, newer repositories are displayed first.",
+        "This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted scores. Within the same rank, newer repositories are displayed first.",
         "",
-        "| Rank | Harness | Year | Agent-owned | Metasystem A | C | P modes | ? | Vector |",
+        "| Rank | Harness | Year | Agent-owned | Metasystem A | C | P | ? | Vector |",
         "| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     rank = 0
