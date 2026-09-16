@@ -4,6 +4,12 @@ project_name: Dify
 repository: https://github.com/langgenius/dify
 review_ref: 43ac0fce5c87815a2a6c71e109ca12aa2d467710
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 9c6c48b50ba99512801873350702326a44dc62de
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
