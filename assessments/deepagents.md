@@ -1,6 +1,6 @@
 ---
 harness_id: deepagents
-project_name: DeepAgents
+project_name: Deep Agents
 repository: https://github.com/langchain-ai/deepagents
 review_ref: f86b4e9abef7620b63a7258bc9fab0ccd83de8a4
 reviewed_at: 2026-09-17
@@ -16,13 +16,13 @@ autonomy_s4: —
 autonomy_s5: —
 ---
 
-# DeepAgents
+# Deep Agents
 
 ## Review boundary
-DeepAgents at the pinned current `main` revision, including the reusable deep-agent runtime, synchronous and async subagent middleware, the model-facing async task-control tools, and the rubric grader as wired by the first-party `dcode` runtime. Optional middleware/configuration is not classified as Constructor merely because it must be enabled; ownership is determined after the function is established.
+Deep Agents at the pinned current `main` revision, including the reusable deep-agent runtime, synchronous and async subagent middleware, the model-facing async task-control tools, and the rubric grader as wired by the first-party `dcode` runtime. Optional middleware/configuration is not classified as Constructor merely because it must be enabled; ownership is determined after the function is established.
 
 ## Repository architecture
-DeepAgents supplies autonomous tool-using agents plus synchronous and remote asynchronous subagents. `AsyncSubAgentMiddleware` exposes `start_async_task`, `check_async_task`, `update_async_task`, `cancel_async_task` and `list_async_tasks` directly to the main agent. The runtime persists the full set of tracked tasks and executes the agent's selected intervention against the remote subagent thread/run.
+Deep Agents supplies autonomous tool-using agents plus synchronous and remote asynchronous subagents. `AsyncSubAgentMiddleware` exposes `start_async_task`, `check_async_task`, `update_async_task`, `cancel_async_task` and `list_async_tasks` directly to the main agent. The runtime persists the full set of tracked tasks and executes the agent's selected intervention against the remote subagent thread/run.
 
 A separate `RubricMiddleware` intercepts a would-be terminal response and invokes a distinct grader agent. The grader can return `needs_revision`, causing structured feedback to be injected into the primary loop and work to resume. In the current first-party `dcode` server wiring, rubric graders receive explicitly selected read-only external-context tools, so the grader can independently inspect evidence rather than relying only on the primary agent's normal report/transcript.
 
