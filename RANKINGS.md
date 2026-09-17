@@ -62,6 +62,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="openhands"></a>[OpenHands](https://github.com/OpenHands/OpenHands) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="r2r"></a>[R2R](https://github.com/SciPhi-AI/R2R) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 4 | <a id="agentlite"></a>[AgentLite](https://github.com/SalesforceAIResearch/AgentLite) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 4 | <a id="agency-swarm"></a>[Agency Swarm](https://github.com/VRSEN/agency-swarm) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="openagents"></a>[OpenAgents](https://github.com/OpenAgentsInc/openagents) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="crewai"></a>[CrewAI](https://github.com/crewAIInc/crewAI) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="ailice"></a>[AIlice](https://github.com/myshell-ai/AIlice) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
