@@ -3,50 +3,53 @@ harness_id: camel-workforce
 project_name: CAMEL Workforce
 repository: https://github.com/camel-ai/camel
 review_ref: 8c791b7b9cf7deab56cb5a92818c34499af9097f
-reviewed_at: 2026-09-16
-status: proposed
+reviewed_at: 2026-09-17
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+assessment_changed_at: 2026-09-17
+status: included
 autonomy_s1: A
-autonomy_s2: A
+autonomy_s2: C
 autonomy_s3: A
-autonomy_s3_star: C
+autonomy_s3_star: —
 autonomy_s4: —
-autonomy_s5: P
+autonomy_s5: —
 ---
 
 # CAMEL Workforce
 
 ## Review boundary
-Pinned Workforce runtime with Coordinator Agent, Task Planner Agent, task/dependency/assignee/in-flight state, failure analysis/recovery, dynamic workers and human intervention.
+Pinned first-party CAMEL `Workforce`: worker agents, Coordinator Agent, Task Planner Agent, shared pending/completed/dependency/assignee state, failure recovery, dynamic worker creation, callbacks/metrics, and human pause/stop controls. General CAMEL framework features outside Workforce are not automatically credited.
 
-## Repository architecture
-Coordinator and Task Planner operate over shared workforce state. Coordinator assigns/tracks work, analyzes failures, can replan and create workers; quality/failure evaluation is configurable rather than a protected independent auditor.
+Reviewed revision: `8c791b7b9cf7deab56cb5a92818c34499af9097f`. Contract: Profile `0.2.1`, Methodology `0.3.1`. Current upstream was checked separately; the candidate pin is preserved.
 
 ## Primary evidence
-- Pinned deep review established coordinator/planner roles, TaskChannel/dependencies, failure recovery, dynamic worker creation, nested Workforces and human intervention at `review_ref`.
-
-## Operational model
-Workers are S1s. Autonomous coordinator closes coordination and current control; configurable evaluation challenges outcomes; human intervention remains outer authority.
+- [`camel/societies/workforce/workforce.py`](https://github.com/camel-ai/camel/blob/8c791b7b9cf7deab56cb5a92818c34499af9097f/camel/societies/workforce/workforce.py) — Workforce state, Coordinator/Task Planner, dependency state, assignment, recovery and dynamic workers.
+- [`docs/key_modules/workforce.md`](https://github.com/camel-ai/camel/blob/8c791b7b9cf7deab56cb5a92818c34499af9097f/docs/key_modules/workforce.md) — documented Workforce operating model.
+- [`test/workforce/test_workforce_pipeline.py`](https://github.com/camel-ai/camel/blob/8c791b7b9cf7deab56cb5a92818c34499af9097f/test/workforce/test_workforce_pipeline.py) — dependency behavior.
 
 ## S1 — Operations
-`A`: worker agents autonomously execute tasks. Confidence: high.
+`A`. Worker agents autonomously execute assigned task work through model/tool loops. Confidence: high.
 
 ## S2 — Coordination
-`A`: coordinator plus TaskChannel/dependency state regulate multiple workers. Confidence: high.
+`C`. Workforce maintains explicit cross-task dependency state and gates release/order of work across multiple workers. This prevents dependent S1 work from proceeding against unsatisfied predecessor commitments, establishing a concrete coordination path beyond routing. The mechanism is supplied deterministically by Workforce while the application supplies the task graph, so ownership is constructor-side rather than agent-owned. Confidence: high.
 
 ## S3 — Inside-and-now control
-`A`: coordinator assigns/tracks work, analyzes failures, replans and can create replacement/new workers. Confidence: high.
+`A`. The Coordinator operates over shared workforce state, assigns work based on worker capability, tracks current commitments, handles failures, and can create new workers or redirect/replan work. These are whole-workforce current-control rights over assignments and available operational capacity. The model-driven coordinator owns the runtime choice within configured bounds. Confidence: high.
 
 ## S3* — Complementary audit
-`C`: quality/failure evaluation provides a challenge surface, but independence/protection remains configured rather than autonomous. Confidence: medium-high.
+`—`. Quality/failure analysis evaluates returned task results in the ordinary Workforce control/reporting path. No materially complementary evidence-access channel or protected independent audit boundary was established. The historical `C` therefore does not survive current S3* criteria. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`—`: dynamic worker creation/replanning is current-task recovery, not prospective environment-facing adaptation. Confidence: high.
+`—`. Replanning and dynamic worker creation respond to current-task failure; they do not establish an external/future environmental intelligence loop that changes organizational capability. Confidence: high.
 
 ## S5 — Policy and identity
-`P`: pause/stop/skip human intervention and external objective preserve parent authority. Confidence: high.
+`—`. Human pause/stop/skip controls and the externally supplied objective are parent/operator controls over ordinary execution, not a demonstrated ultimate-policy/identity closure path. The historical `P` is therefore removed. Confidence: high.
 
-## Recursion, variety, escalation
-Nested Workforces are technically possible; dynamic worker creation amplifies corrective variety while human intervention supplies escalation.
+## Recursion, variety, and escalation
+Nested Workforces are technically composable, but each nested instance requires its own functional evidence before being counted as recursively viable. Dynamic worker creation amplifies current operational variety; dependency gates, assignment and recovery attenuate it; human controls provide operational escalation without constituting S5.
 
-## Deep-review conclusion
-Signature at the pinned revision: `A A A C — P`. CAMEL Workforce closes strong autonomous S2/S3 without over-crediting current-task replanning as S4.
+## Admission conclusion
+Canonical vector: `A C A — — —`.
+
+Same-ref correction of historical `A A A C — P`: S2 remains but is classified constructor-owned because the decisive dependency gate is runtime machinery; S3 remains autonomous through the Coordinator; ordinary evaluation and human intervention are no longer promoted to S3*/S5.
