@@ -4,6 +4,9 @@ on:
   pull_request:
   push:
 
+permissions:
+  contents: write
+
 jobs:
   index:
     runs-on: ubuntu-latest
@@ -14,6 +17,61 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Prepare remaining batch 29 canonical data
+        if: github.ref == 'refs/heads/admit-batch-29-tail'
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+
+          additions = [
+              ('concordia', 'Concordia', 'https://github.com/google-deepmind/concordia', '2023-11-21T13:34:11Z', '3e30a207bb2b75f9cf837fa6b657c466ca450765', '2026-09-16'),
+              ('openjarvis', 'OpenJarvis', 'https://github.com/open-jarvis/OpenJarvis', '2026-02-15T00:24:16Z', '61c2f89096006604774779b348176ee552afa01b', '2026-09-17'),
+              ('meta-harness', 'Meta-Harness', 'https://github.com/stanford-iris-lab/meta-harness', '2026-04-15T05:31:36Z', '0cbc31e97c9e6d24232d1dc754827c02e1ec415c', '2026-09-17'),
+              ('penguin-harness', 'PenguinHarness', 'https://github.com/Prism-Shadow/penguin-harness', '2026-07-19T03:15:21Z', '77c746954f92a588295de1c2dad362b1b8593f19', '2026-09-16'),
+          ]
+          catalog_path = Path('data/catalog.psv')
+          with catalog_path.open(newline='', encoding='utf-8') as f:
+              rows = list(csv.DictReader(f, delimiter='|'))
+          ids = {a[0] for a in additions}
+          rows = [r for r in rows if r['harness_id'] not in ids]
+          for hid, name, repo, created, ref, pinned in additions:
+              rows.append({'catalog_position':'0','harness_id':hid,'project_name':name,'repository':repo,'repository_created_at':created,'source_membership':'index-addition','review_ref':ref,'pinned_at':pinned})
+          rows.sort(key=lambda r: (r['repository_created_at'], r['harness_id']))
+          fields = ['catalog_position','harness_id','project_name','repository','repository_created_at','source_membership','review_ref','pinned_at']
+          with catalog_path.open('w', newline='', encoding='utf-8') as f:
+              w = csv.DictWriter(f, fieldnames=fields, delimiter='|', lineterminator='\n')
+              w.writeheader()
+              for i, row in enumerate(rows, 1):
+                  row['catalog_position'] = str(i)
+                  w.writerow(row)
+
+          new_sigs = {
+              'concordia': 'Sequential/simultaneous engines mediate autonomous player actions through shared Game Master scheduling and event resolution as constructor-owned S2; world-causality control and scenario rules are not S3/S5 organizational closure.',
+              'penguin-harness': 'Isolated evaluator subagents inspect benchmark workspaces and bound traces under private rubrics, feeding independent scores into strict accept/rollback optimization; the surrounding tuning pipeline and self-evolution do not establish S2/S3/S4/S5.',
+              'meta-harness': 'An automated proposer/validation/benchmark loop searches task-specific harness code around a fixed model; that evolutionary search is the primary operation itself, while validation and final held-out testing do not establish S2-S5 metasystem closure.',
+              'openjarvis': 'OpenJarvis supplies autonomous tool-using and persistent single-agent modes plus trace-driven learning; alternative agent modes, internal self-improvement and user-authored persona/configuration do not establish S2-S5 organizational closure.',
+          }
+          sig_path = Path('data/signatures.psv')
+          with sig_path.open(newline='', encoding='utf-8') as f:
+              sig_rows = list(csv.DictReader(f, delimiter='|'))
+          sigs = {r['harness_id']: r['signature'] for r in sig_rows}
+          sigs.update(new_sigs)
+          positions = {r['harness_id']: int(r['catalog_position']) for r in rows}
+          with sig_path.open('w', newline='', encoding='utf-8') as f:
+              w = csv.DictWriter(f, fieldnames=['catalog_position','harness_id','signature'], delimiter='|', lineterminator='\n')
+              w.writeheader()
+              for hid in sorted(sigs, key=lambda x: positions[x]):
+                  w.writerow({'catalog_position':positions[hid],'harness_id':hid,'signature':sigs[hid]})
+          PY
+          python scripts/render_tldr.py
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Generate remaining batch 29 admission artifacts'
+            git push
+          fi
       - run: python scripts/check_index.py
       - run: python -m unittest discover -s tests -v
       - name: Check immutable generation provenance against PR base
