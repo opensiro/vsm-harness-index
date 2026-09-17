@@ -4,6 +4,12 @@ project_name: MiroThinker
 repository: https://github.com/MiroMindAI/MiroThinker
 review_ref: 1c4253f6774bf40314271a827304b842100e054c
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 1c4253f6774bf40314271a827304b842100e054c
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

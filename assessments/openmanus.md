@@ -4,6 +4,12 @@ project_name: OpenManus
 repository: https://github.com/FoundationAgents/OpenManus
 review_ref: 3309bf4e416fb1c74b008f3e86494439a31bad53
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 3309bf4e416fb1c74b008f3e86494439a31bad53
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

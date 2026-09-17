@@ -4,6 +4,12 @@ project_name: Claude Agent SDK
 repository: https://github.com/anthropics/claude-agent-sdk-python
 review_ref: 37a52c9fb3f0271de017911914b0d42efea6267e
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 9d398b6b7ed8a1bf9527c8939f75a8abfa6f165b
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
