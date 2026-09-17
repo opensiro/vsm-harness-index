@@ -1,0 +1,115 @@
+name: one-shot R2 final 76
+
+on:
+  push:
+    branches:
+      - r2-final-batch-76
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Record final R2 outcomes and close round
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+
+          snapshot = "c504f4c54e92792c3d0faa169f1a356dc9e18ce2"
+          paths = subprocess.check_output(
+              ["git", "ls-tree", "-r", "--name-only", snapshot, "assessments"],
+              text=True,
+          ).splitlines()
+          included = []
+          for path in paths:
+              if not path.endswith(".md"):
+                  continue
+              text = subprocess.check_output(["git", "show", f"{snapshot}:{path}"], text=True)
+              front = text.split("---", 2)[1] if text.startswith("---") else ""
+              fields = {}
+              for line in front.splitlines():
+                  if ":" in line:
+                      key, value = line.split(":", 1)
+                      fields[key.strip()] = value.strip()
+              if fields.get("status") == "included":
+                  included.append(fields.get("harness_id"))
+          if len(included) != 76 or len(set(included)) != 76:
+              raise SystemExit(f"expected 76 unique included assessments at snapshot, found {len(included)} / {len(set(included))}")
+
+          history_path = Path("data/reassessment-history.psv")
+          history = history_path.read_text().rstrip("\n")
+          rows = [
+              "R2|google-adk|460715b6c62c8e9ab00931c502381ee0364e39b6|7ae1c9b026c84bf8a65921003f71b0f30c8e3166|460715b6c62c8e9ab00931c502381ee0364e39b6|2026-09-17|0.2.1|0.3.1|no-material-change|—|https://github.com/google/adk-python/compare/460715b6c62c8e9ab00931c502381ee0364e39b6...7ae1c9b026c84bf8a65921003f71b0f30c8e3166 ; https://github.com/google/adk-python/blob/7ae1c9b026c84bf8a65921003f71b0f30c8e3166/src/google/adk/workflow/_dynamic_node_scheduler.py ; https://github.com/google/adk-python/blob/7ae1c9b026c84bf8a65921003f71b0f30c8e3166/src/google/adk/evaluation/agent_evaluator.py ; https://github.com/google/adk-python/blob/7ae1c9b026c84bf8a65921003f71b0f30c8e3166/src/google/adk/flows/llm_flows/tools/_confirmation.py",
+              "R2|opencode|95daf90670b7c039c436c85537da5fbfe2205b41|5a8335857b0ebec44ef6aa1d52b339cf25c329ca|95daf90670b7c039c436c85537da5fbfe2205b41|2026-09-17|0.2.1|0.3.1|no-material-change|—|https://github.com/anomalyco/opencode/compare/95daf90670b7c039c436c85537da5fbfe2205b41...5a8335857b0ebec44ef6aa1d52b339cf25c329ca ; https://github.com/anomalyco/opencode/blob/5a8335857b0ebec44ef6aa1d52b339cf25c329ca/packages/opencode/src/tool/task.ts",
+              "R2|deerflow|6f81daefff2035d76d41e45d021626f022885372|4889f61f1d7e6b1ba131edaccde83ddbbf576b31|6f81daefff2035d76d41e45d021626f022885372|2026-09-17|0.2.1|0.3.1|no-material-change|—|https://github.com/bytedance/deer-flow/compare/6f81daefff2035d76d41e45d021626f022885372...4889f61f1d7e6b1ba131edaccde83ddbbf576b31 ; https://github.com/bytedance/deer-flow/blob/4889f61f1d7e6b1ba131edaccde83ddbbf576b31/backend/packages/harness/deerflow/agents/middlewares/loop_detection_middleware.py ; https://github.com/bytedance/deer-flow/blob/4889f61f1d7e6b1ba131edaccde83ddbbf576b31/backend/packages/harness/deerflow/subagents/capacity.py ; https://github.com/bytedance/deer-flow/blob/4889f61f1d7e6b1ba131edaccde83ddbbf576b31/backend/packages/harness/deerflow/agents/middlewares/tool_promotion_audit_middleware.py",
+              "R2|symphony|e0ccc83720a42a600a53b61c5f8d3e518bebe1db|be10a1b79df723d6d7612b5651c8522704dafb2e|e0ccc83720a42a600a53b61c5f8d3e518bebe1db|2026-09-17|0.2.1|0.3.1|no-material-change|—|https://github.com/openai/symphony/compare/e0ccc83720a42a600a53b61c5f8d3e518bebe1db...be10a1b79df723d6d7612b5651c8522704dafb2e",
+          ]
+          for row in rows:
+              harness = row.split("|", 3)[1]
+              if any(line.startswith(f"R2|{harness}|") for line in history.splitlines()):
+                  raise SystemExit(f"R2 history already contains {harness}")
+          history = history + "\n" + "\n".join(rows) + "\n"
+          history_path.write_text(history)
+
+          r2_ids = [
+              line.split("|", 3)[1]
+              for line in history.splitlines()
+              if line.startswith("R2|")
+          ]
+          if len(r2_ids) != 76 or len(set(r2_ids)) != 76:
+              raise SystemExit(f"expected 76 unique R2 outcomes after append, found {len(r2_ids)} / {len(set(r2_ids))}")
+          if set(r2_ids) != set(included):
+              missing = sorted(set(included) - set(r2_ids))
+              extra = sorted(set(r2_ids) - set(included))
+              raise SystemExit(f"R2/snapshot mismatch missing={missing} extra={extra}")
+
+          round_path = Path("reassessments/R2-2026-09-16.md")
+          text = round_path.read_text()
+          if "- Closed: —\n- Status: in-progress\n" not in text:
+              raise SystemExit("R2 round is not in expected open state")
+          text = text.replace(
+              "- Closed: —\n- Status: in-progress\n",
+              "- Closed: 2026-09-17\n- Status: closed\n",
+              1,
+          )
+          marker = "\n## Completion\n"
+          if text.count(marker) != 1:
+              raise SystemExit("expected exactly one R2 Completion heading")
+          table_rows = (
+              "| `google-adk` | `460715b6c62c8e9ab00931c502381ee0364e39b6` | `7ae1c9b026c84bf8a65921003f71b0f30c8e3166` | 2026-09-17 | 0.2.1 | 0.3.1 | no-material-change | — | [upstream delta](https://github.com/google/adk-python/compare/460715b6c62c8e9ab00931c502381ee0364e39b6...7ae1c9b026c84bf8a65921003f71b0f30c8e3166), [dynamic scheduler](https://github.com/google/adk-python/blob/7ae1c9b026c84bf8a65921003f71b0f30c8e3166/src/google/adk/workflow/_dynamic_node_scheduler.py), [evaluation boundary](https://github.com/google/adk-python/blob/7ae1c9b026c84bf8a65921003f71b0f30c8e3166/src/google/adk/evaluation/agent_evaluator.py), [tool confirmation](https://github.com/google/adk-python/blob/7ae1c9b026c84bf8a65921003f71b0f30c8e3166/src/google/adk/flows/llm_flows/tools/_confirmation.py) |\n"
+              "| `opencode` | `95daf90670b7c039c436c85537da5fbfe2205b41` | `5a8335857b0ebec44ef6aa1d52b339cf25c329ca` | 2026-09-17 | 0.2.1 | 0.3.1 | no-material-change | — | [upstream delta](https://github.com/anomalyco/opencode/compare/95daf90670b7c039c436c85537da5fbfe2205b41...5a8335857b0ebec44ef6aa1d52b339cf25c329ca), [task/subagent boundary](https://github.com/anomalyco/opencode/blob/5a8335857b0ebec44ef6aa1d52b339cf25c329ca/packages/opencode/src/tool/task.ts) |\n"
+              "| `deerflow` | `6f81daefff2035d76d41e45d021626f022885372` | `4889f61f1d7e6b1ba131edaccde83ddbbf576b31` | 2026-09-17 | 0.2.1 | 0.3.1 | no-material-change | — | [upstream delta](https://github.com/bytedance/deer-flow/compare/6f81daefff2035d76d41e45d021626f022885372...4889f61f1d7e6b1ba131edaccde83ddbbf576b31), [single-S1 loop guard](https://github.com/bytedance/deer-flow/blob/4889f61f1d7e6b1ba131edaccde83ddbbf576b31/backend/packages/harness/deerflow/agents/middlewares/loop_detection_middleware.py), [deterministic subagent capacity](https://github.com/bytedance/deer-flow/blob/4889f61f1d7e6b1ba131edaccde83ddbbf576b31/backend/packages/harness/deerflow/subagents/capacity.py), [passive promotion audit](https://github.com/bytedance/deer-flow/blob/4889f61f1d7e6b1ba131edaccde83ddbbf576b31/backend/packages/harness/deerflow/agents/middlewares/tool_promotion_audit_middleware.py) |\n"
+              "| `symphony` | `e0ccc83720a42a600a53b61c5f8d3e518bebe1db` | `be10a1b79df723d6d7612b5651c8522704dafb2e` | 2026-09-17 | 0.2.1 | 0.3.1 | no-material-change | — | [release-only upstream delta](https://github.com/openai/symphony/compare/e0ccc83720a42a600a53b61c5f8d3e518bebe1db...be10a1b79df723d6d7612b5651c8522704dafb2e) |\n"
+          )
+          text = text.replace(marker, table_rows + marker, 1)
+          completion = (
+              "R2 is complete when every canonical `status: included` assessment frozen by scope snapshot `c504f4c54e92792c3d0faa169f1a356dc9e18ce2` has exactly one accepted R2 outcome, the corresponding history event exists, successful checks have current `0.2.1 / 0.3.1` provenance/freshness, and all affected generated/cohort-relative artifacts are consistent."
+          )
+          closed = completion + "\n\nClosed with **76/76** frozen `status: included` assessments carrying exactly one accepted R2 outcome. The snapshot also contains proposed/intake or excluded assessment artifacts; those are outside this round by contract and are not counted as missing outcomes."
+          if completion not in text:
+              raise SystemExit("R2 completion paragraph not found")
+          round_path.write_text(text.replace(completion, closed, 1))
+          PY
+      - name: Validate final round
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/check_index.py
+      - name: Commit final R2 closure and remove helper
+        shell: bash
+        run: |
+          rm .github/workflows/one-shot-r2-final-76.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "R2: close frozen included cohort"
+          git push
