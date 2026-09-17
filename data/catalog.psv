@@ -88,7 +88,7 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 87|symphony|Symphony|https://github.com/openai/symphony|2026-02-26T21:54:00Z|adapted-source|e0ccc83720a42a600a53b61c5f8d3e518bebe1db|2026-09-13
 88|looptroop|LoopTroop|https://github.com/looptroop-ai/LoopTroop|2026-03-03T13:33:49Z|adapted-source|b96f5448251cbe88cd845cd5f262adda02701413|2026-09-13
 89|nerve|Nerve|https://github.com/ClickHouse/nerve|2026-03-11T20:39:49Z|index-addition|079548115c5c4c1d826f0ab8034c1001cac9ef7f|2026-09-16
-90|talon|Talon|https://github.com/dylanneve1/talon|2026-03-14T19:58:33Z|adapted-source|afae82e60540e49970d04401a25725fd7635ec96|2026-09-13
+90|talon|Talon|https://github.com/dylanneve1/talon|2026-03-14T19:58:33Z|adapted-source|1a4b8b60e142a6de3e0cdae9c7fa4a34c88b571e|2026-09-13
 91|orca-stablyai|Orca|https://github.com/stablyai/orca|2026-03-17T03:28:57Z|index-addition|c33a446190bdfa21286a373e097c50a2b3e0a4d4|2026-09-16
 92|herdr|Herdr|https://github.com/herdrdev/herdr|2026-03-27T17:54:33Z|index-addition|18061191fdc019498610aee81f0df93f6c2ebd31|2026-09-16
 93|openharness-hkuds|OpenHarness (HKUDS)|https://github.com/HKUDS/OpenHarness|2026-04-01T15:37:13Z|adapted-source|9b2efd795c6aa09f88b0c257d269a9e518da6ae7|2026-09-13
