@@ -4,6 +4,12 @@ project_name: Proliferate
 repository: https://github.com/proliferate-ai/proliferate
 review_ref: 74e1178cf3ecfbfc3ffeb8321f82c4a9bfce620f
 reviewed_at: 2026-09-16
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 74e1178cf3ecfbfc3ffeb8321f82c4a9bfce620f
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-16
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
