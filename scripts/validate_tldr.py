@@ -10,10 +10,9 @@ ALLOWED = {"A", "A(P)", "C", "C(P)", "P", "—", "?"}
 PARENT_MODE_STATES = {"A(P)", "C(P)", "P"}
 PARENT_MODE_KEYS = {"s3", "s4", "s5"}
 ALLOWED_STATUSES = {"included", "excluded-no-agentic-vsm", "proposed"}
-FRESHNESS_KEYS = (
+ROUND_FRESHNESS_KEYS = (
     "last_checked_ref",
     "last_checked_at",
-    "assessment_changed_at",
     "last_reassessment_round",
 )
 SPEC_PROVENANCE_KEYS = (
@@ -140,19 +139,28 @@ def validate_assessment(row: dict[str, str]) -> None:
     if row["status"] == "included" and states[0] != "A":
         raise ValueError(f"{row['harness_id']}: included harness must establish S1 · A")
 
-    present_freshness = [key for key in FRESHNESS_KEYS if row.get(key)]
-    if present_freshness and len(present_freshness) != len(FRESHNESS_KEYS):
-        missing = [key for key in FRESHNESS_KEYS if not row.get(key)]
-        raise ValueError(
-            f"{row['harness_id']}: reassessment freshness metadata must be complete; missing {missing}"
-        )
-    if present_freshness:
+    # A newly admitted baseline assessment records when its canonical semantics
+    # were established even before it has participated in a reassessment round.
+    # Round freshness is a separate all-or-nothing set added by the first
+    # successful reassessment check.
+    if row.get("assessment_changed_at"):
+        require_iso_date(row, "assessment_changed_at")
+
+    present_round_freshness = [key for key in ROUND_FRESHNESS_KEYS if row.get(key)]
+    if present_round_freshness:
+        missing = [key for key in ROUND_FRESHNESS_KEYS if not row.get(key)]
+        if not row.get("assessment_changed_at"):
+            missing.append("assessment_changed_at")
+        if missing:
+            raise ValueError(
+                f"{row['harness_id']}: reassessment freshness metadata must be complete; missing {missing}"
+            )
+
         if row["status"] == "proposed":
             raise ValueError(f"{row['harness_id']}: proposed assessment cannot carry canonical reassessment freshness")
         if len(row["last_checked_ref"]) != 40:
             raise ValueError(f"{row['harness_id']}: last_checked_ref must be 40 characters")
         require_iso_date(row, "last_checked_at")
-        require_iso_date(row, "assessment_changed_at")
         if not row["last_reassessment_round"].startswith("R") or not row["last_reassessment_round"][1:].isdigit():
             raise ValueError(f"{row['harness_id']}: last_reassessment_round must look like R1")
         if row["assessment_changed_at"] > row["last_checked_at"]:
