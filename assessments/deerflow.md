@@ -4,6 +4,12 @@ project_name: DeerFlow
 repository: https://github.com/bytedance/deer-flow
 review_ref: 6f81daefff2035d76d41e45d021626f022885372
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 4889f61f1d7e6b1ba131edaccde83ddbbf576b31
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
