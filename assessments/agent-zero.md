@@ -4,6 +4,12 @@ project_name: Agent Zero
 repository: https://github.com/agent0ai/agent-zero
 review_ref: b1cbd1f960a1a5c4482b324dcff4742aa67b7a51
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: b1cbd1f960a1a5c4482b324dcff4742aa67b7a51
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

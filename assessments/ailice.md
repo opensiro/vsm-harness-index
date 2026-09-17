@@ -4,6 +4,12 @@ project_name: AIlice
 repository: https://github.com/myshell-ai/AIlice
 review_ref: 63a22105cdf8c0d297af332010f46e4153bbc1ec
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 63a22105cdf8c0d297af332010f46e4153bbc1ec
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

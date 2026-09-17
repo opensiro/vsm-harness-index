@@ -4,6 +4,12 @@ project_name: AnythingLLM
 repository: https://github.com/Mintplex-Labs/anything-llm
 review_ref: 3a85d3e75490f09453de7e8c440b9463f4a82019
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 90108f98f29546dbe71df27a4da7aef302d48f08
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
