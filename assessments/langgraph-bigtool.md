@@ -4,6 +4,12 @@ project_name: LangGraph BigTool
 repository: https://github.com/langchain-ai/langgraph-bigtool
 review_ref: 0bb7f9227d349afa4d4207c6630e800658c80894
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 0bb7f9227d349afa4d4207c6630e800658c80894
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
