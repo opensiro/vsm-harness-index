@@ -129,6 +129,8 @@ def validate_reassessment_history(
                     f"{round_id}/{harness_id}: {outcome} cannot advance accepted_review_ref"
                 )
         elif outcome == "same-ref-correction":
+            # A same-ref correction fixes semantics at the previously accepted
+            # boundary. A round may still inspect a newer ref for freshness.
             if row["accepted_review_ref"] != row["previous_review_ref"]:
                 raise SystemExit(
                     f"{round_id}/{harness_id}: same-ref correction cannot advance accepted_review_ref"
@@ -191,6 +193,11 @@ def main() -> int:
         validate_assessment(assessment)
         source = by_id.get(harness_id)
         if assessment["status"] == "proposed":
+            # Proposed is an intake/review artifact, not an admitted Index fact.
+            # It may coexist with an older catalog record while deep review
+            # updates the project label, repository target, or pinned ref. Cross-
+            # artifact equality is therefore intentionally deferred to admission,
+            # where the accepted proposal must update/agree with catalog atomically.
             continue
         if source is None:
             raise SystemExit(f"canonical assessment missing catalog row: {harness_id}")
@@ -198,6 +205,12 @@ def main() -> int:
             if assessment[key] != source[key]:
                 raise SystemExit(f"{harness_id}: {key} differs from catalog")
         canonical_assessments[harness_id] = assessment
+
+    # Admission is intentionally sparse with respect to catalog_position. The
+    # catalog is an immutable discovery/order ledger, while proposed assessments
+    # can remain unresolved as later positions are admitted. If an earlier
+    # proposal is admitted later, cohort-relative signatures at later positions
+    # must be re-synthesized; repository-relative assessments do not move.
 
     reassessment_history = read_psv(repo / "data" / "reassessment-history.psv")
     validate_reassessment_history(reassessment_history, by_id, canonical_assessments)
@@ -218,9 +231,6 @@ def main() -> int:
 
     generated = {repo / "TLDR.md": render_tldr(repo), repo / "RANKINGS.md": render_rankings(repo)}
     for path, expected in generated.items():
-        print(f"===EXPECTED:{path.name}===")
-        print(expected)
-        print(f"===END:{path.name}===")
         if not path.exists() or path.read_text(encoding="utf-8") != expected:
             raise SystemExit(f"{path.name} is stale; run scripts/render_tldr.py")
     proposed_count = sum(1 for row in assessments.values() if row["status"] == "proposed")
