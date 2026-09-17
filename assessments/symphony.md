@@ -4,6 +4,12 @@ project_name: Symphony
 repository: https://github.com/openai/symphony
 review_ref: e0ccc83720a42a600a53b61c5f8d3e518bebe1db
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: be10a1b79df723d6d7612b5651c8522704dafb2e
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
