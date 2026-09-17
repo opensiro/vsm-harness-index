@@ -5,6 +5,12 @@ repository: https://github.com/i-am-bee/beeai-framework
 review_ref: 6a8b28f54073790f9a8135320a0e9ed1d4cef602
 reviewed_at: 2026-09-15
 status: included
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 50bb05be270f681c0375c232792079287f1888b1
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -41,6 +47,8 @@ Specialist agents are S1. The main agent's handoff is delegation/consultation; w
 ## S3* — Complementary audit
 `—`: observability, middleware and requirement checking do not instantiate a distinct independent audit channel with corrective authority.
 
+R2 compatibility note: the checked delta adds an optional HOL Guard middleware example. It invokes a separately installed external `hol-guard` process before one tool executes and fails closed on a non-allow decision. This is a configured execution gate around S1 behavior, not a first-party complementary-audit organization with independent access and corrective closure.
+
 ## S4 — Outside-and-then intelligence
 `—`: memory, RAG and environment tools serve current-task reasoning rather than a prospective intelligence loop coupled back to S3.
 
@@ -49,3 +57,6 @@ Specialist agents are S1. The main agent's handoff is delegation/consultation; w
 
 ## Recursion, variety, escalation
 Handoff hierarchies and workflows are compositional; they do not by themselves establish recursive viable systems.
+
+## R2 result
+Checked through `50bb05be270f681c0375c232792079287f1888b1`. The 10-commit delta changes adapters, serving/auth/tool behavior and examples without changing the assessed organizational vector. Outcome: `no-material-change`; accepted `review_ref` remains unchanged.

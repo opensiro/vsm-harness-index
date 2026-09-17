@@ -5,6 +5,12 @@ repository: https://github.com/browser-use/browser-use
 review_ref: 50f205533fe10ba35b553d2a3689c77b87bd5d0a
 reviewed_at: 2026-09-15
 status: included
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: d8110c5ff87ccba887aaa726cdb780f2f84bef8d
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -48,3 +54,6 @@ The agent observes browser state, asks the model for the next action, executes b
 
 ## Recursion, variety, escalation
 The harness has substantial operational variety through browser tools, planning and judging, but these remain internal features of S1 rather than recursively closed S2–S5 functions.
+
+## R2 result
+Checked through `d8110c5ff87ccba887aaa726cdb780f2f84bef8d`. The 16-commit delta is confined to provider/model documentation, examples and a small model adapter change; no assessed agent, planner or judge ownership path changes. Outcome: `no-material-change`; accepted `review_ref` remains unchanged.
