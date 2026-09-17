@@ -3,10 +3,13 @@ harness_id: herdr
 project_name: Herdr
 repository: https://github.com/herdrdev/herdr
 review_ref: 18061191fdc019498610aee81f0df93f6c2ebd31
-reviewed_at: 2026-09-16
-status: proposed
-autonomy_s1: C
-autonomy_s2: C
+reviewed_at: 2026-09-17
+profile_version: 0.2.2
+assessment_procedure_version: 0.3.1
+assessment_changed_at: 2026-09-17
+status: included
+autonomy_s1: A
+autonomy_s2: —
 autonomy_s3: —
 autonomy_s3_star: —
 autonomy_s4: —
@@ -16,37 +19,36 @@ autonomy_s5: —
 # Herdr
 
 ## Review boundary
-Pinned persistent agent-terminal runtime hosting external Claude, Codex, Cursor and OpenCode workers.
+Pinned Herdr persistent terminal/runtime distribution hosting supported coding agents such as Claude Code, Codex, Cursor and OpenCode. Session spawning, prompting, waiting, reconnect/resume and status surfaces are included; higher VSM functions are credited only where Herdr regulates an organizational disturbance rather than merely transporting or observing agent work.
 
-## Repository architecture
-Herdr owns agent session spawning, prompting, waiting, status classification, resume and agent-aware terminal APIs while domain cognition remains in external agents.
+Reviewed revision: `18061191fdc019498610aee81f0df93f6c2ebd31`. Contract: Profile `0.2.2`, Methodology `0.3.1`.
 
 ## Primary evidence
-- Pinned review established persistent session lifecycle, status classification and spawn/prompt/wait/resume control at `review_ref`.
-
-## Operational model
-External coding agents are hosted S1 units; Herdr supplies the shared execution/session substrate used to coordinate their coexistence.
+- [`README.md`](https://github.com/herdrdev/herdr/blob/18061191fdc019498610aee81f0df93f6c2ebd31/README.md) — persistent agent sessions, supported coding agents, reconnectable runtime and agent-to-agent prompting/waiting.
+- [`skills/herdr/SKILL.md`](https://github.com/herdrdev/herdr/blob/18061191fdc019498610aee81f0df93f6c2ebd31/skills/herdr/SKILL.md) — model-facing spawn, prompt, inspect, wait and resume procedure for agents operating inside Herdr.
 
 ## S1 — Operations
-`C`: external agents provide operational cognition through Herdr's hosting surface. Confidence: high.
+`A`. Herdr's supported standard mode hosts autonomous coding agents that execute domain work, and its first-party skill lets an agent create and drive those persistent worker sessions. The operational decision/action loop is therefore present rather than merely constructible. Confidence: high.
 
 ## S2 — Coordination
-`C`: persistent agent/session state and agent-aware APIs provide composable coordination across hosted workers. Confidence: medium-high.
+`—`. Herdr supplies agent/session status, prompt, wait and resume primitives, but the reviewed pin does not identify a concrete inter-S1 collision, oscillation or dependency disturbance that a specific Herdr mechanism regulates and closes into changed later S1 behavior. Generic transport and synchronization are insufficient under the current S2 test. Confidence: high.
 
 ## S3 — Inside-and-now control
-`—`: no whole-system operational regulation authority beyond session lifecycle was established. Confidence: high.
+`—`. Session lifecycle and per-agent state do not establish a whole-organization current view plus authority over shared resources, commitments, priorities or constraints. Confidence: high.
 
 ## S3* — Complementary audit
-`—`: no distinct complementary audit channel was established. Confidence: high.
+`—`. No materially independent complementary audit channel with corrective closure was established. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`—`: no prospective environment-facing adaptation function was established. Confidence: high.
+`—`. No outside-looking prospective organizational adaptation loop was established. Confidence: high.
 
 ## S5 — Policy and identity
-`—`: purpose/policy are supplied externally. Confidence: high.
+`—`. Purpose and ultimate policy remain external to the runtime. Confidence: high.
 
-## Recursion, variety, escalation
-Multiple persistent agents increase operational variety; status/resume mechanisms attenuate execution-state uncertainty without closing a higher metasystem.
+## Recursion, variety, and escalation
+Persistent sessions and agent-to-agent spawning can amplify operational variety and preserve work across terminal boundaries. Status/wait/resume attenuate execution-state uncertainty, but they do not by themselves close a VSM metasystem function.
 
-## Deep-review conclusion
-Signature at the pinned revision: `C C — — — —`. Herdr is a composable multi-agent terminal runtime rather than a self-governing organization.
+## Admission conclusion
+Canonical vector: `A — — — — —`.
+
+Same-ref correction of historical `C C — — — —`: standard supported agents close S1 autonomously, while session state and agent APIs no longer count as S2 without a disturbance-specific coordination loop.

@@ -63,30 +63,35 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 62|crush|Crush|https://github.com/charmbracelet/crush|2025-05-21T12:14:57Z|adapted-source|ef7bae117905a3927b177ed6923f36e811737d53|2026-09-17
 63|openai-agents-js|OpenAI Agents SDK for JavaScript|https://github.com/openai/openai-agents-js|2025-05-31T00:08:49Z|adapted-source|8831eae9d34365f9a397cbd52ae0366f304e1a96|2026-09-13
 64|mcp-zero|MCP-Zero|https://github.com/xfey/MCP-Zero|2025-06-01T15:39:29Z|adapted-source|fd666c44c9290a671949b974444c30f4ab161622|2026-09-13
-65|claude-agent-sdk|Claude Agent SDK|https://github.com/anthropics/claude-agent-sdk-python|2025-06-11T21:33:43Z|adapted-source|37a52c9fb3f0271de017911914b0d42efea6267e|2026-09-13
-66|qwen-code|Qwen Code|https://github.com/QwenLM/qwen-code|2025-06-26T01:37:46Z|adapted-source|3ac6fe65e81c84897c02d22abd3dc91d1e567d5f|2026-09-17
-67|hermes-agent|Hermes Agent|https://github.com/NousResearch/hermes-agent|2025-07-22T22:22:28Z|adapted-source|16bddc88dd325c5eef27c2cc71bbb14c16b870aa|2026-09-17
-68|deepagents|Deep Agents|https://github.com/langchain-ai/deepagents|2025-07-27T23:07:53Z|adapted-source|f86b4e9abef7620b63a7258bc9fab0ccd83de8a4|2026-09-17
-69|mirothinker|MiroThinker|https://github.com/MiroMindAI/MiroThinker|2025-08-07T13:32:12Z|adapted-source|1c4253f6774bf40314271a827304b842100e054c|2026-09-13
-70|pi|Pi|https://github.com/earendil-works/pi|2025-08-09T14:03:50Z|adapted-source|71dca871bc80b6bc97be37f0ca3189399d651fff|2026-09-13
-71|repomaster|RepoMaster|https://github.com/QuantaAlpha/RepoMaster|2025-08-17T10:22:04Z|adapted-source|9cf59930102970d61d6eb2f702fd936d3cda7f11|2026-09-13
-72|youtu-agent|Youtu-Agent|https://github.com/TencentCloudADP/youtu-agent|2025-08-21T07:58:13Z|adapted-source|c2caa539f4c95ae1c39ed24dc8a99cb3651e1d5d|2026-09-13
-73|shannon|Shannon|https://github.com/Kocoro-lab/Shannon|2025-08-29T10:53:48Z|index-addition|391b619130281502d227a53dd97238c9791bf174|2026-09-16
-74|agentrl|AgentRL|https://github.com/THUDM/AgentRL|2025-09-10T11:37:54Z|adapted-source|6a73409d31ba695d383b978a8ad3ef400d90c054|2026-09-13
-75|openclaw|OpenClaw|https://github.com/openclaw/openclaw|2025-11-24T10:16:47Z|adapted-source|387da5edaa9d6c6cfcfc15e167fe2e46d8647d86|2026-09-16
-76|oh-my-pi|oh-my-pi|https://github.com/can1357/oh-my-pi|2025-12-31T14:01:28Z|adapted-source|dbf3afad4894bde827d90f965e77b3fe1c5a95e5|2026-09-17
-77|hive|Hive|https://github.com/aden-hive/hive|2026-01-12T00:04:22Z|adapted-source|0c387492067e8b7d3e1c803009169f202f30ed77|2026-09-13
-78|openjarvis|OpenJarvis|https://github.com/open-jarvis/OpenJarvis|2026-02-15T00:24:16Z|index-addition|61c2f89096006604774779b348176ee552afa01b|2026-09-17
-79|swarmclaw|SwarmClaw|https://github.com/swarmclawai/swarmclaw|2026-02-18T22:21:42Z|index-addition|ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1|2026-09-16
-80|open-harness|open-harness|https://github.com/MaxGfeller/open-harness|2026-02-23T19:39:32Z|adapted-source|026e8d9cb8f184cdeac2054b489ec20972ba8681|2026-09-13
-81|symphony|Symphony|https://github.com/openai/symphony|2026-02-26T21:54:00Z|adapted-source|e0ccc83720a42a600a53b61c5f8d3e518bebe1db|2026-09-13
-82|looptroop|LoopTroop|https://github.com/looptroop-ai/LoopTroop|2026-03-03T13:33:49Z|adapted-source|b96f5448251cbe88cd845cd5f262adda02701413|2026-09-13
-83|nerve|Nerve|https://github.com/ClickHouse/nerve|2026-03-11T20:39:49Z|index-addition|079548115c5c4c1d826f0ab8034c1001cac9ef7f|2026-09-16
-84|talon|Talon|https://github.com/dylanneve1/talon|2026-03-14T19:58:33Z|adapted-source|afae82e60540e49970d04401a25725fd7635ec96|2026-09-13
-85|openharness-hkuds|OpenHarness (HKUDS)|https://github.com/HKUDS/OpenHarness|2026-04-01T15:37:13Z|adapted-source|9b2efd795c6aa09f88b0c257d269a9e518da6ae7|2026-09-13
-86|claw-code-agent|claw-code-agent|https://github.com/HarnessLab/claw-code-agent|2026-04-01T19:41:37Z|adapted-source|167571da895b2a1a9e36ecfae2876984cef65e0d|2026-09-13
-87|autoharness|AutoHarness|https://github.com/aiming-lab/AutoHarness|2026-04-02T00:25:20Z|adapted-source|3561e468f9ca9f9bf282512e695bd32e4e90fef4|2026-09-13
-88|meta-harness|Meta-Harness|https://github.com/stanford-iris-lab/meta-harness|2026-04-15T05:31:36Z|index-addition|0cbc31e97c9e6d24232d1dc754827c02e1ec415c|2026-09-17
-89|proliferate|Proliferate|https://github.com/proliferate-ai/proliferate|2026-04-30T23:54:35Z|adapted-source|74e1178cf3ecfbfc3ffeb8321f82c4a9bfce620f|2026-09-13
-90|get-shit-done|get-shit-done|https://github.com/open-gsd/gsd-core|2026-05-22T11:36:21Z|adapted-source|4f487e4e75276ad50fc13796cef8d23148cd8830|2026-09-13
-91|penguin-harness|PenguinHarness|https://github.com/Prism-Shadow/penguin-harness|2026-07-19T03:15:21Z|index-addition|77c746954f92a588295de1c2dad362b1b8593f19|2026-09-16
+65|ruflo|Ruflo|https://github.com/ruvnet/ruflo|2025-06-02T21:24:20Z|index-addition|2602b642d92234c710ffbe96bfb33007d481ceab|2026-09-16
+66|claude-agent-sdk|Claude Agent SDK|https://github.com/anthropics/claude-agent-sdk-python|2025-06-11T21:33:43Z|adapted-source|37a52c9fb3f0271de017911914b0d42efea6267e|2026-09-13
+67|qwen-code|Qwen Code|https://github.com/QwenLM/qwen-code|2025-06-26T01:37:46Z|adapted-source|3ac6fe65e81c84897c02d22abd3dc91d1e567d5f|2026-09-17
+68|hermes-agent|Hermes Agent|https://github.com/NousResearch/hermes-agent|2025-07-22T22:22:28Z|adapted-source|16bddc88dd325c5eef27c2cc71bbb14c16b870aa|2026-09-17
+69|deepagents|Deep Agents|https://github.com/langchain-ai/deepagents|2025-07-27T23:07:53Z|adapted-source|f86b4e9abef7620b63a7258bc9fab0ccd83de8a4|2026-09-17
+70|aionui|AionUi|https://github.com/iOfficeAI/AionUi|2025-08-07T10:29:51Z|index-addition|6744099b279b991c17e31c243f0920477bd31cb6|2026-09-16
+71|mirothinker|MiroThinker|https://github.com/MiroMindAI/MiroThinker|2025-08-07T13:32:12Z|adapted-source|1c4253f6774bf40314271a827304b842100e054c|2026-09-13
+72|pi|Pi|https://github.com/earendil-works/pi|2025-08-09T14:03:50Z|adapted-source|71dca871bc80b6bc97be37f0ca3189399d651fff|2026-09-13
+73|repomaster|RepoMaster|https://github.com/QuantaAlpha/RepoMaster|2025-08-17T10:22:04Z|adapted-source|9cf59930102970d61d6eb2f702fd936d3cda7f11|2026-09-13
+74|youtu-agent|Youtu-Agent|https://github.com/TencentCloudADP/youtu-agent|2025-08-21T07:58:13Z|adapted-source|c2caa539f4c95ae1c39ed24dc8a99cb3651e1d5d|2026-09-13
+75|shannon|Shannon|https://github.com/Kocoro-lab/Shannon|2025-08-29T10:53:48Z|index-addition|391b619130281502d227a53dd97238c9791bf174|2026-09-16
+76|agentrl|AgentRL|https://github.com/THUDM/AgentRL|2025-09-10T11:37:54Z|adapted-source|6a73409d31ba695d383b978a8ad3ef400d90c054|2026-09-13
+77|openclaw|OpenClaw|https://github.com/openclaw/openclaw|2025-11-24T10:16:47Z|adapted-source|387da5edaa9d6c6cfcfc15e167fe2e46d8647d86|2026-09-16
+78|oh-my-openagent|oh-my-openagent|https://github.com/code-yeongyu/oh-my-openagent|2025-12-03T01:40:05Z|index-addition|879a8b791e511edee68bada80187e0febb9b1aac|2026-09-16
+79|oh-my-pi|oh-my-pi|https://github.com/can1357/oh-my-pi|2025-12-31T14:01:28Z|adapted-source|dbf3afad4894bde827d90f965e77b3fe1c5a95e5|2026-09-17
+80|hive|Hive|https://github.com/aden-hive/hive|2026-01-12T00:04:22Z|adapted-source|0c387492067e8b7d3e1c803009169f202f30ed77|2026-09-13
+81|openjarvis|OpenJarvis|https://github.com/open-jarvis/OpenJarvis|2026-02-15T00:24:16Z|index-addition|61c2f89096006604774779b348176ee552afa01b|2026-09-17
+82|swarmclaw|SwarmClaw|https://github.com/swarmclawai/swarmclaw|2026-02-18T22:21:42Z|index-addition|ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1|2026-09-16
+83|open-harness|open-harness|https://github.com/MaxGfeller/open-harness|2026-02-23T19:39:32Z|adapted-source|026e8d9cb8f184cdeac2054b489ec20972ba8681|2026-09-13
+84|symphony|Symphony|https://github.com/openai/symphony|2026-02-26T21:54:00Z|adapted-source|e0ccc83720a42a600a53b61c5f8d3e518bebe1db|2026-09-13
+85|looptroop|LoopTroop|https://github.com/looptroop-ai/LoopTroop|2026-03-03T13:33:49Z|adapted-source|b96f5448251cbe88cd845cd5f262adda02701413|2026-09-13
+86|nerve|Nerve|https://github.com/ClickHouse/nerve|2026-03-11T20:39:49Z|index-addition|079548115c5c4c1d826f0ab8034c1001cac9ef7f|2026-09-16
+87|talon|Talon|https://github.com/dylanneve1/talon|2026-03-14T19:58:33Z|adapted-source|afae82e60540e49970d04401a25725fd7635ec96|2026-09-13
+88|orca-stablyai|Orca|https://github.com/stablyai/orca|2026-03-17T03:28:57Z|index-addition|c33a446190bdfa21286a373e097c50a2b3e0a4d4|2026-09-16
+89|herdr|Herdr|https://github.com/herdrdev/herdr|2026-03-27T17:54:33Z|index-addition|18061191fdc019498610aee81f0df93f6c2ebd31|2026-09-16
+90|openharness-hkuds|OpenHarness (HKUDS)|https://github.com/HKUDS/OpenHarness|2026-04-01T15:37:13Z|adapted-source|9b2efd795c6aa09f88b0c257d269a9e518da6ae7|2026-09-13
+91|claw-code-agent|claw-code-agent|https://github.com/HarnessLab/claw-code-agent|2026-04-01T19:41:37Z|adapted-source|167571da895b2a1a9e36ecfae2876984cef65e0d|2026-09-13
+92|autoharness|AutoHarness|https://github.com/aiming-lab/AutoHarness|2026-04-02T00:25:20Z|adapted-source|3561e468f9ca9f9bf282512e695bd32e4e90fef4|2026-09-13
+93|meta-harness|Meta-Harness|https://github.com/stanford-iris-lab/meta-harness|2026-04-15T05:31:36Z|index-addition|0cbc31e97c9e6d24232d1dc754827c02e1ec415c|2026-09-17
+94|proliferate|Proliferate|https://github.com/proliferate-ai/proliferate|2026-04-30T23:54:35Z|adapted-source|74e1178cf3ecfbfc3ffeb8321f82c4a9bfce620f|2026-09-13
+95|get-shit-done|get-shit-done|https://github.com/open-gsd/gsd-core|2026-05-22T11:36:21Z|adapted-source|4f487e4e75276ad50fc13796cef8d23148cd8830|2026-09-13
+96|penguin-harness|PenguinHarness|https://github.com/Prism-Shadow/penguin-harness|2026-07-19T03:15:21Z|index-addition|77c746954f92a588295de1c2dad362b1b8593f19|2026-09-16
