@@ -50,7 +50,7 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 49|kilo-code|Kilo Code|https://github.com/Kilo-Org/kilocode|2025-03-10T15:34:26Z|adapted-source|c36e22634860e06e0aa63234fae37bbd83d3b182|2026-09-13
 50|openai-agents-sdk|OpenAI Agents SDK|https://github.com/openai/openai-agents-python|2025-03-11T03:42:36Z|adapted-source|fbd2dbcaaf74a2c447c6d3fa9d5645d83fd7e292|2026-09-13
 51|google-adk|Google ADK|https://github.com/google/adk-python|2025-04-01T20:44:40Z|adapted-source|460715b6c62c8e9ab00931c502381ee0364e39b6|2026-09-13
-52|codex|Codex|https://github.com/openai/codex|2025-04-13T05:37:54Z|adapted-source|36f0dbe796d9bb1a18a0fc0640ed08b3e1d54564|2026-09-13
+52|codex|Codex|https://github.com/openai/codex|2025-04-13T05:37:54Z|adapted-source|b974893c90048d147207ae9004489c02f3116426|2026-09-17
 53|gemini-cli|Gemini CLI|https://github.com/google-gemini/gemini-cli|2025-04-17T17:04:31Z|adapted-source|9c1b0a610534d6f8120964cf2672c07807d8fc90|2026-09-13
 54|microsoft-agent-framework|Microsoft Agent Framework|https://github.com/microsoft/agent-framework|2025-04-28T19:40:42Z|adapted-source|1cd06c5a2058a172eebadf5d9d7c3fa45c519520|2026-09-13
 55|opencode|OpenCode|https://github.com/anomalyco/opencode|2025-04-30T20:08:00Z|adapted-source|95daf90670b7c039c436c85537da5fbfe2205b41|2026-09-13
