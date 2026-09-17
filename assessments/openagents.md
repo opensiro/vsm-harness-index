@@ -4,6 +4,12 @@ project_name: OpenAgents
 repository: https://github.com/OpenAgentsInc/openagents
 review_ref: a2de475d2ee3a2f00865944c79c15600c1ada45c
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 8f84d05896ef14edee491621bf977ee5315cc8ed
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
