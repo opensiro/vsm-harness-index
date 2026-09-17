@@ -4,6 +4,12 @@ project_name: Talon
 repository: https://github.com/dylanneve1/talon
 review_ref: afae82e60540e49970d04401a25725fd7635ec96
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 7aaddbd1f9bd76ec011c2378e31bf843eae1438e
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
