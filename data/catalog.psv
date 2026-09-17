@@ -26,58 +26,59 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 25|ailice|AIlice|https://github.com/myshell-ai/AIlice|2023-10-16T01:51:14Z|adapted-source|63a22105cdf8c0d297af332010f46e4153bbc1ec|2026-09-13
 26|crewai|CrewAI|https://github.com/crewAIInc/crewAI|2023-10-27T03:26:59Z|adapted-source|894898f84c4ac0a89f24bf7bee6c381eb0e67f51|2026-09-13
 27|openagents|OpenAgents|https://github.com/OpenAgentsInc/openagents|2023-11-07T16:16:46Z|adapted-source|a2de475d2ee3a2f00865944c79c15600c1ada45c|2026-09-13
-28|agentlite|AgentLite|https://github.com/SalesforceAIResearch/AgentLite|2024-02-09T23:29:18Z|index-addition|b173239a652eea560e57c6fe46b0c0af7c4f3578|2026-09-13
-29|r2r|R2R|https://github.com/SciPhi-AI/R2R|2024-02-12T03:24:27Z|adapted-source|9c5a94d151f90876bd7eb860f300a8fd662dc481|2026-09-13
-30|openhands|OpenHands|https://github.com/OpenHands/OpenHands|2024-03-13T03:33:31Z|adapted-source|28464621d879e3e9b3ceeae9d70a71d96da6212d|2026-09-13
-31|praisonai|PraisonAI|https://github.com/MervinPraison/PraisonAI|2024-03-19T16:45:25Z|adapted-source|43a106db26d399d312370f8eeca949a5ba135c5b|2026-09-13
-32|stagehand|Stagehand|https://github.com/browserbase/stagehand|2024-03-24T19:19:44Z|adapted-source|b771930d2b4d858e5bd9670203c66260b385a8fa|2026-09-13
-33|swe-agent|SWE-agent|https://github.com/SWE-agent/SWE-agent|2024-04-02T04:09:47Z|adapted-source|3ea751c087f32b16e039a2233dd6eefecef325d5|2026-09-13
-34|agent-zero|Agent Zero|https://github.com/agent0ai/agent-zero|2024-06-10T09:10:45Z|adapted-source|b1cbd1f960a1a5c4482b324dcff4742aa67b7a51|2026-09-13
-35|pydantic-ai|Pydantic AI|https://github.com/pydantic/pydantic-ai|2024-06-21T15:55:04Z|adapted-source|5cbacfc8f86d653baa0ca2e31970cbf4f0fcec95|2026-09-13
-36|cline|Cline|https://github.com/cline/cline|2024-07-06T07:28:10Z|adapted-source|cfe9cadab99617d5013bf89f07b079d105057791|2026-09-13
-37|eliza|Eliza|https://github.com/elizaOS/eliza|2024-07-09T07:55:40Z|adapted-source|5b183d21ff25a8c3e43af9a284a38b5ff487ded9|2026-09-13
-38|agent-squad|Agent Squad|https://github.com/2FastLabs/agent-squad|2024-07-23T12:48:30Z|adapted-source|31eccfeb0d546262d1d0ec2e2e5239186f8d2954|2026-09-13
-39|mastra|Mastra|https://github.com/mastra-ai/mastra|2024-08-06T20:44:31Z|adapted-source|76cec9be889c0a6ae7f51fbf25356d5a06019351|2026-09-13
-40|beeai-framework|BeeAI Framework|https://github.com/i-am-bee/beeai-framework|2024-08-23T14:03:06Z|adapted-source|6a8b28f54073790f9a8135320a0e9ed1d4cef602|2026-09-13
-41|goose|Goose|https://github.com/aaif-goose/goose|2024-08-23T19:03:36Z|adapted-source|50666ae0b9a51e260b52b7efbab2e4e020346e94|2026-09-13
-42|superagentx|SuperAgentX|https://github.com/superagentxai/superagentx|2024-10-22T06:40:24Z|adapted-source|28f2759f20d2dba9fa184ca4fe6b50943388cfbc|2026-09-13
-43|browser-use|Browser Use|https://github.com/browser-use/browser-use|2024-10-31T16:00:56Z|adapted-source|50f205533fe10ba35b553d2a3689c77b87bd5d0a|2026-09-13
-44|roo-code|Roo Code|https://github.com/RooCodeInc/Roo-Code|2024-10-31T17:56:50Z|adapted-source|b867ec9145750d0ae1ff7f02d35406e9bf2a0b16|2026-09-13
-45|smolagents|smolagents|https://github.com/huggingface/smolagents|2024-12-05T11:28:04Z|adapted-source|30bb1161095dbae2271e6bc3cc4c219cc3897a57|2026-09-13
-46|cloudflare-agents|Cloudflare Agents|https://github.com/cloudflare/agents|2025-01-29T23:14:04Z|adapted-source|46760e635ce9599add0abbfe6c1a34af0d5d44f1|2026-09-13
-47|langgraph-bigtool|LangGraph BigTool|https://github.com/langchain-ai/langgraph-bigtool|2025-03-03T15:50:47Z|adapted-source|0bb7f9227d349afa4d4207c6630e800658c80894|2026-09-13
-48|openmanus|OpenManus|https://github.com/FoundationAgents/OpenManus|2025-03-06T14:08:14Z|adapted-source|3309bf4e416fb1c74b008f3e86494439a31bad53|2026-09-13
-49|kilo-code|Kilo Code|https://github.com/Kilo-Org/kilocode|2025-03-10T15:34:26Z|adapted-source|a1d4d665c8dfcbb1fc70bc1e49ca4e8ca9f16a51|2026-09-17
-50|openai-agents-sdk|OpenAI Agents SDK|https://github.com/openai/openai-agents-python|2025-03-11T03:42:36Z|adapted-source|fbd2dbcaaf74a2c447c6d3fa9d5645d83fd7e292|2026-09-13
-51|google-adk|Google ADK|https://github.com/google/adk-python|2025-04-01T20:44:40Z|adapted-source|460715b6c62c8e9ab00931c502381ee0364e39b6|2026-09-13
-52|codex|Codex|https://github.com/openai/codex|2025-04-13T05:37:54Z|adapted-source|b974893c90048d147207ae9004489c02f3116426|2026-09-17
-53|gemini-cli|Gemini CLI|https://github.com/google-gemini/gemini-cli|2025-04-17T17:04:31Z|adapted-source|6a466a7e2fe2b1255752c1e74f69b31f0216084d|2026-09-17
-54|microsoft-agent-framework|Microsoft Agent Framework|https://github.com/microsoft/agent-framework|2025-04-28T19:40:42Z|adapted-source|1cd06c5a2058a172eebadf5d9d7c3fa45c519520|2026-09-13
-55|opencode|OpenCode|https://github.com/anomalyco/opencode|2025-04-30T20:08:00Z|adapted-source|95daf90670b7c039c436c85537da5fbfe2205b41|2026-09-13
-56|agentsilex|AgentSilex|https://github.com/howl-anderson/agentsilex|2025-05-01T19:25:56Z|adapted-source|cd529f2838151fd8a4f0d6b7054a45d829b3f78d|2026-09-13
-57|deerflow|DeerFlow|https://github.com/bytedance/deer-flow|2025-05-07T02:50:19Z|adapted-source|6f81daefff2035d76d41e45d021626f022885372|2026-09-13
-58|strands-agents|Strands Agents|https://github.com/strands-agents/harness-sdk|2025-05-14T19:59:51Z|adapted-source|08ed4cfd3eb42ae9f668595e675d5f196eee7e44|2026-09-13
-59|crush|Crush|https://github.com/charmbracelet/crush|2025-05-21T12:14:57Z|adapted-source|ef7bae117905a3927b177ed6923f36e811737d53|2026-09-17
-60|openai-agents-js|OpenAI Agents SDK for JavaScript|https://github.com/openai/openai-agents-js|2025-05-31T00:08:49Z|adapted-source|8831eae9d34365f9a397cbd52ae0366f304e1a96|2026-09-13
-61|mcp-zero|MCP-Zero|https://github.com/xfey/MCP-Zero|2025-06-01T15:39:29Z|adapted-source|fd666c44c9290a671949b974444c30f4ab161622|2026-09-13
-62|claude-agent-sdk|Claude Agent SDK|https://github.com/anthropics/claude-agent-sdk-python|2025-06-11T21:33:43Z|adapted-source|37a52c9fb3f0271de017911914b0d42efea6267e|2026-09-13
-63|qwen-code|Qwen Code|https://github.com/QwenLM/qwen-code|2025-06-26T01:37:46Z|adapted-source|3ac6fe65e81c84897c02d22abd3dc91d1e567d5f|2026-09-17
-64|hermes-agent|Hermes Agent|https://github.com/NousResearch/hermes-agent|2025-07-22T22:22:28Z|adapted-source|16bddc88dd325c5eef27c2cc71bbb14c16b870aa|2026-09-17
-65|deepagents|Deep Agents|https://github.com/langchain-ai/deepagents|2025-07-27T23:07:53Z|adapted-source|f86b4e9abef7620b63a7258bc9fab0ccd83de8a4|2026-09-17
-66|mirothinker|MiroThinker|https://github.com/MiroMindAI/MiroThinker|2025-08-07T13:32:12Z|adapted-source|1c4253f6774bf40314271a827304b842100e054c|2026-09-13
-67|pi|Pi|https://github.com/earendil-works/pi|2025-08-09T14:03:50Z|adapted-source|71dca871bc80b6bc97be37f0ca3189399d651fff|2026-09-13
-68|repomaster|RepoMaster|https://github.com/QuantaAlpha/RepoMaster|2025-08-17T10:22:04Z|adapted-source|9cf59930102970d61d6eb2f702fd936d3cda7f11|2026-09-13
-69|youtu-agent|Youtu-Agent|https://github.com/TencentCloudADP/youtu-agent|2025-08-21T07:58:13Z|adapted-source|c2caa539f4c95ae1c39ed24dc8a99cb3651e1d5d|2026-09-13
-70|agentrl|AgentRL|https://github.com/THUDM/AgentRL|2025-09-10T11:37:54Z|adapted-source|6a73409d31ba695d383b978a8ad3ef400d90c054|2026-09-13
-71|openclaw|OpenClaw|https://github.com/openclaw/openclaw|2025-11-24T10:16:47Z|adapted-source|387da5edaa9d6c6cfcfc15e167fe2e46d8647d86|2026-09-16
-72|oh-my-pi|oh-my-pi|https://github.com/can1357/oh-my-pi|2025-12-31T14:01:28Z|adapted-source|dbf3afad4894bde827d90f965e77b3fe1c5a95e5|2026-09-17
-73|hive|Hive|https://github.com/aden-hive/hive|2026-01-12T00:04:22Z|adapted-source|0c387492067e8b7d3e1c803009169f202f30ed77|2026-09-13
-74|open-harness|open-harness|https://github.com/MaxGfeller/open-harness|2026-02-23T19:39:32Z|adapted-source|026e8d9cb8f184cdeac2054b489ec20972ba8681|2026-09-13
-75|symphony|Symphony|https://github.com/openai/symphony|2026-02-26T21:54:00Z|adapted-source|e0ccc83720a42a600a53b61c5f8d3e518bebe1db|2026-09-13
-76|looptroop|LoopTroop|https://github.com/looptroop-ai/LoopTroop|2026-03-03T13:33:49Z|adapted-source|b96f5448251cbe88cd845cd5f262adda02701413|2026-09-13
-77|talon|Talon|https://github.com/dylanneve1/talon|2026-03-14T19:58:33Z|adapted-source|afae82e60540e49970d04401a25725fd7635ec96|2026-09-13
-78|openharness-hkuds|OpenHarness (HKUDS)|https://github.com/HKUDS/OpenHarness|2026-04-01T15:37:13Z|adapted-source|9b2efd795c6aa09f88b0c257d269a9e518da6ae7|2026-09-13
-79|claw-code-agent|claw-code-agent|https://github.com/HarnessLab/claw-code-agent|2026-04-01T19:41:37Z|adapted-source|167571da895b2a1a9e36ecfae2876984cef65e0d|2026-09-13
-80|autoharness|AutoHarness|https://github.com/aiming-lab/AutoHarness|2026-04-02T00:25:20Z|adapted-source|3561e468f9ca9f9bf282512e695bd32e4e90fef4|2026-09-13
-81|proliferate|Proliferate|https://github.com/proliferate-ai/proliferate|2026-04-30T23:54:35Z|adapted-source|74e1178cf3ecfbfc3ffeb8321f82c4a9bfce620f|2026-09-13
-82|get-shit-done|get-shit-done|https://github.com/open-gsd/gsd-core|2026-05-22T11:36:21Z|adapted-source|4f487e4e75276ad50fc13796cef8d23148cd8830|2026-09-13
+28|agency-swarm|Agency Swarm|https://github.com/VRSEN/agency-swarm|2023-11-16T02:29:26Z|index-addition|853d37b9b243edc5dfe2ff2d2d4658aa8ec9a750|2026-09-16
+29|agentlite|AgentLite|https://github.com/SalesforceAIResearch/AgentLite|2024-02-09T23:29:18Z|index-addition|b173239a652eea560e57c6fe46b0c0af7c4f3578|2026-09-13
+30|r2r|R2R|https://github.com/SciPhi-AI/R2R|2024-02-12T03:24:27Z|adapted-source|9c5a94d151f90876bd7eb860f300a8fd662dc481|2026-09-13
+31|openhands|OpenHands|https://github.com/OpenHands/OpenHands|2024-03-13T03:33:31Z|adapted-source|28464621d879e3e9b3ceeae9d70a71d96da6212d|2026-09-13
+32|praisonai|PraisonAI|https://github.com/MervinPraison/PraisonAI|2024-03-19T16:45:25Z|adapted-source|43a106db26d399d312370f8eeca949a5ba135c5b|2026-09-13
+33|stagehand|Stagehand|https://github.com/browserbase/stagehand|2024-03-24T19:19:44Z|adapted-source|b771930d2b4d858e5bd9670203c66260b385a8fa|2026-09-13
+34|swe-agent|SWE-agent|https://github.com/SWE-agent/SWE-agent|2024-04-02T04:09:47Z|adapted-source|3ea751c087f32b16e039a2233dd6eefecef325d5|2026-09-13
+35|agent-zero|Agent Zero|https://github.com/agent0ai/agent-zero|2024-06-10T09:10:45Z|adapted-source|b1cbd1f960a1a5c4482b324dcff4742aa67b7a51|2026-09-13
+36|pydantic-ai|Pydantic AI|https://github.com/pydantic/pydantic-ai|2024-06-21T15:55:04Z|adapted-source|5cbacfc8f86d653baa0ca2e31970cbf4f0fcec95|2026-09-13
+37|cline|Cline|https://github.com/cline/cline|2024-07-06T07:28:10Z|adapted-source|cfe9cadab99617d5013bf89f07b079d105057791|2026-09-13
+38|eliza|Eliza|https://github.com/elizaOS/eliza|2024-07-09T07:55:40Z|adapted-source|5b183d21ff25a8c3e43af9a284a38b5ff487ded9|2026-09-13
+39|agent-squad|Agent Squad|https://github.com/2FastLabs/agent-squad|2024-07-23T12:48:30Z|adapted-source|31eccfeb0d546262d1d0ec2e2e5239186f8d2954|2026-09-13
+40|mastra|Mastra|https://github.com/mastra-ai/mastra|2024-08-06T20:44:31Z|adapted-source|76cec9be889c0a6ae7f51fbf25356d5a06019351|2026-09-13
+41|beeai-framework|BeeAI Framework|https://github.com/i-am-bee/beeai-framework|2024-08-23T14:03:06Z|adapted-source|6a8b28f54073790f9a8135320a0e9ed1d4cef602|2026-09-13
+42|goose|Goose|https://github.com/aaif-goose/goose|2024-08-23T19:03:36Z|adapted-source|50666ae0b9a51e260b52b7efbab2e4e020346e94|2026-09-13
+43|superagentx|SuperAgentX|https://github.com/superagentxai/superagentx|2024-10-22T06:40:24Z|adapted-source|28f2759f20d2dba9fa184ca4fe6b50943388cfbc|2026-09-13
+44|browser-use|Browser Use|https://github.com/browser-use/browser-use|2024-10-31T16:00:56Z|adapted-source|50f205533fe10ba35b553d2a3689c77b87bd5d0a|2026-09-13
+45|roo-code|Roo Code|https://github.com/RooCodeInc/Roo-Code|2024-10-31T17:56:50Z|adapted-source|b867ec9145750d0ae1ff7f02d35406e9bf2a0b16|2026-09-13
+46|smolagents|smolagents|https://github.com/huggingface/smolagents|2024-12-05T11:28:04Z|adapted-source|30bb1161095dbae2271e6bc3cc4c219cc3897a57|2026-09-13
+47|cloudflare-agents|Cloudflare Agents|https://github.com/cloudflare/agents|2025-01-29T23:14:04Z|adapted-source|46760e635ce9599add0abbfe6c1a34af0d5d44f1|2026-09-13
+48|langgraph-bigtool|LangGraph BigTool|https://github.com/langchain-ai/langgraph-bigtool|2025-03-03T15:50:47Z|adapted-source|0bb7f9227d349afa4d4207c6630e800658c80894|2026-09-13
+49|openmanus|OpenManus|https://github.com/FoundationAgents/OpenManus|2025-03-06T14:08:14Z|adapted-source|3309bf4e416fb1c74b008f3e86494439a31bad53|2026-09-13
+50|kilo-code|Kilo Code|https://github.com/Kilo-Org/kilocode|2025-03-10T15:34:26Z|adapted-source|a1d4d665c8dfcbb1fc70bc1e49ca4e8ca9f16a51|2026-09-17
+51|openai-agents-sdk|OpenAI Agents SDK|https://github.com/openai/openai-agents-python|2025-03-11T03:42:36Z|adapted-source|fbd2dbcaaf74a2c447c6d3fa9d5645d83fd7e292|2026-09-13
+52|google-adk|Google ADK|https://github.com/google/adk-python|2025-04-01T20:44:40Z|adapted-source|460715b6c62c8e9ab00931c502381ee0364e39b6|2026-09-13
+53|codex|Codex|https://github.com/openai/codex|2025-04-13T05:37:54Z|adapted-source|b974893c90048d147207ae9004489c02f3116426|2026-09-17
+54|gemini-cli|Gemini CLI|https://github.com/google-gemini/gemini-cli|2025-04-17T17:04:31Z|adapted-source|6a466a7e2fe2b1255752c1e74f69b31f0216084d|2026-09-17
+55|microsoft-agent-framework|Microsoft Agent Framework|https://github.com/microsoft/agent-framework|2025-04-28T19:40:42Z|adapted-source|1cd06c5a2058a172eebadf5d9d7c3fa45c519520|2026-09-13
+56|opencode|OpenCode|https://github.com/anomalyco/opencode|2025-04-30T20:08:00Z|adapted-source|95daf90670b7c039c436c85537da5fbfe2205b41|2026-09-13
+57|agentsilex|AgentSilex|https://github.com/howl-anderson/agentsilex|2025-05-01T19:25:56Z|adapted-source|cd529f2838151fd8a4f0d6b7054a45d829b3f78d|2026-09-13
+58|deerflow|DeerFlow|https://github.com/bytedance/deer-flow|2025-05-07T02:50:19Z|adapted-source|6f81daefff2035d76d41e45d021626f022885372|2026-09-13
+59|strands-agents|Strands Agents|https://github.com/strands-agents/harness-sdk|2025-05-14T19:59:51Z|adapted-source|08ed4cfd3eb42ae9f668595e675d5f196eee7e44|2026-09-13
+60|crush|Crush|https://github.com/charmbracelet/crush|2025-05-21T12:14:57Z|adapted-source|ef7bae117905a3927b177ed6923f36e811737d53|2026-09-17
+61|openai-agents-js|OpenAI Agents SDK for JavaScript|https://github.com/openai/openai-agents-js|2025-05-31T00:08:49Z|adapted-source|8831eae9d34365f9a397cbd52ae0366f304e1a96|2026-09-13
+62|mcp-zero|MCP-Zero|https://github.com/xfey/MCP-Zero|2025-06-01T15:39:29Z|adapted-source|fd666c44c9290a671949b974444c30f4ab161622|2026-09-13
+63|claude-agent-sdk|Claude Agent SDK|https://github.com/anthropics/claude-agent-sdk-python|2025-06-11T21:33:43Z|adapted-source|37a52c9fb3f0271de017911914b0d42efea6267e|2026-09-13
+64|qwen-code|Qwen Code|https://github.com/QwenLM/qwen-code|2025-06-26T01:37:46Z|adapted-source|3ac6fe65e81c84897c02d22abd3dc91d1e567d5f|2026-09-17
+65|hermes-agent|Hermes Agent|https://github.com/NousResearch/hermes-agent|2025-07-22T22:22:28Z|adapted-source|16bddc88dd325c5eef27c2cc71bbb14c16b870aa|2026-09-17
+66|deepagents|Deep Agents|https://github.com/langchain-ai/deepagents|2025-07-27T23:07:53Z|adapted-source|f86b4e9abef7620b63a7258bc9fab0ccd83de8a4|2026-09-17
+67|mirothinker|MiroThinker|https://github.com/MiroMindAI/MiroThinker|2025-08-07T13:32:12Z|adapted-source|1c4253f6774bf40314271a827304b842100e054c|2026-09-13
+68|pi|Pi|https://github.com/earendil-works/pi|2025-08-09T14:03:50Z|adapted-source|71dca871bc80b6bc97be37f0ca3189399d651fff|2026-09-13
+69|repomaster|RepoMaster|https://github.com/QuantaAlpha/RepoMaster|2025-08-17T10:22:04Z|adapted-source|9cf59930102970d61d6eb2f702fd936d3cda7f11|2026-09-13
+70|youtu-agent|Youtu-Agent|https://github.com/TencentCloudADP/youtu-agent|2025-08-21T07:58:13Z|adapted-source|c2caa539f4c95ae1c39ed24dc8a99cb3651e1d5d|2026-09-13
+71|agentrl|AgentRL|https://github.com/THUDM/AgentRL|2025-09-10T11:37:54Z|adapted-source|6a73409d31ba695d383b978a8ad3ef400d90c054|2026-09-13
+72|openclaw|OpenClaw|https://github.com/openclaw/openclaw|2025-11-24T10:16:47Z|adapted-source|387da5edaa9d6c6cfcfc15e167fe2e46d8647d86|2026-09-16
+73|oh-my-pi|oh-my-pi|https://github.com/can1357/oh-my-pi|2025-12-31T14:01:28Z|adapted-source|dbf3afad4894bde827d90f965e77b3fe1c5a95e5|2026-09-17
+74|hive|Hive|https://github.com/aden-hive/hive|2026-01-12T00:04:22Z|adapted-source|0c387492067e8b7d3e1c803009169f202f30ed77|2026-09-13
+75|open-harness|open-harness|https://github.com/MaxGfeller/open-harness|2026-02-23T19:39:32Z|adapted-source|026e8d9cb8f184cdeac2054b489ec20972ba8681|2026-09-13
+76|symphony|Symphony|https://github.com/openai/symphony|2026-02-26T21:54:00Z|adapted-source|e0ccc83720a42a600a53b61c5f8d3e518bebe1db|2026-09-13
+77|looptroop|LoopTroop|https://github.com/looptroop-ai/LoopTroop|2026-03-03T13:33:49Z|adapted-source|b96f5448251cbe88cd845cd5f262adda02701413|2026-09-13
+78|talon|Talon|https://github.com/dylanneve1/talon|2026-03-14T19:58:33Z|adapted-source|afae82e60540e49970d04401a25725fd7635ec96|2026-09-13
+79|openharness-hkuds|OpenHarness (HKUDS)|https://github.com/HKUDS/OpenHarness|2026-04-01T15:37:13Z|adapted-source|9b2efd795c6aa09f88b0c257d269a9e518da6ae7|2026-09-13
+80|claw-code-agent|claw-code-agent|https://github.com/HarnessLab/claw-code-agent|2026-04-01T19:41:37Z|adapted-source|167571da895b2a1a9e36ecfae2876984cef65e0d|2026-09-13
+81|autoharness|AutoHarness|https://github.com/aiming-lab/AutoHarness|2026-04-02T00:25:20Z|adapted-source|3561e468f9ca9f9bf282512e695bd32e4e90fef4|2026-09-13
+82|proliferate|Proliferate|https://github.com/proliferate-ai/proliferate|2026-04-30T23:54:35Z|adapted-source|74e1178cf3ecfbfc3ffeb8321f82c4a9bfce620f|2026-09-13
+83|get-shit-done|get-shit-done|https://github.com/open-gsd/gsd-core|2026-05-22T11:36:21Z|adapted-source|4f487e4e75276ad50fc13796cef8d23148cd8830|2026-09-13
