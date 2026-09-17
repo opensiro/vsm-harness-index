@@ -4,6 +4,9 @@ on:
   pull_request:
   push:
 
+permissions:
+  contents: write
+
 jobs:
   index:
     runs-on: ubuntu-latest
@@ -14,6 +17,67 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Prepare batch 29 canonical data
+        if: github.ref == 'refs/heads/admit-batch-29-shannon-through-camel'
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+
+          additions = [
+              ('camel-workforce', 'CAMEL Workforce', 'https://github.com/camel-ai/camel', '2023-03-17T21:41:54Z', '8c791b7b9cf7deab56cb5a92818c34499af9097f'),
+              ('shannon', 'Shannon', 'https://github.com/Kocoro-lab/Shannon', '2025-08-29T10:53:48Z', '391b619130281502d227a53dd97238c9791bf174'),
+              ('swarmclaw', 'SwarmClaw', 'https://github.com/swarmclawai/swarmclaw', '2026-02-18T22:21:42Z', 'ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1'),
+              ('nerve', 'Nerve', 'https://github.com/ClickHouse/nerve', '2026-03-11T20:39:49Z', '079548115c5c4c1d826f0ab8034c1001cac9ef7f'),
+          ]
+          catalog_path = Path('data/catalog.psv')
+          with catalog_path.open(newline='', encoding='utf-8') as f:
+              rows = list(csv.DictReader(f, delimiter='|'))
+          ids = {a[0] for a in additions}
+          rows = [r for r in rows if r['harness_id'] not in ids]
+          for hid, name, repo, created, ref in additions:
+              rows.append({
+                  'catalog_position': '0', 'harness_id': hid, 'project_name': name,
+                  'repository': repo, 'repository_created_at': created,
+                  'source_membership': 'index-addition', 'review_ref': ref,
+                  'pinned_at': '2026-09-16',
+              })
+          rows.sort(key=lambda r: (r['repository_created_at'], r['harness_id']))
+          fields = ['catalog_position','harness_id','project_name','repository','repository_created_at','source_membership','review_ref','pinned_at']
+          with catalog_path.open('w', newline='', encoding='utf-8') as f:
+              w = csv.DictWriter(f, fieldnames=fields, delimiter='|', lineterminator='\n')
+              w.writeheader()
+              for i, row in enumerate(rows, 1):
+                  row['catalog_position'] = str(i)
+                  w.writerow(row)
+
+          new_sigs = {
+              'camel-workforce': 'Workforce dependency gates provide constructor-owned S2, while a model-driven Coordinator owns whole-workforce assignments, failure response and dynamic capacity as S3; ordinary evaluation and human controls do not close S3*/S5.',
+              'shannon': 'Autonomous AgentLoops run under constructor-owned shared budget/preflight/backpressure regulation; swarm delegation lacks a concrete S2 disturbance witness and human action approval is not S5.',
+              'swarmclaw': 'Structured protocol dependency/order gates provide constructor-owned S2 across autonomous participants; phase control, verification stages and manual waits remain workflow support rather than S3/S3*/S5.',
+              'nerve': 'A single autonomous worker runs plan-approve-execute and can revise skills from past experience; workflow control, internal learning and human approval do not establish S2-S5.',
+          }
+          sig_path = Path('data/signatures.psv')
+          with sig_path.open(newline='', encoding='utf-8') as f:
+              sig_rows = list(csv.DictReader(f, delimiter='|'))
+          sigs = {r['harness_id']: r['signature'] for r in sig_rows}
+          sigs.update(new_sigs)
+          positions = {r['harness_id']: int(r['catalog_position']) for r in rows}
+          with sig_path.open('w', newline='', encoding='utf-8') as f:
+              w = csv.DictWriter(f, fieldnames=['catalog_position','harness_id','signature'], delimiter='|', lineterminator='\n')
+              w.writeheader()
+              for hid in sorted(sigs, key=lambda x: positions[x]):
+                  w.writerow({'catalog_position': positions[hid], 'harness_id': hid, 'signature': sigs[hid]})
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_rankings.py
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Generate batch 29 admission artifacts'
+            git push
+          fi
       - run: python scripts/check_index.py
       - run: python -m unittest discover -s tests -v
       - name: Check immutable generation provenance against PR base
