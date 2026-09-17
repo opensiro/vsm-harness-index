@@ -6,6 +6,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | 1 | <a id="omnigent"></a>[Omnigent](https://github.com/omnigent-ai/omnigent) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 1 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 1 | <a id="cc-haha"></a>[cc-haha](https://github.com/NanmiCoder/cc-haha) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 1 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 2 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 2 | <a id="jcode"></a>[jcode](https://github.com/1jehuang/jcode) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
@@ -19,13 +20,17 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 3 | <a id="penguin-harness"></a>[PenguinHarness](https://github.com/Prism-Shadow/penguin-harness) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 3 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 3 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 3 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
+| 3 | <a id="claude-code"></a>[Claude Code](https://github.com/anthropics/claude-code) | 2025 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 3 | <a id="goose"></a>[Goose](https://github.com/aaif-goose/goose) | 2024 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 3 | <a id="letta"></a>[Letta](https://github.com/letta-ai/letta) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="metagpt"></a>[MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 3 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
+| 4 | <a id="mini-harness"></a>[mini-harness](https://github.com/mini-harness/mini-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 4 | <a id="agentbox"></a>[AgentBox](https://github.com/madarco/agentbox) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="reasonix"></a>[Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 4 | <a id="meta-harness"></a>[Meta-Harness](https://github.com/stanford-iris-lab/meta-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
