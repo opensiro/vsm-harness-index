@@ -4,6 +4,12 @@ project_name: Google ADK
 repository: https://github.com/google/adk-python
 review_ref: 460715b6c62c8e9ab00931c502381ee0364e39b6
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 7ae1c9b026c84bf8a65921003f71b0f30c8e3166
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
