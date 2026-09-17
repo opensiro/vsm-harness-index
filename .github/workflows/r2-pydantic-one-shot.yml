@@ -1,3 +1,4 @@
+# one-shot branch helper; removed before PR
 name: R2 Pydantic AI one-shot updater
 
 on:
