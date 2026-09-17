@@ -1,4 +1,3 @@
-# one-shot branch helper; removed before PR
 name: R2 Pydantic AI one-shot updater
 
 on:
@@ -11,13 +10,12 @@ permissions:
 
 jobs:
   update:
-    if: ${{ !contains(github.event.head_commit.message, '[r2-pydantic-autofix]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Record Pydantic AI no-material-change
+      - name: Record Pydantic AI R2 outcome
         shell: bash
         run: |
           python - <<'PY'
@@ -27,42 +25,45 @@ jobs:
           checked_ref = '532fb9b98092664c0d59a825de5d986783cae036'
           checked_at = '2026-09-17'
 
-          assessment_path = Path('assessments/pydantic-ai.md')
-          text = assessment_path.read_text(encoding='utf-8')
-          old = '''review_ref: 5cbacfc8f86d653baa0ca2e31970cbf4f0fcec95
-reviewed_at: 2026-09-15
-status: included
-'''
-          new = f'''review_ref: {old_ref}
-reviewed_at: 2026-09-15
-status: included
-profile_version: 0.2.1
-assessment_procedure_version: 0.3.1
-last_checked_ref: {checked_ref}
-last_checked_at: {checked_at}
-assessment_changed_at: 2026-09-15
-last_reassessment_round: R2
-'''
-          assert text.count(old) == 1, 'unexpected Pydantic AI frontmatter'
-          assessment_path.write_text(text.replace(old, new), encoding='utf-8')
+          assessment = Path('assessments/pydantic-ai.md').read_text(encoding='utf-8')
+          required = [
+              f'review_ref: {old_ref}',
+              'profile_version: 0.2.1',
+              'assessment_procedure_version: 0.3.1',
+              f'last_checked_ref: {checked_ref}',
+              f'last_checked_at: {checked_at}',
+              'last_reassessment_round: R2',
+              'autonomy_s1: A',
+              'autonomy_s2: —',
+              'autonomy_s3: —',
+              'autonomy_s3_star: —',
+              'autonomy_s4: —',
+              'autonomy_s5: —',
+          ]
+          for item in required:
+              assert item in assessment, f'missing assessment field: {item}'
 
           history_path = Path('data/reassessment-history.psv')
           history = history_path.read_text(encoding='utf-8')
-          assert 'R2|pydantic-ai|' not in history, 'Pydantic AI already recorded in R2'
-          evidence = (
-              f'https://github.com/pydantic/pydantic-ai/compare/{old_ref}...{checked_ref} ; '
-              f'https://github.com/pydantic/pydantic-ai/blob/{checked_ref}/docs/multi-agent-applications.md ; '
-              f'https://github.com/pydantic/pydantic-ai/blob/{checked_ref}/pydantic_ai_slim/pydantic_ai/_enqueue.py ; '
-              f'https://github.com/pydantic/pydantic-ai/blob/{checked_ref}/docs/extensibility.md'
-          )
-          row = f'R2|pydantic-ai|{old_ref}|{checked_ref}|{old_ref}|{checked_at}|0.2.1|0.3.1|no-material-change|—|{evidence}'
-          history_path.write_text(history.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
+          assert 'R2|pydantic-ai|' not in history, 'Pydantic AI already recorded in R2 history'
+          evidence = ' ; '.join([
+              f'https://github.com/pydantic/pydantic-ai/compare/{old_ref}...{checked_ref}',
+              f'https://github.com/pydantic/pydantic-ai/blob/{checked_ref}/docs/multi-agent-applications.md',
+              f'https://github.com/pydantic/pydantic-ai/blob/{checked_ref}/pydantic_ai_slim/pydantic_ai/_enqueue.py',
+              f'https://github.com/pydantic/pydantic-ai/blob/{checked_ref}/docs/extensibility.md',
+          ])
+          history_row = '|'.join([
+              'R2', 'pydantic-ai', old_ref, checked_ref, old_ref, checked_at,
+              '0.2.1', '0.3.1', 'no-material-change', '—', evidence,
+          ])
+          history_path.write_text(history.rstrip('\n') + '\n' + history_row + '\n', encoding='utf-8')
 
           round_path = Path('reassessments/R2-2026-09-16.md')
           round_text = round_path.read_text(encoding='utf-8')
           assert '| `pydantic-ai` |' not in round_text, 'Pydantic AI already recorded in R2 round'
-          row = (
-              f'| `pydantic-ai` | `{old_ref}` | `{checked_ref}` | {checked_at} | 0.2.1 | 0.3.1 | no-material-change | — | '
+          round_row = (
+              f'| `pydantic-ai` | `{old_ref}` | `{checked_ref}` | {checked_at} | 0.2.1 | 0.3.1 | '
+              f'no-material-change | — | '
               f'[upstream delta](https://github.com/pydantic/pydantic-ai/compare/{old_ref}...{checked_ref}), '
               f'[multi-agent boundary](https://github.com/pydantic/pydantic-ai/blob/{checked_ref}/docs/multi-agent-applications.md), '
               f'[single-run enqueue](https://github.com/pydantic/pydantic-ai/blob/{checked_ref}/pydantic_ai_slim/pydantic_ai/_enqueue.py), '
@@ -70,18 +71,18 @@ last_reassessment_round: R2
           )
           marker = '\n## Completion\n'
           assert round_text.count(marker) == 1, 'unexpected R2 completion marker'
-          round_text = round_text.replace(marker, '\n' + row + '\n' + marker, 1)
-          round_path.write_text(round_text, encoding='utf-8')
+          round_path.write_text(round_text.replace(marker, '\n' + round_row + '\n' + marker, 1), encoding='utf-8')
           PY
           python scripts/render_tldr.py --check
           python scripts/check_index.py
           python scripts/check_generation_provenance.py --base-ref origin/main
           git diff --check
-      - name: Commit result
+      - name: Commit canonical result and remove helper
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/r2-pydantic-one-shot.yml
           git add assessments/pydantic-ai.md data/reassessment-history.psv reassessments/R2-2026-09-16.md
-          git commit -m "[r2-pydantic-autofix] Record Pydantic AI no-material-change"
+          git commit -m "R2: record Pydantic AI no-material-change"
           git push origin HEAD:r2-pydantic-ai-deep-104
