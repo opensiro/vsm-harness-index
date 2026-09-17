@@ -3,50 +3,52 @@ harness_id: swarmclaw
 project_name: SwarmClaw
 repository: https://github.com/swarmclawai/swarmclaw
 review_ref: ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1
-reviewed_at: 2026-09-16
-status: proposed
+reviewed_at: 2026-09-17
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+assessment_changed_at: 2026-09-17
+status: included
 autonomy_s1: A
 autonomy_s2: C
-autonomy_s3: C
-autonomy_s3_star: C
+autonomy_s3: —
+autonomy_s3_star: —
 autonomy_s4: —
-autonomy_s5: P
+autonomy_s5: —
 ---
 
 # SwarmClaw
 
 ## Review boundary
-Pinned structured protocol runtime with participant collection, facilitator, task assignment, branches, loops, parallel/subflows/swarm/A2A and persistent waiting.
+Pinned first-party SwarmClaw runtime including autonomous participants, structured protocol execution, task assignment, dependency/order constraints, branches, bounded loops, parallel/subflow/swarm/A2A primitives, verification stages, schedules and persistent manual waits.
 
-## Repository architecture
-Executable protocols own task emission/assignment, DAG/order constraints, phase transitions and branches. Verifying lifecycles can collect, compare, decide and route corrections.
+Reviewed revision: `ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1`. Contract: Profile `0.2.1`, Methodology `0.3.1`. The pin matched upstream `main` when rechecked on 2026-09-17.
 
 ## Primary evidence
-- Pinned deep review established protocol coordination, task/phase control, verifying lifecycle and persistent manual wait at `review_ref`.
-
-## Operational model
-Agents execute operations inside constructor-defined protocols that coordinate coexistence, regulate current flow and optionally insert verification/correction stages.
+- [`README.md`](https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/README.md) — autonomous agents, swarms, delegation, schedules and runtime controls.
+- Pinned first-party structured-protocol implementation and tests reviewed for dependency/order gates, phase/branch execution, verification and durable manual waits.
 
 ## S1 — Operations
-`A`: participants autonomously perform assigned model/tool work. Confidence: high.
+`A`. Agent participants independently execute assigned model/tool work and adapt their local trajectories. Confidence: high.
 
 ## S2 — Coordination
-`C`: protocol-defined DAG/order/interference management closes composable coordination. Confidence: high.
+`C`. Structured protocols can impose dependency/order constraints across multiple participating S1s so incompatible or premature work is not released until the required predecessor relation is satisfied. That is a concrete constructor-owned coordination path beyond message routing or delegation. The runtime supplies the mechanism; the application supplies the protocol. Confidence: medium-high.
 
 ## S3 — Inside-and-now control
-`C`: assignment, phase transitions, branches and bounded loops regulate current operation. Confidence: high.
+`—`. Assignment, phase transitions, branches and bounded loops are authored protocol execution. The reviewed standard distribution does not establish a distinct whole-system current regulator with authority over shared organizational resources, commitments and priorities. The historical `C` relied on workflow-control semantics. Confidence: high.
 
 ## S3* — Complementary audit
-`C`: verifying lifecycle plus collect/compare/decide/summarize machinery can challenge work and route correction. Confidence: high.
+`—`. Verification/collect/compare/decide stages inspect artifacts/results carried through the normal protocol path. No first-party materially complementary access path to operational reality was established, so verification is not promoted to S3*. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`—`: no prospective organizational adaptation function was established. Confidence: high.
+`—`. No first-party outside-and-then organizational adaptation loop was established. Confidence: high.
 
 ## S5 — Policy and identity
-`P`: explicit manual wait preserves durable parent authority. Confidence: high.
+`—`. Persistent manual wait preserves a human intervention point, but waiting for an operator during protocol execution is not by itself a function-specific ultimate-policy/identity closure. The historical `P` therefore does not survive. Confidence: high.
 
-## Recursion, variety, escalation
-Subflows/swarm/A2A amplify organizational variety; bounded loops and branch rules attenuate it; manual wait provides escalation.
+## Recursion, variety, and escalation
+Subflows, swarm/A2A and parallel execution amplify operational variety; dependency gates, bounded loops, branches and waits attenuate it. Nested execution remains task/protocol composition unless a child system is separately shown viable at its own recursion level.
 
-## Deep-review conclusion
-Signature at the pinned revision: `A C C C — P`. SwarmClaw is a protocol-centric constructor with substantial metasystem closure.
+## Admission conclusion
+Canonical vector: `A C — — — —`.
+
+Same-ref correction of historical `A C C C — P`: constructor-owned dependency/order coordination remains S2; workflow control, routine verification and manual operational waits no longer count as S3, S3* or S5.
