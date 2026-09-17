@@ -4,6 +4,12 @@ project_name: OpenCode
 repository: https://github.com/anomalyco/opencode
 review_ref: 95daf90670b7c039c436c85537da5fbfe2205b41
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 5a8335857b0ebec44ef6aa1d52b339cf25c329ca
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
