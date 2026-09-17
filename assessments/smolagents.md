@@ -5,6 +5,12 @@ repository: https://github.com/huggingface/smolagents
 review_ref: 30bb1161095dbae2271e6bc3cc4c219cc3897a57
 reviewed_at: 2026-09-15
 status: included
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 30bb1161095dbae2271e6bc3cc4c219cc3897a57
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —

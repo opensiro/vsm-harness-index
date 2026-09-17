@@ -5,6 +5,12 @@ repository: https://github.com/cloudflare/agents
 review_ref: 46760e635ce9599add0abbfe6c1a34af0d5d44f1
 reviewed_at: 2026-09-15
 status: included
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 16b6856070f6c711486011b8b9dd926c2eaae52b
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
