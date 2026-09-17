@@ -5,6 +5,12 @@ repository: https://github.com/Aider-AI/aider
 review_ref: 5dc9490bb35f9729ef2c95d00a19ccd30c26339c
 reviewed_at: 2026-09-15
 status: included
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 5dc9490bb35f9729ef2c95d00a19ccd30c26339c
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
