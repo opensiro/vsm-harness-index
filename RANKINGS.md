@@ -8,6 +8,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 1 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 1 | <a id="cc-haha"></a>[cc-haha](https://github.com/NanmiCoder/cc-haha) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 1 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
+| 2 | <a id="deepseek-harness"></a>[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 2026 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 2 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 2 | <a id="jcode"></a>[jcode](https://github.com/1jehuang/jcode) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 2 | <a id="oh-my-openagent"></a>[oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
