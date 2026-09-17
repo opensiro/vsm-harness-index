@@ -5,6 +5,12 @@ repository: https://github.com/vercel/ai
 review_ref: 6c6c2210b9532a4c369615c044a16d595f3db117
 reviewed_at: 2026-09-15
 status: included
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 6dcd923799d2c663dff348927790c7967ce597dc
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -40,6 +46,8 @@ The model-driven tool loop is one S1. Approval, stopping, preparation and callba
 
 ## S3* — Complementary audit
 `—`: tool approval is an execution gate and callbacks are observation hooks, not a sufficiently independent reviewer/auditor with corrective closure. Confidence: high.
+
+R2 revalidation: the new experimental `evaluate()` API evaluates caller-supplied state against caller-supplied questions and returns typed answers to the caller. It neither establishes an independent channel to operational reality nor closes findings back into `ToolLoopAgent`/`WorkflowAgent`; it is therefore an SDK evaluation primitive that downstream applications may compose into an audit path, not first-party S3* at this boundary.
 
 ## S4 — Outside-and-then intelligence
 `—`: model/tool adaptation within the current task is operational behavior; no distinct external-and-prospective intelligence function coupled to S3 is supplied. Confidence: high.
