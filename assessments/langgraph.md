@@ -5,6 +5,12 @@ repository: https://github.com/langchain-ai/langgraph
 review_ref: e539ac122f4126f6dd850581c1494948cf620e31
 reviewed_at: 2026-09-15
 status: included
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 230927fb3a9ac9b2893a30322b4dfea7cdea9a8f
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
