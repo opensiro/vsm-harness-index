@@ -6,8 +6,6 @@ review_ref: dbf3afad4894bde827d90f965e77b3fe1c5a95e5
 reviewed_at: 2026-09-17
 profile_version: 0.2.1
 assessment_procedure_version: 0.3.1
-last_checked_ref: dbf3afad4894bde827d90f965e77b3fe1c5a95e5
-last_checked_at: 2026-09-17
 assessment_changed_at: 2026-09-17
 status: included
 autonomy_s1: A
@@ -62,4 +60,4 @@ The primary agent performs coding work and can create multiple sibling S1 worker
 Subagents amplify operational variety. Agent-selected workspace isolation attenuates sibling write conflict; Hub provides current regulation; Advisor provides an independent challenge path. Human Agent Hub supervision is represented as parent S3 rather than being incorrectly lifted into S5.
 
 ## Admission conclusion
-Canonical vector at the pinned revision: `A A A(P) A — —`. Relative to the proposal, S2 is upgraded from `C` to `A` because the autonomous parent selects the supplied conflict-attenuation mode, S3 is upgraded from `C` to `A(P)` because both autonomous and parent current-control closures are first-party, S3* remains autonomous with stronger complementary-access evidence, and generic human authority is removed from S5.
+Canonical vector at the pinned revision: `A A A(P) A — —`. Relative to the proposal, S2 is upgraded from `C` to `A` because the autonomous parent selects the supplied conflict-attenuation mode, S3 is upgraded from `C` to `A(P)` because both autonomous and parent current-control closures are first-party, S3* remains autonomous with stronger complementary-access evidence, and generic user authority is removed from S5.
