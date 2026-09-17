@@ -24,10 +24,22 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          catalog='107|yylo|YYLO|https://github.com/yylo-dev/yylo|2026-01-06T18:57:23Z|index-addition|93abebf1a787bd1d6c14677d0766e64361bda1ae|2026-09-16'
-          signature='107|yylo|Parallel task worktrees plus native Git conflict/target-movement handling provide constructor-owned S2, while a fresh exact-tip read-only reviewer with structured findings exposes composable S3*; no S3/S4/S5 closure is established.'
-          grep -Fqx "$catalog" data/catalog.psv || printf '%s\n' "$catalog" >> data/catalog.psv
-          grep -Fqx "$signature" data/signatures.psv || printf '%s\n' "$signature" >> data/signatures.psv
+          python - <<'PY'
+          from pathlib import Path
+
+          rows = {
+              "data/catalog.psv": "107|yylo|YYLO|https://github.com/yylo-dev/yylo|2026-01-06T18:57:23Z|index-addition|93abebf1a787bd1d6c14677d0766e64361bda1ae|2026-09-16",
+              "data/signatures.psv": "107|yylo|Parallel task worktrees plus native Git conflict/target-movement handling provide constructor-owned S2, while a fresh exact-tip read-only reviewer with structured findings exposes composable S3*; no S3/S4/S5 closure is established.",
+          }
+          for filename, row in rows.items():
+              path = Path(filename)
+              text = path.read_text(encoding="utf-8")
+              if text and not text.endswith("\n"):
+                  text += "\n"
+              if row not in text.splitlines():
+                  text += row + "\n"
+              path.write_text(text, encoding="utf-8")
+          PY
           python scripts/render_tldr.py
           python scripts/check_index.py
           python -m unittest discover -s tests -v
