@@ -1,0 +1,74 @@
+name: one-shot goose 106
+
+on:
+  push:
+    branches:
+      - r2-goose-s3-correction-106
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Record Goose correction
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          old = "50666ae0b9a51e260b52b7efbab2e4e020346e94"
+          checked = "d213a3b13545b4e85524a572ac695b2181728e3b"
+          evidence = f"https://github.com/aaif-goose/goose/blob/{old}/crates/goose/src/agents/platform_extensions/orchestrator.rs"
+
+          history = Path("data/reassessment-history.psv")
+          text = history.read_text()
+          row = f"R2|goose|{old}|{checked}|{old}|2026-09-17|0.2.1|0.3.1|same-ref-correction|S3|{evidence}"
+          if "R2|goose|" in text:
+              raise SystemExit("R2 Goose history row already exists")
+          history.write_text(text.rstrip("\n") + "\n" + row + "\n")
+
+          round_file = Path("reassessments/R2-2026-09-16.md")
+          text = round_file.read_text()
+          round_row = f"| `goose` | `{old}` | `{checked}` | 2026-09-17 | 0.2.1 | 0.3.1 | same-ref-correction | S3 | [accepted-ref orchestrator]({evidence}) |"
+          if "| `goose` |" in text:
+              raise SystemExit("R2 Goose progress row already exists")
+          marker = "\n## Completion"
+          if marker not in text:
+              raise SystemExit("R2 completion marker not found")
+          text = text.replace(marker, "\n" + round_row + "\n" + marker, 1)
+          round_file.write_text(text)
+
+          signatures = Path("data/signatures.psv")
+          lines = signatures.read_text().splitlines()
+          matches = [i for i, line in enumerate(lines) if line.startswith("41|goose|")]
+          if len(matches) != 1:
+              raise SystemExit(f"expected one Goose signature row, found {len(matches)}")
+          lines[matches[0]] = (
+              "41|goose|The optional first-party Orchestrator gives a top-level Goose agent whole-session state "
+              "plus authority to start, instruct and interrupt independent peer sessions, establishing agent-owned S3; "
+              "sibling messaging remains below the S2 interference-regulation threshold."
+          )
+          signatures.write_text("\n".join(lines) + "\n")
+          PY
+      - name: Regenerate and validate
+        run: |
+          python scripts/render_tldr.py
+          python -m unittest discover -s tests -v
+          python scripts/check_index.py
+      - name: Commit final patch and remove one-shot workflow
+        shell: bash
+        run: |
+          rm .github/workflows/one-shot-goose-106.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "R2: record Goose same-ref S3 correction"
+          git push
