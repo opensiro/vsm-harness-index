@@ -36,20 +36,12 @@ jobs:
           ids = {a[0] for a in additions}
           rows = [r for r in rows if r['harness_id'] not in ids]
           for hid, name, repo, created, ref in additions:
-              rows.append({
-                  'catalog_position': '0', 'harness_id': hid, 'project_name': name,
-                  'repository': repo, 'repository_created_at': created,
-                  'source_membership': 'index-addition', 'review_ref': ref,
-                  'pinned_at': '2026-09-16',
-              })
+              rows.append({'catalog_position':'0','harness_id':hid,'project_name':name,'repository':repo,'repository_created_at':created,'source_membership':'index-addition','review_ref':ref,'pinned_at':'2026-09-16'})
           rows.sort(key=lambda r: (r['repository_created_at'], r['harness_id']))
           fields = ['catalog_position','harness_id','project_name','repository','repository_created_at','source_membership','review_ref','pinned_at']
           with catalog_path.open('w', newline='', encoding='utf-8') as f:
-              w = csv.DictWriter(f, fieldnames=fields, delimiter='|', lineterminator='\n')
-              w.writeheader()
-              for i, row in enumerate(rows, 1):
-                  row['catalog_position'] = str(i)
-                  w.writerow(row)
+              w = csv.DictWriter(f, fieldnames=fields, delimiter='|', lineterminator='\n'); w.writeheader()
+              for i, row in enumerate(rows, 1): row['catalog_position']=str(i); w.writerow(row)
 
           new_sigs = {
               'camel-workforce': 'Workforce dependency gates provide constructor-owned S2, while a model-driven Coordinator owns whole-workforce assignments, failure response and dynamic capacity as S3; ordinary evaluation and human controls do not close S3*/S5.',
@@ -60,17 +52,13 @@ jobs:
           sig_path = Path('data/signatures.psv')
           with sig_path.open(newline='', encoding='utf-8') as f:
               sig_rows = list(csv.DictReader(f, delimiter='|'))
-          sigs = {r['harness_id']: r['signature'] for r in sig_rows}
-          sigs.update(new_sigs)
+          sigs = {r['harness_id']: r['signature'] for r in sig_rows}; sigs.update(new_sigs)
           positions = {r['harness_id']: int(r['catalog_position']) for r in rows}
           with sig_path.open('w', newline='', encoding='utf-8') as f:
-              w = csv.DictWriter(f, fieldnames=['catalog_position','harness_id','signature'], delimiter='|', lineterminator='\n')
-              w.writeheader()
-              for hid in sorted(sigs, key=lambda x: positions[x]):
-                  w.writerow({'catalog_position': positions[hid], 'harness_id': hid, 'signature': sigs[hid]})
+              w = csv.DictWriter(f, fieldnames=['catalog_position','harness_id','signature'], delimiter='|', lineterminator='\n'); w.writeheader()
+              for hid in sorted(sigs, key=lambda x: positions[x]): w.writerow({'catalog_position':positions[hid],'harness_id':hid,'signature':sigs[hid]})
           PY
           python scripts/render_tldr.py
-          python scripts/render_rankings.py
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md
