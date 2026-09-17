@@ -4,6 +4,12 @@ project_name: LoopTroop
 repository: https://github.com/looptroop-ai/LoopTroop
 review_ref: b96f5448251cbe88cd845cd5f262adda02701413
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 83ae324348164c6f4d1c5dedaebcba69359d15c9
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

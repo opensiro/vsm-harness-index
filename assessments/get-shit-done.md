@@ -4,6 +4,12 @@ project_name: get-shit-done
 repository: https://github.com/open-gsd/gsd-core
 review_ref: 4f487e4e75276ad50fc13796cef8d23148cd8830
 reviewed_at: 2026-09-16
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 652796e903c630d7ac367fc57de6a0c11da4b1c2
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-16
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

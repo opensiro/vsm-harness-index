@@ -4,6 +4,12 @@ project_name: CrewAI
 repository: https://github.com/crewAIInc/crewAI
 review_ref: 894898f84c4ac0a89f24bf7bee6c381eb0e67f51
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 7a01af27912c2b142d8bac70d1894343f8b91bd1
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
