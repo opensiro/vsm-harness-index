@@ -13,6 +13,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 3 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
+| 3 | <a id="goose"></a>[Goose](https://github.com/aaif-goose/goose) | 2024 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 3 | <a id="letta"></a>[Letta](https://github.com/letta-ai/letta) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="metagpt"></a>[MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 4 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
@@ -43,7 +44,6 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="roo-code"></a>[Roo Code](https://github.com/RooCodeInc/Roo-Code) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="browser-use"></a>[Browser Use](https://github.com/browser-use/browser-use) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="superagentx"></a>[SuperAgentX](https://github.com/superagentxai/superagentx) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 4 | <a id="goose"></a>[Goose](https://github.com/aaif-goose/goose) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="beeai-framework"></a>[BeeAI Framework](https://github.com/i-am-bee/beeai-framework) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="mastra"></a>[Mastra](https://github.com/mastra-ai/mastra) | 2024 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 4 | <a id="agent-squad"></a>[Agent Squad](https://github.com/2FastLabs/agent-squad) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
