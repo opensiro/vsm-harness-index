@@ -6,8 +6,6 @@ review_ref: 3ac6fe65e81c84897c02d22abd3dc91d1e567d5f
 reviewed_at: 2026-09-17
 profile_version: 0.2.1
 assessment_procedure_version: 0.3.1
-last_checked_ref: 3ac6fe65e81c84897c02d22abd3dc91d1e567d5f
-last_checked_at: 2026-09-17
 assessment_changed_at: 2026-09-17
 status: included
 autonomy_s1: A
