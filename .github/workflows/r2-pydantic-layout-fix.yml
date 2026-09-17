@@ -1,0 +1,45 @@
+name: R2 Pydantic table layout fix
+
+on:
+  push:
+    branches:
+      - r2-pydantic-ai-deep-104
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Keep Pydantic row inside progress table
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('reassessments/R2-2026-09-16.md')
+          text = path.read_text(encoding='utf-8')
+          needle = '| `kilo-code` |'
+          pydantic = '| `pydantic-ai` |'
+          assert text.count(pydantic) == 1
+          before, after = text.split(pydantic, 1)
+          assert needle in before
+          before = before.rstrip('\n') + '\n'
+          path.write_text(before + pydantic + after, encoding='utf-8')
+          PY
+          python scripts/render_tldr.py --check
+          python scripts/check_index.py
+          python scripts/check_generation_provenance.py --base-ref origin/main
+          git diff --check
+      - name: Commit fix and remove helper
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/r2-pydantic-layout-fix.yml
+          git add reassessments/R2-2026-09-16.md
+          git commit -m "R2: keep Pydantic AI row in progress table"
+          git push origin HEAD:r2-pydantic-ai-deep-104
