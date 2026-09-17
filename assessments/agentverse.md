@@ -4,6 +4,12 @@ project_name: AgentVerse
 repository: https://github.com/OpenBMB/AgentVerse
 review_ref: f90c4bd9680fdd3bcff8c52c9170911a59b23478
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: f90c4bd9680fdd3bcff8c52c9170911a59b23478
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: C
