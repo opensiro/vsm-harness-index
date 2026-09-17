@@ -12,6 +12,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
+| 3 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 3 | <a id="letta"></a>[Letta](https://github.com/letta-ai/letta) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="metagpt"></a>[MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 4 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
@@ -35,7 +36,6 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="codex"></a>[Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 4 | <a id="google-adk"></a>[Google ADK](https://github.com/google/adk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="openai-agents-sdk"></a>[OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 4 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="openmanus"></a>[OpenManus](https://github.com/FoundationAgents/OpenManus) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="langgraph-bigtool"></a>[LangGraph BigTool](https://github.com/langchain-ai/langgraph-bigtool) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="cloudflare-agents"></a>[Cloudflare Agents](https://github.com/cloudflare/agents) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
