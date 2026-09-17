@@ -4,6 +4,12 @@ project_name: AgentLite
 repository: https://github.com/SalesforceAIResearch/AgentLite
 review_ref: b173239a652eea560e57c6fe46b0c0af7c4f3578
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: b173239a652eea560e57c6fe46b0c0af7c4f3578
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
