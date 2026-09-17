@@ -100,3 +100,8 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 99|get-shit-done|get-shit-done|https://github.com/open-gsd/gsd-core|2026-05-22T11:36:21Z|adapted-source|4f487e4e75276ad50fc13796cef8d23148cd8830|2026-09-13
 100|omnigent|Omnigent|https://github.com/omnigent-ai/omnigent|2026-06-11T12:18:13Z|index-addition|4d963a360e798f076d4fdbd4665e7188e4da05df|2026-09-16
 101|penguin-harness|PenguinHarness|https://github.com/Prism-Shadow/penguin-harness|2026-07-19T03:15:21Z|index-addition|77c746954f92a588295de1c2dad362b1b8593f19|2026-09-16
+102|mini-harness|mini-harness|https://github.com/mini-harness/mini-harness|2026-09-05T19:26:01Z|index-addition|340d2d9f1bcc833483d2924770448fcf4ef788be|2026-09-16
+103|claude-code|Claude Code|https://github.com/anthropics/claude-code|2025-02-22T22:36:48Z|index-addition|7dd06361110d4417f3edefaf075f41923f0e04c5|2026-09-16
+104|prime-agent|Prime Agent|https://github.com/PrimeIntellect-ai/prime-agent|2026-05-08T05:03:03Z|index-addition|66abc2a604fc42a220292a1ca4cf33ee60cb5733|2026-09-16
+105|agentbox|AgentBox|https://github.com/madarco/agentbox|2026-05-12T03:37:33Z|index-addition|463a6a0a20176147f0b0dbfa8a261aba5e43cbd6|2026-09-16
+106|cc-haha|cc-haha|https://github.com/NanmiCoder/cc-haha|2026-03-31T08:40:34Z|index-addition|0676c194e84b2da77c94d3992eadbf6e5eb9d7cb|2026-09-16
