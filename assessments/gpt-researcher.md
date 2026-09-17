@@ -5,6 +5,12 @@ repository: https://github.com/assafelovic/gpt-researcher
 review_ref: 6f998577d547b1e54ec662dac63583aa11e3b84b
 reviewed_at: 2026-09-15
 status: included
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 6f998577d547b1e54ec662dac63583aa11e3b84b
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
