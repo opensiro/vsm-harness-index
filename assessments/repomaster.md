@@ -4,6 +4,12 @@ project_name: RepoMaster
 repository: https://github.com/QuantaAlpha/RepoMaster
 review_ref: 9cf59930102970d61d6eb2f702fd936d3cda7f11
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 9cf59930102970d61d6eb2f702fd936d3cda7f11
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

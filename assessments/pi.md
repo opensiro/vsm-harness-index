@@ -4,6 +4,12 @@ project_name: Pi
 repository: https://github.com/earendil-works/pi
 review_ref: 71dca871bc80b6bc97be37f0ca3189399d651fff
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: e4c75a73222ae2c72abb5f5314fa35ee8effc508
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —

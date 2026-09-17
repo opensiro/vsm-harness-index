@@ -4,6 +4,12 @@ project_name: Youtu-Agent
 repository: https://github.com/TencentCloudADP/youtu-agent
 review_ref: c2caa539f4c95ae1c39ed24dc8a99cb3651e1d5d
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: c2caa539f4c95ae1c39ed24dc8a99cb3651e1d5d
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
