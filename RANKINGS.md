@@ -12,6 +12,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="microsoft-agent-framework"></a>[Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | 2025 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 2 | <a id="autogen-agentchat"></a>[Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 2 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 3 | <a id="penguin-harness"></a>[PenguinHarness](https://github.com/Prism-Shadow/penguin-harness) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
@@ -20,6 +21,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="letta"></a>[Letta](https://github.com/letta-ai/letta) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="metagpt"></a>[MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 3 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
+| 4 | <a id="meta-harness"></a>[Meta-Harness](https://github.com/stanford-iris-lab/meta-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 4 | <a id="claw-code-agent"></a>[claw-code-agent](https://github.com/HarnessLab/claw-code-agent) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 4 | <a id="talon"></a>[Talon](https://github.com/dylanneve1/talon) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
@@ -28,6 +30,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="symphony"></a>[Symphony](https://github.com/openai/symphony) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="open-harness"></a>[open-harness](https://github.com/MaxGfeller/open-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="swarmclaw"></a>[SwarmClaw](https://github.com/swarmclawai/swarmclaw) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 4 | <a id="openjarvis"></a>[OpenJarvis](https://github.com/open-jarvis/OpenJarvis) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="openclaw"></a>[OpenClaw](https://github.com/openclaw/openclaw) | 2025 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 4 | <a id="agentrl"></a>[AgentRL](https://github.com/THUDM/AgentRL) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="shannon"></a>[Shannon](https://github.com/Kocoro-lab/Shannon) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
@@ -66,6 +69,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="openhands"></a>[OpenHands](https://github.com/OpenHands/OpenHands) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="r2r"></a>[R2R](https://github.com/SciPhi-AI/R2R) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 4 | <a id="agentlite"></a>[AgentLite](https://github.com/SalesforceAIResearch/AgentLite) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 4 | <a id="concordia"></a>[Concordia](https://github.com/google-deepmind/concordia) | 2023 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 4 | <a id="agency-swarm"></a>[Agency Swarm](https://github.com/VRSEN/agency-swarm) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="openagents"></a>[OpenAgents](https://github.com/OpenAgentsInc/openagents) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="crewai"></a>[CrewAI](https://github.com/crewAIInc/crewAI) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
