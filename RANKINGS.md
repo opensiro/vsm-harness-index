@@ -107,6 +107,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="llama-index"></a>[LlamaIndex](https://github.com/run-llama/llama_index) | 2022 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 4 | <a id="langchain"></a>[LangChain](https://github.com/langchain-ai/langchain) | 2022 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 4 | <a id="khoj"></a>[Khoj](https://github.com/khoj-ai/khoj) | 2021 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 4 | <a id="haystack"></a>[Haystack](https://github.com/deepset-ai/haystack) | 2019 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="n8n"></a>[n8n](https://github.com/n8n-io/n8n) | 2019 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="botpress"></a>[Botpress](https://github.com/botpress/botpress) | 2016 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="rasa"></a>[Rasa](https://github.com/RasaHQ/rasa) | 2016 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
