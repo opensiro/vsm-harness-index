@@ -1,0 +1,54 @@
+name: tmp-generate-haystack
+
+on:
+  push:
+    branches:
+      - admit-haystack-37
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-haystack-37
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Add Haystack corpus rows and render projections
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          rows = {
+              Path("data/catalog.psv"): "108|haystack|Haystack|https://github.com/deepset-ai/haystack|2019-11-14T09:05:28Z|adapted-source|52df9672a7808e1091995f33189d1ff8e91b6998|2026-09-17",
+              Path("data/signatures.psv"): "108|haystack|Haystack's Agent autonomously owns its tool-calling loop; AgentTool coordinator/specialist composition remains delegation, while first-party hooks are execution/control extension points rather than supplied S2-S5 organizational closure.",
+          }
+          for path, row in rows.items():
+              text = path.read_text(encoding="utf-8")
+              lines = text.splitlines()
+              if row not in lines:
+                  lines.append(row)
+              path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+          python scripts/render_tldr.py
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Commit generated corpus changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Generate Haystack corpus projections'
+          git push origin HEAD:admit-haystack-37
