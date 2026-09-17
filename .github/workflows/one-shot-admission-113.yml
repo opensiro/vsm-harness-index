@@ -1,7 +1,9 @@
 name: one-shot admission 113
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - admission-proposed-01
 
 permissions:
   contents: write
@@ -74,6 +76,9 @@ jobs:
               header + "\n" + "\n".join(f"{pos}|{rows[pos][0]}|{rows[pos][1]}" for pos in sorted(rows)) + "\n"
           )
           PY
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -p 'test_*.py'
 
       - name: Regenerate derived views
         run: python scripts/render_tldr.py
