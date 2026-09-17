@@ -4,6 +4,12 @@ project_name: open-harness
 repository: https://github.com/MaxGfeller/open-harness
 review_ref: 026e8d9cb8f184cdeac2054b489ec20972ba8681
 reviewed_at: 2026-09-15
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+last_checked_ref: 026e8d9cb8f184cdeac2054b489ec20972ba8681
+last_checked_at: 2026-09-17
+assessment_changed_at: 2026-09-15
+last_reassessment_round: R2
 status: included
 autonomy_s1: A
 autonomy_s2: —
