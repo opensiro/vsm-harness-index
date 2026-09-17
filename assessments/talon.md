@@ -6,8 +6,8 @@ review_ref: afae82e60540e49970d04401a25725fd7635ec96
 reviewed_at: 2026-09-15
 profile_version: 0.2.1
 assessment_procedure_version: 0.3.1
-last_checked_ref: 7aaddbd1f9bd76ec011c2378e31bf843eae1438e
-last_checked_at: 2026-09-17
+last_checked_ref: 1a4b8b60e142a6de3e0cdae9c7fa4a34c88b571e
+last_checked_at: 2026-09-18
 assessment_changed_at: 2026-09-15
 last_reassessment_round: R2
 status: included
@@ -23,6 +23,8 @@ autonomy_s5: —
 
 ## Review boundary
 Talon at the pinned revision as the multi-frontend harness/control runtime around pluggable agent backends, background heartbeats/dreams/triggers and persistent goals.
+
+Candidate-batch #37 freshness recheck on 2026-09-18 covered upstream `7aaddbd1f9bd76ec011c2378e31bf843eae1438e` → `1a4b8b60e142a6de3e0cdae9c7fa4a34c88b571e` (v4.0.1 → v4.2.0). The delta adds cross-frontend media delivery, agent-accessible WhatsApp account operations and companion self-update. These extend operational/tooling surfaces but do not add a distinct inter-S1 coordination loop, whole-system current regulator, independent audit channel, prospective environment-intelligence loop or ultimate-policy closure. The canonical vector therefore remains unchanged.
 
 ## Repository architecture
 Talon routes chats to agent backends, offers MCP tools/skills/plugins, runs heartbeat/dream/cron/trigger tasks, stores persistent goals and task state, and uses a typed event bus/task table. Self-authored watcher scripts can wake the agent when conditions become true.
