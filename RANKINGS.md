@@ -32,7 +32,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="deerflow"></a>[DeerFlow](https://github.com/bytedance/deer-flow) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="agentsilex"></a>[AgentSilex](https://github.com/howl-anderson/agentsilex) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 4 | <a id="opencode"></a>[OpenCode](https://github.com/anomalyco/opencode) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 4 | <a id="codex"></a>[Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 4 | <a id="codex"></a>[Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 4 | <a id="google-adk"></a>[Google ADK](https://github.com/google/adk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="openai-agents-sdk"></a>[OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
