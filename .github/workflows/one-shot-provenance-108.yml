@@ -23,48 +23,46 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
+          import textwrap
 
           check = Path("scripts/check_index.py")
           text = check.read_text()
-          old = '''        elif outcome == "same-ref-correction":
-              if row["checked_ref"] != row["previous_review_ref"] or row["accepted_review_ref"] != row["previous_review_ref"]:
-                  raise SystemExit(
-                      f"{round_id}/{harness_id}: same-ref correction must keep the review boundary"
-                  )
-          '''
-          new = '''        elif outcome == "same-ref-correction":
-              # The semantic correction must stay on the previously accepted boundary,
-              # but a reassessment round may also inspect a newer upstream ref and
-              # record that successful freshness check in checked_ref/last_checked_ref.
+          pattern = re.compile(
+              r'        elif outcome == "same-ref-correction":\n'
+              r'            if row\["checked_ref"\] != row\["previous_review_ref"\] or row\["accepted_review_ref"\] != row\["previous_review_ref"\]:\n'
+              r'                raise SystemExit\(\n'
+              r'                    f"\{round_id\}/\{harness_id\}: same-ref correction must keep the review boundary"\n'
+              r'                \)\n'
+          )
+          replacement = '''        elif outcome == "same-ref-correction":
+              # A same-ref correction fixes semantics at the previously accepted
+              # boundary. A round may still inspect a newer ref for freshness.
               if row["accepted_review_ref"] != row["previous_review_ref"]:
                   raise SystemExit(
                       f"{round_id}/{harness_id}: same-ref correction cannot advance accepted_review_ref"
                   )
           '''
-          if old not in text:
-              raise SystemExit("expected same-ref validator block not found")
-          check.write_text(text.replace(old, new))
+          text, count = pattern.subn(replacement, text, count=1)
+          if count != 1:
+              raise SystemExit(f"expected one same-ref validator block, replaced {count}")
+          check.write_text(text)
 
           contributing = Path("CONTRIBUTING.md")
           text = contributing.read_text()
-          old = '''1. **Same-ref correction.** Re-evaluate the existing assessment at the same `review_ref`. This is appropriate when the evidence was missed or interpreted incorrectly. `data/catalog.psv` does not change.
-          2. **New-ref reassessment.** Re-evaluate a newer upstream commit because relevant architecture or runtime behavior changed. Update the catalog `review_ref` and `pinned_at` only after the new assessment boundary is accepted; the assessment's own `reviewed_at` records when the reassessment was performed.
-          '''
-          new = '''1. **Same-ref correction.** Re-evaluate the existing assessment at the same `review_ref`. This is appropriate when the evidence was missed or interpreted incorrectly. `data/catalog.psv` does not change. Inside a reassessment round, the reviewer may also inspect a newer upstream `checked_ref`; when that newer ref does not materially change the corrected assessment, keep `accepted_review_ref` / canonical `review_ref` on the old boundary while allowing `last_checked_ref` to record the newer successful freshness check.
-          2. **New-ref reassessment.** Re-evaluate a newer upstream commit because relevant architecture or runtime behavior changed. Update the catalog `review_ref` and `pinned_at` only after the new assessment boundary is accepted; the assessment's own `reviewed_at` records when the reassessment was performed.
-          '''
-          if old not in text:
-              raise SystemExit("expected CONTRIBUTING re-review block not found")
-          text = text.replace(old, new)
-          old = '''A round check is useful even when the assessment does not change. In that case `last_checked_ref` and `last_checked_at` advance while the accepted `review_ref` can remain unchanged.
-          '''
-          new = '''A round check is useful even when the assessment does not change. In that case `last_checked_ref` and `last_checked_at` advance while the accepted `review_ref` can remain unchanged. The same freshness rule applies when a semantic error is corrected at the old accepted ref: `same-ref-correction` describes where the corrected classification is evidenced, while a newer `checked_ref` may separately record that later upstream was inspected and did not require a new accepted boundary.
-          '''
-          if old not in text:
-              raise SystemExit("expected CONTRIBUTING freshness paragraph not found")
-          contributing.write_text(text.replace(old, new))
+          marker = "1. **Same-ref correction.** Re-evaluate the existing assessment at the same `review_ref`. This is appropriate when the evidence was missed or interpreted incorrectly. `data/catalog.psv` does not change."
+          expanded = marker + " Inside a reassessment round, the reviewer may also inspect a newer upstream `checked_ref`; when that newer ref does not materially change the corrected assessment, keep `accepted_review_ref` / canonical `review_ref` on the old boundary while allowing `last_checked_ref` to record the newer successful freshness check."
+          if marker not in text:
+              raise SystemExit("same-ref documentation marker not found")
+          text = text.replace(marker, expanded, 1)
+          marker = "A round check is useful even when the assessment does not change. In that case `last_checked_ref` and `last_checked_at` advance while the accepted `review_ref` can remain unchanged."
+          expanded = marker + " The same freshness rule applies when a semantic error is corrected at the old accepted ref: `same-ref-correction` records where the corrected classification is evidenced, while a newer `checked_ref` may separately record that later upstream was inspected and did not require a new accepted boundary."
+          if marker not in text:
+              raise SystemExit("freshness documentation marker not found")
+          contributing.write_text(text.replace(marker, expanded, 1))
 
-          Path("tests/test_reassessment_provenance.py").write_text(r'''import sys
+          test = textwrap.dedent('''\
+          import sys
           import unittest
           from pathlib import Path
 
@@ -119,6 +117,7 @@ jobs:
           if __name__ == "__main__":
               unittest.main()
           ''')
+          Path("tests/test_reassessment_provenance.py").write_text(test)
           PY
       - name: Validate
         run: |
