@@ -23,30 +23,35 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re
           import textwrap
 
           check = Path("scripts/check_index.py")
-          text = check.read_text()
-          pattern = re.compile(
-              r'        elif outcome == "same-ref-correction":\n'
-              r'            if row\["checked_ref"\] != row\["previous_review_ref"\] or row\["accepted_review_ref"\] != row\["previous_review_ref"\]:\n'
-              r'                raise SystemExit\(\n'
-              r'                    f"\{round_id\}/\{harness_id\}: same-ref correction must keep the review boundary"\n'
-              r'                \)\n'
-          )
-          replacement = '''        elif outcome == "same-ref-correction":
-              # A same-ref correction fixes semantics at the previously accepted
-              # boundary. A round may still inspect a newer ref for freshness.
-              if row["accepted_review_ref"] != row["previous_review_ref"]:
-                  raise SystemExit(
-                      f"{round_id}/{harness_id}: same-ref correction cannot advance accepted_review_ref"
-                  )
-          '''
-          text, count = pattern.subn(replacement, text, count=1)
-          if count != 1:
-              raise SystemExit(f"expected one same-ref validator block, replaced {count}")
-          check.write_text(text)
+          lines = check.read_text().splitlines()
+          target = '        elif outcome == "same-ref-correction":'
+          try:
+              i = lines.index(target)
+          except ValueError:
+              raise SystemExit("same-ref validator block not found")
+          expected = [
+              target,
+              '            if row["checked_ref"] != row["previous_review_ref"] or row["accepted_review_ref"] != row["previous_review_ref"]:',
+              '                raise SystemExit(',
+              '                    f"{round_id}/{harness_id}: same-ref correction must keep the review boundary"',
+              '                )',
+          ]
+          if lines[i:i + len(expected)] != expected:
+              raise SystemExit("same-ref validator block has unexpected shape")
+          replacement = [
+              target,
+              '            # A same-ref correction fixes semantics at the previously accepted',
+              '            # boundary. A round may still inspect a newer ref for freshness.',
+              '            if row["accepted_review_ref"] != row["previous_review_ref"]:',
+              '                raise SystemExit(',
+              '                    f"{round_id}/{harness_id}: same-ref correction cannot advance accepted_review_ref"',
+              '                )',
+          ]
+          lines[i:i + len(expected)] = replacement
+          check.write_text("\n".join(lines) + "\n")
 
           contributing = Path("CONTRIBUTING.md")
           text = contributing.read_text()
