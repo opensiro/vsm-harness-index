@@ -3,50 +3,53 @@ harness_id: concordia
 project_name: Concordia
 repository: https://github.com/google-deepmind/concordia
 review_ref: 3e30a207bb2b75f9cf837fa6b657c466ca450765
-reviewed_at: 2026-09-16
-status: proposed
+reviewed_at: 2026-09-17
+profile_version: 0.2.1
+assessment_procedure_version: 0.3.1
+assessment_changed_at: 2026-09-17
+status: included
 autonomy_s1: A
 autonomy_s2: C
-autonomy_s3: C
+autonomy_s3: —
 autonomy_s3_star: —
 autonomy_s4: —
-autonomy_s5: C
+autonomy_s5: —
 ---
 
 # Concordia
 
 ## Review boundary
-Pinned generative multi-agent simulation harness, treating player entities as operations and Game Master/environment as the shared-world regulator.
+Pinned first-party Concordia generative social-simulation harness: autonomous player entities, Game Master entities, and the sequential/simultaneous engines that schedule actions, resolve putative events, and return authoritative observations. Scenario-authored organizational semantics outside these supplied paths are not credited.
 
-## Repository architecture
-Player entities generate putative actions. Game Master schedules/observes/resolves them into authoritative world events and updates shared world state, including simultaneous/interrupt-driven resolution.
+Reviewed revision: `3e30a207bb2b75f9cf837fa6b657c466ca450765`, which also matched upstream `main` when rechecked on 2026-09-17. Contract: Profile `0.2.1`, Methodology `0.3.1`.
 
 ## Primary evidence
-- Pinned deep review established player action generation and Game Master scheduling/observation/authoritative event resolution at `review_ref`.
-
-## Operational model
-Players are autonomous S1 units. Constructor-defined Game Master mechanisms coordinate shared-world interaction and regulate authoritative current state.
+- [`README.md`](https://github.com/google-deepmind/concordia/blob/3e30a207bb2b75f9cf837fa6b657c466ca450765/README.md) — entities, Game Masters and Engine boundary.
+- [`concordia/environment/engines/sequential.py`](https://github.com/google-deepmind/concordia/blob/3e30a207bb2b75f9cf837fa6b657c466ca450765/concordia/environment/engines/sequential.py) — one-entity-at-a-time scheduling, Game Master selection, event resolution and subsequent observations.
+- [`concordia/environment/engines/simultaneous.py`](https://github.com/google-deepmind/concordia/blob/3e30a207bb2b75f9cf837fa6b657c466ca450765/concordia/environment/engines/simultaneous.py) — grouped simultaneous actions and common resolution.
 
 ## S1 — Operations
-`A`: player entities autonomously choose putative actions. Confidence: high.
+`A`. Player entities autonomously choose putative actions within the simulated domain. Their decisions are the operational transformations the harness exists to exercise. Confidence: high.
 
 ## S2 — Coordination
-`C`: shared-world scheduling plus simultaneous/interrupt-driven resolution coordinate multiple players. Confidence: high.
+`C`. Concordia supplies an explicit cross-player interaction membrane: the sequential engine allows one entity to act at a time when order matters, while both engine forms route putative actions through common Game Master resolution before the resulting event becomes subsequent shared observation. This closes ordering/interaction interference across multiple S1s rather than merely forwarding messages. The concrete scenario, Game Master components and action semantics remain constructor-supplied, so the organizational coordination path is composable rather than an out-of-box autonomous S2. Confidence: medium-high.
 
 ## S3 — Inside-and-now control
-`C`: Game Master owns authoritative event resolution and world-state update. Confidence: high.
+`—`. Game Master event resolution is authoritative over the simulated world's causality, but that is the ordinary environment-resolution path. The reviewed repository does not separately establish a whole-organization current view plus authority over shared organizational resources, commitments, priorities or constraints. The historical `C` promoted environment/world-state control into S3. Confidence: high.
 
 ## S3* — Complementary audit
-`—`: authoritative event resolution is the ordinary control path, not a separate complementary audit channel. Confidence: high.
+`—`. Event resolution and logging are part of the normal simulation path, not materially complementary access to operational reality. Confidence: high.
 
 ## S4 — Outside-and-then intelligence
-`—`: simulating future scenarios does not itself constitute prospective adaptation of the organization. Confidence: high.
+`—`. Running social simulations or choosing future simulated events does not itself create an outside-and-then intelligence loop that adapts the system-in-focus. Confidence: high.
 
 ## S5 — Policy and identity
-`C`: scenario premises and Game Master rules are constructor-authored policy/identity surfaces. Confidence: high.
+`—`. Scenario premises, Game Master rules and component configuration carry developer-authored policy, but no first-party runtime path was established in which identity/ultimate-policy tension reaches legitimate ultimate authority and returns as changed organizational policy. The historical `C` therefore does not survive the function-first S5 test. Confidence: high.
 
-## Recursion, variety, escalation
-Game Master attenuates conflicting player action into authoritative events; simulation nesting does not automatically establish recursive viability.
+## Recursion, variety, and escalation
+Multiple autonomous players amplify behavioral variety; engine scheduling and common event resolution attenuate interaction variety into one coherent simulated history. Game Master authority over simulation causality should not be confused with metasystem authority over an organization.
 
-## Deep-review conclusion
-Signature at the pinned revision: `A C C — — C`. Concordia cleanly separates autonomous players from constructor-owned shared-world coordination/control.
+## Admission conclusion
+Canonical vector: `A C — — — —`.
+
+Same-ref correction of historical `A C C — — C`: constructor-side S2 remains supported by the explicit interaction/scheduling membrane; world-state resolution and static scenario rules no longer count as S3 or S5.
