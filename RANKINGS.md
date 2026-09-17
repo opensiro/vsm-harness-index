@@ -7,6 +7,8 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 1 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 1 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 2 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 2 | <a id="oh-my-openagent"></a>[oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 2 | <a id="aionui"></a>[AionUi](https://github.com/iOfficeAI/AionUi) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 2 | <a id="deepagents"></a>[Deep Agents](https://github.com/langchain-ai/deepagents) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 2 | <a id="qwen-code"></a>[Qwen Code](https://github.com/QwenLM/qwen-code) | 2025 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 2 | <a id="microsoft-agent-framework"></a>[Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | 2025 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
@@ -24,6 +26,8 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="meta-harness"></a>[Meta-Harness](https://github.com/stanford-iris-lab/meta-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 4 | <a id="claw-code-agent"></a>[claw-code-agent](https://github.com/HarnessLab/claw-code-agent) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 4 | <a id="herdr"></a>[Herdr](https://github.com/herdrdev/herdr) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 4 | <a id="orca-stablyai"></a>[Orca](https://github.com/stablyai/orca) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 4 | <a id="talon"></a>[Talon](https://github.com/dylanneve1/talon) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="nerve"></a>[Nerve](https://github.com/ClickHouse/nerve) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="looptroop"></a>[LoopTroop](https://github.com/looptroop-ai/LoopTroop) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
@@ -39,6 +43,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="pi"></a>[Pi](https://github.com/earendil-works/pi) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="mirothinker"></a>[MiroThinker](https://github.com/MiroMindAI/MiroThinker) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="claude-agent-sdk"></a>[Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 4 | <a id="ruflo"></a>[Ruflo](https://github.com/ruvnet/ruflo) | 2025 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 4 | <a id="openai-agents-js"></a>[OpenAI Agents SDK for JavaScript](https://github.com/openai/openai-agents-js) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="crush"></a>[Crush](https://github.com/charmbracelet/crush) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="strands-agents"></a>[Strands Agents](https://github.com/strands-agents/harness-sdk) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
