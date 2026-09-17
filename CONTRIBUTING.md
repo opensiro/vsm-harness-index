@@ -37,7 +37,7 @@ A request must identify:
 
 There are two re-review kinds:
 
-1. **Same-ref correction.** Re-evaluate the existing assessment at the same `review_ref`. This is appropriate when the evidence was missed or interpreted incorrectly. `data/catalog.psv` does not change.
+1. **Same-ref correction.** Re-evaluate the existing assessment at the same `review_ref`. This is appropriate when the evidence was missed or interpreted incorrectly. `data/catalog.psv` does not change. Inside a reassessment round, the reviewer may also inspect a newer upstream `checked_ref`; when that newer ref does not materially change the corrected assessment, keep `accepted_review_ref` / canonical `review_ref` on the old boundary while allowing `last_checked_ref` to record the newer successful freshness check.
 2. **New-ref reassessment.** Re-evaluate a newer upstream commit because relevant architecture or runtime behavior changed. Update the catalog `review_ref` and `pinned_at` only after the new assessment boundary is accepted; the assessment's own `reviewed_at` records when the reassessment was performed.
 
 Do not edit generated rankings as the primary fix and do not open a ranking-only PR.
@@ -58,7 +58,7 @@ For every harness assigned to a round batch:
 8. update `review_ref`, `reviewed_at`, catalog pinning, signatures, and generated views only where the accepted reassessment requires them;
 9. run `python scripts/check_index.py`.
 
-A round check is useful even when the assessment does not change. In that case `last_checked_ref` and `last_checked_at` advance while the accepted `review_ref` can remain unchanged.
+A round check is useful even when the assessment does not change. In that case `last_checked_ref` and `last_checked_at` advance while the accepted `review_ref` can remain unchanged. The same freshness rule applies when a semantic error is corrected at the old accepted ref: `same-ref-correction` records where the corrected classification is evidenced, while a newer `checked_ref` may separately record that later upstream was inspected and did not require a new accepted boundary.
 
 ### Claim a re-review as a contributor
 

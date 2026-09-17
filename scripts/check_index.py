@@ -129,9 +129,11 @@ def validate_reassessment_history(
                     f"{round_id}/{harness_id}: {outcome} cannot advance accepted_review_ref"
                 )
         elif outcome == "same-ref-correction":
-            if row["checked_ref"] != row["previous_review_ref"] or row["accepted_review_ref"] != row["previous_review_ref"]:
+            # A same-ref correction fixes semantics at the previously accepted
+            # boundary. A round may still inspect a newer ref for freshness.
+            if row["accepted_review_ref"] != row["previous_review_ref"]:
                 raise SystemExit(
-                    f"{round_id}/{harness_id}: same-ref correction must keep the review boundary"
+                    f"{round_id}/{harness_id}: same-ref correction cannot advance accepted_review_ref"
                 )
         elif outcome in {"reassessed-unchanged", "reassessed-changed"}:
             if row["accepted_review_ref"] != row["checked_ref"]:
