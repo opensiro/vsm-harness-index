@@ -99,7 +99,6 @@ jobs:
           ## R2 deep-review conclusion
           Since the accepted `{old_ref}` boundary, Kilo Code has added organizationally material first-party multi-agent surfaces. The canonical vector changes from `A — — — — —` to `A A C(P) C — —`: S2 is now closed by default-on agent-owned overlap/blocker coordination; S3 is exposed as an agent-side constructor with a distinct human parent-control mode; and `/review` exposes a complementary-audit constructor path. S4 and S5 remain unestablished.
           '''
-          # Remove YAML indentation introduced by this workflow's inline Python block.
           assessment = "\n".join(line[10:] if line.startswith("          ") else line for line in assessment.splitlines()) + "\n"
           Path("assessments/kilo-code.md").write_text(assessment, encoding="utf-8")
 
@@ -143,7 +142,7 @@ jobs:
           PY
           python scripts/render_tldr.py
           python scripts/check_index.py
-          python scripts/check_generation_provenance.py
+          python scripts/check_generation_provenance.py --base-ref origin/main
       - name: Commit generated result
         shell: bash
         run: |
