@@ -1,7 +1,9 @@
 name: one-shot admission 113
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - admission-proposed-01
 
 permissions:
   contents: write
