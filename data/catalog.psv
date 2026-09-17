@@ -62,7 +62,7 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 61|mcp-zero|MCP-Zero|https://github.com/xfey/MCP-Zero|2025-06-01T15:39:29Z|adapted-source|fd666c44c9290a671949b974444c30f4ab161622|2026-09-13
 62|claude-agent-sdk|Claude Agent SDK|https://github.com/anthropics/claude-agent-sdk-python|2025-06-11T21:33:43Z|adapted-source|37a52c9fb3f0271de017911914b0d42efea6267e|2026-09-13
 63|qwen-code|Qwen Code|https://github.com/QwenLM/qwen-code|2025-06-26T01:37:46Z|adapted-source|01aa4f267fd4f76a47a391a858f86c855aceb0ba|2026-09-13
-64|hermes-agent|Hermes Agent|https://github.com/NousResearch/hermes-agent|2025-07-22T22:22:28Z|adapted-source|db66b21ae4ed7c06fdf37c0199c588b5f5b22387|2026-09-13
+64|hermes-agent|Hermes Agent|https://github.com/NousResearch/hermes-agent|2025-07-22T22:22:28Z|adapted-source|16bddc88dd325c5eef27c2cc71bbb14c16b870aa|2026-09-17
 65|deepagents|Deep Agents|https://github.com/langchain-ai/deepagents|2025-07-27T23:07:53Z|adapted-source|9e7d62ff6e7131505995a706d717e01837aa8617|2026-09-13
 66|mirothinker|MiroThinker|https://github.com/MiroMindAI/MiroThinker|2025-08-07T13:32:12Z|adapted-source|1c4253f6774bf40314271a827304b842100e054c|2026-09-13
 67|pi|Pi|https://github.com/earendil-works/pi|2025-08-09T14:03:50Z|adapted-source|71dca871bc80b6bc97be37f0ca3189399d651fff|2026-09-13

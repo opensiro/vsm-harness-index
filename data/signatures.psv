@@ -58,7 +58,7 @@ catalog_position|harness_id|signature
 58|strands-agents|Swarm peer handoffs include configurable repetitive-handoff detection, exposing composable S2 anti-oscillation control while higher metasystem functions remain application-supplied.
 60|openai-agents-js|The JavaScript SDK mirrors handoffs, agents-as-tools, guardrails, HITL, sessions, and tracing; delegation and normal validation remain non-metasystemic under the stricter rules.
 62|claude-agent-sdk|The SDK wraps a Claude Code session with tools, permissions, MCP, and hooks; hooks constrain one S1 but do not establish independent audit or policy closure.
-64|hermes-agent|A persistent agent can create skills, curate memory, schedule work, and spawn subagents; its closed learning loop is explicitly not treated as S4.
+64|hermes-agent|Bot Mode and default Kanban decomposition give autonomous agents closed S2 coordination over peer turns and dependencies; configured orchestrators expose whole-board S3 with a human parent-control mode, and configurable reviewer/verifier lanes expose S3*.
 66|mirothinker|Long-horizon research scales hundreds of environment interactions and post-training, but trajectory refinement and training are not counted as runtime S4.
 67|pi|A provider-neutral coding runtime combines tool calling, state, telemetry, and sandbox patterns around one S1 without a supplied metasystem.
 68|repomaster|The system autonomously discovers, configures, and executes relevant external repositories through specialized backends, while its multi-agent orchestration semantics remain under-specified.

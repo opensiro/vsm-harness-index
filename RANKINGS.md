@@ -11,6 +11,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 3 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 3 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 3 | <a id="letta"></a>[Letta](https://github.com/letta-ai/letta) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 3 | <a id="metagpt"></a>[MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 4 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
@@ -25,7 +26,6 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="repomaster"></a>[RepoMaster](https://github.com/QuantaAlpha/RepoMaster) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="pi"></a>[Pi](https://github.com/earendil-works/pi) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="mirothinker"></a>[MiroThinker](https://github.com/MiroMindAI/MiroThinker) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 4 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="claude-agent-sdk"></a>[Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="openai-agents-js"></a>[OpenAI Agents SDK for JavaScript](https://github.com/openai/openai-agents-js) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="strands-agents"></a>[Strands Agents](https://github.com/strands-agents/harness-sdk) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
