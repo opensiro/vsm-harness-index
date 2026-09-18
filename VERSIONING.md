@@ -46,7 +46,9 @@ Methodology `0.3.1` clarifies the publication boundary without changing that sta
 - S3* does not publish the parent modifier in the `0.3.x` line;
 - S5 remains the canonical parent-governed case for identity / ultimate-policy authority at a legitimate parent recursion.
 
-This is a Methodology publication choice, not a claim that human-owned S1/S2/S3* arrangements are impossible in real organizations.
+Methodology `0.3.3` adds reproducibility requirements for defensible `—` states and composite-mode reconstruction. `0.3.4` corrects structural parsing of `S3*` without changing the assessment contract. Methodology `0.3.5`, aligned with Profile `0.2.3`, makes boundary provenance reconstructable: new or revalidated artifacts distinguish credited operating/distribution surfaces from adjacent first-party surfaces, and every positive state records why its decisive owner or constructor path is reachable inside the declared assessed mode.
+
+Repository co-location is therefore never sufficient to credit a function owner. Development/dogfood, test/evaluation, CI/release, contributor, example, or governance machinery can corroborate interpretation or a constructor path without supplying ownership or closure to another system-in-focus.
 
 Assessment front matter and reassessment history retain the compatibility field name `assessment_procedure_version`. Its value is the Methodology version as applied to that assessment/reassessment event. Likewise, `generated_assessment_procedure_version` is the immutable generation-time Methodology version for an assessment artifact.
 
@@ -74,20 +76,25 @@ If a stable external Index schema/API is later consumed independently of the rep
 
 ```text
 profile_version|methodology_version
-0.2.1|0.3.1
+0.2.3|0.3.5
 ```
+
+The activated upstream releases are:
+
+- VSM Harness Profile `v0.2.3` — release target `06246a1e5bd95f237b88ecc7d23f0fa7e8a995cd`;
+- VSM Harness Methodology `v0.3.5` — release target `9f50d20a6747178cf4917a7adc2eb1265ebcf87c`.
 
 This file is compatibility/configuration infrastructure, not a second assessment database.
 
-Changing the active pair does not retroactively rewrite historical assessment provenance or an already-open reassessment round. A round remains frozen on the Profile/Methodology pair declared when it opened.
+Changing the active pair does not retroactively rewrite historical assessment provenance or an already-open reassessment round. A round remains frozen on the Profile/Methodology pair declared when it opened. Existing canonical assessments also retain their recorded current contract until they are explicitly revalidated; immutable `generated_profile_version` / `generated_assessment_procedure_version` values never change.
+
+Profile `0.2.3` is a compatible PATCH clarification with `assessment_impact: none`. Methodology `0.3.5` is likewise a procedural PATCH: it makes the already-required system/evidence boundary structurally reconstructable for newly produced or revalidated work, but does not create an automatic vector migration.
+
+Weak historical mappings exposed by the clarified boundary are handled as evidence-backed same-ref corrections under their frozen contracts. A newer upstream revision remains a separate new-ref reassessment event.
 
 Methodology `0.3.0` introduced the substantive composite ownership notation. Existing canonical assessments are not automatically rewritten to `A(P)`, `C(P)`, or S3/S4 `P`; they remain valid historical/current artifacts under their recorded Methodology until they are explicitly revalidated. A migration may be same-ref when the upstream repository boundary is unchanged, but the reviewer must re-establish the S3/S4/S5 function and every ownership mode from primary evidence.
 
-Methodology `0.3.1` is a patch clarification of the allowed parent-mode boundary. It does not add a new vector migration by itself: correctly reviewed `0.3.0` vectors remain valid unless evidence review under the clarified boundary changes a conclusion. Current `assessment_procedure_version` advances only after normal successful revalidation.
-
-Immutable `generated_profile_version` / `generated_assessment_procedure_version` values never change during that migration. Only the current `profile_version` / `assessment_procedure_version` advance after successful revalidation.
-
-Frozen historical rounds remain frozen. In particular, R1 remains on Profile `0.2.0` / Methodology `0.2.1`; the active `0.2.1 / 0.3.1` contract must not silently rewrite that round.
+Frozen historical rounds remain frozen. In particular, R1 remains on Profile `0.2.0` / Methodology `0.2.1`; later active contracts must not silently rewrite that round or any other round with a declared frozen pair.
 
 ## Generated views
 
