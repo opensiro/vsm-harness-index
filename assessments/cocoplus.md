@@ -5,9 +5,9 @@ repository: https://github.com/Snowflake-Labs/cocoplus
 review_ref: b252a8e7e09da6ca3178000d1fb5f48783dffc13
 reviewed_at: 2026-09-18
 generated_profile_version: 0.2.2
-generated_assessment_procedure_version: 0.3.3
+generated_assessment_procedure_version: 0.3.4
 profile_version: 0.2.2
-assessment_procedure_version: 0.3.3
+assessment_procedure_version: 0.3.4
 assessment_changed_at: 2026-09-18
 status: included
 autonomy_s1: A
@@ -30,7 +30,7 @@ autonomy_s5: —
 - Recursion level: one CocoPlus project/run organization. Specialist personas are S1 work units for the assembled organization; technical phase nesting is not automatically VSM recursion.
 - Reviewed revision: `b252a8e7e09da6ca3178000d1fb5f48783dffc13`.
 - Observation date: 2026-09-18.
-- Generated/current Profile / Methodology: `0.2.2` / `0.3.3`.
+- Generated/current Profile / Methodology: `0.2.2` / `0.3.4`.
 
 ## Repository architecture
 

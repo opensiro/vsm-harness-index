@@ -5,9 +5,9 @@ repository: https://github.com/yc-software/qm
 review_ref: 9745e3425ec87df199dd82cbf5e72033f1012165
 reviewed_at: 2026-09-18
 generated_profile_version: 0.2.2
-generated_assessment_procedure_version: 0.3.3
+generated_assessment_procedure_version: 0.3.4
 profile_version: 0.2.2
-assessment_procedure_version: 0.3.3
+assessment_procedure_version: 0.3.4
 assessment_changed_at: 2026-09-18
 status: included
 autonomy_s1: A
@@ -30,7 +30,7 @@ autonomy_s5: —
 - Recursion level: one QM scope/room organization with optional worker sessions. Worker recursion in the API is technical nesting unless a complete local metasystem is evidenced.
 - Reviewed revision: `9745e3425ec87df199dd82cbf5e72033f1012165`.
 - Observation date: 2026-09-18.
-- Generated/current Profile / Methodology: `0.2.2` / `0.3.3`.
+- Generated/current Profile / Methodology: `0.2.2` / `0.3.4`.
 
 ## Repository architecture
 

@@ -5,9 +5,9 @@ repository: https://github.com/huangruiteng/loopx
 review_ref: ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f
 reviewed_at: 2026-09-18
 generated_profile_version: 0.2.2
-generated_assessment_procedure_version: 0.3.3
+generated_assessment_procedure_version: 0.3.4
 profile_version: 0.2.2
-assessment_procedure_version: 0.3.3
+assessment_procedure_version: 0.3.4
 assessment_changed_at: 2026-09-18
 status: included
 autonomy_s1: A
@@ -30,7 +30,7 @@ autonomy_s5: P
 - Recursion level: one governed Goal organization. Registered peers and bounded child workers are operational participants; technical nesting alone is not counted as recursion.
 - Reviewed revision: `ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f`.
 - Observation date: 2026-09-18.
-- Generated/current Profile / Methodology: `0.2.2` / `0.3.3`.
+- Generated/current Profile / Methodology: `0.2.2` / `0.3.4`.
 
 ## Repository architecture
 

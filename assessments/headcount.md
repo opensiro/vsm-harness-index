@@ -5,9 +5,9 @@ repository: https://github.com/cbrock84/headcount
 review_ref: 9cbf34005e3e8a980a6af9b55eb226bd926a62b3
 reviewed_at: 2026-09-18
 generated_profile_version: 0.2.2
-generated_assessment_procedure_version: 0.3.3
+generated_assessment_procedure_version: 0.3.4
 profile_version: 0.2.2
-assessment_procedure_version: 0.3.3
+assessment_procedure_version: 0.3.4
 assessment_changed_at: 2026-09-18
 status: included
 autonomy_s1: A
@@ -30,7 +30,7 @@ autonomy_s5: A
 - Recursion level: one Headcount organization. Departments are functionally distinct units but are not automatically credited as complete viable recursions.
 - Reviewed revision: `9cbf34005e3e8a980a6af9b55eb226bd926a62b3`.
 - Observation date: 2026-09-18.
-- Generated/current Profile / Methodology: `0.2.2` / `0.3.3`.
+- Generated/current Profile / Methodology: `0.2.2` / `0.3.4`.
 
 ## Repository architecture
 
