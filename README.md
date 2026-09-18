@@ -15,6 +15,20 @@ assessments/<harness_id>.md
 
 `data/catalog.psv` is deliberately separate from those artifacts. It is the discovery/order/provenance registry and contains no VSM grades.
 
+<!-- VSM INDEX METRICS:START -->
+## Corpus snapshot
+
+| Included | Catalog | Reassessments | Full-A |
+| ---: | ---: | ---: | ---: |
+| **128** | 129 | 80 | 0 |
+
+**Next corpus milestone:** 128/250 (51.2%).
+
+Active semantic contract: **Profile 0.2.3 / Methodology 0.3.5**.
+
+[Full metrics](METRICS.md) · [Machine-readable metrics](data/metrics.json)
+<!-- VSM INDEX METRICS:END -->
+
 ## Assessments
 
 An assessment is the primary research artifact. It describes the reviewed GitHub repository, review boundary, operational model, evidence for each VSM function, evidence gaps, recursion/variety context, and the first-party ownership states `A/A(P)/C/C(P)/P/—/?`.
@@ -155,6 +169,8 @@ discover → queue → pin → assess → admit → regenerate → validate
 ```bash
 python scripts/validate_tldr.py
 python scripts/render_tldr.py
+python scripts/render_metrics.py
+python scripts/sync_metrics_readme.py
 python scripts/check_index.py
 ```
 

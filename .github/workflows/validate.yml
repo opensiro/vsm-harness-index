@@ -71,6 +71,8 @@ jobs:
 
       - run: python scripts/check_index.py
       - run: python scripts/render_full_a.py --check
+      - run: python scripts/render_metrics.py --check
+      - run: python scripts/sync_metrics_readme.py --check
       - name: Check live discovery queue deduplication
         env:
           GITHUB_TOKEN: ${{ github.token }}
