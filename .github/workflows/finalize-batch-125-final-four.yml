@@ -1,0 +1,55 @@
+name: finalize batch 125 final four
+
+on:
+  push:
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Append catalog and signatures
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q '^116|aohp|' data/catalog.psv || cat >> data/catalog.psv <<'EOF'
+          116|aohp|AOHP|https://github.com/aohp-os/aohp|2026-05-21T14:27:13Z|adapted-source|b8ab9e98a2bd51f7fbd01a95d3b45dca078c5884|2026-09-18
+          117|open-code-review|OpenCodeReview|https://github.com/alibaba/open-code-review|2026-05-18T02:16:36Z|adapted-source|7a571b78d3493b249f6ad14d835c6a79a0a67d2e|2026-09-18
+          118|clawgui|ClawGUI|https://github.com/ZJU-REAL/ClawGUI|2026-04-07T06:43:03Z|adapted-source|d990d3e3f2390ced708771d9681d3c4f9a6cbef5|2026-09-18
+          119|opensre|OpenSRE|https://github.com/Tracer-Cloud/opensre|2026-01-13T00:04:47Z|adapted-source|dac688001e0e92b0356807176bb2162e3cd69843|2026-09-18
+          EOF
+          grep -q '^116|aohp|' data/signatures.psv || cat >> data/signatures.psv <<'EOF'
+          116|aohp|AOHP supplies an autonomous OS-level agent operating path over apps/APIs/CLIs with strong security and consent enforcement, but the pinned boundary does not establish separate S2-S5 organizational closure from those mechanisms.
+          117|open-code-review|OpenCodeReview runs autonomous tool-using review agents under deterministic file selection/bundling/rules; parallel bundles and routine comment reflection/post-processing do not establish separate S2-S5 functions at the pinned boundary.
+          118|clawgui|ClawGUI runs autonomous GUI agents and, in evolve mode, adds an isolated sealed-evidence verifier whose independent diagnosis forces restricted skill revision and retry, establishing S3* without promoting self-improvement to S4.
+          119|opensre|OpenSRE runs an autonomous evidence-driven incident-response agent; broad integrations, remediation and human tool approvals remain S1 support/action authorization rather than independently evidenced S2-S5 organizational closure.
+          EOF
+      - name: Regenerate views
+        run: python scripts/render_tldr.py
+      - name: Validate corpus
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/check_index.py
+          python scripts/check_discovery_queues.py
+          python -m unittest discover -s tests -v
+      - name: Commit generated corpus and remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/finalize-batch-125-final-four.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md .github/workflows/finalize-batch-125-final-four.yml
+          git commit -m 'Finalize remaining assessments from batch #125'
+          git push
