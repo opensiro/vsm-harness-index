@@ -134,6 +134,12 @@ The issue should identify the disputed VSM function, current interpretation, exa
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full acceptance contract.
 
+## Contributing and organization
+
+Use this repository for harness discovery/intake, evidence-backed assessments and reassessments, catalog/provenance maintenance, signatures, and generated Index views.
+
+For questions or proposals about **the organization shared by Profile, Skills, Index, and Awesome** — contributor roles, authority boundaries, cross-repository control/coordination, escalation, milestone sequencing, or the shared contribution control plane — use [`opensiro/vsm-oss-organization`](https://github.com/opensiro/vsm-oss-organization). Canonical assessment facts and Index-local research work remain here.
+
 ## Continuous index
 
 The historical ordered deep-review migration through catalog position 82 is complete. New candidates now follow the continuous lifecycle:
