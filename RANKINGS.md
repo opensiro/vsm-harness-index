@@ -70,6 +70,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="langgraph-bigtool"></a>[LangGraph BigTool](https://github.com/langchain-ai/langgraph-bigtool) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="cloudflare-agents"></a>[Cloudflare Agents](https://github.com/cloudflare/agents) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="smolagents"></a>[smolagents](https://github.com/huggingface/smolagents) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 4 | <a id="ag2"></a>[AG2](https://github.com/ag2ai/ag2) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 4 | <a id="roo-code"></a>[Roo Code](https://github.com/RooCodeInc/Roo-Code) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="browser-use"></a>[Browser Use](https://github.com/browser-use/browser-use) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 4 | <a id="superagentx"></a>[SuperAgentX](https://github.com/superagentxai/superagentx) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |

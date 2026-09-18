@@ -108,3 +108,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 107|yylo|YYLO|https://github.com/yylo-dev/yylo|2026-01-06T18:57:23Z|index-addition|93abebf1a787bd1d6c14677d0766e64361bda1ae|2026-09-16
 108|haystack|Haystack|https://github.com/deepset-ai/haystack|2019-11-14T09:05:28Z|adapted-source|52df9672a7808e1091995f33189d1ff8e91b6998|2026-09-17
 109|deepseek-harness|DeepSeek Harness|https://github.com/deepseek-ai/deepseek-harness|2026-08-13T11:56:32Z|adapted-source|ddefc45fbc7f8e46dd73185e68295696d1297887|2026-09-17
+110|ag2|AG2|https://github.com/ag2ai/ag2|2024-11-11T20:43:34Z|adapted-source|3211bb19832049e7abe1a5742b6d177274bff723|2026-09-18
