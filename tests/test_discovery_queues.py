@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 from pathlib import Path
+import sys
 import unittest
 
 
@@ -9,6 +10,7 @@ MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts" / "check_discovery
 SPEC = importlib.util.spec_from_file_location("check_discovery_queues", MODULE_PATH)
 assert SPEC is not None and SPEC.loader is not None
 module = importlib.util.module_from_spec(SPEC)
+sys.modules[SPEC.name] = module
 SPEC.loader.exec_module(module)
 
 
