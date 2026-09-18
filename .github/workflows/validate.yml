@@ -19,6 +19,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/check_index.py
+      - run: python scripts/render_full_a.py --check
       - name: Check live discovery queue deduplication
         env:
           GITHUB_TOKEN: ${{ github.token }}
