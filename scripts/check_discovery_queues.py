@@ -17,11 +17,13 @@ must not queue that repository into another batch.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import csv
 import json
 import os
 import re
 import sys
+import threading
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -120,6 +122,7 @@ class GitHubAPI:
     def __init__(self, token: str | None) -> None:
         self.token = token
         self.repo_cache: dict[str, tuple[int, str]] = {}
+        self.cache_lock = threading.Lock()
 
     def get(self, path: str) -> object:
         request = urllib.request.Request(
@@ -153,13 +156,20 @@ class GitHubAPI:
 
     def repository_identity(self, repository: str) -> tuple[int, str]:
         key = repository.lower()
-        if key in self.repo_cache:
-            return self.repo_cache[key]
+        with self.cache_lock:
+            cached = self.repo_cache.get(key)
+        if cached is not None:
+            return cached
         payload = self.get(f"/repos/{repository}")
         assert isinstance(payload, dict)
         identity = (int(payload["id"]), normalize_repo(str(payload["full_name"])))
-        self.repo_cache[key] = identity
+        with self.cache_lock:
+            self.repo_cache[key] = identity
         return identity
+
+    def repository_identities(self, repositories: list[str], workers: int = 16) -> list[tuple[int, str]]:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            return list(pool.map(self.repository_identity, repositories))
 
 
 def active_queue_entries(api: GitHubAPI, index_repo: str) -> tuple[list[QueueEntry], list[str]]:
@@ -231,13 +241,12 @@ def main() -> int:
     if not args.no_github_id_resolution:
         canonical_sources = sorted(set(assessments["included"] + catalog))
         canonical_ids: dict[int, list[str]] = {}
-        for repository in canonical_sources:
-            repo_id, full_name = api.repository_identity(repository)
+        for (repo_id, full_name) in api.repository_identities(canonical_sources):
             canonical_ids.setdefault(repo_id, []).append(full_name)
 
         queued_ids: dict[int, list[QueueEntry]] = {}
-        for entry in entries:
-            repo_id, full_name = api.repository_identity(entry.repository)
+        queue_identities = api.repository_identities([entry.repository for entry in entries])
+        for entry, (repo_id, _full_name) in zip(entries, queue_identities, strict=True):
             queued_ids.setdefault(repo_id, []).append(entry)
             if repo_id in canonical_ids:
                 errors.append(
