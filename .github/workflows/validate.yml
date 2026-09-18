@@ -18,6 +18,57 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Resolve active semantic contract
+        id: active_contract
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import csv
+          from pathlib import Path
+
+          path = Path("data/active-contract.psv")
+          with path.open(encoding="utf-8", newline="") as handle:
+              rows = list(csv.DictReader(handle, delimiter="|"))
+          if len(rows) != 1:
+              raise SystemExit("active-contract.psv must contain exactly one row")
+          row = rows[0]
+          print(f"profile={row['profile_version']}")
+          print(f"methodology={row['methodology_version']}")
+          PY
+
+      - name: Checkout active VSM Harness Methodology release
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vsm-harness-skills
+          ref: v${{ steps.active_contract.outputs.methodology }}
+          path: .methodology
+          fetch-depth: 1
+
+      - name: Check active-version assessment structural contract
+        shell: bash
+        env:
+          ACTIVE_METHODOLOGY: ${{ steps.active_contract.outputs.methodology }}
+        run: |
+          python - <<'PY' > /tmp/active-assessments.txt
+          import re
+          import os
+          from pathlib import Path
+
+          target = os.environ["ACTIVE_METHODOLOGY"]
+          pattern = re.compile(r"^assessment_procedure_version:\s*(\S+)\s*$", re.MULTILINE)
+          for path in sorted(Path("assessments").glob("*.md")):
+              match = pattern.search(path.read_text(encoding="utf-8"))
+              if match and match.group(1) == target:
+                  print(path)
+          PY
+          mapfile -t active_assessments < /tmp/active-assessments.txt
+          if (( ${#active_assessments[@]} == 0 )); then
+            echo "No assessments currently use active Methodology ${ACTIVE_METHODOLOGY}; structural gate ready for new work."
+          else
+            python .methodology/scripts/check_assessment_contract.py "${active_assessments[@]}"
+          fi
+
       - run: python scripts/check_index.py
       - run: python scripts/render_full_a.py --check
       - name: Check live discovery queue deduplication
