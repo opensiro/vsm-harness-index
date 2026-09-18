@@ -118,3 +118,7 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 117|open-code-review|OpenCodeReview|https://github.com/alibaba/open-code-review|2026-05-18T02:16:36Z|adapted-source|7a571b78d3493b249f6ad14d835c6a79a0a67d2e|2026-09-18
 118|clawgui|ClawGUI|https://github.com/ZJU-REAL/ClawGUI|2026-04-07T06:43:03Z|adapted-source|d990d3e3f2390ced708771d9681d3c4f9a6cbef5|2026-09-18
 119|opensre|OpenSRE|https://github.com/Tracer-Cloud/opensre|2026-01-13T00:04:47Z|adapted-source|dac688001e0e92b0356807176bb2162e3cd69843|2026-09-18
+120|loopx|LoopX|https://github.com/huangruiteng/loopx|2026-05-31T14:58:56Z|adapted-source|ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f|2026-09-18
+121|headcount|Headcount|https://github.com/cbrock84/headcount|2026-08-28T18:03:04Z|adapted-source|9cbf34005e3e8a980a6af9b55eb226bd926a62b3|2026-09-18
+122|qm|QM|https://github.com/yc-software/qm|2026-07-29T20:03:08Z|adapted-source|9745e3425ec87df199dd82cbf5e72033f1012165|2026-09-18
+123|cocoplus|CocoPlus|https://github.com/Snowflake-Labs/cocoplus|2024-12-08T04:07:51Z|adapted-source|b252a8e7e09da6ca3178000d1fb5f48783dffc13|2026-09-18
