@@ -70,7 +70,7 @@ At the community/project recursion, current-control changes to operational capac
 
 ## S1 — Operations
 
-- State: `A`.
+- State: A
 - Function: perform autonomous coding, research, communication and tool-mediated work in response to Buzz channel/user goals.
 - Disturbance / variety regulated: user requests, repository/workspace state, tool results, channel context, implementation uncertainty and changing local task conditions.
 - Decisive decision or feedback right: choose the next substantive model/tool action and iterate until the requested bounded outcome is completed or the agent determines it cannot proceed.
@@ -86,7 +86,7 @@ At the community/project recursion, current-control changes to operational capac
 
 ## S2 — Coordination
 
-- State: `C`.
+- State: C
 - Function: attenuate destructive duplicate/concurrent processing among parallel managed-agent workers that share a Buzz channel/session surface while retaining useful cross-channel parallelism.
 - Disturbance / variety regulated: two autonomous worker subprocesses processing the same channel concurrently could act on overlapping event batches/session context, emit duplicate or inconsistent responses, or race on channel-scoped operational state.
 - Decisive decision or feedback right: admit at most one in-flight agent turn for a channel while allowing independent channels to dispatch concurrently, then release queued channel work after the in-flight turn completes.
@@ -107,7 +107,7 @@ At the community/project recursion, current-control changes to operational capac
 
 ## S3 — Inside-and-now control
 
-- State: `P`.
+- State: P
 - Function: regulate current community/project operational capacity and structure by deciding whether managed agents are created/reconfigured and whether new project channels are admitted.
 - Disturbance / variety regulated: a managed agent may identify a need for new operational capacity, a changed role/runtime/model/response policy, or a new project channel, but unilateral mutation could change shared current commitments, access and capacity without legitimate project/community authority.
 - Decisive decision or feedback right: approve or reject the proposed current-state change; on approval, create/start the managed agent or modify its persona/configuration, or create the requested project channel with the selected template/visibility/TTL.
@@ -125,7 +125,7 @@ At the community/project recursion, current-control changes to operational capac
 
 ## S3* — Complementary audit
 
-- State: `—`.
+- State: —
 - Function: no materially separate first-party autonomous complementary-audit function is established at the reviewed community/runtime boundary.
 - Disturbance / variety regulated: Buzz records signed events and exposes review/audit-oriented data, but the inspected operating surfaces do not supply a distinct autonomous auditor with complementary access, protected judgment and a corrective return path.
 - Decisive decision or feedback right: none established for a qualifying S3* function.
@@ -146,7 +146,7 @@ At the community/project recursion, current-control changes to operational capac
 
 ## S4 — Outside-and-then intelligence
 
-- State: `—`.
+- State: —
 - Function: no distinct first-party outside-and-prospective intelligence function is established at the community recursion.
 - Disturbance / variety regulated: Buzz supports search, durable memory, scheduled/event-triggered work and agent learning conventions, but these mechanisms do not by themselves model changing external/future conditions and return organizational adaptation into current control.
 - Decisive decision or feedback right: none established for a qualifying S4 adaptation function.
@@ -167,7 +167,7 @@ At the community/project recursion, current-control changes to operational capac
 
 ## S5 — Policy and identity
 
-- State: `—`.
+- State: —
 - Function: no community-level identity/ultimate-policy authority loop is established at the reviewed recursion.
 - Disturbance / variety regulated: owner-authored agent personas/system prompts, response policy, permissions, project ownership, access controls and workflow rules constrain operation, but they do not establish a distinct legitimate conversation that resolves Buzz-community identity or ultimate policy and returns that judgment into operation.
 - Decisive decision or feedback right: none established for a qualifying community-level S5 function.
