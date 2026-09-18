@@ -12,6 +12,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="paperclip"></a>[Paperclip](https://github.com/paperclipai/paperclip) | 2026 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 2 | <a id="squad"></a>[Squad](https://github.com/bradygaster/squad) | 2026 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 2 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
+| 2 | <a id="gastown"></a>[Gas Town](https://github.com/gastownhall/gastown) | 2025 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 2 | <a id="cocoplus"></a>[CocoPlus](https://github.com/Snowflake-Labs/cocoplus) | 2024 | 4/6 | 3/5 | 1 | 1 | 0 | `A A A(P) A C —` |
 | 3 | <a id="deepseek-harness"></a>[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 2026 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 3 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
