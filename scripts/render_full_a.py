@@ -1,27 +1,33 @@
 #!/usr/bin/env python3
-"""Render harnesses with an exact A/A/A/A/A/A autonomy vector."""
+"""Render harnesses with autonomous ownership across all six VSM functions."""
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
 
-from render_tldr import anchored_label, data, escape
+from render_tldr import anchored_label, base_state, data, escape
 from validate_tldr import vector
 
 
-FULL_A_VECTOR = ["A", "A", "A", "A", "A", "A"]
+def has_full_a_coverage(assessment: dict[str, str]) -> bool:
+    """Return true when every VSM function has base autonomy state A.
+
+    A(P) counts because it preserves an autonomous mode and additionally exposes
+    an optional parent-governed mode. P by itself does not count as autonomous.
+    """
+    return all(base_state(state) == "A" for state in vector(assessment))
 
 
 def full_a_rows(repo: Path):
-    """Return included canonical rows whose six autonomy states are exactly A."""
-    return [row for row in data(repo) if vector(row[2]) == FULL_A_VECTOR]
+    """Return included canonical rows with autonomous ownership in all six functions."""
+    return [row for row in data(repo) if has_full_a_coverage(row[2])]
 
 
 def render_full_a(repo: Path) -> str:
     lines = [
         "# Full-A Pivot",
         "",
-        "Generated projection of included standalone assessments whose exact autonomy vector is `A A A A A A`. Composite or parent-governed states such as `A(P)` do not count as exact `A` in this view.",
+        "Generated projection of included standalone assessments with autonomous ownership across all six VSM functions. `A(P)` counts as autonomous coverage because `P` is an additional optional parent-governed mode; parent-only `P` does not count.",
         "",
         "| Harness | S1 | S2 | S3 | S3* | S4 | S5 | TL;DR |",
         "| --- | --- | --- | --- | --- | --- | --- | --- |",
