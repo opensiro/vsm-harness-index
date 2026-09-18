@@ -57,6 +57,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="orca-stablyai"></a>[Orca](https://github.com/stablyai/orca) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 5 | <a id="talon"></a>[Talon](https://github.com/dylanneve1/talon) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="nerve"></a>[Nerve](https://github.com/ClickHouse/nerve) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="buzz"></a>[Buzz](https://github.com/block/buzz) | 2026 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 5 | <a id="looptroop"></a>[LoopTroop](https://github.com/looptroop-ai/LoopTroop) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 5 | <a id="symphony"></a>[Symphony](https://github.com/openai/symphony) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="open-harness"></a>[open-harness](https://github.com/MaxGfeller/open-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |

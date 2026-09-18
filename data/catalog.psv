@@ -128,3 +128,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 127|parlant|Parlant|https://github.com/emcie-co/parlant|2024-02-15T20:16:15Z|adapted-source|ea737442b8ae65854a842542e544fbe7e6144bad|2026-09-18
 128|maestro|Maestro|https://github.com/RunMaestro/Maestro|2025-11-23T01:59:55Z|adapted-source|32ecbc14fe832138e9a7af4f263d1026a8aa8a5b|2026-09-18
 129|henterprise|Henterprise|https://github.com/humbertobellor/henterprise|2026-09-09T02:47:28Z|index-addition|0bd56397676462e216f92b5b7800919a3597a99a|2026-09-19
+130|buzz|Buzz|https://github.com/block/buzz|2026-03-06T21:00:56Z|index-addition|8953cbfff58ed768d996677fed3af0e3bac64a20|2026-09-18
