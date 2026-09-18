@@ -122,3 +122,8 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 121|headcount|Headcount|https://github.com/cbrock84/headcount|2026-08-28T18:03:04Z|adapted-source|9cbf34005e3e8a980a6af9b55eb226bd926a62b3|2026-09-18
 122|qm|QM|https://github.com/yc-software/qm|2026-07-29T20:03:08Z|adapted-source|9745e3425ec87df199dd82cbf5e72033f1012165|2026-09-18
 123|cocoplus|CocoPlus|https://github.com/Snowflake-Labs/cocoplus|2024-12-08T04:07:51Z|adapted-source|b252a8e7e09da6ca3178000d1fb5f48783dffc13|2026-09-18
+124|chief|Chief|https://github.com/SmileLikeYe/agent-chief|2026-07-04T15:28:56Z|adapted-source|d46072a804ff16aa7ce87751b82178f13fb973be|2026-09-18
+125|paperclip|Paperclip|https://github.com/paperclipai/paperclip|2026-03-02T15:01:51Z|adapted-source|352153b5edf02ff4262210c7bd5bfa94bcf37c7c|2026-09-18
+126|lobehub|LobeHub|https://github.com/lobehub/lobehub|2023-05-21T07:19:12Z|adapted-source|3af256caae11796da471bec5f57d882853f30f19|2026-09-18
+127|parlant|Parlant|https://github.com/emcie-co/parlant|2024-02-15T20:16:15Z|adapted-source|ea737442b8ae65854a842542e544fbe7e6144bad|2026-09-18
+128|maestro|Maestro|https://github.com/RunMaestro/Maestro|2025-11-23T01:59:55Z|adapted-source|32ecbc14fe832138e9a7af4f263d1026a8aa8a5b|2026-09-18
