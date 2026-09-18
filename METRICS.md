@@ -6,9 +6,13 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 
 | Metric | Value | Definition |
 | --- | ---: | --- |
-| Included standalone assessments | 100 | Canonical assessments with `status: included`. |
+| Included standalone assessments | 128 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
+| Canonical assessment records | 129 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
+| Canonical exclusions | 1 | Completed assessments with `status: excluded-no-agentic-vsm`. |
+| Proposed intake assessments | 2 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
 | Catalog entries | 129 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
-| Catalog entries without an included assessment | 29 | `catalog entries - included assessments`; these are not automatically equivalent to pending admissions. |
+| Catalog entries without an included assessment | 1 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
+| Reassessment events | 80 | Recorded events in `data/reassessment-history.psv`. |
 | Full-A assessments | 0 | Included assessments whose base state is autonomous across S1, S2, S3, S3*, S4 and S5. `A(P)` counts as autonomous coverage. |
 
 ## Active semantic contract
@@ -21,10 +25,10 @@ Milestones count included completed standalone assessments only. They are corpus
 
 | Target | Status | Progress |
 | ---: | --- | ---: |
-| 100 | Achieved | 100/100 (100.0%) |
-| 250 | Next | 100/250 (40.0%) |
-| 500 | Planned | 100/500 (20.0%) |
-| 1000 | Planned | 100/1000 (10.0%) |
+| 100 | Achieved | Achieved (current corpus: 128) |
+| 250 | Next | 128/250 (51.2%) |
+| 500 | Planned | 128/500 (25.6%) |
+| 1000 | Planned | 128/1000 (12.8%) |
 
 ## Machine-readable view
 
@@ -33,7 +37,8 @@ The same snapshot is available in [`data/metrics.json`](data/metrics.json) for d
 Source-of-truth relationship:
 
 ```text
-assessments/*.md + data/catalog.psv + data/active-contract.psv
+assessments/*.md + data/catalog.psv + data/reassessment-history.psv
+                  + data/active-contract.psv
                          ↓
               scripts/render_metrics.py
                          ↓
