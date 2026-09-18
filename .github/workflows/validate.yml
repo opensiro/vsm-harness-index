@@ -4,6 +4,10 @@ on:
   pull_request:
   push:
 
+permissions:
+  contents: read
+  issues: read
+
 jobs:
   index:
     runs-on: ubuntu-latest
@@ -15,6 +19,10 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/check_index.py
+      - name: Check live discovery queue deduplication
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/check_discovery_queues.py
       - run: python -m unittest discover -s tests -v
       - name: Check immutable generation provenance against PR base
         if: github.event_name == 'pull_request'
