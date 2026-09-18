@@ -9,6 +9,7 @@ from pathlib import Path
 
 from render_full_a import full_a_rows
 from render_tldr import data, read_psv
+from validate_tldr import load_assessments, validate_assessment
 
 MILESTONES = (100, 250, 500, 1000)
 
@@ -38,20 +39,36 @@ def milestone_rows(included: int) -> list[dict[str, object]]:
 def compute_metrics(repo: Path) -> dict[str, object]:
     catalog_entries = len(read_psv(repo / "data" / "catalog.psv"))
     included_assessments = len(data(repo))
-    if included_assessments > catalog_entries:
-        raise ValueError("included assessments cannot exceed catalog entries")
+
+    assessments = load_assessments(repo / "assessments")
+    for row in assessments.values():
+        validate_assessment(row)
+    proposed_assessments = sum(row["status"] == "proposed" for row in assessments.values())
+    excluded_assessments = sum(row["status"] == "excluded-no-agentic-vsm" for row in assessments.values())
+    canonical_assessments = len(assessments) - proposed_assessments
+
+    if included_assessments + excluded_assessments != canonical_assessments:
+        raise ValueError("canonical assessment status counts are inconsistent")
+    if canonical_assessments != catalog_entries:
+        raise ValueError("canonical assessment count must match catalog entries")
 
     active_contract = read_psv(repo / "data" / "active-contract.psv")
     if len(active_contract) != 1:
         raise ValueError("active-contract.psv must contain exactly one row")
     contract = active_contract[0]
 
+    reassessment_events = len(read_psv(repo / "data" / "reassessment-history.psv"))
+
     return {
         "schema_version": 1,
         "corpus": {
             "included_assessments": included_assessments,
+            "canonical_assessments": canonical_assessments,
+            "excluded_assessments": excluded_assessments,
+            "proposed_assessments": proposed_assessments,
             "catalog_entries": catalog_entries,
             "catalog_entries_without_included_assessment": catalog_entries - included_assessments,
+            "reassessment_events": reassessment_events,
             "full_a_assessments": len(full_a_rows(repo)),
         },
         "active_contract": {
@@ -80,9 +97,13 @@ def render_markdown(repo: Path) -> str:
         "",
         "| Metric | Value | Definition |",
         "| --- | ---: | --- |",
-        f"| Included standalone assessments | {corpus['included_assessments']} | Canonical assessments with `status: included`. |",
+        f"| Included standalone assessments | {corpus['included_assessments']} | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |",
+        f"| Canonical assessment records | {corpus['canonical_assessments']} | Included plus canonical `excluded-no-agentic-vsm` assessment records. |",
+        f"| Canonical exclusions | {corpus['excluded_assessments']} | Completed assessments with `status: excluded-no-agentic-vsm`. |",
+        f"| Proposed intake assessments | {corpus['proposed_assessments']} | Assessment files still in `status: proposed`; not counted in the canonical corpus. |",
         f"| Catalog entries | {corpus['catalog_entries']} | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |",
-        f"| Catalog entries without an included assessment | {corpus['catalog_entries_without_included_assessment']} | `catalog entries - included assessments`; these are not automatically equivalent to pending admissions. |",
+        f"| Catalog entries without an included assessment | {corpus['catalog_entries_without_included_assessment']} | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |",
+        f"| Reassessment events | {corpus['reassessment_events']} | Recorded events in `data/reassessment-history.psv`. |",
         f"| Full-A assessments | {corpus['full_a_assessments']} | Included assessments whose base state is autonomous across S1, S2, S3, S3*, S4 and S5. `A(P)` counts as autonomous coverage. |",
         "",
         "## Active semantic contract",
@@ -102,7 +123,11 @@ def render_markdown(repo: Path) -> str:
         target = int(row["target"])
         completed = int(row["completed"])
         progress = float(row["progress_fraction"]) * 100
-        lines.append(f"| {target} | {status} | {completed}/{target} ({progress:.1f}%) |")
+        if completed >= target:
+            progress_text = f"Achieved (current corpus: {completed})"
+        else:
+            progress_text = f"{completed}/{target} ({progress:.1f}%)"
+        lines.append(f"| {target} | {status} | {progress_text} |")
 
     lines += [
         "",
@@ -113,7 +138,8 @@ def render_markdown(repo: Path) -> str:
         "Source-of-truth relationship:",
         "",
         "```text",
-        "assessments/*.md + data/catalog.psv + data/active-contract.psv",
+        "assessments/*.md + data/catalog.psv + data/reassessment-history.psv",
+        "                  + data/active-contract.psv",
         "                         ↓",
         "              scripts/render_metrics.py",
         "                         ↓",
