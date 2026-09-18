@@ -109,3 +109,8 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 108|haystack|Haystack|https://github.com/deepset-ai/haystack|2019-11-14T09:05:28Z|adapted-source|52df9672a7808e1091995f33189d1ff8e91b6998|2026-09-17
 109|deepseek-harness|DeepSeek Harness|https://github.com/deepseek-ai/deepseek-harness|2026-08-13T11:56:32Z|adapted-source|ddefc45fbc7f8e46dd73185e68295696d1297887|2026-09-17
 110|ag2|AG2|https://github.com/ag2ai/ag2|2024-11-11T20:43:34Z|adapted-source|3211bb19832049e7abe1a5742b6d177274bff723|2026-09-18
+111|harness-evolver|Harness Evolver|https://github.com/raphaelchristi/harness-evolver|2026-03-31T05:16:24Z|adapted-source|87fa7612358acccb01d34abf72426a7e47329642|2026-09-18
+112|auto-harness|Auto Harness|https://github.com/neosigmaai/auto-harness|2026-04-03T21:18:14Z|adapted-source|52360dbbeb8cea8886d90778e634a145c51da735|2026-09-18
+113|browser-harness|Browser Harness|https://github.com/browser-use/browser-harness|2026-04-17T01:56:15Z|adapted-source|afbcc381b963040c19627d788e40c7e7663171ee|2026-09-18
+114|autoagent|AutoAgent|https://github.com/thirdlayerinc/autoagent|2026-04-02T20:44:58Z|adapted-source|eb3f185dc9faac276955b4fe5feb93c8f836b644|2026-09-18
+115|squad|Squad|https://github.com/bradygaster/squad|2026-02-06T07:11:36Z|adapted-source|2099faf51c08a912c359209447011b06decf0565|2026-09-18
