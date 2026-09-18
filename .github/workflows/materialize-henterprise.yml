@@ -1,0 +1,56 @@
+name: materialize-henterprise
+
+on:
+  push:
+    branches:
+      - add-henterprise-assessment
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Add catalog and cohort signature
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|henterprise|' in catalog_text:
+              raise SystemExit('henterprise already present in catalog')
+          catalog.write_text(
+              catalog_text + '\n129|henterprise|Henterprise|https://github.com/humbertobellor/henterprise|2026-09-09T02:47:28Z|index-addition|0bd56397676462e216f92b5b7800919a3597a99a|2026-09-19\n',
+              encoding='utf-8',
+          )
+
+          signatures = Path('data/signatures.psv')
+          signature_text = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|henterprise|' in signature_text:
+              raise SystemExit('henterprise already present in signatures')
+          signatures.write_text(
+              signature_text + "\n129|henterprise|Henterprise ports Headcount's enterprise role semantics into Hermes skills/profiles: S1 closes in the executing Hermes agent, while dependency coordination, portfolio/current control, independent reviewer audit, future strategy and executive identity/policy are explicit constructor paths whose cross-profile return loops still require composition.\n",
+              encoding='utf-8',
+          )
+          PY
+      - name: Regenerate deterministic views
+        run: python scripts/render_tldr.py
+      - name: Validate complete index
+        run: python scripts/check_index.py
+      - name: Remove one-shot workflow and commit generated admission
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/materialize-henterprise.yml
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md
+          git commit -m "Complete Henterprise index admission"
+          git push origin HEAD:${{ github.ref_name }}
