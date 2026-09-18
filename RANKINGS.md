@@ -9,6 +9,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="loopx"></a>[LoopX](https://github.com/huangruiteng/loopx) | 2026 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 2 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 2 | <a id="cc-haha"></a>[cc-haha](https://github.com/NanmiCoder/cc-haha) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 2 | <a id="paperclip"></a>[Paperclip](https://github.com/paperclipai/paperclip) | 2026 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 2 | <a id="squad"></a>[Squad](https://github.com/bradygaster/squad) | 2026 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 2 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 2 | <a id="cocoplus"></a>[CocoPlus](https://github.com/Snowflake-Labs/cocoplus) | 2024 | 4/6 | 3/5 | 1 | 1 | 0 | `A A A(P) A C —` |
@@ -29,15 +30,18 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 4 | <a id="clawgui"></a>[ClawGUI](https://github.com/ZJU-REAL/ClawGUI) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 4 | <a id="harness-evolver"></a>[Harness Evolver](https://github.com/raphaelchristi/harness-evolver) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 4 | <a id="maestro"></a>[Maestro](https://github.com/RunMaestro/Maestro) | 2025 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 4 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 4 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 4 | <a id="claude-code"></a>[Claude Code](https://github.com/anthropics/claude-code) | 2025 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 4 | <a id="goose"></a>[Goose](https://github.com/aaif-goose/goose) | 2024 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 4 | <a id="letta"></a>[Letta](https://github.com/letta-ai/letta) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 4 | <a id="metagpt"></a>[MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 4 | <a id="lobehub"></a>[LobeHub](https://github.com/lobehub/lobehub) | 2023 | 2/6 | 1/5 | 1 | 0 | 0 | `A A — C — —` |
 | 4 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="mini-harness"></a>[mini-harness](https://github.com/mini-harness/mini-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="qm"></a>[QM](https://github.com/yc-software/qm) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 5 | <a id="aohp"></a>[AOHP](https://github.com/aohp-os/aohp) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="open-code-review"></a>[OpenCodeReview](https://github.com/alibaba/open-code-review) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="agentbox"></a>[AgentBox](https://github.com/madarco/agentbox) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
@@ -98,6 +102,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="stagehand"></a>[Stagehand](https://github.com/browserbase/stagehand) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="praisonai"></a>[PraisonAI](https://github.com/MervinPraison/PraisonAI) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 5 | <a id="openhands"></a>[OpenHands](https://github.com/OpenHands/OpenHands) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="parlant"></a>[Parlant](https://github.com/emcie-co/parlant) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="r2r"></a>[R2R](https://github.com/SciPhi-AI/R2R) | 2024 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 5 | <a id="agentlite"></a>[AgentLite](https://github.com/SalesforceAIResearch/AgentLite) | 2024 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="concordia"></a>[Concordia](https://github.com/google-deepmind/concordia) | 2023 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
