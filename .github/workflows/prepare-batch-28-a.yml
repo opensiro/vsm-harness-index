@@ -1,0 +1,78 @@
+name: prepare-batch-28-a
+
+on:
+  push:
+    branches:
+      - batch-28-assessment-a
+    paths:
+      - .github/workflows/prepare-batch-28-a.yml
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          repository: opensiro/vsm-harness-skills
+          ref: v0.3.3
+          path: vsm-skills
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check Methodology 0.3.3 assessment contract
+        run: |
+          python vsm-skills/scripts/check_assessment_contract.py \
+            assessments/loopx.md \
+            assessments/headcount.md \
+            assessments/qm.md \
+            assessments/cocoplus.md
+      - name: Append canonical corpus rows
+        shell: bash
+        run: |
+          set -euo pipefail
+          for id in loopx headcount qm cocoplus; do
+            if grep -q "|${id}|" data/catalog.psv; then
+              echo "duplicate catalog id: ${id}" >&2
+              exit 1
+            fi
+            if grep -q "|${id}|" data/signatures.psv; then
+              echo "duplicate signature id: ${id}" >&2
+              exit 1
+            fi
+          done
+          cat >> data/catalog.psv <<'EOF'
+          120|loopx|LoopX|https://github.com/huangruiteng/loopx|2026-05-31T14:58:56Z|adapted-source|ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f|2026-09-18
+          121|headcount|Headcount|https://github.com/cbrock84/headcount|2026-08-28T18:03:04Z|adapted-source|9cbf34005e3e8a980a6af9b55eb226bd926a62b3|2026-09-18
+          122|qm|QM|https://github.com/yc-software/qm|2026-07-29T20:03:08Z|adapted-source|9745e3425ec87df199dd82cbf5e72033f1012165|2026-09-18
+          123|cocoplus|CocoPlus|https://github.com/Snowflake-Labs/cocoplus|2024-12-08T04:07:51Z|adapted-source|b252a8e7e09da6ca3178000d1fb5f48783dffc13|2026-09-18
+          EOF
+          cat >> data/signatures.psv <<'EOF'
+          120|loopx|LoopX closes autonomous Goal work, concrete peer coordination, whole-Goal current control and independent review through model-driven workers; first-party parent paths retain protected current decisions and ultimate Goal identity, while no S4 closure is established.
+          121|headcount|Headcount's department agents establish autonomous operations, write-surface coordination, executive current control, independent reviewer audit, external/future strategy and internal identity/policy closure across all six VSM functions.
+          122|qm|QM supplies autonomous scoped agent work, while its swarm messaging/isolation, scheduler/admin policy, observability, memory and background triggers do not establish separate S2-S5 organizational closure.
+          123|cocoplus|CocoPlus combines autonomous specialist operations, dependency/write-surface coordination, Team Lead current control with a developer parent mode, independent critics and a constructor S4 path for model-upgrade adaptation; no S5 closure is established.
+          EOF
+      - name: Regenerate cohort views
+        run: python scripts/render_tldr.py
+      - name: Validate corpus
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/check_index.py
+          python scripts/check_discovery_queues.py
+          python -m unittest discover -s tests -v
+      - name: Commit generated corpus
+        run: |
+          rm -rf vsm-skills
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md
+          git commit -m 'Admit batch #28 tranche A assessments'
+          git push
