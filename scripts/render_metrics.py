@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
 from pathlib import Path
 
@@ -135,11 +136,24 @@ def main() -> int:
     }
 
     if args.check:
-        stale = [
-            str(path.relative_to(repo))
-            for path, rendered in outputs.items()
-            if not path.exists() or path.read_text(encoding="utf-8") != rendered
-        ]
+        stale: list[str] = []
+        for path, rendered in outputs.items():
+            rel = str(path.relative_to(repo))
+            current = path.read_text(encoding="utf-8") if path.exists() else ""
+            if current == rendered:
+                continue
+            stale.append(rel)
+            print(
+                "".join(
+                    difflib.unified_diff(
+                        current.splitlines(keepends=True),
+                        rendered.splitlines(keepends=True),
+                        fromfile=rel,
+                        tofile=f"generated/{rel}",
+                    )
+                ),
+                end="",
+            )
         if stale:
             raise SystemExit("stale generated metric file(s): " + ", ".join(stale))
     else:
