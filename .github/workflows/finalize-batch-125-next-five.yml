@@ -1,0 +1,57 @@
+name: finalize batch 125 next five
+
+on:
+  push:
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Append catalog and signatures
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q '^111|harness-evolver|' data/catalog.psv || cat >> data/catalog.psv <<'EOF'
+          111|harness-evolver|Harness Evolver|https://github.com/raphaelchristi/harness-evolver|2026-03-31T05:16:24Z|adapted-source|87fa7612358acccb01d34abf72426a7e47329642|2026-09-18
+          112|auto-harness|Auto Harness|https://github.com/neosigmaai/auto-harness|2026-04-03T21:18:14Z|adapted-source|52360dbbeb8cea8886d90778e634a145c51da735|2026-09-18
+          113|browser-harness|Browser Harness|https://github.com/browser-use/browser-harness|2026-04-17T01:56:15Z|adapted-source|afbcc381b963040c19627d788e40c7e7663171ee|2026-09-18
+          114|autoagent|AutoAgent|https://github.com/thirdlayerinc/autoagent|2026-04-02T20:44:58Z|adapted-source|eb3f185dc9faac276955b4fe5feb93c8f836b644|2026-09-18
+          115|squad|Squad|https://github.com/bradygaster/squad|2026-02-06T07:11:36Z|adapted-source|2099faf51c08a912c359209447011b06decf0565|2026-09-18
+          EOF
+          grep -q '^111|harness-evolver|' data/signatures.psv || cat >> data/signatures.psv <<'EOF'
+          111|harness-evolver|Harness Evolver runs an autonomous harness-evolution operation and adds a separate anti-gaming Critic that challenges ordinary evaluator scores and installs stricter evaluators, establishing S3* without S2/S3/S4/S5 closure.
+          112|auto-harness|Auto Harness gives a coding agent an autonomous benchmark-driven improve/gate/revert loop; its regression and held-out gates are ordinary optimization feedback, not separate S2-S5 metasystem closure.
+          113|browser-harness|Browser Harness gives agents autonomous browser control and exposes a constructor-owned S2 path for the concrete shared-daemon mutable-tab race through serialization or browser isolation; no S3-S5 closure is established.
+          114|autoagent|AutoAgent programs a meta-agent to diagnose benchmark failures, mutate a single-file harness and keep or discard experiments autonomously; benchmark scoring and self-improvement remain the primary operation rather than S2-S5 metasystem functions.
+          115|squad|Squad's specialist agents operate autonomously; agent-owned dependency/design coordination, whole-team current control and independent reviewer feedback establish S2, S3 and S3*, while first-party human escalation adds parent S3 and human ownership of team identity/durable directives closes S5=P; no S4 loop is established.
+          EOF
+      - name: Regenerate views
+        run: python scripts/render_tldr.py
+      - name: Validate corpus
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/check_index.py
+          python scripts/check_discovery_queues.py
+          python -m unittest discover -s tests -v
+      - name: Commit generated corpus and remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/finalize-batch-125-next-five.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md .github/workflows/finalize-batch-125-next-five.yml
+          git commit -m 'Finalize next five assessments from batch #125'
+          git push
