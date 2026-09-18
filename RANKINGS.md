@@ -4,7 +4,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 
 | Rank | Harness | Year | Agent-owned | Metasystem A | C | P | ? | Vector |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| 1 | <a id="headcount"></a>[Headcount](https://github.com/cbrock84/headcount) | 2026 | 6/6 | 5/5 | 0 | 0 | 0 | `A A A A A A` |
+| 1 | <a id="headcount"></a>[Headcount](https://github.com/cbrock84/headcount) | 2026 | 5/6 | 4/5 | 1 | 0 | 0 | `A A A C A A` |
 | 2 | <a id="omnigent"></a>[Omnigent](https://github.com/omnigent-ai/omnigent) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 2 | <a id="loopx"></a>[LoopX](https://github.com/huangruiteng/loopx) | 2026 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 2 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
