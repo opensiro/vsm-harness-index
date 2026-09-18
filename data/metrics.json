@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "corpus": {
+    "included_assessments": 100,
+    "catalog_entries": 129,
+    "catalog_entries_without_included_assessment": 29,
+    "full_a_assessments": 0
+  },
+  "active_contract": {
+    "profile_version": "0.2.3",
+    "methodology_version": "0.3.5"
+  },
+  "milestones": [
+    {
+      "target": 100,
+      "status": "achieved",
+      "completed": 100,
+      "progress_fraction": 1.0
+    },
+    {
+      "target": 250,
+      "status": "next",
+      "completed": 100,
+      "progress_fraction": 0.4
+    },
+    {
+      "target": 500,
+      "status": "planned",
+      "completed": 100,
+      "progress_fraction": 0.2
+    },
+    {
+      "target": 1000,
+      "status": "planned",
+      "completed": 100,
+      "progress_fraction": 0.1
+    }
+  ]
+}
