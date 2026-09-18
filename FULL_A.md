@@ -1,6 +1,6 @@
 # Full-A Pivot
 
-Generated projection of included standalone assessments whose exact autonomy vector is `A A A A A A`. Composite or parent-governed states such as `A(P)` do not count as exact `A` in this view.
+Generated projection of included standalone assessments with autonomous ownership across all six VSM functions. `A(P)` counts as autonomous coverage because `P` is an additional optional parent-governed mode; parent-only `P` does not count.
 
 | Harness | S1 | S2 | S3 | S3* | S4 | S5 | TL;DR |
 | --- | --- | --- | --- | --- | --- | --- | --- |
