@@ -93,6 +93,11 @@ Primary evidence:
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: ordinary parallel dispatch is not the witness; S2 rests on the explicit conflict modes plus corrective feedback to the affected S1s.
+- Distinct S1 units: backend, frontend, mobile and other specialist implementation agents dispatched as separate task/workspace units under one OMA session.
+- Inter-S1 disturbance: shared API/data contracts can diverge across specialists and overlapping workspace ownership can cause conflicting mutations or downstream work against an unstable upstream contract.
+- Attenuating coordination relation: the root coordinator monitors contract alignment, pauses dependent downstream work until reconciliation, and splits/reassigns ownership boundaries when workspaces conflict.
+- Feedback into subsequent S1 behaviour: reconciled contracts, revised ownership and re-dispatch instructions are supplied back to affected specialist agents before they resume or retry work.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the credited path is tied to named cross-S1 interference modes and changes the affected units specifically to damp those disturbances; task routing and parallel spawning alone are excluded.
 
 ## S3 — Inside-and-now control
 
@@ -127,6 +132,11 @@ Primary evidence:
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: repository benchmark scorers are excluded; the positive witness is the deployed workflow's structurally independent reviewer/judge path and corrective return.
+- Claim being audited: implementation agents and the ordinary OMA coordinator claim that planned work/phases satisfy acceptance criteria and are ready to advance or complete.
+- Ordinary reporting path: implementation agent result/progress artifacts plus the coordinator's normal task-board, phase and completion state.
+- Complementary access path: fresh-context reviewer/JUDGE agents independently read raw diff, changed files, plan, checks, acceptance evidence and required phase artifacts while excluding implementer narration and reasoning.
+- Independence boundary: reviewer agents are separately spawned in fresh isolated contexts; Ralph explicitly forbids the orchestrator from self-judging except a recorded downgraded fallback.
+- Who acts on findings: the OMA coordinator changes criterion/task state and returns FAIL/REGRESSED findings to REPLAN or the responsible implementation agent for corrective work and re-verification.
 
 ## S4 — Outside-and-then intelligence
 
