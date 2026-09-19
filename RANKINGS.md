@@ -39,6 +39,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="trpc-agent-go"></a>[tRPC-Agent-Go](https://github.com/trpc-group/trpc-agent-go) | 2025 | 2/6 | 1/5 | 1 | 1 | 0 | `A C — — A(P) —` |
 | 4 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 4 | <a id="claude-code"></a>[Claude Code](https://github.com/anthropics/claude-code) | 2025 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 4 | <a id="autoagent-hkuds"></a>[AutoAgent (HKUDS)](https://github.com/HKUDS/AutoAgent) | 2025 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 4 | <a id="goose"></a>[Goose](https://github.com/aaif-goose/goose) | 2024 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 4 | <a id="letta"></a>[Letta](https://github.com/letta-ai/letta) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 4 | <a id="metagpt"></a>[MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
