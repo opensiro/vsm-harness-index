@@ -6,11 +6,11 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 
 | Metric | Value | Definition |
 | --- | ---: | --- |
-| Included standalone assessments | 134 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
-| Canonical assessment records | 135 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
+| Included standalone assessments | 135 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
+| Canonical assessment records | 136 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
 | Canonical exclusions | 1 | Completed assessments with `status: excluded-no-agentic-vsm`. |
 | Proposed intake assessments | 2 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
-| Catalog entries | 135 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
+| Catalog entries | 136 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
 | Catalog entries without an included assessment | 1 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
 | Reassessment events | 80 | Recorded events in `data/reassessment-history.psv`. |
 | Full-A assessments | 0 | Included assessments whose base state is autonomous across S1, S2, S3, S3*, S4 and S5. `A(P)` counts as autonomous coverage. |
@@ -25,10 +25,10 @@ Milestones count included completed standalone assessments only. They are corpus
 
 | Target | Status | Progress |
 | ---: | --- | ---: |
-| 100 | Achieved | Achieved (current corpus: 134) |
-| 250 | Next | 134/250 (53.6%) |
-| 500 | Planned | 134/500 (26.8%) |
-| 1000 | Planned | 134/1000 (13.4%) |
+| 100 | Achieved | Achieved (current corpus: 135) |
+| 250 | Next | 135/250 (54.0%) |
+| 500 | Planned | 135/500 (27.0%) |
+| 1000 | Planned | 135/1000 (13.5%) |
 
 ## Machine-readable view
 
