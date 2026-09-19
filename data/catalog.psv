@@ -141,3 +141,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 140|open-cowork|Open Cowork|https://github.com/OpenCoworkAI/open-cowork|2026-01-13T16:43:05Z|index-addition|a1d0e4ab0f0f78bc42c622653174650cd2025968|2026-09-19
 141|mateclaw|MateClaw|https://github.com/mateaix/mateclaw|2026-04-04T10:53:35Z|index-addition|5c67af85fc85060a8518fa25ca66a7c19f1e11ab|2026-09-19
 142|flue|Flue|https://github.com/withastro/flue|2026-02-07T22:27:04Z|index-addition|6285b0ee89ad8941009ecd0062de11a8cd64c4a3|2026-09-19
+143|open-multi-agent|OMA / Open Multi-Agent|https://github.com/open-multi-agent/open-multi-agent|2026-03-31T19:07:34Z|index-addition|4107fb144653c3240c569f345cf06b028dd7747a|2026-09-19
