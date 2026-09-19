@@ -99,6 +99,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="codex"></a>[Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 5 | <a id="google-adk"></a>[Google ADK](https://github.com/google/adk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="openai-agents-sdk"></a>[OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="claude-squad"></a>[Claude Squad](https://github.com/smtg-ai/claude-squad) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 5 | <a id="openmanus"></a>[OpenManus](https://github.com/FoundationAgents/OpenManus) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="langgraph-bigtool"></a>[LangGraph BigTool](https://github.com/langchain-ai/langgraph-bigtool) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="cloudflare-agents"></a>[Cloudflare Agents](https://github.com/cloudflare/agents) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
