@@ -71,6 +71,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="open-harness"></a>[open-harness](https://github.com/MaxGfeller/open-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="swarmclaw"></a>[SwarmClaw](https://github.com/swarmclawai/swarmclaw) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 5 | <a id="openjarvis"></a>[OpenJarvis](https://github.com/open-jarvis/OpenJarvis) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="open-cowork"></a>[Open Cowork](https://github.com/OpenCoworkAI/open-cowork) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="opensre"></a>[OpenSRE](https://github.com/Tracer-Cloud/opensre) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="yylo"></a>[YYLO](https://github.com/yylo-dev/yylo) | 2026 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 5 | <a id="openclaw"></a>[OpenClaw](https://github.com/openclaw/openclaw) | 2025 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
