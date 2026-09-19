@@ -5,7 +5,7 @@ on:
   push:
 
 permissions:
-  contents: write
+  contents: read
   issues: read
 
 jobs:
@@ -18,37 +18,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Temporarily generate Go Micro admission projections
-        if: github.event_name == 'push' && github.ref_name == 'assessment/go-micro'
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          catalog = Path("data/catalog.psv")
-          catalog_text = catalog.read_text(encoding="utf-8")
-          catalog_row = "144|go-micro|Go Micro|https://github.com/micro/go-micro|2015-01-13T23:30:18Z|index-addition|792b18c3010715e2f12621f0120bf058be225482|2026-09-19"
-          if "|go-micro|" not in catalog_text:
-              catalog.write_text(catalog_text.rstrip("\n") + "\n" + catalog_row + "\n", encoding="utf-8")
-
-          signatures = Path("data/signatures.psv")
-          signatures_text = signatures.read_text(encoding="utf-8")
-          signature_row = "144|go-micro|Go Micro closes autonomous S1 execution and an A(P) outside-and-then service-capability adaptation loop through missing-capability generation plus operator-approved prompt-driven generation; it exposes a constructor S3* verification-feedback path, while routing/delegation does not establish S2, local plans/limits do not establish S3, and product-runtime controls do not close S5."
-          if "|go-micro|" not in signatures_text:
-              signatures.write_text(signatures_text.rstrip("\n") + "\n" + signature_row + "\n", encoding="utf-8")
-          PY
-          python scripts/render_tldr.py
-          python scripts/render_full_a.py
-          python scripts/render_metrics.py
-          python scripts/sync_metrics_readme.py
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md FULL_A.md METRICS.md data/metrics.json README.md
-          if ! git diff --cached --quiet; then
-            git commit -m "Generate Go Micro index projections"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
 
       - name: Resolve active semantic contract
         id: active_contract
