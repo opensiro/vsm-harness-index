@@ -142,3 +142,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 141|mateclaw|MateClaw|https://github.com/mateaix/mateclaw|2026-04-04T10:53:35Z|index-addition|5c67af85fc85060a8518fa25ca66a7c19f1e11ab|2026-09-19
 142|flue|Flue|https://github.com/withastro/flue|2026-02-07T22:27:04Z|index-addition|6285b0ee89ad8941009ecd0062de11a8cd64c4a3|2026-09-19
 143|open-multi-agent|OMA / Open Multi-Agent|https://github.com/open-multi-agent/open-multi-agent|2026-03-31T19:07:34Z|index-addition|4107fb144653c3240c569f345cf06b028dd7747a|2026-09-19
+144|go-micro|Go Micro|https://github.com/micro/go-micro|2015-01-13T23:30:18Z|index-addition|792b18c3010715e2f12621f0120bf058be225482|2026-09-19
