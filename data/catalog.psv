@@ -137,3 +137,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 136|oh-my-agent|oh-my-agent|https://github.com/first-fluke/oh-my-agent|2026-01-30T11:29:46Z|index-addition|428e80e93fa9e4e6e9776e755ee57af4ba5cd929|2026-09-18
 137|autoagent-hkuds|AutoAgent (HKUDS)|https://github.com/HKUDS/AutoAgent|2025-02-06T12:47:15Z|index-addition|16c12b052ef2330a198063c62a07a7f9723031e3|2026-09-19
 138|thclaws|thClaws|https://github.com/thClaws/thClaws|2026-04-20T01:27:39Z|index-addition|cd700937a71a391f052438d139b7b1c5a6456755|2026-09-19
+139|flock|Flock|https://github.com/Onelevenvy/flock|2024-07-24T23:57:20Z|index-addition|2eac827aa803ae2ee8578e401a864e116cd994d3|2026-09-19
