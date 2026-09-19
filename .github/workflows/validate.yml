@@ -5,7 +5,7 @@ on:
   push:
 
 permissions:
-  contents: read
+  contents: write
   issues: read
 
 jobs:
@@ -18,6 +18,37 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Temporarily generate MateClaw admission projections
+        if: github.event_name == 'push' && github.ref_name == 'assessment/mateclaw'
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          catalog = Path("data/catalog.psv")
+          catalog_text = catalog.read_text(encoding="utf-8")
+          catalog_row = "141|mateclaw|MateClaw|https://github.com/mateaix/mateclaw|2026-04-04T10:53:35Z|index-addition|5c67af85fc85060a8518fa25ca66a7c19f1e11ab|2026-09-19"
+          if "|mateclaw|" not in catalog_text:
+              catalog.write_text(catalog_text.rstrip("\n") + "\n" + catalog_row + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          signatures_text = signatures.read_text(encoding="utf-8")
+          signature_row = "141|mateclaw|MateClaw closes autonomous S1 execution, an S2-specific inter-worker interference loop, agent-owned whole-team current control with a parallel operator-governed mode, and an autonomous skill-adaptation loop with operator promote/dismiss/reopen governance; ordinary timelines/review do not establish independent S3* audit and role/policy configuration does not close S5."
+          if "|mateclaw|" not in signatures_text:
+              signatures.write_text(signatures_text.rstrip("\n") + "\n" + signature_row + "\n", encoding="utf-8")
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md FULL_A.md METRICS.md data/metrics.json README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate MateClaw index projections"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
 
       - name: Resolve active semantic contract
         id: active_contract
