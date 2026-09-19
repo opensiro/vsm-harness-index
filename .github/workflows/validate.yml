@@ -1,13 +1,15 @@
-name: regenerate-trpc-assessment
+name: validate
 
 on:
+  pull_request:
   push:
 
 permissions:
-  contents: write
+  contents: read
+  issues: read
 
 jobs:
-  regenerate:
+  index:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,71 +18,69 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Correct tRPC S4 ownership modes and regenerate views
+
+      - name: Resolve active semantic contract
+        id: active_contract
         shell: bash
         run: |
-          python - <<'PY'
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import csv
           from pathlib import Path
 
-          path = Path("assessments/trpc-agent-go.md")
-          text = path.read_text(encoding="utf-8")
-          text = text.replace("autonomy_s4: A\n", "autonomy_s4: A(P)\n", 1)
-          text = text.replace(
-              "- Credited operating / distribution surfaces: LLMAgent plus Runner; coordinator-team member-as-tool feedback; Evolution's background review → reconcile → gate → publish loop; managed skill repositories and `skill_load`; OpenClaw's first-party Evolution wiring; and PromptIter/optimization as corroborating first-party prospective adaptation machinery.\n",
-              "- Credited operating / distribution surfaces: LLMAgent plus Runner; coordinator-team member-as-tool feedback; Evolution's background review → reconcile → gate → publish loop; managed skill repositories and `skill_load`; built-in HumanGate/ApprovalService parent-governed promotion mode; OpenClaw's first-party Evolution wiring; and PromptIter/optimization as corroborating first-party prospective adaptation machinery.\n",
-          )
-          text = text.replace(
-              "Evolution is a separate first-party background learning loop. On completed tasks it applies a review policy, passes qualifying transcripts to an LLM Reviewer, reconciles proposed skills, applies schema/safety/effectiveness and optional human gates, publishes accepted `SKILL.md` revisions, refreshes the shared skill repository, and makes those skills available to later agent runs through `skill_load`. OpenClaw contains first-party wiring that creates the service, revision store, gates and managed skill directory when Evolution is enabled. A separate optimization path evaluates candidate skills on feedback/validation/holdout splits before optional revision submission, and PromptIter similarly turns evaluation failures into candidate prompt patches with validation-set acceptance. These paths corroborate prospective adaptation, but ordinary Evaluation is not credited as S3*: it measures/regresses behavior and does not independently close a corrective audit path into current operations.\n",
-              "Evolution is a separate first-party background learning loop. On completed tasks it applies a review policy, passes qualifying transcripts to an LLM Reviewer, reconciles proposed skills, applies schema/safety/effectiveness and optional human gates, publishes accepted `SKILL.md` revisions, refreshes the shared skill repository, and makes those skills available to later agent runs through `skill_load`. OpenClaw contains first-party wiring that creates the service, revision store, gates and managed skill directory when Evolution is enabled. The standard Evolution package also provides built-in HumanGate implementations and ApprovalService: a held revision remains `pending_approval` until a human reviewer approves or rejects it, and an approved revision can become active/published. A separate optimization path evaluates candidate skills on feedback/validation/holdout splits before optional revision submission, and PromptIter similarly turns evaluation failures into candidate prompt patches with validation-set acceptance. These paths corroborate prospective adaptation, but ordinary Evaluation is not credited as S3*: it measures/regresses behavior and does not independently close a corrective audit path into current operations.\n",
-          )
-
-          start = text.index("## S4 — Outside-and-then intelligence")
-          end = text.index("## S5 — Policy and identity")
-          s4_lines = [
-              "## S4 — Outside-and-then intelligence",
-              "",
-              "- State: A(P)",
-              "- Function: learn reusable future-facing operating procedures from completed interactions and make accepted adaptations available to subsequent agent tasks, with both autonomous promotion and an optional first-party parent-governed promotion mode.",
-              "- Disturbance / variety regulated: repeated exploration cost, user corrections, recovered errors, recurring tool workflows, operational pitfalls and changes revealed by completed-task experience.",
-              "- Decisive decision or feedback right: decide whether a completed-session delta merits review, form a reusable skill adaptation, and determine whether the resulting revision becomes active capability for later runs. In the base mode the reviewer-driven Evolution loop closes this without human approval; in the parent mode a human reviewer owns the final approve/reject judgment over a held revision.",
-              "- Decision owner: base mode — the LLM Reviewer owns semantic adaptation generation while fixed first-party gates qualify/enforce publication; parent mode — the human reviewer reached through built-in HumanGate/ApprovalService owns the decisive promotion/rejection judgment.",
-              "- Supporting / enforcement mechanisms: `DefaultReviewPolicy`, LLM Reviewer, Reconciler, SpecGate, SafetyGate, EffectivenessGate, HumanGate, ApprovalService, immutable revision store/active pointer, Publisher, shared skill repository, `skill_load`, rollback and OpenClaw Evolution wiring.",
-              "- Closure path: completed task/session and correction/recovery/tool-use distinctions → review policy → LLM Reviewer extracts reusable workflow → reconcile/gates qualify revision → autonomous mode publishes directly, or HumanGate holds it for parent approve/reject → approved revision is activated/published and repository refresh exposes it → a later similar task loads the skill and changes operational behavior.",
-              "- Boundary reachability: Runner directly accepts `WithEvolutionService`; the standard distribution includes the no-human-gate autonomous path plus `WithHumanGate`, built-in hold gates and `ApprovalService` for the parent mode. The documented first-party Publisher/revision machinery returns either mode's accepted decision into the managed skill repository; no custom approval protocol is required.",
-              "- Why this is / is not agent-owned: in the base mode the semantic adaptation candidate is generated by a dedicated reviewer model and fixed gates only constrain/enforce that agentic adaptation before it is returned to future capability. Enabling HumanGate deliberately transfers the decisive promotion judgment for held revisions to a parent human without removing the separately supported autonomous mode.",
-              "- Evidence: `docs/mkdocs/en/evolution.md`, `runner/runner.go`, `openclaw/app/evolution_runtime.go`, `evolution/revision.go`, `docs/mkdocs/en/promptiter.md`.",
-              "- Basis: explicit + structural",
-              "- Confidence: high",
-              "- Caveats: ordinary memory/history is not the positive witness. Offline optimizer and PromptIter are corroborating adaptation paths; the online Evolution loop independently establishes the base `A`. The parent mode is specific to Evolution revision promotion, not a generic S5 or organization-wide human approval claim.",
-              "- External distinction: completed-session transcript evidence including multi-step tool use, explicit user correction and recovered errors; optional outcomes/evaluation evidence can further qualify candidate revisions.",
-              "- Future / prospective distinction: the Reviewer abstracts reusable workflows/pitfalls from past executions specifically so later similar tasks avoid repeated exploration and failure.",
-              "- Adaptation option generated: a structured managed `SKILL.md` revision (or, in separate first-party optimization modes, an improved skill/prompt candidate) with qualification state and revision history.",
-              "- Path back into current capability / S3: after publish and repository refresh, the same repository used by LLMAgent exposes the managed skill to future runs through skill overview/`skill_load`, directly changing the operational context and available proven procedure.",
-              "",
-              "| Mode | Decisive owner | Trigger | Closure | Evidence |",
-              "| --- | --- | --- | --- | --- |",
-              "| Base (`A`) | LLM Reviewer / autonomous Evolution adaptation loop | Completed session passes review policy with HumanGate disabled | Reviewer proposes reusable skill → fixed gates qualify → Publisher activates revision → repository refresh → later `skill_load` changes operation | `docs/mkdocs/en/evolution.md`, `runner/runner.go`, `openclaw/app/evolution_runtime.go` |",
-              "| Parent (`P`) | Human reviewer through built-in ApprovalService | HumanGate holds an otherwise qualifying revision in `pending_approval` | Human approve/reject decision → approve changes revision to active/published (or approved delete mutates live skill) → later runs observe changed managed skill capability | `docs/mkdocs/en/evolution.md`, `evolution/revision.go` |",
-              "",
-              "",
-          ]
-          text = text[:start] + "\n".join(s4_lines) + text[end:]
-          text = text.replace(
-              "Human Evolution gates can hold a candidate revision for approval, but that is an optional parent intervention into S4 promotion rather than evidence that the framework owns S5.",
-              "Human Evolution gates provide the distinct parent-governed S4 promotion mode recorded by `A(P)`; they remain bounded adaptation authority and do not establish S5 identity/ultimate-policy closure.",
-          )
-          text = text.replace(
-              "- Evolution is opt-in, but once enabled it has a first-party autonomous closure path, including in shipped OpenClaw wiring. The default HumanGate is disabled; deployments that enable one deliberately introduce parent control over selected promotions.",
-              "- Evolution is opt-in, but once enabled it has a first-party autonomous closure path, including in shipped OpenClaw wiring. The default HumanGate is disabled; the built-in HumanGate + ApprovalService path separately closes parent-governed promotion for held revisions, so S4 is published as `A(P)`.",
-          )
-          path.write_text(text, encoding="utf-8")
+          path = Path("data/active-contract.psv")
+          with path.open(encoding="utf-8", newline="") as handle:
+              rows = list(csv.DictReader(handle, delimiter="|"))
+          if len(rows) != 1:
+              raise SystemExit("active-contract.psv must contain exactly one row")
+          row = rows[0]
+          print(f"profile={row['profile_version']}")
+          print(f"methodology={row['methodology_version']}")
           PY
 
-          python scripts/render_tldr.py
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet; then
-            git add assessments/trpc-agent-go.md TLDR.md RANKINGS.md
-            git commit -m "Correct tRPC S4 parent-governed mode"
-            git push
+      - name: Checkout active VSM Harness Methodology release
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/vsm-harness-skills
+          ref: v${{ steps.active_contract.outputs.methodology }}
+          path: .methodology
+          fetch-depth: 1
+
+      - name: Check active-version assessment structural contract
+        shell: bash
+        env:
+          ACTIVE_METHODOLOGY: ${{ steps.active_contract.outputs.methodology }}
+        run: |
+          python - <<'PY' > /tmp/active-assessments.txt
+          import re
+          import os
+          from pathlib import Path
+
+          target = os.environ["ACTIVE_METHODOLOGY"]
+          pattern = re.compile(r"^assessment_procedure_version:\s*(\S+)\s*$", re.MULTILINE)
+          for path in sorted(Path("assessments").glob("*.md")):
+              match = pattern.search(path.read_text(encoding="utf-8"))
+              if match and match.group(1) == target:
+                  print(path)
+          PY
+          mapfile -t active_assessments < /tmp/active-assessments.txt
+          if (( ${#active_assessments[@]} == 0 )); then
+            echo "No assessments currently use active Methodology ${ACTIVE_METHODOLOGY}; structural gate ready for new work."
+          else
+            python .methodology/scripts/check_assessment_contract.py "${active_assessments[@]}"
           fi
+
+      - run: python scripts/check_index.py
+      - run: python scripts/render_full_a.py --check
+      - run: python scripts/render_metrics.py --check
+      - run: python scripts/sync_metrics_readme.py --check
+      - name: Check live discovery queue deduplication
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/check_discovery_queues.py
+      - run: python -m unittest discover -s tests -v
+      - name: Check immutable generation provenance against PR base
+        if: github.event_name == 'pull_request'
+        run: python scripts/check_generation_provenance.py --base-ref "${{ github.event.pull_request.base.sha }}"
+      - name: Check immutable generation provenance against previous push
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        run: python scripts/check_generation_provenance.py --base-ref "${{ github.event.before }}"
