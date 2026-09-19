@@ -34,6 +34,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 4 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 4 | <a id="clawgui"></a>[ClawGUI](https://github.com/ZJU-REAL/ClawGUI) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 4 | <a id="open-multi-agent"></a>[OMA / Open Multi-Agent](https://github.com/open-multi-agent/open-multi-agent) | 2026 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
 | 4 | <a id="harness-evolver"></a>[Harness Evolver](https://github.com/raphaelchristi/harness-evolver) | 2026 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 4 | <a id="maestro"></a>[Maestro](https://github.com/RunMaestro/Maestro) | 2025 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 4 | <a id="deepagentsjs"></a>[Deep Agents JS](https://github.com/langchain-ai/deepagentsjs) | 2025 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
