@@ -83,6 +83,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="agentsilex"></a>[AgentSilex](https://github.com/howl-anderson/agentsilex) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 5 | <a id="opencode"></a>[OpenCode](https://github.com/anomalyco/opencode) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="gemini-cli"></a>[Gemini CLI](https://github.com/google-gemini/gemini-cli) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="voltagent"></a>[VoltAgent](https://github.com/VoltAgent/voltagent) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 5 | <a id="codex"></a>[Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 5 | <a id="google-adk"></a>[Google ADK](https://github.com/google/adk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="openai-agents-sdk"></a>[OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
