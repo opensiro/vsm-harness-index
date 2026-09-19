@@ -5,7 +5,7 @@ on:
   push:
 
 permissions:
-  contents: write
+  contents: read
   issues: read
 
 jobs:
@@ -18,37 +18,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Temporarily generate Claude Squad admission projections
-        if: github.event_name == 'push' && github.ref_name == 'assessment/claude-squad'
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          catalog = Path("data/catalog.psv")
-          catalog_text = catalog.read_text(encoding="utf-8")
-          catalog_row = "145|claude-squad|Claude Squad|https://github.com/smtg-ai/claude-squad|2025-03-09T20:00:41Z|index-addition|ce1ffb4392b01f38e2c4599c7c84d2a93973b138|2026-09-19"
-          if "|claude-squad|" not in catalog_text:
-              catalog.write_text(catalog_text.rstrip("\n") + "\n" + catalog_row + "\n", encoding="utf-8")
-
-          signatures = Path("data/signatures.psv")
-          signatures_text = signatures.read_text(encoding="utf-8")
-          signature_row = "145|claude-squad|Claude Squad hosts autonomous coding-agent S1 sessions and exposes a constructor S2 path by assigning each concurrent task a separate git worktree/branch explicitly to prevent workspace conflicts; lifecycle controls, diff review, profiles and confirmations do not establish S3, S3*, S4 or S5."
-          if "|claude-squad|" not in signatures_text:
-              signatures.write_text(signatures_text.rstrip("\n") + "\n" + signature_row + "\n", encoding="utf-8")
-          PY
-          python scripts/render_tldr.py
-          python scripts/render_full_a.py
-          python scripts/render_metrics.py
-          python scripts/sync_metrics_readme.py
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md FULL_A.md METRICS.md data/metrics.json README.md
-          if ! git diff --cached --quiet; then
-            git commit -m "Generate Claude Squad index projections"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
 
       - name: Resolve active semantic contract
         id: active_contract
