@@ -6,50 +6,41 @@ on:
       - assess-voltagent
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   generate:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Add canonical catalog and signature inputs in workspace
+      - name: Add canonical catalog and signature inputs
         shell: bash
         run: |
           printf '%s\n' '132|voltagent|VoltAgent|https://github.com/VoltAgent/voltagent|2025-04-16T15:41:18Z|index-addition|44b4c8e4998ce56095b2f0e4eaf1a988f5e6d0de|2026-09-18' >> data/catalog.psv
           printf '%s\n' '132|voltagent|An optional supervisor mediates information among otherwise unaware subagents and chooses necessary specialists as composable S2; suspend/resume HITL, guardrails, evals and memory remain workflow/runtime support rather than S3-S5 closure.' >> data/signatures.psv
-      - name: Render canonical derived artifacts
+      - name: Render and validate canonical artifacts
+        shell: bash
         run: |
           python scripts/render_tldr.py
           python scripts/render_full_a.py
           python scripts/render_metrics.py
           python scripts/sync_metrics_readme.py
-      - name: Check generated Index state
-        run: |
           python scripts/check_index.py
           python scripts/render_full_a.py --check
           python scripts/render_metrics.py --check
           python scripts/sync_metrics_readme.py --check
           python -m unittest discover -s tests -v
-      - name: Check Methodology 0.3.5 structural contract
-        shell: bash
-        run: |
           git clone --depth 1 --branch v0.3.5 https://github.com/opensiro/vsm-harness-skills.git .methodology
           python .methodology/scripts/check_assessment_contract.py assessments/voltagent.md
-      - name: Upload generated admission tree
-        uses: actions/upload-artifact@v4
-        with:
-          name: voltagent-admission
-          path: |
-            assessments/voltagent.md
-            data/catalog.psv
-            data/signatures.psv
-            TLDR.md
-            RANKINGS.md
-            FULL_A.md
-            METRICS.md
-            data/metrics.json
-            README.md
+      - name: Commit generated admission state
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/voltagent.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md FULL_A.md METRICS.md data/metrics.json README.md
+          git commit -m 'Admit VoltAgent assessment and regenerate index'
+          git push origin HEAD:assess-voltagent
