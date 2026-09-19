@@ -5,7 +5,7 @@ on:
   push:
 
 permissions:
-  contents: read
+  contents: write
   issues: read
 
 jobs:
@@ -19,6 +19,37 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Temporarily generate thClaws admission projections
+        if: github.event_name == 'push' && github.ref_name == 'assessment/thclaws'
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          catalog = Path("data/catalog.psv")
+          catalog_text = catalog.read_text(encoding="utf-8")
+          catalog_row = "138|thclaws|thClaws|https://github.com/thClaws/thClaws|2026-04-20T01:27:39Z|index-addition|cd700937a71a391f052438d139b7b1c5a6456755|2026-09-19"
+          if "|thclaws|" not in catalog_text:
+              catalog.write_text(catalog_text.rstrip("\n") + "\n" + catalog_row + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          signatures_text = signatures.read_text(encoding="utf-8")
+          signature_row = "138|thclaws|thClaws combines autonomous environment-facing agent operations with an agent-owned Team mode that regulates concrete teammate interference, gives a lead whole-team current control and complementary direct workspace verification; KMS/auto-learn does not establish S4, while signed Enterprise policy closes S5 through a legitimate organization Parent."
+          if "|thclaws|" not in signatures_text:
+              signatures.write_text(signatures_text.rstrip("\n") + "\n" + signature_row + "\n", encoding="utf-8")
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md FULL_A.md METRICS.md data/metrics.json README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate thClaws index projections"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
       - name: Resolve active semantic contract
         id: active_contract
         shell: bash
@@ -31,7 +62,7 @@ jobs:
           with path.open(encoding="utf-8", newline="") as handle:
               rows = list(csv.DictReader(handle, delimiter="|"))
           if len(rows) != 1:
-              raise SystemExit("active-contract.psv must contain exactly one row")
+            raise SystemExit("active-contract.psv must contain exactly one row")
           row = rows[0]
           print(f"profile={row['profile_version']}")
           print(f"methodology={row['methodology_version']}")
