@@ -5,7 +5,7 @@ on:
   push:
 
 permissions:
-  contents: read
+  contents: write
   issues: read
 
 jobs:
@@ -19,6 +19,37 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Temporarily generate Flock admission projections
+        if: github.event_name == 'push' && github.ref_name == 'assessment/flock'
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          catalog = Path("data/catalog.psv")
+          catalog_text = catalog.read_text(encoding="utf-8")
+          catalog_row = "139|flock|Flock|https://github.com/Onelevenvy/flock|2024-07-24T23:57:20Z|index-addition|2eac827aa803ae2ee8578e401a864e116cd994d3|2026-09-19"
+          if "|flock|" not in catalog_text:
+              catalog.write_text(catalog_text.rstrip("\n") + "\n" + catalog_row + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          signatures_text = signatures.read_text(encoding="utf-8")
+          signature_row = "139|flock|Flock supplies autonomous environment-facing agent/tool loops and a shipped skill-creator that researches, evaluates, revises, and persists reusable future capabilities; declarative multi-agent graph topology does not itself establish S2/S3, adaptation graders are not S3* current-control audit, and session/tool approval does not establish S5."
+          if "|flock|" not in signatures_text:
+              signatures.write_text(signatures_text.rstrip("\n") + "\n" + signature_row + "\n", encoding="utf-8")
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md FULL_A.md METRICS.md data/metrics.json README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate Flock index projections"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
       - name: Resolve active semantic contract
         id: active_contract
         shell: bash
@@ -31,7 +62,7 @@ jobs:
           with path.open(encoding="utf-8", newline="") as handle:
               rows = list(csv.DictReader(handle, delimiter="|"))
           if len(rows) != 1:
-              raise SystemExit("active-contract.psv must contain exactly one row")
+            raise SystemExit("active-contract.psv must contain exactly one row")
           row = rows[0]
           print(f"profile={row['profile_version']}")
           print(f"methodology={row['methodology_version']}")
