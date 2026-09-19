@@ -133,3 +133,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 132|voltagent|VoltAgent|https://github.com/VoltAgent/voltagent|2025-04-16T15:41:18Z|index-addition|44b4c8e4998ce56095b2f0e4eaf1a988f5e6d0de|2026-09-18
 133|scion|Scion|https://github.com/annex-ai/scion|2026-02-24T07:10:25Z|index-addition|8a3e21f7d624e13eb5f14a18728c6f98172a5c55|2026-09-18
 134|trpc-agent-go|tRPC-Agent-Go|https://github.com/trpc-group/trpc-agent-go|2025-05-14T13:51:35Z|index-addition|28cb50c1d927a586521de028aed95bde2a018144|2026-09-18
+135|deepagentsjs|Deep Agents JS|https://github.com/langchain-ai/deepagentsjs|2025-08-04T15:23:17Z|index-addition|39b85021d5c64d14539999490610970f76da0b47|2026-09-18
