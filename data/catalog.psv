@@ -135,3 +135,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 134|trpc-agent-go|tRPC-Agent-Go|https://github.com/trpc-group/trpc-agent-go|2025-05-14T13:51:35Z|index-addition|28cb50c1d927a586521de028aed95bde2a018144|2026-09-18
 135|deepagentsjs|Deep Agents JS|https://github.com/langchain-ai/deepagentsjs|2025-08-04T15:23:17Z|index-addition|39b85021d5c64d14539999490610970f76da0b47|2026-09-18
 136|oh-my-agent|oh-my-agent|https://github.com/first-fluke/oh-my-agent|2026-01-30T11:29:46Z|index-addition|428e80e93fa9e4e6e9776e755ee57af4ba5cd929|2026-09-18
+137|autoagent-hkuds|AutoAgent (HKUDS)|https://github.com/HKUDS/AutoAgent|2025-02-06T12:47:15Z|index-addition|16c12b052ef2330a198063c62a07a7f9723031e3|2026-09-19
