@@ -131,3 +131,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 130|buzz|Buzz|https://github.com/block/buzz|2026-03-06T21:00:56Z|index-addition|8953cbfff58ed768d996677fed3af0e3bac64a20|2026-09-18
 131|gastown|Gas Town|https://github.com/gastownhall/gastown|2025-12-16T00:33:33Z|index-addition|649b832b7672bc7a2dbef26f5983aba6198b819b|2026-09-18
 132|voltagent|VoltAgent|https://github.com/VoltAgent/voltagent|2025-04-16T15:41:18Z|index-addition|44b4c8e4998ce56095b2f0e4eaf1a988f5e6d0de|2026-09-18
+133|scion|Scion|https://github.com/annex-ai/scion|2026-02-24T07:10:25Z|index-addition|8a3e21f7d624e13eb5f14a18728c6f98172a5c55|2026-09-18
