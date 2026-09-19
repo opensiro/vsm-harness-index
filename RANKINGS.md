@@ -6,6 +6,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | 1 | <a id="headcount"></a>[Headcount](https://github.com/cbrock84/headcount) | 2026 | 5/6 | 4/5 | 1 | 0 | 0 | `A A A C A A` |
 | 1 | <a id="oh-my-agent"></a>[oh-my-agent](https://github.com/first-fluke/oh-my-agent) | 2026 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
+| 2 | <a id="henterprise"></a>[Henterprise](https://github.com/humbertobellor/henterprise) | 2026 | 4/6 | 3/5 | 2 | 0 | 0 | `A C A C A A` |
 | 2 | <a id="omnigent"></a>[Omnigent](https://github.com/omnigent-ai/omnigent) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 2 | <a id="loopx"></a>[LoopX](https://github.com/huangruiteng/loopx) | 2026 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 2 | <a id="thclaws"></a>[thClaws](https://github.com/thClaws/thClaws) | 2026 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
@@ -50,7 +51,6 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="lobehub"></a>[LobeHub](https://github.com/lobehub/lobehub) | 2023 | 2/6 | 1/5 | 1 | 0 | 0 | `A A — C — —` |
 | 4 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 4 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
-| 5 | <a id="henterprise"></a>[Henterprise](https://github.com/humbertobellor/henterprise) | 2026 | 1/6 | 0/5 | 5 | 0 | 0 | `A C C C C C` |
 | 5 | <a id="mini-harness"></a>[mini-harness](https://github.com/mini-harness/mini-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="qm"></a>[QM](https://github.com/yc-software/qm) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
