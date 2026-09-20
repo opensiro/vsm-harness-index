@@ -19,6 +19,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 2 | <a id="gastown"></a>[Gas Town](https://github.com/gastownhall/gastown) | 2025 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 2 | <a id="cocoplus"></a>[CocoPlus](https://github.com/Snowflake-Labs/cocoplus) | 2024 | 4/6 | 3/5 | 1 | 1 | 0 | `A A A(P) A C —` |
+| 2 | <a id="megaagent"></a>[MegaAgent](https://github.com/Xtra-Computing/MegaAgent) | 2024 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 2 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="deepseek-harness"></a>[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 2026 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 3 | <a id="kadath"></a>[KADATH](https://github.com/i3T4AN/KADATH) | 2026 | 3/6 | 2/5 | 1 | 1 | 0 | `A — C A A P` |
