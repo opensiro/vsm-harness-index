@@ -1,0 +1,69 @@
+name: admit-water-140
+
+on:
+  push:
+    branches:
+      - admit-water-140
+    paths:
+      - .github/workflows/admit-water-140.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-water-140
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Assemble canonical admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/water.md')
+          text = assessment.read_text()
+          if 'status: proposed' not in text:
+              raise SystemExit('expected proposed Water assessment')
+          text = text.replace('assessment_procedure_version: 0.3.5\nstatus: proposed', 'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-20\nstatus: included', 1)
+          assessment.write_text(text)
+
+          catalog = Path('data/catalog.psv')
+          row = '164|water|Water|https://github.com/manthanguptaa/water|2025-06-03T11:33:27Z|index-addition|454a86b79980877ed77d38ad1a150246a9bf1cf2|2026-09-20'
+          ctext = catalog.read_text().rstrip('\n')
+          if '|water|' in ctext:
+              raise SystemExit('catalog already contains water')
+          catalog.write_text(ctext + '\n' + row + '\n')
+
+          signatures = Path('data/signatures.psv')
+          sig = "164|water|Water ships a first-party model-controlled ReAct S1 and exposes a constructor S3 path where whole-team shared state/history can drive dynamic next-agent commitments; its standard distribution does not establish a concrete S2 disturbance/attenuation loop, independent live S3* audit, prospective S4 capability adaptation, or S5 identity closure."
+          stext = signatures.read_text().rstrip('\n')
+          if '|water|' in stext:
+              raise SystemExit('signature already contains water')
+          signatures.write_text(stext + '\n' + sig + '\n')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+          git rm .github/workflows/admit-water-140.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'assessment: assemble Water admission'
+          git push origin HEAD:admit-water-140
