@@ -5,7 +5,7 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 4|khoj|Khoj|https://github.com/khoj-ai/khoj|2021-08-16T01:48:44Z|adapted-source|ae229ca894c0b80ad84664afcfdde523b5e87057|2026-09-13
 5|agno|Agno|https://github.com/agno-agi/agno|2022-05-04T15:23:02Z|adapted-source|44219f8532e2fe6ce936850455f4b9a2567e4194|2026-09-13
 6|langchain|LangChain|https://github.com/langchain-ai/langchain|2022-10-17T02:58:36Z|adapted-source|348c9dc572599947d2d7d33d6a5b8b936e92a1d4|2026-09-13
-7|llama-index|LlamaIndex|https://github.com/run-llama/llama_index|2022-11-02T04:24:27Z|adapted-source|7169bcd0dca2e16aecc8e0247f34e50079d9c0d5|2026-09-13
+7|llama-index|LlamaIndex|https://github.com/run-llama/llama_index|2022-11-02T04:24:54Z|adapted-source|7169bcd0dca2e16aecc8e0247f34e50079d9c0d5|2026-09-13
 8|langflow|Langflow|https://github.com/langflow-ai/langflow|2023-02-08T22:28:03Z|adapted-source|595cd72a2b2021f2375fa31109af02d20bb17648|2026-09-13
 9|semantic-kernel|Semantic Kernel|https://github.com/microsoft/semantic-kernel|2023-02-27T17:39:42Z|adapted-source|ca40aa7226531d28a721d0ca0e451d0aaf86dafc|2026-09-13
 10|autogpt|AutoGPT|https://github.com/Significant-Gravitas/AutoGPT|2023-03-16T09:21:07Z|adapted-source|98381ab27f733468bfe1f9c4f4942b4b416d9a8b|2026-09-13
