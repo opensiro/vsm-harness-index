@@ -103,6 +103,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="vibe-kanban"></a>[Vibe Kanban](https://github.com/BloopAI/vibe-kanban) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 5 | <a id="cais"></a>[Causal AI Scientist (CAIS)](https://github.com/causalNLP/causal-agent) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="claude-agent-sdk"></a>[Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="water"></a>[Water](https://github.com/manthanguptaa/water) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 5 | <a id="ruflo"></a>[Ruflo](https://github.com/ruvnet/ruflo) | 2025 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 5 | <a id="openai-agents-js"></a>[OpenAI Agents SDK for JavaScript](https://github.com/openai/openai-agents-js) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="crush"></a>[Crush](https://github.com/charmbracelet/crush) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
