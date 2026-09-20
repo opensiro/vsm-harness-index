@@ -161,3 +161,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 160|lobstah|lobstah|https://github.com/aequitas-labs/lobstah|2026-09-02T21:00:35Z|index-addition|6aa75e2212fa8f22fa8dde7790070463c0021f8c|2026-09-20
 161|agent-orchestrator|Agent Orchestrator|https://github.com/Untrivial-ai/agent-orchestrator|2026-02-13T09:52:36Z|index-addition|1e4a394b20c470d281b2a7f6f63fd47c30af5019|2026-09-20
 162|litellm-agent-control-plane|LiteLLM Agent Control Plane|https://github.com/LiteLLM-Labs/litellm-agent-control-plane|2026-05-07T21:35:39Z|index-addition|53bfd20e2fec51fc8f665fb614512c6b138367da|2026-09-20
+163|pydantic-ai-harness|Pydantic AI Harness|https://github.com/pydantic/pydantic-ai-harness|2026-03-20T19:58:53Z|index-addition|434649f87d34aa7e5d48c7bd26ad33c50d57cf10|2026-09-20
