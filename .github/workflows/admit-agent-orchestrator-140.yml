@@ -1,0 +1,68 @@
+name: admit-agent-orchestrator-140
+
+on:
+  push:
+    branches:
+      - admit-agent-orchestrator-140
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-agent-orchestrator-140
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply Agent Orchestrator admission and regenerate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/agent-orchestrator.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' not in text:
+              raise SystemExit('expected proposed assessment')
+          text = text.replace(
+              'assessment_procedure_version: 0.3.5\nstatus: proposed\n',
+              'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-20\nstatus: included\n',
+              1,
+          )
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '161|agent-orchestrator|Agent Orchestrator|https://github.com/Untrivial-ai/agent-orchestrator|2026-02-13T09:52:36Z|index-addition|1e4a394b20c470d281b2a7f6f63fd47c30af5019|2026-09-20'
+          catalog_text = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|agent-orchestrator|' in catalog_text:
+              raise SystemExit('agent-orchestrator already present in catalog')
+          catalog.write_text(catalog_text + '\n' + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig = "161|agent-orchestrator|Agent Orchestrator combines autonomous isolated coding workers with model-owned cross-worker coordination and whole-project current control, plus a separate read-only reviewer whose changes-requested findings return to the responsible worker; the desktop/operator path adds parent-governed S3, while planning/history/configuration do not close S4 or S5."
+          sig_text = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|agent-orchestrator|' in sig_text:
+              raise SystemExit('agent-orchestrator already present in signatures')
+          signatures.write_text(sig_text + '\n' + sig + '\n', encoding='utf-8')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+
+          git rm .github/workflows/admit-agent-orchestrator-140.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assessments/agent-orchestrator.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md FULL_A.md METRICS.md data/metrics.json README.md
+          git commit -m "assessment: assemble Agent Orchestrator admission"
+          git push origin HEAD:admit-agent-orchestrator-140
