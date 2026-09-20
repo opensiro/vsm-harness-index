@@ -51,15 +51,36 @@ jobs:
           ACTIVE_METHODOLOGY: ${{ steps.active_contract.outputs.methodology }}
         run: |
           python - <<'PY' > /tmp/active-assessments.txt
-          import re
           import os
+          import re
           from pathlib import Path
 
           target = os.environ["ACTIVE_METHODOLOGY"]
-          pattern = re.compile(r"^assessment_procedure_version:\s*(\S+)\s*$", re.MULTILINE)
+          methodology_pattern = re.compile(
+              r"^assessment_procedure_version:\s*(\S+)\s*$", re.MULTILINE
+          )
+          status_pattern = re.compile(r"^status:\s*(\S+)\s*$", re.MULTILINE)
+          proposed_dir = Path("/tmp/proposed-assessment-contract")
+          proposed_dir.mkdir(parents=True, exist_ok=True)
+
           for path in sorted(Path("assessments").glob("*.md")):
-              match = pattern.search(path.read_text(encoding="utf-8"))
-              if match and match.group(1) == target:
+              text = path.read_text(encoding="utf-8")
+              methodology_match = methodology_pattern.search(text)
+              if not methodology_match or methodology_match.group(1) != target:
+                  continue
+
+              status_match = status_pattern.search(text)
+              if status_match and status_match.group(1) == "proposed":
+                  # `proposed` is an Index-local pre-admission lifecycle state,
+                  # not a canonical Methodology state. Validate the prospective
+                  # canonical artifact by normalizing only that lifecycle field
+                  # in a temporary copy; the repository file remains proposed
+                  # and check_index.py keeps it outside the canonical corpus.
+                  normalized = status_pattern.sub("status: included", text, count=1)
+                  tmp_path = proposed_dir / path.name
+                  tmp_path.write_text(normalized, encoding="utf-8")
+                  print(tmp_path)
+              else:
                   print(path)
           PY
           mapfile -t active_assessments < /tmp/active-assessments.txt
