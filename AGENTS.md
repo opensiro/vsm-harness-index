@@ -15,6 +15,16 @@ This file is a routing surface for coding/research agents working in `opensiro/v
 
 For sequential assessment batches, the default contribution unit is the row marked `NEXT` in the issue's Manual assessment board.
 
+Before semantic work, assemble the current task envelope mechanically:
+
+```bash
+python scripts/assessment_preflight.py <assessment-batch-issue-number>
+```
+
+Use `--json` when another tool or agent needs a machine-readable envelope. The preflight resolves the current `NEXT` row, frozen repository/ref, suggested assessment path, active Profile/Methodology contract, task boundaries, and final validation commands. It fails closed if the Manual assessment board and frozen candidate table disagree.
+
+The preflight is routing/tooling only. It does not perform VSM interpretation and does not replace reading current Profile/Methodology `main`.
+
 - Do not take a later queued row.
 - Do not silently replace the issue's frozen `review_ref` with a newer upstream head.
 - Fix the first-party system boundary before mapping functions.
