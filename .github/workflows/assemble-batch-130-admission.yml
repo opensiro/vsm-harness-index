@@ -1,0 +1,107 @@
+name: assemble batch 130 admission
+
+on:
+  push:
+    branches:
+      - admit-batch-130-remaining
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-batch-130-remaining
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Admit reviewed assessments and append provenance
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessments = [
+              "assessments/chorus.md",
+              "assessments/omnicoreagent.md",
+              "assessments/hankweave.md",
+          ]
+          for name in assessments:
+              path = Path(name)
+              text = path.read_text(encoding="utf-8")
+              if text.count("status: proposed") != 1:
+                  raise SystemExit(f"expected exactly one proposed status in {name}")
+              text = text.replace("status: proposed", "status: included", 1)
+              if "assessment_changed_at:" not in text:
+                  marker = "assessment_procedure_version: 0.3.5\n"
+                  if marker not in text:
+                      raise SystemExit(f"missing methodology marker in {name}")
+                  text = text.replace(marker, marker + "assessment_changed_at: 2026-09-20\n", 1)
+              path.write_text(text, encoding="utf-8")
+
+          catalog = Path("data/catalog.psv")
+          catalog_text = catalog.read_text(encoding="utf-8")
+          rows = [
+              "156|chorus|Chorus|https://github.com/Chorus-AIDLC/Chorus|2026-02-04T06:56:16Z|index-addition|148b7928b99773f7fbdf61080940bd6995b06934|2026-09-20",
+              "157|omnicoreagent|OmniCoreAgent|https://github.com/omnirexflora-labs/omnicoreagent|2025-03-19T11:20:50Z|index-addition|60da57a6dacd3f7796fffd9d198c0a7420aa6aad|2026-09-20",
+              "158|hankweave|hankweave|https://github.com/SouthBridgeAI/hankweave-runtime|2026-01-21T02:23:32Z|index-addition|9ea76bbb826becb6ab148bec9dd3aeb00b410c61|2026-09-20",
+          ]
+          for row in rows:
+              hid = row.split("|")[1]
+              if f"|{hid}|" in catalog_text:
+                  raise SystemExit(f"catalog already contains {hid}")
+          if not catalog_text.rstrip().startswith("catalog_position|") and "catalog_position|" not in catalog_text.splitlines()[0]:
+              raise SystemExit("unexpected catalog header")
+          positions = [int(line.split("|", 1)[0]) for line in catalog_text.splitlines()[1:] if line.strip()]
+          if max(positions) != 155:
+              raise SystemExit(f"expected current max catalog position 155, got {max(positions)}")
+          catalog.write_text(catalog_text.rstrip("\n") + "\n" + "\n".join(rows) + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          sig_text = signatures.read_text(encoding="utf-8")
+          sig_rows = [
+              "156|chorus|Chorus combines autonomous task execution with agent-owned project-wide current control and separate read-only proposal/task reviewers whose blocking verdicts return work into revision or rework; task DAG sequencing does not establish S2, while project planning and permissions do not close S4 or S5.",
+              "157|omnicoreagent|OmniCoreAgent closes an autonomous model/tool/observation loop with optional delegation and durable production machinery; subagents/workflows do not establish S2, while leases/retries/governance/serving are enforcement rather than autonomous S3 and guardrails, memory and policy do not close S3*, S4 or S5.",
+              "158|hankweave|hankweave executes autonomous agentic codons through supported harness adapters inside a deliberately single-threaded long-horizon runtime; budgets/retries/rollback remain deterministic control, sentinels provide observation without standard corrective S3* closure, and repair/shim workflows do not become runtime S4 or S5.",
+          ]
+          for row in sig_rows:
+              hid = row.split("|")[1]
+              if f"|{hid}|" in sig_text:
+                  raise SystemExit(f"signatures already contains {hid}")
+          positions = [int(line.split("|", 1)[0]) for line in sig_text.splitlines()[1:] if line.strip()]
+          if max(positions) != 155:
+              raise SystemExit(f"expected current max signature position 155, got {max(positions)}")
+          signatures.write_text(sig_text.rstrip("\n") + "\n" + "\n".join(sig_rows) + "\n", encoding="utf-8")
+          PY
+
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate assembled corpus
+        run: |
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Commit admission and remove assembler
+        shell: bash
+        run: |
+          rm .github/workflows/assemble-batch-130-admission.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git diff --cached --quiet && { echo "No admission changes produced"; exit 1; }
+          git commit -m "admit: complete runtime orchestration batch 130"
+          git push origin HEAD:admit-batch-130-remaining
