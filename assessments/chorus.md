@@ -6,9 +6,10 @@ review_ref: 148b7928b99773f7fbdf61080940bd6995b06934
 reviewed_at: 2026-09-20
 generated_profile_version: 0.2.3
 generated_assessment_procedure_version: 0.3.5
+assessment_changed_at: 2026-09-20
 profile_version: 0.2.3
 assessment_procedure_version: 0.3.5
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: A
