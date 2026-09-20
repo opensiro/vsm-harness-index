@@ -147,6 +147,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="crewai"></a>[CrewAI](https://github.com/crewAIInc/crewAI) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="ailice"></a>[AIlice](https://github.com/myshell-ai/AIlice) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="chatdev"></a>[ChatDev](https://github.com/OpenBMB/ChatDev) | 2023 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 5 | <a id="autoagents"></a>[AutoAgents](https://github.com/OWD-AI/AutoAgents) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="langgraph"></a>[LangGraph](https://github.com/langchain-ai/langgraph) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="open-interpreter"></a>[Open Interpreter](https://github.com/openinterpreter/openinterpreter) | 2023 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 5 | <a id="anythingllm"></a>[AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | 2023 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
