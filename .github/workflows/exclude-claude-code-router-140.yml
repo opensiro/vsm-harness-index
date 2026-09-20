@@ -1,0 +1,66 @@
+name: exclude-claude-code-router-140
+
+on:
+  push:
+    branches:
+      - exclude-claude-code-router-140
+    paths:
+      - .github/workflows/exclude-claude-code-router-140.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: exclude-claude-code-router-140
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Assemble canonical exclusion
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/claude-code-router.md')
+          text = assessment.read_text()
+          if 'status: proposed' not in text:
+              raise SystemExit('expected proposed Claude Code Router assessment')
+          text = text.replace(
+              'assessment_procedure_version: 0.3.5\nstatus: proposed',
+              'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-20\nstatus: excluded-no-agentic-vsm',
+              1,
+          )
+          assessment.write_text(text)
+
+          catalog = Path('data/catalog.psv')
+          row = '165|claude-code-router|Claude Code Router|https://github.com/musistudio/claude-code-router|2025-02-25T02:17:18Z|index-addition|a034b0c51cdd1b5628bbff545821f5540d30c6c5|2026-09-20'
+          ctext = catalog.read_text().rstrip('\n')
+          if '|claude-code-router|' in ctext:
+              raise SystemExit('catalog already contains claude-code-router')
+          catalog.write_text(ctext + '\n' + row + '\n')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+          git rm .github/workflows/exclude-claude-code-router-140.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'assessment: assemble Claude Code Router exclusion'
+          git push origin HEAD:exclude-claude-code-router-140
