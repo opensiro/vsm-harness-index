@@ -6,15 +6,22 @@ VSM Harness Index uses an assessment-first workflow. Repository evidence is the 
 
 You usually do **not** need to choose catalog order, invent a ranking, or design a batch yourself.
 
-### Review a queued batch
+### Review queued assessment work
 
-1. Open the repository Issues page and look for an open issue whose title starts with `[Index batch]`.
-2. Pick an unclaimed batch whose issue says it is ready for review.
-3. Comment that you are taking it, or ask to be assigned.
-4. Follow the exact repositories, pinned revisions, outputs, and acceptance checks in that issue.
-5. Submit one PR for the batch unless the issue says otherwise.
+Assessment queues are usually tracked in issues titled `[Assessment batch] ...`. Discovery-only queues may still be titled `[Candidate batch] ...` until they are frozen and given an active manual assessment board.
 
-A batch may be completed by a human contributor, a human using coding/research agents, or an autonomous agent. The acceptance contract is the same: pinned primary evidence, reviewable assessments, deterministic validation, and a normal PR.
+For the normal sequential assessment workflow:
+
+1. Open the repository Issues page and choose a frozen batch that says manual assessment is ready or in progress.
+2. Read the batch's **Manual assessment board** and find the row marked `NEXT`.
+3. Claim that `NEXT` row in a comment, or ask to be assigned. The batch is the queue/container; the default contribution unit is the current `NEXT` row, not the whole batch.
+4. Re-read current `main` of `opensiro/vsm-harness-profile` and `opensiro/vsm-harness-skills`, then follow the exact frozen repository revision, system-boundary reminders, outputs, and acceptance checks in the issue.
+5. Assess only that row unless the issue explicitly authorizes a different unit of work. Do not silently repin it and do not advance to later queued rows.
+6. Submit a reviewable PR for the row's canonical admission or terminal resolution. Advance exactly one row only through the batch workflow after the current `NEXT` reaches a terminal state.
+
+A batch may ultimately be completed by one or many contributors, including humans using coding/research agents or autonomous agents. The acceptance contract is the same: pinned primary evidence, reviewable assessments, deterministic validation, and normal PR review.
+
+If you arrive without a pre-assigned task, start from an open frozen `[Assessment batch]` with an active Manual assessment board rather than choosing an arbitrary candidate from a partial discovery queue.
 
 ### Suggest a harness
 
@@ -95,7 +102,7 @@ If the re-review cannot distinguish between two states after the strongest avail
 
 The detailed workflow below applies when creating or integrating an assessment rather than merely suggesting a candidate.
 
-1. Check out `vsm-harness-profile`, `vsm-skills`, and `vsm-harness-index` as siblings.
+1. Check out `vsm-harness-profile`, `vsm-harness-skills`, and `vsm-harness-index` as siblings.
 2. Confirm or add the discovery row in `data/catalog.psv`; preserve provenance, exact `review_ref`, `pinned_at`, and chronological ordering.
 3. Use `assess-vsm-harness` to write `assessments/<harness_id>.md` from pinned primary evidence.
 4. Only after the assessment is complete, compare it with all earlier completed assessments and add or update its cohort-relative signature in `data/signatures.psv`.
