@@ -154,3 +154,6 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 153|cais|Causal AI Scientist (CAIS)|https://github.com/causalNLP/causal-agent|2025-06-13T05:15:06Z|index-addition|2289e9e3c11376336dec027fd17269a46443a784|2026-09-20
 154|openags|OpenAGS|https://github.com/openags/auto-researcher|2024-06-13T22:47:38Z|index-addition|9bb9dfc6d5e66ad92e3652c8a2ed250d62f8c11f|2026-09-20
 155|veritas|Veritas|https://github.com/matiasrodlo/veritas|2025-04-13T21:20:18Z|index-addition|f366432381834dee8ecb17bcbc2bad3e6232ff0b|2026-09-20
+156|chorus|Chorus|https://github.com/Chorus-AIDLC/Chorus|2026-02-04T06:56:16Z|index-addition|148b7928b99773f7fbdf61080940bd6995b06934|2026-09-20
+157|omnicoreagent|OmniCoreAgent|https://github.com/omnirexflora-labs/omnicoreagent|2025-03-19T11:20:50Z|index-addition|60da57a6dacd3f7796fffd9d198c0a7420aa6aad|2026-09-20
+158|hankweave|hankweave|https://github.com/SouthBridgeAI/hankweave-runtime|2026-01-21T02:23:32Z|index-addition|9ea76bbb826becb6ab148bec9dd3aeb00b410c61|2026-09-20

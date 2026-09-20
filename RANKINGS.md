@@ -21,6 +21,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="deepseek-harness"></a>[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 2026 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 3 | <a id="kadath"></a>[KADATH](https://github.com/i3T4AN/KADATH) | 2026 | 3/6 | 2/5 | 1 | 1 | 0 | `A — C A A P` |
+| 3 | <a id="chorus"></a>[Chorus](https://github.com/Chorus-AIDLC/Chorus) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 3 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 3 | <a id="jcode"></a>[jcode](https://github.com/1jehuang/jcode) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 3 | <a id="oh-my-openagent"></a>[oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | 2025 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
@@ -84,6 +85,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="swarmclaw"></a>[SwarmClaw](https://github.com/swarmclawai/swarmclaw) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 5 | <a id="openjarvis"></a>[OpenJarvis](https://github.com/open-jarvis/OpenJarvis) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="flue"></a>[Flue](https://github.com/withastro/flue) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="hankweave"></a>[hankweave](https://github.com/SouthBridgeAI/hankweave-runtime) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="open-cowork"></a>[Open Cowork](https://github.com/OpenCoworkAI/open-cowork) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="opensre"></a>[OpenSRE](https://github.com/Tracer-Cloud/opensre) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="yylo"></a>[YYLO](https://github.com/yylo-dev/yylo) | 2026 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
@@ -108,6 +110,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="voltagent"></a>[VoltAgent](https://github.com/VoltAgent/voltagent) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 5 | <a id="codex"></a>[Codex](https://github.com/openai/codex) | 2025 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 5 | <a id="google-adk"></a>[Google ADK](https://github.com/google/adk-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="omnicoreagent"></a>[OmniCoreAgent](https://github.com/omnirexflora-labs/omnicoreagent) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="openai-agents-sdk"></a>[OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="claude-squad"></a>[Claude Squad](https://github.com/smtg-ai/claude-squad) | 2025 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 5 | <a id="openmanus"></a>[OpenManus](https://github.com/FoundationAgents/OpenManus) | 2025 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
