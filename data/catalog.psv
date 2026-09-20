@@ -164,3 +164,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 163|pydantic-ai-harness|Pydantic AI Harness|https://github.com/pydantic/pydantic-ai-harness|2026-03-20T19:58:53Z|index-addition|434649f87d34aa7e5d48c7bd26ad33c50d57cf10|2026-09-20
 164|water|Water|https://github.com/manthanguptaa/water|2025-06-03T11:33:27Z|index-addition|454a86b79980877ed77d38ad1a150246a9bf1cf2|2026-09-20
 165|claude-code-router|Claude Code Router|https://github.com/musistudio/claude-code-router|2025-02-25T02:17:18Z|index-addition|a034b0c51cdd1b5628bbff545821f5540d30c6c5|2026-09-20
+166|openfang|OpenFang|https://github.com/RightNow-AI/openfang|2026-02-24T23:12:38Z|index-addition|acf2587e46be174c10200489c9a2d23a39a98aeb|2026-09-20
