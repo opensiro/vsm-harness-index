@@ -14,6 +14,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="cc-haha"></a>[cc-haha](https://github.com/NanmiCoder/cc-haha) | 2026 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 2 | <a id="paperclip"></a>[Paperclip](https://github.com/paperclipai/paperclip) | 2026 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 2 | <a id="scion"></a>[Scion](https://github.com/annex-ai/scion) | 2026 | 4/6 | 3/5 | 1 | 0 | 0 | `A A A C A —` |
+| 2 | <a id="agent-orchestrator"></a>[Agent Orchestrator](https://github.com/Untrivial-ai/agent-orchestrator) | 2026 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 2 | <a id="squad"></a>[Squad](https://github.com/bradygaster/squad) | 2026 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 2 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 2 | <a id="gastown"></a>[Gas Town](https://github.com/gastownhall/gastown) | 2025 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
