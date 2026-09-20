@@ -2,11 +2,11 @@
   "schema_version": 1,
   "corpus": {
     "included_assessments": 160,
-    "canonical_assessments": 161,
-    "excluded_assessments": 1,
-    "proposed_assessments": 3,
-    "catalog_entries": 161,
-    "catalog_entries_without_included_assessment": 1,
+    "canonical_assessments": 162,
+    "excluded_assessments": 2,
+    "proposed_assessments": 2,
+    "catalog_entries": 162,
+    "catalog_entries_without_included_assessment": 2,
     "reassessment_events": 80,
     "full_a_assessments": 0
   },
