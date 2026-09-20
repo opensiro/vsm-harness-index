@@ -163,3 +163,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 162|litellm-agent-control-plane|LiteLLM Agent Control Plane|https://github.com/LiteLLM-Labs/litellm-agent-control-plane|2026-05-07T21:35:39Z|index-addition|53bfd20e2fec51fc8f665fb614512c6b138367da|2026-09-20
 163|pydantic-ai-harness|Pydantic AI Harness|https://github.com/pydantic/pydantic-ai-harness|2026-03-20T19:58:53Z|index-addition|434649f87d34aa7e5d48c7bd26ad33c50d57cf10|2026-09-20
 164|water|Water|https://github.com/manthanguptaa/water|2025-06-03T11:33:27Z|index-addition|454a86b79980877ed77d38ad1a150246a9bf1cf2|2026-09-20
+165|claude-code-router|Claude Code Router|https://github.com/musistudio/claude-code-router|2025-02-25T02:17:18Z|index-addition|a034b0c51cdd1b5628bbff545821f5540d30c6c5|2026-09-20
