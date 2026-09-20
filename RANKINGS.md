@@ -62,6 +62,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 5 | <a id="henterprise"></a>[Henterprise](https://github.com/humbertobellor/henterprise) | 2026 | 1/6 | 0/5 | 5 | 0 | 0 | `A C C C C C` |
 | 5 | <a id="mini-harness"></a>[mini-harness](https://github.com/mini-harness/mini-harness) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 5 | <a id="lobstah"></a>[lobstah](https://github.com/aequitas-labs/lobstah) | 2026 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 5 | <a id="qm"></a>[QM](https://github.com/yc-software/qm) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="trueforge"></a>[TrueForge](https://github.com/truefoundry/trueforge) | 2026 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 5 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |

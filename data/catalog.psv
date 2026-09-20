@@ -158,3 +158,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 157|omnicoreagent|OmniCoreAgent|https://github.com/omnirexflora-labs/omnicoreagent|2025-03-19T11:20:50Z|index-addition|60da57a6dacd3f7796fffd9d198c0a7420aa6aad|2026-09-20
 158|hankweave|hankweave|https://github.com/SouthBridgeAI/hankweave-runtime|2026-01-21T02:23:32Z|index-addition|9ea76bbb826becb6ab148bec9dd3aeb00b410c61|2026-09-20
 159|trueforge|TrueForge|https://github.com/truefoundry/trueforge|2026-07-23T09:16:13Z|index-addition|651c574e6ebf8bc2f4c39a00c7f749b4c22d9f88|2026-09-20
+160|lobstah|lobstah|https://github.com/aequitas-labs/lobstah|2026-09-02T21:00:35Z|index-addition|6aa75e2212fa8f22fa8dde7790070463c0021f8c|2026-09-20
