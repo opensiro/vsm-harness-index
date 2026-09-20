@@ -1,4 +1,5 @@
 import importlib.util
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -10,6 +11,7 @@ SPEC = importlib.util.spec_from_file_location(
 )
 assert SPEC and SPEC.loader
 preflight = importlib.util.module_from_spec(SPEC)
+sys.modules[SPEC.name] = preflight
 SPEC.loader.exec_module(preflight)
 
 
