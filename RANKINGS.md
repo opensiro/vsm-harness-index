@@ -22,6 +22,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="deepseek-harness"></a>[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 2026 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 3 | <a id="kadath"></a>[KADATH](https://github.com/i3T4AN/KADATH) | 2026 | 3/6 | 2/5 | 1 | 1 | 0 | `A — C A A P` |
+| 3 | <a id="pydantic-ai-harness"></a>[Pydantic AI Harness](https://github.com/pydantic/pydantic-ai-harness) | 2026 | 3/6 | 2/5 | 1 | 0 | 0 | `A — A A C —` |
 | 3 | <a id="chorus"></a>[Chorus](https://github.com/Chorus-AIDLC/Chorus) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 3 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 3 | <a id="jcode"></a>[jcode](https://github.com/1jehuang/jcode) | 2026 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
