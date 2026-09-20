@@ -1,0 +1,85 @@
+name: assemble MegaAgent admission
+
+on:
+  push:
+    branches:
+      - admit-megaagent-140
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-megaagent-140
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Promote MegaAgent and append canonical provenance
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/megaagent.md')
+          text = assessment.read_text(encoding='utf-8')
+          needle = 'assessment_procedure_version: 0.3.5\nstatus: proposed\n'
+          replacement = 'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-21\nstatus: included\n'
+          if needle not in text:
+              raise SystemExit('MegaAgent assessment is not in expected proposed state')
+          assessment.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          if '|megaagent|' in catalog_text:
+              raise SystemExit('MegaAgent already present in catalog')
+          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          if not rows[-1].startswith('167|'):
+              raise SystemExit(f'Expected catalog position 167 before admission, got: {rows[-1]}')
+          catalog_row = '168|megaagent|MegaAgent|https://github.com/Xtra-Computing/MegaAgent|2024-08-10T15:37:44Z|index-addition|c2e45ad99d8166db82b8f8516d2bcd722ad8540a|2026-09-21'
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + catalog_row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_text = signatures.read_text(encoding='utf-8')
+          if '|megaagent|' in sig_text:
+              raise SystemExit('MegaAgent already present in signatures')
+          signature = ('168|megaagent|MegaAgent runs parallel autonomous agent cells, attenuates concrete dependency and shared-workspace collisions through agent-owned coordination with hash-aware enforcement, closes current whole-project control through a generated CEO, and uses a separate testing agent to return direct runtime findings into corrective work; dynamic staffing remains current-task adaptation rather than S4, and configuration/CEO authority does not close S5.')
+          signatures.write_text(sig_text.rstrip('\n') + '\n' + signature + '\n', encoding='utf-8')
+          PY
+
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate assembled admission
+        run: |
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Commit canonical admission
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/megaagent.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md FULL_A.md METRICS.md data/metrics.json README.md
+          git commit -m 'admit: assemble MegaAgent canonical artifacts'
+          git push origin HEAD:admit-megaagent-140
+
+      - name: Remove temporary assembler
+        run: |
+          rm .github/workflows/assemble-megaagent-admission.yml
+          git add .github/workflows/assemble-megaagent-admission.yml
+          git commit -m 'chore: remove MegaAgent admission assembler'
+          git push origin HEAD:admit-megaagent-140
