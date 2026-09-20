@@ -144,3 +144,13 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 143|open-multi-agent|OMA / Open Multi-Agent|https://github.com/open-multi-agent/open-multi-agent|2026-03-31T19:07:34Z|index-addition|4107fb144653c3240c569f345cf06b028dd7747a|2026-09-19
 144|go-micro|Go Micro|https://github.com/micro/go-micro|2015-01-13T23:30:18Z|index-addition|792b18c3010715e2f12621f0120bf058be225482|2026-09-19
 145|claude-squad|Claude Squad|https://github.com/smtg-ai/claude-squad|2025-03-09T20:00:41Z|index-addition|ce1ffb4392b01f38e2c4599c7c84d2a93973b138|2026-09-19
+146|ai-scientist|The AI Scientist|https://github.com/SakanaAI/AI-Scientist|2024-08-12T09:32:55Z|index-addition|1de1dbc1f4ee2c5f61e9c94348d55eb51d7fa2eb|2026-09-20
+147|ai-scientist-v2|The AI Scientist-v2|https://github.com/SakanaAI/AI-Scientist-v2|2025-04-08T06:37:25Z|index-addition|96bd51617cfdbb494a9fc283af00fe090edfae48|2026-09-20
+148|agent-laboratory|Agent Laboratory|https://github.com/SamuelSchmidgall/AgentLaboratory|2025-01-08T02:00:51Z|index-addition|d9017d90e329112d2a80b7712f37ee9094d2cd27|2026-09-20
+149|data-to-paper|data-to-paper|https://github.com/Technion-Kishony-lab/data-to-paper|2023-06-17T09:31:27Z|index-addition|81df14c4b9600466e645c3b2b336cc54daa3df3a|2026-09-20
+150|xcientist|Xcientist|https://github.com/OpenDFM/Xcientist|2025-11-05T11:32:48Z|index-addition|666eee404bc3cf59249dc8af0ab621cc3e804a49|2026-09-20
+151|kadath|KADATH|https://github.com/i3T4AN/KADATH|2026-08-08T15:49:55Z|index-addition|db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef|2026-09-20
+152|omniscientist|OmniScientist|https://github.com/Omni-Scientist/OmniScientist|2026-08-16T15:02:56Z|index-addition|fb0164a1c4ff739b57f230cbc0b9a68796a45e1f|2026-09-20
+153|cais|Causal AI Scientist (CAIS)|https://github.com/causalNLP/causal-agent|2025-06-13T05:15:06Z|index-addition|2289e9e3c11376336dec027fd17269a46443a784|2026-09-20
+154|openags|OpenAGS|https://github.com/openags/auto-researcher|2024-06-13T22:47:38Z|index-addition|9bb9dfc6d5e66ad92e3652c8a2ed250d62f8c11f|2026-09-20
+155|veritas|Veritas|https://github.com/matiasrodlo/veritas|2025-04-13T21:20:18Z|index-addition|f366432381834dee8ecb17bcbc2bad3e6232ff0b|2026-09-20
