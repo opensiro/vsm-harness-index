@@ -1,0 +1,76 @@
+name: assemble Agent S admission
+
+on:
+  push:
+    branches:
+      - admit-agent-s
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Promote Agent S and append canonical provenance
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('assessments/agent-s.md')
+          text = p.read_text()
+          needle = 'assessment_procedure_version: 0.3.5\nstatus: proposed\n'
+          repl = 'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-21\nstatus: included\n'
+          if needle not in text:
+              raise SystemExit('unexpected Agent S frontmatter state')
+          p.write_text(text.replace(needle, repl, 1))
+
+          catalog = Path('data/catalog.psv')
+          c = catalog.read_text()
+          if '\n178|agent-s|' in c or c.startswith('178|agent-s|'):
+              raise SystemExit('Agent S already present in catalog')
+          if not c.rstrip().endswith('177|ecc|Everything Claude Code (ECC)|https://github.com/affaan-m/ECC|2026-01-18T00:51:51Z|index-addition|2b6e839771e53096d8451a213d40dc64ec8acac0|2026-09-21'):
+              raise SystemExit('catalog tail changed; rebuild admission on current main')
+          c = c.rstrip('\n') + '\n178|agent-s|Agent S|https://github.com/simular-ai/Agent-S|2024-10-09T15:43:12Z|index-addition|3aa272d23d2994c7bbde1acbbe0ef8e8d06b8693|2026-09-21\n'
+          catalog.write_text(c)
+
+          sig = Path('data/signatures.psv')
+          s = sig.read_text()
+          if '\n178|agent-s|' in s or s.startswith('178|agent-s|'):
+              raise SystemExit('Agent S signature already present')
+          s = s.rstrip('\n') + '\n178|agent-s|Agent S closes autonomous S1 through its shipped Agent S3 Worker screenshot-to-decision-to-GUI-execution feedback loop; the current hierarchy-free runtime does not establish distinct repository-local S2, S3, S3*, S4, or S5 ownership.\n'
+          sig.write_text(s)
+          PY
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate assembled admission
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit canonical admission
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'admit: add Agent S from reviewed standalone assessment'
+          git push
+      - name: Remove temporary assembler
+        run: |
+          git rm .github/workflows/assemble-agent-s-admission.yml
+          git commit -m 'chore: remove Agent S admission assembler'
+          git push
