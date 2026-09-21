@@ -33,3 +33,14 @@ Milestones count included completed standalone assessments only. They are corpus
 ## Machine-readable view
 
 The same snapshot is available in [`data/metrics.json`](data/metrics.json) for downstream synchronization such as `opensiro.com`.
+
+Source-of-truth relationship:
+
+```text
+assessments/*.md + data/catalog.psv + data/reassessment-history.psv
+                  + data/active-contract.psv
+                         ↓
+              scripts/render_metrics.py
+                         ↓
+             METRICS.md + data/metrics.json
+```
