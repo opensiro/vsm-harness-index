@@ -178,3 +178,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 177|ecc|Everything Claude Code (ECC)|https://github.com/affaan-m/ECC|2026-01-18T00:51:51Z|index-addition|2b6e839771e53096d8451a213d40dc64ec8acac0|2026-09-21
 178|agent-s|Agent S|https://github.com/simular-ai/Agent-S|2024-10-09T15:43:12Z|index-addition|3aa272d23d2994c7bbde1acbbe0ef8e8d06b8693|2026-09-21
 179|nanobot|nanobot|https://github.com/HKUDS/nanobot|2026-02-01T07:16:15Z|index-addition|24c41a6af0736330cd9c67b3c9d1ec9adeefdf5f|2026-09-21
+180|cowagent|CowAgent|https://github.com/zhayujie/CowAgent|2022-08-07T08:33:41Z|index-addition|7c55a61e1bccb82c99d97a4a436f598c079f7c9d|2026-09-21
