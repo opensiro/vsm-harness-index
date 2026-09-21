@@ -22,77 +22,27 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Resolve stale proposals
+      - name: Append canonical AIOS provenance
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          duplicate = Path('assessments/openharness.md')
-          duplicate_text = duplicate.read_text(encoding='utf-8')
-          if 'status: proposed' not in duplicate_text or 'repository: https://github.com/HKUDS/OpenHarness' not in duplicate_text:
-              raise SystemExit('legacy OpenHarness proposal is not in expected stale state')
-
-          canonical = Path('assessments/openharness-hkuds.md').read_text(encoding='utf-8')
-          if 'status: included' not in canonical or 'repository: https://github.com/HKUDS/OpenHarness' not in canonical:
-              raise SystemExit('canonical OpenHarness assessment is missing')
-          duplicate.unlink()
-
-          aios = Path('assessments/aios.md')
-          old = aios.read_text(encoding='utf-8')
-          if 'status: proposed' not in old or 'review_ref: 292d98f78c835499df18cdb6de6325bba1895862' not in old:
-              raise SystemExit('AIOS proposal is not in expected state')
-
-          aios.write_text('''---
-harness_id: aios
-project_name: AIOS
-repository: https://github.com/agiresearch/AIOS
-review_ref: 292d98f78c835499df18cdb6de6325bba1895862
-reviewed_at: 2026-09-17
-profile_version: 0.2.1
-assessment_procedure_version: 0.3.1
-assessment_changed_at: 2026-09-17
-status: excluded-no-agentic-vsm
-autonomy_s1: —
-autonomy_s2: —
-autonomy_s3: —
-autonomy_s3_star: —
-autonomy_s4: —
-autonomy_s5: —
----
-
-# AIOS
-
-## Review boundary
-
-- System in focus: the first-party AIOS Kernel/runtime at pinned revision `292d98f78c835499df18cdb6de6325bba1895862`.
-- Standard-distribution boundary: AIOS-owned scheduling, context switching, LLM/memory/storage/tool queues and kernel services. Operational agents onboarded through Cerebrum or other agent frameworks are adjacent runtimes and are not inherited as AIOS-owned S1 actors.
-- Reviewed revision: `292d98f78c835499df18cdb6de6325bba1895862`.
-- Accepted recheck date: 2026-09-17.
-- Accepted contract: Profile `0.2.1` / Methodology `0.3.1`.
-
-## Repository architecture
-
-AIOS supplies an agent-operating-system kernel: FIFO/round-robin scheduling, time slicing, context snapshot/restore, service queues, memory/storage/tool management and configurable runtime services. Those are substantial first-party infrastructure and regulation surfaces, but the domain-operational agent loops consuming them are onboarded from adjacent agent frameworks rather than implemented as first-party AIOS operational agents at this repository boundary.
-
-## Operational model
-
-The accepted same-ref recheck performed with batch #29 separated the kernel from Cerebrum/external agents. Removing the onboarded agent runtime while leaving the AIOS Kernel intact leaves scheduling, queues, context management and service infrastructure, but no first-party autonomous S1 actor that interprets arbitrary operational goals and closes the substantive model/tool/action loop. Therefore constructor/control-plane capabilities are not published as positive VSM autonomy states for an included autonomous harness.
-
-## Exclusion conclusion
-
-`excluded-no-agentic-vsm` at the repository-local AIOS Kernel boundary. The historical proposal vector `C C C — — C` is superseded by the accepted batch-#29 recheck recorded in Index PR #116: AIOS does not establish repository-local `S1=A`, so it does not satisfy the Index inclusion boundary. No positive autonomy claims are published for this excluded row.
-''', encoding='utf-8')
+          aios = Path('assessments/aios.md').read_text(encoding='utf-8')
+          if 'status: excluded-no-agentic-vsm' not in aios:
+              raise SystemExit('AIOS is not terminalized')
+          if Path('assessments/openharness.md').exists():
+              raise SystemExit('superseded OpenHarness proposal still exists')
 
           catalog = Path('data/catalog.psv')
-          catalog_text = catalog.read_text(encoding='utf-8')
-          if '|aios|' in catalog_text:
+          text = catalog.read_text(encoding='utf-8')
+          if '|aios|' in text:
               raise SystemExit('AIOS already has a catalog row')
-          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          rows = [line for line in text.splitlines() if line.strip()]
           if not rows[-1].startswith('175|'):
               raise SystemExit(f'Expected catalog position 175 before cleanup, got: {rows[-1]}')
           row = '176|aios|AIOS|https://github.com/agiresearch/AIOS|2024-01-15T03:52:41Z|index-addition|292d98f78c835499df18cdb6de6325bba1895862|2026-09-16'
-          catalog.write_text(catalog_text.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
+          catalog.write_text(text.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
           PY
 
       - name: Regenerate canonical projections
@@ -115,8 +65,8 @@ The accepted same-ref recheck performed with batch #29 separated the kernel from
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assessments/aios.md assessments/openharness.md data/catalog.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
-          git commit -m 'assessment: resolve stale proposal artifacts'
+          git add data/catalog.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
+          git commit -m 'index: canonicalize resolved proposal state'
           git push origin HEAD:cleanup-stale-proposals
 
       - name: Remove temporary assembler
