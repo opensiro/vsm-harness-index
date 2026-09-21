@@ -146,6 +146,10 @@ When the model encounters a reusable future need, the shipped workspace/tool/ski
 - Basis: explicit + structural.
 - Confidence: high.
 - Caveats: memory distillation, self-editing and file writing are not credited alone. The positive mapping rests on the prospective adaptation loop that introduces durable reusable skills/functions into future execution.
+- External distinction: recurring environmental events, reusable workflow patterns, newly learned techniques and user-taught practices that matter beyond the present conversation.
+- Future / prospective distinction: the selected adaptation is encoded for later conversations, scheduled times or future events rather than only repairing the current turn.
+- Adaptation option generated: create or revise a persistent workspace skill and/or author a new durable Inngest cron/event/multi-step function.
+- Path back into current capability / S3: later prompt construction loads changed skills; the sidecar hot-loads changed functions, whose future execution can act directly or emit `agent.message.received` back into Utah's operational loop.
 
 ## S5 — Policy and identity
 
