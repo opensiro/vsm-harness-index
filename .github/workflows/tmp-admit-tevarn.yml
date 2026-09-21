@@ -1,0 +1,73 @@
+name: temporary Tevarn admission renderer
+
+on:
+  push:
+    branches:
+      - admit/tevarn-20260922
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Promote Tevarn sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/tevarn.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed\n'
+          if text.count(old) != 1:
+              raise SystemExit('expected exactly one proposed Tevarn status')
+          assessment.write_text(text.replace(old, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          ctext = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|tevarn|' in ctext:
+              raise SystemExit('Tevarn already exists in catalog')
+          ctext += '\n188|tevarn|Tevarn|https://github.com/wu1w/tevarn|2026-07-04T15:53:27Z|index-addition|e5e8e204ca2baf8ff671104ab6bf5529d40213ef|2026-09-22\n'
+          catalog.write_text(ctext, encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          stext = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|tevarn|' in stext:
+              raise SystemExit('Tevarn already exists in signatures')
+          signature = ('Tevarn closes autonomous model/tool S1 and CEO/steward S3 whole-workforce regulation over assignments, budgets, capabilities, failures and results; queue/concurrency controls do not establish S2, review lacks independent S3* access, heuristic memory does not close S4, and strategic direction returns through owner-governed S5.')
+          stext += f'\n188|tevarn|{signature}\n'
+          signatures.write_text(stext, encoding='utf-8')
+          PY
+      - name: Regenerate deterministic views
+        shell: bash
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate generated state
+        shell: bash
+        run: |
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Commit admission
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/tevarn.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
+          git commit -m 'admit: add Tevarn from reviewed standalone assessment'
+          git push origin HEAD:admit/tevarn-20260922
