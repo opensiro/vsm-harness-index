@@ -175,3 +175,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 174|tinyagi|TinyAGI|https://github.com/TinyAGI/tinyagi|2026-02-09T00:34:11Z|index-addition|2db3a03a891b302c460f624d6c5a0523b8aa3528|2026-09-21
 175|ouroboros|Ouroboros|https://github.com/razzant/ouroboros|2026-02-11T22:02:13Z|index-addition|86806ee123ce8e26cc063cc1a618f975eea64f26|2026-09-21
 176|aios|AIOS|https://github.com/agiresearch/AIOS|2024-01-15T03:52:41Z|index-addition|292d98f78c835499df18cdb6de6325bba1895862|2026-09-16
+177|ecc|Everything Claude Code (ECC)|https://github.com/affaan-m/ECC|2026-01-18T00:51:51Z|index-addition|2b6e839771e53096d8451a213d40dc64ec8acac0|2026-09-21
