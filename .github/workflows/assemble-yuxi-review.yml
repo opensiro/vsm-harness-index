@@ -1,0 +1,39 @@
+name: assemble Yuxi review
+
+on:
+  push:
+    branches:
+      - assessment/yuxi-159
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/yuxi-159
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate proposed-assessment metrics
+        run: python scripts/render_metrics.py
+      - name: Validate review tree
+        run: |
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit generated review artifacts and remove assembler
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/assemble-yuxi-review.yml
+          git add METRICS.md data/metrics.json
+          git commit -m 'chore: finalize Yuxi standalone review'
+          git push origin HEAD:assessment/yuxi-159
