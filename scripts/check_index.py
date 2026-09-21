@@ -5,7 +5,7 @@ import csv
 from datetime import date
 from pathlib import Path
 from validate_tldr import SEMVER_RE, load_assessments, validate_assessment
-from render_tldr import render_tldr, render_rankings
+from render_tldr import render_tldr, render_rankings, render_temporal
 
 CATALOG_FIELDS = [
     "catalog_position",
@@ -229,10 +229,14 @@ def main() -> int:
         if int(row["catalog_position"]) != int(by_id[row["harness_id"]]["catalog_position"]):
             raise SystemExit(f"{row['harness_id']}: signature position mismatch")
 
-    generated = {repo / "TLDR.md": render_tldr(repo), repo / "RANKINGS.md": render_rankings(repo)}
+    generated = {
+        repo / "TLDR.md": render_tldr(repo),
+        repo / "RANKINGS.md": render_rankings(repo),
+        repo / "analytics" / "temporal.md": render_temporal(repo),
+    }
     for path, expected in generated.items():
         if not path.exists() or path.read_text(encoding="utf-8") != expected:
-            raise SystemExit(f"{path.name} is stale; run scripts/render_tldr.py")
+            raise SystemExit(f"{path.relative_to(repo)} is stale; run scripts/render_tldr.py")
     proposed_count = sum(1 for row in assessments.values() if row["status"] == "proposed")
     print(
         f"Validated {len(canonical_assessments)} canonical assessment(s), {proposed_count} proposed intake assessment(s), "
