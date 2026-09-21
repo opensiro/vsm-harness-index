@@ -1,0 +1,56 @@
+name: rebuild nanobot review
+
+on:
+  push:
+    branches:
+      - assessment/nanobot
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Normalize lifecycle to review layer
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('assessments/nanobot.md')
+          text = p.read_text()
+          text = text.replace('assessment_changed_at: 2026-09-20\nstatus: included\n', 'status: proposed\n', 1)
+          if 'status: proposed\n' not in text:
+              raise SystemExit('failed to normalize nanobot review lifecycle')
+          p.write_text(text)
+          PY
+      - name: Regenerate review projections
+        run: |
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate review tree
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit review tree
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'assessment: normalize nanobot standalone review lifecycle'
+          git push
+      - name: Remove temporary assembler
+        run: |
+          git rm .github/workflows/rebuild-nanobot-review.yml
+          git commit -m 'chore: remove nanobot review assembler'
+          git push
