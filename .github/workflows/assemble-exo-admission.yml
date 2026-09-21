@@ -1,0 +1,72 @@
+name: assemble Exo admission
+
+on:
+  push:
+    branches:
+      - admit-exo
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Promote Exo and append canonical provenance
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('assessments/exo.md')
+          text = p.read_text()
+          needle = 'assessment_procedure_version: 0.3.5\nstatus: proposed\n'
+          repl = 'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-21\nstatus: included\n'
+          if needle not in text:
+              raise SystemExit('unexpected Exo frontmatter state')
+          p.write_text(text.replace(needle, repl, 1))
+
+          catalog = Path('data/catalog.psv')
+          c = catalog.read_text()
+          expected = '180|cowagent|CowAgent|https://github.com/zhayujie/CowAgent|2022-08-07T08:33:41Z|index-addition|7c55a61e1bccb82c99d97a4a436f598c079f7c9d|2026-09-21'
+          if not c.rstrip().endswith(expected):
+              raise SystemExit('catalog tail changed; rebuild on current main')
+          catalog.write_text(c.rstrip('\n') + '\n181|exo|Exo|https://github.com/exoharness/exo|2026-05-20T06:21:50Z|index-addition|6164288895a5851b2118492c880fb37b543e2ac6|2026-09-21\n')
+
+          sig = Path('data/signatures.psv')
+          s = sig.read_text()
+          if '\n181|exo|' in s or s.startswith('181|exo|'):
+              raise SystemExit('Exo signature already present')
+          sig.write_text(s.rstrip('\n') + '\n181|exo|Exo owns autonomous S1, parent-governed whole-host S3, and autonomous-plus-parent prospective adaptation and identity/policy paths for S4/S5; future lineage/cloning coordination is not credited as S2, and durable event provenance does not establish independent S3*.\n')
+          PY
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate assembled admission
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit canonical admission
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'admit: add Exo from reviewed standalone assessment'
+          git push
+      - name: Remove temporary assembler
+        run: |
+          git rm .github/workflows/assemble-exo-admission.yml
+          git commit -m 'chore: remove Exo admission assembler'
+          git push
