@@ -1,0 +1,35 @@
+name: render-quarter-projection
+
+on:
+  push:
+    branches:
+      - projection-quarter-granularity
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Render generated temporal views
+        run: python scripts/render_tldr.py
+      - name: Check temporal unit tests
+        run: python -m unittest tests.test_temporal_projection -v
+      - name: Commit generated views
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add TLDR.md RANKINGS.md analytics/temporal.md
+          if git diff --cached --quiet; then
+            echo "Generated views already current."
+            exit 0
+          fi
+          git commit -m "projection: regenerate quarter-native views"
+          git push
