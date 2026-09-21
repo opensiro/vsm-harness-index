@@ -5,7 +5,7 @@
 
 ## Frozen revisions
 
-- Experimental Methodology: `opensiro/vsm-harness-skills@d8588a1ffd73e9787ca826222c8ff7f31da3ec62`
+- Experimental Methodology: `opensiro/vsm-harness-skills@947b42e77551ed1a86456f8a812c72a96a36506a`
   - `experiments/self-organizing-autonomy/SPEC.md`
   - `experiments/self-organizing-autonomy/FIXTURES.md`
 - Canonical Index baseline snapshot: `opensiro/vsm-harness-index@28e91dd2fb66675040bfdd9b6041c3bfbe15ed28`
@@ -29,6 +29,21 @@ S5  —
 
 This vector is input only. The experiment does not modify it.
 
+## Released-`A` eligibility gate
+
+The pinned experimental Methodology requires released `A` before a function can advance to the candidate `S` test.
+
+For this fixture:
+
+- S1 (`A`) — eligible;
+- S2 (`A`) — eligible;
+- S3 (`A`) — eligible;
+- S3* (`C`) — **not eligible** for `candidate-witness`; use it as a constructor/audit counterexample under the frozen baseline;
+- S4 (`A`) — eligible;
+- S5 (`—`) — not eligible because the released function/ownership prerequisite is absent.
+
+If primary evidence discovered during this experiment suggests that `S3*=C` or `S5=—` is wrong, record a separate canonical reassessment question. Do not silently rewrite the frozen baseline or use experimental `S` to jump over released ownership classification.
+
 ## Declared boundary
 
 Use the same system-in-focus and operating boundary as the frozen canonical assessment:
@@ -46,7 +61,7 @@ Do not enlarge the boundary to repository-development/CI activity or downstream 
 
 ## Frozen experimental question
 
-For each released positive VSM function, determine whether primary evidence establishes a transition in which:
+For each released-`A`-eligible VSM function, determine whether primary evidence establishes a transition in which:
 
 1. the existing organizational/regulatory repertoire was materially insufficient for in-domain variety;
 2. Scion itself recognized that insufficiency;
@@ -60,23 +75,24 @@ A function can satisfy or fail this test independently of every other function.
 
 ## Required per-function screen
 
-Explicitly screen:
+Explicitly record all six released baseline rows, but only released-`A` rows are eligible for `candidate-witness`:
 
-| Function | Released baseline | Function-specific question |
+| Function | Released baseline | Eligibility / function-specific question |
 | --- | --- | --- |
-| S1 | `A` | Is there a concrete operational disturbance for which the existing action/tool/delegation repertoire was insufficient, followed by endogenous reconstruction of the operational repertoire and later use of that reconstruction to close the same variety? |
-| S2 | `A` | Is there a concrete inter-specialist dependency/interface/deadlock disturbance that the existing team-coordination repertoire could not attenuate, followed by endogenous reconstruction of role/dependency/coordination organization and demonstrated later closure? |
-| S3 | `A` | Is there a current whole-assistant/team control disturbance that exceeded existing priority/retry/reallocation/team-control repertoire, followed by endogenous reconstruction of current-control organization and subsequent closure? |
-| S3* | `C` | Does Scion itself construct the missing independent complementary-audit organization at runtime, preserve sufficient independence, integrate findings into corrective control, and do so because the prior audit repertoire was insufficient? |
-| S4 | `A` | Is there a disturbance showing that the existing Observe → Reflect → Coach/adaptation repertoire itself was insufficient, followed by endogenous reconstruction of how future/external variety is sensed, modeled or translated into later capability? |
+| S1 | `A` | Eligible. Is there a concrete operational disturbance for which the existing action/tool/delegation repertoire was insufficient, followed by endogenous reconstruction of the operational repertoire and later use of that reconstruction to close the same variety? |
+| S2 | `A` | Eligible. Is there a concrete inter-specialist dependency/interface/deadlock disturbance that the existing team-coordination repertoire could not attenuate, followed by endogenous reconstruction of role/dependency/coordination organization and demonstrated later closure? |
+| S3 | `A` | Eligible. Is there a current whole-assistant/team control disturbance that exceeded existing priority/retry/reallocation/team-control repertoire, followed by endogenous reconstruction of current-control organization and subsequent closure? |
+| S3* | `C` | Ineligible under `SPEC.md §3.1`. Record `no-candidate-witness` under the frozen baseline. Inspect audit evidence only as a constructor/independence control; a possible baseline error belongs in normal reassessment. |
+| S4 | `A` | Eligible. Is there a disturbance showing that the existing Observe → Reflect → Coach/adaptation repertoire itself was insufficient, followed by endogenous reconstruction of how future/external variety is sensed, modeled or translated into later capability? |
+| S5 | `—` | Ineligible under the function/ownership prerequisite. Do not run the candidate `S` test unless a separate canonical reassessment first establishes released `A`. |
 
-S5 is `—` at the released baseline and is outside the required positive-function screen. If evidence appears to establish a released-baseline error, record it as a canonical reassessment question rather than silently turning the `S` experiment into a baseline rewrite.
-
-For each required row record exactly one:
+For eligible rows record exactly one:
 
 - `candidate-witness`
 - `no-candidate-witness`
 - `insufficient-evidence`
+
+For S3* under this frozen `C` baseline record `no-candidate-witness` for the experimental screen and preserve the released constructor interpretation. For S5 record the released ineligibility separately from the eligible-function result set.
 
 A `candidate-witness` must then receive the complete candidate `S` test from the pinned Skills `SPEC.md`.
 
@@ -148,7 +164,10 @@ Each independent reviewer must produce:
 
 - reviewer/context declaration;
 - frozen revisions and boundary confirmation;
-- full per-function screening table for S1, S2, S3, S3*, S4;
+- full baseline table for S1, S2, S3, S3*, S4, S5, including eligibility;
+- complete screening for eligible S1, S2, S3 and S4;
+- the fixed S3* `C` prerequisite result plus any separate reassessment question;
+- the S5 `—` prerequisite result plus any separate reassessment question;
 - for every `candidate-witness`, the complete `SPEC.md` test fields;
 - primary evidence links;
 - counter-evidence and missing evidence;
@@ -159,7 +178,7 @@ Each independent reviewer must produce:
   - `does-not-support-S`
   - `inconclusive`
 
-The overall finding must identify which function-specific witness, if any, carries it.
+The overall finding must identify which eligible function-specific witness, if any, carries it.
 
 ## Independence and publication boundary
 
