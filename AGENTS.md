@@ -4,12 +4,13 @@ This file is a routing surface for coding/research agents working in `opensiro/v
 
 ## Start here
 
-1. Read [README.md](README.md) for this repository's source-of-truth boundary.
-2. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the live contribution workflow and acceptance contract.
-3. For plain-language / visual orientation only, see [opensiro.com](https://opensiro.com) and the [VSMLite / VSM poster](https://opensiro.com/vsm.html). The website is non-normative.
-4. Before every assessment row, read current `main` of:
+1. Read [README.md](README.md) for the repository overview and source-of-truth boundary.
+2. Read [INDEXING.md](INDEXING.md) for Index-owned lifecycle, provenance, reassessment bookkeeping, and publication rules.
+3. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the live contribution workflow.
+4. For plain-language / visual orientation only, see [opensiro.com](https://opensiro.com) and the [VSMLite / VSM poster](https://opensiro.com/vsm.html). The website is non-normative.
+5. Before every semantic assessment row, read current `main` of:
    - `opensiro/vsm-harness-profile` for normative VSM semantics;
-   - `opensiro/vsm-harness-skills` for the active assessment methodology.
+   - `opensiro/vsm-harness-skills` for the active assessment Methodology.
 
 ## Assessment task rule
 
@@ -23,29 +24,31 @@ python scripts/assessment_preflight.py <assessment-batch-issue-number>
 
 Use `--json` when another tool or agent needs a machine-readable envelope. The preflight resolves the current `NEXT` row, frozen repository/ref, suggested assessment path, active Profile/Methodology contract, task boundaries, and final validation commands. It fails closed if the Manual assessment board and frozen candidate table disagree.
 
-The preflight is routing/tooling only. It does not perform VSM interpretation and does not replace reading current Profile/Methodology `main`.
+The preflight is Index routing/tooling only. It does not perform VSM interpretation and does not replace reading current Profile/Methodology.
 
 - Do not take a later queued row.
 - Do not silently replace the issue's frozen `review_ref` with a newer upstream head.
-- Fix the first-party system boundary before mapping functions.
-- Map the organizational function first; classify ownership/autonomy second.
-- Do not infer S2/S3/S3*/S4/S5 from component names or feature names.
-- Treat `assessments/<harness_id>.md` as the repository-relative research artifact; `TLDR.md` and `RANKINGS.md` are derived views.
+- Use the assessment artifact format and classification procedure from the active Skills Methodology.
+- Treat `assessments/<harness_id>.md` as the repository-relative research artifact; `TLDR.md`, `RANKINGS.md`, and other views are derived materializations.
 
-If the issue's explicit task contract differs from a generic instruction here, follow the issue for the bounded work item while preserving the canonical Profile / Methodology boundaries above.
+If the issue's explicit task contract differs from a generic instruction here, follow the issue for the bounded work item while preserving the canonical Profile / Methodology / Index ownership boundaries above.
 
 ## Before completion
 
-Use the checks required by the current issue and methodology. For canonical Index changes, the repository-level final gate is:
+Use the checks required by the current issue and Methodology. For canonical Index changes, the repository-level final gate is:
 
 ```bash
 python scripts/check_index.py
 ```
 
-Run any additional assessment-contract or rendering checks required by the active methodology / contribution workflow before declaring the work complete.
+Run the version-pinned Skills assessment-contract checker and any additional rendering checks required by the active contribution workflow before declaring the work complete.
 
 ## Routing outside Index
 
-Repository-local assessment, catalog/provenance, signatures, and generated Index work stays here.
+Repository-local assessment instances, catalog/provenance, reassessment history, signatures, and generated Index work stay here.
+
+Changes to assessment format, publication-state classification, synthesis semantics, or ranking projection belong in `opensiro/vsm-harness-skills`.
+
+Changes to VSM semantics belong in `opensiro/vsm-harness-profile`.
 
 Questions about shared contributor authority, escalation, cross-repository coordination, milestone sequencing, or the bounded VSM Harness OSS control plane route to [`opensiro/vsm-oss-organization`](https://github.com/opensiro/vsm-oss-organization) and its `CONTRIBUTOR_START.md`.
