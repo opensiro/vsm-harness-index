@@ -68,6 +68,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="agent-laboratory"></a>[Agent Laboratory](https://github.com/SamuelSchmidgall/AgentLaboratory) | 2025-Q1 | 2/6 | 1/5 | 0 | 1 | 1 | `A — — ? A(P) —` |
 | 5 | <a id="goose"></a>[Goose](https://github.com/aaif-goose/goose) | 2024-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="flock"></a>[Flock](https://github.com/Onelevenvy/flock) | 2024-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
+| 5 | <a id="yuxi"></a>[Yuxi](https://github.com/xerrors/Yuxi) | 2024-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="letta"></a>[Letta](https://github.com/letta-ai/letta) | 2023-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="metagpt"></a>[MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 2023-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="lobehub"></a>[LobeHub](https://github.com/lobehub/lobehub) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A A — C — —` |
