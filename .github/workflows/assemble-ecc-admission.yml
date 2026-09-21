@@ -1,0 +1,86 @@
+name: assemble ECC admission
+
+on:
+  push:
+    branches:
+      - admit-ecc
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-ecc
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Promote ECC and append canonical provenance
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/ecc.md')
+          text = assessment.read_text(encoding='utf-8')
+          needle = 'assessment_procedure_version: 0.3.5\nstatus: proposed\n'
+          replacement = 'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-21\nstatus: included\n'
+          if needle not in text:
+              raise SystemExit('ECC assessment is not in expected proposed state')
+          assessment.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          if '|ecc|' in catalog_text:
+              raise SystemExit('ECC already present in catalog')
+          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          if not rows[-1].startswith('176|'):
+              raise SystemExit(f'Expected catalog position 176 before admission, got: {rows[-1]}')
+          catalog_row = '177|ecc|Everything Claude Code (ECC)|https://github.com/affaan-m/ECC|2026-01-18T00:51:51Z|index-addition|2b6e839771e53096d8451a213d40dc64ec8acac0|2026-09-21'
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + catalog_row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_text = signatures.read_text(encoding='utf-8')
+          if '|ecc|' in sig_text:
+              raise SystemExit('ECC already present in signatures')
+          signature = ('177|ecc|ECC runs autonomous managed coding sessions, exposes constructor-owned collision attenuation and whole-team control with an optional parent-operated mode, closes independent corrective review through Santa Method, and promotes learned instincts into future operation through autonomous and parent-governed S4 paths; no repository-local S5 identity/ultimate-policy loop is established.')
+          signatures.write_text(sig_text.rstrip('\n') + '\n' + signature + '\n', encoding='utf-8')
+          PY
+
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate assembled admission
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Commit canonical admission
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/ecc.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
+          git commit -m 'admit: assemble ECC canonical artifacts'
+          git push origin HEAD:admit-ecc
+
+      - name: Remove temporary assembler
+        run: |
+          rm .github/workflows/assemble-ecc-admission.yml
+          git add .github/workflows/assemble-ecc-admission.yml
+          git commit -m 'chore: remove ECC admission assembler'
+          git push origin HEAD:admit-ecc
