@@ -181,3 +181,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 180|cowagent|CowAgent|https://github.com/zhayujie/CowAgent|2022-08-07T08:33:41Z|index-addition|7c55a61e1bccb82c99d97a4a436f598c079f7c9d|2026-09-21
 181|exo|Exo|https://github.com/exoharness/exo|2026-05-20T06:21:50Z|index-addition|6164288895a5851b2118492c880fb37b543e2ac6|2026-09-21
 182|gagans-agent-os|agent-os|https://github.com/gagans23/agent-os|2026-05-21T17:40:37Z|index-addition|d318787db1fce4163e470ac1c94f5a74d667303f|2026-09-21
+183|dexto|Dexto|https://github.com/truffle-ai/dexto|2025-03-24T22:49:13Z|index-addition|ac56fbfcd8e7a682fc0e96c690e5b6362980181d|2026-09-21
