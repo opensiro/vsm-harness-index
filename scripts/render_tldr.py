@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Render cohort signatures and deterministic autonomy rankings."""
+"""Render cohort signatures, autonomy rankings, and temporal projections."""
 from __future__ import annotations
 import argparse, csv
+from collections import defaultdict
+from datetime import date
 from pathlib import Path
 from validate_tldr import load_assessments, validate_assessment, vector
+
+
+FUNCTIONS = ("S1", "S2", "S3", "S3*", "S4", "S5")
 
 
 def read_psv(path: Path) -> list[dict[str, str]]:
@@ -45,6 +50,22 @@ def year(catalog: dict[str, str]) -> str:
     return catalog["repository_created_at"][:4]
 
 
+def quarter_from_timestamp(timestamp: str) -> str:
+    """Derive a calendar quarter from an ISO-style repository timestamp."""
+    month = int(timestamp[5:7])
+    if not 1 <= month <= 12:
+        raise ValueError(f"invalid month in repository_created_at: {timestamp}")
+    return f"Q{((month - 1) // 3) + 1}"
+
+
+def quarter(catalog: dict[str, str]) -> str:
+    return quarter_from_timestamp(catalog["repository_created_at"])
+
+
+def period(catalog: dict[str, str]) -> str:
+    return f"{year(catalog)}-{quarter(catalog)}"
+
+
 def data(repo: Path):
     catalog = read_psv(repo / "data" / "catalog.psv")
     by_id = {row["harness_id"]: row for row in catalog}
@@ -68,15 +89,15 @@ def render_tldr(repo: Path) -> str:
     lines = [
         "# VSM Harness TL;DR",
         "",
-        "Cohort-relative signatures derived from standalone assessments. Display order is newest-first by GitHub repository creation time; signature synthesis still follows ascending catalog order.",
+        "Cohort-relative signatures derived from standalone assessments. Display order is newest-first by GitHub repository creation time; Period is derived from that same timestamp as `YYYY-QN`. Signature synthesis still follows ascending catalog order.",
         "",
-        "| Harness | Year | S1 | S2 | S3 | S3* | S4 | S5 | Signature |",
+        "| Harness | Period | S1 | S2 | S3 | S3* | S4 | S5 | Signature |",
         "| --- | ---: | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for _, catalog, assessment, signature in rows:
         states = vector(assessment)
         label = anchored_label(catalog)
-        lines.append("| " + " | ".join([label, year(catalog), *states, escape(signature)]) + " |")
+        lines.append("| " + " | ".join([label, period(catalog), *states, escape(signature)]) + " |")
     lines += ["", "Assessments are repository-relative; signatures are cohort-relative and may change when the ordered cohort changes.", ""]
     return "\n".join(lines)
 
@@ -103,9 +124,9 @@ def render_rankings(repo: Path) -> str:
     lines = [
         "# VSM Harness Autonomy Rankings",
         "",
-        "This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted scores. Within the same rank, newer repositories are displayed first.",
+        "This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted scores. Within the same rank, newer repositories are displayed first. Period is derived from GitHub repository creation time and does not affect rank.",
         "",
-        "| Rank | Harness | Year | Agent-owned | Metasystem A | C | P | ? | Vector |",
+        "| Rank | Harness | Period | Agent-owned | Metasystem A | C | P | ? | Vector |",
         "| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     rank = 0
@@ -117,20 +138,118 @@ def render_rankings(repo: Path) -> str:
             rank += 1
             previous_key = key
         label = anchored_label(catalog)
-        lines.append(f"| {rank} | {label} | {year(catalog)} | {total_a}/6 | {meta_a}/5 | {c_count} | {p_count} | {unknown} | `{' '.join(states)}` |")
+        lines.append(f"| {rank} | {label} | {period(catalog)} | {total_a}/6 | {meta_a}/5 | {c_count} | {p_count} | {unknown} | `{' '.join(states)}` |")
     lines.append("")
+    return "\n".join(lines)
+
+
+def snapshot_date(rows) -> date:
+    """Use canonical intake provenance rather than wall-clock time for rendering."""
+    if not rows:
+        raise ValueError("cannot render temporal projection for an empty included cohort")
+    return max(date.fromisoformat(catalog["pinned_at"]) for _, catalog, _, _ in rows)
+
+
+def group_temporal(rows, key_fn) -> dict[str, list[list[str]]]:
+    groups: dict[str, list[list[str]]] = defaultdict(list)
+    for _, catalog, assessment, _ in rows:
+        groups[key_fn(catalog)].append(vector(assessment))
+    return dict(groups)
+
+
+def share(count: int, total: int) -> str:
+    return f"{count}/{total} ({100.0 * count / total:.1f}%)"
+
+
+def render_temporal_table(
+    groups: dict[str, list[list[str]]],
+    *,
+    base: bool,
+    current_key: str,
+    current_suffix: str,
+) -> list[str]:
+    lines = [
+        "| Period | N | S1 | S2 | S3 | S3* | S4 | S5 |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for key in sorted(groups):
+        vectors = groups[key]
+        total = len(vectors)
+        counts = []
+        for index in range(len(FUNCTIONS)):
+            states = [states[index] for states in vectors]
+            if base:
+                count = sum(base_state(state) == "A" for state in states)
+            else:
+                count = sum(state == "A" for state in states)
+            counts.append(share(count, total))
+        label = f"{key} {current_suffix}" if key == current_key else key
+        lines.append("| " + " | ".join([label, str(total), *counts]) + " |")
+    return lines
+
+
+def render_temporal(repo: Path) -> str:
+    rows = data(repo)
+    as_of = snapshot_date(rows)
+    current_year = str(as_of.year)
+    current_period = f"{as_of.year}-{quarter_from_timestamp(as_of.isoformat())}"
+    annual = group_temporal(rows, year)
+    quarterly = group_temporal(rows, period)
+
+    lines = [
+        "# VSM Harness Temporal Projection",
+        "",
+        "Deterministic descriptive cohorts derived from canonical included assessments and GitHub repository creation time.",
+        "",
+        f"- **Projection as-of:** {as_of.isoformat()} (latest `pinned_at` in the included cohort)",
+        "- **Temporal source:** `data/catalog.psv:repository_created_at`",
+        "- **Quarter convention:** Q1 Jan-Mar, Q2 Apr-Jun, Q3 Jul-Sep, Q4 Oct-Dec",
+        f"- **Current year:** {current_year} is marked **YTD**",
+        f"- **Current quarter:** {current_period} is marked **partial**",
+        "",
+        "Repository creation time selects cohorts only. VSM states come from standalone canonical assessments. These projections describe ownership arrangements; they are not product-quality, maturity, or viability rankings.",
+        "",
+        "## Quarterly strict `A` share",
+        "",
+        "Strict counts include literal `A` only; `A(P)` remains visible as a distinct state and does not count here.",
+        "",
+        *render_temporal_table(quarterly, base=False, current_key=current_period, current_suffix="(partial)"),
+        "",
+        "## Quarterly base `A` share",
+        "",
+        "Base ownership follows ranking semantics: `A(P)` collapses to base `A`; `C`, `C(P)`, `P`, `—`, and `?` receive no fractional autonomous score.",
+        "",
+        *render_temporal_table(quarterly, base=True, current_key=current_period, current_suffix="(partial)"),
+        "",
+        "## Annual strict `A` share",
+        "",
+        *render_temporal_table(annual, base=False, current_key=current_year, current_suffix="(YTD)"),
+        "",
+        "## Annual base `A` share",
+        "",
+        *render_temporal_table(annual, base=True, current_key=current_year, current_suffix="(YTD)"),
+        "",
+        "The current year and quarter are incomplete observation windows. Compare closed periods directly; treat YTD/partial rows as provisional temporal slices.",
+        "",
+    ]
     return "\n".join(lines)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(); parser.add_argument("--check", action="store_true"); args = parser.parse_args()
     repo = Path(__file__).resolve().parents[1]
-    outputs = {repo / "TLDR.md": render_tldr(repo), repo / "RANKINGS.md": render_rankings(repo)}
+    outputs = {
+        repo / "TLDR.md": render_tldr(repo),
+        repo / "RANKINGS.md": render_rankings(repo),
+        repo / "analytics" / "temporal.md": render_temporal(repo),
+    }
     if args.check:
         stale = [str(path) for path, text in outputs.items() if not path.exists() or path.read_text(encoding="utf-8") != text]
         if stale: raise SystemExit("stale generated file(s): " + ", ".join(stale))
     else:
-        for path, text in outputs.items(): path.write_text(text, encoding="utf-8")
+        for path, text in outputs.items():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text, encoding="utf-8")
     return 0
 
 
