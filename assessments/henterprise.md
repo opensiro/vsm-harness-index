@@ -12,10 +12,10 @@ assessment_changed_at: 2026-09-19
 status: included
 autonomy_s1: A
 autonomy_s2: C
-autonomy_s3: C
+autonomy_s3: A
 autonomy_s3_star: C
-autonomy_s4: C
-autonomy_s5: C
+autonomy_s4: A
+autonomy_s5: A
 ---
 
 # Henterprise
@@ -54,15 +54,16 @@ Primary evidence:
 - [`pmo/head-of-pmo/SKILL.md`](https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/pmo/head-of-pmo/SKILL.md) and [`pmo/portfolio-governance/SKILL.md`](https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/pmo/portfolio-governance/SKILL.md) — portfolio capacity, gates, current commitments and resource contention.
 - [`security/chief-information-security-officer/SKILL.md`](https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/security/chief-information-security-officer/SKILL.md) and [`legal-risk/SOUL.md`](https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/legal-risk/SOUL.md) — independent reviewer-class authority and escalation.
 - [`corporate-strategy/chief-strategy-officer/SKILL.md`](https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/corporate-strategy/chief-strategy-officer/SKILL.md) and [`corporate-strategy/scenario-planning/SKILL.md`](https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/corporate-strategy/scenario-planning/SKILL.md) — outside/future strategy and adaptation options.
+- [`finance/chief-financial-officer/SKILL.md`](https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/finance/chief-financial-officer/SKILL.md) — budget of record, capital allocation, spend authority and financial return path.
 - [`executive/agent-hierarchy/SKILL.md`](https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/executive/agent-hierarchy/SKILL.md) — explicit builder/reviewer separation, authority categories, write-surface conflict control and a portable organization-construction method.
 
 ## Operational model
 
 Hermes supplies the underlying autonomous model/tool loop. Henterprise supplies the organizational specialization, decision procedures, escalation relationships, reviewer independence, and role-specific constraints used by that loop.
 
-Departmental profile agents can directly produce domain-specific judgments and work products. In the per-department mode, the repository also exposes explicit cross-profile organizational relationships. However, Henterprise does not ship a durable shared control plane that automatically transports every handoff, stores portfolio or strategy state, routes artifacts to reviewer profiles, monitors indicators, or applies returned decisions across all profiles.
+The assessment must treat Henterprise's documented deployment modes separately rather than requiring every mode to provide the same topology. In the supported one-profile mode, one autonomous Hermes actor receives the complete Henterprise skill tree and the Executive persona as the organization-wide soul. S3, S4 and S5 decision paths can therefore be selected, exercised and returned inside the same autonomous operating context; they do not require inter-profile RPC merely because Henterprise also documents a multi-profile deployment.
 
-The assessment therefore distinguishes autonomous local operation from higher-level constructor paths. S2-S5 are positive because the repository supplies function-specific decision/feedback surfaces, not because generic Hermes extensibility could be programmed into those functions. They remain `C` because the cross-profile actor/transport/state/closure needed for autonomous whole-organization execution still has to be composed by the operator or surrounding runtime.
+The separate-profile mode remains material where the VSM function itself depends on distinct operational or reviewer actors. S2 requires distinct S1 units and S3* requires sufficiently independent complementary access. Henterprise documents those distinct departmental/reviewer profiles, but does not ship a durable shared control plane that automatically transports commitments, routes review artifacts/findings, or enforces returned decisions across those profiles. Those two functions therefore remain constructor paths.
 
 ## S1 — Operations
 
@@ -93,26 +94,27 @@ The assessment therefore distinguishes autonomous local operation from higher-le
 - Decision owner: a designated PMO/operations agent in the supplied organizational design, but the repository does not autonomously transport and persist those commitments across separate Hermes profiles.
 - Supporting / enforcement mechanisms: department boundaries, explicit dependency fields, escalation instructions, and related-skill routing.
 - Closure path: Henterprise defines the S2-specific commitment/feedback path, but the actual cross-profile message/state transport and continuing shared commitment ledger require composition.
-- Why this is / is not agent-owned: the intended coordinator is agentic, but Henterprise does not itself close the organizational loop in the documented multi-profile mode; this therefore meets the constructor rather than autonomous threshold.
+- Why this is / is not agent-owned: the intended coordinator is agentic, but the function requires distinct S1 units and Henterprise does not itself close their organizational loop in the documented multi-profile mode; this therefore meets the constructor rather than autonomous threshold.
 - Evidence: `pmo/dependency-and-risk-management/SKILL.md`; `operations/chief-operating-officer/SKILL.md` for cross-functional handoff responsibility.
 - Basis: `explicit` and `structural`.
 - Confidence: high.
-- Caveats: the positive mapping does not rely on ordinary delegation or skill cross-references; it relies on the explicit dependency/handoff disturbance and its coordination procedure.
+- Caveats: the one-profile mode does not upgrade S2 because multiple departmental skill lenses inside one actor are not by themselves distinct S1 operational units at this recursion level.
 
 ## S3 — Inside-and-now control
 
-- State: `C`.
+- State: `A`.
 - Function: regulate current organization-wide commitments, portfolio capacity, priorities, and intervention on behalf of the whole.
 - Disturbance / variety regulated: portfolio overcommitment, excessive work in progress, competing initiatives, resource contention, recurring execution failures, and cross-functional priority conflicts.
 - Whole-system current view: the PMO is explicitly tasked with making organization-wide delivery capacity visible; the Chief Executive receives cross-functional considerations and owns allocation of capital and attention.
 - Current-control decision scope: decide which work proceeds, draw the line at actual capacity, stop/pause/redirect work at stage gates, resolve resource contention, and arbitrate present cross-functional trade-offs.
 - Decisive decision or feedback right: select which current commitments the organization carries and which are displaced, stopped, or redirected.
-- Decision owner: the designated PMO/COO/Chief Executive agent according to the concrete current-control issue.
+- Decision owner: the autonomous Hermes actor applying the PMO/COO/Chief Executive role appropriate to the current-control issue.
+- A witness mode: the documented one-profile-for-the-whole-organization deployment, where the same autonomous Hermes actor can load the complete Henterprise tree under the Executive organization-wide soul.
 - Supporting / enforcement mechanisms: stage-gate procedures, capacity measurement, portfolio records, operating cadence, owned artifacts and escalation conventions.
-- Closure path: Henterprise specifies that gates can stop, pause, or redirect work and that each approval should displace another commitment when capacity is fixed; applying those decisions across separately running departmental profiles still requires a composed shared state/transport layer.
-- Why this is / is not agent-owned: the S3-specific decision rights and agent roles are explicit, but durable whole-system execution of their decisions is not closed by Henterprise alone; the standard distribution therefore exposes a constructor path.
-- Evidence: `pmo/head-of-pmo/SKILL.md`, `pmo/portfolio-governance/SKILL.md`, `operations/chief-operating-officer/SKILL.md`, and `executive/chief-executive/SKILL.md`.
-- Basis: `explicit`.
+- Closure path: whole-system capacity/commitment evidence → model-driven PMO/COO/Executive decision → stop/pause/redirect/displace/priority consequence → subsequent work in the same organization-wide agent context proceeds under that decision.
+- Why this is / is not agent-owned: the decisive portfolio/current-control judgment is model-driven and the supported single-profile mode does not require the developer to compose another actor or transport layer for the decision to govern subsequent work. The alternative multi-profile mode may need additional transport/state without negating the closed first-party witness mode.
+- Evidence: top-level `README.md`; `pmo/head-of-pmo/SKILL.md`; `pmo/portfolio-governance/SKILL.md`; `operations/chief-operating-officer/SKILL.md`; and `executive/chief-executive/SKILL.md`.
+- Basis: `explicit` and `structural`.
 - Confidence: high.
 - Caveats: resource contention at portfolio level is S3 evidence here; S2 above is established separately through cross-unit dependency/handoff regulation.
 
@@ -138,40 +140,39 @@ The assessment therefore distinguishes autonomous local operation from higher-le
 
 ## S4 — Outside-and-then intelligence
 
-- State: `C`.
-- Function: model external and prospective conditions, develop adaptation options, and return them toward present organizational capability and allocation decisions.
+- State: `A`.
+- Function: model external and prospective conditions, develop adaptation options, and return them into present organizational capability and allocation decisions.
 - Disturbance / variety regulated: changing markets, competitors, regulation, technology, partnerships, acquisition opportunities, uncertain multi-year conditions, and falsified strategic assumptions.
 - External distinction: markets, segments, competitors, regulation, technology shifts, strategic partnerships, acquisitions/divestitures, and other conditions outside current internal execution.
 - Future / prospective distinction: multi-year horizon, scenario quadrants, load-bearing uncertainties, early-warning indicators, and assumptions whose falsification should change the strategy.
 - Adaptation option generated: robust moves, contingent moves, real options, market/business entry or exit choices, build/buy/partner choices, and portfolio recommendations.
-- Path back into current capability / S3: the strategy role hands recommendations to the Chief Executive and Finance; scenario planning names actions to take now and indicators that should trigger revisiting the plan. Henterprise does not itself monitor those indicators or propagate the resulting strategy revision through persistent organization-wide state.
 - Decisive decision or feedback right: develop/revise strategic options and recommend changes when environmental assumptions or future scenarios alter the viable choice set.
-- Decision owner: the intended Corporate Strategy agent.
-- Supporting / enforcement mechanisms: scenario templates, assumption lists, indicator ownership/review cadence, related-skill routing, and executive/finance escalation.
-- Closure path: outside/future distinction → strategic option/recommendation → executive/finance handoff → intended change to present allocation/capability; the last cross-profile return remains composition-dependent.
-- Why this is / is not agent-owned: Henterprise supplies an S4-specific agent role and adaptation procedure, but no autonomous monitoring/return loop that closes the organizational adaptation cycle across profiles.
-- Evidence: `corporate-strategy/chief-strategy-officer/SKILL.md` and `corporate-strategy/scenario-planning/SKILL.md`.
-- Basis: `explicit`.
-- Confidence: high.
-- Caveats: ordinary task planning is not counted as S4; the positive path depends on explicit external/future strategy and scenario work.
+- Decision owner: the autonomous Hermes actor applying Corporate Strategy / Chief Strategy Officer reasoning.
+- A witness mode: the documented one-profile-for-the-whole-organization deployment, in which Strategy, Executive and Finance skills are reachable to the same autonomous actor.
+- Supporting / enforcement mechanisms: scenario templates, assumption lists, early-warning indicators with ownership/review cadence, cross-skill routing, Executive escalation and Finance allocation authority.
+- Closure path: external/future distinction → model-driven strategic option/recommendation → Executive/Finance decision context → present commitment, capital, budget or other capability consequence inside the same organization-wide agent loop. Scenario planning also requires an action to take now and an observable trigger for revisiting the plan.
+- Why this is / is not agent-owned: the prospective judgment and option generation are model-driven, and the documented single-profile mode supplies a first-party return path into the same actor's Executive/Finance current-control context. The Profile does not require a background monitoring daemon; indicator ownership/cadence and trigger-based revisit are supporting evidence rather than a prerequisite for a separate process.
+- Evidence: top-level `README.md`; `corporate-strategy/chief-strategy-officer/SKILL.md`; `corporate-strategy/scenario-planning/SKILL.md`; and `finance/chief-financial-officer/SKILL.md`.
+- Basis: `explicit` and `structural`.
+- Confidence: medium-high.
+- Caveats: the migration omits Headcount's stronger statement that strategy is unfinished until specific resourcing artifacts visibly move, and the alternative multi-profile deployment does not itself propagate strategy state across profiles. Neither gap defeats the closed single-profile witness mode.
 
 ## S5 — Policy and identity
 
-- State: `C`.
+- State: `A`.
 - Function: establish organizational direction, identity boundaries, and ultimate arbitration where lower-level functions cannot settle a question.
 - Disturbance / variety regulated: disagreement over what the organization is for, what it will not do, which strategy is authoritative, and cross-functional conflicts that require an organization-level rather than departmental choice.
 - Identity / ultimate-policy issue: organizational purpose/direction, explicit exclusions, strategy of record, priority stack, and final policy-level cross-functional trade-offs.
-- Ultimate authority in each claimed mode: the supplied Chief Executive agent role is designated as the internal escalation endpoint and owner of direction for the constructor path.
-- Return-to-operation path: executive decisions are required to end with concrete handoffs/owners/dates and are intended to govern subsequent departmental priorities and work; Henterprise does not persist or automatically apply that policy state across separately running profiles.
-- Decisive decision or feedback right: set direction and resolve ultimate internal policy conflicts no subordinate executive can settle.
-- Decision owner: the intended Chief Executive agent.
-- Supporting / enforcement mechanisms: Executive `SOUL.md`, `chief-executive` skill, subordinate escalation rules, strategy/priority artifacts, and return-contract conventions.
-- Closure path: identity/policy conflict → Chief Executive decision → explicit handoff/priority consequences → intended subsequent departmental operation. The final return across the multi-profile organization remains composition-dependent.
-- Why this is / is not agent-owned: Henterprise supplies a function-specific autonomous role and decision surface, but not a complete first-party organizational runtime that closes the returned policy across all departmental profiles; the state is therefore `C`.
-- Evidence: `executive/SOUL.md`, `executive/chief-executive/SKILL.md`, and `corporate-strategy/chief-strategy-officer/SKILL.md` for final strategy ownership.
-- Basis: `explicit`.
-- Confidence: high.
-- Caveats: the Executive persona says genuinely owner-reserved matters should be returned to the owner, but the repository does not define a sufficiently specific identity/ultimate-policy parent trigger and returned decision loop to publish `P` or `C(P)`. Generic human installation, invocation, or override is not enough.
+- Decisive decision or feedback right: set direction, own the strategy of record and priority stack, and resolve ultimate internal policy conflicts no subordinate executive can settle.
+- Decision owner: the autonomous Hermes actor operating under the supplied Executive persona / Chief Executive role.
+- A witness mode: the documented one-profile-for-the-whole-organization deployment, for which Henterprise explicitly identifies `executive/SOUL.md` as the natural organization-wide soul.
+- Supporting / enforcement mechanisms: Executive `SOUL.md`, `chief-executive` skill, subordinate escalation rules, strategy/priority artifacts, and the six-part decision/return contract.
+- Closure path: identity/policy conflict → model-driven Chief Executive decision → explicit priority/strategy/handoff consequences with owners and dates → subsequent work in the same organization-wide agent context is governed by that decision.
+- Why this is / is not agent-owned: Henterprise gives the Executive role actual direction/strategy/final-tradeoff decision rights rather than merely static policy text, and the supported single-profile mode closes the return into subsequent operation without requiring a developer-composed cross-profile control plane.
+- Evidence: top-level `README.md`; `executive/SOUL.md`; `executive/chief-executive/SKILL.md`; and `corporate-strategy/chief-strategy-officer/SKILL.md` for final strategy ownership.
+- Basis: `explicit` and `structural`.
+- Confidence: medium-high.
+- Caveats: the Executive persona says genuinely owner-reserved matters should be returned to the owner, but the repository does not define a sufficiently specific identity/ultimate-policy parent trigger and returned decision loop to publish `A(P)`. Generic human installation, invocation, or override is not enough.
 
 ## Distributed OSS parent arrangement
 
@@ -203,18 +204,18 @@ local agent discretion
 cross-unit dependency, current-control issue, review finding,
 future adaptation question, or identity/policy conflict
         ↓
-function-specific constructor path
+mode-appropriate S2/S3* constructor path or in-profile S3/S4/S5 closure
         ↓
 Chief Executive escalation where lower authority is insufficient
 ```
 
 Notable mechanisms include narrow departmental ownership, artifacts of record, dated dependency commitments, PMO capacity/gating, independent reviewer classes, long-horizon strategy/scenario methods, and Chief Executive escalation.
 
-The main missing capability is not organizational semantics but runtime closure. The repository describes who should decide and how signals should move more completely than it implements durable cross-profile transport, shared state, automatic invocation, monitoring, and enforcement.
+The main missing capability is specifically multi-profile organizational closure, not the semantics or all higher-function autonomy. Cross-profile commitment transport and independent-review routing/enforcement remain composition work for S2 and S3*. The documented single-profile mode already provides a first-party autonomous witness for S3 current control, S4 adaptation and S5 internal policy/identity closure.
 
 ## Evidence gaps
 
-The principal unresolved implementation boundary is Hermes itself and the wiring between separately installed departmental profiles. No Henterprise-local execution trace was found demonstrating a complete cross-profile cycle such as:
+No Henterprise-local execution trace was found demonstrating a complete cross-profile cycle such as:
 
 ```text
 Technology output
@@ -225,16 +226,16 @@ Technology output
 → changed subsequent operation
 ```
 
-Likewise, no Henterprise-local persistent organizational state was established for dependency commitments, portfolio capacity, strategy of record, accepted-risk records, early-warning indicators, or executive decisions. These gaps do not erase the highly specific constructor paths, but they prevent upgrading S2-S5 from `C` to `A` at the reviewed repository boundary.
+Likewise, no Henterprise-local durable shared ledger was established for commitments/findings across separately running departmental profiles. These gaps continue to constrain S2 and S3* and make the multi-profile deployment less closed than the one-profile mode. They do not require downgrading S3, S4 or S5 when those functions have a separate supported first-party single-profile witness mode whose decisive actor and return path are reachable at the assessed boundary.
 
 ## Admission conclusion
 
 Canonical standalone vector at the reviewed revision:
 
 ```text
-A C C C C C
+A C A C A A
 ```
 
-Henterprise qualifies for inclusion as an autonomous-agent organizational harness. Its distinguishing property is that the higher VSM functions are not inferred from generic messaging, graph structure, role names, or framework extensibility. The repository contains explicit function-specific organizational procedures for cross-unit coordination, portfolio/current control, independent reviewer audit, external/future adaptation, and ultimate direction/policy.
+Henterprise qualifies for inclusion as an autonomous-agent organizational harness. Its distinguishing property is the coexistence of two materially different deployment topologies: a supported single-profile organization in which one autonomous Hermes actor can close current control, external/future adaptation and internal policy/identity through the full skill tree, and a multi-profile organization that exposes distinct departmental and reviewer actors but leaves part of their cross-profile transport/state closure to composition.
 
-At the same time, Henterprise remains constructor-heavy: it supplies organizational decision surfaces much more completely than it supplies the runtime channels/state needed to close them across separately running Hermes profiles. This is why the resulting vector is `A C C C C C`, rather than either a role-name-driven all-`A` classification or an overly strict `A — — — — —`.
+This topology difference is function-sensitive. S2 remains `C` because its positive witness requires distinct S1 units whose commitments are not durably transported by Henterprise itself. S3* remains `C` because reviewer independence requires the separate reviewer profiles whose invocation/enforcement loop is still compositional. S3, S4 and S5 are `A` because those functions do not require separate processes or actors by definition, and Henterprise documents a first-party single-profile mode in which their decisive autonomous actor and return paths are reachable.
