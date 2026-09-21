@@ -1,0 +1,75 @@
+name: assemble NanoClaw exclusion
+
+on:
+  push:
+    branches:
+      - exclude-nanoclaw-159
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: exclude-nanoclaw-159
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Canonically exclude NanoClaw
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/nanoclaw.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' in text:
+              text = text.replace('status: proposed', 'status: excluded-no-agentic-vsm', 1)
+          elif 'status: excluded-no-agentic-vsm' not in text:
+              raise SystemExit('unexpected NanoClaw assessment status')
+          if 'assessment_changed_at:' not in text:
+              text = text.replace('assessment_procedure_version: 0.3.5\n', 'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-21\n', 1)
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          row = '171|nanoclaw|NanoClaw|https://github.com/nanocoai/nanoclaw|2026-01-31T15:47:22Z|index-addition|7902716b5b930215dbee4f56b8fb5b938d40468d|2026-09-21'
+          if '|nanoclaw|' not in catalog_text:
+              catalog.write_text(catalog_text.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
+          PY
+
+      - name: Regenerate canonical metrics
+        shell: bash
+        run: |
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate assembled exclusion
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Commit assembled artifacts
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/nanoclaw.md data/catalog.psv METRICS.md data/metrics.json README.md
+          if git diff --cached --quiet; then
+            echo 'Nothing to commit'
+          else
+            git commit -m 'assessment: canonically exclude NanoClaw'
+            git push origin HEAD:exclude-nanoclaw-159
+          fi
