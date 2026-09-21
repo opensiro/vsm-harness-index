@@ -24,6 +24,27 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
     def test_normalize_owner_repo(self) -> None:
         self.assertEqual(module.normalize_repo("`strands-agents/harness-sdk`"), "strands-agents/harness-sdk")
 
+    def test_tracked_queue_title_families(self) -> None:
+        for title in (
+            "[Candidate batch] Runtime harnesses",
+            "[Candidate-batch] Runtime harnesses",
+            "[Assessment batch] Runtime harnesses",
+            "[Assessment-batch] Runtime harnesses",
+            "[Evidence intake] Governance/control candidates",
+            "[Evidence-intake] Governance/control candidates",
+        ):
+            with self.subTest(title=title):
+                self.assertTrue(module.is_tracked_queue_title(title))
+
+    def test_non_queue_title_is_ignored(self) -> None:
+        for title in (
+            "[Related awesome export] Source tracker",
+            "[Experiment] Frozen fixture",
+            "[Analytics roadmap] Reports",
+        ):
+            with self.subTest(title=title):
+                self.assertFalse(module.is_tracked_queue_title(title))
+
     def test_parse_current_candidate_table(self) -> None:
         body = """## Candidates pinned for intake
 
