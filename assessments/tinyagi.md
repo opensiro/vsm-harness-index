@@ -6,9 +6,10 @@ review_ref: 2db3a03a891b302c460f624d6c5a0523b8aa3528
 reviewed_at: 2026-09-21
 generated_profile_version: 0.2.3
 generated_assessment_procedure_version: 0.3.5
+assessment_changed_at: 2026-09-21
 profile_version: 0.2.3
 assessment_procedure_version: 0.3.5
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
