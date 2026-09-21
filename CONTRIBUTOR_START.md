@@ -1,24 +1,31 @@
 # Contributor start
 
-There are three common ways to contribute.
+There are three common ways to contribute to the Index.
 
-## Review a queued harness batch
+## Review a queued harness assessment
 
-Start with an open `[Index batch]` issue. Claim the batch in the issue, review only the pinned revisions listed there, produce evidence-backed assessments, and submit one pull request for the batch.
+Start with an open frozen `[Assessment batch]` issue. Read its Manual assessment board, take only the row marked `NEXT`, and keep the supplied repository revision pinned.
+
+Before semantic work, read current `main` of:
+
+- `opensiro/vsm-harness-profile` for VSM semantics;
+- `opensiro/vsm-harness-skills` for the assessment Methodology and artifact contract.
+
+This repository owns the queue/admission/provenance workflow, not a separate assessment format.
 
 ## Suggest a new harness
 
-Open a `[Harness suggestion]` issue with the primary repository URL and a short explanation of why it belongs in an agent-harness index. Maintainers own catalog placement, provenance normalization, and batching.
+Open a `[Harness suggestion]` issue with the primary repository URL and a short explanation of why it belongs in an agent-harness index. Maintainers own catalog placement, provenance normalization, deduplication, and batching.
 
 ## Request or perform an assessment re-review
 
-Open an `[Assessment re-review]` issue when you find stronger primary evidence, disagree with a mapping, or want an existing harness reassessed at a newer revision.
+Open an `[Assessment re-review]` issue when stronger primary evidence may change a canonical assessment or a newer upstream revision materially changes the harness.
 
-A re-review may be either:
+Index bookkeeping distinguishes:
 
-- **same-ref correction** — challenge the interpretation at the assessment's existing pinned `review_ref`;
-- **new-ref reassessment** — reassess the harness because relevant behavior changed at a newer pinned commit.
+- **same-ref correction / semantic revalidation** — the accepted `review_ref` stays fixed;
+- **new-ref reassessment** — a newer commit becomes the accepted review boundary.
 
-You do not need to know the final replacement grade before opening the issue. Provide the disputed function, current interpretation, exact primary evidence, and why the existing assessment may be incomplete or inconsistent with the VSM Harness Profile. Contributors can claim the issue and submit the evidence-backed assessment change as a normal PR.
+The semantic reassessment itself must follow the applicable `vsm-harness-skills` Methodology. The Index records the accepted boundary, freshness, reassessment history, signatures, and generated views.
 
-For the full assessment and re-review protocol, see `CONTRIBUTING.md`.
+For the full repository workflow, see [`CONTRIBUTING.md`](CONTRIBUTING.md). For Index-owned lifecycle/provenance rules, see [`INDEXING.md`](INDEXING.md).

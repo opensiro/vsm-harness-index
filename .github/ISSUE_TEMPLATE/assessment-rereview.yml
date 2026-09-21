@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this form when stronger primary evidence may change an existing assessment. The issue is an evidence request, not a vote on a preferred grade.
+        Use this form when stronger primary evidence may change an existing assessment. The issue is an evidence request, not a vote on a preferred grade. Semantic review follows the applicable `opensiro/vsm-harness-profile` and `opensiro/vsm-harness-skills` contracts; this repository owns the corpus/provenance workflow around the result.
 
   - type: input
     id: harness
@@ -50,7 +50,7 @@ body:
     id: functions
     attributes:
       label: Affected VSM function(s)
-      description: One or more of S1, S2, S3, S3*, S4, S5.
+      description: One or more of S1, S2, S3, S3*, S4, S5, or another assessment-contract claim.
       placeholder: "S2"
     validations:
       required: true
@@ -60,7 +60,7 @@ body:
     attributes:
       label: Current interpretation
       description: Current state/vector or the specific claim being challenged.
-      placeholder: "S2=C in vector A C A A — —"
+      placeholder: "Current S2 claim in the canonical assessment"
     validations:
       required: true
 
@@ -68,7 +68,7 @@ body:
     id: challenge
     attributes:
       label: Why re-review is needed
-      description: Explain the suspected category error, missed evidence, changed upstream behavior, or boundary problem.
+      description: Explain the suspected missed evidence, changed upstream behavior, contract migration, or boundary problem.
     validations:
       required: true
 
@@ -96,7 +96,6 @@ body:
     attributes:
       label: Proposed interpretation (optional)
       description: A proposed replacement state or alternatives. Leave blank if the purpose is only to request independent re-review.
-      placeholder: "S2=A or S2=—; current C appears inconsistent"
 
   - type: dropdown
     id: contribution
@@ -114,9 +113,9 @@ body:
     attributes:
       label: Evidence checks
       options:
-        - label: I am using primary first-party evidence, not only README wording or third-party summaries.
+        - label: I am using primary first-party evidence, not only third-party summaries.
           required: true
-        - label: I understand that component names such as manager, verifier, planner, or policy are not sufficient VSM evidence by themselves.
+        - label: I understand that the semantic decision must follow the applicable Profile and Skills Methodology rather than an Index-local shortcut.
           required: true
-        - label: I understand that the final grade may differ from the interpretation proposed in this issue.
+        - label: I understand that the final accepted state may differ from the interpretation proposed in this issue.
           required: true
