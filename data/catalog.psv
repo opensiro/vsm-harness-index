@@ -179,3 +179,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 178|agent-s|Agent S|https://github.com/simular-ai/Agent-S|2024-10-09T15:43:12Z|index-addition|3aa272d23d2994c7bbde1acbbe0ef8e8d06b8693|2026-09-21
 179|nanobot|nanobot|https://github.com/HKUDS/nanobot|2026-02-01T07:16:15Z|index-addition|24c41a6af0736330cd9c67b3c9d1ec9adeefdf5f|2026-09-21
 180|cowagent|CowAgent|https://github.com/zhayujie/CowAgent|2022-08-07T08:33:41Z|index-addition|7c55a61e1bccb82c99d97a4a436f598c079f7c9d|2026-09-21
+181|exo|Exo|https://github.com/exoharness/exo|2026-05-20T06:21:50Z|index-addition|6164288895a5851b2118492c880fb37b543e2ac6|2026-09-21
