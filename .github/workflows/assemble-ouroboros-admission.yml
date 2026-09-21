@@ -1,0 +1,86 @@
+name: assemble Ouroboros admission
+
+on:
+  push:
+    branches:
+      - admit-ouroboros-full-a
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-ouroboros-full-a
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Promote Ouroboros and append canonical provenance
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/ouroboros.md')
+          text = assessment.read_text(encoding='utf-8')
+          needle = 'assessment_procedure_version: 0.3.5\nstatus: proposed\n'
+          replacement = 'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-21\nstatus: included\n'
+          if needle not in text:
+              raise SystemExit('Ouroboros assessment is not in expected proposed state')
+          assessment.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          if '|ouroboros|' in catalog_text:
+              raise SystemExit('Ouroboros already present in catalog')
+          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          if not rows[-1].startswith('174|'):
+              raise SystemExit(f'Expected catalog position 174 before admission, got: {rows[-1]}')
+          catalog_row = '175|ouroboros|Ouroboros|https://github.com/razzant/ouroboros|2026-02-11T22:02:13Z|index-addition|86806ee123ce8e26cc063cc1a618f975eea64f26|2026-09-21'
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + catalog_row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_text = signatures.read_text(encoding='utf-8')
+          if '|ouroboros|' in sig_text:
+              raise SystemExit('Ouroboros already present in signatures')
+          signature = ('175|ouroboros|Ouroboros closes autonomous S1–S3* through a persistent Main, isolated specialist integration, whole-runtime routing, and separate reviewers; post-task reflection can promote reviewed future capability changes for S4, while live identity/policy surfaces support autonomous Cyber Pro and owner-governed S4/S5 modes.')
+          signatures.write_text(sig_text.rstrip('\n') + '\n' + signature + '\n', encoding='utf-8')
+          PY
+
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate assembled admission
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Commit canonical admission
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/ouroboros.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md FULL_A.md analytics/temporal.md METRICS.md data/metrics.json README.md
+          git commit -m 'admit: assemble Ouroboros canonical artifacts'
+          git push origin HEAD:admit-ouroboros-full-a
+
+      - name: Remove temporary assembler
+        run: |
+          rm .github/workflows/assemble-ouroboros-admission.yml
+          git add .github/workflows/assemble-ouroboros-admission.yml
+          git commit -m 'chore: remove Ouroboros admission assembler'
+          git push origin HEAD:admit-ouroboros-full-a
