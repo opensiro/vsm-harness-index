@@ -55,6 +55,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="open-multi-agent"></a>[OMA / Open Multi-Agent](https://github.com/open-multi-agent/open-multi-agent) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
 | 5 | <a id="harness-evolver"></a>[Harness Evolver](https://github.com/raphaelchristi/harness-evolver) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="openfang"></a>[OpenFang](https://github.com/RightNow-AI/openfang) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="utah"></a>[Utah](https://github.com/inngest/utah) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="ironclaw"></a>[IronClaw](https://github.com/nearai/ironclaw) | 2026-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A — P —` |
 | 5 | <a id="maestro"></a>[Maestro](https://github.com/RunMaestro/Maestro) | 2025-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="cuga"></a>[CUGA](https://github.com/cuga-project/cuga-agent) | 2025-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
