@@ -80,6 +80,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="qm"></a>[QM](https://github.com/yc-software/qm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="trueforge"></a>[TrueForge](https://github.com/truefoundry/trueforge) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="agentyou"></a>[AgentYou](https://github.com/shreyasic77/agentyou) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
 | 6 | <a id="gagans-agent-os"></a>[agent-os](https://github.com/gagans23/agent-os) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C — — P —` |
 | 6 | <a id="aohp"></a>[AOHP](https://github.com/aohp-os/aohp) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="open-code-review"></a>[OpenCodeReview](https://github.com/alibaba/open-code-review) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
