@@ -132,6 +132,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="roo-code"></a>[Roo Code](https://github.com/RooCodeInc/Roo-Code) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="browser-use"></a>[Browser Use](https://github.com/browser-use/browser-use) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="superagentx"></a>[SuperAgentX](https://github.com/superagentxai/superagentx) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="agent-s"></a>[Agent S](https://github.com/simular-ai/Agent-S) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="beeai-framework"></a>[BeeAI Framework](https://github.com/i-am-bee/beeai-framework) | 2024-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mastra"></a>[Mastra](https://github.com/mastra-ai/mastra) | 2024-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="agent-squad"></a>[Agent Squad](https://github.com/2FastLabs/agent-squad) | 2024-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |

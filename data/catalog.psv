@@ -176,3 +176,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 175|ouroboros|Ouroboros|https://github.com/razzant/ouroboros|2026-02-11T22:02:13Z|index-addition|86806ee123ce8e26cc063cc1a618f975eea64f26|2026-09-21
 176|aios|AIOS|https://github.com/agiresearch/AIOS|2024-01-15T03:52:41Z|index-addition|292d98f78c835499df18cdb6de6325bba1895862|2026-09-16
 177|ecc|Everything Claude Code (ECC)|https://github.com/affaan-m/ECC|2026-01-18T00:51:51Z|index-addition|2b6e839771e53096d8451a213d40dc64ec8acac0|2026-09-21
+178|agent-s|Agent S|https://github.com/simular-ai/Agent-S|2024-10-09T15:43:12Z|index-addition|3aa272d23d2994c7bbde1acbbe0ef8e8d06b8693|2026-09-21
