@@ -33,11 +33,18 @@ jobs:
           p.write_text(text.replace(old, new, 1))
 
           catalog = Path('data/catalog.psv')
-          line = '187|ante|Ante|https://github.com/AntigmaLabs/ante|2025-12-23T23:42:44Z|index-addition|74ce24554341fb0c6cc3521baa5da5b94cedf881|2026-09-21'
+          catalog_line = '187|ante|Ante|https://github.com/AntigmaLabs/ante|2025-12-23T23:42:44Z|index-addition|74ce24554341fb0c6cc3521baa5da5b94cedf881|2026-09-21'
           ctext = catalog.read_text().rstrip('\n')
           if '|ante|Ante|' in ctext:
               raise SystemExit('Ante already present in catalog')
-          catalog.write_text(ctext + '\n' + line + '\n')
+          catalog.write_text(ctext + '\n' + catalog_line + '\n')
+
+          signatures = Path('data/signatures.psv')
+          signature_line = '187|ante|Ante closes autonomous S1, model-evaluator S3 goal control, and persistent auto-memory S4; bounded subagent concurrency and curated independent review remain constructor S2/S3*, while configuration and permissions do not close S5.'
+          stext = signatures.read_text().rstrip('\n')
+          if '|ante|' in stext:
+              raise SystemExit('Ante already present in signatures')
+          signatures.write_text(stext + '\n' + signature_line + '\n')
           PY
       - name: Regenerate canonical projections
         run: |
