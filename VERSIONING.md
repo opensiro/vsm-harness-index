@@ -1,8 +1,8 @@
 # Versioning and provenance
 
-`vsm-harness-index` is the evidence-backed corpus and generated-view repository. It deliberately avoids creating a separate semantic version for every derived artifact.
+`vsm-harness-index` is the evidence-backed corpus and generated-view repository. It deliberately does not create another semantic version line for assessment meaning.
 
-The release/provenance model is:
+The ecosystem release/provenance chain is:
 
 ```text
 VSM Harness Profile version
@@ -11,115 +11,131 @@ VSM Harness Methodology version
         ↓
 vsm-harness-index @ exact Git revision
         ↓
-TLDR.md / RANKINGS.md generated views
+materialized Index views
 ```
 
-## Two semantic versions
+## Semantic owners
 
 ### Profile
 
-The Profile version identifies the normative VSM semantics used by the ecosystem.
+The VSM Harness Profile version identifies the normative organizational semantics used by the ecosystem.
 
 ### Methodology
 
-The Methodology version identifies the procedural contract in `vsm-harness-skills` that turns repository evidence into assessments and corpus views. One Methodology release covers:
+The VSM Harness Methodology version in `vsm-harness-skills` identifies the procedure that turns repository evidence into standalone assessments and corpus projections.
+
+The Methodology owns:
 
 - assessment/evidence procedure;
-- ownership-state notation and classification procedure;
-- assessment provenance contract;
-- cohort-relative signature synthesis;
+- assessment artifact format;
+- publication-state notation and classification procedure;
+- assessment provenance requirements;
+- cohort-relative synthesis;
 - deterministic ranking projection;
-- validation rules for those procedures.
+- structural validation rules for those procedures.
 
-Methodology `0.3.x` uses the publication symbols:
+This repository must not independently redefine any of those semantics. When the active Methodology changes, Index code may need a consumer-compatibility update before the new release can be activated here.
 
-```text
-A  A(P)  C  C(P)  P  —  ?
-```
-
-`A(P)` and `C(P)` are supported-mode notation for S3/S4/S5: the base `A` or `C` condition is established and a distinct first-party parent-governed mode for the same function is also operationally closed. Standalone `P` records a parent-governed S3/S4/S5 mode when no first-party `A` or `C` autonomous mode is established at the reviewed boundary.
-
-Methodology `0.3.1` clarifies the publication boundary without changing that state set:
-
-- S1 and S2 intentionally do not publish `P` because the assessment target is an autonomous AI agent harness rather than every human-owned organizational topology that can exist in a broader organization;
-- S3 and S4 permit parent modes as explicit supervisory/current-control and adaptation exceptions, including self-hosted and distributed OSS cases;
-- S3* does not publish the parent modifier in the `0.3.x` line;
-- S5 remains the canonical parent-governed case for identity / ultimate-policy authority at a legitimate parent recursion.
-
-Methodology `0.3.3` adds reproducibility requirements for defensible `—` states and composite-mode reconstruction. `0.3.4` corrects structural parsing of `S3*` without changing the assessment contract. Methodology `0.3.5`, aligned with Profile `0.2.3`, makes boundary provenance reconstructable: new or revalidated artifacts distinguish credited operating/distribution surfaces from adjacent first-party surfaces, and every positive state records why its decisive owner or constructor path is reachable inside the declared assessed mode.
-
-Repository co-location is therefore never sufficient to credit a function owner. Development/dogfood, test/evaluation, CI/release, contributor, example, or governance machinery can corroborate interpretation or a constructor path without supplying ownership or closure to another system-in-focus.
-
-Assessment front matter and reassessment history retain the compatibility field name `assessment_procedure_version`. Its value is the Methodology version as applied to that assessment/reassessment event. Likewise, `generated_assessment_procedure_version` is the immutable generation-time Methodology version for an assessment artifact.
-
-Do not introduce independent semantic versions for synthesis or ranking while those procedures are released under the same Methodology boundary.
+Assessment frontmatter retains the compatibility field name `assessment_procedure_version`; its value is the Methodology version applied to that assessment. `generated_assessment_procedure_version` records immutable generation-time Methodology provenance when known.
 
 ## Exact Index state
 
-The exact Git revision of this repository identifies the complete corpus/output state, including:
+The exact Git revision of this repository identifies the concrete corpus/output state, including:
 
 - catalog and admission state;
-- canonical and proposed assessments;
-- assessment provenance and freshness;
+- canonical and proposed assessment instances;
+- assessment provenance/freshness;
 - reassessment history;
 - cohort-relative signatures;
-- rendering/validation implementation;
-- materialized `TLDR.md` and `RANKINGS.md`.
+- consumer parser/renderer implementation;
+- materialized generated views and analytics.
 
-This is why the Index does not need an additional general `index_version`, `schema_version`, cohort fingerprint, `TLDR_VERSION`, or `RANKINGS_VERSION` today.
+The Index therefore does not currently need a separate general `index_version`, `schema_version`, `TLDR_VERSION`, or `RANKINGS_VERSION`.
 
-If a stable external Index schema/API is later consumed independently of the repository revision, that interface may justify a separate format version. Until then, Git is the immutable state identity.
+If a stable external Index API/schema is later consumed independently of the repository revision, that interface may justify a dedicated format version. Until then, Git revision is the immutable corpus/output identity.
 
 ## Active contract
 
-`data/active-contract.psv` stores only the semantic pair expected for **new work**:
+`data/active-contract.psv` records the Profile/Methodology pair expected for new Index work.
 
-```text
-profile_version|methodology_version
-0.2.3|0.3.5
+It is compatibility/configuration metadata, not another semantic specification and not a second assessment database.
+
+Changing the active pair does not retroactively rewrite:
+
+- historical assessment generation provenance;
+- an already-open reassessment round frozen on an earlier pair;
+- accepted assessment vectors that have not been explicitly revalidated;
+- prior reassessment-history events.
+
+The active pair may advance only to released upstream contracts that the Index consumer implementation can materialize and validate.
+
+## Historical assessment provenance
+
+Each assessment distinguishes generation provenance from current accepted validation provenance.
+
+Generation fields are immutable when present:
+
+```yaml
+generated_profile_version: ...
+generated_assessment_procedure_version: ...
 ```
 
-The activated upstream releases are:
+Current accepted contract fields may advance after explicit successful revalidation:
 
-- VSM Harness Profile `v0.2.3` — release target `06246a1e5bd95f237b88ecc7d23f0fa7e8a995cd`;
-- VSM Harness Methodology `v0.3.5` — release target `9f50d20a6747178cf4917a7adc2eb1265ebcf87c`.
+```yaml
+profile_version: ...
+assessment_procedure_version: ...
+```
 
-This file is compatibility/configuration infrastructure, not a second assessment database.
+Legacy assessments whose original generation versions were never recorded must not be backfilled by guesswork.
 
-Changing the active pair does not retroactively rewrite historical assessment provenance or an already-open reassessment round. A round remains frozen on the Profile/Methodology pair declared when it opened. Existing canonical assessments also retain their recorded current contract until they are explicitly revalidated; immutable `generated_profile_version` / `generated_assessment_procedure_version` values never change.
+A later Profile or Methodology release does not automatically rewrite an older assessment. The upstream release contract determines whether a semantic review or migration is required; the Index records the resulting explicit revalidation/reassessment event.
 
-Profile `0.2.3` is a compatible PATCH clarification with `assessment_impact: none`. Methodology `0.3.5` is likewise a procedural PATCH: it makes the already-required system/evidence boundary structurally reconstructable for newly produced or revalidated work, but does not create an automatic vector migration.
+## Reassessment-round provenance
 
-Weak historical mappings exposed by the clarified boundary are handled as evidence-backed same-ref corrections under their frozen contracts. A newer upstream revision remains a separate new-ref reassessment event.
+A reassessment round freezes its Profile/Methodology pair at opening time. Later activation of another pair does not mutate the frozen historical round.
 
-Methodology `0.3.0` introduced the substantive composite ownership notation. Existing canonical assessments are not automatically rewritten to `A(P)`, `C(P)`, or S3/S4 `P`; they remain valid historical/current artifacts under their recorded Methodology until they are explicitly revalidated. A migration may be same-ref when the upstream repository boundary is unchanged, but the reviewer must re-establish the S3/S4/S5 function and every ownership mode from primary evidence.
+Per-harness reassessment events record the contract actually used for that event in `data/reassessment-history.psv`.
 
-Frozen historical rounds remain frozen. In particular, R1 remains on Profile `0.2.0` / Methodology `0.2.1`; later active contracts must not silently rewrite that round or any other round with a declared frozen pair.
+Successful freshness checks may advance `last_checked_ref` and `last_checked_at` without advancing the accepted `review_ref` when later upstream changes do not require a new assessment boundary.
 
 ## Generated views
 
-`TLDR.md` and `RANKINGS.md` are generated/materialized views of an Index revision.
+`TLDR.md`, `RANKINGS.md`, `FULL_A.md`, metrics, and analytics are materialized views of a particular Index revision.
 
-They have no independent semantic versions:
+They have no independent semantic version. Their meaning is reconstructed from:
 
-- TLDR depends on canonical assessments, cohort-relative signatures, and the Methodology synthesis rules;
-- RANKINGS depends on canonical assessment states and the Methodology ranking projection;
-- a particular checked-in result is identified by the Index Git revision containing it.
+1. the Profile/Methodology provenance recorded by the source assessments and active contract;
+2. the applicable Skills synthesis/projection contract;
+3. the exact Index Git revision containing the source corpus and rendering implementation.
 
-Under Methodology `0.3.x`, ranking parses composite states by base ownership:
+A Profile or Methodology release may require assessment revalidation, re-synthesis, projection-code compatibility changes, or regeneration. Those changes are captured by a new Index revision rather than by inventing another semantic version axis.
+
+## Consumer compatibility
+
+The Index contains local parsing and rendering code because it must materialize a concrete corpus and detect incompatible data.
+
+That code is a consumer of the released Methodology. It may explicitly support a finite set of released publication tokens or projection shapes, but such support is not the source of their meaning.
+
+When Methodology changes require consumer work, use this order:
 
 ```text
-A(P) → A for agent-owned coverage
-C(P) → C for constructor coverage
+release Profile/Methodology upstream
+        ↓
+update Index consumer compatibility
+        ↓
+activate the released pair for new work
+        ↓
+explicitly revalidate/migrate affected corpus artifacts
+        ↓
+regenerate materialized views
 ```
 
-Parent-mode presence is descriptive and unweighted. It must never make `A(P)` rank above `A` or `C(P)` above `C`.
-
-A Profile or Methodology change may make some source assessments or projections stale and can require reassessment, re-synthesis, re-ranking, or regeneration. The resulting state is then captured by a new Index revision rather than by inventing another version axis.
+Do not infer a new assessment state or migration solely from what the current Index parser happens to accept.
 
 ## Minimal reconstruction tuple
 
-For ecosystem-level reproducibility, the useful tuple is:
+For ecosystem-level reproducibility, use:
 
 ```text
 Profile version
@@ -127,4 +143,4 @@ Profile version
 + Index Git revision
 ```
 
-Per-assessment upstream revisions and generation/current provenance remain inside the assessment artifacts themselves.
+Per-assessment upstream refs and generation/current validation provenance remain inside the assessment artifacts and reassessment history.
