@@ -53,7 +53,6 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="clawgui"></a>[ClawGUI](https://github.com/ZJU-REAL/ClawGUI) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="open-multi-agent"></a>[OMA / Open Multi-Agent](https://github.com/open-multi-agent/open-multi-agent) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
-| 5 | <a id="harness-evolver"></a>[Harness Evolver](https://github.com/raphaelchristi/harness-evolver) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="openfang"></a>[OpenFang](https://github.com/RightNow-AI/openfang) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="utah"></a>[Utah](https://github.com/inngest/utah) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="ironclaw"></a>[IronClaw](https://github.com/nearai/ironclaw) | 2026-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A — P —` |
@@ -90,6 +89,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="autoagent"></a>[AutoAgent](https://github.com/thirdlayerinc/autoagent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="claw-code-agent"></a>[claw-code-agent](https://github.com/HarnessLab/claw-code-agent) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="harness-evolver"></a>[Harness Evolver](https://github.com/raphaelchristi/harness-evolver) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="herdr"></a>[Herdr](https://github.com/herdrdev/herdr) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="orca-stablyai"></a>[Orca](https://github.com/stablyai/orca) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="talon"></a>[Talon](https://github.com/dylanneve1/talon) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
