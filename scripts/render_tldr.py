@@ -89,7 +89,7 @@ def render_tldr(repo: Path) -> str:
     lines = [
         "# VSM Harness TL;DR",
         "",
-        "Cohort-relative signatures derived from standalone assessments. Display order is newest-first by GitHub repository creation time; Period is derived from that same timestamp as `YYYY-QN`. Signature synthesis still follows ascending catalog order.",
+        "Cohort-relative signatures derived from standalone assessments. Display order is newest-first by GitHub repository creation time; Period is the repository creation quarter derived from `repository_created_at` as `YYYY-QN`. Signature synthesis still follows ascending catalog order.",
         "",
         "| Harness | Period | S1 | S2 | S3 | S3* | S4 | S5 | Signature |",
         "| --- | ---: | --- | --- | --- | --- | --- | --- | --- |",
@@ -124,7 +124,7 @@ def render_rankings(repo: Path) -> str:
     lines = [
         "# VSM Harness Autonomy Rankings",
         "",
-        "This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted scores. Within the same rank, newer repositories are displayed first. Period is derived from GitHub repository creation time and does not affect rank.",
+        "This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted scores. Within the same rank, newer repositories are displayed first. Period is the GitHub repository creation quarter and does not affect rank.",
         "",
         "| Rank | Harness | Period | Agent-owned | Metasystem A | C | P | ? | Vector |",
         "| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
@@ -201,8 +201,7 @@ def render_temporal(repo: Path) -> str:
         "",
         "Deterministic descriptive cohorts derived from canonical included assessments and GitHub repository creation time.",
         "",
-        f"- **Projection as-of:** {as_of.isoformat()} (latest `pinned_at` in the included cohort)",
-        "- **Temporal source:** `data/catalog.psv:repository_created_at`",
+        "- **Period meaning:** GitHub repository creation quarter from `data/catalog.psv:repository_created_at`",
         "- **Quarter convention:** Q1 Jan-Mar, Q2 Apr-Jun, Q3 Jul-Sep, Q4 Oct-Dec",
         f"- **Current year:** {current_year} is marked **YTD**",
         f"- **Current quarter:** {current_period} is marked **partial**",
