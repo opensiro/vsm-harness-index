@@ -12,7 +12,7 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 | Proposed intake assessments | 0 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
 | Catalog entries | 186 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
 | Catalog entries without an included assessment | 8 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
-| Reassessment events | 80 | Recorded events in `data/reassessment-history.psv`. |
+| Reassessment events | 81 | Recorded events in `data/reassessment-history.psv`. |
 | Full-A assessments | 1 | Included assessments whose base state is autonomous across S1, S2, S3, S3*, S4 and S5. `A(P)` counts as autonomous coverage. |
 
 ## Active semantic contract
