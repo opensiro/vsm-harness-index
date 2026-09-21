@@ -2,20 +2,19 @@
 """Validate live candidate queues against canonical Index repository identities.
 
 The validator is intentionally discovery-only. It does not mutate GitHub.
-It checks current-convention open candidate batches for:
+It checks open candidate/assessment batches and evidence-intake queues for:
 
 - repositories already admitted as canonical `status: included` assessments;
 - repositories already present in the catalog;
-- the same repository queued in more than one active candidate batch;
+- the same repository queued in more than one active queue;
 - rename/transfer aliases by resolving stable GitHub repository IDs;
 - declared batch occupancy that disagrees with the candidate table.
 
 `status: proposed` overlaps are reported as warnings because a proposed artifact can
-legitimately coexist with the batch that is currently reviewing it, but discovery
-must not queue that repository into another batch.
+legitimately coexist with the queue that is currently reviewing it, but discovery
+must not queue that repository into another queue.
 """
 from __future__ import annotations
-
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 import csv
@@ -30,7 +29,11 @@ import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
-CURRENT_BATCH_RE = re.compile(r"\[candidate(?:-| )batch\]", re.IGNORECASE)
+
+QUEUE_TITLE_RE = re.compile(
+    r"\[(?:(?:candidate|assessment)(?:-| )batch|evidence(?:-| )intake)\]",
+    re.IGNORECASE,
+)
 OCCUPANCY_RE = re.compile(r"Batch occupancy:\s*\*\*(\d+)/10", re.IGNORECASE)
 GITHUB_URL_RE = re.compile(r"(?:https://github\.com/)?([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
 
@@ -51,6 +54,10 @@ def normalize_repo(value: str) -> str:
     if not match:
         raise ValueError(f"not a GitHub owner/repo identity: {value!r}")
     return f"{match.group(1)}/{match.group(2)}"
+
+
+def is_tracked_queue_title(title: str) -> bool:
+    return bool(QUEUE_TITLE_RE.search(title))
 
 
 def parse_frontmatter(path: Path) -> dict[str, str]:
@@ -177,13 +184,13 @@ def active_queue_entries(api: GitHubAPI, index_repo: str) -> tuple[list[QueueEnt
     errors: list[str] = []
     for issue in api.open_issues(index_repo):
         title = str(issue.get("title", ""))
-        if not CURRENT_BATCH_RE.search(title):
+        if not is_tracked_queue_title(title):
             continue
         number = int(issue["number"])
         body = str(issue.get("body") or "")
         repositories = parse_candidate_repositories(body)
         if not repositories:
-            errors.append(f"#{number}: candidate batch has no parseable candidate table")
+            errors.append(f"#{number}: tracked queue has no parseable candidate table")
             continue
         occupancy = OCCUPANCY_RE.search(body)
         if occupancy and int(occupancy.group(1)) != len(repositories):
@@ -275,7 +282,7 @@ def main() -> int:
 
     print(
         f"Validated {len(entries)} active candidate queue entr{'y' if len(entries) == 1 else 'ies'} "
-        "against catalog, assessments, cross-batch identity, and GitHub repository IDs"
+        "against catalog, assessments, cross-queue identity, and GitHub repository IDs"
     )
     return 0
 
