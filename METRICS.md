@@ -6,11 +6,11 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 
 | Metric | Value | Definition |
 | --- | ---: | --- |
-| Included standalone assessments | 165 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
-| Canonical assessment records | 168 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
+| Included standalone assessments | 166 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
+| Canonical assessment records | 169 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
 | Canonical exclusions | 3 | Completed assessments with `status: excluded-no-agentic-vsm`. |
-| Proposed intake assessments | 3 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
-| Catalog entries | 168 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
+| Proposed intake assessments | 2 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
+| Catalog entries | 169 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
 | Catalog entries without an included assessment | 3 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
 | Reassessment events | 80 | Recorded events in `data/reassessment-history.psv`. |
 | Full-A assessments | 0 | Included assessments whose base state is autonomous across S1, S2, S3, S3*, S4 and S5. `A(P)` counts as autonomous coverage. |
@@ -25,10 +25,10 @@ Milestones count included completed standalone assessments only. They are corpus
 
 | Target | Status | Progress |
 | ---: | --- | ---: |
-| 100 | Achieved | Achieved (current corpus: 165) |
-| 250 | Next | 165/250 (66.0%) |
-| 500 | Planned | 165/500 (33.0%) |
-| 1000 | Planned | 165/1000 (16.5%) |
+| 100 | Achieved | Achieved (current corpus: 166) |
+| 250 | Next | 166/250 (66.4%) |
+| 500 | Planned | 166/500 (33.2%) |
+| 1000 | Planned | 166/1000 (16.6%) |
 
 ## Machine-readable view
 
