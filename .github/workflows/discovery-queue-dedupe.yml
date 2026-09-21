@@ -1,6 +1,12 @@
 name: discovery queue dedupe
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/check_discovery_queues.py
+      - .github/workflows/discovery-queue-dedupe.yml
   schedule:
     - cron: "45 * * * *"
   workflow_dispatch:
