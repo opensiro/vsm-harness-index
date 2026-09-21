@@ -7,11 +7,11 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 | Metric | Value | Definition |
 | --- | ---: | --- |
 | Included standalone assessments | 168 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
-| Canonical assessment records | 175 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
-| Canonical exclusions | 7 | Completed assessments with `status: excluded-no-agentic-vsm`. |
-| Proposed intake assessments | 2 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
-| Catalog entries | 175 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
-| Catalog entries without an included assessment | 7 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
+| Canonical assessment records | 176 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
+| Canonical exclusions | 8 | Completed assessments with `status: excluded-no-agentic-vsm`. |
+| Proposed intake assessments | 0 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
+| Catalog entries | 176 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
+| Catalog entries without an included assessment | 8 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
 | Reassessment events | 80 | Recorded events in `data/reassessment-history.psv`. |
 | Full-A assessments | 1 | Included assessments whose base state is autonomous across S1, S2, S3, S3*, S4 and S5. `A(P)` counts as autonomous coverage. |
 
