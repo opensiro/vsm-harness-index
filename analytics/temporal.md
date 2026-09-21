@@ -2,8 +2,7 @@
 
 Deterministic descriptive cohorts derived from canonical included assessments and GitHub repository creation time.
 
-- **Projection as-of:** 2026-09-21 (latest `pinned_at` in the included cohort)
-- **Temporal source:** `data/catalog.psv:repository_created_at`
+- **Period meaning:** GitHub repository creation quarter from `data/catalog.psv:repository_created_at`
 - **Quarter convention:** Q1 Jan-Mar, Q2 Apr-Jun, Q3 Jul-Sep, Q4 Oct-Dec
 - **Current year:** 2026 is marked **YTD**
 - **Current quarter:** 2026-Q3 is marked **partial**
