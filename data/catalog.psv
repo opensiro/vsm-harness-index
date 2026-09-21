@@ -185,3 +185,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 184|cuga|CUGA|https://github.com/cuga-project/cuga-agent|2025-09-11T11:58:55Z|index-addition|b3bdcaee74aaf7a53d3fb621b781d305fb714f5d|2026-09-21
 
 185|utah|Utah|https://github.com/inngest/utah|2026-02-18T14:31:43Z|index-addition|b3aeb81c076f2a03d78fc291417c55439f796d61|2026-09-21
+186|yuxi|Yuxi|https://github.com/xerrors/Yuxi|2024-07-05T10:57:35Z|index-addition|86c67dc41249c3c9cad9e976fd8a006194d39a76|2026-09-21
