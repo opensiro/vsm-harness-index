@@ -1,0 +1,72 @@
+name: assemble Dexto admission
+
+on:
+  push:
+    branches:
+      - admit-dexto
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Promote Dexto and append canonical provenance
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('assessments/dexto.md')
+          text = p.read_text()
+          needle = 'assessment_procedure_version: 0.3.5\nstatus: proposed\n'
+          repl = 'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-21\nstatus: included\n'
+          if needle not in text:
+              raise SystemExit('unexpected Dexto frontmatter state')
+          p.write_text(text.replace(needle, repl, 1))
+
+          catalog = Path('data/catalog.psv')
+          c = catalog.read_text()
+          expected = '182|gagans-agent-os|agent-os|https://github.com/gagans23/agent-os|2026-05-21T17:40:37Z|index-addition|d318787db1fce4163e470ac1c94f5a74d667303f|2026-09-21'
+          if not c.rstrip().endswith(expected):
+              raise SystemExit('catalog tail changed; rebuild on current main')
+          catalog.write_text(c.rstrip('\n') + '\n183|dexto|Dexto|https://github.com/truffle-ai/dexto|2025-03-24T22:49:13Z|index-addition|ac56fbfcd8e7a682fc0e96c690e5b6362980181d|2026-09-21\n')
+
+          sig = Path('data/signatures.psv')
+          s = sig.read_text()
+          if '\n183|dexto|' in s or s.startswith('183|dexto|'):
+              raise SystemExit('Dexto signature already present')
+          sig.write_text(s.rstrip('\n') + '\n183|dexto|Dexto closes autonomous S1 while constructor-owned concurrency limits provide S2 and exported AgentRuntime supplies constructor S3 whole-pool visibility and intervention; no independent S3*, prospective S4 adaptation loop, or S5 identity-policy closure is established.\n')
+          PY
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate assembled admission
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit canonical admission
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'admit: add Dexto from reviewed standalone assessment'
+          git push
+      - name: Remove temporary assembler
+        run: |
+          git rm .github/workflows/assemble-dexto-admission.yml
+          git commit -m 'chore: remove Dexto admission assembler'
+          git push
