@@ -169,3 +169,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 168|megaagent|MegaAgent|https://github.com/Xtra-Computing/MegaAgent|2024-08-10T15:37:44Z|index-addition|c2e45ad99d8166db82b8f8516d2bcd722ad8540a|2026-09-21
 169|ironclaw|IronClaw|https://github.com/nearai/ironclaw|2026-02-03T06:57:10Z|index-addition|b0b999d96781516ee05e6ba961d6f3ead900da96|2026-09-21
 170|zeroclaw|ZeroClaw|https://github.com/zeroclaw-labs/zeroclaw|2026-02-13T08:56:04Z|index-addition|757db6c356c61861256a87222e30c7c92e8f166f|2026-09-21
+171|nanoclaw|NanoClaw|https://github.com/nanocoai/nanoclaw|2026-01-31T15:47:22Z|index-addition|7902716b5b930215dbee4f56b8fb5b938d40468d|2026-09-21
