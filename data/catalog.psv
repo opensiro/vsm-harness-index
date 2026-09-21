@@ -166,3 +166,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 165|claude-code-router|Claude Code Router|https://github.com/musistudio/claude-code-router|2025-02-25T02:17:18Z|index-addition|a034b0c51cdd1b5628bbff545821f5540d30c6c5|2026-09-20
 166|openfang|OpenFang|https://github.com/RightNow-AI/openfang|2026-02-24T23:12:38Z|index-addition|acf2587e46be174c10200489c9a2d23a39a98aeb|2026-09-20
 167|autoagents|AutoAgents|https://github.com/OWD-AI/AutoAgents|2023-08-21T12:19:36Z|index-addition|223ad991988d752c446d25a0381e647f6e71c92c|2026-09-21
+168|megaagent|MegaAgent|https://github.com/Xtra-Computing/MegaAgent|2024-08-10T15:37:44Z|index-addition|c2e45ad99d8166db82b8f8516d2bcd722ad8540a|2026-09-21
