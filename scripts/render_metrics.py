@@ -38,7 +38,11 @@ def milestone_rows(included: int) -> list[dict[str, object]]:
 
 def compute_metrics(repo: Path) -> dict[str, object]:
     catalog_entries = len(read_psv(repo / "data" / "catalog.psv"))
-    included_assessments = len(data(repo))
+    included_rows = data(repo)
+    included_assessments = len(included_rows)
+    if not included_rows:
+        raise ValueError("cannot compute snapshot_date for an empty included cohort")
+    snapshot_date = max(catalog["pinned_at"] for _, catalog, _, _ in included_rows)
 
     assessments = load_assessments(repo / "assessments")
     for row in assessments.values():
@@ -61,6 +65,7 @@ def compute_metrics(repo: Path) -> dict[str, object]:
 
     return {
         "schema_version": 1,
+        "snapshot_date": snapshot_date,
         "corpus": {
             "included_assessments": included_assessments,
             "canonical_assessments": canonical_assessments,
