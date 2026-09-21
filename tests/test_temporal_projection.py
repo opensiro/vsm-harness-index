@@ -66,7 +66,8 @@ class TemporalProjectionTests(unittest.TestCase):
 
         self.assertIn("2026-Q3 (partial)", rendered)
         self.assertIn("2026 (YTD)", rendered)
-        self.assertIn("**Projection as-of:** 2026-09-21", rendered)
+        self.assertIn("**Period meaning:** GitHub repository creation quarter", rendered)
+        self.assertNotIn("Projection as-of", rendered)
         self.assertIn("`A(P)` collapses to base `A`", rendered)
 
     def test_base_state_preserves_existing_ranking_semantics(self):

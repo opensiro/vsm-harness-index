@@ -1,6 +1,6 @@
 # VSM Harness Autonomy Rankings
 
-This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted scores. Within the same rank, newer repositories are displayed first. Period is derived from GitHub repository creation time and does not affect rank.
+This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted scores. Within the same rank, newer repositories are displayed first. Period is the GitHub repository creation quarter and does not affect rank.
 
 | Rank | Harness | Period | Agent-owned | Metasystem A | C | P | ? | Vector |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |

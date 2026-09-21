@@ -1,6 +1,6 @@
 # VSM Harness TL;DR
 
-Cohort-relative signatures derived from standalone assessments. Display order is newest-first by GitHub repository creation time; Period is derived from that same timestamp as `YYYY-QN`. Signature synthesis still follows ascending catalog order.
+Cohort-relative signatures derived from standalone assessments. Display order is newest-first by GitHub repository creation time; Period is the repository creation quarter derived from `repository_created_at` as `YYYY-QN`. Signature synthesis still follows ascending catalog order.
 
 | Harness | Period | S1 | S2 | S3 | S3* | S4 | S5 | Signature |
 | --- | ---: | --- | --- | --- | --- | --- | --- | --- |

@@ -1,5 +1,6 @@
 {
   "schema_version": 1,
+  "snapshot_date": "2026-09-21",
   "corpus": {
     "included_assessments": 168,
     "canonical_assessments": 175,
