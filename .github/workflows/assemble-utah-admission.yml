@@ -1,0 +1,78 @@
+name: assemble Utah admission
+
+on:
+  push:
+    branches:
+      - admit-utah-159
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-utah-159
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Promote reviewed Utah and append canonical provenance
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import csv
+
+          assessment = Path('assessments/utah.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'assessment_procedure_version: 0.3.5\nstatus: proposed'
+          new = 'assessment_procedure_version: 0.3.5\nassessment_changed_at: 2026-09-21\nstatus: included'
+          if old not in text:
+              raise SystemExit('Utah proposed frontmatter marker missing')
+          assessment.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          rows = list(csv.DictReader(catalog.open(encoding='utf-8', newline=''), delimiter='|'))
+          if any(r['harness_id'] == 'utah' or r['repository'].lower() == 'https://github.com/inngest/utah' for r in rows):
+              raise SystemExit('Utah already present in catalog')
+          position = max(int(r['catalog_position']) for r in rows) + 1
+          if position != 185:
+              raise SystemExit(f'expected catalog position 185 on this fresh branch, got {position}')
+          with catalog.open('a', encoding='utf-8', newline='') as handle:
+              handle.write(f'\n{position}|utah|Utah|https://github.com/inngest/utah|2026-02-18T14:31:43Z|index-addition|b3aeb81c076f2a03d78fc291417c55439f796d61|2026-09-21')
+
+          signatures = Path('data/signatures.psv')
+          sig_text = signatures.read_text(encoding='utf-8')
+          if '|utah|' in sig_text:
+              raise SystemExit('Utah signature already present')
+          signature = 'Utah closes autonomous model/tool operations and prospective S4 by letting its model persist learned future capabilities as skills or hot-loaded cron/event functions. Singleton cancellation is same-unit control rather than S2; delegation lacks whole-current S3, observability lacks independent S3*, and editable identity files do not close S5.'
+          with signatures.open('a', encoding='utf-8', newline='') as handle:
+              handle.write(f'\n{position}|utah|{signature}')
+          PY
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate canonical tree
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit canonical artifacts and remove assembler
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/assemble-utah-admission.yml
+          git add -A
+          git commit -m 'admit: add Utah from reviewed standalone assessment'
+          git push origin HEAD:admit-utah-159
+
+# trigger revision
