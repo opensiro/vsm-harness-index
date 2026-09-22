@@ -104,7 +104,7 @@ discover → deduplicate → queue → pin → assess → admit → synthesize �
 
 Use this repository for harness discovery/intake, assessment instances, reassessment history, catalog/provenance maintenance, signatures, generated Index views, and Index-local tooling.
 
-For **currently tracked work across the bounded VSM Harness OSS group**, start with the [`OpenSiro VSM OSS Project`](https://github.com/orgs/opensiro/projects/1). When it selects an Index task, return to the linked Index issue: that issue remains authoritative for the batch/row, frozen `review_ref`, evidence boundary, validation and admission state.
+For **currently tracked work across the bounded VSM Harness OSS group**, start with the shared [`OpenSiro VSM OSS TODO`](https://github.com/opensiro/vsm-oss-organization/blob/main/TODO.md). When it selects an Index task, return to the linked Index issue: that issue remains authoritative for the batch/row, frozen `review_ref`, evidence boundary, validation and admission state.
 
 Use `vsm-harness-skills` for changes to assessment format, classification procedure, publication states, synthesis semantics, and ranking projection.
 
