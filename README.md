@@ -2,7 +2,13 @@
 
 VSM Harness Index is the evidence-backed corpus of real agent-harness assessments in the OpenSiro VSM ecosystem.
 
-> **Looking for current work?** Start with the shared [`OpenSiro VSM OSS TODO`](https://github.com/opensiro/vsm-oss-organization/blob/main/TODO.md), then follow the selected issue back to its owning repository. For new, unclassified, or cross-repository work, use the [`OpenSiro VSM OSS contributor entry`](https://github.com/opensiro/vsm-oss-organization/blob/main/CONTRIBUTOR_START.md). The owning issue/repository remains authoritative for task scope, evidence, validation, and acceptance.
+## Start here before choosing work
+
+If the request names a specific Index issue, assessment, file, or concrete change, work from that owning artifact.
+
+If the request is open-ended — for example, “continue current work”, “pick up the next task”, or “find something useful to work on” — start with the shared [`OpenSiro VSM OSS TODO`](https://github.com/opensiro/vsm-oss-organization/blob/main/TODO.md), then follow the selected issue back to its owning repository. **Do not choose current work by scanning open issues or unfinished batches.**
+
+For new, unclassified, or cross-repository work, use the [`OpenSiro VSM OSS contributor entry`](https://github.com/opensiro/vsm-oss-organization/blob/main/CONTRIBUTOR_START.md). The selected owning issue/repository remains authoritative for task scope, evidence, validation, and acceptance.
 
 The ownership chain is intentionally split:
 
