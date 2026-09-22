@@ -2,6 +2,8 @@
 
 VSM Harness Index is the evidence-backed corpus of real agent-harness assessments in the OpenSiro VSM ecosystem.
 
+> **Looking for current work?** Start with the shared [`OpenSiro VSM OSS TODO`](https://github.com/opensiro/vsm-oss-organization/blob/main/TODO.md), then follow the selected issue back to its owning repository. For new, unclassified, or cross-repository work, use the [`OpenSiro VSM OSS contributor entry`](https://github.com/opensiro/vsm-oss-organization/blob/main/CONTRIBUTOR_START.md). The owning issue/repository remains authoritative for task scope, evidence, validation, and acceptance.
+
 The ownership chain is intentionally split:
 
 ```text
@@ -42,9 +44,9 @@ assessments/<harness_id>.md
 
 | Included | Catalog | Reassessments | Full-A |
 | ---: | ---: | ---: | ---: |
-| **186** | 194 | 81 | 1 |
+| **188** | 196 | 81 | 1 |
 
-**Next corpus milestone:** 186/250 (74.4%).
+**Next corpus milestone:** 188/250 (75.2%).
 
 Active semantic contract: **Profile 0.2.4 / Methodology 0.3.6**.
 

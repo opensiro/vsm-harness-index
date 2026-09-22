@@ -11,10 +11,12 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="omnigent"></a>[Omnigent](https://github.com/omnigent-ai/omnigent) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="loopx"></a>[LoopX](https://github.com/huangruiteng/loopx) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="thclaws"></a>[thClaws](https://github.com/thClaws/thClaws) | 2026-Q2 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
+| 3 | <a id="marveen"></a>[Marveen](https://github.com/Szotasz/marveen) | 2026-Q2 | 4/6 | 3/5 | 1 | 3 | 0 | `A A A(P) A C(P) P` |
 | 3 | <a id="mateclaw"></a>[MateClaw](https://github.com/mateaix/mateclaw) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) — A(P) —` |
 | 3 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="cc-haha"></a>[cc-haha](https://github.com/NanmiCoder/cc-haha) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="paperclip"></a>[Paperclip](https://github.com/paperclipai/paperclip) | 2026-Q1 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
+| 3 | <a id="harness-kit"></a>[Harness Kit](https://github.com/deepklarity/harness-kit) | 2026-Q1 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A P —` |
 | 3 | <a id="scion"></a>[Scion](https://github.com/annex-ai/scion) | 2026-Q1 | 4/6 | 3/5 | 1 | 0 | 0 | `A A A C A —` |
 | 3 | <a id="agent-orchestrator"></a>[Agent Orchestrator](https://github.com/Untrivial-ai/agent-orchestrator) | 2026-Q1 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="squad"></a>[Squad](https://github.com/bradygaster/squad) | 2026-Q1 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
