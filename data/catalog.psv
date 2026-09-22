@@ -191,3 +191,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 189|agentyou|AgentYou|https://github.com/shreyasic77/agentyou|2026-06-07T16:17:05Z|index-addition|a8289d95608aa974f2a51aba68af5374bfa71d01|2026-09-22
 190|pibot|pibot|https://github.com/glebis/pibot|2026-08-27T22:51:54Z|index-addition|350bf2c8263f31bcda33789c819329bb56f14c00|2026-09-22
 191|reflex|Reflex|https://github.com/reflex-agent/reflex-agent|2026-05-27T06:13:49Z|index-addition|f3b3dd7b438c8333e5731a29023eca81239c7d19|2026-09-22
+192|super-agent|super-agent|https://github.com/FedericoCasarella/super-agent|2026-05-25T13:53:35Z|index-addition|afa4850f4cf698db8ce868525c6dad3215a13a6d|2026-09-22
