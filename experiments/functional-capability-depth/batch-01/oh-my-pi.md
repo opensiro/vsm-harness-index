@@ -19,29 +19,29 @@ OMP materially transforms several inherited substrates, especially language-serv
 
 | S1 dimension | Ownership | Evidence domain | Evidence type | Observation | Confidence |
 | --- | --- | --- | --- | --- | --- |
-| operational effectiveness | `mixed` | Coding / SWE | controlled before/after claims, **self-reported** | The frozen README reports same-weight / same-prompt harness effects for editing, including Grok Code Fast 1 `6.7% → 68.3%` and MiniMax `2.1×` pass rate. These are direct harness-effect claims, but the frozen repository does not independently reproduce the benchmark protocol, so they remain self-reported. | medium |
-| environment-interaction fidelity | `mixed` | Coding / SWE | controlled before/after claims + executable implementation | The same README reports edit-format gains across multiple models. First-party Hashline state stores full-file snapshots and guards edit state; OMP also owns LSP auto-detection/integration while the language server's semantic intelligence remains external. This is stronger than a feature-count claim because the edit path has an attributed before/after result, but it remains self-reported. | medium |
+| operational effectiveness | `mixed` | Coding / SWE | maintainer-reported comparative/ablation claims, **self-reported** | The frozen README reports edit/tool outcome changes attributed to harness mechanisms: Grok Code Fast 1 `6.7% → 68.3%`, Gemini 3 Flash `+5 pp` versus `str_replace`, and MiniMax `2.1×` pass rate. Only the MiniMax row explicitly says “same weights, same prompt.” The frozen repository does not independently reproduce the evaluation protocol, so all remain self-reported. | medium |
+| environment-interaction fidelity | `mixed` | Coding / SWE | self-reported comparative claims + executable implementation | The same README reports edit-format gains across multiple models. First-party Hashline state stores full-file snapshots and guards edit state; OMP also owns LSP auto-detection/integration while the language server's semantic intelligence remains external. This is more direct than a feature-count claim because the edit path has attributed outcome deltas, but those deltas remain self-reported. | medium |
 | operational state continuity | `native` | Coding / SWE | primary technical documentation | OMP retains Pi-style persistent sessions and adds first-party persistent project memory/session facilities. Session state is resumable and operational context can survive compaction; optional external memory backends are not credited as native. | medium |
 | recovery / resilience | `native` | Coding / SWE | executable code path + primary documentation | Time-Traveling Stream Rules can be inspected/tested through the real matching pipeline and are designed to abort an off-policy stream, inject a rule, and retry. Hashline edit state also supplies action-local guards such as no-op/stale-state protection. No common failure-injection benchmark against another cohort member was found. | high |
 | operational result assurance | `unclear` | Coding / SWE | implementation review | Hashline and LSP integration provide action-local validation signals, but no frozen first-party hard task-completion gate equivalent to a required test/check receipt was found. The separate advisor/review surface is not credited automatically because independent review is S3* topology. **insufficient evidence** for stronger task-level S1 assurance. | medium |
-| efficiency | `mixed` | Coding / SWE | controlled before/after claim, **self-reported** | The frozen README reports `−61%` output tokens for Grok 4 Fast on the same work after avoiding bad-diff retry loops. The model is external, while the edit protocol is a first-party causal intervention; the result is therefore `mixed` and self-reported. | medium |
+| efficiency | `mixed` | Coding / SWE | maintainer-reported comparative claim, **self-reported** | The frozen README reports `−61%` output tokens for Grok 4 Fast and attributes the reduction to the retry loop on bad diffs disappearing. The model is external while the edit protocol is first-party; the evidence is therefore `mixed` and self-reported. The frozen README does not expose enough protocol detail to treat this as independently reproduced efficiency evidence. | medium |
 | portability / robustness | `mixed` | Coding / SWE | multi-model self-reported evidence + technical documentation | OMP reports positive edit/tool effects on Grok, Gemini, and MiniMax and ships the same runtime across macOS, Linux, and Windows with many providers. This is limited evidence that the operational mechanism is not tied to one model, but the reported evaluations are not one identical cross-model protocol and do not support universal robustness. | low-medium |
 
 ## Specialized-domain witnesses
 
-- Coding / SWE: primary evidence context; edit/tool behavior, LSP/DAP integration, Hashline, and the self-reported harness ablations all live here.
+- Coding / SWE: primary evidence context; edit/tool behavior, LSP/DAP integration, Hashline, and the self-reported harness comparisons all live here.
 - Research / Science: web/PDF tooling exists, but no frozen controlled research-task result is used here. **insufficient evidence** for a comparative projection.
 - Government / Public Administration: **insufficient evidence**.
 - other applicable domains: debugger, shell, and general tool integrations are architecture evidence only unless paired with outcome evidence.
 
 ## Controlled / benchmark evidence
 
-All values below are maintainer-reported in the frozen README and are therefore labeled **self-reported**:
+All values below are maintainer-reported in the frozen README and are therefore labeled **self-reported**; the record does not assume a stronger experimental control than the README documents:
 
-- Grok Code Fast 1: `6.7% → 68.3%` attributed to the edit format;
+- Grok Code Fast 1: `6.7% → 68.3%`, attributed to the edit format;
 - Gemini 3 Flash: `+5 pp` versus `str_replace`;
-- Grok 4 Fast: `−61%` output tokens on the same work after removing bad-diff retry loops;
-- MiniMax: `2.1×` pass rate, described as same weights and same prompt.
+- Grok 4 Fast: `−61%` output tokens, attributed to removal of the bad-diff retry loop;
+- MiniMax: `2.1×` pass rate, explicitly described as “same weights, same prompt.”
 
 These are useful harness-effect witnesses but are not treated as independently verified benchmark results.
 
