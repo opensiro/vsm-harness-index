@@ -12,13 +12,13 @@ MAP_PATH = ROOT / "map.json"
 
 FUNCTIONS = {"S1", "S2", "S3", "S3*", "S4", "S5"}
 FITS = {"direct", "proxy", "unsuitable", "unknown"}
-SYSTEM_LINKAGE = {
+DECLARED_SYSTEM_COMPATIBILITY = {
     "native-system",
     "adapter-preserved",
     "benchmark-scaffolded",
     "unclear",
-    "observation-specific",
 }
+MAP_LINKAGE = DECLARED_SYSTEM_COMPATIBILITY | {"observation-specific"}
 
 
 def fail(message: str) -> None:
@@ -41,9 +41,7 @@ def main() -> None:
     if set(data.get("fit_vocabulary", [])) != FITS:
         fail("fit_vocabulary does not match validator vocabulary")
 
-    declared_compat = set(data.get("system_compatibility_vocabulary", []))
-    expected_declared = SYSTEM_LINKAGE - {"observation-specific"}
-    if declared_compat != expected_declared:
+    if set(data.get("system_compatibility_vocabulary", [])) != DECLARED_SYSTEM_COMPATIBILITY:
         fail("system_compatibility_vocabulary does not match validator vocabulary")
 
     entries = data.get("entries")
@@ -82,7 +80,7 @@ def main() -> None:
             fail(f"entry {index} has invalid function: {function!r}")
         if fit not in FITS:
             fail(f"entry {index} has invalid fit: {fit!r}")
-        if linkage not in SYSTEM_LINKAGE:
+        if linkage not in MAP_LINKAGE:
             fail(f"entry {index} has invalid system_linkage: {linkage!r}")
         if not isinstance(benchmark_id, str) or not benchmark_id.strip():
             fail(f"entry {index} benchmark_id must be non-empty")
@@ -112,7 +110,7 @@ def main() -> None:
             for entry in entries
             if entry["function"] == function and entry["fit"] == "direct"
         )
-        for function in sorted(FUNCTIONS)
+        for function in ("S1", "S2", "S3", "S3*", "S4", "S5")
     }
 
     print(f"ok: {len(entries)} reviewed benchmark mappings")
