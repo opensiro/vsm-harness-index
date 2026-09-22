@@ -212,3 +212,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 202|mission-control|Mission Control|https://github.com/CosmonautJones/mission-control|2026-08-22T22:09:44Z|index-addition|9337744f7ec940234ecdc2936fa426d70598d26d|2026-09-22
 
 203|reigen|Reigen / Conductor|https://github.com/zachary-wilde/reigen|2026-07-30T23:40:54Z|index-addition|6236f47a1b2f3081a0f22bcba47705bcd1680720|2026-09-22
+
+204|foreman|Foreman|https://github.com/marcelsud/claude-foreman|2026-07-20T01:23:03Z|index-addition|1863451a47f914a909f2b3857a73e87645ccd1fe|2026-09-22
