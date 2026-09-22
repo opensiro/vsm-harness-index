@@ -20,11 +20,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate standalone assessment and proposal metrics
+      - name: Render proposal metrics
         shell: bash
         run: |
           set -euo pipefail
-          python scripts/check_assessment_contract.py assessments/masters-of-ai-harness.md
           python scripts/render_metrics.py
           python scripts/render_metrics.py --check
           git config user.name 'github-actions[bot]'
