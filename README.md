@@ -46,7 +46,7 @@ assessments/<harness_id>.md
 
 **Next corpus milestone:** 186/250 (74.4%).
 
-Active semantic contract: **Profile 0.2.3 / Methodology 0.3.5**.
+Active semantic contract: **Profile 0.2.4 / Methodology 0.3.6**.
 
 [Full metrics](METRICS.md) · [Machine-readable metrics](data/metrics.json)
 <!-- VSM INDEX METRICS:END -->
