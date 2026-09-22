@@ -27,6 +27,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 4 | <a id="deepseek-harness"></a>[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="kadath"></a>[KADATH](https://github.com/i3T4AN/KADATH) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A — C A A P` |
+| 4 | <a id="reigen"></a>[Reigen / Conductor](https://github.com/zachary-wilde/reigen) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
 | 4 | <a id="exo"></a>[Exo](https://github.com/exoharness/exo) | 2026-Q2 | 3/6 | 2/5 | 0 | 3 | 0 | `A — P — A(P) A(P)` |
 | 4 | <a id="pydantic-ai-harness"></a>[Pydantic AI Harness](https://github.com/pydantic/pydantic-ai-harness) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A — A A C —` |
 | 4 | <a id="zeroclaw"></a>[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
