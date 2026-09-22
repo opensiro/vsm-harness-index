@@ -36,10 +36,19 @@ def milestone_rows(included: int) -> list[dict[str, object]]:
     return rows
 
 
+def compute_core_metrics(repo: Path) -> dict[str, int]:
+    """Return repository-owned corpus stock metrics usable on historical trees."""
+    return {
+        "included_assessments": len(data(repo)),
+        "catalog_entries": len(read_psv(repo / "data" / "catalog.psv")),
+    }
+
+
 def compute_metrics(repo: Path) -> dict[str, object]:
-    catalog_entries = len(read_psv(repo / "data" / "catalog.psv"))
+    core = compute_core_metrics(repo)
+    catalog_entries = core["catalog_entries"]
     included_rows = data(repo)
-    included_assessments = len(included_rows)
+    included_assessments = core["included_assessments"]
     if not included_rows:
         raise ValueError("cannot compute snapshot_date for an empty included cohort")
     snapshot_date = max(catalog["pinned_at"] for _, catalog, _, _ in included_rows)
@@ -158,9 +167,27 @@ def render_markdown(repo: Path) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--source-root",
+        type=Path,
+        help="read metric sources from this repository tree instead of the current checkout",
+    )
+    parser.add_argument(
+        "--stdout-core-json",
+        action="store_true",
+        help="print read-only core corpus metrics as JSON and exit",
+    )
     args = parser.parse_args()
 
-    repo = Path(__file__).resolve().parents[1]
+    repo = (
+        args.source_root.resolve()
+        if args.source_root is not None
+        else Path(__file__).resolve().parents[1]
+    )
+
+    if args.stdout_core_json:
+        print(json.dumps(compute_core_metrics(repo), sort_keys=True))
+        return 0
     outputs = {
         repo / "METRICS.md": render_markdown(repo),
         repo / "data" / "metrics.json": render_json(repo),
