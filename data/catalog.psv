@@ -206,3 +206,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 199|pi-harness|Pi-Harness|https://github.com/wangmiaozero/pi-harness|2026-08-20T12:29:47Z|index-addition|efed4bd8d01505ae5fc8a52de243af7a3827ec39|2026-09-22
 
 200|bossconsole|BossConsole|https://github.com/risa-labs-inc/BossConsole|2026-07-21T01:01:05Z|index-addition|d4db04882425327915e0520a366eac2da8af01f3|2026-09-22
+
+201|preloop|Preloop|https://github.com/preloop/preloop|2026-01-09T19:41:47Z|index-addition|06d53f902d9a8712ea3345ae0bee9b0b8292f917|2026-09-22
