@@ -192,3 +192,5 @@ catalog_position|harness_id|signature
 196|harness-kit|Harness Kit runs autonomous coding S1 units, uses planner-owned dependency judgments to attenuate shared-file interference for S2, and supports autonomous planning with staged parent override for S3 plus independent read-only reflection for S3*; its external-repository adaptation loop remains parent-governed S4, with no material S5 closure.
 
 197|openharness|OpenHarness gives autonomous S1 through durable vendor-agent sessions, exposes installation-wide current control as a constructor path plus parent-closed operator mode for S3, and provides constructor+parent-governed future capability adaptation through its live Store/DSH install-update path; no material top-level S2, S3*, or S5 path is established.
+
+198|masters-of-ai-harness|Masters of AI Harness runs autonomous S1 through Claude Agent SDK actors, exposes installation-wide budget/access regulation as constructor plus parent-governed S3, and provides reviewed external-capability adaptation and identity-change proposal paths as C(P) for S4 and S5; no material top-level S2 or S3* path is established.
