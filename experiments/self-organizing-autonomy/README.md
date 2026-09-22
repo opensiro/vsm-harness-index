@@ -52,3 +52,9 @@ Review artifacts are experimental evidence about the candidate classification di
 ## Current fixtures
 
 - [`ouroboros/`](fixtures/ouroboros/) — first real-system candidate fixture; tracked by Index issue #271.
+
+## Research notes
+
+Research notes preserve candidate reasoning and evidence leads before a judgment-free fixture packet is frozen. They are not fixture findings and must not be used to alter canonical assessment state.
+
+- [`browser-harness-s1-learning.md`](notes/browser-harness-s1-learning.md) — Browser Harness as a candidate learned S1 regulator / persistent operational repertoire case; focuses on `agent_helpers.py`, domain-skill reuse, the merged Expedia URL-first regulator, and the unresolved external-constructor/provenance test.
