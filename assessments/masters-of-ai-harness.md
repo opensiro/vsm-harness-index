@@ -180,7 +180,7 @@ Identity follows the same deliberate split. `prompt_propose` is specifically an 
 - Caveats: static identity text by itself would not be S5. The positive mapping depends on the explicit runtime identity-proposal path plus a documented parent-owned identity source of truth and return into later prompt assembly.
 - Identity / ultimate-policy issue: `prompt_propose` is specifically for changes to the agent's own identity or system prompt when behavior, framing or context should change.
 - Ultimate authority in each claimed mode: base constructor mode leaves authority uncomposed; parent mode vests authority in the installation owner/agent author who edits the authoritative `IDENTITY.md`.
-- Return-to-operation: accepted identity edits are loaded by `loadAgentManifest()` / `buildSystemPrompt()` for subsequent agent execution; serve mode watches agent definitions and broadcasts roster updates when `IDENTITY.md` changes.
+- Return-to-operation path: accepted identity edits are loaded by `loadAgentManifest()` / `buildSystemPrompt()` for subsequent agent execution; serve mode watches agent definitions and broadcasts roster updates when `IDENTITY.md` changes.
 
 | Mode | Decisive owner | Trigger | Closure | Evidence |
 | --- | --- | --- | --- | --- |
