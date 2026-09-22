@@ -1,0 +1,65 @@
+name: render Pi-Harness admission
+
+on:
+  push:
+    branches:
+      - admit-pi-harness-199
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Admit Pi-Harness sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path("assessments/pi-harness.md")
+          text = assessment.read_text(encoding="utf-8")
+          if "status: proposed" not in text:
+              raise SystemExit("Pi-Harness assessment is not proposed")
+          assessment.write_text(text.replace("status: proposed", "status: included", 1), encoding="utf-8")
+
+          catalog = Path("data/catalog.psv")
+          catalog_text = catalog.read_text(encoding="utf-8")
+          row = "199|pi-harness|Pi-Harness|https://github.com/wangmiaozero/pi-harness|2026-08-20T12:29:47Z|index-addition|efed4bd8d01505ae5fc8a52de243af7a3827ec39|2026-09-22"
+          if "|pi-harness|" in catalog_text:
+              raise SystemExit("Pi-Harness already present in catalog")
+          catalog.write_text(catalog_text.rstrip() + "\n\n" + row + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          signatures_text = signatures.read_text(encoding="utf-8")
+          signature = "199|pi-harness|Pi-Harness runs autonomous Pi-backed S1 units, exposes concrete shared-file interference coordination as an S2 constructor path, provides constructor plus parent-governed whole-orchestration current control for S3, and closes autonomous S3* through a distinct reviewer-agent corrective loop; external package-registry adaptation is constructor plus parent-governed S4, with no material S5 closure."
+          if "|pi-harness|" in signatures_text:
+              raise SystemExit("Pi-Harness already present in signatures")
+          signatures.write_text(signatures_text.rstrip() + "\n\n" + signature + "\n", encoding="utf-8")
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+      - name: Commit admission
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --stat
+          git commit -m "admit: add Pi-Harness to canonical index"
+          git push origin HEAD:${GITHUB_REF_NAME}
