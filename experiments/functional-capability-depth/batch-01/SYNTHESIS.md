@@ -21,52 +21,52 @@ All six canonical S1 states remain `A`. Findings below concern demonstrated S1 c
 
 | S1 dimension | Pairwise outcome | Basis |
 | --- | --- | --- |
-| operational effectiveness | **stronger evidence for oh-my-pi** | On Coding/SWE evidence, OMP reports same-weight/same-prompt edit/task ablations; Pi has no frozen matched task-success experiment. OMP results are still **self-reported**. |
+| operational effectiveness | **stronger evidence for oh-my-pi** | On Coding/SWE evidence, OMP reports several edit/tool comparisons; the MiniMax row explicitly states `2.1×` pass rate with the same weights and same prompt. Pi has no frozen matched task-success experiment. All OMP results remain **self-reported**. |
 | environment-interaction fidelity | **stronger evidence for oh-my-pi** | OMP couples executable Hashline/LSP/tool mechanisms to self-reported edit-format outcome deltas. Pi demonstrates argument validation and safe handling of truncated tool calls but no fidelity outcome measurement. Scope: Coding/SWE edit/tool interaction. |
 | operational state continuity | **comparable under available evidence** | Both boundaries own resumable/persistent session state and compaction/current-trajectory continuity. No matched interruption/resume stress test orders them. |
 | recovery / resilience | **incomparable** | Pi evidence emphasizes context-overflow and truncated-tool-call recovery; OMP evidence emphasizes TTSR course correction and edit-state guards. No common failure-injection condition supports an ordering. |
 | operational result assurance | **insufficient evidence** | Pi has action-level validation but no hard task completion gate found. OMP has action-local edit/LSP checks, while separate advisor review is excluded as an automatic S1 bonus. |
-| efficiency | **stronger evidence for oh-my-pi** | OMP reports a **self-reported** `−61%` output-token result for the cited edit-loop intervention; Pi exposes accounting/compaction but no matched successful-work resource comparison. Scope: cited Coding/SWE work only. |
+| efficiency | **stronger evidence for oh-my-pi** | OMP reports a **self-reported** `−61%` output-token result attributed to elimination of a bad-diff retry loop; Pi exposes accounting/compaction but no matched successful-work resource comparison. Scope: the cited Coding/SWE intervention only. |
 | portability / robustness | **stronger evidence for oh-my-pi, limited** | OMP reports positive edit/tool effects across several model families; Pi demonstrates broad provider architecture without a fixed-task cross-provider outcome study. The OMP protocols are not one universal cross-model benchmark, so this remains a limited Coding/SWE portability result. |
 
-**Interpretation:** the common `S1=A` state does not encode the measured edit/tool-effect evidence available for OMP, while Pi remains a strong narrow-S1 implementation control. This is not a global Pi-vs-OMP judgment.
+**Interpretation:** the common `S1=A` state does not encode the reported edit/tool-effect evidence available for OMP, while Pi serves as the narrow-S1 implementation control. This is not a global Pi-vs-OMP judgment.
 
 ## P2 — `oh-my-pi.S1 ↔ Ouroboros.S1`
 
 | S1 dimension | Pairwise outcome | Basis |
 | --- | --- | --- |
-| operational effectiveness | **incomparable** | OMP's frozen controlled claims are edit/tool-focused; Ouroboros publishes end-to-end Terminal-Bench/OSWorld/SWE-style results. Different units and task conditions prevent a defensible direct ordering. |
-| environment-interaction fidelity | **stronger evidence for oh-my-pi on Coding/SWE edit fidelity** | OMP exposes edit-specific before/after claims plus Hashline/LSP implementation evidence. Ouroboros has typed execution/evidence rails and end-to-end traces, but the frozen evidence does not isolate edit/tool fidelity in a matched ablation. |
+| operational effectiveness | **incomparable** | OMP's frozen self-reported comparisons are edit/tool-focused; Ouroboros publishes end-to-end Terminal-Bench/OSWorld/SWE-style results. Different units and task conditions prevent a defensible direct ordering. |
+| environment-interaction fidelity | **stronger evidence for oh-my-pi on Coding/SWE edit fidelity** | OMP exposes edit-specific comparative claims plus Hashline/LSP implementation evidence. Ouroboros has typed execution/evidence rails and end-to-end traces, but the frozen evidence does not isolate edit/tool fidelity in a matched ablation. |
 | operational state continuity | **comparable under available evidence** | Both own substantial current-trajectory persistence/checkpoint mechanisms. No common interruption protocol measures which preserves state more effectively. |
 | recovery / resilience | **incomparable** | OMP's stream-rule/edit-state recovery and Ouroboros's provider-death/retry-wall/custody/finalization rails cover different failure classes; no common failure-injection benchmark exists. |
 | operational result assurance | **stronger evidence for Ouroboros** | Ouroboros demonstrates a first-party root completion path with host-attested verification/artifact evidence and task acceptance. OMP's independent advisor is not counted; no equivalent frozen hard root completion gate was found. |
-| efficiency | **stronger evidence for oh-my-pi on the cited Coding/SWE intervention** | OMP has a **self-reported** token-reduction ablation; Ouroboros has native usage/cache/budget controls but no matched successful-work resource comparison in the frozen evidence. |
+| efficiency | **stronger evidence for oh-my-pi on the cited Coding/SWE intervention** | OMP has a **self-reported** token-reduction claim attributed to its edit/retry path; Ouroboros has native usage/cache/budget controls but no matched successful-work resource comparison in the frozen evidence. |
 | portability / robustness | **stronger evidence for Ouroboros for whole-task multi-model robustness** | The same Ouroboros harness reports Terminal-Bench runs across multiple model substrates with public artifacts. OMP has multi-model edit claims, but not the same whole-task protocol. Both remain self-reported and domain-scoped. |
 
-**Interpretation:** the pair separates different S1 strengths without using Full-A status: OMP has more direct edit-fidelity/efficiency evidence, while Ouroboros has more direct root-assurance and whole-task multi-model evidence.
+**Interpretation:** the pair has different dimension-specific evidence profiles without using Full-A status: OMP has more direct edit-fidelity/efficiency evidence, while Ouroboros has more direct root-assurance and whole-task multi-model evidence.
 
 ## P3 — `oh-my-pi.S1 ↔ thClaws.S1`
 
 | S1 dimension | Pairwise outcome | Basis |
 | --- | --- | --- |
-| operational effectiveness | **stronger evidence for oh-my-pi** | OMP provides frozen self-reported controlled Coding/SWE deltas; no matched thClaws task-success benchmark was found. |
-| environment-interaction fidelity | **stronger evidence for oh-my-pi on Coding/SWE edit fidelity** | thClaws has a concrete native parse/dispatch/result loop, but OMP additionally links its edit protocol to outcome deltas. This does not order non-coding environment interaction. |
+| operational effectiveness | **stronger evidence for oh-my-pi** | OMP provides frozen self-reported Coding/SWE comparative deltas; no matched thClaws task-success benchmark was found. |
+| environment-interaction fidelity | **stronger evidence for oh-my-pi on Coding/SWE edit fidelity** | thClaws has a concrete native parse/dispatch/result loop, but OMP additionally links its edit protocol to reported outcome deltas. This does not order non-coding environment interaction. |
 | operational state continuity | **comparable under available evidence** | Both own resumable state and compaction/current-trajectory mechanisms. No common continuity stress test exists. |
 | recovery / resilience | **incomparable** | OMP and thClaws demonstrate different recovery classes: TTSR/edit-state correction versus provider retry/context rescue/max-token continuation. |
 | operational result assurance | **stronger evidence for thClaws** | thClaws `/goal --require` supplies a first-party hard artifact-existence condition that rejects `MarkGoalComplete` while unmet. OMP has action-local checks but no comparable frozen hard task-completion gate. This does not claim semantic correctness of the required artifact. |
-| efficiency | **stronger evidence for oh-my-pi on the cited Coding/SWE intervention** | OMP reports a token ablation; thClaws provides budgets/caps but no comparative resource-per-success result. |
+| efficiency | **stronger evidence for oh-my-pi on the cited Coding/SWE intervention** | OMP reports a token-reduction claim attributed to its retry path; thClaws provides budgets/caps but no comparative resource-per-success result. |
 | portability / robustness | **insufficient evidence** | Both have broad provider/platform architecture. OMP has model-specific edit results, but the available protocols are not aligned enough with thClaws to establish comparative robustness. |
 
 ## P4 — `oh-my-pi.S1 ↔ Headcount.S1`
 
 | S1 dimension | Pairwise outcome | Basis |
 | --- | --- | --- |
-| operational effectiveness | **stronger evidence for oh-my-pi** | OMP has controlled self-reported Coding/SWE harness effects; Headcount has no matched Claude Code baseline with/without its skills. |
+| operational effectiveness | **stronger evidence for oh-my-pi** | OMP has self-reported Coding/SWE harness-effect comparisons; Headcount has no matched Claude Code baseline with/without its skills. |
 | environment-interaction fidelity | **stronger first-party evidence for oh-my-pi** | OMP owns material edit/tool control paths. Headcount explicitly does not execute actions itself; tool fidelity is primarily inherited from Claude Code. |
 | operational state continuity | **capability primarily inherited rather than first-party for Headcount** | OMP owns session/current-trajectory mechanisms; no Headcount-owned session runtime was found. Claude Code supplies Headcount's live trajectory state. |
 | recovery / resilience | **stronger first-party evidence for oh-my-pi** | OMP exposes executable recovery mechanisms. Headcount contains recovery/debugging procedures, but no controlled effect separates them from host execution. |
 | operational result assurance | **incomparable** | Headcount owns an explicit completion-verification procedure but relies on Claude Code to execute/enforce it; OMP owns action-level guards but lacks an equivalent frozen hard completion gate. No common outcome assay orders the two forms. |
-| efficiency | **stronger evidence for oh-my-pi on the cited Coding/SWE intervention** | OMP reports token reduction; Headcount has no comparable resource experiment. |
+| efficiency | **stronger evidence for oh-my-pi on the cited Coding/SWE intervention** | OMP reports token reduction attributed to its edit/retry path; Headcount has no comparable resource experiment. |
 | portability / robustness | **stronger evidence for oh-my-pi, limited** | OMP reports multi-model edit effects and owns a multi-provider runtime. Headcount's frozen distribution is Claude Code-specific, with no alternate-host task result. |
 
 **Ownership result:** both remain canonical `S1=A`; the capability accounting nevertheless distinguishes a native/mixed runtime path from a host-inherited execution path.
@@ -115,7 +115,7 @@ The batch supports the narrow research hypothesis: canonical `S1=A` does not by 
 
 Concrete examples:
 
-- OMP's frozen Coding/SWE evidence contains controlled, though self-reported, edit/tool and token effects that are absent from the Pi control record.
+- OMP's frozen Coding/SWE evidence contains self-reported comparative edit/tool and token effects that are absent from the Pi control record; the MiniMax row explicitly controls weights and prompt.
 - thClaws demonstrates a native hard artifact-existence completion gate (`/goal --require`) that is a different S1 assurance mechanism from OMP's action-local guards.
 - Ouroboros demonstrates a first-party root task acceptance/evidence path, while Headcount and Henterprise supply task procedures over external execution hosts.
 - Headcount and Henterprise replicate the ownership-accounting case: visible operation can remain canonically autonomous S1 while much execution capability is `inherited` and specific first-party procedures are `mixed`.
@@ -134,6 +134,6 @@ These statements do **not** imply a harness-wide order.
 
 ## Interpretation boundary
 
-Batch 01 supports continuing per-function capability research, but it does not yet justify a normative S1 capability score or a cross-function scoring framework. The strongest distinctions mix different evidence classes: self-reported controlled benchmarks, executable mechanisms, and ownership-boundary evidence. A future replication should prefer common task/failure protocols across more pairs before treating the procedure as stable enough for normative promotion.
+Batch 01 supports continuing per-function capability research, but it does not yet justify a normative S1 capability score or a cross-function scoring framework. The strongest distinctions mix different evidence classes: self-reported comparative benchmark claims, executable mechanisms, and ownership-boundary evidence. A future replication should prefer common task/failure protocols across more pairs before treating the procedure as stable enough for normative promotion.
 
 Accordingly, this batch does not modify canonical assessments and does not promote these S1 dimensions into S2/S3/S3*/S4/S5 criteria.
