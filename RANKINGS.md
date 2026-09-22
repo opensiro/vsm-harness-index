@@ -87,6 +87,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="lobehub"></a>[LobeHub](https://github.com/lobehub/lobehub) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A A — C — —` |
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
+| 6 | <a id="unreal-agent"></a>[Unreal Agent](https://github.com/unreallabsai/unreal-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mini-harness"></a>[mini-harness](https://github.com/mini-harness/mini-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="lobstah"></a>[lobstah](https://github.com/aequitas-labs/lobstah) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="openharness"></a>[OpenHarness](https://github.com/autonomous-ai/openharness) | 2026-Q3 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
