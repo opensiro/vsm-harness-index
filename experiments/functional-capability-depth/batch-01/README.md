@@ -120,6 +120,8 @@ Every empirical claim SHOULD also identify the domain in which it was observed:
 
 Domain-specific evidence can support a general mechanism claim only when the mechanism and transfer argument are explicit. Otherwise it remains evidence for the specialized projection only.
 
+**No absence penalty:** a harness does not lose general capability depth merely because it does not target a particular specialized domain. Missing `coding-swe`, `research-science`, `government-public-admin`, or other applied-domain evidence means only that the corresponding specialized projection is unevaluated or unsupported.
+
 ## Evidence hierarchy
 
 Prefer, in descending order:
@@ -274,6 +276,7 @@ Disallowed in Batch 01:
 - treating tool count as execution quality;
 - treating specialized-domain breadth as general capability depth;
 - treating one specialized-domain benchmark as universal harness quality;
+- penalizing a harness for not targeting a specialized applied domain;
 - converting experimental conclusions into canonical autonomy states;
 - modifying upstream repositories to create evidence for this pilot.
 
