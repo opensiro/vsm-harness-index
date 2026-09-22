@@ -1,0 +1,48 @@
+name: admit-masters-of-ai-render
+
+on:
+  push:
+    branches:
+      - admit-masters-of-ai-harness-198
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-masters-of-ai-harness-198
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit Masters of AI Harness and regenerate canonical views
+        shell: bash
+        run: |
+          set -euo pipefail
+          sed -i 's/^status: proposed$/status: included/' assessments/masters-of-ai-harness.md
+          if ! grep -q '^198|masters-of-ai-harness|' data/catalog.psv; then
+            printf '\n198|masters-of-ai-harness|Masters of AI Harness|https://github.com/mastersof-ai/harness|2026-02-26T22:10:28Z|index-addition|3f5c4846a2f7ecdf48198d6d1116204132e967a5|2026-09-22\n' >> data/catalog.psv
+          fi
+          if ! grep -q '^198|masters-of-ai-harness|' data/signatures.psv; then
+            printf '\n198|masters-of-ai-harness|Masters of AI Harness runs autonomous S1 through Claude Agent SDK actors, exposes installation-wide budget/access regulation as constructor plus parent-governed S3, and provides reviewed external-capability adaptation and identity-change proposal paths as C(P) for S4 and S5; no material top-level S2 or S3* path is established.\n' >> data/signatures.psv
+          fi
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/masters-of-ai-harness.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'admit: add Masters of AI Harness from reviewed standalone assessment'
+            git push origin HEAD:admit-masters-of-ai-harness-198
+          fi
