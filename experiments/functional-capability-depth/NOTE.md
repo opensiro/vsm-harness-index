@@ -124,9 +124,14 @@ means that autonomous operational closure is present. It does **not** mean that 
 systems have comparable task success, tool fidelity, execution breadth, recovery behavior, cost,
 latency, or benchmark performance.
 
-## Candidate capability dimensions
+## General capability domains
 
-A first exploratory decomposition for agent harnesses could include:
+Capability depth should be defined first through **general, application-domain-agnostic capability
+domains**. This follows the same separation intended for the curated Awesome views: the generic
+layer describes reusable capability / organizational-form patterns, while applied domains are
+projections over that generic layer.
+
+A first exploratory generic capability decomposition is:
 
 ```text
 E  execution/task effectiveness
@@ -139,11 +144,65 @@ O  operational maturity
 B  benchmark / experimental evidence strength
 ```
 
+These dimensions should be interpreted generically. For example:
+
+- `T` asks whether environment interaction is faithful and effective, not whether the environment
+  happens to be a source-code repository;
+- `V` asks whether claims/results are independently or structurally verified, not whether the
+  verifier is specifically a code reviewer;
+- `R` asks whether the operational loop can recover from failures and drift, independent of whether
+  the task is coding, research, administration, security, or another applied domain;
+- `E` concerns task-effectiveness evidence under a defined task distribution, not a single product
+  vertical.
+
 This is intentionally a candidate list, not a scoring specification.
 
 A per-function formulation may ultimately be cleaner than a single global harness score. For
 example, `S1 capability depth` could be evaluated separately from `S3 capability depth`, while the
 canonical VSM vector continues to answer only closure / ownership.
+
+## Specialized domain projections
+
+Specialized domains should **reuse** the general capability model rather than create incompatible
+quality systems.
+
+Examples of applied views include:
+
+- Coding / SWE;
+- Research / scientific work;
+- Government / public administration;
+- Cybersecurity / incident response;
+- Infrastructure / SRE;
+- Enterprise operations;
+- industrial / robotic operations;
+- legal / compliance;
+- healthcare operations;
+- logistics / supply chain.
+
+A specialized domain may provide:
+
+- a domain-specific task distribution;
+- domain-specific success criteria;
+- required environment/tool reach;
+- domain-specific failure and recovery cases;
+- evidence relevant to that domain.
+
+It should **not** redefine what `E/T/C/D/V/R/O/B` mean globally, and strength in one specialized
+view must not be silently promoted into universal harness quality.
+
+Thus evidence may be represented as:
+
+```text
+general capability profile
+        ↓
+        ├── Coding / SWE projection
+        ├── Research / Science projection
+        ├── Government projection
+        └── other applied-domain projections
+```
+
+Architectural/product shape such as `Base/Constructor` versus `Applied` is a separate descriptive
+axis and should not itself increase capability depth.
 
 ## Important methodological constraint
 
@@ -164,6 +223,10 @@ prefer controlled or reproducible outcomes such as:
 Host-inherited capability should also be separated from first-party harness capability where the
 boundary can be established.
 
+Domain-specific evidence must also be labeled as such. A coding benchmark can support the Coding / SWE
+projection and may provide evidence for a general mechanism, but it does not by itself establish
+universal S1 capability across unrelated domains.
+
 ## Prior-art boundary
 
 This note does **not** claim that separating structural viability from performance is new, nor that
@@ -173,22 +236,25 @@ The candidate contribution to investigate is narrower:
 
 > pair an evidence-backed VSM closure / ownership profile with a separate evidence-backed
 > per-function capability profile for agent harnesses, without allowing either axis to stand in for
-> the other.
+> the other, and expose specialized domains only as projections over the common capability layer.
 
 ## Research questions
 
-1. Can `S1 capability depth` be defined in a way that is reproducible across very different harness
-   architectures?
+1. Can `S1 capability depth` be defined in a domain-agnostic way that is reproducible across very
+   different harness architectures?
 2. Should capability be measured per VSM function or through a harness-global vector?
 3. How should first-party capability be separated from capability inherited from a host model,
    coding agent, runtime, or external tool provider?
-4. Which measurements transfer across models, and which are model-specific?
+4. Which measurements transfer across models and specialized domains, and which are necessarily
+   domain-specific?
 5. Can fixed-model experiments expose harness effects large enough to make the closure / capability
    distinction empirically useful?
 6. Does a richer organizational topology improve functional capability, or are the two largely
    independent until particular failure modes appear?
-7. Can the Index identify cases where a narrower VSM profile has materially stronger S1 execution
-   than a near-Full-A or Full-A system?
+7. Can the Index identify cases where a narrower VSM profile has materially stronger general S1
+   execution evidence than a near-Full-A or Full-A system?
+8. Can specialized Awesome/domain views be generated from the same generic capability evidence
+   without creating a second incompatible taxonomy?
 
 ## Initial candidate cases
 
@@ -199,6 +265,10 @@ The first comparison set should include at least:
 - `Headcount` — near-Full-A organizational layer with significant host-inherited execution;
 - `thClaws` — broad first-party local runtime / multi-agent platform;
 - one deliberately minimal `S1=A` harness as a low-depth control.
+
+`oh-my-pi`'s coding strength is a useful specialized witness, but the experiment must not define
+S1 depth as coding capability. The base comparison should use only general capability domains; any
+Coding / SWE conclusion should be published as a specialized projection.
 
 The useful result is not an overall winner. The experiment should show whether systems sharing the
 same canonical autonomy state exhibit measurably different functional depth, and whether those
