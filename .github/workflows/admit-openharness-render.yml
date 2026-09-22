@@ -1,0 +1,48 @@
+name: admit-openharness-render
+
+on:
+  push:
+    branches:
+      - admit-openharness-197
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-openharness-197
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit OpenHarness and regenerate canonical views
+        shell: bash
+        run: |
+          set -euo pipefail
+          sed -i 's/^status: proposed$/status: included/' assessments/openharness.md
+          if ! grep -q '^197|openharness|' data/catalog.psv; then
+            printf '\n197|openharness|OpenHarness|https://github.com/autonomous-ai/openharness|2026-08-04T07:53:15Z|index-addition|ffbc4b0d7de0dfb8ccf43213e17e2495dce7fd85|2026-09-22\n' >> data/catalog.psv
+          fi
+          if ! grep -q '^197|openharness|' data/signatures.psv; then
+            printf '\n197|openharness|OpenHarness gives autonomous S1 through durable vendor-agent sessions, exposes installation-wide current control as a constructor path plus parent-closed operator mode for S3, and provides constructor+parent-governed future capability adaptation through its live Store/DSH install-update path; no material top-level S2, S3*, or S5 path is established.\n' >> data/signatures.psv
+          fi
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/openharness.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'admit: add OpenHarness from reviewed standalone assessment'
+            git push origin HEAD:admit-openharness-197
+          fi
