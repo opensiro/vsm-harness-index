@@ -4,6 +4,8 @@ Status: experimental, non-normative.
 
 Issue: #371
 
+`map.json` is the machine-readable source of truth for reviewed fit classifications. This document records the evidence and function-first reasoning behind those classifications.
+
 This review applies the current `vsm-harness-profile` function definitions before interpreting benchmark vocabulary. It does not change canonical assessments or Profile semantics.
 
 ## Reviewed map
