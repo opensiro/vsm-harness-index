@@ -1,0 +1,48 @@
+name: admit-marveen-render
+
+on:
+  push:
+    branches:
+      - admit-marveen-195
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-marveen-195
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit Marveen and regenerate canonical views
+        shell: bash
+        run: |
+          set -euo pipefail
+          sed -i 's/^status: proposed$/status: included/' assessments/marveen.md
+          if ! grep -q '^195|marveen|' data/catalog.psv; then
+            printf '\n195|marveen|Marveen|https://github.com/Szotasz/marveen|2026-04-08T11:00:40Z|index-addition|b3f6574a76488b3367b26684f9065acca695a00f|2026-09-22\n' >> data/catalog.psv
+          fi
+          if ! grep -q '^195|marveen|' data/signatures.psv; then
+            printf '\n195|marveen|Marveen closes autonomous S1 through scheduled/delegated fleet execution, autonomously resolves inter-agent channel collisions for S2, regulates current commitments via Kanban audit with parent-supervised S3, and supplies autonomous S3* through independent orchestrator PR review; S4 is constructor+parent-governed, while identity remains parent-governed S5.\n' >> data/signatures.psv
+          fi
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/marveen.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'admit: add Marveen from reviewed standalone assessment'
+            git push origin HEAD:admit-marveen-195
+          fi
