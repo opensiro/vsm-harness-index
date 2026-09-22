@@ -198,3 +198,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 195|marveen|Marveen|https://github.com/Szotasz/marveen|2026-04-08T11:00:40Z|index-addition|b3f6574a76488b3367b26684f9065acca695a00f|2026-09-22
 
 196|harness-kit|Harness Kit|https://github.com/deepklarity/harness-kit|2026-03-01T16:53:11Z|index-addition|87305cd35cba8e75194a50d6dd301c6dd52a69c9|2026-09-22
+
+197|openharness|OpenHarness|https://github.com/autonomous-ai/openharness|2026-08-04T07:53:15Z|index-addition|ffbc4b0d7de0dfb8ccf43213e17e2495dce7fd85|2026-09-22
