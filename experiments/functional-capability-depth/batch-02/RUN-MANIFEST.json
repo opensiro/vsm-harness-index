@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "issue": 354,
+  "status": "terminally-unavailable-before-first-semantic-run",
+  "generated_at": "2026-09-22T18:06:29Z",
+  "run_order_seed": 35420260922,
+  "planned_runs": 54,
+  "started_runs": 0,
+  "valid_runs": 0,
+  "infrastructure_invalid_or_unavailable": 54,
+  "systems": {
+    "Pi": {
+      "frozen_ref": "earendil-works/pi@71dca871bc80b6bc97be37f0ca3189399d651fff",
+      "adapter_version_or_digest": "sha256:943dd7f8a8f1ef6071d8fa29790f30b0482f622c6a145a5197620f1f9f2c05f9"
+    },
+    "oh-my-pi": {
+      "frozen_ref": "can1357/oh-my-pi@dbf3afad4894bde827d90f965e77b3fe1c5a95e5",
+      "adapter_version_or_digest": "sha256:3bb3251e995f77c3766c76b2252a603a4a9eabc5d9d16c0879dc67fea36b417a"
+    },
+    "Ouroboros": {
+      "frozen_ref": "razzant/ouroboros@86806ee123ce8e26cc063cc1a618f975eea64f26",
+      "adapter_version_or_digest": "sha256:bcd7c9ff8243468a19caae3ce0cc6affbe6a228ac9141ffa0b70dea53cd96079"
+    },
+    "thClaws": {
+      "frozen_ref": "thClaws/thClaws@cd700937a71a391f052438d139b7b1c5a6456755",
+      "adapter_version_or_digest": "sha256:86eaadc1718aecd444b040b963c1458c3ebd0c3de1079cf96934bd4449c8cd19"
+    },
+    "Headcount": {
+      "frozen_ref": "cbrock84/headcount@9cbf34005e3e8a980a6af9b55eb226bd926a62b3",
+      "adapter_version_or_digest": "sha256:76f8a57d49f89d845499f674f5dab8f154c8c090afa4cae4eb30a2cd62538be7"
+    },
+    "Henterprise": {
+      "frozen_ref": "humbertobellor/henterprise@0bd56397676462e216f92b5b7800919a3597a99a",
+      "adapter_version_or_digest": "sha256:42d494f48f64192d9bdd2ff7953d63f6728d8e79b490c57c28c4c9018fd649d1"
+    }
+  },
+  "record_defaults": {
+    "model_identifier": "claude-sonnet-4-6",
+    "environment_digest": "sha256:01020e2167276688a1394c0a6a513f43f653e35677f1bf91004538e8876ee039",
+    "start_time": null,
+    "end_time": null,
+    "exit_state": "not-started: execution-environment-unavailable",
+    "evaluator_pass": null,
+    "changed_paths": [],
+    "verification_state": null,
+    "transient_failure_observed": null,
+    "recovery_state": null,
+    "model_requests": null,
+    "input_tokens": null,
+    "output_tokens": null,
+    "tool_calls": null,
+    "retry_count": null,
+    "run_validity": "terminally-unavailable-pre-run"
+  },
+  "record_fields": [
+    "sequence",
+    "system",
+    "task",
+    "repetition"
+  ],
+  "record_resolution": "Each row in records is one planned run. Resolve frozen_ref and adapter_version_or_digest from systems[row.system], then apply record_defaults. The resolved record contains every mandatory Batch 02 manifest field; no semantic value is inferred.",
+  "records": [
+    [1, "Headcount", "T1", 1],
+    [2, "Henterprise", "T1", 3],
+    [3, "Pi", "T3", 3],
+    [4, "Headcount", "T3", 2],
+    [5, "oh-my-pi", "T2", 3],
+    [6, "oh-my-pi", "T3", 1],
+    [7, "Pi", "T2", 1],
+    [8, "oh-my-pi", "T2", 2],
+    [9, "oh-my-pi", "T2", 1],
+    [10, "thClaws", "T3", 1],
+    [11, "Henterprise", "T1", 2],
+    [12, "Headcount", "T1", 3],
+    [13, "Pi", "T1", 3],
+    [14, "Headcount", "T1", 2],
+    [15, "oh-my-pi", "T1", 1],
+    [16, "Ouroboros", "T2", 3],
+    [17, "Pi", "T1", 1],
+    [18, "thClaws", "T3", 2],
+    [19, "thClaws", "T2", 1],
+    [20, "Ouroboros", "T3", 2],
+    [21, "Henterprise", "T3", 2],
+    [22, "Pi", "T3", 2],
+    [23, "thClaws", "T1", 2],
+    [24, "Headcount", "T2", 1],
+    [25, "thClaws", "T2", 2],
+    [26, "Ouroboros", "T3", 1],
+    [27, "Ouroboros", "T1", 2],
+    [28, "Ouroboros", "T1", 1],
+    [29, "Headcount", "T2", 3],
+    [30, "oh-my-pi", "T1", 3],
+    [31, "Henterprise", "T2", 3],
+    [32, "oh-my-pi", "T3", 3],
+    [33, "Pi", "T2", 3],
+    [34, "Headcount", "T2", 2],
+    [35, "thClaws", "T2", 3],
+    [36, "oh-my-pi", "T3", 2],
+    [37, "Henterprise", "T1", 1],
+    [38, "Pi", "T3", 1],
+    [39, "thClaws", "T1", 1],
+    [40, "Henterprise", "T3", 1],
+    [41, "thClaws", "T3", 3],
+    [42, "Ouroboros", "T2", 1],
+    [43, "Ouroboros", "T3", 3],
+    [44, "Ouroboros", "T1", 3],
+    [45, "thClaws", "T1", 3],
+    [46, "Headcount", "T3", 1],
+    [47, "Henterprise", "T3", 3],
+    [48, "Pi", "T1", 2],
+    [49, "Pi", "T2", 2],
+    [50, "Headcount", "T3", 3],
+    [51, "Henterprise", "T2", 2],
+    [52, "oh-my-pi", "T1", 2],
+    [53, "Henterprise", "T2", 1],
+    [54, "Ouroboros", "T2", 2]
+  ],
+  "infrastructure_reason": "No DNS resolution for api.anthropic.com or github.com in the execution runtime, and no usable Anthropic credential was exposed; no candidate process was launched."
+}
