@@ -5,6 +5,8 @@ Status: experimental, non-normative.
 Issue: #371
 
 First semantic review: [`REVIEW.md`](REVIEW.md)
+Machine-readable reviewed map: [`map.json`](map.json)
+Validator: [`validate.py`](validate.py)
 
 ## Question
 
@@ -32,9 +34,15 @@ The evidence channels stay separate:
 
 Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 
+## Source of truth
+
+`map.json` is the machine-readable source of truth for reviewed function↔benchmark-family fit classifications.
+
+`REVIEW.md` records the evidence and function-first argument behind those classifications. Its prose/table are explanatory, not a second assessment database.
+
 ## Current reviewed map
 
-The detailed argument and sources are in `REVIEW.md`.
+The detailed argument and sources are in `REVIEW.md`; exact machine-readable state is in `map.json`.
 
 | VSM function | Benchmark family | Reviewed fit |
 | --- | --- | --- |
@@ -165,15 +173,25 @@ The first review establishes:
 - strong S4 proxies but no reviewed benchmark closing the required S3↔S4 adaptation loop;
 - no direct S5 benchmark yet.
 
+Direct reviewed coverage is therefore intentionally sparse:
+
+```text
+S1  2
+S2  1
+S3  1
+S3* 0
+S4  0
+S5  0
+```
+
 `REVIEW.md` also records useful negative cases: AdaPlanBench/CostBench are reactive planning rather than S4, and AgentGovBench measures governance enforcement rather than S5 ultimate-policy authority.
 
 ## Next phase
 
-1. Build a small machine-readable map from the reviewed classifications rather than duplicating prose manually.
-2. Link canonical systems only where `native-system` or defensible `adapter-preserved` evidence exists.
-3. Start with S1, because real system-level evidence is already dense.
-4. Record S2/S3/S3*/S4/S5 coverage gaps instead of filling them by name association.
-5. Only after the system/function benchmark layer is stable, connect observations to individual first-party features/mechanisms.
+1. Link canonical systems only where `native-system` or defensible `adapter-preserved` evidence exists.
+2. Start with S1, because real system-level evidence is already dense.
+3. Record S2/S3/S3*/S4/S5 coverage gaps instead of filling them by name association.
+4. Only after the system/function benchmark layer is stable, connect observations to individual first-party features/mechanisms.
 
 ## Boundary
 
