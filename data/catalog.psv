@@ -192,3 +192,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 190|pibot|pibot|https://github.com/glebis/pibot|2026-08-27T22:51:54Z|index-addition|350bf2c8263f31bcda33789c819329bb56f14c00|2026-09-22
 191|reflex|Reflex|https://github.com/reflex-agent/reflex-agent|2026-05-27T06:13:49Z|index-addition|f3b3dd7b438c8333e5731a29023eca81239c7d19|2026-09-22
 192|super-agent|super-agent|https://github.com/FedericoCasarella/super-agent|2026-05-25T13:53:35Z|index-addition|afa4850f4cf698db8ce868525c6dad3215a13a6d|2026-09-22
+193|holt|Holt|https://github.com/holt-os/holt|2026-07-02T06:02:28Z|index-addition|3a88451f980678f5dd62d72d9b159c125c48ae05|2026-09-22
