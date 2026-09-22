@@ -1,0 +1,79 @@
+name: temporary Reflex admission renderer
+
+on:
+  push:
+    branches:
+      - admit/reflex-191
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit/reflex-191
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/reflex.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' in text:
+              text = text.replace('status: proposed', 'status: included', 1)
+          elif 'status: included' not in text:
+              raise SystemExit('unexpected Reflex assessment status')
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '191|reflex|Reflex|https://github.com/reflex-agent/reflex-agent|2026-05-27T06:13:49Z|index-addition|f3b3dd7b438c8333e5731a29023eca81239c7d19|2026-09-22'
+          ctext = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|reflex|' not in ctext:
+              ctext += '\n' + row
+          catalog.write_text(ctext + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signature = ('191|reflex|Reflex closes autonomous model-driven S1 through its topic/orchestrator protocol, '
+                       'exposes constructor S2 by isolating concurrent code tasks in per-task worktrees, and retains '
+                       'whole-Space S3 current control under parent user governance; same-path audit logging, scheduled '
+                       'workflows/memory/suggestions and editable prompts/settings do not establish S3*, S4 or S5.')
+          stext = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|reflex|' not in stext:
+              stext += '\n' + signature
+          signatures.write_text(stext + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical views
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate generated state
+        run: |
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Commit generated admission
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/reflex.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
+          if git diff --cached --quiet; then
+            echo 'No admission changes to commit.'
+          else
+            git commit -m 'admit: generate Reflex canonical views'
+            git push origin HEAD:admit/reflex-191
+          fi
