@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-23",
+  "function": "S3",
+  "direct_observation_count": 0,
+  "coverage_classes": [
+    "direct-scaffolded",
+    "native-proxy",
+    "proxy-scaffolded"
+  ],
+  "cases": [
+    {
+      "case_id": "clawarena-team-direct-scaffolded",
+      "benchmark": "ClawArena-Team",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/aiming-lab/ClawArena/tree/main/ClawArena-Team",
+        "https://arxiv.org/abs/2606.31174"
+      ],
+      "finding": "ClawArena-Team directly exercises whole-team current control through creation, privilege/workspace assignment, inspection, scheduling and dynamic workflow management, but the benchmark supplies that organization and fixed worker pool. Published manager-model results are not native canonical-harness S3 observations.",
+      "admitted": false
+    },
+    {
+      "case_id": "autogen-magentic-one-native-proxy-s3",
+      "benchmark": "GAIA / AssistantBench / WebArena orchestrator ablation",
+      "benchmark_fit": "proxy",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "autogen-agentchat",
+      "primary_sources": [
+        "https://arxiv.org/abs/2411.04468",
+        "https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/"
+      ],
+      "finding": "The native Magentic-One orchestrator ablation removes whole-team ledgers, progress tracking, planning/replanning, loop detection and explicit direction and changes end-task performance. The benchmarks do not isolate S3 and the ablation spans both S2 and S3, so it remains proxy evidence.",
+      "admitted": false
+    },
+    {
+      "case_id": "enterprise-arena-proxy-scaffolded",
+      "benchmark": "EnterpriseArena",
+      "benchmark_fit": "proxy",
+      "coverage_class": "proxy-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://arxiv.org/abs/2603.23638"
+      ],
+      "finding": "EnterpriseArena stresses scarce-resource allocation under uncertainty, an S3-relevant current-control capability, but the CFO-style benchmark environment blends current regulation with prospective reasoning and does not exercise a canonical harness control plane.",
+      "admitted": false
+    }
+  ],
+  "representative_canonical_s3_systems_inspected": [
+    "autogen-agentchat",
+    "headcount",
+    "deepseek-harness",
+    "reigen",
+    "omnigent",
+    "loopx",
+    "thclaws",
+    "codex",
+    "pi-harness"
+  ],
+  "capability_dimensions": [
+    "worker-team-lifecycle-control",
+    "live-assignment-commitment-regulation",
+    "resource-budget-allocation",
+    "privilege-tool-workspace-control",
+    "progress-stall-failure-intervention",
+    "priority-scheduling-control"
+  ]
+}
