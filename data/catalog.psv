@@ -202,3 +202,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 197|openharness|OpenHarness|https://github.com/autonomous-ai/openharness|2026-08-04T07:53:15Z|index-addition|ffbc4b0d7de0dfb8ccf43213e17e2495dce7fd85|2026-09-22
 
 198|masters-of-ai-harness|Masters of AI Harness|https://github.com/mastersof-ai/harness|2026-02-26T22:10:28Z|index-addition|3f5c4846a2f7ecdf48198d6d1116204132e967a5|2026-09-22
+
+199|pi-harness|Pi-Harness|https://github.com/wangmiaozero/pi-harness|2026-08-20T12:29:47Z|index-addition|efed4bd8d01505ae5fc8a52de243af7a3827ec39|2026-09-22
