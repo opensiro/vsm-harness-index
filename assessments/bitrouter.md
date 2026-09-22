@@ -105,7 +105,7 @@ The optimizer's publication authority is strong but does not make S4 `A`: Method
 
 | Mode | Decisive owner | Trigger | Closure | Evidence |
 | --- | --- | --- | --- | --- |
-| Constructor (`C`) | downstream autonomous manager must be composed | typed whole-run state indicates a current-control intervention | manager reads first-party list/snapshot/event state and issues the function-specific `SessionCommand`/`SessionAction`; supervisor applies it and returns updated state | `apps/bitrouter/src/supervisor.rs`; `skills/bitrouter/references/sessions.md` |
+| Base (`C`) | downstream autonomous manager must be composed | typed whole-run state indicates a current-control intervention | manager reads first-party list/snapshot/event state and issues the function-specific `SessionCommand`/`SessionAction`; supervisor applies it and returns updated state | `apps/bitrouter/src/supervisor.rs`; `skills/bitrouter/references/sessions.md` |
 | Parent (`P`) | human/operator | Code/`bro agents` shows Needs input, Ready for review, error, active run or requested lifecycle action | operator uses shipped control deck/attach/stop/respond/route/review controls; daemon mutates live run state and later state reflects the decision | `docs/BACKGROUND_AGENT_UX_SPEC.md`; `apps/bitrouter/src/agent_sessions.rs`; `skills/bitrouter/references/sessions.md` |
 
 ## S3* — Complementary audit
@@ -146,13 +146,13 @@ The optimizer's publication authority is strong but does not make S4 `A`: Method
 - Confidence: high.
 - Caveats: BitRouter documentation uses the phrase "autonomous controller step" for `optimize run`; that is product/runtime autonomy, not Methodology `A` unless an autonomous agent owns the decisive organizational judgment.
 - External distinction: admitted quality/cost/latency/violation evidence comes from normal task outcomes and external evaluator authorities such as task-native tests, humans, agentic evaluators or private evaluators; it is immutable and authority-scoped rather than inferred from the live request alone.
-- Future/prospective distinction: the system asks whether a different routing treatment should be explored or become the route for future task/episode cohorts, including post-adoption monitoring/withdrawal.
+- Future / prospective distinction: the system asks whether a different routing treatment should be explored or become the route for future task/episode cohorts, including post-adoption monitoring/withdrawal.
 - Adaptation option generated: the controller/compiler creates signed exploration or successor policy states and can select candidate route treatments, promotion, retreat/withdrawal, hold or convergence.
-- Path back into capability/S3: atomic publication replaces the active policy lock, activates adaptive mode where required and reloads a reachable daemon; later routed sessions use that changed policy.
+- Path back into current capability / S3: atomic publication replaces the active policy lock, activates adaptive mode where required and reloads a reachable daemon; later routed sessions use that changed policy.
 
 | Mode | Decisive owner | Trigger | Closure | Evidence |
 | --- | --- | --- | --- | --- |
-| Constructor (`C`) | downstream autonomous adaptation actor must be composed around first-party function-specific surfaces | admitted Eval evidence and/or a separately managed optimization workflow indicates a candidate adaptation | actor can use Eval snapshot, compile/evolve/diff/publish/restore interfaces; signed publication changes active routing and subsequent operation | `skills/bitrouter/references/adaptive-routing.md`; `docs/AGENTIC_OPTIMIZATION_SPEC.md`; `apps/bitrouter/src/policy_compile.rs` |
+| Base (`C`) | downstream autonomous adaptation actor must be composed around first-party function-specific surfaces | admitted Eval evidence and/or a separately managed optimization workflow indicates a candidate adaptation | actor can use Eval snapshot, compile/evolve/diff/publish/restore interfaces; signed publication changes active routing and subsequent operation | `skills/bitrouter/references/adaptive-routing.md`; `docs/AGENTIC_OPTIMIZATION_SPEC.md`; `apps/bitrouter/src/policy_compile.rs` |
 | Parent (`P`) | human/operator | operator decides evidence justifies exploration/policy replacement or rollback | operator freezes/inspects evidence, compiles/diffs and explicitly publishes or restores a policy; publication/reload returns decision into live routing | `skills/bitrouter/references/adaptive-routing.md`; `docs/CLI.md`; `docs/ACP_EVOLUTION_SPEC.md` |
 
 ## S5 — Policy and identity
