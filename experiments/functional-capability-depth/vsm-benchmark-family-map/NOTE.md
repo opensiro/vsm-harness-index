@@ -186,6 +186,12 @@ S5  0
 
 `REVIEW.md` also records useful negative cases: AdaPlanBench/CostBench are reactive planning rather than S4, and AgentGovBench measures governance enforcement rather than S5 ultimate-policy authority.
 
+## Validation
+
+`validate.py` checks schema version, controlled vocabularies, unique `(function, benchmark_id)` pairs, source URLs, required explanatory fields, all six VSM functions, and direct-coverage counts.
+
+A local clone/run could not be executed from the current execution environment because DNS resolution for `github.com` is unavailable. Do not treat the validator as runtime-passed until CI or another reachable execution surface runs it.
+
 ## Next phase
 
 1. Link canonical systems only where `native-system` or defensible `adapter-preserved` evidence exists.
