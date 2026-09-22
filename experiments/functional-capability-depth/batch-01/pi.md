@@ -5,7 +5,7 @@
 - repository: `earendil-works/pi`
 - review_ref: `71dca871bc80b6bc97be37f0ca3189399d651fff`
 - canonical S1 state: `A`
-- canonical assessment: [`assessments/pi.md`](../../assessments/pi.md)
+- canonical assessment: [`assessments/pi.md`](../../../assessments/pi.md)
 
 No newer Pi revision is used in this record, even though the canonical assessment has a later `last_checked_ref`.
 
