@@ -214,3 +214,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 203|reigen|Reigen / Conductor|https://github.com/zachary-wilde/reigen|2026-07-30T23:40:54Z|index-addition|6236f47a1b2f3081a0f22bcba47705bcd1680720|2026-09-22
 
 204|foreman|Foreman|https://github.com/marcelsud/claude-foreman|2026-07-20T01:23:03Z|index-addition|1863451a47f914a909f2b3857a73e87645ccd1fe|2026-09-22
+
+205|unreal-agent|Unreal Agent|https://github.com/unreallabsai/unreal-agent|2026-09-21T23:14:02Z|index-addition|b7c9bf1c5c2fa4127255c07727a7c8413e23944a|2026-09-22
