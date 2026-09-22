@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-23",
+  "function": "S2",
+  "direct_observation_count": 0,
+  "coverage_classes": [
+    "direct-scaffolded",
+    "native-proxy",
+    "framework-scaffolded",
+    "candidate-boundary-unresolved"
+  ],
+  "cases": [
+    {
+      "case_id": "dpbench-direct-scaffolded",
+      "benchmark": "DPBench",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/najmulhasan-code/dpbench",
+        "https://arxiv.org/abs/2602.13255"
+      ],
+      "finding": "DPBench directly exercises simultaneous shared-resource contention and coordination failure, but supplies the multi-agent organization, action protocol and communication structure itself. Published model/provider runs are not native canonical-harness S2 observations.",
+      "admitted": false
+    },
+    {
+      "case_id": "autogen-magentic-one-native-proxy",
+      "benchmark": "GAIA / AssistantBench / WebArena orchestrator ablation",
+      "benchmark_fit": "proxy",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "autogen-agentchat",
+      "primary_sources": [
+        "https://arxiv.org/abs/2411.04468",
+        "https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/"
+      ],
+      "finding": "The native Magentic-One orchestrator ablation removes progress tracking, loop detection and explicit direction and changes end-task performance, but the benchmark tasks do not directly instantiate an S2 disturbance and the ablation spans both S2 and S3 mechanisms.",
+      "admitted": false
+    },
+    {
+      "case_id": "mafbench-langgraph-framework-scaffolded",
+      "benchmark": "MAFBench multi-agent topology",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "framework-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": "langgraph",
+      "primary_sources": [
+        "https://github.com/CoDS-GCS/MAFBench",
+        "https://github.com/CoDS-GCS/MAFBench/tree/main/multi_agent/topology"
+      ],
+      "finding": "MAFBench includes conflict-avoidance, matching, leader-election and consensus tasks, but its published topology implementation builds the coordination application itself and currently uses LangGraph as the runtime. Canonical LangGraph has S2=—, so these runs are not LangGraph.S2 evidence.",
+      "admitted": false
+    },
+    {
+      "case_id": "twining-direct-candidate-boundary-unresolved",
+      "benchmark": "Twining Benchmark",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-boundary-unresolved",
+      "system_compatibility": "unclear",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/daveangulo/twining-benchmark",
+        "https://github.com/daveangulo/twining-mcp"
+      ],
+      "finding": "The benchmark varies coordination conditions over a common multi-agent coding substrate and includes concurrent-agent/conflict-resolution scenarios. It is a strong direct-S2 candidate, but the system-in-focus is multiple Claude agents plus a coordination condition and twining-mcp is not currently a canonical Index system.",
+      "admitted": false
+    },
+    {
+      "case_id": "deepseek-harness-native-mechanism-no-direct-benchmark",
+      "benchmark": "DeepSeek Harness public benchmark entry point",
+      "benchmark_fit": "not-direct-S2",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "deepseek-harness",
+      "primary_sources": [
+        "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/agent-team.md",
+        "https://github.com/deepseek-ai/deepseek-harness/blob/master/BENCHMARK.md"
+      ],
+      "finding": "Canonical Agent Teams exposes durable shared tasks/commitments and team coordination, but the public benchmark entry point currently directs users to the minimal jsonrpc-agent variant rather than the Agent Teams S2 path.",
+      "admitted": false
+    }
+  ],
+  "representative_canonical_s2_systems_inspected": [
+    "autogen-agentchat",
+    "headcount",
+    "deepseek-harness",
+    "reigen",
+    "omnigent",
+    "loopx",
+    "thclaws",
+    "pi-harness",
+    "reasonix",
+    "browser-harness"
+  ],
+  "mechanism_classes": [
+    "shared-resource-contention",
+    "parallel-write-collision",
+    "team-loop-stall-turn-interference",
+    "host-resource-admission-contention"
+  ]
+}
