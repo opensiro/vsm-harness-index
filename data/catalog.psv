@@ -218,3 +218,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 205|unreal-agent|Unreal Agent|https://github.com/unreallabsai/unreal-agent|2026-09-21T23:14:02Z|index-addition|b7c9bf1c5c2fa4127255c07727a7c8413e23944a|2026-09-22
 
 206|atlias|atlias|https://github.com/ridelink0/atlias|2026-09-22T11:01:53Z|index-addition|270eb980b32bc05278183aaf10af85ef35de2bc3|2026-09-23
+
+207|bitrouter|BitRouter|https://github.com/bitrouter/bitrouter|2026-03-06T20:04:01Z|index-addition|e2a8c644e8ece5a2f152d2516269497d23aeef5d|2026-09-23
