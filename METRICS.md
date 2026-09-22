@@ -17,7 +17,7 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 
 ## Active semantic contract
 
-Profile **0.2.3** / Methodology **0.3.5**
+Profile **0.2.4** / Methodology **0.3.6**
 
 ## Public corpus milestones
 
