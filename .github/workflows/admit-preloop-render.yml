@@ -1,0 +1,65 @@
+name: render Preloop admission
+
+on:
+  push:
+    branches:
+      - admit-preloop-201
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Admit Preloop sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path("assessments/preloop.md")
+          text = assessment.read_text(encoding="utf-8")
+          if "status: proposed" not in text:
+              raise SystemExit("Preloop assessment is not proposed")
+          assessment.write_text(text.replace("status: proposed", "status: included", 1), encoding="utf-8")
+
+          catalog = Path("data/catalog.psv")
+          catalog_text = catalog.read_text(encoding="utf-8")
+          row = "201|preloop|Preloop|https://github.com/preloop/preloop|2026-01-09T19:41:47Z|index-addition|06d53f902d9a8712ea3345ae0bee9b0b8292f917|2026-09-22"
+          if "|preloop|" in catalog_text:
+              raise SystemExit("Preloop already present in catalog")
+          catalog.write_text(catalog_text.rstrip() + "\n\n" + row + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          signatures_text = signatures.read_text(encoding="utf-8")
+          signature = "201|preloop|Preloop runs autonomous governed external-agent S1 units, exposes account-wide current control as constructor plus parent-governed S3, and closes autonomous S3* through separate PR reviewer flows whose trusted findings drive durable repair turns; weekly external-tariff review closes parent-governed S4 into runtime pricing, while no material installation-level S2 or S5 path is established."
+          if "|preloop|" in signatures_text:
+              raise SystemExit("Preloop already present in signatures")
+          signatures.write_text(signatures_text.rstrip() + "\n\n" + signature + "\n", encoding="utf-8")
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+      - name: Commit admission
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --stat
+          git commit -m "admit: add Preloop to canonical index"
+          git push origin HEAD:${GITHUB_REF_NAME}
