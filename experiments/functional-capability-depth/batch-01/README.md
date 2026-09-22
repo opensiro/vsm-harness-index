@@ -1,199 +1,257 @@
-# Functional capability depth — test batch 01
+# S1 capability comparison — test batch 01
 
 Status: **non-normative pilot batch**
 
-This batch tests the hypothesis recorded in [`../NOTE.md`](../NOTE.md): canonical VSM closure / ownership and functional harness capability are related but distinct dimensions.
+This batch tests the hypothesis recorded in [`../NOTE.md`](../NOTE.md): systems can share the same canonical VSM closure state for a function while differing materially in the capability of that same function.
 
 This batch MUST NOT change canonical VSM assessments, publication states, `TLDR.md`, `RANKINGS.md`, `FULL_A.md`, or any Profile / Methodology semantics.
 
 ## Pilot question
 
-Can harnesses sharing the same canonical `S1=A` state exhibit materially different, evidence-backed **general S1 capability depth**, including cases where a narrower VSM profile has stronger first-party execution capability than a near-Full-A or Full-A organization?
+Among systems whose canonical state is `S1=A`, can we establish reproducible, evidence-backed differences in **S1 capability** without using broader VSM coverage as a performance prior?
 
-The pilot is falsification-oriented. It should be considered unsuccessful if the proposed capability distinctions cannot be grounded reproducibly enough to survive independent review.
-
-## General-domain rule
-
-Batch 01 evaluates **general capability domains first**. It does not define S1 depth through any one applied vertical such as coding.
-
-The generic capability layer is intended to support later specialized projections, following the same split used for the curated Awesome taxonomy:
+The unit of comparison is:
 
 ```text
-general capability / form layer
-        ↓
-        ├── Coding / SWE
-        ├── Research / Science
-        ├── Government / Public Administration
-        ├── Cybersecurity / Incident Response
-        ├── Infrastructure / SRE
-        ├── Enterprise Operations
-        └── other applied domains
+system A.S1  ↔  system B.S1
 ```
 
-Specialized domains may supply task distributions, success criteria, required environment reach and domain-specific evidence. They MUST NOT redefine the generic capability dimensions or turn strength in one vertical into universal harness quality.
+not:
 
-Architectural/product shape such as `Base/Constructor` versus `Applied` is descriptive context, not a capability bonus.
+```text
+system A  ↔  system B
+```
+
+as a global harness-quality judgment.
+
+Batch 01 is intentionally limited to S1. It does not define S2/S3/S3*/S4/S5 capability criteria.
 
 ## Frozen comparison cohort
 
-Use the canonical Index assessment revision as the initial comparison boundary. Do not silently replace these refs with newer upstream heads during this pilot.
+Use the canonical Index assessment revision as the frozen comparison boundary. Do not silently replace these refs with newer upstream heads during this pilot.
 
-| Harness | Upstream | Frozen review ref | Canonical vector | Role in batch |
+| Harness | Upstream | Frozen review ref | Canonical vector | S1 cohort reason |
 | --- | --- | --- | --- | --- |
-| `oh-my-pi` | `can1357/oh-my-pi` | `dbf3afad4894bde827d90f965e77b3fe1c5a95e5` | `A A A(P) A — —` | thick first-party S1; Coding/SWE witness |
-| `Ouroboros` | `razzant/ouroboros` | `86806ee123ce8e26cc063cc1a618f975eea64f26` | `A A A A A(P) A(P)` | current Full-A comparison; general-purpose runtime |
-| `thClaws` | `thClaws/thClaws` | `cd700937a71a391f052438d139b7b1c5a6456755` | `A A A A — P` | near-Full-A, thick general-purpose first-party runtime |
-| `Headcount` | `cbrock84/headcount` | `9cbf34005e3e8a980a6af9b55eb226bd926a62b3` | `A A A C A A` | near-Full-A organizational layer / host-inheritance case |
-| `Henterprise` | `humbertobellor/henterprise` | `0bd56397676462e216f92b5b7800919a3597a99a` | `A C A C A A` | organizational-layer replication control |
-| `Pi` | `earendil-works/pi` | `71dca871bc80b6bc97be37f0ca3189399d651fff` | `A — — — — —` | narrow-S1 control |
+| `oh-my-pi` | `can1357/oh-my-pi` | `dbf3afad4894bde827d90f965e77b3fe1c5a95e5` | `A A A(P) A — —` | `S1=A`; thick first-party operational runtime |
+| `Ouroboros` | `razzant/ouroboros` | `86806ee123ce8e26cc063cc1a618f975eea64f26` | `A A A A A(P) A(P)` | `S1=A`; Full-A system with first-party operational loop |
+| `thClaws` | `thClaws/thClaws` | `cd700937a71a391f052438d139b7b1c5a6456755` | `A A A A — P` | `S1=A`; thick first-party general-purpose runtime |
+| `Headcount` | `cbrock84/headcount` | `9cbf34005e3e8a980a6af9b55eb226bd926a62b3` | `A A A C A A` | `S1=A`; organizational layer with host-inherited execution |
+| `Henterprise` | `humbertobellor/henterprise` | `0bd56397676462e216f92b5b7800919a3597a99a` | `A C A C A A` | `S1=A`; second host-inheritance / organizational-layer case |
+| `Pi` | `earendil-works/pi` | `71dca871bc80b6bc97be37f0ca3189399d651fff` | `A — — — — —` | `S1=A`; narrow-S1 control |
 
-The canonical vectors are context only. They MUST NOT be used as inputs to a capability judgment except to select the VSM function being compared.
+The non-S1 canonical states are context only. They MUST NOT be used as inputs to the S1 capability judgment.
 
-## Primary target: S1 capability depth
+In particular:
 
-Batch 01 intentionally starts with S1 rather than attempting to score all six VSM functions at once.
+- Full-A gives no S1 capability bonus;
+- absence of S4/S5 gives no S1 capability penalty;
+- broad organizational topology must not substitute for S1 evidence.
 
-For this pilot, `S1 capability depth` means the demonstrated ability of the assessed harness boundary to turn an operational objective into successful environment-facing work through its own model/tool execution path, independent of the applied domain used to observe that capability.
+## S1 capability under test
 
-The assessment should distinguish at least:
+For this pilot, S1 capability means the demonstrated capacity of the credited S1 boundary to turn an operational objective into successful environment-facing work under defined conditions.
 
-- task effectiveness under a fixed or matched model where evidence exists;
-- tool fidelity and correctness of environment interaction;
-- breadth and adequacy of first-party execution primitives relevant to task completion;
-- context handling and memory insofar as they affect current S1 work;
-- recovery from tool, process, state, or trajectory failures;
-- verification integrated into the operational loop;
-- efficiency effects such as tokens, retries, latency, or cost when supported by controlled evidence;
-- portability across models, environments, or task domains when supported by evidence.
+Batch 01 compares these candidate S1-specific dimensions:
 
-These are general evidence dimensions, not feature counters.
+### 1. Operational effectiveness
 
-## Explanatory capability vector
+Can S1 complete the operational objective successfully under matched or otherwise comparable conditions?
 
-Use the candidate vector from the research note as a structured evidence map:
+Prefer:
+
+- pass / completion rate;
+- task success under a fixed model;
+- controlled before/after harness effects;
+- reproducible task traces.
+
+### 2. Environment-interaction fidelity
+
+How reliably does S1 convert decisions into correct environment-facing actions?
+
+Possible evidence:
+
+- tool-call correctness;
+- edit / mutation correctness;
+- command / process execution fidelity;
+- browser, filesystem, repository or other environment interaction where applicable;
+- detection of failed or stale actions.
+
+Tool count alone is not evidence of greater fidelity.
+
+### 3. Operational state continuity
+
+How well does S1 preserve and use state needed for the current operational trajectory?
+
+Possible evidence:
+
+- context continuity;
+- persistent or resumable task state;
+- working-memory discipline;
+- artifact / observation retention;
+- recovery of the current task after interruption.
+
+This is about current S1 operation, not S4 learning or long-horizon organizational adaptation.
+
+### 4. Recovery / resilience
+
+How effectively can S1 detect and recover from failures inside its operational trajectory?
+
+Possible evidence:
+
+- failed tool-call recovery;
+- invalid edit / command correction;
+- retry policy quality;
+- rollback / alternate-path behavior;
+- recovery from process or context failure;
+- controlled failure-injection results.
+
+### 5. Operational result assurance
+
+How well does S1 establish that its own operational output is acceptable before treating the task as complete?
+
+Possible evidence:
+
+- first-party tests or checks integrated into the S1 loop;
+- output validation;
+- execution-result checking;
+- task-local verification mechanisms.
+
+Do not silently credit independent complementary review here. A distinct S3* reviewer remains S3* topology; Batch 01 may record that its output informs S1, but must not turn S3* existence into an S1 capability bonus without showing the actual operational effect.
+
+### 6. Efficiency
+
+How much resource does S1 require for comparable successful work?
+
+Possible evidence:
+
+- model tokens;
+- tool calls;
+- retries;
+- wall-clock latency;
+- model / infrastructure cost.
+
+Efficiency is only comparable when task/model/environment conditions are sufficiently aligned.
+
+### 7. Portability / robustness
+
+Does the observed S1 capability survive changes in substrate?
+
+Possible evidence:
+
+- multiple models;
+- multiple task families;
+- multiple environments;
+- repeated runs;
+- controlled model or tool substitutions.
+
+This dimension is especially important before promoting evidence from one specialized domain into a general S1 claim.
+
+## Applied-domain evidence
+
+S1 capability is the comparison target. Coding, research, government, SRE, security, and other domains are **evidence contexts / projections**.
 
 ```text
-E  execution/task effectiveness
-T  tool fidelity and environment reach
-C  context and memory quality
-D  delegation / multi-agent execution quality
-V  verification and review quality
-R  recovery / resilience
-O  operational maturity
-B  benchmark / experimental evidence strength
+S1 capability comparison
+        ↓
+        ├── Coding / SWE witness
+        ├── Research / Science witness
+        ├── Government / Public Administration witness
+        ├── Cybersecurity / Incident Response witness
+        ├── Infrastructure / SRE witness
+        └── other applied-domain witnesses
 ```
 
-Interpret these dimensions generically:
+A domain-specific result remains domain-specific unless a transfer claim is supported.
 
-- a code edit, a browser action, a research retrieval step and an administrative system mutation are all possible observations of `T`, but none defines `T` by itself;
-- a code-review benchmark can support `V` in a Coding/SWE projection, but general `V` requires evidence about the underlying verification mechanism rather than the application label;
-- domain breadth alone does not establish greater `E`;
-- `D` should be recorded separately because delegation can cross into S2/S3 topology and must not be allowed to inflate S1 merely because more agents exist.
+Examples:
 
-Do **not** compute a weighted total or overall winner in this pilot.
+Allowed:
+
+```text
+oh-my-pi.S1 shows stronger edit/tool fidelity than X.S1 on the frozen Coding/SWE evidence.
+```
+
+Not automatically allowed:
+
+```text
+oh-my-pi.S1 is universally stronger than X.S1.
+```
+
+A harness is never penalized for lacking evidence in an unrelated specialized domain. The corresponding projection is simply unsupported / unevaluated.
 
 ## Capability ownership boundary
 
-Every positive capability claim MUST label its ownership source as one of:
+Every positive S1 capability claim MUST label its ownership source as one of:
 
-- `native` — implemented and owned inside the assessed first-party harness boundary;
-- `inherited` — supplied primarily by an external host, coding agent, model provider, MCP/tool service, IDE, or other substrate;
-- `mixed` — the harness adds a material first-party control/transformation over an inherited substrate;
+- `native` — implemented and owned inside the credited first-party S1 boundary;
+- `inherited` — supplied primarily by an external host, model, coding agent, runtime, IDE, MCP/tool service, or other substrate;
+- `mixed` — S1 adds a material first-party control/transformation over inherited capability;
 - `unclear` — evidence is insufficient to assign the boundary confidently.
 
-A host-inherited capability may matter to user-visible performance, but it MUST NOT be silently credited as first-party harness depth.
+User-visible ability and first-party S1 capability are not always the same thing.
 
-This distinction is especially important for `Headcount` and `Henterprise`, where organizational closure can be broad while low-level execution is supplied by the host runtime.
-
-## Evidence-domain label
-
-Every empirical claim SHOULD also identify the domain in which it was observed:
-
-- `general` — directly demonstrated across multiple unrelated task/environment classes or by a domain-independent mechanism;
-- `coding-swe`;
-- `research-science`;
-- `government-public-admin`;
-- `cybersecurity-ir`;
-- `infrastructure-sre`;
-- `enterprise-ops`;
-- another explicitly named applied domain.
-
-Domain-specific evidence can support a general mechanism claim only when the mechanism and transfer argument are explicit. Otherwise it remains evidence for the specialized projection only.
-
-**No absence penalty:** a harness does not lose general capability depth merely because it does not target a particular specialized domain. Missing applied-domain evidence means only that the corresponding specialized projection is unevaluated or unsupported.
+This boundary is a core test for Headcount and Henterprise: their canonical `S1=A` state remains unchanged, while the pilot asks what portion of operational capability can be credited to the first-party S1 versus the host.
 
 ## Evidence hierarchy
 
 Prefer, in descending order:
 
-1. reproducible fixed-model or matched-model task results;
-2. public traces / artifacts sufficient to inspect the claimed harness effect;
-3. controlled ablations or before/after results attributable to a specific harness mechanism;
-4. executable tests or code paths that directly demonstrate the mechanism;
+1. reproducible fixed-model / matched-model task comparisons;
+2. public traces or artifacts sufficient to inspect the claimed S1 effect;
+3. controlled ablations or before/after results attributable to an S1 mechanism;
+4. executable tests / code paths demonstrating the mechanism;
 5. primary technical documentation tied to concrete implementation;
 6. maintainer claims without reproducible evidence.
 
-A feature list alone is insufficient evidence for greater capability depth.
+Feature lists are supporting architecture evidence, not S1 capability scores.
 
 Self-reported benchmark results may be recorded, but MUST be labeled `self-reported` unless independently reproduced or externally verified.
 
 ## Pairwise tests
 
-The batch should answer these comparisons without producing an overall ranking.
+### P1 — narrow S1 vs thick S1
 
-### P1 — same `S1=A`, radically different topology
+`Pi.S1` ↔ `oh-my-pi.S1`
 
-`oh-my-pi` vs `Pi`
+Question: does the shared `S1=A` state conceal reproducible differences in operational effectiveness, environment fidelity, state continuity, recovery, assurance, efficiency, or portability?
 
-Question: does the shared canonical `S1=A` state conceal a materially different first-party S1 execution surface and evidence base on **generic capability dimensions**?
+### P2 — non-Full-A S1 vs Full-A S1
 
-Coding/SWE evidence may be used as a witness where available, but the pairwise conclusion must distinguish the specialized observation from the general mechanism claim.
+`oh-my-pi.S1` ↔ `Ouroboros.S1`
 
-### P2 — narrow profile vs Full-A
+Question: can S1 capability be compared without allowing Ouroboros's S4/S5 closure or Full-A status to influence the S1 judgment?
 
-`oh-my-pi` vs `Ouroboros`
+Coding/SWE may provide a shared specialized evidence context, but any conclusion must remain scoped to the evidence actually available.
 
-Question: can a non-Full-A harness equal or exceed the Full-A system on one or more **general S1 capability dimensions** while remaining clearly weaker in organizational coverage?
+### P3 — thick runtime vs thick runtime
 
-A Coding/SWE projection may be reported separately because both systems expose coding evidence, but it MUST NOT substitute for the general comparison.
+`oh-my-pi.S1` ↔ `thClaws.S1`
 
-A result in either direction is acceptable. The test is whether the distinction can be represented without treating Full-A as a performance prior.
+Question: can two substantial first-party runtimes with different product emphasis be compared on S1-specific dimensions without treating product breadth as capability?
 
-### P3 — thick runtime vs near-Full-A runtime
+### P4 — first-party runtime vs organizational overlay
 
-`oh-my-pi` vs `thClaws`
+`oh-my-pi.S1` ↔ `Headcount.S1`
 
-Question: can two strong first-party runtimes with different product emphasis be compared on generic `E/T/C/V/R/O/B` dimensions without collapsing product/domain breadth into quality?
+Question: does explicit `native / inherited / mixed` accounting distinguish first-party S1 capability from host-supplied execution while preserving both systems' canonical `S1=A` classification?
 
-A specialized Coding/SWE view may additionally expose where `oh-my-pi` is optimized more deeply for source-code work, while thClaws may expose evidence from broader applied environments.
+### P5 — host-inheritance replication
 
-### P4 — deep runtime vs organizational overlay
+`Headcount.S1` ↔ `Henterprise.S1`
 
-`oh-my-pi` vs `Headcount`
+Question: can the same S1 ownership-accounting rule be applied consistently to two organizational-layer systems?
 
-Question: does an explicit `native / inherited / mixed` boundary prevent broad organizational closure from being mistaken for first-party general S1 execution depth?
+### P6 — Full-A S1 vs host-inherited S1
 
-Do not infer that coding specialization itself makes `oh-my-pi` generally stronger; compare only generic mechanisms/evidence that cross the domain boundary.
+`Ouroboros.S1` ↔ `Headcount.S1` and `Henterprise.S1`
 
-### P5 — replication of host-inheritance distinction
+Question: after isolating the S1 boundary, what S1 capability evidence remains comparable, and what remains inherited or incomparable?
 
-`Headcount` vs `Henterprise`
+No conclusion about S2–S5 should be drawn from this test.
 
-Question: is the native/inherited distinction reproducible across two independently assessed organizational-layer systems rather than being an artifact of one project?
+## Per-system S1 evidence record
 
-This pair also tests whether an Enterprise/organizational applied domain can remain a projection over the same generic capability model.
-
-### P6 — Full-A vs near-Full-A
-
-`Ouroboros` vs `Headcount` and `Henterprise`
-
-Question: does Full-A provide any observable **general S1 capability** advantage once execution-substrate ownership is separated, or is the difference mainly in higher-order organizational closure?
-
-This is exploratory only; no causal claim should be made from topology alone.
-
-## Per-harness record
-
-Create one evidence record per harness under this directory when the pilot is executed:
+Create one S1 evidence record per system when the pilot is executed:
 
 ```text
 batch-01/
@@ -207,108 +265,125 @@ batch-01/
   SYNTHESIS.md
 ```
 
-Each harness record should contain:
+Each record should contain:
 
 ```markdown
-# <harness>
+# <system> — S1 capability evidence
 
 ## Frozen boundary
 - repository:
 - review_ref:
 - canonical S1 state: A
 
-## S1 operational boundary
-- what counts as first-party S1:
+## Credited S1 boundary
+- first-party S1 actor / loop:
+- environment-facing action path:
 - external substrates:
 
-## General capability evidence map
-| Dimension | Ownership | Evidence domain | Evidence type | Observation | Confidence |
+## S1 evidence
+| S1 dimension | Ownership | Evidence domain | Evidence type | Observation | Confidence |
 | --- | --- | --- | --- | --- | --- |
-| E | native/inherited/mixed/unclear | general / applied-domain | ... | ... | ... |
-| T | ... | ... | ... | ... | ... |
-| C | ... | ... | ... | ... | ... |
-| D | ... | ... | ... | ... | ... |
-| V | ... | ... | ... | ... | ... |
-| R | ... | ... | ... | ... | ... |
-| O | ... | ... | ... | ... | ... |
-| B | ... | ... | ... | ... | ... |
+| operational effectiveness | native/inherited/mixed/unclear | general / applied-domain | ... | ... | ... |
+| environment-interaction fidelity | ... | ... | ... | ... | ... |
+| operational state continuity | ... | ... | ... | ... | ... |
+| recovery / resilience | ... | ... | ... | ... | ... |
+| operational result assurance | ... | ... | ... | ... | ... |
+| efficiency | ... | ... | ... | ... | ... |
+| portability / robustness | ... | ... | ... | ... | ... |
 
-## Specialized domain witnesses
-### Coding / SWE
-- ...
-
-### Research / Science
-- ...
-
-### Other applicable views
-- ...
+## Specialized-domain witnesses
+- Coding / SWE:
+- Research / Science:
+- Government / Public Administration:
+- other applicable domains:
 
 ## Controlled / benchmark evidence
 - ...
 
 ## Unsupported or non-comparable claims
 - ...
-
-## Provisional general S1-depth conclusion
-- qualitative only; no scalar score in Batch 01
 ```
 
-A harness does not need evidence for every specialized domain. Empty domain views are expected and MUST NOT count against general capability depth.
+Do not assign an overall harness capability score in the per-system record.
 
-## Synthesis rules
+## Synthesis
 
-`SYNTHESIS.md` may state only evidence-backed pairwise conclusions.
+`SYNTHESIS.md` should compare **S1 to S1** dimension-by-dimension.
 
-Allowed examples:
+Example shape:
 
-- `oh-my-pi demonstrates stronger first-party evidence for general tool-interaction fidelity than X at the frozen boundary; the strongest observed witness is in Coding/SWE`;
-- `X has broader organizational closure, but this batch does not establish greater general S1 capability`;
-- `X is stronger on the Coding/SWE projection, while general recovery remains incomparable`;
-- `the available evidence is insufficient to compare recovery between X and Y`;
-- `most of Y's execution capability is inherited from host Z, so first-party S1 depth remains indeterminate`.
+```text
+                         OMP.S1    Ouroboros.S1    thClaws.S1
+operational effect          ?            ?              ?
+tool/environment fidelity   ?            ?              ?
+state continuity            ?            ?              ?
+recovery                    ?            ?              ?
+result assurance            ?            ?              ?
+efficiency                  ?            ?              ?
+portability                 ?            ?              ?
+```
 
-Disallowed in Batch 01:
+The synthesis may state pairwise evidence-backed relations such as:
 
-- overall harness rankings;
-- weighted totals;
-- deriving capability from the number of VSM `A` states;
-- treating Full-A as a quality bonus;
-- treating tool count as execution quality;
-- treating specialized-domain breadth as general capability depth;
-- treating one specialized-domain benchmark as universal harness quality;
-- penalizing a harness for not targeting a specialized applied domain;
-- converting experimental conclusions into canonical autonomy states;
-- modifying upstream repositories to create evidence for this pilot.
+- stronger evidence for dimension X under domain Y;
+- comparable under the available evidence;
+- incomparable because conditions differ;
+- primarily native versus primarily inherited;
+- insufficient evidence.
+
+It MUST NOT force a total order.
+
+## Disallowed conclusions
+
+Batch 01 must not:
+
+- rank harnesses globally;
+- produce a weighted harness-wide capability total;
+- infer S1 capability from the number of VSM `A` states;
+- treat Full-A as an S1 quality bonus;
+- treat absence of S4/S5 as an S1 penalty;
+- treat tool count as S1 quality;
+- turn S3* review capability into S1 capability merely because a reviewer exists;
+- treat specialized-domain breadth as general S1 strength;
+- treat one specialized benchmark as universal S1 capability;
+- convert experimental capability findings into canonical VSM states;
+- modify upstream systems to manufacture evidence for the pilot.
 
 ## Success criteria
 
 Batch 01 supports the research direction only if all of the following hold:
 
-1. at least four of six harnesses yield enough primary evidence to populate a meaningful **general** S1 evidence map;
-2. at least one same-state pair (`S1=A` vs `S1=A`) exhibits a defensible general capability distinction not expressible by the canonical state alone;
-3. the distinction survives explicit `native / inherited / mixed` boundary accounting;
-4. specialized-domain evidence can be kept as a projection without silently redefining the generic dimensions;
-5. at least one pair remains honestly `incomparable` on one or more dimensions, demonstrating that the method does not force a total order;
-6. an independent reviewer can reconstruct the pairwise conclusion from the frozen evidence without relying on the original researcher's semantic impression.
+1. at least four of six systems yield enough primary evidence for a meaningful S1 comparison;
+2. at least one `S1=A` pair exhibits a defensible capability difference not expressible by the canonical S1 state alone;
+3. the difference survives explicit `native / inherited / mixed` accounting;
+4. non-S1 VSM coverage can be excluded from the S1 judgment without losing the comparison;
+5. applied-domain evidence can remain scoped as a projection rather than redefining S1;
+6. at least one dimension or pair remains honestly `incomparable` where evidence does not support an ordering;
+7. an independent reviewer can reconstruct the S1 pairwise conclusion from the frozen evidence without relying on the original researcher's overall impression of either harness.
 
-The hypothesis should be weakened or rejected if the distinctions depend mainly on feature counting, maintainer marketing claims, domain labels, unfrozen upstream changes, or subjective overall impressions.
+The hypothesis should be weakened or rejected if the apparent distinctions depend mainly on feature counting, broader VSM coverage, maintainer marketing, domain labels, unfrozen upstream changes, or subjective global impressions.
 
 ## Promotion boundary
 
 This batch is Index-local experimental research only.
 
-If the pilot produces a stable, reproducible capability procedure, the procedure itself should be proposed upstream in `opensiro/vsm-harness-skills`. The Index should retain frozen real-system evidence, pilot records, and any later derived experimental views.
+If a stable S1 capability-comparison procedure emerges, that procedure should be proposed upstream in `opensiro/vsm-harness-skills` as an **S1-specific** experimental protocol.
 
-If Awesome/domain views later consume this experiment, the intended direction is:
+Later S2/S3/S3*/S4/S5 capability experiments should define their own function-specific criteria rather than reuse the S1 dimensions mechanically.
+
+The intended long-term shape is:
 
 ```text
-canonical VSM closure
-        +
-general capability evidence
-        ↓
-curated generic capability/form views
-        ↓
-specialized applied-domain projections
+canonical VSM closure / ownership
+        │
+        ├── S1 capability comparison across systems
+        ├── S2 capability comparison across systems
+        ├── S3 capability comparison across systems
+        ├── S3* capability comparison across systems
+        ├── S4 capability comparison across systems
+        └── S5 capability comparison across systems
+                 │
+                 └── applied-domain projections where useful
 ```
 
-The specialized views remain derived presentations; they do not become a second canonical assessment system.
+No harness-wide capability score is required.
