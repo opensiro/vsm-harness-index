@@ -2,13 +2,37 @@
 
 Status: **experimental, non-normative**
 
-Tracking issue: #406
+Tracking issues: #406, #452
+
+Public-evidence operating contract: [`PUBLIC-EVIDENCE.md`](PUBLIC-EVIDENCE.md).
 
 This document defines a simple baseline for comparing harness capability beside canonical VSM closure and ownership.
 
 It does not change the VSM Profile, released assessment states, canonical assessments, rankings, or the separate self-organizing-autonomy experiment.
 
 Current primary-family selections and explicit gaps are recorded in [`PRIMARY-BASELINES.md`](PRIMARY-BASELINES.md), with a machine-readable projection in [`primary-baselines.json`](primary-baselines.json).
+
+## Operating mode — public evidence first
+
+The default capability source is public benchmark evidence, not Opensiro-operated execution.
+
+```text
+public result
+    ↓
+provenance + normalization
+    ↓
+function attribution
+    ↓
+matched comparison where supported
+    ↓
+capability projection
+```
+
+A published observation may come from an independent benchmark operator or from the harness project itself. Preserve the evidence-source class and provenance explicitly.
+
+Opensiro-operated runs are optional validation/reproduction evidence. They are useful when a specific uncertainty requires reproduction or ablation, but they are not required to admit a capability observation or select a primary benchmark family.
+
+The frozen Batch 02 controlled-replication artifacts remain historical experiment evidence and are not a prerequisite for this baseline.
 
 ## Baseline shape
 
@@ -47,7 +71,7 @@ A function with canonical state `—` does not receive a low capability score. I
 
 ## Rule 2 — keep the comparison cell matched
 
-A baseline comparison should keep constant, as far as the available evidence allows:
+A baseline comparison should use evidence that keeps constant, as far as the published record allows:
 
 - model and model configuration;
 - benchmark version and task set;
@@ -57,7 +81,9 @@ A baseline comparison should keep constant, as far as the available evidence all
 
 The harness/system is the intended varying factor.
 
-If these conditions are not matched, keep the result as observational or proxy evidence with explicit confounders rather than treating it as a baseline-comparable harness result.
+If these conditions are not matched or cannot be reconstructed, keep the result as observational, descriptive, partially matched, or proxy evidence with explicit confounders rather than treating it as a baseline-comparable harness result.
+
+The Index does not need to rerun a public benchmark merely because some metadata are unavailable; unavailable fields remain explicit evidence limits.
 
 ## Rule 3 — one primary benchmark does not exclude more benchmarks
 
@@ -100,20 +126,22 @@ It does not automatically support:
 
 Domain-specific indexes or views may therefore be generated independently from the same canonical function and raw observation layers.
 
-## Rule 5 — ordinary baseline runs use a frozen functional repertoire
+## Rule 5 — ordinary baseline observations use a frozen functional repertoire
 
 This rule matters when a harness may support the experimental self-organizing `S` distinction.
 
 An ordinary capability baseline measures the quality of the harness's **current functional repertoire**. It should not also measure the harness's ability to improve that repertoire across benchmark tasks.
 
-For baseline-comparable runs:
+For an admitted public result, inspect the published benchmark protocol and preserve whether task isolation/reset prevents persistent cross-task adaptation. For an optional Opensiro-operated reproduction, enforce the same rule directly.
+
+For baseline-comparable observations:
 
 - ordinary within-task reasoning and tool use are allowed;
 - retry and recovery inside the task are allowed;
 - transient context and state inside the episode are allowed;
 - persistent endogenous changes to the tested function's repertoire must not carry into later benchmark tasks.
 
-Examples of persistent changes that should be disabled, reset, or isolated for an ordinary baseline include:
+Examples of persistent changes that should be disabled, reset, isolated, or explicitly marked as adaptive include:
 
 - learned or newly generated skills;
 - persistent prompt or policy rewrites;
@@ -122,9 +150,9 @@ Examples of persistent changes that should be disabled, reset, or isolated for a
 - self-generated code or configuration changes that alter later functional behavior;
 - persistent learned memory used as a new regulator for later tasks.
 
-If adaptation cannot be disabled, each benchmark task should start from the same clean snapshot where technically possible.
+If the public evidence does not establish repertoire isolation, record the limitation rather than assuming a frozen baseline.
 
-If neither freezing nor clean reset is possible, record the run as adaptive and non-baseline-comparable instead of silently mixing it into the ordinary baseline.
+If adaptation is intentionally part of the benchmark, record the observation as adaptive and non-baseline-comparable instead of silently mixing it into the ordinary baseline.
 
 ## Rule 6 — adaptive and self-organizing evaluation stays separate
 
@@ -186,9 +214,12 @@ A capability observation should identify, where available:
 - execution environment;
 - budget, timeout, and repetition settings;
 - metric and result;
-- source/provenance;
+- publisher and evidence-source class (`external-reproduced`, `first-party-reported`, or non-numeric `mechanism-only` where appropriate);
+- primary/immutable artifact source;
 - system compatibility class such as `native-system` or `adapter-preserved`;
 - comparison class and known confounders.
+
+Unknown provenance remains unknown; do not infer it from current repository state.
 
 A historical benchmark result remains historical evidence. It must not be represented as if it evaluated the current canonical review revision.
 
@@ -221,6 +252,7 @@ S1
     primary_benchmark: Benchmark A
     fixed_model: Model M
     result: ...
+    evidence_source: external-reproduced
 
   secondary:
     Benchmark B: ...
@@ -239,16 +271,27 @@ The important separation is:
 ```text
 canonical VSM state
         ↓
-function capability baseline
+public function capability evidence
         ↓
-secondary/domain evidence
+primary / secondary / domain projections
+
+optional:
+controlled reproduction / validation
 
 separate track:
 self-organizing adaptation evidence
 ```
 
+## Gap semantics
+
+A primary `gap` means that reviewed public evidence does not currently support a selected matched canonical-harness primary for that function.
+
+It does not mean that the function has zero capability, that no benchmark evidence exists, or that Opensiro has failed to operate its own benchmark.
+
+Do not create an Opensiro-run benchmark merely to fill a gap.
+
 ## Promotion boundary
 
 This file is an Index research contract, not released assessment methodology.
 
-If these baseline rules become a formal evaluation procedure, that procedure belongs upstream in `opensiro/vsm-harness-skills`. The Index should continue to hold real-system evidence, benchmark observations, and derived experimental views.
+If these baseline rules become a formal evaluation procedure, that procedure belongs upstream in `opensiro/vsm-harness-skills`. The Index should continue to hold public real-system evidence, benchmark observations, provenance, optional reproduction evidence, and derived experimental views.
