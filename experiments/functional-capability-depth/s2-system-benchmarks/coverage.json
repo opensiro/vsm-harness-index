@@ -2,6 +2,7 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-24",
   "function": "S2",
+  "direct_benchmark_family_count": 2,
   "direct_observation_count": 0,
   "proxy_projection_count": 1,
   "coverage_classes": [
@@ -24,6 +25,21 @@
         "https://arxiv.org/abs/2602.13255"
       ],
       "finding": "DPBench directly exercises simultaneous shared-resource contention and coordination failure, but supplies the multi-agent organization, action protocol and communication structure itself. Published model/provider runs are not native canonical-harness S2 observations.",
+      "admitted": false
+    },
+    {
+      "case_id": "stale-semantic-coordination-direct-scaffolded",
+      "benchmark": "STALE semantic-coordination benchmark",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/illinoisdata/STALE-bench/tree/f7bc831e4eff08b9652acd893553824636ae3985",
+        "https://github.com/illinoisdata/STALE-bench/blob/f7bc831e4eff08b9652acd893553824636ae3985/README.md",
+        "https://arxiv.org/abs/2609.25396"
+      ],
+      "finding": "STALE isolates semantic interference among parallel coding workers by reusing exact solo patches and counting only tests that pass under each patch alone but fail when the patches are composed. Its controlled visibility/communication conditions supply an explicit attenuation witness: a precise message describing the finalized concurrent change reduces synthetic interference by about 98%, while real-derived Django tasks show high blind interference and substantial one-message recovery. The parallel-work and information-sharing organization is benchmark-defined, so mini-swe-agent, OpenHands and other task-solving harnesses used underneath do not own this S2 path and no canonical S2 observation is admitted.",
       "admitted": false
     },
     {
@@ -171,6 +187,7 @@
   "mechanism_classes": [
     "shared-resource-contention",
     "parallel-write-collision",
+    "semantic-staleness-interference",
     "team-loop-stall-turn-interference",
     "host-resource-admission-contention"
   ]
