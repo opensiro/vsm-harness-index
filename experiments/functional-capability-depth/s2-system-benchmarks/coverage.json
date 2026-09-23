@@ -8,7 +8,8 @@
     "direct-scaffolded",
     "native-proxy",
     "framework-scaffolded",
-    "candidate-boundary-unresolved"
+    "candidate-boundary-unresolved",
+    "candidate-no-results"
   ],
   "cases": [
     {
@@ -81,6 +82,47 @@
         "https://github.com/deepseek-ai/deepseek-harness/blob/master/BENCHMARK.md"
       ],
       "finding": "Canonical Agent Teams exposes durable shared tasks/commitments and team coordination, but the public benchmark entry point currently directs users to the minimal jsonrpc-agent variant rather than the Agent Teams S2 path.",
+      "admitted": false
+    },
+    {
+      "case_id": "agent-framework-benchmark-sequential-scaffolded",
+      "benchmark": "Agent Framework Benchmark",
+      "benchmark_fit": "not-direct-S2",
+      "coverage_class": "framework-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/LukaszGrochal/agent-framework-benchmark/tree/2ce20686e939b9a065705877882bdfabdf857e27",
+        "https://github.com/LukaszGrochal/agent-framework-benchmark/blob/2ce20686e939b9a065705877882bdfabdf857e27/src/autogen_impl/workflow.py"
+      ],
+      "finding": "The benchmark holds model, prompts and tools constant across five framework implementations, but deliberately imposes the same Researcher-to-Analyst-to-Writer sequential pipeline. Its AutoGen path caps RoundRobinGroupChat at one round specifically to match that pipeline, so recurring inter-S1 interference is removed rather than exercised. Published quality, latency and token differences are not direct S2 evidence.",
+      "admitted": false
+    },
+    {
+      "case_id": "squad-marble-controlled-coordination-candidate",
+      "benchmark": "Squad / MARBLE controlled coordination ablation",
+      "benchmark_fit": "proxy",
+      "coverage_class": "candidate-boundary-unresolved",
+      "system_compatibility": "unclear",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/tamirdresher/squad-marble-benchmark/tree/f539d22557827292a664572536ca909ccbb4f8dc",
+        "https://github.com/bradygaster/squad/tree/a1a8e1f4ec10b2dc08411009f29acf725d9ab515"
+      ],
+      "finding": "The MARBLE factorial ablation fixes Claude Opus 4.6 and aligned tasks while comparing Full Squad, coordination-only, memory-only and no-Squad conditions, giving unusually clean evidence for a first-party coordination layer. MARBLE still measures broad collaborative task outcomes rather than an explicit VSM S2 disturbance/attenuation relation, and bradygaster/squad is not currently a canonical Index system, so this cannot populate the S2 primary baseline today.",
+      "admitted": false
+    },
+    {
+      "case_id": "mao-bench-candidate-no-results",
+      "benchmark": "MAO-Bench",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-no-results",
+      "system_compatibility": "unclear",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/rachitpareek/multi-agent-orchestration-evals/tree/3343fe1cf5a24211023a69374d31df3d6711b613"
+      ],
+      "finding": "MAO-Bench is structurally promising for native orchestration comparison: it defines parallel and sequential multi-agent tiers, adversarial failure/conflict tasks, topology/parallelism metrics, hermetic execution and an adapter interface. Its seeded leaderboard still has no published multi-orchestrator baseline results, so there is no matched canonical-harness S2 cell to admit or select yet.",
       "admitted": false
     }
   ],
