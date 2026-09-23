@@ -80,7 +80,7 @@ StarNet also distinguishes present control from future adaptation. Present organ
 - Inter-S1 disturbance: repeated same-origin/same-agent/same-request peer handoff at an unchanged artifact/question checkpoint can oscillate and duplicate sibling work.
 - Attenuating coordination relation: the coordinator detects that repeated relation and holds the next peer turn instead of launching it, while also bounding pending work and recovery nudges.
 - Feedback into subsequent S1 behaviour: `held` prevents the targeted sibling run from executing again until explicit continuation; changed artifact/question evidence changes the checkpoint and therefore the later admission behavior.
-- Why specifically S2: the relation regulates interference/oscillation created by interaction among sibling operational units; it is not merely routing, delegation, persistence or whole-system managerial allocation.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the relation regulates interference/oscillation created by interaction among sibling operational units; it is not merely routing, delegation, persistence or whole-system managerial allocation.
 
 ## S3 — Inside-and-now control
 
