@@ -58,13 +58,15 @@ Other coding or agent benchmarks may be useful later, but they must first pass t
 
 ### `native-system`
 
-The benchmark submission directly identifies and runs the first-party system. Exact historical revision may still be unknown.
-
-PawBench's pinned adapters qualify for the first matched baseline group because they install and drive the first-party QwenPaw, OpenClaw and Hermes Agent runtimes rather than replacing their operational loops.
+The benchmark submission directly identifies and runs the first-party system without an external adapter materially controlling the system setup boundary. Exact historical revision may still be unknown.
 
 ### `adapter-preserved`
 
-An external benchmark adapter controls environment/setup/evaluation, but the operational S1 loop remains the first-party harness. Harbor's Codex and OpenHands installed-agent paths qualify because they invoke the actual first-party Codex CLI/OpenHands tool rather than replacing the agent loop.
+An external benchmark adapter controls environment/setup/evaluation, but the operational S1 loop remains the first-party harness.
+
+Harbor's Codex and OpenHands installed-agent paths qualify because they invoke the actual first-party Codex CLI/OpenHands tool rather than replacing the agent loop.
+
+PawBench's QwenPaw, OpenClaw and Hermes Agent rows also qualify here: PawBench controls container lifecycle, installation/configuration, model binding, task environment and grading, while the operational loop itself remains the corresponding first-party harness runtime.
 
 ### Not admitted
 
@@ -92,7 +94,7 @@ OpenClaw     0.6779
 Hermes Agent 0.5674
 ```
 
-The group is marked `matched-model`: the same PawBench v1.0 run/model label and task/evaluation surface are used while the native harness varies.
+The group is marked `matched-model` and `adapter-preserved`: the same PawBench v1.0 run/model label and task/evaluation surface are used while the preserved first-party harness loop varies.
 
 Pinned adapter evidence identifies the historical harness versions:
 
