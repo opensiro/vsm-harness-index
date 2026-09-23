@@ -16,7 +16,7 @@
       "status": "selected",
       "scope": "general",
       "primary": {
-        "benchmark_id": "pawbench-v1.0",
+        "benchmark_id": "pawbench",
         "benchmark_name": "PawBench v1.0",
         "primary_source": "https://github.com/agentscope-ai/PawBench",
         "comparison_design": "matched-model-cross-harness",
@@ -35,7 +35,7 @@
       "domains": {
         "coding_swe": {
           "status": "domain_projection",
-          "primary_candidate": {
+          "primary": {
             "benchmark_id": "claw-swe-bench",
             "benchmark_name": "Claw-SWE-Bench",
             "primary_source": "https://claw-swe-bench.github.io/",
