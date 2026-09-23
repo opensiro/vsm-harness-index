@@ -49,7 +49,7 @@ This table is a Coding/SWE projection of S1 capability. It must not be promoted 
 | Claude Code (`claude-code`) | `A` | `2.1.237` · version-known | `19/30` (63.3%) | `adapter-preserved` |
 | Codex (`codex`) | `A` | `0.148.0` · version-known | `20/30` (66.7%) | `adapter-preserved` |
 | Hermes Agent (`hermes-agent`) | `A` | `0.20.4` @ `044acf2bf700` · exact-historical | `15/30` (50.0%) | `adapter-preserved` |
-| Oh My Pi (`oh-my-pi`) | `A` | `17.4.0` · version-known | `17/30` (56.7%) | `adapter-preserved` |
+| oh-my-pi (`oh-my-pi`) | `A` | `17.4.0` · version-known | `17/30` (56.7%) | `adapter-preserved` |
 | OpenCode (`opencode`) | `A` | `1.18.19` · version-known | `15/30` (50.0%) | `adapter-preserved` |
 | Pi (`pi`) | `A` | `0.84.2` · version-known | `18/30` (60.0%) | `adapter-preserved` |
 
