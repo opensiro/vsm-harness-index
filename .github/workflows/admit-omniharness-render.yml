@@ -1,0 +1,44 @@
+name: admit omniHarness render
+on:
+  push:
+    branches: [admit-omniharness-212]
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit and render
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('assessments/omniharness.md')
+          s=p.read_text().replace('status: proposed','status: included',1)
+          p.write_text(s)
+          cat=Path('data/catalog.psv'); text=cat.read_text()
+          row='212|omniharness|omniHarness|https://github.com/archimedes-run/omniHarness|2026-05-06T16:26:26Z|index-addition|fd71e375ff626ae99537163edd3d14b16100d786|2026-09-23'
+          if row not in text: cat.write_text(text.rstrip()+"\n"+row+"\n")
+          sig=Path('data/signatures.psv'); text=sig.read_text()
+          row='212|omniharness|omniHarness closes autonomous S1 through its lead/subagent tool loop and autonomous run-level S3 through lead-owned decomposition, bounded assignment and synthesis; no complete sibling S2 or independent S3* path is established, while optional skill evolution closes autonomous-plus-parent S4 and persistent custom-agent SOUL/config refinement closes parent-governed S5.'
+          if row not in text: sig.write_text(text.rstrip()+"\n"+row+"\n")
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/omniharness.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md METRICS.md README.md analytics/temporal.md data/metrics.json
+          git commit -m 'admit: render omniHarness canonical inclusion'
+          git push
