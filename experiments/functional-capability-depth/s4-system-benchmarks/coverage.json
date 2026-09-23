@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-23",
+  "reviewed_at": "2026-09-24",
   "function": "S4",
-  "direct_benchmark_family_count": 3,
-  "composed_direct_observation_count": 3,
+  "direct_benchmark_family_count": 4,
+  "composed_direct_observation_count": 4,
   "canonical_direct_observation_count": 0,
   "proxy_observation_count": 5,
   "proxy_systems_observed": [
@@ -61,6 +61,21 @@
         "https://mas-orchestra.salesforceresearch.ai/evoharness/"
       ],
       "finding": "The self-evolving mode updates persistent inner adaptation state from accumulated experience while the supplied tool/skill/agent harness changes across stages. Deployment-only evaluation is explicitly excluded from the direct-S4 classification.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "evo-bench-heldout-direct-composed",
+      "benchmark": "Evo-Bench",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-composed",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/RUCAIBox/Evo-Bench/tree/889e4fc8b197f426b444dbf8de217ea15b596fd2",
+        "https://arxiv.org/abs/2608.09096",
+        "https://evobench.org/"
+      ],
+      "finding": "Evo-Bench holds the policy model, minimal seed harness, benchmark protocol and evolution budget fixed while an evolver diagnoses validation failures and persistently rewrites the executable harness. The selected harness is frozen before a disjoint 448-task evaluation suite is scored, so the benchmark directly closes evidence-to-persistent-change-to-future-operation at its benchmark-defined S4 boundary. The evolver/harness organization is benchmark-supplied and is not a native canonical-harness S4 implementation.",
       "admitted_to_canonical_registry": false
     },
     {
