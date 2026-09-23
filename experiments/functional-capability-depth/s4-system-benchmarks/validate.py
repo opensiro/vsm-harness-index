@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the experimental direct-S4 benchmark coverage layer."""
+"""Validate the experimental direct-S4 coverage and S4-proxy system observations."""
 
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ MAP = HERE.parent / "vsm-benchmark-family-map" / "map.json"
 COVERAGE = HERE / "coverage.json"
 BENCHMARK_OBSERVATIONS = HERE / "benchmark_observations.json"
 CANONICAL_OBSERVATIONS = HERE / "canonical_observations.json"
+PROXY_OBSERVATIONS = HERE / "proxy_observations.json"
 
 DIRECT_S4 = {
     "a-evolve-harness-evolution",
@@ -32,6 +33,15 @@ SYSTEM_COMPATIBILITY = {
     "benchmark-scaffolded",
     "unclear",
 }
+FUTURESIM_COMPARABILITY = "futuresim-v1-recommended-harness-cross-system-confounded"
+EXPECTED_FUTURESIM = {
+    "futuresim-v1-codex-0125-gpt55": ("codex", "0.125.0", 25, 0.05),
+    "futuresim-v1-claude-code-21132-opus46": ("claude-code", "2.1.132", 20, 0.02),
+    "futuresim-v1-claude-code-21132-deepseek-v4-pro": ("claude-code", "2.1.132", 13, -0.02),
+    "futuresim-v1-claude-code-21132-glm51": ("claude-code", "2.1.132", 10, -0.01),
+    "futuresim-v1-opencode-1411-qwen36plus": ("opencode", "1.4.11", 5, -0.07),
+}
+FUTURESIM_SYSTEMS = {"codex", "claude-code", "opencode"}
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
 
@@ -67,6 +77,7 @@ def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     benchmark_observations = json.loads(BENCHMARK_OBSERVATIONS.read_text(encoding="utf-8"))
     canonical_observations = json.loads(CANONICAL_OBSERVATIONS.read_text(encoding="utf-8"))
+    proxy_observations = json.loads(PROXY_OBSERVATIONS.read_text(encoding="utf-8"))
 
     if coverage.get("schema_version") != 1:
         fail("coverage schema_version must be 1")
@@ -81,6 +92,13 @@ def main() -> None:
     if direct_s4 != DIRECT_S4:
         fail(f"unexpected direct S4 benchmark map: {sorted(direct_s4)}")
 
+    futuresim_map = [
+        entry for entry in benchmark_map.get("entries", [])
+        if entry.get("function") == "S4" and entry.get("benchmark_id") == "futuresim"
+    ]
+    if len(futuresim_map) != 1 or futuresim_map[0].get("fit") != "proxy":
+        fail("FutureSim must remain proxy for S4")
+
     skilllearn = [
         entry for entry in benchmark_map.get("entries", [])
         if entry.get("function") == "S4" and entry.get("benchmark_id") == "skilllearnbench"
@@ -92,8 +110,10 @@ def main() -> None:
         fail("benchmark_observations.json must contain a list")
     if not isinstance(canonical_observations, list):
         fail("canonical_observations.json must contain a list")
+    if not isinstance(proxy_observations, list):
+        fail("proxy_observations.json must contain a list")
     if canonical_observations:
-        fail("first direct-S4 pass expects canonical direct registry to remain empty")
+        fail("direct canonical S4 registry must remain empty")
 
     if coverage.get("direct_benchmark_family_count") != len(DIRECT_S4):
         fail("direct_benchmark_family_count mismatch")
@@ -101,6 +121,10 @@ def main() -> None:
         fail("composed_direct_observation_count mismatch")
     if coverage.get("canonical_direct_observation_count") != len(canonical_observations):
         fail("canonical_direct_observation_count mismatch")
+    if coverage.get("proxy_observation_count") != len(proxy_observations):
+        fail("proxy_observation_count mismatch")
+    if set(coverage.get("proxy_systems_observed", [])) != FUTURESIM_SYSTEMS:
+        fail("proxy_systems_observed mismatch")
 
     if len(benchmark_observations) != 3:
         fail("expected exactly three reviewed composed direct S4 evidence records")
@@ -135,6 +159,66 @@ def main() -> None:
 
     if observed_families != DIRECT_S4:
         fail("benchmark observations must cover every reviewed direct S4 family exactly once")
+
+    proxy_ids: set[str] = set()
+    proxy_systems: set[str] = set()
+    for obs in proxy_observations:
+        observation_id = obs.get("observation_id")
+        if observation_id not in EXPECTED_FUTURESIM:
+            fail(f"unexpected FutureSim proxy observation: {observation_id!r}")
+        if observation_id in proxy_ids:
+            fail(f"duplicate FutureSim proxy observation_id: {observation_id}")
+        proxy_ids.add(observation_id)
+
+        expected_harness, expected_version, expected_accuracy, expected_bss = EXPECTED_FUTURESIM[observation_id]
+        if obs.get("function") != "S4" or obs.get("benchmark_id") != "futuresim":
+            fail(f"{observation_id}: must be an S4/FutureSim observation")
+        if obs.get("benchmark_fit") != "proxy":
+            fail(f"{observation_id}: FutureSim benchmark_fit must remain proxy")
+        if obs.get("system_compatibility") != "adapter-preserved":
+            fail(f"{observation_id}: expected adapter-preserved compatibility")
+        if obs.get("canonical_harness_id") != expected_harness:
+            fail(f"{observation_id}: canonical_harness_id mismatch")
+        if obs.get("canonical_assessment_ref") != f"assessments/{expected_harness}.md":
+            fail(f"{observation_id}: canonical_assessment_ref mismatch")
+        if obs.get("canonical_s4_state_at_review") != "—":
+            fail(f"{observation_id}: canonical_s4_state_at_review must be —")
+        if obs.get("published_harness_version") != expected_version:
+            fail(f"{observation_id}: published harness version mismatch")
+        if obs.get("final_top1_accuracy_percent") != expected_accuracy:
+            fail(f"{observation_id}: top-1 accuracy mismatch")
+        if obs.get("final_brier_skill_score") != expected_bss:
+            fail(f"{observation_id}: Brier skill score mismatch")
+        if obs.get("question_count") != 330 or obs.get("seeds") != 3:
+            fail(f"{observation_id}: expected 330 questions and 3 seeds")
+        if obs.get("reasoning_setting") != "maximum reasoning effort":
+            fail(f"{observation_id}: reasoning setting mismatch")
+        if obs.get("comparability_group") != FUTURESIM_COMPARABILITY:
+            fail(f"{observation_id}: comparability group mismatch")
+        confounders = obs.get("confounders")
+        if not isinstance(confounders, list) or not confounders:
+            fail(f"{observation_id}: explicit confounders required")
+        sources = obs.get("primary_sources")
+        if not isinstance(sources, list) or not sources or any(not valid_https(s) for s in sources):
+            fail(f"{observation_id}: invalid primary_sources")
+        non_claim = obs.get("non_claim")
+        if not isinstance(non_claim, str) or len(non_claim.strip()) < 40:
+            fail(f"{observation_id}: explicit non-claim required")
+
+        fields = assessment_fields(expected_harness)
+        if fields.get("status") != "included":
+            fail(f"{observation_id}: canonical assessment not included")
+        if fields.get("autonomy_s4") != "—":
+            fail(
+                f"{observation_id}: canonical {expected_harness} no longer has S4=—; "
+                "review the negative-control interpretation"
+            )
+        proxy_systems.add(expected_harness)
+
+    if proxy_ids != set(EXPECTED_FUTURESIM):
+        fail("FutureSim proxy observation set is incomplete")
+    if proxy_systems != FUTURESIM_SYSTEMS:
+        fail("FutureSim canonical proxy-system set mismatch")
 
     declared_classes = set(coverage.get("coverage_classes", []))
     if declared_classes != COVERAGE_CLASSES:
@@ -196,6 +280,8 @@ def main() -> None:
     print(f"reviewed direct S4 families: {len(direct_s4)}")
     print(f"composed direct evidence records: {len(benchmark_observations)}")
     print(f"canonical direct observations: {len(canonical_observations)}")
+    print(f"FutureSim proxy observations: {len(proxy_observations)}")
+    print(f"FutureSim canonical proxy systems: {len(proxy_systems)}")
     print(f"coverage cases: {len(cases)}")
     print(f"representative canonical S4 systems inspected: {len(representative)}")
 

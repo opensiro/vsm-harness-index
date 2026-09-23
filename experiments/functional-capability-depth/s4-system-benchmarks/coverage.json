@@ -5,6 +5,12 @@
   "direct_benchmark_family_count": 3,
   "composed_direct_observation_count": 3,
   "canonical_direct_observation_count": 0,
+  "proxy_observation_count": 5,
+  "proxy_systems_observed": [
+    "codex",
+    "claude-code",
+    "opencode"
+  ],
   "coverage_classes": [
     "direct-composed",
     "task-solver-not-adaptation-owner",
@@ -91,9 +97,10 @@
       "canonical_harness_id": null,
       "primary_sources": [
         "https://openforecaster.github.io/futuresim/",
-        "https://github.com/OpenForecaster/futuresim"
+        "https://github.com/OpenForecaster/futuresim",
+        "https://arxiv.org/abs/2605.15188"
       ],
-      "finding": "FutureSim has unusually good real-harness integration and directly exercises chronological external sensing and forecast revision, but family-level linkage remains observation-specific and the benchmark still closes on belief/forecast state rather than requiring persistent organizational capability adaptation.",
+      "finding": "FutureSim directly exercises chronological external sensing and forecast revision but closes on belief/forecast state rather than persistent organizational capability adaptation. Its family-level linkage remains observation-specific; five published recommended/native-CLI runs are recorded separately as adapter-preserved proxy observations for canonical Codex, Claude Code and OpenCode.",
       "admitted_to_canonical_registry": false
     }
   ],
