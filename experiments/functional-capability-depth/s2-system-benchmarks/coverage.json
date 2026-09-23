@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-23",
+  "reviewed_at": "2026-09-24",
   "function": "S2",
   "direct_observation_count": 0,
   "proxy_projection_count": 1,
@@ -96,6 +96,36 @@
         "https://github.com/LukaszGrochal/agent-framework-benchmark/blob/2ce20686e939b9a065705877882bdfabdf857e27/src/autogen_impl/workflow.py"
       ],
       "finding": "The benchmark holds model, prompts and tools constant across five framework implementations, but deliberately imposes the same Researcher-to-Analyst-to-Writer sequential pipeline. Its AutoGen path caps RoundRobinGroupChat at one round specifically to match that pipeline, so recurring inter-S1 interference is removed rather than exercised. Published quality, latency and token differences are not direct S2 evidence.",
+      "admitted": false
+    },
+    {
+      "case_id": "astra-agno-coordinate-framework-scaffolded",
+      "benchmark": "Astra cross-framework investment-team benchmark — Agno row",
+      "benchmark_fit": "not-direct-S2",
+      "coverage_class": "framework-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": "agno",
+      "primary_sources": [
+        "https://github.com/HeeManSu/astra-agi/blob/129b440e531af9d053645f7fab966c172bfb3b3b/research/research.md",
+        "https://github.com/HeeManSu/astra-agi/blob/129b440e531af9d053645f7fab966c172bfb3b3b/benchmarking/agno-investment-team/teams/research_team.py",
+        "https://github.com/HeeManSu/astra-agi/blob/129b440e531af9d053645f7fab966c172bfb3b3b/benchmarking/agno-investment-team/uv.lock"
+      ],
+      "finding": "The Astra campaign is well matched at the model/tool/workload level, but its Agno organization is benchmark-authored: Agno 2.5.17 is configured as TeamMode.coordinate with a strict sequential analyst order and explicit benchmark instructions. This is not the canonical TeamMode.tasks mutual-adjustment path used to establish Agno S2, and the workload contains no explicit inter-S1 interference/attenuation disturbance. The published call/token/latency results therefore remain framework-execution evidence, not direct Agno.S2 capability evidence.",
+      "admitted": false
+    },
+    {
+      "case_id": "astra-autogen-selector-framework-scaffolded",
+      "benchmark": "Astra cross-framework investment-team benchmark — AutoGen row",
+      "benchmark_fit": "not-direct-S2",
+      "coverage_class": "framework-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": "autogen-agentchat",
+      "primary_sources": [
+        "https://github.com/HeeManSu/astra-agi/blob/129b440e531af9d053645f7fab966c172bfb3b3b/research/research.md",
+        "https://github.com/HeeManSu/astra-agi/blob/129b440e531af9d053645f7fab966c172bfb3b3b/benchmarking/autogen-investment-team/teams/research_team.py",
+        "https://github.com/HeeManSu/astra-agi/blob/129b440e531af9d053645f7fab966c172bfb3b3b/benchmarking/autogen-investment-team/uv.lock"
+      ],
+      "finding": "The Astra campaign runs AutoGen AgentChat 0.7.5 through first-party SelectorGroupChat, but the compared organization still uses a benchmark-authored selector prompt, custom all-analysts-spoken termination and workload-specific specialist topology. It does not expose a benchmark-defined inter-S1 interference/oscillation and its attenuation, so the matched cost/token/latency row cannot be promoted to a direct native S2 observation merely because canonical AutoGen establishes S2 elsewhere.",
       "admitted": false
     },
     {
