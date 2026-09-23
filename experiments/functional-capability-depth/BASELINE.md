@@ -8,6 +8,8 @@ This document defines a simple baseline for comparing harness capability beside 
 
 It does not change the VSM Profile, released assessment states, canonical assessments, rankings, or the separate self-organizing-autonomy experiment.
 
+Current primary-family selections and explicit gaps are recorded in [`PRIMARY-BASELINES.md`](PRIMARY-BASELINES.md), with a machine-readable projection in [`primary-baselines.json`](primary-baselines.json).
+
 ## Baseline shape
 
 For the baseline view:
