@@ -14,6 +14,7 @@ This review applies the current `vsm-harness-profile` function definitions befor
 | --- | --- | --- | --- |
 | S1 — Operations | Terminal-Bench / Harbor | `direct` | Agents perform end-to-end work in a real terminal environment; task state is externally graded. This directly exercises operational execution, tool use, environment feedback, and task completion. |
 | S1 — Operations | SWE-bench family | `direct` | An agent receives a real repository issue, edits a checked-out repository, and is graded by issue-specific tests. This is direct evidence of software-engineering operational capability. |
+| S1 — Operations | Claw-SWE-Bench | `direct` in Coding/SWE domain | The harness operates on isolated GitHub issue-resolution tasks, changes repository state through its own operational loop, and is graded by the official SWE-bench evaluator under a common cross-harness membrane. This directly measures S1 operational capability for software engineering, not universal S1 capability. |
 | S2 — Coordination | DPBench | `direct` | The benchmark structurally creates multiple operational actors under simultaneous shared-resource contention and measures deadlock/coordination outcomes. This supplies the specific interference/oscillation witness required by the Profile rather than treating communication as coordination by name. |
 | S2 — Coordination | SILO-BENCH | `proxy` | It measures distributed collaboration under fragmented information and exposes a communication-reasoning gap, but the primary disturbance is information separation rather than a clearly identified recurring inter-S1 interference/oscillation relation. |
 | S2 — Coordination | alem | `proxy` | Long-horizon teams must communicate, specialise, trade and execute shared plans, but the published benchmark-level description does not by itself establish the specific disturbance-plus-attenuation relation required for direct S2 mapping. Task-level review could promote particular coordination goals later. |
@@ -32,13 +33,19 @@ This review applies the current `vsm-harness-profile` function definitions befor
 
 ### S1
 
-Terminal-Bench and SWE-bench are direct because their evaluated object performs the primary transformation in an environment and receives execution-grounded feedback. A benchmark result still belongs to a concrete `(system, model, configuration, benchmark revision)` and must not be converted into an autonomy state.
+Terminal-Bench, SWE-bench and Claw-SWE-Bench are direct because their evaluated object performs the primary transformation in an environment and receives execution-grounded feedback. A benchmark result still belongs to a concrete `(system, model, configuration, benchmark revision)` and must not be converted into an autonomy state.
+
+Claw-SWE-Bench adds an especially useful controlled harness-comparison design for the Coding/SWE projection. At pinned revision `fcece5f4c0817430ce953b52c80c931a40cd9b83`, it gives supported harnesses the same GitHub issue-resolution task surface, common prompting with a narrowly documented GenericAgent tool-name exception, isolated Docker workspace, standard 3600-second timeout, runner-side `git diff` collection and the official SWE-bench evaluator. Each instance starts in a fresh container. This makes the harness the intended varying factor while preserving the harness's own operational loop through an external evaluation membrane.
+
+The direct fit is deliberately domain-scoped. A Claw-SWE-Bench result establishes evidence about S1 operational capability on Coding/SWE tasks; it does not establish universal S1 capability across unrelated domains. Nor do planning, tool, recovery or orchestration details observed during the coding task establish S2, S3, S3*, S4 or S5 by vocabulary association.
 
 Primary sources:
 
 - Terminal-Bench datasets / Harbor: https://hub.harborframework.com/datasets/terminal-bench
 - SWE-bench: https://www.swebench.com/
 - Harbor SWE-bench Verified adapter/parity: https://hub.harborframework.com/datasets/swe-bench/swe-bench-verified
+- Claw-SWE-Bench implementation: https://github.com/TokenRhythm/claw-swe-bench/tree/fcece5f4c0817430ce953b52c80c931a40cd9b83
+- Claw-SWE-Bench paper: https://arxiv.org/abs/2606.12344
 
 ### S2
 
@@ -136,6 +143,8 @@ Harbor's SWE-bench Verified parity records explicitly include:
 
 The official SWE-bench leaderboard also contains OpenHands and SWE-agent entries, and current Harbor/Terminal-Bench public jobs contain Codex runs. These are suitable starting points for S1 linkage once exact benchmark revision, model, harness version and adapter boundary are preserved.
 
+Claw-SWE-Bench adds a controlled fixed-model harness comparison in the Coding/SWE domain. Its published matrix includes OpenClaw and Hermes Agent, both canonical Index systems, under the same Qwen 3.6-flash and GLM 5.1 cells. System-level linkage must still be recorded observation-by-observation as `adapter-preserved`, with historical harness version/revision left unknown unless primary evidence establishes it.
+
 ### S2: direct benchmark, weak canonical-system linkage
 
 DPBench's published experiments primarily evaluate model agents inside the DPBench multi-agent environment rather than first-party Index harness coordination paths. It is therefore `direct` for S2 capability semantics but currently `benchmark-scaffolded` for most canonical-system attribution.
@@ -160,7 +169,7 @@ AgentGovBench publishes framework integrations/results for systems including Cod
 
 ## Evidence gaps after the first review
 
-1. **S1 has the strongest real-system evidence.** Mature execution benchmarks frequently run actual harnesses and retain version/model metadata.
+1. **S1 has the strongest real-system evidence.** Mature execution benchmarks frequently run actual harnesses and retain version/model metadata; Claw-SWE-Bench also supplies an explicit matched-model cross-harness Coding/SWE design.
 2. **S2 has a strong direct benchmark but poor native-harness coverage.** DPBench measures the right disturbance, but current runs mostly use benchmark-owned topology.
 3. **S3 now has a plausible direct benchmark family.** ClawArena-Team exercises whole-team control, but currently evaluates a benchmark-defined organization rather than native Index S3 implementations.
 4. **S3* lacks a direct same-system benchmark.** AuditBench measures investigator skill, not complementary audit closure inside an operating organization.
