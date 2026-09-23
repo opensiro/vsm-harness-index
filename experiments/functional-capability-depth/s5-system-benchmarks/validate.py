@@ -44,6 +44,10 @@ REQUIRED_FOLLOWUP_CASES = {
         "candidate-native-mechanism-not-benchmark",
         "368717cb50b70826412f85022d23b3fd8a0dec77",
     ),
+    "agent-parliament-ratified-amendment-process": (
+        "governance-process-not-harness-benchmark",
+        None,
+    ),
     "mac-constitution-optimization-proxy": (
         "proxy",
         "76aea7ce2cd95e46cfcf015a70895fdc267a0f4f",
@@ -145,6 +149,12 @@ def main() -> None:
     constitutional = by_id["constitutional-agent-governance-amendment-mechanism"]
     if "constitutional-agent-governance" not in constitutional["primary_sources"][0]:
         fail("constitutional-agent-governance case must retain first-party repository provenance")
+
+    parliament = by_id["agent-parliament-ratified-amendment-process"]
+    if parliament.get("classification") != "governance-process-not-harness-benchmark":
+        fail("Agent Parliament must remain governance-process evidence, not a harness benchmark")
+    if not any("parliament.hermanity.dev/laws/constitution" in source for source in parliament["primary_sources"]):
+        fail("Agent Parliament case must retain the public constitutional record")
 
     mac = by_id["mac-constitution-optimization-proxy"]
     if not any("MAC-Multi-Agent-Constitution-Learning" in source for source in mac["primary_sources"]):
