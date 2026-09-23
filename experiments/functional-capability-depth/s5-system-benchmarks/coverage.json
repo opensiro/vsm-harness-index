@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-23",
+  "function": "S5",
+  "direct_family_count": 0,
+  "canonical_direct_observation_count": 0,
+  "coverage_classes": [
+    "proxy",
+    "unsuitable",
+    "protocol-not-benchmark",
+    "governance-process-not-harness-benchmark"
+  ],
+  "cases": [
+    {
+      "case_id": "agentgovbench-enforcement-not-authority",
+      "artifact": "AgentGovBench",
+      "classification": "unsuitable",
+      "primary_sources": [
+        "https://github.com/agentic-control-plane/agentgovbench"
+      ],
+      "finding": "Scores enforcement and propagation of pre-existing governance decisions. It does not exercise legitimate ultimate-policy or identity authority making a new decision and returning it to operation."
+    },
+    {
+      "case_id": "rolecde-value-conflict-proxy",
+      "artifact": "RoleCDE",
+      "classification": "proxy",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01552",
+        "https://github.com/rabbitrose/RoleCDE"
+      ],
+      "finding": "Exercises role/value conflict reasoning, but the evaluated model is not established as the legitimate ultimate authority of an organization and no adopted policy decision is required to govern subsequent operation."
+    },
+    {
+      "case_id": "agent-valuebench-expressed-values-proxy",
+      "artifact": "Agent-ValueBench",
+      "classification": "proxy",
+      "review_ref": "3527b4a4ea8fc9dde6fbe27cd371c4ba7df76ac1",
+      "primary_sources": [
+        "https://github.com/ValueByte-AI/Agent-ValueBench",
+        "https://arxiv.org/abs/2605.10365"
+      ],
+      "finding": "Provides executable value-conflict tasks and measures values expressed by tool-using agents. It does not establish legitimate organizational authority to settle identity/ultimate policy and bind later operation."
+    },
+    {
+      "case_id": "agentcity-operational-legislation-proxy",
+      "artifact": "AgentCity",
+      "classification": "proxy",
+      "primary_sources": [
+        "https://arxiv.org/abs/2604.07007",
+        "https://agentcity.dev/"
+      ],
+      "finding": "Agents legislate operational smart-contract rules inside a constitutional economy, but foundational contracts and key constitutional parameters are human-authored/agent-immutable. The evaluated legislation is below the ultimate foundational authority layer."
+    },
+    {
+      "case_id": "cgst-conformance-proxy",
+      "artifact": "Constitutional AI Governance Stress Test",
+      "classification": "proxy",
+      "review_ref": "a70dd1ffd4b2c462a9c0680b6aa6d6b9ad788cdf",
+      "primary_sources": [
+        "https://github.com/CognitiveThoughtEngine/cgst-framework"
+      ],
+      "finding": "Provides governance/conformance scoring and stress evidence, including constitutional and authority questions, but does not itself execute an identity-level conflict through legitimate amendment/adjudication and then observe later operation under the changed policy."
+    },
+    {
+      "case_id": "constitutional-governance-metric-spaces-process",
+      "artifact": "Constitutional Governance in Metric Spaces",
+      "classification": "governance-process-not-harness-benchmark",
+      "primary_sources": [
+        "https://arxiv.org/abs/2605.13362"
+      ],
+      "finding": "Defines an end-to-end governance process that can adopt policy and amend the constitution under supermajority rules. It is useful S5 protocol evidence but not a benchmark of an agent harness's S5 capability."
+    },
+    {
+      "case_id": "hem-parent-escalation-protocol",
+      "artifact": "Human Escalation Mechanism",
+      "classification": "protocol-not-benchmark",
+      "primary_sources": [
+        "https://datatracker.ietf.org/doc/draft-sato-soos-hem/"
+      ],
+      "finding": "Defines a non-bypassable human escalation/decision path that can support Parent-governed S5 when the escalated issue is identity/ultimate-policy level, but the protocol itself is not a benchmark result."
+    }
+  ],
+  "representative_canonical_s5_systems": [
+    {"harness_id": "headcount", "expected_state": "A"},
+    {"harness_id": "henterprise", "expected_state": "A"},
+    {"harness_id": "ouroboros", "expected_state": "A(P)"},
+    {"harness_id": "thclaws", "expected_state": "P"},
+    {"harness_id": "masters-of-ai-harness", "expected_state": "C(P)"}
+  ],
+  "missing_direct_benchmark_requirements": [
+    "identity-or-ultimate-policy-level conflict",
+    "legitimate authority at declared recursion",
+    "actual adjudication-ratification-or-amendment",
+    "decision provenance separating ownership from enforcement",
+    "newly decided policy returned into subsequent operation"
+  ]
+}
