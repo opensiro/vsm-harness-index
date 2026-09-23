@@ -1,10 +1,17 @@
 name: discovery queue dedupe
 
 on:
+  issues:
+    types:
+      - opened
+      - edited
+      - reopened
   push:
     branches:
       - main
     paths:
+      - assessments/**
+      - data/catalog.psv
       - scripts/check_discovery_queues.py
       - .github/workflows/discovery-queue-dedupe.yml
   schedule:
