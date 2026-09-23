@@ -223,3 +223,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 208|starnet|StarNet|https://github.com/androoAGI/starnet|2026-06-14T23:11:55Z|index-addition|f00aa04dfceac4e0d1a3a1e95b7b8d24d55456d1|2026-09-23
 209|temporal-agent-harness|Temporal Agent Harness|https://github.com/temporal-community/temporal-agent-harness|2026-06-18T22:43:11Z|index-addition|d54bef90153a5201aff680cfa36b921bea7cc2e4|2026-09-23
 210|swarm|SWARM|https://github.com/KhanUzeb/SWARM|2026-08-13T10:28:13Z|index-addition|5234bed4e889b13f1343833382a7e13a782a5ee7|2026-09-23
+211|nac|nac|https://github.com/arcee-ai/nac|2026-03-28T04:02:01Z|index-addition|fd75f2a000fd794a3a5c2184437d3a5e6c2a0437|2026-09-23
