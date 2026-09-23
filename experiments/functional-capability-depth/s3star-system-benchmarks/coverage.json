@@ -9,7 +9,9 @@
     "direct-composed",
     "native-proxy",
     "external-wrapper-not-native",
-    "proxy-scaffolded"
+    "proxy-scaffolded",
+    "capability-label-not-s3star",
+    "candidate-native-no-direct-results"
   ],
   "cases": [
     {
@@ -64,6 +66,76 @@
         "https://alignment.anthropic.com/2026/auditbench/"
       ],
       "finding": "AuditBench provides alternative investigator access to hidden target-model behavior, but the target is an external benchmark object and findings need not return into current control of the same operating organization. It remains a strong S3* proxy rather than a direct same-system closure benchmark.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "pawbench-self-verification-label-not-s3star",
+      "benchmark": "PawBench Self_Verification capability slice",
+      "benchmark_fit": "not-direct-S3star",
+      "coverage_class": "capability-label-not-s3star",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/agentscope-ai/PawBench/tree/0f794a8bb6c27aa9ee4091b2691fa30e4ed9cc8f",
+        "https://github.com/agentscope-ai/PawBench/blob/0f794a8bb6c27aa9ee4091b2691fa30e4ed9cc8f/submissions/pawbench-4models-opusjudge-20260529__qwen3.6-35b-a3b__qwenpaw.json"
+      ],
+      "finding": "PawBench publishes a Self_Verification capability slice, but the slice remains task-performance evidence. Its label does not establish a materially distinct complementary evidence path, audit independence, claim-vs-reality discrepancy detection, corrective return into current control, or re-verification. It must not be mapped to VSM S3* by vocabulary similarity.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "codex-guardian-native-no-direct-results",
+      "benchmark": "Codex Guardian / AutoReview native audit path",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-native-no-direct-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "codex",
+      "primary_sources": [
+        "https://github.com/openai/codex/blob/b974893c90048d147207ae9004489c02f3116426/codex-rs/ext/guardian-reviewer/src/routing.rs",
+        "https://github.com/openai/codex/blob/b974893c90048d147207ae9004489c02f3116426/codex-rs/ext/guardian-reviewer/src/assessment.rs"
+      ],
+      "finding": "Codex has a real first-party Guardian/AutoReview constructor path with separate review and structured allow/deny return into execution. The reviewed public search did not recover a first-party published benchmark cell that directly measures this native complementary-audit path under a matched canonical-harness comparison. Preserve the missing benchmark as a gap rather than assigning a score from external wrappers or generic review claims.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "omnigent-polly-reviewer-native-no-direct-results",
+      "benchmark": "Omnigent Polly cross-vendor reviewer path",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-native-no-direct-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "omnigent",
+      "primary_sources": [
+        "https://github.com/omnigent-ai/omnigent/blob/4d963a360e798f076d4fdbd4665e7188e4da05df/examples/polly/config.yaml",
+        "https://github.com/omnigent-ai/omnigent/tree/4d963a360e798f076d4fdbd4665e7188e4da05df"
+      ],
+      "finding": "Omnigent's bundled Polly organization has a separate cross-vendor reviewer whose blocking findings become corrective fix tasks, so the native path satisfies the structural S3* boundary. The reviewed benchmark surfaces did not provide published reviewer-specific discrepancy, corrective-return and re-verification results under a matched canonical-harness design; generic release or performance regression benchmarks therefore do not close the S3* primary gap.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "thclaws-team-audit-native-no-direct-results",
+      "benchmark": "thClaws Team completion-audit path",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-native-no-direct-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "thclaws",
+      "primary_sources": [
+        "https://github.com/thClaws/thClaws/blob/cd700937a71a391f052438d139b7b1c5a6456755/crates/core/src/default_prompts/lead.md",
+        "https://github.com/thClaws/thClaws/blob/cd700937a71a391f052438d139b7b1c5a6456755/user-manual/ch17-agent-teams.md"
+      ],
+      "finding": "thClaws Team mode has a native complementary audit path: a teammate completion claim can be challenged through direct lead inspection of workspace state and failed work can be returned to the responsible teammate for correction. The reviewed repository search did not recover a published benchmark exercising this exact claim-to-inspection-to-corrective-return path, so no direct canonical S3* observation is admitted.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "reigen-verification-native-no-direct-results",
+      "benchmark": "Reigen configured verification constructor path",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-native-no-direct-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "reigen",
+      "primary_sources": [
+        "https://github.com/zachary-wilde/reigen/blob/6236f47a1b2f3081a0f22bcba47705bcd1680720/src/main/ravel.ts",
+        "https://github.com/zachary-wilde/reigen/blob/6236f47a1b2f3081a0f22bcba47705bcd1680720/src/main/ravel-model.ts"
+      ],
+      "finding": "Reigen/Conductor supplies a constructor-level complementary verification path in which a project-configured verification command inspects a finished child's worktree before the manager consumes the completion event and the verdict returns into current control. The reviewed public search did not recover a published direct benchmark of that native verification constructor, so the canonical direct registry remains empty.",
       "admitted_to_canonical_registry": false
     }
   ],
