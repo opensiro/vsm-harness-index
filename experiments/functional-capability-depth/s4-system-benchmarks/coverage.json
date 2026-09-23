@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-23",
+  "function": "S4",
+  "direct_benchmark_family_count": 3,
+  "composed_direct_observation_count": 3,
+  "canonical_direct_observation_count": 0,
+  "coverage_classes": [
+    "direct-composed",
+    "native-proxy",
+    "task-solver-not-adaptation-owner",
+    "proxy-scaffolded"
+  ],
+  "cases": [
+    {
+      "case_id": "a-evolve-direct-composed",
+      "benchmark": "A-Evolve harness-evolution protocol",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-composed",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/tree/96ed93ba7ee0b9519fc55c963afb47a1975eb1ae",
+        "https://arxiv.org/abs/2605.30621"
+      ],
+      "finding": "A-Evolve converts task execution evidence into persistent harness updates and evaluates later harness benefit, directly exercising S4 at its benchmark-defined evolving-system boundary. The evolver is benchmark-supplied rather than a canonical harness's native S4 path.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "skillevolbench-direct-composed",
+      "benchmark": "SkillEvolBench",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-composed",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/AIoT-MLSys-Lab/SkillEvolBench/tree/9e3daa339987c3cfa624121e1be442593a53d43c",
+        "https://arxiv.org/abs/2605.24117"
+      ],
+      "finding": "SkillEvolBench uses acquisition trajectories and verifier feedback to induce/revise persistent skills, freezes the learned library, and tests future context shift, adversarial variants and composition. The Skill Author belongs to the benchmark-defined organization.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "evoharnessbench-self-evolving-direct-composed",
+      "benchmark": "EvoHarnessBench self-evolving adaptation",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-composed",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://arxiv.org/abs/2609.04280",
+        "https://mas-orchestra.salesforceresearch.ai/evoharness/"
+      ],
+      "finding": "The self-evolving mode updates persistent inner adaptation state from accumulated experience while the supplied tool/skill/agent harness changes across stages. Deployment-only evaluation is explicitly excluded from the direct-S4 classification.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "skillevolbench-codex-task-solver-not-owner",
+      "benchmark": "SkillEvolBench task-solver integrations",
+      "benchmark_fit": "direct",
+      "coverage_class": "task-solver-not-adaptation-owner",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": "codex",
+      "primary_sources": [
+        "https://github.com/AIoT-MLSys-Lab/SkillEvolBench/tree/9e3daa339987c3cfa624121e1be442593a53d43c/agents_port",
+        "https://github.com/AIoT-MLSys-Lab/SkillEvolBench/blob/9e3daa339987c3cfa624121e1be442593a53d43c/README.md"
+      ],
+      "finding": "SkillEvolBench can execute Codex CLI as an operational task solver, but the Skill Author and persistent adaptation protocol are benchmark-hosted. A Codex-backed run is therefore not evidence for canonical Codex S4 ownership or native S4 capability.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "skilllearnbench-proxy-scaffolded",
+      "benchmark": "SkillLearnBench",
+      "benchmark_fit": "proxy",
+      "coverage_class": "proxy-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/cxcscmu/SkillLearnBench/tree/a0da045a8bf64b8a8ff20730c4d6ef10dc4e2c5b",
+        "https://arxiv.org/abs/2604.20087"
+      ],
+      "finding": "SkillLearnBench refines reusable skills from self or teacher feedback, but its family-level protocol is more tightly coupled to retries and same-task-family improvement and does not isolate frozen prospective deployment as cleanly as the direct S4 families.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "futuresim-proxy",
+      "benchmark": "FutureSim",
+      "benchmark_fit": "proxy",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "adapter-preserved",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://openforecaster.github.io/futuresim/",
+        "https://github.com/OpenForecaster/futuresim"
+      ],
+      "finding": "FutureSim has unusually good real-harness integration and directly exercises chronological external sensing and forecast revision, but it still closes on belief/forecast state rather than requiring persistent organizational capability adaptation.",
+      "admitted_to_canonical_registry": false
+    }
+  ],
+  "representative_canonical_s4_systems_inspected": [
+    "headcount",
+    "henterprise",
+    "kadath",
+    "omniscientist",
+    "super-agent",
+    "bossconsole",
+    "exo",
+    "agentyou"
+  ],
+  "canonical_states_at_review": {
+    "headcount": "A",
+    "henterprise": "A",
+    "kadath": "A",
+    "omniscientist": "A",
+    "super-agent": "A",
+    "bossconsole": "A(P)",
+    "exo": "A(P)",
+    "agentyou": "C"
+  },
+  "capability_dimensions": [
+    "external-or-future-distinction-sensing",
+    "adaptation-option-generation",
+    "persistent-capability-update",
+    "future-deployment-transfer",
+    "retention-under-environment-change",
+    "adaptation-benefit-vs-update-quality-separation"
+  ]
+}
