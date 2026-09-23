@@ -14,6 +14,8 @@ The rule for the baseline view is simple:
 
 A primary is selected only when the current evidence can support a matched comparison of canonical harness systems. A direct VSM benchmark is not enough by itself if the benchmark scaffold supplies the target organizational function or if the published comparison varies only models rather than harnesses.
 
+The generated current S1 projection is [`S1-BASELINE.md`](S1-BASELINE.md). It is derived from this selection record plus raw S1 observations; do not maintain benchmark values manually in this file.
+
 ## Selection gate
 
 A primary family should be:
@@ -70,7 +72,7 @@ Why this is the general S1 primary rather than a Coding/SWE benchmark:
 
 The selection is a benchmark-family choice, not a claim that the published May 2026 rows evaluate current September 2026 canonical revisions.
 
-Published PawBench harness versions are historical relative to the current Index review refs. Raw observations imported later must therefore preserve:
+Published PawBench harness versions are historical relative to the current Index review refs. Raw observations must therefore preserve:
 
 - the published harness version/configuration;
 - the relationship to the current canonical lineage;
@@ -83,13 +85,13 @@ Numeric benchmark results do **not** belong in this selection file. They belong 
 
 ## S1 / Coding-SWE domain projection
 
-### Claw-SWE-Bench — domain primary candidate
+### Claw-SWE-Bench — selected domain primary
 
 Primary source: <https://claw-swe-bench.github.io/>
 
-Claw-SWE-Bench is a strong Coding/SWE projection because it explicitly elevates the harness to the controlled variable: model, 350 SWE tasks, Docker runtime and the official SWE-bench evaluator are held fixed while the harness varies.
+Claw-SWE-Bench is the selected Coding/SWE primary because it explicitly elevates the harness to the controlled variable: model, 350 SWE tasks, Docker runtime and the official SWE-bench evaluator are held fixed while the harness varies.
 
-The preferred cheap reference cell is:
+The cheap reference cell is:
 
 ```text
 model: Qwen 3.6-flash
@@ -97,7 +99,7 @@ scope: Coding / SWE
 full task set: 350
 ```
 
-The published five-harness matrix includes OpenClaw and Hermes Agent, both already canonical Index systems. Additional benchmark harnesses can be mapped independently before being linked to canonical observations.
+The published five-harness matrix includes OpenClaw and Hermes Agent, both canonical Index systems with admitted matched-model observations under this domain projection.
 
 This benchmark is **not** promoted to the general S1 primary because its task distribution is intentionally software-engineering specific.
 
@@ -105,16 +107,16 @@ This benchmark is **not** promoted to the general S1 primary because its task di
 
 Primary source: <https://github.com/frontier-harness-eval/eval>
 
-FrontierHarness Eval is additional high-value domain evidence because it fixes Kimi K3 and the runtime while comparing a broad harness set including several canonical Index systems such as Codex, Claude Code, Pi, oh-my-pi, OpenCode and Hermes.
+FrontierHarness Eval is additional high-value domain evidence because it fixes Kimi K3 and the runtime while comparing a broad harness set including canonical Index systems Codex, Claude Code, Pi, oh-my-pi, OpenCode and Hermes.
 
-Its own methodology describes v1.0 as focused on software-engineering contexts and terminal-based tasks, so it remains a Coding/SWE projection rather than the general S1 baseline.
+Its v1.0 task set contains 21 Terminal-Bench 2.1 tasks and 9 DeepSWE v1.1 tasks. It therefore remains in the existing technical/Coding-SWE projection rather than becoming the general S1 baseline.
 
 It is especially useful for:
 
 - broad canonical harness overlap;
 - cost/cache/time measurements alongside pass rate;
 - fresh-restore task isolation;
-- future robustness checks against the PawBench general baseline.
+- robustness checks beside the selected domain-primary Claw-SWE cell.
 
 ## S2 — primary gap
 
@@ -204,12 +206,14 @@ A new benchmark may replace a primary when it offers materially stronger:
 
 Replacing a primary changes the derived baseline view. It does not delete historical observations or secondary/domain evidence.
 
-## Next evidence step
+## Current evidence state
 
-After this selection contract is merged, import raw observations separately:
+The first selected cells are now present in the shared S1 observation layer:
 
-1. PawBench v1.0 `qwen3.6-35b-a3b` × QwenPaw / OpenClaw / Hermes as historical general-S1 baseline observations;
-2. Claw-SWE-Bench `Qwen 3.6-flash` rows as Coding/SWE domain observations;
-3. FrontierHarness Kimi K3 rows as additional Coding/SWE observations for canonical systems with verified lineage.
+1. PawBench v1.0 `qwen3.6-35b-a3b` × QwenPaw / OpenClaw / Hermes — general S1 primary;
+2. Claw-SWE-Bench `Qwen 3.6-flash` × canonical OpenClaw / Hermes rows — Coding/SWE domain primary;
+3. FrontierHarness Eval v1.0 Kimi K3 × canonical Codex / Claude Code / Pi / Oh My Pi / OpenCode / Hermes rows — additional Coding/SWE evidence.
 
-Each numeric result should be stored once in the shared observation layer and referenced from the relevant function/domain projection.
+Claw-SWE-Bench also contains an admitted GLM 5.1 matched-model robustness cell. It remains additional evidence and is not substituted for the selected cheap Qwen 3.6-flash domain-primary cell.
+
+Each numeric result is stored once in `s1-system-benchmarks/observations.jsonl`. The generated [`S1-BASELINE.md`](S1-BASELINE.md) projects those observations according to `primary-baselines.json`; it must not become an independently edited evidence source.
