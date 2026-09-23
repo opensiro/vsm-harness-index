@@ -2,6 +2,7 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-24",
   "function": "S3",
+  "direct_benchmark_family_count": 2,
   "direct_observation_count": 0,
   "proxy_projection_count": 1,
   "coverage_classes": [
