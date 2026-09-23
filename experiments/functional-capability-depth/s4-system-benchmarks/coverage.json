@@ -7,9 +7,9 @@
   "canonical_direct_observation_count": 0,
   "coverage_classes": [
     "direct-composed",
-    "native-proxy",
     "task-solver-not-adaptation-owner",
-    "proxy-scaffolded"
+    "proxy-scaffolded",
+    "proxy-observation-specific"
   ],
   "cases": [
     {
@@ -86,14 +86,14 @@
       "case_id": "futuresim-proxy",
       "benchmark": "FutureSim",
       "benchmark_fit": "proxy",
-      "coverage_class": "native-proxy",
-      "system_compatibility": "adapter-preserved",
+      "coverage_class": "proxy-observation-specific",
+      "system_compatibility": "unclear",
       "canonical_harness_id": null,
       "primary_sources": [
         "https://openforecaster.github.io/futuresim/",
         "https://github.com/OpenForecaster/futuresim"
       ],
-      "finding": "FutureSim has unusually good real-harness integration and directly exercises chronological external sensing and forecast revision, but it still closes on belief/forecast state rather than requiring persistent organizational capability adaptation.",
+      "finding": "FutureSim has unusually good real-harness integration and directly exercises chronological external sensing and forecast revision, but family-level linkage remains observation-specific and the benchmark still closes on belief/forecast state rather than requiring persistent organizational capability adaptation.",
       "admitted_to_canonical_registry": false
     }
   ],
