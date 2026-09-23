@@ -14,8 +14,28 @@ COVERAGE = HERE / "coverage.json"
 OBSERVATIONS = HERE / "observations.json"
 BENCHMARK_MAP = HERE.parent / "vsm-benchmark-family-map" / "map.json"
 
-COVERAGE_CLASSES = {"direct-scaffolded", "native-proxy", "proxy-scaffolded"}
-SYSTEM_COMPATIBILITY = {"native-system", "adapter-preserved", "benchmark-scaffolded", "unclear"}
+COVERAGE_CLASSES = {
+    "direct-scaffolded",
+    "native-proxy",
+    "proxy-scaffolded",
+    "framework-scaffolded",
+    "candidate-boundary-unresolved",
+}
+SYSTEM_COMPATIBILITY = {
+    "native-system",
+    "adapter-preserved",
+    "benchmark-scaffolded",
+    "unclear",
+}
+REQUIRED_CASE_IDS = {
+    "clawarena-team-direct-scaffolded",
+    "autogen-magentic-one-native-proxy-s3",
+    "enterprise-arena-proxy-scaffolded",
+    "astra-cross-framework-wrong-native-s3-path",
+    "principalbench-model-orchestrator-proxy",
+    "multi-agent-orchestration-native-s3-candidate",
+    "orchestrabench-failure-recovery-candidate",
+}
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
 
@@ -59,7 +79,9 @@ def main() -> None:
         fail("observations.json must contain a list")
     if coverage.get("direct_observation_count") != len(observations):
         fail("direct_observation_count does not match observations.json")
-    if set(coverage.get("coverage_classes", [])) != COVERAGE_CLASSES:
+
+    declared_classes = set(coverage.get("coverage_classes", []))
+    if declared_classes != COVERAGE_CLASSES:
         fail("coverage_classes vocabulary drift")
 
     reviewed_direct_s3 = {
@@ -75,6 +97,7 @@ def main() -> None:
         fail("coverage cases must be a non-empty list")
 
     seen: set[str] = set()
+    by_id: dict[str, dict] = {}
     for case in cases:
         case_id = case.get("case_id")
         if not isinstance(case_id, str) or not case_id:
@@ -82,13 +105,14 @@ def main() -> None:
         if case_id in seen:
             fail(f"duplicate case_id: {case_id}")
         seen.add(case_id)
+        by_id[case_id] = case
 
         if case.get("coverage_class") not in COVERAGE_CLASSES:
             fail(f"{case_id}: invalid coverage_class")
         if case.get("system_compatibility") not in SYSTEM_COMPATIBILITY:
             fail(f"{case_id}: invalid system_compatibility")
         if case.get("admitted") is not False:
-            fail(f"{case_id}: first-pass coverage case must remain non-admitted")
+            fail(f"{case_id}: coverage case must remain non-admitted")
         if not isinstance(case.get("finding"), str) or len(case["finding"].strip()) < 40:
             fail(f"{case_id}: explicit finding required")
 
@@ -106,6 +130,38 @@ def main() -> None:
             if case["coverage_class"] == "native-proxy" and fields.get("autonomy_s3") in {None, "—", "?"}:
                 fail(f"{case_id}: native-proxy system does not currently establish S3")
 
+    missing_cases = REQUIRED_CASE_IDS - seen
+    if missing_cases:
+        fail(f"required S3 search cases missing: {sorted(missing_cases)}")
+
+    # A matched framework benchmark is not sufficient when it bypasses the
+    # exact canonical S3 mode. Keep the current positive and negative controls
+    # mechanically tied to their canonical assessments so later reassessment
+    # forces this coverage interpretation to be revisited.
+    astra = by_id["astra-cross-framework-wrong-native-s3-path"]
+    inspected = set(astra.get("canonical_harness_ids_inspected", []))
+    expected_inspected = {"agno", "autogen-agentchat", "crewai", "langgraph"}
+    if inspected != expected_inspected:
+        fail("Astra framework-control cohort drift")
+
+    for harness_id in ("agno", "autogen-agentchat"):
+        fields = assessment_fields(harness_id)
+        if fields.get("status") != "included" or fields.get("autonomy_s3") in {None, "—", "?"}:
+            fail(f"Astra positive control {harness_id} no longer establishes S3; review coverage semantics")
+
+    for harness_id in ("crewai", "langgraph"):
+        fields = assessment_fields(harness_id)
+        if fields.get("status") != "included" or fields.get("autonomy_s3") != "—":
+            fail(f"Astra negative control {harness_id} no longer has S3=—; review coverage semantics")
+
+    native_candidate = by_id["multi-agent-orchestration-native-s3-candidate"]
+    if native_candidate.get("system_compatibility") != "native-system":
+        fail("Multi-Agent Orchestration candidate must remain native-system at its own benchmark boundary")
+    if native_candidate.get("canonical_harness_id") is not None:
+        fail("Multi-Agent Orchestration candidate must not acquire canonical linkage inside this coverage record")
+    if native_candidate.get("benchmark_fit") != "candidate-direct":
+        fail("Multi-Agent Orchestration candidate fit drift")
+
     representative = coverage.get("representative_canonical_s3_systems_inspected")
     if not isinstance(representative, list) or not representative:
         fail("representative canonical S3 cohort is required")
@@ -120,7 +176,7 @@ def main() -> None:
             fail(f"representative {harness_id}: current canonical assessment does not establish S3")
 
     if observations:
-        fail("first-pass direct S3 observation registry is expected to remain empty")
+        fail("direct S3 observation registry is expected to remain empty")
 
     print("ok: S3 coverage gap validated")
     print(f"reviewed direct S3 families: {len(reviewed_direct_s3)}")
