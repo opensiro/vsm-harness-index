@@ -92,6 +92,8 @@ def main() -> None:
     }
     if reviewed_direct_s3 != {"clawarena-team", "loop-back-authority"}:
         fail(f"unexpected committed direct-S3 benchmark map: {sorted(reviewed_direct_s3)}")
+    if coverage.get("direct_benchmark_family_count") != len(reviewed_direct_s3):
+        fail("direct_benchmark_family_count does not match reviewed direct-S3 map")
 
     cases = coverage.get("cases")
     if not isinstance(cases, list) or not cases:
