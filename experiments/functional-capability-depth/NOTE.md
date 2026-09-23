@@ -4,6 +4,8 @@ Status: **non-normative research note**
 
 Baseline comparison rules: [`BASELINE.md`](BASELINE.md).
 
+Public-evidence operating contract: [`PUBLIC-EVIDENCE.md`](PUBLIC-EVIDENCE.md).
+
 This note records a hypothesis about what the VSM Harness Index does **not** measure.
 It does not change the VSM Profile, assessment states, publication notation, ranking projection,
 or any canonical assessment.
@@ -28,6 +30,31 @@ actually instantiate the function under a comparable boundary.
 
 `A`, `P`, `C`, `A(P)`, and the other publication states are closure / ownership states. They are not
 scalar performance scores.
+
+## Operating model — public evidence first
+
+The Index does not need to operate every benchmark itself.
+
+The default research path is:
+
+```text
+public benchmark / paper / leaderboard / repository result
+                    ↓
+          provenance + normalization
+                    ↓
+       VSM-function attribution
+                    ↓
+         comparable evidence groups
+                    ↓
+        capability projections
+```
+
+Opensiro-operated execution is optional reproduction or validation evidence when a concrete
+uncertainty cannot be resolved from public artifacts. It is not a prerequisite for capability
+observations or primary benchmark selection.
+
+This keeps the Index aligned with its corpus role: preserve evidence and normalize heterogeneous
+harness results instead of becoming a second benchmark operator.
 
 ## Core comparison unit
 
@@ -223,14 +250,21 @@ Capability depth should not become feature counting.
 
 Prefer, in descending order:
 
-1. reproducible fixed-model or matched-model comparisons;
-2. public traces / artifacts sufficient to inspect the claimed function effect;
-3. controlled ablations or before/after results attributable to a mechanism;
-4. executable tests or code paths that demonstrate the mechanism;
-5. primary technical documentation tied to concrete implementation;
-6. maintainer claims without reproducible evidence.
+1. public independently operated fixed-model or matched-model comparisons with reconstructable artifacts;
+2. other public matched benchmark results with explicit source class and provenance;
+3. public traces / artifacts sufficient to inspect the claimed function effect;
+4. controlled ablations or before/after results attributable to a mechanism;
+5. executable tests or code paths that demonstrate the mechanism;
+6. primary technical documentation tied to concrete implementation;
+7. maintainer claims without reproducible evidence.
 
-Self-reported benchmark results may be recorded, but should remain labeled `self-reported` unless
+Public result provenance should distinguish at least:
+
+- `external-reproduced`;
+- `first-party-reported`;
+- `mechanism-only` where no admitted performance observation exists.
+
+First-party benchmark results may be recorded, but must remain labeled as first-party-reported unless
 independently reproduced or externally verified.
 
 ## Motivating S1 comparison
@@ -264,7 +298,7 @@ A   A   A   A    A(P)  A(P)
 
 Ouroboros has broader organizational closure and a substantial first-party operational loop.
 However, Full-A does not establish that `Ouroboros.S1` is more capable than `oh-my-pi.S1` on any
-specific S1 criterion. That must be measured independently.
+specific S1 criterion. That requires separate capability evidence.
 
 References:
 
@@ -294,7 +328,7 @@ Reference:
 
 Capability should only be compared where the function comparison is meaningful.
 
-For the first experiments, prefer same-function / same-state cohorts such as:
+For the first comparisons, prefer same-function / same-state cohorts such as:
 
 ```text
 S1=A vs S1=A
@@ -320,21 +354,25 @@ The candidate contribution to investigate is narrower:
 > evidence-backed cross-system capability comparison for that same function, while keeping applied
 > domains as projections rather than redefining the function.
 
+The Index contribution is normalization and VSM-functional attribution across heterogeneous public
+evidence, not ownership of a new benchmark suite.
+
 ## Research questions
 
-1. Can S1 capability be compared reproducibly across systems that all have `S1=A`?
+1. Can S1 capability be compared reproducibly across public results for systems that all have `S1=A`?
 2. Which comparison dimensions are specific to S1, S2, S3, S3*, S4, and S5 respectively?
 3. How should native, inherited, and mixed capability be handled in same-function comparisons?
 4. Which measurements transfer across models and applied domains, and which remain domain-specific?
-5. Can fixed-model experiments expose function-level harness effects large enough to be useful?
-6. Does broader VSM coverage correlate with stronger capability in any particular function, or are
+5. Do public fixed-model comparisons expose function-level harness effects large enough to be useful?
+6. When is controlled reproduction necessary to distinguish a harness effect from model/environment confounding?
+7. Does broader VSM coverage correlate with stronger capability in any particular function, or are
    closure breadth and function strength mostly independent?
-7. Can specialized Awesome/domain views be generated from the same function-level evidence without
+8. Can specialized Awesome/domain views be generated from the same function-level evidence without
    creating incompatible taxonomies?
 
-## Initial experiment
+## Initial and current experiment path
 
-Batch 01 tests **S1 only** across systems whose canonical state is `S1=A`:
+The original Batch 01 explored **S1 only** across systems whose canonical state is `S1=A`:
 
 - `oh-my-pi`;
 - `Ouroboros`;
@@ -343,6 +381,16 @@ Batch 01 tests **S1 only** across systems whose canonical state is `S1=A`:
 - `Henterprise`;
 - `Pi`.
 
-The experiment should not produce an overall harness winner. Its purpose is to determine whether
-`S1=A` systems exhibit reproducible, evidence-backed differences in **S1 capability**, and whether
-those differences can be represented without corrupting the meaning of the canonical VSM state.
+Batch 02 then froze a controlled replication design for the same cohort. Its design and execution-attempt
+artifacts remain useful historical experiment evidence, but controlled replication is no longer a prerequisite
+for the main capability-depth thesis.
+
+The current default path is to ingest and normalize public evidence. The selected S1 baseline already follows
+this path through published PawBench, Claw-SWE-Bench, FrontierHarness, SWE-bench/Harbor, and related observations.
+
+A future controlled run should be opened only when it answers a specific unresolved evidence question rather
+than because Opensiro must reproduce every public benchmark.
+
+The experiment must not produce an overall harness winner. Its purpose is to determine whether systems with the
+same canonical VSM function/ownership state exhibit evidence-backed differences in that function's capability,
+and whether those differences can be represented without corrupting the meaning of the canonical VSM state.
