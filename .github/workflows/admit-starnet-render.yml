@@ -1,0 +1,69 @@
+name: render StarNet admission
+
+on:
+  push:
+    branches: [admit-starnet-208]
+    paths:
+      - '.github/workflows/admit-starnet-render.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-starnet-208
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit StarNet canonical row
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/starnet.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed'
+          if text.count(old) != 1:
+              raise SystemExit(f'expected exactly one proposed status, found {text.count(old)}')
+          assessment.write_text(text.replace(old, 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_row = '208|starnet|StarNet|https://github.com/androoAGI/starnet|2026-06-14T23:11:55Z|index-addition|f00aa04dfceac4e0d1a3a1e95b7b8d24d55456d1|2026-09-23'
+          catalog_text = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|starnet|' in catalog_text:
+              raise SystemExit('StarNet already exists in catalog')
+          if not catalog_text.splitlines()[-1].startswith('207|bitrouter|'):
+              raise SystemExit('catalog slot 208 is no longer safely appendable')
+          catalog.write_text(catalog_text + '\n' + catalog_row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signature_row = '208|starnet|StarNet runs autonomous agent S1 units, exposes a first-party S2 constructor path that holds repeated unchanged peer handoffs, and provides constructor plus parent-governed whole-station current control for S3; distinct peer reviewers close autonomous S3* through immutable-artifact challenge and corrective return, while evidence-backed capability-gap recruitment provides constructor plus parent-governed S4 and no material S5 closure is established.'
+          signatures_text = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|starnet|' in signatures_text:
+              raise SystemExit('StarNet already exists in signatures')
+          if not signatures_text.splitlines()[-1].startswith('207|bitrouter|'):
+              raise SystemExit('signature slot 208 is no longer safely appendable')
+          signatures.write_text(signatures_text + '\n' + signature_row + '\n', encoding='utf-8')
+          PY
+      - name: Render and validate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+      - name: Commit rendered admission
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/starnet.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md METRICS.md README.md analytics/temporal.md data/metrics.json
+          git commit -m 'admit: render StarNet canonical inclusion'
+          git push origin HEAD:admit-starnet-208
