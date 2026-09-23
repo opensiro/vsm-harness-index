@@ -26,12 +26,30 @@ COVERAGE_CLASSES = {
     "task-solver-not-adaptation-owner",
     "proxy-scaffolded",
     "proxy-observation-specific",
+    "candidate-native-no-direct-results",
+    "domain-native-no-matched-baseline",
+    "native-adaptation-boundary-needs-freeze",
 }
 SYSTEM_COMPATIBILITY = {
     "native-system",
     "adapter-preserved",
     "benchmark-scaffolded",
     "unclear",
+}
+REQUIRED_CASE_IDS = {
+    "a-evolve-direct-composed",
+    "skillevolbench-direct-composed",
+    "evoharnessbench-self-evolving-direct-composed",
+    "skillevolbench-codex-task-solver-not-owner",
+    "skilllearnbench-proxy-scaffolded",
+    "futuresim-proxy",
+    "kadath-native-s4-no-standardized-results",
+    "super-agent-tone-mirror-native-no-results",
+    "bossconsole-tool-evolver-native-no-results",
+    "exo-native-s4-boundary-needs-freeze",
+    "headcount-strategy-domain-no-baseline",
+    "henterprise-strategy-domain-no-baseline",
+    "omniscientist-research-domain-no-baseline",
 }
 FUTURESIM_COMPARABILITY = "futuresim-v1-recommended-harness-cross-system-confounded"
 EXPECTED_FUTURESIM = {
@@ -228,6 +246,7 @@ def main() -> None:
     if not isinstance(cases, list) or not cases:
         fail("coverage cases must be non-empty")
     seen_cases: set[str] = set()
+    by_id: dict[str, dict] = {}
     for case in cases:
         case_id = case.get("case_id")
         if not isinstance(case_id, str) or not case_id:
@@ -235,27 +254,84 @@ def main() -> None:
         if case_id in seen_cases:
             fail(f"duplicate case_id: {case_id}")
         seen_cases.add(case_id)
-        if case.get("coverage_class") not in COVERAGE_CLASSES:
+        by_id[case_id] = case
+
+        coverage_class = case.get("coverage_class")
+        if coverage_class not in COVERAGE_CLASSES:
             fail(f"{case_id}: invalid coverage_class")
         if case.get("system_compatibility") not in SYSTEM_COMPATIBILITY:
             fail(f"{case_id}: invalid system_compatibility")
         if case.get("admitted_to_canonical_registry") is not False:
             fail(f"{case_id}: coverage case must remain non-admitted")
+        if not isinstance(case.get("finding"), str) or len(case["finding"].strip()) < 40:
+            fail(f"{case_id}: explicit finding required")
         sources = case.get("primary_sources")
         if not isinstance(sources, list) or not sources or any(not valid_https(s) for s in sources):
             fail(f"{case_id}: invalid primary_sources")
 
         harness_id = case.get("canonical_harness_id")
+        fields = None
         if harness_id is not None:
             fields = assessment_fields(harness_id)
             if fields.get("status") != "included":
                 fail(f"{case_id}: canonical assessment not included")
-            if case.get("coverage_class") == "task-solver-not-adaptation-owner":
-                if fields.get("autonomy_s4") != "—":
-                    fail(
-                        f"{case_id}: negative-control task solver no longer has S4=—; "
-                        "review the boundary before retaining this case"
-                    )
+
+        if coverage_class == "task-solver-not-adaptation-owner":
+            if fields is None or fields.get("autonomy_s4") != "—":
+                fail(
+                    f"{case_id}: negative-control task solver no longer has S4=—; "
+                    "review the boundary before retaining this case"
+                )
+
+        if coverage_class == "candidate-native-no-direct-results":
+            if fields is None or fields.get("autonomy_s4") in {None, "—", "?"}:
+                fail(f"{case_id}: native-no-results candidate must currently establish S4")
+            if case.get("system_compatibility") != "native-system":
+                fail(f"{case_id}: native-no-results candidate must be native-system")
+            if case.get("benchmark_fit") != "candidate-direct":
+                fail(f"{case_id}: native-no-results candidate fit drift")
+
+        if coverage_class == "domain-native-no-matched-baseline":
+            if fields is None or fields.get("autonomy_s4") in {None, "—", "?"}:
+                fail(f"{case_id}: domain candidate must currently establish S4")
+            if case.get("system_compatibility") != "native-system":
+                fail(f"{case_id}: domain candidate must be native-system")
+            if case.get("benchmark_fit") != "candidate-domain-direct":
+                fail(f"{case_id}: domain candidate fit drift")
+            if case.get("domain") not in {"strategy", "research-science"}:
+                fail(f"{case_id}: unreviewed S4 domain")
+
+        if coverage_class == "native-adaptation-boundary-needs-freeze":
+            if harness_id != "exo":
+                fail(f"{case_id}: current frozen-regulator boundary case must remain Exo")
+            if fields is None or fields.get("autonomy_s4") in {None, "—", "?"}:
+                fail(f"{case_id}: frozen-regulator candidate must currently establish S4")
+            if case.get("system_compatibility") != "native-system":
+                fail(f"{case_id}: frozen-regulator candidate must be native-system")
+            if case.get("benchmark_fit") != "candidate-direct":
+                fail(f"{case_id}: frozen-regulator candidate fit drift")
+            if case.get("ordinary_s4_baseline_rule") != (
+                "freeze-s4-regulator; permit persistent change only to the declared adaptation target"
+            ):
+                fail(f"{case_id}: ordinary S4 frozen-regulator rule drift")
+
+    missing_cases = REQUIRED_CASE_IDS - seen_cases
+    if missing_cases:
+        fail(f"required S4 coverage cases missing: {sorted(missing_cases)}")
+
+    kadath = by_id["kadath-native-s4-no-standardized-results"]
+    if not isinstance(kadath.get("ordinary_s4_boundary"), str) or len(kadath["ordinary_s4_boundary"].strip()) < 40:
+        fail("KADATH ordinary-S4 boundary note is required")
+
+    expected_domain_cases = {
+        "headcount-strategy-domain-no-baseline": ("headcount", "strategy"),
+        "henterprise-strategy-domain-no-baseline": ("henterprise", "strategy"),
+        "omniscientist-research-domain-no-baseline": ("omniscientist", "research-science"),
+    }
+    for case_id, (harness_id, domain) in expected_domain_cases.items():
+        case = by_id[case_id]
+        if case.get("canonical_harness_id") != harness_id or case.get("domain") != domain:
+            fail(f"{case_id}: domain/canonical linkage drift")
 
     representative = coverage.get("representative_canonical_s4_systems_inspected")
     states = coverage.get("canonical_states_at_review")
