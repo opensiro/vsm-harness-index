@@ -20,6 +20,7 @@ DIRECT_S4 = {
     "a-evolve-harness-evolution",
     "skillevolbench",
     "evoharnessbench-self-evolving",
+    "evo-bench",
 }
 COVERAGE_CLASSES = {
     "direct-composed",
@@ -40,6 +41,7 @@ REQUIRED_CASE_IDS = {
     "a-evolve-direct-composed",
     "skillevolbench-direct-composed",
     "evoharnessbench-self-evolving-direct-composed",
+    "evo-bench-heldout-direct-composed",
     "skillevolbench-codex-task-solver-not-owner",
     "skilllearnbench-proxy-scaffolded",
     "futuresim-proxy",
@@ -144,8 +146,8 @@ def main() -> None:
     if set(coverage.get("proxy_systems_observed", [])) != FUTURESIM_SYSTEMS:
         fail("proxy_systems_observed mismatch")
 
-    if len(benchmark_observations) != 3:
-        fail("expected exactly three reviewed composed direct S4 evidence records")
+    if len(benchmark_observations) != 4:
+        fail("expected exactly four reviewed composed direct S4 evidence records")
 
     observation_ids: set[str] = set()
     observed_families: set[str] = set()
