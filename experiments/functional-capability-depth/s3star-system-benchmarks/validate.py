@@ -20,12 +20,25 @@ COVERAGE_CLASSES = {
     "native-proxy",
     "external-wrapper-not-native",
     "proxy-scaffolded",
+    "capability-label-not-s3star",
+    "candidate-native-no-direct-results",
 }
 SYSTEM_COMPATIBILITY = {
     "native-system",
     "adapter-preserved",
     "benchmark-scaffolded",
     "unclear",
+}
+REQUIRED_CASE_IDS = {
+    "truecall-tau2-direct-composed",
+    "swe-agent-swebench-native-proxy-s3star",
+    "codex-truecall-external-wrapper",
+    "auditbench-proxy-scaffolded",
+    "pawbench-self-verification-label-not-s3star",
+    "codex-guardian-native-no-direct-results",
+    "omnigent-polly-reviewer-native-no-direct-results",
+    "thclaws-team-audit-native-no-direct-results",
+    "reigen-verification-native-no-direct-results",
 }
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
@@ -89,7 +102,7 @@ def main() -> None:
         fail("canonical_direct_observation_count mismatch")
 
     if canonical_observations:
-        fail("first S3* pass expects canonical direct observation registry to remain empty")
+        fail("canonical direct S3* observation registry is expected to remain empty")
 
     declared_classes = set(coverage.get("coverage_classes", []))
     if declared_classes != COVERAGE_CLASSES:
@@ -127,6 +140,7 @@ def main() -> None:
     if not isinstance(cases, list) or not cases:
         fail("coverage cases must be non-empty")
     seen_cases: set[str] = set()
+    by_id: dict[str, dict] = {}
     for case in cases:
         case_id = case.get("case_id")
         if not isinstance(case_id, str) or not case_id:
@@ -134,12 +148,17 @@ def main() -> None:
         if case_id in seen_cases:
             fail(f"duplicate case_id: {case_id}")
         seen_cases.add(case_id)
-        if case.get("coverage_class") not in COVERAGE_CLASSES:
+        by_id[case_id] = case
+
+        coverage_class = case.get("coverage_class")
+        if coverage_class not in COVERAGE_CLASSES:
             fail(f"{case_id}: invalid coverage_class")
         if case.get("system_compatibility") not in SYSTEM_COMPATIBILITY:
             fail(f"{case_id}: invalid system_compatibility")
         if case.get("admitted_to_canonical_registry") is not False:
             fail(f"{case_id}: coverage case must remain non-admitted")
+        if not isinstance(case.get("finding"), str) or len(case["finding"].strip()) < 40:
+            fail(f"{case_id}: explicit finding required")
         sources = case.get("primary_sources")
         if not isinstance(sources, list) or not sources or any(not valid_https(s) for s in sources):
             fail(f"{case_id}: invalid primary_sources")
@@ -151,6 +170,37 @@ def main() -> None:
                 fail(f"{case_id}: canonical assessment not included")
             if fields.get("autonomy_s3_star") in {None, "—", "?"}:
                 fail(f"{case_id}: referenced canonical system no longer establishes S3*")
+
+        if coverage_class == "candidate-native-no-direct-results":
+            if harness_id is None:
+                fail(f"{case_id}: native-no-results candidate requires canonical_harness_id")
+            if case.get("system_compatibility") != "native-system":
+                fail(f"{case_id}: native-no-results candidate must be native-system")
+            if case.get("benchmark_fit") != "candidate-direct":
+                fail(f"{case_id}: native-no-results candidate must retain candidate-direct fit")
+
+    missing_cases = REQUIRED_CASE_IDS - seen_cases
+    if missing_cases:
+        fail(f"required S3* search cases missing: {sorted(missing_cases)}")
+
+    pawbench = by_id["pawbench-self-verification-label-not-s3star"]
+    if pawbench.get("coverage_class") != "capability-label-not-s3star":
+        fail("PawBench Self_Verification negative-control class drift")
+    if pawbench.get("canonical_harness_id") is not None:
+        fail("PawBench capability-label negative control must not claim one canonical S3* owner")
+    if pawbench.get("benchmark_fit") != "not-direct-S3star":
+        fail("PawBench Self_Verification negative-control fit drift")
+
+    expected_native_no_results = {
+        "codex-guardian-native-no-direct-results": "codex",
+        "omnigent-polly-reviewer-native-no-direct-results": "omnigent",
+        "thclaws-team-audit-native-no-direct-results": "thclaws",
+        "reigen-verification-native-no-direct-results": "reigen",
+    }
+    for case_id, harness_id in expected_native_no_results.items():
+        case = by_id[case_id]
+        if case.get("canonical_harness_id") != harness_id:
+            fail(f"{case_id}: canonical linkage drift")
 
     representative = coverage.get("representative_canonical_s3star_systems_inspected")
     states = coverage.get("canonical_states_at_review")
