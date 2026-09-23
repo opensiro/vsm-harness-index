@@ -6,6 +6,8 @@ Issue: #382
 
 Parent benchmark-family review: `../vsm-benchmark-family-map/`
 
+Primary-baseline selection: `../PRIMARY-BASELINES.md`
+
 ## Purpose
 
 This layer records published benchmark observations for canonical Index systems only when:
@@ -27,30 +29,38 @@ Each row is an observation of a concrete configuration:
 
 not a timeless score for the project.
 
-## Initial admitted systems
+When benchmark prose, live UI and an immutable committed result artifact disagree, prefer the immutable result artifact and preserve the discrepancy explicitly rather than silently reconciling it.
 
-The first pass admits observations for:
+## Admitted systems
+
+Current observations cover:
 
 - `codex`;
 - `openhands`;
-- `swe-agent`.
+- `swe-agent`;
+- `qwenpaw`;
+- `openclaw`;
+- `hermes-agent`.
 
-All three are canonical Index systems with S1 established independently by their assessments.
+All are canonical Index systems with S1 established independently by their assessments.
 
 ## Benchmark families
 
 Only reviewed direct S1 families are admitted here:
 
 - SWE-bench Verified;
-- Terminal-Bench / Harbor.
+- Terminal-Bench / Harbor;
+- PawBench v1.0.
 
-Other coding or agent benchmarks may be useful later, but they must first pass the benchmark-family semantic review rather than being added here by reputation or naming similarity.
+Other coding or agent benchmarks may be useful later, but they must first pass the benchmark-family semantic review or the primary-baseline selection rules rather than being added here by reputation or naming similarity.
 
 ## System compatibility
 
 ### `native-system`
 
 The benchmark submission directly identifies and runs the first-party system. Exact historical revision may still be unknown.
+
+PawBench's pinned adapters qualify for the first matched baseline group because they install and drive the first-party QwenPaw, OpenClaw and Hermes Agent runtimes rather than replacing their operational loops.
 
 ### `adapter-preserved`
 
@@ -60,9 +70,72 @@ An external benchmark adapter controls environment/setup/evaluation, but the ope
 
 `benchmark-scaffolded` observations are not system-level S1 evidence for a canonical harness. `unclear` observations remain candidates/rejections until the boundary is recoverable.
 
-## First comparison group
+## PawBench general S1 baseline group
 
-The strongest initial cross-system comparison is:
+The selected first general S1 primary family is PawBench v1.0.
+
+Immutable benchmark revision:
+
+```text
+agentscope-ai/PawBench@0f794a8bb6c27aa9ee4091b2691fa30e4ed9cc8f
+```
+
+Matched reference cell:
+
+```text
+run: pawbench-4models-opusjudge-20260529
+model: qwen3.6-35b-a3b
+tasks: 150
+
+QwenPaw      0.6828
+OpenClaw     0.6779
+Hermes Agent 0.5674
+```
+
+The group is marked `matched-model`: the same PawBench v1.0 run/model label and task/evaluation surface are used while the native harness varies.
+
+Pinned adapter evidence identifies the historical harness versions:
+
+- QwenPaw `1.1.3`;
+- OpenClaw `2026.4.24`;
+- Hermes Agent `2026.4.23`.
+
+The exact upstream git revisions of those historical package versions are not imported by inference, so observation identity remains `version-known` rather than `exact-historical`.
+
+### Frozen-repertoire compatibility
+
+The benchmark runs harnesses in isolated task environments; the QwenPaw adapter explicitly documents one fresh container per task. This is compatible with the ordinary frozen-repertoire baseline rule: persistent learning from one benchmark task is not credited as part of the next task's baseline state.
+
+This does not prohibit ordinary within-task reasoning, tool use, retry or recovery.
+
+### Source discrepancy
+
+For the OpenClaw row, PawBench README prose reports `68.2`, while the committed submission artifact reports:
+
+```text
+overall = 0.6779
+```
+
+and the live leaderboard rounds that artifact-backed value to `67.8`.
+
+`observations.jsonl` therefore stores `0.6779`. The immutable committed submission is treated as the result source of truth; the README discrepancy is retained in the observation notes.
+
+### Non-claims
+
+PawBench exposes slices named `Planning`, `Self_Verification`, `Skill_Use`, `Workflow and Agent Orchestration` and similar capability labels. Those names must not be converted directly into VSM functions.
+
+In particular:
+
+- `Planning` does not establish S3;
+- `Self_Verification` does not establish S3*;
+- `Skill_Use` does not establish S4 or experimental self-organizing `S`;
+- orchestration-labelled tasks do not establish S2/S3 ownership.
+
+The imported rows are S1 system-performance evidence because canonical S1 has already been established independently.
+
+## Previous SWE-bench comparison group
+
+The earlier cross-system comparison is:
 
 ```text
 SWE-bench Verified, 500 tasks
