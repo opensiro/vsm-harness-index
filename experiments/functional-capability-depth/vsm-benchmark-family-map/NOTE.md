@@ -41,7 +41,7 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 
 `map.json` is the machine-readable source of truth for reviewed function↔benchmark-family fit classifications.
 
-`REVIEW.md` records the first semantic pass. `S3STAR-REVIEW.md` adds the first direct S3* family. `S4-REVIEW.md` adds the first direct S4 families/modes. `S5-REVIEW.md` records the direct-S5 gap and reviewed proxy/unsuitable governance/value families. Follow-up reviews supersede the first review only for the function-specific gap statements they explicitly revisit.
+`REVIEW.md` records the first semantic pass and later S1 family additions. `S3STAR-REVIEW.md` adds the first direct S3* family. `S4-REVIEW.md` adds the first direct S4 families/modes. `S5-REVIEW.md` records the direct-S5 gap and reviewed proxy/unsuitable governance/value families. Follow-up reviews supersede the first review only for the function-specific gap statements they explicitly revisit.
 
 ## Current reviewed map
 
@@ -49,6 +49,7 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 | --- | --- | --- |
 | S1 — Operations | Terminal-Bench / Harbor | `direct` |
 | S1 — Operations | SWE-bench family | `direct` |
+| S1 — Operations | Claw-SWE-Bench | `direct` in Coding/SWE domain |
 | S2 — Coordination | DPBench | `direct` |
 | S2 — Coordination | SILO-BENCH | `proxy` |
 | S2 — Coordination | alem | `proxy` |
@@ -72,6 +73,8 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 | S5 — Policy and identity | Constitutional AI Governance Stress Test | `proxy` |
 
 `direct` means direct fit to the **function at the benchmark's own declared boundary**. It does not mean that every product/harness evaluated by or mentioned around the benchmark has that function.
+
+Claw-SWE-Bench is additionally domain-scoped: its `direct` S1 fit applies to Coding/SWE operational capability. A strong result there is not automatically universal S1 capability outside software-engineering tasks.
 
 For TrueCall specifically, the direct boundary is the composed operational agent + TrueCall post-condition audit path. Adapter support for Codex or Claude Code does not make the external audit layer part of those canonical harness boundaries.
 
@@ -179,17 +182,17 @@ Do not turn the synthesis into a scalar maturity score or reinterpret `A/C/P` as
 
 The combined first review plus follow-up reviews establish:
 
-- mature direct S1 benchmark families with real-harness evidence;
+- three direct S1 benchmark families, including Claw-SWE-Bench as an explicitly matched-harness Coding/SWE projection;
 - a strong direct S2 benchmark (`DPBench`) but weak native-harness linkage;
 - a direct S3 capability benchmark (`ClawArena-Team`) whose organization is benchmark-defined;
 - a direct S3* runtime-verification family (`TrueCall`) at a composed audited-system boundary, while canonical native direct-S3* linkage remains absent;
 - three direct S4 families/modes that close persistent adaptation at benchmark-defined boundaries, while canonical native direct-S4 linkage remains absent;
 - no direct S5 benchmark: policy enforcement, value conflict, operational legislation and constitutional conformance remain proxy/unsuitable evidence because legitimate ultimate-policy authority plus decision→operation closure is not jointly exercised.
 
-Direct reviewed coverage remains:
+Direct reviewed coverage is now:
 
 ```text
-S1  2
+S1  3
 S2  1
 S3  1
 S3* 1
@@ -197,7 +200,7 @@ S4  3
 S5  0
 ```
 
-`REVIEW.md` records the first pass and useful negative cases. `S3STAR-REVIEW.md` records the evidence that narrows the S3* gap. `S4-REVIEW.md` records the direct S4 promotion and keeps frozen-deployment/persistent-adaptation boundary distinctions explicit. `S5-REVIEW.md` records the remaining direct-S5 gap and the benchmark shape needed to close it.
+`REVIEW.md` records the first pass, useful negative cases and the Claw-SWE-Bench S1 domain addition. `S3STAR-REVIEW.md` records the evidence that narrows the S3* gap. `S4-REVIEW.md` records the direct S4 promotion and keeps frozen-deployment/persistent-adaptation boundary distinctions explicit. `S5-REVIEW.md` records the remaining direct-S5 gap and the benchmark shape needed to close it.
 
 ## Validation
 
