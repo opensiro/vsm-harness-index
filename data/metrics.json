@@ -16,9 +16,29 @@
     "methodology_version": "0.3.6"
   },
   "milestones": [
-    {"target":100,"status":"achieved","completed":203,"progress_fraction":1.0},
-    {"target":250,"status":"next","completed":203,"progress_fraction":0.812},
-    {"target":500,"status":"planned","completed":203,"progress_fraction":0.406},
-    {"target":1000,"status":"planned","completed":203,"progress_fraction":0.203}
+    {
+      "target": 100,
+      "status": "achieved",
+      "completed": 203,
+      "progress_fraction": 1.0
+    },
+    {
+      "target": 250,
+      "status": "next",
+      "completed": 203,
+      "progress_fraction": 0.812
+    },
+    {
+      "target": 500,
+      "status": "planned",
+      "completed": 203,
+      "progress_fraction": 0.406
+    },
+    {
+      "target": 1000,
+      "status": "planned",
+      "completed": 203,
+      "progress_fraction": 0.203
+    }
   ]
 }
