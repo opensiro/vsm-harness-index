@@ -78,12 +78,14 @@ A direct `git clone https://github.com/opensiro/vsm-harness-index.git` therefore
 
 No `ANTHROPIC_API_KEY` credential is available to the execution process. No secret value was inspected, printed, or committed.
 
-The frozen mechanical common-model intersection remains the one recorded in `ELIGIBILITY.md`:
+`ELIGIBILITY.md` records the demonstrated Phase-1 common-model intersection as:
 
 - endpoint family: direct Anthropic / Anthropic Messages-compatible provider path;
 - exact model identifier: `claude-sonnet-4-6`.
 
-This preflight does **not** freeze an endpoint URL, host version, model parameters, output limit, run-order seed, adapter commands, or other Phase-B field because the common provider membrane cannot be instantiated in the available substrate.
+Issue #366 explicitly requires attempt 02 to follow the frozen Batch 02 model-selection rule rather than blindly inheriting attempt 01's membrane. This preflight therefore does **not** treat the Phase-1 Anthropic intersection as an irrevocable attempt-02 choice. If the frozen design permits a fresh attempt-local preregistration, that choice would still require installed candidate/host paths and a reachable common provider/model path before Phase B. This execution surface has neither, so no alternative membrane can be operationally tested or frozen here.
+
+This preflight does **not** freeze an endpoint URL, host version, model identifier, model parameters, output limit, run-order seed, adapter commands, or other Phase-B field because no valid common provider membrane can be instantiated in the available substrate.
 
 ## Phase-A checklist
 
@@ -94,11 +96,11 @@ This preflight does **not** freeze an endpoint URL, host version, model paramete
 | 3 | OS / architecture / runtime/toolchain versions | Python/Node/npm and capture/timeout tools observed; candidate-specific toolchains are not installed |
 | 4 | materialize frozen fixture workspaces | fixture trees/hashes are inspectable through the GitHub connector, but the execution container cannot obtain an executable repository checkout because GitHub DNS/egress is unavailable |
 | 5 | obtain/install each frozen candidate or documented host path | failed: none of the six required candidate/host CLIs is installed, and the container cannot fetch them from GitHub |
-| 6 | provider/model endpoint supported by all candidate paths | failed operationally: `api.anthropic.com` cannot be resolved/reached; no common endpoint can be instantiated |
-| 7 | credential handling without exposing secrets | secret non-disclosure is satisfied, but no Anthropic credential is available for execution |
+| 6 | provider/model endpoint supported by all candidate paths | failed operationally before model selection: candidate paths are absent and public provider egress is unavailable; the recorded Anthropic endpoint is additionally DNS-unresolved |
+| 7 | credential handling without exposing secrets | secret non-disclosure is satisfied; no Anthropic credential is available, and no alternate executable provider credential/path is exposed to this container |
 | 8 | timeout/capture support | available mechanically via external process timeout and terminal/process capture tools |
 | 9 | external evaluator isolation | structurally compatible with the container, but no harness run is authorized to reach evaluator execution in this attempt |
-| 10 | hard execution limitations | no executable GitHub egress, no Anthropic endpoint egress, no Anthropic credential, no frozen candidate/host installations, no immutable environment digest |
+| 10 | hard execution limitations | no executable GitHub egress, no candidate/host installations, no reachable demonstrated provider endpoint, no usable common provider membrane, no immutable environment digest |
 
 ## Decision
 
@@ -121,7 +123,7 @@ Per issue #366 Phase A:
 A later independent execution context may resume attempt 02 only after a fresh Phase-A recheck demonstrates a valid common membrane. At minimum it must provide either exact preseeded frozen checkouts/installations or working repository/package retrieval, plus:
 
 1. the six frozen candidate/documented-host paths at the refs/versions required by the committed contract;
-2. a reachable common Anthropic-compatible provider path supporting exact model `claude-sonnet-4-6` for all six paths without candidate source modification;
+2. a reachable common provider/model path satisfying the frozen README's common-model rule for all six paths without candidate source modification; if the previously demonstrated intersection is reused, that is direct Anthropic with exact model `claude-sonnet-4-6`;
 3. execution credentials injected without committing/logging secret values;
 4. an execution environment whose image/toolchain can be frozen reproducibly;
 5. common timeout/capture and isolated external-evaluator execution.
