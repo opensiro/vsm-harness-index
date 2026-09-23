@@ -19,6 +19,7 @@ COVERAGE_CLASSES = {
     "native-proxy",
     "framework-scaffolded",
     "candidate-boundary-unresolved",
+    "candidate-no-results",
 }
 SYSTEM_COMPATIBILITY = {
     "native-system",
