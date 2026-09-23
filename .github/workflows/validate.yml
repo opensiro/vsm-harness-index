@@ -94,6 +94,7 @@ jobs:
       - run: python scripts/render_metrics.py --check
       - run: python scripts/sync_metrics_readme.py --check
       - run: python experiments/functional-capability-depth/render_s1_baseline.py --check
+      - run: python experiments/functional-capability-depth/s2-system-benchmarks/validate.py
       - run: python -m unittest discover -s tests -v
       - name: Check immutable generation provenance against PR base
         if: github.event_name == 'pull_request'
