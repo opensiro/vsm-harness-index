@@ -14,7 +14,7 @@ The rule for the baseline view is simple:
 
 A primary is selected only when the current evidence can support a matched comparison of canonical harness systems. A direct VSM benchmark is not enough by itself if the benchmark scaffold supplies the target organizational function or if the published comparison varies only models rather than harnesses.
 
-The generated current S1 projection is [`S1-BASELINE.md`](S1-BASELINE.md). It is derived from this selection record plus raw S1 observations; do not maintain benchmark values manually in this file.
+The generated cross-function status projection is [`FUNCTION-BASELINES.md`](FUNCTION-BASELINES.md). The generated current S1 projection is [`S1-BASELINE.md`](S1-BASELINE.md). Both are derived views; do not maintain benchmark values manually in this file.
 
 ## Selection gate
 
