@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-23",
+  "system_name": "Magentic-One",
+  "canonical_harness_id": "autogen-agentchat",
+  "canonical_assessment_ref": "assessments/autogen-agentchat.md",
+  "canonical_review_ref": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+  "canonical_states_at_review": {
+    "S2": "A",
+    "S3": "A"
+  },
+  "published_implementation": {
+    "platform": "AutoGen 0.4",
+    "experiment_period": "August-October 2024",
+    "system_compatibility": "native-system",
+    "canonical_revision_match": "historical-first-party-lineage-not-current-review-ref",
+    "note": "The paper benchmarks the first-party Magentic-One implementation on AutoGen 0.4. The current canonical AutoGen AgentChat assessment includes the Magentic-One Orchestrator path at a later pinned revision; the historical benchmark must not be presented as a run of that current review_ref."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2411.04468",
+    "https://www.microsoft.com/en-us/research/wp-content/uploads/2024/11/Magentic-One.pdf",
+    "https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/"
+  ],
+  "observations": [
+    {
+      "observation_id": "magentic-one-gpt4o-test-results",
+      "kind": "system-outcome",
+      "configuration": "Magentic-One (GPT-4o)",
+      "model_configuration": {
+        "default_agent_model": "gpt-4o-2024-05-13",
+        "special_model_overrides": []
+      },
+      "benchmark_results": [
+        {
+          "benchmark": "GAIA",
+          "split": "test",
+          "metric": "exact task completion rate percent",
+          "value": 32.33,
+          "wald_95ci_plus_minus": 5.3,
+          "provenance": "Table 1"
+        },
+        {
+          "benchmark": "AssistantBench",
+          "split": "test",
+          "metric": "exact match percent",
+          "value": 11.0,
+          "wald_95ci_plus_minus": 4.6,
+          "provenance": "Table 1"
+        },
+        {
+          "benchmark": "AssistantBench",
+          "split": "test",
+          "metric": "accuracy percent",
+          "value": 25.3,
+          "wald_95ci_plus_minus": 6.3,
+          "provenance": "Table 1"
+        },
+        {
+          "benchmark": "WebArena",
+          "split": "paper test split",
+          "metric": "exact task completion rate percent",
+          "value": 32.8,
+          "wald_95ci_plus_minus": 3.2,
+          "provenance": "Table 1",
+          "caveat": "WebArena has no hidden test set; the paper reports its own validation/test split and notes possible mild over-fitting."
+        }
+      ],
+      "non_claim": "These end-task outcomes do not isolate S2 or S3 and must not be converted into a VSM function score."
+    },
+    {
+      "observation_id": "magentic-one-gpt4o-o1-test-results",
+      "kind": "system-outcome",
+      "configuration": "Magentic-One (GPT-4o, o1-preview)",
+      "model_configuration": {
+        "default_agent_model": "gpt-4o-2024-05-13",
+        "special_model_overrides": [
+          "o1-preview for Orchestrator outer loop",
+          "o1-preview for Coder"
+        ]
+      },
+      "benchmark_results": [
+        {
+          "benchmark": "GAIA",
+          "split": "test",
+          "metric": "exact task completion rate percent",
+          "value": 38.0,
+          "wald_95ci_plus_minus": 5.5,
+          "provenance": "Table 1"
+        },
+        {
+          "benchmark": "AssistantBench",
+          "split": "test",
+          "metric": "exact match percent",
+          "value": 13.3,
+          "wald_95ci_plus_minus": 4.9,
+          "provenance": "Table 1"
+        },
+        {
+          "benchmark": "AssistantBench",
+          "split": "test",
+          "metric": "accuracy percent",
+          "value": 27.7,
+          "wald_95ci_plus_minus": 6.5,
+          "provenance": "Table 1"
+        },
+        {
+          "benchmark": "WebArena",
+          "split": "test",
+          "metric": "not reported",
+          "value": null,
+          "provenance": "Table 1 / footnote",
+          "caveat": "The paper does not report this configuration because o1-preview refused 26% of WebArena GitLab tasks and 12% of Shopping Administration tasks, making a fair comparison impossible."
+        }
+      ],
+      "non_claim": "Differences from the GPT-4o-only configuration are model-configuration effects inside the same system and do not isolate a harness or VSM-function effect."
+    },
+    {
+      "observation_id": "magentic-one-simple-orchestrator-gaia-ablation",
+      "kind": "native-mechanism-ablation",
+      "configuration": "Magentic-One (GPT-4o) full Orchestrator vs Simple Orchestrator",
+      "benchmark": "GAIA",
+      "split": "development/validation",
+      "metric": "successful-task performance",
+      "reported_relative_change_percent": -31,
+      "ablation": {
+        "removed_or_replaced": "full Magentic-One Orchestrator",
+        "replacement": "simple AutoGen GroupChat-like orchestrator",
+        "replacement_behavior": "selects which agent speaks next",
+        "removed_mechanisms": [
+          "progress tracking",
+          "loop detection",
+          "explicit instructions/direction to other agents",
+          "full Orchestrator ledger behavior"
+        ]
+      },
+      "provenance": "Section 5.3 and Figure 3",
+      "non_claim": "The 31% end-task performance drop is not '31% of S2' or '31% of S3'. The ablation changes mechanisms relevant to both functions and GAIA is not a direct S2/S3 benchmark."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "projection_id": "autogen-magentic-one-native-proxy-s3",
+    "function": "S3",
+    "canonical_harness_id": "autogen-agentchat",
+    "canonical_state_at_review": "A",
+    "benchmark_fit": "proxy",
+    "system_compatibility": "native-system",
+    "revision_relation": "historical-first-party-lineage-not-current-review-ref",
+    "raw_record": "../system-observations/magentic-one.json",
+    "raw_observation_ids": [
+      "magentic-one-gpt4o-test-results",
+      "magentic-one-gpt4o-o1-test-results",
+      "magentic-one-simple-orchestrator-gaia-ablation"
+    ],
+    "mechanism_interpretation": "The full Magentic-One Orchestrator owns whole-team task/facts/plan/progress state, directs agents, detects stalls/loops and can reset/replan. Replacing it with a simple next-speaker selector removes progress tracking, loop detection and explicit direction and is reported to reduce GAIA validation performance by 31%.",
+    "why_proxy_not_direct": "GAIA, AssistantBench and WebArena score broad end-task success rather than current whole-system regulation as the target function. The Orchestrator ablation simultaneously changes S2-relevant coordination and S3-relevant control mechanisms.",
+    "non_claim": "The raw task-success metrics and 31% ablation effect do not quantify an S3 maturity level and do not determine canonical S3=A."
+  }
+]
