@@ -15,7 +15,10 @@
     "direct-composed",
     "task-solver-not-adaptation-owner",
     "proxy-scaffolded",
-    "proxy-observation-specific"
+    "proxy-observation-specific",
+    "candidate-native-no-direct-results",
+    "domain-native-no-matched-baseline",
+    "native-adaptation-boundary-needs-freeze"
   ],
   "cases": [
     {
@@ -101,6 +104,110 @@
         "https://arxiv.org/abs/2605.15188"
       ],
       "finding": "FutureSim directly exercises chronological external sensing and forecast revision but closes on belief/forecast state rather than persistent organizational capability adaptation. Its family-level linkage remains observation-specific; five published recommended/native-CLI runs are recorded separately as adapter-preserved proxy observations for canonical Codex, Claude Code and OpenCode.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "kadath-native-s4-no-standardized-results",
+      "benchmark": "KADATH native evolutionary run",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-native-no-direct-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "kadath",
+      "primary_sources": [
+        "https://github.com/i3T4AN/KADATH/blob/db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef/README.md",
+        "https://github.com/i3T4AN/KADATH/blob/db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef/kadath/engine.py"
+      ],
+      "finding": "KADATH has a native closed S4 loop: independently graded environment/benchmark evidence informs model-driven mutation/reproduction, valid changed organism genomes are activated, and later epochs execute the changed capability. Its benchmark definition is generated and operator-approved per run and the reviewed repository does not publish a standardized reusable matched cross-harness result corpus for this native S4 path.",
+      "ordinary_s4_boundary": "The non-evolving kernel, locked benchmark, grading/evidence machinery and selection controls remain outside the evolvable organism genome during a run, so ordinary S4 can change the operational genome while keeping the S4 regulator boundary fixed.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "super-agent-tone-mirror-native-no-results",
+      "benchmark": "super-agent Tone Mirror adaptation",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-native-no-direct-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "super-agent",
+      "primary_sources": [
+        "https://github.com/FedericoCasarella/super-agent/blob/afa4850f4cf698db8ce868525c6dad3215a13a6d/backend/src/agent/tone_mirror.ts",
+        "https://github.com/FedericoCasarella/super-agent/blob/afa4850f4cf698db8ce868525c6dad3215a13a6d/backend/src/claude/prompts.ts"
+      ],
+      "finding": "super-agent's nightly Tone Mirror converts observed user interaction into a durable behavioral/tone profile that later ordinary turns inject into their context, giving a native persistent adaptation closure. The reviewed repository search did not recover published before/after future-turn benefit, retention/generalization, regression or cost measurements for that native S4 path.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "bossconsole-tool-evolver-native-no-results",
+      "benchmark": "BossConsole Tool Evolver live capability adaptation",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-native-no-direct-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "bossconsole",
+      "primary_sources": [
+        "https://github.com/risa-labs-inc/BossConsole/blob/d4db04882425327915e0520a366eac2da8af01f3/README.md",
+        "https://github.com/risa-labs-inc/boss-plugin-tool-evolver/blob/84b21f23d38c22b720e131e93691cf8e0f43d1de/src/main/kotlin/ai/rever/boss/plugin/dynamic/toolevolver/EvolveLauncher.kt"
+      ],
+      "finding": "BossConsole's credited Tool Evolver path can turn a capability request into a changed plugin, build and hot-reload it into the running installation, probe/verify the live capability and iterate. The reviewed first-party repositories did not expose a standardized published adaptation-results corpus suitable for a matched canonical S4 baseline.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "exo-native-s4-boundary-needs-freeze",
+      "benchmark": "Exo native reusable capability/self-change path",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "native-adaptation-boundary-needs-freeze",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "exo",
+      "primary_sources": [
+        "https://github.com/exoharness/exo/blob/6164288895a5851b2118492c880fb37b543e2ac6/docs/RSI.md",
+        "https://github.com/exoharness/exo/blob/6164288895a5851b2118492c880fb37b543e2ac6/exo/SELF.md",
+        "https://github.com/exoharness/exo/blob/6164288895a5851b2118492c880fb37b543e2ac6/exo/tools/guardian-tools.ts"
+      ],
+      "finding": "Exo has a native S4 path that can create reusable tools/skills and can edit mounted prompts/source before activating changes through the guardian path. Because this reach may also alter the machinery that performs adaptation, an ordinary S4 benchmark must explicitly freeze the S4 decision/feedback regulator and identify a separate target capability. A run that improves the S4 regulator itself belongs to the separate self-organizing-S evidence class.",
+      "ordinary_s4_baseline_rule": "freeze-s4-regulator; permit persistent change only to the declared adaptation target",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "headcount-strategy-domain-no-baseline",
+      "benchmark": "Headcount strategic-intelligence path",
+      "benchmark_fit": "candidate-domain-direct",
+      "coverage_class": "domain-native-no-matched-baseline",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "headcount",
+      "domain": "strategy",
+      "primary_sources": [
+        "https://github.com/cbrock84/headcount/blob/9cbf34005e3e8a980a6af9b55eb226bd926a62b3/plugins/corporate-strategy/skills/chief-strategy-officer/SKILL.md",
+        "https://github.com/cbrock84/headcount/blob/9cbf34005e3e8a980a6af9b55eb226bd926a62b3/plugins/executive/skills/chief-executive/SKILL.md"
+      ],
+      "finding": "Headcount's native S4 path turns market/competitor/multi-year scenario evidence and early-warning distinctions into strategic options that return into executive/finance allocation. The reviewed repository does not publish a matched benchmark of this strategy-specific S4 path, so it is a domain candidate rather than evidence for a general primary score.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "henterprise-strategy-domain-no-baseline",
+      "benchmark": "Henterprise strategic-intelligence path",
+      "benchmark_fit": "candidate-domain-direct",
+      "coverage_class": "domain-native-no-matched-baseline",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "henterprise",
+      "domain": "strategy",
+      "primary_sources": [
+        "https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/corporate-strategy/chief-strategy-officer/SKILL.md",
+        "https://github.com/humbertobellor/henterprise/blob/0bd56397676462e216f92b5b7800919a3597a99a/corporate-strategy/scenario-planning/SKILL.md"
+      ],
+      "finding": "Henterprise's native strategy path senses markets, competition, regulation/technology and future uncertainty, constructs scenarios/options and returns them to the organization-wide executive/financial decision context. No reviewed matched strategy benchmark of that native S4 path was recovered, so it remains a domain-specific candidate.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "omniscientist-research-domain-no-baseline",
+      "benchmark": "OmniScientist literature-grounded ideation path",
+      "benchmark_fit": "candidate-domain-direct",
+      "coverage_class": "domain-native-no-matched-baseline",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "omniscientist",
+      "domain": "research-science",
+      "primary_sources": [
+        "https://github.com/Omni-Scientist/OmniScientist/blob/fb0164a1c4ff739b57f230cbc0b9a68796a45e1f/engine/omniscientist/agentic.py",
+        "https://github.com/Omni-Scientist/OmniScientist/blob/fb0164a1c4ff739b57f230cbc0b9a68796a45e1f/skill/omnisci/SKILL.md"
+      ],
+      "finding": "OmniScientist's native S4 path retrieves the external scientific landscape, generates and screens hypotheses for novelty/feasibility, persists the selected direction and makes the later experiment stage consume it. The reviewed public evaluation surfaces do not provide a matched benchmark specifically measuring this S4 selection-to-future-experiment closure across canonical harnesses.",
       "admitted_to_canonical_registry": false
     }
   ],
