@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
 import re
 from pathlib import Path
@@ -358,7 +359,18 @@ def main() -> int:
 
     rendered = render()
     if args.check:
-        if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != rendered:
+        actual = OUTPUT.read_text(encoding="utf-8") if OUTPUT.exists() else ""
+        if actual != rendered:
+            diff = "".join(
+                difflib.unified_diff(
+                    actual.splitlines(keepends=True),
+                    rendered.splitlines(keepends=True),
+                    fromfile=str(OUTPUT.relative_to(ROOT)),
+                    tofile="generated",
+                )
+            )
+            if diff:
+                print(diff, end="")
             raise SystemExit(
                 "S1-BASELINE.md is stale; run "
                 "experiments/functional-capability-depth/render_s1_baseline.py"
