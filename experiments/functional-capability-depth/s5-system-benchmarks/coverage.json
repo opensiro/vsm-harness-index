@@ -8,7 +8,9 @@
     "proxy",
     "unsuitable",
     "protocol-not-benchmark",
-    "governance-process-not-harness-benchmark"
+    "governance-process-not-harness-benchmark",
+    "candidate-native-mechanism-not-benchmark",
+    "candidate-native-no-direct-results"
   ],
   "cases": [
     {
@@ -78,20 +80,80 @@
         "https://datatracker.ietf.org/doc/draft-sato-soos-hem/"
       ],
       "finding": "Defines a non-bypassable human escalation/decision path that can support Parent-governed S5 when the escalated issue is identity/ultimate-policy level, but the protocol itself is not a benchmark result."
+    },
+    {
+      "case_id": "constitutional-agent-governance-amendment-mechanism",
+      "artifact": "Constitutional Agent Governance amendment authority",
+      "classification": "candidate-native-mechanism-not-benchmark",
+      "review_ref": "368717cb50b70826412f85022d23b3fd8a0dec77",
+      "primary_sources": [
+        "https://github.com/CognitiveThoughtEngine/constitutional-agent-governance"
+      ],
+      "finding": "First-party tests exercise proposer/ratifier separation, tiered legitimate authority, formal ratification, constitution-version change, authority-registry mutation and root-authority guards. This is strong S5-shaped mechanism evidence at the library boundary, but it is a conformance/regression suite rather than a reusable matched cross-harness benchmark, and the repository is not currently a canonical Index system."
+    },
+    {
+      "case_id": "mac-constitution-optimization-proxy",
+      "artifact": "MAC: Multi-Agent Constitution Learning",
+      "classification": "proxy",
+      "review_ref": "76aea7ce2cd95e46cfcf015a70895fdc267a0f4f",
+      "primary_sources": [
+        "https://github.com/rushil-thareja/MAC-Multi-Agent-Constitution-Learning",
+        "https://arxiv.org/abs/2603.15968"
+      ],
+      "finding": "Learns structured rule sets through specialized accept/edit/reject agents and task reward. Constitution optimization is measurable policy adaptation, but the evaluated system is not established as the legitimate ultimate-policy authority of an organization resolving an identity-level tension, so reward improvement does not establish direct S5 closure."
+    },
+    {
+      "case_id": "cmag-fixed-constitution-governance-proxy",
+      "artifact": "LLM Constitutional Multi-Agent Governance",
+      "classification": "proxy",
+      "primary_sources": [
+        "https://arxiv.org/abs/2603.13189"
+      ],
+      "finding": "Benchmarks cooperation, autonomy, integrity and fairness under constitutional governance regimes, but the constitution is supplied as a fixed filtering/optimization layer. The experiment measures operation under policy rather than legitimate authority deciding or amending ultimate policy."
+    },
+    {
+      "case_id": "gps-bench-policy-analysis-not-organizational-s5",
+      "artifact": "GPS-Bench",
+      "classification": "unsuitable",
+      "primary_sources": [
+        "https://arxiv.org/abs/2609.03553"
+      ],
+      "finding": "Benchmarks evidence-grounded public-policy simulation and downstream impact prediction. Its object is external policy analysis, not the evaluated harness's own organizational identity or ultimate-policy authority, so it is outside direct S5 capability measurement."
     }
   ],
   "representative_canonical_s5_systems": [
-    {"harness_id": "headcount", "expected_state": "A"},
-    {"harness_id": "henterprise", "expected_state": "A"},
-    {"harness_id": "ouroboros", "expected_state": "A(P)"},
-    {"harness_id": "thclaws", "expected_state": "P"},
-    {"harness_id": "masters-of-ai-harness", "expected_state": "C(P)"}
+    {
+      "harness_id": "headcount",
+      "expected_state": "A",
+      "benchmark_status": "candidate-native-no-direct-results"
+    },
+    {
+      "harness_id": "henterprise",
+      "expected_state": "A",
+      "benchmark_status": "candidate-native-no-direct-results"
+    },
+    {
+      "harness_id": "ouroboros",
+      "expected_state": "A(P)",
+      "benchmark_status": "candidate-native-no-direct-results"
+    },
+    {
+      "harness_id": "thclaws",
+      "expected_state": "P",
+      "benchmark_status": "candidate-native-no-direct-results"
+    },
+    {
+      "harness_id": "masters-of-ai-harness",
+      "expected_state": "C(P)",
+      "benchmark_status": "candidate-native-no-direct-results"
+    }
   ],
   "missing_direct_benchmark_requirements": [
     "identity-or-ultimate-policy-level conflict",
     "legitimate authority at declared recursion",
     "actual adjudication-ratification-or-amendment",
     "decision provenance separating ownership from enforcement",
-    "newly decided policy returned into subsequent operation"
+    "newly decided policy returned into subsequent operation",
+    "matched native-or-adapter-preserved canonical harness comparison for primary-baseline use"
   ]
 }
