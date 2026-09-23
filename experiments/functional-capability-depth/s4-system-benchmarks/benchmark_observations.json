@@ -1,0 +1,85 @@
+[
+  {
+    "observation_id": "a-evolve-harness-evolution-protocol-2026",
+    "function": "S4",
+    "benchmark_id": "a-evolve-harness-evolution",
+    "benchmark_fit": "direct",
+    "boundary_class": "benchmark-defined-evolving-system",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "reviewed_revision": "96ed93ba7ee0b9519fc55c963afb47a1975eb1ae",
+    "evidence_type": "published-protocol-and-results",
+    "adaptation_loop": [
+      "external task batch",
+      "execution trajectories/evidence",
+      "evolver proposes persistent harness delta",
+      "updated harness workspace",
+      "later task-solving agent uses evolved harness"
+    ],
+    "future_evaluation": "Exp0 isolates harness-updating by varying the evolver with fixed solver anchors; Exp1 isolates harness-benefit by varying the solver with fixed evolver anchors, with an additional train/test split route.",
+    "vsm_interpretation": "The benchmark directly exercises external/operational evidence -> adaptation option -> persistent capability change -> later operation. The adaptation organization is supplied by A-Evolve and must not be attributed to a task solver by association.",
+    "primary_sources": [
+      "https://github.com/A-EVO-Lab/a-evolve/tree/96ed93ba7ee0b9519fc55c963afb47a1975eb1ae",
+      "https://arxiv.org/abs/2605.30621"
+    ]
+  },
+  {
+    "observation_id": "skillevolbench-frozen-deployment-protocol-2026",
+    "function": "S4",
+    "benchmark_id": "skillevolbench",
+    "benchmark_fit": "direct",
+    "boundary_class": "benchmark-defined-skill-evolving-system",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "reviewed_revision": "9e3daa339987c3cfa624121e1be442593a53d43c",
+    "evidence_type": "published-protocol-and-results",
+    "task_structure": "6 environments x 5 latent skill families x 6 tasks; T1-T3 acquisition, T4 context shift, T5 adversarial variant, T6 skill composition",
+    "adaptation_loop": [
+      "acquisition-task execution",
+      "compacted trajectories and verifier feedback",
+      "Skill Author induces/revises persistent skill library",
+      "skill library frozen",
+      "future deployment tasks test transfer"
+    ],
+    "controls": [
+      "no-skill",
+      "raw-trajectory RAG",
+      "self-generated static/dynamic skills",
+      "curated static/dynamic skills"
+    ],
+    "vsm_interpretation": "Frozen deployment makes the persistent return-to-capability path explicit and separates durable procedural adaptation from current-episode repair and raw episodic reuse. The Skill Author is benchmark-hosted.",
+    "primary_sources": [
+      "https://github.com/AIoT-MLSys-Lab/SkillEvolBench/tree/9e3daa339987c3cfa624121e1be442593a53d43c",
+      "https://arxiv.org/abs/2605.24117"
+    ]
+  },
+  {
+    "observation_id": "evoharnessbench-self-evolving-adaptation-v2",
+    "function": "S4",
+    "benchmark_id": "evoharnessbench-self-evolving",
+    "benchmark_fit": "direct",
+    "boundary_class": "benchmark-defined-self-evolving-system",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "reviewed_revision": null,
+    "protocol_version": "arXiv 2609.04280 v2 (2026-09-10)",
+    "code_revision_status": "unresolved-official-github-repository",
+    "evidence_type": "published-protocol-and-results",
+    "external_change": "tools, reusable skills and specialist agents are introduced across multi-stage harness streams",
+    "adaptation_loop": [
+      "observe experience under current harness version",
+      "update persistent inner adaptation state",
+      "carry memories/skills/prompts across subsequent harness versions",
+      "evaluate held-out performance under later harness stages"
+    ],
+    "mode_boundary": "Only self-evolving adaptation is classified direct. Deployment-only evaluation without persistent inner adaptation is a retention/robustness control, not direct S4.",
+    "vsm_interpretation": "The self-evolving mode closes external harness change plus accumulated experience into persistent adaptation that affects later operation. No unrelated GitHub repository is attached by name similarity.",
+    "primary_sources": [
+      "https://arxiv.org/abs/2609.04280",
+      "https://mas-orchestra.salesforceresearch.ai/evoharness/"
+    ]
+  }
+]
