@@ -4,8 +4,9 @@ Status: experimental, non-normative.
 
 Issue: #371
 
-First semantic review: [`REVIEW.md`](REVIEW.md)
-Machine-readable reviewed map: [`map.json`](map.json)
+First semantic review: [`REVIEW.md`](REVIEW.md)  
+S3* follow-up semantic review: [`S3STAR-REVIEW.md`](S3STAR-REVIEW.md)  
+Machine-readable reviewed map: [`map.json`](map.json)  
 Validator: [`validate.py`](validate.py)
 
 ## Question
@@ -38,11 +39,9 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 
 `map.json` is the machine-readable source of truth for reviewed function↔benchmark-family fit classifications.
 
-`REVIEW.md` records the evidence and function-first argument behind those classifications. Its prose/table are explanatory, not a second assessment database.
+`REVIEW.md` records the first semantic pass. `S3STAR-REVIEW.md` is the follow-up review that adds the first direct S3* family and supersedes the first review only for that S3* gap statement.
 
 ## Current reviewed map
-
-The detailed argument and sources are in `REVIEW.md`; exact machine-readable state is in `map.json`.
 
 | VSM function | Benchmark family | Reviewed fit |
 | --- | --- | --- |
@@ -55,6 +54,7 @@ The detailed argument and sources are in `REVIEW.md`; exact machine-readable sta
 | S3 — Inside-and-now control | ClawArena-Team | `direct` at the benchmark-defined organizational boundary |
 | S3 — Inside-and-now control | EnterpriseArena | `proxy` |
 | S3* — Complementary audit | AuditBench | `proxy` |
+| S3* — Complementary audit | TrueCall silent-failure runtime verification | `direct` at a composed audited-system boundary |
 | S4 — Outside-and-then intelligence | FutureSim | `proxy` |
 | S4 — Outside-and-then intelligence | ClawArena | `proxy` |
 | S4 — Outside-and-then intelligence | AdaPlanBench | `unsuitable` for S4 function measurement |
@@ -63,6 +63,8 @@ The detailed argument and sources are in `REVIEW.md`; exact machine-readable sta
 | S5 — Policy and identity | RoleCDE | `proxy` |
 
 `direct` means direct fit to the **function at the benchmark's own declared boundary**. It does not mean that every product/harness evaluated by or mentioned around the benchmark has that function.
+
+For TrueCall specifically, the direct boundary is the composed operational agent + TrueCall post-condition audit path. Adapter support for Codex or Claude Code does not make the external audit layer part of those canonical harness boundaries.
 
 ## Benchmark-fit vocabulary
 
@@ -86,7 +88,7 @@ When a benchmark observation is linked to a canonical Index system, classify how
 - `benchmark-scaffolded` — the benchmark supplies the control/coordination/audit organization and mainly evaluates a model or policy inside it;
 - `unclear` — insufficient published evidence.
 
-A `direct` benchmark with `benchmark-scaffolded` compatibility measures the VSM capability in the benchmark's organization. It must not be attributed to a canonical harness merely because that harness/model/provider name appears in the run.
+A `direct` benchmark with non-native compatibility measures the VSM capability in the benchmark/composed organization. It must not be attributed to a canonical harness merely because that harness/model/provider name appears in the run.
 
 This gives the experiment three separate questions:
 
@@ -127,15 +129,13 @@ Once a benchmark family is accepted for a VSM function, canonical Index systems 
 
 Comparisons are valid only inside defensible comparability groups. Prefer matched model/configuration when studying harness/system effects, but do not require the same benchmark across different VSM functions.
 
-The intended shape is:
-
 ```text
-S1 systems → reviewed S1 benchmark family/families
-S2 systems → reviewed S2 benchmark family/families
-S3 systems → reviewed S3 benchmark family/families
+S1 systems  → reviewed S1 benchmark family/families
+S2 systems  → reviewed S2 benchmark family/families
+S3 systems  → reviewed S3 benchmark family/families
 S3* systems → reviewed S3* benchmark family/families
-S4 systems → reviewed S4 benchmark family/families
-S5 systems → reviewed S5 benchmark family/families
+S4 systems  → reviewed S4 benchmark family/families
+S5 systems  → reviewed S5 benchmark family/families
 ```
 
 A system may have evidence from several different benchmark families because it closes several different organizational functions.
@@ -158,45 +158,45 @@ This permits conclusions such as:
 - first-party mechanisms are rich but public benchmark evidence is weak;
 - different harnesses produce different outcomes under matched model conditions;
 - a benchmark is informative only as a proxy for the VSM function;
-- a benchmark directly exercises a VSM function but only inside a benchmark-owned scaffold.
+- a benchmark directly exercises a VSM function but only inside a benchmark-owned or composed scaffold.
 
 Do not turn the synthesis into a scalar maturity score or reinterpret `A/C/P` as an ordinal ladder.
 
-## First review findings
+## Current review findings
 
-The first review establishes:
+The combined first review plus S3* follow-up establishes:
 
 - mature direct S1 benchmark families with real-harness evidence;
 - a strong direct S2 benchmark (`DPBench`) but weak native-harness linkage;
 - a direct S3 capability benchmark (`ClawArena-Team`) whose organization is benchmark-defined;
-- no direct same-system S3* benchmark yet;
+- a direct S3* runtime-verification family (`TrueCall`) at a composed audited-system boundary, while canonical native direct-S3* linkage remains absent;
 - strong S4 proxies but no reviewed benchmark closing the required S3↔S4 adaptation loop;
 - no direct S5 benchmark yet.
 
-Direct reviewed coverage is therefore intentionally sparse:
+Direct reviewed coverage is now:
 
 ```text
 S1  2
 S2  1
 S3  1
-S3* 0
+S3* 1
 S4  0
 S5  0
 ```
 
-`REVIEW.md` also records useful negative cases: AdaPlanBench/CostBench are reactive planning rather than S4, and AgentGovBench measures governance enforcement rather than S5 ultimate-policy authority.
+`REVIEW.md` records the first pass and useful negative cases. `S3STAR-REVIEW.md` records the evidence that narrows the S3* gap from “no direct family” to “direct family exists, canonical native linkage still missing.”
 
 ## Validation
 
 `validate.py` checks schema version, controlled vocabularies, unique `(function, benchmark_id)` pairs, source URLs, required explanatory fields, all six VSM functions, and direct-coverage counts.
 
-A local clone/run could not be executed from the current execution environment because DNS resolution for `github.com` is unavailable. Do not treat the validator as runtime-passed until CI or another reachable execution surface runs it.
+Function-specific system layers may add stricter validators for canonical assessment anchors and observation-boundary provenance.
 
 ## Next phase
 
 1. Link canonical systems only where `native-system` or defensible `adapter-preserved` evidence exists.
-2. Start with S1, because real system-level evidence is already dense.
-3. Record S2/S3/S3*/S4/S5 coverage gaps instead of filling them by name association.
+2. Preserve composed direct observations separately from canonical system observations.
+3. Record S4/S5 coverage gaps instead of filling them by name association.
 4. Only after the system/function benchmark layer is stable, connect observations to individual first-party features/mechanisms.
 
 ## Boundary

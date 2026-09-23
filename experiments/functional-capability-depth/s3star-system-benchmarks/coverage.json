@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-23",
+  "function": "S3*",
+  "direct_benchmark_family_count": 1,
+  "composed_direct_observation_count": 1,
+  "canonical_direct_observation_count": 0,
+  "coverage_classes": [
+    "direct-composed",
+    "native-proxy",
+    "external-wrapper-not-native",
+    "proxy-scaffolded"
+  ],
+  "cases": [
+    {
+      "case_id": "truecall-tau2-direct-composed",
+      "benchmark": "TrueCall silent-failure runtime verification",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-composed",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/abhid1234/truecall/blob/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2/RESULTS.md",
+        "https://github.com/abhid1234/truecall/blob/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2/seam.py"
+      ],
+      "finding": "The live tau2 integration directly instantiates an ordinary success claim, complementary post-condition access to actual environment state, discrepancy detection and in-flight corrective feedback. The audited system is the composed agent plus TrueCall layer rather than a canonical Index harness.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "swe-agent-swebench-native-proxy-s3star",
+      "benchmark": "SWE-bench Lite retry/chooser submission configuration",
+      "benchmark_fit": "proxy",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "swe-agent",
+      "primary_sources": [
+        "https://github.com/SWE-agent/SWE-agent/blob/3ea751c087f32b16e039a2233dd6eefecef325d5/config/benchmarks/250212_sweagent_heavy_sbl.yaml"
+      ],
+      "finding": "SWE-agent's first-party benchmark configuration runs RetryAgent with multiple attempts and a distinct chooser/reviewer, so its native S3* mechanism is genuinely exercised. SWE-bench scores end-to-end software-task success rather than complementary-audit discrepancy and feedback, so this remains native proxy evidence rather than direct S3* evidence.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "codex-truecall-external-wrapper",
+      "benchmark": "TrueCall adapter for Codex",
+      "benchmark_fit": "direct",
+      "coverage_class": "external-wrapper-not-native",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": "codex",
+      "primary_sources": [
+        "https://github.com/abhid1234/truecall/tree/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/packages/adapters",
+        "https://github.com/openai/codex/tree/b974893c90048d147207ae9004489c02f3116426"
+      ],
+      "finding": "Canonical Codex already has a first-party Guardian S3* constructor path, but TrueCall wrapping adds a separate external post-condition audit layer. A TrueCall-wrapped Codex run would therefore measure the composed system unless a benchmark explicitly exercises Codex Guardian itself.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "auditbench-proxy-scaffolded",
+      "benchmark": "AuditBench",
+      "benchmark_fit": "proxy",
+      "coverage_class": "proxy-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://alignment.anthropic.com/2026/auditbench/"
+      ],
+      "finding": "AuditBench provides alternative investigator access to hidden target-model behavior, but the target is an external benchmark object and findings need not return into current control of the same operating organization. It remains a strong S3* proxy rather than a direct same-system closure benchmark.",
+      "admitted_to_canonical_registry": false
+    }
+  ],
+  "representative_canonical_s3star_systems_inspected": [
+    "omnigent",
+    "thclaws",
+    "codex",
+    "swe-agent",
+    "reigen"
+  ],
+  "canonical_states_at_review": {
+    "omnigent": "A",
+    "thclaws": "A",
+    "codex": "C",
+    "swe-agent": "C",
+    "reigen": "C"
+  },
+  "capability_dimensions": [
+    "claim-vs-reality-discrepancy-detection",
+    "alternative-operational-evidence-access",
+    "audit-independence-for-addressed-risk",
+    "corrective-feedback-into-control",
+    "reverification-after-correction"
+  ]
+}
