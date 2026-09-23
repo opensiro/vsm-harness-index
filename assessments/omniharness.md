@@ -160,5 +160,5 @@ The runtime also closes two longer-horizon governance paths that are distinct fr
 - Confidence: high.
 - Caveats: ordinary user task instructions are not S5; this finding is limited to the persistent named custom-agent SOUL/config identity path.
 - Identity / ultimate-policy issue: whether the enduring named custom agent's SOUL/description/governing tool/skill/model configuration should be changed for future operation.
-- Ultimate authority: the user/parent requesting and specifying the refinement in the custom-agent chat.
+- Ultimate authority in each claimed mode: the parent-governed mode is owned by the user/parent requesting and specifying the refinement in the custom-agent chat.
 - Return-to-operation path: `update_agent` persists the revised SOUL/config and the next turn rebuilds the agent from those files, governing subsequent operation under the new identity/policy.
