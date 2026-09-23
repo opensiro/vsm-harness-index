@@ -8,7 +8,7 @@ It checks open candidate/assessment batches and evidence-intake queues for:
 - repositories already present in the catalog;
 - the same repository queued in more than one active queue;
 - rename/transfer aliases by resolving stable GitHub repository IDs;
-- declared batch occupancy that disagrees with the candidate table.
+- declared active queue occupancy that disagrees with the candidate table.
 
 `status: proposed` overlaps are reported as warnings because a proposed artifact can
 legitimately coexist with the queue that is currently reviewing it, but discovery
@@ -34,7 +34,10 @@ QUEUE_TITLE_RE = re.compile(
     r"\[(?:(?:candidate|assessment)(?:-| )batch|evidence(?:-| )intake)\]",
     re.IGNORECASE,
 )
-OCCUPANCY_RE = re.compile(r"Batch occupancy:\s*\*\*(\d+)/10", re.IGNORECASE)
+OCCUPANCY_RE = re.compile(
+    r"(?:Remaining active candidate occupancy|Batch occupancy):\s*\*{0,2}(\d+)/10",
+    re.IGNORECASE,
+)
 GITHUB_URL_RE = re.compile(r"(?:https://github\.com/)?([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
 
 
@@ -58,6 +61,11 @@ def normalize_repo(value: str) -> str:
 
 def is_tracked_queue_title(title: str) -> bool:
     return bool(QUEUE_TITLE_RE.search(title))
+
+
+def declared_active_occupancy(body: str) -> int | None:
+    match = OCCUPANCY_RE.search(body)
+    return int(match.group(1)) if match else None
 
 
 def parse_frontmatter(path: Path) -> dict[str, str]:
@@ -192,11 +200,9 @@ def active_queue_entries(api: GitHubAPI, index_repo: str) -> tuple[list[QueueEnt
         if not repositories:
             errors.append(f"#{number}: tracked queue has no parseable candidate table")
             continue
-        occupancy = OCCUPANCY_RE.search(body)
-        if occupancy and int(occupancy.group(1)) != len(repositories):
-            errors.append(
-                f"#{number}: declared occupancy {occupancy.group(1)}/10 != {len(repositories)}/10 table rows"
-            )
+        occupancy = declared_active_occupancy(body)
+        if occupancy is not None and occupancy != len(repositories):
+            errors.append(f"#{number}: declared occupancy {occupancy}/10 != {len(repositories)}/10 table rows")
         for repository in repositories:
             entries.append(QueueEntry(number, title, repository))
     return entries, errors
