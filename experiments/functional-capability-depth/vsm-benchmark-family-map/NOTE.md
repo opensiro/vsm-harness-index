@@ -6,6 +6,7 @@ Issue: #371
 
 First semantic review: [`REVIEW.md`](REVIEW.md)  
 S3* follow-up semantic review: [`S3STAR-REVIEW.md`](S3STAR-REVIEW.md)  
+S4 follow-up semantic review: [`S4-REVIEW.md`](S4-REVIEW.md)  
 Machine-readable reviewed map: [`map.json`](map.json)  
 Validator: [`validate.py`](validate.py)
 
@@ -39,7 +40,7 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 
 `map.json` is the machine-readable source of truth for reviewed function↔benchmark-family fit classifications.
 
-`REVIEW.md` records the first semantic pass. `S3STAR-REVIEW.md` is the follow-up review that adds the first direct S3* family and supersedes the first review only for that S3* gap statement.
+`REVIEW.md` records the first semantic pass. `S3STAR-REVIEW.md` adds the first direct S3* family. `S4-REVIEW.md` adds the first direct S4 families/modes. Follow-up reviews supersede the first review only for the function-specific gap statements they explicitly revisit.
 
 ## Current reviewed map
 
@@ -55,6 +56,10 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 | S3 — Inside-and-now control | EnterpriseArena | `proxy` |
 | S3* — Complementary audit | AuditBench | `proxy` |
 | S3* — Complementary audit | TrueCall silent-failure runtime verification | `direct` at a composed audited-system boundary |
+| S4 — Outside-and-then intelligence | A-Evolve harness-evolution protocol | `direct` at a benchmark-defined evolving-harness boundary |
+| S4 — Outside-and-then intelligence | SkillEvolBench | `direct` at a benchmark-defined skill-evolution boundary |
+| S4 — Outside-and-then intelligence | EvoHarnessBench self-evolving adaptation | `direct` for the persistent inner-adaptation setting only |
+| S4 — Outside-and-then intelligence | SkillLearnBench | `proxy` |
 | S4 — Outside-and-then intelligence | FutureSim | `proxy` |
 | S4 — Outside-and-then intelligence | ClawArena | `proxy` |
 | S4 — Outside-and-then intelligence | AdaPlanBench | `unsuitable` for S4 function measurement |
@@ -65,6 +70,8 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 `direct` means direct fit to the **function at the benchmark's own declared boundary**. It does not mean that every product/harness evaluated by or mentioned around the benchmark has that function.
 
 For TrueCall specifically, the direct boundary is the composed operational agent + TrueCall post-condition audit path. Adapter support for Codex or Claude Code does not make the external audit layer part of those canonical harness boundaries.
+
+For the S4 direct families, the adaptation organization is benchmark-defined. Running Codex CLI, Claude Code, Gemini CLI, a model, or another task solver inside the benchmark does not transfer the benchmark-hosted evolver/Skill Author/persistent adaptation path into that canonical product's S4 ownership.
 
 ## Benchmark-fit vocabulary
 
@@ -85,7 +92,7 @@ When a benchmark observation is linked to a canonical Index system, classify how
 
 - `native-system` — the benchmark actually ran the canonical/first-party harness or a recoverable version of it;
 - `adapter-preserved` — an adapter is used, but the relevant native function path remains materially intact and can be evidenced;
-- `benchmark-scaffolded` — the benchmark supplies the control/coordination/audit organization and mainly evaluates a model or policy inside it;
+- `benchmark-scaffolded` — the benchmark supplies the control/coordination/audit/adaptation organization and mainly evaluates a model or policy inside it;
 - `unclear` — insufficient published evidence.
 
 A `direct` benchmark with non-native compatibility measures the VSM capability in the benchmark/composed organization. It must not be attributed to a canonical harness merely because that harness/model/provider name appears in the run.
@@ -164,13 +171,13 @@ Do not turn the synthesis into a scalar maturity score or reinterpret `A/C/P` as
 
 ## Current review findings
 
-The combined first review plus S3* follow-up establishes:
+The combined first review plus follow-up reviews establish:
 
 - mature direct S1 benchmark families with real-harness evidence;
 - a strong direct S2 benchmark (`DPBench`) but weak native-harness linkage;
 - a direct S3 capability benchmark (`ClawArena-Team`) whose organization is benchmark-defined;
 - a direct S3* runtime-verification family (`TrueCall`) at a composed audited-system boundary, while canonical native direct-S3* linkage remains absent;
-- strong S4 proxies but no reviewed benchmark closing the required S3↔S4 adaptation loop;
+- three direct S4 families/modes that close persistent adaptation at benchmark-defined boundaries, while canonical native direct-S4 linkage remains absent;
 - no direct S5 benchmark yet.
 
 Direct reviewed coverage is now:
@@ -180,11 +187,11 @@ S1  2
 S2  1
 S3  1
 S3* 1
-S4  0
+S4  3
 S5  0
 ```
 
-`REVIEW.md` records the first pass and useful negative cases. `S3STAR-REVIEW.md` records the evidence that narrows the S3* gap from “no direct family” to “direct family exists, canonical native linkage still missing.”
+`REVIEW.md` records the first pass and useful negative cases. `S3STAR-REVIEW.md` records the evidence that narrows the S3* gap. `S4-REVIEW.md` records the direct S4 promotion and keeps frozen-deployment/persistent-adaptation boundary distinctions explicit.
 
 ## Validation
 
@@ -195,8 +202,8 @@ Function-specific system layers may add stricter validators for canonical assess
 ## Next phase
 
 1. Link canonical systems only where `native-system` or defensible `adapter-preserved` evidence exists.
-2. Preserve composed direct observations separately from canonical system observations.
-3. Record S4/S5 coverage gaps instead of filling them by name association.
+2. Preserve benchmark/composed direct observations separately from canonical system observations.
+3. Record the S5 benchmark gap instead of filling it by governance vocabulary or policy-enforcement scores.
 4. Only after the system/function benchmark layer is stable, connect observations to individual first-party features/mechanisms.
 
 ## Boundary
