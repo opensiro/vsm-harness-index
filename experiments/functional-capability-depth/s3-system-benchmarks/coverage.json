@@ -7,7 +7,9 @@
   "coverage_classes": [
     "direct-scaffolded",
     "native-proxy",
-    "proxy-scaffolded"
+    "proxy-scaffolded",
+    "framework-scaffolded",
+    "candidate-boundary-unresolved"
   ],
   "cases": [
     {
@@ -52,9 +54,73 @@
       ],
       "finding": "EnterpriseArena stresses scarce-resource allocation under uncertainty, an S3-relevant current-control capability, but the CFO-style benchmark environment blends current regulation with prospective reasoning and does not exercise a canonical harness control plane.",
       "admitted": false
+    },
+    {
+      "case_id": "astra-cross-framework-wrong-native-s3-path",
+      "benchmark": "Astra AGI five-framework orchestration benchmark",
+      "benchmark_fit": "not-direct-S3",
+      "coverage_class": "framework-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "canonical_harness_ids_inspected": [
+        "agno",
+        "autogen-agentchat",
+        "crewai",
+        "langgraph"
+      ],
+      "primary_sources": [
+        "https://github.com/HeeManSu/astra-agi/blob/129b440e531af9d053645f7fab966c172bfb3b3b/benchmarking/README.md",
+        "https://github.com/HeeManSu/astra-agi/blob/129b440e531af9d053645f7fab966c172bfb3b3b/benchmarking/agno-investment-team/teams/research_team.py",
+        "https://github.com/HeeManSu/astra-agi/blob/129b440e531af9d053645f7fab966c172bfb3b3b/benchmarking/autogen-investment-team/teams/research_team.py"
+      ],
+      "finding": "This is a strong matched framework experiment: Gemini 2.5 Flash, tools, workload and most prompts are fixed while the orchestration framework varies. It still does not exercise the canonical S3 implementations: Agno is run in TeamMode.coordinate rather than the TeamMode.tasks path that establishes canonical S3=A, and AutoGen is run through SelectorGroupChat rather than MagenticOneOrchestrator. CrewAI and LangGraph are current S3=— negative controls. Fixed-model framework parity therefore does not make this a matched native-S3 comparison.",
+      "admitted": false
+    },
+    {
+      "case_id": "principalbench-model-orchestrator-proxy",
+      "benchmark": "PrincipalBench",
+      "benchmark_fit": "proxy",
+      "coverage_class": "proxy-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/KalarisLabs/Principal-Bench/tree/89923dd855664165813c776ca9e77ce308d969c0",
+        "https://github.com/KalarisLabs/Principal-Bench/blob/89923dd855664165813c776ca9e77ce308d969c0/harness/pipeline.py"
+      ],
+      "finding": "PrincipalBench measures decomposition, failure detection, adversarial recovery and context coherence, but its benchmark harness creates the worker outputs with WorkerSimulator, injects failures and presents the resulting outputs to one model through a benchmark-defined principal prompt. It does not exercise a canonical harness's native worker lifecycle, live assignment, resource/priority authority, retry/replan or whole-system control implementation, so it remains S3-adjacent scaffolded proxy evidence.",
+      "admitted": false
+    },
+    {
+      "case_id": "multi-agent-orchestration-native-s3-candidate",
+      "benchmark": "Multi-Agent Orchestration Engine deterministic benchmark",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-boundary-unresolved",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/tree/e6c34462af045d7e53d383103346362351c96353",
+        "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/tree/e6c34462af045d7e53d383103346362351c96353/benchmarks",
+        "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/tree/e6c34462af045d7e53d383103346362351c96353/benchmarks/results"
+      ],
+      "finding": "The first-party runtime exposes a supervisor acting against live execution state with delegate, fan-out, retry, replan, approval and finalize decisions while deterministic runtime machinery enforces budgets, permissions, concurrency and persistence. Its committed 54-scenario benchmark compares baseline, supervisor, supervisor+retry and supervisor+parallel arms across routing/recovery/control scenarios, making it a strong native direct-S3 candidate at its own boundary. The repository is not currently a canonical Index system, so no canonical S3 observation or primary-baseline row can be admitted yet.",
+      "admitted": false
+    },
+    {
+      "case_id": "orchestrabench-failure-recovery-candidate",
+      "benchmark": "OrchestraBench failure/recovery protocol",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-boundary-unresolved",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://arxiv.org/abs/2608.05263"
+      ],
+      "finding": "OrchestraBench directly studies routing, injected orchestration failures, cascade radius and recovery in controlled dependency chains, which makes its protocol highly relevant to S3 current-control capability. The reviewed public evidence is a benchmark-defined orchestration organization and no authoritative code source was recovered that links its measurements to native canonical harness S3 implementations, so it cannot populate the primary baseline today.",
+      "admitted": false
     }
   ],
   "representative_canonical_s3_systems_inspected": [
+    "agno",
     "autogen-agentchat",
     "headcount",
     "deepseek-harness",
