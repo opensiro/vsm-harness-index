@@ -27,6 +27,23 @@ A second ecosystem reference used for recall is **Awesome Agent Harnesses** by N
 
 It is a broader survey of harness research, production harnesses, essays, and talks. No catalog data in this repository is adapted from that survey unless a future change explicitly records such provenance.
 
+### OpenSiro-adjacent OSS discovery
+
+Discovery is intentionally broader than repositories that self-identify as `agent-harness`.
+
+Future repository sweeps should also search for OSS projects that are architecturally adjacent to the OpenSiro stack itself, including:
+
+- agent control planes, governance runtimes, authority/delegation systems and bounded-autonomy middleware;
+- multi-agent organizations, agent operating systems, fleet managers, persistent agent teams and recursive/hierarchical agent runtimes;
+- agent identity, policy, approval, escalation, audit/evidence and runtime-interception systems when they expose a substantive executable control boundary;
+- harness registries, indexes, catalogs, conformance suites, assessment frameworks and machine-checkable agent-organization standards;
+- cybernetics/VSM-inspired agent systems even when they use different terminology;
+- adjacent standardization projects whose implementation includes a deployable agent/runtime/control organization rather than only prose/specification artifacts.
+
+Useful recall vocabulary includes `agent control plane`, `agent governance`, `agent authority`, `delegation`, `escalation`, `bounded autonomy`, `agent organization`, `autonomous organization`, `agent operating system`, `agent fleet`, `multi-agent hierarchy`, `recursive agents`, `conformance`, `agent standard`, `harness registry`, `harness index`, `assessment framework`, `cybernetics`, `viable system model`, and close functional equivalents.
+
+This broader recall policy does **not** relax intake boundaries. Product-only offerings, papers/specifications without an executable first-party organization, dashboards/proxies without owned runtime/control machinery, benchmarks, observability-only layers and security primitives without a complete operational/control boundary remain adjacent unless direct source inspection proves otherwise. Candidate promotion still requires canonical identity normalization, global deduplication, an immutable review ref and the normal assessment workflow.
+
 ## Assessments
 
 Every `assessments/<harness_id>.md` file is independently reconstructed from the named project's primary sources at its pinned `review_ref`. The upstream discovery descriptions and rankings are not used as VSM evidence.
