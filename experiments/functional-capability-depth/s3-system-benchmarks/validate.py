@@ -29,6 +29,7 @@ SYSTEM_COMPATIBILITY = {
 }
 REQUIRED_CASE_IDS = {
     "clawarena-team-direct-scaffolded",
+    "loop-back-authority-direct-scaffolded",
     "autogen-magentic-one-native-proxy-s3",
     "enterprise-arena-proxy-scaffolded",
     "astra-cross-framework-wrong-native-s3-path",
@@ -89,7 +90,7 @@ def main() -> None:
         for entry in benchmark_map.get("entries", [])
         if entry.get("function") == "S3" and entry.get("fit") == "direct"
     }
-    if reviewed_direct_s3 != {"clawarena-team"}:
+    if reviewed_direct_s3 != {"clawarena-team", "loop-back-authority"}:
         fail(f"unexpected committed direct-S3 benchmark map: {sorted(reviewed_direct_s3)}")
 
     cases = coverage.get("cases")
@@ -133,6 +134,16 @@ def main() -> None:
     missing_cases = REQUIRED_CASE_IDS - seen
     if missing_cases:
         fail(f"required S3 search cases missing: {sorted(missing_cases)}")
+
+    loop_back = by_id["loop-back-authority-direct-scaffolded"]
+    if loop_back.get("benchmark_fit") != "direct":
+        fail("Loop-Back Authority must remain direct S3 at its benchmark-defined boundary")
+    if loop_back.get("coverage_class") != "direct-scaffolded":
+        fail("Loop-Back Authority coverage class drift")
+    if loop_back.get("system_compatibility") != "benchmark-scaffolded":
+        fail("Loop-Back Authority must remain benchmark-scaffolded")
+    if loop_back.get("canonical_harness_id") is not None:
+        fail("Loop-Back Authority must not claim canonical harness ownership")
 
     # A matched framework benchmark is not sufficient when it bypasses the
     # exact canonical S3 mode. Keep the current positive and negative controls
