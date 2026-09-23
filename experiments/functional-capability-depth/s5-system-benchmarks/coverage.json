@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-23",
+  "reviewed_at": "2026-09-24",
   "function": "S5",
   "direct_family_count": 0,
   "canonical_direct_observation_count": 0,
@@ -71,6 +71,15 @@
         "https://arxiv.org/abs/2605.13362"
       ],
       "finding": "Defines an end-to-end governance process that can adopt policy and amend the constitution under supermajority rules. It is useful S5 protocol evidence but not a benchmark of an agent harness's S5 capability."
+    },
+    {
+      "case_id": "agent-parliament-ratified-amendment-process",
+      "artifact": "Agent Parliament constitutional ratification and amendment history",
+      "classification": "governance-process-not-harness-benchmark",
+      "primary_sources": [
+        "https://parliament.hermanity.dev/laws/constitution/"
+      ],
+      "finding": "The public constitutional record documents an actual v0.1.6 ratification and later v0.1.7 amendment entering force through a declared legitimate authority process with supermajority voting, Crown veto/signature handling, version and hash provenance, separation-of-duty requirements and preserved amendment history. This is unusually strong S5-shaped evidence that ultimate organizational policy can actually change under an authority process, but it is a live governance record rather than a reusable agent-harness benchmark and supplies no matched canonical-harness capability comparison."
     },
     {
       "case_id": "hem-parent-escalation-protocol",
