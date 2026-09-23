@@ -40,7 +40,11 @@ Current observations cover:
 - `swe-agent`;
 - `qwenpaw`;
 - `openclaw`;
-- `hermes-agent`.
+- `hermes-agent`;
+- `claude-code`;
+- `pi`;
+- `oh-my-pi`;
+- `opencode`.
 
 All are canonical Index systems with S1 established independently by their assessments.
 
@@ -51,7 +55,8 @@ Only reviewed direct S1 families are admitted here:
 - SWE-bench Verified;
 - Terminal-Bench / Harbor;
 - PawBench v1.0;
-- Claw-SWE-Bench, scoped to Coding/SWE.
+- Claw-SWE-Bench, scoped to Coding/SWE;
+- FrontierHarness Eval v1.0, scoped to the existing Coding/SWE technical projection.
 
 Other coding or agent benchmarks may be useful later, but they must first pass the benchmark-family semantic review or the primary-baseline selection rules rather than being added here by reputation or naming similarity.
 
@@ -70,6 +75,8 @@ Harbor's Codex and OpenHands installed-agent paths qualify because they invoke t
 PawBench's QwenPaw, OpenClaw and Hermes Agent rows also qualify here: PawBench controls container lifecycle, installation/configuration, model binding, task environment and grading, while the operational loop itself remains the corresponding first-party harness runtime.
 
 Claw-SWE-Bench's OpenClaw and Hermes Agent rows use the same boundary: the benchmark controls the SWE task membrane, prompt, container/workspace, timeout, patch extraction and evaluator, while the first-party harness performs the operational work.
+
+FrontierHarness Eval uses the same compatibility class. Runta/Harbor supplies the common execution/evaluation membrane and fresh checkpoint restore while the corresponding first-party harness remains the operational S1 loop.
 
 ### Not admitted
 
@@ -191,6 +198,70 @@ The two model cells are robustness evidence for the same applied domain. They mu
 - A test, review, planning, recovery or tooling step inside a coding task does not establish S3*, S3, S4 or another VSM function by vocabulary association.
 - Fresh-container evaluation does not establish or test experimental self-organizing `S`; it intentionally prevents persistent cross-task adaptation from contaminating the ordinary baseline.
 - These scores do not determine `A/C/P/—/?` ownership states.
+
+## FrontierHarness Eval Kimi K3 matched group
+
+FrontierHarness Eval v1.0 provides an additional matched-model technical/Coding-SWE observation group with broader canonical-system overlap than Claw-SWE-Bench.
+
+Immutable source:
+
+```text
+frontier-harness-eval/eval@e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63
+```
+
+Frozen cell:
+
+```text
+model: Kimi K3
+provider: Fireworks
+tasks: 30
+  21 Terminal-Bench 2.1
+   9 DeepSWE v1.1
+selection: first valid attempt 1
+```
+
+Canonical rows admitted here:
+
+```text
+Codex        66.7%   20 / 30   version 0.148.0
+Claude Code  63.3%   19 / 30   version 2.1.237
+Pi           60.0%   18 / 30   version 0.84.2
+Oh My Pi     56.7%   17 / 30   version 17.4.0
+OpenCode     50.0%   15 / 30   version 1.18.19
+Hermes Agent 50.0%   15 / 30   version 0.20.4
+```
+
+All six rows use:
+
+```text
+comparison.mode: matched-model
+comparison.scope: coding-swe
+system_compatibility: adapter-preserved
+```
+
+FrontierHarness pins the historical versions in `metadata/harness-versions.json`. Codex, Claude Code, Pi, Oh My Pi and OpenCode remain `revision_match: version-known` because the benchmark does not publish exact source revisions for those rows. Hermes Agent is `exact-historical` because the same metadata records source revision `044acf2bf700b8452e903f035406091146eb0245` for version `0.20.4`.
+
+The campaign prepares golden checkpoints and restores each trial from the same task/harness checkpoint, keeping the ordinary baseline compatible with the frozen-repertoire rule.
+
+The task distribution is intentionally kept under the existing `coding-swe` projection even though 21 of 30 tasks are Terminal-Bench tasks. It is a technical operational benchmark, not evidence for universal S1 capability.
+
+### Historical reproduction caveat
+
+The published baseline did not record its applied egress allowlist. The current reproduction workflow therefore marks new runs non-comparable by default until a matched control is evaluated under the same environment/policy. That limitation does not invalidate the internally matched historical campaign, but it prevents silent comparison of later reproductions against these rows.
+
+### Excluded displayed configurations
+
+DeepSeek Harness configurations, Exo Harness and Kimi Code appear in the published benchmark but are not imported here merely from their display names. At this step their benchmarked identities are not independently linked to a corresponding canonical Index system under the required boundary.
+
+Their omission is identity-based, not performance-based.
+
+### FrontierHarness non-claims
+
+- No overall harness ranking is derived from this group.
+- The Kimi K3 cell is not combined numerically with PawBench or Claw-SWE-Bench into a composite score.
+- Planning, retry, review, tool use or orchestration observed inside a technical task does not establish S2, S3, S3*, S4 or S5 by name.
+- Benchmark performance does not determine `A/C/P/—/?`.
+- Fresh checkpoint restoration does not establish experimental self-organizing `S`.
 
 ## Previous SWE-bench comparison group
 
