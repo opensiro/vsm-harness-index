@@ -84,6 +84,21 @@
       "admitted_to_canonical_registry": false
     },
     {
+      "case_id": "silentprobe-self-monitoring-negative-control",
+      "benchmark": "SilentProbe production-API silent-failure agent loop",
+      "benchmark_fit": "not-direct-S3star",
+      "coverage_class": "proxy-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/Jasper0122/silentprobe/tree/8f6a9dc4e9ad2d8bae2f9c70400d30211cdf45aa",
+        "https://github.com/Jasper0122/silentprobe/blob/8f6a9dc4e9ad2d8bae2f9c70400d30211cdf45aa/README.md",
+        "https://arxiv.org/abs/2609.00035"
+      ],
+      "finding": "SilentProbe supplies a strong negative control for the S3* independence boundary. It exposes ordinary tool-using agents to production-API silent failures and reports that models detect the resulting failure in only 12% of full-loop cases and repair it in 0%. The addressed risk is S3*-relevant claim-vs-reality mismatch, but the evaluated mechanism is the same agent reasoning over its own operational path rather than a materially distinct complementary evidence channel with independent access, corrective return into current control and re-verification. The measurements therefore remain non-direct scaffolded evidence and must not be interpreted as a canonical S3* capability score.",
+      "admitted_to_canonical_registry": false
+    },
+    {
       "case_id": "pawbench-self-verification-label-not-s3star",
       "benchmark": "PawBench Self_Verification capability slice",
       "benchmark_fit": "not-direct-S3star",
