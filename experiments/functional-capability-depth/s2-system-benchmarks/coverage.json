@@ -3,6 +3,7 @@
   "reviewed_at": "2026-09-23",
   "function": "S2",
   "direct_observation_count": 0,
+  "proxy_projection_count": 1,
   "coverage_classes": [
     "direct-scaffolded",
     "native-proxy",
@@ -31,11 +32,13 @@
       "coverage_class": "native-proxy",
       "system_compatibility": "native-system",
       "canonical_harness_id": "autogen-agentchat",
+      "proxy_projection_ref": "proxy_links.json#autogen-magentic-one-native-proxy-s2",
+      "raw_observation_ref": "../system-observations/magentic-one.json",
       "primary_sources": [
         "https://arxiv.org/abs/2411.04468",
         "https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/"
       ],
-      "finding": "The native Magentic-One orchestrator ablation removes progress tracking, loop detection and explicit direction and changes end-task performance, but the benchmark tasks do not directly instantiate an S2 disturbance and the ablation spans both S2 and S3 mechanisms.",
+      "finding": "The native historical Magentic-One orchestrator ablation removes progress tracking, loop detection and explicit direction and changes end-task performance, but the benchmark tasks do not directly instantiate an S2 disturbance and the ablation spans both S2 and S3 mechanisms. Numeric results live only in the shared raw observation record.",
       "admitted": false
     },
     {
