@@ -34,6 +34,8 @@ REQUIRED_CASE_IDS = {
     "swe-agent-swebench-native-proxy-s3star",
     "codex-truecall-external-wrapper",
     "auditbench-proxy-scaffolded",
+    "harnessaudit-trajectory-audit-proxy-scaffolded",
+    "silentprobe-self-monitoring-negative-control",
     "pawbench-self-verification-label-not-s3star",
     "codex-guardian-native-no-direct-results",
     "omnigent-polly-reviewer-native-no-direct-results",
@@ -190,6 +192,16 @@ def main() -> None:
         fail("PawBench capability-label negative control must not claim one canonical S3* owner")
     if pawbench.get("benchmark_fit") != "not-direct-S3star":
         fail("PawBench Self_Verification negative-control fit drift")
+
+    silentprobe = by_id["silentprobe-self-monitoring-negative-control"]
+    if silentprobe.get("coverage_class") != "proxy-scaffolded":
+        fail("SilentProbe self-monitoring negative-control class drift")
+    if silentprobe.get("benchmark_fit") != "not-direct-S3star":
+        fail("SilentProbe must remain non-direct S3* evidence")
+    if silentprobe.get("system_compatibility") != "benchmark-scaffolded":
+        fail("SilentProbe must remain benchmark-scaffolded")
+    if silentprobe.get("canonical_harness_id") is not None:
+        fail("SilentProbe self-monitoring evidence must not claim canonical S3* ownership")
 
     expected_native_no_results = {
         "codex-guardian-native-no-direct-results": "codex",
