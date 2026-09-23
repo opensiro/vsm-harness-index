@@ -81,5 +81,43 @@
       "https://arxiv.org/abs/2609.04280",
       "https://mas-orchestra.salesforceresearch.ai/evoharness/"
     ]
+  },
+  {
+    "observation_id": "evo-bench-heldout-harness-evolution-2026",
+    "function": "S4",
+    "benchmark_id": "evo-bench",
+    "benchmark_fit": "direct",
+    "boundary_class": "benchmark-defined-harness-evolving-system",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "reviewed_revision": "889e4fc8b197f426b444dbf8de217ea15b596fd2",
+    "evidence_type": "published-protocol-and-results",
+    "evidence_source_class": "external-reproduced",
+    "policy_model": "DeepSeek-V4-Flash",
+    "seed_harness": "minimal CodeAct policy harness",
+    "validation_task_count": 160,
+    "heldout_evaluation_task_count": 448,
+    "evolution_budget": "20 validation iterations, 1000 evolver steps, 48 hours",
+    "published_results": {
+      "seed_overall_score": 29.7,
+      "best_autonomous_overall_score": 46.3,
+      "best_absolute_gain": 16.6,
+      "human_engineered_reference": 47.5
+    },
+    "adaptation_loop": [
+      "execute current harness on validation tasks",
+      "evolver diagnoses failures and edits persistent executable harness",
+      "validation-only feedback selects later harness state",
+      "selected harness is frozen and evolver sandbox destroyed",
+      "disjoint held-out evaluation measures future capability"
+    ],
+    "future_evaluation": "The evolver cannot access the 448-task evaluation suite during evolution; only the 160-task validation suite is available. Final evaluation occurs after the selected harness is frozen.",
+    "vsm_interpretation": "The benchmark directly converts operating evidence into a persistent executable capability change and then measures later operation under a disjoint future evaluation surface. The S4 owner is the benchmark-defined evolver plus evolving harness organization, not the fixed policy model or a canonical Index harness.",
+    "primary_sources": [
+      "https://github.com/RUCAIBox/Evo-Bench/tree/889e4fc8b197f426b444dbf8de217ea15b596fd2",
+      "https://arxiv.org/abs/2608.09096",
+      "https://evobench.org/"
+    ]
   }
 ]
