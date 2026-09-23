@@ -10,10 +10,10 @@ This view reports baseline availability and evidence coverage only. It does not 
 | --- | --- | --- | --- | --- |
 | S1 | `selected` | PawBench v1.0 | `qwen3.6-35b-a3b` | [generated S1 baseline](S1-BASELINE.md) |
 | S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 10 reviewed cases · direct observations: `0` |
-| S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-23` · 7 reviewed cases · direct observations: `0` |
+| S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 8 reviewed cases · direct observations: `0` |
 | S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 10 reviewed cases · direct families: `1` · canonical direct observations: `0` · composed direct observations: `1` |
 | S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 14 reviewed cases · direct families: `4` · canonical direct observations: `0` · composed direct observations: `4` |
-| S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-23` · 11 reviewed cases · direct families: `0` · canonical direct observations: `0` |
+| S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 12 reviewed cases · direct families: `0` · canonical direct observations: `0` |
 
 A `gap` means that no matched canonical-harness primary baseline has been selected for that function. It is not a zero capability score and it does not mean benchmark evidence is absent.
 
