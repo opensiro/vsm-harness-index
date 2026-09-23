@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-23",
+  "reviewed_at": "2026-09-24",
   "function": "S3*",
   "direct_benchmark_family_count": 1,
   "composed_direct_observation_count": 1,
@@ -66,6 +66,21 @@
         "https://alignment.anthropic.com/2026/auditbench/"
       ],
       "finding": "AuditBench provides alternative investigator access to hidden target-model behavior, but the target is an external benchmark object and findings need not return into current control of the same operating organization. It remains a strong S3* proxy rather than a direct same-system closure benchmark.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "harnessaudit-trajectory-audit-proxy-scaffolded",
+      "benchmark": "HarnessAudit-Bench",
+      "benchmark_fit": "proxy",
+      "coverage_class": "proxy-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/UCSB-AI/HarnessAudit/tree/6317162590aeeb1c8dde32b880ac199933343e4a",
+        "https://arxiv.org/abs/2605.14271",
+        "https://harnessaudit.github.io/"
+      ],
+      "finding": "HarnessAudit-Bench provides strong trajectory-level evidence over 210 tasks by externally auditing boundary compliance, execution fidelity and system stability across multiple harness/framework configurations. That external audit can expose unauthorized resource access and inter-agent information-flow violations, but the published evaluation does not establish a native complementary S3* path that returns detected discrepancies into the same harness's current-control loop for correction and re-verification. It is therefore valuable S3* proxy/scaffolded evidence rather than a direct canonical S3* observation.",
       "admitted_to_canonical_registry": false
     },
     {
