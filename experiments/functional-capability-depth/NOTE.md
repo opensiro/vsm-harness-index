@@ -2,6 +2,8 @@
 
 Status: **non-normative research note**
 
+Baseline comparison rules: [`BASELINE.md`](BASELINE.md).
+
 This note records a hypothesis about what the VSM Harness Index does **not** measure.
 It does not change the VSM Profile, assessment states, publication notation, ranking projection,
 or any canonical assessment.
