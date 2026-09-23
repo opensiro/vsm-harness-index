@@ -7,6 +7,7 @@ Issue: #371
 First semantic review: [`REVIEW.md`](REVIEW.md)  
 S3* follow-up semantic review: [`S3STAR-REVIEW.md`](S3STAR-REVIEW.md)  
 S4 follow-up semantic review: [`S4-REVIEW.md`](S4-REVIEW.md)  
+S5 follow-up semantic review: [`S5-REVIEW.md`](S5-REVIEW.md)  
 Machine-readable reviewed map: [`map.json`](map.json)  
 Validator: [`validate.py`](validate.py)
 
@@ -40,7 +41,7 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 
 `map.json` is the machine-readable source of truth for reviewed function↔benchmark-family fit classifications.
 
-`REVIEW.md` records the first semantic pass. `S3STAR-REVIEW.md` adds the first direct S3* family. `S4-REVIEW.md` adds the first direct S4 families/modes. Follow-up reviews supersede the first review only for the function-specific gap statements they explicitly revisit.
+`REVIEW.md` records the first semantic pass. `S3STAR-REVIEW.md` adds the first direct S3* family. `S4-REVIEW.md` adds the first direct S4 families/modes. `S5-REVIEW.md` records the direct-S5 gap and reviewed proxy/unsuitable governance/value families. Follow-up reviews supersede the first review only for the function-specific gap statements they explicitly revisit.
 
 ## Current reviewed map
 
@@ -66,12 +67,17 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 | S4 — Outside-and-then intelligence | CostBench | `unsuitable` for S4 function measurement |
 | S5 — Policy and identity | AgentGovBench | `unsuitable` for S5 function measurement |
 | S5 — Policy and identity | RoleCDE | `proxy` |
+| S5 — Policy and identity | Agent-ValueBench | `proxy` |
+| S5 — Policy and identity | AgentCity | `proxy` |
+| S5 — Policy and identity | Constitutional AI Governance Stress Test | `proxy` |
 
 `direct` means direct fit to the **function at the benchmark's own declared boundary**. It does not mean that every product/harness evaluated by or mentioned around the benchmark has that function.
 
 For TrueCall specifically, the direct boundary is the composed operational agent + TrueCall post-condition audit path. Adapter support for Codex or Claude Code does not make the external audit layer part of those canonical harness boundaries.
 
 For the S4 direct families, the adaptation organization is benchmark-defined. Running Codex CLI, Claude Code, Gemini CLI, a model, or another task solver inside the benchmark does not transfer the benchmark-hosted evolver/Skill Author/persistent adaptation path into that canonical product's S4 ownership.
+
+For S5, value conflict, constitutional terminology, policy enforcement, legislation and escalation are not sufficient by themselves. A direct benchmark must exercise legitimate ultimate-policy/identity authority, an actual decision or ratification, and return of the newly decided rule into later operation.
 
 ## Benchmark-fit vocabulary
 
@@ -178,9 +184,9 @@ The combined first review plus follow-up reviews establish:
 - a direct S3 capability benchmark (`ClawArena-Team`) whose organization is benchmark-defined;
 - a direct S3* runtime-verification family (`TrueCall`) at a composed audited-system boundary, while canonical native direct-S3* linkage remains absent;
 - three direct S4 families/modes that close persistent adaptation at benchmark-defined boundaries, while canonical native direct-S4 linkage remains absent;
-- no direct S5 benchmark yet.
+- no direct S5 benchmark: policy enforcement, value conflict, operational legislation and constitutional conformance remain proxy/unsuitable evidence because legitimate ultimate-policy authority plus decision→operation closure is not jointly exercised.
 
-Direct reviewed coverage is now:
+Direct reviewed coverage remains:
 
 ```text
 S1  2
@@ -191,7 +197,7 @@ S4  3
 S5  0
 ```
 
-`REVIEW.md` records the first pass and useful negative cases. `S3STAR-REVIEW.md` records the evidence that narrows the S3* gap. `S4-REVIEW.md` records the direct S4 promotion and keeps frozen-deployment/persistent-adaptation boundary distinctions explicit.
+`REVIEW.md` records the first pass and useful negative cases. `S3STAR-REVIEW.md` records the evidence that narrows the S3* gap. `S4-REVIEW.md` records the direct S4 promotion and keeps frozen-deployment/persistent-adaptation boundary distinctions explicit. `S5-REVIEW.md` records the remaining direct-S5 gap and the benchmark shape needed to close it.
 
 ## Validation
 
@@ -203,7 +209,7 @@ Function-specific system layers may add stricter validators for canonical assess
 
 1. Link canonical systems only where `native-system` or defensible `adapter-preserved` evidence exists.
 2. Preserve benchmark/composed direct observations separately from canonical system observations.
-3. Record the S5 benchmark gap instead of filling it by governance vocabulary or policy-enforcement scores.
+3. Keep the S5 direct gap explicit until a benchmark exercises legitimate policy/identity authority and return-to-operation closure.
 4. Only after the system/function benchmark layer is stable, connect observations to individual first-party features/mechanisms.
 
 ## Boundary
