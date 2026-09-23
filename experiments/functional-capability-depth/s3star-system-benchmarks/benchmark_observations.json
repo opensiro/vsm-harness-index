@@ -1,0 +1,70 @@
+[
+  {
+    "observation_id": "truecall-tau2-retail-silent-failure-2026-06",
+    "function": "S3*",
+    "benchmark_id": "truecall-runtime-verification",
+    "benchmark_fit": "direct",
+    "boundary_class": "composed-system",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "reviewed_system_revision": "3b1d8ce253ad6d9908936f844bf5e0255785e8b9",
+    "environment": "tau2-bench retail",
+    "tau2_version": "1.0.0",
+    "agent_model": "gemini/gemini-2.5-flash",
+    "user_model": "gemini/gemini-2.5-flash",
+    "reasoning_effort": "disable",
+    "fault_model": "seeded injected silent failures on WRITE tools; success-shaped response retained while database mutation is undone",
+    "paired_runs": [
+      {
+        "fault_probability": 0.3,
+        "seed": 12345,
+        "tasks": 10,
+        "trials_per_task": 2,
+        "baseline_reward": 0.375,
+        "truecall_reward": 0.353
+      },
+      {
+        "fault_probability": 0.4,
+        "seed": 777,
+        "tasks": 16,
+        "trials_per_task": 2,
+        "baseline_reward": 0.321,
+        "truecall_reward": 0.467
+      },
+      {
+        "fault_probability": 0.4,
+        "seed": 2024,
+        "tasks": 20,
+        "trials_per_task": 2,
+        "baseline_reward": 0.389,
+        "truecall_reward": 0.333
+      }
+    ],
+    "reported_mean_baseline_reward": 0.362,
+    "reported_mean_truecall_reward": 0.384,
+    "reported_detection_rate": 1.0,
+    "reported_false_positive_count": 0,
+    "reported_detection_scope": "all injected silent failures across the published live runs",
+    "correction_uptake": [
+      {
+        "message_condition": "soft",
+        "corrections": 25,
+        "retry_rate": 0.08,
+        "give_up_rate": 0.84
+      },
+      {
+        "message_condition": "imperative",
+        "corrections": 11,
+        "retry_rate": 0.64,
+        "give_up_rate": 0.36
+      }
+    ],
+    "publisher_conclusion": "Detection was deterministic in the published runs; end-to-end task-reward recovery was not established at this scale/model because reward deltas were inconsistent across paired runs.",
+    "vsm_interpretation": "The observation directly exercises complementary reality access plus discrepancy feedback at the composed TrueCall boundary. It does not establish S1 recovery quality and is not attributable to a canonical harness S3* implementation.",
+    "primary_sources": [
+      "https://github.com/abhid1234/truecall/blob/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2/RESULTS.md",
+      "https://github.com/abhid1234/truecall/blob/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2/seam.py"
+    ]
+  }
+]
