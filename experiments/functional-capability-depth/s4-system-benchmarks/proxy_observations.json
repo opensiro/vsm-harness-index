@@ -1,0 +1,159 @@
+[
+  {
+    "observation_id": "futuresim-v1-codex-0125-gpt55",
+    "function": "S4",
+    "benchmark_id": "futuresim",
+    "benchmark_fit": "proxy",
+    "canonical_harness_id": "codex",
+    "canonical_assessment_ref": "assessments/codex.md",
+    "canonical_s4_state_at_review": "—",
+    "system_compatibility": "adapter-preserved",
+    "published_harness_version": "0.125.0",
+    "model": "GPT 5.5",
+    "benchmark_revision": "arXiv:2605.15188v1",
+    "benchmark_window": "2025-12-24 through 2026-03-28",
+    "question_count": 330,
+    "seeds": 3,
+    "reasoning_setting": "maximum reasoning effort",
+    "prompt_condition": "recommended/native harness",
+    "final_top1_accuracy_percent": 25,
+    "final_brier_skill_score": 0.05,
+    "metric_provenance": "Figure 1 final rounded labels",
+    "comparability_group": "futuresim-v1-recommended-harness-cross-system-confounded",
+    "confounders": [
+      "model differs across harness configurations",
+      "the benchmark supplies its chronological environment, search interface and forecast actions"
+    ],
+    "primary_sources": [
+      "https://arxiv.org/pdf/2605.15188",
+      "https://github.com/OpenForecaster/futuresim"
+    ],
+    "non_claim": "This proxy observation does not establish canonical Codex S4, and the cross-system metric difference does not isolate a Codex harness effect."
+  },
+  {
+    "observation_id": "futuresim-v1-claude-code-21132-opus46",
+    "function": "S4",
+    "benchmark_id": "futuresim",
+    "benchmark_fit": "proxy",
+    "canonical_harness_id": "claude-code",
+    "canonical_assessment_ref": "assessments/claude-code.md",
+    "canonical_s4_state_at_review": "—",
+    "system_compatibility": "adapter-preserved",
+    "published_harness_version": "2.1.132",
+    "model": "Claude Opus 4.6",
+    "benchmark_revision": "arXiv:2605.15188v1",
+    "benchmark_window": "2025-12-24 through 2026-03-28",
+    "question_count": 330,
+    "seeds": 3,
+    "reasoning_setting": "maximum reasoning effort",
+    "prompt_condition": "recommended/native harness",
+    "final_top1_accuracy_percent": 20,
+    "final_brier_skill_score": 0.02,
+    "metric_provenance": "Figure 1 final rounded labels",
+    "comparability_group": "futuresim-v1-recommended-harness-cross-system-confounded",
+    "confounders": [
+      "model differs across harness configurations",
+      "the benchmark supplies its chronological environment, search interface and forecast actions"
+    ],
+    "primary_sources": [
+      "https://arxiv.org/pdf/2605.15188",
+      "https://github.com/OpenForecaster/futuresim"
+    ],
+    "non_claim": "This proxy observation does not establish canonical Claude Code S4, and the cross-system metric difference does not isolate a Claude Code harness effect."
+  },
+  {
+    "observation_id": "futuresim-v1-claude-code-21132-deepseek-v4-pro",
+    "function": "S4",
+    "benchmark_id": "futuresim",
+    "benchmark_fit": "proxy",
+    "canonical_harness_id": "claude-code",
+    "canonical_assessment_ref": "assessments/claude-code.md",
+    "canonical_s4_state_at_review": "—",
+    "system_compatibility": "adapter-preserved",
+    "published_harness_version": "2.1.132",
+    "model": "DeepSeek V4 Pro",
+    "benchmark_revision": "arXiv:2605.15188v1",
+    "benchmark_window": "2025-12-24 through 2026-03-28",
+    "question_count": 330,
+    "seeds": 3,
+    "reasoning_setting": "maximum reasoning effort",
+    "prompt_condition": "recommended harness plus additional update-encouragement prompting",
+    "final_top1_accuracy_percent": 13,
+    "final_brier_skill_score": -0.02,
+    "metric_provenance": "Figure 1 final rounded labels",
+    "comparability_group": "futuresim-v1-recommended-harness-cross-system-confounded",
+    "confounders": [
+      "model differs across harness configurations",
+      "additional prompting was added for DeepSeek to encourage forecast updates",
+      "the benchmark supplies its chronological environment, search interface and forecast actions"
+    ],
+    "primary_sources": [
+      "https://arxiv.org/pdf/2605.15188",
+      "https://github.com/OpenForecaster/futuresim"
+    ],
+    "non_claim": "This proxy observation does not establish canonical Claude Code S4 and is not directly comparable as a harness effect because model and prompt condition differ."
+  },
+  {
+    "observation_id": "futuresim-v1-claude-code-21132-glm51",
+    "function": "S4",
+    "benchmark_id": "futuresim",
+    "benchmark_fit": "proxy",
+    "canonical_harness_id": "claude-code",
+    "canonical_assessment_ref": "assessments/claude-code.md",
+    "canonical_s4_state_at_review": "—",
+    "system_compatibility": "adapter-preserved",
+    "published_harness_version": "2.1.132",
+    "model": "GLM 5.1",
+    "benchmark_revision": "arXiv:2605.15188v1",
+    "benchmark_window": "2025-12-24 through 2026-03-28",
+    "question_count": 330,
+    "seeds": 3,
+    "reasoning_setting": "maximum reasoning effort",
+    "prompt_condition": "recommended harness",
+    "final_top1_accuracy_percent": 10,
+    "final_brier_skill_score": -0.01,
+    "metric_provenance": "Figure 1 final rounded labels",
+    "comparability_group": "futuresim-v1-recommended-harness-cross-system-confounded",
+    "confounders": [
+      "model differs across harness configurations",
+      "the benchmark supplies its chronological environment, search interface and forecast actions"
+    ],
+    "primary_sources": [
+      "https://arxiv.org/pdf/2605.15188",
+      "https://github.com/OpenForecaster/futuresim"
+    ],
+    "non_claim": "This proxy observation does not establish canonical Claude Code S4 and cannot be interpreted as an isolated Claude Code harness score."
+  },
+  {
+    "observation_id": "futuresim-v1-opencode-1411-qwen36plus",
+    "function": "S4",
+    "benchmark_id": "futuresim",
+    "benchmark_fit": "proxy",
+    "canonical_harness_id": "opencode",
+    "canonical_assessment_ref": "assessments/opencode.md",
+    "canonical_s4_state_at_review": "—",
+    "system_compatibility": "adapter-preserved",
+    "published_harness_version": "1.4.11",
+    "model": "Qwen 3.6 Plus",
+    "benchmark_revision": "arXiv:2605.15188v1",
+    "benchmark_window": "2025-12-24 through 2026-03-28",
+    "question_count": 330,
+    "seeds": 3,
+    "reasoning_setting": "maximum reasoning effort",
+    "prompt_condition": "recommended harness plus additional update-encouragement prompting",
+    "final_top1_accuracy_percent": 5,
+    "final_brier_skill_score": -0.07,
+    "metric_provenance": "Figure 1 final rounded labels",
+    "comparability_group": "futuresim-v1-recommended-harness-cross-system-confounded",
+    "confounders": [
+      "model differs across harness configurations",
+      "additional prompting was added for Qwen to encourage forecast updates",
+      "the benchmark supplies its chronological environment, search interface and forecast actions"
+    ],
+    "primary_sources": [
+      "https://arxiv.org/pdf/2605.15188",
+      "https://github.com/OpenForecaster/futuresim"
+    ],
+    "non_claim": "This proxy observation does not establish canonical OpenCode S4 and is not a causal comparison of OpenCode against Codex or Claude Code."
+  }
+]
