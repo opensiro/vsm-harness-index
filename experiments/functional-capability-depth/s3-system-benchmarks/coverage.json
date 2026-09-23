@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-23",
+  "reviewed_at": "2026-09-24",
   "function": "S3",
   "direct_observation_count": 0,
   "proxy_projection_count": 1,
@@ -24,6 +24,22 @@
         "https://arxiv.org/abs/2606.31174"
       ],
       "finding": "ClawArena-Team directly exercises whole-team current control through creation, privilege/workspace assignment, inspection, scheduling and dynamic workflow management, but the benchmark supplies that organization and fixed worker pool. Published manager-model results are not native canonical-harness S3 observations.",
+      "admitted": false
+    },
+    {
+      "case_id": "loop-back-authority-direct-scaffolded",
+      "benchmark": "Loop-Back Authority paired manager-control experiment",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/cihatburak/loop-back-authority-llm-agents/tree/6f26a97cafb0b463a45cdc40b5348351d844f7a5",
+        "https://github.com/cihatburak/loop-back-authority-llm-agents/blob/6f26a97cafb0b463a45cdc40b5348351d844f7a5/hierarchical_graph.py",
+        "https://github.com/cihatburak/loop-back-authority-llm-agents/blob/6f26a97cafb0b463a45cdc40b5348351d844f7a5/flat_graph.py",
+        "https://arxiv.org/abs/2609.14767"
+      ],
+      "finding": "The paired experiment isolates a whole-team current-control right: the hierarchical Manager may reject completed worker output and loop work back with corrective instructions, while the flat Manager observes the same workflow but is forced to route forward. Five agents, roles, prompts, tools, model assignment and product data are otherwise held fixed. This directly exercises benchmark-defined S3 authority, but the organization is authored by the experiment and runs on LangGraph only as an execution substrate, so the published results are not native S3 observations for LangGraph or another canonical harness.",
       "admitted": false
     },
     {
