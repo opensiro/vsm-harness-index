@@ -15,7 +15,7 @@ OBS = HERE / "observations.jsonl"
 ALLOWED_COMPAT = {"native-system", "adapter-preserved"}
 ALLOWED_REVISION = {"exact-historical", "version-known", "unknown"}
 ALLOWED_COMPARE = {"matched-model", "partially-matched", "descriptive-only"}
-ALLOWED_FAMILIES = {"swe-bench", "terminal-bench", "pawbench"}
+ALLOWED_FAMILIES = {"swe-bench", "terminal-bench", "pawbench", "claw-swe-bench"}
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
 
