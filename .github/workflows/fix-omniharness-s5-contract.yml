@@ -1,0 +1,30 @@
+name: fix omniHarness S5 contract wording
+on:
+  push:
+    branches: [assessment-omniharness-pinned]
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply exact S5 contract label
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('assessments/omniharness.md')
+          s = p.read_text()
+          old = '- Ultimate authority: the user/parent requesting and specifying the refinement in the custom-agent chat.'
+          new = '- Ultimate authority in each claimed mode: the parent-governed mode is owned by the user/parent requesting and specifying the refinement in the custom-agent chat.'
+          if old not in s:
+              raise SystemExit('expected S5 authority line not found')
+          p.write_text(s.replace(old, new, 1))
+          PY
+          rm .github/workflows/fix-omniharness-s5-contract.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/omniharness.md .github/workflows/fix-omniharness-s5-contract.yml
+          git commit -m 'assessment: align omniHarness S5 contract wording [skip s5 fix]'
+          git push
