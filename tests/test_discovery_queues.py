@@ -62,6 +62,20 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
 """
         self.assertEqual(module.parse_candidate_repositories(body), ["owner/alpha"])
 
+    def test_parse_legacy_batch_occupancy(self) -> None:
+        self.assertEqual(module.declared_active_occupancy("Batch occupancy: **7/10**"), 7)
+
+    def test_parse_modern_remaining_active_occupancy(self) -> None:
+        self.assertEqual(
+            module.declared_active_occupancy(
+                "**Manual assessment queue. Batch frozen at 10/10. Remaining active candidate occupancy: 9/10.**"
+            ),
+            9,
+        )
+
+    def test_absent_active_occupancy_is_none(self) -> None:
+        self.assertIsNone(module.declared_active_occupancy("Batch frozen at 10/10."))
+
     def test_non_candidate_table_is_ignored(self) -> None:
         body = """| Project | Notes |
 | --- | --- |
