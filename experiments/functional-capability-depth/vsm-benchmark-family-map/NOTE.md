@@ -5,6 +5,7 @@ Status: experimental, non-normative.
 Issue: #371
 
 First semantic review: [`REVIEW.md`](REVIEW.md)  
+S1 FrontierHarness follow-up review: [`S1-FRONTIERHARNESS-REVIEW.md`](S1-FRONTIERHARNESS-REVIEW.md)  
 S3* follow-up semantic review: [`S3STAR-REVIEW.md`](S3STAR-REVIEW.md)  
 S4 follow-up semantic review: [`S4-REVIEW.md`](S4-REVIEW.md)  
 S5 follow-up semantic review: [`S5-REVIEW.md`](S5-REVIEW.md)  
@@ -41,7 +42,7 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 
 `map.json` is the machine-readable source of truth for reviewed function↔benchmark-family fit classifications.
 
-`REVIEW.md` records the first semantic pass and later S1 family additions. `S3STAR-REVIEW.md` adds the first direct S3* family. `S4-REVIEW.md` adds the first direct S4 families/modes. `S5-REVIEW.md` records the direct-S5 gap and reviewed proxy/unsuitable governance/value families. Follow-up reviews supersede the first review only for the function-specific gap statements they explicitly revisit.
+`REVIEW.md` records the first semantic pass and the Claw-SWE-Bench S1 addition. `S1-FRONTIERHARNESS-REVIEW.md` records the FrontierHarness applied-domain S1 addition and its historical reproduction limits. `S3STAR-REVIEW.md` adds the first direct S3* family. `S4-REVIEW.md` adds the first direct S4 families/modes. `S5-REVIEW.md` records the direct-S5 gap and reviewed proxy/unsuitable governance/value families. Follow-up reviews supersede the first review only for the function-specific gap statements they explicitly revisit.
 
 ## Current reviewed map
 
@@ -50,6 +51,7 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 | S1 — Operations | Terminal-Bench / Harbor | `direct` |
 | S1 — Operations | SWE-bench family | `direct` |
 | S1 — Operations | Claw-SWE-Bench | `direct` in Coding/SWE domain |
+| S1 — Operations | FrontierHarness Eval v1.0 | `direct` in the existing Coding/SWE projection; mixed terminal/SWE task scope |
 | S2 — Coordination | DPBench | `direct` |
 | S2 — Coordination | SILO-BENCH | `proxy` |
 | S2 — Coordination | alem | `proxy` |
@@ -75,6 +77,8 @@ Benchmark performance must not be used to infer `A`, `C`, `P`, `—`, or `?`.
 `direct` means direct fit to the **function at the benchmark's own declared boundary**. It does not mean that every product/harness evaluated by or mentioned around the benchmark has that function.
 
 Claw-SWE-Bench is additionally domain-scoped: its `direct` S1 fit applies to Coding/SWE operational capability. A strong result there is not automatically universal S1 capability outside software-engineering tasks.
+
+FrontierHarness Eval remains under the existing Coding/SWE applied projection but has a mixed task distribution: 21 Terminal-Bench 2.1 tasks and 9 DeepSWE v1.1 tasks. Its direct S1 fit applies to that technical terminal/SWE boundary, not universal S1 capability. The historical published baseline is internally matched under fixed Kimi K3, but future reproduction runs require a matched control because the original applied egress allowlist was not recorded.
 
 For TrueCall specifically, the direct boundary is the composed operational agent + TrueCall post-condition audit path. Adapter support for Codex or Claude Code does not make the external audit layer part of those canonical harness boundaries.
 
@@ -182,7 +186,7 @@ Do not turn the synthesis into a scalar maturity score or reinterpret `A/C/P` as
 
 The combined first review plus follow-up reviews establish:
 
-- three direct S1 benchmark families, including Claw-SWE-Bench as an explicitly matched-harness Coding/SWE projection;
+- four direct S1 benchmark families, including Claw-SWE-Bench and FrontierHarness Eval as matched-harness applied-domain evidence;
 - a strong direct S2 benchmark (`DPBench`) but weak native-harness linkage;
 - a direct S3 capability benchmark (`ClawArena-Team`) whose organization is benchmark-defined;
 - a direct S3* runtime-verification family (`TrueCall`) at a composed audited-system boundary, while canonical native direct-S3* linkage remains absent;
@@ -192,7 +196,7 @@ The combined first review plus follow-up reviews establish:
 Direct reviewed coverage is now:
 
 ```text
-S1  3
+S1  4
 S2  1
 S3  1
 S3* 1
@@ -200,7 +204,7 @@ S4  3
 S5  0
 ```
 
-`REVIEW.md` records the first pass, useful negative cases and the Claw-SWE-Bench S1 domain addition. `S3STAR-REVIEW.md` records the evidence that narrows the S3* gap. `S4-REVIEW.md` records the direct S4 promotion and keeps frozen-deployment/persistent-adaptation boundary distinctions explicit. `S5-REVIEW.md` records the remaining direct-S5 gap and the benchmark shape needed to close it.
+`REVIEW.md` records the first pass, useful negative cases and the Claw-SWE-Bench S1 domain addition. `S1-FRONTIERHARNESS-REVIEW.md` records the FrontierHarness S1 admission and reproduction caveats. `S3STAR-REVIEW.md` records the evidence that narrows the S3* gap. `S4-REVIEW.md` records the direct S4 promotion and keeps frozen-deployment/persistent-adaptation boundary distinctions explicit. `S5-REVIEW.md` records the remaining direct-S5 gap and the benchmark shape needed to close it.
 
 ## Validation
 
