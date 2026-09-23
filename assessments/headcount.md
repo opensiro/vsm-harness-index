@@ -8,7 +8,7 @@ generated_profile_version: 0.2.2
 generated_assessment_procedure_version: 0.3.4
 profile_version: 0.2.2
 assessment_procedure_version: 0.3.4
-assessment_changed_at: 2026-09-22
+assessment_changed_at: 2026-09-19
 last_checked_ref: 9cbf34005e3e8a980a6af9b55eb226bd926a62b3
 last_checked_at: 2026-09-19
 last_reassessment_round: R3
