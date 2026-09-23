@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "selected_at": "2026-09-23",
+  "tracking_issue": 409,
+  "selection_gate": [
+    "function-valid",
+    "matched-harness",
+    "canonical-linkable",
+    "frozen-repertoire-compatible",
+    "public-reproducible",
+    "scope-honest"
+  ],
+  "functions": {
+    "S1": {
+      "status": "selected",
+      "scope": "general",
+      "primary": {
+        "benchmark_id": "pawbench-v1.0",
+        "benchmark_name": "PawBench v1.0",
+        "primary_source": "https://github.com/agentscope-ai/PawBench",
+        "comparison_design": "matched-model-cross-harness",
+        "reference_model": "qwen3.6-35b-a3b",
+        "task_count": 150,
+        "canonical_harness_ids": [
+          "qwenpaw",
+          "openclaw",
+          "hermes-agent"
+        ],
+        "canonical_state_required_for_first_cell": "S1=A",
+        "score_storage": "shared-raw-observation-layer",
+        "provenance_note": "Published PawBench rows predate the current September 2026 canonical review refs; later observations must preserve the published harness versions and historical-lineage relation explicitly.",
+        "grading_note": "PawBench v1.0 mixes automated, LLM-judge and hybrid grading; grading mode remains part of benchmark identity."
+      },
+      "domains": {
+        "coding_swe": {
+          "status": "domain_projection",
+          "primary_candidate": {
+            "benchmark_id": "claw-swe-bench",
+            "benchmark_name": "Claw-SWE-Bench",
+            "primary_source": "https://claw-swe-bench.github.io/",
+            "comparison_design": "matched-model-cross-harness",
+            "reference_model": "Qwen 3.6-flash",
+            "task_count": 350,
+            "verified_canonical_harness_ids": [
+              "openclaw",
+              "hermes-agent"
+            ],
+            "scope_note": "Software-engineering specific; do not promote this result to universal S1 capability."
+          },
+          "additional_evidence": [
+            {
+              "benchmark_id": "frontierharness-v1.0",
+              "benchmark_name": "FrontierHarness Eval v1.0",
+              "primary_source": "https://github.com/frontier-harness-eval/eval",
+              "reference_model": "Kimi K3",
+              "scope_note": "Software-engineering and terminal-task scope; useful for broad canonical harness overlap and cost/cache/time robustness checks."
+            }
+          ]
+        }
+      }
+    },
+    "S2": {
+      "status": "gap",
+      "reviewed_direct_families": [
+        {
+          "benchmark_id": "dpbench",
+          "benchmark_name": "DPBench",
+          "primary_source": "https://github.com/najmulhasan-code/dpbench",
+          "blocking_reason": "The coordination organization and protocol are benchmark-scaffolded; published comparisons do not yet isolate native S2 implementations across canonical harnesses under a matched model."
+        }
+      ]
+    },
+    "S3": {
+      "status": "gap",
+      "reviewed_direct_families": [
+        {
+          "benchmark_id": "clawarena-team",
+          "benchmark_name": "ClawArena-Team",
+          "primary_source": "https://github.com/aiming-lab/ClawArena/tree/main/ClawArena-Team",
+          "blocking_reason": "The benchmark supplies the management tool surface, worker pool and team organization; published comparison varies the main-agent model rather than native S3 implementations of canonical harnesses."
+        }
+      ]
+    },
+    "S3*": {
+      "status": "gap",
+      "reviewed_direct_families": [
+        {
+          "benchmark_id": "truecall-runtime-verification",
+          "benchmark_name": "TrueCall silent-failure runtime verification",
+          "primary_source": "https://github.com/abhid1234/truecall",
+          "blocking_reason": "The complementary audit function is supplied by the external TrueCall layer, so wrapped harness results cannot be attributed as native S3* capability of the canonical harness."
+        }
+      ]
+    },
+    "S4": {
+      "status": "gap",
+      "reviewed_direct_families": [
+        {
+          "benchmark_id": "a-evolve-harness-evolution",
+          "benchmark_name": "A-Evolve harness evolution"
+        },
+        {
+          "benchmark_id": "skillevolbench",
+          "benchmark_name": "SkillEvolBench"
+        },
+        {
+          "benchmark_id": "evoharnessbench-self-evolving",
+          "benchmark_name": "EvoHarnessBench self-evolving mode"
+        }
+      ],
+      "blocking_reason": "Current direct families evaluate benchmark-defined or composed adaptation loops rather than matched native S4 implementations across canonical harnesses.",
+      "frozen_repertoire_note": "Ordinary S4 evaluation may use the current S4 repertoire to adapt other organizational capability; persistent improvement of S4's own decision/feedback repertoire belongs to the separate self-organizing-S evidence class."
+    },
+    "S5": {
+      "status": "gap",
+      "blocking_reason": "No reviewed benchmark family currently provides direct legitimate ultimate-policy/identity authority, actual adjudication or revision, and return of the newly decided policy into subsequent operation."
+    }
+  },
+  "raw_metric_rule": "Do not duplicate numeric benchmark results in this selection record. Store each result once in the shared raw observation layer and reference it from function/domain projections.",
+  "replacement_rule": "A stronger benchmark may replace a primary baseline without deleting historical observations or secondary/domain evidence."
+}
