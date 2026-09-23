@@ -50,7 +50,8 @@ Only reviewed direct S1 families are admitted here:
 
 - SWE-bench Verified;
 - Terminal-Bench / Harbor;
-- PawBench v1.0.
+- PawBench v1.0;
+- Claw-SWE-Bench, scoped to Coding/SWE.
 
 Other coding or agent benchmarks may be useful later, but they must first pass the benchmark-family semantic review or the primary-baseline selection rules rather than being added here by reputation or naming similarity.
 
@@ -67,6 +68,8 @@ An external benchmark adapter controls environment/setup/evaluation, but the ope
 Harbor's Codex and OpenHands installed-agent paths qualify because they invoke the actual first-party Codex CLI/OpenHands tool rather than replacing the agent loop.
 
 PawBench's QwenPaw, OpenClaw and Hermes Agent rows also qualify here: PawBench controls container lifecycle, installation/configuration, model binding, task environment and grading, while the operational loop itself remains the corresponding first-party harness runtime.
+
+Claw-SWE-Bench's OpenClaw and Hermes Agent rows use the same boundary: the benchmark controls the SWE task membrane, prompt, container/workspace, timeout, patch extraction and evaluator, while the first-party harness performs the operational work.
 
 ### Not admitted
 
@@ -134,6 +137,60 @@ In particular:
 - orchestration-labelled tasks do not establish S2/S3 ownership.
 
 The imported rows are S1 system-performance evidence because canonical S1 has already been established independently.
+
+## Claw-SWE-Bench Coding/SWE matched-model groups
+
+Claw-SWE-Bench is a direct S1 family only for the Coding/SWE domain. It is therefore stored as a domain projection beside the general PawBench baseline, not as a replacement for universal S1 capability.
+
+Immutable sources:
+
+```text
+TokenRhythm/claw-swe-bench@fcece5f4c0817430ce953b52c80c931a40cd9b83
+claw-swe-bench/claw-swe-bench.github.io@191d0c62a0f72fb0bc1f0eb47b6f1e15950e725f
+```
+
+The committed leaderboard identifies the fixed-model section as `Same Model × Different Claws` and records the 350-task full-set results.
+
+### Qwen 3.6-flash
+
+```text
+model: Qwen 3.6-flash
+tasks: 350
+
+OpenClaw     66.0%   231 / 350   $71.5    636.0 s
+Hermes Agent 62.6%   219 / 350   $103.3   638.6 s
+```
+
+### GLM 5.1
+
+```text
+model: GLM 5.1
+tasks: 350
+
+OpenClaw     73.4%   257 / 350   $277.0   586.8 s
+Hermes Agent 71.1%   249 / 350   $330.6   675.1 s
+```
+
+Both groups are stored as:
+
+```text
+comparison.mode: matched-model
+comparison.scope: coding-swe
+system_compatibility: adapter-preserved
+```
+
+The benchmark implementation holds the task set, prompting contract, Docker/workspace membrane, standard timeout, runner-side patch collection and official SWE-bench evaluator fixed while the harness varies. Each instance starts in a fresh container, and OpenClaw additionally receives a throwaway agent per instance.
+
+The pinned sources do not establish exact historical OpenClaw or Hermes Agent upstream versions/revisions for these runs. Those fields remain `null`, with `revision_match: unknown`; current canonical `assessment_ref` is used only as the lineage anchor.
+
+The two model cells are robustness evidence for the same applied domain. They must not be averaged into a composite score or used to claim an overall harness ranking.
+
+### Coding/SWE non-claims
+
+- Coding/SWE performance is not universal S1 capability.
+- A test, review, planning, recovery or tooling step inside a coding task does not establish S3*, S3, S4 or another VSM function by vocabulary association.
+- Fresh-container evaluation does not establish or test experimental self-organizing `S`; it intentionally prevents persistent cross-task adaptation from contaminating the ordinary baseline.
+- These scores do not determine `A/C/P/—/?` ownership states.
 
 ## Previous SWE-bench comparison group
 
