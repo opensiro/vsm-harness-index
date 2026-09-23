@@ -1,0 +1,49 @@
+name: admit nac render
+on:
+  push:
+    branches: [admit-nac-211]
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit and render
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('assessments/nac.md')
+          s=p.read_text()
+          s=s.replace('status: proposed','status: included',1)
+          p.write_text(s)
+          cat=Path('data/catalog.psv')
+          text=cat.read_text()
+          row='211|nac|nac|https://github.com/arcee-ai/nac|2026-03-28T04:02:01Z|index-addition|fd75f2a000fd794a3a5c2184437d3a5e6c2a0437|2026-09-23'
+          if row not in text:
+              cat.write_text(text.rstrip()+"\n"+row+"\n")
+          sig=Path('data/signatures.psv')
+          text=sig.read_text()
+          row='211|nac|nac runs autonomous worker-thread S1 units, closes autonomous S2 through orchestrator-owned propagation of material sibling discoveries into re-dispatched worker context, and closes autonomous whole-run S3 through decomposition, dependency steering, dispatch/re-dispatch/fork and synthesis; fresh verification threads independently challenge material completion and return findings into corrective work for autonomous S3*, while no material run-level S4 or S5 closure is established.'
+          if row not in text:
+              sig.write_text(text.rstrip()+"\n"+row+"\n")
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/nac.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md METRICS.md README.md analytics/temporal.md data/metrics.json
+          git commit -m 'admit: render nac canonical inclusion'
+          git push
