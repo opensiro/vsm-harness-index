@@ -80,14 +80,18 @@ def main() -> None:
         for entry in benchmark_map.get("entries", [])
         if entry.get("function") == "S2" and entry.get("fit") == "direct"
     }
-    if reviewed_direct_s2 != {"dpbench"}:
+    expected_direct_s2 = {"dpbench", "stale-semantic-coordination"}
+    if reviewed_direct_s2 != expected_direct_s2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
+    if coverage.get("direct_benchmark_family_count") != len(reviewed_direct_s2):
+        fail("direct_benchmark_family_count does not match reviewed direct-S2 map")
 
     cases = coverage.get("cases")
     if not isinstance(cases, list) or not cases:
         fail("coverage cases must be a non-empty list")
 
     seen: set[str] = set()
+    by_id: dict[str, dict] = {}
     for case in cases:
         case_id = case.get("case_id")
         if not isinstance(case_id, str) or not case_id:
@@ -95,6 +99,7 @@ def main() -> None:
         if case_id in seen:
             fail(f"duplicate case_id: {case_id}")
         seen.add(case_id)
+        by_id[case_id] = case
 
         if case.get("coverage_class") not in COVERAGE_CLASSES:
             fail(f"{case_id}: invalid coverage_class")
@@ -123,6 +128,18 @@ def main() -> None:
             elif case["coverage_class"] == "native-proxy":
                 if fields.get("autonomy_s2") in {None, "—", "?"}:
                     fail(f"{case_id}: native-proxy system does not currently establish S2")
+
+    stale = by_id.get("stale-semantic-coordination-direct-scaffolded")
+    if stale is None:
+        fail("missing STALE direct-S2 coverage case")
+    if stale.get("benchmark_fit") != "direct":
+        fail("STALE must remain direct S2 at its benchmark-defined boundary")
+    if stale.get("coverage_class") != "direct-scaffolded":
+        fail("STALE coverage class drift")
+    if stale.get("system_compatibility") != "benchmark-scaffolded":
+        fail("STALE must remain benchmark-scaffolded")
+    if stale.get("canonical_harness_id") is not None:
+        fail("STALE must not claim canonical harness S2 ownership")
 
     representative = coverage.get("representative_canonical_s2_systems_inspected")
     if not isinstance(representative, list) or not representative:
