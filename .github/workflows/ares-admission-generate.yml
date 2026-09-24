@@ -1,0 +1,81 @@
+name: Generate ARES admission
+
+on:
+  push:
+    branches:
+      - admit-ares-241
+    paths:
+      - .github/workflows/ares-admission-generate.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-ares-241
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Apply canonical admission inputs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/ares.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' not in text:
+              raise SystemExit('ARES assessment is not proposed')
+          assessment.write_text(text.replace('status: proposed', 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|ares|' in catalog_text:
+              raise SystemExit('ARES already present in catalog')
+          catalog.write_text(
+              catalog_text + '\n241|ares|ARES|https://github.com/Timwood0x10/ARES|2026-03-13T02:48:23Z|index-addition|f03153acace190c555c3721019407a7df47c139f|2026-09-25\n',
+              encoding='utf-8',
+          )
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|ares|' in signatures_text:
+              raise SystemExit('ARES already present in signatures')
+          signature = (
+              'ARES closes autonomous S1 through its model-driven L2 planner loop; deterministic kernel scheduling '
+              'closes S2=C and current-control S3=C(P), while production runtime-evidence strategy evolution closes '
+              'S4=C(P) with optional operator approval; flight/eval paths do not establish S3*, and no S5 identity '
+              'closure is established.'
+          )
+          signatures.write_text(signatures_text + '\n241|ares|' + signature + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Validate canonical projections
+        run: |
+          python scripts/validate_tldr.py
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit generated admission
+        run: |
+          git config user.name xLagerFeuer
+          git config user.email '41616537+xLagerFeuer@users.noreply.github.com'
+          git add assessments/ares.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md METRICS.md data/metrics.json README.md FULL_A.md
+          if git diff --cached --quiet; then
+            echo 'No admission changes generated'
+            exit 1
+          fi
+          git commit -m 'index: admit ARES at catalog 241'
+          git push origin HEAD:admit-ares-241
