@@ -49,6 +49,7 @@ REQUIRED_CASE_IDS = {
     "omnigent-polly-reviewer-native-no-direct-results",
     "thclaws-team-audit-native-no-direct-results",
     "reigen-verification-native-no-direct-results",
+    "redteam-adversarial-review-native-no-direct-results",
 }
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
@@ -293,6 +294,7 @@ def main() -> None:
         "omnigent-polly-reviewer-native-no-direct-results": "omnigent",
         "thclaws-team-audit-native-no-direct-results": "thclaws",
         "reigen-verification-native-no-direct-results": "reigen",
+        "redteam-adversarial-review-native-no-direct-results": "redteam",
     }
     for case_id, harness_id in expected_native_no_results.items():
         case = by_id[case_id]
