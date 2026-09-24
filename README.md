@@ -50,7 +50,7 @@ assessments/<harness_id>.md
 
 | Included | Catalog | Reassessments | Full-A |
 | ---: | ---: | ---: | ---: |
-| **210** | 223 | 81 | 1 |
+| **210** | 224 | 81 | 1 |
 
 **Next corpus milestone:** 210/250 (84.0%).
 
@@ -136,4 +136,4 @@ CI additionally validates active-version assessment structure using the version-
 
 ## License
 
-Repository code and original documentation are licensed under [Apache License 2.0](LICENSE). The adapted discovery dataset and generated comparative views retain the licensing described in [SOURCES.md](SOURCES.md). Linked projects retain their own terms.
+Repository code and original documentation are licensed under [Apache License 2.0](LICENSE). The adapted discovery dataset and generated comparative views retain the licensing described in [SOURCES.md](SOURCES.md).
