@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 534,
+  "reviewed_at": "2026-09-24",
+  "candidate_cell_id": "adaptive-auto-harness-polybench-public-baselines-v1",
+  "preflight_disposition": "blocked",
+  "execution_authorized": false,
+  "primary_baseline_after_preflight": "gap",
+  "evidence_mode": "public-results-only",
+  "candidate_evidence": {
+    "paper": "https://arxiv.org/abs/2606.01770",
+    "public_mirror_repository": "https://github.com/A-EVO-Lab/AdaptiveHarness",
+    "public_mirror_revision": "c1ea7d60c009519f5c037f7db9d47e97063bb353",
+    "mirror_declared_canonical_lineage": "https://github.com/A-EVO-Lab/a-evolve/tree/release/adaptive-auto-harness",
+    "benchmark": "PolyBench",
+    "reported_methods": [
+      "A-Evolve",
+      "GEPA",
+      "Meta-Harness",
+      "Continual Harness",
+      "SkillOS",
+      "Adaptive Auto-Harness"
+    ]
+  },
+  "gates": [
+    {
+      "gate_id": "public-cross-method-comparison",
+      "status": "satisfied",
+      "finding": "The first-party paper and released plotting artifact report multiple auto-harness methods on the same PolyBench comparison surface, including A-Evolve, GEPA, Meta-Harness, Continual Harness, SkillOS and Adaptive Auto-Harness.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770",
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/evaluations/analysis_poly/plot_pareto_frontier.py"
+      ]
+    },
+    {
+      "gate_id": "common-polybench-stream",
+      "status": "satisfied",
+      "finding": "The released analysis code describes one dot per method on the same PolyBench stream and derives Return, Accuracy and Coverage from the shared PolyBench market index and per-method result directories.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/evaluations/analysis_poly/plot_pareto_frontier.py",
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/scripts/poly_hypothesis.sh"
+      ]
+    },
+    {
+      "gate_id": "common-result-surface",
+      "status": "satisfied",
+      "finding": "The public analysis applies the same PolyBench summarization surface to method result directories and plots Return, Accuracy and Coverage, so a common reported outcome surface exists even though implementation provenance is incomplete.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/evaluations/analysis_poly/plot_pareto_frontier.py"
+      ]
+    },
+    {
+      "gate_id": "mirror-independent-system-identity",
+      "status": "satisfied",
+      "finding": "The AdaptiveHarness README explicitly declares the repository a mirror and identifies A-Evolve release/adaptive-auto-harness as the canonical actively maintained code. The mirror is therefore treated as the same release lineage for deduplication and is not counted as an independent second canonical S4 system.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/README.md",
+        "https://github.com/A-EVO-Lab/a-evolve/tree/release/adaptive-auto-harness"
+      ]
+    },
+    {
+      "gate_id": "native-baseline-implementation-provenance",
+      "status": "blocked",
+      "finding": "The released algorithms package explicitly states that comparison baselines gepa, meta_harness, skillos, continual_harness and mas_adaptive_skill are not shipped in the released version; the plotting artifact consumes pre-existing result directories instead of binding those rows to inspectable native upstream implementations.",
+      "blocking_effect": "Do not admit the public comparison as matched canonical S4 evidence unless primary evidence binds each candidate row to an immutable implementation revision and establishes that the system's own native or adapter-preserved S4 path ran.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/agent_evolve/algorithms/__init__.py",
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/evaluations/analysis_poly/plot_pareto_frontier.py"
+      ]
+    },
+    {
+      "gate_id": "immutable-upstream-revision-binding",
+      "status": "not_reached",
+      "finding": "Immutable upstream revisions for the named comparison methods cannot be promoted to verified row bindings while the released artifact does not expose the baseline implementations that produced the plotted result directories.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/agent_evolve/algorithms/__init__.py"
+      ]
+    },
+    {
+      "gate_id": "canonical-s4-linkage",
+      "status": "not_reached",
+      "finding": "Canonical Index S4 ownership cannot be linked to the named comparison rows until exact evaluated system identities and revisions are established; method names alone are not sufficient organizational evidence.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/BASELINE.md"
+      ]
+    },
+    {
+      "gate_id": "matched-model-provider-and-budget",
+      "status": "not_reached",
+      "finding": "The released A-Evolve PolyBench launcher exposes common solver/evolver model controls for its shipped experiment cells, but equality for the unshipped comparison baseline implementations cannot be verified before their implementation and launch provenance is recovered.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/scripts/poly_hypothesis.sh"
+      ]
+    },
+    {
+      "gate_id": "ordinary-s4-regulator-freeze",
+      "status": "not_reached",
+      "finding": "The ordinary-S4 frozen-regulator boundary cannot be audited for named comparison baselines whose producing implementations and immutable revisions are not exposed in the released artifact.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/s4-system-benchmarks/README.md"
+      ]
+    }
+  ],
+  "results": null,
+  "non_claim": "This preflight records a provenance blocker for a promising public cross-method comparison. It does not say that any named baseline lacks S4 capability, does not rank the methods, does not treat the AdaptiveHarness mirror as a second independent system, and does not change the S4 primary baseline from gap."
+}
