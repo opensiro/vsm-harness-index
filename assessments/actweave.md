@@ -27,7 +27,7 @@ autonomy_s5: —
 - Relevant environment: external model-provider APIs; enterprise HTTP services reached through Provider/Connection; AAP business applications; external A2A agents; console operators; infrastructure such as PostgreSQL, Redis and MinIO.
 - Standard-distribution boundary: ActWeave's own Go backend, runtime/control services and shipped configuration/governance machinery are inside. Model endpoints, enterprise APIs and remote A2A agents are dependencies and do not donate autonomy.
 - Credited operating / distribution surfaces: `backend/internal/agentrun/runtime.go`; `backend/internal/einoruntime/agentic_engine.go`; `backend/internal/einoruntime/agentic_agent_builder.go`; `backend/internal/agentdelegation/`; `backend/internal/agentaudit/`; documented Workflow/Tool/AAP/A2A runtime paths.
-- Adjacent first-party surfaces excluded from positive ownership claims: repository-development CI/docs, operator choices made outside the runtime, configuration objects without a closed organizational decision loop, and external Agents/services whose internal decision rights are not owned by ActWeave.
+- Adjacent first-party surfaces excluded from ownership: repository-development CI/docs, operator choices made outside the runtime, configuration objects without a closed organizational decision loop, and external Agents/services whose internal decision rights are not owned by ActWeave.
 - First-party operating / deployment modes considered: Agentic model/tool execution; async AgentRun start/cancel/continue-after-confirmation; in-workspace INLINE/TASK delegation; root-shared delegation budgets; deterministic Workflow graph execution; Tool publishing/testing; AAP conversations/runs/interactions; configured A2A inbound/outbound paths; trace/audit query UI.
 - Recursion level: one ActWeave installation. Hosted Agents are operational units. Delegated child Agents and Workflow nodes can form lower-level task organizations, but plurality/topology does not itself establish installation-level metasystem functions.
 - Reviewed revision: `ea0451acc090977c14c1c8d9d0b4d2bee5df4238`.
@@ -76,7 +76,7 @@ Delegation can create nested operational units with immutable binding snapshots 
 - Supporting / enforcement mechanisms: typed runner/checkpoint store, Tool catalog validation/disclosure, Tool invocation and iteration budgets, sequential execution, async AgentRun lifecycle, cancel/continue hooks, durable run facts and trace projection.
 - Closure path: runtime request/context → Agentic model turn → model-selected Tool/delegation or answer → first-party action execution → result/event returned into Agentic context → next model turn or terminal/interrupted state.
 - Boundary reachability: `AgenticEngine` and `BuildAgenticAgent` are documented production-target paths; `agentrun.Runtime` is the production facade used by runtime callers.
-- Why this is agent-owned: deterministic machinery constrains and transports the loop, while semantic next-action choice is made by the model-driven Agent over first-party-maintained context/capabilities. No external Agent or business service is used to establish the decision right.
+- Why this is / is not agent-owned: deterministic machinery constrains and transports the loop, while semantic next-action choice is made by the model-driven Agent over first-party-maintained context/capabilities. No external Agent or business service is used to establish the decision right.
 - Evidence: [`agentic_engine.go`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/backend/internal/einoruntime/agentic_engine.go); [`agentic_agent_builder.go`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/backend/internal/einoruntime/agentic_agent_builder.go); [`runtime.go`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/backend/internal/agentrun/runtime.go); [`concepts.md`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/docs/concepts.md).
 - Basis: explicit + structural.
 - Confidence: high.
@@ -92,7 +92,7 @@ Delegation can create nested operational units with immutable binding snapshots 
 - Supporting / enforcement mechanisms: INLINE/TASK delegation bindings, immutable graph snapshots, root-shared delegation budget, sequential Tool execution, Workflow graph dependencies and A2A task exchange.
 - Closure path: parent Agent selects a delegation → first-party runtime dispatches the configured child → child result returns to the parent; budget checks may reject a dispatch when static limits are exceeded. No cross-S1 disturbance is sensed, resolved and returned as a coordination decision.
 - Boundary reachability: delegation and budget paths are shipped and reachable; the negative classification is functional, not due to absence of multi-agent machinery.
-- Why this is not agent-owned S2: delegation, routing and static capacity limits do not by themselves damp oscillation, reconcile incompatible assumptions or resolve contention between viable units.
+- Why this is / is not agent-owned: delegation, routing and static capacity limits do not by themselves damp oscillation, reconcile incompatible assumptions or resolve contention between viable units.
 - Evidence: [`agent_tool.go`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/backend/internal/agentdelegation/agent_tool.go); [`models.go`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/backend/internal/agentdelegation/models.go); [`concepts.md`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/docs/concepts.md).
 - Basis: explicit + structural negative search.
 - Confidence: high.
@@ -117,7 +117,7 @@ Delegation can create nested operational units with immutable binding snapshots 
 - Supporting / enforcement mechanisms: management-plane configuration, published Agent/Tool/Workflow versions, run cancellation, continuation leases, runtime budgets, Workspace/RBAC and deterministic Workflow execution.
 - Closure path: operators/configuration establish permitted resources and callers can cancel/continue particular runs; runtime enforces those choices locally. No installation-wide current-management assessment → intervention → operational feedback loop closes autonomously.
 - Boundary reachability: these controls are shipped first-party surfaces; they are classified by function rather than by naming.
-- Why this is not agent-owned: current-control decisions remain local execution rules or operator/API decisions, not a distinct S3 decision owner within the harness.
+- Why this is / is not agent-owned: current-control decisions remain local execution rules or operator/API decisions, not a distinct S3 decision owner within the harness.
 - Evidence: [`runtime.go`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/backend/internal/agentrun/runtime.go); [`architecture.md`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/docs/architecture.md); [`concepts.md`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/docs/concepts.md).
 - Basis: explicit + structural negative search.
 - Confidence: medium-high.
@@ -139,7 +139,7 @@ Delegation can create nested operational units with immutable binding snapshots 
 - Supporting / enforcement mechanisms: fail-closed delegation audit rows, trace timelines, status/statistics aggregation, admin audit UI, Tool tests/trials and retained run evidence.
 - Closure path: operations write evidence → audit service loads/aggregates evidence → admin can inspect/export it. The first-party path stops before independent challenge → corrective feedback closure.
 - Boundary reachability: audit query and delegation evidence are concrete shipped code paths.
-- Why this is not agent-owned: logging, trace aggregation and pre-dispatch evidence requirements make behavior inspectable but do not supply the independent semantic audit right required by S3*.
+- Why this is / is not agent-owned: logging, trace aggregation and pre-dispatch evidence requirements make behavior inspectable but do not supply the independent semantic audit right required by S3*.
 - Evidence: [`agentaudit/service.go`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/backend/internal/agentaudit/service.go); [`agentdelegation/agent_tool.go`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/backend/internal/agentdelegation/agent_tool.go); [`architecture.md`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/docs/architecture.md).
 - Basis: explicit + structural negative search.
 - Confidence: high.
@@ -161,7 +161,7 @@ Delegation can create nested operational units with immutable binding snapshots 
 - Supporting / enforcement mechanisms: Agent prompt/model/capability configuration, Workflow drafts/revisions/trials/publishing, Tool test/publish lifecycle, durable run/context state and external service/model configuration.
 - Closure path: human/operator configuration → trial/test/publish → later runtime use. The missing segment is a first-party prospective intelligence/adaptation decision that closes the loop without inheriting the operator's external judgment.
 - Boundary reachability: configuration and publishing surfaces are shipped; their function remains lifecycle management rather than S4.
-- Why this is not agent-owned: persistence, revisions and publishing provide memory/change mechanisms but no autonomous outside/future sensing and adaptation selection.
+- Why this is / is not agent-owned: persistence, revisions and publishing provide memory/change mechanisms but no autonomous outside/future sensing and adaptation selection.
 - Evidence: [`architecture.md`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/docs/architecture.md); [`concepts.md`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/docs/concepts.md); [`agentic_engine.go`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/backend/internal/einoruntime/agentic_engine.go).
 - Basis: explicit + structural negative search.
 - Confidence: medium-high.
@@ -183,7 +183,7 @@ Delegation can create nested operational units with immutable binding snapshots 
 - Supporting / enforcement mechanisms: Workspace/RBAC, platform-administrator permissions, Agent/Tool/Workflow configuration and publishing, AAP credentials/grants/scopes, A2A exposure/auth policy and runtime feature flags.
 - Closure path: operators configure policy-like objects → first-party runtime enforces them. The repository does not establish identity-level issue → legitimate ultimate authority → returned governing policy closure.
 - Boundary reachability: access and governance objects are shipped and documented; negative classification follows the Profile's distinction between enforcement/configuration and S5 ownership.
-- Why this is not agent-owned: the system enforces configured permissions and published versions but does not itself own ultimate identity/policy judgment.
+- Why this is / is not agent-owned: the system enforces configured permissions and published versions but does not itself own ultimate identity/policy judgment.
 - Evidence: [`architecture.md`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/docs/architecture.md); [`concepts.md`](https://github.com/chenow9/act-weave/blob/ea0451acc090977c14c1c8d9d0b4d2bee5df4238/docs/concepts.md).
 - Basis: explicit + structural negative search.
 - Confidence: high.
