@@ -11,6 +11,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 SELECTION = HERE / "primary-baselines.json"
+BENCHMARK_MAP = HERE / "vsm-benchmark-family-map" / "map.json"
 OUTPUT = HERE / "FUNCTION-BASELINES.md"
 FUNCTION_ORDER = ("S1", "S2", "S3", "S3*", "S4", "S5")
 SUPPORTED_STATUSES = {"selected", "gap"}
@@ -60,6 +61,39 @@ def selected_primary(function: str, item: dict) -> tuple[str, str]:
     if not isinstance(reference_model, str) or not reference_model:
         fail(f"{function}: selected primary reference_model missing")
     return benchmark_name, reference_model
+
+
+def validate_reviewed_direct_families(function: str, item: dict, benchmark_map: dict) -> None:
+    direct_ids = {
+        entry.get("benchmark_id")
+        for entry in benchmark_map.get("entries", [])
+        if isinstance(entry, dict)
+        and entry.get("function") == function
+        and entry.get("fit") == "direct"
+    }
+    if None in direct_ids:
+        fail(f"{function}: direct benchmark-map entry missing benchmark_id")
+
+    reviewed = item.get("reviewed_direct_families", [])
+    if not isinstance(reviewed, list):
+        fail(f"{function}: reviewed_direct_families must be a list")
+
+    reviewed_ids: list[str] = []
+    for family in reviewed:
+        if not isinstance(family, dict):
+            fail(f"{function}: reviewed_direct_families entries must be objects")
+        benchmark_id = family.get("benchmark_id")
+        if not isinstance(benchmark_id, str) or not benchmark_id:
+            fail(f"{function}: reviewed direct family missing benchmark_id")
+        reviewed_ids.append(benchmark_id)
+
+    if len(reviewed_ids) != len(set(reviewed_ids)):
+        fail(f"{function}: duplicate reviewed direct family")
+    if set(reviewed_ids) != direct_ids:
+        fail(
+            f"{function}: reviewed_direct_families drift from benchmark map; "
+            f"selection={sorted(reviewed_ids)}, map={sorted(direct_ids)}"
+        )
 
 
 def gap_reason(function: str, item: dict) -> str:
@@ -119,8 +153,6 @@ def evidence_summary(coverage: dict, path: Path) -> str:
         value = coverage[field]
         if not isinstance(value, int) or value < 0:
             fail(f"{coverage.get('function')}: {field} must be a non-negative integer")
-        # Some function-specific schemas use different field names for the same
-        # concept. Preserve the source schema without printing duplicate labels.
         if label in seen_labels:
             continue
         seen_labels.add(label)
@@ -130,6 +162,7 @@ def evidence_summary(coverage: dict, path: Path) -> str:
 
 def render() -> str:
     selection = load_json(SELECTION)
+    benchmark_map = load_json(BENCHMARK_MAP)
     functions = selection.get("functions")
     if not isinstance(functions, dict):
         fail("primary-baselines.json functions must be an object")
@@ -154,6 +187,7 @@ def render() -> str:
             rows.append((function, status, family, model, evidence))
             continue
 
+        validate_reviewed_direct_families(function, item, benchmark_map)
         reason = gap_reason(function, item)
         coverage, coverage_path = load_gap_coverage(function)
         evidence = evidence_summary(coverage, coverage_path)
