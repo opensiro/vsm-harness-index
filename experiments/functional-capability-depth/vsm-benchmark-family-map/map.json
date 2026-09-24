@@ -1,151 +1,40 @@
 {
   "schema_version": 1,
-  "status": "experimental-non-normative",
-  "selected_at": "2026-09-23",
-  "tracking_issue": 409,
-  "selection_gate": [
-    "function-valid",
-    "matched-harness",
-    "canonical-linkable",
-    "frozen-repertoire-compatible",
-    "public-reproducible",
-    "scope-honest"
-  ],
-  "functions": {
-    "S1": {
-      "status": "selected",
-      "scope": "general",
-      "primary": {
-        "benchmark_id": "pawbench",
-        "benchmark_name": "PawBench v1.0",
-        "primary_source": "https://github.com/agentscope-ai/PawBench",
-        "comparison_design": "matched-model-cross-harness",
-        "reference_model": "qwen3.6-35b-a3b",
-        "task_count": 150,
-        "canonical_harness_ids": [
-          "qwenpaw",
-          "openclaw",
-          "hermes-agent"
-        ],
-        "canonical_state_required_for_first_cell": "S1=A",
-        "score_storage": "shared-raw-observation-layer",
-        "provenance_note": "Published PawBench rows predate the current September 2026 canonical review refs; later observations must preserve the published harness versions and historical-lineage relation explicitly.",
-        "grading_note": "PawBench v1.0 mixes automated, LLM-judge and hybrid grading; grading mode remains part of benchmark identity."
-      },
-      "domains": {
-        "coding_swe": {
-          "status": "domain_projection",
-          "primary": {
-            "benchmark_id": "claw-swe-bench",
-            "benchmark_name": "Claw-SWE-Bench",
-            "primary_source": "https://claw-swe-bench.github.io/",
-            "comparison_design": "matched-model-cross-harness",
-            "reference_model": "Qwen 3.6-flash",
-            "task_count": 350,
-            "verified_canonical_harness_ids": [
-              "openclaw",
-              "hermes-agent"
-            ],
-            "scope_note": "Software-engineering specific; do not promote this result to universal S1 capability."
-          },
-          "additional_evidence": [
-            {
-              "benchmark_id": "frontierharness-v1.0",
-              "benchmark_name": "FrontierHarness Eval v1.0",
-              "primary_source": "https://github.com/frontier-harness-eval/eval",
-              "reference_model": "Kimi K3",
-              "scope_note": "Software-engineering and terminal-task scope; useful for broad canonical harness overlap and cost/cache/time robustness checks."
-            }
-          ]
-        }
-      }
-    },
-    "S2": {
-      "status": "gap",
-      "reviewed_direct_families": [
-        {
-          "benchmark_id": "dpbench",
-          "benchmark_name": "DPBench",
-          "primary_source": "https://github.com/najmulhasan-code/dpbench"
-        },
-        {
-          "benchmark_id": "stale-semantic-coordination",
-          "benchmark_name": "STALE semantic-coordination benchmark",
-          "primary_source": "https://github.com/illinoisdata/STALE-bench/tree/f7bc831e4eff08b9652acd893553824636ae3985"
-        }
-      ],
-      "blocking_reason": "Reviewed direct S2 families exercise benchmark-defined coordination organizations and disturbance/attenuation relations, but published evidence does not yet provide a matched comparison of native S2 implementations across canonical harnesses."
-    },
-    "S3": {
-      "status": "gap",
-      "reviewed_direct_families": [
-        {
-          "benchmark_id": "clawarena-team",
-          "benchmark_name": "ClawArena-Team",
-          "primary_source": "https://github.com/aiming-lab/ClawArena/tree/main/ClawArena-Team"
-        },
-        {
-          "benchmark_id": "loop-back-authority",
-          "benchmark_name": "Loop-Back Authority paired manager-control experiment",
-          "primary_source": "https://github.com/cihatburak/loop-back-authority-llm-agents/tree/6f26a97cafb0b463a45cdc40b5348351d844f7a5"
-        },
-        {
-          "benchmark_id": "multi-agent-orchestration-supervisor-ablation",
-          "benchmark_name": "Multi-Agent Orchestration native supervisor ablation",
-          "primary_source": "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/docs/evaluation-benchmark.md"
-        }
-      ],
-      "blocking_reason": "Reviewed direct S3 families now include a canonical native within-system current-control ablation, but public evidence still does not provide a matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell."
-    },
-    "S3*": {
-      "status": "gap",
-      "reviewed_direct_families": [
-        {
-          "benchmark_id": "truecall-runtime-verification",
-          "benchmark_name": "TrueCall silent-failure runtime verification",
-          "primary_source": "https://github.com/abhid1234/truecall/tree/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2"
-        },
-        {
-          "benchmark_id": "swe-review",
-          "benchmark_name": "SWE-Review-Bench generate-review-revise evaluation",
-          "primary_source": "https://github.com/LegoX/SWE-Review/tree/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench"
-        },
-        {
-          "benchmark_id": "harness-bench-adversarial-review",
-          "benchmark_name": "harness-bench adversarial review-revision evaluation",
-          "primary_source": "https://github.com/tdrml/harness-bench/tree/f2fb12cc28ac90dce6eba873788b5632d6fc5431"
-        }
-      ],
-      "blocking_reason": "Reviewed direct S3* families close complementary audit and corrective-return loops at composed or benchmark-defined boundaries, including controlled reviewer-to-revision-to-reverification evidence, but public evidence does not yet provide a matched comparison of native S3* implementations across canonical harnesses."
-    },
-    "S4": {
-      "status": "gap",
-      "reviewed_direct_families": [
-        {
-          "benchmark_id": "a-evolve-harness-evolution",
-          "benchmark_name": "A-Evolve harness evolution"
-        },
-        {
-          "benchmark_id": "skillevolbench",
-          "benchmark_name": "SkillEvolBench"
-        },
-        {
-          "benchmark_id": "evoharnessbench-self-evolving",
-          "benchmark_name": "EvoHarnessBench self-evolving mode"
-        },
-        {
-          "benchmark_id": "evo-bench",
-          "benchmark_name": "Evo-Bench"
-        }
-      ],
-      "blocking_reason": "Current direct families evaluate benchmark-defined or composed adaptation loops rather than matched native S4 implementations across canonical harnesses.",
-      "frozen_repertoire_note": "Ordinary S4 evaluation may use the current S4 repertoire to adapt other organizational capability; persistent improvement of S4's own decision/feedback repertoire belongs to the separate self-organizing-S evidence class."
-    },
-    "S5": {
-      "status": "gap",
-      "blocking_reason": "No reviewed benchmark family currently provides direct legitimate ultimate-policy/identity authority, actual adjudication or revision, and return of the newly decided policy into subsequent operation."
-    }
-  },
-  "raw_metric_rule": "Do not duplicate numeric benchmark results in this selection record. Store each result once in the shared raw observation layer and reference it from function/domain projections.",
-  "replacement_rule": "A stronger benchmark may replace a primary baseline without deleting historical observations or secondary/domain evidence."
+  "reviewed_at": "2026-09-24",
+  "profile_version": "0.2.4",
+  "fit_vocabulary": ["direct", "proxy", "unsuitable", "unknown"],
+  "system_compatibility_vocabulary": ["native-system", "adapter-preserved", "benchmark-scaffolded", "unclear"],
+  "entries": [
+    {"function":"S1","benchmark_id":"terminal-bench","benchmark_name":"Terminal-Bench / Harbor","fit":"direct","primary_source":"https://hub.harborframework.com/datasets/terminal-bench","evaluated_object":"agent performing end-to-end tasks in a terminal environment","evaluation_mode":"execution-grounded","system_linkage":"observation-specific","non_claim":"Task performance does not determine S1 autonomy ownership."},
+    {"function":"S1","benchmark_id":"swe-bench","benchmark_name":"SWE-bench family","fit":"direct","primary_source":"https://www.swebench.com/","evaluated_object":"software-engineering agent editing repository state to resolve real issues","evaluation_mode":"execution-grounded","system_linkage":"observation-specific","non_claim":"Resolved rate is configuration-specific and does not establish VSM ownership."},
+    {"function":"S1","benchmark_id":"claw-swe-bench","benchmark_name":"Claw-SWE-Bench","fit":"direct","primary_source":"https://github.com/TokenRhythm/claw-swe-bench/tree/fcece5f4c0817430ce953b52c80c931a40cd9b83","evaluated_object":"agent harness operating on isolated GitHub issue-resolution tasks and modifying repository state under a common adapter and evaluation membrane","evaluation_mode":"execution-grounded","system_linkage":"observation-specific","domain_scope":"coding-swe","non_claim":"Direct S1 fit is specific to Coding/SWE operational capability; harness, tool, planning or orchestration behavior does not establish S2-S5 or universal S1 capability."},
+    {"function":"S1","benchmark_id":"frontierharness-v1.0","benchmark_name":"FrontierHarness Eval v1.0","fit":"direct","primary_source":"https://github.com/frontier-harness-eval/eval/tree/e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63","evaluated_object":"coding-agent harness performing a frozen mixed set of terminal and software-engineering tasks under fixed Kimi K3 and a common fresh-restore runtime/evaluation membrane","evaluation_mode":"execution-grounded","system_linkage":"observation-specific","domain_scope":"coding-swe","scope_note":"21 Terminal-Bench 2.1 tasks plus 9 DeepSWE v1.1 tasks; stored under the existing Coding/SWE applied projection but broader than pure SWE","non_claim":"Direct S1 fit is limited to this mixed technical terminal/SWE distribution; display names do not establish canonical identity and benchmark behavior does not establish S2-S5, self-organizing S, or VSM ownership."},
+    {"function":"S2","benchmark_id":"dpbench","benchmark_name":"DPBench","fit":"direct","primary_source":"https://arxiv.org/abs/2602.13255","evaluated_object":"multiple agents coordinating under simultaneous shared-resource contention","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Direct S2 fit applies to the benchmark-defined multi-agent organization, not to an external harness by model-name association."},
+    {"function":"S2","benchmark_id":"stale-semantic-coordination","benchmark_name":"STALE semantic-coordination benchmark","fit":"direct","primary_source":"https://github.com/illinoisdata/STALE-bench/tree/f7bc831e4eff08b9652acd893553824636ae3985","evaluated_object":"parallel coding workers whose patches are individually correct but can introduce semantic failures only when composed, with benchmark-controlled visibility or communication used to attenuate the interference","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Direct S2 fit belongs to the benchmark-defined parallel-work and information-sharing conditions; mini-swe-agent, OpenHands, or another task-solving harness used underneath does not thereby own the coordination function, and these results are not native canonical-harness S2 observations."},
+    {"function":"S2","benchmark_id":"silo-bench","benchmark_name":"SILO-BENCH","fit":"proxy","primary_source":"https://aclanthology.org/2026.acl-long.1354/","evaluated_object":"role-free multi-agent collaboration under fragmented information","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Communication and distributed computation do not by themselves establish a specific S2 interference/oscillation relation."},
+    {"function":"S2","benchmark_id":"alem","benchmark_name":"alem","fit":"proxy","primary_source":"https://arxiv.org/abs/2606.08340","evaluated_object":"homogeneous agent teams in long-horizon open-ended coordination tasks","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Shared plans, communication and role allocation are not sufficient for direct S2 without a task-level disturbance-plus-attenuation witness."},
+    {"function":"S2","benchmark_id":"multiagentbench","benchmark_name":"MultiAgentBench","fit":"proxy","primary_source":"https://aclanthology.org/2025.acl-long.421/","evaluated_object":"multi-agent collaboration and competition under benchmark-defined coordination protocols","evaluation_mode":"mixed","system_linkage":"benchmark-scaffolded","non_claim":"Collaboration quality and topology comparisons are broader than VSM S2 disturbance attenuation."},
+    {"function":"S3","benchmark_id":"clawarena-team","benchmark_name":"ClawArena-Team","fit":"direct","primary_source":"https://arxiv.org/abs/2606.31174","evaluated_object":"main agent regulating a fixed subagent pool through creation, privileges, inspection, scheduling and dynamic workflow control","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Direct S3 fit is grounded in whole-team visibility and live control rights, not manager/delegation vocabulary; published model results are not native-harness S3 results."},
+    {"function":"S3","benchmark_id":"loop-back-authority","benchmark_name":"Loop-Back Authority paired manager-control experiment","fit":"direct","primary_source":"https://github.com/cihatburak/loop-back-authority-llm-agents/tree/6f26a97cafb0b463a45cdc40b5348351d844f7a5","evaluated_object":"paired five-agent team where roles, prompts, tools, model assignment and data are held fixed while the Manager's right to reject completed worker output and require revision is enabled or removed","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"The experiment directly measures one benchmark-defined S3 current-control authority relation; use of LangGraph underneath does not make the result a native LangGraph S3 observation or establish S3 ownership for any canonical harness."},
+    {"function":"S3","benchmark_id":"multi-agent-orchestration-supervisor-ablation","benchmark_name":"Multi-Agent Orchestration native supervisor ablation","fit":"direct","primary_source":"https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/docs/evaluation-benchmark.md","evaluated_object":"canonical Multi-Agent Orchestration Engine with its first-party live-state supervisor enabled versus the same engine using only deterministic HeuristicRouter current-control, with retry and parallelism disabled in both clean comparison arms","evaluation_mode":"execution-grounded-deterministic","system_linkage":"native-canonical-observation","non_claim":"The within-system ablation directly exercises native S3 current-control capability for canonical multi-agent-orchestration; it is not a matched cross-harness S3 primary, and retry-only recovery is not credited to the supervisor-only S3 effect."},
+    {"function":"S3","benchmark_id":"enterprise-arena","benchmark_name":"EnterpriseArena","fit":"proxy","primary_source":"https://arxiv.org/abs/2603.23638","evaluated_object":"single CFO-style agent allocating scarce enterprise resources over a long horizon","evaluation_mode":"simulation","system_linkage":"benchmark-scaffolded","non_claim":"Resource allocation is S3-relevant but the benchmark blends current control with prospective reasoning and does not cleanly expose a multi-S1 S3 boundary."},
+    {"function":"S3*","benchmark_id":"auditbench","benchmark_name":"AuditBench","fit":"proxy","primary_source":"https://alignment.anthropic.com/2026/auditbench/","evaluated_object":"investigator agent probing target models for implanted hidden behaviours","evaluation_mode":"mixed","system_linkage":"benchmark-scaffolded","non_claim":"The target is not necessarily the organization's own S1 and findings are not required to close into S3 control."},
+    {"function":"S3*","benchmark_id":"truecall-runtime-verification","benchmark_name":"TrueCall silent-failure runtime verification","fit":"direct","primary_source":"https://github.com/abhid1234/truecall/tree/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2","evaluated_object":"composed tool-using agent plus deterministic post-condition audit path under injected silent tool failures","evaluation_mode":"execution-grounded","system_linkage":"observation-specific","non_claim":"Direct S3* fit applies to the composed audited system; TrueCall adapters do not make Codex, Claude Code or another wrapped harness natively own this external audit layer."},
+    {"function":"S3*","benchmark_id":"swe-review","benchmark_name":"SWE-Review-Bench generate-review-revise evaluation","fit":"direct","primary_source":"https://github.com/LegoX/SWE-Review/tree/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench","evaluated_object":"benchmark-defined composed organization in which a separate reviewer agent explores a candidate PR and repository, emits approve/reject plus structured discrepancy feedback, rejected work returns to the original PR generator for revision, and the revised patch is re-verified through SWE-bench","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Direct S3* fit belongs to the SWE-Review reviewer-revision-verification organization; OpenHands, Harbor, Claude Code, Codex Guardian, PR-generator models, or other execution substrates do not thereby own this complementary audit loop, and these results are not native canonical-harness S3* observations."},
+    {"function":"S3*","benchmark_id":"harness-bench-adversarial-review","benchmark_name":"harness-bench adversarial review-revision evaluation","fit":"direct","primary_source":"https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/runner/run-pilot4.mjs","evaluated_object":"benchmark-defined coding organization in which a separate adversarial reviewer inspects the candidate diff and repository, returns REQUEST_CHANGES findings to the original executor session, the producer revises, and build, visible tests and held-out verification re-check the revised state","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"The benchmark authors state that this reviewer/harness is a clean-room benchmark implementation of production patterns rather than production Telos code; the result is direct composed S3* evidence and must not be attributed as native S3* capability of Telos, Claude Code, or another canonical harness."},
+    {"function":"S4","benchmark_id":"a-evolve-harness-evolution","benchmark_name":"A-Evolve harness-evolution protocol","fit":"direct","primary_source":"https://github.com/A-EVO-Lab/a-evolve/tree/96ed93ba7ee0b9519fc55c963afb47a1975eb1ae","evaluated_object":"benchmark-defined evolving agent whose persistent external harness is updated from execution evidence between task batches and then reused on later tasks","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Direct S4 fit belongs to the benchmark-defined agent-plus-evolver boundary; running a task-solving model or harness inside A-Evolve does not make that external evolver the canonical harness's own S4 implementation."},
+    {"function":"S4","benchmark_id":"skillevolbench","benchmark_name":"SkillEvolBench","fit":"direct","primary_source":"https://github.com/AIoT-MLSys-Lab/SkillEvolBench/tree/9e3daa339987c3cfa624121e1be442593a53d43c","evaluated_object":"agent organization that converts acquisition-task trajectories and verifier feedback into persistent skills and tests them under frozen future deployment with context shift, adversarial variants and composition","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Codex CLI, Claude Code, Gemini CLI or another task solver used by the benchmark does not thereby own the benchmark-hosted Skill Author or its S4 adaptation loop."},
+    {"function":"S4","benchmark_id":"evoharnessbench-self-evolving","benchmark_name":"EvoHarnessBench self-evolving adaptation evaluation","fit":"direct","primary_source":"https://mas-orchestra.salesforceresearch.ai/evoharness/","evaluated_object":"agent with persistent adaptation state updated from accumulated experience while an externally supplied tool/skill/agent harness evolves across stages","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"The direct S4 classification applies only to the self-evolving adaptation setting with persistent inner updates; deployment-only evaluation of externally changing harnesses is not by itself S4 ownership."},
+    {"function":"S4","benchmark_id":"evo-bench","benchmark_name":"Evo-Bench","fit":"direct","primary_source":"https://github.com/RUCAIBox/Evo-Bench/tree/889e4fc8b197f426b444dbf8de217ea15b596fd2","evaluated_object":"benchmark-defined evolver diagnosing validation failures, rewriting a persistent executable policy harness, freezing the selected harness, and measuring later performance on a disjoint held-out evaluation suite under a fixed policy model","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Direct S4 fit belongs to the Evo-Bench evolver-plus-evolving-harness boundary; the fixed policy model or any benchmark task source does not thereby own this adaptation loop, and the result is not a native canonical-harness S4 observation."},
+    {"function":"S4","benchmark_id":"skilllearnbench","benchmark_name":"SkillLearnBench","fit":"proxy","primary_source":"https://github.com/cxcscmu/SkillLearnBench/tree/a0da045a8bf64b8a8ff20730c4d6ef10dc4e2c5b","evaluated_object":"continual-learning methods generating and refining reusable task skills from self or teacher feedback","evaluation_mode":"execution-grounded","system_linkage":"benchmark-scaffolded","non_claim":"Repeated refinement and retry on the same task family does not isolate durable external-and-prospective adaptation as cleanly as frozen future-deployment protocols."},
+    {"function":"S4","benchmark_id":"futuresim","benchmark_name":"FutureSim","fit":"proxy","primary_source":"https://openforecaster.github.io/futuresim/","evaluated_object":"agent updating forecasts and beliefs as chronological real-world information arrives","evaluation_mode":"simulation","system_linkage":"observation-specific","non_claim":"External/prospective belief adaptation does not close full S4 without adaptation options returning into present capability/S3."},
+    {"function":"S4","benchmark_id":"clawarena","benchmark_name":"ClawArena","fit":"proxy","primary_source":"https://arxiv.org/abs/2604.04202","evaluated_object":"agent maintaining beliefs across noisy multi-source evidence and staged environmental updates","evaluation_mode":"execution-grounded","system_linkage":"observation-specific","non_claim":"Dynamic belief revision alone is not the complete S4 adaptation loop."},
+    {"function":"S4","benchmark_id":"adaplanbench","benchmark_name":"AdaPlanBench","fit":"unsuitable","primary_source":"https://arxiv.org/abs/2606.05622","evaluated_object":"agent replanning a current household task as hidden constraints are revealed","evaluation_mode":"interactive","system_linkage":"benchmark-scaffolded","non_claim":"Reactive current-task planning is not S4 by itself."},
+    {"function":"S4","benchmark_id":"costbench","benchmark_name":"CostBench","fit":"unsuitable","primary_source":"https://aclanthology.org/2026.acl-long.584/","evaluated_object":"tool-use agent replanning a current travel task under cost changes and blocking events","evaluation_mode":"interactive","system_linkage":"benchmark-scaffolded","non_claim":"Current-task replanning under failures/cost changes is S1-adjacent rather than full external-and-prospective S4."},
+    {"function":"S5","benchmark_id":"agentgovbench","benchmark_name":"AgentGovBench","fit":"unsuitable","primary_source":"https://github.com/agentic-control-plane/agentgovbench","evaluated_object":"governance layer enforcing pre-existing identity, policy, delegation, rate-limit, audit and isolation rules","evaluation_mode":"deterministic","system_linkage":"observation-specific","non_claim":"Policy enforcement and identity propagation do not establish legitimate ultimate-policy/identity authority."},
+    {"function":"S5","benchmark_id":"rolecde","benchmark_name":"RoleCDE","fit":"proxy","primary_source":"https://aclanthology.org/2026.findings-acl.106/","evaluated_object":"role-playing model resolving conflicts between role-specific values and alignment constraints","evaluation_mode":"scenario-based","system_linkage":"benchmark-scaffolded","non_claim":"Role/value conflict reasoning lacks legitimate organizational ultimate authority and return-to-operation closure."},
+    {"function":"S5","benchmark_id":"agent-valuebench","benchmark_name":"Agent-ValueBench","fit":"proxy","primary_source":"https://github.com/ValueByte-AI/Agent-ValueBench/tree/3527b4a4ea8fc9dde6fbe27cd371c4ba7df76ac1","evaluated_object":"tool-using agents choosing actions under executable value conflicts across multiple value systems","evaluation_mode":"mixed","system_linkage":"benchmark-scaffolded","non_claim":"Expressed value choices do not establish legitimate organizational ultimate-policy or identity authority or return-to-operation closure."},
+    {"function":"S5","benchmark_id":"agentcity","benchmark_name":"AgentCity","fit":"proxy","primary_source":"https://arxiv.org/abs/2604.07007","evaluated_object":"constitutional multi-agent economy with agent legislation of operational smart-contract rules under human-authored foundational governance","evaluation_mode":"simulation","system_linkage":"benchmark-scaffolded","non_claim":"Operational legislation below human-authored foundational authority does not by itself benchmark ownership of the system's ultimate identity or constitutional policy."},
+    {"function":"S5","benchmark_id":"cgst-framework","benchmark_name":"Constitutional AI Governance Stress Test","fit":"proxy","primary_source":"https://github.com/CognitiveThoughtEngine/cgst-framework/tree/a70dd1ffd4b2c462a9c0680b6aa6d6b9ad788cdf","evaluated_object":"agent governance architecture scored against constitutional, authority, autonomy and integrity controls","evaluation_mode":"mixed","system_linkage":"observation-specific","non_claim":"Governance conformance and stress scoring do not execute a legitimate identity-level policy decision, ratification and downstream return-to-operation closure."}
+  ]
 }
