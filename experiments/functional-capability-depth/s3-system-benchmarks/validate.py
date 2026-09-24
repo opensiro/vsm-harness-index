@@ -21,6 +21,7 @@ COVERAGE_CLASSES = {
     "proxy-scaffolded",
     "framework-scaffolded",
     "candidate-boundary-unresolved",
+    "candidate-native-no-direct-results",
 }
 SYSTEM_COMPATIBILITY = {
     "native-system",
@@ -42,6 +43,9 @@ REQUIRED_CASE_IDS = {
     "principalbench-model-orchestrator-proxy",
     "multi-agent-orchestration-native-s3-direct",
     "orchestrabench-failure-recovery-candidate",
+    "cadis-native-s3-no-direct-results",
+    "awaken-native-s3-no-direct-results",
+    "ares-native-s3-no-direct-results",
 }
 DIRECT_OBSERVATION_ID = "multi-agent-orchestration-supervisor-ablation-2026-08"
 DIRECT_CANONICAL_HARNESS = "multi-agent-orchestration"
@@ -237,12 +241,17 @@ def main() -> None:
             fail(f"{case_id}: all primary_sources must be https URLs")
 
         harness_id = case.get("canonical_harness_id")
-        if harness_id is not None:
-            fields = assessment_fields(harness_id)
-            if fields.get("status") != "included":
-                fail(f"{case_id}: canonical assessment is not included")
-            if coverage_class in {"native-proxy", "direct-native"} and fields.get("autonomy_s3") in {None, "—", "?"}:
+        fields = assessment_fields(harness_id) if harness_id is not None else None
+        if fields is not None and fields.get("status") != "included":
+            fail(f"{case_id}: canonical assessment is not included")
+        if coverage_class in {"native-proxy", "direct-native", "candidate-native-no-direct-results"}:
+            if fields is None or fields.get("autonomy_s3") in {None, "—", "?"}:
                 fail(f"{case_id}: canonical system does not currently establish S3")
+        if coverage_class == "candidate-native-no-direct-results":
+            if case.get("system_compatibility") != "native-system":
+                fail(f"{case_id}: native-no-results candidate must be native-system")
+            if case.get("benchmark_fit") != "candidate-direct":
+                fail(f"{case_id}: native-no-results candidate fit drift")
 
     missing_cases = REQUIRED_CASE_IDS - seen
     if missing_cases:
@@ -270,10 +279,6 @@ def main() -> None:
     if direct_native.get("observation_ref") != f"observations.json#{DIRECT_OBSERVATION_ID}":
         fail("Multi-Agent Orchestration direct S3 observation_ref drift")
 
-    # A matched framework benchmark is not sufficient when it bypasses the
-    # exact canonical S3 mode. Keep the current positive and negative controls
-    # mechanically tied to their canonical assessments so later reassessment
-    # forces this coverage interpretation to be revisited.
     astra = by_id["astra-cross-framework-wrong-native-s3-path"]
     inspected = set(astra.get("canonical_harness_ids_inspected", []))
     expected_inspected = {"agno", "autogen-agentchat", "crewai", "langgraph"}
@@ -290,6 +295,23 @@ def main() -> None:
         if fields.get("status") != "included" or fields.get("autonomy_s3") != "—":
             fail(f"Astra negative control {harness_id} no longer has S3=—; review coverage semantics")
 
+    post_closure = {
+        "cadis-native-s3-no-direct-results": ("cadis", "52c55854b1abbcda82839b7a934cbdb16a69b635", "A(P)"),
+        "awaken-native-s3-no-direct-results": ("awaken", "2b0d375004ec8723cf40d8a59c0bb486ebce57e0", "C(P)"),
+        "ares-native-s3-no-direct-results": ("ares", "f03153acace190c555c3721019407a7df47c139f", "C(P)"),
+    }
+    for case_id, (harness_id, review_ref, state) in post_closure.items():
+        case = by_id[case_id]
+        if case.get("canonical_harness_id") != harness_id:
+            fail(f"{case_id}: canonical linkage drift")
+        if case.get("canonical_review_ref") != review_ref:
+            fail(f"{case_id}: stored canonical review_ref drift")
+        fields = assessment_fields(harness_id)
+        if fields.get("review_ref") != review_ref:
+            fail(f"{harness_id}: canonical assessment review_ref changed")
+        if fields.get("autonomy_s3") != state:
+            fail(f"{harness_id}: S3 state changed from reviewed delta")
+
     representative = coverage.get("representative_canonical_s3_systems_inspected")
     if not isinstance(representative, list) or not representative:
         fail("representative canonical S3 cohort is required")
@@ -297,6 +319,8 @@ def main() -> None:
         fail("duplicate harness_id in representative S3 cohort")
     if DIRECT_CANONICAL_HARNESS not in representative:
         fail("direct canonical S3 system missing from representative cohort")
+    if not {"cadis", "awaken", "ares"}.issubset(set(representative)):
+        fail("post-closure S3 canonical deltas missing from representative cohort")
 
     for harness_id in representative:
         fields = assessment_fields(harness_id)
