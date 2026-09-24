@@ -230,3 +230,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 215|jontey-agent-harness|Agent Harness|https://github.com/jontey/agent-harness|2026-09-24T10:22:53Z|index-addition|db6297cb776f6181310d3533c0ebf22d35e66de4|2026-09-24
 216|korus|Korus|https://github.com/surefire-ai/korus|2026-04-16T09:21:59Z|index-addition|ed5ea6a9fca86f43df161a100e913c29fa9b40c9|2026-09-24
 217|redteam|redteam|https://github.com/AscendyProject/redteam|2026-06-08T10:59:19Z|index-addition|c2bedf14aca43cc03330503f35e60e12b72f37ee|2026-09-24
+218|term-mesh|term-mesh|https://github.com/x-mesh/term-mesh|2026-04-22T05:24:42Z|index-addition|36f704695f62d0ae2e6935d9d016cc476fde0477|2026-09-24
