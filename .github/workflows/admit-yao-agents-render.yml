@@ -1,0 +1,55 @@
+name: admit yao agents render
+on:
+  push:
+    branches: [admit-yao-agents-222]
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit Yao Agents and render
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/yao-agents.md')
+          text = assessment.read_text()
+          if 'status: proposed' not in text:
+              raise SystemExit('assessment is not proposed')
+          assessment.write_text(text.replace('status: proposed', 'status: included', 1))
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text()
+          row = '222|yao-agents|Yao Agents|https://github.com/YaoApp/yao|2021-09-06T09:20:27Z|index-addition|a289dd55abe357941506e2114fb8c5ec21b99149|2026-09-24'
+          if row not in catalog_text:
+              catalog.write_text(catalog_text.rstrip() + '\n' + row + '\n')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text()
+          signature = ('222|yao-agents|Yao Agents runs autonomous first-party model/tool/search S1 loops and exposes constructor S2 through forked-context anti-race coordination for parallel A2A agents plus constructor S3 through team-wide execution-slot limits and priority admission; the co-located eval framework is not wired as runtime S3*, recurring task-instruction enrichment does not close external/prospective S4, and no S5 identity/ultimate-policy closure is established.')
+          if signature not in signatures_text:
+              signatures.write_text(signatures_text.rstrip() + '\n' + signature + '\n')
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/yao-agents.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md METRICS.md data/metrics.json README.md
+          git commit -m 'admit: render Yao Agents canonical inclusion'
+          git push
