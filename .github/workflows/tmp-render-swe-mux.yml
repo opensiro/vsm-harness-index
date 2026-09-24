@@ -71,6 +71,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assessments/swe-mux.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md METRICS.md data/metrics.json README.md FULL-A.md
+          git add assessments/swe-mux.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md METRICS.md data/metrics.json README.md
           git commit -m "admit: render swe-mux canonical inclusion"
           git push origin HEAD:${GITHUB_REF_NAME}
