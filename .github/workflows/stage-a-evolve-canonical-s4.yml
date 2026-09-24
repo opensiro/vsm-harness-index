@@ -1,0 +1,163 @@
+name: stage A-Evolve canonical S4
+on:
+  push:
+    branches:
+      - experiment/a-evolve-canonical-s4-517
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit canonical S4 observation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('experiments/functional-capability-depth/s4-system-benchmarks')
+          canonical_path = root / 'canonical_observations.json'
+          coverage_path = root / 'coverage.json'
+          readme_path = root / 'README.md'
+          validator_path = root / 'validate.py'
+
+          canonical = [
+            {
+              'observation_id': 'a-evolve-harness-updating-2026',
+              'function': 'S4',
+              'benchmark_id': 'a-evolve-harness-evolution',
+              'benchmark_fit': 'direct',
+              'evidence_source_class': 'first-party-reported',
+              'boundary_class': 'canonical-native-system',
+              'canonical_harness_id': 'a-evolve',
+              'canonical_assessment_ref': 'assessments/a-evolve.md',
+              'canonical_system_eligible': True,
+              'system_compatibility': 'native-system',
+              'canonical_review_revision': '18ba996dac9843f2759b2cdf8a94022f58fbfeb9',
+              'source_artifact_revision': '96ed93ba7ee0b9519fc55c963afb47a1975eb1ae',
+              'publication_id': 'arXiv:2605.30621',
+              'publication_date': '2026-05-28',
+              'comparison_class': 'controlled-within-system-evolver-study',
+              'benchmarks': ['SWE-bench Verified', 'MCP-Atlas', 'SkillsBench'],
+              'anchor_agents': ['Claude Opus 4.6', 'Claude Sonnet 4.6', 'Qwen3-235B-A22B'],
+              'evolver_models': ['Claude Opus 4.6', 'Claude Sonnet 4.6', 'Claude Haiku 4.5', 'Qwen3-235B-A22B', 'Qwen3-32B', 'GPT-OSS-120B', 'Qwen3.5-9B'],
+              'ordinary_s4_boundary': 'Within each measured agent-evolver pairing, the solve/evolve protocol, evolver prompt template, trajectory window and evolver backbone are fixed while the declared target harness is updated from execution evidence. The target is skills on SWE-bench Verified and SkillsBench, and skills/prompts/memories on MCP-Atlas; the S4 regulator itself is not the adaptation target.',
+              'adaptation_target_by_benchmark': {
+                'SWE-bench Verified': ['skills'],
+                'MCP-Atlas': ['skills', 'prompts', 'memories'],
+                'SkillsBench': ['skills']
+              },
+              'adaptation_loop': [
+                'operational agent executes the next task batch under the current harness',
+                'execution trajectories and outputs become evidence for the A-Evolve evolver',
+                'the fixed evolver procedure proposes and applies a persistent harness update',
+                'the updated harness becomes the next agent state',
+                'later task execution measures whether the changed persistent capability is useful'
+              ],
+              'reported_harness_updating_metrics': {
+                'maximum_best_vs_worst_evolver_spread_pp': 3.1,
+                'qwen3_235b_swe_gain_pp': 8.2,
+                'qwen3_235b_mcp_gain_pp': 0.6,
+                'qwen3_5_9b_skillsbench_gain_pp': 3.8,
+                'opus_4_6_skillsbench_gain_pp': 2.3,
+                'qwen3_235b_skillsbench_gain_pp': 1.5
+              },
+              'metric_note': 'The publication defines harness-updating capability as mean pairwise evolution gain across fixed anchor agents and reports pass-rate gains in percentage points. These values are preserved as a vector of reported observations, not collapsed into a global S4 score.',
+              'comparison_scope_note': 'This is direct quantitative capability evidence for one canonical native S4 system across three task domains and several evolver backbones. It is not a matched cross-harness S4 comparison and does not close the primary-baseline gap.',
+              'provenance_limitation': 'The reported experimental runs come from the first-party harness-evolution release lineage at 96ed93ba7ee0b9519fc55c963afb47a1975eb1ae. That release lineage and canonical review ref 18ba996dac9843f2759b2cdf8a94022f58fbfeb9 diverge in Git history. The canonical review ref nevertheless contains the first-party harness-disentangling artifact and UnifiedEngine port implementing the published Exp0/Exp1 protocol. Preserve the result as first-party-reported historical evidence; it is not independently reproduced at the canonical review revision.',
+              'vsm_interpretation': 'The canonical assessment independently establishes A-Evolve S4=A without using benchmark gains. The published first-party protocol then directly exercises the same organizational function: external task execution evidence is interpreted by the evolver into persistent harness changes that alter later operation while the adaptation regulator remains fixed within each measured run. This therefore supplies the first canonical native direct S4 capability observation, but one system is insufficient for a matched cross-harness primary baseline.',
+              'primary_sources': [
+                'https://arxiv.org/abs/2605.30621',
+                'https://github.com/A-EVO-Lab/a-evolve/tree/96ed93ba7ee0b9519fc55c963afb47a1975eb1ae',
+                'https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/examples/harness-disentangling/README.md',
+                'https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/algorithms/unified/engine.py'
+              ]
+            }
+          ]
+          canonical_path.write_text(json.dumps(canonical, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          coverage = json.loads(coverage_path.read_text(encoding='utf-8'))
+          coverage['canonical_direct_observation_count'] = 1
+          for case in coverage['cases']:
+              if case.get('case_id') == 'a-evolve-direct-composed':
+                  case['finding'] = ('A-Evolve converts task execution evidence into persistent harness updates and evaluates later harness benefit, directly exercising S4 at its benchmark-defined evolving-system boundary. The original family review stored this as composed evidence before A-Evolve had a canonical assessment; after canonical admission #515, a separate first-party-reported canonical observation links the same first-party evolution organization to canonical A-Evolve S4=A without rewriting this historical family record.')
+                  case['canonical_followup_observation_id'] = 'a-evolve-harness-updating-2026'
+                  break
+          else:
+              raise SystemExit('missing a-evolve-direct-composed coverage case')
+          reps = coverage['representative_canonical_s4_systems_inspected']
+          if 'a-evolve' not in reps:
+              reps.append('a-evolve')
+          coverage['canonical_states_at_review']['a-evolve'] = 'A'
+          coverage_path.write_text(json.dumps(coverage, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          readme = readme_path.read_text(encoding='utf-8')
+          old_counts = '''reviewed direct S4 benchmark families/modes: 3\npublished direct evidence records at benchmark/composed boundaries: 3\ncanonical native/adapter-preserved direct-S4 observations: 0'''
+          new_counts = '''reviewed direct S4 benchmark families/modes: 4\npublished direct evidence records at benchmark/composed boundaries: 4\ncanonical native/adapter-preserved direct-S4 observations: 1'''
+          if old_counts not in readme:
+              raise SystemExit('README count block drift')
+          readme = readme.replace(old_counts, new_counts, 1)
+
+          old_ae = '''### A-Evolve harness evolution\n\nReviewed implementation: `A-EVO-Lab/a-evolve@96ed93ba7ee0b9519fc55c963afb47a1975eb1ae`.\n\nThe benchmark-defined organization converts execution evidence into persistent harness changes and measures later benefit. It directly exercises S4 at that composed boundary, but the evolver is benchmark-supplied.'''
+          new_ae = '''### A-Evolve harness evolution\n\nReviewed implementation: `A-EVO-Lab/a-evolve@96ed93ba7ee0b9519fc55c963afb47a1975eb1ae`.\n\nThe first-party protocol converts execution evidence into persistent harness changes and measures later benefit. The original family review stored this at the benchmark/composed boundary because A-Evolve did not yet have a canonical standalone assessment. After #512/#515 independently established and admitted canonical `a-evolve` with `S4=A`, `canonical_observations.json` now links the published A-Evolve evolution run to that native S4 system as first-party-reported historical evidence. The reported release lineage and canonical review ref are divergent, so this is not claimed as a reproduction at the canonical commit.'''
+          if old_ae not in readme:
+              raise SystemExit('README A-Evolve block drift')
+          readme = readme.replace(old_ae, new_ae, 1)
+
+          evo_marker = '''### EvoHarnessBench self-evolving adaptation\n\nReviewed paper: arXiv `2609.04280`.\n\nOnly the self-evolving adaptation mode is direct S4. Deployment-only evaluation remains a retention/robustness control. The benchmark supplies the adaptation/evolution protocol rather than measuring a canonical harness's own S4 path.\n'''
+          evo_bench = '''\n### Evo-Bench\n\nReviewed implementation: `RUCAIBox/Evo-Bench@889e4fc8b197f426b444dbf8de217ea15b596fd2`.\n\nEvo-Bench lets an evolver diagnose validation failures and persistently rewrite a minimal executable harness, then freezes the selected harness before a disjoint 448-task evaluation suite. This is direct S4 at the benchmark-defined harness-evolving boundary, not native evidence for an unrelated canonical harness.\n'''
+          if evo_marker not in readme:
+              raise SystemExit('README EvoHarnessBench block drift')
+          readme = readme.replace(evo_marker, evo_marker + evo_bench, 1)
+
+          old_canonical = '''## Canonical direct boundary\n\n`canonical_observations.json` is intentionally empty.\n\nA direct S4 benchmark can use a canonical harness as its S1 task solver while replacing S4 with a benchmark-owned evolver. That is direct S4 evidence for the **composed benchmark system**, not for the canonical task solver.\n\nExamples:\n\n- SkillEvolBench can execute Codex CLI, but its Skill Author owns adaptation;\n- A-Evolve owns the harness-evolution engine;\n- EvoHarnessBench owns the staged evolution/adaptation protocol.\n\nTask-solver identity does not transfer adaptation ownership.'''
+          new_canonical = '''## Canonical direct boundary\n\n`canonical_observations.json` now contains one native direct observation: A-Evolve. Canonical assessment #512 independently established `a-evolve` as `S4=A`; canonical admission #515 then made that ownership claim eligible for capability linkage. The paper's Exp0 protocol directly exercises A-Evolve's first-party evolver over persistent harness state, and the canonical review ref contains the corresponding harness-disentangling artifact and UnifiedEngine port.\n\nPublished harness-updating results are preserved without collapsing them into a scalar: the best-vs-worst evolver spread is at most 3.1 percentage points on any benchmark; Qwen3-235B reports +8.2 pp on SWE and +0.6 pp on MCP; on SkillsBench Qwen3.5-9B reports +3.8 pp versus Opus 4.6 +2.3 pp and Qwen3-235B +1.5 pp. These are first-party-reported historical results, not reproduction at the canonical review commit.\n\nThe general system-linkage rule remains unchanged. A direct S4 benchmark can use a canonical harness as its S1 task solver while replacing S4 with a benchmark-owned evolver; that is evidence for the composed benchmark system, not for the task solver. SkillEvolBench's Codex integration remains the key negative control.\n\nOne native A-Evolve observation also does **not** create a matched cross-harness primary. A primary still requires at least two canonical systems exercising their own S4 paths under a common evaluation membrane.'''
+          if old_canonical not in readme:
+              raise SystemExit('README canonical boundary block drift')
+          readme = readme.replace(old_canonical, new_canonical, 1)
+
+          rep_old = '''- `headcount` — `A`;'''
+          rep_new = '''- `a-evolve` — `A`;\n- `headcount` — `A`;'''
+          if rep_old not in readme:
+              raise SystemExit('README representative cohort block drift')
+          readme = readme.replace(rep_old, rep_new, 1)
+          readme_path.write_text(readme, encoding='utf-8')
+
+          validator = validator_path.read_text(encoding='utf-8')
+          old_empty = '''    if canonical_observations:\n        fail("direct canonical S4 registry must remain empty")\n'''
+          new_validation = '''    if len(canonical_observations) != 1:\n        fail("expected exactly one canonical direct S4 observation")\n\n    canonical_obs = canonical_observations[0]\n    if canonical_obs.get("observation_id") != "a-evolve-harness-updating-2026":\n        fail("unexpected canonical S4 observation_id")\n    if canonical_obs.get("function") != "S4":\n        fail("canonical A-Evolve observation function must be S4")\n    if canonical_obs.get("benchmark_id") != "a-evolve-harness-evolution":\n        fail("canonical A-Evolve benchmark_id drift")\n    if canonical_obs.get("benchmark_fit") != "direct":\n        fail("canonical A-Evolve benchmark_fit must be direct")\n    if canonical_obs.get("evidence_source_class") != "first-party-reported":\n        fail("canonical A-Evolve evidence source must remain first-party-reported")\n    if canonical_obs.get("boundary_class") != "canonical-native-system":\n        fail("canonical A-Evolve boundary_class drift")\n    if canonical_obs.get("canonical_harness_id") != "a-evolve":\n        fail("canonical A-Evolve harness linkage drift")\n    if canonical_obs.get("canonical_assessment_ref") != "assessments/a-evolve.md":\n        fail("canonical A-Evolve assessment linkage drift")\n    if canonical_obs.get("canonical_system_eligible") is not True:\n        fail("canonical A-Evolve observation must remain canonical-eligible")\n    if canonical_obs.get("system_compatibility") != "native-system":\n        fail("canonical A-Evolve system compatibility drift")\n    expected_review_ref = "18ba996dac9843f2759b2cdf8a94022f58fbfeb9"\n    if canonical_obs.get("canonical_review_revision") != expected_review_ref:\n        fail("canonical A-Evolve review revision drift")\n    if canonical_obs.get("source_artifact_revision") != "96ed93ba7ee0b9519fc55c963afb47a1975eb1ae":\n        fail("canonical A-Evolve source artifact revision drift")\n    if canonical_obs.get("publication_id") != "arXiv:2605.30621":\n        fail("canonical A-Evolve publication binding drift")\n    if canonical_obs.get("comparison_class") != "controlled-within-system-evolver-study":\n        fail("canonical A-Evolve comparison class drift")\n    if canonical_obs.get("benchmarks") != ["SWE-bench Verified", "MCP-Atlas", "SkillsBench"]:\n        fail("canonical A-Evolve benchmark set drift")\n    if canonical_obs.get("anchor_agents") != ["Claude Opus 4.6", "Claude Sonnet 4.6", "Qwen3-235B-A22B"]:\n        fail("canonical A-Evolve anchor-agent set drift")\n    metrics = canonical_obs.get("reported_harness_updating_metrics")\n    expected_metrics = {\n        "maximum_best_vs_worst_evolver_spread_pp": 3.1,\n        "qwen3_235b_swe_gain_pp": 8.2,\n        "qwen3_235b_mcp_gain_pp": 0.6,\n        "qwen3_5_9b_skillsbench_gain_pp": 3.8,\n        "opus_4_6_skillsbench_gain_pp": 2.3,\n        "qwen3_235b_skillsbench_gain_pp": 1.5,\n    }\n    if metrics != expected_metrics:\n        fail("canonical A-Evolve reported metrics drift")\n    if not isinstance(canonical_obs.get("ordinary_s4_boundary"), str) or len(canonical_obs["ordinary_s4_boundary"].strip()) < 80:\n        fail("canonical A-Evolve ordinary-S4 freeze boundary required")\n    if not isinstance(canonical_obs.get("adaptation_loop"), list) or len(canonical_obs["adaptation_loop"]) < 5:\n        fail("canonical A-Evolve adaptation loop incomplete")\n    if not isinstance(canonical_obs.get("provenance_limitation"), str) or len(canonical_obs["provenance_limitation"].strip()) < 120:\n        fail("canonical A-Evolve provenance limitation required")\n    sources = canonical_obs.get("primary_sources")\n    if not isinstance(sources, list) or len(sources) < 3 or any(not valid_https(s) for s in sources):\n        fail("canonical A-Evolve primary_sources invalid")\n    a_evolve_fields = assessment_fields("a-evolve")\n    if a_evolve_fields.get("status") != "included":\n        fail("canonical A-Evolve assessment is not included")\n    if a_evolve_fields.get("autonomy_s4") != "A":\n        fail("canonical A-Evolve no longer establishes S4=A")\n    if a_evolve_fields.get("review_ref") != expected_review_ref:\n        fail("canonical A-Evolve assessment review_ref drift")\n'''
+          if old_empty not in validator:
+              raise SystemExit('validator canonical-empty guard drift')
+          validator = validator.replace(old_empty, new_validation, 1)
+          validator_path.write_text(validator, encoding='utf-8')
+          PY
+      - name: Regenerate cross-function baseline view
+        run: python experiments/functional-capability-depth/render_function_baselines.py
+      - name: Validate experiment and repository
+        run: |
+          python experiments/functional-capability-depth/s4-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+          python experiments/functional-capability-depth/render_s1_baseline.py --check
+          python experiments/functional-capability-depth/s2-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s3-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s5-system-benchmarks/validate.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit experiment
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add experiments/functional-capability-depth/s4-system-benchmarks experiments/functional-capability-depth/FUNCTION-BASELINES.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'experiment: admit first canonical direct S4 observation'
+          git push
