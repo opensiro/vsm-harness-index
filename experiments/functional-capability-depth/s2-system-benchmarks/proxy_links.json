@@ -16,5 +16,22 @@
     "mechanism_interpretation": "The full Magentic-One Orchestrator maintains progress/loop state and controlled transfer of the next action right across multiple operational agents. Replacing it with a simple next-speaker selector removes progress tracking, loop detection and explicit direction and is reported to reduce GAIA validation performance by 31%.",
     "why_proxy_not_direct": "GAIA, AssistantBench and WebArena score broad end-task success rather than a benchmark-defined inter-S1 interference/oscillation and its attenuation. The Orchestrator ablation also removes mechanisms spanning S2 and S3.",
     "non_claim": "The raw task-success metrics and 31% ablation effect do not quantify an S2 maturity level and do not determine canonical S2=A."
+  },
+  {
+    "projection_id": "squad-marble-native-proxy-s2",
+    "function": "S2",
+    "canonical_harness_id": "squad",
+    "canonical_state_at_review": "A",
+    "benchmark_fit": "proxy",
+    "system_compatibility": "native-system",
+    "revision_relation": "historical-first-party-lineage-not-current-review-ref",
+    "raw_record": "../system-observations/squad.json",
+    "raw_observation_ids": [
+      "squad-marble-aligned-coordination-ablation",
+      "squad-marble-completion-ablation"
+    ],
+    "mechanism_interpretation": "The published MARBLE factorial campaign evaluates Squad's first-party coordination path under same-model/same-task conditions and toggles coordination independently from Squad-generated memory. The aligned rerun reports both coordination-on/no-memory versus no-Squad and coordination+memory versus memory-only contrasts.",
+    "why_proxy_not_direct": "MARBLE reports broad collaborative completion, milestone and judged-quality outcomes rather than an explicit inter-S1 interference/oscillation variable and its attenuation. The controlled ablation therefore supports native Squad S2 capability evidence without becoming a direct S2 benchmark family or primary baseline.",
+    "non_claim": "The reported MARBLE deltas do not quantify an S2 maturity level and do not determine canonical Squad S2=A."
   }
 ]

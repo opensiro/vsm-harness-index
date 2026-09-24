@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-24",
+  "system_name": "Squad",
+  "canonical_harness_id": "squad",
+  "canonical_assessment_ref": "assessments/squad.md",
+  "canonical_review_ref": "2099faf51c08a912c359209447011b06decf0565",
+  "canonical_states_at_review": {
+    "S2": "A"
+  },
+  "published_implementation": {
+    "benchmark_repository": "tamirdresher/squad-marble-benchmark",
+    "benchmark_ref": "f539d22557827292a664572536ca909ccbb4f8dc",
+    "system_compatibility": "native-system",
+    "canonical_revision_match": "historical-first-party-lineage-not-current-review-ref",
+    "note": "The public benchmark explicitly evaluates Squad and toggles its coordination layer under controlled conditions. The benchmark pin preserves the published observation, but it is not presented as a run of the later canonical Squad review_ref."
+  },
+  "primary_sources": [
+    "https://github.com/tamirdresher/squad-marble-benchmark/tree/f539d22557827292a664572536ca909ccbb4f8dc",
+    "https://github.com/bradygaster/squad/tree/2099faf51c08a912c359209447011b06decf0565"
+  ],
+  "observations": [
+    {
+      "observation_id": "squad-marble-aligned-coordination-ablation",
+      "kind": "native-mechanism-ablation",
+      "configuration": "MARBLE aligned four-domain coordination ablation",
+      "model_configuration": {
+        "model": "Claude Opus 4.6",
+        "matched_across_conditions": true
+      },
+      "benchmark": "MARBLE aligned four-domain re-run",
+      "comparison_design": "same-model-same-task-factorial-ablation",
+      "conditions": {
+        "full_squad": {
+          "coordination": true,
+          "squad_memory": true,
+          "milestone_kpi_percent": 81.1,
+          "quality_1_to_5": 4.10
+        },
+        "coord_only": {
+          "coordination": true,
+          "squad_memory": false,
+          "milestone_kpi_percent": 81.1,
+          "quality_1_to_5": 4.04
+        },
+        "no_squad": {
+          "coordination": false,
+          "squad_memory": false,
+          "milestone_kpi_percent": 77.2,
+          "quality_1_to_5": 3.76
+        },
+        "memory_only": {
+          "coordination": false,
+          "squad_memory": true,
+          "milestone_kpi_percent": 65.8,
+          "quality_1_to_5": 3.58
+        }
+      },
+      "coordination_contrasts": [
+        {
+          "contrast": "coord_only_minus_no_squad",
+          "milestone_kpi_percentage_points": 3.9,
+          "quality_delta": 0.28
+        },
+        {
+          "contrast": "full_squad_minus_memory_only",
+          "milestone_kpi_percentage_points": 15.3,
+          "quality_delta": 0.52
+        }
+      ],
+      "provenance": "README Correctness & quality aligned re-run",
+      "caveat": "The benchmark notes small per-domain samples and an LLM judge; exact deltas should be treated as directional.",
+      "non_claim": "The controlled coordination effect is native Squad evidence, but MARBLE scores broad collaborative task outcomes rather than an explicit inter-S1 interference/oscillation quantity. These values are not an S2 score and do not determine canonical S2=A."
+    },
+    {
+      "observation_id": "squad-marble-completion-ablation",
+      "kind": "native-mechanism-ablation",
+      "configuration": "MARBLE controlled completion ablation",
+      "model_configuration": {
+        "model": "Claude Opus 4.6",
+        "matched_across_conditions": true
+      },
+      "benchmark": "MARBLE factorial ablation",
+      "metric": "completion percent",
+      "conditions": {
+        "full_squad": 100.0,
+        "coord_only": 92.5,
+        "no_squad": 85.0,
+        "memory_only": 42.5
+      },
+      "provenance": "README Controlled Ablation (MARBLE)",
+      "non_claim": "Completion measures whether usable output was produced within the benchmark budget. It supports the native coordination ablation but does not directly measure VSM S2 disturbance attenuation."
+    }
+  ]
+}

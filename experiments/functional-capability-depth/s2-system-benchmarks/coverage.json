@@ -4,7 +4,7 @@
   "function": "S2",
   "direct_benchmark_family_count": 2,
   "direct_observation_count": 0,
-  "proxy_projection_count": 1,
+  "proxy_projection_count": 2,
   "coverage_classes": [
     "direct-scaffolded",
     "native-proxy",
@@ -145,17 +145,19 @@
       "admitted": false
     },
     {
-      "case_id": "squad-marble-controlled-coordination-candidate",
+      "case_id": "squad-marble-native-proxy",
       "benchmark": "Squad / MARBLE controlled coordination ablation",
       "benchmark_fit": "proxy",
-      "coverage_class": "candidate-boundary-unresolved",
-      "system_compatibility": "unclear",
-      "canonical_harness_id": null,
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "squad",
+      "proxy_projection_ref": "proxy_links.json#squad-marble-native-proxy-s2",
+      "raw_observation_ref": "../system-observations/squad.json",
       "primary_sources": [
         "https://github.com/tamirdresher/squad-marble-benchmark/tree/f539d22557827292a664572536ca909ccbb4f8dc",
-        "https://github.com/bradygaster/squad/tree/a1a8e1f4ec10b2dc08411009f29acf725d9ab515"
+        "https://github.com/bradygaster/squad/tree/2099faf51c08a912c359209447011b06decf0565"
       ],
-      "finding": "The MARBLE factorial ablation fixes Claude Opus 4.6 and aligned tasks while comparing Full Squad, coordination-only, memory-only and no-Squad conditions, giving unusually clean evidence for a first-party coordination layer. MARBLE still measures broad collaborative task outcomes rather than an explicit VSM S2 disturbance/attenuation relation, and bradygaster/squad is not currently a canonical Index system, so this cannot populate the S2 primary baseline today.",
+      "finding": "Canonical Squad now establishes S2=A, and the public MARBLE campaign evaluates Squad's first-party coordination path under controlled same-model/same-task factorial conditions, including coordination-only versus no-Squad and full-Squad versus memory-only contrasts. This is therefore native historical-lineage S2 capability evidence linked to canonical Squad. MARBLE still scores broad collaborative completion, milestone and judged-quality outcomes rather than an explicit inter-S1 interference/oscillation variable and its attenuation, so the result remains a native proxy rather than a direct S2 observation or primary baseline. Numeric results live only in the shared raw observation record.",
       "admitted": false
     },
     {
@@ -174,6 +176,7 @@
   ],
   "representative_canonical_s2_systems_inspected": [
     "autogen-agentchat",
+    "squad",
     "headcount",
     "deepseek-harness",
     "reigen",
