@@ -1,1 +1,60 @@
-[]
+[
+  {
+    "observation_id": "ouroboros-parent-governed-cyber-pro-policy-enactment-2026-09",
+    "function": "S5",
+    "evidence_surface": "immutable-repository-history",
+    "benchmark_family": null,
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "canonical-native-system",
+    "canonical_harness_id": "ouroboros",
+    "canonical_system_eligible": true,
+    "system_compatibility": "native-system",
+    "canonical_review_revision": "86806ee123ce8e26cc063cc1a618f975eea64f26",
+    "canonical_s5_state": "A(P)",
+    "ownership_mode_observed": "parent-governed",
+    "comparison_class": "descriptive-only",
+    "result_form": "immutable policy-change, enactment, executable-return and lineage-persistence witness",
+    "policy_change_commit": "25fbd3615a97e6ec3277c470eac9862d448aee10",
+    "policy_change_commit_message": "Clarify Cyber Pro evidence without internal veto",
+    "policy_change_author": "ouroboros-agent",
+    "enactment_pr": 855,
+    "enactment_pr_title": "Integrate selected issue sprint across runtime and UI",
+    "enactment_merge_commit": "dd5aded8fef7884774e2ccba3802f4bf0200d124",
+    "enactment_author": "ouroboros-agent",
+    "legitimate_parent_authority": "razzant",
+    "owner_selected_work": true,
+    "authority_issue": "who holds ultimate internal review and configuration authority in Cyber Pro, including whether independent review evidence can veto action and whether context/safety settings remain owner-only",
+    "decision_chain": [
+      "Cyber Pro ultimate internal review/configuration authority is treated as an identity/ultimate-policy matter in canonical Ouroboros",
+      "ouroboros-agent authors constitutional and runtime changes for the owner-selected issue sprint",
+      "repository owner razzant merges PR #855 into the canonical repository",
+      "BIBLE.md changes the constitutional rule so Cyber Pro review evidence remains factual but cannot become an internal veto or permission request",
+      "runtime_mode_policy.py and config.py implement the changed authority boundary in executable first-party code",
+      "tests/test_review_cyber_authority.py executes the policy distinction between pro and cyber_pro while preserving review facts",
+      "the merge commit remains an ancestor of the later canonical review revision and the changed runtime policy remains present there"
+    ],
+    "executable_effects": [
+      "Cyber Pro receives unrestricted internal action authority while independent review findings remain preserved as evidence",
+      "context-mode and safety-mode lowering remain owner-only outside Cyber Pro but are authorable in Cyber Pro",
+      "review-gate tests demonstrate Cyber Pro can continue or commit after failed/pending review without relabeling or discarding the review evidence"
+    ],
+    "lineage": {
+      "merge_commit": "dd5aded8fef7884774e2ccba3802f4bf0200d124",
+      "canonical_review_revision": "86806ee123ce8e26cc063cc1a618f975eea64f26",
+      "merge_commit_is_ancestor": true,
+      "canonical_revision_commits_ahead": 673,
+      "canonical_revision_commits_behind": 0
+    },
+    "provenance_note": "This is a descriptive first-party repository-history observation, not an independently reproduced benchmark run. The parent-governed attribution is based on the PR explicitly describing owner-selected work and GitHub recording repository owner razzant as the merger. The observation does not establish that autonomous Cyber Pro independently selected this constitutional change.",
+    "vsm_interpretation": "The canonical assessment independently establishes Ouroboros S5=A(P) and identifies Cyber Pro review/configuration posture as an ultimate-policy surface. PR #855 provides an actual parent-governed policy decision: the agent-authored constitutional/runtime change is selected and enacted through repository-owner authority, changes executable governance, persists into the later canonical lineage, and governs subsequent operation. This is direct descriptive capability evidence for the P mode of canonical Ouroboros S5. It is one-system evidence and cannot form a matched cross-harness S5 primary.",
+    "non_claim": "This observation is not a numeric S5 score, not evidence that autonomous Cyber Pro independently chose the policy change, not an S5 benchmark family, and not a matched cross-harness primary comparison.",
+    "primary_sources": [
+      "https://github.com/razzant/ouroboros/commit/25fbd3615a97e6ec3277c470eac9862d448aee10",
+      "https://github.com/razzant/ouroboros/pull/855",
+      "https://github.com/razzant/ouroboros/blob/86806ee123ce8e26cc063cc1a618f975eea64f26/BIBLE.md",
+      "https://github.com/razzant/ouroboros/blob/86806ee123ce8e26cc063cc1a618f975eea64f26/ouroboros/runtime_mode_policy.py",
+      "https://github.com/razzant/ouroboros/blob/86806ee123ce8e26cc063cc1a618f975eea64f26/ouroboros/config.py"
+    ]
+  }
+]
