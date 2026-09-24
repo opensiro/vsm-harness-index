@@ -74,6 +74,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="clawgui"></a>[ClawGUI](https://github.com/ZJU-REAL/ClawGUI) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="open-multi-agent"></a>[OMA / Open Multi-Agent](https://github.com/open-multi-agent/open-multi-agent) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
+| 5 | <a id="wasp"></a>[WASP](https://github.com/agentwasp/agentwasp) | 2026-Q1 | 2/6 | 1/5 | 4 | 2 | 0 | `A C C(P) C A C(P)` |
 | 5 | <a id="openfang"></a>[OpenFang](https://github.com/RightNow-AI/openfang) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="qwenpaw"></a>[QwenPaw](https://github.com/agentscope-ai/QwenPaw) | 2026-Q1 | 2/6 | 1/5 | 2 | 2 | 0 | `A C P C A P` |
 | 5 | <a id="a-evolve"></a>[A-Evolve](https://github.com/A-EVO-Lab/a-evolve) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
