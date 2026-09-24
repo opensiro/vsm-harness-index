@@ -88,9 +88,14 @@
           "benchmark_id": "loop-back-authority",
           "benchmark_name": "Loop-Back Authority paired manager-control experiment",
           "primary_source": "https://github.com/cihatburak/loop-back-authority-llm-agents/tree/6f26a97cafb0b463a45cdc40b5348351d844f7a5"
+        },
+        {
+          "benchmark_id": "multi-agent-orchestration-supervisor-ablation",
+          "benchmark_name": "Multi-Agent Orchestration native supervisor ablation",
+          "primary_source": "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/docs/evaluation-benchmark.md"
         }
       ],
-      "blocking_reason": "Reviewed direct S3 families exercise benchmark-defined current-control organizations and management authority, but published evidence does not yet provide a matched comparison of native S3 implementations across canonical harnesses."
+      "blocking_reason": "Reviewed direct S3 families now include a canonical native within-system current-control ablation, but public evidence still does not provide a matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell."
     },
     "S3*": {
       "status": "gap",
