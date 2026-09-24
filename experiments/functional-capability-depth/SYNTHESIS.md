@@ -4,6 +4,8 @@ Status: **experimental, non-normative**
 
 Tracking issue: #571
 
+Cycle input revision: [`c3bdc59bc210a2b5d0cd6b24e7d1faa1fc3d8c8a`](https://github.com/opensiro/vsm-harness-index/tree/c3bdc59bc210a2b5d0cd6b24e7d1faa1fc3d8c8a/experiments/functional-capability-depth)
+
 This document closes the current `functional-capability-depth` research cycle. It is a historical synthesis of the reviewed public-evidence state, not a permanent freeze on later evidence ingestion.
 
 The experiment keeps two questions separate:
@@ -31,7 +33,7 @@ A capability result does not create or change canonical autonomy state. A canoni
 | S5 | `evidence-backed-gap` | no matched canonical-harness primary |
 <!-- END FUNCTION STATE -->
 
-The machine-readable snapshot is [`experiment-state.json`](experiment-state.json). The public-evidence operating contract is [`PUBLIC-EVIDENCE.md`](PUBLIC-EVIDENCE.md).
+The machine-readable snapshot is [`experiment-state.json`](experiment-state.json). The public-evidence operating contract for this cycle is [`PUBLIC-EVIDENCE.md`](https://github.com/opensiro/vsm-harness-index/blob/c3bdc59bc210a2b5d0cd6b24e7d1faa1fc3d8c8a/experiments/functional-capability-depth/PUBLIC-EVIDENCE.md).
 
 A `gap` is not a zero capability score. It means that the reviewed public evidence did not satisfy the complete matched-primary gate for that function.
 
@@ -93,15 +95,15 @@ Adaptive or self-organizing `S` evidence therefore remains separate rather than 
 
 ## Function-level closure records
 
-The evidence-backed gaps are defined by their own fail-closed closure records and reopen rules:
+The evidence-backed gaps are defined by the fail-closed closure records frozen at the cycle input revision:
 
-- S2 — [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json)
-- S3 — [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json)
-- S3* — [`s3star-primary-search-closure.json`](s3star-system-benchmarks/matched-cell/s3star-primary-search-closure.json)
-- S4 — [`s4-primary-search-closure.json`](s4-system-benchmarks/matched-cell/s4-primary-search-closure.json)
-- S5 — [`s5-primary-search-closure.json`](s5-system-benchmarks/matched-cell/s5-primary-search-closure.json)
+- S2 — [`s2-primary-search-closure.json`](https://github.com/opensiro/vsm-harness-index/blob/c3bdc59bc210a2b5d0cd6b24e7d1faa1fc3d8c8a/experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/s2-primary-search-closure.json)
+- S3 — [`s3-primary-search-closure.json`](https://github.com/opensiro/vsm-harness-index/blob/c3bdc59bc210a2b5d0cd6b24e7d1faa1fc3d8c8a/experiments/functional-capability-depth/s3-system-benchmarks/matched-cell/s3-primary-search-closure.json)
+- S3* — [`s3star-primary-search-closure.json`](https://github.com/opensiro/vsm-harness-index/blob/c3bdc59bc210a2b5d0cd6b24e7d1faa1fc3d8c8a/experiments/functional-capability-depth/s3star-system-benchmarks/matched-cell/s3star-primary-search-closure.json)
+- S4 — [`s4-primary-search-closure.json`](https://github.com/opensiro/vsm-harness-index/blob/c3bdc59bc210a2b5d0cd6b24e7d1faa1fc3d8c8a/experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/s4-primary-search-closure.json)
+- S5 — [`s5-primary-search-closure.json`](https://github.com/opensiro/vsm-harness-index/blob/c3bdc59bc210a2b5d0cd6b24e7d1faa1fc3d8c8a/experiments/functional-capability-depth/s5-system-benchmarks/matched-cell/s5-primary-search-closure.json)
 
-Those records are authoritative for function-specific reopen conditions. This synthesis does not duplicate their route inventories or replace their validators.
+Those pinned records are authoritative for this historical cycle. Current-state closure files may later evolve under their recorded reopen rules; such evolution does not rewrite this synthesis.
 
 ## Limits of the current evidence
 
