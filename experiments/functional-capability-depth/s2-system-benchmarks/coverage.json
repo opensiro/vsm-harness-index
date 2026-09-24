@@ -1,9 +1,10 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-24",
+  "reviewed_at": "2026-09-25",
   "function": "S2",
-  "direct_benchmark_family_count": 2,
-  "direct_observation_count": 0,
+  "direct_benchmark_family_count": 3,
+  "direct_observation_count": 1,
+  "canonical_direct_observation_count": 0,
   "proxy_projection_count": 2,
   "coverage_classes": [
     "direct-scaffolded",
@@ -40,6 +41,23 @@
         "https://arxiv.org/abs/2609.25396"
       ],
       "finding": "STALE isolates semantic interference among parallel coding workers by reusing exact solo patches and counting only tests that pass under each patch alone but fail when the patches are composed. Its controlled visibility/communication conditions supply an explicit attenuation witness: a precise message describing the finalized concurrent change reduces synthetic interference by about 98%, while real-derived Django tasks show high blind interference and substantial one-message recovery. The parallel-work and information-sharing organization is benchmark-defined, so mini-swe-agent, OpenHands and other task-solving harnesses used underneath do not own this S2 path and no canonical S2 observation is admitted.",
+      "admitted": false
+    },
+    {
+      "case_id": "nool-fleet-coordination-direct-scaffolded",
+      "benchmark": "Nool coding-agent fleet coordination benchmark",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "review_ref": "126d69b5921be71daffd38c70ec4aa77252b4f39",
+      "observation_ref": "observations.json#nool-trackd-scaleup1-contention-2026-08-21",
+      "primary_sources": [
+        "https://github.com/noolinc/nool_long_eval_bench/tree/126d69b5921be71daffd38c70ec4aa77252b4f39",
+        "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/docs/findings/2026-08-21-findings.md",
+        "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/replications/MANIFEST.md"
+      ],
+      "finding": "The pre-registered Track D fleet experiment directly instantiates interaction-specific S2 variety: autonomous coding workers concurrently target overlapping regions of one shared codebase, producing merge conflicts and silent composition breakage in an uncoordinated arm. The treatment attenuates that interference before work starts by gating footprint-overlapping tickets until the prior member integrates, causing later workers to branch from updated integrated state. At N=10 on the 20-ticket contention workload, the two primary uncoordinated runs accept 1/20 and 13/20 tickets with 14/20 and 13/20 clean merges, while the two coordinated runs accept 19/20 each and merge 20/20 cleanly. The public repository is the benchmark/evidence package, not a canonical open-source Nool runtime, so the result is direct non-canonical S2 evidence and does not establish native canonical S2 ownership.",
       "admitted": false
     },
     {

@@ -72,9 +72,14 @@
           "benchmark_id": "stale-semantic-coordination",
           "benchmark_name": "STALE semantic-coordination benchmark",
           "primary_source": "https://github.com/illinoisdata/STALE-bench/tree/f7bc831e4eff08b9652acd893553824636ae3985"
+        },
+        {
+          "benchmark_id": "nool-fleet-coordination",
+          "benchmark_name": "Nool coding-agent fleet coordination benchmark",
+          "primary_source": "https://github.com/noolinc/nool_long_eval_bench/tree/126d69b5921be71daffd38c70ec4aa77252b4f39"
         }
       ],
-      "blocking_reason": "Reviewed direct S2 families exercise benchmark-defined coordination organizations and disturbance/attenuation relations, but published evidence does not yet provide a matched comparison of native S2 implementations across canonical harnesses."
+      "blocking_reason": "Reviewed direct S2 evidence now includes explicit benchmark-defined fleet contention/attenuation observations, including Nool's controlled pre-start gating experiment, but public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
     },
     "S3": {
       "status": "gap",

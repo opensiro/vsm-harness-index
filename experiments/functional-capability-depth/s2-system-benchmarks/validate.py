@@ -148,6 +148,54 @@ def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
             fail(f"{case_id}: raw_observation_ref drift")
 
 
+def validate_nool_observation(observations: list[dict]) -> None:
+    if len(observations) != 1:
+        fail("S2 observations.json must contain exactly one direct non-canonical observation")
+    observation = observations[0]
+    expected = {
+        "observation_id": "nool-trackd-scaleup1-contention-2026-08-21",
+        "function": "S2",
+        "benchmark_id": "nool-fleet-coordination",
+        "benchmark_fit": "direct",
+        "boundary_class": "benchmark-defined-agent-fleet",
+        "canonical_harness_id": None,
+        "canonical_system_eligible": False,
+        "system_compatibility": "benchmark-scaffolded",
+        "benchmark_artifact_revision": "126d69b5921be71daffd38c70ec4aa77252b4f39",
+        "result_artifact": "results/trackc/fleet_runs.jsonl",
+        "result_manifest": "results/replications/MANIFEST.md",
+        "model": "claude-sonnet-5",
+        "worker_count": 10,
+        "ticket_count": 20,
+        "nool_version": "6.14.1",
+    }
+    for field, value in expected.items():
+        if observation.get(field) != value:
+            fail(f"Nool direct S2 observation {field} drift: {observation.get(field)!r}")
+
+    git_runs = observation.get("git_uncoordinated_runs")
+    coordinated_runs = observation.get("coordinated_runs")
+    if not isinstance(git_runs, list) or len(git_runs) != 2:
+        fail("Nool direct S2 observation must retain two uncoordinated primary replicates")
+    if not isinstance(coordinated_runs, list) or len(coordinated_runs) != 2:
+        fail("Nool direct S2 observation must retain two coordinated primary replicates")
+    if [(row.get("run_id"), row.get("accepted"), row.get("clean_merges")) for row in git_runs] != [
+        ("fleet_git_fleet_9a6eb70f", 1, 14),
+        ("fleet_git_fleet_803f2288", 13, 13),
+    ]:
+        fail("Nool direct S2 uncoordinated primary results drift")
+    if [(row.get("run_id"), row.get("accepted"), row.get("clean_merges")) for row in coordinated_runs] != [
+        ("fleet_nool_fleet_cb7ccf72", 19, 20),
+        ("fleet_nool_fleet_2a51582f", 19, 20),
+    ]:
+        fail("Nool direct S2 coordinated primary results drift")
+    if observation.get("excluded_variant", {}).get("run_id") != "fleet_nool_fleet_16e2e1b0":
+        fail("Nool direct S2 excluded gate-hole variant drift")
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(source) for source in sources):
+        fail("Nool direct S2 observation must retain immutable HTTPS provenance")
+
+
 def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
@@ -161,6 +209,8 @@ def main() -> None:
         fail("observations.json must contain a list")
     if coverage.get("direct_observation_count") != len(observations):
         fail("direct_observation_count does not match observations.json")
+    if coverage.get("canonical_direct_observation_count") != 0:
+        fail("S2 canonical_direct_observation_count must remain 0")
 
     declared_classes = set(coverage.get("coverage_classes", []))
     if declared_classes != COVERAGE_CLASSES:
@@ -171,7 +221,7 @@ def main() -> None:
         for entry in benchmark_map.get("entries", [])
         if entry.get("function") == "S2" and entry.get("fit") == "direct"
     }
-    expected_direct_s2 = {"dpbench", "stale-semantic-coordination"}
+    expected_direct_s2 = {"dpbench", "stale-semantic-coordination", "nool-fleet-coordination"}
     if reviewed_direct_s2 != expected_direct_s2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
     if coverage.get("direct_benchmark_family_count") != len(reviewed_direct_s2):
@@ -197,7 +247,7 @@ def main() -> None:
         if case.get("system_compatibility") not in SYSTEM_COMPATIBILITY:
             fail(f"{case_id}: invalid system_compatibility")
         if case.get("admitted") is not False:
-            fail(f"{case_id}: first-pass coverage case must remain non-admitted")
+            fail(f"{case_id}: coverage case must remain non-canonical/non-primary")
         if not isinstance(case.get("finding"), str) or len(case["finding"].strip()) < 40:
             fail(f"{case_id}: explicit finding required")
 
@@ -232,6 +282,21 @@ def main() -> None:
     if stale.get("canonical_harness_id") is not None:
         fail("STALE must not claim canonical harness S2 ownership")
 
+    nool = by_id.get("nool-fleet-coordination-direct-scaffolded")
+    if nool is None:
+        fail("missing Nool fleet direct-S2 coverage case")
+    if nool.get("benchmark_fit") != "direct" or nool.get("coverage_class") != "direct-scaffolded":
+        fail("Nool fleet coordination must remain direct-scaffolded S2 evidence")
+    if nool.get("system_compatibility") != "benchmark-scaffolded":
+        fail("Nool fleet coordination must remain benchmark-scaffolded")
+    if nool.get("canonical_harness_id") is not None:
+        fail("Nool fleet observation must not acquire a canonical harness id")
+    if nool.get("review_ref") != "126d69b5921be71daffd38c70ec4aa77252b4f39":
+        fail("Nool fleet benchmark review_ref drift")
+    if nool.get("observation_ref") != "observations.json#nool-trackd-scaleup1-contention-2026-08-21":
+        fail("Nool fleet coverage/observation linkage drift")
+
+    validate_nool_observation(observations)
     validate_proxy_links(coverage, by_id)
 
     representative = coverage.get("representative_canonical_s2_systems_inspected")
@@ -247,12 +312,10 @@ def main() -> None:
         if fields.get("autonomy_s2") in {None, "—", "?"}:
             fail(f"representative {harness_id}: current canonical assessment does not establish S2")
 
-    if observations:
-        fail("first-pass direct S2 observation registry is expected to remain empty")
-
     print("ok: S2 coverage gap validated")
     print(f"reviewed direct S2 families: {len(reviewed_direct_s2)}")
-    print(f"admitted direct observations: {len(observations)}")
+    print(f"direct observations: {len(observations)}")
+    print(f"canonical direct observations: {coverage.get('canonical_direct_observation_count')}")
     print(f"native proxy projections: {coverage.get('proxy_projection_count')}")
     print(f"coverage cases: {len(cases)}")
     print(f"representative canonical S2 systems inspected: {len(representative)}")
