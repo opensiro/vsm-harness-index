@@ -32,8 +32,17 @@ EXPECTED_CANONICAL = {
     "masters-of-ai-harness": "C(P)",
 }
 
+EXPECTED_BENCHMARK_STATUS = {
+    "headcount": "candidate-native-no-direct-results",
+    "henterprise": "candidate-native-no-direct-results",
+    "ouroboros": "direct-native-descriptive-observation",
+    "thclaws": "candidate-native-no-direct-results",
+    "masters-of-ai-harness": "candidate-native-no-direct-results",
+}
+
 EXPECTED_COVERAGE_CLASSES = {
     "direct-composed",
+    "direct-canonical",
     "proxy",
     "unsuitable",
     "protocol-not-benchmark",
@@ -44,6 +53,7 @@ EXPECTED_COVERAGE_CLASSES = {
 
 REQUIRED_FOLLOWUP_CASES = {
     "govsim-selfgovern-membership-authority-direct-composed": ("direct-composed", None),
+    "ouroboros-parent-governed-policy-change-direct-canonical": ("direct-canonical", None),
     "constitutional-agent-governance-amendment-mechanism": (
         "candidate-native-mechanism-not-benchmark",
         "368717cb50b70826412f85022d23b3fd8a0dec77",
@@ -101,20 +111,18 @@ def main() -> None:
     if coverage.get("function") != "S5":
         fail("coverage function must be S5")
     if coverage.get("direct_family_count") != 1:
-        fail("S5 direct_family_count must be 1")
+        fail("S5 direct_family_count must remain 1")
     if coverage.get("composed_direct_observation_count") != 1:
-        fail("S5 composed_direct_observation_count must be 1")
-    if coverage.get("canonical_direct_observation_count") != 0:
-        fail("S5 canonical_direct_observation_count must remain 0")
-    if canonical_observations != []:
-        fail("canonical_observations.json must remain empty without canonical direct S5 evidence")
+        fail("S5 composed_direct_observation_count must remain 1")
+    if coverage.get("canonical_direct_observation_count") != 1:
+        fail("S5 canonical_direct_observation_count must be 1")
 
     s5_baseline = (baselines.get("functions") or {}).get("S5") or {}
     if s5_baseline.get("status") != "gap":
         fail("primary-baselines.json must preserve S5 status=gap")
     reviewed = s5_baseline.get("reviewed_direct_families")
     if not isinstance(reviewed, list) or [row.get("benchmark_id") for row in reviewed] != ["govsim-selfgovern"]:
-        fail("S5 gap metadata must record GovSim-SelfGovern as the reviewed direct family")
+        fail("S5 gap metadata must keep GovSim-SelfGovern as the only reviewed direct benchmark family")
 
     declared_classes = set(coverage.get("coverage_classes", []))
     if declared_classes != EXPECTED_COVERAGE_CLASSES:
@@ -166,6 +174,18 @@ def main() -> None:
     if govsim_case.get("code_revision_status") != "unresolved-authoritative-public-repository":
         fail("GovSim-SelfGovern code provenance limitation drift")
 
+    ouroboros_case = by_id["ouroboros-parent-governed-policy-change-direct-canonical"]
+    if ouroboros_case.get("benchmark_fit") != "direct":
+        fail("Ouroboros repository-history case must remain direct S5 evidence")
+    if ouroboros_case.get("system_compatibility") != "native-system":
+        fail("Ouroboros direct observation must remain native-system")
+    if ouroboros_case.get("canonical_harness_id") != "ouroboros":
+        fail("Ouroboros direct observation lost canonical identity")
+    if ouroboros_case.get("ownership_mode_observed") != "parent-governed":
+        fail("Ouroboros observation must remain limited to parent-governed ownership")
+    if ouroboros_case.get("comparison_class") != "descriptive-only":
+        fail("Ouroboros observation must remain descriptive-only")
+
     if not isinstance(benchmark_observations, list) or len(benchmark_observations) != 1:
         fail("S5 benchmark_observations.json must contain exactly one composed observation")
     observation = benchmark_observations[0]
@@ -192,8 +212,37 @@ def main() -> None:
         fail("GovSim-SelfGovern non-thinking exile result drift")
     if observation.get("thinking_exile") != {"enacted": 31, "proposed": 122, "pass_rate": 0.254}:
         fail("GovSim-SelfGovern thinking exile result drift")
-    if not any("2609.22600" in source for source in observation.get("primary_sources", [])):
-        fail("GovSim-SelfGovern observation must retain arXiv provenance")
+
+    if not isinstance(canonical_observations, list) or len(canonical_observations) != 1:
+        fail("S5 canonical_observations.json must contain exactly one canonical direct observation")
+    canonical = canonical_observations[0]
+    expected_canonical_fields = {
+        "function": "S5",
+        "evidence_surface": "immutable-repository-history",
+        "benchmark_family": None,
+        "benchmark_fit": "direct",
+        "boundary_class": "canonical-native-system",
+        "canonical_harness_id": "ouroboros",
+        "canonical_system_eligible": True,
+        "system_compatibility": "native-system",
+        "canonical_review_revision": "86806ee123ce8e26cc063cc1a618f975eea64f26",
+        "canonical_s5_state": "A(P)",
+        "ownership_mode_observed": "parent-governed",
+        "comparison_class": "descriptive-only",
+        "policy_change_commit": "25fbd3615a97e6ec3277c470eac9862d448aee10",
+        "enactment_pr": 855,
+        "enactment_merge_commit": "dd5aded8fef7884774e2ccba3802f4bf0200d124",
+        "legitimate_parent_authority": "razzant",
+        "owner_selected_work": True,
+    }
+    for field, expected in expected_canonical_fields.items():
+        if canonical.get(field) != expected:
+            fail(f"Ouroboros canonical observation {field} drift: {canonical.get(field)!r}")
+    lineage = canonical.get("lineage") or {}
+    if lineage.get("merge_commit_is_ancestor") is not True or lineage.get("canonical_revision_commits_ahead") != 673:
+        fail("Ouroboros canonical lineage evidence drift")
+    if not canonical.get("non_claim") or "autonomous" not in canonical["non_claim"]:
+        fail("Ouroboros observation must retain autonomous-mode non-claim")
 
     s5_entries = [entry for entry in benchmark_map.get("entries", []) if entry.get("function") == "S5"]
     actual_map = {entry.get("benchmark_id"): entry.get("fit") for entry in s5_entries}
@@ -213,9 +262,9 @@ def main() -> None:
     declared = {row.get("harness_id"): row.get("expected_state") for row in anchors if isinstance(row, dict)}
     if declared != EXPECTED_CANONICAL:
         fail(f"canonical anchor declaration mismatch: {declared!r}")
-    for row in anchors:
-        if row.get("benchmark_status") != "candidate-native-no-direct-results":
-            fail(f"{row.get('harness_id')}: canonical S5 anchor must remain candidate-native-no-direct-results")
+    statuses = {row.get("harness_id"): row.get("benchmark_status") for row in anchors if isinstance(row, dict)}
+    if statuses != EXPECTED_BENCHMARK_STATUS:
+        fail(f"canonical S5 evidence-status mismatch: {statuses!r}")
 
     for harness_id, expected_state in EXPECTED_CANONICAL.items():
         path = ROOT / "assessments" / f"{harness_id}.md"
@@ -239,7 +288,7 @@ def main() -> None:
 
     print(
         f"ok: {len(cases)} S5 coverage cases, 1 direct family, "
-        "1 composed direct observation, 0 canonical observations, primary gap preserved"
+        "1 composed direct observation, 1 canonical direct observation, primary gap preserved"
     )
 
 
