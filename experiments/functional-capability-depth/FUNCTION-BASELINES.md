@@ -39,7 +39,7 @@ Evidence search: [`s3star-system-benchmarks/coverage.json`](s3star-system-benchm
 
 ### S4
 
-Current direct families evaluate benchmark-defined or composed adaptation loops rather than matched native S4 implementations across canonical harnesses.
+Direct S4 evidence now includes one canonical native A-Evolve harness-updating observation, but public evidence still does not provide a matched comparison of native S4 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.
 
 Evidence search: [`s4-system-benchmarks/coverage.json`](s4-system-benchmarks/coverage.json).
 
