@@ -259,7 +259,7 @@ ordinary-vs-self-organizing boundary
 ## Source of truth
 
 - `benchmark_observations.json` — direct evidence records at benchmark/composed boundaries;
-- `canonical_observations.json` — direct canonical native/adapter-preserved observations; currently `[]`;
+- `canonical_observations.json` — direct canonical native/adapter-preserved observations; currently 2 (`a-evolve`, `kadath`);
 - `proxy_observations.json` — observation-specific canonical-system proxy evidence such as FutureSim;
 - `coverage.json` — boundary/proxy/native-no-results/domain/freeze cases and canonical anchors;
 - `validate.py` — validates direct-family map, direct/proxy separation, required cases, frozen-regulator guard and current canonical states.
