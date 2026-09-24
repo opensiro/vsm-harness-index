@@ -1,0 +1,76 @@
+name: temporary ActWeave admission renderer
+
+on:
+  push:
+    branches:
+      - admit-actweave-230
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Apply canonical admission inputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path("assessments/actweave.md")
+          text = assessment.read_text(encoding="utf-8")
+          old = "status: proposed\n"
+          new = "status: included\n"
+          if old in text:
+              text = text.replace(old, new, 1)
+              assessment.write_text(text, encoding="utf-8")
+          elif new not in text:
+              raise SystemExit("ActWeave assessment has neither proposed nor included status")
+
+          catalog = Path("data/catalog.psv")
+          catalog_text = catalog.read_text(encoding="utf-8")
+          catalog_row = "230|actweave|ActWeave|https://github.com/chenow9/act-weave|2026-07-25T08:42:39Z|index-addition|ea0451acc090977c14c1c8d9d0b4d2bee5df4238|2026-09-24"
+          if "|actweave|" not in catalog_text:
+              catalog.write_text(catalog_text.rstrip("\n") + "\n" + catalog_row + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          signatures_text = signatures.read_text(encoding="utf-8")
+          signature_row = "230|actweave|ActWeave closes autonomous hosted S1 through its first-party Agentic model/tool/delegation runtime; delegation graphs, shared budgets, workflows and trace/audit governance remain bounded execution or observability mechanisms without standalone S2-S5 closure."
+          if "|actweave|" not in signatures_text:
+              signatures.write_text(signatures_text.rstrip("\n") + "\n" + signature_row + "\n", encoding="utf-8")
+          PY
+
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+
+      - name: Validate rendered state
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Commit rendered admission
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No render changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assessments/actweave.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md METRICS.md data/metrics.json README.md
+          git commit -m "admit: render ActWeave canonical inclusion"
+          git push origin HEAD:${GITHUB_REF_NAME}
