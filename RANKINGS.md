@@ -57,6 +57,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="pibot"></a>[pibot](https://github.com/glebis/pibot) | 2026-Q3 | 2/6 | 1/5 | 1 | 3 | 0 | `A — P C A(P) P` |
 | 5 | <a id="mission-control"></a>[Mission Control](https://github.com/CosmonautJones/mission-control) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — C(P) A — —` |
 | 5 | <a id="pi-harness"></a>[Pi-Harness](https://github.com/wangmiaozero/pi-harness) | 2026-Q3 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
+| 5 | <a id="swe-mux"></a>[swe-mux](https://github.com/jatoran/swe-mux) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C A(P) C P —` |
 | 5 | <a id="omniscientist"></a>[OmniScientist](https://github.com/Omni-Scientist/OmniScientist) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="bossconsole"></a>[BossConsole](https://github.com/risa-labs-inc/BossConsole) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C C(P) — A(P) —` |
 | 5 | <a id="foreman"></a>[Foreman](https://github.com/marcelsud/claude-foreman) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — A(P) C — —` |
