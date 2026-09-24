@@ -10,7 +10,7 @@ This view reports baseline availability and evidence coverage only. It does not 
 | --- | --- | --- | --- | --- |
 | S1 | `selected` | PawBench v1.0 | `qwen3.6-35b-a3b` | [generated S1 baseline](S1-BASELINE.md) |
 | S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 11 reviewed cases · direct families: `2` · direct observations: `0` |
-| S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 8 reviewed cases · direct families: `2` · direct observations: `0` |
+| S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 8 reviewed cases · direct families: `3` · direct observations: `1` |
 | S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 12 reviewed cases · direct families: `2` · canonical direct observations: `0` · composed direct observations: `2` |
 | S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 14 reviewed cases · direct families: `4` · canonical direct observations: `0` · composed direct observations: `4` |
 | S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 12 reviewed cases · direct families: `0` · canonical direct observations: `0` |
@@ -27,7 +27,7 @@ Evidence search: [`s2-system-benchmarks/coverage.json`](s2-system-benchmarks/cov
 
 ### S3
 
-Reviewed direct S3 families exercise benchmark-defined current-control organizations and management authority, but published evidence does not yet provide a matched comparison of native S3 implementations across canonical harnesses.
+Reviewed direct S3 families now include a canonical native within-system current-control ablation, but public evidence still does not provide a matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.
 
 Evidence search: [`s3-system-benchmarks/coverage.json`](s3-system-benchmarks/coverage.json).
 

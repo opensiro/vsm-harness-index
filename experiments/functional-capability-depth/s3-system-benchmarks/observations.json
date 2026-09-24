@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "observation_id": "multi-agent-orchestration-supervisor-ablation-2026-08",
+    "function": "S3",
+    "benchmark_id": "multi-agent-orchestration-supervisor-ablation",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "canonical-native-system",
+    "canonical_harness_id": "multi-agent-orchestration",
+    "canonical_system_eligible": true,
+    "system_compatibility": "native-system",
+    "canonical_review_revision": "e6c34462af045d7e53d383103346362351c96353",
+    "benchmark_artifact_revision": "e6c34462af045d7e53d383103346362351c96353",
+    "result_artifact": "benchmarks/results/eval_c760d1ff9d464cbfa89e.json",
+    "result_id": "eval_c760d1ff9d464cbfa89e",
+    "result_started_at": "2026-08-28T05:32:26.508755Z",
+    "embedded_run_git_sha": "aed23ddd56c9ff6978a72140160634ced31ecf74",
+    "embedded_run_git_sha_publicly_resolvable_at_review": false,
+    "provenance_limitation": "The committed result JSON reports embedded run git_sha aed23ddd56c9ff6978a72140160634ced31ecf74, but that SHA no longer resolves in the current public repository history. The observation is therefore preserved as first-party-reported from the immutable result artifact committed at the canonical review revision, not relabeled as an independently reproduced run of that revision.",
+    "scenario_count": 54,
+    "provider": "MockProvider",
+    "provider_configuration": "scripted deterministic scenario replies and scripted retry failures; zero synthetic provider latency",
+    "comparison_class": "within-system-controlled-ablation",
+    "held_constant": [
+      "same 54 scenarios",
+      "same scripted model replies/failures",
+      "same engine and evaluator",
+      "retry disabled in baseline and supervisor arms",
+      "max_concurrent_nodes=1 in baseline and supervisor arms"
+    ],
+    "treatment": "enable first-party autonomous supervisor current-control path instead of deterministic HeuristicRouter-only floor",
+    "baseline_arm": {
+      "uses_supervisor": false,
+      "retry_enabled": false,
+      "parallelism_enabled": false,
+      "scenarios_passed": 11,
+      "scenarios_run": 54,
+      "completion_rate": 0.204,
+      "routing_accuracy": 0.566667,
+      "total_tokens": 14669
+    },
+    "supervisor_arm": {
+      "uses_supervisor": true,
+      "retry_enabled": false,
+      "parallelism_enabled": false,
+      "scenarios_passed": 48,
+      "scenarios_run": 54,
+      "completion_rate": 0.889,
+      "routing_accuracy": 1.0,
+      "total_tokens": 23784
+    },
+    "reported_completion_gain_percentage_points": 68.5,
+    "reported_routing_accuracy_gain_percentage_points": 43.3333,
+    "scope_note": "The supervisor arm fails exactly the six retry scenarios; those require node-level retry and are not credited to the supervisor-only S3 effect.",
+    "vsm_interpretation": "The canonical assessment independently establishes S3=A for the first-party supervisor. This benchmark ablates that native live-state current-control path inside the same harness while holding retry and parallelism disabled, so the published supervisor-versus-baseline result is direct native S3 capability evidence. One within-system result does not form a matched cross-harness primary baseline.",
+    "primary_sources": [
+      "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/docs/evaluation-benchmark.md",
+      "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/src/orchestration/evaluation/arms.py",
+      "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/benchmarks/results/eval_c760d1ff9d464cbfa89e.json"
+    ]
+  }
+]
