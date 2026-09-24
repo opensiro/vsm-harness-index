@@ -119,6 +119,36 @@
       "admitted": false
     },
     {
+      "case_id": "cadis-native-s2-no-direct-results",
+      "benchmark": "C.A.D.I.S. native worker coordination path",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-no-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "cadis",
+      "canonical_review_ref": "52c55854b1abbcda82839b7a934cbdb16a69b635",
+      "primary_sources": [
+        "https://github.com/Growth-Circle/cadis/tree/52c55854b1abbcda82839b7a934cbdb16a69b635",
+        "https://github.com/Growth-Circle/cadis/blob/52c55854b1abbcda82839b7a934cbdb16a69b635/docs/standards/17_PERFORMANCE_STANDARD.md"
+      ],
+      "finding": "Canonical C.A.D.I.S. establishes S2=C through its first-party worker/worktree coordination surfaces, but the reviewed benchmark material is oriented to local latency/overhead targets and does not publish an inter-S1 disturbance-to-attenuation capability result. The post-closure admission therefore expands the inspected canonical cohort without adding a direct S2 observation.",
+      "admitted": false
+    },
+    {
+      "case_id": "ares-native-s2-no-direct-results",
+      "benchmark": "ARES native fabric/scheduler coordination path",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-no-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "ares",
+      "canonical_review_ref": "f03153acace190c555c3721019407a7df47c139f",
+      "primary_sources": [
+        "https://github.com/Timwood0x10/ARES/tree/f03153acace190c555c3721019407a7df47c139f",
+        "https://github.com/Timwood0x10/ARES/blob/f03153acace190c555c3721019407a7df47c139f/benchmarks/benchmark_report.md"
+      ],
+      "finding": "Canonical ARES establishes S2=C through deterministic fabric/scheduler coordination over shared resources, but its committed benchmark report measures scheduler/fabric microperformance such as ns/op, allocations and throughput rather than interaction-generated worker interference and attenuation. It is a reviewed native mechanism with no direct S2 capability result.",
+      "admitted": false
+    },
+    {
       "case_id": "agent-framework-benchmark-sequential-scaffolded",
       "benchmark": "Agent Framework Benchmark",
       "benchmark_fit": "not-direct-S2",
@@ -203,7 +233,9 @@
     "thclaws",
     "pi-harness",
     "reasonix",
-    "browser-harness"
+    "browser-harness",
+    "cadis",
+    "ares"
   ],
   "mechanism_classes": [
     "shared-resource-contention",
