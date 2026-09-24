@@ -102,6 +102,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="swarm"></a>[SWARM](https://github.com/KhanUzeb/SWARM) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="openharness"></a>[OpenHarness](https://github.com/autonomous-ai/openharness) | 2026-Q3 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
 | 6 | <a id="qm"></a>[QM](https://github.com/yc-software/qm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="actweave"></a>[ActWeave](https://github.com/chenow9/act-weave) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="trueforge"></a>[TrueForge](https://github.com/truefoundry/trueforge) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="temporal-agent-harness"></a>[Temporal Agent Harness](https://github.com/temporal-community/temporal-agent-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A — C(P) — — —` |
