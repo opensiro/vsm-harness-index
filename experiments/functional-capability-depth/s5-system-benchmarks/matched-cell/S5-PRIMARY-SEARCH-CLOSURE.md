@@ -2,19 +2,21 @@
 
 Status: experimental, non-normative.  
 Tracking issue: #569  
-Scope: current public evidence reviewed through 2026-09-24.
+Current-state update: #472  
+Scope: current public evidence reviewed through 2026-09-25.
 
 ## Result
 
 ```text
-reviewed S5-relevant artifacts           12
-direct reusable S5 benchmark families   0
+reviewed S5-relevant artifacts           13
+direct S5 benchmark families             1
+composed direct S5 observations          1
 canonical direct S5 observations         0
 matched canonical S5 primary             not available
 S5 primary baseline                      gap
 ```
 
-This closes the current public-evidence search transaction, not the possibility of future S5 benchmarks.
+GovSim-SelfGovern closes the previous direct-family hole at its **benchmark-defined society boundary**. It does not close the canonical matched-primary gap.
 
 ## Direct criterion
 
@@ -36,7 +38,37 @@ subsequent operation under that policy
 
 For a primary baseline, the result must additionally support a materially matched native/adapter-preserved comparison across canonical harnesses.
 
-No reviewed public benchmark family currently closes this chain.
+## Direct composed evidence — GovSim-SelfGovern
+
+Primary source: `arXiv:2609.22600v1`.
+
+The benchmark defines a five-agent society that authors executable Python laws, receives sandbox validation, votes on valid proposals and executes enacted laws. The S5 witness is specifically the **membership/identity authority path**, not legislation in general:
+
+```text
+fatal resource wall / membership tension
+        ↓
+agent-authored executable membership law
+        ↓
+sandbox validation against benchmark constraints
+        ↓
+majority vote by current active members
+        ↓
+enactment
+        ↓
+agent.active = False
+        ↓
+member expelled / active system boundary changes
+        ↓
+subsequent rounds continue after the decision
+```
+
+The paper explicitly defines `agent.active = False` as exile, executes passed laws before later round activity, and reports enacted exile outcomes. Across pooled non-thinking runs, 8 of 460 exile proposals pass (1.7%); in thinking runs, 31 of 122 pass (25.4%). The paper also reports that intact survival in fatal-scarcity runs is concentrated among runs that reduce membership early.
+
+This is direct S5 evidence for the **composed benchmark society** because legitimate current-member authority actually changes membership/identity and returns that decision into operation.
+
+It remains `benchmark-scaffolded` because the sandbox, voting mechanics, physics and constrained API are part of the benchmark/evaluation membrane. No underlying model, unrelated GovSim repository, or canonical Index harness inherits native S5 ownership/capability by association. No authoritative public code revision for GovSim-SelfGovern was recovered in this review.
+
+Catch caps, penalties, taxation, treasury disbursement and other operational laws are not credited as S5 merely because they are legislated. The paper's broader G1 ICS improvement (45.0% → 72.5%) mixes governance mechanisms and is not treated as an S5-only effect.
 
 ## Reviewed nearby evidence
 
@@ -70,31 +102,37 @@ MAC learns structured rule sets and measures task reward under evolving constitu
 
 The coverage record separately tracks canonical systems already known to own S5 in different arrangements, including Headcount, Henterprise, Ouroboros, thClaws and Masters of AI Harness. Their S5 ownership does not manufacture a capability benchmark result.
 
-That separation is central:
+The separation is now:
 
 ```text
-canonical S5 ownership exists
+direct S5 benchmark exists
         !=
-direct public S5 capability benchmark exists
+canonical native direct S5 observation exists
+        !=
+matched canonical S5 primary exists
 ```
 
-## Why the gap is evidence-backed
+GovSim-SelfGovern establishes the first layer only.
 
-The reviewed evidence spans enforcement, values, governance processes, constitutional amendment mechanisms, parent escalation and policy optimization. Every near-hit fails a specific part of the direct criterion rather than a vocabulary check.
+## Why the primary gap remains evidence-backed
+
+The current evidence includes a legitimate direct S5 benchmark-defined organization, plus enforcement, values, governance-process, amendment-mechanism, parent-escalation and policy-optimization evidence. What remains absent is a native or adapter-preserved canonical S5 comparison cell.
 
 The present `gap` therefore means:
 
-> no reviewed reusable public benchmark currently measures legitimate organizational ultimate-policy authority through actual change and later operation, with provenance suitable for canonical capability attribution.
+> no reviewed public evidence currently supports a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations.
+
+It no longer means that direct S5 benchmark evidence is absent.
 
 ## Reopen rule
 
-Reopen when public primary evidence supplies one of:
+Reopen the primary-baseline decision when public primary evidence supplies one of:
 
-1. a benchmark that exercises the complete authority → decision/change → subsequent-operation chain at an identity/ultimate-policy boundary;
-2. an immutable canonical native/adapter-preserved direct result satisfying that chain;
-3. a materially matched benchmark comparing multiple canonical-linkable S5 systems under the same authority/change/subsequent-operation protocol.
+1. an immutable canonical native/adapter-preserved direct S5 result satisfying the full authority/change/subsequent-operation chain;
+2. a materially matched benchmark comparing multiple canonical-linkable S5 systems under one authority/change/subsequent-operation protocol;
+3. GovSim-SelfGovern or another direct family exposing adapter-preserved canonical harness rows with sufficient immutable model/configuration provenance for a matched comparison cell.
 
-Do not reopen for fixed-policy adherence/enforcement, external public-policy analysis, value-expression tests, governance mechanism unit tests, protocols or live constitutional history without a reusable harness capability benchmark.
+Do not reopen merely for another benchmark-scaffolded direct S5 family without canonical linkage, fixed-policy adherence/enforcement, external public-policy analysis, value-expression tests, governance mechanism unit tests, protocols or live constitutional history.
 
 ## Consequence
 
@@ -102,4 +140,4 @@ Do not reopen for fixed-policy adherence/enforcement, external public-policy ana
 S5 primary baseline = gap
 ```
 
-This is an evidence-backed empirical disposition, not a zero S5 capability score and not a reassessment of canonical S5 ownership.
+This remains an evidence-backed empirical disposition, not a zero S5 capability score and not a reassessment of canonical S5 ownership.
