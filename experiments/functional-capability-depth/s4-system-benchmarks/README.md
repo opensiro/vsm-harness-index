@@ -15,9 +15,9 @@ Can reviewed direct S4 benchmark families be linked to canonical Index systems w
 Current result:
 
 ```text
-reviewed direct S4 benchmark families/modes: 3
-published direct evidence records at benchmark/composed boundaries: 3
-canonical native/adapter-preserved direct-S4 observations: 0
+reviewed direct S4 benchmark families/modes: 4
+published direct evidence records at benchmark/composed boundaries: 4
+canonical native/adapter-preserved direct-S4 observations: 1
 published canonical-system S4-proxy observations: 5 across 3 systems
 S4 primary baseline: gap
 ```
@@ -65,7 +65,7 @@ Ordinary S4 adaptation and experimental `S` therefore remain distinct:
 
 Reviewed implementation: `A-EVO-Lab/a-evolve@96ed93ba7ee0b9519fc55c963afb47a1975eb1ae`.
 
-The benchmark-defined organization converts execution evidence into persistent harness changes and measures later benefit. It directly exercises S4 at that composed boundary, but the evolver is benchmark-supplied.
+The first-party protocol converts execution evidence into persistent harness changes and measures later benefit. The original family review stored this at the benchmark/composed boundary because A-Evolve did not yet have a canonical standalone assessment. After #512/#515 independently established and admitted canonical `a-evolve` with `S4=A`, `canonical_observations.json` now links the published A-Evolve evolution run to that native S4 system as first-party-reported historical evidence. The reported release lineage and canonical review ref are divergent, so this is not claimed as a reproduction at the canonical commit.
 
 ### SkillEvolBench
 
@@ -79,19 +79,21 @@ Reviewed paper: arXiv `2609.04280`.
 
 Only the self-evolving adaptation mode is direct S4. Deployment-only evaluation remains a retention/robustness control. The benchmark supplies the adaptation/evolution protocol rather than measuring a canonical harness's own S4 path.
 
+### Evo-Bench
+
+Reviewed implementation: `RUCAIBox/Evo-Bench@889e4fc8b197f426b444dbf8de217ea15b596fd2`.
+
+Evo-Bench lets an evolver diagnose validation failures and persistently rewrite a minimal executable harness, then freezes the selected harness before a disjoint 448-task evaluation suite. This is direct S4 at the benchmark-defined harness-evolving boundary, not native evidence for an unrelated canonical harness.
+
 ## Canonical direct boundary
 
-`canonical_observations.json` is intentionally empty.
+`canonical_observations.json` now contains one native direct observation: A-Evolve. Canonical assessment #512 independently established `a-evolve` as `S4=A`; canonical admission #515 then made that ownership claim eligible for capability linkage. The paper's Exp0 protocol directly exercises A-Evolve's first-party evolver over persistent harness state, and the canonical review ref contains the corresponding harness-disentangling artifact and UnifiedEngine port.
 
-A direct S4 benchmark can use a canonical harness as its S1 task solver while replacing S4 with a benchmark-owned evolver. That is direct S4 evidence for the **composed benchmark system**, not for the canonical task solver.
+Published harness-updating results are preserved without collapsing them into a scalar: the best-vs-worst evolver spread is at most 3.1 percentage points on any benchmark; Qwen3-235B reports +8.2 pp on SWE and +0.6 pp on MCP; on SkillsBench Qwen3.5-9B reports +3.8 pp versus Opus 4.6 +2.3 pp and Qwen3-235B +1.5 pp. These are first-party-reported historical results, not reproduction at the canonical review commit.
 
-Examples:
+The general system-linkage rule remains unchanged. A direct S4 benchmark can use a canonical harness as its S1 task solver while replacing S4 with a benchmark-owned evolver; that is evidence for the composed benchmark system, not for the task solver. SkillEvolBench's Codex integration remains the key negative control.
 
-- SkillEvolBench can execute Codex CLI, but its Skill Author owns adaptation;
-- A-Evolve owns the harness-evolution engine;
-- EvoHarnessBench owns the staged evolution/adaptation protocol.
-
-Task-solver identity does not transfer adaptation ownership.
+One native A-Evolve observation also does **not** create a matched cross-harness primary. A primary still requires at least two canonical systems exercising their own S4 paths under a common evaluation membrane.
 
 ## Native S4 candidates without a general baseline
 
@@ -228,6 +230,7 @@ That is an evidence state, not a zero score.
 
 The coverage layer continues to validate several ownership arrangements:
 
+- `a-evolve` — `A`;
 - `headcount` — `A`;
 - `henterprise` — `A`;
 - `kadath` — `A`;

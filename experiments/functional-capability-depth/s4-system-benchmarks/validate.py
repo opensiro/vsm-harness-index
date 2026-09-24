@@ -132,8 +132,70 @@ def main() -> None:
         fail("canonical_observations.json must contain a list")
     if not isinstance(proxy_observations, list):
         fail("proxy_observations.json must contain a list")
-    if canonical_observations:
-        fail("direct canonical S4 registry must remain empty")
+    if len(canonical_observations) != 1:
+        fail("expected exactly one canonical direct S4 observation")
+
+    canonical_obs = canonical_observations[0]
+    if canonical_obs.get("observation_id") != "a-evolve-harness-updating-2026":
+        fail("unexpected canonical S4 observation_id")
+    if canonical_obs.get("function") != "S4":
+        fail("canonical A-Evolve observation function must be S4")
+    if canonical_obs.get("benchmark_id") != "a-evolve-harness-evolution":
+        fail("canonical A-Evolve benchmark_id drift")
+    if canonical_obs.get("benchmark_fit") != "direct":
+        fail("canonical A-Evolve benchmark_fit must be direct")
+    if canonical_obs.get("evidence_source_class") != "first-party-reported":
+        fail("canonical A-Evolve evidence source must remain first-party-reported")
+    if canonical_obs.get("boundary_class") != "canonical-native-system":
+        fail("canonical A-Evolve boundary_class drift")
+    if canonical_obs.get("canonical_harness_id") != "a-evolve":
+        fail("canonical A-Evolve harness linkage drift")
+    if canonical_obs.get("canonical_assessment_ref") != "assessments/a-evolve.md":
+        fail("canonical A-Evolve assessment linkage drift")
+    if canonical_obs.get("canonical_system_eligible") is not True:
+        fail("canonical A-Evolve observation must remain canonical-eligible")
+    if canonical_obs.get("system_compatibility") != "native-system":
+        fail("canonical A-Evolve system compatibility drift")
+    expected_review_ref = "18ba996dac9843f2759b2cdf8a94022f58fbfeb9"
+    if canonical_obs.get("canonical_review_revision") != expected_review_ref:
+        fail("canonical A-Evolve review revision drift")
+    if canonical_obs.get("source_artifact_revision") != "96ed93ba7ee0b9519fc55c963afb47a1975eb1ae":
+        fail("canonical A-Evolve source artifact revision drift")
+    if canonical_obs.get("publication_id") != "arXiv:2605.30621":
+        fail("canonical A-Evolve publication binding drift")
+    if canonical_obs.get("comparison_class") != "controlled-within-system-evolver-study":
+        fail("canonical A-Evolve comparison class drift")
+    if canonical_obs.get("benchmarks") != ["SWE-bench Verified", "MCP-Atlas", "SkillsBench"]:
+        fail("canonical A-Evolve benchmark set drift")
+    if canonical_obs.get("anchor_agents") != ["Claude Opus 4.6", "Claude Sonnet 4.6", "Qwen3-235B-A22B"]:
+        fail("canonical A-Evolve anchor-agent set drift")
+    metrics = canonical_obs.get("reported_harness_updating_metrics")
+    expected_metrics = {
+        "maximum_best_vs_worst_evolver_spread_pp": 3.1,
+        "qwen3_235b_swe_gain_pp": 8.2,
+        "qwen3_235b_mcp_gain_pp": 0.6,
+        "qwen3_5_9b_skillsbench_gain_pp": 3.8,
+        "opus_4_6_skillsbench_gain_pp": 2.3,
+        "qwen3_235b_skillsbench_gain_pp": 1.5,
+    }
+    if metrics != expected_metrics:
+        fail("canonical A-Evolve reported metrics drift")
+    if not isinstance(canonical_obs.get("ordinary_s4_boundary"), str) or len(canonical_obs["ordinary_s4_boundary"].strip()) < 80:
+        fail("canonical A-Evolve ordinary-S4 freeze boundary required")
+    if not isinstance(canonical_obs.get("adaptation_loop"), list) or len(canonical_obs["adaptation_loop"]) < 5:
+        fail("canonical A-Evolve adaptation loop incomplete")
+    if not isinstance(canonical_obs.get("provenance_limitation"), str) or len(canonical_obs["provenance_limitation"].strip()) < 120:
+        fail("canonical A-Evolve provenance limitation required")
+    sources = canonical_obs.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 3 or any(not valid_https(s) for s in sources):
+        fail("canonical A-Evolve primary_sources invalid")
+    a_evolve_fields = assessment_fields("a-evolve")
+    if a_evolve_fields.get("status") != "included":
+        fail("canonical A-Evolve assessment is not included")
+    if a_evolve_fields.get("autonomy_s4") != "A":
+        fail("canonical A-Evolve no longer establishes S4=A")
+    if a_evolve_fields.get("review_ref") != expected_review_ref:
+        fail("canonical A-Evolve assessment review_ref drift")
 
     if coverage.get("direct_benchmark_family_count") != len(DIRECT_S4):
         fail("direct_benchmark_family_count mismatch")
