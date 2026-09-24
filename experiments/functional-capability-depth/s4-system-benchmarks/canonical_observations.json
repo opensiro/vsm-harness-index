@@ -73,5 +73,48 @@
       "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/examples/harness-disentangling/README.md",
       "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/algorithms/unified/engine.py"
     ]
+  },
+  {
+    "observation_id": "kadath-ten-epoch-native-evolution-2026",
+    "function": "S4",
+    "benchmark_id": "kadath-native-evolution",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "canonical-native-system",
+    "canonical_harness_id": "kadath",
+    "canonical_assessment_ref": "assessments/kadath.md",
+    "canonical_system_eligible": true,
+    "system_compatibility": "native-system",
+    "canonical_review_revision": "db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef",
+    "source_artifact_revision": "db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef",
+    "comparison_class": "within-system-longitudinal-population-evolution",
+    "epochs": 10,
+    "benchmark_scope": "one operator-approved run-specific locked fitness benchmark",
+    "ordinary_s4_boundary": "The non-evolving kernel, approved benchmark and objective hashes, grading/evidence pipeline, scoring formulas, selection controls and lineage machinery remain outside the evolvable organism genome. Organism frameworks mutate only after grading; accepted changed genomes are activated for later epochs under the same locked fitness definition.",
+    "adaptation_loop": [
+      "organisms execute under the current genome against the locked environment/fitness definition",
+      "the kernel freezes attempts and an independent Grader extracts benchmark evidence",
+      "verified scores, population evidence and elite evidence enter model-driven reflection, Tweaker and Birther adaptation paths",
+      "valid prompt/source/dependency/file genome mutations are committed after grading",
+      "the changed population is activated and later epochs execute the changed capabilities"
+    ],
+    "reported_population_metrics": {
+      "best_fitness_epoch_1": 18,
+      "best_fitness_epoch_10": 91,
+      "best_fitness_improvement": 73,
+      "top5_median_epoch_1": 8,
+      "top5_median_epoch_10": 77,
+      "top5_median_improvement": 69,
+      "top5_floor_epoch_1": 1,
+      "top5_floor_epoch_10": 71,
+      "top5_floor_improvement": 70
+    },
+    "metric_note": "The first-party README reports a ten-epoch upward shift in the leading cohort. Each epoch point may represent a different top-performing agent, so these metrics describe population-level evolutionary improvement rather than one individual trajectory.",
+    "comparability_limitation": "The fitness benchmark is generated from the user goal and explicitly approved and locked per run. The published proof does not expose enough run metadata to reconstruct a common model/goal/population/configuration cell with A-Evolve or another canonical S4 system. Preserve this as a heterogeneous within-system observation, not a matched cross-harness score.",
+    "vsm_interpretation": "The canonical assessment independently establishes KADATH S4=A. The published proof exercises that same native path: independently graded current performance feeds model-driven mutation and reproduction of persistent organism frameworks, and changed genomes execute in later epochs while the S4 control boundary remains fixed. This supplies a second canonical native direct S4 observation but does not close the matched primary-baseline gap.",
+    "primary_sources": [
+      "https://github.com/i3T4AN/KADATH/blob/db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef/README.md",
+      "https://github.com/i3T4AN/KADATH/blob/db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef/kadath/engine.py"
+    ]
   }
 ]

@@ -28,6 +28,7 @@ COVERAGE_CLASSES = {
     "proxy-scaffolded",
     "proxy-observation-specific",
     "candidate-native-no-direct-results",
+    "canonical-native-direct",
     "domain-native-no-matched-baseline",
     "native-adaptation-boundary-needs-freeze",
 }
@@ -132,8 +133,8 @@ def main() -> None:
         fail("canonical_observations.json must contain a list")
     if not isinstance(proxy_observations, list):
         fail("proxy_observations.json must contain a list")
-    if len(canonical_observations) != 1:
-        fail("expected exactly one canonical direct S4 observation")
+    if len(canonical_observations) != 2:
+        fail("expected exactly two canonical direct S4 observations")
 
     canonical_obs = canonical_observations[0]
     if canonical_obs.get("observation_id") != "a-evolve-harness-updating-2026":
@@ -196,6 +197,58 @@ def main() -> None:
         fail("canonical A-Evolve no longer establishes S4=A")
     if a_evolve_fields.get("review_ref") != expected_review_ref:
         fail("canonical A-Evolve assessment review_ref drift")
+
+    if len({obs.get("observation_id") for obs in canonical_observations}) != 2:
+        fail("canonical S4 observation IDs must be unique")
+    kadath_obs = canonical_observations[1]
+    if kadath_obs.get("observation_id") != "kadath-ten-epoch-native-evolution-2026":
+        fail("unexpected KADATH canonical S4 observation_id")
+    if kadath_obs.get("function") != "S4" or kadath_obs.get("benchmark_id") != "kadath-native-evolution":
+        fail("KADATH canonical observation function/benchmark drift")
+    if kadath_obs.get("benchmark_fit") != "direct":
+        fail("KADATH canonical benchmark_fit must be direct")
+    if kadath_obs.get("evidence_source_class") != "first-party-reported":
+        fail("KADATH evidence source must remain first-party-reported")
+    if kadath_obs.get("boundary_class") != "canonical-native-system":
+        fail("KADATH canonical boundary_class drift")
+    if kadath_obs.get("canonical_harness_id") != "kadath" or kadath_obs.get("canonical_assessment_ref") != "assessments/kadath.md":
+        fail("KADATH canonical linkage drift")
+    if kadath_obs.get("canonical_system_eligible") is not True or kadath_obs.get("system_compatibility") != "native-system":
+        fail("KADATH canonical eligibility/compatibility drift")
+    kadath_ref = "db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef"
+    if kadath_obs.get("canonical_review_revision") != kadath_ref or kadath_obs.get("source_artifact_revision") != kadath_ref:
+        fail("KADATH canonical/source revision drift")
+    if kadath_obs.get("comparison_class") != "within-system-longitudinal-population-evolution":
+        fail("KADATH comparison class drift")
+    if kadath_obs.get("epochs") != 10:
+        fail("KADATH epoch count drift")
+    expected_kadath_metrics = {
+        "best_fitness_epoch_1": 18,
+        "best_fitness_epoch_10": 91,
+        "best_fitness_improvement": 73,
+        "top5_median_epoch_1": 8,
+        "top5_median_epoch_10": 77,
+        "top5_median_improvement": 69,
+        "top5_floor_epoch_1": 1,
+        "top5_floor_epoch_10": 71,
+        "top5_floor_improvement": 70,
+    }
+    if kadath_obs.get("reported_population_metrics") != expected_kadath_metrics:
+        fail("KADATH reported population metrics drift")
+    if not isinstance(kadath_obs.get("ordinary_s4_boundary"), str) or len(kadath_obs["ordinary_s4_boundary"].strip()) < 100:
+        fail("KADATH ordinary-S4 boundary required")
+    if not isinstance(kadath_obs.get("adaptation_loop"), list) or len(kadath_obs["adaptation_loop"]) < 5:
+        fail("KADATH adaptation loop incomplete")
+    if not isinstance(kadath_obs.get("comparability_limitation"), str) or len(kadath_obs["comparability_limitation"].strip()) < 120:
+        fail("KADATH comparability limitation required")
+    kadath_sources = kadath_obs.get("primary_sources")
+    if not isinstance(kadath_sources, list) or len(kadath_sources) < 2 or any(not valid_https(s) for s in kadath_sources):
+        fail("KADATH primary_sources invalid")
+    kadath_fields = assessment_fields("kadath")
+    if kadath_fields.get("status") != "included" or kadath_fields.get("autonomy_s4") != "A":
+        fail("canonical KADATH no longer establishes included S4=A")
+    if kadath_fields.get("review_ref") != kadath_ref:
+        fail("canonical KADATH assessment review_ref drift")
 
     if coverage.get("direct_benchmark_family_count") != len(DIRECT_S4):
         fail("direct_benchmark_family_count mismatch")
@@ -325,8 +378,11 @@ def main() -> None:
             fail(f"{case_id}: invalid coverage_class")
         if case.get("system_compatibility") not in SYSTEM_COMPATIBILITY:
             fail(f"{case_id}: invalid system_compatibility")
-        if case.get("admitted_to_canonical_registry") is not False:
-            fail(f"{case_id}: coverage case must remain non-admitted")
+        if coverage_class == "canonical-native-direct":
+            if case.get("admitted_to_canonical_registry") is not True:
+                fail(f"{case_id}: canonical-native-direct case must be admitted")
+        elif case.get("admitted_to_canonical_registry") is not False:
+            fail(f"{case_id}: non-canonical coverage case must remain non-admitted")
         if not isinstance(case.get("finding"), str) or len(case["finding"].strip()) < 40:
             fail(f"{case_id}: explicit finding required")
         sources = case.get("primary_sources")
@@ -354,6 +410,18 @@ def main() -> None:
                 fail(f"{case_id}: native-no-results candidate must be native-system")
             if case.get("benchmark_fit") != "candidate-direct":
                 fail(f"{case_id}: native-no-results candidate fit drift")
+
+        if coverage_class == "canonical-native-direct":
+            if case_id != "kadath-native-s4-no-standardized-results":
+                fail(f"{case_id}: unreviewed canonical-native-direct case")
+            if fields is None or fields.get("autonomy_s4") != "A":
+                fail(f"{case_id}: canonical-native-direct case must currently establish S4=A")
+            if case.get("system_compatibility") != "native-system":
+                fail(f"{case_id}: canonical-native-direct case must be native-system")
+            if case.get("benchmark_fit") != "direct":
+                fail(f"{case_id}: canonical-native-direct benchmark_fit drift")
+            if case.get("canonical_observation_id") != "kadath-ten-epoch-native-evolution-2026":
+                fail(f"{case_id}: canonical observation linkage drift")
 
         if coverage_class == "domain-native-no-matched-baseline":
             if fields is None or fields.get("autonomy_s4") in {None, "—", "?"}:
