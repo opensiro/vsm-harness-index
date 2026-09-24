@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 561,
+  "reviewed_at": "2026-09-24",
+  "disposition": "evidence-backed-gap",
+  "primary_baseline": "gap",
+  "closure_scope": "current-public-evidence",
+  "canonical_native_observations": [
+    "appliedscientist",
+    "data-to-paper"
+  ],
+  "evidence_depth": {
+    "direct_benchmark_families": 5,
+    "composed_direct_observations": 3,
+    "canonical_direct_observations": 2
+  },
+  "strongest_matched_negative_control": {
+    "paper": "https://arxiv.org/abs/2607.28631",
+    "title": "Can AI Evaluate AI Scientists? A Benchmarking Study of Autonomous Research Generation Systems Using Automated Multi-Model Review",
+    "matched_surface": "15 common research proposals with a common multi-model paper-quality evaluation surface",
+    "systems": ["Sakana v1", "Sakana v2", "CycleResearcher", "Data-to-Paper"],
+    "integrated_review_flags": {
+      "Sakana v1": false,
+      "Sakana v2": false,
+      "CycleResearcher": true,
+      "Data-to-Paper": false
+    },
+    "canonical_anchor": "data-to-paper",
+    "disposition": "not-s3star-native-comparison",
+    "blocking_reason": "The matched study evaluates whole-system paper quality, while its own architecture table marks Integrated Review = No for canonical Data-to-Paper and both Sakana systems. Therefore the matched outcome does not exercise Data-to-Paper's canonical native reviewer-revision S3* path."
+  },
+  "reviewed_route_classes": [
+    {
+      "route_id": "canonical-native-within-system",
+      "status": "heterogeneous",
+      "systems": ["appliedscientist", "data-to-paper"],
+      "blocking_reason": "Tasks, models, evaluator surfaces and result shapes differ; one observation is quantitative and the other descriptive-only."
+    },
+    {
+      "route_id": "direct-composed-review-benchmarks",
+      "status": "not-native-cross-harness",
+      "examples": ["TrueCall", "SWE-Review", "harness-bench"],
+      "blocking_reason": "The reviewer/audit organization is benchmark-defined or composed rather than a materially matched comparison of multiple canonical native S3* implementations."
+    },
+    {
+      "route_id": "ai-scientist-head-to-head-2607.28631",
+      "status": "matched-whole-system-not-s3star",
+      "blocking_reason": "The common paper-quality comparison does not activate the native S3* path of canonical data-to-paper."
+    }
+  ],
+  "closure_claim": "Current public evidence contains direct canonical native S3* observations and matched whole-system comparisons, but no materially matched comparison in which multiple canonical native or adapter-preserved complementary-audit paths are actually active and measured.",
+  "reopen_when": [
+    "a public study evaluates two or more independently canonical-linkable systems with their native or adapter-preserved S3* paths active under one matched task/model/evaluator cell",
+    "an existing matched study publishes configuration or trajectory evidence proving native S3* activation for multiple canonical systems",
+    "an immutable result directly compares discrepancy detection, corrective return and re-verification across multiple canonical systems"
+  ],
+  "do_not_reopen_for": [
+    "another benchmark-supplied external reviewer loop",
+    "another whole-system paper-quality leaderboard without native S3* path activation",
+    "another heterogeneous single-system reviewer-revision result"
+  ],
+  "non_claim": "This closure is not a zero S3* capability score, not a claim that matched evidence can never appear, and not a ranking. It freezes the reviewed public-evidence state until materially new primary evidence changes the matched-native condition."
+}
