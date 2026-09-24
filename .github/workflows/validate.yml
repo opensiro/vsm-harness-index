@@ -94,6 +94,7 @@ jobs:
       - run: python scripts/render_metrics.py --check
       - run: python scripts/sync_metrics_readme.py --check
       - run: python experiments/functional-capability-depth/render_function_baselines.py --check
+      - run: python experiments/functional-capability-depth/render_evidence_frontier.py --check
       - run: python experiments/functional-capability-depth/render_s1_baseline.py --check
       - run: python experiments/functional-capability-depth/s2-system-benchmarks/validate.py
       - run: python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_primary_search_closure.py
