@@ -222,6 +222,8 @@ S4 primary baseline = gap
 
 That is an evidence state, not a zero score.
 
+The first explicit matched-cell preflight is tracked in [`matched-cell/`](matched-cell/PROTOCOL.md). The current A-Evolve × Exo / SkillsBench / skills-only candidate is fail-closed at the exact common model/provider gate, so no execution result is admitted and the primary remains `gap`.
+
 ## Representative canonical S4 cohort
 
 The coverage layer continues to validate several ownership arrangements:
