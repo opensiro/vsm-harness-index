@@ -70,11 +70,6 @@ jobs:
 
               status_match = status_pattern.search(text)
               if status_match and status_match.group(1) == "proposed":
-                  # `proposed` is an Index-local pre-admission lifecycle state,
-                  # not a canonical Methodology state. Validate the prospective
-                  # canonical artifact by normalizing only that lifecycle field
-                  # in a temporary copy; the repository file remains proposed
-                  # and check_index.py keeps it outside the canonical corpus.
                   normalized = status_pattern.sub("status: included", text, count=1)
                   tmp_path = proposed_dir / path.name
                   tmp_path.write_text(normalized, encoding="utf-8")
@@ -98,6 +93,7 @@ jobs:
       - run: python experiments/functional-capability-depth/s2-system-benchmarks/validate.py
       - run: python experiments/functional-capability-depth/s3-system-benchmarks/validate.py
       - run: python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+      - run: python experiments/functional-capability-depth/s3star-system-benchmarks/matched-cell/validate_s3star_primary_search_closure.py
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/validate.py
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate.py
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench.py
