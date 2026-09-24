@@ -1,0 +1,69 @@
+name: tmp-admit-agentos-237
+
+on:
+  push:
+    branches:
+      - admit-agentos-237
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit AgentOS and regenerate canonical projections
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/agentos.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed\n'
+          if old in text:
+              text = text.replace(old, 'status: included\n', 1)
+              assessment.write_text(text, encoding='utf-8')
+          elif 'status: included\n' not in text:
+              raise SystemExit('unexpected AgentOS assessment status')
+
+          catalog = Path('data/catalog.psv')
+          catalog_row = '237|agentos|AgentOS|https://github.com/framerslab/agentos|2025-10-28T04:35:14Z|index-addition|1e9921837385b8218774955b699d949c233e52ea|2026-09-25'
+          catalog_text = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|agentos|' not in catalog_text:
+              catalog.write_text(catalog_text + '\n' + catalog_row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signature_row = "237|agentos|AgentOS closes autonomous S1 through model/tool/delegation loops, S2 through debate-mode peer conflict attenuation, and S4 through judged runtime capability forging; whole-system workflow/resource governance remains constructor-owned S3, routine QA does not establish S3*, and SOUL identity, values and hard limits remain parent-governed S5."
+          signature_text = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|agentos|' not in signature_text:
+              signatures.write_text(signature_text + '\n' + signature_row + '\n', encoding='utf-8')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/check_index.py
+
+          if git diff --quiet; then
+            echo 'No admission changes to commit.'
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/agentos.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md METRICS.md data/metrics.json README.md
+          git commit -m 'index: admit AgentOS at catalog position 237'
+          git push
