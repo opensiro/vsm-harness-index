@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 551,
+  "reviewed_at": "2026-09-24",
+  "refines_preflight": "public-polybench-paper-controls.json",
+  "candidate_cell_id": "adaptive-auto-harness-polybench-gepa-linkage-v4",
+  "preflight_disposition": "blocked",
+  "execution_authorized": false,
+  "primary_baseline_after_preflight": "gap",
+  "evidence_mode": "public-results-only",
+  "paper_row": {
+    "paper": "https://arxiv.org/abs/2606.01770",
+    "reported_method_label": "GEPA",
+    "benchmark": "PolyBench",
+    "paper_level_solver_policy": "Claude Sonnet 4.6 for all experiments unless specified",
+    "paper_level_evolver_policy": "Claude Opus 4.6",
+    "paper_level_solver_temperature": 0.0,
+    "paper_level_evolver_temperature": 0.0,
+    "paper_level_polybench_batch_size": 100,
+    "paper_level_common_chronological_order": true,
+    "paper_level_common_temporal_reveal": true
+  },
+  "implementation_linkage": {
+    "a_evolve_pre_release_revision": "e4f70b949989e0abf08532e8223cb9eab447e971",
+    "adapter_path": "agent_evolve/algorithms/gepa/engine.py",
+    "adapter_documentation_path": "docs/algorithms/gepa.md",
+    "upstream_repository": "https://github.com/gepa-ai/gepa",
+    "upstream_api": "gepa.optimize_anything.optimize_anything",
+    "dependency_spec": "gepa>=0.1.0",
+    "exact_evaluated_package_version": null,
+    "exact_evaluated_upstream_revision": null,
+    "lock_or_run_metadata_found": false,
+    "adapter_calls_upstream_package": true,
+    "adapter_restores_selected_candidate_into_workspace": true
+  },
+  "gates": [
+    {
+      "gate_id": "paper-level-comparison-controls",
+      "status": "satisfied",
+      "finding": "Historical #538 establishes a common paper-level PolyBench task order, batch loop, solver/evolver policy, zero temperatures and result surface for the named auto-harness comparison rows.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770",
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/public-polybench-paper-controls.json"
+      ]
+    },
+    {
+      "gate_id": "evaluated-row-adapter-identity",
+      "status": "satisfied",
+      "finding": "The public A-Evolve pre-release tree contains a GEPAEngine adapter that imports GEPA's optimize_anything API, serializes A-Evolve workspace layers into the GEPA candidate representation, evaluates through the common TrialRunner and restores GEPA's selected candidate into the workspace. The GEPA row therefore has stronger implementation identity than method-label similarity or a wholly local reimplementation.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/e4f70b949989e0abf08532e8223cb9eab447e971/agent_evolve/algorithms/gepa/engine.py",
+        "https://github.com/A-EVO-Lab/a-evolve/blob/e4f70b949989e0abf08532e8223cb9eab447e971/docs/algorithms/gepa.md"
+      ]
+    },
+    {
+      "gate_id": "upstream-gepa-system-identity",
+      "status": "satisfied",
+      "finding": "The adapter and its first-party documentation identify the external package/API as GEPA and point to the public GEPA project. Public GEPA documentation exposes the same optimize_anything API used by the adapter.",
+      "primary_sources": [
+        "https://github.com/gepa-ai/gepa",
+        "https://github.com/A-EVO-Lab/a-evolve/blob/e4f70b949989e0abf08532e8223cb9eab447e971/docs/algorithms/gepa.md"
+      ]
+    },
+    {
+      "gate_id": "immutable-evaluated-upstream-revision-binding",
+      "status": "blocked",
+      "finding": "The inspected pre-release A-Evolve tree constrains GEPA only as gepa>=0.1.0. No package lock, committed run metadata or other primary artifact inspected in the public comparison lineage binds the paper's PolyBench GEPA row to an exact GEPA package version or immutable gepa-ai/gepa revision.",
+      "blocking_effect": "Do not admit the paper GEPA row as canonical-native or adapter-preserved GEPA capability evidence until the exact evaluated upstream package version or immutable repository revision is bound by primary evidence.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/e4f70b949989e0abf08532e8223cb9eab447e971/pyproject.toml",
+        "https://github.com/A-EVO-Lab/a-evolve/blob/e4f70b949989e0abf08532e8223cb9eab447e971/agent_evolve/algorithms/gepa/engine.py"
+      ]
+    },
+    {
+      "gate_id": "canonical-gepa-system-boundary",
+      "status": "not_reached",
+      "finding": "The Index does not currently have a standalone canonical assessment binding this paper row to a reviewed GEPA system-in-focus. Such an assessment must be independent of benchmark performance and can be attempted only after an immutable evaluated implementation is recoverable.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/BASELINE.md"
+      ]
+    },
+    {
+      "gate_id": "canonical-gepa-s4-ownership",
+      "status": "not_reached",
+      "finding": "The GEPA method has an inspectable adaptation algorithm path, but canonical S4 ownership is not inferred from that fact or from the reported result row. Standalone function mapping remains a separate required step.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/PUBLIC-EVIDENCE.md"
+      ]
+    },
+    {
+      "gate_id": "matched-canonical-s4-cell",
+      "status": "not_reached",
+      "finding": "The public paper-level membrane and GEPA adapter identity are established, but the GEPA row cannot enter a matched canonical cell until immutable evaluated revision binding and independent canonical S4 ownership are both established.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/BASELINE.md"
+      ]
+    }
+  ],
+  "results": null,
+  "non_claim": "This refinement establishes that the reported GEPA row uses an A-Evolve adapter around the upstream GEPA optimize_anything implementation, but it does not identify the exact evaluated GEPA package/revision, does not assign canonical S4 ownership to GEPA, does not admit a capability observation or ranking, and does not promote the S4 primary baseline from gap."
+}
