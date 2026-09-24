@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 569,
+  "reviewed_at": "2026-09-24",
+  "disposition": "evidence-backed-gap",
+  "primary_baseline": "gap",
+  "closure_scope": "current-public-evidence",
+  "evidence_depth": {
+    "reviewed_cases": 12,
+    "direct_benchmark_families": 0,
+    "canonical_direct_observations": 0,
+    "representative_canonical_s5_systems": 5
+  },
+  "required_direct_chain": [
+    "identity-or-ultimate-policy-level conflict",
+    "legitimate authority at declared recursion",
+    "actual adjudication-ratification-or-amendment",
+    "decision provenance separating ownership from enforcement",
+    "newly decided policy returned into subsequent operation",
+    "matched native-or-adapter-preserved canonical harness comparison for primary-baseline use"
+  ],
+  "reviewed_route_classes": [
+    {
+      "route_id": "fixed-policy-enforcement-and-governance",
+      "status": "not-direct-s5",
+      "examples": ["AgentGovBench", "CMAG"],
+      "blocking_reason": "These evaluate operation, enforcement or propagation under pre-existing policy rather than legitimate ultimate authority making and returning a new organizational policy decision."
+    },
+    {
+      "route_id": "value-and-policy-reasoning-proxies",
+      "status": "proxy",
+      "examples": ["RoleCDE", "Agent-ValueBench", "GPS-Bench"],
+      "blocking_reason": "The evaluated system reasons about values or external policy but is not established as the legitimate ultimate authority of its own organization."
+    },
+    {
+      "route_id": "live-constitutional-governance-processes",
+      "status": "process-not-harness-benchmark",
+      "examples": ["Agent Parliament", "Constitutional Governance in Metric Spaces"],
+      "blocking_reason": "Actual ratification/amendment processes exist, but they are governance records/protocols rather than reusable agent-harness capability benchmarks."
+    },
+    {
+      "route_id": "parent-escalation-protocol",
+      "status": "protocol-not-benchmark",
+      "examples": ["Human Escalation Mechanism"],
+      "blocking_reason": "The protocol can support parent-governed S5 but supplies no harness capability result."
+    },
+    {
+      "route_id": "native-constitutional-mechanism",
+      "status": "mechanism-not-benchmark",
+      "examples": ["constitutional-agent-governance"],
+      "blocking_reason": "First-party tests exercise legitimate amendment mechanisms and authority guards, but the artifact is a conformance/regression suite rather than a reusable matched harness benchmark."
+    },
+    {
+      "route_id": "constitution-policy-optimization",
+      "status": "authority-not-established",
+      "examples": ["MAC"],
+      "blocking_reason": "Policy adaptation is measurable, but the evaluated system is not established as the legitimate ultimate organizational authority resolving an identity-level tension."
+    }
+  ],
+  "closure_claim": "Current public evidence contains strong S5-shaped mechanisms, governance processes and proxies, but no reusable direct benchmark family that exercises legitimate ultimate authority through policy decision/change and subsequent operation, and no canonical direct S5 observation.",
+  "reopen_when": [
+    "a public benchmark exercises identity or ultimate-policy conflict through legitimate authority, actual decision or amendment, and subsequent operation under the newly decided policy",
+    "a canonical S5 system publishes an immutable native or adapter-preserved direct result satisfying the full S5 chain",
+    "a materially matched benchmark compares two or more canonical-linkable S5 systems under the same authority/change/subsequent-operation protocol"
+  ],
+  "do_not_reopen_for": [
+    "fixed-policy adherence, filtering or enforcement benchmarks",
+    "external public-policy analysis or value-expression tasks",
+    "governance mechanism unit tests, protocols or live constitutional history without a reusable harness capability benchmark"
+  ],
+  "non_claim": "This closure is not a zero S5 capability score and does not deny that canonical systems own S5. It freezes the reviewed public-evidence state until a direct reusable S5 capability benchmark or canonical native result appears."
+}
