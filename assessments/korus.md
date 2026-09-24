@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.6
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-09-24
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -205,6 +205,6 @@ Escalation is largely declarative/operator-owned. Human-in-the-loop and governan
 - Evaluation gate semantics are implemented as a first-party constructor primitive, but no standard release/publish/current-control consumer of `GatePassed` was found at the reviewed revision.
 - Web Console/detail surfaces are not used to infer organizational ownership where the repository's own completeness audit describes them as incomplete/static.
 
-## Proposed standalone result
+## Standalone result
 
 `S1=A / S2=— / S3=— / S3*=C / S4=— / S5=—`.

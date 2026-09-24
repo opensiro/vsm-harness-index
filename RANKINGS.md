@@ -109,6 +109,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agentbox"></a>[AgentBox](https://github.com/madarco/agentbox) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="reasonix"></a>[Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="browser-harness"></a>[Browser Harness](https://github.com/browser-use/browser-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="korus"></a>[Korus](https://github.com/surefire-ai/korus) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="meta-harness"></a>[Meta-Harness](https://github.com/stanford-iris-lab/meta-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="auto-harness"></a>[Auto Harness](https://github.com/neosigmaai/auto-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="autoagent"></a>[AutoAgent](https://github.com/thirdlayerinc/autoagent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
