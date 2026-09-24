@@ -234,3 +234,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 219|cmcp|cMCP|https://github.com/agentrust-io/cmcp|2026-06-03T19:32:18Z|index-addition|f8743e013786b094caaa70c336519834e73c74d5|2026-09-24
 220|agent-control-plane|Agent Control Plane|https://github.com/ryanwi/agent-control-plane|2026-03-06T02:55:06Z|index-addition|99da3934faa2aa7be09df72134cc5e8023e8704f|2026-09-24
 221|appliedscientist|TheAppliedScientist|https://github.com/TheAppliedScientist/TheAppliedScientist|2026-09-02T14:33:15Z|index-addition|762824fd41598370e75588861b48991b0a9fd784|2026-09-24
+222|yao-agents|Yao Agents|https://github.com/YaoApp/yao|2021-09-06T09:20:27Z|index-addition|a289dd55abe357941506e2114fb8c5ec21b99149|2026-09-24
