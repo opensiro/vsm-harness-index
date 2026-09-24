@@ -241,3 +241,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 226|a-evolve|A-Evolve|https://github.com/A-EVO-Lab/a-evolve|2026-02-20T04:52:59Z|index-addition|18ba996dac9843f2759b2cdf8a94022f58fbfeb9|2026-09-24
 227|kotro|Kotro|https://github.com/kotro-labs/kotro-proxy-engine|2026-06-29T06:00:27Z|index-addition|3b07c55ba31af68f3b58f78de2492189b07b23fb|2026-09-24
 228|humanlayer-agent-control-plane|Agent Control Plane|https://github.com/humanlayer/agentcontrolplane|2024-10-17T04:04:29Z|index-addition|eaa2a7ed1d9cb4e13dc53defaf420e36f481dcad|2026-09-24
+229|agentoven|AgentOven|https://github.com/agentoven/agentoven|2026-02-13T18:46:04Z|index-addition|7575127d3a11788a31c1f7d029d0d3eb5c6f2fc6|2026-09-24
