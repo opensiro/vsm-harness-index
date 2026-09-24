@@ -153,7 +153,14 @@
     },
     "S5": {
       "status": "gap",
-      "blocking_reason": "No reviewed benchmark family currently provides direct legitimate ultimate-policy/identity authority, actual adjudication or revision, and return of the newly decided policy into subsequent operation."
+      "reviewed_direct_families": [
+        {
+          "benchmark_id": "govsim-selfgovern",
+          "benchmark_name": "GovSim-SelfGovern",
+          "primary_source": "https://arxiv.org/abs/2609.22600"
+        }
+      ],
+      "blocking_reason": "Reviewed direct S5 evidence now includes GovSim-SelfGovern's benchmark-scaffolded membership/identity authority path, but public evidence still provides no canonical native direct S5 observation and no materially matched comparison of native or adapter-preserved S5 implementations across multiple canonical harnesses."
     }
   },
   "raw_metric_rule": "Do not duplicate numeric benchmark results in this selection record. Store each result once in the shared raw observation layer and reference it from function/domain projections.",
