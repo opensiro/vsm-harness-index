@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 527,
+  "reviewed_at": "2026-09-24",
+  "candidate_cell_id": "a-evolve-exo-skillsbench-skills-only-v1",
+  "preflight_disposition": "blocked",
+  "execution_authorized": false,
+  "primary_baseline_after_preflight": "gap",
+  "systems": [
+    {
+      "harness_id": "a-evolve",
+      "canonical_assessment_ref": "assessments/a-evolve.md",
+      "canonical_review_revision": "18ba996dac9843f2759b2cdf8a94022f58fbfeb9",
+      "canonical_s4_state": "A",
+      "selected_s4_topology": "autonomous native evolver over persistent harness state"
+    },
+    {
+      "harness_id": "exo",
+      "canonical_assessment_ref": "assessments/exo.md",
+      "canonical_review_revision": "6164288895a5851b2118492c880fb37b543e2ac6",
+      "canonical_s4_state": "A(P)",
+      "selected_s4_topology": "autonomous base path using durable skill installation; parent path not selected for the candidate cell"
+    }
+  ],
+  "candidate_membrane": {
+    "benchmark_repository": "https://github.com/benchflow-ai/skillsbench",
+    "benchmark_revision": "828bb921fb94dc065bfefd6bac4e8938be3f71e0",
+    "persistent_adaptation_target": "skills",
+    "split_design": ["B0", "A", "H", "R"],
+    "result_shape": "vector-only-no-global-score"
+  },
+  "gates": [
+    {
+      "gate_id": "canonical-s4-ownership",
+      "status": "satisfied",
+      "finding": "Both canonical assessments are included and independently establish the selected S4 ownership states at their pinned review revisions.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/a-evolve.md",
+        "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/exo.md"
+      ]
+    },
+    {
+      "gate_id": "common-persistent-target",
+      "status": "satisfied",
+      "finding": "A skills-only persistent target is structurally available on both pinned systems: A-Evolve exposes skills as an evolvable workspace layer, while Exo installs durable skills as agent artifacts consumed by later turns.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/config.py",
+        "https://github.com/exoharness/exo/blob/6164288895a5851b2118492c880fb37b543e2ac6/exoharness/typescript/harness/skill-tools.ts"
+      ]
+    },
+    {
+      "gate_id": "skillsbench-provenance",
+      "status": "satisfied",
+      "finding": "A-Evolve pins the public SkillsBench repository to revision 828bb921fb94dc065bfefd6bac4e8938be3f71e0 and exposes task/evaluator integration through its benchmark adapter.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/agents/skillbench/repo.py",
+        "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/benchmarks/skillbench/skill_bench.py"
+      ]
+    },
+    {
+      "gate_id": "exact-common-model-provider",
+      "status": "blocked",
+      "finding": "The pinned built-in A-Evolve SkillsBench native solver constructs a Strands Agent backed by BedrockModel; its Harbor path uses a separate Vertex-style model binding. Pinned Exo supports OpenAI/OpenRouter and native Anthropic bindings, and explicitly excludes provider-prefixed Bedrock/Vertex Anthropic IDs from its native Anthropic route. The reviewed built-in routes therefore do not establish one exact common model/provider cell.",
+      "blocking_effect": "Do not execute or compare the candidate cell until an adapter-preserved common model/provider route is established by primary evidence.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/agents/skillbench/agent.py",
+        "https://github.com/exoharness/exo/blob/6164288895a5851b2118492c880fb37b543e2ac6/exoharness/typescript/model-runtime/responses.ts"
+      ]
+    },
+    {
+      "gate_id": "common-task-evaluator-runtime",
+      "status": "not_reached",
+      "finding": "A task/evaluator adapter for Exo is not promoted to an admissible matched runtime while the exact common model/provider gate is blocked. Structural feasibility is insufficient to count this gate as satisfied.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/benchmarks/base.py",
+        "https://github.com/exoharness/exo/blob/6164288895a5851b2118492c880fb37b543e2ac6/README.md"
+      ]
+    },
+    {
+      "gate_id": "frozen-regulator-hash-plan",
+      "status": "not_reached",
+      "finding": "The protocol declares a skills-only ordinary-S4 target and protected regulator surfaces, but byte/hash stability has not been exercised in a valid common runtime and therefore remains unevaluated.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/config.py",
+        "https://github.com/exoharness/exo/blob/6164288895a5851b2118492c880fb37b543e2ac6/exo/SELF.md"
+      ]
+    },
+    {
+      "gate_id": "heldout-future-use-closure",
+      "status": "not_reached",
+      "finding": "Both systems have persistent skill mechanisms, but the matched B0/A/H/R execution proving held-out future use has not run and cannot be credited while the provider gate is blocked.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/agents/skillbench/agent.py",
+        "https://github.com/exoharness/exo/blob/6164288895a5851b2118492c880fb37b543e2ac6/exoharness/typescript/harness/skill-tools.ts"
+      ]
+    }
+  ],
+  "protected_surfaces": {
+    "a-evolve": [
+      "agent_evolve/algorithms/",
+      "agent_evolve/benchmarks/",
+      "agent_evolve/agents/skillbench/agent.py",
+      "agent_evolve/config.py"
+    ],
+    "exo": [
+      "exo/harness.ts",
+      "exo/prompts/me.md",
+      "exo/tools/guardian-tools.ts",
+      "exoharness/typescript/model-runtime/",
+      "exoharness/typescript/harness/skill-tools.ts"
+    ]
+  },
+  "excluded_substitution": {
+    "harness_id": "kadath",
+    "reason": "Pinned KADATH requires its native Architect to generate and lock the run benchmark from the goal and explicitly forbids dependence on a user-authored benchmark file or script; adapter preservation for an externally authored SkillsBench contract is not established.",
+    "primary_source": "https://github.com/i3T4AN/KADATH/blob/db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef/kadath/specialists.py"
+  },
+  "results": null,
+  "non_claim": "This preflight records a blocked built-in route. It is not a benchmark result, not a capability score, not evidence that either system lacks S4 capability, and not a basis for a cross-harness ranking."
+}
