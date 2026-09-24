@@ -240,3 +240,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 225|swe-mux|swe-mux|https://github.com/jatoran/swe-mux|2026-08-16T21:33:26Z|index-addition|c14351b48a5424d2941b8a2e0e63b56f7033d2a0|2026-09-24
 226|a-evolve|A-Evolve|https://github.com/A-EVO-Lab/a-evolve|2026-02-20T04:52:59Z|index-addition|18ba996dac9843f2759b2cdf8a94022f58fbfeb9|2026-09-24
 227|kotro|Kotro|https://github.com/kotro-labs/kotro-proxy-engine|2026-06-29T06:00:27Z|index-addition|3b07c55ba31af68f3b58f78de2492189b07b23fb|2026-09-24
+228|humanlayer-agent-control-plane|Agent Control Plane|https://github.com/humanlayer/agentcontrolplane|2024-10-17T04:04:29Z|index-addition|eaa2a7ed1d9cb4e13dc53defaf420e36f481dcad|2026-09-24
