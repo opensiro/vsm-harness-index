@@ -119,9 +119,14 @@
           "benchmark_id": "appliedscientist-iterative-review",
           "benchmark_name": "AppliedScientist iterative scientific review-revision",
           "primary_source": "https://arxiv.org/abs/2609.14738"
+        },
+        {
+          "benchmark_id": "data-to-paper-review-revision",
+          "benchmark_name": "data-to-paper native reviewer-revision case study",
+          "primary_source": "https://doi.org/10.1056/AIoa2400555"
         }
       ],
-      "blocking_reason": "Reviewed direct S3* families now include a canonical native within-system observation from AppliedScientist in addition to composed/benchmark-defined review-correction-reverification evidence, but public evidence still does not provide a matched comparison of native S3* implementations across multiple canonical harnesses under one common benchmark/model/configuration cell."
+      "blocking_reason": "Reviewed direct S3* evidence now includes two canonical native systems: AppliedScientist provides quantitative within-system weakness-closure measurements, while data-to-paper provides a first-party published descriptive reviewer→revision closure witness. These observations use different tasks, models, evaluators and result surfaces, so public evidence still does not provide a materially matched comparison of native S3* implementations across multiple canonical harnesses."
     },
     "S4": {
       "status": "gap",

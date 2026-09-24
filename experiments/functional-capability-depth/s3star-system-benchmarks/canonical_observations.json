@@ -47,5 +47,42 @@
       "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-reviewer/review_api.py",
       "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-reviewer/prompts/paper_reviewer_instruction_template.md"
     ]
+  },
+  {
+    "observation_id": "data-to-paper-review-revision-2024",
+    "function": "S3*",
+    "benchmark_id": "data-to-paper-review-revision",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "canonical-native-system",
+    "canonical_harness_id": "data-to-paper",
+    "canonical_system_eligible": true,
+    "system_compatibility": "native-system",
+    "canonical_review_revision": "81df14c4b9600466e645c3b2b336cc54daa3df3a",
+    "publication_id": "DOI:10.1056/AIoa2400555",
+    "publication_date": "2024-12-03",
+    "comparison_class": "descriptive-only",
+    "published_example_count": 1,
+    "published_example_reference": "Figure 2B / Supplementary Run A5",
+    "aggregate_s3star_metric_reported": false,
+    "metric_note": "The publication demonstrates native reviewer-feedback-to-revision closure but does not report an aggregate S3*-specific detection, correction, or re-verification score for this loop.",
+    "audit_loop": [
+      "the performer conversation creates a current research product",
+      "a separate role-inverted Reviewer conversation receives the product and relevant prior research context",
+      "Reviewer emits concrete feedback on the candidate product",
+      "the feedback is transferred back into the performer conversation as corrective input",
+      "the performer revises the product according to the reviewer findings",
+      "the research step concludes only after the product passes rule-based and LLM review, so rejected products remain in the correction/review loop"
+    ],
+    "published_result_summary": "The first-party paper Figure 2B, drawn from Supplementary Run A5, shows reviewer comments on a Discussion draft being returned to the performer and producing a corrected revised response. The Methods state that products must pass LLM review before the research step concludes.",
+    "comparison_scope_note": "This is a direct descriptive within-system closure witness. It is not a quantitative comparison with AppliedScientist or any other harness and must not be normalized into a common S3* score.",
+    "provenance_limitation": "The publication identifies the first-party data-to-paper project and codebase, and the canonical repository at review ref 81df14c4b9600466e645c3b2b336cc54daa3df3a implements the same separate reviewer-to-performer correction loop. The publication does not bind Supplementary Run A5 to the exact canonical review revision. Preserve this as first-party-reported historical evidence; it is not independently reproduced at the pinned revision.",
+    "vsm_interpretation": "The canonical assessment independently establishes S3*=A for data-to-paper. The publication directly observes that native complementary-audit path in operation: a separate reviewer challenges a performer product, findings return to the producer, and the product is revised before review completion. This is direct native S3* capability evidence, but descriptive-only evidence under a different task/model/evaluator surface from AppliedScientist.",
+    "primary_sources": [
+      "https://doi.org/10.1056/AIoa2400555",
+      "https://github.com/Technion-Kishony-lab/data-to-paper/blob/81df14c4b9600466e645c3b2b336cc54daa3df3a/src/data_to_paper/base_steps/dual_converser.py",
+      "https://github.com/Technion-Kishony-lab/data-to-paper/blob/81df14c4b9600466e645c3b2b336cc54daa3df3a/src/data_to_paper/base_steps/request_code.py",
+      "https://github.com/Technion-Kishony-lab/data-to-paper/blob/81df14c4b9600466e645c3b2b336cc54daa3df3a/src/data_to_paper/research_types/hypothesis_testing/steps_runner.py"
+    ]
   }
 ]
