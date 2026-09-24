@@ -118,7 +118,7 @@ Primary evidence:
 
 | Mode | Decisive owner | Trigger | Closure | Evidence |
 | --- | --- | --- | --- | --- |
-| Autonomous (`A`) | Manager model | current review/planner/checklist/project evidence requires a stage/current-control decision | Manager verdict → stage validation → durable advance/hold/rollback/complete → subsequent Planner/Engineer work follows current stage | `argus_skill/manager/_stage_ops.py`, Manager role contract |
+| Base (`A`) | Manager model | current review/planner/checklist/project evidence requires a stage/current-control decision | Manager verdict → stage validation → durable advance/hold/rollback/complete → subsequent Planner/Engineer work follows current stage | `argus_skill/manager/_stage_ops.py`, Manager role contract |
 | Parent (`P`) | Operator | explicit pause/abort/steering/authorization or replacement of standing objective | Manager/Host control path updates durable daemon/campaign state, supersedes or pauses work, and subsequent operation follows the operator decision | `docs/FEATURES.md`, `argus_skill/daemon/_life_worker_boot.py` |
 
 ## S3* — Complementary audit
