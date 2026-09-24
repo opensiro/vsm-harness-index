@@ -1,1 +1,82 @@
-[]
+[
+  {
+    "observation_id": "nool-trackd-scaleup1-contention-2026-08-21",
+    "function": "S2",
+    "benchmark_id": "nool-fleet-coordination",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "benchmark-defined-agent-fleet",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "benchmark_artifact_revision": "126d69b5921be71daffd38c70ec4aa77252b4f39",
+    "result_artifact": "results/trackc/fleet_runs.jsonl",
+    "result_manifest": "results/replications/MANIFEST.md",
+    "findings_artifact": "docs/findings/2026-08-21-findings.md",
+    "experiment": "Track D scale-up 1",
+    "date": "2026-08-21",
+    "model": "claude-sonnet-5",
+    "worker_count": 10,
+    "ticket_count": 20,
+    "nool_version": "6.14.1",
+    "held_constant": [
+      "same 20-ticket corpus-v2 contention workload",
+      "same claude-sonnet-5 model",
+      "same prompts",
+      "same N=10 worker count",
+      "same per-ticket worktree isolation",
+      "serialized worktree creation in both primary arms"
+    ],
+    "disturbance": "Parallel coding agents work against one shared codebase while nine tickets form three overlapping-footprint contention clusters. Without pre-start attenuation, second/third members can branch from stale shared state and collide at integration or silently poison composed behavior.",
+    "treatment": "Pre-start coordination gates dispatch of footprint-overlapping tickets until the prior overlapping ticket has integrated, so later work branches from the updated integrated state.",
+    "git_uncoordinated_runs": [
+      {
+        "run_id": "fleet_git_fleet_9a6eb70f",
+        "accepted": 1,
+        "clean_merges": 14,
+        "tickets": 20,
+        "final_main_health": "build-broken",
+        "failed_integration_spend_usd": 1.40
+      },
+      {
+        "run_id": "fleet_git_fleet_803f2288",
+        "accepted": 13,
+        "clean_merges": 13,
+        "tickets": 20,
+        "final_main_health": "green",
+        "failed_integration_spend_usd": 1.57
+      }
+    ],
+    "coordinated_runs": [
+      {
+        "run_id": "fleet_nool_fleet_cb7ccf72",
+        "accepted": 19,
+        "clean_merges": 20,
+        "tickets": 20,
+        "final_main_health": "green",
+        "failed_integration_spend_usd": 0.0
+      },
+      {
+        "run_id": "fleet_nool_fleet_2a51582f",
+        "accepted": 19,
+        "clean_merges": 20,
+        "tickets": 20,
+        "final_main_health": "green",
+        "failed_integration_spend_usd": 0.0
+      }
+    ],
+    "reported_conflict_structure": "All conflicts in the two primary uncoordinated runs occur on second or third members of the designed contention clusters. The coordinated arm integrates all nine contention-cluster tickets in both primary replicates.",
+    "excluded_variant": {
+      "run_id": "fleet_nool_fleet_16e2e1b0",
+      "reason": "same-batch dispatch-gate bug allowed overlapping tickets admitted in one batch to race; retained in raw data and excluded from the primary comparison"
+    },
+    "causal_control_note": "The same benchmark later reports that a git-only scheduler using the same pre-start check-in logic can match the coordinated Nool arm when declared footprints are accurate. This supports attribution to the coordination relation rather than to product branding alone.",
+    "vsm_interpretation": "This is direct S2 capability evidence at the benchmark-defined fleet boundary: distinct S1 workers generate interaction-specific variety through overlapping concurrent work; the coordination treatment attenuates that interference before execution by delaying overlapping work; later workers then operate on integrated state, changing subsequent S1 behavior and integration outcomes. The public benchmark repository does not establish the external Nool runtime as a canonical Index harness, so this observation is non-canonical and cannot select the S2 primary baseline.",
+    "primary_sources": [
+      "https://github.com/noolinc/nool_long_eval_bench/tree/126d69b5921be71daffd38c70ec4aa77252b4f39",
+      "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/docs/findings/2026-08-21-findings.md",
+      "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/replications/MANIFEST.md",
+      "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/trackc/fleet_runs.jsonl"
+    ]
+  }
+]
