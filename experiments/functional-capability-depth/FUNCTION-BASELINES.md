@@ -33,7 +33,7 @@ Evidence search: [`s3-system-benchmarks/coverage.json`](s3-system-benchmarks/cov
 
 ### S3*
 
-Current direct families close complementary audit loops at benchmark-defined/composed boundaries; published comparisons still do not isolate native S3* implementations across canonical harnesses under a matched design.
+The complementary audit function is supplied by the external TrueCall layer, so wrapped harness results cannot be attributed as native S3* capability of the canonical harness.
 
 Evidence search: [`s3star-system-benchmarks/coverage.json`](s3star-system-benchmarks/coverage.json).
 
