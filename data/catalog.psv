@@ -238,3 +238,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 223|agentsystems-control-plane|AgentSystems Agent Control Plane|https://github.com/agentsystems/agent-control-plane|2025-06-16T23:28:16Z|index-addition|f09a940d4185a44dfab7df77796641268c592e18|2026-09-24
 224|rottay-agent-control-plane|Rottay Agent Control Plane|https://github.com/rottay/agent-control-plane|2026-09-03T13:33:17Z|index-addition|07f4f9c4f8914bb8bec6e179b747f7a8cb7085c8|2026-09-24
 225|swe-mux|swe-mux|https://github.com/jatoran/swe-mux|2026-08-16T21:33:26Z|index-addition|c14351b48a5424d2941b8a2e0e63b56f7033d2a0|2026-09-24
+226|a-evolve|A-Evolve|https://github.com/A-EVO-Lab/a-evolve|2026-02-20T04:52:59Z|index-addition|18ba996dac9843f2759b2cdf8a94022f58fbfeb9|2026-09-24
