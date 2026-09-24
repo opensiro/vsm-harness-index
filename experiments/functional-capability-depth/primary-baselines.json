@@ -148,7 +148,7 @@
           "benchmark_name": "Evo-Bench"
         }
       ],
-      "blocking_reason": "Direct S4 evidence now includes one canonical native A-Evolve harness-updating observation, but public evidence still does not provide a matched comparison of native S4 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.",
+      "blocking_reason": "Direct S4 evidence now includes two canonical native systems: A-Evolve publishes harness-updating measurements across SWE-bench Verified, MCP-Atlas and SkillsBench, while KADATH publishes a ten-epoch locked-benchmark population-improvement run. Their tasks, benchmark definitions, models/configurations and result surfaces are not matched, so public evidence still does not provide a common cross-harness S4 comparison cell.",
       "frozen_repertoire_note": "Ordinary S4 evaluation may use the current S4 repertoire to adapt other organizational capability; persistent improvement of S4's own decision/feedback repertoire belongs to the separate self-organizing-S evidence class."
     },
     "S5": {

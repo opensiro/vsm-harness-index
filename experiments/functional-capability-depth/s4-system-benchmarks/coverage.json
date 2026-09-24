@@ -4,7 +4,7 @@
   "function": "S4",
   "direct_benchmark_family_count": 4,
   "composed_direct_observation_count": 4,
-  "canonical_direct_observation_count": 1,
+  "canonical_direct_observation_count": 2,
   "proxy_observation_count": 5,
   "proxy_systems_observed": [
     "codex",
@@ -13,6 +13,7 @@
   ],
   "coverage_classes": [
     "direct-composed",
+    "canonical-native-direct",
     "task-solver-not-adaptation-owner",
     "proxy-scaffolded",
     "proxy-observation-specific",
@@ -125,17 +126,18 @@
     {
       "case_id": "kadath-native-s4-no-standardized-results",
       "benchmark": "KADATH native evolutionary run",
-      "benchmark_fit": "candidate-direct",
-      "coverage_class": "candidate-native-no-direct-results",
+      "benchmark_fit": "direct",
+      "coverage_class": "canonical-native-direct",
       "system_compatibility": "native-system",
       "canonical_harness_id": "kadath",
       "primary_sources": [
         "https://github.com/i3T4AN/KADATH/blob/db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef/README.md",
         "https://github.com/i3T4AN/KADATH/blob/db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef/kadath/engine.py"
       ],
-      "finding": "KADATH has a native closed S4 loop: independently graded environment/benchmark evidence informs model-driven mutation/reproduction, valid changed organism genomes are activated, and later epochs execute the changed capability. Its benchmark definition is generated and operator-approved per run and the reviewed repository does not publish a standardized reusable matched cross-harness result corpus for this native S4 path.",
+      "finding": "KADATH publishes a native ten-epoch evolutionary run under one locked fitness benchmark at the same revision as its canonical assessment: best fitness rises 18→91, top-five median 8→77, and the top-five floor 1→71. The result directly exercises the canonical S4=A path because independently graded evidence feeds model-driven mutation/reproduction, valid changed genomes are activated, and later epochs execute them while the benchmark/kernel/grading boundary stays fixed. The run-specific generated benchmark and undisclosed full run configuration prevent a matched cross-harness comparison.",
       "ordinary_s4_boundary": "The non-evolving kernel, locked benchmark, grading/evidence machinery and selection controls remain outside the evolvable organism genome during a run, so ordinary S4 can change the operational genome while keeping the S4 regulator boundary fixed.",
-      "admitted_to_canonical_registry": false
+      "admitted_to_canonical_registry": true,
+      "canonical_observation_id": "kadath-ten-epoch-native-evolution-2026"
     },
     {
       "case_id": "super-agent-tone-mirror-native-no-results",

@@ -17,7 +17,7 @@ Current result:
 ```text
 reviewed direct S4 benchmark families/modes: 4
 published direct evidence records at benchmark/composed boundaries: 4
-canonical native/adapter-preserved direct-S4 observations: 1
+canonical native/adapter-preserved direct-S4 observations: 2
 published canonical-system S4-proxy observations: 5 across 3 systems
 S4 primary baseline: gap
 ```
@@ -87,35 +87,31 @@ Evo-Bench lets an evolver diagnose validation failures and persistently rewrite 
 
 ## Canonical direct boundary
 
-`canonical_observations.json` now contains one native direct observation: A-Evolve. Canonical assessment #512 independently established `a-evolve` as `S4=A`; canonical admission #515 then made that ownership claim eligible for capability linkage. The paper's Exp0 protocol directly exercises A-Evolve's first-party evolver over persistent harness state, and the canonical review ref contains the corresponding harness-disentangling artifact and UnifiedEngine port.
+`canonical_observations.json` now contains two native direct observations: A-Evolve and KADATH. Their canonical assessments independently establish `S4=A`; capability evidence is linked only after that ownership decision.
 
-Published harness-updating results are preserved without collapsing them into a scalar: the best-vs-worst evolver spread is at most 3.1 percentage points on any benchmark; Qwen3-235B reports +8.2 pp on SWE and +0.6 pp on MCP; on SkillsBench Qwen3.5-9B reports +3.8 pp versus Opus 4.6 +2.3 pp and Qwen3-235B +1.5 pp. These are first-party-reported historical results, not reproduction at the canonical review commit.
+A-Evolve preserves published harness-updating measurements without collapsing them into a scalar: the best-vs-worst evolver spread is at most 3.1 percentage points on any benchmark; Qwen3-235B reports +8.2 pp on SWE and +0.6 pp on MCP; on SkillsBench Qwen3.5-9B reports +3.8 pp versus Opus 4.6 +2.3 pp and Qwen3-235B +1.5 pp. These are first-party-reported historical results from a divergent release lineage, not reproduction at the canonical review commit.
+
+KADATH's pinned canonical README publishes a ten-epoch native run under one locked fitness benchmark: best fitness 18→91, top-five median 8→77, and the top-five floor 1→71. Each point may be a different leading organism, so this is a population-shift measurement rather than one individual trajectory.
 
 The general system-linkage rule remains unchanged. A direct S4 benchmark can use a canonical harness as its S1 task solver while replacing S4 with a benchmark-owned evolver; that is evidence for the composed benchmark system, not for the task solver. SkillEvolBench's Codex integration remains the key negative control.
 
-One native A-Evolve observation also does **not** create a matched cross-harness primary. A primary still requires at least two canonical systems exercising their own S4 paths under a common evaluation membrane.
+Two native observations still do **not** create a matched cross-harness primary. A-Evolve uses published task suites and a controlled harness-evolution protocol; KADATH generates and operator-approves a run-specific fitness benchmark. Their evaluation membranes are heterogeneous, so no shared comparison cell exists.
 
 ## Native S4 candidates without a general baseline
 
-### KADATH — strongest native capability-adaptation candidate
+### KADATH — canonical native direct observation
 
-Canonical KADATH has `S4=A`.
+Canonical KADATH has `S4=A`, and the same pinned revision publishes a ten-epoch native evolutionary proof under one locked fitness benchmark:
 
-Its shipped evolutionary loop closes:
+| Top-five measurement | Epoch 1 | Epoch 10 | Improvement |
+| --- | ---: | ---: | ---: |
+| Best fitness | 18 | 91 | +73 |
+| Median fitness | 8 | 77 | +69 |
+| Lowest fitness | 1 | 71 | +70 |
 
-```text
-verified benchmark/environment evidence
-        ↓
-model-driven mutation / reproduction
-        ↓
-changed organism genome
-        ↓
-next epoch executes changed capability
-```
+The repository states that each epoch point can be a different top-performing organism, so the observation measures an upward shift across the competitive population rather than a cherry-picked individual trajectory. The ordinary-S4 boundary is clean: organism genomes change only after grading, while the non-evolving kernel, locked benchmark, grading/evidence machinery and selection controls remain outside the evolvable genome.
 
-This is a genuine native S4 path. It also demonstrates a clean ordinary-S4 boundary: the organism genome can change while the non-evolving kernel, locked benchmark, evidence/grading machinery and selection controls remain outside the evolvable genome during the run.
-
-The blocker is measurement comparability, not missing S4. The benchmark/fitness definition is generated and operator-approved per run, and the reviewed repository does not publish a reusable matched cross-harness results corpus for this native S4 path.
+This closes KADATH's native quantitative-observation gap, not the general matched-primary gap. The fitness benchmark is generated and operator-approved per run, and the published proof does not expose a common goal/model/population/configuration cell shared with A-Evolve or another canonical harness.
 
 ### super-agent — durable personal adaptation
 
