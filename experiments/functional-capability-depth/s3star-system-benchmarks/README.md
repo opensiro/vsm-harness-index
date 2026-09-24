@@ -3,7 +3,8 @@
 Status: experimental, non-normative.
 
 Initial issue: #392  
-Primary-baseline follow-up: #430
+Primary-baseline follow-up: #430  
+First canonical native observation: #502
 
 Parent semantic map: `../vsm-benchmark-family-map/`
 
@@ -14,20 +15,23 @@ Can a reviewed direct S3* benchmark be linked to canonical Index systems without
 Current answer:
 
 ```text
-reviewed direct S3* benchmark families: 1
-published direct observations at a composed S3* boundary: 1 aggregate evidence record
-canonical native/adapter-preserved direct-S3* observations: 0
+reviewed direct S3* benchmark families: 4
+published direct observations at composed S3* boundaries: 3
+canonical native direct-S3* observations: 1
 S3* primary baseline: gap
 ```
 
-The gap therefore has two layers:
+The evidence state now has three layers:
 
 ```text
 semantic gap: closed
-  TrueCall directly exercises S3* at a composed audited-system boundary
+  multiple direct families exercise complementary audit + corrective return
 
-canonical linkage gap: open
-  no reviewed public direct-S3* observation yet exercises a canonical harness's own S3* path
+canonical linkage gap: partially closed
+  AppliedScientist provides the first reviewed native canonical observation
+
+matched-primary gap: open
+  no common benchmark cell yet compares native S3* implementations across multiple canonical harnesses
 ```
 
 ## Rule — a direct S3* benchmark must preserve the complementary audit path
@@ -42,147 +46,120 @@ A benchmark is not S3* merely because it contains:
 - retries;
 - a second model.
 
-For a canonical S3* baseline, the evaluated path must preserve all of the following:
+For direct S3* evidence, the evaluated path must preserve all of the following:
 
-1. an ordinary claim or operating report to challenge;
+1. an ordinary claim or operating artifact to challenge;
 2. materially complementary evidence access;
 3. sufficient audit independence for the addressed risk;
 4. discrepancy/finding returned into current control;
-5. correction or retry with possible re-verification;
-6. native or adapter-preserved ownership of that path by the canonical harness being scored;
-7. matched model/task/environment/evaluator where cross-harness comparison is claimed.
+5. correction or retry with possible re-verification.
 
-This keeps function mapping separate from benchmark vocabulary.
+For a canonical S3* observation, the path must additionally be native or defensibly adapter-preserved for the canonical harness being observed. A cross-harness primary baseline further requires a matched model/task/environment/evaluator cell.
 
-## Direct family: TrueCall runtime verification
+This keeps function mapping separate from benchmark vocabulary and keeps ownership separate from capability measurement.
+
+## Composed direct families
+
+### TrueCall runtime verification
 
 Reviewed TrueCall revision:
 
 `3b1d8ce253ad6d9908936f844bf5e0255785e8b9`
 
-The direct mapping is based on the actual audit path:
+The τ²-bench integration injects silent write-tool failures by undoing the database mutation while preserving a success-shaped tool response. The complementary post-condition path independently inspects world/database state, detects the discrepancy, replaces the false success with corrective feedback, and allows subsequent retry/re-verification.
 
-```text
-ordinary claim
-  tool returns success
-        ↓
-complementary reality access
-  deterministic post-condition inspects world/database state
-        ↓
-challenge
-  expected state != actual state
-        ↓
-control feedback
-  false success replaced by structured correction
-        ↓
-subsequent operation
-  agent may retry and the effect is re-verified
-```
-
-The τ²-bench integration deliberately injects silent write-tool failures by undoing the database mutation while preserving a success-shaped tool response. Detection therefore cannot be obtained by trusting or re-parsing the ordinary report; it depends on the complementary state path.
-
-## Published direct observation
-
-`benchmark_observations.json` records the publisher's live τ²-bench retail experiment with Gemini 2.5 Flash.
-
-Across three paired run groups the publisher reports:
+Across the publisher's three paired run groups, `benchmark_observations.json` records:
 
 - all injected silent failures detected;
 - zero false positives in the reported runs;
 - baseline mean task reward `0.362`;
 - TrueCall mean task reward `0.384`;
 - end-task recovery **not established**, because run-level reward deltas were inconsistent;
-- retry uptake changed from `8%` (`n=25`) under soft correction wording to `64%` (`n=11`) under imperative wording.
+- retry uptake changing from `8%` (`n=25`) under soft correction wording to `64%` (`n=11`) under imperative wording.
 
-The direct S3* result is the complementary detection/feedback path. It is **not** a claim that downstream S1 recovery is guaranteed.
+The direct S3* result is the complementary detection/feedback path. It is not a claim that downstream S1 recovery is guaranteed.
 
-## Canonical-system boundary
+### SWE-Review-Bench
 
-`canonical_observations.json` is intentionally empty.
+SWE-Review-Bench closes a benchmark-defined generate → independent review → revise → re-verify loop. A separate reviewer explores the repository and candidate PR, returns structured approve/reject feedback, rejected work returns to the original generator, and the revised patch is independently re-evaluated through SWE-bench.
 
-TrueCall has adapters for Codex and Claude Code, but those adapters add an external audit layer. They do not make the wrapped product's canonical assessment own that layer.
+The published example for Qwen3-30B-A3B reports an initial resolve rate of `27.5%` and iterative resolve rate of `56.9%` (`+29.4` percentage points). Because the reviewer/revision organization is supplied by the benchmark, this remains composed direct S3* evidence rather than native evidence for an execution substrate or PR-generator harness.
 
-A future observation may enter `canonical_observations.json` only when the direct benchmark actually exercises a canonical harness's first-party S3* path as either:
+### harness-bench adversarial review
 
-- `native-system`, or
-- defensible `adapter-preserved` where the adapter preserves the native S3* mechanism rather than replacing it.
+harness-bench Pilot 4 directly instantiates a separate adversarial reviewer, returns `REQUEST_CHANGES` findings to the original executor session, performs one revision round, then reruns build, visible tests and held-out verification. The two published L2 FULL runs both requested changes, both revised, and both passed post-revision build/visible/holdout checks.
 
-## Native proxy: SWE-agent
+The benchmark authors describe this as a clean-room benchmark implementation of production patterns rather than production Telos code. The result therefore belongs to the benchmark-defined composed organization.
 
-SWE-agent remains the strongest native benchmarked proxy found so far.
+## First canonical native observation — AppliedScientist
 
-Its first-party SWE-bench Lite configuration explicitly runs:
+Canonical anchor:
 
-- `agent.type: retry`;
-- multiple operational attempts;
-- a separate chooser/reviewer model;
-- reviewer selection among candidate patch submissions.
+```text
+harness_id: appliedscientist
+catalog: 221
+review_ref: 762824fd41598370e75588861b48991b0a9fd784
+S3*=A
+```
 
-This is real benchmarked native S3* mechanism evidence, but SWE-bench is reviewed as a direct **S1** benchmark. Its score is end-to-end software task success, not a direct S3* discrepancy/challenge/feedback metric. The evidence therefore remains `native-proxy`.
+The standalone canonical assessment established the native S3* path independently from repository evidence: the Scientist submits the current manuscript to a separately deployed Reviewer, the Reviewer performs a fresh independent review with its own literature/methodology evidence access, findings return to the Scientist for corrective code/experiment/manuscript work, and the revised artifact is submitted for another fresh review.
 
-## Negative control: PawBench `Self_Verification`
+The first-party publication then directly exercises that organization over 30 completed scientific-revision trajectories and five revision rounds. `canonical_observations.json` records the reported closure counts:
 
-PawBench publishes a `Self_Verification` capability slice in the same fixed-model harness matrix used by the S1 baseline.
+- execution-related weaknesses: `128 / 150` resolved (`85.3%`);
+- idea-related weaknesses: `2 / 18` resolved (`11.1%`);
+- revision conditions include human-initialized reviewer-guided revision, AI-initialized reviewer-guided revision, and autonomous fixed-prompt self-revision;
+- saved human-initialized versions are separately scored by Stanford Reviewer as an external validation surface, not as the native S3* owner.
 
-That label must not be translated into S3*.
+This is **first-party-reported**, not independently reproduced. The public repository at the canonical review ref implements the same Scientist → separate Reviewer → correction → fresh-review architecture described in the publication, but the fetched publication does not expose an explicit repository URL binding the reported experimental runs to that exact Git commit. The validator preserves this caveat mechanically.
 
-The slice remains task-performance evidence and does not by itself establish:
+This observation closes the previous `canonical_direct_observation_count = 0` evidence gap. It does **not** close the primary-baseline gap because it is one within-system result rather than a matched cross-harness comparison.
 
-- an ordinary claim versus a distinct reality path;
-- audit independence;
-- discrepancy detection;
-- corrective return into S3;
-- re-verification.
+## Native proxy — SWE-agent
 
-This case is retained explicitly as `capability-label-not-s3star` so future domain/capability views cannot silently equate benchmark vocabulary with VSM organizational functions.
+SWE-agent remains native benchmarked proxy evidence. Its first-party SWE-bench Lite configuration explicitly runs multiple attempts plus a separate chooser/reviewer model, but SWE-bench scores end-to-end software-task success rather than complementary-audit discrepancy and feedback. The evidence therefore remains `native-proxy`, not direct S3*.
+
+## Negative controls
+
+### PawBench `Self_Verification`
+
+PawBench publishes a `Self_Verification` capability slice in the same fixed-model harness matrix used by the S1 baseline. The label does not establish a materially distinct reality path, audit independence, discrepancy detection, corrective return, or re-verification, so it remains `capability-label-not-s3star`.
+
+### SilentProbe self-monitoring
+
+SilentProbe exposes ordinary tool-using agents to production-API silent failures and reports low self-detection and no repair in its evaluated loop. This is useful negative evidence for same-agent self-monitoring, but it does not instantiate a materially distinct complementary evidence channel and remains non-direct scaffolded evidence.
 
 ## Canonical native paths without direct benchmark results
 
 The absence of a direct benchmark is represented as missing evidence, not a low score.
 
-### Codex Guardian / AutoReview
+- `codex` — `S3*=C`; Guardian/AutoReview supplies a first-party complementary review path, but no reviewed direct native result cell was recovered.
+- `omnigent` — `S3*=A`; Polly supplies a separate cross-vendor reviewer and corrective fix-task loop, but no reviewer-specific direct result cell was recovered.
+- `thclaws` — `S3*=A`; teammate completion can be challenged through workspace inspection and returned for correction, but no direct published benchmark was recovered.
+- `reigen` — `S3*=C`; project-configured verification can inspect a completed child worktree before completion is accepted, but no direct published result was recovered.
+- `redteam` — `S3*=A`; the default cross-provider adversarial reviewer returns requested changes into a fresh implementation/re-review loop, but the pinned repository exposes no committed real Phase-1 result set for direct admission.
 
-Canonical Codex has `S3*=C`. Its optional Guardian/AutoReview path runs a distinct reviewer over a captured proposed action, can gather read-only context, and returns a structured allow/deny result into execution.
+These cases remain `candidate-native-no-direct-results`: the organizational path exists, but the direct capability observation does not.
 
-The reviewed public search did not recover a first-party published benchmark cell that directly measures this native complementary-audit path and supports a matched canonical-harness comparison. TrueCall-wrapped Codex remains an external composed system, not Codex Guardian evidence.
-
-### Omnigent Polly reviewer
-
-Canonical Omnigent has `S3*=A`. The bundled Polly organization uses a separate cross-vendor reviewer; blocking findings become corrective fix tasks.
-
-The repository has broader release/performance benchmark infrastructure, but the reviewed benchmark surfaces did not publish reviewer-specific discrepancy, corrective-return and re-verification measurements under a matched canonical-harness design. Generic regression/performance benchmarks are not promoted to S3*.
-
-### thClaws Team audit path
-
-Canonical thClaws has `S3*=A`. A teammate completion claim can be challenged through direct lead inspection of workspace reality; inadequate work can be returned to the responsible teammate before acceptance/integration.
-
-No reviewed published benchmark was recovered for this exact claim → complementary inspection → corrective return path.
-
-### Reigen verification constructor
-
-Canonical Reigen has `S3*=C`. A configured project verification command can inspect a finished child's worktree before the manager consumes the child-completion event, and the verdict returns into current control.
-
-No reviewed published direct benchmark was recovered for that constructor path.
-
-These cases are recorded as `candidate-native-no-direct-results`: the organizational path exists, but the benchmark observation does not.
-
-## Existing proxy: AuditBench
+## Existing proxy — AuditBench
 
 AuditBench remains a strong S3* proxy. Its investigator can obtain alternative evidence about hidden target-model behavior, but the target is an external benchmark object and findings do not have to return into current control of the same operating organization.
 
 ## Representative canonical S3* systems inspected
 
-The coverage layer checks mechanism-diverse current canonical systems:
+The coverage layer currently checks mechanism-diverse canonical systems:
 
-- `omnigent` — `S3*=A`, separate cross-vendor reviewer and corrective fix-task loop;
-- `thclaws` — `S3*=A`, completion claim challenged through direct workspace inspection and corrective return;
-- `codex` — `S3*=C`, optional Guardian AutoReview path;
-- `swe-agent` — `S3*=C`, optional retry/chooser reviewer path;
-- `reigen` — `S3*=C`, independent worktree verification constructor path.
+- `omnigent` — `S3*=A`;
+- `thclaws` — `S3*=A`;
+- `codex` — `S3*=C`;
+- `swe-agent` — `S3*=C`;
+- `reigen` — `S3*=C`;
+- `redteam` — `S3*=A`;
+- `appliedscientist` — `S3*=A`, first admitted canonical direct observation.
 
 ## What would close the primary gap
 
-A usable primary baseline needs at least one matched cell where two or more canonical harnesses exercise their own complementary-audit paths under comparable disturbances.
+A selected primary baseline needs a matched cell where two or more canonical harnesses exercise their own complementary-audit paths under comparable disturbances and evaluation conditions.
 
 A suitable benchmark would preferably report S3*-specific observables such as:
 
@@ -197,7 +174,7 @@ successful re-verification rate
 audit cost / latency
 ```
 
-End-task S1 success may be retained as downstream context, but it should not replace the audit-specific measurement.
+End-task S1 success may be retained as downstream context, but it should not replace audit-specific measurement.
 
 Until such a cell exists:
 
@@ -210,18 +187,22 @@ That is an evidence state, not a zero capability score.
 ## Source of truth
 
 - `benchmark_observations.json` — direct S3* observations at non-canonical composed boundaries;
-- `canonical_observations.json` — direct native/adapter-preserved canonical harness observations; currently `[]`;
-- `coverage.json` — direct/proxy/negative-control/native-no-results cases;
-- `validate.py` — checks the reviewed direct family, observation separation, required search cases and canonical assessment anchors.
+- `canonical_observations.json` — direct native/adapter-preserved canonical harness observations; currently one AppliedScientist record;
+- `coverage.json` — direct/proxy/negative-control/native-no-results cases and representative canonical cohort;
+- `validate.py` — fail-closed checks for direct-family membership, composed/canonical observation separation, published metrics, provenance caveats and canonical assessment anchors;
+- `../primary-baselines.json` — primary selection state; remains `gap` for S3*.
 
 ## Non-goals
 
 This layer does not:
 
-- infer canonical S3* ownership from TrueCall results;
-- credit an external audit plugin to Codex or Claude Code;
+- infer canonical S3* ownership from external wrappers;
+- credit TrueCall to Codex or Claude Code;
 - treat every verifier, judge, test, `Self_Verification` label or retry loop as S3*;
 - convert missing native benchmark results into zero scores;
-- infer autonomy state from detection/retry/reward metrics;
-- combine S3* detection with S1 recovery into one score;
+- infer autonomy state from capability metrics;
+- treat Stanford Reviewer as the native AppliedScientist S3* owner;
+- claim the AppliedScientist result was independently reproduced at the pinned Git revision;
+- combine S3* detection/closure with S1 task success into one score;
+- select a primary baseline from one native observation;
 - modify canonical assessments, Profile, Skills, catalog or derived rankings.
