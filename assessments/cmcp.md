@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.6
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-09-24
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -189,7 +189,7 @@ Primary evidence:
 - Plausible first-party paths checked: policy engine as S5; signed policy issuer as parent S5; manifest intent as organizational identity; operator block/unblock as ultimate authority.
 - Why no material first-party path remains: the repository verifies and enforces externally supplied identity/policy facts, but does not establish an identity/ultimate-policy organizational decision loop at the declared first-party recursion.
 
-## Proposed terminal outcome
+## Terminal outcome
 
 `excluded-no-agentic-vsm`.
 
