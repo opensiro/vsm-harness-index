@@ -11,7 +11,7 @@ This view reports baseline availability and evidence coverage only. It does not 
 | S1 | `selected` | PawBench v1.0 | `qwen3.6-35b-a3b` | [generated S1 baseline](S1-BASELINE.md) |
 | S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 11 reviewed cases · direct families: `2` · direct observations: `0` |
 | S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 8 reviewed cases · direct families: `2` · direct observations: `0` |
-| S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 11 reviewed cases · direct families: `1` · canonical direct observations: `0` · composed direct observations: `1` |
+| S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 12 reviewed cases · direct families: `2` · canonical direct observations: `0` · composed direct observations: `2` |
 | S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 14 reviewed cases · direct families: `4` · canonical direct observations: `0` · composed direct observations: `4` |
 | S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 12 reviewed cases · direct families: `0` · canonical direct observations: `0` |
 
@@ -33,7 +33,7 @@ Evidence search: [`s3-system-benchmarks/coverage.json`](s3-system-benchmarks/cov
 
 ### S3*
 
-The complementary audit function is supplied by the external TrueCall layer, so wrapped harness results cannot be attributed as native S3* capability of the canonical harness.
+Current direct families close complementary audit loops at benchmark-defined/composed boundaries; published comparisons still do not isolate native S3* implementations across canonical harnesses under a matched design.
 
 Evidence search: [`s3star-system-benchmarks/coverage.json`](s3star-system-benchmarks/coverage.json).
 
