@@ -66,10 +66,15 @@
         {
           "benchmark_id": "dpbench",
           "benchmark_name": "DPBench",
-          "primary_source": "https://github.com/najmulhasan-code/dpbench",
-          "blocking_reason": "The coordination organization and protocol are benchmark-scaffolded; published comparisons do not yet isolate native S2 implementations across canonical harnesses under a matched model."
+          "primary_source": "https://github.com/najmulhasan-code/dpbench"
+        },
+        {
+          "benchmark_id": "stale-semantic-coordination",
+          "benchmark_name": "STALE semantic-coordination benchmark",
+          "primary_source": "https://github.com/illinoisdata/STALE-bench/tree/f7bc831e4eff08b9652acd893553824636ae3985"
         }
-      ]
+      ],
+      "blocking_reason": "Reviewed direct S2 families exercise benchmark-defined coordination organizations and disturbance/attenuation relations, but published evidence does not yet provide a matched comparison of native S2 implementations across canonical harnesses."
     },
     "S3": {
       "status": "gap",
@@ -77,10 +82,15 @@
         {
           "benchmark_id": "clawarena-team",
           "benchmark_name": "ClawArena-Team",
-          "primary_source": "https://github.com/aiming-lab/ClawArena/tree/main/ClawArena-Team",
-          "blocking_reason": "The benchmark supplies the management tool surface, worker pool and team organization; published comparison varies the main-agent model rather than native S3 implementations of canonical harnesses."
+          "primary_source": "https://github.com/aiming-lab/ClawArena/tree/main/ClawArena-Team"
+        },
+        {
+          "benchmark_id": "loop-back-authority",
+          "benchmark_name": "Loop-Back Authority paired manager-control experiment",
+          "primary_source": "https://github.com/cihatburak/loop-back-authority-llm-agents/tree/6f26a97cafb0b463a45cdc40b5348351d844f7a5"
         }
-      ]
+      ],
+      "blocking_reason": "Reviewed direct S3 families exercise benchmark-defined current-control organizations and management authority, but published evidence does not yet provide a matched comparison of native S3 implementations across canonical harnesses."
     },
     "S3*": {
       "status": "gap",
@@ -88,10 +98,15 @@
         {
           "benchmark_id": "truecall-runtime-verification",
           "benchmark_name": "TrueCall silent-failure runtime verification",
-          "primary_source": "https://github.com/abhid1234/truecall",
-          "blocking_reason": "The complementary audit function is supplied by the external TrueCall layer, so wrapped harness results cannot be attributed as native S3* capability of the canonical harness."
+          "primary_source": "https://github.com/abhid1234/truecall/tree/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2"
+        },
+        {
+          "benchmark_id": "swe-review",
+          "benchmark_name": "SWE-Review-Bench generate-review-revise evaluation",
+          "primary_source": "https://github.com/LegoX/SWE-Review/tree/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench"
         }
-      ]
+      ],
+      "blocking_reason": "Reviewed direct S3* families close complementary audit and corrective-return loops at composed or benchmark-defined boundaries, but published evidence does not yet provide a matched comparison of native S3* implementations across canonical harnesses."
     },
     "S4": {
       "status": "gap",
@@ -107,6 +122,10 @@
         {
           "benchmark_id": "evoharnessbench-self-evolving",
           "benchmark_name": "EvoHarnessBench self-evolving mode"
+        },
+        {
+          "benchmark_id": "evo-bench",
+          "benchmark_name": "Evo-Bench"
         }
       ],
       "blocking_reason": "Current direct families evaluate benchmark-defined or composed adaptation loops rather than matched native S4 implementations across canonical harnesses.",
