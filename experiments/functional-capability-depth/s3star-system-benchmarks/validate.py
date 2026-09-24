@@ -16,7 +16,7 @@ BENCHMARK_OBSERVATIONS = HERE / "benchmark_observations.json"
 CANONICAL_OBSERVATIONS = HERE / "canonical_observations.json"
 
 COMPOSED_DIRECT_S3STAR = {"truecall-runtime-verification", "swe-review", "harness-bench-adversarial-review"}
-DIRECT_S3STAR = COMPOSED_DIRECT_S3STAR | {"appliedscientist-iterative-review"}
+DIRECT_S3STAR = COMPOSED_DIRECT_S3STAR | {"appliedscientist-iterative-review", "data-to-paper-review-revision"}
 EXPECTED_OBSERVATION_IDS = {
     "truecall-tau2-retail-silent-failure-2026-06",
     "swe-review-generate-review-revise-2026-07",
@@ -25,6 +25,9 @@ EXPECTED_OBSERVATION_IDS = {
 CANONICAL_OBSERVATION_ID = "appliedscientist-iterative-review-2026-09"
 CANONICAL_DIRECT_HARNESS = "appliedscientist"
 CANONICAL_REVIEW_REF = "762824fd41598370e75588861b48991b0a9fd784"
+DATA_TO_PAPER_OBSERVATION_ID = "data-to-paper-review-revision-2024"
+DATA_TO_PAPER_HARNESS = "data-to-paper"
+DATA_TO_PAPER_REVIEW_REF = "81df14c4b9600466e645c3b2b336cc54daa3df3a"
 
 COVERAGE_CLASSES = {
     "direct-composed",
@@ -57,6 +60,7 @@ REQUIRED_CASE_IDS = {
     "reigen-verification-native-no-direct-results",
     "redteam-adversarial-review-native-no-direct-results",
     "appliedscientist-native-s3star-direct",
+    "data-to-paper-native-s3star-direct",
 }
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
@@ -162,6 +166,70 @@ def validate_canonical_observation(observation: dict) -> None:
     if not any(CANONICAL_REVIEW_REF in source for source in sources if "github.com" in source):
         fail("AppliedScientist observation must retain pinned repository evidence")
 
+
+def validate_data_to_paper_observation(observation: dict) -> None:
+    if observation.get("observation_id") != DATA_TO_PAPER_OBSERVATION_ID:
+        fail("unexpected data-to-paper canonical observation_id")
+    if observation.get("function") != "S3*" or observation.get("benchmark_fit") != "direct":
+        fail("data-to-paper canonical observation must remain direct S3*")
+    if observation.get("benchmark_id") != "data-to-paper-review-revision":
+        fail("data-to-paper benchmark linkage drift")
+    if observation.get("evidence_source_class") != "first-party-reported":
+        fail("data-to-paper result must remain first-party-reported")
+    if observation.get("boundary_class") != "canonical-native-system":
+        fail("data-to-paper observation must retain canonical-native-system boundary")
+    if observation.get("canonical_harness_id") != DATA_TO_PAPER_HARNESS:
+        fail("data-to-paper canonical_harness_id drift")
+    if observation.get("canonical_system_eligible") is not True:
+        fail("data-to-paper observation must remain canonical-system eligible")
+    if observation.get("system_compatibility") != "native-system":
+        fail("data-to-paper observation must remain native-system")
+    if observation.get("canonical_review_revision") != DATA_TO_PAPER_REVIEW_REF:
+        fail("data-to-paper canonical review ref drift")
+    if observation.get("comparison_class") != "descriptive-only":
+        fail("data-to-paper observation must remain descriptive-only")
+    if observation.get("published_example_count") != 1:
+        fail("data-to-paper published example count drift")
+    if observation.get("published_example_reference") != "Figure 2B / Supplementary Run A5":
+        fail("data-to-paper published example reference drift")
+    if observation.get("aggregate_s3star_metric_reported") is not False:
+        fail("data-to-paper must not acquire an invented aggregate S3* metric")
+
+    fields = assessment_fields(DATA_TO_PAPER_HARNESS)
+    if fields.get("status") != "included":
+        fail("data-to-paper canonical assessment must remain included")
+    if fields.get("autonomy_s3_star") != "A":
+        fail("data-to-paper no longer establishes canonical S3*=A")
+    if fields.get("review_ref") != DATA_TO_PAPER_REVIEW_REF:
+        fail("data-to-paper assessment review_ref drift")
+
+    audit_loop = observation.get("audit_loop")
+    if not isinstance(audit_loop, list) or len(audit_loop) < 6:
+        fail("data-to-paper observation must preserve full reviewer-correct-review closure")
+    loop_text = " ".join(audit_loop)
+    for phrase in ("separate role-inverted Reviewer", "transferred back into the performer", "concludes only after the product passes"):
+        if phrase not in loop_text:
+            fail(f"data-to-paper audit-loop closure drift: {phrase}")
+
+    limitation = observation.get("provenance_limitation")
+    if not isinstance(limitation, str) or DATA_TO_PAPER_REVIEW_REF not in limitation:
+        fail("data-to-paper provenance limitation must retain pinned review ref")
+    if "not independently reproduced" not in limitation:
+        fail("data-to-paper provenance limitation must preserve non-reproduction boundary")
+    if "does not bind Supplementary Run A5 to the exact canonical review revision" not in limitation:
+        fail("data-to-paper historical run/revision caveat must remain explicit")
+
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(s) for s in sources):
+        fail("data-to-paper observation requires publication plus pinned first-party code sources")
+    if "https://doi.org/10.1056/AIoa2400555" not in sources:
+        fail("data-to-paper observation must retain the publication source")
+    if not any(DATA_TO_PAPER_REVIEW_REF in source for source in sources if "github.com" in source):
+        fail("data-to-paper observation must retain pinned repository evidence")
+    metric_note = observation.get("metric_note")
+    if not isinstance(metric_note, str) or "does not report an aggregate S3*-specific" not in metric_note:
+        fail("data-to-paper no-score boundary must remain explicit")
+
 def main() -> None:
     benchmark_map = json.loads(MAP.read_text(encoding="utf-8"))
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
@@ -193,9 +261,14 @@ def main() -> None:
     if coverage.get("canonical_direct_observation_count") != len(canonical_observations):
         fail("canonical_direct_observation_count mismatch")
 
-    if len(canonical_observations) != 1:
-        fail("expected exactly one canonical direct S3* observation")
-    validate_canonical_observation(canonical_observations[0])
+    if len(canonical_observations) != 2:
+        fail("expected exactly two canonical direct S3* observations")
+    canonical_by_id = {obs.get("observation_id"): obs for obs in canonical_observations}
+    expected_canonical_ids = {CANONICAL_OBSERVATION_ID, DATA_TO_PAPER_OBSERVATION_ID}
+    if set(canonical_by_id) != expected_canonical_ids:
+        fail(f"unexpected canonical S3* observation set: {sorted(canonical_by_id)}")
+    validate_canonical_observation(canonical_by_id[CANONICAL_OBSERVATION_ID])
+    validate_data_to_paper_observation(canonical_by_id[DATA_TO_PAPER_OBSERVATION_ID])
 
     declared_classes = set(coverage.get("coverage_classes", []))
     if declared_classes != COVERAGE_CLASSES:

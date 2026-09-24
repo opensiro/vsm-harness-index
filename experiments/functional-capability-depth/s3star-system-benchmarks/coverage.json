@@ -2,9 +2,9 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-24",
   "function": "S3*",
-  "direct_benchmark_family_count": 4,
+  "direct_benchmark_family_count": 5,
   "composed_direct_observation_count": 3,
-  "canonical_direct_observation_count": 1,
+  "canonical_direct_observation_count": 2,
   "coverage_classes": [
     "direct-composed",
     "direct-native",
@@ -231,6 +231,22 @@
       ],
       "finding": "Canonical AppliedScientist establishes S3*=A through its separate fresh Reviewer service and Scientist correction/re-review loop. The first-party publication directly evaluates this organization over 30 scientific-revision trajectories and reports 128/150 execution-related weaknesses resolved (85.3%) while only 2/18 idea-related weaknesses are resolved (11.1%). This is admitted native direct S3* evidence; the result is first-party-reported rather than independently reproduced at the pinned Git revision and does not supply a matched cross-harness primary cell.",
       "admitted_to_canonical_registry": true
+    },
+    {
+      "case_id": "data-to-paper-native-s3star-direct",
+      "benchmark": "data-to-paper native reviewer-revision case study",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-native",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "data-to-paper",
+      "observation_ref": "canonical_observations.json#data-to-paper-review-revision-2024",
+      "primary_sources": [
+        "https://doi.org/10.1056/AIoa2400555",
+        "https://github.com/Technion-Kishony-lab/data-to-paper/blob/81df14c4b9600466e645c3b2b336cc54daa3df3a/src/data_to_paper/base_steps/dual_converser.py",
+        "https://github.com/Technion-Kishony-lab/data-to-paper/blob/81df14c4b9600466e645c3b2b336cc54daa3df3a/src/data_to_paper/research_types/hypothesis_testing/steps_runner.py"
+      ],
+      "finding": "Canonical data-to-paper establishes S3*=A through a separate reviewer conversation whose findings return to the performer for revision. The first-party publication Figure 2B / Supplementary Run A5 directly shows that reviewer-to-revision closure. The evidence is descriptive-only and reports no aggregate S3*-specific score, so it is admitted as a native direct observation without creating a matched primary cell.",
+      "admitted_to_canonical_registry": true
     }
   ],
   "representative_canonical_s3star_systems_inspected": [
@@ -240,7 +256,8 @@
     "swe-agent",
     "reigen",
     "redteam",
-    "appliedscientist"
+    "appliedscientist",
+    "data-to-paper"
   ],
   "canonical_states_at_review": {
     "omnigent": "A",
@@ -249,7 +266,8 @@
     "swe-agent": "C",
     "reigen": "C",
     "redteam": "A",
-    "appliedscientist": "A"
+    "appliedscientist": "A",
+    "data-to-paper": "A"
   },
   "capability_dimensions": [
     "claim-vs-reality-discrepancy-detection",
