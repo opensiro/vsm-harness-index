@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.6
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-09-24
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -63,7 +63,7 @@ A user initializes a project and an active lead identity. That lead, itself runn
 
 The counterfactual owner test is decisive. Remove Codex/DeepSeek/OpenCode or an equivalent external lead/worker harness while leaving the controller, policy, leases, state, sandbox, proxy and lifecycle machinery intact. The remaining first-party system can validate, persist, allocate, launch, reconcile and enforce, but it no longer contains an autonomous actor that interprets the engineering task and chooses the next substantive model/tool/action. The operational decision/action loop therefore closes outside the assessed boundary.
 
-Under Methodology 0.3.6, an included autonomous harness must establish its operational S1 rather than inheriting operation from an adjacent runtime. The proposed terminal outcome is therefore `excluded-no-agentic-vsm`, not an included constructor vector built from control-plane primitives.
+Under Methodology 0.3.6, an included autonomous harness must establish its operational S1 rather than inheriting operation from an adjacent runtime. The terminal outcome is therefore `excluded-no-agentic-vsm`, not an included constructor vector built from control-plane primitives.
 
 ## S1 — Operations
 
@@ -213,7 +213,7 @@ Escalation remains lead-centered. Architecture assigns the accountable lead resp
 - Architecture documents roles such as reviewer and verifier that are not in the implemented first-release `Role` union; they are not credited from design intent alone.
 - The public repository metadata at review time exposes no recognized license. This is an intake/legal-provenance caveat rather than evidence for or against any VSM function and should be handled by Index intake policy separately from the semantic exclusion result.
 
-## Proposed terminal outcome
+## Terminal outcome
 
 `excluded-no-agentic-vsm`.
 
