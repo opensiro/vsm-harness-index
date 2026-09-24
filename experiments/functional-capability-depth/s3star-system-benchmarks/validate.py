@@ -15,6 +15,11 @@ COVERAGE = HERE / "coverage.json"
 BENCHMARK_OBSERVATIONS = HERE / "benchmark_observations.json"
 CANONICAL_OBSERVATIONS = HERE / "canonical_observations.json"
 
+DIRECT_S3STAR = {"truecall-runtime-verification", "swe-review"}
+EXPECTED_OBSERVATION_IDS = {
+    "truecall-tau2-retail-silent-failure-2026-06",
+    "swe-review-generate-review-revise-2026-07",
+}
 COVERAGE_CLASSES = {
     "direct-composed",
     "native-proxy",
@@ -31,6 +36,7 @@ SYSTEM_COMPATIBILITY = {
 }
 REQUIRED_CASE_IDS = {
     "truecall-tau2-direct-composed",
+    "swe-review-direct-composed",
     "swe-agent-swebench-native-proxy-s3star",
     "codex-truecall-external-wrapper",
     "auditbench-proxy-scaffolded",
@@ -93,7 +99,7 @@ def main() -> None:
         for entry in benchmark_map.get("entries", [])
         if entry.get("function") == "S3*" and entry.get("fit") == "direct"
     }
-    if direct_s3star != {"truecall-runtime-verification"}:
+    if direct_s3star != DIRECT_S3STAR:
         fail(f"unexpected direct S3* benchmark map: {sorted(direct_s3star)}")
 
     if coverage.get("direct_benchmark_family_count") != len(direct_s3star):
@@ -111,11 +117,17 @@ def main() -> None:
         fail("coverage_classes vocabulary drift")
 
     observation_ids: set[str] = set()
+    observations_by_id: dict[str, dict] = {}
+    observed_families: set[str] = set()
     for obs in benchmark_observations:
         if obs.get("function") != "S3*":
             fail("benchmark observation function must be S3*")
-        if obs.get("benchmark_id") not in direct_s3star:
+        benchmark_id = obs.get("benchmark_id")
+        if benchmark_id not in direct_s3star:
             fail("benchmark observation does not use a reviewed direct S3* family")
+        observed_families.add(benchmark_id)
+        if obs.get("benchmark_fit") != "direct":
+            fail("composed benchmark observation must remain direct")
         if obs.get("boundary_class") != "composed-system":
             fail("direct benchmark observation must preserve composed-system boundary")
         if obs.get("canonical_harness_id") is not None:
@@ -130,13 +142,49 @@ def main() -> None:
         if observation_id in observation_ids:
             fail(f"duplicate observation_id: {observation_id}")
         observation_ids.add(observation_id)
+        observations_by_id[observation_id] = obs
         sources = obs.get("primary_sources")
         if not isinstance(sources, list) or not sources or any(not valid_https(s) for s in sources):
             fail(f"{observation_id}: invalid primary_sources")
-        if obs.get("reported_detection_rate") != 1.0:
-            fail(f"{observation_id}: reviewed published detection rate changed")
-        if obs.get("reported_false_positive_count") != 0:
-            fail(f"{observation_id}: reviewed false-positive count changed")
+        interpretation = obs.get("vsm_interpretation")
+        if not isinstance(interpretation, str) or len(interpretation.strip()) < 40:
+            fail(f"{observation_id}: explicit VSM interpretation required")
+
+    if observation_ids != EXPECTED_OBSERVATION_IDS:
+        fail(f"unexpected composed S3* observation set: {sorted(observation_ids)}")
+    if observed_families != DIRECT_S3STAR:
+        fail("composed S3* observations must cover every reviewed direct family")
+
+    truecall = observations_by_id["truecall-tau2-retail-silent-failure-2026-06"]
+    if truecall.get("benchmark_id") != "truecall-runtime-verification":
+        fail("TrueCall observation benchmark linkage drift")
+    if truecall.get("reviewed_system_revision") != "3b1d8ce253ad6d9908936f844bf5e0255785e8b9":
+        fail("TrueCall reviewed revision drift")
+    if truecall.get("reported_detection_rate") != 1.0:
+        fail("TrueCall reviewed published detection rate changed")
+    if truecall.get("reported_false_positive_count") != 0:
+        fail("TrueCall reviewed false-positive count changed")
+
+    swe_review = observations_by_id["swe-review-generate-review-revise-2026-07"]
+    if swe_review.get("benchmark_id") != "swe-review":
+        fail("SWE-Review observation benchmark linkage drift")
+    if swe_review.get("reviewed_system_revision") != "95b652e095e5ac8f16f08ae52fd3b26513c56097":
+        fail("SWE-Review reviewed revision drift")
+    if swe_review.get("benchmark_instances") != 1384:
+        fail("SWE-Review benchmark instance count drift")
+    if swe_review.get("source_issue_count") != 500 or swe_review.get("quality_tiers") != 3:
+        fail("SWE-Review benchmark construction fields drift")
+    if swe_review.get("reported_initial_resolve_rate_percent") != 27.5:
+        fail("SWE-Review initial resolve-rate example drift")
+    if swe_review.get("reported_iterative_resolve_rate_percent") != 56.9:
+        fail("SWE-Review iterative resolve-rate example drift")
+    if swe_review.get("reported_absolute_gain_percentage_points") != 29.4:
+        fail("SWE-Review reported absolute gain drift")
+    audit_loop = swe_review.get("audit_loop")
+    if not isinstance(audit_loop, list) or len(audit_loop) < 5:
+        fail("SWE-Review direct observation must preserve full review-revise-reverify loop")
+    if "SWE-bench" not in str(swe_review.get("reverification_surface")):
+        fail("SWE-Review observation must preserve independent SWE-bench re-verification")
 
     cases = coverage.get("cases")
     if not isinstance(cases, list) or not cases:
@@ -184,6 +232,17 @@ def main() -> None:
     missing_cases = REQUIRED_CASE_IDS - seen_cases
     if missing_cases:
         fail(f"required S3* search cases missing: {sorted(missing_cases)}")
+
+    for case_id in ("truecall-tau2-direct-composed", "swe-review-direct-composed"):
+        case = by_id[case_id]
+        if case.get("benchmark_fit") != "direct":
+            fail(f"{case_id}: direct composed fit drift")
+        if case.get("coverage_class") != "direct-composed":
+            fail(f"{case_id}: direct composed coverage class drift")
+        if case.get("system_compatibility") != "benchmark-scaffolded":
+            fail(f"{case_id}: direct composed system compatibility drift")
+        if case.get("canonical_harness_id") is not None:
+            fail(f"{case_id}: direct composed evidence must not claim canonical harness ownership")
 
     pawbench = by_id["pawbench-self-verification-label-not-s3star"]
     if pawbench.get("coverage_class") != "capability-label-not-s3star":
