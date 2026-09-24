@@ -1,0 +1,36 @@
+name: temporary cascaide assessment link fixer
+
+on:
+  push:
+    branches:
+      - assessment/cascaide-ts-review-189
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix frozen evidence link
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('assessments/cascaide-ts.md')
+          text = p.read_text(encoding='utf-8')
+          bad = '08fc10fcd58ecf72949b85670ca5453d7d0e/packages/core/src/controller.ts'
+          good = '08fc10fcd58ecf729b9b0c5c1f0c135f7bb723f7/packages/core/src/controller.ts'
+          text2 = text.replace(bad, good)
+          if text2 != text:
+              p.write_text(text2, encoding='utf-8')
+          PY
+          if git diff --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assessments/cascaide-ts.md
+          git commit -m "fix: correct cascaide frozen evidence link"
+          git push origin HEAD:${GITHUB_REF_NAME}
