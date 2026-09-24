@@ -2,8 +2,8 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-24",
   "function": "S3*",
-  "direct_benchmark_family_count": 2,
-  "composed_direct_observation_count": 2,
+  "direct_benchmark_family_count": 3,
+  "composed_direct_observation_count": 3,
   "canonical_direct_observation_count": 0,
   "coverage_classes": [
     "direct-composed",
@@ -42,6 +42,21 @@
         "https://arxiv.org/abs/2607.06065"
       ],
       "finding": "SWE-Review-Bench directly closes a complementary audit loop at its benchmark-defined boundary: a separate reviewer agent explores the repository and candidate PR, produces an approve/reject verdict plus structured discrepancy feedback, rejected work returns to the original PR generator for correction, and the revised patch is re-verified through SWE-bench. Published iterative review-revision improves downstream resolve rate, including a reported Qwen3-30B-A3B path from 27.5% to 56.9%. The reviewer/revision/verification organization is benchmark-defined, so these results are composed direct S3* evidence rather than native S3* evidence for OpenHands, Harbor, Claude Code, Codex Guardian, or any PR-generator harness.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "harness-bench-adversarial-review-direct-composed",
+      "benchmark": "harness-bench adversarial review-revision evaluation",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-composed",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/README.md",
+        "https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/runner/run-pilot4.mjs",
+        "https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/results/pilot4.jsonl"
+      ],
+      "finding": "harness-bench Pilot 4 directly closes a benchmark-defined complementary audit loop: an adversarial reviewer independently challenges the producer diff, two published L2 FULL runs return REQUEST_CHANGES findings into the original executor session, both execute a revision, and build plus visible and held-out verification pass afterward. The benchmark explicitly uses a clean-room harness rather than production Telos code, so this is composed direct S3* evidence and not native evidence for Telos, Claude Code, or another canonical harness.",
       "admitted_to_canonical_registry": false
     },
     {
