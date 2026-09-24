@@ -227,3 +227,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 212|omniharness|omniHarness|https://github.com/archimedes-run/omniHarness|2026-05-06T16:26:26Z|index-addition|fd71e375ff626ae99537163edd3d14b16100d786|2026-09-23
 213|onit|OnIt|https://github.com/sibyl-oracles/onit|2026-02-03T02:43:57Z|index-addition|88f562d1c4e62a3a8599ac5d0bdfa6423a6e1fc0|2026-09-23
 214|multi-agent-orchestration|Multi-Agent Orchestration Engine|https://github.com/Vinay-veeragani/Multi-Agent-Orchestration|2026-08-31T12:56:17Z|index-addition|e6c34462af045d7e53d383103346362351c96353|2026-09-24
+215|jontey-agent-harness|Agent Harness|https://github.com/jontey/agent-harness|2026-09-24T10:22:53Z|index-addition|db6297cb776f6181310d3533c0ebf22d35e66de4|2026-09-24
