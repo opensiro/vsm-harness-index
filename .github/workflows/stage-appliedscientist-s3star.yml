@@ -1,0 +1,336 @@
+name: stage AppliedScientist canonical S3star observation
+on:
+  push:
+    branches: [experiment/appliedscientist-s3star-502]
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Stage first canonical direct S3star observation
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('experiments/functional-capability-depth')
+          s3 = root / 's3star-system-benchmarks'
+          review_ref = '762824fd41598370e75588861b48991b0a9fd784'
+          benchmark_id = 'appliedscientist-iterative-review'
+          observation_id = 'appliedscientist-iterative-review-2026-09'
+          case_id = 'appliedscientist-native-s3star-direct'
+
+          # Benchmark-family map: add one native canonical direct family.
+          map_path = root / 'vsm-benchmark-family-map' / 'map.json'
+          benchmark_map = json.loads(map_path.read_text())
+          ids = [e.get('benchmark_id') for e in benchmark_map['entries']]
+          if benchmark_id not in ids:
+              entry = {
+                  'function': 'S3*',
+                  'benchmark_id': benchmark_id,
+                  'benchmark_name': 'AppliedScientist iterative scientific review-revision',
+                  'fit': 'direct',
+                  'primary_source': 'https://arxiv.org/abs/2609.14738',
+                  'evaluated_object': 'canonical AppliedScientist scientific-revision system in which a separate fresh reviewer independently audits each manuscript, returns feedback into Scientist code/experiment/manuscript revision, and reviews the subsequent revision again',
+                  'evaluation_mode': 'execution-grounded-research',
+                  'system_linkage': 'native-canonical-observation',
+                  'non_claim': 'This is a first-party-reported within-system canonical S3* observation; it is not an independently reproduced run at the pinned Git revision and does not create a matched cross-harness S3* primary baseline.'
+              }
+              insert_at = next(i for i, e in enumerate(benchmark_map['entries']) if e.get('function') == 'S4')
+              benchmark_map['entries'].insert(insert_at, entry)
+          map_path.write_text(json.dumps(benchmark_map, indent=2, ensure_ascii=False) + '\n')
+
+          # Canonical observation: first native S3* quantitative record.
+          obs_path = s3 / 'canonical_observations.json'
+          observations = json.loads(obs_path.read_text())
+          if observations not in ([], [o for o in observations if o.get('observation_id') == observation_id]):
+              raise SystemExit('unexpected pre-existing canonical S3* observations')
+          if not observations:
+              observations = [{
+                  'observation_id': observation_id,
+                  'function': 'S3*',
+                  'benchmark_id': benchmark_id,
+                  'benchmark_fit': 'direct',
+                  'evidence_source_class': 'first-party-reported',
+                  'boundary_class': 'canonical-native-system',
+                  'canonical_harness_id': 'appliedscientist',
+                  'canonical_system_eligible': True,
+                  'system_compatibility': 'native-system',
+                  'canonical_review_revision': review_ref,
+                  'publication_id': 'arXiv:2609.14738',
+                  'publication_version_at_review': 'v2',
+                  'paper_count': 30,
+                  'rejected_paper_count': 25,
+                  'borderline_paper_count': 5,
+                  'revision_rounds': 5,
+                  'comparison_class': 'within-system-guidance-comparison',
+                  'revision_conditions': [
+                      'human-initialized reviewer-guided revision',
+                      'AI-initialized reviewer-guided revision',
+                      'autonomous fixed-prompt self-revision'
+                  ],
+                  'audit_loop': [
+                      'Scientist produces a revised implementation, experiments and manuscript',
+                      'a separate fresh Reviewer sees only the current manuscript and independently searches literature',
+                      'Reviewer emits weaknesses, suggestions and a new evaluation without memory of prior feedback or scores',
+                      'review feedback becomes guidance for the next Scientist revision',
+                      'Scientist edits code, runs experiments, analyzes results and revises the manuscript',
+                      'the new manuscript is submitted to another fresh independent review'
+                  ],
+                  'reported_execution_weaknesses_total': 150,
+                  'reported_execution_weaknesses_resolved': 128,
+                  'reported_execution_weakness_resolution_rate': 0.853,
+                  'reported_idea_weaknesses_total': 18,
+                  'reported_idea_weaknesses_resolved': 2,
+                  'reported_idea_weakness_resolution_rate': 0.111,
+                  'external_validation_surface': 'Stanford Reviewer scores saved human-initialized versions independently and is never shown to the Scientist; it is supporting validation, not the native S3* owner.',
+                  'comparison_scope_note': 'The paper compares reviewer-guided revision with fixed-prompt self-revision inside AppliedScientist. The weakness-resolution counts are aggregate closure evidence for the native review-guided loop, not a matched cross-harness S3* score.',
+                  'provenance_limitation': f'The public AppliedScientist repository at canonical review ref {review_ref} is first-party and implements the same Scientist-to-separate-Reviewer-to-correction-to-fresh-review architecture described in the publication. The fetched publication HTML does not expose an explicit repository URL binding the reported experimental runs to that exact Git commit. Preserve this result as first-party-reported; it is not independently reproduced at the pinned revision.',
+                  'vsm_interpretation': 'The canonical assessment independently establishes S3*=A for AppliedScientist. The publication directly exercises that native complementary-audit organization: a separate fresh reviewer gathers independent evidence, returns concrete findings into the Scientist current revision loop, and the corrected artifact is reviewed again. The result is therefore direct native S3* capability evidence, while one within-system result remains insufficient for a matched cross-harness primary baseline.',
+                  'primary_sources': [
+                      'https://arxiv.org/abs/2609.14738',
+                      f'https://github.com/TheAppliedScientist/TheAppliedScientist/blob/{review_ref}/components/ai-scientist/.claude/CLAUDE.md',
+                      f'https://github.com/TheAppliedScientist/TheAppliedScientist/blob/{review_ref}/components/ai-scientist/scripts/submit_for_review.sh',
+                      f'https://github.com/TheAppliedScientist/TheAppliedScientist/blob/{review_ref}/components/ai-reviewer/review_api.py',
+                      f'https://github.com/TheAppliedScientist/TheAppliedScientist/blob/{review_ref}/components/ai-reviewer/prompts/paper_reviewer_instruction_template.md'
+                  ]
+              }]
+          obs_path.write_text(json.dumps(observations, indent=2, ensure_ascii=False) + '\n')
+
+          # Coverage layer: add direct-native class/case and canonical cohort anchor.
+          cov_path = s3 / 'coverage.json'
+          coverage = json.loads(cov_path.read_text())
+          if coverage.get('direct_benchmark_family_count') not in (3, 4):
+              raise SystemExit('unexpected S3* direct family count before staging')
+          if coverage.get('composed_direct_observation_count') != 3:
+              raise SystemExit('unexpected composed S3* observation count')
+          if coverage.get('canonical_direct_observation_count') not in (0, 1):
+              raise SystemExit('unexpected canonical S3* observation count before staging')
+          coverage['direct_benchmark_family_count'] = 4
+          coverage['canonical_direct_observation_count'] = 1
+          if 'direct-native' not in coverage['coverage_classes']:
+              coverage['coverage_classes'].insert(1, 'direct-native')
+          if not any(c.get('case_id') == case_id for c in coverage['cases']):
+              coverage['cases'].append({
+                  'case_id': case_id,
+                  'benchmark': 'AppliedScientist iterative scientific review-revision',
+                  'benchmark_fit': 'direct',
+                  'coverage_class': 'direct-native',
+                  'system_compatibility': 'native-system',
+                  'canonical_harness_id': 'appliedscientist',
+                  'observation_ref': f'canonical_observations.json#{observation_id}',
+                  'primary_sources': [
+                      'https://arxiv.org/abs/2609.14738',
+                      f'https://github.com/TheAppliedScientist/TheAppliedScientist/blob/{review_ref}/components/ai-scientist/.claude/CLAUDE.md',
+                      f'https://github.com/TheAppliedScientist/TheAppliedScientist/blob/{review_ref}/components/ai-scientist/scripts/submit_for_review.sh',
+                      f'https://github.com/TheAppliedScientist/TheAppliedScientist/blob/{review_ref}/components/ai-reviewer/review_api.py'
+                  ],
+                  'finding': 'Canonical AppliedScientist establishes S3*=A through its separate fresh Reviewer service and Scientist correction/re-review loop. The first-party publication directly evaluates this organization over 30 scientific-revision trajectories and reports 128/150 execution-related weaknesses resolved (85.3%) while only 2/18 idea-related weaknesses are resolved (11.1%). This is admitted native direct S3* evidence; the result is first-party-reported rather than independently reproduced at the pinned Git revision and does not supply a matched cross-harness primary cell.',
+                  'admitted_to_canonical_registry': True
+              })
+          if 'appliedscientist' not in coverage['representative_canonical_s3star_systems_inspected']:
+              coverage['representative_canonical_s3star_systems_inspected'].append('appliedscientist')
+          coverage['canonical_states_at_review']['appliedscientist'] = 'A'
+          cov_path.write_text(json.dumps(coverage, indent=2, ensure_ascii=False) + '\n')
+
+          # Primary selection: family is reviewed, but primary remains gap.
+          prim_path = root / 'primary-baselines.json'
+          primary = json.loads(prim_path.read_text())
+          s3p = primary['functions']['S3*']
+          if s3p.get('status') != 'gap':
+              raise SystemExit('S3* primary status unexpectedly not gap')
+          if not any(f.get('benchmark_id') == benchmark_id for f in s3p['reviewed_direct_families']):
+              s3p['reviewed_direct_families'].append({
+                  'benchmark_id': benchmark_id,
+                  'benchmark_name': 'AppliedScientist iterative scientific review-revision',
+                  'primary_source': 'https://arxiv.org/abs/2609.14738'
+              })
+          s3p['blocking_reason'] = 'Reviewed direct S3* families now include a canonical native within-system observation from AppliedScientist in addition to composed/benchmark-defined review-correction-reverification evidence, but public evidence still does not provide a matched comparison of native S3* implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.'
+          prim_path.write_text(json.dumps(primary, indent=2, ensure_ascii=False) + '\n')
+
+          # Fail-closed validator: split composed and canonical direct registries.
+          val_path = s3 / 'validate.py'
+          text = val_path.read_text()
+          old = 'DIRECT_S3STAR = {"truecall-runtime-verification", "swe-review", "harness-bench-adversarial-review"}'
+          new = 'COMPOSED_DIRECT_S3STAR = {"truecall-runtime-verification", "swe-review", "harness-bench-adversarial-review"}\nDIRECT_S3STAR = COMPOSED_DIRECT_S3STAR | {"appliedscientist-iterative-review"}'
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'COMPOSED_DIRECT_S3STAR' not in text:
+              raise SystemExit('direct-family validator anchor missing')
+
+          const_anchor = 'COVERAGE_CLASSES = {\n'
+          const_block = f'CANONICAL_OBSERVATION_ID = "{observation_id}"\nCANONICAL_DIRECT_HARNESS = "appliedscientist"\nCANONICAL_REVIEW_REF = "{review_ref}"\n\n'
+          if 'CANONICAL_OBSERVATION_ID' not in text:
+              text = text.replace(const_anchor, const_block + const_anchor, 1)
+          if '    "direct-native",\n' not in text:
+              text = text.replace('    "direct-composed",\n', '    "direct-composed",\n    "direct-native",\n', 1)
+          if f'    "{case_id}",\n' not in text:
+              text = text.replace('    "redteam-adversarial-review-native-no-direct-results",\n', '    "redteam-adversarial-review-native-no-direct-results",\n    "appliedscientist-native-s3star-direct",\n', 1)
+
+          helper = '''def validate_canonical_observation(observation: dict) -> None:
+    if observation.get("observation_id") != CANONICAL_OBSERVATION_ID:
+        fail("unexpected canonical direct S3* observation_id")
+    if observation.get("function") != "S3*":
+        fail("canonical observation function must be S3*")
+    if observation.get("benchmark_id") != "appliedscientist-iterative-review":
+        fail("AppliedScientist canonical observation benchmark linkage drift")
+    if observation.get("benchmark_fit") != "direct":
+        fail("AppliedScientist canonical observation must remain direct")
+    if observation.get("evidence_source_class") != "first-party-reported":
+        fail("AppliedScientist result must remain first-party-reported")
+    if observation.get("boundary_class") != "canonical-native-system":
+        fail("AppliedScientist observation must retain canonical-native-system boundary")
+    if observation.get("canonical_harness_id") != CANONICAL_DIRECT_HARNESS:
+        fail("AppliedScientist canonical_harness_id drift")
+    if observation.get("canonical_system_eligible") is not True:
+        fail("AppliedScientist observation must remain canonical-system eligible")
+    if observation.get("system_compatibility") != "native-system":
+        fail("AppliedScientist observation must remain native-system")
+    if observation.get("canonical_review_revision") != CANONICAL_REVIEW_REF:
+        fail("AppliedScientist canonical review ref drift")
+
+    fields = assessment_fields(CANONICAL_DIRECT_HARNESS)
+    if fields.get("status") != "included":
+        fail("AppliedScientist canonical assessment must remain included")
+    if fields.get("autonomy_s3_star") != "A":
+        fail("AppliedScientist no longer establishes canonical S3*=A")
+    if fields.get("review_ref") != CANONICAL_REVIEW_REF:
+        fail("AppliedScientist assessment review_ref drift")
+
+    expected_counts = {
+        "paper_count": 30,
+        "rejected_paper_count": 25,
+        "borderline_paper_count": 5,
+        "revision_rounds": 5,
+        "reported_execution_weaknesses_total": 150,
+        "reported_execution_weaknesses_resolved": 128,
+        "reported_idea_weaknesses_total": 18,
+        "reported_idea_weaknesses_resolved": 2,
+    }
+    for field, expected in expected_counts.items():
+        if observation.get(field) != expected:
+            fail(f"AppliedScientist reported field drift: {field}")
+    if observation.get("reported_execution_weakness_resolution_rate") != 0.853:
+        fail("AppliedScientist execution-weakness resolution-rate drift")
+    if observation.get("reported_idea_weakness_resolution_rate") != 0.111:
+        fail("AppliedScientist idea-weakness resolution-rate drift")
+    if observation.get("comparison_class") != "within-system-guidance-comparison":
+        fail("AppliedScientist comparison class drift")
+
+    audit_loop = observation.get("audit_loop")
+    if not isinstance(audit_loop, list) or len(audit_loop) < 6:
+        fail("AppliedScientist observation must preserve the full review-correct-re-review loop")
+    loop_text = " ".join(audit_loop)
+    for phrase in ("fresh Reviewer", "feedback becomes guidance", "submitted to another fresh independent review"):
+        if phrase not in loop_text:
+            fail(f"AppliedScientist audit-loop closure drift: {phrase}")
+
+    limitation = observation.get("provenance_limitation")
+    if not isinstance(limitation, str) or CANONICAL_REVIEW_REF not in limitation:
+        fail("AppliedScientist provenance limitation must retain the pinned review ref")
+    if "not independently reproduced" not in limitation:
+        fail("AppliedScientist provenance limitation must preserve non-reproduction boundary")
+    if "does not expose an explicit repository URL" not in limitation:
+        fail("AppliedScientist publication/repository binding caveat must remain explicit")
+
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(s) for s in sources):
+        fail("AppliedScientist observation requires publication plus pinned first-party code sources")
+    if "https://arxiv.org/abs/2609.14738" not in sources:
+        fail("AppliedScientist observation must retain the publication source")
+    if not any(CANONICAL_REVIEW_REF in source for source in sources if "github.com" in source):
+        fail("AppliedScientist observation must retain pinned repository evidence")
+
+'''
+          if 'def validate_canonical_observation' not in text:
+              text = text.replace('def main() -> None:\n', helper + 'def main() -> None:\n', 1)
+
+          old_empty = '    if canonical_observations:\n        fail("canonical direct S3* observation registry is expected to remain empty")\n'
+          new_obs = '    if len(canonical_observations) != 1:\n        fail("expected exactly one canonical direct S3* observation")\n    validate_canonical_observation(canonical_observations[0])\n'
+          if old_empty in text:
+              text = text.replace(old_empty, new_obs, 1)
+          elif 'expected exactly one canonical direct S3* observation' not in text:
+              raise SystemExit('canonical observation validator anchor missing')
+
+          text = text.replace('    if observed_families != DIRECT_S3STAR:\n        fail("composed S3* observations must cover every reviewed direct family")\n', '    if observed_families != COMPOSED_DIRECT_S3STAR:\n        fail("composed S3* observations must cover exactly the reviewed composed direct families")\n', 1)
+
+          old_admit = '        if case.get("admitted_to_canonical_registry") is not False:\n            fail(f"{case_id}: coverage case must remain non-admitted")\n'
+          new_admit = '        if coverage_class == "direct-native":\n            if case.get("admitted_to_canonical_registry") is not True:\n                fail(f"{case_id}: direct-native coverage must be admitted")\n        elif case.get("admitted_to_canonical_registry") is not False:\n            fail(f"{case_id}: non-direct-native coverage case must remain non-admitted")\n'
+          if old_admit in text:
+              text = text.replace(old_admit, new_admit, 1)
+          elif 'direct-native coverage must be admitted' not in text:
+              raise SystemExit('coverage admission validator anchor missing')
+
+          direct_anchor = '    pawbench = by_id["pawbench-self-verification-label-not-s3star"]\n'
+          direct_check = f'''    direct_native = by_id["{case_id}"]
+    if direct_native.get("benchmark_fit") != "direct":
+        fail("AppliedScientist native S3* case must remain direct")
+    if direct_native.get("coverage_class") != "direct-native":
+        fail("AppliedScientist native S3* coverage class drift")
+    if direct_native.get("system_compatibility") != "native-system":
+        fail("AppliedScientist direct S3* case must remain native-system")
+    if direct_native.get("canonical_harness_id") != CANONICAL_DIRECT_HARNESS:
+        fail("AppliedScientist direct S3* canonical linkage drift")
+    if direct_native.get("observation_ref") != f"canonical_observations.json#{{CANONICAL_OBSERVATION_ID}}":
+        fail("AppliedScientist direct S3* observation_ref drift")
+
+'''
+          if 'AppliedScientist native S3* case must remain direct' not in text:
+              text = text.replace(direct_anchor, direct_check + direct_anchor, 1)
+          val_path.write_text(text)
+
+          # Documentation: synchronize counts/boundaries; do not change primary status.
+          readme_path = s3 / 'README.md'
+          readme = readme_path.read_text()
+          readme = readme.replace(
+              'reviewed direct S3* benchmark families: 1\npublished direct observations at a composed S3* boundary: 1 aggregate evidence record\ncanonical native/adapter-preserved direct-S3* observations: 0\nS3* primary baseline: gap',
+              'reviewed direct S3* benchmark families: 4\npublished direct observations at composed S3* boundaries: 3\ncanonical native/adapter-preserved direct-S3* observations: 1\nS3* primary baseline: gap'
+          )
+          readme = readme.replace(
+              'canonical linkage gap: open\n  no reviewed public direct-S3* observation yet exercises a canonical harness\'s own S3* path',
+              'canonical linkage gap: partially closed\n  AppliedScientist supplies the first reviewed native canonical S3* observation\n\nmatched-primary gap: open\n  no common cell yet compares native S3* implementations across multiple canonical harnesses'
+          )
+          old_boundary = '`canonical_observations.json` is intentionally empty.\n\nTrueCall has adapters for Codex and Claude Code, but those adapters add an external audit layer. They do not make the wrapped product\'s canonical assessment own that layer.\n\nA future observation may enter `canonical_observations.json` only when the direct benchmark actually exercises a canonical harness\'s first-party S3* path as either:'
+          new_boundary = '`canonical_observations.json` now contains one native canonical observation: AppliedScientist.\n\nTrueCall has adapters for Codex and Claude Code, but those adapters add an external audit layer. They do not make the wrapped product\'s canonical assessment own that layer.\n\nA canonical observation may enter `canonical_observations.json` only when the direct benchmark actually exercises a canonical harness\'s first-party S3* path as either:'
+          if old_boundary in readme:
+              readme = readme.replace(old_boundary, new_boundary, 1)
+          applied_section = f'''\n## First canonical native observation: AppliedScientist\n\nCanonical review ref: `{review_ref}`.\n\nAppliedScientist's ordinary supported loop uses a separate fresh Reviewer that sees the current manuscript, performs its own literature-grounded audit, returns weaknesses and actionable suggestions, and sends those findings back to the Scientist for code/experiment/manuscript correction before another fresh review. The canonical assessment independently establishes this path as `S3*=A`.\n\nThe first-party publication evaluates 30 paper trajectories over five revision rounds and reports 128/150 execution-related weaknesses resolved (`85.3%`) and 2/18 idea-related weaknesses resolved (`11.1%`). Reviewer-guided conditions are compared against fixed-prompt autonomous self-revision; Stanford Reviewer is used only as an external validation surface and is not credited as the native S3* owner.\n\nThis record remains `first-party-reported`: the public repository implements the same named architecture and is first-party, but the fetched publication HTML does not expose an explicit repository URL binding the reported runs to exact Git ref `{review_ref}`. The result is not represented as an independent reproduction at that revision.\n\nOne native canonical observation closes the zero-observation linkage gap, but it does **not** close the primary-baseline gap because no matched cross-harness cell exists.\n'''
+          marker = '\n## Native proxy: SWE-agent\n'
+          if '## First canonical native observation: AppliedScientist' not in readme:
+              readme = readme.replace(marker, applied_section + marker, 1)
+          readme = readme.replace(
+              '- `reigen` — `S3*=C`, independent worktree verification constructor path.\n',
+              '- `reigen` — `S3*=C`, independent worktree verification constructor path;\n- `redteam` — `S3*=A`, separate adversarial reviewer with corrective re-review closure;\n- `appliedscientist` — `S3*=A`, separate fresh scientific Reviewer with published native iterative-revision results.\n'
+          )
+          readme = readme.replace(
+              '- `canonical_observations.json` — direct native/adapter-preserved canonical harness observations; currently `[]`;',
+              '- `canonical_observations.json` — direct native/adapter-preserved canonical harness observations; currently the AppliedScientist native iterative-review record;'
+          )
+          readme_path.write_text(readme)
+          PY
+
+          python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/render_function_baselines.py
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+          python scripts/check_index.py
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            experiments/functional-capability-depth/vsm-benchmark-family-map/map.json \
+            experiments/functional-capability-depth/s3star-system-benchmarks/canonical_observations.json \
+            experiments/functional-capability-depth/s3star-system-benchmarks/coverage.json \
+            experiments/functional-capability-depth/s3star-system-benchmarks/validate.py \
+            experiments/functional-capability-depth/s3star-system-benchmarks/README.md \
+            experiments/functional-capability-depth/primary-baselines.json \
+            experiments/functional-capability-depth/FUNCTION-BASELINES.md
+          git commit -m 'experiment: admit AppliedScientist canonical S3star observation'
+          git push
