@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 564,
+  "reviewed_at": "2026-09-24",
+  "disposition": "evidence-backed-gap",
+  "primary_baseline": "gap",
+  "closure_scope": "current-public-evidence",
+  "evidence_depth": {
+    "direct_benchmark_families": 2,
+    "canonical_direct_observations": 0,
+    "native_proxy_projections": 2,
+    "representative_canonical_s2_systems_inspected": 11
+  },
+  "reviewed_route_classes": [
+    {
+      "route_id": "direct-disturbance-benchmarks",
+      "status": "benchmark-scaffolded",
+      "examples": ["DPBench", "STALE"],
+      "blocking_reason": "The benchmark directly instantiates inter-S1 disturbance and attenuation, but supplies the coordination organization itself rather than exercising a canonical harness's own S2 path."
+    },
+    {
+      "route_id": "native-quantitative-proxies",
+      "status": "native-but-not-direct-s2",
+      "examples": ["AutoGen/Magentic-One", "Squad/MARBLE"],
+      "blocking_reason": "The published ablations exercise native coordination mechanisms but score broad task/collaboration outcomes rather than an explicit interaction-generated disturbance and its attenuation."
+    },
+    {
+      "route_id": "matched-framework-campaigns",
+      "status": "framework-scaffolded-or-no-s2-disturbance",
+      "examples": ["Astra", "Agent Framework Benchmark"],
+      "blocking_reason": "The compared organization is benchmark-authored and/or deliberately removes recurring inter-S1 interference, so matched cost/quality/runtime rows are not direct S2 capability evidence."
+    },
+    {
+      "route_id": "native-mechanism-without-direct-results",
+      "status": "no-direct-results",
+      "examples": ["DeepSeek Agent Teams"],
+      "blocking_reason": "A canonical native S2 mechanism exists, but the public benchmark entry point does not exercise that path directly."
+    },
+    {
+      "route_id": "promising-multi-orchestrator-benchmark",
+      "status": "no-published-results",
+      "examples": ["MAO-Bench"],
+      "blocking_reason": "The adapter/benchmark design is structurally promising, but the public leaderboard does not yet contain the multi-orchestrator result rows needed for a matched canonical cell."
+    }
+  ],
+  "closure_claim": "Current public evidence contains direct S2 disturbance benchmarks and native quantitative S2 proxies, but no canonical native direct observation and no matched canonical-harness S2 primary cell.",
+  "reopen_when": [
+    "a canonical S2 harness publishes an explicit native inter-S1 disturbance-to-attenuation result",
+    "a materially matched benchmark evaluates two or more canonical systems exercising their own native or adapter-preserved S2 paths under one disturbance definition",
+    "MAO-Bench or a comparable benchmark publishes recoverable multi-orchestrator results with immutable system/model/configuration provenance and direct S2 semantics"
+  ],
+  "do_not_reopen_for": [
+    "another broad collaboration or task-success score without an explicit S2 disturbance",
+    "another topology or framework benchmark whose coordination organization is benchmark-authored",
+    "another communication or token-efficiency metric without disturbance-to-attenuation closure"
+  ],
+  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. It freezes the reviewed public-evidence state until materially new direct native or matched evidence appears."
+}
