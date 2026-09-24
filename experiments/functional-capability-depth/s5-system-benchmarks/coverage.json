@@ -2,9 +2,11 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-24",
   "function": "S5",
-  "direct_family_count": 0,
+  "direct_family_count": 1,
+  "composed_direct_observation_count": 1,
   "canonical_direct_observation_count": 0,
   "coverage_classes": [
+    "direct-composed",
     "proxy",
     "unsuitable",
     "protocol-not-benchmark",
@@ -13,6 +15,15 @@
     "candidate-native-no-direct-results"
   ],
   "cases": [
+    {
+      "case_id": "govsim-selfgovern-membership-direct-composed",
+      "artifact": "GovSim-SelfGovern membership-governance evaluation",
+      "classification": "direct-composed",
+      "primary_sources": [
+        "https://arxiv.org/abs/2609.22600"
+      ],
+      "finding": "GovSim-SelfGovern directly exercises an S5 identity path at its benchmark-defined society boundary: agents author executable membership laws, valid proposals are submitted to legitimate majority authority, passed laws are enacted, agent.active=False removes a member through exile, and subsequent rounds continue with the changed active membership. The experimenter-fixed sandbox, voting procedure, API and physics form the evaluation membrane; direct S5 attribution is limited to membership/identity authority and does not extend to ordinary catch-cap, penalty, tax or treasury rules. No underlying model, runtime or canonical harness inherits this S5 ownership by association."
+    },
     {
       "case_id": "agentgovbench-enforcement-not-authority",
       "artifact": "AgentGovBench",
@@ -157,12 +168,10 @@
       "benchmark_status": "candidate-native-no-direct-results"
     }
   ],
-  "missing_direct_benchmark_requirements": [
-    "identity-or-ultimate-policy-level conflict",
-    "legitimate authority at declared recursion",
-    "actual adjudication-ratification-or-amendment",
-    "decision provenance separating ownership from enforcement",
-    "newly decided policy returned into subsequent operation",
-    "matched native-or-adapter-preserved canonical harness comparison for primary-baseline use"
+  "remaining_primary_baseline_requirements": [
+    "matched native-or-adapter-preserved canonical harness comparison",
+    "canonical identity linkage at reviewed revisions",
+    "common identity-or-ultimate-policy challenge under comparable authority boundaries",
+    "published result cells attributable to each canonical harness's own S5 path"
   ]
 }
