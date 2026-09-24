@@ -208,6 +208,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="langflow"></a>[Langflow](https://github.com/langflow-ai/langflow) | 2023-Q1 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 6 | <a id="llama-index"></a>[LlamaIndex](https://github.com/run-llama/llama_index) | 2022-Q4 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
 | 6 | <a id="langchain"></a>[LangChain](https://github.com/langchain-ai/langchain) | 2022-Q4 | 1/6 | 0/5 | 0 | 0 | 4 | `A — ? ? ? ?` |
+| 6 | <a id="yao-agents"></a>[Yao Agents](https://github.com/YaoApp/yao) | 2021-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="khoj"></a>[Khoj](https://github.com/khoj-ai/khoj) | 2021-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="haystack"></a>[Haystack](https://github.com/deepset-ai/haystack) | 2019-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="n8n"></a>[n8n](https://github.com/n8n-io/n8n) | 2019-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
