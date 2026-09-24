@@ -1,0 +1,47 @@
+name: admit term-mesh exclusion render
+on:
+  push:
+    branches: [admit-term-mesh-exclusion-218]
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit exclusion and render
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('assessments/term-mesh.md')
+          s = p.read_text()
+          if 'status: proposed' not in s:
+              raise SystemExit('assessment is not proposed')
+          s = s.replace('status: proposed', 'status: excluded-no-agentic-vsm', 1)
+          s = s.replace('## Proposed terminal outcome', '## Terminal outcome', 1)
+          p.write_text(s)
+
+          cat = Path('data/catalog.psv')
+          text = cat.read_text()
+          row = '218|term-mesh|term-mesh|https://github.com/x-mesh/term-mesh|2026-04-22T05:24:42Z|index-addition|36f704695f62d0ae2e6935d9d016cc476fde0477|2026-09-24'
+          if row not in text:
+              cat.write_text(text.rstrip() + '\n' + row + '\n')
+          PY
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/term-mesh.md data/catalog.psv METRICS.md README.md data/metrics.json
+          git commit -m 'admit: render term-mesh canonical exclusion'
+          git push
