@@ -65,6 +65,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="penguin-harness"></a>[PenguinHarness](https://github.com/Prism-Shadow/penguin-harness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="tevarn"></a>[Tevarn](https://github.com/wu1w/tevarn) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — A — — P` |
 | 5 | <a id="holt"></a>[Holt](https://github.com/holt-os/holt) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — P C A —` |
+| 5 | <a id="leviath"></a>[Leviath](https://github.com/GEMISIS/leviath) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C(P) A — —` |
 | 5 | <a id="starnet"></a>[StarNet](https://github.com/androoAGI/starnet) | 2026-Q2 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
 | 5 | <a id="redteam"></a>[redteam](https://github.com/AscendyProject/redteam) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="super-agent"></a>[super-agent](https://github.com/FedericoCasarella/super-agent) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P — A —` |
