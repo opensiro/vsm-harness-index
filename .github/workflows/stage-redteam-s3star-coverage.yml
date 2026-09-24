@@ -70,12 +70,14 @@ jobs:
           PY
 
           python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/render_function_baselines.py
           python experiments/functional-capability-depth/render_function_baselines.py --check
 
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add experiments/functional-capability-depth/s3star-system-benchmarks/coverage.json \
-                  experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+                  experiments/functional-capability-depth/s3star-system-benchmarks/validate.py \
+                  experiments/functional-capability-depth/FUNCTION-BASELINES.md
           if ! git diff --cached --quiet; then
             git commit -m 'experiment: link redteam native S3star coverage'
             git push
