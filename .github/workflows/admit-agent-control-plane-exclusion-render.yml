@@ -1,0 +1,47 @@
+name: admit agent control plane exclusion render
+on:
+  push:
+    branches: [admit-agent-control-plane-exclusion-220]
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit exclusion and render
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('assessments/agent-control-plane.md')
+          s = p.read_text()
+          if 'status: proposed' not in s:
+              raise SystemExit('assessment is not proposed')
+          s = s.replace('status: proposed', 'status: excluded-no-agentic-vsm', 1)
+          s = s.replace('## Proposed terminal outcome', '## Terminal outcome', 1)
+          p.write_text(s)
+
+          cat = Path('data/catalog.psv')
+          text = cat.read_text()
+          row = '220|agent-control-plane|Agent Control Plane|https://github.com/ryanwi/agent-control-plane|2026-03-06T02:55:06Z|index-addition|99da3934faa2aa7be09df72134cc5e8023e8704f|2026-09-24'
+          if row not in text:
+              cat.write_text(text.rstrip() + '\n' + row + '\n')
+          PY
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/agent-control-plane.md data/catalog.psv METRICS.md README.md data/metrics.json
+          git commit -m 'admit: render Agent Control Plane canonical exclusion'
+          git push
