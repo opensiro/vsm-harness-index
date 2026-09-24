@@ -30,7 +30,7 @@ jobs:
           with path.open(encoding="utf-8", newline="") as handle:
               rows = list(csv.DictReader(handle, delimiter="|"))
           if len(rows) != 1:
-              raise SystemExit("active-contract.psv must contain exactly one row")
+            raise SystemExit("active-contract.psv must contain exactly one row")
           row = rows[0]
           print(f"profile={row['profile_version']}")
           print(f"methodology={row['methodology_version']}")
@@ -104,6 +104,7 @@ jobs:
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_paper_controls.py
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_continual_linkage.py
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_gepa_linkage.py
+      - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_meta_harness_linkage.py
       - run: python experiments/functional-capability-depth/s5-system-benchmarks/validate.py
       - run: python -m unittest discover -s tests -v
       - name: Check immutable generation provenance against PR base

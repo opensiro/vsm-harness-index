@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 553,
+  "reviewed_at": "2026-09-24",
+  "refines_preflight": "public-polybench-paper-controls.json",
+  "candidate_cell_id": "adaptive-auto-harness-polybench-meta-harness-linkage-v5",
+  "preflight_disposition": "blocked",
+  "execution_authorized": false,
+  "primary_baseline_after_preflight": "gap",
+  "evidence_mode": "public-results-only",
+  "paper_row": {
+    "paper": "https://arxiv.org/abs/2606.01770",
+    "reported_method_label": "Meta-Harness",
+    "benchmark": "PolyBench",
+    "paper_level_solver_policy": "Claude Sonnet 4.6 for all experiments unless specified",
+    "paper_level_evolver_policy": "Claude Opus 4.6",
+    "paper_level_solver_temperature": 0.0,
+    "paper_level_evolver_temperature": 0.0,
+    "paper_level_polybench_batch_size": 100,
+    "paper_level_common_chronological_order": true,
+    "paper_level_common_temporal_reveal": true
+  },
+  "implementation_linkage": {
+    "a_evolve_pre_release_revision": "e4f70b949989e0abf08532e8223cb9eab447e971",
+    "local_engine_path": "agent_evolve/algorithms/meta_harness/engine.py",
+    "claimed_design_source": "Meta-Harness search framework (Lee et al., 2026)",
+    "upstream_paper": "https://arxiv.org/abs/2603.28052",
+    "upstream_repository": "https://github.com/stanford-iris-lab/meta-harness",
+    "upstream_reference_revision_inspected": "0cbc31e97c9e6d24232d1dc754827c02e1ec415c",
+    "upstream_reference_runtime_path": "experimental/harbor_meta_harness/agents/meta_harness.py",
+    "local_imports_upstream_runtime": false,
+    "local_vendors_upstream_runtime": false,
+    "immutable_evaluated_upstream_revision": null
+  },
+  "gates": [
+    {
+      "gate_id": "paper-level-comparison-controls",
+      "status": "satisfied",
+      "finding": "Historical #538 establishes a common paper-level PolyBench task order, batch loop, solver/evolver policy, zero temperatures and result surface for the named auto-harness rows.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770",
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/public-polybench-paper-controls.json"
+      ]
+    },
+    {
+      "gate_id": "meta-harness-paper-identity",
+      "status": "satisfied",
+      "finding": "The A-Evolve comparison engine explicitly identifies itself as implementing the Meta-Harness search framework (Lee et al., 2026), matching the public Meta-Harness paper arXiv:2603.28052.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/e4f70b949989e0abf08532e8223cb9eab447e971/agent_evolve/algorithms/meta_harness/engine.py",
+        "https://arxiv.org/abs/2603.28052"
+      ]
+    },
+    {
+      "gate_id": "design-correspondence",
+      "status": "satisfied",
+      "finding": "The local comparison engine implements recognizable Meta-Harness design elements: an agentic proposer, persistent prior-candidate source/score/trace archive, repeated candidate evaluation, and selection over accumulated candidates. This supports method-design correspondence but not implementation identity.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/e4f70b949989e0abf08532e8223cb9eab447e971/agent_evolve/algorithms/meta_harness/engine.py",
+        "https://arxiv.org/abs/2603.28052"
+      ]
+    },
+    {
+      "gate_id": "upstream-native-implementation-identity",
+      "status": "blocked",
+      "finding": "The inspected PolyBench Meta-Harness row is produced by A-Evolve's own MetaHarnessEngine around A-Evolve workspace/TrialRunner, Claude Code proposer, local candidate archive and Pareto selection. It does not import, vendor or invoke the public stanford-iris-lab/meta-harness runtime. The inspected upstream reference runtime is instead a Harbor BaseAgent outer loop with a bounded evaluate_harness tool and its own controller/suite boundary.",
+      "blocking_effect": "Do not attribute the paper's PolyBench Meta-Harness row to the upstream Meta-Harness system or a future canonical Meta-Harness assessment. Preserve it as benchmark-local/design-faithful comparison evidence unless stronger primary provenance establishes the evaluated implementation identity.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/e4f70b949989e0abf08532e8223cb9eab447e971/agent_evolve/algorithms/meta_harness/engine.py",
+        "https://github.com/stanford-iris-lab/meta-harness/blob/0cbc31e97c9e6d24232d1dc754827c02e1ec415c/experimental/harbor_meta_harness/agents/meta_harness.py",
+        "https://github.com/stanford-iris-lab/meta-harness"
+      ]
+    },
+    {
+      "gate_id": "immutable-evaluated-upstream-revision-binding",
+      "status": "not_reached",
+      "finding": "Because the row is not bound to the upstream runtime at all, an immutable upstream evaluated revision cannot be credited from the current evidence.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/a-evolve/blob/e4f70b949989e0abf08532e8223cb9eab447e971/agent_evolve/algorithms/meta_harness/engine.py"
+      ]
+    },
+    {
+      "gate_id": "canonical-meta-harness-system-boundary",
+      "status": "not_reached",
+      "finding": "A standalone canonical assessment of an upstream Meta-Harness repository would remain a separate system-in-focus decision and could not retroactively convert this benchmark-local implementation row into native evidence.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/BASELINE.md"
+      ]
+    },
+    {
+      "gate_id": "matched-canonical-s4-cell",
+      "status": "not_reached",
+      "finding": "Paper-level matching and design correspondence do not satisfy canonical-native implementation attribution, so this row cannot enter a matched canonical S4 cell.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/BASELINE.md"
+      ]
+    }
+  ],
+  "results": null,
+  "non_claim": "This refinement recognizes that the A-Evolve PolyBench implementation intentionally follows the Meta-Harness paper design. It does not claim that it is the upstream Meta-Harness runtime, does not assign canonical S4 ownership, does not admit a capability observation or ranking, and does not promote the S4 primary baseline from gap."
+}
