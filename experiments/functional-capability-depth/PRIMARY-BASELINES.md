@@ -4,17 +4,50 @@ Status: **experimental, non-normative**
 
 Tracking issue: #409
 
-This file applies [`BASELINE.md`](BASELINE.md) to the benchmark families currently reviewed under `functional-capability-depth`.
+This file records the durable rationale and selection policy used by the `functional-capability-depth` experiment. It is **not** the current-state registry for benchmark-family coverage.
 
-The rule for the baseline view is simple:
+The current state has explicit sources of truth:
+
+```text
+vsm-benchmark-family-map/map.json
+        -> reviewed function-valid benchmark families
+
+primary-baselines.json
+        -> selected / gap decision metadata
+
+s2-system-benchmarks/coverage.json
+s3-system-benchmarks/coverage.json
+s3star-system-benchmarks/coverage.json
+s4-system-benchmarks/coverage.json
+s5-system-benchmarks/coverage.json
+        -> function-specific evidence coverage
+
+FUNCTION-BASELINES.md
+        -> deterministic cross-function status projection
+
+S1-BASELINE.md
+        -> deterministic selected S1 projection
+```
+
+Do not maintain changing benchmark-family counts, gap inventories, or numeric benchmark values manually in this file.
+
+## Baseline rule
+
+The baseline view is intentionally simple:
 
 ```text
 1 VSM function -> 1 primary benchmark
 ```
 
-A primary is selected only when the current evidence can support a matched comparison of canonical harness systems. A direct VSM benchmark is not enough by itself if the benchmark scaffold supplies the target organizational function or if the published comparison varies only models rather than harnesses.
+A primary is selected only when current public evidence can support a matched comparison of canonical harness systems. A benchmark being function-valid is not enough by itself if the benchmark scaffold supplies the target organizational function or if the published comparison varies models rather than harnesses.
 
-The generated cross-function status projection is [`FUNCTION-BASELINES.md`](FUNCTION-BASELINES.md). The generated current S1 projection is [`S1-BASELINE.md`](S1-BASELINE.md). Both are derived views; do not maintain benchmark values manually in this file.
+A `gap` therefore means:
+
+> no reviewed public evidence currently satisfies the complete primary-selection gate for that VSM function.
+
+It does **not** mean the function has zero capability or no relevant benchmark evidence.
+
+For the current selected/gap state and current direct-family depth, use [`FUNCTION-BASELINES.md`](FUNCTION-BASELINES.md).
 
 ## Selection gate
 
@@ -23,173 +56,129 @@ A primary family should be:
 1. **function-valid** — it measures the target VSM function rather than a nearby feature label;
 2. **matched-harness** — model/configuration, tasks, environment, evaluator and resource policy can be held fixed while the harness varies;
 3. **canonical-linkable** — benchmarked systems can be linked to canonical Index harnesses without importing the target function from the benchmark scaffold;
-4. **frozen-repertoire compatible** — ordinary baseline runs do not silently mix persistent self-improvement across benchmark tasks into the same score;
-5. **public and reproducible** — the protocol and provenance are sufficient to preserve observation identity;
+4. **frozen-repertoire compatible** — ordinary baseline observations do not silently mix persistent self-improvement across benchmark tasks into the same score;
+5. **public and reproducible** — protocol and provenance are sufficient to preserve observation identity;
 6. **scope-honest** — narrow applied-domain results remain domain projections rather than universal capability claims.
 
-## Current selection
+The distinction is:
 
-| Function | Baseline status | Primary family | Reference cell | Reason |
-| --- | --- | --- | --- | --- |
-| S1 | selected | PawBench v1.0 | `qwen3.6-35b-a3b` × QwenPaw / OpenClaw / Hermes | general Model × Harness design with three canonical `S1=A` systems under one 150-task evaluation surface |
-| S2 | gap | — | — | DPBench is direct S2 evidence, but the coordination organization is benchmark-scaffolded rather than a native canonical-harness comparison |
-| S3 | gap | — | — | ClawArena-Team directly tests team management, but the benchmark supplies the management organization/tools and varies the main-agent model |
-| S3* | gap | — | — | TrueCall directly tests a composed audit path, but the audit function is supplied by the external TrueCall layer |
-| S4 | gap | — | — | direct S4 families currently evaluate benchmark-defined/composed adaptation loops rather than matched native S4 across canonical harnesses |
-| S5 | gap | — | — | no reviewed direct S5 benchmark currently closes legitimate ultimate-policy/identity authority and return to operation |
+```text
+function-valid benchmark
+        !=
+canonical-harness observation
+        !=
+matched canonical-harness primary
+```
 
-A `gap` is deliberate. It means the current evidence is not strong enough for the simple primary baseline view; it does not mean the function lacks benchmark evidence.
+This is why benchmark-defined or composed direct evidence can increase evidence depth while the primary status remains `gap`.
 
-## S1 — selected general primary
+## S1 — selected general-primary rationale
 
-### PawBench v1.0
+The current S1 primary is **PawBench v1.0**. The machine-readable selection and reference cell live in `primary-baselines.json`; benchmark values live only in the shared observation layer and are projected by `S1-BASELINE.md`.
 
 Primary source: <https://github.com/agentscope-ai/PawBench>
 
-PawBench is explicitly organized as a **Model × Harness** co-evaluation benchmark. Its v1.0 matrix covers 150 tasks, nine models and three harnesses. The benchmark supports holding one model fixed and comparing harnesses over the same task/evaluation surface.
+PawBench is suitable as the general S1 primary because it is explicitly organized as a **Model × Harness** co-evaluation benchmark. Its v1.0 design supports holding a model fixed while comparing multiple harnesses over one task/evaluation surface.
 
-The first reference cell is:
+The rationale for using it as the general S1 primary rather than a Coding/SWE-only benchmark is durable:
 
-```text
-model: qwen3.6-35b-a3b
-benchmark: PawBench v1.0
-harnesses:
-  - qwenpaw
-  - openclaw
-  - hermes-agent
-```
+- it spans multiple task sources and capability slices rather than only repository issue resolution;
+- it explicitly exposes harness choice as a comparison variable;
+- additional harness adapters can extend the matrix without redefining S1;
+- its isolated task execution is compatible with the frozen-repertoire baseline rule when exact run configuration and external persistent state are preserved in observation provenance.
 
-All three harnesses are canonical Index systems and all three currently have `S1=A`.
+### Historical-lineage limit
 
-Why this is the general S1 primary rather than a Coding/SWE benchmark:
+A primary-family selection is not a claim that every published row evaluates the latest canonical Index revision.
 
-- PawBench mixes multiple task sources and capability slices rather than restricting the comparison to repository issue resolution;
-- it is explicitly designed to inspect model and harness effects independently;
-- it can later accept more harness adapters without changing the conceptual baseline;
-- its Docker/task isolation is compatible with the frozen-repertoire baseline rule, subject to preserving exact run configuration and any external persistent state in future observation records.
+Raw observations must preserve:
 
-### Limits
+- the benchmarked harness version/configuration;
+- relationship to the current canonical lineage;
+- fixed model/provider/configuration;
+- benchmark version and task set;
+- grading mode;
+- known environment or persistence caveats.
 
-The selection is a benchmark-family choice, not a claim that the published May 2026 rows evaluate current September 2026 canonical revisions.
+Numeric results belong in the observation layer, never in this rationale file.
 
-Published PawBench harness versions are historical relative to the current Index review refs. Raw observations must therefore preserve:
+## Applied-domain projections
 
-- the published harness version/configuration;
-- the relationship to the current canonical lineage;
-- the fixed model and provider/configuration;
-- PawBench version/task set;
-- grading mode, including automated / LLM-judge / hybrid behavior;
-- any known environment or persistence caveats.
+A VSM function can have domain-specific projections without replacing its general primary.
 
-Numeric benchmark results do **not** belong in this selection file. They belong in the shared raw observation layer.
+For S1, Coding/SWE evidence currently uses a dedicated domain primary plus additional technical evidence. The exact selected family, model cell, canonical harness rows and current observations are source-derived from `primary-baselines.json` and `s1-system-benchmarks/observations.jsonl` into `S1-BASELINE.md`.
 
-## S1 / Coding-SWE domain projection
-
-### Claw-SWE-Bench — selected domain primary
-
-Primary source: <https://claw-swe-bench.github.io/>
-
-Claw-SWE-Bench is the selected Coding/SWE primary because it explicitly elevates the harness to the controlled variable: model, 350 SWE tasks, Docker runtime and the official SWE-bench evaluator are held fixed while the harness varies.
-
-The cheap reference cell is:
+The durable rule is:
 
 ```text
-model: Qwen 3.6-flash
-scope: Coding / SWE
-full task set: 350
+general S1 capability
+        ↓
+        ├── Coding / SWE projection
+        ├── Research / Science projection
+        ├── Government / Public Administration projection
+        ├── Cybersecurity / Incident Response projection
+        ├── Infrastructure / SRE projection
+        └── other applied-domain projections
 ```
 
-The published five-harness matrix includes OpenClaw and Hermes Agent, both canonical Index systems with admitted matched-model observations under this domain projection.
+A domain result can support a comparison inside that domain. It must not be promoted automatically to universal S1 capability.
 
-This benchmark is **not** promoted to the general S1 primary because its task distribution is intentionally software-engineering specific.
+## Ownership and boundary rule
 
-### FrontierHarness Eval — additional Coding/SWE evidence
+Capability observations do not determine canonical VSM ownership.
 
-Primary source: <https://github.com/frontier-harness-eval/eval>
-
-FrontierHarness Eval is additional high-value domain evidence because it fixes Kimi K3 and the runtime while comparing a broad harness set including canonical Index systems Codex, Claude Code, Pi, oh-my-pi, OpenCode and Hermes.
-
-Its v1.0 task set contains 21 Terminal-Bench 2.1 tasks and 9 DeepSWE v1.1 tasks. It therefore remains in the existing technical/Coding-SWE projection rather than becoming the general S1 baseline.
-
-It is especially useful for:
-
-- broad canonical harness overlap;
-- cost/cache/time measurements alongside pass rate;
-- fresh-restore task isolation;
-- robustness checks beside the selected domain-primary Claw-SWE cell.
-
-## S2 — primary gap
-
-Reviewed direct family: **DPBench**.
-
-Primary source: <https://github.com/najmulhasan-code/dpbench>
-
-DPBench directly measures coordination under simultaneous shared-resource contention and reports deadlock, throughput, fairness and message-action consistency.
-
-It is not selected as the canonical-harness S2 primary because the benchmark defines the multi-agent organization and interaction protocol itself. Published experiments primarily compare models and protocol conditions inside that benchmark organization; they do not yet provide a matched comparison among canonical harnesses that natively own S2.
-
-DPBench remains direct S2 benchmark-family evidence.
-
-## S3 — primary gap
-
-Reviewed direct family: **ClawArena-Team**.
-
-Primary source: <https://github.com/aiming-lab/ClawArena/tree/main/ClawArena-Team>
-
-ClawArena-Team cleanly tests whole-team management by holding a fixed subagent pool constant while a main agent creates, empowers, schedules, inspects and integrates subagents.
-
-It is not selected as the canonical-harness S3 primary because the benchmark supplies the management tool surface, worker pool and organization. Published comparison therefore isolates the main model's management ability inside a benchmark-defined organization rather than comparing native S3 implementations of canonical harnesses.
-
-ClawArena-Team remains direct S3 benchmark-family evidence.
-
-## S3* — primary gap
-
-Reviewed direct family: **TrueCall silent-failure runtime verification**.
-
-Primary source: <https://github.com/abhid1234/truecall>
-
-TrueCall provides a deterministic post-condition audit layer and corrective return path, including adapters around more than one harness. That makes the composed audited system a direct S3* benchmark boundary.
-
-It is not selected as the canonical-harness S3* primary because TrueCall itself supplies the complementary audit function. A wrapped Codex or Claude Code run therefore cannot be interpreted as measuring that harness's native S3* capability.
-
-TrueCall remains direct composed S3* evidence and may later support controlled studies of how different S1 systems respond to the same external audit signal.
-
-## S4 — primary gap
-
-Reviewed direct families include:
-
-- A-Evolve harness evolution;
-- SkillEvolBench;
-- EvoHarnessBench self-evolving mode.
-
-These are valuable direct S4 benchmarks at their declared benchmark-defined/composed adaptation boundaries. They currently do not provide a matched comparison among canonical harnesses that natively own S4.
-
-### Frozen-repertoire rule for S4
-
-The ordinary capability baseline asks how good the **current S4 regulator** is.
-
-That does not forbid S4 from doing its ordinary job. An existing S4 mechanism may sense the environment, generate adaptation options and cause changes elsewhere in the organization during an S4 benchmark.
-
-What the ordinary baseline must not silently add is persistent improvement of **S4's own decision/feedback repertoire** across benchmark tasks. That belongs to the separate experimental self-organizing `S` question.
-
-So:
+For every function:
 
 ```text
-S4 uses its current repertoire to adapt another function
--> ordinary S4 capability may be measured
+canonical assessment
+        -> who owns/closes the organizational function
 
-S4 changes how S4 itself learns / senses / generates adaptation
-and carries that new regulator forward
--> separate self-organizing evidence
+capability evidence
+        -> how the observed function performs at the declared benchmark boundary
 ```
 
-## S5 — primary gap
+A benchmark-owned coordination, management, audit, adaptation, or governance layer must not be credited to a task-solving harness merely because that harness runs inside the benchmark.
 
-No reviewed benchmark family currently satisfies the direct S5 gate for the primary baseline.
+This boundary is especially important for S2-S5, where many useful public benchmarks evaluate **benchmark-defined or composed organizations** rather than native canonical-harness implementations.
 
-A qualifying direct S5 benchmark must reach more than policy enforcement or value-conflict reasoning. It must expose legitimate ultimate-policy/identity authority at the declared recursion, an actual adjudication/ratification/revision decision, and return the newly decided policy into subsequent operation.
+## Frozen-repertoire rule
 
-Current reviewed families remain proxy or unsuitable under that standard.
+The ordinary capability baseline asks how good the **current functional repertoire** is.
+
+This does not forbid a function from performing its ordinary organizational job. For example, an existing S4 mechanism may sense the environment, generate adaptation options and change another part of the organization during an S4 evaluation.
+
+What an ordinary baseline must not silently include is persistent endogenous improvement of the tested function's **own decision/feedback repertoire** across benchmark tasks.
+
+```text
+Sx uses its current repertoire to perform Sx
+-> ordinary capability evidence
+
+Sx persistently changes how Sx itself decides / senses / coordinates / audits
+and carries the changed regulator forward
+-> separate self-organizing-S evidence
+```
+
+The self-organizing `S` experiment remains a separate evidence class rather than an extra scalar capability dimension.
+
+## Public-evidence-first rule
+
+Opensiro does not need to operate every benchmark itself.
+
+The default capability path is:
+
+```text
+public benchmark / paper / leaderboard result
+        ↓
+provenance + observation identity
+        ↓
+VSM-function attribution
+        ↓
+ownership/boundary classification
+        ↓
+matched comparison where justified
+```
+
+Opensiro-operated runs are optional reproduction or validation evidence, not a prerequisite for capability ingestion.
 
 ## Replacement and expansion rule
 
@@ -206,14 +195,16 @@ A new benchmark may replace a primary when it offers materially stronger:
 
 Replacing a primary changes the derived baseline view. It does not delete historical observations or secondary/domain evidence.
 
-## Current evidence state
+Adding a new direct benchmark family should update the benchmark-family map, the relevant function coverage, and `primary-baselines.json` as required. `render_function_baselines.py --check` mechanically rejects direct-family drift between the map and gap-selection metadata.
 
-The first selected cells are now present in the shared S1 observation layer:
+## Reading the current experiment
 
-1. PawBench v1.0 `qwen3.6-35b-a3b` × QwenPaw / OpenClaw / Hermes — general S1 primary;
-2. Claw-SWE-Bench `Qwen 3.6-flash` × canonical OpenClaw / Hermes rows — Coding/SWE domain primary;
-3. FrontierHarness Eval v1.0 Kimi K3 × canonical Codex / Claude Code / Pi / Oh My Pi / OpenCode / Hermes rows — additional Coding/SWE evidence.
+Use these artifacts instead of this file for changing state:
 
-Claw-SWE-Bench also contains an admitted GLM 5.1 matched-model robustness cell. It remains additional evidence and is not substituted for the selected cheap Qwen 3.6-flash domain-primary cell.
+- [`FUNCTION-BASELINES.md`](FUNCTION-BASELINES.md) — current selected/gap projection and evidence-depth counts;
+- [`primary-baselines.json`](primary-baselines.json) — machine-readable primary/gap decisions;
+- [`S1-BASELINE.md`](S1-BASELINE.md) — current selected S1 observations;
+- function-specific `coverage.json` files — reviewed evidence and boundary decisions;
+- [`vsm-benchmark-family-map/map.json`](vsm-benchmark-family-map/map.json) — current function-valid direct/proxy/unsuitable benchmark-family mapping.
 
-Each numeric result is stored once in `s1-system-benchmarks/observations.jsonl`. The generated [`S1-BASELINE.md`](S1-BASELINE.md) projects those observations according to `primary-baselines.json`; it must not become an independently edited evidence source.
+This separation keeps durable methodology/rationale stable while allowing public evidence to grow without creating another manually synchronized assessment database.
