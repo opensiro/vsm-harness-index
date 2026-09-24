@@ -2,11 +2,12 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-24",
   "function": "S3*",
-  "direct_benchmark_family_count": 3,
+  "direct_benchmark_family_count": 4,
   "composed_direct_observation_count": 3,
-  "canonical_direct_observation_count": 0,
+  "canonical_direct_observation_count": 1,
   "coverage_classes": [
     "direct-composed",
+    "direct-native",
     "native-proxy",
     "external-wrapper-not-native",
     "proxy-scaffolded",
@@ -213,6 +214,23 @@
       ],
       "finding": "Canonical redteam establishes S3*=A in its default agent-pair path: a fresh cross-provider reviewer independently inspects the committed implementation diff and project constraints, CHANGES_REQUESTED findings are returned to the implementer, and review runs again before draft-PR creation. The pinned repository includes benchmark machinery but no committed real Phase-1 result set was recovered, so this is native mechanism-only coverage and no direct canonical capability observation is admitted.",
       "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "appliedscientist-native-s3star-direct",
+      "benchmark": "AppliedScientist iterative scientific review-revision",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-native",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "appliedscientist",
+      "observation_ref": "canonical_observations.json#appliedscientist-iterative-review-2026-09",
+      "primary_sources": [
+        "https://arxiv.org/abs/2609.14738",
+        "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-scientist/.claude/CLAUDE.md",
+        "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-scientist/scripts/submit_for_review.sh",
+        "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-reviewer/review_api.py"
+      ],
+      "finding": "Canonical AppliedScientist establishes S3*=A through its separate fresh Reviewer service and Scientist correction/re-review loop. The first-party publication directly evaluates this organization over 30 scientific-revision trajectories and reports 128/150 execution-related weaknesses resolved (85.3%) while only 2/18 idea-related weaknesses are resolved (11.1%). This is admitted native direct S3* evidence; the result is first-party-reported rather than independently reproduced at the pinned Git revision and does not supply a matched cross-harness primary cell.",
+      "admitted_to_canonical_registry": true
     }
   ],
   "representative_canonical_s3star_systems_inspected": [
@@ -221,7 +239,8 @@
     "codex",
     "swe-agent",
     "reigen",
-    "redteam"
+    "redteam",
+    "appliedscientist"
   ],
   "canonical_states_at_review": {
     "omnigent": "A",
@@ -229,7 +248,8 @@
     "codex": "C",
     "swe-agent": "C",
     "reigen": "C",
-    "redteam": "A"
+    "redteam": "A",
+    "appliedscientist": "A"
   },
   "capability_dimensions": [
     "claim-vs-reality-discrepancy-detection",

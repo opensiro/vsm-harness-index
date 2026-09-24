@@ -1,1 +1,51 @@
-[]
+[
+  {
+    "observation_id": "appliedscientist-iterative-review-2026-09",
+    "function": "S3*",
+    "benchmark_id": "appliedscientist-iterative-review",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "canonical-native-system",
+    "canonical_harness_id": "appliedscientist",
+    "canonical_system_eligible": true,
+    "system_compatibility": "native-system",
+    "canonical_review_revision": "762824fd41598370e75588861b48991b0a9fd784",
+    "publication_id": "arXiv:2609.14738",
+    "publication_version_at_review": "v2",
+    "paper_count": 30,
+    "rejected_paper_count": 25,
+    "borderline_paper_count": 5,
+    "revision_rounds": 5,
+    "comparison_class": "within-system-guidance-comparison",
+    "revision_conditions": [
+      "human-initialized reviewer-guided revision",
+      "AI-initialized reviewer-guided revision",
+      "autonomous fixed-prompt self-revision"
+    ],
+    "audit_loop": [
+      "Scientist produces a revised implementation, experiments and manuscript",
+      "a separate fresh Reviewer sees only the current manuscript and independently searches literature",
+      "Reviewer emits weaknesses, suggestions and a new evaluation without memory of prior feedback or scores",
+      "review feedback becomes guidance for the next Scientist revision",
+      "Scientist edits code, runs experiments, analyzes results and revises the manuscript",
+      "the new manuscript is submitted to another fresh independent review"
+    ],
+    "reported_execution_weaknesses_total": 150,
+    "reported_execution_weaknesses_resolved": 128,
+    "reported_execution_weakness_resolution_rate": 0.853,
+    "reported_idea_weaknesses_total": 18,
+    "reported_idea_weaknesses_resolved": 2,
+    "reported_idea_weakness_resolution_rate": 0.111,
+    "external_validation_surface": "Stanford Reviewer scores saved human-initialized versions independently and is never shown to the Scientist; it is supporting validation, not the native S3* owner.",
+    "comparison_scope_note": "The paper compares reviewer-guided revision with fixed-prompt self-revision inside AppliedScientist. The weakness-resolution counts are aggregate closure evidence for the native review-guided loop, not a matched cross-harness S3* score.",
+    "provenance_limitation": "The public AppliedScientist repository at canonical review ref 762824fd41598370e75588861b48991b0a9fd784 is first-party and implements the same Scientist-to-separate-Reviewer-to-correction-to-fresh-review architecture described in the publication. The fetched publication HTML does not expose an explicit repository URL binding the reported experimental runs to that exact Git commit. Preserve this result as first-party-reported; it is not independently reproduced at the pinned revision.",
+    "vsm_interpretation": "The canonical assessment independently establishes S3*=A for AppliedScientist. The publication directly exercises that native complementary-audit organization: a separate fresh reviewer gathers independent evidence, returns concrete findings into the Scientist current revision loop, and the corrected artifact is reviewed again. The result is therefore direct native S3* capability evidence, while one within-system result remains insufficient for a matched cross-harness primary baseline.",
+    "primary_sources": [
+      "https://arxiv.org/abs/2609.14738",
+      "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-scientist/.claude/CLAUDE.md",
+      "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-scientist/scripts/submit_for_review.sh",
+      "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-reviewer/review_api.py",
+      "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-reviewer/prompts/paper_reviewer_instruction_template.md"
+    ]
+  }
+]

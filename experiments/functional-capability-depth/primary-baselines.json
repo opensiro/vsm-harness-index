@@ -114,9 +114,14 @@
           "benchmark_id": "harness-bench-adversarial-review",
           "benchmark_name": "harness-bench adversarial review-revision evaluation",
           "primary_source": "https://github.com/tdrml/harness-bench/tree/f2fb12cc28ac90dce6eba873788b5632d6fc5431"
+        },
+        {
+          "benchmark_id": "appliedscientist-iterative-review",
+          "benchmark_name": "AppliedScientist iterative scientific review-revision",
+          "primary_source": "https://arxiv.org/abs/2609.14738"
         }
       ],
-      "blocking_reason": "Reviewed direct S3* families close complementary audit and corrective-return loops at composed or benchmark-defined boundaries, including controlled reviewer-to-revision-to-reverification evidence, but public evidence does not yet provide a matched comparison of native S3* implementations across canonical harnesses."
+      "blocking_reason": "Reviewed direct S3* families now include a canonical native within-system observation from AppliedScientist in addition to composed/benchmark-defined review-correction-reverification evidence, but public evidence still does not provide a matched comparison of native S3* implementations across multiple canonical harnesses under one common benchmark/model/configuration cell."
     },
     "S4": {
       "status": "gap",
