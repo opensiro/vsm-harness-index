@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 558,
+  "reviewed_at": "2026-09-24",
+  "disposition": "evidence-backed-gap",
+  "primary_baseline": "gap",
+  "closure_scope": "current-public-evidence",
+  "canonical_native_observations": [
+    "a-evolve",
+    "kadath"
+  ],
+  "reviewed_routes": [
+    {
+      "route_id": "a-evolve-exo-skillsbench",
+      "source": "preflight.json",
+      "status": "blocked",
+      "blocking_gate": "exact-common-model-provider"
+    },
+    {
+      "route_id": "adaptive-auto-harness-polybench-paper-controls",
+      "source": "public-polybench-paper-controls.json",
+      "status": "matched-paper-level-only",
+      "blocking_gate": "native-baseline-implementation-provenance"
+    },
+    {
+      "route_id": "polybench-continual-harness",
+      "source": "public-polybench-continual-linkage.json",
+      "status": "blocked",
+      "blocking_gate": "evaluated-row-implementation-binding"
+    },
+    {
+      "route_id": "polybench-gepa",
+      "source": "public-polybench-gepa-linkage.json",
+      "status": "blocked",
+      "blocking_gate": "immutable-evaluated-upstream-revision-binding"
+    },
+    {
+      "route_id": "polybench-meta-harness",
+      "source": "public-polybench-meta-harness-linkage.json",
+      "status": "blocked",
+      "blocking_gate": "upstream-native-implementation-identity"
+    },
+    {
+      "route_id": "polybench-skillos",
+      "source": "public-polybench-skillos-linkage.json",
+      "status": "blocked",
+      "blocking_gate": "evaluated-implementation-identity"
+    }
+  ],
+  "closure_claim": "The current public evidence contains canonical native S4 observations and materially matched paper-level comparisons, but no route satisfies the full matched canonical-harness primary gate.",
+  "reopen_when": [
+    "a blocked provenance or common-membrane gate is resolved by new public primary evidence",
+    "a new public study exposes two or more independently canonical-linkable S4 systems under one benchmark/model/configuration cell",
+    "an adapter-preserved common execution membrane becomes publicly established for existing canonical systems"
+  ],
+  "do_not_reopen_for": [
+    "another heterogeneous single-system S4 result",
+    "another benchmark-defined evolver without canonical-native linkage",
+    "method-name similarity without immutable implementation provenance"
+  ],
+  "non_claim": "This closure is not a claim that a matched S4 primary can never exist, not a zero capability result, and not a ranking. It freezes the reviewed public-evidence state until materially new primary evidence changes a blocked gate."
+}

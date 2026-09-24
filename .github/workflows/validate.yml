@@ -106,6 +106,7 @@ jobs:
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_gepa_linkage.py
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_meta_harness_linkage.py
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_skillos_linkage.py
+      - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_s4_primary_search_closure.py
       - run: python experiments/functional-capability-depth/s5-system-benchmarks/validate.py
       - run: python -m unittest discover -s tests -v
       - name: Check immutable generation provenance against PR base
