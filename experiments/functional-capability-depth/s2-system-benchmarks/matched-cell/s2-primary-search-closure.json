@@ -3,6 +3,7 @@
   "status": "experimental-non-normative",
   "tracking_issue": 564,
   "current_state_update_issue": 586,
+  "post_closure_delta_issue": 592,
   "reviewed_at": "2026-09-25",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
@@ -12,7 +13,7 @@
     "direct_observations": 1,
     "canonical_direct_observations": 0,
     "native_proxy_projections": 2,
-    "representative_canonical_s2_systems_inspected": 11
+    "representative_canonical_s2_systems_inspected": 13
   },
   "reviewed_route_classes": [
     {
@@ -36,8 +37,8 @@
     {
       "route_id": "native-mechanism-without-direct-results",
       "status": "no-direct-results",
-      "examples": ["DeepSeek Agent Teams"],
-      "blocking_reason": "A canonical native S2 mechanism exists, but the public benchmark entry point does not exercise that path directly."
+      "examples": ["DeepSeek Agent Teams", "C.A.D.I.S.", "ARES"],
+      "blocking_reason": "Canonical native S2 mechanisms exist, including post-closure admissions C.A.D.I.S. and ARES, but reviewed public result surfaces do not exercise those native paths as explicit inter-S1 disturbance-to-attenuation capability measurements."
     },
     {
       "route_id": "promising-multi-orchestrator-benchmark",
@@ -46,7 +47,7 @@
       "blocking_reason": "The adapter/benchmark design is structurally promising, but the public leaderboard does not yet contain the multi-orchestrator result rows needed for a matched canonical cell."
     }
   ],
-  "closure_claim": "Current public evidence contains three direct S2 disturbance benchmark families, one immutable direct non-canonical fleet observation, and two native quantitative S2 proxy projections, but still no canonical native direct observation and no matched canonical-harness S2 primary cell.",
+  "closure_claim": "Current public evidence contains three direct S2 disturbance benchmark families, one immutable direct non-canonical fleet observation, two native quantitative S2 proxy projections, and a 13-system reviewed canonical S2 cohort including post-closure C.A.D.I.S. and ARES admissions, but still no canonical native direct observation and no matched canonical-harness S2 primary cell.",
   "reopen_when": [
     "a canonical S2 harness publishes an explicit native inter-S1 disturbance-to-attenuation result",
     "a materially matched benchmark evaluates two or more canonical systems exercising their own native or adapter-preserved S2 paths under one disturbance definition",
@@ -58,5 +59,5 @@
     "another topology or framework benchmark whose coordination organization is benchmark-authored",
     "another communication or token-efficiency metric without disturbance-to-attenuation closure"
   ],
-  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool's observation is direct evidence for the benchmark-defined fleet/coordination boundary only; it does not make the external Nool product a canonical Index harness. The S2 primary remains frozen until materially new canonical native or matched evidence appears."
+  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool's observation is direct evidence for the benchmark-defined fleet/coordination boundary only; it does not make the external Nool product a canonical Index harness. C.A.D.I.S. and ARES expand the reviewed native-mechanism cohort but add no direct capability observation. The S2 primary remains frozen until materially new canonical native or matched evidence appears."
 }
