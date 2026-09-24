@@ -21,19 +21,19 @@ A `gap` means that no matched canonical-harness primary baseline has been select
 
 ### S2
 
-The coordination organization and protocol are benchmark-scaffolded; published comparisons do not yet isolate native S2 implementations across canonical harnesses under a matched model.
+Reviewed direct S2 families exercise benchmark-defined coordination organizations and disturbance/attenuation relations, but published evidence does not yet provide a matched comparison of native S2 implementations across canonical harnesses.
 
 Evidence search: [`s2-system-benchmarks/coverage.json`](s2-system-benchmarks/coverage.json).
 
 ### S3
 
-The benchmark supplies the management tool surface, worker pool and team organization; published comparison varies the main-agent model rather than native S3 implementations of canonical harnesses.
+Reviewed direct S3 families exercise benchmark-defined current-control organizations and management authority, but published evidence does not yet provide a matched comparison of native S3 implementations across canonical harnesses.
 
 Evidence search: [`s3-system-benchmarks/coverage.json`](s3-system-benchmarks/coverage.json).
 
 ### S3*
 
-The complementary audit function is supplied by the external TrueCall layer, so wrapped harness results cannot be attributed as native S3* capability of the canonical harness.
+Reviewed direct S3* families close complementary audit and corrective-return loops at composed or benchmark-defined boundaries, but published evidence does not yet provide a matched comparison of native S3* implementations across canonical harnesses.
 
 Evidence search: [`s3star-system-benchmarks/coverage.json`](s3star-system-benchmarks/coverage.json).
 
