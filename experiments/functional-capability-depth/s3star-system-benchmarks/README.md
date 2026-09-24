@@ -4,7 +4,8 @@ Status: experimental, non-normative.
 
 Initial issue: #392  
 Primary-baseline follow-up: #430  
-First canonical native observation: #502
+First canonical native observation: #502  
+Second canonical native observation: #509
 
 Parent semantic map: `../vsm-benchmark-family-map/`
 
@@ -15,9 +16,9 @@ Can a reviewed direct S3* benchmark be linked to canonical Index systems without
 Current answer:
 
 ```text
-reviewed direct S3* benchmark families: 4
+reviewed direct S3* benchmark families: 5
 published direct observations at composed S3* boundaries: 3
-canonical native direct-S3* observations: 1
+canonical native direct-S3* observations: 2
 S3* primary baseline: gap
 ```
 
@@ -27,8 +28,8 @@ The evidence state now has three layers:
 semantic gap: closed
   multiple direct families exercise complementary audit + corrective return
 
-canonical linkage gap: partially closed
-  AppliedScientist provides the first reviewed native canonical observation
+canonical linkage gap: substantially narrowed
+  AppliedScientist and data-to-paper now provide two reviewed native canonical observations
 
 matched-primary gap: open
   no common benchmark cell yet compares native S3* implementations across multiple canonical harnesses
@@ -115,6 +116,30 @@ This is **first-party-reported**, not independently reproduced. The public repos
 
 This observation closes the previous `canonical_direct_observation_count = 0` evidence gap. It does **not** close the primary-baseline gap because it is one within-system result rather than a matched cross-harness comparison.
 
+## Second canonical native observation — data-to-paper
+
+Canonical anchor:
+
+```text
+harness_id: data-to-paper
+review_ref: 81df14c4b9600466e645c3b2b336cc54daa3df3a
+S3*=A
+```
+
+The standalone canonical assessment independently establishes the native S3* path: a separate reviewer conversation challenges the current performer product, reviewer concerns are returned to the original performer for revision, and review repeats until approval or the configured bound.
+
+The first-party NEJM AI publication directly shows this organization in operation. Figure 2B, drawn from Supplementary Run A5, presents reviewer feedback on a Discussion draft being returned to the performer and producing a corrected revision. The Methods also state that a research step concludes only after its product passes rule-based and LLM review, so rejected products remain inside the corrective review loop.
+
+This record is deliberately **descriptive-only**:
+
+- it establishes a published native reviewer → revision closure witness;
+- it does **not** report an aggregate S3*-specific detection, correction or re-verification score;
+- the paper's broader paper-quality result must not be relabeled as an S3* metric;
+- it is first-party-reported and not independently reproduced;
+- the publication does not bind Supplementary Run A5 to the exact canonical repository revision.
+
+Together with AppliedScientist this raises `canonical_direct_observation_count` to `2`, but the two observations use different scientific tasks, models, evaluators and result surfaces. They therefore do not form a matched cross-harness comparison.
+
 ## Native proxy — SWE-agent
 
 SWE-agent remains native benchmarked proxy evidence. Its first-party SWE-bench Lite configuration explicitly runs multiple attempts plus a separate chooser/reviewer model, but SWE-bench scores end-to-end software-task success rather than complementary-audit discrepancy and feedback. The evidence therefore remains `native-proxy`, not direct S3*.
@@ -155,7 +180,8 @@ The coverage layer currently checks mechanism-diverse canonical systems:
 - `swe-agent` — `S3*=C`;
 - `reigen` — `S3*=C`;
 - `redteam` — `S3*=A`;
-- `appliedscientist` — `S3*=A`, first admitted canonical direct observation.
+- `appliedscientist` — `S3*=A`, first admitted canonical direct observation;
+- `data-to-paper` — `S3*=A`, second admitted canonical direct observation, descriptive-only.
 
 ## What would close the primary gap
 
@@ -187,7 +213,7 @@ That is an evidence state, not a zero capability score.
 ## Source of truth
 
 - `benchmark_observations.json` — direct S3* observations at non-canonical composed boundaries;
-- `canonical_observations.json` — direct native/adapter-preserved canonical harness observations; currently one AppliedScientist record;
+- `canonical_observations.json` — direct native/adapter-preserved canonical harness observations; currently AppliedScientist (quantitative within-system closure) plus data-to-paper (descriptive published closure witness);
 - `coverage.json` — direct/proxy/negative-control/native-no-results cases and representative canonical cohort;
 - `validate.py` — fail-closed checks for direct-family membership, composed/canonical observation separation, published metrics, provenance caveats and canonical assessment anchors;
 - `../primary-baselines.json` — primary selection state; remains `gap` for S3*.
@@ -204,5 +230,7 @@ This layer does not:
 - treat Stanford Reviewer as the native AppliedScientist S3* owner;
 - claim the AppliedScientist result was independently reproduced at the pinned Git revision;
 - combine S3* detection/closure with S1 task success into one score;
-- select a primary baseline from one native observation;
+- normalize AppliedScientist and data-to-paper into one score;
+- treat data-to-paper overall paper correctness as an S3* metric;
+- select a primary baseline from heterogeneous native observations;
 - modify canonical assessments, Profile, Skills, catalog or derived rankings.
