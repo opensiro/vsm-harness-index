@@ -3,6 +3,7 @@
   "status": "experimental-non-normative",
   "tracking_issue": 571,
   "reviewed_at": "2026-09-24",
+  "cycle_input_revision": "c3bdc59bc210a2b5d0cd6b24e7d1faa1fc3d8c8a",
   "research_cycle_disposition": "complete-current-public-evidence",
   "evidence_model": "public-evidence-first",
   "opensiro_owned_execution_required": false,
