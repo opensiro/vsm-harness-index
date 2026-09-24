@@ -16,7 +16,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Stage experiment files
-        run: python .github/scripts/stage_data_to_paper_s3star.py
+        run: |
+          python .github/scripts/stage_data_to_paper_s3star.py
+          python .github/scripts/patch_s3star_readme_509.py
       - name: Validate and render
         run: |
           python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
@@ -31,7 +33,8 @@ jobs:
           git add experiments/functional-capability-depth/s3star-system-benchmarks/canonical_observations.json
           git add experiments/functional-capability-depth/s3star-system-benchmarks/coverage.json
           git add experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+          git add experiments/functional-capability-depth/s3star-system-benchmarks/README.md
           git add experiments/functional-capability-depth/primary-baselines.json
           git add experiments/functional-capability-depth/FUNCTION-BASELINES.md
-          git commit -m 'experiment: admit data-to-paper canonical S3star observation'
+          git commit -m 'docs: update S3star canonical evidence state'
           git push
