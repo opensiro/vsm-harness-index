@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the experimental direct-S5 benchmark gap and primary-search coverage."""
+"""Validate experimental S5 benchmark coverage and canonical/composed separation."""
 
 from __future__ import annotations
 
@@ -12,9 +12,11 @@ ROOT = HERE.parents[2]
 MAP_PATH = HERE.parent / "vsm-benchmark-family-map" / "map.json"
 BASELINES_PATH = HERE.parent / "primary-baselines.json"
 COVERAGE_PATH = HERE / "coverage.json"
-OBSERVATIONS_PATH = HERE / "canonical_observations.json"
+BENCHMARK_OBSERVATIONS_PATH = HERE / "benchmark_observations.json"
+CANONICAL_OBSERVATIONS_PATH = HERE / "canonical_observations.json"
 
 EXPECTED_S5_MAP = {
+    "govsim-selfgovern": "direct",
     "agentgovbench": "unsuitable",
     "rolecde": "proxy",
     "agent-valuebench": "proxy",
@@ -31,6 +33,7 @@ EXPECTED_CANONICAL = {
 }
 
 EXPECTED_COVERAGE_CLASSES = {
+    "direct-composed",
     "proxy",
     "unsuitable",
     "protocol-not-benchmark",
@@ -40,6 +43,7 @@ EXPECTED_COVERAGE_CLASSES = {
 }
 
 REQUIRED_FOLLOWUP_CASES = {
+    "govsim-selfgovern-membership-authority-direct-composed": ("direct-composed", None),
     "constitutional-agent-governance-amendment-mechanism": (
         "candidate-native-mechanism-not-benchmark",
         "368717cb50b70826412f85022d23b3fd8a0dec77",
@@ -87,7 +91,8 @@ def frontmatter(path: Path) -> dict[str, str]:
 
 def main() -> None:
     coverage = json.loads(COVERAGE_PATH.read_text(encoding="utf-8"))
-    observations = json.loads(OBSERVATIONS_PATH.read_text(encoding="utf-8"))
+    benchmark_observations = json.loads(BENCHMARK_OBSERVATIONS_PATH.read_text(encoding="utf-8"))
+    canonical_observations = json.loads(CANONICAL_OBSERVATIONS_PATH.read_text(encoding="utf-8"))
     benchmark_map = json.loads(MAP_PATH.read_text(encoding="utf-8"))
     baselines = json.loads(BASELINES_PATH.read_text(encoding="utf-8"))
 
@@ -95,16 +100,21 @@ def main() -> None:
         fail("coverage schema_version must be 1")
     if coverage.get("function") != "S5":
         fail("coverage function must be S5")
-    if coverage.get("direct_family_count") != 0:
-        fail("S5 direct_family_count must remain 0")
+    if coverage.get("direct_family_count") != 1:
+        fail("S5 direct_family_count must be 1")
+    if coverage.get("composed_direct_observation_count") != 1:
+        fail("S5 composed_direct_observation_count must be 1")
     if coverage.get("canonical_direct_observation_count") != 0:
-        fail("canonical_direct_observation_count must remain 0")
-    if observations != []:
-        fail("canonical_observations.json must remain empty while no direct S5 family exists")
+        fail("S5 canonical_direct_observation_count must remain 0")
+    if canonical_observations != []:
+        fail("canonical_observations.json must remain empty without canonical direct S5 evidence")
 
     s5_baseline = (baselines.get("functions") or {}).get("S5") or {}
     if s5_baseline.get("status") != "gap":
         fail("primary-baselines.json must preserve S5 status=gap")
+    reviewed = s5_baseline.get("reviewed_direct_families")
+    if not isinstance(reviewed, list) or [row.get("benchmark_id") for row in reviewed] != ["govsim-selfgovern"]:
+        fail("S5 gap metadata must record GovSim-SelfGovern as the reviewed direct family")
 
     declared_classes = set(coverage.get("coverage_classes", []))
     if declared_classes != EXPECTED_COVERAGE_CLASSES:
@@ -140,38 +150,62 @@ def main() -> None:
     for case_id, (expected_class, expected_ref) in REQUIRED_FOLLOWUP_CASES.items():
         case = by_id.get(case_id)
         if case is None:
-            fail(f"missing required S5 primary-search case: {case_id}")
+            fail(f"missing required S5 coverage case: {case_id}")
         if case.get("classification") != expected_class:
             fail(f"{case_id}: expected classification {expected_class}")
         if expected_ref is not None and case.get("review_ref") != expected_ref:
             fail(f"{case_id}: review_ref drift")
 
-    constitutional = by_id["constitutional-agent-governance-amendment-mechanism"]
-    if "constitutional-agent-governance" not in constitutional["primary_sources"][0]:
-        fail("constitutional-agent-governance case must retain first-party repository provenance")
+    govsim_case = by_id["govsim-selfgovern-membership-authority-direct-composed"]
+    if govsim_case.get("benchmark_fit") != "direct":
+        fail("GovSim-SelfGovern coverage case must remain direct")
+    if govsim_case.get("system_compatibility") != "benchmark-scaffolded":
+        fail("GovSim-SelfGovern must remain benchmark-scaffolded")
+    if govsim_case.get("canonical_harness_id") is not None:
+        fail("GovSim-SelfGovern composed evidence must not acquire a canonical harness id")
+    if govsim_case.get("code_revision_status") != "unresolved-authoritative-public-repository":
+        fail("GovSim-SelfGovern code provenance limitation drift")
 
-    parliament = by_id["agent-parliament-ratified-amendment-process"]
-    if parliament.get("classification") != "governance-process-not-harness-benchmark":
-        fail("Agent Parliament must remain governance-process evidence, not a harness benchmark")
-    if not any("parliament.hermanity.dev/laws/constitution" in source for source in parliament["primary_sources"]):
-        fail("Agent Parliament case must retain the public constitutional record")
-
-    mac = by_id["mac-constitution-optimization-proxy"]
-    if not any("MAC-Multi-Agent-Constitution-Learning" in source for source in mac["primary_sources"]):
-        fail("MAC case must retain first-party repository provenance")
-    if not any("2603.15968" in source for source in mac["primary_sources"]):
-        fail("MAC case must retain paper provenance")
+    if not isinstance(benchmark_observations, list) or len(benchmark_observations) != 1:
+        fail("S5 benchmark_observations.json must contain exactly one composed observation")
+    observation = benchmark_observations[0]
+    expected_observation_fields = {
+        "function": "S5",
+        "benchmark_id": "govsim-selfgovern",
+        "benchmark_fit": "direct",
+        "boundary_class": "composed-system",
+        "canonical_harness_id": None,
+        "canonical_system_eligible": False,
+        "system_compatibility": "benchmark-scaffolded",
+        "code_revision_status": "unresolved-authoritative-public-repository",
+        "society_size": 5,
+        "max_rounds": 12,
+        "model_settings": 8,
+        "seeds_per_model_game_cell": 5,
+    }
+    for field, expected in expected_observation_fields.items():
+        if observation.get(field) != expected:
+            fail(f"GovSim-SelfGovern observation {field} drift: {observation.get(field)!r}")
+    if observation.get("membership_action") != "agent.active = False":
+        fail("GovSim-SelfGovern membership action drift")
+    if observation.get("non_thinking_exile") != {"enacted": 8, "proposed": 460, "pass_rate": 0.017}:
+        fail("GovSim-SelfGovern non-thinking exile result drift")
+    if observation.get("thinking_exile") != {"enacted": 31, "proposed": 122, "pass_rate": 0.254}:
+        fail("GovSim-SelfGovern thinking exile result drift")
+    if not any("2609.22600" in source for source in observation.get("primary_sources", [])):
+        fail("GovSim-SelfGovern observation must retain arXiv provenance")
 
     s5_entries = [entry for entry in benchmark_map.get("entries", []) if entry.get("function") == "S5"]
-    direct = [entry for entry in s5_entries if entry.get("fit") == "direct"]
-    if direct:
-        fail(f"benchmark-family map unexpectedly contains direct S5 entries: {[e.get('benchmark_id') for e in direct]}")
-
     actual_map = {entry.get("benchmark_id"): entry.get("fit") for entry in s5_entries}
     for benchmark_id, expected_fit in EXPECTED_S5_MAP.items():
         actual_fit = actual_map.get(benchmark_id)
         if actual_fit != expected_fit:
             fail(f"S5 map mismatch for {benchmark_id}: expected {expected_fit}, got {actual_fit}")
+    direct = [entry for entry in s5_entries if entry.get("fit") == "direct"]
+    if [entry.get("benchmark_id") for entry in direct] != ["govsim-selfgovern"]:
+        fail(f"unexpected direct S5 family set: {[e.get('benchmark_id') for e in direct]}")
+    if direct[0].get("system_linkage") != "benchmark-scaffolded":
+        fail("GovSim-SelfGovern map entry must remain benchmark-scaffolded")
 
     anchors = coverage.get("representative_canonical_s5_systems")
     if not isinstance(anchors, list):
@@ -194,16 +228,18 @@ def main() -> None:
         if actual_state != expected_state:
             fail(f"{harness_id}: expected autonomy_s5={expected_state}, got {actual_state!r}")
 
-    requirements = coverage.get("missing_direct_benchmark_requirements")
-    if not isinstance(requirements, list) or len(requirements) < 6:
-        fail("missing_direct_benchmark_requirements must preserve the full direct + baseline gate")
-    if not any("matched" in str(item).lower() and "canonical" in str(item).lower() for item in requirements):
-        fail("missing direct requirements must include matched canonical-harness comparison")
+    direct_requirements = coverage.get("direct_benchmark_requirements")
+    if not isinstance(direct_requirements, list) or len(direct_requirements) != 5:
+        fail("direct_benchmark_requirements must preserve the five-step direct S5 chain")
+    primary_requirements = coverage.get("primary_baseline_additional_requirements")
+    if not isinstance(primary_requirements, list) or len(primary_requirements) != 1:
+        fail("primary_baseline_additional_requirements must preserve the matched canonical gate")
+    if "matched" not in primary_requirements[0].lower() or "canonical" not in primary_requirements[0].lower():
+        fail("S5 primary gap must retain matched canonical-harness requirement")
 
     print(
-        f"ok: {len(cases)} S5 coverage cases, "
-        f"{len(EXPECTED_CANONICAL)} canonical native-path gaps, "
-        "0 direct families, 0 canonical observations, primary gap preserved"
+        f"ok: {len(cases)} S5 coverage cases, 1 direct family, "
+        "1 composed direct observation, 0 canonical observations, primary gap preserved"
     )
 
 

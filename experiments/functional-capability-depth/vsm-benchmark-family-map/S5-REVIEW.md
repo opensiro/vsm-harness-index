@@ -2,33 +2,22 @@
 
 Status: experimental, non-normative.
 
-Issue: #399
+Initial issue: #399  
+Direct-family update: #472
 
-This follow-up reviews benchmark and protocol candidates specifically against **S5 — Policy and identity** in the current `vsm-harness-profile`.
+This review maps public benchmark families against **S5 — Policy and identity** under the current `vsm-harness-profile`. It does not change canonical assessments or autonomy ownership.
 
-It does not change canonical assessments or autonomy ownership.
-
-## Result
-
-```text
-reviewed direct S5 benchmark families: 0
-```
-
-The gap is narrower than “governance benchmarks do not exist”. Public work already covers policy enforcement, value conflicts, constitutional conformance, operational legislation, democratic aggregation and human escalation. What is still missing is a benchmark that executes the full S5 organizational closure:
+## Current result
 
 ```text
-identity / ultimate-policy tension
-        ↓
-legitimate authority at the declared recursion
-        ↓
-actual adjudication / ratification / amendment
-        ↓
-newly decided policy
-        ↓
-subsequent operation demonstrably governed by that decision
+reviewed direct S5 benchmark families: 1
+first direct family: GovSim-SelfGovern
+system linkage: benchmark-scaffolded
+canonical native direct S5 observations: 0
+matched canonical S5 primary: gap
 ```
 
-A benchmark that fixes policy in advance and scores compliance or enforcement remains below this gate.
+The earlier zero-direct-family gap was valid for the public evidence reviewed through 2026-09-24. GovSim-SelfGovern (`arXiv:2609.22600v1`) now supplies a direct S5 witness at a **benchmark-defined society boundary**.
 
 ## Direct-S5 gate
 
@@ -41,19 +30,64 @@ A `direct` family must establish all of the following at its declared benchmark 
 5. return of the newly decided policy into later operation;
 6. evidence that separates policy ownership from enforcement of a pre-existing rule.
 
-The authority may be autonomous, collective or Parent-governed. `P` is a valid ownership arrangement; direct S5 measurement does not require autonomous S5.
+The authority may be autonomous, collective or Parent-governed. Direct S5 measurement does not require autonomous S5.
 
-## Reviewed candidates
+A matched primary has an additional requirement: two or more canonical native or adapter-preserved S5 paths must be compared under a materially matched benchmark/model/configuration cell.
+
+## GovSim-SelfGovern — `direct`, benchmark-scaffolded
+
+Primary source: https://arxiv.org/abs/2609.22600
+
+GovSim-SelfGovern extends the five-agent fishing commons with executable law authorship. Agents propose Python laws over a constrained World API, receive sandbox validation, vote on valid proposals and execute enacted laws across rounds.
+
+The direct S5 witness is specifically the **membership/identity path**:
+
+```text
+fatal resource wall
+        ↓
+membership-level organizational tension
+        ↓
+agent-authored executable membership law
+        ↓
+sandbox validation
+        ↓
+majority vote by current active members
+        ↓
+enactment
+        ↓
+agent.active = False
+        ↓
+member expelled / active system boundary changes
+        ↓
+subsequent rounds continue after the decision
+```
+
+The paper explicitly defines `agent.active = False` as exile. Valid proposals are voted on, majority-approved laws are executed, and expelled members are removed before subsequent round activity. In pooled results, non-thinking democratic agents enact 8 of 460 exile proposals (1.7%), while thinking agents enact 31 of 122 (25.4%).
+
+This satisfies the S5 direct gate at the declared society recursion because legitimate current-member authority makes and enacts a membership decision that changes who belongs to the system and the changed membership persists into later operation.
+
+The classification is nevertheless `benchmark-scaffolded`:
+
+- the sandbox, voting procedure, game physics and API are benchmark-defined;
+- the benchmark society, not an underlying model, owns the measured authority relation;
+- no canonical Index harness is linked to this observation as a native or adapter-preserved S5 implementation;
+- no authoritative public code repository/revision for GovSim-SelfGovern was recovered in this review.
+
+Do not attach another GovSim repository merely by name similarity.
+
+### Scope boundary
+
+Not every enacted GovSim law is S5. Catch caps, penalties, taxation and treasury operations regulate current operation below the ultimate identity layer. They are not promoted to S5 merely because they are legislated.
+
+Likewise, the paper's aggregate G1 governance gain (ICS 45.0% → 72.5%) combines mechanisms and is not an S5-only capability effect.
+
+## Reviewed non-direct candidates
 
 ### AgentGovBench — `unsuitable`
 
 Primary source: https://github.com/agentic-control-plane/agentgovbench
 
-AgentGovBench exercises governance plumbing such as identity propagation, policy enforcement, delegation provenance, rate limits, audit completeness, tenant isolation and fail-mode behavior.
-
-Those mechanisms can support governance, but the benchmark begins with policy already decided. It does not test who legitimately owns ultimate identity/policy authority or how a new policy decision is made and returned to operation.
-
-Existing classification remains `unsuitable` for direct S5 measurement.
+AgentGovBench exercises identity propagation, policy enforcement, delegation provenance, rate limits, audit completeness, tenant isolation and fail-mode behavior. Policy begins already decided, so it does not test legitimate ultimate-policy ownership or creation of a new policy decision.
 
 ### RoleCDE — `proxy`
 
@@ -62,77 +96,33 @@ Primary sources:
 - https://arxiv.org/abs/2606.01552
 - https://github.com/rabbitrose/RoleCDE
 
-RoleCDE exposes structured conflicts between role-specific values and alignment-oriented constraints. This is useful evidence about identity/value conflict reasoning.
-
-The evaluated model is not established as the legitimate ultimate authority of an organization, and the benchmark does not require an adopted policy decision to govern later operation. It remains a proxy.
+RoleCDE exposes conflicts between role-specific values and alignment constraints, but the evaluated model is not established as the legitimate ultimate authority of an organization and no adopted policy must govern later operation.
 
 ### Agent-ValueBench — `proxy`
 
 Reviewed repository: `ValueByte-AI/Agent-ValueBench@3527b4a4ea8fc9dde6fbe27cd371c4ba7df76ac1`.
 
-Primary sources:
-
-- https://github.com/ValueByte-AI/Agent-ValueBench
-- https://arxiv.org/abs/2605.10365
-
-Agent-ValueBench contains 4,335 executable value-conflict tasks across 28 value systems and asks what values tool-using agents exhibit under those conflicts.
-
-This is stronger behavioral evidence than text-only value dilemmas, and it may expose harness effects on expressed values. It still measures **expressed value choice**, not legitimate organizational authority to settle identity/ultimate policy and bind subsequent operation.
-
-Classification: `proxy`.
+It provides executable value-conflict tasks, but measures expressed value choice rather than legitimate organizational authority to settle identity/ultimate policy and bind subsequent operation.
 
 ### AgentCity — `proxy`
 
-Primary sources:
+AgentCity includes operational agent legislation, but foundational contracts and key constitutional parameters remain human-authored/agent-immutable. The benchmarked legislation therefore remains below the ultimate foundational layer.
 
-- https://arxiv.org/abs/2604.07007
-- https://agentcity.dev/
+### Constitutional AI Governance Stress Test — `proxy`
 
-AgentCity is unusually close to an S5-relevant organization. Agents legislate operational smart-contract rules, deterministic software executes them, and humans adjudicate through an ownership chain.
+`CognitiveThoughtEngine/cgst-framework@a70dd1ffd4b2c462a9c0680b6aa6d6b9ad788cdf` provides strong governance/conformance evidence, but does not itself execute an identity-level conflict through legitimate ratification and later operation under a changed policy.
 
-The published architecture explicitly separates three contract tiers:
+## Important adjacent non-benchmark evidence
 
-- foundational contracts — human-authored and agent-immutable;
-- meta-contracts — procedural governance;
-- operational contracts — agent-legislated task rules.
+`Constitutional Governance in Metric Spaces` defines an end-to-end governance/amendment process, and Agent Parliament publishes actual constitutional ratification/amendment history. These are useful S5-shaped governance-process evidence, but not reusable agent-harness capability benchmarks.
 
-The benchmarked agent legislation is therefore below the ultimate foundational layer. Agents can exercise significant policy-making power without owning the system's ultimate identity/constitutional authority.
+The Human Escalation Mechanism specifies a non-bypassable human decision path relevant to Parent-governed S5, but is a protocol rather than a benchmark result.
 
-Classification: `proxy`, not direct S5.
+`constitutional-agent-governance` exercises proposer/ratifier separation, tiered authority and constitution mutation in first-party tests. That is strong mechanism/conformance evidence, not a matched capability benchmark.
 
-### Constitutional AI Governance Stress Test (CGST) — `proxy`
-
-Reviewed repository: `CognitiveThoughtEngine/cgst-framework@a70dd1ffd4b2c462a9c0680b6aa6d6b9ad788cdf`.
-
-Primary source: https://github.com/CognitiveThoughtEngine/cgst-framework
-
-CGST is strongly S5-relevant conformance evidence. Its governance rubric asks whether constitutional grounding, amendment authority, autonomy boundaries and other control layers exist and hold under review/stress.
-
-But CGST is an assessment/scoring framework over an architecture. It does not itself execute an identity-level conflict, invoke the named legitimate authority, ratify a changed policy and then observe later operation under that new decision.
-
-Classification: `proxy` / conformance evidence.
-
-## Important adjacent protocols that are not benchmark families
-
-### Constitutional Governance in Metric Spaces
-
-Primary source: https://arxiv.org/abs/2605.13362
-
-This work defines an end-to-end governance process in which a community can adopt policy and amend the constitution under aggregation/supermajority rules. It is useful evidence for what explicit S5 decision machinery can look like.
-
-It is a computational governance process, not a benchmark of an agent harness's S5 capability, so it is not inserted into `map.json` as a benchmark family.
-
-### Human Escalation Mechanism (HEM)
-
-Primary source: https://datatracker.ietf.org/doc/draft-sato-soos-hem/
-
-HEM specifies a non-bypassable human-escalation state, designation chain, structured decisions and return to execution. That is architecturally relevant to Parent-governed S5 closure when the escalated issue is actually identity/ultimate-policy level.
-
-It is a protocol specification, not a benchmark result. Ordinary human confirmation also does not become S5 merely by using HEM; the escalated issue itself must be S5-level.
+MAC performs measurable constitution optimization, but task-reward optimization does not establish legitimate ultimate organizational authority.
 
 ## Why enforcement is not enough
-
-The distinction this review protects is:
 
 ```text
 policy already exists
@@ -142,9 +132,7 @@ propagate / enforce / audit it
 choose legitimate ultimate policy
 ```
 
-AgentGovBench is the clearest negative control. A system can be excellent at enforcing policy and still have no ownership of S5.
-
-Likewise, value preference is not authority:
+Likewise:
 
 ```text
 agent chooses between values in a scenario
@@ -152,39 +140,20 @@ agent chooses between values in a scenario
 organization legitimately changes its identity/policy
 ```
 
-## Missing benchmark shape
-
-A direct S5 benchmark should create a bounded organizational conflict such as:
-
-```text
-current operational commitment / S3 pressure
-                ↕
-future adaptation / S4 proposal
-                ↓
-identity / constitutional conflict
-                ↓
-legitimate S5 authority
-                ↓
-ratified decision with provenance
-                ↓
-subsequent operations governed by that newly decided rule
-```
-
-Useful metrics could include:
-
-- correct escalation to the legitimate authority;
-- authority/provenance integrity;
-- successful resolution of an identity/policy conflict;
-- propagation of the **newly decided** rule into later behavior;
-- resistance to unauthorized constitutional mutation;
-- coherence across recursion boundaries.
-
-No scalar S5 maturity score is implied.
+GovSim-SelfGovern differs because the benchmark-defined authority actually ratifies and enacts a membership decision and later operation occurs after the boundary change.
 
 ## Canonical-system consequence
 
-Because no direct S5 benchmark family is established, no direct canonical S5 observation should be invented.
+The direct-family hole is now closed, but the canonical-primary hole is not:
 
-Canonical ownership states remain repository-derived and heterogeneous (`A`, `P`, `A(P)`, `C(P)`, etc.). The absence of a direct benchmark does not weaken or reorder those states.
+```text
+direct benchmark-defined S5 organization exists
+        !=
+canonical native direct S5 observation exists
+        !=
+matched canonical S5 primary exists
+```
 
-The companion `../s5-system-benchmarks/` layer records this coverage gap and representative canonical anchors.
+Canonical ownership states remain repository-derived and heterogeneous (`A`, `P`, `A(P)`, `C(P)`, etc.). GovSim-SelfGovern does not change, weaken or reorder those states.
+
+The companion `../s5-system-benchmarks/` layer stores the composed observation, current coverage and canonical native-path gap.

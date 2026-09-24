@@ -1,10 +1,12 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-24",
+  "reviewed_at": "2026-09-25",
   "function": "S5",
-  "direct_family_count": 0,
+  "direct_family_count": 1,
+  "composed_direct_observation_count": 1,
   "canonical_direct_observation_count": 0,
   "coverage_classes": [
+    "direct-composed",
     "proxy",
     "unsuitable",
     "protocol-not-benchmark",
@@ -13,6 +15,21 @@
     "candidate-native-no-direct-results"
   ],
   "cases": [
+    {
+      "case_id": "govsim-selfgovern-membership-authority-direct-composed",
+      "artifact": "GovSim-SelfGovern",
+      "benchmark_fit": "direct",
+      "classification": "direct-composed",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "code_revision_status": "unresolved-authoritative-public-repository",
+      "primary_sources": [
+        "https://arxiv.org/abs/2609.22600",
+        "https://arxiv.org/pdf/2609.22600"
+      ],
+      "finding": "At the benchmark-defined society boundary, a fatal resource wall creates an identity/membership tension; agents author executable laws, current members ratify valid proposals by majority vote, agent.active = False expels a member, and later rounds continue after the enacted membership change. This is direct S5 identity-policy evidence for the composed benchmark society. The sandbox, voting mechanics, physics and API remain benchmark-scaffolded constraints, and no canonical harness receives native S5 credit by association.",
+      "admitted_to_canonical_registry": false
+    },
     {
       "case_id": "agentgovbench-enforcement-not-authority",
       "artifact": "AgentGovBench",
@@ -157,12 +174,14 @@
       "benchmark_status": "candidate-native-no-direct-results"
     }
   ],
-  "missing_direct_benchmark_requirements": [
+  "direct_benchmark_requirements": [
     "identity-or-ultimate-policy-level conflict",
     "legitimate authority at declared recursion",
     "actual adjudication-ratification-or-amendment",
     "decision provenance separating ownership from enforcement",
-    "newly decided policy returned into subsequent operation",
+    "newly decided policy returned into subsequent operation"
+  ],
+  "primary_baseline_additional_requirements": [
     "matched native-or-adapter-preserved canonical harness comparison for primary-baseline use"
   ]
 }

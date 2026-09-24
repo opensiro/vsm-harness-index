@@ -1,0 +1,57 @@
+[
+  {
+    "observation_id": "govsim-selfgovern-membership-authority-2026-09",
+    "function": "S5",
+    "benchmark_id": "govsim-selfgovern",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "composed-system",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "code_revision_status": "unresolved-authoritative-public-repository",
+    "paper_version": "arXiv:2609.22600v1",
+    "benchmark": "GovSim-SelfGovern",
+    "society_size": 5,
+    "max_rounds": 12,
+    "model_settings": 8,
+    "seeds_per_model_game_cell": 5,
+    "s5_boundary": "benchmark-defined agent society at the current-membership recursion",
+    "authority_path": [
+      "fatal resource pressure creates a membership-level organizational tension",
+      "agents author executable laws over the constrained World API",
+      "the sandbox validates proposals against parent/evaluation constraints",
+      "current active members exercise majority-vote authority over valid laws",
+      "passed laws are enacted and executed",
+      "agent.active = False expels a member and changes the active system boundary",
+      "subsequent rounds continue under the enacted law and changed membership"
+    ],
+    "membership_action": "agent.active = False",
+    "membership_action_meaning": "False = exiled",
+    "enactment_rule": "valid proposals pass by majority vote in the democratic arms and are then executed in order",
+    "non_thinking_exile": {
+      "enacted": 8,
+      "proposed": 460,
+      "pass_rate": 0.017
+    },
+    "thinking_exile": {
+      "enacted": 31,
+      "proposed": 122,
+      "pass_rate": 0.254
+    },
+    "broader_g1_result": {
+      "metric": "intact community survival",
+      "ungoverned": 0.45,
+      "governed": 0.725,
+      "absolute_gain": 0.275,
+      "scope_note": "This aggregate governance gain mixes multiple mechanisms and is not an S5-only effect."
+    },
+    "result_scope_note": "The direct S5 observation is limited to the membership/exile authority path. Catch caps, penalties, taxation, treasury disbursement and other operational laws are not credited as S5 merely because they are legislated.",
+    "provenance_note": "The paper is the authoritative public result artifact recovered in this review. No authoritative public code repository/revision for GovSim-SelfGovern was recovered, so no unrelated GovSim repository is attached by name similarity.",
+    "vsm_interpretation": "At the benchmark-defined society boundary, current members hold legitimate authority to ratify an executable membership rule; enactment changes membership and later rounds operate after that decision. This directly exercises S5 identity-policy authority for the composed benchmark society. The fixed sandbox, voting procedure, physics and API are benchmark/evaluation membrane constraints, and the result does not establish native S5 ownership or capability for any canonical Index harness or underlying model.",
+    "primary_sources": [
+      "https://arxiv.org/abs/2609.22600",
+      "https://arxiv.org/pdf/2609.22600"
+    ]
+  }
+]
