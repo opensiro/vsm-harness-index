@@ -15,10 +15,11 @@ COVERAGE = HERE / "coverage.json"
 BENCHMARK_OBSERVATIONS = HERE / "benchmark_observations.json"
 CANONICAL_OBSERVATIONS = HERE / "canonical_observations.json"
 
-DIRECT_S3STAR = {"truecall-runtime-verification", "swe-review"}
+DIRECT_S3STAR = {"truecall-runtime-verification", "swe-review", "harness-bench-adversarial-review"}
 EXPECTED_OBSERVATION_IDS = {
     "truecall-tau2-retail-silent-failure-2026-06",
     "swe-review-generate-review-revise-2026-07",
+    "harness-bench-pilot4-review-revise-reverify-2026-07",
 }
 COVERAGE_CLASSES = {
     "direct-composed",
@@ -37,6 +38,7 @@ SYSTEM_COMPATIBILITY = {
 REQUIRED_CASE_IDS = {
     "truecall-tau2-direct-composed",
     "swe-review-direct-composed",
+    "harness-bench-adversarial-review-direct-composed",
     "swe-agent-swebench-native-proxy-s3star",
     "codex-truecall-external-wrapper",
     "auditbench-proxy-scaffolded",
@@ -186,6 +188,30 @@ def main() -> None:
     if "SWE-bench" not in str(swe_review.get("reverification_surface")):
         fail("SWE-Review observation must preserve independent SWE-bench re-verification")
 
+    harness_bench = observations_by_id["harness-bench-pilot4-review-revise-reverify-2026-07"]
+    if harness_bench.get("benchmark_id") != "harness-bench-adversarial-review":
+        fail("harness-bench observation benchmark linkage drift")
+    if harness_bench.get("reviewed_system_revision") != "f2fb12cc28ac90dce6eba873788b5632d6fc5431":
+        fail("harness-bench reviewed revision drift")
+    for field in (
+        "reported_reviewed_runs",
+        "reported_request_changes_runs",
+        "reported_revision_runs",
+        "post_revision_build_green_runs",
+        "post_revision_visible_green_runs",
+        "post_revision_holdout_pass_runs",
+        "post_revision_success_runs",
+    ):
+        if harness_bench.get(field) != 2:
+            fail(f"harness-bench Pilot 4 closure count drift: {field}")
+    harness_loop = harness_bench.get("audit_loop")
+    if not isinstance(harness_loop, list) or len(harness_loop) < 6:
+        fail("harness-bench observation must preserve review-revise-reverify loop")
+    if "held-out verification" not in " ".join(harness_loop):
+        fail("harness-bench observation must preserve independent held-out re-verification")
+    if "clean-room" not in str(harness_bench.get("publisher_boundary_note")):
+        fail("harness-bench must preserve clean-room/non-Telos-native boundary")
+
     cases = coverage.get("cases")
     if not isinstance(cases, list) or not cases:
         fail("coverage cases must be non-empty")
@@ -233,7 +259,7 @@ def main() -> None:
     if missing_cases:
         fail(f"required S3* search cases missing: {sorted(missing_cases)}")
 
-    for case_id in ("truecall-tau2-direct-composed", "swe-review-direct-composed"):
+    for case_id in ("truecall-tau2-direct-composed", "swe-review-direct-composed", "harness-bench-adversarial-review-direct-composed"):
         case = by_id[case_id]
         if case.get("benchmark_fit") != "direct":
             fail(f"{case_id}: direct composed fit drift")

@@ -103,5 +103,47 @@
       "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench/reverify_revision.py",
       "https://arxiv.org/abs/2607.06065"
     ]
+  },
+  {
+    "observation_id": "harness-bench-pilot4-review-revise-reverify-2026-07",
+    "function": "S3*",
+    "benchmark_id": "harness-bench-adversarial-review",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "composed-system",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "reviewed_system_revision": "f2fb12cc28ac90dce6eba873788b5632d6fc5431",
+    "benchmark": "harness-bench Pilot 4 planning-tier ablation",
+    "target_repository": "tdrml/telos",
+    "target_repository_revision": "c62bcf6420c24c7e43c078d72aade6afcf25a765",
+    "executor_model": "claude-haiku-4-5-20251001",
+    "planner_model": "claude-sonnet-5",
+    "task": "L2",
+    "arm": "FULL",
+    "reported_reviewed_runs": 2,
+    "reported_request_changes_runs": 2,
+    "reported_revision_runs": 2,
+    "post_revision_build_green_runs": 2,
+    "post_revision_visible_green_runs": 2,
+    "post_revision_holdout_pass_runs": 2,
+    "post_revision_success_runs": 2,
+    "audit_loop": [
+      "executor produces a candidate repository change and completion contract",
+      "a separate adversarial reviewer inspects the diff and repository against the task",
+      "reviewer emits REQUEST_CHANGES plus concrete discrepancy findings",
+      "the runner returns those findings to the original executor session",
+      "the executor performs one revision round",
+      "the benchmark independently reruns build, visible tests and held-out verification on the revised state"
+    ],
+    "comparison_scope_note": "FULL also contains a deterministic done-gate and schema-forced result contract. The two L2 records establish operation and closure of the complementary review-revision-reverification loop; they are not an isolated causal estimate of reviewer contribution to overall task success.",
+    "publisher_boundary_note": "The README describes the benchmark reviewer/harness as a minimal clean-room implementation of production patterns rather than production Telos code. No native Telos or Claude Code S3* ownership is inferred.",
+    "vsm_interpretation": "The observation directly exercises a materially distinct complementary reviewer, discrepancy feedback returned to the producing executor for correction, and independent post-revision verification. The benchmark-defined composed organization owns this S3* loop; no target repository, model, execution substrate, or canonical harness inherits native S3* ownership by association.",
+    "primary_sources": [
+      "https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/README.md",
+      "https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/runner/run-pilot4.mjs",
+      "https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/results/pilot4.jsonl"
+    ]
   }
 ]
