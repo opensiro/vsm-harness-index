@@ -1,0 +1,82 @@
+name: stage redteam S3star coverage
+on:
+  push:
+    branches: [experiment/redteam-s3star-coverage-492]
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Stage canonical mechanism-only S3star linkage
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('experiments/functional-capability-depth/s3star-system-benchmarks')
+          path = root / 'coverage.json'
+          data = json.loads(path.read_text())
+          case_id = 'redteam-adversarial-review-native-no-direct-results'
+          if not any(c.get('case_id') == case_id for c in data['cases']):
+              data['cases'].append({
+                  'case_id': case_id,
+                  'benchmark': 'redteam native adversarial review path',
+                  'benchmark_fit': 'candidate-direct',
+                  'coverage_class': 'candidate-native-no-direct-results',
+                  'system_compatibility': 'native-system',
+                  'canonical_harness_id': 'redteam',
+                  'primary_sources': [
+                      'https://github.com/AscendyProject/redteam/blob/c2bedf14aca43cc03330503f35e60e12b72f37ee/.redteam/workflows/phase_runners/review_code.py',
+                      'https://github.com/AscendyProject/redteam/blob/c2bedf14aca43cc03330503f35e60e12b72f37ee/.redteam/workflows/orchestrator.py',
+                      'https://github.com/AscendyProject/redteam/blob/c2bedf14aca43cc03330503f35e60e12b72f37ee/.redteam/workflows/phase_runners/implement.py'
+                  ],
+                  'finding': 'Canonical redteam establishes S3*=A in its default agent-pair path: a fresh cross-provider reviewer independently inspects the committed implementation diff and project constraints, CHANGES_REQUESTED findings are returned to the implementer, and review runs again before draft-PR creation. The pinned repository includes benchmark machinery but no committed real Phase-1 result set was recovered, so this is native mechanism-only coverage and no direct canonical capability observation is admitted.',
+                  'admitted_to_canonical_registry': False
+              })
+          if 'redteam' not in data['representative_canonical_s3star_systems_inspected']:
+              data['representative_canonical_s3star_systems_inspected'].append('redteam')
+          data['canonical_states_at_review']['redteam'] = 'A'
+          if data.get('direct_benchmark_family_count') != 3:
+              raise SystemExit('direct family count changed unexpectedly')
+          if data.get('composed_direct_observation_count') != 3:
+              raise SystemExit('composed direct observation count changed unexpectedly')
+          if data.get('canonical_direct_observation_count') != 0:
+              raise SystemExit('canonical direct observation registry unexpectedly non-empty')
+          path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')
+
+          path = root / 'validate.py'
+          s = path.read_text()
+          required_anchor = '    "reigen-verification-native-no-direct-results",\n}'
+          required_replacement = '    "reigen-verification-native-no-direct-results",\n    "redteam-adversarial-review-native-no-direct-results",\n}'
+          if '"redteam-adversarial-review-native-no-direct-results",' not in s.split('FRONTMATTER', 1)[0]:
+              if required_anchor not in s:
+                  raise SystemExit('required-case anchor missing')
+              s = s.replace(required_anchor, required_replacement, 1)
+          map_anchor = '        "reigen-verification-native-no-direct-results": "reigen",\n    }'
+          map_replacement = '        "reigen-verification-native-no-direct-results": "reigen",\n        "redteam-adversarial-review-native-no-direct-results": "redteam",\n    }'
+          if '"redteam-adversarial-review-native-no-direct-results": "redteam"' not in s:
+              if map_anchor not in s:
+                  raise SystemExit('native-no-results map anchor missing')
+              s = s.replace(map_anchor, map_replacement, 1)
+          path.write_text(s)
+          PY
+
+          python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add experiments/functional-capability-depth/s3star-system-benchmarks/coverage.json \
+                  experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+          if ! git diff --cached --quiet; then
+            git commit -m 'experiment: link redteam native S3star coverage'
+            git push
+          fi
