@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.6
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-09-24
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -189,7 +189,7 @@ Primary evidence:
 - Plausible first-party paths checked: leader as ultimate authority; merge approval as identity policy; budget guard as policy; project ownership as S5; configuration as governance.
 - Why no material first-party path remains: these are current operational constraints/approvals or externally authored configuration. No first-party identity/ultimate-policy deliberation and closure path was established.
 
-## Proposed terminal outcome
+## Terminal outcome
 
 `excluded-no-agentic-vsm`.
 
