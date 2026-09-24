@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 538,
+  "reviewed_at": "2026-09-24",
+  "supersedes": null,
+  "refines_preflight": "public-polybench-preflight.json",
+  "candidate_cell_id": "adaptive-auto-harness-polybench-public-baselines-paper-controls-v2",
+  "preflight_disposition": "blocked",
+  "execution_authorized": false,
+  "primary_baseline_after_preflight": "gap",
+  "evidence_mode": "public-results-only",
+  "paper": {
+    "url": "https://arxiv.org/abs/2606.01770",
+    "title": "Adaptive Auto-Harness: Sustained Self-Improvement for Agentic System Deployment on Open-Ended Task Streams",
+    "solver_model_policy": "Claude Sonnet 4.6 for all experiments unless specified",
+    "evolver_model_policy": "Claude Opus 4.6",
+    "solver_temperature": 0.0,
+    "evolver_temperature": 0.0,
+    "polybench_batch_size": 100,
+    "common_batch_loop": true,
+    "common_temporal_reveal_gate": true,
+    "common_chronological_task_order": true,
+    "native_tool_calling": true,
+    "reported_results_source": "corresponding results.jsonl files"
+  },
+  "release_provenance": {
+    "public_mirror_repository": "https://github.com/A-EVO-Lab/AdaptiveHarness",
+    "public_mirror_revision": "c1ea7d60c009519f5c037f7db9d47e97063bb353",
+    "initial_public_release_revision": "b5fcd95f61190e8158c01506fc73be576dfbc4f8",
+    "mirror_declared_canonical_lineage": "https://github.com/A-EVO-Lab/a-evolve/tree/release/adaptive-auto-harness",
+    "results_committed": false,
+    "comparison_implementations_shipped": false,
+    "gepa_dependency_spec": "gepa>=0.1.0"
+  },
+  "gates": [
+    {
+      "gate_id": "public-cross-method-comparison",
+      "status": "satisfied",
+      "finding": "The first-party paper reports A-Evolve, GEPA, Meta-Harness, Continual Harness, SkillOS and Adaptive Auto-Harness in one cross-method experiment table on PolyBench, CTF-Dojo and FutureX.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770"
+      ]
+    },
+    {
+      "gate_id": "common-task-stream-order",
+      "status": "satisfied",
+      "finding": "The paper states that all main runs use the same chronological task order used by the benchmarks and that all algorithms share the same batch loop and temporal-reveal gate; PolyBench uses batch size 100.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770"
+      ]
+    },
+    {
+      "gate_id": "common-solver-evolver-model-policy",
+      "status": "satisfied",
+      "finding": "The paper states Claude Sonnet 4.6 is used as solver for all experiments unless specified and Claude Opus 4.6 as evolver, with both at temperature zero; the named auto-harness comparison rows are presented under this shared algorithm-comparison policy.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770"
+      ]
+    },
+    {
+      "gate_id": "common-result-surface",
+      "status": "satisfied",
+      "finding": "The paper reports the same PolyBench Accuracy and Return definitions for the auto-harness rows, while the released plotting code applies one PolyBench summarization surface to per-method result directories.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770",
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/evaluations/analysis_poly/plot_pareto_frontier.py"
+      ]
+    },
+    {
+      "gate_id": "native-baseline-implementation-provenance",
+      "status": "blocked",
+      "finding": "The released algorithms package explicitly states that GEPA, Meta-Harness, SkillOS, Continual Harness and MAS Adaptive Skill comparison implementations are not shipped. The initial public release also excludes results/logs, and the public tree does not expose inspectable implementations for those named baseline rows.",
+      "blocking_effect": "Do not promote any named comparison row to matched canonical S4 evidence until its exact evaluated implementation and immutable revision are bound by primary evidence and the native or adapter-preserved S4 path is established.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/agent_evolve/algorithms/__init__.py",
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/b5fcd95f61190e8158c01506fc73be576dfbc4f8/.gitignore",
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/b5fcd95f61190e8158c01506fc73be576dfbc4f8/pyproject.toml"
+      ]
+    },
+    {
+      "gate_id": "immutable-upstream-revision-binding",
+      "status": "not_reached",
+      "finding": "The paper citations identify method families, but immutable evaluated upstream revisions cannot be verified while the producing baseline implementations and result artifacts are absent from the public release; the GEPA dependency is only constrained as gepa>=0.1.0.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770",
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/b5fcd95f61190e8158c01506fc73be576dfbc4f8/pyproject.toml"
+      ]
+    },
+    {
+      "gate_id": "canonical-s4-linkage",
+      "status": "not_reached",
+      "finding": "Method-family citations are insufficient to link result rows to canonical Index systems. Exact evaluated repository boundaries and revisions must be established before standalone S4 ownership can be joined to the published rows.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/BASELINE.md"
+      ]
+    },
+    {
+      "gate_id": "ordinary-s4-regulator-freeze",
+      "status": "not_reached",
+      "finding": "The paper-level common controls do not by themselves prove that each named baseline kept its own S4 regulator fixed while adapting a declared target. That boundary can be audited only after the exact evaluated implementation is recovered.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/s4-system-benchmarks/README.md"
+      ]
+    }
+  ],
+  "results": null,
+  "non_claim": "This refinement records that the published auto-harness comparison is materially matched at the paper-level model, temperature, task-order, batch-loop and metric surfaces while remaining blocked at exact native implementation/revision provenance. It does not rank systems, infer canonical S4 ownership from method names, or promote an S4 primary baseline."
+}
