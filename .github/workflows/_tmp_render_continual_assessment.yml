@@ -1,0 +1,31 @@
+name: tmp-render-continual-assessment
+on:
+  push:
+    paths:
+      - '.github/workflows/_tmp_render_continual_assessment.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/continual-harness-168
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/render_metrics.py
+      - run: python scripts/sync_metrics_readme.py
+      - name: Commit generated metrics
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add METRICS.md data/metrics.json README.md
+          if git diff --cached --quiet; then
+            echo 'No generated changes'
+          else
+            git commit -m 'chore: render metrics for Continual Harness proposal'
+            git push origin HEAD:assessment/continual-harness-168
+          fi
