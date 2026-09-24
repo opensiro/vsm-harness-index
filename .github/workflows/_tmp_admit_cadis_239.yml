@@ -1,0 +1,69 @@
+name: tmp-admit-cadis-239
+
+on:
+  push:
+    branches:
+      - admit-cadis-239
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit cadis and regenerate canonical projections
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/cadis.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed\n'
+          if old in text:
+              text = text.replace(old, 'status: included\n', 1)
+              assessment.write_text(text, encoding='utf-8')
+          elif 'status: included\n' not in text:
+              raise SystemExit('unexpected cadis assessment status')
+
+          catalog = Path('data/catalog.psv')
+          catalog_row = '239|cadis|C.A.D.I.S.|https://github.com/Growth-Circle/cadis|2026-04-26T13:12:25Z|index-addition|52c55854b1abbcda82839b7a934cbdb16a69b635|2026-09-25'
+          catalog_text = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|cadis|' not in catalog_text:
+              catalog.write_text(catalog_text + '\n' + catalog_row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signature_row = '239|cadis|C.A.D.I.S. closes autonomous S1 through its daemon-owned model/tool loop and S3=A(P) through whole-agent runtime awareness, model-driven child commitments and operator list/kill/cancel control; worktree isolation plus global worker admission provide S2=C, while reviewer/validation, memory and persona/policy paths do not establish S3*/S4/S5.'
+          signature_text = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|cadis|' not in signature_text:
+              signatures.write_text(signature_text + '\n' + signature_row + '\n', encoding='utf-8')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/check_index.py
+
+          if git diff --quiet; then
+            echo 'No admission changes to commit.'
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/cadis.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md METRICS.md data/metrics.json README.md
+          git commit -m 'index: admit cadis at catalog position 239'
+          git push
