@@ -100,6 +100,7 @@ jobs:
       - run: python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/validate.py
       - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate.py
+      - run: python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench.py
       - run: python experiments/functional-capability-depth/s5-system-benchmarks/validate.py
       - run: python -m unittest discover -s tests -v
       - name: Check immutable generation provenance against PR base
