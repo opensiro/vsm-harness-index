@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 555,
+  "reviewed_at": "2026-09-24",
+  "refines_preflight": "public-polybench-paper-controls.json",
+  "candidate_cell_id": "adaptive-auto-harness-polybench-skillos-linkage-v6",
+  "preflight_disposition": "blocked",
+  "execution_authorized": false,
+  "primary_baseline_after_preflight": "gap",
+  "evidence_mode": "public-results-only",
+  "paper_row": {
+    "paper": "https://arxiv.org/abs/2606.01770",
+    "reported_method_label": "SkillOS",
+    "reported_method_paper": "https://arxiv.org/abs/2605.06614",
+    "reported_method_authors": "Ouyang et al. (2026)",
+    "benchmark": "PolyBench",
+    "paper_level_solver_policy": "Claude Sonnet 4.6 for all experiments unless specified",
+    "paper_level_evolver_policy": "Claude Opus 4.6",
+    "paper_level_solver_temperature": 0.0,
+    "paper_level_evolver_temperature": 0.0,
+    "paper_level_polybench_batch_size": 100,
+    "paper_level_common_chronological_order": true,
+    "paper_level_common_temporal_reveal": true
+  },
+  "implementation_linkage": {
+    "a_evolve_pre_release_revision": "e4f70b949989e0abf08532e8223cb9eab447e971",
+    "adaptive_harness_release_revision": "c1ea7d60c009519f5c037f7db9d47e97063bb353",
+    "release_declares_comparison_implementation_omitted": true,
+    "pre_release_contains_skillos_path": false,
+    "pre_release_commit_history_binding_found": false,
+    "first_party_upstream_repository_bound": null,
+    "immutable_evaluated_revision": null,
+    "third_party_reproductions_admissible_as_row_identity": false
+  },
+  "gates": [
+    {
+      "gate_id": "paper-level-comparison-controls",
+      "status": "satisfied",
+      "finding": "Historical #538 establishes a common paper-level PolyBench task order, batch loop, solver/evolver policy, zero temperatures and result surface for the named auto-harness rows.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770",
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/public-polybench-paper-controls.json"
+      ]
+    },
+    {
+      "gate_id": "skillos-paper-identity",
+      "status": "satisfied",
+      "finding": "Adaptive Auto-Harness explicitly identifies its SkillOS baseline as Ouyang et al. (2026), SkillOS: Learning Skill Curation for Self-Evolving Agents, arXiv:2605.06614.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770",
+        "https://arxiv.org/abs/2605.06614"
+      ]
+    },
+    {
+      "gate_id": "evaluated-implementation-identity",
+      "status": "blocked",
+      "finding": "The public AdaptiveHarness release explicitly states that the SkillOS comparison implementation is not shipped. The inspected A-Evolve pre-release revision e4f70b949989e0abf08532e8223cb9eab447e971 contains recoverable GEPA and Meta-Harness implementation paths but no SkillOS implementation path in its recursive tree, and inspected commit-history search does not expose a SkillOS implementation binding.",
+      "blocking_effect": "Do not attribute the reported PolyBench SkillOS row to any public SkillOS repository or reproduction until first-party primary evidence binds the evaluated implementation and immutable revision.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/agent_evolve/algorithms/__init__.py",
+        "https://github.com/A-EVO-Lab/a-evolve/tree/e4f70b949989e0abf08532e8223cb9eab447e971/agent_evolve/algorithms"
+      ]
+    },
+    {
+      "gate_id": "immutable-evaluated-revision-binding",
+      "status": "not_reached",
+      "finding": "Because the producing SkillOS implementation is not publicly identified, no immutable evaluated repository revision can be credited from the current evidence.",
+      "primary_sources": [
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/agent_evolve/algorithms/__init__.py"
+      ]
+    },
+    {
+      "gate_id": "canonical-skillos-system-boundary",
+      "status": "not_reached",
+      "finding": "A standalone assessment of a future first-party SkillOS repository would be a separate system-in-focus decision. Third-party reproductions must not be substituted for the implementation evaluated by Adaptive Auto-Harness.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/BASELINE.md"
+      ]
+    },
+    {
+      "gate_id": "matched-canonical-s4-cell",
+      "status": "not_reached",
+      "finding": "Paper-level matching and method identity do not establish native/adapter-preserved implementation attribution, so the SkillOS row cannot enter a matched canonical S4 cell.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/BASELINE.md"
+      ]
+    }
+  ],
+  "results": null,
+  "non_claim": "This refinement identifies the cited SkillOS method and its materially matched paper-level result row. It does not identify the producing implementation, does not substitute a third-party reproduction, does not assign canonical S4 ownership, does not admit a capability observation or ranking, and does not promote the S4 primary baseline from gap."
+}
