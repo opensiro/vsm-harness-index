@@ -1,0 +1,53 @@
+[
+  {
+    "observation_id": "govsim-selfgovern-membership-authority-2026-09",
+    "function": "S5",
+    "benchmark_id": "govsim-selfgovern",
+    "benchmark_fit": "direct",
+    "boundary_class": "benchmark-defined-agent-society",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "protocol_version": "arXiv:2609.22600v1 (2026-09-18)",
+    "code_revision_status": "unresolved-authoritative-public-repository",
+    "society_size": 5,
+    "round_limit": 12,
+    "models_evaluated": 8,
+    "seeds_per_model_game_cell": 5,
+    "authority_process": [
+      "agents deliberate over the shared commons",
+      "an agent authors one executable Python law over the constrained World API",
+      "sandbox validation checks parent/evaluation constraints and returns repair feedback for invalid proposals",
+      "current members receive a proposal summary and dry-run effects",
+      "current members vote on the valid proposal",
+      "majority approval enacts the law",
+      "enacted laws execute before later rounds continue"
+    ],
+    "identity_level_witness": {
+      "mutable_field": "agent.active",
+      "paper_semantics": "False = exiled",
+      "system_effect": "membership reduction changes which agents remain active in the society",
+      "return_to_operation": "exile is executed before reflection/retirement and the game continues into subsequent rounds with the changed active membership"
+    },
+    "reported_membership_law_results": {
+      "non_thinking_proposals": 460,
+      "non_thinking_enacted": 8,
+      "non_thinking_enactment_rate_percent": 1.7,
+      "thinking_proposals": 122,
+      "thinking_enacted": 31,
+      "thinking_enactment_rate_percent": 25.4
+    },
+    "reported_context_result": {
+      "scope": "broader governed-vs-ungoverned G1 result; not an S5-only effect",
+      "ungoverned_ics_percent": 45.0,
+      "governed_ics_percent": 72.5,
+      "absolute_gain_percentage_points": 27.5
+    },
+    "evaluation_membrane": "The experimenter fixes game physics, sandbox safety constraints, proposal count, majority-vote procedure, API surface and evaluation horizon. Direct S5 attribution is therefore limited to the agent society's legitimate authority over executable membership/identity laws inside that declared boundary; lower-level catch-cap, penalty, tax and treasury laws are not reclassified as S5.",
+    "publisher_result_note": "The paper reports that intact survival in the fatal setting is concentrated among runs that execute membership reduction early, and that thinking substantially increases enactment of membership/exile proposals.",
+    "vsm_interpretation": "The membership path directly exercises an identity-level tension, legitimate collective authority, actual ratification/enactment, provenance separating voting authority from deterministic enforcement, and subsequent operation after the system boundary changes. This establishes direct S5 evidence only for the benchmark-defined society, not for any model or canonical harness used underneath.",
+    "primary_sources": [
+      "https://arxiv.org/abs/2609.22600"
+    ]
+  }
+]
