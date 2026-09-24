@@ -2,226 +2,185 @@
 
 Status: experimental, non-normative.
 
-Issue: #387
-
-Latest primary-baseline search: #425
+Initial issue: #387  
+Primary-search closure: #564  
+Current direct-evidence update: #586
 
 Parent semantic review: `../vsm-benchmark-family-map/`
 
 ## Question
 
-Do canonical Index systems that already establish **S2 — Coordination** have published benchmark observations that exercise their own S2 implementation under a benchmark already reviewed as `direct` for S2?
+Do public benchmark results directly exercise **S2 — Coordination** as defined by the current Profile, and can any such results be linked to canonical Index systems without confusing benchmark-authored coordination with native harness ownership?
 
-The answer is intentionally allowed to be **zero**.
-
-A zero does not mean that the systems lack S2 capability. It means that the current public benchmark evidence does not simultaneously satisfy both gates:
+The functional gate is:
 
 ```text
-benchmark actually exercises S2
-                +
-benchmark actually uses the canonical system's own S2 path
+distinct S1 units
+        ↓
+interaction-generated disturbance / interference
+        ↓
+coordination relation attenuates that disturbance
+        ↓
+feedback changes subsequent S1 behaviour
 ```
 
-For the primary baseline there is an additional comparison requirement:
+Generic communication, delegation, teamwork, topology, throughput or team success is insufficient by itself.
 
-```text
-native canonical S2 path
-        +
-explicit S2 disturbance / attenuation relation
-        +
-matched model / task / environment across harnesses
-```
+For a cross-harness primary baseline, the direct S2 path must additionally be native or adapter-preserved for multiple canonical systems under materially matched model/task/environment conditions.
 
 ## Current result
 
-At this review point:
-
 ```text
-direct S2 benchmark families reviewed: 1
-native/adapter-preserved direct-S2 observations admitted: 0
-primary S2 baseline: gap
+direct S2 benchmark families reviewed:          3
+direct S2 observations:                         1
+canonical native direct-S2 observations:        0
+native canonical proxy projections:             2
+primary S2 baseline:                             gap
 ```
 
-The one committed direct family is `DPBench`.
+The direct families are:
 
-DPBench supplies the Dining-Philosophers organization, simultaneous shared-resource contention, action protocol and communication structure itself. Its published model/provider runs therefore measure S2 capability **inside the benchmark-defined organization**. They are `benchmark-scaffolded` with respect to canonical OpenSiro harnesses and are not admitted as native system evidence.
+- `DPBench`;
+- `STALE semantic-coordination`;
+- `Nool coding-agent fleet coordination`.
 
-The September 23 primary-baseline follow-up additionally reviewed controlled cross-framework/orchestration candidates. None currently closes all gates, so the gap remains deliberate rather than being filled with a weaker proxy.
+The single direct observation is the Nool Track D fleet-contention result at the benchmark-defined fleet boundary. It is **not** a canonical native observation.
 
-## Why this is not a failure
+A `gap` therefore no longer means direct S2 observations are absent. It means no materially matched primary comparison of native canonical S2 implementations is available.
 
-Repository-grounded S2 evidence and benchmark evidence answer different questions.
+## Evidence separation
 
-For example, current canonical systems already include concrete S2 mechanisms such as:
-
-- write-surface and shared-file interference attenuation;
-- worktree/isolation-based collision avoidance;
-- durable shared commitments and controlled turn/task ownership;
-- explicit loop/stall suppression;
-- concurrency/admission queues for shared host resources.
-
-Those mechanisms remain valid canonical evidence even when no public direct S2 benchmark has exercised them.
-
-The experiment therefore preserves:
+The experiment preserves three independent questions:
 
 ```text
-canonical S2 ownership
-        ↓
-first-party mechanism evidence ────────┐
-                                       ├── later S2 capability synthesis
-native direct-S2 benchmark evidence ──┘
+canonical repository evidence
+→ establishes whether a harness owns S2
+
+benchmark-defined direct evidence
+→ can measure S2 capability at the benchmark's own organization boundary
+
+canonical native / adapter-preserved direct evidence
+→ can support a canonical S2 capability row
 ```
 
-and does not replace the missing lower channel with a proxy score.
-
-## Coverage classes
-
-`coverage.json` records five distinct evidence situations.
-
-### `direct-scaffolded`
-
-The benchmark directly exercises S2 semantics, but supplies the coordination organization itself.
-
-Example: DPBench.
-
-### `native-proxy`
-
-A canonical S2 system is benchmarked through its own implementation, but the benchmark measures a broader/current task outcome rather than an explicit S2 disturbance.
-
-Example: AutoGen/Magentic-One orchestrator ablations on GAIA/AssistantBench/WebArena. These are valuable mechanism/ablation evidence but not admitted direct S2 observations.
-
-### `framework-scaffolded`
-
-A benchmark uses a framework runtime to host a benchmark-authored coordination topology or workflow. This must not be confused with native S2 ownership by that framework.
-
-Examples:
-
-- MAFBench topology builds distributed coordination tasks through benchmark-authored LangGraph graphs while canonical LangGraph remains `S2=—`;
-- Agent Framework Benchmark forces all compared frameworks into the same sequential Researcher → Analyst → Writer pipeline, so the application-level coordination structure is benchmark-authored rather than a native S2 disturbance comparison.
-
-### `candidate-boundary-unresolved`
-
-The benchmark or ablation is promising for coordination evidence, but the system-in-focus / canonical Index boundary or direct-S2 fit is not yet sufficient for a canonical system row.
-
-Examples:
-
-- Twining Benchmark;
-- Squad / MARBLE controlled coordination ablation.
-
-### `candidate-no-results`
-
-The benchmark design is structurally promising for native orchestration comparison, but there is not yet a published matched result cell to evaluate or admit.
-
-Example: MAO-Bench at `3343fe1cf5a24211023a69374d31df3d6711b613`.
-
-This class is intentionally separate from a boundary problem: the evaluation design may be suitable in principle while evidence simply has not been produced yet.
-
-## Representative canonical S2 cohort inspected
-
-The first pass explicitly checked high-signal canonical S2 systems/mechanism classes, including:
-
-- `autogen-agentchat` — autonomous team turn/loop/stall regulation;
-- `headcount` — autonomous write-surface coordination;
-- `deepseek-harness` — autonomous Agent Teams durable commitments/shared task coordination;
-- `reigen` — autonomous parallel edit-scope collision prevention;
-- `omnigent` — autonomous dependency-aware isolated-worker coordination;
-- `loopx` — autonomous peer coordination;
-- `thclaws` — autonomous Team-mode teammate interference regulation;
-- `pi-harness` — constructor shared-file interference coordination;
-- `reasonix` — constructor serialization of overlapping subagent write claims;
-- `browser-harness` — constructor serialization/isolation of shared mutable browser state.
-
-This is a mechanism-diverse inspection set, not a claim that no other canonical S2 system exists.
+A benchmark can be direct without making the runtime/model underneath it a canonical S2 owner. Conversely, a canonical `S2=A` harness can have strong mechanism evidence without any public direct S2 capability result.
 
 ## Direct benchmark: DPBench
 
-DPBench is retained as `direct` because its disturbance is explicit: multiple agents simultaneously contend for shared resources and can deadlock; deadlock, throughput, fairness and message/action consistency expose whether coordination attenuates the disturbance.
+DPBench directly exercises simultaneous shared-resource contention. Multiple agents compete for shared resources and can deadlock; deadlock, throughput, fairness and consistency expose whether the benchmark-defined coordination organization attenuates the disturbance.
 
-However, the benchmark API takes a model callback while DPBench defines the philosophers, grouping, protocol and coordination environment. Published model results are therefore not native AutoGen/Headcount/DeepSeek Harness/etc. S2 observations.
+The benchmark itself supplies the philosophers, grouping, protocol and communication structure. Published model/provider rows are therefore `benchmark-scaffolded`, not native AutoGen/Headcount/DeepSeek Harness/etc. S2 observations.
+
+## Direct benchmark: STALE semantic coordination
+
+Pinned source:
+
+```text
+illinoisdata/STALE-bench@f7bc831e4eff08b9652acd893553824636ae3985
+```
+
+STALE creates a particularly clean semantic-interference witness: individual patches can be correct in isolation while their composition breaks tests. Controlled visibility/communication then changes whether the second worker can avoid the stale assumption.
+
+The benchmark reports strong attenuation when a precise message exposes the finalized concurrent change, including roughly 98% reduction of synthetic interference and substantial recovery on real-derived Django tasks.
+
+The coordination organization and information-sharing conditions are benchmark-defined. Underlying task-solving harnesses do not inherit native S2 ownership from these rows.
+
+## Direct observation: Nool Track D fleet coordination
+
+Pinned source:
+
+```text
+noolinc/nool_long_eval_bench@126d69b5921be71daffd38c70ec4aa77252b4f39
+```
+
+The benchmark studies many autonomous coding workers modifying one shared codebase. The Track D scale-up pre-registers three contention clusters inside a 20-ticket workload and compares uncoordinated parallel dispatch with pre-start coordination that delays footprint-overlapping tickets until the prior member integrates.
+
+The S2 chain is explicit:
+
+```text
+parallel coding workers
+        ↓
+overlapping concurrent work
+        ↓
+merge conflicts / stale-base composition / silent poisoning
+        ↓
+pre-start footprint coordination
+        ↓
+overlapping work waits for prior integration
+        ↓
+later worker branches from updated shared state
+        ↓
+changed integration and acceptance outcomes
+```
+
+The primary N=10 comparison holds prompts, model (`claude-sonnet-5`), worker count and worktree isolation fixed:
+
+| Arm | Run | Accepted | Clean merges | Final main |
+| --- | --- | ---: | ---: | --- |
+| uncoordinated git | `fleet_git_fleet_9a6eb70f` | 1/20 | 14/20 | broken |
+| uncoordinated git | `fleet_git_fleet_803f2288` | 13/20 | 13/20 | green |
+| coordinated | `fleet_nool_fleet_cb7ccf72` | 19/20 | 20/20 | green |
+| coordinated | `fleet_nool_fleet_2a51582f` | 19/20 | 20/20 | green |
+
+All conflicts in the two primary uncoordinated runs occur on second/third members of the designed contention clusters. The coordinated arm integrates all nine cluster tickets in both primary replicates.
+
+The benchmark also preserves an excluded gate-hole run (`fleet_nool_fleet_16e2e1b0`) in the raw ledger and documents why it is not part of the primary comparison. A later control shows that a git-only scheduler using the same pre-start check-in relation can match the coordinated arm when declared footprints are accurate. That supports the narrow interpretation: the measured capability is the **coordination relation**, not product branding.
+
+Raw provenance:
+
+```text
+results/trackc/fleet_runs.jsonl
+results/replications/MANIFEST.md
+docs/findings/2026-08-21-findings.md
+```
+
+The public repository is the benchmark/evidence package. It does not establish the external Nool runtime as a canonical Index harness, so this observation is recorded as `direct-scaffolded`, `canonical_harness_id: null`.
 
 ## Native proxy: AutoGen / Magentic-One
 
-Canonical AutoGen AgentChat establishes `S2=A` independently through first-party team selection plus explicit progress/loop/stall regulation.
+Canonical AutoGen AgentChat establishes S2 independently through first-party team selection plus explicit progress/loop/stall regulation.
 
-Magentic-One's published evaluations include a native orchestrator ablation: a simpler GroupChat-style selector removes progress tracking, loop detection and explicit direction and materially changes end-task performance on GAIA/AssistantBench/WebArena.
+Magentic-One's published native orchestrator ablation changes end-task performance on GAIA/AssistantBench/WebArena. This is useful quantitative evidence, but the ablation spans S2 and S3 mechanisms and the tasks do not instantiate an explicit S2 disturbance. It remains a `native-proxy` projection rather than a direct S2 observation.
 
-That is strong first-party **mechanism/ablation evidence**, but:
+## Native proxy: Squad / MARBLE
 
-- the benchmark tasks are general task-success benchmarks rather than S2 disturbance benchmarks;
-- the ablation changes mechanisms spanning both S2 and S3.
+Canonical Squad now establishes `S2=A`. The public MARBLE campaign exercises Squad's first-party coordination path under controlled same-model/same-task factorial conditions, including coordination-only versus no-Squad and full-Squad versus memory-only contrasts.
 
-It is therefore not inserted into the direct S2 observation registry.
+That is native historical-lineage capability evidence. It remains a proxy because MARBLE reports broad collaborative completion/milestone/quality outcomes rather than a measured inter-S1 interference variable and its attenuation.
 
-## Framework-scaffolded negative control: MAFBench / LangGraph
+The repository also ships orchestration-log templates, but no committed real `.squad/orchestration-log/` run corpus was recovered at the reviewed revision, so templates are not promoted into a descriptive direct observation.
 
-MAFBench's topology module contains S2-relevant distributed tasks: graph coloring with conflict avoidance, matching, vertex cover, leader election and Byzantine consensus.
+## Framework-scaffolded negative controls
 
-The published implementation currently uses benchmark-authored graph builders and lists LangGraph as its completed framework integration. Canonical LangGraph itself remains `S2=—`: generic graph/routing expressivity does not establish first-party S2 ownership.
+### MAFBench / LangGraph
 
-Therefore a successful MAFBench/LangGraph run can demonstrate coordination in the benchmark-authored application without becoming evidence for `LangGraph.S2`.
+MAFBench contains S2-relevant distributed tasks such as conflict avoidance, matching, leader election and Byzantine consensus, but the published topology is benchmark-authored and currently hosted through LangGraph. Canonical LangGraph itself remains `S2=—`; framework expressivity does not create native S2 ownership.
 
-MAFBench still deserves a separate benchmark-family semantic review; it is not silently added to the committed map here.
+### Agent Framework Benchmark
 
-## Direct-S2 candidate: Twining Benchmark
-
-Twining Benchmark is a promising follow-up because it holds a common Claude-agent/codebase substrate while varying coordination conditions such as baseline/shared files/structured state/full Twining. Its scenario set includes concurrent agents and conflict resolution, which are much closer to explicit S2 disturbances than generic teamwork scores.
-
-However, the current system boundary is unresolved:
-
-- `twining-mcp` is primarily a coordination MCP/plugin surface providing shared blackboard, decisions, warnings and handoff state to external agents;
-- the benchmarked organization is multiple Claude agents plus the selected coordination condition;
-- `twining-mcp` is not currently a canonical Index system.
-
-Therefore Twining is recorded only as a benchmark-family candidate pending separate semantic and system-boundary review.
-
-## Controlled framework comparison that does not exercise S2
-
-`LukaszGrochal/agent-framework-benchmark@2ce20686e939b9a065705877882bdfabdf857e27` is useful as a negative control for the primary-baseline search.
-
-It does several things correctly for harness comparison:
-
-- fixes the default model at Qwen3 14B;
-- uses temperature 0;
-- shares prompts and tools;
-- compares five framework implementations;
-- publishes quality, latency and token measurements.
-
-But the workload is deliberately normalized to the same sequential three-stage pipeline:
+`LukaszGrochal/agent-framework-benchmark@2ce20686e939b9a065705877882bdfabdf857e27` fixes model/prompts/tools across several frameworks, but deliberately normalizes them to a sequential:
 
 ```text
 Researcher → Analyst → Writer
 ```
 
-The AutoGen implementation uses `RoundRobinGroupChat` with `MaxMessageTermination(4)`, explicitly described as one round that matches the sequential pipeline.
+pipeline. Recurring inter-S1 interference is removed rather than measured, so quality/latency/token differences are not direct S2 evidence.
 
-This prevents the benchmark from becoming direct S2 evidence. It measures framework execution of a benchmark-authored workflow, not attenuation of a recurring inter-S1 interference/conflict/oscillation.
+### Astra cross-framework investment team
 
-## Squad / MARBLE controlled coordination ablation
+Astra provides useful matched framework/runtime measurements, including Agno and AutoGen rows, but the compared organization is benchmark-authored and the workload does not expose an explicit S2 disturbance/attenuation variable. These rows remain framework-execution evidence.
 
-Pinned sources:
+## Candidate: Twining Benchmark
 
-```text
-tamirdresher/squad-marble-benchmark@f539d22557827292a664572536ca909ccbb4f8dc
-bradygaster/squad@a1a8e1f4ec10b2dc08411009f29acf725d9ab515
-```
+Twining varies coordination conditions over multiple coding agents and includes concurrent-agent/conflict-resolution scenarios. It remains a strong candidate, but the system-in-focus is multiple external agents plus the selected coordination condition; `twining-mcp` is not currently a canonical Index system. The boundary remains unresolved for canonical capability use.
 
-This is one of the strongest public coordination-layer ablations found in the follow-up search:
+## Native mechanism without direct result: DeepSeek Agent Teams
 
-- same Claude Opus 4.6 model in the MARBLE ablation;
-- aligned tasks;
-- Full Squad / Coord-only / Memory-only / No Squad conditions;
-- task decomposition/routing and parallel specialists in the coordination layer;
-- public raw artifacts and an aligned correctness re-run.
+Canonical DeepSeek Harness establishes `S2=A` through Agent Teams shared tasks/commitments and coordination machinery. Current public Agent Team code/tests demonstrate the mechanism, including overlap-related primitives, but no published capability run/result was recovered that closes an explicit inter-S1 disturbance → attenuation → changed-operation chain.
 
-It is still not the S2 primary baseline.
+Tests and mechanism existence are not converted into a capability observation.
 
-First, MARBLE measures broad collaborative task outcomes rather than directly exposing a specific S2 disturbance and its attenuation. The result is therefore best treated as **coordination mechanism/proxy evidence**, not automatically direct S2.
-
-Second, `bradygaster/squad` is not currently a canonical Index system. Exact repository-identity search found no current canonical entry or intake issue. The benchmark cannot be linked to a canonical S2 state until Squad is separately assessed as its own system-in-focus.
-
-A future Squad assessment must still map its organizational functions from primary repository evidence; the benchmark result cannot establish S2 by itself.
-
-## MAO-Bench — structurally promising, no published baseline cell yet
+## Candidate: MAO-Bench
 
 Pinned source:
 
@@ -229,77 +188,53 @@ Pinned source:
 rachitpareek/multi-agent-orchestration-evals@3343fe1cf5a24211023a69374d31df3d6711b613
 ```
 
-MAO-Bench is architecturally close to what an OpenSiro S2 cross-harness baseline would want:
+MAO-Bench is structurally close to a future canonical S2 comparison: parallel/sequential tiers, adversarial failure/conflict tasks, topology and parallelism metrics, hermetic execution and a multi-orchestrator adapter interface.
 
-- parallel and sequential multi-agent task tiers;
-- adversarial failures, conflicts and ambiguity;
-- topology and parallelism-efficiency measurements;
-- persistence and recovery metrics;
-- hermetic Docker environments;
-- automated oracles;
-- an adapter interface intended for multiple orchestrators.
+Its public seeded leaderboard still contains no multi-orchestrator result rows. The design is promising; the result cell does not yet exist.
 
-Its README names Gas Town, CrewAI, AutoGen and LangGraph as seeded baseline targets. However, at the reviewed revision those leaderboard cells are unpopulated; the initial implementation provides the benchmark framework/tasks and a Claude Code baseline adapter rather than completed matched multi-orchestrator results.
+## Representative canonical S2 cohort inspected
 
-So MAO-Bench is retained as a **future primary candidate**, not evidence that can populate `observations.json` today.
+The current coverage record checks a mechanism-diverse set including:
 
-Promotion would require at least:
+- `autogen-agentchat`;
+- `squad`;
+- `headcount`;
+- `deepseek-harness`;
+- `reigen`;
+- `omnigent`;
+- `loopx`;
+- `thclaws`;
+- `pi-harness`;
+- `reasonix`;
+- `browser-harness`.
 
-1. published result rows for multiple actual orchestrators;
-2. recoverable model/configuration identity;
-3. task/environment/evaluator matching across those orchestrators;
-4. confirmation that the compared coordination path belongs to each system rather than the benchmark scaffold;
-5. canonical Index linkage for the systems used in the baseline cell;
-6. a direct S2 semantic review of the relevant task/metric subset rather than importing MAO's composite score wholesale.
+These systems span autonomous and constructor coordination paths, write-surface collision prevention, isolated-worker coordination, durable team commitments, turn/stall regulation and shared mutable-resource admission. The cohort is an inspection set, not a claim of exhaustiveness.
 
-## S2 mechanism classes exposed by the gap
+## Why the primary gap remains
 
-The review suggests that one S2 benchmark family may not cover every S2 implementation form. Useful future benchmark families may need to target distinct disturbance classes while remaining inside the same VSM function:
-
-```text
-S2 — Coordination
-├── shared-resource contention / deadlock
-│   └── DPBench-like
-├── parallel code/write collision
-│   └── concurrent-agent / conflict-resolution coding benchmarks
-├── team loop/stall/turn interference
-│   └── direct team-progress disturbance benchmarks
-└── host-resource saturation / admission contention
-    └── concurrency/resource-allocation stress benchmarks
-```
-
-These are capability subdimensions, not new VSM systems and not a maturity scale.
-
-## Current primary-baseline conclusion
-
-After the controlled-orchestration follow-up:
+The current state is:
 
 ```text
-S2 primary: gap
+direct S2 benchmark-defined observation exists
+        !=
+canonical native direct S2 observation exists
+        !=
+matched canonical S2 primary exists
 ```
 
-The reason is now more specific than “no coordination benchmarks exist.” Public benchmarks cover several useful pieces, but none currently combines all of:
+Nool closes the first observation-layer hole but not the canonical one.
 
-```text
-explicit S2 disturbance
-+ native coordination path
-+ matched cross-harness comparison
-+ canonical system linkage
-+ published reproducible results
-```
-
-The gap should be revisited when:
-
-- MAO-Bench or a similar adapter benchmark publishes real matched orchestrator cells;
-- Squad is independently assessed and a direct-S2 benchmark surface can be isolated;
-- Twining's system boundary is resolved;
-- or a canonical S2 harness publishes a native matched coordination benchmark.
+A future primary still requires materially matched evidence for two or more canonical systems exercising their own native or adapter-preserved S2 paths under a common disturbance definition, with recoverable model/configuration provenance.
 
 ## Source of truth
 
-- `observations.json` — admitted native/adapter-preserved direct-S2 observations. It is currently an empty list.
-- `coverage.json` — reviewed coverage/gap cases and their boundary classification.
-- `validate.py` — checks the empty/non-empty observation contract, controlled vocabularies and canonical anchors used in coverage cases.
+- `observations.json` — admitted direct S2 observations; currently one non-canonical Nool Track D observation;
+- `coverage.json` — reviewed direct/proxy/candidate cases and canonical linkage;
+- `proxy_links.json` — native canonical proxy projections;
+- `validate.py` — fail-closed separation of direct, canonical and proxy evidence;
+- `matched-cell/s2-primary-search-closure.json` — current primary-gap disposition;
+- `matched-cell/S2-PRIMARY-SEARCH-CLOSURE.md` — human-readable closure and reopen rule;
+- `../vsm-benchmark-family-map/map.json` — benchmark-family semantic classification.
 
 ## Non-goals
 
@@ -307,9 +242,10 @@ This experiment does not:
 
 - weaken S2 semantics to populate a dataset;
 - turn generic communication/delegation into S2;
-- infer S2 from benchmark performance;
-- change canonical assessments;
-- promote MAFBench, Twining, Squad/MARBLE, Agent Framework Benchmark or MAO-Bench into the committed benchmark-family map without separate semantic review;
-- attribute benchmark-owned coordination to LangGraph, AutoGen or another framework by name association;
-- treat MAO-Bench's future composite score as a VSM S2 score;
-- create a scalar S2 score.
+- infer canonical S2 ownership from benchmark performance;
+- attribute benchmark-owned coordination to an underlying model/framework/product by name association;
+- treat Nool's external product runtime as a canonical OpenSiro harness without a separate repository-grounded assessment;
+- promote native proxy evidence into direct S2 after seeing favorable scores;
+- select a primary without matched canonical native evidence;
+- create a scalar S2 score or overall harness score;
+- modify Profile, Skills, canonical assessments, catalog, TLDR, rankings or Full-A artifacts.
