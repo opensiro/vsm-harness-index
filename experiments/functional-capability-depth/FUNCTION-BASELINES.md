@@ -13,7 +13,7 @@ This view reports baseline availability and evidence coverage only. It does not 
 | S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 8 reviewed cases · direct families: `3` · direct observations: `1` |
 | S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 16 reviewed cases · direct families: `5` · canonical direct observations: `2` · composed direct observations: `3` |
 | S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 14 reviewed cases · direct families: `4` · canonical direct observations: `2` · composed direct observations: `4` |
-| S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 12 reviewed cases · direct families: `0` · canonical direct observations: `0` |
+| S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 13 reviewed cases · direct families: `1` · canonical direct observations: `0` · composed direct observations: `1` |
 
 A `gap` means that no matched canonical-harness primary baseline has been selected for that function. It is not a zero capability score and it does not mean benchmark evidence is absent.
 
@@ -45,7 +45,7 @@ Evidence search: [`s4-system-benchmarks/coverage.json`](s4-system-benchmarks/cov
 
 ### S5
 
-No reviewed benchmark family currently provides direct legitimate ultimate-policy/identity authority, actual adjudication or revision, and return of the newly decided policy into subsequent operation.
+Reviewed direct S5 evidence now includes GovSim-SelfGovern's benchmark-scaffolded membership/identity authority path, but public evidence still provides no canonical native direct S5 observation and no materially matched comparison of native or adapter-preserved S5 implementations across multiple canonical harnesses.
 
 Evidence search: [`s5-system-benchmarks/coverage.json`](s5-system-benchmarks/coverage.json).
 
