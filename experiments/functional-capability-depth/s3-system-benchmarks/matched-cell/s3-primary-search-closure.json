@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 567,
+  "reviewed_at": "2026-09-24",
+  "disposition": "evidence-backed-gap",
+  "primary_baseline": "gap",
+  "closure_scope": "current-public-evidence",
+  "evidence_depth": {
+    "direct_benchmark_families": 3,
+    "canonical_direct_observations": 1,
+    "native_proxy_projections": 1,
+    "representative_canonical_s3_systems_inspected": 11
+  },
+  "canonical_native_observation": {
+    "harness_id": "multi-agent-orchestration",
+    "observation_id": "multi-agent-orchestration-supervisor-ablation-2026-08",
+    "comparison_class": "within-system-native-supervisor-ablation",
+    "baseline_passed": 11,
+    "supervisor_passed": 48,
+    "task_count": 54,
+    "baseline_routing_accuracy": 0.567,
+    "supervisor_routing_accuracy": 1.0,
+    "clean_arm_controls": "retry and parallelism disabled in both clean comparison arms"
+  },
+  "reviewed_route_classes": [
+    {
+      "route_id": "direct-manager-control-benchmarks",
+      "status": "benchmark-scaffolded",
+      "examples": ["ClawArena-Team", "Loop-Back Authority"],
+      "blocking_reason": "The benchmarks directly exercise whole-team current-control authority, but their management organization is authored by the benchmark rather than a canonical harness's own S3 path."
+    },
+    {
+      "route_id": "canonical-native-direct-within-system",
+      "status": "single-system-only",
+      "examples": ["Multi-Agent Orchestration"],
+      "blocking_reason": "A clean canonical native direct S3 observation exists, but one system cannot form a matched cross-harness primary."
+    },
+    {
+      "route_id": "native-quantitative-proxy",
+      "status": "not-isolated-s3",
+      "examples": ["AutoGen/Magentic-One"],
+      "blocking_reason": "The native orchestrator ablation changes outcome but spans both S2 and S3 mechanisms rather than isolating current-control capability."
+    },
+    {
+      "route_id": "matched-framework-campaign",
+      "status": "wrong-native-s3-paths",
+      "examples": ["Astra"],
+      "blocking_reason": "The matched campaign holds model/tools/workload fixed but evaluates Agno and AutoGen through benchmark-selected organization paths that are not the canonical S3 paths used to establish S3 ownership."
+    },
+    {
+      "route_id": "direct-orchestration-benchmark-without-native-linkage",
+      "status": "benchmark-defined",
+      "examples": ["OrchestraBench"],
+      "blocking_reason": "The benchmark directly studies orchestration failures and recovery, but public evidence does not bind the measurements to native canonical harness S3 implementations."
+    }
+  ],
+  "closure_claim": "Current public evidence contains direct S3 benchmarks, one canonical native direct S3 observation and matched framework comparisons, but no materially matched comparison of multiple canonical native or adapter-preserved S3 implementations.",
+  "reopen_when": [
+    "a second canonical native or adapter-preserved direct S3 observation appears under a materially matched benchmark/model/configuration cell",
+    "an existing matched framework campaign proves that canonical S3 paths are actually active for two or more systems",
+    "a new direct orchestration benchmark binds immutable results to multiple canonical native S3 implementations"
+  ],
+  "do_not_reopen_for": [
+    "another benchmark-authored manager topology",
+    "another whole-task orchestration score without isolated current-control attribution",
+    "another framework comparison that does not activate canonical S3 paths"
+  ],
+  "non_claim": "This closure is not a zero S3 capability score and does not generalize the single Multi-Agent Orchestration result into a cross-harness ranking. It freezes the reviewed public-evidence state until materially new matched-native evidence appears."
+}
