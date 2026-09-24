@@ -232,3 +232,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 217|redteam|redteam|https://github.com/AscendyProject/redteam|2026-06-08T10:59:19Z|index-addition|c2bedf14aca43cc03330503f35e60e12b72f37ee|2026-09-24
 218|term-mesh|term-mesh|https://github.com/x-mesh/term-mesh|2026-04-22T05:24:42Z|index-addition|36f704695f62d0ae2e6935d9d016cc476fde0477|2026-09-24
 219|cmcp|cMCP|https://github.com/agentrust-io/cmcp|2026-06-03T19:32:18Z|index-addition|f8743e013786b094caaa70c336519834e73c74d5|2026-09-24
+220|agent-control-plane|Agent Control Plane|https://github.com/ryanwi/agent-control-plane|2026-03-06T02:55:06Z|index-addition|99da3934faa2aa7be09df72134cc5e8023e8704f|2026-09-24
