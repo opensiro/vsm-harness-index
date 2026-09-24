@@ -2,8 +2,8 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-24",
   "function": "S3*",
-  "direct_benchmark_family_count": 1,
-  "composed_direct_observation_count": 1,
+  "direct_benchmark_family_count": 2,
+  "composed_direct_observation_count": 2,
   "canonical_direct_observation_count": 0,
   "coverage_classes": [
     "direct-composed",
@@ -26,6 +26,22 @@
         "https://github.com/abhid1234/truecall/blob/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2/seam.py"
       ],
       "finding": "The live tau2 integration directly instantiates an ordinary success claim, complementary post-condition access to actual environment state, discrepancy detection and in-flight corrective feedback. The audited system is the composed agent plus TrueCall layer rather than a canonical Index harness.",
+      "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "swe-review-direct-composed",
+      "benchmark": "SWE-Review-Bench generate-review-revise evaluation",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-composed",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "primary_sources": [
+        "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/README.md",
+        "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench/README.md",
+        "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench/reverify_revision.py",
+        "https://arxiv.org/abs/2607.06065"
+      ],
+      "finding": "SWE-Review-Bench directly closes a complementary audit loop at its benchmark-defined boundary: a separate reviewer agent explores the repository and candidate PR, produces an approve/reject verdict plus structured discrepancy feedback, rejected work returns to the original PR generator for correction, and the revised patch is re-verified through SWE-bench. Published iterative review-revision improves downstream resolve rate, including a reported Qwen3-30B-A3B path from 27.5% to 56.9%. The reviewer/revision/verification organization is benchmark-defined, so these results are composed direct S3* evidence rather than native S3* evidence for OpenHands, Harbor, Claude Code, Codex Guardian, or any PR-generator harness.",
       "admitted_to_canonical_registry": false
     },
     {

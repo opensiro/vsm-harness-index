@@ -66,5 +66,42 @@
       "https://github.com/abhid1234/truecall/blob/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2/RESULTS.md",
       "https://github.com/abhid1234/truecall/blob/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2/seam.py"
     ]
+  },
+  {
+    "observation_id": "swe-review-generate-review-revise-2026-07",
+    "function": "S3*",
+    "benchmark_id": "swe-review",
+    "benchmark_fit": "direct",
+    "boundary_class": "composed-system",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "reviewed_system_revision": "95b652e095e5ac8f16f08ae52fd3b26513c56097",
+    "benchmark": "SWE-Review-Bench",
+    "benchmark_instances": 1384,
+    "source_issue_count": 500,
+    "quality_tiers": 3,
+    "source_benchmark": "SWE-bench Verified",
+    "audit_loop": [
+      "candidate PR generated for an issue",
+      "separate reviewer agent explores repository and patch",
+      "reviewer emits approve/reject decision plus structured feedback",
+      "rejected patch returns to the original PR generator for revision",
+      "revised patch is re-verified through SWE-bench"
+    ],
+    "revision_protocol": "approved patches remain unchanged; rejected patches are revised by the original PR generator for the split; model failures fall back to the original patch",
+    "reported_example_generator": "Qwen3-30B-A3B",
+    "reported_initial_resolve_rate_percent": 27.5,
+    "reported_iterative_resolve_rate_percent": 56.9,
+    "reported_absolute_gain_percentage_points": 29.4,
+    "reverification_surface": "SWE-Review-Bench/reverify_revision.py via SWE-bench",
+    "publisher_conclusion": "Agentic review continuously improves PRs through iterative review-revision and improves downstream issue resolution relative to one-shot generation and fixed-context review baselines.",
+    "vsm_interpretation": "The composed benchmark directly exercises a materially distinct complementary reviewer, discrepancy feedback returned to the operating generator for correction, and independent re-verification of the revised artifact. The benchmark-defined organization owns this S3* loop; no execution substrate or PR-generator harness inherits native S3* ownership by association.",
+    "primary_sources": [
+      "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/README.md",
+      "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench/README.md",
+      "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench/reverify_revision.py",
+      "https://arxiv.org/abs/2607.06065"
+    ]
   }
 ]
