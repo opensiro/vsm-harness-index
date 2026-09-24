@@ -148,7 +148,7 @@
           "benchmark_name": "Evo-Bench"
         }
       ],
-      "blocking_reason": "Current direct families evaluate benchmark-defined or composed adaptation loops rather than matched native S4 implementations across canonical harnesses.",
+      "blocking_reason": "Direct S4 evidence now includes one canonical native A-Evolve harness-updating observation, but public evidence still does not provide a matched comparison of native S4 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.",
       "frozen_repertoire_note": "Ordinary S4 evaluation may use the current S4 repertoire to adapt other organizational capability; persistent improvement of S4's own decision/feedback repertoire belongs to the separate self-organizing-S evidence class."
     },
     "S5": {

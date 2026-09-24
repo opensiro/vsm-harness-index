@@ -12,7 +12,7 @@ This view reports baseline availability and evidence coverage only. It does not 
 | S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 11 reviewed cases · direct families: `2` · direct observations: `0` |
 | S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 8 reviewed cases · direct families: `3` · direct observations: `1` |
 | S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 16 reviewed cases · direct families: `5` · canonical direct observations: `2` · composed direct observations: `3` |
-| S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 14 reviewed cases · direct families: `4` · canonical direct observations: `0` · composed direct observations: `4` |
+| S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 14 reviewed cases · direct families: `4` · canonical direct observations: `1` · composed direct observations: `4` |
 | S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 12 reviewed cases · direct families: `0` · canonical direct observations: `0` |
 
 A `gap` means that no matched canonical-harness primary baseline has been selected for that function. It is not a zero capability score and it does not mean benchmark evidence is absent.
@@ -39,7 +39,7 @@ Evidence search: [`s3star-system-benchmarks/coverage.json`](s3star-system-benchm
 
 ### S4
 
-Current direct families evaluate benchmark-defined or composed adaptation loops rather than matched native S4 implementations across canonical harnesses.
+Direct S4 evidence now includes one canonical native A-Evolve harness-updating observation, but public evidence still does not provide a matched comparison of native S4 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.
 
 Evidence search: [`s4-system-benchmarks/coverage.json`](s4-system-benchmarks/coverage.json).
 

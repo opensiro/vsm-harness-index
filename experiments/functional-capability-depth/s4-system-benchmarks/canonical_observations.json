@@ -1,1 +1,77 @@
-[]
+[
+  {
+    "observation_id": "a-evolve-harness-updating-2026",
+    "function": "S4",
+    "benchmark_id": "a-evolve-harness-evolution",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "canonical-native-system",
+    "canonical_harness_id": "a-evolve",
+    "canonical_assessment_ref": "assessments/a-evolve.md",
+    "canonical_system_eligible": true,
+    "system_compatibility": "native-system",
+    "canonical_review_revision": "18ba996dac9843f2759b2cdf8a94022f58fbfeb9",
+    "source_artifact_revision": "96ed93ba7ee0b9519fc55c963afb47a1975eb1ae",
+    "publication_id": "arXiv:2605.30621",
+    "publication_date": "2026-05-28",
+    "comparison_class": "controlled-within-system-evolver-study",
+    "benchmarks": [
+      "SWE-bench Verified",
+      "MCP-Atlas",
+      "SkillsBench"
+    ],
+    "anchor_agents": [
+      "Claude Opus 4.6",
+      "Claude Sonnet 4.6",
+      "Qwen3-235B-A22B"
+    ],
+    "evolver_models": [
+      "Claude Opus 4.6",
+      "Claude Sonnet 4.6",
+      "Claude Haiku 4.5",
+      "Qwen3-235B-A22B",
+      "Qwen3-32B",
+      "GPT-OSS-120B",
+      "Qwen3.5-9B"
+    ],
+    "ordinary_s4_boundary": "Within each measured agent-evolver pairing, the solve/evolve protocol, evolver prompt template, trajectory window and evolver backbone are fixed while the declared target harness is updated from execution evidence. The target is skills on SWE-bench Verified and SkillsBench, and skills/prompts/memories on MCP-Atlas; the S4 regulator itself is not the adaptation target.",
+    "adaptation_target_by_benchmark": {
+      "SWE-bench Verified": [
+        "skills"
+      ],
+      "MCP-Atlas": [
+        "skills",
+        "prompts",
+        "memories"
+      ],
+      "SkillsBench": [
+        "skills"
+      ]
+    },
+    "adaptation_loop": [
+      "operational agent executes the next task batch under the current harness",
+      "execution trajectories and outputs become evidence for the A-Evolve evolver",
+      "the fixed evolver procedure proposes and applies a persistent harness update",
+      "the updated harness becomes the next agent state",
+      "later task execution measures whether the changed persistent capability is useful"
+    ],
+    "reported_harness_updating_metrics": {
+      "maximum_best_vs_worst_evolver_spread_pp": 3.1,
+      "qwen3_235b_swe_gain_pp": 8.2,
+      "qwen3_235b_mcp_gain_pp": 0.6,
+      "qwen3_5_9b_skillsbench_gain_pp": 3.8,
+      "opus_4_6_skillsbench_gain_pp": 2.3,
+      "qwen3_235b_skillsbench_gain_pp": 1.5
+    },
+    "metric_note": "The publication defines harness-updating capability as mean pairwise evolution gain across fixed anchor agents and reports pass-rate gains in percentage points. These values are preserved as a vector of reported observations, not collapsed into a global S4 score.",
+    "comparison_scope_note": "This is direct quantitative capability evidence for one canonical native S4 system across three task domains and several evolver backbones. It is not a matched cross-harness S4 comparison and does not close the primary-baseline gap.",
+    "provenance_limitation": "The reported experimental runs come from the first-party harness-evolution release lineage at 96ed93ba7ee0b9519fc55c963afb47a1975eb1ae. That release lineage and canonical review ref 18ba996dac9843f2759b2cdf8a94022f58fbfeb9 diverge in Git history. The canonical review ref nevertheless contains the first-party harness-disentangling artifact and UnifiedEngine port implementing the published Exp0/Exp1 protocol. Preserve the result as first-party-reported historical evidence; it is not independently reproduced at the canonical review revision.",
+    "vsm_interpretation": "The canonical assessment independently establishes A-Evolve S4=A without using benchmark gains. The published first-party protocol then directly exercises the same organizational function: external task execution evidence is interpreted by the evolver into persistent harness changes that alter later operation while the adaptation regulator remains fixed within each measured run. This therefore supplies the first canonical native direct S4 capability observation, but one system is insufficient for a matched cross-harness primary baseline.",
+    "primary_sources": [
+      "https://arxiv.org/abs/2605.30621",
+      "https://github.com/A-EVO-Lab/a-evolve/tree/96ed93ba7ee0b9519fc55c963afb47a1975eb1ae",
+      "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/examples/harness-disentangling/README.md",
+      "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/algorithms/unified/engine.py"
+    ]
+  }
+]

@@ -4,7 +4,7 @@
   "function": "S4",
   "direct_benchmark_family_count": 4,
   "composed_direct_observation_count": 4,
-  "canonical_direct_observation_count": 0,
+  "canonical_direct_observation_count": 1,
   "proxy_observation_count": 5,
   "proxy_systems_observed": [
     "codex",
@@ -32,8 +32,9 @@
         "https://github.com/A-EVO-Lab/a-evolve/tree/96ed93ba7ee0b9519fc55c963afb47a1975eb1ae",
         "https://arxiv.org/abs/2605.30621"
       ],
-      "finding": "A-Evolve converts task execution evidence into persistent harness updates and evaluates later harness benefit, directly exercising S4 at its benchmark-defined evolving-system boundary. The evolver is benchmark-supplied rather than a canonical harness's native S4 path.",
-      "admitted_to_canonical_registry": false
+      "finding": "A-Evolve converts task execution evidence into persistent harness updates and evaluates later harness benefit, directly exercising S4 at its benchmark-defined evolving-system boundary. The original family review stored this as composed evidence before A-Evolve had a canonical assessment; after canonical admission #515, a separate first-party-reported canonical observation links the same first-party evolution organization to canonical A-Evolve S4=A without rewriting this historical family record.",
+      "admitted_to_canonical_registry": false,
+      "canonical_followup_observation_id": "a-evolve-harness-updating-2026"
     },
     {
       "case_id": "skillevolbench-direct-composed",
@@ -234,7 +235,8 @@
     "super-agent",
     "bossconsole",
     "exo",
-    "agentyou"
+    "agentyou",
+    "a-evolve"
   ],
   "canonical_states_at_review": {
     "headcount": "A",
@@ -244,7 +246,8 @@
     "super-agent": "A",
     "bossconsole": "A(P)",
     "exo": "A(P)",
-    "agentyou": "C"
+    "agentyou": "C",
+    "a-evolve": "A"
   },
   "capability_dimensions": [
     "external-or-future-distinction-sensing",
