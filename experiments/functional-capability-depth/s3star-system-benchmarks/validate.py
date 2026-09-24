@@ -15,14 +15,20 @@ COVERAGE = HERE / "coverage.json"
 BENCHMARK_OBSERVATIONS = HERE / "benchmark_observations.json"
 CANONICAL_OBSERVATIONS = HERE / "canonical_observations.json"
 
-DIRECT_S3STAR = {"truecall-runtime-verification", "swe-review", "harness-bench-adversarial-review"}
+COMPOSED_DIRECT_S3STAR = {"truecall-runtime-verification", "swe-review", "harness-bench-adversarial-review"}
+DIRECT_S3STAR = COMPOSED_DIRECT_S3STAR | {"appliedscientist-iterative-review"}
 EXPECTED_OBSERVATION_IDS = {
     "truecall-tau2-retail-silent-failure-2026-06",
     "swe-review-generate-review-revise-2026-07",
     "harness-bench-pilot4-review-revise-reverify-2026-07",
 }
+CANONICAL_OBSERVATION_ID = "appliedscientist-iterative-review-2026-09"
+CANONICAL_DIRECT_HARNESS = "appliedscientist"
+CANONICAL_REVIEW_REF = "762824fd41598370e75588861b48991b0a9fd784"
+
 COVERAGE_CLASSES = {
     "direct-composed",
+    "direct-native",
     "native-proxy",
     "external-wrapper-not-native",
     "proxy-scaffolded",
@@ -50,6 +56,7 @@ REQUIRED_CASE_IDS = {
     "thclaws-team-audit-native-no-direct-results",
     "reigen-verification-native-no-direct-results",
     "redteam-adversarial-review-native-no-direct-results",
+    "appliedscientist-native-s3star-direct",
 }
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
@@ -80,6 +87,80 @@ def assessment_fields(harness_id: str) -> dict[str, str]:
         fields[key.strip()] = value.strip()
     return fields
 
+
+def validate_canonical_observation(observation: dict) -> None:
+    if observation.get("observation_id") != CANONICAL_OBSERVATION_ID:
+        fail("unexpected canonical direct S3* observation_id")
+    if observation.get("function") != "S3*":
+        fail("canonical observation function must be S3*")
+    if observation.get("benchmark_id") != "appliedscientist-iterative-review":
+        fail("AppliedScientist canonical observation benchmark linkage drift")
+    if observation.get("benchmark_fit") != "direct":
+        fail("AppliedScientist canonical observation must remain direct")
+    if observation.get("evidence_source_class") != "first-party-reported":
+        fail("AppliedScientist result must remain first-party-reported")
+    if observation.get("boundary_class") != "canonical-native-system":
+        fail("AppliedScientist observation must retain canonical-native-system boundary")
+    if observation.get("canonical_harness_id") != CANONICAL_DIRECT_HARNESS:
+        fail("AppliedScientist canonical_harness_id drift")
+    if observation.get("canonical_system_eligible") is not True:
+        fail("AppliedScientist observation must remain canonical-system eligible")
+    if observation.get("system_compatibility") != "native-system":
+        fail("AppliedScientist observation must remain native-system")
+    if observation.get("canonical_review_revision") != CANONICAL_REVIEW_REF:
+        fail("AppliedScientist canonical review ref drift")
+
+    fields = assessment_fields(CANONICAL_DIRECT_HARNESS)
+    if fields.get("status") != "included":
+        fail("AppliedScientist canonical assessment must remain included")
+    if fields.get("autonomy_s3_star") != "A":
+        fail("AppliedScientist no longer establishes canonical S3*=A")
+    if fields.get("review_ref") != CANONICAL_REVIEW_REF:
+        fail("AppliedScientist assessment review_ref drift")
+
+    expected_counts = {
+        "paper_count": 30,
+        "rejected_paper_count": 25,
+        "borderline_paper_count": 5,
+        "revision_rounds": 5,
+        "reported_execution_weaknesses_total": 150,
+        "reported_execution_weaknesses_resolved": 128,
+        "reported_idea_weaknesses_total": 18,
+        "reported_idea_weaknesses_resolved": 2,
+    }
+    for field, expected in expected_counts.items():
+        if observation.get(field) != expected:
+            fail(f"AppliedScientist reported field drift: {field}")
+    if observation.get("reported_execution_weakness_resolution_rate") != 0.853:
+        fail("AppliedScientist execution-weakness resolution-rate drift")
+    if observation.get("reported_idea_weakness_resolution_rate") != 0.111:
+        fail("AppliedScientist idea-weakness resolution-rate drift")
+    if observation.get("comparison_class") != "within-system-guidance-comparison":
+        fail("AppliedScientist comparison class drift")
+
+    audit_loop = observation.get("audit_loop")
+    if not isinstance(audit_loop, list) or len(audit_loop) < 6:
+        fail("AppliedScientist observation must preserve the full review-correct-re-review loop")
+    loop_text = " ".join(audit_loop)
+    for phrase in ("fresh Reviewer", "feedback becomes guidance", "submitted to another fresh independent review"):
+        if phrase not in loop_text:
+            fail(f"AppliedScientist audit-loop closure drift: {phrase}")
+
+    limitation = observation.get("provenance_limitation")
+    if not isinstance(limitation, str) or CANONICAL_REVIEW_REF not in limitation:
+        fail("AppliedScientist provenance limitation must retain the pinned review ref")
+    if "not independently reproduced" not in limitation:
+        fail("AppliedScientist provenance limitation must preserve non-reproduction boundary")
+    if "does not expose an explicit repository URL" not in limitation:
+        fail("AppliedScientist publication/repository binding caveat must remain explicit")
+
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(s) for s in sources):
+        fail("AppliedScientist observation requires publication plus pinned first-party code sources")
+    if "https://arxiv.org/abs/2609.14738" not in sources:
+        fail("AppliedScientist observation must retain the publication source")
+    if not any(CANONICAL_REVIEW_REF in source for source in sources if "github.com" in source):
+        fail("AppliedScientist observation must retain pinned repository evidence")
 
 def main() -> None:
     benchmark_map = json.loads(MAP.read_text(encoding="utf-8"))
@@ -112,8 +193,9 @@ def main() -> None:
     if coverage.get("canonical_direct_observation_count") != len(canonical_observations):
         fail("canonical_direct_observation_count mismatch")
 
-    if canonical_observations:
-        fail("canonical direct S3* observation registry is expected to remain empty")
+    if len(canonical_observations) != 1:
+        fail("expected exactly one canonical direct S3* observation")
+    validate_canonical_observation(canonical_observations[0])
 
     declared_classes = set(coverage.get("coverage_classes", []))
     if declared_classes != COVERAGE_CLASSES:
@@ -155,8 +237,8 @@ def main() -> None:
 
     if observation_ids != EXPECTED_OBSERVATION_IDS:
         fail(f"unexpected composed S3* observation set: {sorted(observation_ids)}")
-    if observed_families != DIRECT_S3STAR:
-        fail("composed S3* observations must cover every reviewed direct family")
+    if observed_families != COMPOSED_DIRECT_S3STAR:
+        fail("composed S3* observations must cover exactly the reviewed composed direct families")
 
     truecall = observations_by_id["truecall-tau2-retail-silent-failure-2026-06"]
     if truecall.get("benchmark_id") != "truecall-runtime-verification":
@@ -232,8 +314,11 @@ def main() -> None:
             fail(f"{case_id}: invalid coverage_class")
         if case.get("system_compatibility") not in SYSTEM_COMPATIBILITY:
             fail(f"{case_id}: invalid system_compatibility")
-        if case.get("admitted_to_canonical_registry") is not False:
-            fail(f"{case_id}: coverage case must remain non-admitted")
+        if coverage_class == "direct-native":
+            if case.get("admitted_to_canonical_registry") is not True:
+                fail(f"{case_id}: direct-native coverage must be admitted")
+        elif case.get("admitted_to_canonical_registry") is not False:
+            fail(f"{case_id}: non-direct-native coverage case must remain non-admitted")
         if not isinstance(case.get("finding"), str) or len(case["finding"].strip()) < 40:
             fail(f"{case_id}: explicit finding required")
         sources = case.get("primary_sources")
@@ -270,6 +355,18 @@ def main() -> None:
             fail(f"{case_id}: direct composed system compatibility drift")
         if case.get("canonical_harness_id") is not None:
             fail(f"{case_id}: direct composed evidence must not claim canonical harness ownership")
+
+    direct_native = by_id["appliedscientist-native-s3star-direct"]
+    if direct_native.get("benchmark_fit") != "direct":
+        fail("AppliedScientist native S3* case must remain direct")
+    if direct_native.get("coverage_class") != "direct-native":
+        fail("AppliedScientist native S3* coverage class drift")
+    if direct_native.get("system_compatibility") != "native-system":
+        fail("AppliedScientist direct S3* case must remain native-system")
+    if direct_native.get("canonical_harness_id") != CANONICAL_DIRECT_HARNESS:
+        fail("AppliedScientist direct S3* canonical linkage drift")
+    if direct_native.get("observation_ref") != f"canonical_observations.json#{CANONICAL_OBSERVATION_ID}":
+        fail("AppliedScientist direct S3* observation_ref drift")
 
     pawbench = by_id["pawbench-self-verification-label-not-s3star"]
     if pawbench.get("coverage_class") != "capability-label-not-s3star":
