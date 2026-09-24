@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 547,
+  "reviewed_at": "2026-09-24",
+  "refines_preflight": "public-polybench-paper-controls.json",
+  "candidate_cell_id": "adaptive-auto-harness-polybench-continual-harness-linkage-v3",
+  "preflight_disposition": "blocked",
+  "execution_authorized": false,
+  "primary_baseline_after_preflight": "gap",
+  "evidence_mode": "public-results-only",
+  "paper_row": {
+    "paper": "https://arxiv.org/abs/2606.01770",
+    "reported_method_label": "Continual Harness",
+    "benchmark": "PolyBench",
+    "paper_level_solver_policy": "Claude Sonnet 4.6 for all experiments unless specified",
+    "paper_level_evolver_policy": "Claude Opus 4.6",
+    "paper_level_solver_temperature": 0.0,
+    "paper_level_evolver_temperature": 0.0,
+    "paper_level_polybench_batch_size": 100,
+    "paper_level_common_chronological_order": true,
+    "paper_level_common_temporal_reveal": true
+  },
+  "canonical_candidate": {
+    "harness_id": "continual-harness",
+    "repository": "https://github.com/sethkarten/continual-harness",
+    "assessment_ref": "assessments/continual-harness.md",
+    "review_revision": "bbab97ad73e460b7cd7c08527d10ced30cc03fbe",
+    "status": "included",
+    "s4_state": "A",
+    "catalog_position": 235
+  },
+  "provenance_search": {
+    "adaptive_harness_public_mirror_revision": "c1ea7d60c009519f5c037f7db9d47e97063bb353",
+    "a_evolve_public_pr_revision": "e4f70b949989e0abf08532e8223cb9eab447e971",
+    "continual_upstream_polybench_reference_found": false,
+    "continual_upstream_adaptive_auto_harness_reference_found": false,
+    "continual_upstream_a_evolve_reference_found": false,
+    "continual_baseline_path_found_in_inspected_a_evolve_pr_tree": false,
+    "comparison_result_artifacts_committed_in_public_release": false
+  },
+  "gates": [
+    {
+      "gate_id": "paper-level-comparison-controls",
+      "status": "satisfied",
+      "finding": "Historical #538 already establishes a common paper-level task stream, solver/evolver policy, zero temperatures, PolyBench batch loop and common result surface for the named auto-harness comparison rows.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770",
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/public-polybench-paper-controls.json"
+      ]
+    },
+    {
+      "gate_id": "canonical-continual-system-identity",
+      "status": "satisfied",
+      "finding": "The Index now independently includes sethkarten/continual-harness at review revision bbab97ad73e460b7cd7c08527d10ced30cc03fbe as canonical catalog position 235, so a separately assessed candidate system exists for the paper's Continual Harness method-family label.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/continual-harness.md",
+        "https://github.com/sethkarten/continual-harness/tree/bbab97ad73e460b7cd7c08527d10ced30cc03fbe"
+      ]
+    },
+    {
+      "gate_id": "canonical-continual-s4-ownership",
+      "status": "satisfied",
+      "finding": "The standalone assessment independently establishes S4=A for the continuing PokeAgent plus HarnessEvolver organization from runtime evidence; benchmark performance was excluded from that ownership classification.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/continual-harness.md"
+      ]
+    },
+    {
+      "gate_id": "evaluated-row-implementation-binding",
+      "status": "blocked",
+      "finding": "Public evidence does not bind the Adaptive Auto-Harness paper's Continual Harness result row to the canonical sethkarten/continual-harness implementation or any immutable evaluated adapter revision. The upstream Continual Harness repository exposes no PolyBench, Adaptive Auto-Harness or A-Evolve binding; the released AdaptiveHarness artifact omits the comparison implementation and result artifacts; and the inspected public A-Evolve pre-release tree at e4f70b949989e0abf08532e8223cb9eab447e971 contains no continual_harness or continual implementation path.",
+      "blocking_effect": "Do not admit the paper row as canonical Continual Harness S4 capability evidence until primary evidence binds the reported row to an immutable native or adapter-preserved implementation revision.",
+      "primary_sources": [
+        "https://github.com/sethkarten/continual-harness/tree/bbab97ad73e460b7cd7c08527d10ced30cc03fbe",
+        "https://github.com/A-EVO-Lab/AdaptiveHarness/blob/c1ea7d60c009519f5c037f7db9d47e97063bb353/agent_evolve/algorithms/__init__.py",
+        "https://github.com/A-EVO-Lab/a-evolve/tree/e4f70b949989e0abf08532e8223cb9eab447e971/agent_evolve/algorithms"
+      ]
+    },
+    {
+      "gate_id": "immutable-evaluated-revision-binding",
+      "status": "not_reached",
+      "finding": "The canonical upstream review revision is known, but the revision or package snapshot that actually produced the paper's Continual Harness PolyBench row remains unverified because the evaluated implementation binding is absent.",
+      "primary_sources": [
+        "https://arxiv.org/abs/2606.01770",
+        "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/continual-harness.md"
+      ]
+    },
+    {
+      "gate_id": "native-s4-path-in-evaluated-row",
+      "status": "not_reached",
+      "finding": "Canonical Continual Harness owns a native reset-free S4 path, but public evidence does not yet prove that the paper's PolyBench row exercised that exact path rather than a benchmark-local approximation or reimplementation.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/continual-harness.md",
+        "https://arxiv.org/abs/2606.01770"
+      ]
+    },
+    {
+      "gate_id": "matched-canonical-s4-cell",
+      "status": "not_reached",
+      "finding": "A common paper-level experimental membrane and canonical S4 ownership are both present, but they cannot be joined into a matched canonical cell until the evaluated Continual Harness row is bound to an immutable native or adapter-preserved implementation.",
+      "primary_sources": [
+        "https://github.com/opensiro/vsm-harness-index/blob/main/experiments/functional-capability-depth/BASELINE.md"
+      ]
+    }
+  ],
+  "results": null,
+  "non_claim": "This refinement establishes an independently assessed canonical S4 candidate behind the Continual Harness method-family name, but it does not claim that the Adaptive Auto-Harness paper row executed that repository revision, does not convert name similarity into capability attribution, does not rank systems, and does not promote the S4 primary baseline from gap."
+}
