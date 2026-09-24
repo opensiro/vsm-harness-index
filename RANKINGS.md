@@ -149,6 +149,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="opensre"></a>[OpenSRE](https://github.com/Tracer-Cloud/opensre) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="yylo"></a>[YYLO](https://github.com/yylo-dev/yylo) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="openclaw"></a>[OpenClaw](https://github.com/openclaw/openclaw) | 2025-Q4 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
+| 6 | <a id="go-agent"></a>[go-agent](https://github.com/Protocol-Lattice/go-agent) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentrl"></a>[AgentRL](https://github.com/THUDM/AgentRL) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="shannon"></a>[Shannon](https://github.com/Kocoro-lab/Shannon) | 2025-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="youtu-agent"></a>[Youtu-Agent](https://github.com/TencentCloudADP/youtu-agent) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |

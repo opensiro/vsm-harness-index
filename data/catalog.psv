@@ -250,3 +250,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 235|continual-harness|Continual Harness|https://github.com/sethkarten/continual-harness|2025-07-08T00:55:50Z|index-addition|bbab97ad73e460b7cd7c08527d10ced30cc03fbe|2026-09-24
 236|argus-agent|Argus|https://github.com/microsoft/ArgusAgent|2026-08-05T02:20:20Z|index-addition|746f76b7a74a1217507c9ee348eecd3b782f7c92|2026-09-24
 237|agentos|AgentOS|https://github.com/framerslab/agentos|2025-10-28T04:35:14Z|index-addition|1e9921837385b8218774955b699d949c233e52ea|2026-09-25
+238|go-agent|go-agent|https://github.com/Protocol-Lattice/go-agent|2025-10-13T08:28:36Z|index-addition|ddfec8630783306b4ecb5ffd37519595384f8d15|2026-09-25
