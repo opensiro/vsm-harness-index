@@ -4,9 +4,10 @@
   "function": "S5",
   "direct_family_count": 1,
   "composed_direct_observation_count": 1,
-  "canonical_direct_observation_count": 0,
+  "canonical_direct_observation_count": 1,
   "coverage_classes": [
     "direct-composed",
+    "direct-canonical",
     "proxy",
     "unsuitable",
     "protocol-not-benchmark",
@@ -29,6 +30,25 @@
       ],
       "finding": "At the benchmark-defined society boundary, a fatal resource wall creates an identity/membership tension; agents author executable laws, current members ratify valid proposals by majority vote, agent.active = False expels a member, and later rounds continue after the enacted membership change. This is direct S5 identity-policy evidence for the composed benchmark society. The sandbox, voting mechanics, physics and API remain benchmark-scaffolded constraints, and no canonical harness receives native S5 credit by association.",
       "admitted_to_canonical_registry": false
+    },
+    {
+      "case_id": "ouroboros-parent-governed-policy-change-direct-canonical",
+      "artifact": "Ouroboros PR #855 constitutional/runtime policy enactment",
+      "benchmark_fit": "direct",
+      "classification": "direct-canonical",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "ouroboros",
+      "canonical_review_revision": "86806ee123ce8e26cc063cc1a618f975eea64f26",
+      "ownership_mode_observed": "parent-governed",
+      "comparison_class": "descriptive-only",
+      "primary_sources": [
+        "https://github.com/razzant/ouroboros/commit/25fbd3615a97e6ec3277c470eac9862d448aee10",
+        "https://github.com/razzant/ouroboros/pull/855",
+        "https://github.com/razzant/ouroboros/blob/86806ee123ce8e26cc063cc1a618f975eea64f26/BIBLE.md",
+        "https://github.com/razzant/ouroboros/blob/86806ee123ce8e26cc063cc1a618f975eea64f26/ouroboros/runtime_mode_policy.py",
+        "https://github.com/razzant/ouroboros/blob/86806ee123ce8e26cc063cc1a618f975eea64f26/ouroboros/config.py"
+      ],
+      "finding": "Canonical Ouroboros S5=A(P) independently establishes review/configuration posture as an ultimate-policy surface. In PR #855, the ouroboros-agent account authors a constitutional/runtime change in explicitly owner-selected work; repository owner razzant merges it, changing Cyber Pro internal review/configuration authority in BIBLE.md and executable runtime code. The merge remains an ancestor of the later canonical review revision, where the executable policy persists. This is a direct descriptive parent-governed S5 observation for canonical Ouroboros, not evidence that autonomous Cyber Pro independently chose the change and not a matched cross-harness primary."
     },
     {
       "case_id": "agentgovbench-enforcement-not-authority",
@@ -161,7 +181,7 @@
     {
       "harness_id": "ouroboros",
       "expected_state": "A(P)",
-      "benchmark_status": "candidate-native-no-direct-results"
+      "benchmark_status": "direct-native-descriptive-observation"
     },
     {
       "harness_id": "thclaws",

@@ -13,7 +13,7 @@ This view reports baseline availability and evidence coverage only. It does not 
 | S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 8 reviewed cases · direct families: `3` · direct observations: `1` |
 | S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 16 reviewed cases · direct families: `5` · canonical direct observations: `2` · composed direct observations: `3` |
 | S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 14 reviewed cases · direct families: `4` · canonical direct observations: `2` · composed direct observations: `4` |
-| S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 13 reviewed cases · direct families: `1` · canonical direct observations: `0` · composed direct observations: `1` |
+| S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 14 reviewed cases · direct families: `1` · canonical direct observations: `1` · composed direct observations: `1` |
 
 A `gap` means that no matched canonical-harness primary baseline has been selected for that function. It is not a zero capability score and it does not mean benchmark evidence is absent.
 
@@ -45,7 +45,7 @@ Evidence search: [`s4-system-benchmarks/coverage.json`](s4-system-benchmarks/cov
 
 ### S5
 
-Reviewed direct S5 evidence now includes GovSim-SelfGovern's benchmark-scaffolded membership/identity authority path, but public evidence still provides no canonical native direct S5 observation and no materially matched comparison of native or adapter-preserved S5 implementations across multiple canonical harnesses.
+Reviewed direct S5 evidence now includes GovSim-SelfGovern's benchmark-scaffolded membership/identity authority path and one canonical native descriptive observation: Ouroboros PR #855 supplies a parent-governed constitutional/runtime policy-change witness with executable return and persistence into later canonical lineage. Public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface.
 
 Evidence search: [`s5-system-benchmarks/coverage.json`](s5-system-benchmarks/coverage.json).
 

@@ -7,10 +7,10 @@
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
   "evidence_depth": {
-    "reviewed_cases": 13,
+    "reviewed_cases": 14,
     "direct_benchmark_families": 1,
     "composed_direct_observations": 1,
-    "canonical_direct_observations": 0,
+    "canonical_direct_observations": 1,
     "representative_canonical_s5_systems": 5
   },
   "required_direct_chain": [
@@ -27,6 +27,12 @@
       "status": "direct-composed-not-canonical-primary",
       "examples": ["GovSim-SelfGovern"],
       "blocking_reason": "GovSim-SelfGovern directly exercises legitimate membership/identity authority at its benchmark-defined society boundary, but the organization is benchmark-scaffolded and supplies no canonical native or adapter-preserved cross-harness S5 comparison."
+    },
+    {
+      "route_id": "canonical-native-parent-governed-policy-change",
+      "status": "single-system-descriptive-only",
+      "examples": ["Ouroboros PR #855"],
+      "blocking_reason": "Canonical Ouroboros now supplies a direct descriptive parent-governed S5 policy-change witness with executable return and later-lineage persistence, but one system and one repository-history surface cannot form a materially matched cross-harness primary."
     },
     {
       "route_id": "fixed-policy-enforcement-and-governance",
@@ -65,17 +71,17 @@
       "blocking_reason": "Policy adaptation is measurable, but the evaluated system is not established as the legitimate ultimate organizational authority resolving an identity-level tension."
     }
   ],
-  "closure_claim": "Current public evidence now contains one direct composed S5 benchmark family and observation: GovSim-SelfGovern exercises legitimate membership/identity authority through ratification, enactment, boundary change and subsequent operation at a benchmark-defined society boundary. The S5 primary remains a gap because there is still no canonical native direct S5 observation and no materially matched comparison of multiple canonical native or adapter-preserved S5 implementations.",
+  "closure_claim": "Current public evidence contains one direct composed S5 benchmark family/observation and one canonical native direct descriptive observation. GovSim-SelfGovern exercises benchmark-scaffolded membership/identity authority, while canonical Ouroboros supplies a parent-governed constitutional/runtime policy-change witness with executable return and persistence into later canonical lineage. The S5 primary remains a gap because public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface.",
   "reopen_when": [
-    "a canonical S5 system publishes an immutable native or adapter-preserved direct result satisfying the full S5 chain",
+    "a second canonical native or adapter-preserved direct S5 observation appears under a materially comparable authority/change/subsequent-operation surface",
     "a materially matched benchmark compares two or more canonical-linkable S5 systems under the same authority/change/subsequent-operation protocol",
     "GovSim-SelfGovern or another direct family publishes adapter-preserved canonical harness rows with recoverable model/configuration provenance suitable for a matched primary cell"
   ],
   "do_not_reopen_for": [
     "another benchmark-scaffolded direct S5 family without canonical native or adapter-preserved linkage",
+    "another heterogeneous single-system descriptive policy-change witness that cannot be materially compared with an existing canonical observation",
     "fixed-policy adherence, filtering or enforcement benchmarks",
-    "external public-policy analysis or value-expression tasks",
-    "governance mechanism unit tests, protocols or live constitutional history without a reusable harness capability benchmark"
+    "external public-policy analysis, value-expression tasks, governance mechanism unit tests or protocols without direct organizational authority/change closure"
   ],
-  "non_claim": "This closure is not a zero S5 capability score and does not attribute GovSim-SelfGovern's benchmark-scaffolded S5 organization to any canonical harness or underlying model. It freezes the current primary-baseline gap until materially new canonical native or matched evidence appears."
+  "non_claim": "This closure is not a zero S5 capability score, does not attribute GovSim-SelfGovern's benchmark-scaffolded S5 organization to an underlying model, and does not treat Ouroboros PR #855 as evidence that autonomous Cyber Pro independently chose the policy change. It preserves the primary gap until materially matched multi-canonical evidence appears."
 }

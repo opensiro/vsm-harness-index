@@ -59,6 +59,7 @@ routes = {route["route_id"]: route["status"] for route in closure["reviewed_rout
 require(
     routes == {
         "direct-composed-membership-authority": "direct-composed-not-canonical-primary",
+        "canonical-native-parent-governed-policy-change": "single-system-descriptive-only",
         "fixed-policy-enforcement-and-governance": "not-direct-s5",
         "value-and-policy-reasoning-proxies": "proxy",
         "live-constitutional-governance-processes": "process-not-harness-benchmark",
@@ -72,6 +73,7 @@ require(
 case_ids = {case["case_id"] for case in coverage["cases"]}
 for required_case in {
     "govsim-selfgovern-membership-authority-direct-composed",
+    "ouroboros-parent-governed-policy-change-direct-canonical",
     "agentgovbench-enforcement-not-authority",
     "agent-parliament-ratified-amendment-process",
     "hem-parent-escalation-protocol",
@@ -86,13 +88,25 @@ require(
     benchmark_observations[0]["benchmark_id"] == "govsim-selfgovern",
     "S5 closure direct composed observation drift",
 )
-require(canonical_observations == [], "S5 closure must retain zero canonical direct observations")
+require(len(canonical_observations) == 1, "S5 closure expects one canonical direct observation")
+require(
+    canonical_observations[0]["canonical_harness_id"] == "ouroboros",
+    "S5 closure canonical observation identity drift",
+)
+require(
+    canonical_observations[0]["ownership_mode_observed"] == "parent-governed",
+    "S5 closure must keep Ouroboros observation limited to parent-governed mode",
+)
+require(
+    canonical_observations[0]["comparison_class"] == "descriptive-only",
+    "S5 closure must keep Ouroboros observation descriptive-only",
+)
 
 s5_baseline = baselines["functions"]["S5"]
-require(s5_baseline["status"] == "gap", "S5 primary was selected without reopening closure")
+require(s5_baseline["status"] == "gap", "S5 primary was selected without matched multi-canonical evidence")
 require(
     [row["benchmark_id"] for row in s5_baseline["reviewed_direct_families"]] == ["govsim-selfgovern"],
-    "S5 gap metadata lost GovSim-SelfGovern",
+    "S5 gap metadata lost GovSim-SelfGovern benchmark-family identity",
 )
 require(len(closure["reopen_when"]) >= 3, "S5 closure must retain explicit reopen conditions")
 require(len(closure["do_not_reopen_for"]) >= 3, "S5 closure must retain anti-churn conditions")

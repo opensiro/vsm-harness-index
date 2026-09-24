@@ -2,21 +2,26 @@
 
 Status: experimental, non-normative.  
 Tracking issue: #569  
-Current-state update: #472  
+Current-state updates: #472, #580  
 Scope: current public evidence reviewed through 2026-09-25.
 
 ## Result
 
 ```text
-reviewed S5-relevant artifacts           13
+reviewed S5-relevant artifacts           14
 direct S5 benchmark families             1
 composed direct S5 observations          1
-canonical direct S5 observations         0
+canonical direct S5 observations         1
 matched canonical S5 primary             not available
 S5 primary baseline                      gap
 ```
 
-GovSim-SelfGovern closes the previous direct-family hole at its **benchmark-defined society boundary**. It does not close the canonical matched-primary gap.
+The evidence search has now crossed two distinct thresholds:
+
+1. GovSim-SelfGovern closes the direct benchmark-family hole at a benchmark-defined society boundary.
+2. Ouroboros PR #855 closes the zero-canonical-observation hole with a descriptive parent-governed policy-change witness.
+
+The matched canonical-primary hole remains open.
 
 ## Direct criterion
 
@@ -42,97 +47,87 @@ For a primary baseline, the result must additionally support a materially matche
 
 Primary source: `arXiv:2609.22600v1`.
 
-The benchmark defines a five-agent society that authors executable Python laws, receives sandbox validation, votes on valid proposals and executes enacted laws. The S5 witness is specifically the **membership/identity authority path**, not legislation in general:
+GovSim-SelfGovern defines a five-agent society that authors executable laws, receives sandbox validation, votes on valid proposals and executes enacted laws. Its direct S5 witness is the membership/identity path: current members can ratify an executable law that sets `agent.active = False`, thereby expelling a member and changing the active system boundary before subsequent rounds continue.
+
+Published pooled results report 8/460 enacted exile proposals (1.7%) in non-thinking runs and 31/122 (25.4%) in thinking runs. The observation remains `benchmark-scaffolded`; no underlying model or canonical harness inherits native S5 capability by association.
+
+## Direct canonical evidence — Ouroboros parent-governed policy change
+
+Canonical anchor:
 
 ```text
-fatal resource wall / membership tension
-        ↓
-agent-authored executable membership law
-        ↓
-sandbox validation against benchmark constraints
-        ↓
-majority vote by current active members
-        ↓
-enactment
-        ↓
-agent.active = False
-        ↓
-member expelled / active system boundary changes
-        ↓
-subsequent rounds continue after the decision
+razzant/ouroboros
+review ref: 86806ee123ce8e26cc063cc1a618f975eea64f26
+canonical S5 state: A(P)
+observed ownership mode: parent-governed
+comparison class: descriptive-only
 ```
 
-The paper explicitly defines `agent.active = False` as exile, executes passed laws before later round activity, and reports enacted exile outcomes. Across pooled non-thinking runs, 8 of 460 exile proposals pass (1.7%); in thinking runs, 31 of 122 pass (25.4%). The paper also reports that intact survival in fatal-scarcity runs is concentrated among runs that reduce membership early.
+The canonical assessment independently identifies Constitution/identity/settings authority as S5 and distinguishes autonomous Cyber Pro authority from ordinary parent-governed authority. Capability evidence does not create that ownership state.
 
-This is direct S5 evidence for the **composed benchmark society** because legitimate current-member authority actually changes membership/identity and returns that decision into operation.
+The admitted observation is deliberately limited to the parent-governed path:
 
-It remains `benchmark-scaffolded` because the sandbox, voting mechanics, physics and constrained API are part of the benchmark/evaluation membrane. No underlying model, unrelated GovSim repository, or canonical Index harness inherits native S5 ownership/capability by association. No authoritative public code revision for GovSim-SelfGovern was recovered in this review.
+```text
+ultimate internal review/configuration authority question
+        ↓
+agent-authored constitutional/runtime proposal
+        ↓
+explicit owner-selected issue work
+        ↓
+repository owner razzant merges PR #855
+        ↓
+BIBLE.md + executable runtime policy change
+        ↓
+Cyber Pro review/configuration authority changes in first-party code
+        ↓
+merge persists into later canonical lineage and subsequent operation
+```
 
-Catch caps, penalties, taxation, treasury disbursement and other operational laws are not credited as S5 merely because they are legislated. The paper's broader G1 ICS improvement (45.0% → 72.5%) mixes governance mechanisms and is not treated as an S5-only effect.
+The constitutional change is preserved in commit `25fbd3615a97e6ec3277c470eac9862d448aee10`. PR #855 is authored from the `ouroboros-agent` fork, explicitly describes the sprint as owner-selected work, and is merged by repository owner `razzant` as merge commit `dd5aded8fef7884774e2ccba3802f4bf0200d124`.
+
+The PR changes executable authority paths as well as documentation:
+
+- `runtime_mode_policy.py` gives Cyber Pro unrestricted internal action authority while preserving independent findings as evidence;
+- `config.py` keeps context/safety lowering owner-only outside Cyber Pro while permitting Cyber Pro to author those settings;
+- `tests/test_review_cyber_authority.py` exercises continuation/commit behavior under failed or pending review without erasing review facts.
+
+The merge commit is an ancestor of canonical review ref `86806ee123ce8e26cc063cc1a618f975eea64f26`; the later revision is 673 commits ahead and retains the executable policy. This supplies the return-to-operation/persistence leg of the S5 chain.
+
+This is **not** evidence that autonomous Cyber Pro independently selected the constitutional change. The legitimate decision/enactment evidence here is parent authority: owner-selected work plus owner merge.
 
 ## Reviewed nearby evidence
 
-### Fixed-policy enforcement/governance
+The coverage layer continues to preserve fixed-policy enforcement/governance, value/policy reasoning proxies, live constitutional-process evidence, parent-escalation protocols, native constitutional mechanisms and constitution-optimization evidence separately from direct observations.
 
-AgentGovBench and CMAG measure enforcement, propagation, cooperation or governance under policy that already exists. They do not exercise ultimate-policy authority deciding and returning a new policy.
+These categories remain useful but do not become a matched primary merely through S5-shaped vocabulary or mechanism existence.
 
-### Value and policy reasoning proxies
-
-RoleCDE, Agent-ValueBench and GPS-Bench exercise value conflict or policy reasoning, but the evaluated model/harness is not established as the legitimate ultimate authority of its own organization.
-
-### Live governance processes
-
-Agent Parliament provides unusually strong S5-shaped process evidence: public ratification and amendment history, declared legitimate authority, version/hash provenance and an amended constitution entering force. `Constitutional Governance in Metric Spaces` similarly defines an end-to-end amendment process.
-
-These are governance processes/records, not reusable harness capability benchmarks.
-
-### Parent escalation
-
-The Human Escalation Mechanism can support Parent-governed S5 when the escalated issue is identity/ultimate-policy level. It is a protocol, not a benchmark result.
-
-### Native constitutional mechanism
-
-`constitutional-agent-governance` exercises proposer/ratifier separation, tiered authority, formal ratification, constitution-version change, authority-registry mutation and root-authority guards. This is strong mechanism/conformance evidence, but not a reusable matched harness benchmark.
-
-### Constitution optimization
-
-MAC learns structured rule sets and measures task reward under evolving constitutions, but the evaluated organization is not established as the legitimate ultimate authority resolving an identity-level tension. Optimization therefore does not become direct S5 merely because the learned object is called a constitution.
-
-## Representative canonical systems
-
-The coverage record separately tracks canonical systems already known to own S5 in different arrangements, including Headcount, Henterprise, Ouroboros, thClaws and Masters of AI Harness. Their S5 ownership does not manufacture a capability benchmark result.
+## Why the primary gap remains evidence-backed
 
 The separation is now:
 
 ```text
-direct S5 benchmark exists
-        !=
-canonical native direct S5 observation exists
-        !=
-matched canonical S5 primary exists
+direct S5 benchmark family exists          yes
+canonical direct S5 observation exists     yes — one descriptive system
+matched multi-canonical S5 primary exists  no
 ```
 
-GovSim-SelfGovern establishes the first layer only.
-
-## Why the primary gap remains evidence-backed
-
-The current evidence includes a legitimate direct S5 benchmark-defined organization, plus enforcement, values, governance-process, amendment-mechanism, parent-escalation and policy-optimization evidence. What remains absent is a native or adapter-preserved canonical S5 comparison cell.
+Ouroboros provides one canonical native descriptive witness, but there is no second canonical native or adapter-preserved S5 system under a materially comparable authority/change/subsequent-operation surface. GovSim-SelfGovern is direct but benchmark-scaffolded and therefore cannot itself supply the missing canonical comparison row.
 
 The present `gap` therefore means:
 
 > no reviewed public evidence currently supports a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations.
 
-It no longer means that direct S5 benchmark evidence is absent.
+It does not mean direct S5 evidence or canonical direct S5 evidence is absent.
 
 ## Reopen rule
 
-Reopen the primary-baseline decision when public primary evidence supplies one of:
+Reopen the primary-baseline decision when public evidence supplies one of:
 
-1. an immutable canonical native/adapter-preserved direct S5 result satisfying the full authority/change/subsequent-operation chain;
-2. a materially matched benchmark comparing multiple canonical-linkable S5 systems under one authority/change/subsequent-operation protocol;
-3. GovSim-SelfGovern or another direct family exposing adapter-preserved canonical harness rows with sufficient immutable model/configuration provenance for a matched comparison cell.
+1. a second canonical native/adapter-preserved direct S5 observation under a materially comparable authority/change/subsequent-operation surface;
+2. a materially matched benchmark comparing multiple canonical-linkable S5 systems under that chain;
+3. GovSim-SelfGovern or another direct family exposing adapter-preserved canonical rows with sufficient immutable model/configuration provenance for a matched comparison cell.
 
-Do not reopen merely for another benchmark-scaffolded direct S5 family without canonical linkage, fixed-policy adherence/enforcement, external public-policy analysis, value-expression tests, governance mechanism unit tests, protocols or live constitutional history.
+Another heterogeneous single-system policy-change history can increase evidence depth but does not by itself establish a matched primary.
 
 ## Consequence
 
@@ -140,4 +135,4 @@ Do not reopen merely for another benchmark-scaffolded direct S5 family without c
 S5 primary baseline = gap
 ```
 
-This remains an evidence-backed empirical disposition, not a zero S5 capability score and not a reassessment of canonical S5 ownership.
+This remains an evidence-backed empirical disposition, not a zero S5 capability score, not a reassessment of canonical ownership, and not a ranking between `A`, `P`, `A(P)` or other S5 ownership arrangements.
