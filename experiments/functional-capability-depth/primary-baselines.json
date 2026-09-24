@@ -160,7 +160,7 @@
           "primary_source": "https://arxiv.org/abs/2609.22600"
         }
       ],
-      "blocking_reason": "Reviewed direct S5 evidence now includes GovSim-SelfGovern's benchmark-scaffolded membership/identity authority path, but public evidence still provides no canonical native direct S5 observation and no materially matched comparison of native or adapter-preserved S5 implementations across multiple canonical harnesses."
+      "blocking_reason": "Reviewed direct S5 evidence now includes GovSim-SelfGovern's benchmark-scaffolded membership/identity authority path and one canonical native descriptive observation: Ouroboros PR #855 supplies a parent-governed constitutional/runtime policy-change witness with executable return and persistence into later canonical lineage. Public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface."
     }
   },
   "raw_metric_rule": "Do not duplicate numeric benchmark results in this selection record. Store each result once in the shared raw observation layer and reference it from function/domain projections.",
