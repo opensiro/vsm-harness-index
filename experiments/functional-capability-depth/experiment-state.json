@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 571,
+  "reviewed_at": "2026-09-24",
+  "research_cycle_disposition": "complete-current-public-evidence",
+  "evidence_model": "public-evidence-first",
+  "opensiro_owned_execution_required": false,
+  "selection_gate": [
+    "function-valid",
+    "matched-harness",
+    "canonical-linkable",
+    "frozen-repertoire-compatible",
+    "public-reproducible",
+    "scope-honest"
+  ],
+  "functions": {
+    "S1": {
+      "status": "selected",
+      "primary": "PawBench v1.0",
+      "reference_model": "qwen3.6-35b-a3b",
+      "comparison_design": "matched-model-cross-harness"
+    },
+    "S2": {
+      "status": "evidence-backed-gap",
+      "closure": "s2-system-benchmarks/matched-cell/s2-primary-search-closure.json"
+    },
+    "S3": {
+      "status": "evidence-backed-gap",
+      "closure": "s3-system-benchmarks/matched-cell/s3-primary-search-closure.json"
+    },
+    "S3*": {
+      "status": "evidence-backed-gap",
+      "closure": "s3star-system-benchmarks/matched-cell/s3star-primary-search-closure.json"
+    },
+    "S4": {
+      "status": "evidence-backed-gap",
+      "closure": "s4-system-benchmarks/matched-cell/s4-primary-search-closure.json"
+    },
+    "S5": {
+      "status": "evidence-backed-gap",
+      "closure": "s5-system-benchmarks/matched-cell/s5-primary-search-closure.json"
+    }
+  },
+  "demonstrated_claims": [
+    "canonical VSM ownership and observed capability are separate variables",
+    "public benchmark, paper and repository evidence can populate capability observations without Opensiro operating a benchmark service",
+    "direct functional evidence does not automatically become canonical-native evidence",
+    "canonical-native evidence does not automatically become a matched primary baseline",
+    "a fail-closed gap is a valid empirical result when function, provenance, matching or native-path gates are not met",
+    "function-specific evidence should remain vector-valued rather than collapsed into a global harness score"
+  ],
+  "separate_evidence_class": "self-organizing/adaptive-S",
+  "future_evidence_policy": "Function-level closures may be reopened only under their recorded reopen rules. New evidence does not retroactively invalidate the historical research-cycle synthesis.",
+  "non_claim": "This synthesis is not a product ranking, not a maturity ladder, not a claim that gap means low capability, and not a claim that future public evidence cannot select additional function-level primaries."
+}
