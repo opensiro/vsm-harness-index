@@ -104,7 +104,7 @@
           "primary_source": "https://github.com/rtk-ai/grit/tree/a2c48735e0a16c49ca1541c4865fce438c479405"
         }
       ],
-      "blocking_reason": "Reviewed direct S2 evidence now includes eight disturbance/attenuation families and four direct non-canonical observations. Nool and The Specification Gap provide benchmark-scaffolded observations; CodeCRDT and Grit provide first-party observations at their own external native product boundaries. Grit's selected synthetic sweep is first-party-reported and partially matched because generated run directories are gitignored and the raw-git/Grit arms sample work allocation separately. Twining lacks recoverable exact treatment revision, and CooperBench lacks the pinned flash-run logs needed for observation admission. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
+      "blocking_reason": "Reviewed direct S2 evidence includes 8 disturbance/attenuation benchmark families. Nool and The Specification Gap provide benchmark-scaffolded direct non-canonical observations; CodeCRDT and Grit provide direct observations at their own non-canonical native product boundaries; and Squad now provides one canonical native descriptive direct observation from first-party operational history. Twining lacks recoverable exact treatment revision and CooperBench lacks pinned flash-run logs for observation admission. One canonical descriptive row is not a materially matched cross-harness comparison, so public evidence still provides no matched primary cell across multiple canonical native S2 implementations."
     },
     "S3": {
       "status": "gap",
