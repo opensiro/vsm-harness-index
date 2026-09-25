@@ -14,6 +14,8 @@ ROOT = EXPERIMENT.parents[1]
 CANONICAL_DELTAS = {
     "cadis": ("C", "52c55854b1abbcda82839b7a934cbdb16a69b635", "cadis-native-s2-no-direct-result"),
     "ares": ("C", "f03153acace190c555c3721019407a7df47c139f", "ares-native-s2-no-direct-result"),
+    "shep": ("C", "a874b3238fd01ebdbafc11015cccd9a63ed6e2f2", "shep-native-s2-no-direct-result"),
+    "axocoatl": ("C", "edfe5031463686dc782cf3539e5aabae4e8eb9ab", "axocoatl-native-s2-no-direct-result"),
 }
 
 
@@ -45,12 +47,14 @@ closure = load(HERE / "s2-primary-search-closure.json")
 coverage = load(S2 / "coverage.json")
 observations = load(S2 / "observations.json")
 baselines = load(EXPERIMENT / "primary-baselines.json")
+delta = load(S2 / "post-closure-deltas" / "shep-axocoatl-2026-09-25.json")
 
 require(closure["schema_version"] == 1, "S2 closure schema_version drift")
 require(closure["status"] == "experimental-non-normative", "S2 closure status drift")
 require(closure["tracking_issue"] == 564, "S2 closure tracking issue drift")
 require(closure["current_state_update_issue"] == 586, "S2 closure current update issue drift")
 require(closure["canonical_delta_review_issue"] == 592, "S2 canonical delta review issue drift")
+require(closure["post_closure_delta_review_issue"] == 626, "S2 post-closure delta review issue drift")
 require(closure["benchmark_family_review_issue"] == 596, "S2 benchmark-family review issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S2 closure must preserve gap")
@@ -95,6 +99,8 @@ for required_case in {
     "deepseek-harness-native-mechanism-no-direct-benchmark",
     "cadis-native-s2-no-direct-result",
     "ares-native-s2-no-direct-result",
+    "shep-native-s2-no-direct-result",
+    "axocoatl-native-s2-no-direct-result",
     "mao-bench-candidate-no-results",
 }:
     require(required_case in cases, f"S2 closure lost required reviewed case: {required_case}")
@@ -110,6 +116,22 @@ for harness_id, (state, review_ref, case_id) in CANONICAL_DELTAS.items():
     require(case.get("canonical_state_at_review") == state, f"{case_id}: reviewed S2 state drift")
     require(case.get("canonical_review_ref") == review_ref, f"{case_id}: reviewed ref drift")
     require(case.get("admitted") is False, f"{case_id}: delta review must remain non-admitted")
+
+require(delta["schema_version"] == 1, "S2 Shep/Axocoatl delta schema drift")
+require(delta["function"] == "S2", "S2 Shep/Axocoatl delta function drift")
+require(delta["disposition"] == "canonical-mechanisms-no-direct-results", "S2 delta disposition drift")
+require(delta["capability_counts_changed"] is False, "S2 delta must not change capability counts")
+require(delta["observation_registry_mutated"] is False, "S2 delta must not mutate observation registry")
+require(delta["primary_baseline_changed"] is False, "S2 delta must not select a primary")
+require(delta["reopen_condition_satisfied"] is False, "S2 delta unexpectedly reopens primary search")
+delta_rows = {row["canonical_harness_id"]: row for row in delta["systems"]}
+require(set(delta_rows) == {"shep", "axocoatl"}, "S2 delta system set drift")
+for harness_id in ("shep", "axocoatl"):
+    state, review_ref, _ = CANONICAL_DELTAS[harness_id]
+    row = delta_rows[harness_id]
+    require(row["canonical_state_at_review"] == state, f"{harness_id}: delta state drift")
+    require(row["canonical_review_ref"] == review_ref, f"{harness_id}: delta ref drift")
+    require(row["result_surface_review"] == "no-direct-s2-result", f"{harness_id}: delta result disposition drift")
 
 require(len(observations) == 1, "S2 closure expects one direct non-canonical observation")
 observation = observations[0]

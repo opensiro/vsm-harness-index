@@ -4,6 +4,7 @@
   "tracking_issue": 564,
   "current_state_update_issue": 586,
   "canonical_delta_review_issue": 592,
+  "post_closure_delta_review_issue": 626,
   "benchmark_family_review_issue": 596,
   "reviewed_at": "2026-09-25",
   "disposition": "evidence-backed-gap",
@@ -14,7 +15,7 @@
     "direct_observations": 1,
     "canonical_direct_observations": 0,
     "native_proxy_projections": 2,
-    "representative_canonical_s2_systems_inspected": 13
+    "representative_canonical_s2_systems_inspected": 15
   },
   "reviewed_route_classes": [
     {
@@ -38,8 +39,8 @@
     {
       "route_id": "native-mechanism-without-direct-results",
       "status": "no-direct-results",
-      "examples": ["DeepSeek Agent Teams", "C.A.D.I.S.", "ARES"],
-      "blocking_reason": "Canonical S2 mechanisms exist, but current public result surfaces do not exercise them as direct native disturbance-to-attenuation capability observations. C.A.D.I.S. and ARES were explicitly re-reviewed in post-closure delta issue #592."
+      "examples": ["DeepSeek Agent Teams", "C.A.D.I.S.", "ARES", "Shep", "Axocoatl"],
+      "blocking_reason": "Canonical S2 mechanisms exist, but current public result surfaces do not exercise them as direct native disturbance-to-attenuation capability observations. C.A.D.I.S. and ARES were explicitly re-reviewed in post-closure delta issue #592; Shep and Axocoatl were reviewed after their canonical admissions in issue #626 and likewise expose mechanism/microbenchmark surfaces without a direct S2 result."
     },
     {
       "route_id": "promising-multi-orchestrator-benchmark",
@@ -48,7 +49,7 @@
       "blocking_reason": "The adapter/benchmark design is structurally promising, but the public leaderboard does not yet contain the multi-orchestrator result rows needed for a matched canonical cell."
     }
   ],
-  "closure_claim": "Current public evidence contains four direct S2 disturbance benchmark families, one immutable direct non-canonical fleet observation, and two native quantitative S2 proxy projections. The current canonical cohort, including post-closure C.A.D.I.S. and ARES admissions, still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.",
+  "closure_claim": "Current public evidence contains four direct S2 disturbance benchmark families, one immutable direct non-canonical fleet observation, and two native quantitative S2 proxy projections. The current reviewed canonical cohort, now including post-closure C.A.D.I.S., ARES, Shep and Axocoatl admissions, still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.",
   "reopen_when": [
     "a canonical S2 harness publishes an explicit native inter-S1 disturbance-to-attenuation result",
     "a materially matched benchmark evaluates two or more canonical systems exercising their own native or adapter-preserved S2 paths under one disturbance definition",
@@ -60,5 +61,5 @@
     "another topology or framework benchmark whose coordination organization is benchmark-authored",
     "another communication or token-efficiency metric without disturbance-to-attenuation closure"
   ],
-  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool's observation is direct evidence for the benchmark-defined fleet/coordination boundary only. Twining's direct family fit is likewise limited to its benchmark-defined conflict-resolution organization; absent exact treatment provenance and a canonical system boundary, it is not an admitted direct observation or canonical S2 result. The S2 primary remains frozen until materially new canonical native or matched evidence appears."
+  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool's observation is direct evidence for the benchmark-defined fleet/coordination boundary only. Twining's direct family fit is likewise limited to its benchmark-defined conflict-resolution organization; absent exact treatment provenance and a canonical system boundary, it is not an admitted direct observation or canonical S2 result. Shep and Axocoatl retain their canonical S2=C ownership classifications, but no public direct capability result is admitted for either. The S2 primary remains frozen until materially new canonical native or matched evidence appears."
 }
