@@ -1,4 +1,4 @@
-name: temporary Axocoatl admission generator
+name: temporary Axocoatl admission provenance correction
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Apply canonical admission inputs
+      - name: Correct canonical repository provenance
         shell: bash
         run: |
           python - <<'PY'
@@ -27,24 +27,20 @@ jobs:
 
           assessment = Path('assessments/axocoatl.md')
           text = assessment.read_text(encoding='utf-8')
-          old = '\nstatus: proposed\n'
-          if old not in text:
-              raise SystemExit('Axocoatl proposal status not found')
-          assessment.write_text(text.replace(old, '\nstatus: included\n', 1), encoding='utf-8')
+          if '\nstatus: included\n' not in text:
+              raise SystemExit('Axocoatl is not in included admission state')
 
           catalog = Path('data/catalog.psv')
           catalog_text = catalog.read_text(encoding='utf-8')
-          row = '246|axocoatl|Axocoatl|https://github.com/axocoatl/axocoatl|2026-07-25T00:32:40Z|index-addition|edfe5031463686dc782cf3539e5aabae4e8eb9ab|2026-09-25'
-          if '|axocoatl|' in catalog_text:
-              raise SystemExit('Axocoatl already present in catalog')
-          catalog.write_text(catalog_text.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
+          old = '246|axocoatl|Axocoatl|https://github.com/axocoatl/axocoatl|2026-07-25T00:32:40Z|index-addition|edfe5031463686dc782cf3539e5aabae4e8eb9ab|2026-09-25'
+          new = '246|axocoatl|Axocoatl|https://github.com/axocoatl/axocoatl|2026-06-04T05:24:13Z|index-addition|edfe5031463686dc782cf3539e5aabae4e8eb9ab|2026-09-25'
+          if old not in catalog_text:
+              raise SystemExit('Axocoatl catalog row with incorrect created_at not found')
+          catalog.write_text(catalog_text.replace(old, new, 1), encoding='utf-8')
 
-          signatures = Path('data/signatures.psv')
-          sig_text = signatures.read_text(encoding='utf-8')
-          sig = '246|axocoatl|Axocoatl closes autonomous S1 through its durable model/tool actor loop, constructor S2 through per-Way clone/sandbox isolation of competing candidate operations, S3 through an explicit operator Keep/Discard parent loop, and autonomous S3* through protected common Checks plus a separate Judge-agent ranking path; Automations, memory and prompt/config surfaces do not establish S4/S5.'
-          if '|axocoatl|' in sig_text:
-              raise SystemExit('Axocoatl already present in signatures')
-          signatures.write_text(sig_text.rstrip('\n') + '\n' + sig + '\n', encoding='utf-8')
+          signatures = Path('data/signatures.psv').read_text(encoding='utf-8')
+          if '|axocoatl|' not in signatures:
+              raise SystemExit('Axocoatl signature missing from generated admission')
           PY
       - name: Render canonical projections
         run: |
@@ -61,11 +57,11 @@ jobs:
           python scripts/sync_metrics_readme.py --check
           python scripts/check_index.py
           python -m unittest discover -s tests -v
-      - name: Commit generated admission
+      - name: Commit corrected admission
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assessments/axocoatl.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
-          git commit -m 'index: admit Axocoatl [admission-generated]'
+          git add data/catalog.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
+          git commit -m 'index: correct Axocoatl repository provenance [admission-generated]'
           git push
