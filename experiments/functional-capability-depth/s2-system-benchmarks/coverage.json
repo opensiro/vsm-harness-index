@@ -2,8 +2,8 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-25",
   "function": "S2",
-  "direct_benchmark_family_count": 4,
-  "direct_observation_count": 1,
+  "direct_benchmark_family_count": 5,
+  "direct_observation_count": 2,
   "canonical_direct_observation_count": 0,
   "proxy_projection_count": 2,
   "coverage_classes": [
@@ -57,7 +57,7 @@
         "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/docs/findings/2026-08-21-findings.md",
         "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/replications/MANIFEST.md"
       ],
-      "finding": "The pre-registered Track D fleet experiment directly instantiates interaction-specific S2 variety: autonomous coding workers concurrently target overlapping regions of one shared codebase, producing merge conflicts and silent composition breakage in an uncoordinated arm. The treatment attenuates that interference before work starts by gating footprint-overlapping tickets until the prior member integrates, causing later workers to branch from updated integrated state. At N=10 on the 20-ticket contention workload, the two primary uncoordinated runs accept 1/20 and 13/20 tickets with 14/20 and 13/20 clean merges, while the two coordinated runs accept 19/20 each and merge 20/20 cleanly. The public repository is the benchmark/evidence package, not a canonical open-source Nool runtime, so the result is direct non-canonical S2 evidence and does not establish native canonical S2 ownership.",
+      "finding": "The pre-registered Track D fleet experiment directly instantiates interaction-specific S2 variety: autonomous coding workers concurrently target overlapping regions of one shared codebase, producing merge conflicts and silent composition breakage in an uncoordinated arm. The treatment attenuates that interference before work starts by gating footprint-overlapping tickets until the prior member integrates, causing later workers to branch from the updated integrated state. At N=10 on the 20-ticket contention workload, the two primary uncoordinated runs accept 1/20 and 13/20 tickets with 14/20 and 13/20 clean merges, while the two coordinated runs accept 19/20 each and merge 20/20 cleanly. The public repository is the benchmark/evidence package, not a canonical open-source Nool runtime, so the result is direct non-canonical S2 evidence and does not establish native canonical S2 ownership.",
       "admitted": false
     },
     {
@@ -106,6 +106,24 @@
         "https://github.com/daveangulo/twining-mcp/blob/d7860e060ddf79e9cca2cc8a0bd9179985c04eee/src/index.ts"
       ],
       "finding": "Twining's conflict-resolution scenario directly instantiates S2 at the benchmark-defined organization boundary: Alice and Bob independently introduce incompatible architectural choices, while Carol must detect the mismatch and reconcile both branches into one coherent architecture; the scorer measures conflict detection, resolution quality, decision documentation and test preservation. The Twining treatment is benchmark-scaffolded through Claude Code plugin/MCP configuration. The committed valid run cannot be admitted as a direct observation because metadata leaves twiningMcpVersion empty while the treatment invokes bare npx twining-mcp and may resolve a user-installed plugin, so the exact treatment revision is not recoverable. twining-mcp itself starts an MCP stdio server for shared coordination state and is not an admitted canonical Index harness/system boundary.",
+      "admitted": false
+    },
+    {
+      "case_id": "specification-gap-recovery-direct-scaffolded",
+      "benchmark": "The Specification Gap / AmbigClass recovery experiment",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "review_ref": "b64059f3ee5cab9b71b834c7b5acc597791880d5",
+      "observation_ref": "observations.json#specification-gap-recovery-2026-03",
+      "primary_sources": [
+        "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5",
+        "https://github.com/camilochs/the_specification_gap/blob/b64059f3ee5cab9b71b834c7b5acc597791880d5/scripts/conflict_experiment.py",
+        "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5/data/conflict_results",
+        "https://arxiv.org/abs/2603.24284"
+      ],
+      "finding": "The Specification Gap directly instantiates interaction-specific S2 variety at a benchmark-defined integration boundary. Two coding workers implement disjoint methods under opposing list/dict structural priors, so their individually produced code can carry incompatible hidden representation assumptions. The same split-worker outputs are then integrated under controlled recovery conditions. With sparse L3 specification and no conflict report, the blind merger passes 52.7% of tests; supplying the full L0 shared specification without conflict metadata raises the pass rate to 88.9%, while adding conflict reports at L3 leaves the result at 52.7%. The committed per-task result corpus makes this an immutable direct non-canonical observation, but the benchmark-defined worker/merger organization does not establish native S2 ownership for any canonical harness.",
       "admitted": false
     },
     {
@@ -284,6 +302,7 @@
     "parallel-write-collision",
     "semantic-staleness-interference",
     "architectural-conflict-reconciliation",
+    "specification-mediated-representation-conflict",
     "team-loop-stall-turn-interference",
     "host-resource-admission-contention"
   ]

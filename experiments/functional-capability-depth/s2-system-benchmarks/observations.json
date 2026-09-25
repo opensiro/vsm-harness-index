@@ -78,5 +78,62 @@
       "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/replications/MANIFEST.md",
       "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/trackc/fleet_runs.jsonl"
     ]
+  },
+  {
+    "observation_id": "specification-gap-recovery-2026-03",
+    "function": "S2",
+    "benchmark_id": "specification-gap-recovery",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "benchmark-defined-two-worker-integration",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "benchmark_artifact_revision": "b64059f3ee5cab9b71b834c7b5acc597791880d5",
+    "result_artifact": "data/conflict_results/",
+    "experiment_artifact": "scripts/conflict_experiment.py",
+    "paper": "https://arxiv.org/abs/2603.24284",
+    "experiment": "2x2 conflict-recovery experiment",
+    "model": "claude-sonnet-4-20250514",
+    "task_count": 53,
+    "worker_count": 2,
+    "disturbance": "Two independent coding workers implement disjoint methods under intentionally opposing list-versus-dictionary structural priors and partial L3 specification, creating incompatible shared internal representations that appear only when their outputs are integrated.",
+    "treatment": "The merger receives a richer shared L0 specification that exposes the common class contract while operating on the same split-worker outputs. This shared specification attenuates the representation mismatch without changing the worker implementations themselves.",
+    "held_constant": [
+      "same per-task pair of split-worker outputs is reused across recovery conditions",
+      "same Claude Sonnet conflict-experiment model family",
+      "same ClassEval-derived task and tests within each recovery comparison",
+      "same merger role; recovery condition changes the information membrane supplied to integration"
+    ],
+    "recovery_conditions": [
+      {
+        "condition": "blind_l3_no_conflict_report",
+        "pass_rate": 0.527
+      },
+      {
+        "condition": "guided_l3_with_conflict_report",
+        "pass_rate": 0.527
+      },
+      {
+        "condition": "spec_only_l0_no_conflict_report",
+        "pass_rate": 0.889
+      },
+      {
+        "condition": "resolve_l0_with_conflict_report",
+        "pass_rate": 0.823
+      }
+    ],
+    "single_agent_l0_ceiling": 0.883,
+    "reported_effects": {
+      "full_specification_vs_blind_pp": 36.2,
+      "conflict_report_at_l3_pp": 0.0
+    },
+    "vsm_interpretation": "This is direct S2 capability evidence at the benchmark-defined two-worker integration boundary. The workers generate interaction-specific variety through incompatible hidden representation choices; a richer shared specification supplied at integration attenuates that variety and materially changes the composed outcome. The organization and coordination membrane are benchmark-defined, so the observation is non-canonical and does not establish native S2 ownership for any external harness.",
+    "primary_sources": [
+      "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5",
+      "https://github.com/camilochs/the_specification_gap/blob/b64059f3ee5cab9b71b834c7b5acc597791880d5/scripts/conflict_experiment.py",
+      "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5/data/conflict_results",
+      "https://arxiv.org/abs/2603.24284"
+    ]
   }
 ]
