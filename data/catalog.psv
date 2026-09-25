@@ -263,3 +263,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 248|shep|Shep|https://github.com/shep-ai/shep|2026-02-01T22:23:54Z|index-addition|a874b3238fd01ebdbafc11015cccd9a63ed6e2f2|2026-09-25
 249|loushang|Loushang|https://github.com/zhnt/loushang|2026-05-29T17:25:11Z|index-addition|3970a791ba277ecc686df7e5477c86ec71915687|2026-09-25
 250|inferoa|Inferoa|https://github.com/agentic-in/inferoa|2026-06-08T06:29:56Z|index-addition|1fd9ec4518b26b60cc78cf67c4faf337fe9bb2cd|2026-09-25
+251|san|San|https://github.com/genai-io/san|2024-09-05T16:16:25Z|index-addition|dd1b41882472fb76ce38dc3f88107deffc2e73bc|2026-09-25
