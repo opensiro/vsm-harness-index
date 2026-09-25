@@ -1,0 +1,64 @@
+name: temporary Synapse exclusion generator
+
+on:
+  push:
+    branches:
+      - admit-synapse-244
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical exclusion inputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/synapse.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = '\nstatus: proposed\n'
+          if old not in text:
+              raise SystemExit('Synapse proposal status not found')
+          assessment.write_text(text.replace(old, '\nstatus: excluded-no-agentic-vsm\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          row = '244|synapse|Synapse|https://github.com/nshkrdotcom/synapse|2024-12-07T12:06:09Z|index-addition|bc43df9671b1e4974054e1ce0109f3e37733e9f4|2026-09-25'
+          if '|synapse|' in catalog_text:
+              raise SystemExit('Synapse already present in catalog')
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate generated state
+        run: |
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Commit generated exclusion
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/synapse.md data/catalog.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md
+          git commit -m 'index: exclude Synapse [admission-generated]'
+          git push
