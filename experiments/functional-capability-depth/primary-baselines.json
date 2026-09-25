@@ -87,9 +87,14 @@
           "benchmark_id": "specification-gap-recovery",
           "benchmark_name": "The Specification Gap / AmbigClass recovery experiment",
           "primary_source": "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5"
+        },
+        {
+          "benchmark_id": "cooperbench-team-harness",
+          "benchmark_name": "CooperBench team-harness coordination ablation",
+          "primary_source": "https://github.com/cooperbench/CooperBench/blob/63b9d44d9f39a02fccf5bf0052db48a917a011fd/docs/team_harness_ablation_report.html"
         }
       ],
-      "blocking_reason": "Reviewed direct S2 evidence now includes five benchmark-defined disturbance/attenuation families. Nool and The Specification Gap supply two admitted immutable direct non-canonical observations; Twining conflict-resolution is direct at its benchmark boundary but lacks recoverable exact Twining treatment revision and canonical harness linkage. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
+      "blocking_reason": "Reviewed direct S2 evidence now includes six benchmark-defined disturbance/attenuation families. Nool and The Specification Gap supply two admitted immutable direct non-canonical observations; Twining lacks recoverable exact treatment revision, while CooperBench has a committed first-party 50-pair ablation report but not the pinned flash-run logs needed for observation admission. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
     },
     "S3": {
       "status": "gap",

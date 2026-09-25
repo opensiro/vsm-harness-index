@@ -2,7 +2,7 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-25",
   "function": "S2",
-  "direct_benchmark_family_count": 5,
+  "direct_benchmark_family_count": 6,
   "direct_observation_count": 2,
   "canonical_direct_observation_count": 0,
   "proxy_projection_count": 2,
@@ -124,6 +124,23 @@
         "https://arxiv.org/abs/2603.24284"
       ],
       "finding": "The Specification Gap directly instantiates interaction-specific S2 variety at a benchmark-defined integration boundary. Two coding workers implement disjoint methods under opposing list/dict structural priors, so their individually produced code can carry incompatible hidden representation assumptions. The same split-worker outputs are then integrated under controlled recovery conditions. With sparse L3 specification and no conflict report, the blind merger passes 52.7% of tests; supplying the full L0 shared specification without conflict metadata raises the pass rate to 88.9%, while adding conflict reports at L3 leaves the result at 52.7%. The committed per-task result corpus makes this an immutable direct non-canonical observation, but the benchmark-defined worker/merger organization does not establish native S2 ownership for any canonical harness.",
+      "admitted": false
+    },
+    {
+      "case_id": "cooperbench-team-harness-direct-scaffolded",
+      "benchmark": "CooperBench team-harness coordination ablation",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "review_ref": "63b9d44d9f39a02fccf5bf0052db48a917a011fd",
+      "primary_sources": [
+        "https://github.com/cooperbench/CooperBench/tree/63b9d44d9f39a02fccf5bf0052db48a917a011fd",
+        "https://github.com/cooperbench/CooperBench/blob/63b9d44d9f39a02fccf5bf0052db48a917a011fd/src/cooperbench/team_harness/__init__.py",
+        "https://github.com/cooperbench/CooperBench/blob/63b9d44d9f39a02fccf5bf0052db48a917a011fd/docs/team_harness_ablation_report.html",
+        "https://github.com/cooperbench/CooperBench/blob/63b9d44d9f39a02fccf5bf0052db48a917a011fd/scripts/gen_ablation_report.py"
+      ],
+      "finding": "CooperBench directly instantiates an S2-relevant coding-team disturbance at its benchmark-defined organization boundary: independently useful feature workers can create integration interference, while the first-party team harness supplies lead/member organization, atomic shared task claims, scratchpad/code sharing and communication surfaces. The committed 50-pair Codex/gpt-5.5 ablation report holds the task subset fixed and removes individual coordination features, so the family is direct S2. The report generator reads local flash run logs that are not pinned in the reviewed repository, however, so the report is not promoted into observations.json. Public full-dataset trajectory archives are a separate evaluation surface and are not substituted for the missing flash-run provenance. No canonical Index harness identity is inferred.",
       "admitted": false
     },
     {

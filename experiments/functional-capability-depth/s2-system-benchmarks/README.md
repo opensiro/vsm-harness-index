@@ -7,6 +7,8 @@ Primary-search closure: #564
 Current direct-evidence update: #586  
 Canonical delta review: #592  
 Twining semantic review: #596
+Specification Gap admission: #629
+CooperBench semantic review: #633
 
 Parent semantic review: `../vsm-benchmark-family-map/`
 
@@ -33,8 +35,8 @@ For a cross-harness primary baseline, the direct S2 path must additionally be na
 ## Current result
 
 ```text
-direct S2 benchmark families reviewed:          4
-direct S2 observations:                         1
+direct S2 benchmark families reviewed:          6
+direct S2 observations:                         2
 canonical native direct-S2 observations:        0
 native canonical proxy projections:             2
 primary S2 baseline:                             gap
@@ -45,11 +47,13 @@ The direct families are:
 - `DPBench`;
 - `STALE semantic-coordination`;
 - `Nool coding-agent fleet coordination`;
-- `Twining Benchmark conflict-resolution`.
+- `Twining Benchmark conflict-resolution`;
+- `The Specification Gap / AmbigClass recovery`;
+- `CooperBench team-harness coordination ablation`.
 
-The single admitted direct observation is the Nool Track D fleet-contention result at the benchmark-defined fleet boundary. It is **not** a canonical native observation.
+The two admitted direct observations are Nool Track D and The Specification Gap recovery experiment. Both are direct at benchmark-defined organization boundaries and neither is a canonical native observation.
 
-Twining adds a fourth direct family but not another admitted observation: its committed result does not recover the exact Twining MCP/plugin treatment revision, and `twining-mcp` is not an admitted canonical Index harness.
+Twining and CooperBench add direct-family coverage without adding observation rows. Twining lacks recoverable exact treatment revision. CooperBench has a committed 50-pair first-party ablation report, but the flash run logs used to generate that report are not pinned in the reviewed repository.
 
 A `gap` therefore does not mean direct S2 families or observations are absent. It means no materially matched primary comparison of native canonical S2 implementations is available.
 
@@ -159,6 +163,34 @@ A committed completed run exists, but it is **not admitted as a direct observati
 
 The focused semantic review is `../vsm-benchmark-family-map/S2-TWINING-REVIEW.md`.
 
+## Direct observation: The Specification Gap / AmbigClass recovery
+
+Pinned source:
+
+```text
+camilochs/the_specification_gap@b64059f3ee5cab9b71b834c7b5acc597791880d5
+```
+
+The benchmark creates two independently useful worker implementations with disjoint method-level work but incompatible hidden representation assumptions. Integration under sparse versus full shared specification then measures whether the shared information surface attenuates the semantic interference. The committed per-task result corpus supports an immutable direct non-canonical observation.
+
+This remains benchmark-defined S2 evidence: the split-worker and integration organization belongs to the experiment, not to an external canonical harness.
+
+## Direct benchmark family: CooperBench team harness
+
+Pinned source:
+
+```text
+cooperbench/CooperBench@63b9d44d9f39a02fccf5bf0052db48a917a011fd
+```
+
+CooperBench's first-party `team_harness` supplies an always-on lead/member role split plus independently toggleable atomic task claims, shared scratchpad/code exchange, MCP waiting, automatic state refresh and typed request/response surfaces. Its paired feature tasks are evaluated together on one composed tree, so integration interference among distinct coding workers is part of the tested organization.
+
+The committed 50-pair ablation report holds the flash task subset and Codex/`gpt-5.5` setting fixed while removing individual coordination surfaces. This is sufficient to classify the benchmark family as direct S2 at the benchmark-defined team-harness boundary.
+
+No CooperBench observation row is admitted in this review. The report generator reads local flash run logs that are not pinned in the reviewed repository. Separately published full-dataset CooperBench trajectories are a different evaluation surface and are not substituted for the missing flash-run provenance.
+
+The focused semantic review is `../vsm-benchmark-family-map/S2-COOPERBENCH-REVIEW.md`.
+
 ## Native proxy: AutoGen / Magentic-One
 
 Canonical AutoGen AgentChat establishes S2 independently through first-party team selection plus explicit progress/loop/stall regulation.
@@ -245,20 +277,21 @@ canonical native direct S2 observation exists
 matched canonical S2 primary exists
 ```
 
-Nool supplies the one admitted direct non-canonical observation. Twining increases reviewed direct-family coverage but fails the observation-provenance gate and canonical-system gate. Neither closes the canonical layer.
+Nool and The Specification Gap supply the two admitted direct non-canonical observations. Twining and CooperBench increase reviewed direct-family coverage but fail their respective observation-provenance gates. None of these rows closes the canonical layer.
 
 A future primary still requires materially matched evidence for two or more canonical systems exercising their own native or adapter-preserved S2 paths under a common disturbance definition, with recoverable model/configuration provenance.
 
 ## Source of truth
 
-- `observations.json` — admitted direct S2 observations; currently one non-canonical Nool Track D observation;
+- `observations.json` — admitted direct S2 observations; currently two non-canonical rows (Nool Track D and The Specification Gap);
 - `coverage.json` — reviewed direct/proxy/candidate cases and canonical linkage;
 - `proxy_links.json` — native canonical proxy projections;
 - `validate.py` — fail-closed separation of direct, canonical and proxy evidence;
 - `matched-cell/s2-primary-search-closure.json` — current primary-gap disposition;
 - `matched-cell/S2-PRIMARY-SEARCH-CLOSURE.md` — human-readable closure and reopen rule;
 - `../vsm-benchmark-family-map/map.json` — benchmark-family semantic classification;
-- `../vsm-benchmark-family-map/S2-TWINING-REVIEW.md` — Twining direct-family and system-boundary review.
+- `../vsm-benchmark-family-map/S2-TWINING-REVIEW.md` — Twining direct-family and system-boundary review;
+- `../vsm-benchmark-family-map/S2-COOPERBENCH-REVIEW.md` — CooperBench direct-family and provenance review.
 
 ## Non-goals
 
@@ -271,6 +304,7 @@ This experiment does not:
 - treat Nool's external product runtime as a canonical OpenSiro harness without a separate repository-grounded assessment;
 - treat `twining-mcp` as a canonical harness merely because multiple external agents use its shared coordination service;
 - promote a Twining result without recoverable exact treatment provenance into the direct observation registry;
+- promote the CooperBench 50-pair report into the observation registry without immutable flash-run provenance, or substitute a different full-dataset trajectory surface for it;
 - promote native proxy evidence into direct S2 after seeing favorable scores;
 - select a primary without matched canonical native evidence;
 - create a scalar S2 score or overall harness score;
