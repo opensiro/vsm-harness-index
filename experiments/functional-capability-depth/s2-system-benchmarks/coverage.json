@@ -2,7 +2,7 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-25",
   "function": "S2",
-  "direct_benchmark_family_count": 3,
+  "direct_benchmark_family_count": 4,
   "direct_observation_count": 1,
   "canonical_direct_observation_count": 0,
   "proxy_projection_count": 2,
@@ -91,17 +91,21 @@
       "admitted": false
     },
     {
-      "case_id": "twining-direct-candidate-boundary-unresolved",
-      "benchmark": "Twining Benchmark",
-      "benchmark_fit": "candidate-direct",
-      "coverage_class": "candidate-boundary-unresolved",
-      "system_compatibility": "unclear",
+      "case_id": "twining-conflict-resolution-direct-scaffolded",
+      "benchmark": "Twining Benchmark conflict-resolution",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-scaffolded",
+      "system_compatibility": "benchmark-scaffolded",
       "canonical_harness_id": null,
+      "review_ref": "b6a4d5e5890c5617376ba5c8fb7a628014296663",
+      "result_harness_ref": "63004a1f7697c64a78bc9c83b6cafd461887bc75",
       "primary_sources": [
-        "https://github.com/daveangulo/twining-benchmark",
-        "https://github.com/daveangulo/twining-mcp"
+        "https://github.com/daveangulo/twining-benchmark/blob/b6a4d5e5890c5617376ba5c8fb7a628014296663/src/scenarios/conflict-resolution.ts",
+        "https://github.com/daveangulo/twining-benchmark/blob/b6a4d5e5890c5617376ba5c8fb7a628014296663/src/conditions/full-twining.ts",
+        "https://github.com/daveangulo/twining-benchmark/blob/b6a4d5e5890c5617376ba5c8fb7a628014296663/benchmark-results/66312b64-0422-40c4-883f-4e16060b9977/metadata.json",
+        "https://github.com/daveangulo/twining-mcp/blob/d7860e060ddf79e9cca2cc8a0bd9179985c04eee/src/index.ts"
       ],
-      "finding": "The benchmark varies coordination conditions over a common multi-agent coding substrate and includes concurrent-agent/conflict-resolution scenarios. It is a strong direct-S2 candidate, but the system-in-focus is multiple Claude agents plus a coordination condition and twining-mcp is not currently a canonical Index system.",
+      "finding": "Twining's conflict-resolution scenario directly instantiates S2 at the benchmark-defined organization boundary: Alice and Bob independently introduce incompatible architectural choices, while Carol must detect the mismatch and reconcile both branches into one coherent architecture; the scorer measures conflict detection, resolution quality, decision documentation and test preservation. The Twining treatment is benchmark-scaffolded through Claude Code plugin/MCP configuration. The committed valid run cannot be admitted as a direct observation because metadata leaves twiningMcpVersion empty while the treatment invokes bare npx twining-mcp and may resolve a user-installed plugin, so the exact treatment revision is not recoverable. twining-mcp itself starts an MCP stdio server for shared coordination state and is not an admitted canonical Index harness/system boundary.",
       "admitted": false
     },
     {
@@ -243,6 +247,7 @@
     "shared-resource-contention",
     "parallel-write-collision",
     "semantic-staleness-interference",
+    "architectural-conflict-reconciliation",
     "team-loop-stall-turn-interference",
     "host-resource-admission-contention"
   ]
