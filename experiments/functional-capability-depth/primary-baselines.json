@@ -77,9 +77,14 @@
           "benchmark_id": "nool-fleet-coordination",
           "benchmark_name": "Nool coding-agent fleet coordination benchmark",
           "primary_source": "https://github.com/noolinc/nool_long_eval_bench/tree/126d69b5921be71daffd38c70ec4aa77252b4f39"
+        },
+        {
+          "benchmark_id": "twining-conflict-resolution",
+          "benchmark_name": "Twining Benchmark conflict-resolution",
+          "primary_source": "https://github.com/daveangulo/twining-benchmark/tree/b6a4d5e5890c5617376ba5c8fb7a628014296663"
         }
       ],
-      "blocking_reason": "Reviewed direct S2 evidence now includes explicit benchmark-defined fleet contention/attenuation observations, including Nool's controlled pre-start gating experiment, but public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
+      "blocking_reason": "Reviewed direct S2 evidence now includes four benchmark-defined disturbance/attenuation families. Nool supplies the one admitted immutable direct non-canonical observation; Twining conflict-resolution is direct at its benchmark boundary but lacks recoverable exact Twining treatment revision and canonical harness linkage. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
     },
     "S3": {
       "status": "gap",
