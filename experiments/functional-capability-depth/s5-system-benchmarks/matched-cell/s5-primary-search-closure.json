@@ -2,10 +2,18 @@
   "schema_version": 1,
   "status": "experimental-non-normative",
   "tracking_issue": 569,
+  "cohort_reconciliation_issue": 621,
   "reviewed_at": "2026-09-25",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
+  "full_cohort_review_artifact": "full-canonical-cohort-review.json",
+  "full_cohort_state": {
+    "canonical_s5_positive_systems": 20,
+    "direct_canonical_observations": 1,
+    "no_direct_public_result": 19,
+    "unresolved": 0
+  },
   "evidence_depth": {
     "reviewed_cases": 14,
     "direct_benchmark_families": 1,
