@@ -1,0 +1,89 @@
+name: tmp-squad-observation-append-644
+
+on:
+  push:
+    branches:
+      - experiment/squad-canonical-s2-644
+
+permissions:
+  contents: write
+
+jobs:
+  append:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/squad-canonical-s2-644
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Append Squad observation byte-preservingly
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import textwrap
+          from pathlib import Path
+
+          path = Path("experiments/functional-capability-depth/s2-system-benchmarks/observations.json")
+          text = path.read_text(encoding="utf-8")
+          observation_id = "squad-shared-state-conflict-attenuation-2026-03"
+          if observation_id in text:
+              raise SystemExit("Squad observation already present")
+          if not text.endswith("\n]\n"):
+              raise SystemExit("unexpected observations.json terminator")
+
+          row = {
+              "observation_id": observation_id,
+              "function": "S2",
+              "benchmark_id": None,
+              "benchmark_fit": "direct",
+              "evidence_source_class": "first-party-reported",
+              "boundary_class": "canonical-squad-project-team",
+              "canonical_harness_id": "squad",
+              "canonical_system_eligible": True,
+              "canonical_assessment_ref": "2099faf51c08a912c359209447011b06decf0565",
+              "canonical_state_at_review": "A",
+              "system_compatibility": "native-system",
+              "comparison_class": "descriptive-only",
+              "evidence_surface": "immutable first-party repository history plus first-party public operational case study",
+              "operational_commits": [
+                  "34925f2f5bec49742216ab9dd93c756fbe1aa8c9",
+                  "e7e6255aa84e04993d568a10331bf9da6661b478",
+                  "6e304ec6d2f1d385226fba074a1192a3eab7b5cb",
+              ],
+              "case_study_date": "2026-03-17",
+              "disturbance": "Parallel Squad S1 agents append to shared team-state and decision surfaces; simultaneous completion can create merge interference on canonical shared state.",
+              "coordination_relation": "Squad's first-party merge=union rules preserve concurrent append-only team-state contributions, while per-agent decision inbox files and Scribe consolidation separate structured concurrent writes before returning them to canonical decisions.md.",
+              "subsequent_operation": "First-party operational history records decision-inbox consolidation followed by later multi-PR release work with team state preserved via merge=union.",
+              "comparison_limitation": "This is descriptive canonical direct evidence from operational history, not a matched benchmark comparison or a causal numeric uplift estimate.",
+              "vsm_interpretation": "This is direct descriptive S2 capability evidence at the canonical Squad project-team boundary. Distinct parallel S1 agents generate interaction-specific shared-state interference; native merge=union and Scribe/inbox coordination attenuate that interference and preserve/consolidate state for subsequent operation. It does not create a benchmark family or a matched cross-harness primary cell.",
+              "primary_sources": [
+                  "https://github.com/bradygaster/squad/tree/2099faf51c08a912c359209447011b06decf0565",
+                  "https://github.com/bradygaster/squad/commit/34925f2f5bec49742216ab9dd93c756fbe1aa8c9",
+                  "https://github.com/bradygaster/squad/commit/e7e6255aa84e04993d568a10331bf9da6661b478",
+                  "https://github.com/bradygaster/squad/commit/6e304ec6d2f1d385226fba074a1192a3eab7b5cb",
+                  "https://www.tamirdresher.com/blog/2026/03/17/scaling-ai-part4-distributed",
+              ],
+          }
+          rendered = textwrap.indent(json.dumps(row, indent=2, ensure_ascii=False), "  ")
+          path.write_text(text[:-3] + ",\n" + rendered + "\n]\n", encoding="utf-8")
+          PY
+      - name: Validate Squad S2 evidence state
+        run: |
+          python experiments/functional-capability-depth/s2-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_primary_search_closure.py
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+          python experiments/functional-capability-depth/render_evidence_frontier.py --check
+          python experiments/functional-capability-depth/validate_synthesis.py
+          python -m unittest discover -s tests -v
+      - name: Commit observation-only append
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/functional-capability-depth/s2-system-benchmarks/observations.json
+          git commit -m "experiment: restore minimal Squad observation diff"
+          git push origin HEAD:experiment/squad-canonical-s2-644
