@@ -19,7 +19,6 @@ from typing import Any
 
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[3]
 ARTIFACT = HERE / "execution-feasibility.json"
 PROTOCOL = HERE / "protocol.json"
 TASK_A = HERE / "fixture" / "task-a.md"
@@ -67,9 +66,10 @@ def _validate_static() -> dict[str, Any]:
 
     assert protocol["status"] == "preregistered-no-results"
     assert protocol["canonical_harness_id"] == "loopx"
-    assert protocol["canonical_upstream_revision"] == CANONICAL_LOOPX_REVISION
+    assert protocol["upstream_revision"] == CANONICAL_LOOPX_REVISION
     assert protocol["canonical_state_at_design"] == "A"
-    assert protocol["worker_count"] == 2
+    execution = protocol["execution"]
+    assert execution["worker_count"] == 2
     assert protocol["results"] is None
     assert protocol["observation_registry_mutation_allowed"] is False
 
@@ -95,7 +95,7 @@ def _validate_static() -> dict[str, Any]:
         "artifact_status": artifact["status"],
         "protocol_status": protocol["status"],
         "canonical_loopx_revision": CANONICAL_LOOPX_REVISION,
-        "frozen_worker_count": protocol["worker_count"],
+        "frozen_worker_count": execution["worker_count"],
         "shared_write_surface": SHARED_WRITE_SURFACE,
     }
 
