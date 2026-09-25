@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-24",
+  "reviewed_at": "2026-09-25",
   "function": "S4",
   "direct_benchmark_family_count": 4,
   "composed_direct_observation_count": 4,
@@ -168,6 +168,23 @@
       "admitted_to_canonical_registry": false
     },
     {
+      "case_id": "ares-evolution-native-no-results",
+      "benchmark": "ARES native strategy-evolution path",
+      "benchmark_fit": "candidate-direct",
+      "coverage_class": "candidate-native-no-direct-results",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "ares",
+      "canonical_state_at_review": "C(P)",
+      "canonical_review_ref": "f03153acace190c555c3721019407a7df47c139f",
+      "primary_sources": [
+        "https://github.com/Timwood0x10/ARES/blob/f03153acace190c555c3721019407a7df47c139f/internal/ares_config/config_evolution.go",
+        "https://github.com/Timwood0x10/ARES/blob/f03153acace190c555c3721019407a7df47c139f/internal/ares_bootstrap/provide_evolution.go",
+        "https://github.com/Timwood0x10/ARES/blob/f03153acace190c555c3721019407a7df47c139f/cmd/ares/main.go"
+      ],
+      "finding": "Canonical ARES establishes S4=C(P) through a production-wired genetic strategy-evolution constructor path. Its committed GA/runtime benchmark reports measure computational cost such as operation latency, generation time, allocations and throughput rather than future operational capability improvement after a selected adaptation is activated and reused. The current public evidence therefore remains mechanism/performance evidence and does not admit a native direct S4 capability observation.",
+      "admitted_to_canonical_registry": false
+    },
+    {
       "case_id": "exo-native-s4-boundary-needs-freeze",
       "benchmark": "Exo native reusable capability/self-change path",
       "benchmark_fit": "candidate-direct",
@@ -238,7 +255,8 @@
     "bossconsole",
     "exo",
     "agentyou",
-    "a-evolve"
+    "a-evolve",
+    "ares"
   ],
   "canonical_states_at_review": {
     "headcount": "A",
@@ -249,7 +267,8 @@
     "bossconsole": "A(P)",
     "exo": "A(P)",
     "agentyou": "C",
-    "a-evolve": "A"
+    "a-evolve": "A",
+    "ares": "C(P)"
   },
   "capability_dimensions": [
     "external-or-future-distinction-sensing",
