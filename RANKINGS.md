@@ -71,6 +71,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="leviath"></a>[Leviath](https://github.com/GEMISIS/leviath) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C(P) A — —` |
 | 5 | <a id="starnet"></a>[StarNet](https://github.com/androoAGI/starnet) | 2026-Q2 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
 | 5 | <a id="redteam"></a>[redteam](https://github.com/AscendyProject/redteam) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="axocoatl"></a>[Axocoatl](https://github.com/axocoatl/axocoatl) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="super-agent"></a>[super-agent](https://github.com/FedericoCasarella/super-agent) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P — A —` |
 | 5 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
