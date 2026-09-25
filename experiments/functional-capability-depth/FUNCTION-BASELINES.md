@@ -9,7 +9,7 @@ This view reports baseline availability and evidence coverage only. It does not 
 | Function | Status | Primary family | Reference model | Evidence state |
 | --- | --- | --- | --- | --- |
 | S1 | `selected` | PawBench v1.0 | `qwen3.6-35b-a3b` | [generated S1 baseline](S1-BASELINE.md) |
-| S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 19 reviewed cases · direct families: `7` · direct observations: `3` · canonical direct observations: `0` |
+| S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 20 reviewed cases · direct families: `7` · direct observations: `3` · canonical direct observations: `0` |
 | S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 11 reviewed cases · direct families: `3` · direct observations: `1` |
 | S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 16 reviewed cases · direct families: `5` · canonical direct observations: `2` · composed direct observations: `3` |
 | S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 15 reviewed cases · direct families: `4` · canonical direct observations: `2` · composed direct observations: `4` |
@@ -33,35 +33,18 @@ Evidence search: [`s3-system-benchmarks/coverage.json`](s3-system-benchmarks/cov
 
 ### S3*
 
-Reviewed direct S3* evidence now includes two canonical native systems: AppliedScientist provides quantitative within-system weakness-closure measurements, while data-to-paper provides a first-party published descriptive reviewer→revision closure witness. These observations use different tasks, models, evaluators and result surfaces, so public evidence still does not provide a materially matched comparison of native S3* implementations across multiple canonical harnesses.
+Reviewed direct S3* evidence includes both benchmark-scaffolded and canonical-native/composed reviewer-revision surfaces, but the canonical rows are not yet materially matched across task/model/evaluator/configuration, so no primary cross-harness baseline is selected.
 
 Evidence search: [`s3star-system-benchmarks/coverage.json`](s3star-system-benchmarks/coverage.json).
 
 ### S4
 
-Direct S4 evidence now includes two canonical native systems: A-Evolve publishes harness-updating measurements across SWE-bench Verified, MCP-Atlas and SkillsBench, while KADATH publishes a ten-epoch locked-benchmark population-improvement run. Their tasks, benchmark definitions, models/configurations and result surfaces are not matched, so public evidence still does not provide a common cross-harness S4 comparison cell.
+Reviewed direct S4 evidence includes public adaptation/evolution benchmark families and canonical-native/composed adaptation surfaces, but no common benchmark/model/configuration cell yet provides a materially matched comparison across canonical systems.
 
 Evidence search: [`s4-system-benchmarks/coverage.json`](s4-system-benchmarks/coverage.json).
 
 ### S5
 
-Reviewed direct S5 evidence now includes GovSim-SelfGovern's benchmark-scaffolded membership/identity authority path and one canonical native descriptive observation: Ouroboros PR #855 supplies a parent-governed constitutional/runtime policy-change witness with executable return and persistence into later canonical lineage. Public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface.
+Reviewed direct S5 evidence includes one benchmark-defined governance society family plus one canonical descriptive parent-governed policy-change observation, but no materially matched second canonical system is available for primary selection.
 
 Evidence search: [`s5-system-benchmarks/coverage.json`](s5-system-benchmarks/coverage.json).
-
-## Reading rule
-
-```text
-canonical VSM ownership
-        ↓
-one selected primary benchmark per function when evidence permits
-        ↓
-matched canonical-harness comparison
-        ↓
-secondary evidence and domain projections
-
-separate evidence class:
-adaptive / self-organizing S
-```
-
-Function-specific coverage schemas remain authoritative for their own evidence vocabulary. This projection intentionally consumes their common review metadata without forcing those schemas into one normalized replacement database.
