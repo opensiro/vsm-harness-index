@@ -226,6 +226,7 @@ def main() -> None:
         "stale-semantic-coordination",
         "nool-fleet-coordination",
         "twining-conflict-resolution",
+        "grit-parallel-agent-contention",
     }
     if reviewed_direct_s2 != expected_direct_s2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
@@ -316,6 +317,24 @@ def main() -> None:
         fail("Twining committed-result harness ref drift")
     if "observation_ref" in twining:
         fail("Twining must not acquire an observation_ref without a new provenance review")
+
+    grit = by_id.get("grit-parallel-agent-contention-direct-noncanonical")
+    if grit is None:
+        fail("missing Grit direct-S2 family review")
+    if grit.get("benchmark_fit") != "direct":
+        fail("Grit parallel-agent contention must remain direct S2")
+    if grit.get("coverage_class") != "candidate-boundary-unresolved":
+        fail("Grit coverage class drift")
+    if grit.get("system_compatibility") != "unclear":
+        fail("Grit must remain non-canonical/unclear until a separate system-boundary review")
+    if grit.get("canonical_harness_id") is not None:
+        fail("Grit must not acquire a canonical harness id in this family-only review")
+    if grit.get("review_ref") != "0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe":
+        fail("Grit benchmark review_ref drift")
+    if grit.get("result_claim_commit") != "a2c48735e0a16c49ca1541c4865fce438c479405":
+        fail("Grit benchmark result-claim commit drift")
+    if "observation_ref" in grit:
+        fail("Grit must not acquire an observation_ref without public run-level provenance")
 
     validate_nool_observation(observations)
     validate_proxy_links(coverage, by_id)
