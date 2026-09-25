@@ -1,0 +1,7 @@
+{
+  "schema_version": "loopx_turn_result_v0",
+  "result_kind": "validated_progress",
+  "classification": "a_then_b",
+  "summary": "Schedule worker A before worker B.",
+  "completed_phases": ["host_execute", "typed_result"]
+}
