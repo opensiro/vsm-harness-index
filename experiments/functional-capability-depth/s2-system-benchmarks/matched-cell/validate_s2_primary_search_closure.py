@@ -9,6 +9,12 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 S2 = HERE.parent
 EXPERIMENT = S2.parent
+ROOT = EXPERIMENT.parents[1]
+
+CANONICAL_DELTAS = {
+    "cadis": ("C", "52c55854b1abbcda82839b7a934cbdb16a69b635", "cadis-native-s2-no-direct-result"),
+    "ares": ("C", "f03153acace190c555c3721019407a7df47c139f", "ares-native-s2-no-direct-result"),
+}
 
 
 def load(path: Path):
@@ -20,6 +26,21 @@ def require(condition: bool, message: str) -> None:
         raise SystemExit(message)
 
 
+def assessment_fields(harness_id: str) -> dict[str, str]:
+    path = ROOT / "assessments" / f"{harness_id}.md"
+    require(path.exists(), f"missing canonical assessment for {harness_id}")
+    text = path.read_text(encoding="utf-8")
+    require(text.startswith("---\n"), f"{harness_id}: missing assessment front matter")
+    front = text.split("---\n", 2)[1]
+    fields: dict[str, str] = {}
+    for line in front.splitlines():
+        if ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        fields[key.strip()] = value.strip()
+    return fields
+
+
 closure = load(HERE / "s2-primary-search-closure.json")
 coverage = load(S2 / "coverage.json")
 observations = load(S2 / "observations.json")
@@ -29,6 +50,7 @@ require(closure["schema_version"] == 1, "S2 closure schema_version drift")
 require(closure["status"] == "experimental-non-normative", "S2 closure status drift")
 require(closure["tracking_issue"] == 564, "S2 closure tracking issue drift")
 require(closure["current_state_update_issue"] == 586, "S2 closure current update issue drift")
+require(closure["canonical_delta_review_issue"] == 592, "S2 canonical delta review issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S2 closure must preserve gap")
 require(closure["closure_scope"] == "current-public-evidence", "S2 closure scope drift")
@@ -43,8 +65,9 @@ require(
 )
 require(len(observations) == expected["direct_observations"], "S2 observation registry count drift")
 require(coverage["proxy_projection_count"] == expected["native_proxy_projections"], "S2 proxy projection count drift")
+representative = coverage["representative_canonical_s2_systems_inspected"]
 require(
-    len(coverage["representative_canonical_s2_systems_inspected"]) == expected["representative_canonical_s2_systems_inspected"],
+    len(representative) == expected["representative_canonical_s2_systems_inspected"],
     "S2 representative canonical cohort size drift",
 )
 
@@ -60,7 +83,7 @@ require(
     f"S2 closure route-state drift: {routes!r}",
 )
 
-case_ids = {case["case_id"] for case in coverage["cases"]}
+cases = {case["case_id"]: case for case in coverage["cases"]}
 for required_case in {
     "dpbench-direct-scaffolded",
     "stale-semantic-coordination-direct-scaffolded",
@@ -68,9 +91,23 @@ for required_case in {
     "autogen-magentic-one-native-proxy",
     "squad-marble-native-proxy",
     "deepseek-harness-native-mechanism-no-direct-benchmark",
+    "cadis-native-s2-no-direct-result",
+    "ares-native-s2-no-direct-result",
     "mao-bench-candidate-no-results",
 }:
-    require(required_case in case_ids, f"S2 closure lost required reviewed case: {required_case}")
+    require(required_case in cases, f"S2 closure lost required reviewed case: {required_case}")
+
+for harness_id, (state, review_ref, case_id) in CANONICAL_DELTAS.items():
+    fields = assessment_fields(harness_id)
+    require(fields.get("status") == "included", f"{harness_id}: canonical assessment no longer included")
+    require(fields.get("autonomy_s2") == state, f"{harness_id}: canonical S2 state drift")
+    require(fields.get("review_ref") == review_ref, f"{harness_id}: canonical review_ref drift")
+    require(harness_id in representative, f"{harness_id}: missing from representative S2 cohort")
+    case = cases[case_id]
+    require(case.get("canonical_harness_id") == harness_id, f"{case_id}: canonical identity drift")
+    require(case.get("canonical_state_at_review") == state, f"{case_id}: reviewed S2 state drift")
+    require(case.get("canonical_review_ref") == review_ref, f"{case_id}: reviewed ref drift")
+    require(case.get("admitted") is False, f"{case_id}: delta review must remain non-admitted")
 
 require(len(observations) == 1, "S2 closure expects one direct non-canonical observation")
 observation = observations[0]
