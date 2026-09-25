@@ -302,6 +302,65 @@ def validate_codecrdt_observation(observations: list[dict]) -> None:
         fail("CodeCRDT observation must retain immutable HTTPS provenance")
 
 
+def validate_agentroom_observation(observations: list[dict]) -> None:
+    observation = observation_by_id(observations, "agentroom-parallel-merge-t4-sonnet46-2026-08")
+    expected = {
+        "function": "S2",
+        "benchmark_id": "agentroom-concurrent-coding",
+        "benchmark_fit": "direct",
+        "evidence_source_class": "first-party-reported",
+        "boundary_class": "paper-defined-concurrent-coding-team",
+        "canonical_harness_id": None,
+        "canonical_system_eligible": False,
+        "system_compatibility": "native-system",
+        "comparison_class": "partially-matched",
+        "paper": "https://arxiv.org/abs/2608.23740",
+        "paper_version": "v1",
+        "paper_date": "2026-08-24",
+        "model": "Sonnet 4.6",
+        "worker_count": 2,
+        "task": "T4 financial ledger",
+        "task_budget_seconds": 600,
+    }
+    for field, value in expected.items():
+        if observation.get(field) != value:
+            fail(f"AgentRoom direct S2 observation {field} drift: {observation.get(field)!r}")
+
+    if "benchmark_artifact_revision" in observation:
+        fail("AgentRoom must not acquire a software revision while the paper-cited repository is unrecoverable")
+    if observation.get("budget_fair_analysis_pool_seconds") != [30, 700]:
+        fail("AgentRoom budget-fair analysis pool drift")
+
+    control = observation.get("control")
+    treatment = observation.get("treatment")
+    comparison = observation.get("reported_comparison")
+    if not isinstance(control, dict) or not isinstance(treatment, dict) or not isinstance(comparison, dict):
+        fail("AgentRoom control/treatment/comparison records must remain objects")
+    if (control.get("condition"), control.get("mean_quality"), control.get("n"), control.get("sigma")) != (
+        "parallel-merge", 0.456, 12, 0.178
+    ):
+        fail("AgentRoom parallel-merge control result drift")
+    if (treatment.get("condition"), treatment.get("mean_quality"), treatment.get("n"), treatment.get("sigma")) != (
+        "AgentRoom", 0.669, 14, 0.140
+    ):
+        fail("AgentRoom treatment result drift")
+    if comparison != {"mean_difference": 0.213, "welch_t": 3.35, "p_value": 0.003}:
+        fail("AgentRoom reported comparison drift")
+
+    limitation = observation.get("comparison_limitation")
+    if not isinstance(limitation, str) or "full AgentRoom coordination bundle" not in limitation:
+        fail("AgentRoom bundle-treatment limitation must remain explicit")
+    provenance = observation.get("provenance_limitation")
+    if not isinstance(provenance, str) or "no software revision" not in provenance:
+        fail("AgentRoom paper-only provenance limitation must remain explicit")
+    repo_status = observation.get("source_repository_status_at_review")
+    if not isinstance(repo_status, str) or "404" not in repo_status:
+        fail("AgentRoom source-repository availability status must remain explicit")
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) != 2 or any(not valid_https(source) for source in sources):
+        fail("AgentRoom observation must retain paper HTTPS provenance")
+
+
 def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
@@ -313,8 +372,8 @@ def main() -> None:
         fail("coverage function must be S2")
     if not isinstance(observations, list):
         fail("observations.json must contain a list")
-    if len(observations) != 3:
-        fail("S2 observations.json must contain exactly three direct non-canonical observations")
+    if len(observations) != 4:
+        fail("S2 observations.json must contain exactly four direct non-canonical observations")
     if coverage.get("direct_observation_count") != len(observations):
         fail("direct_observation_count does not match observations.json")
     if coverage.get("canonical_direct_observation_count") != 0:
@@ -337,6 +396,7 @@ def main() -> None:
         "specification-gap-recovery",
         "cooperbench-team-harness",
         "codecrdt-observation-coordination",
+        "agentroom-concurrent-coding",
     }
     if reviewed_direct_s2 != expected_direct_s2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
@@ -470,9 +530,26 @@ def main() -> None:
     if codecrdt.get("observation_ref") != "observations.json#codecrdt-parallel-convergence-2025-10":
         fail("CodeCRDT coverage/observation linkage drift")
 
+    agentroom = by_id.get("agentroom-concurrent-coding-direct-native-noncanonical")
+    if agentroom is None:
+        fail("missing AgentRoom direct-native-noncanonical S2 coverage case")
+    if agentroom.get("benchmark_fit") != "direct" or agentroom.get("coverage_class") != "direct-native-noncanonical":
+        fail("AgentRoom must remain direct-native-noncanonical S2 evidence")
+    if agentroom.get("system_compatibility") != "native-system":
+        fail("AgentRoom must remain native-system at its paper-defined boundary")
+    if agentroom.get("canonical_harness_id") is not None:
+        fail("AgentRoom must not acquire a canonical harness id through capability evidence")
+    if "review_ref" in agentroom:
+        fail("AgentRoom coverage must not invent a source repository revision")
+    if agentroom.get("paper") != "https://arxiv.org/abs/2608.23740":
+        fail("AgentRoom paper provenance drift")
+    if agentroom.get("observation_ref") != "observations.json#agentroom-parallel-merge-t4-sonnet46-2026-08":
+        fail("AgentRoom coverage/observation linkage drift")
+
     validate_nool_observation(observations)
     validate_specification_gap_observation(observations)
     validate_codecrdt_observation(observations)
+    validate_agentroom_observation(observations)
     validate_proxy_links(coverage, by_id)
 
     representative = coverage.get("representative_canonical_s2_systems_inspected")
