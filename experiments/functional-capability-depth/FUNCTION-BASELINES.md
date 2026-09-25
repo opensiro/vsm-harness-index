@@ -9,7 +9,7 @@ This view reports baseline availability and evidence coverage only. It does not 
 | Function | Status | Primary family | Reference model | Evidence state |
 | --- | --- | --- | --- | --- |
 | S1 | `selected` | PawBench v1.0 | `qwen3.6-35b-a3b` | [generated S1 baseline](S1-BASELINE.md) |
-| S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 18 reviewed cases · direct families: `6` · direct observations: `2` · canonical direct observations: `0` |
+| S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 19 reviewed cases · direct families: `7` · direct observations: `3` · canonical direct observations: `0` |
 | S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 11 reviewed cases · direct families: `3` · direct observations: `1` |
 | S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 16 reviewed cases · direct families: `5` · canonical direct observations: `2` · composed direct observations: `3` |
 | S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 15 reviewed cases · direct families: `4` · canonical direct observations: `2` · composed direct observations: `4` |
@@ -21,7 +21,7 @@ A `gap` means that no matched canonical-harness primary baseline has been select
 
 ### S2
 
-Reviewed direct S2 evidence now includes six benchmark-defined disturbance/attenuation families. Nool and The Specification Gap supply two admitted immutable direct non-canonical observations; Twining lacks recoverable exact treatment revision, while CooperBench has a committed first-party 50-pair ablation report but not the pinned flash-run logs needed for observation admission. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses.
+Reviewed direct S2 evidence now includes seven disturbance/attenuation families. Nool and The Specification Gap provide two benchmark-scaffolded direct non-canonical observations, while CodeCRDT provides one descriptive direct observation at its own external native product boundary. Twining lacks recoverable exact treatment revision, and CooperBench lacks the pinned flash-run logs needed for observation admission. CodeCRDT has no matched uncoordinated-parallel control and is not a canonical Index harness. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses.
 
 Evidence search: [`s2-system-benchmarks/coverage.json`](s2-system-benchmarks/coverage.json).
 
