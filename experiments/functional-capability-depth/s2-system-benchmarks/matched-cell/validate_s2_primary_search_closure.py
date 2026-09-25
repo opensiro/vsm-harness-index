@@ -56,6 +56,7 @@ require(closure["current_state_update_issue"] == 586, "S2 closure current update
 require(closure["canonical_delta_review_issue"] == 592, "S2 canonical delta review issue drift")
 require(closure["post_closure_delta_review_issue"] == 626, "S2 post-closure delta review issue drift")
 require(closure["benchmark_family_review_issue"] == 596, "S2 benchmark-family review issue drift")
+require(closure["public_evidence_admission_issue"] == 629, "S2 public evidence admission issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S2 closure must preserve gap")
 require(closure["closure_scope"] == "current-public-evidence", "S2 closure scope drift")
@@ -94,6 +95,7 @@ for required_case in {
     "stale-semantic-coordination-direct-scaffolded",
     "nool-fleet-coordination-direct-scaffolded",
     "twining-conflict-resolution-direct-scaffolded",
+    "specification-gap-recovery-direct-scaffolded",
     "autogen-magentic-one-native-proxy",
     "squad-marble-native-proxy",
     "deepseek-harness-native-mechanism-no-direct-benchmark",
@@ -133,18 +135,36 @@ for harness_id in ("shep", "axocoatl"):
     require(row["canonical_review_ref"] == review_ref, f"{harness_id}: delta ref drift")
     require(row["result_surface_review"] == "no-direct-s2-result", f"{harness_id}: delta result disposition drift")
 
-require(len(observations) == 1, "S2 closure expects one direct non-canonical observation")
-observation = observations[0]
-require(observation["benchmark_id"] == "nool-fleet-coordination", "S2 direct observation benchmark drift")
-require(observation["canonical_harness_id"] is None, "Nool S2 observation must remain non-canonical")
-require(observation["canonical_system_eligible"] is False, "Nool S2 observation must remain non-canonical")
-require(observation["system_compatibility"] == "benchmark-scaffolded", "Nool S2 system compatibility drift")
+require(len(observations) == 2, "S2 closure expects two direct non-canonical observations")
+observation_rows = {row["observation_id"]: row for row in observations}
+require(
+    set(observation_rows) == {
+        "nool-trackd-scaleup1-contention-2026-08-21",
+        "specification-gap-recovery-2026-03",
+    },
+    "S2 direct observation identity set drift",
+)
+for observation_id, benchmark_id in {
+    "nool-trackd-scaleup1-contention-2026-08-21": "nool-fleet-coordination",
+    "specification-gap-recovery-2026-03": "specification-gap-recovery",
+}.items():
+    observation = observation_rows[observation_id]
+    require(observation["benchmark_id"] == benchmark_id, f"{observation_id}: benchmark drift")
+    require(observation["canonical_harness_id"] is None, f"{observation_id}: must remain non-canonical")
+    require(observation["canonical_system_eligible"] is False, f"{observation_id}: must remain non-canonical")
+    require(observation["system_compatibility"] == "benchmark-scaffolded", f"{observation_id}: system compatibility drift")
 
 s2_baseline = baselines["functions"]["S2"]
 require(s2_baseline["status"] == "gap", "S2 primary was selected without reopening closure")
 require(
     [row["benchmark_id"] for row in s2_baseline["reviewed_direct_families"]]
-    == ["dpbench", "stale-semantic-coordination", "nool-fleet-coordination", "twining-conflict-resolution"],
+    == [
+        "dpbench",
+        "stale-semantic-coordination",
+        "nool-fleet-coordination",
+        "twining-conflict-resolution",
+        "specification-gap-recovery",
+    ],
     "S2 gap metadata direct-family set drift",
 )
 require(len(closure["reopen_when"]) >= 3, "S2 closure must retain explicit reopen conditions")
