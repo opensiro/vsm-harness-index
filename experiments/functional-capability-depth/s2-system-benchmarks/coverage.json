@@ -2,7 +2,7 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-25",
   "function": "S2",
-  "direct_benchmark_family_count": 4,
+  "direct_benchmark_family_count": 5,
   "direct_observation_count": 1,
   "canonical_direct_observation_count": 0,
   "proxy_projection_count": 2,
@@ -106,6 +106,25 @@
         "https://github.com/daveangulo/twining-mcp/blob/d7860e060ddf79e9cca2cc8a0bd9179985c04eee/src/index.ts"
       ],
       "finding": "Twining's conflict-resolution scenario directly instantiates S2 at the benchmark-defined organization boundary: Alice and Bob independently introduce incompatible architectural choices, while Carol must detect the mismatch and reconcile both branches into one coherent architecture; the scorer measures conflict detection, resolution quality, decision documentation and test preservation. The Twining treatment is benchmark-scaffolded through Claude Code plugin/MCP configuration. The committed valid run cannot be admitted as a direct observation because metadata leaves twiningMcpVersion empty while the treatment invokes bare npx twining-mcp and may resolve a user-installed plugin, so the exact treatment revision is not recoverable. twining-mcp itself starts an MCP stdio server for shared coordination state and is not an admitted canonical Index harness/system boundary.",
+      "admitted": false
+    },
+    {
+      "case_id": "grit-parallel-agent-contention-direct-noncanonical",
+      "benchmark": "Grit parallel-agent merge-contention benchmarks",
+      "benchmark_fit": "direct",
+      "coverage_class": "candidate-boundary-unresolved",
+      "system_compatibility": "unclear",
+      "canonical_harness_id": null,
+      "review_ref": "0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe",
+      "result_claim_commit": "a2c48735e0a16c49ca1541c4865fce438c479405",
+      "primary_sources": [
+        "https://github.com/rtk-ai/grit/tree/0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe",
+        "https://github.com/rtk-ai/grit/blob/0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe/README.md",
+        "https://github.com/rtk-ai/grit/blob/0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe/scripts/README.md",
+        "https://github.com/rtk-ai/grit/blob/0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe/scripts/.gitignore",
+        "https://github.com/rtk-ai/grit/commit/a2c48735e0a16c49ca1541c4865fce438c479405"
+      ],
+      "finding": "Grit directly instantiates S2 at its product-defined coordination boundary: parallel coding workers create merge/contention disturbance, while first-party symbol claims and queues attenuate overlapping work before execution, isolated worktrees prevent workspace collision, and serialized integration attenuates merge races on return. The pinned repository publishes benchmark scripts and immutable first-party summary claims, but run-level result directories are explicitly gitignored (`*/results/`), so the exact per-run ledgers needed by the current observation-provenance gate are not public. Grit is also not an admitted canonical Index harness. The family is therefore reviewed as direct S2, but no observation_ref or canonical S2 attribution is admitted.",
       "admitted": false
     },
     {
@@ -249,6 +268,7 @@
     "semantic-staleness-interference",
     "architectural-conflict-reconciliation",
     "team-loop-stall-turn-interference",
-    "host-resource-admission-contention"
+    "host-resource-admission-contention",
+    "symbol-claim-queue-merge-contention"
   ]
 }
