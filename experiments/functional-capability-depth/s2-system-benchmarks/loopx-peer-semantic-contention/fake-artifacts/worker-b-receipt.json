@@ -1,0 +1,9 @@
+{
+  "status": "committed",
+  "agent_id": "codex-worker-b",
+  "todo_id": "todo-task-b",
+  "result_kind": "validated_progress",
+  "start_base_commit": "after-a-commit",
+  "patch_ref": "artifact:worker-b.patch",
+  "isolated_acceptance": true
+}
