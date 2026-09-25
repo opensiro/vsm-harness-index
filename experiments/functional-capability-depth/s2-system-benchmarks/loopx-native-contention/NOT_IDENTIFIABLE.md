@@ -34,12 +34,12 @@ experiment rather than identify it.
 
 ## What this does not mean
 
-This is **not** a negative S2 capability result and does not change the canonical
-LoopX assessment (`S2=A`). In plain terms, this is not a negative S2 capability
-result; it is an execution-identifiability stop for this frozen fixture. The
-assessment is evidence about the first-party organizational function at the
-reviewed boundary; this experiment asks a narrower empirical question under one
-frozen two-task disturbance fixture.
+This is not a negative S2 capability result.
+
+The execution-identifiability stop does not change the canonical LoopX assessment
+(`S2=A`). The assessment is evidence about the first-party organizational
+function at the reviewed boundary; this experiment asks a narrower empirical
+question under one frozen two-task disturbance fixture.
 
 `protocol.json` remains `preregistered-no-results`, `results` remains `null`, and
 `observations.json` is not modified.
