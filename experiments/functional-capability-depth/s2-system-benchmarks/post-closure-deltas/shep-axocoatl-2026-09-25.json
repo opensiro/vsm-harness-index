@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "status": "experimental-non-normative",
+  "tracking_issue": 626,
   "reviewed_at": "2026-09-25",
   "function": "S2",
   "disposition": "canonical-mechanisms-no-direct-results",
@@ -13,8 +14,8 @@
       "result_surface_review": "no-direct-s2-result",
       "finding": "Shep's canonical constructor S2 path regulates concrete integration interference through dependency blocking, sync/rebase-before-spawn and transactional integration/conflict handling. Reviewed first-party public surfaces at the pinned revision provide implementation, architecture, specifications and project evidence, but no explicit capability result that instantiates an inter-S1 disturbance and measures attenuation through that native S2 path.",
       "primary_sources": [
-        "https://github.com/shep-ai/shep/tree/a874b3238fd01ebdbafc11015cccd9a63ed6e2f2/src",
-        "https://github.com/shep-ai/shep/blob/a874b3238fd01ebdbafc11015cccd9a63ed6e2f2/docs/architecture.md"
+        "https://github.com/shep-ai/shep/blob/a874b3238fd01ebdbafc11015cccd9a63ed6e2f2/packages/core/src/application/use-cases/features/check-and-unblock-features.use-case.ts",
+        "https://github.com/shep-ai/shep/blob/a874b3238fd01ebdbafc11015cccd9a63ed6e2f2/specs/041-feature-dependencies/spec.yaml"
       ]
     },
     {
