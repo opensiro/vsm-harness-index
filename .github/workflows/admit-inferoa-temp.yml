@@ -1,0 +1,64 @@
+name: admit-inferoa-temp
+
+on:
+  push:
+    branches:
+      - admit-inferoa-250
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply canonical admission inputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path("assessments/inferoa.md")
+          text = assessment.read_text(encoding="utf-8")
+          old = "status: proposed"
+          new = "status: included"
+          if old not in text:
+              raise SystemExit("expected proposed Inferoa assessment state")
+          assessment.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          catalog = Path("data/catalog.psv")
+          catalog_text = catalog.read_text(encoding="utf-8")
+          if "|inferoa|" not in catalog_text:
+              if not catalog_text.endswith("\n"):
+                  catalog_text += "\n"
+              catalog_text += "250|inferoa|Inferoa|https://github.com/agentic-in/inferoa|2026-06-08T06:29:56Z|index-addition|1fd9ec4518b26b60cc78cf67c4faf337fe9bb2cd|2026-09-25\n"
+              catalog.write_text(catalog_text, encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          signatures_text = signatures.read_text(encoding="utf-8")
+          if "|inferoa|" not in signatures_text:
+              if not signatures_text.endswith("\n"):
+                  signatures_text += "\n"
+              signatures_text += (
+                  "250|inferoa|Inferoa closes autonomous S1 through durable Loop execution, S3 through a distinct internal reflection decision over objective-wide coverage/frontier/risk state, and S3* through checker-only verification with isolated suite modes; subagents/worktrees do not establish S2 at the selected recursion, while discovery/self-improve and policy/configuration do not close S4 or S5.\n"
+              )
+              signatures.write_text(signatures_text, encoding="utf-8")
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Commit rendered admission transaction
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "index: admit Inferoa at catalog #250"
+          git push
