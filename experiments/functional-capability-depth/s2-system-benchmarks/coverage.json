@@ -3,12 +3,13 @@
   "reviewed_at": "2026-09-25",
   "function": "S2",
   "direct_benchmark_family_count": 7,
-  "direct_observation_count": 3,
-  "canonical_direct_observation_count": 0,
+  "direct_observation_count": 4,
+  "canonical_direct_observation_count": 1,
   "proxy_projection_count": 2,
   "coverage_classes": [
     "direct-scaffolded",
     "direct-native-noncanonical",
+    "direct-native-canonical",
     "native-proxy",
     "framework-scaffolded",
     "candidate-boundary-unresolved",
@@ -302,6 +303,26 @@
         "https://github.com/bradygaster/squad/tree/2099faf51c08a912c359209447011b06decf0565"
       ],
       "finding": "Canonical Squad now establishes S2=A, and the public MARBLE campaign evaluates Squad's first-party coordination path under controlled same-model/same-task factorial conditions, including coordination-only versus no-Squad and full-Squad versus memory-only contrasts. This is therefore native historical-lineage S2 capability evidence linked to canonical Squad. MARBLE still scores broad collaborative completion, milestone and judged-quality outcomes rather than an explicit inter-S1 interference/oscillation variable and its attenuation, so the result remains a native proxy rather than a direct S2 observation or primary baseline. Numeric results live only in the shared raw observation record.",
+      "admitted": false
+    },
+    {
+      "case_id": "squad-shared-state-conflict-direct-native-canonical",
+      "benchmark": "Squad shared-state conflict attenuation operational evidence",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-native-canonical",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "squad",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "2099faf51c08a912c359209447011b06decf0565",
+      "observation_ref": "observations.json#squad-shared-state-conflict-attenuation-2026-03",
+      "primary_sources": [
+        "https://github.com/bradygaster/squad/tree/2099faf51c08a912c359209447011b06decf0565",
+        "https://github.com/bradygaster/squad/commit/34925f2f5bec49742216ab9dd93c756fbe1aa8c9",
+        "https://github.com/bradygaster/squad/commit/e7e6255aa84e04993d568a10331bf9da6661b478",
+        "https://github.com/bradygaster/squad/commit/6e304ec6d2f1d385226fba074a1192a3eab7b5cb",
+        "https://www.tamirdresher.com/blog/2026/03/17/scaling-ai-part4-distributed"
+      ],
+      "finding": "Canonical Squad S2=A is independently established by the assessment. First-party operational history and a public case study record real concurrent shared-state merge interference, native merge=union preservation, per-agent decision inboxes and Scribe consolidation, followed by subsequent project/release operation with team state preserved. This is direct descriptive native S2 evidence, not a new benchmark family or matched causal comparison.",
       "admitted": false
     },
     {

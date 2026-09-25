@@ -14,8 +14,8 @@
   "closure_scope": "current-public-evidence",
   "evidence_depth": {
     "direct_benchmark_families": 7,
-    "direct_observations": 3,
-    "canonical_direct_observations": 0,
+    "direct_observations": 4,
+    "canonical_direct_observations": 1,
     "native_proxy_projections": 2,
     "representative_canonical_s2_systems_inspected": 15
   },
@@ -73,9 +73,9 @@
       "blocking_reason": "The adapter/benchmark design is structurally promising, but the public leaderboard does not yet contain the multi-orchestrator result rows needed for a matched canonical cell."
     }
   ],
-  "closure_claim": "Current public evidence contains seven direct S2 disturbance/attenuation families, three direct non-canonical observations, and two native quantitative S2 proxy projections. CodeCRDT expands direct evidence to an external first-party native product boundary, but the current reviewed canonical cohort still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.",
+  "closure_claim": "Current public evidence contains seven direct S2 disturbance/attenuation families, four direct observations, one canonical native descriptive direct observation (Squad), and two native quantitative S2 proxy projections. The canonical layer is therefore no longer empty, but public evidence still lacks a materially matched direct comparison across two or more canonical S2 systems, so no primary baseline is selected.",
   "reopen_when": [
-    "a canonical S2 harness publishes an explicit native inter-S1 disturbance-to-attenuation result",
+    "a second canonical S2 harness publishes a direct native or adapter-preserved inter-S1 disturbance-to-attenuation result that can form a materially comparable cell with existing canonical evidence",
     "a materially matched benchmark evaluates two or more canonical systems exercising their own native or adapter-preserved S2 paths under one disturbance definition",
     "MAO-Bench or a comparable benchmark publishes recoverable multi-orchestrator results with immutable system/model/configuration provenance and direct S2 semantics"
   ],
@@ -85,6 +85,7 @@
     "another topology or framework benchmark whose coordination organization is benchmark-authored",
     "another communication or token-efficiency metric without disturbance-to-attenuation closure"
   ],
-  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool and The Specification Gap provide direct evidence only for their benchmark-defined organizations. CodeCRDT provides direct descriptive evidence for its own external native product boundary, but it has no canonical Index identity and its sequential-versus-parallel study does not estimate a causal coordination uplift versus an uncoordinated-parallel control. Twining and CooperBench contribute direct-family coverage without admitted observations for their recorded provenance reasons. The S2 primary remains frozen until materially new canonical native or matched evidence appears.",
-  "cooperbench_family_review_issue": 633
+  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Squad now supplies one canonical native descriptive direct observation, while Nool, The Specification Gap and CodeCRDT remain direct non-canonical observations at their reviewed boundaries. One descriptive canonical row is not a matched cross-harness primary; S2 primary remains a gap until materially matched canonical evidence appears.",
+  "cooperbench_family_review_issue": 633,
+  "squad_canonical_direct_issue": 644
 }

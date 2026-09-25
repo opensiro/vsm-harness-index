@@ -35,9 +35,9 @@ For a cross-harness primary baseline, the direct S2 path must additionally be na
 ## Current result
 
 ```text
-direct S2 benchmark families reviewed:          6
-direct S2 observations:                         2
-canonical native direct-S2 observations:        0
+direct S2 benchmark families reviewed:          7
+direct S2 observations:                         4
+canonical native direct-S2 observations:        1
 native canonical proxy projections:             2
 primary S2 baseline:                             gap
 ```
@@ -49,9 +49,10 @@ The direct families are:
 - `Nool coding-agent fleet coordination`;
 - `Twining Benchmark conflict-resolution`;
 - `The Specification Gap / AmbigClass recovery`;
-- `CooperBench team-harness coordination ablation`.
+- `CooperBench team-harness coordination ablation`;
+- `CodeCRDT observation-driven coordination evaluation`.
 
-The two admitted direct observations are Nool Track D and The Specification Gap recovery experiment. Both are direct at benchmark-defined organization boundaries and neither is a canonical native observation.
+Four direct observations are admitted: Nool Track D, The Specification Gap, CodeCRDT, and a descriptive canonical Squad operational observation. The first three remain non-canonical; Squad is the first canonical native direct S2 row.
 
 Twining and CooperBench add direct-family coverage without adding observation rows. Twining lacks recoverable exact treatment revision. CooperBench has a committed 50-pair first-party ablation report, but the flash run logs used to generate that report are not pinned in the reviewed repository.
 
@@ -197,6 +198,12 @@ Canonical AutoGen AgentChat establishes S2 independently through first-party tea
 
 Magentic-One's published native orchestrator ablation changes end-task performance on GAIA/AssistantBench/WebArena. This is useful quantitative evidence, but the ablation spans S2 and S3 mechanisms and the tasks do not instantiate an explicit S2 disturbance. It remains a `native-proxy` projection rather than a direct S2 observation.
 
+## Canonical direct descriptive observation: Squad shared-state conflict attenuation
+
+Canonical Squad independently establishes `S2=A` at `2099faf51c08a912c359209447011b06decf0565`. First-party repository history records native `merge=union` rules for append-only team state, Scribe consolidation of per-agent decision inboxes, and later release work with team state preserved. A first-party public operational case study separately describes simultaneous agent writes creating a real `.squad/decisions.md` merge conflict, then native `merge=union` preservation and inbox/Scribe consolidation.
+
+This is admitted as `direct-native-canonical`, `descriptive-only`. It creates no benchmark family and no causal numeric uplift. The separate Squad/MARBLE quantitative surface remains a `native-proxy` because it scores broad collaboration outcomes rather than an explicit S2 disturbance.
+
 ## Native proxy: Squad / MARBLE
 
 Canonical Squad now establishes `S2=A`. The public MARBLE campaign exercises Squad's first-party coordination path under controlled same-model/same-task factorial conditions, including coordination-only versus no-Squad and full-Squad versus memory-only contrasts.
@@ -283,7 +290,7 @@ A future primary still requires materially matched evidence for two or more cano
 
 ## Source of truth
 
-- `observations.json` — admitted direct S2 observations; currently two non-canonical rows (Nool Track D and The Specification Gap);
+- `observations.json` — admitted direct S2 observations; currently three non-canonical rows plus one canonical descriptive Squad row;
 - `coverage.json` — reviewed direct/proxy/candidate cases and canonical linkage;
 - `proxy_links.json` — native canonical proxy projections;
 - `validate.py` — fail-closed separation of direct, canonical and proxy evidence;

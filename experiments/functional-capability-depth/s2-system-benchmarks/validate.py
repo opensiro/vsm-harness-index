@@ -19,6 +19,7 @@ SYSTEM_OBSERVATIONS = HERE.parent / "system-observations"
 COVERAGE_CLASSES = {
     "direct-scaffolded",
     "direct-native-noncanonical",
+    "direct-native-canonical",
     "native-proxy",
     "framework-scaffolded",
     "candidate-boundary-unresolved",
@@ -302,6 +303,23 @@ def validate_codecrdt_observation(observations: list[dict]) -> None:
         fail("CodeCRDT observation must retain immutable HTTPS provenance")
 
 
+
+def validate_squad_canonical_observation(observations: list[dict]) -> None:
+    observation = observation_by_id(observations, "squad-shared-state-conflict-attenuation-2026-03")
+    expected = {"function":"S2","benchmark_id":None,"benchmark_fit":"direct","evidence_source_class":"first-party-reported","boundary_class":"canonical-squad-project-team","canonical_harness_id":"squad","canonical_system_eligible":True,"canonical_assessment_ref":"2099faf51c08a912c359209447011b06decf0565","canonical_state_at_review":"A","system_compatibility":"native-system","comparison_class":"descriptive-only"}
+    for field, value in expected.items():
+        if observation.get(field) != value:
+            fail(f"Squad canonical direct S2 observation {field} drift: {observation.get(field)!r}")
+    fields = assessment_fields("squad")
+    if fields.get("status") != "included" or fields.get("review_ref") != expected["canonical_assessment_ref"] or fields.get("autonomy_s2") != "A":
+        fail("Squad canonical assessment/ref/S2 state drift")
+    if observation.get("operational_commits") != ["34925f2f5bec49742216ab9dd93c756fbe1aa8c9","e7e6255aa84e04993d568a10331bf9da6661b478","6e304ec6d2f1d385226fba074a1192a3eab7b5cb"]:
+        fail("Squad operational evidence lineage drift")
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 5 or any(not valid_https(source) for source in sources):
+        fail("Squad canonical direct observation must retain public HTTPS provenance")
+
+
 def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
@@ -313,12 +331,15 @@ def main() -> None:
         fail("coverage function must be S2")
     if not isinstance(observations, list):
         fail("observations.json must contain a list")
-    if len(observations) != 3:
-        fail("S2 observations.json must contain exactly three direct non-canonical observations")
+    if len(observations) != 4:
+        fail("S2 observations.json must contain exactly four direct observations")
     if coverage.get("direct_observation_count") != len(observations):
         fail("direct_observation_count does not match observations.json")
-    if coverage.get("canonical_direct_observation_count") != 0:
-        fail("S2 canonical_direct_observation_count must remain 0")
+    canonical_observations = [row for row in observations if row.get("canonical_system_eligible") is True]
+    if coverage.get("canonical_direct_observation_count") != len(canonical_observations):
+        fail("canonical_direct_observation_count does not match canonical direct observations")
+    if len(canonical_observations) != 1:
+        fail("S2 must retain exactly one canonical direct observation in this snapshot")
 
     declared_classes = set(coverage.get("coverage_classes", []))
     if declared_classes != COVERAGE_CLASSES:
@@ -456,6 +477,18 @@ def main() -> None:
     if "observation_ref" in cooperbench:
         fail("CooperBench must not acquire an observation_ref without a new provenance review")
 
+    squad_direct = by_id.get("squad-shared-state-conflict-direct-native-canonical")
+    if squad_direct is None:
+        fail("missing Squad canonical direct-S2 coverage case")
+    if squad_direct.get("benchmark_fit") != "direct" or squad_direct.get("coverage_class") != "direct-native-canonical":
+        fail("Squad operational evidence must remain direct-native-canonical S2")
+    if squad_direct.get("system_compatibility") != "native-system" or squad_direct.get("canonical_harness_id") != "squad":
+        fail("Squad canonical direct S2 linkage drift")
+    if squad_direct.get("canonical_state_at_review") != "A" or squad_direct.get("canonical_review_ref") != "2099faf51c08a912c359209447011b06decf0565":
+        fail("Squad canonical direct S2 assessment anchor drift")
+    if squad_direct.get("observation_ref") != "observations.json#squad-shared-state-conflict-attenuation-2026-03":
+        fail("Squad canonical direct coverage/observation linkage drift")
+
     codecrdt = by_id.get("codecrdt-observation-driven-direct-native-noncanonical")
     if codecrdt is None:
         fail("missing CodeCRDT direct-native-noncanonical S2 coverage case")
@@ -473,6 +506,7 @@ def main() -> None:
     validate_nool_observation(observations)
     validate_specification_gap_observation(observations)
     validate_codecrdt_observation(observations)
+    validate_squad_canonical_observation(observations)
     validate_proxy_links(coverage, by_id)
 
     representative = coverage.get("representative_canonical_s2_systems_inspected")

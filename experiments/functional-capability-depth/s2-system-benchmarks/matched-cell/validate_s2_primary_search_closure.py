@@ -58,6 +58,7 @@ require(closure["post_closure_delta_review_issue"] == 626, "S2 post-closure delt
 require(closure["benchmark_family_review_issue"] == 596, "S2 benchmark-family review issue drift")
 require(closure["public_evidence_admission_issue"] == 629, "S2 public evidence admission issue drift")
 require(closure["codecrdt_public_evidence_issue"] == 640, "S2 CodeCRDT public-evidence issue drift")
+require(closure["squad_canonical_direct_issue"] == 644, "S2 Squad canonical-direct issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S2 closure must preserve gap")
 require(closure["closure_scope"] == "current-public-evidence", "S2 closure scope drift")
@@ -101,6 +102,7 @@ for required_case in {
     "codecrdt-observation-driven-direct-native-noncanonical",
     "autogen-magentic-one-native-proxy",
     "squad-marble-native-proxy",
+    "squad-shared-state-conflict-direct-native-canonical",
     "deepseek-harness-native-mechanism-no-direct-benchmark",
     "cadis-native-s2-no-direct-result",
     "ares-native-s2-no-direct-result",
@@ -138,13 +140,14 @@ for harness_id in ("shep", "axocoatl"):
     require(row["canonical_review_ref"] == review_ref, f"{harness_id}: delta ref drift")
     require(row["result_surface_review"] == "no-direct-s2-result", f"{harness_id}: delta result disposition drift")
 
-require(len(observations) == 3, "S2 closure expects three direct non-canonical observations")
+require(len(observations) == 4, "S2 closure expects four direct observations")
 observation_rows = {row["observation_id"]: row for row in observations}
 require(
     set(observation_rows) == {
         "nool-trackd-scaleup1-contention-2026-08-21",
         "specification-gap-recovery-2026-03",
         "codecrdt-parallel-convergence-2025-10",
+        "squad-shared-state-conflict-attenuation-2026-03",
     },
     "S2 direct observation identity set drift",
 )
@@ -152,16 +155,27 @@ for observation_id, (benchmark_id, compatibility) in {
     "nool-trackd-scaleup1-contention-2026-08-21": ("nool-fleet-coordination", "benchmark-scaffolded"),
     "specification-gap-recovery-2026-03": ("specification-gap-recovery", "benchmark-scaffolded"),
     "codecrdt-parallel-convergence-2025-10": ("codecrdt-observation-coordination", "native-system"),
+    "squad-shared-state-conflict-attenuation-2026-03": (None, "native-system"),
 }.items():
     observation = observation_rows[observation_id]
     require(observation["benchmark_id"] == benchmark_id, f"{observation_id}: benchmark drift")
-    require(observation["canonical_harness_id"] is None, f"{observation_id}: must remain non-canonical")
-    require(observation["canonical_system_eligible"] is False, f"{observation_id}: must remain non-canonical")
     require(observation["system_compatibility"] == compatibility, f"{observation_id}: system compatibility drift")
+    if observation_id == "squad-shared-state-conflict-attenuation-2026-03":
+        require(observation["canonical_harness_id"] == "squad", "Squad canonical observation identity drift")
+        require(observation["canonical_system_eligible"] is True, "Squad canonical observation eligibility drift")
+        require(observation.get("canonical_assessment_ref") == "2099faf51c08a912c359209447011b06decf0565", "Squad canonical observation ref drift")
+        require(observation.get("canonical_state_at_review") == "A", "Squad canonical observation S2 state drift")
+    else:
+        require(observation["canonical_harness_id"] is None, f"{observation_id}: must remain non-canonical")
+        require(observation["canonical_system_eligible"] is False, f"{observation_id}: must remain non-canonical")
 
 require(
     observation_rows["codecrdt-parallel-convergence-2025-10"].get("comparison_class") == "descriptive-only",
     "CodeCRDT direct observation must remain descriptive-only",
+)
+require(
+    observation_rows["squad-shared-state-conflict-attenuation-2026-03"].get("comparison_class") == "descriptive-only",
+    "Squad canonical direct observation must remain descriptive-only",
 )
 
 s2_baseline = baselines["functions"]["S2"]
