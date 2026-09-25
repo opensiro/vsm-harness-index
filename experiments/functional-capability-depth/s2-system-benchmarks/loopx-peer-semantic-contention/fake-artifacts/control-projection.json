@@ -1,0 +1,7 @@
+{
+  "effective_action": "normal_run",
+  "interaction_contract": {
+    "mode": "bounded_delivery"
+  },
+  "agent_id": "codex-worker-a"
+}
