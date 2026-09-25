@@ -2,12 +2,13 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-25",
   "function": "S2",
-  "direct_benchmark_family_count": 6,
-  "direct_observation_count": 2,
+  "direct_benchmark_family_count": 7,
+  "direct_observation_count": 3,
   "canonical_direct_observation_count": 0,
   "proxy_projection_count": 2,
   "coverage_classes": [
     "direct-scaffolded",
+    "direct-native-noncanonical",
     "native-proxy",
     "framework-scaffolded",
     "candidate-boundary-unresolved",
@@ -57,7 +58,7 @@
         "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/docs/findings/2026-08-21-findings.md",
         "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/replications/MANIFEST.md"
       ],
-      "finding": "The pre-registered Track D fleet experiment directly instantiates interaction-specific S2 variety: autonomous coding workers concurrently target overlapping regions of one shared codebase, producing merge conflicts and silent composition breakage in an uncoordinated arm. The treatment attenuates that interference before work starts by gating footprint-overlapping tickets until the prior member integrates, causing later workers to branch from the updated integrated state. At N=10 on the 20-ticket contention workload, the two primary uncoordinated runs accept 1/20 and 13/20 tickets with 14/20 and 13/20 clean merges, while the two coordinated runs accept 19/20 each and merge 20/20 cleanly. The public repository is the benchmark/evidence package, not a canonical open-source Nool runtime, so the result is direct non-canonical S2 evidence and does not establish native canonical S2 ownership.",
+      "finding": "The pre-registered Track D fleet experiment directly instantiates interaction-specific S2 variety: autonomous coding workers concurrently target overlapping regions of one shared codebase, producing merge conflicts and silent composition breakage in an uncoordinated arm. The treatment attenuates that interference before work starts by gating footprint-overlapping tickets until the prior member integrates, causing later workers to branch from updated integrated state. At N=10 on the 20-ticket contention workload, the two primary uncoordinated runs accept 1/20 and 13/20 tickets with 14/20 and 13/20 clean merges, while the two coordinated runs accept 19/20 each and merge 20/20 cleanly. The public repository is the benchmark/evidence package, not a canonical open-source Nool runtime, so the result is direct non-canonical S2 evidence and does not establish native canonical S2 ownership.",
       "admitted": false
     },
     {
@@ -141,6 +142,26 @@
         "https://github.com/cooperbench/CooperBench/blob/63b9d44d9f39a02fccf5bf0052db48a917a011fd/scripts/gen_ablation_report.py"
       ],
       "finding": "CooperBench directly instantiates an S2-relevant coding-team disturbance at its benchmark-defined organization boundary: independently useful feature workers can create integration interference, while the first-party team harness supplies lead/member organization, atomic shared task claims, scratchpad/code sharing and communication surfaces. The committed 50-pair Codex/gpt-5.5 ablation report holds the task subset fixed and removes individual coordination features, so the family is direct S2. The report generator reads local flash run logs that are not pinned in the reviewed repository, however, so the report is not promoted into observations.json. Public full-dataset trajectory archives are a separate evaluation surface and are not substituted for the missing flash-run provenance. No canonical Index harness identity is inferred.",
+      "admitted": false
+    },
+    {
+      "case_id": "codecrdt-observation-driven-direct-native-noncanonical",
+      "benchmark": "CodeCRDT observation-driven coordination evaluation",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-native-noncanonical",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": null,
+      "review_ref": "8fa5a307062025c900e9de27696f4e804a0a7809",
+      "observation_ref": "observations.json#codecrdt-parallel-convergence-2025-10",
+      "primary_sources": [
+        "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809",
+        "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/README.md",
+        "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/evaluation_results/evaluation_report.yaml",
+        "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/evaluation_results",
+        "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/SCIENCE.md",
+        "https://arxiv.org/abs/2510.18893"
+      ],
+      "finding": "CodeCRDT directly instantiates S2 at its own first-party product boundary: parallel coding agents update one shared CRDT-backed artifact and coordinate by observing shared state, incorporating concurrent edits and relying on strong eventual consistency for convergence. The pinned repository commits a 600-evaluation corpus, environment metadata and reports; first-party scientific material reports 100% convergence with zero merge failures while noting residual semantic conflicts. Because the evaluation compares sequential with CodeCRDT-coordinated parallel operation rather than a matched uncoordinated-parallel arm, the admitted observation is descriptive-only and must not be used as a causal coordination uplift estimate. CodeCRDT is not a canonical Index harness, so no canonical S2 ownership is inferred.",
       "admitted": false
     },
     {
@@ -321,6 +342,7 @@
     "architectural-conflict-reconciliation",
     "specification-mediated-representation-conflict",
     "team-loop-stall-turn-interference",
-    "host-resource-admission-contention"
+    "host-resource-admission-contention",
+    "shared-state-convergence"
   ]
 }

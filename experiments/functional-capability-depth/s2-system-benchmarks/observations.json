@@ -135,5 +135,57 @@
       "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5/data/conflict_results",
       "https://arxiv.org/abs/2603.24284"
     ]
+  },
+  {
+    "observation_id": "codecrdt-parallel-convergence-2025-10",
+    "function": "S2",
+    "benchmark_id": "codecrdt-observation-coordination",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "product-defined-parallel-coding-team",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "native-system",
+    "comparison_class": "descriptive-only",
+    "benchmark_artifact_revision": "8fa5a307062025c900e9de27696f4e804a0a7809",
+    "result_artifact": "evaluation/evaluation_results/checkpoint.json",
+    "result_report": "evaluation/evaluation_results/evaluation_report.yaml",
+    "environment_artifact": "evaluation/evaluation_results/environment_info.json",
+    "objective_metrics_artifact": "evaluation/evaluation_results/objective_metrics.csv",
+    "paper": "https://arxiv.org/abs/2510.18893",
+    "experiment": "CodeCRDT sequential-versus-parallel evaluation",
+    "date": "2025-10-15",
+    "model": "Claude Sonnet 4.5",
+    "task_count": 6,
+    "runs_per_task_per_mode": 50,
+    "total_evaluations": 600,
+    "sequential_runs": 300,
+    "parallel_runs": 300,
+    "environment": {
+      "platform": "Linux",
+      "architecture": "aarch64",
+      "python_version": "3.12.3",
+      "temperature": 0.0,
+      "random_seed": 42,
+      "max_concurrent_requests": 1
+    },
+    "disturbance": "Multiple coding agents in the parallel CodeCRDT organization update one shared code artifact concurrently. Their useful local edits create interaction-specific integration variety, including the possibility of overlapping or semantically incompatible concurrent changes.",
+    "coordination_relation": "CodeCRDT supplies first-party observation-driven coordination over shared CRDT state: agents observe concurrent edits, incorporate the shared state and rely on strong eventual consistency to converge concurrent updates without a separate textual merge-resolution step.",
+    "reported_parallel_properties": {
+      "convergence_rate": 1.0,
+      "merge_failures": 0,
+      "semantic_conflicts": "preliminary first-party estimate of 5-10%; requires reconciliation and is retained as a limitation"
+    },
+    "comparison_limitation": "The public evaluation compares sequential generation with CodeCRDT-coordinated parallel generation and does not include a matched uncoordinated-parallel arm. This observation is therefore descriptive direct evidence of the coordinated product boundary, not a causal estimate of CodeCRDT uplift versus no coordination.",
+    "vsm_interpretation": "This is direct descriptive S2 capability evidence at the external CodeCRDT product boundary. Distinct concurrent coding activities generate interaction-specific integration variety and the first-party shared CRDT relation attenuates merge-level variety by maintaining deterministic convergence. The absence of an uncoordinated-parallel control prevents a causal effect claim, and CodeCRDT is not a canonical Index harness, so this row cannot create canonical S2 ownership or select the S2 primary baseline.",
+    "primary_sources": [
+      "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809",
+      "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/README.md",
+      "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/evaluation_results/environment_info.json",
+      "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/evaluation_results/evaluation_report.yaml",
+      "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/evaluation_results",
+      "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/SCIENCE.md",
+      "https://arxiv.org/abs/2510.18893"
+    ]
   }
 ]

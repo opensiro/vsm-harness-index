@@ -18,6 +18,7 @@ SYSTEM_OBSERVATIONS = HERE.parent / "system-observations"
 
 COVERAGE_CLASSES = {
     "direct-scaffolded",
+    "direct-native-noncanonical",
     "native-proxy",
     "framework-scaffolded",
     "candidate-boundary-unresolved",
@@ -246,6 +247,61 @@ def validate_specification_gap_observation(observations: list[dict]) -> None:
         fail("Specification Gap observation must retain immutable HTTPS provenance")
 
 
+def validate_codecrdt_observation(observations: list[dict]) -> None:
+    observation = observation_by_id(observations, "codecrdt-parallel-convergence-2025-10")
+    expected = {
+        "function": "S2",
+        "benchmark_id": "codecrdt-observation-coordination",
+        "benchmark_fit": "direct",
+        "evidence_source_class": "first-party-reported",
+        "boundary_class": "product-defined-parallel-coding-team",
+        "canonical_harness_id": None,
+        "canonical_system_eligible": False,
+        "system_compatibility": "native-system",
+        "comparison_class": "descriptive-only",
+        "benchmark_artifact_revision": "8fa5a307062025c900e9de27696f4e804a0a7809",
+        "result_artifact": "evaluation/evaluation_results/checkpoint.json",
+        "result_report": "evaluation/evaluation_results/evaluation_report.yaml",
+        "environment_artifact": "evaluation/evaluation_results/environment_info.json",
+        "objective_metrics_artifact": "evaluation/evaluation_results/objective_metrics.csv",
+        "model": "Claude Sonnet 4.5",
+        "task_count": 6,
+        "runs_per_task_per_mode": 50,
+        "total_evaluations": 600,
+        "sequential_runs": 300,
+        "parallel_runs": 300,
+    }
+    for field, value in expected.items():
+        if observation.get(field) != value:
+            fail(f"CodeCRDT direct S2 observation {field} drift: {observation.get(field)!r}")
+
+    environment = observation.get("environment")
+    if environment != {
+        "platform": "Linux",
+        "architecture": "aarch64",
+        "python_version": "3.12.3",
+        "temperature": 0.0,
+        "random_seed": 42,
+        "max_concurrent_requests": 1,
+    }:
+        fail("CodeCRDT environment provenance drift")
+
+    properties = observation.get("reported_parallel_properties")
+    if not isinstance(properties, dict):
+        fail("CodeCRDT reported_parallel_properties must be an object")
+    if properties.get("convergence_rate") != 1.0 or properties.get("merge_failures") != 0:
+        fail("CodeCRDT descriptive convergence/merge-failure report drift")
+    semantic_conflicts = properties.get("semantic_conflicts")
+    if not isinstance(semantic_conflicts, str) or "5-10%" not in semantic_conflicts:
+        fail("CodeCRDT residual semantic-conflict limitation must remain explicit")
+    limitation = observation.get("comparison_limitation")
+    if not isinstance(limitation, str) or "does not include a matched uncoordinated-parallel arm" not in limitation:
+        fail("CodeCRDT must remain descriptive-only without an uncoordinated-parallel control")
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 6 or any(not valid_https(source) for source in sources):
+        fail("CodeCRDT observation must retain immutable HTTPS provenance")
+
+
 def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
@@ -257,8 +313,8 @@ def main() -> None:
         fail("coverage function must be S2")
     if not isinstance(observations, list):
         fail("observations.json must contain a list")
-    if len(observations) != 2:
-        fail("S2 observations.json must contain exactly two direct non-canonical observations")
+    if len(observations) != 3:
+        fail("S2 observations.json must contain exactly three direct non-canonical observations")
     if coverage.get("direct_observation_count") != len(observations):
         fail("direct_observation_count does not match observations.json")
     if coverage.get("canonical_direct_observation_count") != 0:
@@ -280,6 +336,7 @@ def main() -> None:
         "twining-conflict-resolution",
         "specification-gap-recovery",
         "cooperbench-team-harness",
+        "codecrdt-observation-coordination",
     }
     if reviewed_direct_s2 != expected_direct_s2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
@@ -399,8 +456,23 @@ def main() -> None:
     if "observation_ref" in cooperbench:
         fail("CooperBench must not acquire an observation_ref without a new provenance review")
 
+    codecrdt = by_id.get("codecrdt-observation-driven-direct-native-noncanonical")
+    if codecrdt is None:
+        fail("missing CodeCRDT direct-native-noncanonical S2 coverage case")
+    if codecrdt.get("benchmark_fit") != "direct" or codecrdt.get("coverage_class") != "direct-native-noncanonical":
+        fail("CodeCRDT must remain direct-native-noncanonical S2 evidence")
+    if codecrdt.get("system_compatibility") != "native-system":
+        fail("CodeCRDT must remain native-system at its external product boundary")
+    if codecrdt.get("canonical_harness_id") is not None:
+        fail("CodeCRDT must not acquire a canonical harness id through capability evidence")
+    if codecrdt.get("review_ref") != "8fa5a307062025c900e9de27696f4e804a0a7809":
+        fail("CodeCRDT review_ref drift")
+    if codecrdt.get("observation_ref") != "observations.json#codecrdt-parallel-convergence-2025-10":
+        fail("CodeCRDT coverage/observation linkage drift")
+
     validate_nool_observation(observations)
     validate_specification_gap_observation(observations)
+    validate_codecrdt_observation(observations)
     validate_proxy_links(coverage, by_id)
 
     representative = coverage.get("representative_canonical_s2_systems_inspected")

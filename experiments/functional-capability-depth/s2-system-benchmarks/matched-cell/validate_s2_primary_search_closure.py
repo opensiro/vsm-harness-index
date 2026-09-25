@@ -57,6 +57,7 @@ require(closure["canonical_delta_review_issue"] == 592, "S2 canonical delta revi
 require(closure["post_closure_delta_review_issue"] == 626, "S2 post-closure delta review issue drift")
 require(closure["benchmark_family_review_issue"] == 596, "S2 benchmark-family review issue drift")
 require(closure["public_evidence_admission_issue"] == 629, "S2 public evidence admission issue drift")
+require(closure["codecrdt_public_evidence_issue"] == 640, "S2 CodeCRDT public-evidence issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S2 closure must preserve gap")
 require(closure["closure_scope"] == "current-public-evidence", "S2 closure scope drift")
@@ -80,7 +81,7 @@ require(
 routes = {route["route_id"]: route["status"] for route in closure["reviewed_route_classes"]}
 require(
     routes == {
-        "direct-disturbance-benchmarks": "benchmark-scaffolded",
+        "direct-disturbance-benchmarks": "mixed-noncanonical-boundaries",
         "native-quantitative-proxies": "native-but-not-direct-s2",
         "matched-framework-campaigns": "framework-scaffolded-or-no-s2-disturbance",
         "native-mechanism-without-direct-results": "no-direct-results",
@@ -96,6 +97,8 @@ for required_case in {
     "nool-fleet-coordination-direct-scaffolded",
     "twining-conflict-resolution-direct-scaffolded",
     "specification-gap-recovery-direct-scaffolded",
+    "cooperbench-team-harness-direct-scaffolded",
+    "codecrdt-observation-driven-direct-native-noncanonical",
     "autogen-magentic-one-native-proxy",
     "squad-marble-native-proxy",
     "deepseek-harness-native-mechanism-no-direct-benchmark",
@@ -135,24 +138,31 @@ for harness_id in ("shep", "axocoatl"):
     require(row["canonical_review_ref"] == review_ref, f"{harness_id}: delta ref drift")
     require(row["result_surface_review"] == "no-direct-s2-result", f"{harness_id}: delta result disposition drift")
 
-require(len(observations) == 2, "S2 closure expects two direct non-canonical observations")
+require(len(observations) == 3, "S2 closure expects three direct non-canonical observations")
 observation_rows = {row["observation_id"]: row for row in observations}
 require(
     set(observation_rows) == {
         "nool-trackd-scaleup1-contention-2026-08-21",
         "specification-gap-recovery-2026-03",
+        "codecrdt-parallel-convergence-2025-10",
     },
     "S2 direct observation identity set drift",
 )
-for observation_id, benchmark_id in {
-    "nool-trackd-scaleup1-contention-2026-08-21": "nool-fleet-coordination",
-    "specification-gap-recovery-2026-03": "specification-gap-recovery",
+for observation_id, (benchmark_id, compatibility) in {
+    "nool-trackd-scaleup1-contention-2026-08-21": ("nool-fleet-coordination", "benchmark-scaffolded"),
+    "specification-gap-recovery-2026-03": ("specification-gap-recovery", "benchmark-scaffolded"),
+    "codecrdt-parallel-convergence-2025-10": ("codecrdt-observation-coordination", "native-system"),
 }.items():
     observation = observation_rows[observation_id]
     require(observation["benchmark_id"] == benchmark_id, f"{observation_id}: benchmark drift")
     require(observation["canonical_harness_id"] is None, f"{observation_id}: must remain non-canonical")
     require(observation["canonical_system_eligible"] is False, f"{observation_id}: must remain non-canonical")
-    require(observation["system_compatibility"] == "benchmark-scaffolded", f"{observation_id}: system compatibility drift")
+    require(observation["system_compatibility"] == compatibility, f"{observation_id}: system compatibility drift")
+
+require(
+    observation_rows["codecrdt-parallel-convergence-2025-10"].get("comparison_class") == "descriptive-only",
+    "CodeCRDT direct observation must remain descriptive-only",
+)
 
 s2_baseline = baselines["functions"]["S2"]
 require(s2_baseline["status"] == "gap", "S2 primary was selected without reopening closure")
@@ -165,6 +175,7 @@ require(
         "twining-conflict-resolution",
         "specification-gap-recovery",
         "cooperbench-team-harness",
+        "codecrdt-observation-coordination",
     ],
     "S2 gap metadata direct-family set drift",
 )
