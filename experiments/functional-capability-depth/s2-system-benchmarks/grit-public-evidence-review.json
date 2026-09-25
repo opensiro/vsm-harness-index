@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "reviewed-no-admitted-result",
+  "tracking_issue": 619,
+  "function": "S2",
+  "reviewed_at": "2026-09-25",
+  "source_repository": "https://github.com/rtk-ai/grit",
+  "review_ref": "0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe",
+  "boundary_class": "first-party-coordination-substrate",
+  "canonical_harness_id": null,
+  "evidence_source_class": "first-party-reported",
+  "benchmark_fit": "candidate-direct",
+  "family_promoted": false,
+  "observation_admitted": false,
+  "primary_baseline_eligible": false,
+  "s2_shape": {
+    "distinct_s1_units": "parallel coding agents",
+    "disturbance": "shared-code merge contention and conflicting concurrent edits",
+    "attenuation_relation": "Grit symbol claims/locks, queues, isolated worktrees, serialized merge and release",
+    "subsequent_behavior_change": "blocked or queued work waits rather than proceeding through the contested symbol"
+  },
+  "public_result_surfaces": [
+    {
+      "surface": "README benchmark tables",
+      "result_kind": "first-party summary",
+      "raw_artifacts_committed": false
+    },
+    {
+      "surface": "scripts/synthetic/bench.sh",
+      "result_kind": "reproducible benchmark implementation",
+      "raw_artifacts_committed": false
+    },
+    {
+      "surface": "scripts/throughput/bench.sh",
+      "result_kind": "reproducible benchmark implementation",
+      "raw_artifacts_committed": false
+    },
+    {
+      "surface": "scripts/ai-agents/bench.sh",
+      "result_kind": "real-agent Grit-only benchmark implementation",
+      "raw_artifacts_committed": false
+    }
+  ],
+  "blocking_reasons": [
+    "scripts/README.md states that runs write timestamped result directories, while scripts/.gitignore excludes */results/, so the raw CSV/log corpus underlying the README summary tables is not committed at the reviewed revision",
+    "the synthetic raw-git arm deliberately inserts file-level headers that guarantee conflicts, while the Grit arm uses a separately shuffled/partitioned symbol assignment, so the published comparison is not materially matched with the S2 relation as the only varying factor",
+    "the throughput benchmark independently allocates symbols in raw-git and Grit arms and adds file-level header/import edits, so its summary cannot isolate the Grit coordination relation as the causal varying factor",
+    "the real-agent benchmark publishes only the Grit-coordinated execution path and no matched no-Grit control at the reviewed revision",
+    "Grit is not a canonical Index harness/system boundary, so even a stronger first-party result would not by itself create a canonical native S2 row"
+  ],
+  "reopen_when": [
+    "the project publishes immutable raw benchmark result artifacts tied to an exact Grit revision and benchmark configuration",
+    "a materially matched public comparison holds workload/edit assignment constant while varying the Grit coordination relation",
+    "a public real-agent campaign includes a recoverable matched no-Grit control and Grit treatment with immutable provenance"
+  ],
+  "non_claim": "This review does not say Grit lacks S2-like coordination capability. It says the public evidence at the pinned revision is insufficient for an admitted capability-depth observation or direct-family promotion under the current provenance and matched-comparison rules."
+}
