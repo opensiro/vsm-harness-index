@@ -56,7 +56,19 @@ class TestS2PostClosureLime(unittest.TestCase):
 
         self.assertEqual(coverage["direct_benchmark_family_count"], len(reviewed_families))
         self.assertEqual(coverage["direct_observation_count"], len(observations))
-        self.assertEqual(coverage["canonical_direct_observation_count"], 0)
+
+        # #657 proves only that Lime itself did not admit a direct result.
+        # Independent later public-evidence transactions may increase the
+        # global canonical count, so bind that count to observations.json.
+        canonical_rows = [
+            observation
+            for observation in observations
+            if observation.get("canonical_system_eligible") is True
+        ]
+        self.assertEqual(
+            coverage["canonical_direct_observation_count"],
+            len(canonical_rows),
+        )
         self.assertEqual(coverage["proxy_projection_count"], 2)
         self.assertIn("lime", coverage["representative_canonical_s2_systems_inspected"])
         self.assertNotIn(
