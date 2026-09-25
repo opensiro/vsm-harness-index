@@ -8,13 +8,14 @@
   "benchmark_family_review_issue": 596,
   "public_evidence_admission_issue": 629,
   "codecrdt_public_evidence_issue": 640,
+  "agentroom_public_evidence_issue": 647,
   "reviewed_at": "2026-09-25",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
   "evidence_depth": {
-    "direct_benchmark_families": 7,
-    "direct_observations": 3,
+    "direct_benchmark_families": 8,
+    "direct_observations": 4,
     "canonical_direct_observations": 0,
     "native_proxy_projections": 2,
     "representative_canonical_s2_systems_inspected": 15
@@ -30,9 +31,10 @@
         "Twining Benchmark conflict-resolution",
         "The Specification Gap / AmbigClass recovery",
         "CooperBench team-harness coordination ablation",
-        "CodeCRDT observation-driven coordination"
+        "CodeCRDT observation-driven coordination",
+        "AgentRoom concurrent coding coordination"
       ],
-      "blocking_reason": "Reviewed direct S2 evidence now spans benchmark-scaffolded organizations and one external first-party native product boundary. Nool and The Specification Gap supply two immutable benchmark-scaffolded direct non-canonical observations. CodeCRDT supplies one descriptive direct non-canonical observation at its own native product boundary, with committed 600-run artifacts but no matched uncoordinated-parallel control. Twining qualifies as a direct family but lacks recoverable exact treatment revision. CooperBench qualifies as a direct family but its committed 50-pair report is generated from flash run logs that are not pinned in the reviewed repository, so no CooperBench observation row is admitted."
+      "blocking_reason": "Reviewed direct S2 evidence now spans benchmark-scaffolded organizations and two external first-party native product boundaries. Nool and The Specification Gap supply two immutable benchmark-scaffolded direct non-canonical observations. CodeCRDT supplies one descriptive direct non-canonical observation at its native product boundary. AgentRoom supplies one paper-backed direct non-canonical observation whose concurrent parallel-merge control preserves the two-worker disturbance surface while the treatment adds the full CRDT + MCP + collaboration-protocol coordination bundle. AgentRoom's paper-cited repository is not currently recoverable, so no software revision or canonical identity is inferred. Twining qualifies as a direct family but lacks recoverable exact treatment revision. CooperBench qualifies as a direct family but its committed 50-pair report is generated from flash run logs that are not pinned in the reviewed repository, so no CooperBench observation row is admitted."
     },
     {
       "route_id": "native-quantitative-proxies",
@@ -73,7 +75,7 @@
       "blocking_reason": "The adapter/benchmark design is structurally promising, but the public leaderboard does not yet contain the multi-orchestrator result rows needed for a matched canonical cell."
     }
   ],
-  "closure_claim": "Current public evidence contains seven direct S2 disturbance/attenuation families, three direct non-canonical observations, and two native quantitative S2 proxy projections. CodeCRDT expands direct evidence to an external first-party native product boundary, but the current reviewed canonical cohort still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.",
+  "closure_claim": "Current public evidence contains eight direct S2 disturbance/attenuation families, four direct non-canonical observations, and two native quantitative S2 proxy projections. CodeCRDT and AgentRoom expand direct evidence to external first-party native boundaries, but the current reviewed canonical cohort still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.",
   "reopen_when": [
     "a canonical S2 harness publishes an explicit native inter-S1 disturbance-to-attenuation result",
     "a materially matched benchmark evaluates two or more canonical systems exercising their own native or adapter-preserved S2 paths under one disturbance definition",
@@ -81,10 +83,11 @@
   ],
   "do_not_reopen_for": [
     "another benchmark-scaffolded direct S2 observation without canonical native or adapter-preserved linkage",
+    "another external native non-canonical S2 observation without canonical system linkage or a matched canonical comparison cell",
     "another broad collaboration or task-success score without an explicit S2 disturbance",
     "another topology or framework benchmark whose coordination organization is benchmark-authored",
     "another communication or token-efficiency metric without disturbance-to-attenuation closure"
   ],
-  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool and The Specification Gap provide direct evidence only for their benchmark-defined organizations. CodeCRDT provides direct descriptive evidence for its own external native product boundary, but it has no canonical Index identity and its sequential-versus-parallel study does not estimate a causal coordination uplift versus an uncoordinated-parallel control. Twining and CooperBench contribute direct-family coverage without admitted observations for their recorded provenance reasons. The S2 primary remains frozen until materially new canonical native or matched evidence appears.",
+  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool and The Specification Gap provide direct evidence only for their benchmark-defined organizations. CodeCRDT and AgentRoom provide direct evidence at external native product/paper-defined boundaries but neither has a canonical Index identity. AgentRoom's observed comparison is attributed only to the reported coordination bundle; no component-level causal share or software revision is invented. Twining and CooperBench contribute direct-family coverage without admitted observations for their recorded provenance reasons. The S2 primary remains frozen until materially new canonical native or matched evidence appears.",
   "cooperbench_family_review_issue": 633
 }
