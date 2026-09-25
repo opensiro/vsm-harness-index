@@ -52,9 +52,9 @@ class TestS2PostClosureShepAxocoatl(unittest.TestCase):
 
         # This regression test proves only that the Shep/Axocoatl delta itself
         # did not admit capability evidence. Later independent public-evidence
-        # transactions may legitimately increase the global S2 family or
-        # observation counts, so bind those counts to their current sources of
-        # truth rather than freezing the values that happened to exist at #626.
+        # transactions may legitimately increase the global S2 family,
+        # observation or reviewed-canonical counts, so bind mutable counts to
+        # their current sources of truth rather than freezing #626's cohort.
         coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
         observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
         baselines = json.loads(BASELINES.read_text(encoding="utf-8"))
@@ -67,7 +67,7 @@ class TestS2PostClosureShepAxocoatl(unittest.TestCase):
         self.assertEqual(coverage["direct_observation_count"], len(observations))
         self.assertEqual(coverage["canonical_direct_observation_count"], 0)
         self.assertEqual(coverage["proxy_projection_count"], 2)
-        self.assertEqual(len(coverage["representative_canonical_s2_systems_inspected"]), 15)
+        self.assertGreaterEqual(len(coverage["representative_canonical_s2_systems_inspected"]), 15)
         self.assertIn("shep", coverage["representative_canonical_s2_systems_inspected"])
         self.assertIn("axocoatl", coverage["representative_canonical_s2_systems_inspected"])
         self.assertNotIn(

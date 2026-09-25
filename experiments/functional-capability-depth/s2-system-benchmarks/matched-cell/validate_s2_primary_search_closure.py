@@ -16,6 +16,7 @@ CANONICAL_DELTAS = {
     "ares": ("C", "f03153acace190c555c3721019407a7df47c139f", "ares-native-s2-no-direct-result"),
     "shep": ("C", "a874b3238fd01ebdbafc11015cccd9a63ed6e2f2", "shep-native-s2-no-direct-result"),
     "axocoatl": ("C", "edfe5031463686dc782cf3539e5aabae4e8eb9ab", "axocoatl-native-s2-no-direct-result"),
+    "lime": ("C", "3823e9092d4106c877ae08a1d19d593b647cf27d", "lime-native-s2-no-direct-result"),
 }
 
 
@@ -48,6 +49,7 @@ coverage = load(S2 / "coverage.json")
 observations = load(S2 / "observations.json")
 baselines = load(EXPERIMENT / "primary-baselines.json")
 delta = load(S2 / "post-closure-deltas" / "shep-axocoatl-2026-09-25.json")
+lime_delta = load(S2 / "post-closure-deltas" / "lime-2026-09-25.json")
 
 require(closure["schema_version"] == 1, "S2 closure schema_version drift")
 require(closure["status"] == "experimental-non-normative", "S2 closure status drift")
@@ -55,6 +57,7 @@ require(closure["tracking_issue"] == 564, "S2 closure tracking issue drift")
 require(closure["current_state_update_issue"] == 586, "S2 closure current update issue drift")
 require(closure["canonical_delta_review_issue"] == 592, "S2 canonical delta review issue drift")
 require(closure["post_closure_delta_review_issue"] == 626, "S2 post-closure delta review issue drift")
+require(closure["lime_post_closure_delta_review_issue"] == 657, "S2 Lime post-closure delta issue drift")
 require(closure["benchmark_family_review_issue"] == 596, "S2 benchmark-family review issue drift")
 require(closure["public_evidence_admission_issue"] == 629, "S2 public evidence admission issue drift")
 require(closure["codecrdt_public_evidence_issue"] == 640, "S2 CodeCRDT public-evidence issue drift")
@@ -106,6 +109,7 @@ for required_case in {
     "ares-native-s2-no-direct-result",
     "shep-native-s2-no-direct-result",
     "axocoatl-native-s2-no-direct-result",
+    "lime-native-s2-no-direct-result",
     "mao-bench-candidate-no-results",
 }:
     require(required_case in cases, f"S2 closure lost required reviewed case: {required_case}")
@@ -137,6 +141,22 @@ for harness_id in ("shep", "axocoatl"):
     require(row["canonical_state_at_review"] == state, f"{harness_id}: delta state drift")
     require(row["canonical_review_ref"] == review_ref, f"{harness_id}: delta ref drift")
     require(row["result_surface_review"] == "no-direct-s2-result", f"{harness_id}: delta result disposition drift")
+
+require(lime_delta["schema_version"] == 1, "S2 Lime delta schema drift")
+require(lime_delta["tracking_issue"] == 657, "S2 Lime delta tracking issue drift")
+require(lime_delta["function"] == "S2", "S2 Lime delta function drift")
+require(lime_delta["disposition"] == "canonical-mechanism-no-direct-result", "S2 Lime delta disposition drift")
+require(lime_delta["capability_counts_changed"] is False, "S2 Lime delta must not change capability counts")
+require(lime_delta["observation_registry_mutated"] is False, "S2 Lime delta must not mutate observation registry")
+require(lime_delta["primary_baseline_changed"] is False, "S2 Lime delta must not select a primary")
+require(lime_delta["reopen_condition_satisfied"] is False, "S2 Lime delta unexpectedly reopens primary search")
+lime_rows = {row["canonical_harness_id"]: row for row in lime_delta["systems"]}
+require(set(lime_rows) == {"lime"}, "S2 Lime delta system set drift")
+lime_state, lime_ref, _ = CANONICAL_DELTAS["lime"]
+lime_row = lime_rows["lime"]
+require(lime_row["canonical_state_at_review"] == lime_state, "lime: delta state drift")
+require(lime_row["canonical_review_ref"] == lime_ref, "lime: delta ref drift")
+require(lime_row["result_surface_review"] == "no-direct-s2-result", "lime: delta result disposition drift")
 
 require(len(observations) == 3, "S2 closure expects three direct non-canonical observations")
 observation_rows = {row["observation_id"]: row for row in observations}

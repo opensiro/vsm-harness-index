@@ -5,6 +5,7 @@
   "current_state_update_issue": 586,
   "canonical_delta_review_issue": 592,
   "post_closure_delta_review_issue": 626,
+  "lime_post_closure_delta_review_issue": 657,
   "benchmark_family_review_issue": 596,
   "public_evidence_admission_issue": 629,
   "codecrdt_public_evidence_issue": 640,
@@ -17,7 +18,7 @@
     "direct_observations": 3,
     "canonical_direct_observations": 0,
     "native_proxy_projections": 2,
-    "representative_canonical_s2_systems_inspected": 15
+    "representative_canonical_s2_systems_inspected": 16
   },
   "reviewed_route_classes": [
     {
@@ -60,9 +61,10 @@
         "C.A.D.I.S.",
         "ARES",
         "Shep",
-        "Axocoatl"
+        "Axocoatl",
+        "Lime"
       ],
-      "blocking_reason": "Canonical S2 mechanisms exist, but current public result surfaces do not exercise them as direct native disturbance-to-attenuation capability observations. C.A.D.I.S. and ARES were explicitly re-reviewed in post-closure delta issue #592; Shep and Axocoatl were reviewed after their canonical admissions in issue #626 and likewise expose mechanism/microbenchmark surfaces without a direct S2 result."
+      "blocking_reason": "Canonical S2 mechanisms exist, but current public result surfaces do not exercise them as direct native disturbance-to-attenuation capability observations. C.A.D.I.S. and ARES were explicitly re-reviewed in post-closure delta issue #592; Shep and Axocoatl were reviewed after their canonical admissions in issue #626; Lime was reviewed after admission in issue #657. Lime's limiter tests and AgentControl Gate B evidence establish admission/lifecycle invariants rather than a direct contention-to-attenuation capability result."
     },
     {
       "route_id": "promising-multi-orchestrator-benchmark",
@@ -73,7 +75,7 @@
       "blocking_reason": "The adapter/benchmark design is structurally promising, but the public leaderboard does not yet contain the multi-orchestrator result rows needed for a matched canonical cell."
     }
   ],
-  "closure_claim": "Current public evidence contains seven direct S2 disturbance/attenuation families, three direct non-canonical observations, and two native quantitative S2 proxy projections. CodeCRDT expands direct evidence to an external first-party native product boundary, but the current reviewed canonical cohort still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.",
+  "closure_claim": "Current public evidence contains seven direct S2 disturbance/attenuation families, three direct non-canonical observations, and two native quantitative S2 proxy projections. CodeCRDT expands direct evidence to an external first-party native product boundary, but the current reviewed canonical cohort, now including Lime, still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.",
   "reopen_when": [
     "a canonical S2 harness publishes an explicit native inter-S1 disturbance-to-attenuation result",
     "a materially matched benchmark evaluates two or more canonical systems exercising their own native or adapter-preserved S2 paths under one disturbance definition",
@@ -85,6 +87,6 @@
     "another topology or framework benchmark whose coordination organization is benchmark-authored",
     "another communication or token-efficiency metric without disturbance-to-attenuation closure"
   ],
-  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool and The Specification Gap provide direct evidence only for their benchmark-defined organizations. CodeCRDT provides direct descriptive evidence for its own external native product boundary, but it has no canonical Index identity and its sequential-versus-parallel study does not estimate a causal coordination uplift versus an uncoordinated-parallel control. Twining and CooperBench contribute direct-family coverage without admitted observations for their recorded provenance reasons. The S2 primary remains frozen until materially new canonical native or matched evidence appears.",
+  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool and The Specification Gap provide direct evidence only for their benchmark-defined organizations. CodeCRDT provides direct descriptive evidence for its own external native product boundary, but it has no canonical Index identity and its sequential-versus-parallel study does not estimate a causal coordination uplift versus an uncoordinated-parallel control. Twining and CooperBench contribute direct-family coverage without admitted observations for their recorded provenance reasons. Lime contributes a canonical constructor S2 mechanism without a direct capability observation. The S2 primary remains frozen until materially new canonical native or matched evidence appears.",
   "cooperbench_family_review_issue": 633
 }
