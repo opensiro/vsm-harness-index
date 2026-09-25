@@ -97,9 +97,14 @@
           "benchmark_id": "codecrdt-observation-coordination",
           "benchmark_name": "CodeCRDT observation-driven coordination evaluation",
           "primary_source": "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809"
+        },
+        {
+          "benchmark_id": "agentroom-concurrent-coding",
+          "benchmark_name": "AgentRoom concurrent coding coordination study",
+          "primary_source": "https://arxiv.org/abs/2608.23740"
         }
       ],
-      "blocking_reason": "Reviewed direct S2 evidence now includes seven disturbance/attenuation families. Nool and The Specification Gap provide two benchmark-scaffolded direct non-canonical observations, while CodeCRDT provides one descriptive direct observation at its own external native product boundary. Twining lacks recoverable exact treatment revision, and CooperBench lacks the pinned flash-run logs needed for observation admission. CodeCRDT has no matched uncoordinated-parallel control and is not a canonical Index harness. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
+      "blocking_reason": "Reviewed direct S2 evidence now includes eight disturbance/attenuation families and four direct non-canonical observations. Nool and The Specification Gap provide benchmark-scaffolded observations; CodeCRDT and AgentRoom provide first-party native-product observations at external non-canonical boundaries. AgentRoom's strongest published control preserves two concurrent workers, but the treatment is the full CRDT + MCP + collaboration-protocol bundle and the paper-cited source repository is not currently recoverable. Twining lacks recoverable exact treatment revision, while CooperBench lacks pinned flash-run logs. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
     },
     "S3": {
       "status": "gap",
