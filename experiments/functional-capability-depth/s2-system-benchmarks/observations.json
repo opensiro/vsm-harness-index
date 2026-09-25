@@ -187,5 +187,55 @@
       "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/SCIENCE.md",
       "https://arxiv.org/abs/2510.18893"
     ]
+  },
+  {
+    "observation_id": "agentroom-parallel-merge-t4-sonnet46-2026-08",
+    "function": "S2",
+    "benchmark_id": "agentroom-concurrent-coding",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "paper-defined-concurrent-coding-team",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "native-system",
+    "comparison_class": "partially-matched",
+    "paper": "https://arxiv.org/abs/2608.23740",
+    "paper_version": "v1",
+    "paper_date": "2026-08-24",
+    "source_repository_cited_by_paper": "https://github.com/seonglae/AgentRoom",
+    "source_repository_status_at_review": "public GitHub API returned 404; no repository revision inferred",
+    "experiment": "T4 Sonnet 4.6 matched-compute parallel-merge versus AgentRoom",
+    "task": "T4 financial ledger",
+    "model": "Sonnet 4.6",
+    "worker_count": 2,
+    "task_budget_seconds": 600,
+    "budget_fair_analysis_pool_seconds": [30, 700],
+    "control": {
+      "condition": "parallel-merge",
+      "mean_quality": 0.456,
+      "n": 12,
+      "sigma": 0.178,
+      "description": "two concurrent coding agents work independently and their outputs are unioned after execution without the AgentRoom shared coordination relation"
+    },
+    "treatment": {
+      "condition": "AgentRoom",
+      "mean_quality": 0.669,
+      "n": 14,
+      "sigma": 0.140,
+      "description": "two concurrent coding agents operate in the CRDT-backed shared workspace with AgentRoom MCP coordination tools and collaboration protocol"
+    },
+    "reported_comparison": {
+      "mean_difference": 0.213,
+      "welch_t": 3.35,
+      "p_value": 0.003
+    },
+    "coordination_relation": "AgentRoom supplies atomic file claims, shared peer/claim state, append-only room communication and a protocol that requires workers to revise their file/task plan when a claim conflicts, over a CRDT-mediated shared workspace.",
+    "comparison_limitation": "The treatment is the full AgentRoom coordination bundle (CRDT shared workspace, MCP coordination tools and collaboration protocol). The smaller shared-plus-collaboration-without-MCP component probe is not used to assign a component-level causal share because its reported interval spans zero.",
+    "provenance_limitation": "The paper-cited GitHub repository was not publicly recoverable through the GitHub API at review time, so no software revision, commit-level implementation provenance or canonical repository identity is inferred. The immutable public experimental record for this observation is the paper itself.",
+    "vsm_interpretation": "This is direct S2 capability evidence at the paper-defined AgentRoom boundary. The control retains two concurrent coding S1s and therefore retains the interaction-generated disturbance surface, while the treatment adds a first-party coordination relation that constrains conflicting file ownership and shared-state interaction and changes subsequent worker behavior. AgentRoom is not a canonical Index harness, so the result is non-canonical and cannot select the S2 primary baseline.",
+    "primary_sources": [
+      "https://arxiv.org/abs/2608.23740",
+      "https://arxiv.org/abs/2608.23740v1"
+    ]
   }
 ]
