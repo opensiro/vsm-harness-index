@@ -164,6 +164,7 @@ require(
         "nool-fleet-coordination",
         "twining-conflict-resolution",
         "specification-gap-recovery",
+        "cooperbench-team-harness",
     ],
     "S2 gap metadata direct-family set drift",
 )

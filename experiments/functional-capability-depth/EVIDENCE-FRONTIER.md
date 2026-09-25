@@ -11,7 +11,7 @@ It is also not a second evidence database: every state, count, blocker and reope
 | Function | Primary state | Current evidence depth | Reviewed through | Source |
 | --- | --- | --- | --- | --- |
 | S1 | `selected` — PawBench v1.0 / `qwen3.6-35b-a3b` | `task_count`: `150` · `canonical_harnesses`: `3` | `2026-09-23` | [`primary-baselines.json`](primary-baselines.json) |
-| S2 | `gap` | `direct_benchmark_families`: `5` · `direct_observations`: `2` · `canonical_direct_observations`: `0` · `native_proxy_projections`: `2` · `representative_canonical_s2_systems_inspected`: `15` | `2026-09-25` | [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json) |
+| S2 | `gap` | `direct_benchmark_families`: `6` · `direct_observations`: `2` · `canonical_direct_observations`: `0` · `native_proxy_projections`: `2` · `representative_canonical_s2_systems_inspected`: `15` | `2026-09-25` | [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json) |
 | S3 | `gap` | `direct_benchmark_families`: `3` · `canonical_direct_observations`: `1` · `native_proxy_projections`: `1` · `representative_canonical_s3_systems_inspected`: `14` | `2026-09-25` | [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json) |
 | S3* | `gap` | `direct_benchmark_families`: `5` · `composed_direct_observations`: `3` · `canonical_direct_observations`: `2` | `2026-09-24` | [`s3star-primary-search-closure.json`](s3star-system-benchmarks/matched-cell/s3star-primary-search-closure.json) |
 | S4 | `gap` | `canonical_native_observations`: `2` · `reviewed_routes`: `6` | `2026-09-25` | [`s4-primary-search-closure.json`](s4-system-benchmarks/matched-cell/s4-primary-search-closure.json) |
@@ -32,10 +32,10 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
 ## S2 — current `gap` frontier
 
 - **Reviewed through:** `2026-09-25`.
-- **Primary blocking reason:** Reviewed direct S2 evidence now includes five benchmark-defined disturbance/attenuation families. Nool and The Specification Gap supply two admitted immutable direct non-canonical observations; Twining conflict-resolution is direct at its benchmark boundary but lacks recoverable exact Twining treatment revision and canonical harness linkage. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses.
-- **Closure claim:** Current public evidence contains five direct S2 disturbance benchmark families, two immutable direct non-canonical observations, and two native quantitative S2 proxy projections. The current reviewed canonical cohort, now including post-closure C.A.D.I.S., ARES, Shep and Axocoatl admissions, still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.
+- **Primary blocking reason:** Reviewed direct S2 evidence now includes six benchmark-defined disturbance/attenuation families. Nool and The Specification Gap supply two admitted immutable direct non-canonical observations; Twining lacks recoverable exact treatment revision, while CooperBench has a committed first-party 50-pair ablation report but not the pinned flash-run logs needed for observation admission. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses.
+- **Closure claim:** Current public evidence contains six direct S2 disturbance benchmark families, two immutable direct non-canonical observations, and two native quantitative S2 proxy projections. The current reviewed canonical cohort still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.
 - **Evidence depth:**
-  - `direct_benchmark_families`: `5`
+  - `direct_benchmark_families`: `6`
   - `direct_observations`: `2`
   - `canonical_direct_observations`: `0`
   - `native_proxy_projections`: `2`
@@ -49,7 +49,7 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
   - another broad collaboration or task-success score without an explicit S2 disturbance
   - another topology or framework benchmark whose coordination organization is benchmark-authored
   - another communication or token-efficiency metric without disturbance-to-attenuation closure
-- **Non-claim:** This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool's observation is direct evidence for the benchmark-defined fleet/coordination boundary only. The Specification Gap observation is direct evidence for its benchmark-defined split-worker/integration boundary and does not establish native S2 ownership for an external harness. Twining's direct family fit is likewise limited to its benchmark-defined conflict-resolution organization; absent exact treatment provenance and a canonical system boundary, it is not an admitted direct observation or canonical S2 result. Shep and Axocoatl retain their canonical S2=C ownership classifications, but no public direct capability result is admitted for either. The S2 primary remains frozen until materially new canonical native or matched evidence appears.
+- **Non-claim:** This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool and The Specification Gap provide direct evidence only for their benchmark-defined organizations. Twining and CooperBench likewise contribute direct-family coverage without canonical attribution; Twining lacks recoverable exact treatment revision, while CooperBench's committed 50-pair report lacks pinned flash-run logs for observation admission. Public full-dataset CooperBench trajectories are a separate evidence surface and are not silently substituted. The S2 primary remains frozen until materially new canonical native or matched evidence appears.
 - **Source:** [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json).
 
 ## S3 — current `gap` frontier

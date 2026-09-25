@@ -12,7 +12,7 @@
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
   "evidence_depth": {
-    "direct_benchmark_families": 5,
+    "direct_benchmark_families": 6,
     "direct_observations": 2,
     "canonical_direct_observations": 0,
     "native_proxy_projections": 2,
@@ -22,35 +22,56 @@
     {
       "route_id": "direct-disturbance-benchmarks",
       "status": "benchmark-scaffolded",
-      "examples": ["DPBench", "STALE", "Nool fleet coordination", "Twining Benchmark conflict-resolution", "The Specification Gap / AmbigClass recovery"],
-      "blocking_reason": "These benchmarks directly instantiate inter-S1 disturbance and attenuation at benchmark-defined boundaries. Nool and The Specification Gap supply two admitted immutable direct non-canonical observations. Twining qualifies as a direct family, but its committed run does not recover the exact Twining MCP/plugin treatment revision and twining-mcp is not an admitted canonical harness, so it creates neither a new observation registry row nor canonical S2 attribution."
+      "examples": [
+        "DPBench",
+        "STALE",
+        "Nool fleet coordination",
+        "Twining Benchmark conflict-resolution",
+        "The Specification Gap / AmbigClass recovery",
+        "CooperBench team-harness coordination ablation"
+      ],
+      "blocking_reason": "These benchmarks directly instantiate inter-S1 disturbance and attenuation at benchmark-defined boundaries. Nool and The Specification Gap supply two admitted immutable direct non-canonical observations. Twining qualifies as a direct family but lacks recoverable exact treatment revision. CooperBench qualifies as a direct family because its first-party team harness coordinates integration-conflicting workers and exposes controlled feature ablations, but its committed 50-pair report is generated from flash run logs that are not pinned in the reviewed repository, so no CooperBench observation row is admitted."
     },
     {
       "route_id": "native-quantitative-proxies",
       "status": "native-but-not-direct-s2",
-      "examples": ["AutoGen/Magentic-One", "Squad/MARBLE"],
+      "examples": [
+        "AutoGen/Magentic-One",
+        "Squad/MARBLE"
+      ],
       "blocking_reason": "The published ablations exercise native coordination mechanisms but score broad task/collaboration outcomes rather than an explicit interaction-generated disturbance and its attenuation."
     },
     {
       "route_id": "matched-framework-campaigns",
       "status": "framework-scaffolded-or-no-s2-disturbance",
-      "examples": ["Astra", "Agent Framework Benchmark"],
+      "examples": [
+        "Astra",
+        "Agent Framework Benchmark"
+      ],
       "blocking_reason": "The compared organization is benchmark-authored and/or deliberately removes recurring inter-S1 interference, so matched cost/quality/runtime rows are not direct S2 capability evidence."
     },
     {
       "route_id": "native-mechanism-without-direct-results",
       "status": "no-direct-results",
-      "examples": ["DeepSeek Agent Teams", "C.A.D.I.S.", "ARES", "Shep", "Axocoatl"],
+      "examples": [
+        "DeepSeek Agent Teams",
+        "C.A.D.I.S.",
+        "ARES",
+        "Shep",
+        "Axocoatl"
+      ],
       "blocking_reason": "Canonical S2 mechanisms exist, but current public result surfaces do not exercise them as direct native disturbance-to-attenuation capability observations. C.A.D.I.S. and ARES were explicitly re-reviewed in post-closure delta issue #592; Shep and Axocoatl were reviewed after their canonical admissions in issue #626 and likewise expose mechanism/microbenchmark surfaces without a direct S2 result."
     },
     {
       "route_id": "promising-multi-orchestrator-benchmark",
       "status": "no-published-results",
-      "examples": ["MAO-Bench"],
+      "examples": [
+        "MAO-Bench"
+      ],
       "blocking_reason": "The adapter/benchmark design is structurally promising, but the public leaderboard does not yet contain the multi-orchestrator result rows needed for a matched canonical cell."
     }
   ],
-  "closure_claim": "Current public evidence contains five direct S2 disturbance benchmark families, two immutable direct non-canonical observations, and two native quantitative S2 proxy projections. The current reviewed canonical cohort, now including post-closure C.A.D.I.S., ARES, Shep and Axocoatl admissions, still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.",
+  "closure_claim": "Current public evidence contains six direct S2 disturbance benchmark families, two immutable direct non-canonical observations, and two native quantitative S2 proxy projections. The current reviewed canonical cohort still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.",
   "reopen_when": [
     "a canonical S2 harness publishes an explicit native inter-S1 disturbance-to-attenuation result",
     "a materially matched benchmark evaluates two or more canonical systems exercising their own native or adapter-preserved S2 paths under one disturbance definition",
@@ -62,5 +83,6 @@
     "another topology or framework benchmark whose coordination organization is benchmark-authored",
     "another communication or token-efficiency metric without disturbance-to-attenuation closure"
   ],
-  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool's observation is direct evidence for the benchmark-defined fleet/coordination boundary only. The Specification Gap observation is direct evidence for its benchmark-defined split-worker/integration boundary and does not establish native S2 ownership for an external harness. Twining's direct family fit is likewise limited to its benchmark-defined conflict-resolution organization; absent exact treatment provenance and a canonical system boundary, it is not an admitted direct observation or canonical S2 result. Shep and Axocoatl retain their canonical S2=C ownership classifications, but no public direct capability result is admitted for either. The S2 primary remains frozen until materially new canonical native or matched evidence appears."
+  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Nool and The Specification Gap provide direct evidence only for their benchmark-defined organizations. Twining and CooperBench likewise contribute direct-family coverage without canonical attribution; Twining lacks recoverable exact treatment revision, while CooperBench's committed 50-pair report lacks pinned flash-run logs for observation admission. Public full-dataset CooperBench trajectories are a separate evidence surface and are not silently substituted. The S2 primary remains frozen until materially new canonical native or matched evidence appears.",
+  "cooperbench_family_review_issue": 633
 }

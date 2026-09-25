@@ -279,6 +279,7 @@ def main() -> None:
         "nool-fleet-coordination",
         "twining-conflict-resolution",
         "specification-gap-recovery",
+        "cooperbench-team-harness",
     }
     if reviewed_direct_s2 != expected_direct_s2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
@@ -383,6 +384,20 @@ def main() -> None:
         fail("Specification Gap review_ref drift")
     if specification_gap.get("observation_ref") != "observations.json#specification-gap-recovery-2026-03":
         fail("Specification Gap coverage/observation linkage drift")
+
+    cooperbench = by_id.get("cooperbench-team-harness-direct-scaffolded")
+    if cooperbench is None:
+        fail("missing CooperBench team-harness direct-S2 coverage case")
+    if cooperbench.get("benchmark_fit") != "direct" or cooperbench.get("coverage_class") != "direct-scaffolded":
+        fail("CooperBench team harness must remain direct-scaffolded S2 evidence")
+    if cooperbench.get("system_compatibility") != "benchmark-scaffolded":
+        fail("CooperBench team harness must remain benchmark-scaffolded")
+    if cooperbench.get("canonical_harness_id") is not None:
+        fail("CooperBench team harness must not acquire a canonical harness id")
+    if cooperbench.get("review_ref") != "63b9d44d9f39a02fccf5bf0052db48a917a011fd":
+        fail("CooperBench review_ref drift")
+    if "observation_ref" in cooperbench:
+        fail("CooperBench must not acquire an observation_ref without a new provenance review")
 
     validate_nool_observation(observations)
     validate_specification_gap_observation(observations)
