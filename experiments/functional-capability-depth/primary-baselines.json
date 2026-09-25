@@ -97,9 +97,14 @@
           "benchmark_id": "codecrdt-observation-coordination",
           "benchmark_name": "CodeCRDT observation-driven coordination evaluation",
           "primary_source": "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809"
+        },
+        {
+          "benchmark_id": "grit-merge-contention",
+          "benchmark_name": "Grit synthetic merge-contention sweep",
+          "primary_source": "https://github.com/rtk-ai/grit/tree/a2c48735e0a16c49ca1541c4865fce438c479405"
         }
       ],
-      "blocking_reason": "Reviewed direct S2 evidence now includes seven disturbance/attenuation families. Nool and The Specification Gap provide two benchmark-scaffolded direct non-canonical observations, while CodeCRDT provides one descriptive direct observation at its own external native product boundary. Twining lacks recoverable exact treatment revision, and CooperBench lacks the pinned flash-run logs needed for observation admission. CodeCRDT has no matched uncoordinated-parallel control and is not a canonical Index harness. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
+      "blocking_reason": "Reviewed direct S2 evidence now includes eight disturbance/attenuation families and four direct non-canonical observations. Nool and The Specification Gap provide benchmark-scaffolded observations; CodeCRDT and Grit provide first-party observations at their own external native product boundaries. Grit's selected synthetic sweep is first-party-reported and partially matched because generated run directories are gitignored and the raw-git/Grit arms sample work allocation separately. Twining lacks recoverable exact treatment revision, and CooperBench lacks the pinned flash-run logs needed for observation admission. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
     },
     "S3": {
       "status": "gap",
