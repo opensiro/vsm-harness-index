@@ -92,9 +92,14 @@
           "benchmark_id": "cooperbench-team-harness",
           "benchmark_name": "CooperBench team-harness coordination ablation",
           "primary_source": "https://github.com/cooperbench/CooperBench/blob/63b9d44d9f39a02fccf5bf0052db48a917a011fd/docs/team_harness_ablation_report.html"
+        },
+        {
+          "benchmark_id": "codecrdt-observation-coordination",
+          "benchmark_name": "CodeCRDT observation-driven coordination evaluation",
+          "primary_source": "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809"
         }
       ],
-      "blocking_reason": "Reviewed direct S2 evidence now includes six benchmark-defined disturbance/attenuation families. Nool and The Specification Gap supply two admitted immutable direct non-canonical observations; Twining lacks recoverable exact treatment revision, while CooperBench has a committed first-party 50-pair ablation report but not the pinned flash-run logs needed for observation admission. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
+      "blocking_reason": "Reviewed direct S2 evidence now includes seven disturbance/attenuation families. Nool and The Specification Gap provide two benchmark-scaffolded direct non-canonical observations, while CodeCRDT provides one descriptive direct observation at its own external native product boundary. Twining lacks recoverable exact treatment revision, and CooperBench lacks the pinned flash-run logs needed for observation admission. CodeCRDT has no matched uncoordinated-parallel control and is not a canonical Index harness. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
     },
     "S3": {
       "status": "gap",
