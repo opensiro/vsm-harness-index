@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "execution-harness-no-live-runs",
+  "tracking_issue": 612,
+  "preregistration_merge": "413e7198947aa51256ac2cf6c07bd4b59a2214d4",
+  "loopx_revision": "ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f",
+  "protocol_status_required": "preregistered-no-results",
+  "canonical_s2_state_unchanged": "A",
+  "functional_worker_count": 2,
+  "live_execution_default": false,
+  "ci_live_execution_allowed": false,
+  "worker_turn_surface": {
+    "host": "codex-cli",
+    "sandbox": "workspace-write",
+    "command_owner": "shared_worker_turn_command_builder",
+    "same_builder_both_arms": true
+  },
+  "coordinator_turn_surface": {
+    "arm": "treatment-only",
+    "host": "codex-cli",
+    "sandbox": "read-only",
+    "available_capabilities": [
+      "peer_agent_activation"
+    ],
+    "classification_field": "classification",
+    "allowed_classifications": [
+      "parallel",
+      "a_then_b",
+      "b_then_a"
+    ]
+  },
+  "control": {
+    "coordinator_turn": false,
+    "peer_agent_activation": false,
+    "task_orchestration_contract_allowed": false,
+    "schedule": "parallel",
+    "schedule_owner": "frozen disturbance generator"
+  },
+  "integration_normalization": [
+    "task_a",
+    "task_b"
+  ],
+  "identifiability_gates": [
+    "disjoint_write_scopes",
+    "ordinary_worker_turn_surfaces",
+    "treatment_native_peer_contract",
+    "control_no_peer_contract",
+    "same_worker_turn_builder",
+    "pure_classification_to_schedule_mapping",
+    "no_task_semantic_schedule_logic"
+  ],
+  "fake_artifacts_required": [
+    "coordinator-a-then-b.json",
+    "coordinator-parallel.json",
+    "coordinator-b-then-a.json",
+    "coordinator-invalid.json",
+    "treatment-peer-projection.json",
+    "control-projection.json",
+    "worker-a-receipt.json",
+    "worker-b-receipt.json",
+    "matched-pair-a-then-b.json"
+  ],
+  "effects": {
+    "live_model_runs_attempted": false,
+    "observations_registry_mutated": false,
+    "canonical_assessment_changed": false,
+    "capability_result_admitted": false,
+    "scalar_s2_score_produced": false
+  }
+}
