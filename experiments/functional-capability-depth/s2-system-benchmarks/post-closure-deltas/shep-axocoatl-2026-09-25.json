@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "reviewed_at": "2026-09-25",
+  "function": "S2",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "shep",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "a874b3238fd01ebdbafc11015cccd9a63ed6e2f2",
+      "repository": "https://github.com/shep-ai/shep",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "Shep's canonical constructor S2 path regulates concrete integration interference through dependency blocking, sync/rebase-before-spawn and transactional integration/conflict handling. Reviewed first-party public surfaces at the pinned revision provide implementation, architecture, specifications and project evidence, but no explicit capability result that instantiates an inter-S1 disturbance and measures attenuation through that native S2 path.",
+      "primary_sources": [
+        "https://github.com/shep-ai/shep/tree/a874b3238fd01ebdbafc11015cccd9a63ed6e2f2/src",
+        "https://github.com/shep-ai/shep/blob/a874b3238fd01ebdbafc11015cccd9a63ed6e2f2/docs/architecture.md"
+      ]
+    },
+    {
+      "canonical_harness_id": "axocoatl",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "edfe5031463686dc782cf3539e5aabae4e8eb9ab",
+      "repository": "https://github.com/axocoatl/axocoatl",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "Axocoatl's canonical constructor S2 path isolates competing Ways/Attempt operations into separate repository/container/actor lanes. The repository publishes Criterion microbenchmarks for actor throughput, routing latency, resource footprint and token efficiency, plus deterministic lifecycle fixtures, but those surfaces do not instantiate and measure native inter-S1 destructive interference versus attenuation through the Ways isolation relation. No direct S2 capability observation is admitted.",
+      "primary_sources": [
+        "https://github.com/axocoatl/axocoatl/blob/edfe5031463686dc782cf3539e5aabae4e8eb9ab/crates/axocoatl-daemon/src/attempts.rs",
+        "https://github.com/axocoatl/axocoatl/blob/edfe5031463686dc782cf3539e5aabae4e8eb9ab/benches/actor_throughput.rs",
+        "https://github.com/axocoatl/axocoatl/blob/edfe5031463686dc782cf3539e5aabae4e8eb9ab/benches/routing_latency.rs",
+        "https://github.com/axocoatl/axocoatl/blob/edfe5031463686dc782cf3539e5aabae4e8eb9ab/demo/one-app/scenarios/several-ways.md"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
