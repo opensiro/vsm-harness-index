@@ -58,6 +58,7 @@ require(closure["post_closure_delta_review_issue"] == 626, "S2 post-closure delt
 require(closure["benchmark_family_review_issue"] == 596, "S2 benchmark-family review issue drift")
 require(closure["public_evidence_admission_issue"] == 629, "S2 public evidence admission issue drift")
 require(closure["codecrdt_public_evidence_issue"] == 640, "S2 CodeCRDT public-evidence issue drift")
+require(closure["agentroom_public_evidence_issue"] == 647, "S2 AgentRoom public-evidence issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S2 closure must preserve gap")
 require(closure["closure_scope"] == "current-public-evidence", "S2 closure scope drift")
@@ -99,6 +100,7 @@ for required_case in {
     "specification-gap-recovery-direct-scaffolded",
     "cooperbench-team-harness-direct-scaffolded",
     "codecrdt-observation-driven-direct-native-noncanonical",
+    "agentroom-concurrent-coding-direct-native-noncanonical",
     "autogen-magentic-one-native-proxy",
     "squad-marble-native-proxy",
     "deepseek-harness-native-mechanism-no-direct-benchmark",
@@ -138,13 +140,14 @@ for harness_id in ("shep", "axocoatl"):
     require(row["canonical_review_ref"] == review_ref, f"{harness_id}: delta ref drift")
     require(row["result_surface_review"] == "no-direct-s2-result", f"{harness_id}: delta result disposition drift")
 
-require(len(observations) == 3, "S2 closure expects three direct non-canonical observations")
+require(len(observations) == 4, "S2 closure expects four direct non-canonical observations")
 observation_rows = {row["observation_id"]: row for row in observations}
 require(
     set(observation_rows) == {
         "nool-trackd-scaleup1-contention-2026-08-21",
         "specification-gap-recovery-2026-03",
         "codecrdt-parallel-convergence-2025-10",
+        "agentroom-parallel-merge-t4-sonnet46-2026-08",
     },
     "S2 direct observation identity set drift",
 )
@@ -152,6 +155,7 @@ for observation_id, (benchmark_id, compatibility) in {
     "nool-trackd-scaleup1-contention-2026-08-21": ("nool-fleet-coordination", "benchmark-scaffolded"),
     "specification-gap-recovery-2026-03": ("specification-gap-recovery", "benchmark-scaffolded"),
     "codecrdt-parallel-convergence-2025-10": ("codecrdt-observation-coordination", "native-system"),
+    "agentroom-parallel-merge-t4-sonnet46-2026-08": ("agentroom-concurrent-coding", "native-system"),
 }.items():
     observation = observation_rows[observation_id]
     require(observation["benchmark_id"] == benchmark_id, f"{observation_id}: benchmark drift")
@@ -163,6 +167,10 @@ require(
     observation_rows["codecrdt-parallel-convergence-2025-10"].get("comparison_class") == "descriptive-only",
     "CodeCRDT direct observation must remain descriptive-only",
 )
+agentroom = observation_rows["agentroom-parallel-merge-t4-sonnet46-2026-08"]
+require(agentroom.get("comparison_class") == "partially-matched", "AgentRoom comparison class drift")
+require("benchmark_artifact_revision" not in agentroom, "AgentRoom must not invent a source repository revision")
+require(agentroom.get("paper") == "https://arxiv.org/abs/2608.23740", "AgentRoom paper provenance drift")
 
 s2_baseline = baselines["functions"]["S2"]
 require(s2_baseline["status"] == "gap", "S2 primary was selected without reopening closure")
@@ -176,6 +184,7 @@ require(
         "specification-gap-recovery",
         "cooperbench-team-harness",
         "codecrdt-observation-coordination",
+        "agentroom-concurrent-coding",
     ],
     "S2 gap metadata direct-family set drift",
 )
