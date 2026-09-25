@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "status": "not-identifiable",
+  "decided_at": "2026-09-25",
+  "tracking_issue": 606,
+  "preregistration_merge": "93a18ad13a50c4bb273064838715c2c6ea5e8253",
+  "canonical_harness_id": "loopx",
+  "canonical_loopx_revision": "ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f",
+  "canonical_s2_state_unchanged": "A",
+  "protocol_status_unchanged": "preregistered-no-results",
+  "reason_code": "frozen_two_task_overlap_has_no_native_child_topology",
+  "frozen_fixture": {
+    "worker_count": 2,
+    "task_a": "fixture/task-a.md",
+    "task_b": "fixture/task-b.md",
+    "shared_write_surface": "src/dispatch.py"
+  },
+  "treatment_identifiability": {
+    "identifiable": false,
+    "facts": [
+      "The frozen fixture has exactly two implementation tasks and both require the same repository write surface.",
+      "At the canonical LoopX revision, adaptive admission treats the first admitted write lane as primary and blocks an overlapping later lane with write_scope_conflict.",
+      "When the frozen pair leaves no selected child lane, build_adaptive_task_orchestration_contract returns no adaptive task-orchestration contract.",
+      "The canonical Turn driver projects child host operations and subagent_execution_topology only from task_orchestration_contract_v2 adaptive eligible_child_lanes.",
+      "Executing the two tasks serially in one parent agent would not satisfy the preregistered requirement for distinct S1 workers."
+    ]
+  },
+  "control_identifiability": {
+    "identifiable": false,
+    "facts": [
+      "The preregistered control removes LoopX adaptive S2 while retaining the same two-worker operational surface.",
+      "Without a native LoopX child topology, the canonical built-in Codex Turn has no first-party typed child-operation or child-receipt surface for this frozen pair.",
+      "Replacing that missing surface with a benchmark-authored subprocess launcher or merge coordinator would violate the preregistered control boundary."
+    ]
+  },
+  "forbidden_repairs": [
+    "add a third non-overlapping task to make an adaptive bundle materialize",
+    "change or misdeclare the frozen task write scopes",
+    "replace the frozen tasks after observing the feasibility failure",
+    "count two sequential turns by the same parent agent as distinct S1 workers",
+    "use a benchmark-authored child launcher or adaptive merge coordinator as LoopX S2"
+  ],
+  "evidence": [
+    {
+      "kind": "canonical-source",
+      "path": "loopx/control_plane/quota/task_orchestration_admission.py",
+      "url": "https://github.com/loopx-project/loopx/blob/ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f/loopx/control_plane/quota/task_orchestration_admission.py",
+      "claim": "overlapping write scopes are blocked; no selected child means no adaptive contract"
+    },
+    {
+      "kind": "canonical-source",
+      "path": "loopx/control_plane/turn_driver/driver.py",
+      "url": "https://github.com/loopx-project/loopx/blob/ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f/loopx/control_plane/turn_driver/driver.py",
+      "claim": "child host operations are projected only for adaptive v2 eligible child lanes"
+    },
+    {
+      "kind": "canonical-test",
+      "path": "tests/control_plane/test_task_orchestration_admission.py",
+      "url": "https://github.com/loopx-project/loopx/blob/ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f/tests/control_plane/test_task_orchestration_admission.py",
+      "claim": "write-scope overlap is serialized and conflicting lanes are typed write_scope_conflict"
+    },
+    {
+      "kind": "canonical-test",
+      "path": "tests/test_loopx_turn_codex_cli.py",
+      "url": "https://github.com/loopx-project/loopx/blob/ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f/tests/test_loopx_turn_codex_cli.py",
+      "claim": "without subagent_execution_topology the built-in Codex prompt omits LoopX child execution instructions and the result schema omits child receipts"
+    },
+    {
+      "kind": "canonical-doc",
+      "path": "docs/integrations/codex-subagent-orchestration.md",
+      "url": "https://github.com/loopx-project/loopx/blob/ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f/docs/integrations/codex-subagent-orchestration.md",
+      "claim": "adaptive child admission requires mutually non-overlapping write scopes; admission is permission rather than a command to spawn"
+    }
+  ],
+  "effects": {
+    "live_model_runs_attempted": false,
+    "observations_registry_mutated": false,
+    "canonical_assessment_changed": false,
+    "capability_result_admitted": false,
+    "scalar_s2_score_produced": false
+  },
+  "reopen_conditions": [
+    "A new-ref LoopX reassessment establishes a first-party observable model-owned path that can arbitrate the exact frozen two-task overlapping-write case while still executing two distinct S1 workers.",
+    "A separate newly preregistered experiment freezes a different fixture/control before any execution; it must not retroactively alter this preregistration."
+  ]
+}

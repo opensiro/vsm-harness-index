@@ -12,6 +12,7 @@ S2 = HERE.parent
 ROOT = HERE.parents[3]
 PROTOCOL = HERE / "protocol.json"
 RUN_TEMPLATE = HERE / "run-template.json"
+EXECUTION_FEASIBILITY = HERE / "execution-feasibility.json"
 OBSERVATIONS = S2 / "observations.json"
 ASSESSMENT = ROOT / "assessments" / "loopx.md"
 FIXTURE = HERE / "fixture"
@@ -33,6 +34,9 @@ REQUIRED_FILES = {
     "README.md",
     "protocol.json",
     "run-template.json",
+    "execution-feasibility.json",
+    "NOT_IDENTIFIABLE.md",
+    "verify_execution_feasibility.py",
     "fixture/src/dispatch.py",
     "fixture/task-a.md",
     "fixture/task-b.md",
@@ -81,6 +85,7 @@ def main() -> None:
 
     protocol = load_json(PROTOCOL)
     run_template = load_json(RUN_TEMPLATE)
+    feasibility = load_json(EXECUTION_FEASIBILITY)
     observations = load_json(OBSERVATIONS)
     fields = assessment_fields()
 
@@ -232,6 +237,71 @@ def main() -> None:
         if run_template.get(empty_field) is not None:
             fail(f"LoopX preregistration run-template must leave {empty_field} unset")
 
+    if feasibility.get("schema_version") != 1:
+        fail("LoopX execution-feasibility schema drift")
+    if feasibility.get("status") != "not-identifiable":
+        fail("LoopX frozen execution must remain not-identifiable until a new-ref review")
+    if feasibility.get("tracking_issue") != 606:
+        fail("LoopX execution-feasibility tracking issue drift")
+    if feasibility.get("canonical_harness_id") != "loopx":
+        fail("LoopX execution-feasibility harness id drift")
+    if feasibility.get("canonical_loopx_revision") != CANONICAL_REF:
+        fail("LoopX execution-feasibility revision drift")
+    if feasibility.get("canonical_s2_state_unchanged") != "A":
+        fail("LoopX execution-feasibility must not rewrite canonical S2 state")
+    if feasibility.get("protocol_status_unchanged") != "preregistered-no-results":
+        fail("LoopX execution-feasibility must not promote protocol status")
+    if feasibility.get("reason_code") != "frozen_two_task_overlap_has_no_native_child_topology":
+        fail("LoopX execution-feasibility reason drift")
+    frozen = feasibility.get("frozen_fixture")
+    if frozen != {
+        "worker_count": 2,
+        "task_a": "fixture/task-a.md",
+        "task_b": "fixture/task-b.md",
+        "shared_write_surface": "src/dispatch.py",
+    }:
+        fail("LoopX execution-feasibility no longer describes the frozen pair")
+    if feasibility.get("treatment_identifiability", {}).get("identifiable") is not False:
+        fail("LoopX treatment identifiability stop was removed")
+    if feasibility.get("control_identifiability", {}).get("identifiable") is not False:
+        fail("LoopX control identifiability stop was removed")
+    expected_effects = {
+        "live_model_runs_attempted": False,
+        "observations_registry_mutated": False,
+        "canonical_assessment_changed": False,
+        "capability_result_admitted": False,
+        "scalar_s2_score_produced": False,
+    }
+    if feasibility.get("effects") != expected_effects:
+        fail("LoopX feasibility artifact must remain a no-run/non-observation record")
+    evidence = feasibility.get("evidence")
+    if not isinstance(evidence, list) or len(evidence) != 5:
+        fail("LoopX execution-feasibility evidence set drift")
+    expected_evidence_paths = {
+        "loopx/control_plane/quota/task_orchestration_admission.py",
+        "loopx/control_plane/turn_driver/driver.py",
+        "tests/control_plane/test_task_orchestration_admission.py",
+        "tests/test_loopx_turn_codex_cli.py",
+        "docs/integrations/codex-subagent-orchestration.md",
+    }
+    if {row.get("path") for row in evidence if isinstance(row, dict)} != expected_evidence_paths:
+        fail("LoopX execution-feasibility evidence paths drift")
+    if any(CANONICAL_REF not in str(row.get("url") or "") for row in evidence if isinstance(row, dict)):
+        fail("LoopX execution-feasibility evidence must remain pinned to canonical ref")
+    require_text(
+        HERE / "NOT_IDENTIFIABLE.md",
+        "No live/model run was attempted.",
+        "distinct S1 workers",
+        "not a negative S2 capability result",
+    )
+    require_text(
+        HERE / "verify_execution_feasibility.py",
+        CANONICAL_REF,
+        "apply_task_orchestration_contract",
+        "child_execution_receipts",
+        "spawn_agent",
+    )
+
     if not isinstance(observations, list):
         fail("S2 observations registry must remain a list")
     loopx_observations = [
@@ -242,6 +312,7 @@ def main() -> None:
         fail("LoopX preregistration cannot coexist with an admitted LoopX observation; execute a new admission transaction")
 
     print("LoopX native S2 preregistration validation passed")
+    print("LoopX native S2 execution feasibility validation passed")
 
 
 if __name__ == "__main__":

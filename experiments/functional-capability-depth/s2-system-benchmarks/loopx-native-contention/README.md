@@ -1,11 +1,30 @@
 # LoopX native-S2 contention study
 
-Status: **preregistered; no results admitted**.
+Status: **preregistered; no results admitted**.  
+Execution feasibility at the frozen revision: **not identifiable** (#606).
 
 Tracking issue: #602  
 Canonical harness: `loopx`  
 Canonical assessment ref: `ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f`  
 Canonical S2 state at design: `A`
+
+## Execution feasibility
+
+The post-preregistration execution check in #606 stopped before any live/model
+run. With exactly the two frozen implementation tasks, both write the same
+`src/dispatch.py` surface. At the pinned LoopX revision the second lane is
+blocked by native `write_scope_conflict`; because no child lane remains, the
+adaptive v2 contract and native child topology are absent. Serial execution by
+the same parent agent would fail this study's distinct-S1 admission gate.
+
+This is an **identifiability result about this frozen experiment**, not a
+negative S2 capability result. The canonical assessment remains `S2=A`, the
+protocol remains `preregistered-no-results`, and `observations.json` remains
+unchanged.
+
+See `execution-feasibility.json` and `NOT_IDENTIFIABLE.md`. The companion
+`verify_execution_feasibility.py` can reproduce the structural stop against an
+exact local checkout of the pinned LoopX revision without invoking a model.
 
 ## Question
 
@@ -114,10 +133,13 @@ A future execution transaction may add a LoopX row to the S2 observation registr
 - `protocol.json` — machine-readable preregistration and source of truth.
 - `run-template.json` — required future run/provenance record shape.
 - `fixture/` — frozen disturbance workload and task acceptance tests.
-- `validate.py` — fail-closed preregistration validator.
+- `execution-feasibility.json` — machine-readable #606 stop result; not an observation.
+- `NOT_IDENTIFIABLE.md` — human-readable explanation of the execution stop.
+- `verify_execution_feasibility.py` — static CI check plus optional pinned-LoopX dynamic proof.
+- `validate.py` — fail-closed preregistration/feasibility validator.
 
 ## Boundary
 
 This package does not change the canonical LoopX assessment, the S2 evidence counts, `observations.json`, the primary baseline, Profile semantics, Skills methodology, TLDR, rankings or Full-A projections.
 
-Execution and result admission must happen in a separate transaction after this protocol is merged.
+A later execution may proceed only if a new-ref feasibility check removes the identified structural blocker while preserving the frozen protocol. A redesigned fixture belongs in a new preregistration rather than rewriting this one.
