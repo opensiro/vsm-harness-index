@@ -36,7 +36,7 @@
         "clean_merges": 14,
         "tickets": 20,
         "final_main_health": "build-broken",
-        "failed_integration_spend_usd": 1.4
+        "failed_integration_spend_usd": 1.40
       },
       {
         "run_id": "fleet_git_fleet_803f2288",
@@ -204,108 +204,24 @@
     "protocol_artifact": "scripts/sweep/bench.sh",
     "experiment": "synthetic merge-contention sweep",
     "date": "2026-04-06",
-    "agent_counts": [
-      1,
-      2,
-      5,
-      10,
-      20,
-      50
-    ],
+    "agent_counts": [1, 2, 5, 10, 20, 50],
     "rounds_per_iteration": 5,
     "iterations": 5,
     "reported_raw_git_failures_per_iteration": [
-      [
-        0,
-        5,
-        20,
-        43,
-        84,
-        175
-      ],
-      [
-        0,
-        5,
-        20,
-        42,
-        85,
-        175
-      ],
-      [
-        0,
-        5,
-        20,
-        43,
-        83,
-        175
-      ],
-      [
-        0,
-        5,
-        20,
-        44,
-        83,
-        175
-      ],
-      [
-        0,
-        5,
-        20,
-        44,
-        82,
-        175
-      ]
+      [0, 5, 20, 43, 84, 175],
+      [0, 5, 20, 42, 85, 175],
+      [0, 5, 20, 43, 83, 175],
+      [0, 5, 20, 44, 83, 175],
+      [0, 5, 20, 44, 82, 175]
     ],
     "reported_raw_git_conflicts_per_iteration": [
-      [
-        0,
-        39,
-        88,
-        99,
-        136,
-        175
-      ],
-      [
-        0,
-        38,
-        85,
-        88,
-        129,
-        175
-      ],
-      [
-        0,
-        37,
-        77,
-        85,
-        122,
-        175
-      ],
-      [
-        0,
-        37,
-        63,
-        88,
-        126,
-        175
-      ],
-      [
-        0,
-        38,
-        85,
-        89,
-        136,
-        175
-      ]
+      [0, 39, 88, 99, 136, 175],
+      [0, 38, 85, 88, 129, 175],
+      [0, 37, 77, 85, 122, 175],
+      [0, 37, 63, 88, 126, 175],
+      [0, 38, 85, 89, 136, 175]
     ],
-    "reported_grit_failures": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
+    "reported_grit_failures": [0, 0, 0, 0, 0, 0],
     "reported_mean_raw_git_failure_rates": {
       "1": 0.0,
       "2": 0.5,
@@ -332,39 +248,6 @@
       "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/scripts/sweep/bench.sh",
       "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/tests/gen_graph.py",
       "https://github.com/rtk-ai/grit/commit/a2c48735e0a16c49ca1541c4865fce438c479405"
-    ]
-  },
-  {
-    "observation_id": "squad-shared-state-conflict-attenuation-2026-03",
-    "function": "S2",
-    "benchmark_id": null,
-    "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
-    "boundary_class": "canonical-squad-project-team",
-    "canonical_harness_id": "squad",
-    "canonical_system_eligible": true,
-    "canonical_assessment_ref": "2099faf51c08a912c359209447011b06decf0565",
-    "canonical_state_at_review": "A",
-    "system_compatibility": "native-system",
-    "comparison_class": "descriptive-only",
-    "evidence_surface": "immutable first-party repository history plus first-party public operational case study",
-    "operational_commits": [
-      "34925f2f5bec49742216ab9dd93c756fbe1aa8c9",
-      "e7e6255aa84e04993d568a10331bf9da6661b478",
-      "6e304ec6d2f1d385226fba074a1192a3eab7b5cb"
-    ],
-    "case_study_date": "2026-03-17",
-    "disturbance": "Parallel Squad S1 agents append to shared team-state and decision surfaces; simultaneous completion can create merge interference on canonical shared state.",
-    "coordination_relation": "Squad's first-party merge=union rules preserve concurrent append-only team-state contributions, while per-agent decision inbox files and Scribe consolidation separate structured concurrent writes before returning them to canonical decisions.md.",
-    "subsequent_operation": "First-party operational history records decision-inbox consolidation followed by later multi-PR release work with team state preserved via merge=union.",
-    "comparison_limitation": "This is descriptive canonical direct evidence from operational history, not a matched benchmark comparison or a causal numeric uplift estimate.",
-    "vsm_interpretation": "This is direct descriptive S2 capability evidence at the canonical Squad project-team boundary. Distinct parallel S1 agents generate interaction-specific shared-state interference; native merge=union and Scribe/inbox coordination attenuate that interference and preserve/consolidate state for subsequent operation. It does not create a benchmark family or a matched cross-harness primary cell.",
-    "primary_sources": [
-      "https://github.com/bradygaster/squad/tree/2099faf51c08a912c359209447011b06decf0565",
-      "https://github.com/bradygaster/squad/commit/34925f2f5bec49742216ab9dd93c756fbe1aa8c9",
-      "https://github.com/bradygaster/squad/commit/e7e6255aa84e04993d568a10331bf9da6661b478",
-      "https://github.com/bradygaster/squad/commit/6e304ec6d2f1d385226fba074a1192a3eab7b5cb",
-      "https://www.tamirdresher.com/blog/2026/03/17/scaling-ai-part4-distributed"
     ]
   }
 ]
