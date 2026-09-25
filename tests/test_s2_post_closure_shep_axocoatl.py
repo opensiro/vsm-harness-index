@@ -50,17 +50,34 @@ class TestS2PostClosureShepAxocoatl(unittest.TestCase):
             self.assertEqual(rows[harness_id]["canonical_review_ref"], review_ref)
             self.assertEqual(rows[harness_id]["result_surface_review"], "no-direct-s2-result")
 
+        # This regression test proves only that the Shep/Axocoatl delta itself
+        # did not admit capability evidence. Later independent public-evidence
+        # transactions may legitimately increase the global S2 family or
+        # observation counts, so bind those counts to their current sources of
+        # truth rather than freezing the values that happened to exist at #626.
         coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
         observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
         baselines = json.loads(BASELINES.read_text(encoding="utf-8"))
-        self.assertEqual(coverage["direct_benchmark_family_count"], 4)
-        self.assertEqual(coverage["direct_observation_count"], 1)
+        reviewed_families = baselines["functions"]["S2"]["reviewed_direct_families"]
+
+        self.assertEqual(
+            coverage["direct_benchmark_family_count"],
+            len(reviewed_families),
+        )
+        self.assertEqual(coverage["direct_observation_count"], len(observations))
         self.assertEqual(coverage["canonical_direct_observation_count"], 0)
         self.assertEqual(coverage["proxy_projection_count"], 2)
         self.assertEqual(len(coverage["representative_canonical_s2_systems_inspected"]), 15)
         self.assertIn("shep", coverage["representative_canonical_s2_systems_inspected"])
         self.assertIn("axocoatl", coverage["representative_canonical_s2_systems_inspected"])
-        self.assertEqual(len(observations), 1)
+        self.assertNotIn(
+            "shep",
+            {row.get("canonical_harness_id") for row in observations},
+        )
+        self.assertNotIn(
+            "axocoatl",
+            {row.get("canonical_harness_id") for row in observations},
+        )
         self.assertEqual(baselines["functions"]["S2"]["status"], "gap")
 
 

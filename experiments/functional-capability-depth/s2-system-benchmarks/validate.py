@@ -63,6 +63,13 @@ def valid_https(value: object) -> bool:
     return parsed.scheme == "https" and bool(parsed.netloc)
 
 
+def observation_by_id(observations: list[dict], observation_id: str) -> dict:
+    matches = [row for row in observations if row.get("observation_id") == observation_id]
+    if len(matches) != 1:
+        fail(f"expected exactly one S2 observation {observation_id!r}")
+    return matches[0]
+
+
 def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
     proxy_links = json.loads(PROXY_LINKS.read_text(encoding="utf-8"))
     if not isinstance(proxy_links, list):
@@ -149,11 +156,8 @@ def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
 
 
 def validate_nool_observation(observations: list[dict]) -> None:
-    if len(observations) != 1:
-        fail("S2 observations.json must contain exactly one direct non-canonical observation")
-    observation = observations[0]
+    observation = observation_by_id(observations, "nool-trackd-scaleup1-contention-2026-08-21")
     expected = {
-        "observation_id": "nool-trackd-scaleup1-contention-2026-08-21",
         "function": "S2",
         "benchmark_id": "nool-fleet-coordination",
         "benchmark_fit": "direct",
@@ -196,6 +200,52 @@ def validate_nool_observation(observations: list[dict]) -> None:
         fail("Nool direct S2 observation must retain immutable HTTPS provenance")
 
 
+def validate_specification_gap_observation(observations: list[dict]) -> None:
+    observation = observation_by_id(observations, "specification-gap-recovery-2026-03")
+    expected = {
+        "function": "S2",
+        "benchmark_id": "specification-gap-recovery",
+        "benchmark_fit": "direct",
+        "evidence_source_class": "first-party-reported",
+        "boundary_class": "benchmark-defined-two-worker-integration",
+        "canonical_harness_id": None,
+        "canonical_system_eligible": False,
+        "system_compatibility": "benchmark-scaffolded",
+        "benchmark_artifact_revision": "b64059f3ee5cab9b71b834c7b5acc597791880d5",
+        "result_artifact": "data/conflict_results/",
+        "experiment_artifact": "scripts/conflict_experiment.py",
+        "model": "claude-sonnet-4-20250514",
+        "task_count": 53,
+        "worker_count": 2,
+    }
+    for field, value in expected.items():
+        if observation.get(field) != value:
+            fail(f"Specification Gap direct S2 observation {field} drift: {observation.get(field)!r}")
+
+    conditions = observation.get("recovery_conditions")
+    if not isinstance(conditions, list):
+        fail("Specification Gap recovery_conditions must be a list")
+    actual = [(row.get("condition"), row.get("pass_rate")) for row in conditions]
+    expected_conditions = [
+        ("blind_l3_no_conflict_report", 0.527),
+        ("guided_l3_with_conflict_report", 0.527),
+        ("spec_only_l0_no_conflict_report", 0.889),
+        ("resolve_l0_with_conflict_report", 0.823),
+    ]
+    if actual != expected_conditions:
+        fail("Specification Gap recovery condition results drift")
+    if observation.get("single_agent_l0_ceiling") != 0.883:
+        fail("Specification Gap single-agent L0 ceiling drift")
+    if observation.get("reported_effects") != {
+        "full_specification_vs_blind_pp": 36.2,
+        "conflict_report_at_l3_pp": 0.0,
+    }:
+        fail("Specification Gap reported effects drift")
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(source) for source in sources):
+        fail("Specification Gap observation must retain immutable HTTPS provenance")
+
+
 def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
@@ -207,6 +257,8 @@ def main() -> None:
         fail("coverage function must be S2")
     if not isinstance(observations, list):
         fail("observations.json must contain a list")
+    if len(observations) != 2:
+        fail("S2 observations.json must contain exactly two direct non-canonical observations")
     if coverage.get("direct_observation_count") != len(observations):
         fail("direct_observation_count does not match observations.json")
     if coverage.get("canonical_direct_observation_count") != 0:
@@ -226,6 +278,7 @@ def main() -> None:
         "stale-semantic-coordination",
         "nool-fleet-coordination",
         "twining-conflict-resolution",
+        "specification-gap-recovery",
     }
     if reviewed_direct_s2 != expected_direct_s2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
@@ -317,7 +370,22 @@ def main() -> None:
     if "observation_ref" in twining:
         fail("Twining must not acquire an observation_ref without a new provenance review")
 
+    specification_gap = by_id.get("specification-gap-recovery-direct-scaffolded")
+    if specification_gap is None:
+        fail("missing Specification Gap direct-S2 coverage case")
+    if specification_gap.get("benchmark_fit") != "direct" or specification_gap.get("coverage_class") != "direct-scaffolded":
+        fail("Specification Gap recovery must remain direct-scaffolded S2 evidence")
+    if specification_gap.get("system_compatibility") != "benchmark-scaffolded":
+        fail("Specification Gap recovery must remain benchmark-scaffolded")
+    if specification_gap.get("canonical_harness_id") is not None:
+        fail("Specification Gap recovery must not acquire a canonical harness id")
+    if specification_gap.get("review_ref") != "b64059f3ee5cab9b71b834c7b5acc597791880d5":
+        fail("Specification Gap review_ref drift")
+    if specification_gap.get("observation_ref") != "observations.json#specification-gap-recovery-2026-03":
+        fail("Specification Gap coverage/observation linkage drift")
+
     validate_nool_observation(observations)
+    validate_specification_gap_observation(observations)
     validate_proxy_links(coverage, by_id)
 
     representative = coverage.get("representative_canonical_s2_systems_inspected")
