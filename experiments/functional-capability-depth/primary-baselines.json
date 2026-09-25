@@ -82,9 +82,14 @@
           "benchmark_id": "twining-conflict-resolution",
           "benchmark_name": "Twining Benchmark conflict-resolution",
           "primary_source": "https://github.com/daveangulo/twining-benchmark/tree/b6a4d5e5890c5617376ba5c8fb7a628014296663"
+        },
+        {
+          "benchmark_id": "grit-parallel-agent-contention",
+          "benchmark_name": "Grit parallel-agent merge-contention benchmarks",
+          "primary_source": "https://github.com/rtk-ai/grit/tree/0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe"
         }
       ],
-      "blocking_reason": "Reviewed direct S2 evidence now includes four benchmark-defined disturbance/attenuation families. Nool supplies the one admitted immutable direct non-canonical observation; Twining conflict-resolution is direct at its benchmark boundary but lacks recoverable exact Twining treatment revision and canonical harness linkage. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
+      "blocking_reason": "Reviewed direct S2 evidence now includes five disturbance/attenuation families. Nool supplies the one admitted immutable direct non-canonical observation; Twining lacks recoverable exact treatment revision and canonical harness linkage; Grit publishes first-party direct contention/attenuation benchmark scripts and summary claims but gitignores run-level result ledgers and is not a canonical Index harness. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses."
     },
     "S3": {
       "status": "gap",
