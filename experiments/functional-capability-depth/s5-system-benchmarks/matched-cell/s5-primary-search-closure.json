@@ -8,15 +8,18 @@
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
   "full_cohort_review_artifact": "full-canonical-cohort-review.json",
+  "full_cohort_state": {
+    "canonical_s5_positive_systems": 20,
+    "direct_canonical_observations": 1,
+    "no_direct_public_result": 19,
+    "unresolved": 0
+  },
   "evidence_depth": {
     "reviewed_cases": 14,
     "direct_benchmark_families": 1,
     "composed_direct_observations": 1,
     "canonical_direct_observations": 1,
-    "representative_canonical_s5_systems": 5,
-    "full_canonical_s5_positive_systems": 20,
-    "full_cohort_no_direct_public_result": 19,
-    "full_cohort_unresolved": 0
+    "representative_canonical_s5_systems": 5
   },
   "required_direct_chain": [
     "identity-or-ultimate-policy-level conflict",
@@ -37,7 +40,7 @@
       "route_id": "canonical-native-parent-governed-policy-change",
       "status": "single-system-descriptive-only",
       "examples": ["Ouroboros PR #855"],
-      "blocking_reason": "Canonical Ouroboros supplies a direct descriptive parent-governed S5 policy-change witness with executable return and later-lineage persistence. Full-cohort reconciliation through issue #621 found no second admitted canonical direct result among the other 19 current S5-positive systems, so one descriptive system still cannot form a materially matched cross-harness primary."
+      "blocking_reason": "Canonical Ouroboros now supplies a direct descriptive parent-governed S5 policy-change witness with executable return and later-lineage persistence, but one system and one repository-history surface cannot form a materially matched cross-harness primary."
     },
     {
       "route_id": "fixed-policy-enforcement-and-governance",
@@ -76,7 +79,7 @@
       "blocking_reason": "Policy adaptation is measurable, but the evaluated system is not established as the legitimate ultimate organizational authority resolving an identity-level tension."
     }
   ],
-  "closure_claim": "Current public evidence contains one direct composed S5 benchmark family/observation and one canonical native direct descriptive observation. The full current cohort of 20 canonical S5-positive systems has been explicitly reconciled: Ouroboros remains the only admitted canonical direct observation, 19 systems have no reviewed public direct result satisfying the complete authority/change/subsequent-operation chain, and none remain unresolved. The S5 primary therefore remains a gap because public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface.",
+  "closure_claim": "Current public evidence contains one direct composed S5 benchmark family/observation and one canonical native direct descriptive observation. GovSim-SelfGovern exercises benchmark-scaffolded membership/identity authority, while canonical Ouroboros supplies a parent-governed constitutional/runtime policy-change witness with executable return and persistence into later canonical lineage. The S5 primary remains a gap because public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface.",
   "reopen_when": [
     "a second canonical native or adapter-preserved direct S5 observation appears under a materially comparable authority/change/subsequent-operation surface",
     "a materially matched benchmark compares two or more canonical-linkable S5 systems under the same authority/change/subsequent-operation protocol",
@@ -86,8 +89,7 @@
     "another benchmark-scaffolded direct S5 family without canonical native or adapter-preserved linkage",
     "another heterogeneous single-system descriptive policy-change witness that cannot be materially compared with an existing canonical observation",
     "fixed-policy adherence, filtering or enforcement benchmarks",
-    "external public-policy analysis, value-expression tasks, governance mechanism unit tests or protocols without direct organizational authority/change closure",
-    "canonical S5 mechanism existence without an actual public authority/change/subsequent-operation result"
+    "external public-policy analysis, value-expression tasks, governance mechanism unit tests or protocols without direct organizational authority/change closure"
   ],
-  "non_claim": "This closure is not a zero S5 capability score, does not attribute GovSim-SelfGovern's benchmark-scaffolded S5 organization to an underlying model, and does not treat Ouroboros PR #855 as evidence that autonomous Cyber Pro independently chose the policy change. Full-cohort no-result dispositions are temporal evidence statements and do not alter canonical S5 ownership."
+  "non_claim": "This closure is not a zero S5 capability score, does not attribute GovSim-SelfGovern's benchmark-scaffolded S5 organization to an underlying model, and does not treat Ouroboros PR #855 as evidence that autonomous Cyber Pro independently chose the policy change. It preserves the primary gap until materially matched multi-canonical evidence appears."
 }
