@@ -11,10 +11,10 @@ It is also not a second evidence database: every state, count, blocker and reope
 | Function | Primary state | Current evidence depth | Reviewed through | Source |
 | --- | --- | --- | --- | --- |
 | S1 | `selected` — PawBench v1.0 / `qwen3.6-35b-a3b` | `task_count`: `150` · `canonical_harnesses`: `3` | `2026-09-23` | [`primary-baselines.json`](primary-baselines.json) |
-| S2 | `gap` | `direct_benchmark_families`: `3` · `direct_observations`: `1` · `canonical_direct_observations`: `0` · `native_proxy_projections`: `2` · `representative_canonical_s2_systems_inspected`: `11` | `2026-09-25` | [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json) |
-| S3 | `gap` | `direct_benchmark_families`: `3` · `canonical_direct_observations`: `1` · `native_proxy_projections`: `1` · `representative_canonical_s3_systems_inspected`: `11` | `2026-09-24` | [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json) |
+| S2 | `gap` | `direct_benchmark_families`: `3` · `direct_observations`: `1` · `canonical_direct_observations`: `0` · `native_proxy_projections`: `2` · `representative_canonical_s2_systems_inspected`: `13` | `2026-09-25` | [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json) |
+| S3 | `gap` | `direct_benchmark_families`: `3` · `canonical_direct_observations`: `1` · `native_proxy_projections`: `1` · `representative_canonical_s3_systems_inspected`: `14` | `2026-09-25` | [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json) |
 | S3* | `gap` | `direct_benchmark_families`: `5` · `composed_direct_observations`: `3` · `canonical_direct_observations`: `2` | `2026-09-24` | [`s3star-primary-search-closure.json`](s3star-system-benchmarks/matched-cell/s3star-primary-search-closure.json) |
-| S4 | `gap` | `canonical_native_observations`: `2` · `reviewed_routes`: `6` | `2026-09-24` | [`s4-primary-search-closure.json`](s4-system-benchmarks/matched-cell/s4-primary-search-closure.json) |
+| S4 | `gap` | `canonical_native_observations`: `2` · `reviewed_routes`: `6` | `2026-09-25` | [`s4-primary-search-closure.json`](s4-system-benchmarks/matched-cell/s4-primary-search-closure.json) |
 | S5 | `gap` | `reviewed_cases`: `14` · `direct_benchmark_families`: `1` · `composed_direct_observations`: `1` · `canonical_direct_observations`: `1` · `representative_canonical_s5_systems`: `5` | `2026-09-25` | [`s5-primary-search-closure.json`](s5-system-benchmarks/matched-cell/s5-primary-search-closure.json) |
 
 A `gap` is an empirical evidence state, not a zero capability score and not a statement about canonical VSM ownership.
@@ -33,13 +33,13 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
 
 - **Reviewed through:** `2026-09-25`.
 - **Primary blocking reason:** Reviewed direct S2 evidence now includes explicit benchmark-defined fleet contention/attenuation observations, including Nool's controlled pre-start gating experiment, but public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses.
-- **Closure claim:** Current public evidence contains three direct S2 disturbance benchmark families, one immutable direct non-canonical fleet observation, and two native quantitative S2 proxy projections, but still no canonical native direct observation and no matched canonical-harness S2 primary cell.
+- **Closure claim:** Current public evidence contains three direct S2 disturbance benchmark families, one immutable direct non-canonical fleet observation, and two native quantitative S2 proxy projections. The current canonical cohort, including post-closure C.A.D.I.S. and ARES admissions, still contains no canonical native direct observation and no matched canonical-harness S2 primary cell.
 - **Evidence depth:**
   - `direct_benchmark_families`: `3`
   - `direct_observations`: `1`
   - `canonical_direct_observations`: `0`
   - `native_proxy_projections`: `2`
-  - `representative_canonical_s2_systems_inspected`: `11`
+  - `representative_canonical_s2_systems_inspected`: `13`
 - **Reopen when:**
   1. a canonical S2 harness publishes an explicit native inter-S1 disturbance-to-attenuation result
   1. a materially matched benchmark evaluates two or more canonical systems exercising their own native or adapter-preserved S2 paths under one disturbance definition
@@ -54,14 +54,14 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
 
 ## S3 — current `gap` frontier
 
-- **Reviewed through:** `2026-09-24`.
+- **Reviewed through:** `2026-09-25`.
 - **Primary blocking reason:** Reviewed direct S3 families now include a canonical native within-system current-control ablation, but public evidence still does not provide a matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.
-- **Closure claim:** Current public evidence contains direct S3 benchmarks, one canonical native direct S3 observation and matched framework comparisons, but no materially matched comparison of multiple canonical native or adapter-preserved S3 implementations.
+- **Closure claim:** Current public evidence contains direct S3 benchmarks and one canonical native direct S3 observation. Post-closure review of C.A.D.I.S., Awaken and ARES adds native mechanism coverage but no new direct capability observation, so no materially matched comparison of multiple canonical native or adapter-preserved S3 implementations exists.
 - **Evidence depth:**
   - `direct_benchmark_families`: `3`
   - `canonical_direct_observations`: `1`
   - `native_proxy_projections`: `1`
-  - `representative_canonical_s3_systems_inspected`: `11`
+  - `representative_canonical_s3_systems_inspected`: `14`
 - **Reopen when:**
   1. a second canonical native or adapter-preserved direct S3 observation appears under a materially matched benchmark/model/configuration cell
   1. an existing matched framework campaign proves that canonical S3 paths are actually active for two or more systems
@@ -70,7 +70,8 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
   - another benchmark-authored manager topology
   - another whole-task orchestration score without isolated current-control attribution
   - another framework comparison that does not activate canonical S3 paths
-- **Non-claim:** This closure is not a zero S3 capability score and does not generalize the single Multi-Agent Orchestration result into a cross-harness ranking. It freezes the reviewed public-evidence state until materially new matched-native evidence appears.
+  - microperformance or mechanism tests that do not measure a current-control intervention and subsequent organizational outcome
+- **Non-claim:** This closure is not a zero S3 capability score and does not generalize the single Multi-Agent Orchestration result into a cross-harness ranking. It freezes the reviewed current canonical/public-evidence state until materially new matched-native evidence appears.
 - **Source:** [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json).
 
 ## S3* — current `gap` frontier
@@ -95,9 +96,9 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
 
 ## S4 — current `gap` frontier
 
-- **Reviewed through:** `2026-09-24`.
+- **Reviewed through:** `2026-09-25`.
 - **Primary blocking reason:** Direct S4 evidence now includes two canonical native systems: A-Evolve publishes harness-updating measurements across SWE-bench Verified, MCP-Atlas and SkillsBench, while KADATH publishes a ten-epoch locked-benchmark population-improvement run. Their tasks, benchmark definitions, models/configurations and result surfaces are not matched, so public evidence still does not provide a common cross-harness S4 comparison cell.
-- **Closure claim:** The current public evidence contains canonical native S4 observations and materially matched paper-level comparisons, but no route satisfies the full matched canonical-harness primary gate.
+- **Closure claim:** The current public evidence contains canonical native S4 observations and materially matched paper-level comparisons, but no route satisfies the full matched canonical-harness primary gate. Post-closure ARES review adds a canonical S4=C(P) mechanism with no admitted capability result; its GA/runtime reports measure computational cost rather than future capability improvement after adaptation.
 - **Evidence depth:**
   - `canonical_native_observations`: `a-evolve`, `kadath`
   - `reviewed_routes`: `6`
@@ -109,7 +110,8 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
   - another heterogeneous single-system S4 result
   - another benchmark-defined evolver without canonical-native linkage
   - method-name similarity without immutable implementation provenance
-- **Non-claim:** This closure is not a claim that a matched S4 primary can never exist, not a zero capability result, and not a ranking. It freezes the reviewed public-evidence state until materially new primary evidence changes a blocked gate.
+  - GA or runtime microperformance measurements without future capability improvement after adaptation
+- **Non-claim:** This closure is not a claim that a matched S4 primary can never exist, not a zero capability result, and not a ranking. It freezes the reviewed current canonical/public-evidence state until materially new primary evidence changes a blocked gate.
 - **Source:** [`s4-primary-search-closure.json`](s4-system-benchmarks/matched-cell/s4-primary-search-closure.json).
 
 ## S5 — current `gap` frontier
