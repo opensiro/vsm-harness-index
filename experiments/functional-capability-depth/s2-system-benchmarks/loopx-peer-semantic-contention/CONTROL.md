@@ -1,10 +1,14 @@
 # Control and adapter-preservation boundary
 
-The control arm removes the LoopX registered-peer S2 relation while preserving the two functional worker Turn surfaces.
+Lifecycle: **historical design only — no live execution planned for functional-capability-depth**.
 
-## Treatment
+This file preserves the control/treatment boundary that was designed before #617 clarified the public-evidence-only operating model. It is retained to document identifiability and adapter-preservation reasoning. It is not an active benchmark plan and must not be used to create capability evidence.
 
-Treatment configures `codex-coordinator` as the peer task coordinator and supplies `peer_agent_activation` on its governed Turn. Before that Turn is eligible, the native LoopX quota projection must expose:
+The historical control arm removed the LoopX registered-peer S2 relation while preserving the two functional worker Turn surfaces.
+
+## Historical treatment
+
+Treatment configured `codex-coordinator` as the peer task coordinator and supplied `peer_agent_activation` on its governed Turn. Before that Turn was eligible, the native LoopX quota projection had to expose:
 
 ```text
 task_orchestration_contract_v1
@@ -12,37 +16,37 @@ task_scoped_peer
 eligible_peer_lanes = [codex-worker-a, codex-worker-b]
 ```
 
-The coordinator model writes the schedule only through the typed `classification` field. The adapter accepts exactly `parallel`, `a_then_b`, or `b_then_a` and maps that token to the frozen launch topology without reading fixture source.
+The coordinator model would write the schedule only through the typed `classification` field. The adapter accepted exactly `parallel`, `a_then_b`, or `b_then_a` and mapped that token to the frozen launch topology without reading fixture source.
 
-## Control
+## Historical control
 
-Control keeps the same two registered worker identities, same governed Codex Turn command builder, same model/config, same frozen tasks, same worktree isolation, and same post-run A-then-B composition check.
+Control kept the same two registered worker identities, same governed Codex Turn command builder, same model/config, same frozen tasks, same worktree isolation, and same post-run A-then-B composition check.
 
-It removes:
+It removed:
 
 - peer task coordinator configuration;
 - coordinator Turn execution;
 - `peer_agent_activation`;
 - any task-orchestration contract.
 
-The adapter then launches A and B concurrently from one frozen baseline. That fixed launch is the preregistered disturbance generator. It is not an adaptive scheduling choice.
+The adapter would then launch A and B concurrently from one frozen baseline. That fixed launch was the preregistered disturbance generator, not an adaptive scheduling choice.
 
-## Why the adapter is not S2
+## Why the adapter was not S2
 
-`adapter.py` contains only:
+`adapter.py` was constrained to:
 
 1. exact-token validation;
 2. a fixed token-to-stage lookup;
 3. the shared worker Turn argv builder;
 4. the treatment-only coordinator Turn argv builder.
 
-It must not read task source or acceptance tests, infer which task should precede another, retry with a different schedule, repair worker output, or invent a dependency. CI scans the adapter source for the frozen task source paths and semantic payload-key literals and rejects them.
+It was forbidden to read task source or acceptance tests, infer which task should precede another, retry with a different schedule, repair worker output, or invent a dependency. CI scans the adapter source for the frozen task source paths and semantic payload-key literals and rejects them.
 
-Post-run metric extraction may inspect worker patches to classify what happened. Measurement after the decision is not allowed to feed back into scheduling.
+Post-run metric extraction was designed to inspect worker patches only after the decision. Measurement after the decision was not allowed to feed back into scheduling.
 
-## Invalidation
+## Historical invalidation rules
 
-A run or harness is invalid if any of the following occurs:
+A proposed run/harness would have been invalid if any of the following occurred:
 
 - Task A/B declared write scopes overlap;
 - treatment does not expose both worker lanes in native `task_scoped_peer`;
@@ -54,4 +58,6 @@ A run or harness is invalid if any of the following occurs:
 - live execution occurs in CI;
 - canonical observations or assessment state are mutated.
 
-Failure of a pre-execution gate yields `not-identifiable`. It does not authorize redesigning the frozen preregistration in place.
+Failure of a pre-execution gate yielded `not-identifiable`; it did not authorize redesigning the frozen preregistration in place.
+
+Under #617, the stronger lifecycle boundary now applies: **the design is not executed live at all for capability-depth**. S2 evidence must come from already-public upstream or third-party results.
