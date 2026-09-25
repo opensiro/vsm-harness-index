@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 621,
+  "reviewed_at": "2026-09-25",
+  "index_revision_at_review": "38538480d2fdc0a1ea056d813b9bef5bf3736a5f",
+  "scope": "full-current-canonical-s5-positive-cohort",
+  "selection_rule": "All included canonical systems with autonomy_s5 in A, P, A(P), or C(P) at the reviewed Index revision; ? is not positive.",
+  "direct_chain": [
+    "identity-or-ultimate-policy-level conflict",
+    "legitimate authority at declared recursion",
+    "actual adjudication-ratification-or-amendment",
+    "decision provenance separating ownership from enforcement",
+    "newly decided policy returned into subsequent operation"
+  ],
+  "counts": {
+    "canonical_s5_positive_systems": 20,
+    "direct_canonical_observations": 1,
+    "no_direct_public_result": 19,
+    "unresolved": 0
+  },
+  "current_direct_anchor": "ouroboros",
+  "systems": [
+    {
+      "canonical_harness_id": "ouroboros",
+      "repository": "https://github.com/razzant/ouroboros",
+      "canonical_review_revision": "86806ee123ce8e26cc063cc1a618f975eea64f26",
+      "canonical_s5_state": "A(P)",
+      "disposition": "direct-observation",
+      "observation_ref": "../../s5-system-benchmarks/canonical_observations.json#ouroboros-parent-governed-cyber-pro-policy-enactment-2026-09",
+      "finding": "PR #855 supplies the admitted direct descriptive parent-governed S5 witness: owner-selected work changes constitutional/runtime authority, the repository owner enacts it, executable policy changes, and the change persists into later canonical lineage.",
+      "comparison_limit": "single-system descriptive repository-history surface; not a matched cross-harness primary"
+    },
+    {
+      "canonical_harness_id": "headcount",
+      "repository": "https://github.com/cbrock84/headcount",
+      "canonical_review_revision": "9cbf34005e3e8a980a6af9b55eb226bd926a62b3",
+      "canonical_s5_state": "A",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "actual-execution-result",
+      "finding": "The Chief Executive structurally owns organizational direction and final internal policy tradeoffs, but reviewed public surfaces do not publish an immutable execution result showing an actual identity/ultimate-policy decision returned into later organization work.",
+      "reopen_when": "A public immutable run or trace records the Chief Executive policy decision, authority provenance, returned strategy or priority consequence, and subsequent work governed by it."
+    },
+    {
+      "canonical_harness_id": "henterprise",
+      "repository": "https://github.com/humbertobellor/henterprise",
+      "canonical_review_revision": "0bd56397676462e216f92b5b7800919a3597a99a",
+      "canonical_s5_state": "A",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "actual-execution-result",
+      "finding": "The Executive/Chief Executive structural path establishes autonomous S5 ownership, but no reviewed public organization-run artifact records an actual identity or ultimate-policy decision followed by changed later work in the same organization context.",
+      "reopen_when": "A public immutable single-profile run records an Executive identity or ultimate-policy decision and subsequent operation under the returned decision."
+    },
+    {
+      "canonical_harness_id": "argus-agent",
+      "repository": "https://github.com/microsoft/ArgusAgent",
+      "canonical_review_revision": "746f76b7a74a1217507c9ee348eecd3b782f7c92",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "operator-identity-or-standing-objective-enactment-result",
+      "finding": "Argus ships a parent-owned identity card, standing-objective replacement and reserved ultimate-policy actions whose decisions return into later role context, but reviewed public results do not record an actual operator identity or standing-purpose decision and subsequent Project operation under it.",
+      "reopen_when": "A public immutable Project trace binds the legitimate operator to an identity or standing-objective decision, persisted control state, and later Argus work governed by the changed state."
+    },
+    {
+      "canonical_harness_id": "loopx",
+      "repository": "https://github.com/huangruiteng/loopx",
+      "canonical_review_revision": "ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "owner-goal-policy-change-result",
+      "finding": "LoopX structurally reserves Goal purpose, acceptance and protected authority to the human Goal owner and returns that authority through Goal/registry/gate state, but no reviewed public upstream result records an actual owner policy change and later worker operation under it.",
+      "reopen_when": "A public upstream LoopX trace records a Goal-owner ultimate-policy decision, its persisted Goal/authority state, and subsequent heartbeat or worker behavior governed by the changed state."
+    },
+    {
+      "canonical_harness_id": "thclaws",
+      "repository": "https://github.com/thClaws/thClaws",
+      "canonical_review_revision": "cd700937a71a391f052438d139b7b1c5a6456755",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "legitimate-deployment-parent-result",
+      "finding": "Signed enterprise policy is a strong S5=P mechanism, but repository maintenance/RFC history is not the credited deployment Parent and no reviewed public deployment record shows an organization signing a changed policy followed by thClaws operation under it.",
+      "reopen_when": "A public immutable deployment record or case study binds the legitimate signing authority to an enacted signed-policy change and subsequent thClaws runtime behavior under that policy."
+    },
+    {
+      "canonical_harness_id": "marveen",
+      "repository": "https://github.com/Szotasz/marveen",
+      "canonical_review_revision": "b3f6574a76488b3367b26684f9065acca695a00f",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "owner-self-rename-runtime-result",
+      "finding": "Marveen's owner-gated self-rename path can persist persona/brand identity and reload subsequent operation while refusing non-owner initiation, but no reviewed public deployment artifact records an actual owner identity decision and later runtime under the changed persona.",
+      "reopen_when": "A public immutable installation trace records owner-authorized identity change, persisted persona/brand mutation, reload, and subsequent Marveen operation under the changed identity."
+    },
+    {
+      "canonical_harness_id": "paperclip",
+      "repository": "https://github.com/paperclipai/paperclip",
+      "canonical_review_revision": "352153b5edf02ff4262210c7bd5bfa94bcf37c7c",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "board-strategy-enactment-result",
+      "finding": "Paperclip reserves company goals, strategy acceptance and organization-level hire authority to the board and returns approved direction into CEO work, but reviewed public artifacts do not record an actual board strategy decision for an assessed company followed by later company operation under it.",
+      "reopen_when": "A public immutable company record binds board authority to an approved/revised goal or strategy and shows subsequent CEO/manager work governed by the enacted direction."
+    },
+    {
+      "canonical_harness_id": "squad",
+      "repository": "https://github.com/bradygaster/squad",
+      "canonical_review_revision": "2099faf51c08a912c359209447011b06decf0565",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "user-roster-or-directive-enactment-result",
+      "finding": "Squad gives the user final authority over roster identity and durable always/never directives that persist into team/decision state, but no reviewed public project artifact records an actual user policy/roster decision and later agent work under it.",
+      "reopen_when": "A public immutable Squad project trace records a user roster/charter/directive decision, its persisted team/decision state, and subsequent team operation governed by that change."
+    },
+    {
+      "canonical_harness_id": "kadath",
+      "repository": "https://github.com/i3T4AN/KADATH",
+      "canonical_review_revision": "db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "operator-approved-benchmark-run-result",
+      "finding": "KADATH has a particularly strong S5=P mechanism: the operator approves the run-wide benchmark/fitness/evidence policy and the locked hash governs later grading and epochs. Reviewed public repository surfaces expose the mechanism but not an immutable completed run binding a real approval to later epochs under that approved policy.",
+      "reopen_when": "A public immutable KADATH run artifact records operator approval of the benchmark/fitness contract, the locked policy hash, and later grading/selection epochs governed by that approved contract."
+    },
+    {
+      "canonical_harness_id": "exo",
+      "repository": "https://github.com/exoharness/exo",
+      "canonical_review_revision": "6164288895a5851b2118492c880fb37b543e2ac6",
+      "canonical_s5_state": "A(P)",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "runtime-identity-policy-enactment-result",
+      "finding": "Exo intentionally exposes writable and activatable durable identity/basic-harness-policy surfaces to the Agent and the parent operator. Public commit history demonstrates product development of prompts and self-control machinery, not a runtime Exo identity-policy decision with actor provenance and subsequent operation, so it is mechanism evidence only.",
+      "reopen_when": "A public immutable Exo runtime trace records an Agent- or parent-owned identity/basic-policy judgment, the activated durable policy change, and subsequent turns under the changed authoritative policy."
+    },
+    {
+      "canonical_harness_id": "omniharness",
+      "repository": "https://github.com/archimedes-run/omniHarness",
+      "canonical_review_revision": "fd71e375ff626ae99537163edd3d14b16100d786",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "user-soul-refinement-runtime-result",
+      "finding": "omniHarness supports user-authorized custom-agent SOUL/configuration refinement with persistence and next-turn rebuild, but no reviewed public installation result records an actual identity-level user decision and subsequent operation under the revised SOUL/configuration.",
+      "reopen_when": "A public immutable custom-agent trace records user identity refinement, persisted SOUL/configuration change, rebuild, and subsequent operation under the changed identity."
+    },
+    {
+      "canonical_harness_id": "agentos",
+      "repository": "https://github.com/framerslab/agentos",
+      "canonical_review_revision": "1e9921837385b8218774955b699d949c233e52ea",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "parent-soul-change-runtime-result",
+      "finding": "AgentOS provides a durable parent-authored SOUL identity/values/hard-limit boundary that is loaded into later operation, but reviewed public evidence does not contain an actual workspace-owner SOUL policy change followed by later runtime behavior under that changed identity.",
+      "reopen_when": "A public immutable AgentOS workspace/run artifact records a legitimate parent SOUL identity/hard-limit change and subsequent agent operation under the reloaded policy."
+    },
+    {
+      "canonical_harness_id": "cowagent",
+      "repository": "https://github.com/zhayujie/CowAgent",
+      "canonical_review_revision": "7c55a61e1bccb82c99d97a4a436f598c079f7c9d",
+      "canonical_s5_state": "A(P)",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "runtime-self-evolution-or-parent-identity-enactment-result",
+      "finding": "CowAgent has autonomous rare-signal AGENT.md identity evolution plus parent core-file authority. Repository commits establish implementation of those mechanisms, but reviewed public history does not publish a runtime identity signal → Self-Evolution judgment → AGENT.md change → later-operation chain or equivalent parent enactment result.",
+      "reopen_when": "A public immutable CowAgent runtime record captures the triggering identity signal or parent decision, legitimate identity judgment, persisted AGENT.md/RULE.md change, and later normal operation under the changed identity."
+    },
+    {
+      "canonical_harness_id": "pibot",
+      "repository": "https://github.com/glebis/pibot",
+      "canonical_review_revision": "350bf2c8263f31bcda33789c819329bb56f14c00",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "owner-persona-enactment-result",
+      "finding": "pibot's owner creates or edits durable companion job/purpose/vibe/proactivity identity that later sessions load, but no reviewed public installation artifact records an actual owner identity decision followed by later companion operation under that changed persona.",
+      "reopen_when": "A public immutable pibot trace records owner identity choice or edit, persisted AGENTS.md/manifest state, and subsequent companion reasoning or heartbeat under the changed persona."
+    },
+    {
+      "canonical_harness_id": "wasp",
+      "repository": "https://github.com/agentwasp/agentwasp",
+      "canonical_review_revision": "8282a76f57aa4d0b7f2071321f064b26be942024",
+      "canonical_s5_state": "C(P)",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "operator-identity-enactment-result",
+      "finding": "WASP exposes an identity-specific constructor primitive and a closed parent save/reset/rollback path whose active identity returns into later prompts, but no reviewed public deployment result records an actual legitimate operator identity decision and subsequent agent operation under it.",
+      "reopen_when": "A public immutable WASP deployment trace records operator identity selection/save/reset/rollback, the resulting active IdentityManager state, and subsequent model operation under the enacted identity."
+    },
+    {
+      "canonical_harness_id": "qwenpaw",
+      "repository": "https://github.com/agentscope-ai/QwenPaw",
+      "canonical_review_revision": "8af8b6e31a837a0e19ee6c9fffaf1c6b44b5f9ec",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "persona-enactment-result",
+      "finding": "QwenPaw gives the self-hosting user durable persona/identity/boundary authority through BOOTSTRAP/SOUL/PROFILE/AGENTS surfaces and hot reload into later prompts, but reviewed public evidence does not record an actual user persona decision and subsequent runtime under the changed identity.",
+      "reopen_when": "A public immutable QwenPaw installation trace records user identity/boundary choice, persisted persona files/configuration, reload, and subsequent operation under the changed persona."
+    },
+    {
+      "canonical_harness_id": "masters-of-ai-harness",
+      "repository": "https://github.com/mastersof-ai/harness",
+      "canonical_review_revision": "3f5c4846a2f7ecdf48198d6d1116204132e967a5",
+      "canonical_s5_state": "C(P)",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "accepted-parent-identity-change-result",
+      "finding": "The harness supplies prompt_propose plus an owner-mediated IDENTITY.md return path, but reviewed public surfaces do not publish an accepted identity proposal/result executing proposal or owner judgment, parent acceptance/edit, and subsequent operation under the changed identity.",
+      "reopen_when": "A public immutable installation trace records an identity/system-prompt issue or proposal, legitimate owner acceptance and IDENTITY.md change, and subsequent harness operation under the accepted identity."
+    },
+    {
+      "canonical_harness_id": "tevarn",
+      "repository": "https://github.com/wu1w/tevarn",
+      "canonical_review_revision": "e5e8e204ca2baf8ff671104ab6bf5529d40213ef",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "owner-strategic-clarification-result",
+      "finding": "Tevarn explicitly reserves strategic direction/project decisions to the owner and returns owner clarification into later steward/workforce decisions, but no reviewed public run records an actual strategic ambiguity, owner decision and subsequent organization work under the clarified direction.",
+      "reopen_when": "A public immutable Tevarn run records a strategy-level clarify event, legitimate owner answer, and subsequent steward/workforce operation governed by that returned direction."
+    },
+    {
+      "canonical_harness_id": "shep",
+      "repository": "https://github.com/shep-ai/shep",
+      "canonical_review_revision": "a874b3238fd01ebdbafc11015cccd9a63ed6e2f2",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "authority-regime-enactment-result",
+      "finding": "Shep preserves parent final authority over delegated supervisor policy and protected approvals, but reviewed public evidence establishes the authority mechanism rather than an actual authority-regime or ultimate-policy decision followed by later fleet operation under a changed regime.",
+      "reopen_when": "A public immutable Shep fleet trace records a legitimate user authority-policy decision or change, the actor-aware enacted state, and subsequent protected feature/fleet operation governed by it."
+    }
+  ],
+  "conclusion": "The full current 20-system canonical S5-positive cohort has been explicitly reconciled against public evidence. Ouroboros remains the only admitted canonical direct S5 observation; the other 19 systems expose qualifying S5 mechanisms/ownership but no reviewed public direct result satisfying the full authority/change/subsequent-operation chain. The S5 primary therefore remains an evidence-backed gap.",
+  "non_claim": "No-direct-public-result is a temporal evidence disposition, not a claim of zero S5 capability or permanent absence. Mechanism evidence remains valid canonical assessment evidence but is not promoted into a capability observation without an actual public result chain."
+}
