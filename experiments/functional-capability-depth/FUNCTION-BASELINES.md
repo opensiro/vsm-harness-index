@@ -9,10 +9,10 @@ This view reports baseline availability and evidence coverage only. It does not 
 | Function | Status | Primary family | Reference model | Evidence state |
 | --- | --- | --- | --- | --- |
 | S1 | `selected` | PawBench v1.0 | `qwen3.6-35b-a3b` | [generated S1 baseline](S1-BASELINE.md) |
-| S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 12 reviewed cases · direct families: `3` · direct observations: `1` · canonical direct observations: `0` |
-| S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 8 reviewed cases · direct families: `3` · direct observations: `1` |
+| S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 14 reviewed cases · direct families: `3` · direct observations: `1` · canonical direct observations: `0` |
+| S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 11 reviewed cases · direct families: `3` · direct observations: `1` |
 | S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 16 reviewed cases · direct families: `5` · canonical direct observations: `2` · composed direct observations: `3` |
-| S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 14 reviewed cases · direct families: `4` · canonical direct observations: `2` · composed direct observations: `4` |
+| S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 15 reviewed cases · direct families: `4` · canonical direct observations: `2` · composed direct observations: `4` |
 | S5 | `gap` | — | — | [`coverage.json`](s5-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 14 reviewed cases · direct families: `1` · canonical direct observations: `1` · composed direct observations: `1` |
 
 A `gap` means that no matched canonical-harness primary baseline has been selected for that function. It is not a zero capability score and it does not mean benchmark evidence is absent.
