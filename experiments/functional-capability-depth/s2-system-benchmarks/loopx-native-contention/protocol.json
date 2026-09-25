@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "status": "preregistered-no-results",
+  "tracking_issue": 602,
+  "function": "S2",
+  "canonical_harness_id": "loopx",
+  "canonical_assessment_ref": "ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f",
+  "canonical_state_at_design": "A",
+  "upstream_repository": "https://github.com/loopx-project/loopx",
+  "upstream_revision": "ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f",
+  "native_substrate": "examples/control_plane/task-lease-runtime-smoke.py",
+  "research_question": "Can LoopX's own model-driven task-coordinator path attenuate an explicit inter-S1 overlapping-write disturbance and change subsequent worker behavior under materially matched conditions?",
+  "function_chain": [
+    "two distinct coding-worker S1s receive independently useful tasks",
+    "both tasks have a predeclared overlapping write surface in src/dispatch.py",
+    "the LoopX task coordinator decides parallel versus serial execution and any scope repartition",
+    "native LoopX task-lease/write-scope machinery enforces the selected coordination relation",
+    "worker admission, execution order, conflict feedback, or integration behavior changes"
+  ],
+  "fixture": {
+    "root": "fixture",
+    "language": "python",
+    "shared_write_surface": "fixture/src/dispatch.py",
+    "tasks": [
+      {
+        "task_id": "request-id-propagation",
+        "instruction_file": "fixture/task-a.md",
+        "primary_test": "fixture/tests/test_request_id.py"
+      },
+      {
+        "task_id": "retryability-classification",
+        "instruction_file": "fixture/task-b.md",
+        "primary_test": "fixture/tests/test_retryable.py"
+      }
+    ],
+    "selection_rule": "Tasks are frozen by this preregistration and must not be replaced because observed runs do or do not conflict."
+  },
+  "arms": {
+    "treatment": {
+      "id": "loopx-native-s2",
+      "requirements": [
+        "use the standard LoopX multi-agent/task-coordinator path at the pinned upstream revision",
+        "the model-driven coordinator must choose parallel versus serial execution and any write-scope split",
+        "use first-party task-lease/write-scope enforcement unchanged",
+        "preserve coordinator decision records, worker prompts, lease events, worker outputs, repository diffs and integration outcome"
+      ]
+    },
+    "control": {
+      "id": "loopx-coordination-ablation",
+      "requirements": [
+        "hold LoopX revision, model, task fixture, worker count, repository state and worker operational capabilities fixed",
+        "remove only the S2-specific coordinator decision/attenuation relation",
+        "do not introduce a benchmark-authored replacement coordinator",
+        "retain the overlapping-write disturbance instead of pre-partitioning it",
+        "if this narrow ablation cannot be implemented without materially changing other organizational functions, mark the study not-identifiable and do not execute a forced comparison"
+      ]
+    }
+  },
+  "execution": {
+    "worker_count": 2,
+    "minimum_primary_replicates_per_arm": 3,
+    "pairing": "same model/config/task fixture per treatment-control pair",
+    "fresh_repo_per_run": true,
+    "randomization": "alternate arm order across replicate pairs; record actual order",
+    "exclusion_rules": [
+      "exclude only infrastructure failures that prevent either arm from reaching the preregistered disturbance surface",
+      "do not exclude task failures, merge conflicts, lease rejections, model mistakes or coordinator mistakes",
+      "every excluded run remains in the raw ledger with an explicit reason"
+    ]
+  },
+  "primary_metrics": [
+    "coordinator_decision",
+    "overlapping_work_admitted_concurrently",
+    "selected_write_scopes",
+    "lease_admission_events",
+    "write_scope_conflict_events",
+    "stale_or_duplicate_work_events",
+    "clean_integration",
+    "accepted_task_a",
+    "accepted_task_b",
+    "subsequent_s1_behavior_changed_by_coordination_feedback"
+  ],
+  "secondary_metrics": [
+    "wall_clock_seconds",
+    "model_tokens_or_cost_when_available"
+  ],
+  "provenance_required": [
+    "loopx_revision",
+    "index_protocol_revision",
+    "fixture_revision",
+    "model_provider",
+    "model_id",
+    "model_version_or_snapshot_when_available",
+    "reasoning_configuration",
+    "coordinator_prompt",
+    "worker_prompts",
+    "worker_count",
+    "environment_image_or_os",
+    "arm_configuration",
+    "run_id",
+    "raw_artifact_paths"
+  ],
+  "admission_gate": [
+    "the disturbance is instantiated by distinct S1 workers rather than simulated only by direct CLI calls",
+    "the treatment exercises the model-driven LoopX S2 decision path rather than only deterministic lease checks",
+    "the native coordination decision or its conflict feedback changes subsequent worker behavior",
+    "system/model/config/task provenance is recoverable",
+    "raw artifacts are public and immutable",
+    "no autonomy state is inferred from benchmark performance"
+  ],
+  "observation_registry_mutation_allowed": false,
+  "results": null
+}
