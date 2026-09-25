@@ -165,7 +165,7 @@ def main() -> None:
     )
     require_text(
         FIXTURE / "task-b.md",
-        "current producer payload contract",
+        "response payload contract that is present in the worker's starting tree",
         "Do not edit `src/envelope.py`",
         "src/retry.py",
         "tests/test_retry.py",
