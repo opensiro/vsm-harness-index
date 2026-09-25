@@ -63,7 +63,19 @@ class GritS2PublicEvidenceReviewTest(unittest.TestCase):
         closure = json.loads(CLOSURE.read_text(encoding="utf-8"))
         self.assertEqual(closure["grit_public_evidence_issue"], 663)
         self.assertEqual(closure["primary_baseline"], "gap")
-        self.assertEqual(closure["evidence_depth"]["canonical_direct_observations"], 0)
+
+        # The Grit transaction itself remains non-canonical. Later independent
+        # public-evidence transactions may legitimately add canonical rows, so
+        # validate the mutable global count against the current registry rather
+        # than freezing #663's historical value of zero.
+        canonical_rows = [
+            row for row in observations if row.get("canonical_system_eligible") is True
+        ]
+        self.assertEqual(
+            closure["evidence_depth"]["canonical_direct_observations"],
+            len(canonical_rows),
+        )
+        self.assertNotIn("grit", {row.get("canonical_harness_id") for row in canonical_rows})
 
 
 if __name__ == "__main__":
