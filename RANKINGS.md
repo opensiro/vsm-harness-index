@@ -32,6 +32,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="deepseek-harness"></a>[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="kadath"></a>[KADATH](https://github.com/i3T4AN/KADATH) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A — C A A P` |
 | 4 | <a id="reigen"></a>[Reigen / Conductor](https://github.com/zachary-wilde/reigen) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
+| 4 | <a id="inferoa"></a>[Inferoa](https://github.com/agentic-in/inferoa) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="continuum"></a>[Continuum](https://github.com/shyftlabs/continuum) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="exo"></a>[Exo](https://github.com/exoharness/exo) | 2026-Q2 | 3/6 | 2/5 | 0 | 3 | 0 | `A — P — A(P) A(P)` |
 | 4 | <a id="omniharness"></a>[omniHarness](https://github.com/archimedes-run/omniHarness) | 2026-Q2 | 3/6 | 2/5 | 0 | 2 | 0 | `A — A — A(P) P` |
