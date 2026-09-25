@@ -1,18 +1,38 @@
 # LoopX registered-peer semantic-contention study
 
-Status: **preregistered; no results admitted**.
+Status: **retired historical preregistration; no results admitted; no live execution planned**.
 
-Tracking issue: #609  
+Tracking issues: #609, #612, #616, #617  
 Canonical harness: `loopx`  
 Canonical assessment ref: `ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f`  
 Canonical S2 state at design: `A`  
 Compatibility target: `adapter-preserved`
 
-## Question
+## Lifecycle
 
-Can LoopX's own model-driven registered-peer task coordinator attenuate stale semantic interference between two distinct coding-worker S1s by changing their execution order, such that the later worker operates against updated integrated state?
+This directory remains under `experiments/` as a record of a controlled-comparison design and its identifiability/adapter-preservation work.
 
-The preregistered chain is:
+The capability-depth operating model is now explicitly public-evidence-only: Opensiro does not run or reproduce benchmark experiments on assessed harnesses to create capability evidence. Issue #616 was therefore closed `not_planned` before any live model execution.
+
+Nothing in this package is an admitted S2 observation. The current LoopX capability state remains:
+
+```text
+canonical assessment: S2=A
+canonical direct capability observation: absent
+action: keep the capability gap open until suitable public upstream/third-party evidence exists
+```
+
+See [`../../PUBLIC-EVIDENCE.md`](../../PUBLIC-EVIDENCE.md) and [`EXECUTION_STATUS.md`](EXECUTION_STATUS.md).
+
+The frozen `protocol.json` is intentionally preserved unchanged as a historical preregistration artifact.
+
+## Historical research question
+
+The preregistered question was:
+
+> Can LoopX's own model-driven registered-peer task coordinator attenuate stale semantic interference between two distinct coding-worker S1s by changing their execution order, such that the later worker operates against updated integrated state?
+
+The preregistered chain was:
 
 ```text
 worker A + worker B
@@ -32,13 +52,15 @@ later worker starts from changed state
 changed implementation / composed outcome
 ```
 
-Generic parallelism is not enough. Admission requires the LoopX-owned coordination decision or its returned ordering feedback to change subsequent S1 behavior.
+Generic parallelism would not have been enough. Admission would have required the LoopX-owned coordination decision or its returned ordering feedback to change subsequent S1 behavior.
 
-## Why this is a new experiment
+## Why this successor design existed
 
-The earlier `loopx-native-contention/` preregistration was frozen around two tasks that both wrote `src/dispatch.py`. Its execution-feasibility transaction correctly found that the exact pair could not produce the required two-worker native child topology at the pinned LoopX revision. That experiment remains historical evidence and is not rewritten here.
+The earlier `loopx-native-contention/` preregistration was frozen around two tasks that both wrote `src/dispatch.py`. Its execution-feasibility transaction found that the exact pair could not produce the required two-worker native child topology at the pinned LoopX revision.
 
-This successor changes the disturbance class before execution: the two tasks have disjoint write scopes but interact through a producer/consumer contract. The goal is to let both S1 workers remain executable while preserving a real interaction-generated semantic disturbance.
+This successor changed the disturbance class before execution: the two tasks had disjoint write scopes but interacted through a producer/consumer contract. The design goal was to keep both S1 workers executable while preserving a real interaction-generated semantic disturbance.
+
+Neither design was run live for capability-depth evidence.
 
 ## Frozen fixture
 
@@ -68,42 +90,40 @@ Task B:
   tests/test_retry.py
 ```
 
-This creates a STALE-style composition hazard. A Task-B worker that starts from the baseline can correctly implement against `status` and pass its isolated test. If Task A is later composed, that consumer can become stale. A Task-B worker that starts after A is integrated instead sees `code` and can change its implementation accordingly.
+This was intended to create a STALE-style composition hazard. A Task-B worker starting from the baseline could implement against `status`; a Task-B worker starting after A integration would instead see `code`.
 
 ## Organizational shape
 
-The experiment uses three registered LoopX identities:
+The design used three registered LoopX identities:
 
 - `codex-coordinator` — temporary S2 task coordinator only;
 - `codex-worker-a` — Task A S1;
 - `codex-worker-b` — Task B S1.
 
-Only the two coding workers count toward `functional_worker_count=2`.
-
-Each worker is executed through the governed LoopX Codex Turn surface at the pinned upstream revision. The coordinator is not allowed to edit fixture code.
+Only the two coding workers counted toward `functional_worker_count=2`.
 
 ## Adapter-preserved boundary
 
-LoopX's pinned registered-peer path projects a `task_scoped_peer` contract but expects a host that can actually activate/resume durable peer runtimes. The experiment therefore supplies a narrow host adapter.
+The pinned registered-peer path projected a `task_scoped_peer` contract but expected a host capable of activating/resuming durable peer runtimes. The experiment therefore designed a narrow host adapter.
 
-The adapter is **transport/execution only**. It may start the requested LoopX Turn, create worktrees, execute the coordinator's validated schedule literally, normalize integration order, run tests and capture artifacts. It may not choose the schedule, reinterpret task semantics, repair code, synthesize dependencies/messages or mutate observations.
+The intended adapter role was transport/execution only: start the requested governed Turn, create worktrees, execute the coordinator's validated schedule literally, normalize integration order, run tests, and capture artifacts. It was forbidden to choose the schedule, reinterpret task semantics, repair code, synthesize dependencies/messages, or mutate observations.
 
-If the adapter must make an S2-specific choice, the run is invalid. This is the key adapter-preservation boundary.
+These rules remain useful as historical methodology notes, not as an active execution plan.
 
-## Treatment
+## Historical treatment design
 
-Treatment configures `peer_task_coordinator=codex-coordinator` and reports `peer_agent_activation` on the coordinator Turn.
+Treatment would have configured `peer_task_coordinator=codex-coordinator` and reported `peer_agent_activation` on the coordinator Turn.
 
-The native contract must be:
+The required native contract was:
 
 ```text
 schema_version = task_orchestration_contract_v1
 mode           = task_scoped_peer
 ```
 
-and both worker lanes must be visible.
+with both worker lanes visible.
 
-The coordinator is instructed to return exactly one scheduling classification:
+The coordinator would have returned exactly one scheduling classification:
 
 ```text
 parallel
@@ -111,36 +131,26 @@ a_then_b
 b_then_a
 ```
 
-The adapter executes that token without semantic reinterpretation.
+The adapter would then have executed that token without semantic reinterpretation.
 
-- `parallel` — both workers start from the same frozen baseline.
-- `a_then_b` — A runs and integrates first; B starts from the A-integrated tree.
-- `b_then_a` — B runs and integrates first; A starts from the B-integrated tree.
+## Historical control design
 
-A wrong coordinator decision is an outcome, not an exclusion.
-
-## Control
-
-Control preserves the same LoopX revision, worker identities, worker model/configuration, fixture, worker count, worktree isolation, integration normalization and tests while removing only the LoopX S2 relation:
+Control would have preserved the same LoopX revision, worker identities, worker model/configuration, fixture, worker count, worktree isolation, integration normalization, and tests while removing only the LoopX S2 relation:
 
 - no peer task coordinator;
 - no coordinator Turn;
 - no `peer_agent_activation` capability;
 - no task-orchestration contract.
 
-The same transport adapter launches A and B concurrently from the same frozen baseline. This is a fixed disturbance generator, not an adaptive coordinator.
-
-If a task-orchestration contract appears in control, the run is protocol-invalid.
+The same transport adapter would have launched A and B concurrently from the same frozen baseline.
 
 ## Integration normalization
 
-Final composed evaluation always normalizes integration as Task A then Task B. This prevents merge-order choice from becoming a hidden benchmark coordinator.
+The design fixed final composed evaluation as Task A then Task B so that merge-order choice could not become a hidden benchmark coordinator.
 
-Every run records each worker's starting base commit and patch. The normalized composition must therefore be independently reconstructable.
+## Historical primary measurements
 
-## Primary measurements
-
-The primary record preserves raw fields rather than a scalar score:
+The preregistration proposed raw fields rather than a scalar score:
 
 - treatment native peer contract present;
 - control peer contract absent;
@@ -155,35 +165,39 @@ The primary record preserves raw fields rather than a scalar score:
 - whether B's implementation changed between matched arms;
 - whether coordination changed subsequent S1 behavior.
 
-Wall-clock time and model token/cost data are secondary only.
+No such live measurements were produced.
 
-## Replication
+## Historical replication design
 
-At least three treatment/control replicate pairs are required. Each arm starts from a fresh fixture repository. Worker model/configuration is held constant within a pair, arm order alternates across pairs, and all exclusions remain in the raw ledger.
+The frozen protocol specified at least three treatment/control replicate pairs with matched worker model/configuration and alternating arm order.
 
-Worker mistakes, coordinator mistakes, bad scheduling choices and composed integration failures are outcomes. Only infrastructure failures before the disturbance surface may be excluded.
+This replication plan is **retired for functional-capability-depth**. It is not a TODO and must not be resumed to fill the S2 gap.
 
-## Pre-execution identifiability gate
+## Identifiability work
 
-A later execution-harness transaction must prove mechanically, with fake/stub host artifacts only, that:
+The execution-harness transaction used model-free fake/stub artifacts to check that:
 
-1. Task A/B write scopes are disjoint;
-2. both registered workers can receive ordinary governed Turns without a coordinator;
-3. treatment projects `task_scoped_peer` with both worker lanes;
-4. control projects no task-orchestration contract;
-5. the same two worker Turn surfaces exist in both arms;
-6. treatment scheduling is a literal execution of the model-authored classification;
-7. the adapter makes no S2-specific decision.
+1. Task A/B write scopes were disjoint;
+2. both registered workers had ordinary governed Turn surfaces without a coordinator;
+3. treatment could project `task_scoped_peer` with both worker lanes;
+4. control could project no task-orchestration contract;
+5. the same worker Turn surfaces existed in both arms;
+6. treatment scheduling could be represented as literal execution of a model-authored classification;
+7. the adapter need not make an S2-specific decision.
 
-Failure of any gate means `not-identifiable`. The frozen fixture must not be redesigned in place.
+Those checks are methodological artifacts only. Passing them is not a capability result.
 
 ## Files
 
-- `protocol.json` — machine-readable preregistration and source of truth.
-- `run-template.json` — future run/provenance record.
+- `protocol.json` — frozen historical preregistration; intentionally unchanged after retirement.
+- `run-template.json` — historical proposed run/provenance schema.
 - `fixture/` — frozen semantic-interference workload.
-- `validate.py` — fail-closed preregistration validator.
+- `adapter.py`, `run_local.py`, `execution-plan.json`, `fake-artifacts/` — historical execution-harness implementation artifacts.
+- `EXECUTION_STATUS.md` — current lifecycle disposition.
+- `validate.py` and repository tests — fail-closed structural checks.
 
 ## Boundary
 
-This package does not run a model, add a direct observation, change LoopX's canonical assessment, modify `observations.json`, produce a scalar S2 score, or change any TLDR/ranking/Full-A projection.
+This package does not add a direct observation, change LoopX's canonical assessment, modify `observations.json`, produce a scalar S2 score, or change any TLDR/ranking/Full-A projection.
+
+The active next step for S2 is **public upstream / third-party evidence discovery**, not harness execution by Opensiro.
