@@ -187,5 +187,67 @@
       "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/SCIENCE.md",
       "https://arxiv.org/abs/2510.18893"
     ]
+  },
+  {
+    "observation_id": "grit-synthetic-merge-contention-2026-04",
+    "function": "S2",
+    "benchmark_id": "grit-merge-contention",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "product-defined-parallel-coding-coordination",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "native-system",
+    "comparison_class": "partially-matched",
+    "benchmark_artifact_revision": "a2c48735e0a16c49ca1541c4865fce438c479405",
+    "result_artifact": "tests/gen_graph.py",
+    "protocol_artifact": "scripts/sweep/bench.sh",
+    "experiment": "synthetic merge-contention sweep",
+    "date": "2026-04-06",
+    "agent_counts": [1, 2, 5, 10, 20, 50],
+    "rounds_per_iteration": 5,
+    "iterations": 5,
+    "reported_raw_git_failures_per_iteration": [
+      [0, 5, 20, 43, 84, 175],
+      [0, 5, 20, 42, 85, 175],
+      [0, 5, 20, 43, 83, 175],
+      [0, 5, 20, 44, 83, 175],
+      [0, 5, 20, 44, 82, 175]
+    ],
+    "reported_raw_git_conflicts_per_iteration": [
+      [0, 39, 88, 99, 136, 175],
+      [0, 38, 85, 88, 129, 175],
+      [0, 37, 77, 85, 122, 175],
+      [0, 37, 63, 88, 126, 175],
+      [0, 38, 85, 89, 136, 175]
+    ],
+    "reported_grit_failures": [0, 0, 0, 0, 0, 0],
+    "reported_mean_raw_git_failure_rates": {
+      "1": 0.0,
+      "2": 0.5,
+      "5": 0.8,
+      "10": 0.864,
+      "20": 0.834,
+      "50": 0.7
+    },
+    "reported_mean_grit_failure_rates": {
+      "1": 0.0,
+      "2": 0.0,
+      "5": 0.0,
+      "10": 0.0,
+      "20": 0.0,
+      "50": 0.0
+    },
+    "disturbance": "Parallel coding branches start from shared repository state and create interaction-specific merge variety when independently useful edits collide during integration; the benchmark records failed raw-git merges and conflict files as agent count grows.",
+    "coordination_relation": "Grit supplies its first-party symbol-claim and locking path, isolated worktrees, queue/admission behavior and serialized integration so conflicting or overlapping work is attenuated before or during merge rather than being discarded as raw-git merge failure.",
+    "provenance_limitation": "The repository commits the benchmark protocol, the five-iteration result arrays and the derived zero-failure Grit series, but generated scripts/*/results directories are intentionally gitignored. This row is therefore first-party-reported and is not independently reproduced or raw-run-ledger-backed.",
+    "comparison_limitation": "The committed sweep script samples symbol allocation separately for the raw-git and Grit arms. The published comparison is therefore treated as partially matched first-party evidence rather than a paired causal estimate or a matched cross-harness primary cell.",
+    "vsm_interpretation": "This is direct S2 capability evidence at the external Grit product boundary: parallel S1-like coding activities generate integration-specific variety and Grit's first-party claim/lock/worktree/merge relation attenuates that variety, with the published sweep reporting zero Grit merge failures across the recorded agent-count series. Grit is not a canonical Index harness, so the observation remains non-canonical and cannot select the S2 primary baseline.",
+    "primary_sources": [
+      "https://github.com/rtk-ai/grit/tree/a2c48735e0a16c49ca1541c4865fce438c479405",
+      "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/scripts/sweep/bench.sh",
+      "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/tests/gen_graph.py",
+      "https://github.com/rtk-ai/grit/commit/a2c48735e0a16c49ca1541c4865fce438c479405"
+    ]
   }
 ]
