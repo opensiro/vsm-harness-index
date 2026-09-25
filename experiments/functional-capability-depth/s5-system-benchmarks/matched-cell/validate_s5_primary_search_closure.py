@@ -99,8 +99,8 @@ require(len(by_id) == len(rows), "full S5 cohort contains duplicate or missing h
 require(set(by_id) == set(EXPECTED_FULL_COHORT), f"full S5 cohort identity drift: {set(by_id)!r}")
 
 # Derive the positive cohort independently from all included assessments. This
-# deliberately fails when a new positive S5 system is admitted or an existing
-# state/ref changes, forcing a new public-evidence reconciliation transaction.
+# fails when a new positive S5 system is admitted or an existing state/ref
+# changes, forcing a new public-evidence reconciliation transaction.
 derived_positive: dict[str, tuple[str, str]] = {}
 for path in ASSESSMENTS.glob("*.md"):
     fm = frontmatter(path)
@@ -130,15 +130,14 @@ for harness_id, (expected_ref, expected_state) in EXPECTED_FULL_COHORT.items():
         require(isinstance(row.get("reopen_when"), str) and len(row["reopen_when"]) >= 80, f"{harness_id}: reopen condition missing")
 
 counts = cohort["counts"]
-require(counts == {
+expected_counts = {
     "canonical_s5_positive_systems": 20,
     "direct_canonical_observations": 1,
     "no_direct_public_result": 19,
     "unresolved": 0,
-}, f"full S5 cohort counts drift: {counts!r}")
-require(expected["full_canonical_s5_positive_systems"] == 20, "S5 closure full-cohort count drift")
-require(expected["full_cohort_no_direct_public_result"] == 19, "S5 closure no-result count drift")
-require(expected["full_cohort_unresolved"] == 0, "S5 closure unresolved count drift")
+}
+require(counts == expected_counts, f"full S5 cohort counts drift: {counts!r}")
+require(closure["full_cohort_state"] == expected_counts, f"S5 closure/full-cohort state drift: {closure['full_cohort_state']!r}")
 require(cohort["current_direct_anchor"] == "ouroboros", "full S5 cohort direct anchor drift")
 
 routes = {route["route_id"]: route["status"] for route in closure["reviewed_route_classes"]}
@@ -180,7 +179,6 @@ require(s5_baseline["status"] == "gap", "S5 primary was selected without matched
 require([row["benchmark_id"] for row in s5_baseline["reviewed_direct_families"]] == ["govsim-selfgovern"], "S5 gap metadata lost GovSim-SelfGovern identity")
 require(len(closure["reopen_when"]) >= 3, "S5 closure must retain explicit reopen conditions")
 require(len(closure["do_not_reopen_for"]) >= 4, "S5 closure must retain anti-churn conditions")
-require("20 canonical S5-positive systems" in closure["closure_claim"], "S5 closure lost full-cohort reconciliation claim")
 require("20-system canonical S5-positive cohort" in cohort["conclusion"], "full S5 cohort conclusion drift")
 require(cohort.get("non_claim"), "full S5 cohort must retain temporal non-claim")
 
