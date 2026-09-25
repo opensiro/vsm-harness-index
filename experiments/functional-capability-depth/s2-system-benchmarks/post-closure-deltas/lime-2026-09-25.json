@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 657,
+  "reviewed_at": "2026-09-25",
+  "function": "S2",
+  "disposition": "canonical-mechanism-no-direct-result",
+  "systems": [
+    {
+      "canonical_harness_id": "lime",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "3823e9092d4106c877ae08a1d19d593b647cf27d",
+      "repository": "https://github.com/limecloud/lime",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "Lime's canonical constructor S2 path regulates root-local child execution contention with bounded slots, atomic reserve/claim, excess-admission rejection and release at terminal completion. Reviewed unit tests and managed AgentControl Gate B evidence establish limiter invariants and runtime/lifecycle correctness, but no public result instantiates competing child work and measures attenuation through the limiter together with the downstream S1 outcome. No direct S2 capability observation is admitted.",
+      "primary_sources": [
+        "https://github.com/limecloud/lime/blob/3823e9092d4106c877ae08a1d19d593b647cf27d/lime-rs/crates/app-server/src/runtime/agent_execution.rs",
+        "https://github.com/limecloud/lime/blob/3823e9092d4106c877ae08a1d19d593b647cf27d/internal/roadmap/agent-workspace/multi-agent-team.md",
+        "https://github.com/limecloud/lime/blob/3823e9092d4106c877ae08a1d19d593b647cf27d/internal/research/refactor/v2/13-evidence/2026-07-14-s4ae-canonical-subagent-gui.md"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
