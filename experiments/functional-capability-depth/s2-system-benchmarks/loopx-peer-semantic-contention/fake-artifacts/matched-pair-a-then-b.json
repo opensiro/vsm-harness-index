@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "pair_id": "fake-pair-001",
+  "treatment": {
+    "arm": "loopx-registered-peer-s2",
+    "coordinator_scheduling_classification": "a_then_b",
+    "worker_a_start_base_commit": "baseline-commit",
+    "worker_b_start_base_commit": "after-a-commit",
+    "worker_b_started_after_a_integration": true,
+    "distinct_worker_s1_executions_observed": true,
+    "composed_acceptance": true
+  },
+  "control": {
+    "arm": "loopx-peer-s2-ablation",
+    "coordinator_scheduling_classification": null,
+    "worker_a_start_base_commit": "baseline-commit",
+    "worker_b_start_base_commit": "baseline-commit",
+    "worker_b_started_after_a_integration": false,
+    "distinct_worker_s1_executions_observed": true,
+    "control_concurrent_live_overlap_observed": true,
+    "composed_acceptance": false
+  },
+  "scalar_s2_score": null
+}
