@@ -51,7 +51,7 @@ require(closure["status"] == "experimental-non-normative", "S2 closure status dr
 require(closure["tracking_issue"] == 564, "S2 closure tracking issue drift")
 require(closure["current_state_update_issue"] == 586, "S2 closure current update issue drift")
 require(closure["canonical_delta_review_issue"] == 592, "S2 canonical delta review issue drift")
-require(closure["benchmark_family_review_issue"] == 596, "S2 benchmark-family review issue drift")
+require(closure["benchmark_family_review_issue"] == 622, "S2 benchmark-family review issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S2 closure must preserve gap")
 require(closure["closure_scope"] == "current-public-evidence", "S2 closure scope drift")
@@ -90,6 +90,7 @@ for required_case in {
     "stale-semantic-coordination-direct-scaffolded",
     "nool-fleet-coordination-direct-scaffolded",
     "twining-conflict-resolution-direct-scaffolded",
+    "grit-parallel-agent-contention-direct-noncanonical",
     "autogen-magentic-one-native-proxy",
     "squad-marble-native-proxy",
     "deepseek-harness-native-mechanism-no-direct-benchmark",
@@ -118,11 +119,23 @@ require(observation["canonical_harness_id"] is None, "Nool S2 observation must r
 require(observation["canonical_system_eligible"] is False, "Nool S2 observation must remain non-canonical")
 require(observation["system_compatibility"] == "benchmark-scaffolded", "Nool S2 system compatibility drift")
 
+grit = cases["grit-parallel-agent-contention-direct-noncanonical"]
+require(grit["review_ref"] == "0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe", "Grit S2 review ref drift")
+require(grit["result_claim_commit"] == "a2c48735e0a16c49ca1541c4865fce438c479405", "Grit result claim commit drift")
+require(grit["canonical_harness_id"] is None, "Grit S2 review must remain non-canonical")
+require("observation_ref" not in grit, "Grit S2 review must not acquire an observation without run-level provenance")
+
 s2_baseline = baselines["functions"]["S2"]
 require(s2_baseline["status"] == "gap", "S2 primary was selected without reopening closure")
 require(
     [row["benchmark_id"] for row in s2_baseline["reviewed_direct_families"]]
-    == ["dpbench", "stale-semantic-coordination", "nool-fleet-coordination", "twining-conflict-resolution"],
+    == [
+        "dpbench",
+        "stale-semantic-coordination",
+        "nool-fleet-coordination",
+        "twining-conflict-resolution",
+        "grit-parallel-agent-contention",
+    ],
     "S2 gap metadata direct-family set drift",
 )
 require(len(closure["reopen_when"]) >= 3, "S2 closure must retain explicit reopen conditions")
