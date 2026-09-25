@@ -1,0 +1,26 @@
+{
+  "effective_action": "coordinate_task_bundle",
+  "interaction_contract": {
+    "mode": "task_orchestration"
+  },
+  "task_orchestration_contract": {
+    "schema_version": "task_orchestration_contract_v1",
+    "mode": "task_scoped_peer",
+    "coordinator_agent_id": "codex-coordinator",
+    "execution_state": "ready",
+    "writeback_owner": "task_coordinator",
+    "eligible_peer_lanes": [
+      {
+        "agent_id": "codex-worker-a",
+        "todo_id": "todo-task-a",
+        "task_class": "advancement_task"
+      },
+      {
+        "agent_id": "codex-worker-b",
+        "todo_id": "todo-task-b",
+        "task_class": "advancement_task"
+      }
+    ],
+    "blocked_peer_lanes": []
+  }
+}
