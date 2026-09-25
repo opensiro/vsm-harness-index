@@ -61,6 +61,7 @@ require(closure["lime_post_closure_delta_review_issue"] == 657, "S2 Lime post-cl
 require(closure["benchmark_family_review_issue"] == 596, "S2 benchmark-family review issue drift")
 require(closure["public_evidence_admission_issue"] == 629, "S2 public evidence admission issue drift")
 require(closure["codecrdt_public_evidence_issue"] == 640, "S2 CodeCRDT public-evidence issue drift")
+require(closure["grit_public_evidence_issue"] == 663, "S2 Grit public-evidence issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S2 closure must preserve gap")
 require(closure["closure_scope"] == "current-public-evidence", "S2 closure scope drift")
@@ -102,6 +103,7 @@ for required_case in {
     "specification-gap-recovery-direct-scaffolded",
     "cooperbench-team-harness-direct-scaffolded",
     "codecrdt-observation-driven-direct-native-noncanonical",
+    "grit-merge-contention-direct-native-noncanonical",
     "autogen-magentic-one-native-proxy",
     "squad-marble-native-proxy",
     "deepseek-harness-native-mechanism-no-direct-benchmark",
@@ -158,13 +160,14 @@ require(lime_row["canonical_state_at_review"] == lime_state, "lime: delta state 
 require(lime_row["canonical_review_ref"] == lime_ref, "lime: delta ref drift")
 require(lime_row["result_surface_review"] == "no-direct-s2-result", "lime: delta result disposition drift")
 
-require(len(observations) == 3, "S2 closure expects three direct non-canonical observations")
+require(len(observations) == 4, "S2 closure expects four direct non-canonical observations")
 observation_rows = {row["observation_id"]: row for row in observations}
 require(
     set(observation_rows) == {
         "nool-trackd-scaleup1-contention-2026-08-21",
         "specification-gap-recovery-2026-03",
         "codecrdt-parallel-convergence-2025-10",
+        "grit-synthetic-merge-contention-2026-04",
     },
     "S2 direct observation identity set drift",
 )
@@ -172,6 +175,7 @@ for observation_id, (benchmark_id, compatibility) in {
     "nool-trackd-scaleup1-contention-2026-08-21": ("nool-fleet-coordination", "benchmark-scaffolded"),
     "specification-gap-recovery-2026-03": ("specification-gap-recovery", "benchmark-scaffolded"),
     "codecrdt-parallel-convergence-2025-10": ("codecrdt-observation-coordination", "native-system"),
+    "grit-synthetic-merge-contention-2026-04": ("grit-merge-contention", "native-system"),
 }.items():
     observation = observation_rows[observation_id]
     require(observation["benchmark_id"] == benchmark_id, f"{observation_id}: benchmark drift")
@@ -182,6 +186,14 @@ for observation_id, (benchmark_id, compatibility) in {
 require(
     observation_rows["codecrdt-parallel-convergence-2025-10"].get("comparison_class") == "descriptive-only",
     "CodeCRDT direct observation must remain descriptive-only",
+)
+require(
+    observation_rows["grit-synthetic-merge-contention-2026-04"].get("comparison_class") == "partially-matched",
+    "Grit direct observation must remain partially matched",
+)
+require(
+    observation_rows["grit-synthetic-merge-contention-2026-04"].get("evidence_source_class") == "first-party-reported",
+    "Grit direct observation must remain first-party-reported",
 )
 
 s2_baseline = baselines["functions"]["S2"]
@@ -196,10 +208,11 @@ require(
         "specification-gap-recovery",
         "cooperbench-team-harness",
         "codecrdt-observation-coordination",
+        "grit-merge-contention",
     ],
     "S2 gap metadata direct-family set drift",
 )
 require(len(closure["reopen_when"]) >= 3, "S2 closure must retain explicit reopen conditions")
-require(len(closure["do_not_reopen_for"]) >= 3, "S2 closure must retain anti-churn conditions")
+require(len(closure["do_not_reopen_for"]) >= 4, "S2 closure must retain anti-churn conditions")
 
 print("S2 primary-search closure validation passed")
