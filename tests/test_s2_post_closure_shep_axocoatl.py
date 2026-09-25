@@ -31,6 +31,7 @@ def frontmatter(path: Path) -> dict[str, str]:
 class TestS2PostClosureShepAxocoatl(unittest.TestCase):
     def test_delta_is_fail_closed_and_non_admitting(self) -> None:
         delta = json.loads(DELTA.read_text(encoding="utf-8"))
+        self.assertEqual(delta["tracking_issue"], 626)
         self.assertEqual(delta["function"], "S2")
         self.assertEqual(delta["disposition"], "canonical-mechanisms-no-direct-results")
         self.assertFalse(delta["capability_counts_changed"])
@@ -56,6 +57,9 @@ class TestS2PostClosureShepAxocoatl(unittest.TestCase):
         self.assertEqual(coverage["direct_observation_count"], 1)
         self.assertEqual(coverage["canonical_direct_observation_count"], 0)
         self.assertEqual(coverage["proxy_projection_count"], 2)
+        self.assertEqual(len(coverage["representative_canonical_s2_systems_inspected"]), 15)
+        self.assertIn("shep", coverage["representative_canonical_s2_systems_inspected"])
+        self.assertIn("axocoatl", coverage["representative_canonical_s2_systems_inspected"])
         self.assertEqual(len(observations), 1)
         self.assertEqual(baselines["functions"]["S2"]["status"], "gap")
 
