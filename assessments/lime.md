@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.6
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-09-25
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: A
