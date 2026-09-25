@@ -35,27 +35,22 @@ For a cross-harness primary baseline, the direct S2 path must additionally be na
 ## Current result
 
 ```text
-direct S2 benchmark families reviewed:          6
-direct S2 observations:                         2
-canonical native direct-S2 observations:        0
+direct S2 benchmark families reviewed:          8
+direct S2 observations:                         5
+canonical native direct-S2 observations:        1
 native canonical proxy projections:             2
 primary S2 baseline:                             gap
 ```
 
-The direct families are:
+The direct benchmark-family set is unchanged by the Squad admission. Existing direct families remain tracked in the machine-readable benchmark-family map.
 
-- `DPBench`;
-- `STALE semantic-coordination`;
-- `Nool coding-agent fleet coordination`;
-- `Twining Benchmark conflict-resolution`;
-- `The Specification Gap / AmbigClass recovery`;
-- `CooperBench team-harness coordination ablation`.
+The observation layer now contains four non-canonical direct observations (Nool, The Specification Gap, CodeCRDT and Grit) plus one canonical native descriptive observation for Squad. Squad/MARBLE remains a separate quantitative proxy rather than being relabeled as direct.
 
-The two admitted direct observations are Nool Track D and The Specification Gap recovery experiment. Both are direct at benchmark-defined organization boundaries and neither is a canonical native observation.
+A `gap` therefore no longer means the canonical direct layer is empty. It means the reviewed public evidence still lacks a materially matched direct primary comparison across two or more canonical S2 implementations.
 
-Twining and CooperBench add direct-family coverage without adding observation rows. Twining lacks recoverable exact treatment revision. CooperBench has a committed 50-pair first-party ablation report, but the flash run logs used to generate that report are not pinned in the reviewed repository.
+### Canonical direct observation: Squad operational shared-state coordination
 
-A `gap` therefore does not mean direct S2 families or observations are absent. It means no materially matched primary comparison of native canonical S2 implementations is available.
+Pinned canonical ref: `2099faf51c08a912c359209447011b06decf0565`. Public first-party repository history plus the March 17, 2026 operational case study record real concurrent shared-state interference and the native `merge=union` / per-agent inbox / Scribe consolidation paths that preserve and reconcile team state before later project operation. This is descriptive direct evidence; it supplies no matched numeric cross-harness effect estimate.
 
 ## Evidence separation
 

@@ -65,7 +65,7 @@ class TestS2PostClosureShepAxocoatl(unittest.TestCase):
             len(reviewed_families),
         )
         self.assertEqual(coverage["direct_observation_count"], len(observations))
-        self.assertEqual(coverage["canonical_direct_observation_count"], 0)
+        self.assertEqual(coverage["canonical_direct_observation_count"], 1)
         self.assertEqual(coverage["proxy_projection_count"], 2)
         self.assertGreaterEqual(len(coverage["representative_canonical_s2_systems_inspected"]), 15)
         self.assertIn("shep", coverage["representative_canonical_s2_systems_inspected"])
