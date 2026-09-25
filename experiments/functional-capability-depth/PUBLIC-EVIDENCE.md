@@ -2,22 +2,27 @@
 
 Status: **experimental, non-normative**
 
-Tracking issue: #452
+Tracking issue: #452  
+Operating-model clarification: #617
 
-This document defines the default operating model for `functional-capability-depth`.
+This document defines the active operating model for `functional-capability-depth`.
 
-The VSM Harness Index is an evidence index, not a required benchmark operator. Per-function capability evidence should therefore be built primarily from public benchmark, leaderboard, paper, repository, and result artifacts that can be provenance-bound and semantically mapped to a VSM function.
+The VSM Harness Index is an evidence index, not a benchmark operator. Per-function capability evidence is built from already-public benchmark, leaderboard, paper, repository, and result artifacts that can be provenance-bound and semantically mapped to a VSM function.
 
-Opensiro-operated benchmark execution is optional validation or reproduction evidence. It is **not** a prerequisite for admitting a capability observation, selecting a primary benchmark family, or maintaining a function-level capability projection.
+**Opensiro does not run or reproduce benchmark experiments on assessed harnesses to create capability evidence for this experiment.** A function-level evidence gap remains a gap until suitable public upstream or third-party evidence exists.
+
+Historical controlled-execution designs, preregistrations, fixtures, fake artifacts, and execution harnesses may remain under `experiments/` as research history. They are not an active admission path and must not be treated as capability observations.
 
 ## Operating model
 
 ```text
-public benchmark / paper / leaderboard / repository result
+public upstream / third-party benchmark, paper, leaderboard, repository result
                     ↓
           provenance + normalization
                     ↓
        VSM-function attribution
+                    ↓
+      canonical/native linkage when supported
                     ↓
          comparable evidence groups
                     ↓
@@ -38,6 +43,18 @@ function-specific observations
 
 Benchmark performance does not create or change `A`, `C`, `P`, `—`, `?`, `A(P)`, or `C(P)` states.
 
+The following is explicitly **not** part of the active capability-depth workflow:
+
+```text
+capability gap
+        ↓
+Opensiro operates the harness / benchmark
+        ↓
+newly generated result
+        ↓
+Index capability evidence
+```
+
 ## Admission sequence
 
 For a public result:
@@ -47,14 +64,14 @@ For a public result:
 3. link the benchmarked harness identity to a canonical Index system without silently equating an ambiguous display label with a repository;
 4. establish that the benchmark actually exercises the relevant first-party function boundary rather than supplying that function entirely from benchmark scaffolding;
 5. classify system compatibility and comparison quality;
-6. store the raw observation once;
+6. store the raw public observation once;
 7. project the observation into one or more VSM functions only after function-specific semantic review.
 
 Do not infer VSM functions from benchmark slice names such as planning, verification, memory, coordination, governance, or learning.
 
 ## Evidence-source classes
 
-These source classes describe **who produced the result**, not whether the result is semantically valid for a VSM function.
+These source classes describe **who produced the public result**, not whether the result is semantically valid for a VSM function.
 
 ### `external-reproduced`
 
@@ -72,11 +89,11 @@ It may be admitted when provenance and configuration are recoverable, but it mus
 
 ### `mechanism-only`
 
-Primary executable or repository evidence establishes a relevant capability mechanism or VSM function path, but there is no admitted performance observation for that mechanism/system under a reviewed benchmark family.
+Primary executable or repository evidence establishes a relevant capability mechanism or VSM function path, but there is no admitted public performance observation for that mechanism/system under a reviewed benchmark family.
 
 `mechanism-only` is not a numeric result and must not be converted into one.
 
-A later external or first-party result may add a performance observation without rewriting the earlier mechanism evidence.
+A later external or first-party public result may add a performance observation without rewriting the earlier mechanism evidence.
 
 ## Orthogonal evidence dimensions
 
@@ -155,7 +172,7 @@ governance score     → S5
 
 The benchmark scaffold may itself own the named behavior. A direct VSM benchmark can therefore still fail to provide a native canonical-harness comparison.
 
-Map the organizational function first; only then use the benchmark result as capability evidence for that function.
+Map the organizational function first; only then use the public benchmark result as capability evidence for that function.
 
 ## Capability ownership interpretation
 
@@ -190,29 +207,25 @@ It does **not** mean:
 
 - the function has zero capability;
 - no relevant benchmark family exists;
-- Opensiro has failed to run its own benchmark.
+- Opensiro should run its own benchmark to fill the gap.
 
-S2-S5 gaps should therefore remain gaps until public evidence supports a valid primary, rather than being filled by an Opensiro-operated benchmark merely for completeness.
+S2-S5 gaps therefore remain gaps until public upstream or third-party evidence supports a valid primary.
 
-## Relationship to controlled reproduction
+## Controlled-execution history
 
-Controlled reproduction remains useful when it can answer a specific uncertainty, for example:
+Controlled-execution work that already exists under this experiment is historical research material only.
 
-- verify a disputed public result;
-- recover missing environment details;
-- test adapter parity;
-- run an ablation unavailable in published evidence;
-- distinguish a harness effect from a model/environment effect.
+This includes the frozen Batch 02 controlled-replication design/attempt records and the LoopX S2 preregistration/execution-harness artifacts produced before the operating-model clarification in #617.
 
-Such reproduction is optional secondary evidence unless a separate experiment explicitly defines it as its own goal.
+These artifacts may document methodology questions such as identifiability, adapter preservation, or why a proposed comparison would be invalid. They must not be scheduled for live harness execution as part of capability-depth, and fake/stub results must never be promoted into capability observations.
 
-The frozen Batch 02 controlled-replication design and attempt records remain immutable historical experiment artifacts. They are not a prerequisite for the public-evidence capability layer.
+If a future Opensiro research track intentionally studies controlled reproduction, it must be scoped separately from `functional-capability-depth` and cannot silently become an evidence source for this Index experiment.
 
 ## Relationship to self-organizing `S`
 
 Public capability evidence and the self-organizing-autonomy experiment remain separate.
 
-A high benchmark score does not establish experimental `S`. Persistent adaptation observed inside a benchmark must be identified explicitly rather than silently mixed with an ordinary frozen-repertoire comparison.
+A high benchmark score does not establish experimental `S`. Persistent adaptation observed inside a public benchmark must be identified explicitly rather than silently mixed with an ordinary frozen-repertoire comparison.
 
 ## Source-of-truth rule
 
@@ -225,7 +238,7 @@ The current S1 observation layer already follows this direction through `s1-syst
 - no global harness winner;
 - no scalar score across S1-S5;
 - no replacement of canonical VSM assessment;
-- no requirement that Opensiro execute every admitted benchmark;
+- no Opensiro-operated harness benchmark runs to create capability-depth evidence;
 - no inference of organizational function from benchmark vocabulary;
 - no forced filling of S2-S5 gaps;
 - no rewrite of frozen controlled-execution history.
