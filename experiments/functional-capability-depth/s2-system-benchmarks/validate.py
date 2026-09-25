@@ -302,6 +302,67 @@ def validate_codecrdt_observation(observations: list[dict]) -> None:
         fail("CodeCRDT observation must retain immutable HTTPS provenance")
 
 
+def validate_grit_observation(observations: list[dict]) -> None:
+    observation = observation_by_id(observations, "grit-synthetic-merge-contention-2026-04")
+    expected = {
+        "function": "S2",
+        "benchmark_id": "grit-merge-contention",
+        "benchmark_fit": "direct",
+        "evidence_source_class": "first-party-reported",
+        "boundary_class": "product-defined-parallel-coding-coordination",
+        "canonical_harness_id": None,
+        "canonical_system_eligible": False,
+        "system_compatibility": "native-system",
+        "comparison_class": "partially-matched",
+        "benchmark_artifact_revision": "a2c48735e0a16c49ca1541c4865fce438c479405",
+        "result_artifact": "tests/gen_graph.py",
+        "protocol_artifact": "scripts/sweep/bench.sh",
+        "experiment": "synthetic merge-contention sweep",
+        "date": "2026-04-06",
+        "agent_counts": [1, 2, 5, 10, 20, 50],
+        "rounds_per_iteration": 5,
+        "iterations": 5,
+    }
+    for field, value in expected.items():
+        if observation.get(field) != value:
+            fail(f"Grit direct S2 observation {field} drift: {observation.get(field)!r}")
+
+    expected_failures = [
+        [0, 5, 20, 43, 84, 175],
+        [0, 5, 20, 42, 85, 175],
+        [0, 5, 20, 43, 83, 175],
+        [0, 5, 20, 44, 83, 175],
+        [0, 5, 20, 44, 82, 175],
+    ]
+    expected_conflicts = [
+        [0, 39, 88, 99, 136, 175],
+        [0, 38, 85, 88, 129, 175],
+        [0, 37, 77, 85, 122, 175],
+        [0, 37, 63, 88, 126, 175],
+        [0, 38, 85, 89, 136, 175],
+    ]
+    if observation.get("reported_raw_git_failures_per_iteration") != expected_failures:
+        fail("Grit committed raw-git failure arrays drift")
+    if observation.get("reported_raw_git_conflicts_per_iteration") != expected_conflicts:
+        fail("Grit committed raw-git conflict arrays drift")
+    if observation.get("reported_grit_failures") != [0, 0, 0, 0, 0, 0]:
+        fail("Grit reported zero-failure series drift")
+    expected_rates = {"1": 0.0, "2": 0.5, "5": 0.8, "10": 0.864, "20": 0.834, "50": 0.7}
+    if observation.get("reported_mean_raw_git_failure_rates") != expected_rates:
+        fail("Grit mean raw-git failure rates drift")
+    if observation.get("reported_mean_grit_failure_rates") != {key: 0.0 for key in expected_rates}:
+        fail("Grit mean Grit failure rates drift")
+    provenance_limitation = observation.get("provenance_limitation")
+    if not isinstance(provenance_limitation, str) or "gitignored" not in provenance_limitation:
+        fail("Grit observation must retain missing raw-run-ledger limitation")
+    comparison_limitation = observation.get("comparison_limitation")
+    if not isinstance(comparison_limitation, str) or "partially matched" not in comparison_limitation:
+        fail("Grit observation must remain partially matched")
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(source) for source in sources):
+        fail("Grit observation must retain immutable HTTPS provenance")
+
+
 def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
@@ -313,8 +374,8 @@ def main() -> None:
         fail("coverage function must be S2")
     if not isinstance(observations, list):
         fail("observations.json must contain a list")
-    if len(observations) != 3:
-        fail("S2 observations.json must contain exactly three direct non-canonical observations")
+    if len(observations) != 4:
+        fail("S2 observations.json must contain exactly four direct non-canonical observations")
     if coverage.get("direct_observation_count") != len(observations):
         fail("direct_observation_count does not match observations.json")
     if coverage.get("canonical_direct_observation_count") != 0:
@@ -337,6 +398,7 @@ def main() -> None:
         "specification-gap-recovery",
         "cooperbench-team-harness",
         "codecrdt-observation-coordination",
+        "grit-merge-contention",
     }
     if reviewed_direct_s2 != expected_direct_s2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
@@ -470,9 +532,24 @@ def main() -> None:
     if codecrdt.get("observation_ref") != "observations.json#codecrdt-parallel-convergence-2025-10":
         fail("CodeCRDT coverage/observation linkage drift")
 
+    grit = by_id.get("grit-merge-contention-direct-native-noncanonical")
+    if grit is None:
+        fail("missing Grit direct-native-noncanonical S2 coverage case")
+    if grit.get("benchmark_fit") != "direct" or grit.get("coverage_class") != "direct-native-noncanonical":
+        fail("Grit must remain direct-native-noncanonical S2 evidence")
+    if grit.get("system_compatibility") != "native-system":
+        fail("Grit must remain native-system at its external product boundary")
+    if grit.get("canonical_harness_id") is not None:
+        fail("Grit must not acquire a canonical harness id through capability evidence")
+    if grit.get("review_ref") != "a2c48735e0a16c49ca1541c4865fce438c479405":
+        fail("Grit review_ref drift")
+    if grit.get("observation_ref") != "observations.json#grit-synthetic-merge-contention-2026-04":
+        fail("Grit coverage/observation linkage drift")
+
     validate_nool_observation(observations)
     validate_specification_gap_observation(observations)
     validate_codecrdt_observation(observations)
+    validate_grit_observation(observations)
     validate_proxy_links(coverage, by_id)
 
     representative = coverage.get("representative_canonical_s2_systems_inspected")
