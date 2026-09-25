@@ -140,6 +140,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="looptroop"></a>[LoopTroop](https://github.com/looptroop-ai/LoopTroop) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="masters-of-ai-harness"></a>[Masters of AI Harness](https://github.com/mastersof-ai/harness) | 2026-Q1 | 1/6 | 0/5 | 3 | 3 | 0 | `A — C(P) — C(P) C(P)` |
 | 6 | <a id="symphony"></a>[Symphony](https://github.com/openai/symphony) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="bumblehive"></a>[BumbleHive](https://github.com/wxhcore/bumblehive) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="open-harness"></a>[open-harness](https://github.com/MaxGfeller/open-harness) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarmclaw"></a>[SwarmClaw](https://github.com/swarmclawai/swarmclaw) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="openjarvis"></a>[OpenJarvis](https://github.com/open-jarvis/OpenJarvis) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
