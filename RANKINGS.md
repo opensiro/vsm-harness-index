@@ -111,6 +111,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 6 | <a id="atlias"></a>[atlias](https://github.com/ridelink0/atlias) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="unreal-agent"></a>[Unreal Agent](https://github.com/unreallabsai/unreal-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="mingbird"></a>[Mingbird](https://github.com/Mingbird/Mingbird-agent) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="hx"></a>[hx](https://github.com/phantomic12/hx-harness) | 2026-Q3 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
 | 6 | <a id="mini-harness"></a>[mini-harness](https://github.com/mini-harness/mini-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="lobstah"></a>[lobstah](https://github.com/aequitas-labs/lobstah) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
