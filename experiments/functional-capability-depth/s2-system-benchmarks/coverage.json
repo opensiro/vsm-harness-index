@@ -155,6 +155,40 @@
       "admitted": false
     },
     {
+      "case_id": "shep-native-s2-no-direct-result",
+      "benchmark": "Shep native dependency/rebase coordination",
+      "benchmark_fit": "not-direct-S2",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "shep",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "a874b3238fd01ebdbafc11015cccd9a63ed6e2f2",
+      "primary_sources": [
+        "https://github.com/shep-ai/shep/blob/a874b3238fd01ebdbafc11015cccd9a63ed6e2f2/packages/core/src/application/use-cases/features/check-and-unblock-features.use-case.ts",
+        "https://github.com/shep-ai/shep/blob/a874b3238fd01ebdbafc11015cccd9a63ed6e2f2/specs/041-feature-dependencies/spec.yaml"
+      ],
+      "finding": "Canonical Shep establishes S2=C through constructor-supplied dependency/capacity relations enforced by a production block, rebase-before-spawn and admission loop that protects feature workcells from stale/integration interference. Reviewed first-party public surfaces at the pinned revision provide implementation, architecture, specifications and project evidence, but no explicit native capability result that instantiates an inter-S1 disturbance and measures attenuation through this S2 path. No direct S2 observation is admitted.",
+      "admitted": false
+    },
+    {
+      "case_id": "axocoatl-native-s2-no-direct-result",
+      "benchmark": "Axocoatl native Ways/Attempt isolation coordination",
+      "benchmark_fit": "not-direct-S2",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "axocoatl",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "edfe5031463686dc782cf3539e5aabae4e8eb9ab",
+      "primary_sources": [
+        "https://github.com/axocoatl/axocoatl/blob/edfe5031463686dc782cf3539e5aabae4e8eb9ab/crates/axocoatl-daemon/src/attempts.rs",
+        "https://github.com/axocoatl/axocoatl/blob/edfe5031463686dc782cf3539e5aabae4e8eb9ab/benches/actor_throughput.rs",
+        "https://github.com/axocoatl/axocoatl/blob/edfe5031463686dc782cf3539e5aabae4e8eb9ab/benches/routing_latency.rs",
+        "https://github.com/axocoatl/axocoatl/blob/edfe5031463686dc782cf3539e5aabae4e8eb9ab/demo/one-app/scenarios/several-ways.md"
+      ],
+      "finding": "Canonical Axocoatl establishes S2=C through deterministic per-attempt repository/container/actor isolation for competing Ways. The reviewed public benchmark surfaces measure actor throughput, routing latency, resource footprint and token efficiency, while the deterministic Ways recording explicitly states that it proves lifecycle boundaries rather than a benchmark result. None measures native inter-S1 destructive interference versus attenuation through the Ways isolation relation, so no direct S2 observation is admitted.",
+      "admitted": false
+    },
+    {
       "case_id": "agent-framework-benchmark-sequential-scaffolded",
       "benchmark": "Agent Framework Benchmark",
       "benchmark_fit": "not-direct-S2",
@@ -241,7 +275,9 @@
     "reasonix",
     "browser-harness",
     "cadis",
-    "ares"
+    "ares",
+    "shep",
+    "axocoatl"
   ],
   "mechanism_classes": [
     "shared-resource-contention",
