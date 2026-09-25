@@ -245,6 +245,23 @@
       "admitted": false
     },
     {
+      "case_id": "lime-native-s2-no-direct-result",
+      "benchmark": "Lime native root-scoped child execution admission",
+      "benchmark_fit": "not-direct-S2",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "lime",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "3823e9092d4106c877ae08a1d19d593b647cf27d",
+      "primary_sources": [
+        "https://github.com/limecloud/lime/blob/3823e9092d4106c877ae08a1d19d593b647cf27d/lime-rs/crates/app-server/src/runtime/agent_execution.rs",
+        "https://github.com/limecloud/lime/blob/3823e9092d4106c877ae08a1d19d593b647cf27d/internal/roadmap/agent-workspace/multi-agent-team.md",
+        "https://github.com/limecloud/lime/blob/3823e9092d4106c877ae08a1d19d593b647cf27d/internal/research/refactor/v2/13-evidence/2026-07-14-s4ae-canonical-subagent-gui.md"
+      ],
+      "finding": "Canonical Lime establishes S2=C through a first-party root-scoped child execution limiter with bounded slots, atomic reserve/claim, excess-admission rejection and release at terminal completion. The reviewed unit and managed Gate B surfaces establish limiter invariants and AgentControl/runtime lifecycle correctness, but they do not publish an explicit capability result that instantiates competing child work, measures attenuation through the limiter and records the downstream S1 outcome. No direct native S2 observation is admitted.",
+      "admitted": false
+    },
+    {
       "case_id": "agent-framework-benchmark-sequential-scaffolded",
       "benchmark": "Agent Framework Benchmark",
       "benchmark_fit": "not-direct-S2",
@@ -333,7 +350,8 @@
     "cadis",
     "ares",
     "shep",
-    "axocoatl"
+    "axocoatl",
+    "lime"
   ],
   "mechanism_classes": [
     "shared-resource-contention",
