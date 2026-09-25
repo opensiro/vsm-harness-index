@@ -119,6 +119,38 @@
       "admitted": false
     },
     {
+      "case_id": "cadis-native-s2-no-direct-result",
+      "benchmark": "C.A.D.I.S. native worktree/admission coordination",
+      "benchmark_fit": "not-direct-S2",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "cadis",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "52c55854b1abbcda82839b7a934cbdb16a69b635",
+      "primary_sources": [
+        "https://github.com/Growth-Circle/cadis/blob/52c55854b1abbcda82839b7a934cbdb16a69b635/crates/cadis-core/src/lib.rs",
+        "https://github.com/Growth-Circle/cadis/blob/52c55854b1abbcda82839b7a934cbdb16a69b635/docs/10_RISK_REGISTER.md"
+      ],
+      "finding": "Canonical C.A.D.I.S. establishes S2=C through daemon-owned worktree isolation and shared worker admission/backpressure for parallel-edit and fan-out disturbances. The reviewed public result surfaces are performance/latency oriented and do not publish an explicit native inter-S1 disturbance-to-attenuation capability result, so this post-closure admission does not create a direct S2 observation.",
+      "admitted": false
+    },
+    {
+      "case_id": "ares-native-s2-no-direct-result",
+      "benchmark": "ARES native runtime/fabric coordination",
+      "benchmark_fit": "not-direct-S2",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "ares",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "f03153acace190c555c3721019407a7df47c139f",
+      "primary_sources": [
+        "https://github.com/Timwood0x10/ARES/tree/f03153acace190c555c3721019407a7df47c139f/internal",
+        "https://github.com/Timwood0x10/ARES/blob/f03153acace190c555c3721019407a7df47c139f/cmd/ares/main.go"
+      ],
+      "finding": "Canonical ARES establishes S2=C through first-party constructor coordination mechanisms. Its committed scheduler/fabric/runtime benchmark surfaces measure microperformance such as operation latency, allocations and throughput rather than an interaction-generated disturbance and its attenuation through the canonical S2 relation. No direct native S2 capability observation is therefore admitted.",
+      "admitted": false
+    },
+    {
       "case_id": "agent-framework-benchmark-sequential-scaffolded",
       "benchmark": "Agent Framework Benchmark",
       "benchmark_fit": "not-direct-S2",
@@ -203,7 +235,9 @@
     "thclaws",
     "pi-harness",
     "reasonix",
-    "browser-harness"
+    "browser-harness",
+    "cadis",
+    "ares"
   ],
   "mechanism_classes": [
     "shared-resource-contention",
