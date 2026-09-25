@@ -1,0 +1,7 @@
+{
+  "schema_version": "loopx_turn_result_v0",
+  "result_kind": "validated_progress",
+  "classification": "inspect_and_choose",
+  "summary": "Invalid free-form schedule token.",
+  "completed_phases": ["host_execute", "typed_result"]
+}
