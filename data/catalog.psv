@@ -265,3 +265,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 250|inferoa|Inferoa|https://github.com/agentic-in/inferoa|2026-06-08T06:29:56Z|index-addition|1fd9ec4518b26b60cc78cf67c4faf337fe9bb2cd|2026-09-25
 251|san|San|https://github.com/genai-io/san|2024-09-05T16:16:25Z|index-addition|dd1b41882472fb76ce38dc3f88107deffc2e73bc|2026-09-25
 252|hx|hx|https://github.com/phantomic12/hx-harness|2026-09-15T04:03:15Z|index-addition|6afe2291a5bc750903eae1e9266ace8cdeb2eaef|2026-09-25
+253|hypha|Hypha|https://github.com/CodeSoul-co/Hypha|2026-07-01T06:51:59Z|index-addition|ac77fa9b4a1b1da2815adf7d5582dbc27cd9373f|2026-09-25
