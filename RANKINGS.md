@@ -28,6 +28,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="cocoplus"></a>[CocoPlus](https://github.com/Snowflake-Labs/cocoplus) | 2024-Q4 | 4/6 | 3/5 | 1 | 1 | 0 | `A A A(P) A C —` |
 | 3 | <a id="megaagent"></a>[MegaAgent](https://github.com/Xtra-Computing/MegaAgent) | 2024-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
+| 4 | <a id="abhed"></a>[Abhed](https://github.com/zybuu-ai/abhed) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="appliedscientist"></a>[TheAppliedScientist](https://github.com/TheAppliedScientist/TheAppliedScientist) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="deepseek-harness"></a>[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="kadath"></a>[KADATH](https://github.com/i3T4AN/KADATH) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A — C A A P` |
