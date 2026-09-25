@@ -25,8 +25,9 @@ autonomy_s5: —
 - System in focus: one first-party Soothe deployment at pinned revision `be4fa14c0aa53203b8861dbff367eccb0df77668`, including `StrangeLoop`, `CoreAgent`, `ContextEngine`, LoopRail selection/interpreting/builtins, the daemon/runner surfaces that launch loops, and the pinned first-party `soothe-nano` runtime dependency.
 - Purpose and identity: execute user goals through persistent model/tool loops while supporting goal-DAG planning, rail-governed multi-goal orchestration, delegated workers, review/recovery workflows, and daemon/CLI operation.
 - Relevant environment: user objectives, local workspaces and git repositories, external model providers, web/research sources, human approvals/clarifications, and downstream applications that may compose the exported rail/guard primitives.
-- Standard-distribution boundary: current loop-native Soothe runtime at the frozen revision. The retired standalone `soothe-autopilot` package and removed daemon `AutopilotService` are historical evidence only and are not credited as current autonomous owners. Repository tests, archived implementation notes and RFCs are supporting evidence unless corroborated by frozen production code.
-- Credited constructor surfaces: public `soothe.rails` exports, `LoopRailInterpreter(guards=...)`, `LLMGuardEvaluator`, ContextEngine goal/state APIs, rail builtins, and shipped builtin rail definitions where the first-party code specifically exposes S2/S3/S3* decision or feedback paths. Constructor credit does not imply those paths are closed autonomously in the default shipping wiring.
+- Standard-distribution boundary: current loop-native Soothe runtime at the frozen revision. The retired standalone `soothe-autopilot` package and removed daemon `AutopilotService` are historical evidence only and are not credited as current autonomous owners.
+- Credited operating / distribution surfaces: standard runner/daemon → StrangeLoop execution; current ContextEngine goal/DAG state; explicit or automatically selected LoopRails; shipped builtin rails; public `soothe.rails` exports including `LoopRailInterpreter(guards=...)`, `GuardEvaluator`, `LLMGuardEvaluator` and CE-facing rail builtins; the pinned first-party `soothe-nano` CoreAgent runtime where reached through Soothe's normal host wiring.
+- Adjacent first-party surfaces excluded from ownership: repository-development tests, archived implementation notes/RFC implementation plans, stale documentation describing the removed `soothe-autopilot` or daemon `AutopilotService`, examples that are not reached from the frozen runtime, and generic research/evaluation artifacts except where current production wiring corroborates them.
 - First-party operating / deployment modes considered: normal StrangeLoop execution; explicit or automatically selected LoopRails; daemon/runner launch with `autopilot_rail_id`; ContextEngine multi-goal execution; builtin maker-checker and greenfield rail patterns; research and skill retrieval paths.
 - Recursion level: one Soothe deployment/job is the assessed organization. Individually executing model/tool goals or maker goals are S1 operational units when the rail/ContextEngine path instantiates them as distinct loops. The user/operator and downstream integrator remain environment/parent actors unless a first-party loop closes the relevant decision right.
 - Reviewed revision: `be4fa14c0aa53203b8861dbff367eccb0df77668`.
@@ -104,7 +105,7 @@ The organizational distinction is ownership. At the frozen revision, ordinary lo
 - Feedback into subsequent S1 behaviour: merge/conflict/retry state changes the goal/branch state used for later execution, and failed work can be replanted onto a fresh branch rather than continuing unchanged.
 - Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the credited mechanism is explicitly tied to a concrete inter-S1 write/integration disturbance and changes later maker behavior to attenuate that disturbance.
 
-## S3 — Current control
+## S3 — Inside-and-now control
 
 - State: C
 - Function: maintain job-wide current operating control over the live goal population and intervene in execution through spawning, retry/replant, feedback, pause and completion decisions.
@@ -119,8 +120,10 @@ The organizational distinction is ownership. At the frozen revision, ordinary lo
 - Basis: explicit + structural
 - Confidence: medium
 - Caveats: `C` depends on the function-specific public guard/interpreter/builtin composition, not on generic scheduler APIs. Historical `AutopilotService` ownership is not credited.
+- Whole-system current view: `GuardContext` plus rail/ContextEngine structural state expose the current job id, triggering event/goal, sibling statuses, role/tags, retry state, pending/active counts, implementation/review/integration ids and branch/job annotations needed for job-level intervention.
+- Current-control decision scope: the constructor path can choose whether to spawn additional/corrective goals, merge or retry/replant work, initiate feedback/review/QA, pause progression, or declare job completion; these choices change current commitments and execution state rather than merely enforcing a fixed concurrency ceiling.
 
-## S3* — Independent audit
+## S3* — Complementary audit
 
 - State: C
 - Function: provide a complementary review channel that can inspect completed maker output with a fresh goal identity and return a challenge that causes corrective work rather than merely confirming routine production status.
@@ -135,25 +138,62 @@ The organizational distinction is ownership. At the frozen revision, ordinary lo
 - Basis: explicit + structural
 - Confidence: medium
 - Caveats: the review goal is credited because it is a fresh, complementary inspection path over maker output with corrective return. A same-model self-check or routine acceptance check alone would not qualify. The missing standard guard wiring prevents `A`.
+- Claim being audited: that a maker's completed/merged implementation actually satisfies the requested slice without correctness or requirement defects that the maker's own loop failed to detect.
+- Ordinary reporting path: the maker goal's own completion/progress state and artifacts flow through the normal ContextEngine/rail production path.
+- Complementary access path: `review` creates a distinct reviewer goal with a fresh identity and a diff-scoped brief over the maker result rather than merely consuming the maker's self-report.
+- Independence boundary: reviewer and maker are separate goal identities/roles and the reviewer can challenge the maker result; independence is constructor-level because default frozen guard wiring does not autonomously schedule and close the full review/send-back path.
+- Who acts on findings: rail builtins can convert failed review/send-back into `retry_branch`/replant and corrective work, returning the finding to production rather than leaving it as an advisory report.
 
-## S4 — Intelligence / adaptation
+## S4 — Outside-and-then intelligence
 
 - State: —
-- Function sought: scan relevant external/future conditions, form an adaptation proposal or changed organizational capability, and close that adaptation back into present operations.
-- Absence scope: reviewed StrangeLoop/ContextEngine/rail runtime, builtin rails, research execution, skill retrieval/indexing, daemon/runner launch paths, public subagents and frozen first-party docs/code relevant to organizational adaptation.
-- Evidence inspected: [`packages/soothe/src/soothe/rails/autoresearch_exec.py`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/autoresearch_exec.py); [`packages/soothe-daemon/src/soothe_daemon/skillify/service.py`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe-daemon/src/soothe_daemon/skillify/service.py); [`packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml).
-- Why absent: web/research flows gather evidence for the current task, and skillify retrieves/indexes existing skills. Neither establishes an organizational outside-and-then loop that changes Soothe's present capability, policy or operating design and verifies the adaptation in operation.
+- Function: scan materially external and prospective conditions, form an adaptation option for the Soothe organization/capability, and return that option into present operating capability or S3 control.
+- Disturbance / variety regulated: none established at the organizational S4 level; current-task web evidence and existing-skill lookup regulate task uncertainty rather than organizational adaptation.
+- Decisive decision or feedback right: no first-party owner was found that can decide an organizational adaptation from outside/future evidence and close it back into current capability.
+- Decision owner: none established within the reviewed boundary.
+- Supporting / enforcement mechanisms: autoresearch, browser/research collection and skill indexing/retrieval are available task-support mechanisms but do not themselves own S4 adaptation.
+- Closure path: no material first-party outside/future → adaptation option → present capability/S3 return loop was established.
+- Why this is / is not agent-owned: model-based research may be agent-owned for a task, but the evidence does not show that the model owns organizational adaptation of Soothe itself.
+- Evidence: [`packages/soothe/src/soothe/rails/autoresearch_exec.py`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/autoresearch_exec.py); [`packages/soothe-daemon/src/soothe_daemon/skillify/service.py`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe-daemon/src/soothe_daemon/skillify/service.py); [`packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml).
 - Basis: scoped absence
 - Confidence: high
 - Caveats: future-facing task research is not S4 unless it returns as organizational adaptation.
 
-## S5 — Policy / identity
+### Absence scope
+
+- Surfaces inspected: StrangeLoop/ContextEngine/rail runtime, builtin rails, autoresearch execution, daemon skill retrieval/indexing, public subagents, runner/daemon launch paths and frozen current architecture docs/source.
+- Plausible first-party paths checked: autoresearch/web research, research synthesis, skillify indexing/retrieval, model/rail selection and corrective feedback/retry paths.
+- Why no material first-party path remains: the inspected paths either improve the current task with external information or select/retrieve already available behavior; none closes an external-and-prospective conversation that changes Soothe's present organizational capability and verifies that adaptation in operation.
+
+## S5 — Policy and identity
 
 - State: —
-- Function sought: resolve an identity-level or ultimate-policy issue through an ultimate authority and return the resulting policy/identity decision to lower-system operation.
-- Absence scope: reviewed rail selection/policies, approvals/clarifications, human pause/cutover hooks, runtime configuration, ContextEngine state, daemon/runner surfaces and builtin rails at the frozen revision.
-- Evidence inspected: [`packages/soothe/src/soothe/rails/interpreter.py`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/interpreter.py); [`packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml); [`packages/soothe/src/soothe/context/engine.py`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/context/engine.py).
-- Why absent: action approval, clarification, configured rails and optional human intervention constrain or authorize operational steps but do not establish an identity/ultimate-policy issue routed to an ultimate policy owner with a return path into S1-S4 behavior.
+- Function: resolve identity-level or ultimate-policy questions for the assessed Soothe organization through an ultimate authority and return the resulting policy/identity decision into lower-system operation.
+- Disturbance / variety regulated: none established at the S5 level; approvals, clarification and configured rails constrain individual actions/workflows but do not resolve organizational identity or ultimate policy.
+- Decisive decision or feedback right: no first-party owner was found with ultimate authority to decide who/what the organization is or its highest-level policy and return that decision into S1-S4 operation.
+- Decision owner: none established within the reviewed boundary.
+- Supporting / enforcement mechanisms: human pauses/approvals, configuration, rail choice and clarification can enforce local operational constraints but are not evidence of S5 ownership.
+- Closure path: no identity/ultimate-policy issue → ultimate authority → authoritative decision → return-to-operation loop was established.
+- Why this is / is not agent-owned: no internal agent owns the ultimate identity/policy right, and ordinary operator approval of an irreversible or risky step is action-level governance rather than S5 closure.
+- Evidence: [`packages/soothe/src/soothe/rails/interpreter.py`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/interpreter.py); [`packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml); [`packages/soothe/src/soothe/context/engine.py`](https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/context/engine.py).
 - Basis: scoped absence
 - Confidence: high
 - Caveats: a human approval gate is not S5 merely because a human has final say over one action.
+
+### Absence scope
+
+- Surfaces inspected: rail definitions/interpreter, approvals/clarifications, human pause/cutover hooks, runtime configuration, ContextEngine state, daemon/runner surfaces and builtin workflow controls.
+- Plausible first-party paths checked: human approval, clarification, configured/default rail choice, job acceptance/completion and optional human handling of irreversible cutover.
+- Why no material first-party path remains: all inspected paths concern operational authorization, workflow selection or completion; none routes an identity/ultimate-policy issue to a legitimate ultimate authority and returns that decision to govern subsequent S1-S4 behavior.
+
+## Recursion
+
+The positive classification is at one deployment/job recursion. A StrangeLoop goal is an S1 unit; multi-maker rails can instantiate several such units under one job. Constructor S2/S3/S3* claims therefore concern the job-level rail/ContextEngine layer over those operational units. Historical daemon Autopilot ownership is not imported from an older recursion or version.
+
+## Variety and escalation
+
+Operational variety is handled first by each S1 loop through tool feedback. The constructor rail layer exposes additional variety attenuation through maker isolation/merge handling, retry/replant, review, QA, feedback and optional human pause. Because the current frozen standard binding omits the guard evaluator, those higher-function escalation paths require composition before they become autonomous organizational closure.
+
+## Evidence gaps
+
+The main gap is the frozen transition from the removed daemon `AutopilotService` to loop-native rails. First-party decision and action primitives remain present, but standard `StrangeLoop` wiring does not install `LLMGuardEvaluator`; therefore this assessment deliberately stops at `C` for S2/S3/S3*. A future reassessment should first check whether production wiring has attached the guard actor and whether goal/send-back/idle event closure is fully restored before considering any `A` upgrade.
