@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 S2 = ROOT / "experiments" / "functional-capability-depth" / "s2-system-benchmarks"
 MAP = ROOT / "experiments" / "functional-capability-depth" / "vsm-benchmark-family-map" / "map.json"
+CLOSURE = S2 / "matched-cell" / "s2-primary-search-closure.json"
 
 
 class GritS2PublicEvidenceReviewTest(unittest.TestCase):
@@ -29,23 +30,40 @@ class GritS2PublicEvidenceReviewTest(unittest.TestCase):
         self.assertGreaterEqual(len(review["blocking_reasons"]), 4)
         self.assertGreaterEqual(len(review["reopen_when"]), 3)
 
-    def test_grit_has_not_silently_entered_observation_or_direct_family_state(self) -> None:
+    def test_explicit_provenance_transaction_admits_grit_noncanonically(self) -> None:
         observations = json.loads((S2 / "observations.json").read_text(encoding="utf-8"))
-        self.assertFalse(
-            any("grit" in json.dumps(row).lower() for row in observations),
-            "Grit requires a new provenance review before observation admission",
+        grit_rows = [
+            row
+            for row in observations
+            if row.get("observation_id") == "grit-synthetic-merge-contention-2026-04"
+        ]
+        self.assertEqual(len(grit_rows), 1)
+        observation = grit_rows[0]
+        self.assertEqual(
+            observation["benchmark_artifact_revision"],
+            "a2c48735e0a16c49ca1541c4865fce438c479405",
         )
+        self.assertEqual(observation["evidence_source_class"], "first-party-reported")
+        self.assertEqual(observation["system_compatibility"], "native-system")
+        self.assertEqual(observation["comparison_class"], "partially-matched")
+        self.assertIsNone(observation["canonical_harness_id"])
+        self.assertFalse(observation["canonical_system_eligible"])
 
         benchmark_map = json.loads(MAP.read_text(encoding="utf-8"))
-        direct_s2 = [
+        grit_families = [
             row
             for row in benchmark_map.get("entries", [])
-            if row.get("function") == "S2" and row.get("fit") == "direct"
+            if row.get("function") == "S2"
+            and row.get("benchmark_id") == "grit-merge-contention"
         ]
-        self.assertFalse(
-            any("grit" in json.dumps(row).lower() for row in direct_s2),
-            "Grit requires a new evidence transaction before direct-family promotion",
-        )
+        self.assertEqual(len(grit_families), 1)
+        self.assertEqual(grit_families[0]["fit"], "direct")
+        self.assertEqual(grit_families[0]["system_linkage"], "external-native-noncanonical")
+
+        closure = json.loads(CLOSURE.read_text(encoding="utf-8"))
+        self.assertEqual(closure["grit_public_evidence_issue"], 663)
+        self.assertEqual(closure["primary_baseline"], "gap")
+        self.assertEqual(closure["evidence_depth"]["canonical_direct_observations"], 0)
 
 
 if __name__ == "__main__":
