@@ -2,8 +2,8 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-25",
   "function": "S2",
-  "direct_benchmark_family_count": 7,
-  "direct_observation_count": 3,
+  "direct_benchmark_family_count": 8,
+  "direct_observation_count": 4,
   "canonical_direct_observation_count": 0,
   "proxy_projection_count": 2,
   "coverage_classes": [
@@ -162,6 +162,24 @@
         "https://arxiv.org/abs/2510.18893"
       ],
       "finding": "CodeCRDT directly instantiates S2 at its own first-party product boundary: parallel coding agents update one shared CRDT-backed artifact and coordinate by observing shared state, incorporating concurrent edits and relying on strong eventual consistency for convergence. The pinned repository commits a 600-evaluation corpus, environment metadata and reports; first-party scientific material reports 100% convergence with zero merge failures while noting residual semantic conflicts. Because the evaluation compares sequential with CodeCRDT-coordinated parallel operation rather than a matched uncoordinated-parallel arm, the admitted observation is descriptive-only and must not be used as a causal coordination uplift estimate. CodeCRDT is not a canonical Index harness, so no canonical S2 ownership is inferred.",
+      "admitted": false
+    },
+    {
+      "case_id": "grit-merge-contention-direct-native-noncanonical",
+      "benchmark": "Grit synthetic merge-contention sweep",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-native-noncanonical",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": null,
+      "review_ref": "a2c48735e0a16c49ca1541c4865fce438c479405",
+      "observation_ref": "observations.json#grit-synthetic-merge-contention-2026-04",
+      "primary_sources": [
+        "https://github.com/rtk-ai/grit/tree/a2c48735e0a16c49ca1541c4865fce438c479405",
+        "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/scripts/sweep/bench.sh",
+        "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/tests/gen_graph.py",
+        "https://github.com/rtk-ai/grit/commit/a2c48735e0a16c49ca1541c4865fce438c479405"
+      ],
+      "finding": "Grit directly instantiates S2 at its own first-party product boundary. Parallel coding branches create interaction-specific merge contention and lost-work variety; Grit attenuates that variety through symbol claims/locks, worktree isolation, queue/admission behavior and serialized integration. The selected immutable synthetic sweep commits five iterations of raw-git failure/conflict arrays and a zero-failure Grit series across the recorded agent counts. Generated per-run result directories are gitignored and the raw-git/Grit arms independently sample work allocation, so the admitted row remains first-party-reported and partially matched rather than independently reproduced or a matched primary. Grit is not a canonical Index harness.",
       "admitted": false
     },
     {
@@ -361,6 +379,7 @@
     "specification-mediated-representation-conflict",
     "team-loop-stall-turn-interference",
     "host-resource-admission-contention",
-    "shared-state-convergence"
+    "shared-state-convergence",
+    "symbol-lock-merge-contention"
   ]
 }
