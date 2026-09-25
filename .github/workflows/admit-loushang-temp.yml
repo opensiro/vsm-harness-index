@@ -1,0 +1,64 @@
+name: admit-loushang-temp
+
+on:
+  push:
+    branches:
+      - admit-loushang-249
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply canonical admission inputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path("assessments/loushang.md")
+          text = assessment.read_text(encoding="utf-8")
+          old = "status: proposed"
+          new = "status: included"
+          if old not in text:
+              raise SystemExit("expected proposed Loushang assessment state")
+          assessment.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          catalog = Path("data/catalog.psv")
+          catalog_text = catalog.read_text(encoding="utf-8")
+          if "|loushang|" not in catalog_text:
+              if not catalog_text.endswith("\n"):
+                  catalog_text += "\n"
+              catalog_text += "249|loushang|Loushang|https://github.com/zhnt/loushang|2026-05-29T17:25:11Z|index-addition|3970a791ba277ecc686df7e5477c86ec71915687|2026-09-25\n"
+              catalog.write_text(catalog_text, encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          signatures_text = signatures.read_text(encoding="utf-8")
+          if "|loushang|" not in signatures_text:
+              if not signatures_text.endswith("\n"):
+                  signatures_text += "\n"
+              signatures_text += (
+                  "249|loushang|Loushang closes autonomous S1 through its production model/tool coding loop, S2 through root-owned shared-worktree scope partitioning and conflict feedback across concurrent implementation agents, S3 through live descendant-tree regulation, and S3* through independent read-only reviewer agents; explicit Method selection and task-local research do not establish S4, while Product/tool/approval policy does not close S5.\n"
+              )
+              signatures.write_text(signatures_text, encoding="utf-8")
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Commit rendered admission transaction
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assessments/loushang.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md METRICS.md data/metrics.json README.md FULL-A.md 2>/dev/null || true
+          git commit -m "index: admit Loushang at catalog #249"
+          git push
