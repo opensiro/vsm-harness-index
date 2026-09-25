@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "status": "preregistered-no-results",
+  "tracking_issue": 609,
+  "function": "S2",
+  "canonical_harness_id": "loopx",
+  "canonical_assessment_ref": "ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f",
+  "canonical_state_at_design": "A",
+  "upstream_repository": "https://github.com/loopx-project/loopx",
+  "upstream_revision": "ade21106b4bc31a9bc4e61d2f5809b1b4d04d14f",
+  "system_compatibility_target": "adapter-preserved",
+  "research_question": "Can LoopX's native registered-peer task coordinator attenuate stale semantic interference between two disjoint coding-worker S1s by changing their execution order, such that the later worker operates against updated integrated state?",
+  "function_chain": [
+    "two distinct registered coding-worker S1s receive independently useful tasks on disjoint write scopes",
+    "parallel execution from one baseline creates a stale cross-file producer-consumer assumption",
+    "the LoopX model-driven registered-peer task coordinator chooses the worker schedule",
+    "the adapter executes that schedule without making an S2 decision",
+    "the selected order changes the starting state and subsequent behavior of the later worker",
+    "composed integration records whether semantic interference was attenuated"
+  ],
+  "fixture": {
+    "root": "fixture",
+    "language": "python",
+    "producer_surface": "fixture/src/envelope.py",
+    "consumer_surface": "fixture/src/retry.py",
+    "task_a": {
+      "task_id": "producer-contract-migration",
+      "instruction_file": "fixture/task-a.md",
+      "write_scopes": [
+        "src/envelope.py",
+        "tests/test_envelope.py"
+      ],
+      "primary_test": "fixture/tests/test_envelope.py"
+    },
+    "task_b": {
+      "task_id": "retry-consumer-current-contract",
+      "instruction_file": "fixture/task-b.md",
+      "write_scopes": [
+        "src/retry.py",
+        "tests/test_retry.py"
+      ],
+      "primary_test": "fixture/tests/test_retry.py"
+    },
+    "composed_test": "fixture/tests/test_retry.py",
+    "selection_rule": "The task pair and write scopes are frozen before execution and must not be replaced or widened after observing results."
+  },
+  "organization": {
+    "coordinator_agent_id": "codex-coordinator",
+    "worker_agent_ids": [
+      "codex-worker-a",
+      "codex-worker-b"
+    ],
+    "functional_worker_count": 2,
+    "coordinator_counts_as_functional_worker": false,
+    "agent_model": "peer_v1"
+  },
+  "adapter_boundary": {
+    "role": "transport-and-execution-only",
+    "allowed_actions": [
+      "start or resume the requested governed LoopX Turn for a named registered agent",
+      "execute the validated coordinator scheduling classification literally",
+      "create fresh git worktrees from the preregistered base commit",
+      "perform the preregistered deterministic A-then-B integration normalization",
+      "capture raw LoopX, Codex, git and test artifacts"
+    ],
+    "forbidden_actions": [
+      "choose parallel versus serial execution in treatment",
+      "inspect task semantics to override or repair the coordinator decision",
+      "rewrite or repartition the frozen tasks after execution begins",
+      "synthesize coordination messages or dependencies not emitted by the coordinator",
+      "repair worker code",
+      "mutate canonical observations"
+    ]
+  },
+  "arms": {
+    "treatment": {
+      "id": "loopx-registered-peer-s2",
+      "peer_task_coordinator_configured": true,
+      "coordinator_capabilities": [
+        "peer_agent_activation"
+      ],
+      "required_contract_schema": "task_orchestration_contract_v1",
+      "required_contract_mode": "task_scoped_peer",
+      "allowed_scheduling_classifications": [
+        "parallel",
+        "a_then_b",
+        "b_then_a"
+      ],
+      "decision_owner": "model-driven LoopX task coordinator"
+    },
+    "control": {
+      "id": "loopx-peer-s2-ablation",
+      "peer_task_coordinator_configured": false,
+      "coordinator_turn_present": false,
+      "peer_agent_activation_capability_present": false,
+      "task_orchestration_contract_allowed": false,
+      "fixed_worker_launch": "concurrent from the same frozen baseline",
+      "fixed_launch_role": "disturbance generator, not adaptive coordination"
+    }
+  },
+  "execution": {
+    "minimum_primary_replicates_per_arm": 3,
+    "fresh_repo_per_run": true,
+    "fresh_worker_worktree_per_execution": true,
+    "worker_model_and_config_matched_within_pair": true,
+    "alternate_arm_order_across_pairs": true,
+    "integration_order": [
+      "task_a",
+      "task_b"
+    ],
+    "exclusion_rules": [
+      "exclude only infrastructure failures that prevent an arm from reaching the preregistered worker-execution disturbance surface",
+      "do not exclude worker mistakes, coordinator mistakes, wrong scheduling decisions, task failures or composed integration failures",
+      "every excluded run remains in the raw ledger with an explicit reason"
+    ]
+  },
+  "primary_metrics": [
+    "treatment_peer_contract_present",
+    "control_peer_contract_absent",
+    "coordinator_scheduling_classification",
+    "distinct_worker_s1_executions_observed",
+    "worker_a_start_base_commit",
+    "worker_b_start_base_commit",
+    "control_concurrent_live_overlap_observed",
+    "task_a_isolated_acceptance",
+    "task_b_isolated_acceptance",
+    "composed_acceptance",
+    "worker_b_contract_key",
+    "worker_b_started_after_a_integration",
+    "worker_b_behavior_changed_between_matched_arms",
+    "subsequent_s1_behavior_changed_by_coordination"
+  ],
+  "secondary_metrics": [
+    "wall_clock_seconds",
+    "model_tokens_or_cost_when_available"
+  ],
+  "provenance_required": [
+    "loopx_revision",
+    "index_protocol_revision",
+    "fixture_revision",
+    "codex_version",
+    "codex_executable",
+    "worker_model_id",
+    "worker_reasoning_configuration",
+    "coordinator_model_id",
+    "coordinator_reasoning_configuration",
+    "coordinator_result",
+    "worker_turn_results",
+    "worker_start_base_commits",
+    "worker_patches",
+    "integration_commits",
+    "test_results",
+    "run_id",
+    "raw_artifact_paths"
+  ],
+  "pre_execution_identifiability_gates": [
+    "the two frozen task write scopes are disjoint",
+    "both registered peer workers can receive ordinary governed LoopX Turns without a coordinator",
+    "treatment projects task_scoped_peer with both worker lanes visible to the configured coordinator",
+    "control projects no task-orchestration contract",
+    "the adapter exposes the same two worker Turn surfaces in both arms",
+    "the treatment schedule is a literal execution of the model-authored classification",
+    "the adapter makes no S2-specific decision"
+  ],
+  "admission_gate": [
+    "two distinct worker S1s instantiate the stale semantic interference",
+    "the treatment exercises LoopX's model-driven registered-peer S2 decision path",
+    "the adapter remains transport-only and preserves the native decision",
+    "the coordination decision changes the starting state or subsequent behavior of a worker",
+    "composed outcome and worker behavior are recoverable from immutable public artifacts",
+    "no autonomy state is inferred from benchmark performance"
+  ],
+  "observation_registry_mutation_allowed": false,
+  "results": null
+}
