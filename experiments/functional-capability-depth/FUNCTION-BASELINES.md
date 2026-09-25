@@ -9,7 +9,7 @@ This view reports baseline availability and evidence coverage only. It does not 
 | Function | Status | Primary family | Reference model | Evidence state |
 | --- | --- | --- | --- | --- |
 | S1 | `selected` | PawBench v1.0 | `qwen3.6-35b-a3b` | [generated S1 baseline](S1-BASELINE.md) |
-| S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 14 reviewed cases · direct families: `3` · direct observations: `1` · canonical direct observations: `0` |
+| S2 | `gap` | — | — | [`coverage.json`](s2-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 14 reviewed cases · direct families: `4` · direct observations: `1` · canonical direct observations: `0` |
 | S3 | `gap` | — | — | [`coverage.json`](s3-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 11 reviewed cases · direct families: `3` · direct observations: `1` |
 | S3* | `gap` | — | — | [`coverage.json`](s3star-system-benchmarks/coverage.json) · reviewed `2026-09-24` · 16 reviewed cases · direct families: `5` · canonical direct observations: `2` · composed direct observations: `3` |
 | S4 | `gap` | — | — | [`coverage.json`](s4-system-benchmarks/coverage.json) · reviewed `2026-09-25` · 15 reviewed cases · direct families: `4` · canonical direct observations: `2` · composed direct observations: `4` |
@@ -21,7 +21,7 @@ A `gap` means that no matched canonical-harness primary baseline has been select
 
 ### S2
 
-Reviewed direct S2 evidence now includes explicit benchmark-defined fleet contention/attenuation observations, including Nool's controlled pre-start gating experiment, but public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses.
+Reviewed direct S2 evidence now includes four benchmark-defined disturbance/attenuation families. Nool supplies the one admitted immutable direct non-canonical observation; Twining conflict-resolution is direct at its benchmark boundary but lacks recoverable exact Twining treatment revision and canonical harness linkage. Public evidence still provides no canonical native direct S2 observation and no matched comparison of native S2 implementations across multiple canonical harnesses.
 
 Evidence search: [`s2-system-benchmarks/coverage.json`](s2-system-benchmarks/coverage.json).
 

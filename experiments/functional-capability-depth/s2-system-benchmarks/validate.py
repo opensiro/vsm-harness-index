@@ -221,7 +221,12 @@ def main() -> None:
         for entry in benchmark_map.get("entries", [])
         if entry.get("function") == "S2" and entry.get("fit") == "direct"
     }
-    expected_direct_s2 = {"dpbench", "stale-semantic-coordination", "nool-fleet-coordination"}
+    expected_direct_s2 = {
+        "dpbench",
+        "stale-semantic-coordination",
+        "nool-fleet-coordination",
+        "twining-conflict-resolution",
+    }
     if reviewed_direct_s2 != expected_direct_s2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
     if coverage.get("direct_benchmark_family_count") != len(reviewed_direct_s2):
@@ -295,6 +300,22 @@ def main() -> None:
         fail("Nool fleet benchmark review_ref drift")
     if nool.get("observation_ref") != "observations.json#nool-trackd-scaleup1-contention-2026-08-21":
         fail("Nool fleet coverage/observation linkage drift")
+
+    twining = by_id.get("twining-conflict-resolution-direct-scaffolded")
+    if twining is None:
+        fail("missing Twining conflict-resolution direct-S2 coverage case")
+    if twining.get("benchmark_fit") != "direct" or twining.get("coverage_class") != "direct-scaffolded":
+        fail("Twining conflict-resolution must remain direct-scaffolded S2 evidence")
+    if twining.get("system_compatibility") != "benchmark-scaffolded":
+        fail("Twining conflict-resolution must remain benchmark-scaffolded")
+    if twining.get("canonical_harness_id") is not None:
+        fail("Twining conflict-resolution must not acquire a canonical harness id")
+    if twining.get("review_ref") != "b6a4d5e5890c5617376ba5c8fb7a628014296663":
+        fail("Twining benchmark review_ref drift")
+    if twining.get("result_harness_ref") != "63004a1f7697c64a78bc9c83b6cafd461887bc75":
+        fail("Twining committed-result harness ref drift")
+    if "observation_ref" in twining:
+        fail("Twining must not acquire an observation_ref without a new provenance review")
 
     validate_nool_observation(observations)
     validate_proxy_links(coverage, by_id)

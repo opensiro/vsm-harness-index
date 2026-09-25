@@ -3,12 +3,14 @@
 Status: experimental, non-normative.  
 Tracking issue: #564  
 Current-state update: #586  
+Canonical delta review: #592  
+Benchmark-family review: #596  
 Scope: current public evidence reviewed through 2026-09-25.
 
 ## Result
 
 ```text
-direct S2 benchmark families               3
+direct S2 benchmark families               4
 direct S2 observations                     1
 canonical native direct S2 observations    0
 canonical native S2 quantitative proxies   2
@@ -20,13 +22,14 @@ This closes the current public-evidence search transaction, not the possibility 
 
 ## Direct benchmark evidence
 
-Three reviewed families directly exercise S2-shaped disturbance/attenuation relations:
+Four reviewed families directly exercise S2-shaped disturbance/attenuation relations at their benchmark-defined boundaries:
 
 - **DPBench** — simultaneous shared-resource contention and coordination failure;
 - **STALE** — semantic interference among individually-correct parallel patches, with controlled communication conditions that attenuate the interference;
-- **Nool fleet coordination** — concurrent coding workers contend on one shared codebase while pre-start footprint gating is enabled or removed under a controlled same-model/same-workload experiment.
+- **Nool fleet coordination** — concurrent coding workers contend on one shared codebase while pre-start footprint gating is enabled or removed under a controlled same-model/same-workload experiment;
+- **Twining Benchmark conflict-resolution** — two implementers deliberately introduce incompatible architectural choices and a third resolver must detect the conflict and unify the shared codebase.
 
-All three are direct S2 at their declared benchmark boundary. None supplies a canonical harness's own native S2 implementation, so they cannot provide a canonical primary cell by themselves.
+These direct-family classifications do not by themselves establish canonical harness S2 ownership. Nool supplies the one admitted direct non-canonical observation. Twining does not add another observation because its committed result does not recover the exact Twining MCP/plugin treatment revision, and `twining-mcp` is not an admitted canonical Index harness.
 
 ## Direct non-canonical observation — Nool Track D
 
@@ -62,6 +65,25 @@ docs/findings/2026-08-21-findings.md
 
 The public repository is the benchmark/evidence package. It does not expose a canonical open-source Nool runtime assessment boundary, so the observation is recorded as direct **non-canonical** S2 evidence.
 
+## Direct family without admitted observation — Twining
+
+Pinned benchmark review revision:
+
+```text
+daveangulo/twining-benchmark
+b6a4d5e5890c5617376ba5c8fb7a628014296663
+```
+
+The conflict-resolution scenario creates a concrete architectural disturbance: Agent A implements event-driven notifications while Agent B implements direct service calls. Agent C must detect the incompatible patterns, choose one, unify the codebase, preserve tests and document the decision. Conflict detection, resolution quality and decision documentation are scored separately.
+
+A completed committed result exists for run `66312b64-0422-40c4-883f-4e16060b9977`, with benchmark harness commit `63004a1f7697c64a78bc9c83b6cafd461887bc75`. However, saved metadata records an empty `twiningMcpVersion`. At the pinned harness ref, full Twining invokes bare `npx -y twining-mcp` and can resolve a user-installed Claude plugin path, so the exact treatment revision used by the result is not recoverable.
+
+The result therefore does not enter `observations.json` under the existing provenance gate.
+
+`twining-mcp` is also not promoted into the canonical Index merely to create canonical linkage. Its first-party repository exposes an MCP stdio coordination server and persistent shared state for external agents rather than establishing an autonomous agent runtime/lifecycle boundary. Canonical S2 attribution remains absent.
+
+Focused review: `../../vsm-benchmark-family-map/S2-TWINING-REVIEW.md`.
+
 ## Native quantitative evidence
 
 Two canonical systems have useful native quantitative proxy evidence:
@@ -79,7 +101,7 @@ Astra and Agent Framework Benchmark provide useful matched framework/runtime com
 
 ### Native mechanism without direct result
 
-DeepSeek Agent Teams exposes a canonical native S2 path, but the public benchmark entry point does not exercise that path directly.
+DeepSeek Agent Teams exposes a canonical native S2 path, but the public benchmark entry point does not exercise that path directly. C.A.D.I.S. and ARES were separately re-reviewed after their canonical admission in #592; their public result surfaces still do not provide direct native inter-S1 disturbance-to-attenuation observations.
 
 ### MAO-Bench
 
@@ -87,11 +109,13 @@ MAO-Bench is structurally promising: parallel/sequential tiers, adversarial fail
 
 ## Why the gap is evidence-backed
 
-The evidence now separates three layers that should not be conflated:
+The evidence now separates four layers that should not be conflated:
 
 ```text
 benchmark directly measures S2 disturbance/attenuation
-        and publishes an immutable result
+        but may lack observation-grade provenance
+
+benchmark publishes an immutable direct result
         but the measured organization is not canonical
 
 canonical harness runs its native coordination path
@@ -101,9 +125,9 @@ matched canonical native S2 comparison
         still absent
 ```
 
-A primary requires the third layer, not merely more evidence in the first two.
+A primary requires the fourth layer, not merely more evidence in the first three.
 
-The coverage record inspects 11 representative canonical S2 systems across shared-resource contention, write collisions, semantic staleness, team-loop interference and host-resource admission mechanisms. The absence of a direct native result is therefore a reviewed empirical gap, not an unsearched placeholder.
+The coverage record inspects 13 representative canonical S2 systems across shared-resource contention, write collisions, semantic staleness, team-loop interference and host-resource admission mechanisms. The absence of a direct native result is therefore a reviewed empirical gap, not an unsearched placeholder.
 
 ## Reopen rule
 
