@@ -4,7 +4,9 @@ Status: experimental, non-normative.
 
 Initial issue: #387  
 Primary-search closure: #564  
-Current direct-evidence update: #586
+Current direct-evidence update: #586  
+Canonical delta review: #592  
+Twining semantic review: #596
 
 Parent semantic review: `../vsm-benchmark-family-map/`
 
@@ -31,7 +33,7 @@ For a cross-harness primary baseline, the direct S2 path must additionally be na
 ## Current result
 
 ```text
-direct S2 benchmark families reviewed:          3
+direct S2 benchmark families reviewed:          4
 direct S2 observations:                         1
 canonical native direct-S2 observations:        0
 native canonical proxy projections:             2
@@ -42,11 +44,14 @@ The direct families are:
 
 - `DPBench`;
 - `STALE semantic-coordination`;
-- `Nool coding-agent fleet coordination`.
+- `Nool coding-agent fleet coordination`;
+- `Twining Benchmark conflict-resolution`.
 
-The single direct observation is the Nool Track D fleet-contention result at the benchmark-defined fleet boundary. It is **not** a canonical native observation.
+The single admitted direct observation is the Nool Track D fleet-contention result at the benchmark-defined fleet boundary. It is **not** a canonical native observation.
 
-A `gap` therefore no longer means direct S2 observations are absent. It means no materially matched primary comparison of native canonical S2 implementations is available.
+Twining adds a fourth direct family but not another admitted observation: its committed result does not recover the exact Twining MCP/plugin treatment revision, and `twining-mcp` is not an admitted canonical Index harness.
+
+A `gap` therefore does not mean direct S2 families or observations are absent. It means no materially matched primary comparison of native canonical S2 implementations is available.
 
 ## Evidence separation
 
@@ -136,6 +141,24 @@ docs/findings/2026-08-21-findings.md
 
 The public repository is the benchmark/evidence package. It does not establish the external Nool runtime as a canonical Index harness, so this observation is recorded as `direct-scaffolded`, `canonical_harness_id: null`.
 
+## Direct benchmark: Twining conflict resolution
+
+Pinned benchmark review:
+
+```text
+daveangulo/twining-benchmark@b6a4d5e5890c5617376ba5c8fb7a628014296663
+```
+
+The `conflict-resolution` scenario assigns two implementation agents incompatible notification architectures: one event-driven, one direct service-to-service. A third resolver must detect the architectural conflict, choose one approach, unify the shared codebase, preserve tests and document the decision. The scorer separately measures conflict detection, resolution quality and decision documentation.
+
+This directly exercises S2 at the benchmark-defined three-agent organization boundary: interaction-generated architectural interference is deliberately introduced, then a coordination/resolution relation must attenuate it in subsequent shared operation.
+
+A committed completed run exists, but it is **not admitted as a direct observation**. Its metadata pins the benchmark harness commit `63004a1f7697c64a78bc9c83b6cafd461887bc75` while leaving `twiningMcpVersion` empty. At that harness ref the full-Twining condition invokes bare `npx -y twining-mcp` and may resolve a user-installed Claude plugin path. The exact MCP/plugin treatment revision is therefore not recoverable from the saved run provenance.
+
+`twining-mcp` also remains outside canonical attribution. Its first-party entry point starts an MCP stdio coordination server and shared state for external agents; it does not establish an autonomous agent runtime/lifecycle boundary, and it is not an admitted canonical Index harness.
+
+The focused semantic review is `../vsm-benchmark-family-map/S2-TWINING-REVIEW.md`.
+
 ## Native proxy: AutoGen / Magentic-One
 
 Canonical AutoGen AgentChat establishes S2 independently through first-party team selection plus explicit progress/loop/stall regulation.
@@ -170,10 +193,6 @@ pipeline. Recurring inter-S1 interference is removed rather than measured, so qu
 
 Astra provides useful matched framework/runtime measurements, including Agno and AutoGen rows, but the compared organization is benchmark-authored and the workload does not expose an explicit S2 disturbance/attenuation variable. These rows remain framework-execution evidence.
 
-## Candidate: Twining Benchmark
-
-Twining varies coordination conditions over multiple coding agents and includes concurrent-agent/conflict-resolution scenarios. It remains a strong candidate, but the system-in-focus is multiple external agents plus the selected coordination condition; `twining-mcp` is not currently a canonical Index system. The boundary remains unresolved for canonical capability use.
-
 ## Native mechanism without direct result: DeepSeek Agent Teams
 
 Canonical DeepSeek Harness establishes `S2=A` through Agent Teams shared tasks/commitments and coordination machinery. Current public Agent Team code/tests demonstrate the mechanism, including overlap-related primitives, but no published capability run/result was recovered that closes an explicit inter-S1 disturbance → attenuation → changed-operation chain.
@@ -206,7 +225,9 @@ The current coverage record checks a mechanism-diverse set including:
 - `thclaws`;
 - `pi-harness`;
 - `reasonix`;
-- `browser-harness`.
+- `browser-harness`;
+- `cadis`;
+- `ares`.
 
 These systems span autonomous and constructor coordination paths, write-surface collision prevention, isolated-worker coordination, durable team commitments, turn/stall regulation and shared mutable-resource admission. The cohort is an inspection set, not a claim of exhaustiveness.
 
@@ -215,14 +236,16 @@ These systems span autonomous and constructor coordination paths, write-surface 
 The current state is:
 
 ```text
-direct S2 benchmark-defined observation exists
+direct S2 benchmark family exists
+        !=
+admitted direct S2 observation exists
         !=
 canonical native direct S2 observation exists
         !=
 matched canonical S2 primary exists
 ```
 
-Nool closes the first observation-layer hole but not the canonical one.
+Nool supplies the one admitted direct non-canonical observation. Twining increases reviewed direct-family coverage but fails the observation-provenance gate and canonical-system gate. Neither closes the canonical layer.
 
 A future primary still requires materially matched evidence for two or more canonical systems exercising their own native or adapter-preserved S2 paths under a common disturbance definition, with recoverable model/configuration provenance.
 
@@ -234,7 +257,8 @@ A future primary still requires materially matched evidence for two or more cano
 - `validate.py` — fail-closed separation of direct, canonical and proxy evidence;
 - `matched-cell/s2-primary-search-closure.json` — current primary-gap disposition;
 - `matched-cell/S2-PRIMARY-SEARCH-CLOSURE.md` — human-readable closure and reopen rule;
-- `../vsm-benchmark-family-map/map.json` — benchmark-family semantic classification.
+- `../vsm-benchmark-family-map/map.json` — benchmark-family semantic classification;
+- `../vsm-benchmark-family-map/S2-TWINING-REVIEW.md` — Twining direct-family and system-boundary review.
 
 ## Non-goals
 
@@ -245,6 +269,8 @@ This experiment does not:
 - infer canonical S2 ownership from benchmark performance;
 - attribute benchmark-owned coordination to an underlying model/framework/product by name association;
 - treat Nool's external product runtime as a canonical OpenSiro harness without a separate repository-grounded assessment;
+- treat `twining-mcp` as a canonical harness merely because multiple external agents use its shared coordination service;
+- promote a Twining result without recoverable exact treatment provenance into the direct observation registry;
 - promote native proxy evidence into direct S2 after seeing favorable scores;
 - select a primary without matched canonical native evidence;
 - create a scalar S2 score or overall harness score;
