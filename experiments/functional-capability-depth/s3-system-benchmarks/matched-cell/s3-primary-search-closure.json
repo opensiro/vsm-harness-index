@@ -2,7 +2,8 @@
   "schema_version": 1,
   "status": "experimental-non-normative",
   "tracking_issue": 567,
-  "reviewed_at": "2026-09-24",
+  "canonical_delta_review_issue": 592,
+  "reviewed_at": "2026-09-25",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
@@ -10,7 +11,7 @@
     "direct_benchmark_families": 3,
     "canonical_direct_observations": 1,
     "native_proxy_projections": 1,
-    "representative_canonical_s3_systems_inspected": 11
+    "representative_canonical_s3_systems_inspected": 14
   },
   "canonical_native_observation": {
     "harness_id": "multi-agent-orchestration",
@@ -37,6 +38,12 @@
       "blocking_reason": "A clean canonical native direct S3 observation exists, but one system cannot form a matched cross-harness primary."
     },
     {
+      "route_id": "canonical-native-mechanisms-without-direct-results",
+      "status": "no-direct-results",
+      "examples": ["C.A.D.I.S.", "Awaken", "ARES"],
+      "blocking_reason": "The post-closure canonical admissions expose S3 current-control mechanisms, but current public result surfaces do not isolate those native paths in capability measurements. Their mechanism/performance/test evidence therefore does not add direct S3 observations."
+    },
+    {
       "route_id": "native-quantitative-proxy",
       "status": "not-isolated-s3",
       "examples": ["AutoGen/Magentic-One"],
@@ -55,7 +62,7 @@
       "blocking_reason": "The benchmark directly studies orchestration failures and recovery, but public evidence does not bind the measurements to native canonical harness S3 implementations."
     }
   ],
-  "closure_claim": "Current public evidence contains direct S3 benchmarks, one canonical native direct S3 observation and matched framework comparisons, but no materially matched comparison of multiple canonical native or adapter-preserved S3 implementations.",
+  "closure_claim": "Current public evidence contains direct S3 benchmarks and one canonical native direct S3 observation. Post-closure review of C.A.D.I.S., Awaken and ARES adds native mechanism coverage but no new direct capability observation, so no materially matched comparison of multiple canonical native or adapter-preserved S3 implementations exists.",
   "reopen_when": [
     "a second canonical native or adapter-preserved direct S3 observation appears under a materially matched benchmark/model/configuration cell",
     "an existing matched framework campaign proves that canonical S3 paths are actually active for two or more systems",
@@ -64,7 +71,8 @@
   "do_not_reopen_for": [
     "another benchmark-authored manager topology",
     "another whole-task orchestration score without isolated current-control attribution",
-    "another framework comparison that does not activate canonical S3 paths"
+    "another framework comparison that does not activate canonical S3 paths",
+    "microperformance or mechanism tests that do not measure a current-control intervention and subsequent organizational outcome"
   ],
-  "non_claim": "This closure is not a zero S3 capability score and does not generalize the single Multi-Agent Orchestration result into a cross-harness ranking. It freezes the reviewed public-evidence state until materially new matched-native evidence appears."
+  "non_claim": "This closure is not a zero S3 capability score and does not generalize the single Multi-Agent Orchestration result into a cross-harness ranking. It freezes the reviewed current canonical/public-evidence state until materially new matched-native evidence appears."
 }
