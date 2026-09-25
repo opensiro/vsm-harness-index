@@ -4,13 +4,13 @@ Status: experimental, non-normative.
 Tracking issue: #564  
 Current-state update: #586  
 Canonical delta review: #592  
-Benchmark-family review: #596  
+Benchmark-family review: #622  
 Scope: current public evidence reviewed through 2026-09-25.
 
 ## Result
 
 ```text
-direct S2 benchmark families               4
+direct S2 benchmark families               5
 direct S2 observations                     1
 canonical native direct S2 observations    0
 canonical native S2 quantitative proxies   2
@@ -22,14 +22,15 @@ This closes the current public-evidence search transaction, not the possibility 
 
 ## Direct benchmark evidence
 
-Four reviewed families directly exercise S2-shaped disturbance/attenuation relations at their benchmark-defined boundaries:
+Five reviewed families directly exercise S2-shaped disturbance/attenuation relations at benchmark- or product-defined boundaries:
 
 - **DPBench** — simultaneous shared-resource contention and coordination failure;
 - **STALE** — semantic interference among individually-correct parallel patches, with controlled communication conditions that attenuate the interference;
 - **Nool fleet coordination** — concurrent coding workers contend on one shared codebase while pre-start footprint gating is enabled or removed under a controlled same-model/same-workload experiment;
-- **Twining Benchmark conflict-resolution** — two implementers deliberately introduce incompatible architectural choices and a third resolver must detect the conflict and unify the shared codebase.
+- **Twining Benchmark conflict-resolution** — two implementers deliberately introduce incompatible architectural choices and a third resolver must detect the conflict and unify the shared codebase;
+- **Grit parallel-agent merge-contention** — parallel coding workers branch from shared repository state while first-party claims/queues/worktrees/serialized integration attenuate merge-contention interference.
 
-These direct-family classifications do not by themselves establish canonical harness S2 ownership. Nool supplies the one admitted direct non-canonical observation. Twining does not add another observation because its committed result does not recover the exact Twining MCP/plugin treatment revision, and `twining-mcp` is not an admitted canonical Index harness.
+These direct-family classifications do not by themselves establish canonical harness S2 ownership. Nool supplies the one admitted direct non-canonical observation. Twining does not add another observation because its committed result does not recover the exact Twining MCP/plugin treatment revision. Grit does not add another observation because its run-level benchmark result directories are intentionally gitignored and it is not an admitted canonical Index harness.
 
 ## Direct non-canonical observation — Nool Track D
 
@@ -78,11 +79,22 @@ The conflict-resolution scenario creates a concrete architectural disturbance: A
 
 A completed committed result exists for run `66312b64-0422-40c4-883f-4e16060b9977`, with benchmark harness commit `63004a1f7697c64a78bc9c83b6cafd461887bc75`. However, saved metadata records an empty `twiningMcpVersion`. At the pinned harness ref, full Twining invokes bare `npx -y twining-mcp` and can resolve a user-installed Claude plugin path, so the exact treatment revision used by the result is not recoverable.
 
-The result therefore does not enter `observations.json` under the existing provenance gate.
+The result therefore does not enter `observations.json` under the existing provenance gate. `twining-mcp` is also not promoted into the canonical Index merely to create canonical linkage.
 
-`twining-mcp` is also not promoted into the canonical Index merely to create canonical linkage. Its first-party repository exposes an MCP stdio coordination server and persistent shared state for external agents rather than establishing an autonomous agent runtime/lifecycle boundary. Canonical S2 attribution remains absent.
+## Direct family without admitted observation — Grit
 
-Focused review: `../../vsm-benchmark-family-map/S2-TWINING-REVIEW.md`.
+Pinned repository revision:
+
+```text
+rtk-ai/grit
+0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe
+```
+
+Grit owns a first-party coordination relation for parallel coding workers: symbol-level claims and queues attenuate overlapping work before execution, per-agent worktrees isolate concurrent mutation, and serialized integration attenuates merge races on return. The repository includes synthetic, throughput, sweep, and real-agent benchmark scripts, and immutable commit `a2c48735e0a16c49ca1541c4865fce438c479405` records first-party benchmark summary claims.
+
+That is sufficient to classify the benchmark family as direct S2 at the Grit product-defined coordination boundary. It is not sufficient for an observation registry row. `scripts/.gitignore` explicitly excludes `*/results/`, while `scripts/README.md` says those run directories contain the raw logs and CSV summaries. The run-level ledgers needed by the current observation-provenance gate are therefore not public in the pinned repository.
+
+Grit is also not an admitted canonical Index harness. No `observation_ref` or canonical S2 attribution is created by this review.
 
 ## Native quantitative evidence
 
@@ -109,7 +121,7 @@ MAO-Bench is structurally promising: parallel/sequential tiers, adversarial fail
 
 ## Why the gap is evidence-backed
 
-The evidence now separates four layers that should not be conflated:
+The evidence separates four layers that should not be conflated:
 
 ```text
 benchmark directly measures S2 disturbance/attenuation
@@ -137,7 +149,7 @@ Reopen when new public primary evidence supplies at least one of:
 2. a common benchmark with two or more canonical systems exercising their native/adapter-preserved S2 paths under the same disturbance definition;
 3. published MAO-Bench or equivalent multi-orchestrator rows with immutable system/model/configuration provenance and direct S2 semantics.
 
-Do not reopen merely for another benchmark-scaffolded direct observation without canonical linkage, another team-success score, topology comparison, communication-count metric or framework throughput benchmark without explicit native S2 closure.
+Do not reopen merely for another benchmark-scaffolded or non-canonical direct family without canonical linkage, another team-success score, topology comparison, communication-count metric or framework throughput benchmark without explicit native S2 closure.
 
 ## Consequence
 
