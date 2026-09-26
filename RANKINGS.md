@@ -191,6 +191,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="repomaster"></a>[RepoMaster](https://github.com/QuantaAlpha/RepoMaster) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pi"></a>[Pi](https://github.com/earendil-works/pi) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mirothinker"></a>[MiroThinker](https://github.com/MiroMindAI/MiroThinker) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="replicator-agent"></a>[ReplicatorAgent](https://github.com/CenterForOpenScience/llm-benchmarking) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="vibe-kanban"></a>[Vibe Kanban](https://github.com/BloopAI/vibe-kanban) | 2025-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="cais"></a>[Causal AI Scientist (CAIS)](https://github.com/causalNLP/causal-agent) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="claude-agent-sdk"></a>[Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
