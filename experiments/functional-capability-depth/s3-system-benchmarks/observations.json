@@ -104,5 +104,47 @@
       "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/omnigent/server/child_session_recovery.py",
       "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/tests/server/test_child_session_recovery.py"
     ]
+  },
+  {
+    "observation_id": "supervisoragent-smas-gaia-runtime-control-2026",
+    "function": "S3",
+    "benchmark_id": "supervisoragent-smas-runtime-control",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "composed-noncanonical-system",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "benchmark_artifact_revision": "ab116b557b095ae8d45bdf2d61057ce19519d4ff",
+    "comparison_class": "within-composed-system-treatment-control",
+    "benchmark": "GAIA validation",
+    "model": "GPT-4.1",
+    "baseline_arm": {
+      "system": "Smolagent",
+      "accuracy_percent": 50.91,
+      "avg_tokens_k": 527.76
+    },
+    "treatment_arm": {
+      "system": "Smolagent + SMAS (SupervisorAgent)",
+      "accuracy_percent": 50.91,
+      "avg_tokens_k": 371.12
+    },
+    "reported_token_reduction_percent": 29.68,
+    "runtime_intervention_actions": [
+      "approve",
+      "provide_guidance",
+      "correct_observation",
+      "run_verification"
+    ],
+    "current_control_relation": "SupervisorAgent observes current interaction steps and traces, filters for operational-risk triggers, constructs local/global context, and selectively returns guidance, correction, observation purification or verification into the live agent trajectory.",
+    "mixed_function_caveat": "The aggregate SMAS treatment is not an isolated S3-only ablation. Guidance, error correction and observation purification instantiate current-control S3, while run_verification can instantiate verification-like S3* activity. The result is admitted as direct composed S3 evidence for an organization that materially contains S3, not as a pure causal estimate of S3 alone.",
+    "provenance_limitation": "This is first-party-reported public evidence committed in the SupervisorAgent repository and paper. It is not independently reproduced by Opensiro and does not establish native S3 ownership for the wrapped Smolagent, AWorld, OAgents, or another base framework.",
+    "vsm_interpretation": "The measured system is the composed SMAS boundary: a base MAS plus SupervisorAgent. The supervisor has live situational awareness and returns current-control interventions into ongoing operation, so the public treatment/control result is direct S3 capability evidence at that composed boundary. Because the controller is externally added and the intervention repertoire also includes verification-like actions, the observation is non-canonical and not eligible to form a native matched S3 primary by itself.",
+    "primary_sources": [
+      "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/README.md",
+      "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/smolagents_SMAS/examples/open_deep_research/run_gaia.py",
+      "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/smolagents_SMAS/src/smolagents/agents.py",
+      "https://openreview.net/forum?id=pzFhtpkabh"
+    ]
   }
 ]
