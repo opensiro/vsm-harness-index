@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 732,
+  "snapshot_index_revision": "0ec71f3dddb16b5eb61d624a13420561a69a74da",
+  "current_skills_contract": {
+    "repository": "opensiro/vsm-harness-skills",
+    "revision": "8ab5fcbcb96e38eb02be4a6157c5d4a48cd39b23",
+    "fixtures_path": "experiments/self-organizing-autonomy/FIXTURES.md",
+    "spec_path": "experiments/self-organizing-autonomy/SPEC.md"
+  },
+  "summary": {
+    "required_fixture_class_count": 8,
+    "required_fixture_classes_with_frozen_packet": 8,
+    "packet_class_coverage_complete": true,
+    "uniform_current_protocol_alignment": false,
+    "independent_review_complete": false,
+    "reproducibility_grade_corpus": false,
+    "stability_gates_complete": false,
+    "experiment_stable": false
+  },
+  "required_classes": [
+    {
+      "class_id": "clear-c",
+      "required_role": "Function-specific construction path exists, but material new functional logic still requires an external constructor.",
+      "fixture_id": "chief",
+      "fixture_path": "fixtures/chief/PACKET.md",
+      "tracking_issue": 302,
+      "pinned_skills_revision": "947b42e77551ed1a86456f8a812c72a96a36506a",
+      "packet_status": "frozen",
+      "review_status": "independent-reviews-pending",
+      "current_protocol_alignment": "not-revalidated-against-current-revision"
+    },
+    {
+      "class_id": "clear-a",
+      "required_role": "Novel in-domain variety is absorbed autonomously using the existing repertoire; no endogenous functional improvement is needed.",
+      "fixture_id": "trueforge",
+      "fixture_path": "fixtures/trueforge/PACKET.md",
+      "tracking_issue": 301,
+      "pinned_skills_revision": "947b42e77551ed1a86456f8a812c72a96a36506a",
+      "packet_status": "frozen",
+      "review_status": "independent-reviews-pending",
+      "current_protocol_alignment": "not-revalidated-against-current-revision"
+    },
+    {
+      "class_id": "self-modifying-non-s",
+      "required_role": "The system edits code/prompts/configuration or adds tools but does not materially improve the relevant function's later decision/feedback closure.",
+      "fixture_id": "harness-evolver",
+      "fixture_path": "fixtures/harness-evolver/PACKET.md",
+      "tracking_issue": 292,
+      "pinned_skills_revision": "947b42e77551ed1a86456f8a812c72a96a36506a",
+      "packet_status": "frozen",
+      "review_status": "review-1-complete-withheld-review-2-pending",
+      "current_protocol_alignment": "not-revalidated-against-current-revision"
+    },
+    {
+      "class_id": "escalation-boundary-shift",
+      "required_role": "A function increases its local requisite variety so a disturbance class that previously required another function/parent is later absorbed locally.",
+      "fixture_id": "synthetic-s1-escalation-shift",
+      "fixture_path": "fixtures/synthetic-s1-escalation-shift/PACKET.md",
+      "tracking_issue": 724,
+      "pinned_skills_revision": "96e16eba5882e98c6261b541521bc88862e00195",
+      "packet_status": "frozen",
+      "review_status": "independent-reviews-pending",
+      "current_protocol_alignment": "not-revalidated-against-current-revision"
+    },
+    {
+      "class_id": "repertoire-change-non-recursive",
+      "required_role": "The system materially improves a function's repertoire without creating a new viable recursion.",
+      "fixture_id": "scion",
+      "fixture_path": "fixtures/scion/PACKET.md",
+      "tracking_issue": 287,
+      "pinned_skills_revision": "947b42e77551ed1a86456f8a812c72a96a36506a",
+      "packet_status": "frozen",
+      "review_status": "review-1-complete-withheld-review-2-pending",
+      "current_protocol_alignment": "not-revalidated-against-current-revision"
+    },
+    {
+      "class_id": "recursive-realization",
+      "required_role": "The system creates/reorganizes and integrates a lower viable recursion that absorbs variety the prior organization could not.",
+      "fixture_id": "megaagent",
+      "fixture_path": "fixtures/megaagent/PACKET.md",
+      "tracking_issue": 306,
+      "pinned_skills_revision": "947b42e77551ed1a86456f8a812c72a96a36506a",
+      "packet_status": "frozen",
+      "review_status": "independent-reviews-pending",
+      "current_protocol_alignment": "not-revalidated-against-current-revision"
+    },
+    {
+      "class_id": "s3star-counterexample",
+      "required_role": "Apparent self-improvement of audit destroys or fails to establish complementary independence.",
+      "fixture_id": "synthetic-s3star-independence-loss",
+      "fixture_path": "fixtures/synthetic-s3star-independence-loss/PACKET.md",
+      "tracking_issue": 727,
+      "pinned_skills_revision": "8ab5fcbcb96e38eb02be4a6157c5d4a48cd39b23",
+      "packet_status": "frozen",
+      "review_status": "independent-reviews-pending",
+      "current_protocol_alignment": "current"
+    },
+    {
+      "class_id": "s5-counterexample",
+      "required_role": "Apparent self-governance lacks legitimate identity/ultimate-policy authority or actually belongs to a higher recursion.",
+      "fixture_id": "synthetic-s5-parent-authority",
+      "fixture_path": "fixtures/synthetic-s5-parent-authority/PACKET.md",
+      "tracking_issue": 728,
+      "pinned_skills_revision": "8ab5fcbcb96e38eb02be4a6157c5d4a48cd39b23",
+      "packet_status": "frozen",
+      "review_status": "independent-reviews-pending",
+      "current_protocol_alignment": "current"
+    }
+  ],
+  "additional_candidates": [
+    {
+      "fixture_id": "ouroboros",
+      "fixture_path": "fixtures/ouroboros/PACKET.md",
+      "tracking_issue": 271,
+      "pinned_skills_revision": "ef7c029eae7ac86b90111f6d682563f1cc78593b",
+      "packet_status": "frozen",
+      "review_status": "review-1-complete-withheld-review-2-pending",
+      "current_protocol_alignment": "not-revalidated-against-current-revision",
+      "required_class_slot": null
+    }
+  ],
+  "remaining_gates": [
+    "complete the required independent reviews without leaking Review 1 reasoning into Review 2",
+    "publish paired reviews and synthesis only after both judgments exist",
+    "reconcile protocol drift for packets pinned before the current Skills revision before any stability decision",
+    "establish whether any real public harness provides a reproducible positive per-function S witness under the applicable frozen/current contract",
+    "confirm the candidate distinction adds information beyond released autonomy, ownership, recursion, S4 and closure semantics",
+    "resolve or explicitly exclude composition with parent-governed modes",
+    "prepare adoption/migration only if the experiment later satisfies all stability gates"
+  ],
+  "non_claims": [
+    "packet-class coverage does not imply a fixture finding",
+    "packet-class coverage does not imply independent-review agreement",
+    "packet-class coverage does not imply current-protocol alignment",
+    "packet-class coverage does not imply a reproducibility-grade corpus",
+    "packet-class coverage does not imply the S distinction is empirically supported",
+    "packet-class coverage does not make S a released Methodology state"
+  ]
+}
