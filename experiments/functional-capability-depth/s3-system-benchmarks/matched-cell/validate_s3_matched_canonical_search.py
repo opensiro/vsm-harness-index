@@ -58,7 +58,6 @@ for key in (
     require(expected_depth[key] == primary_depth[key], f"S3 matched search {key} depth drift")
 require(coverage["direct_benchmark_family_count"] == expected_depth["direct_benchmark_families"], "S3 coverage direct-family drift")
 require(coverage["direct_observation_count"] == expected_depth["direct_observations"], "S3 coverage observation drift")
-require(coverage["canonical_direct_observation_count"] == expected_depth["canonical_direct_observations"], "S3 coverage canonical observation drift")
 require(coverage["proxy_projection_count"] == expected_depth["native_proxy_projections"], "S3 coverage proxy drift")
 require(len(observations) == expected_depth["direct_observations"], "S3 observation registry count drift")
 
@@ -101,6 +100,10 @@ require(omnigent_obs.get("revision_relation") == "post-assessment-descendant", "
 require(omnigent_obs.get("comparison_class") == "descriptive-only", "Omnigent observation became matched without reopening search")
 
 canonical_rows = [row for row in observations if row.get("canonical_system_eligible") is True]
+require(
+    len(canonical_rows) == expected_depth["canonical_direct_observations"],
+    "S3 canonical observation count drift",
+)
 require(
     {row["observation_id"] for row in canonical_rows} == {mao_id, omnigent_id},
     "S3 canonical observation cohort changed without reopening matched search",
