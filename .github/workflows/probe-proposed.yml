@@ -1,0 +1,21 @@
+name: Probe unresolved proposed assessment
+
+on:
+  push:
+    branches:
+      - maintenance/resolve-proposed-20260926
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find proposed assessments
+        shell: bash
+        run: |
+          echo '=== proposed assessments ==='
+          grep -RIl '^status: proposed$' assessments || true
+          echo '=== count ==='
+          grep -RIl '^status: proposed$' assessments | wc -l
+          echo '=== catalog tail ==='
+          tail -n 5 data/catalog.psv
