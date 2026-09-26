@@ -10,14 +10,14 @@
   "public_evidence_admission_issue": 629,
   "codecrdt_public_evidence_issue": 640,
   "grit_public_evidence_issue": 663,
-  "reviewed_at": "2026-09-25",
+  "reviewed_at": "2026-09-26",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
   "evidence_depth": {
     "direct_benchmark_families": 8,
-    "direct_observations": 5,
-    "canonical_direct_observations": 1,
+    "direct_observations": 6,
+    "canonical_direct_observations": 2,
     "native_proxy_projections": 2,
     "representative_canonical_s2_systems_inspected": 16
   },
@@ -36,6 +36,15 @@
         "Grit synthetic merge-contention sweep"
       ],
       "blocking_reason": "Reviewed direct S2 evidence now spans benchmark-scaffolded organizations and two external first-party native product boundaries. Nool and The Specification Gap supply two benchmark-scaffolded direct non-canonical observations. CodeCRDT supplies a descriptive direct non-canonical observation at its own native product boundary. Grit supplies a first-party direct non-canonical product-boundary observation from a committed synthetic merge-contention sweep, but generated per-run result directories are gitignored and the raw-git/Grit arms sample work allocation separately, so the row remains partially matched rather than independently reproduced or primary-quality. Twining qualifies as a direct family but lacks recoverable exact treatment revision. CooperBench qualifies as a direct family but its committed 50-pair report is generated from flash run logs that are not pinned in the reviewed repository, so no CooperBench observation row is admitted."
+    },
+    {
+      "route_id": "canonical-direct-operational-history",
+      "status": "direct-descriptive-not-matched",
+      "examples": [
+        "Squad shared-state conflict attenuation",
+        "thClaws Agent Teams workspace-interference attenuation"
+      ],
+      "blocking_reason": "Squad and thClaws each supply canonical native direct descriptive S2 observations from public first-party operational history. Their disturbances, evidence surfaces and outcome records are heterogeneous rather than one materially matched benchmark/protocol cell, so the two canonical rows close the empty-canonical-evidence gap but still cannot select a primary baseline."
     },
     {
       "route_id": "native-quantitative-proxies",
@@ -77,20 +86,22 @@
       "blocking_reason": "The adapter/benchmark design is structurally promising, but the public leaderboard does not yet contain the multi-orchestrator result rows needed for a matched canonical cell."
     }
   ],
-  "closure_claim": "Current public evidence contains 8 direct S2 disturbance/attenuation benchmark families, 5 direct observations, one canonical native descriptive direct observation (Squad), and 2 native quantitative S2 proxy projections. The canonical layer is therefore no longer empty, but public evidence still lacks a materially matched direct comparison across two or more canonical S2 systems, so no primary baseline is selected.",
+  "closure_claim": "Current public evidence contains 8 direct S2 disturbance/attenuation benchmark families, 6 direct observations, 2 canonical native descriptive direct observations (Squad and thClaws), and 2 native quantitative S2 proxy projections. The canonical direct-evidence layer is therefore no longer sparse to a single row, but the two canonical observations are heterogeneous operational-history surfaces rather than a materially matched comparison cell, so no primary baseline is selected.",
   "reopen_when": [
-    "a second canonical S2 harness publishes a direct native or adapter-preserved inter-S1 disturbance-to-attenuation result that can form a materially comparable cell with existing canonical evidence",
+    "a canonical S2 harness publishes a direct native or adapter-preserved inter-S1 disturbance-to-attenuation result that forms a materially comparable cell with an existing canonical direct observation",
     "a materially matched benchmark evaluates two or more canonical systems exercising their own native or adapter-preserved S2 paths under one disturbance definition",
     "MAO-Bench or a comparable benchmark publishes recoverable multi-orchestrator results with immutable system/model/configuration provenance and direct S2 semantics"
   ],
   "do_not_reopen_for": [
     "another benchmark-scaffolded direct S2 observation without canonical native or adapter-preserved linkage",
     "another external-native non-canonical S2 observation without canonical linkage or a matched canonical comparison cell",
+    "another descriptive canonical S2 observation that cannot form a materially matched comparison cell with existing canonical evidence",
     "another broad collaboration or task-success score without an explicit S2 disturbance",
     "another topology or framework benchmark whose coordination organization is benchmark-authored",
     "another communication or token-efficiency metric without disturbance-to-attenuation closure"
   ],
-  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Squad now supplies one canonical native descriptive direct observation; Nool, The Specification Gap, CodeCRDT and Grit remain direct non-canonical observations at their reviewed boundaries. One descriptive canonical row is not a matched cross-harness primary; S2 primary remains a gap until materially matched canonical evidence appears.",
+  "non_claim": "This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Squad and thClaws now supply two canonical native descriptive direct observations; Nool, The Specification Gap, CodeCRDT and Grit remain direct non-canonical observations at their reviewed boundaries. Two heterogeneous descriptive canonical rows are still not a matched cross-harness primary; S2 primary remains a gap until materially matched canonical evidence appears.",
   "cooperbench_family_review_issue": 633,
-  "squad_canonical_direct_issue": 644
+  "squad_canonical_direct_issue": 644,
+  "thclaws_canonical_direct_issue": 675
 }
