@@ -4,12 +4,14 @@
   "tracking_issue": 567,
   "canonical_delta_review_issue": 592,
   "current_state_update_issue": 693,
+  "composed_evidence_review_issue": 685,
   "reviewed_at": "2026-09-26",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
   "evidence_depth": {
-    "direct_benchmark_families": 3,
+    "direct_benchmark_families": 4,
+    "direct_observations": 3,
     "canonical_direct_observations": 2,
     "native_proxy_projections": 1,
     "representative_canonical_s3_systems_inspected": 14
@@ -37,12 +39,29 @@
       "reported_witness": "parent runner failure followed by first-party recovery of the unfinished child under original child/dispatch identities while completed work remains closed and no replacement worker is created"
     }
   ],
+  "noncanonical_direct_observations": [
+    {
+      "system": "SMAS (base MAS + SupervisorAgent)",
+      "observation_id": "supervisoragent-smas-gaia-runtime-control-2026",
+      "comparison_class": "within-composed-system-treatment-control",
+      "boundary_class": "composed-noncanonical-system",
+      "benchmark_revision": "ab116b557b095ae8d45bdf2d61057ce19519d4ff",
+      "reported_witness": "GAIA GPT-4.1 pass@1 holds Smolagent accuracy at 50.91% while reported average tokens fall from 527.76K to 371.12K with the external SupervisorAgent runtime controller enabled",
+      "mixed_function_caveat": "The treatment combines S3 guidance/correction/purification with verification-like S3* actions and is therefore not a pure S3 causal ablation."
+    }
+  ],
   "reviewed_route_classes": [
     {
       "route_id": "direct-manager-control-benchmarks",
       "status": "benchmark-scaffolded",
       "examples": ["ClawArena-Team", "Loop-Back Authority"],
       "blocking_reason": "The benchmarks directly exercise whole-team current-control authority, but their management organization is authored by the benchmark rather than a canonical harness's own S3 path."
+    },
+    {
+      "route_id": "direct-composed-runtime-supervision",
+      "status": "composed-noncanonical-mixed-function",
+      "examples": ["SupervisorAgent / SMAS"],
+      "blocking_reason": "SMAS directly adds runtime current-control intervention to a base MAS and publishes a recoverable treatment/control result, but the S3 relation belongs to the composed base-MAS-plus-SupervisorAgent boundary rather than the wrapped framework. The aggregate treatment also contains verification-like S3* actions, so it is not a pure isolated S3 effect and cannot form a canonical-native primary row."
     },
     {
       "route_id": "canonical-native-direct-within-system",
@@ -75,7 +94,7 @@
       "blocking_reason": "The benchmark directly studies orchestration failures and recovery, but public evidence does not bind the measurements to native canonical harness S3 implementations."
     }
   ],
-  "closure_claim": "Current public evidence contains three direct S3 benchmark families and two canonical direct S3 observations. Multi-Agent Orchestration provides a controlled native supervisor ablation; Omnigent provides first-party descriptive operational recovery evidence at a post-assessment descendant revision. These rows are not materially matched, so no cross-harness canonical-native S3 primary baseline is currently supported.",
+  "closure_claim": "Current public evidence contains four direct S3 benchmark families and three admitted direct S3 observations. SupervisorAgent/SMAS contributes one non-canonical composed observation; Multi-Agent Orchestration and Omnigent contribute two canonical native observations. The two canonical rows remain materially heterogeneous and SMAS is not a canonical native row, so no cross-harness canonical-native S3 primary baseline is currently supported.",
   "reopen_when": [
     "a materially matched benchmark/model/configuration cell evaluates two or more canonical systems through their own native or adapter-preserved S3 paths",
     "an existing matched framework campaign proves that canonical S3 paths are actually active for two or more systems under one recoverable comparison protocol",
@@ -83,10 +102,12 @@
   ],
   "do_not_reopen_for": [
     "another descriptive canonical S3 observation without a materially comparable cross-harness cell",
+    "another direct composed non-canonical observation without a materially matched canonical linkage",
     "another benchmark-authored manager topology",
     "another whole-task orchestration score without isolated current-control attribution",
     "another framework comparison that does not activate canonical S3 paths",
-    "microperformance or mechanism tests that do not measure a current-control intervention and subsequent organizational outcome"
+    "microperformance or mechanism tests that do not measure a current-control intervention and subsequent organizational outcome",
+    "an Opensiro-operated reproduction or benchmark run"
   ],
-  "non_claim": "This closure is not a zero S3 capability score and does not normalize the heterogeneous Multi-Agent Orchestration and Omnigent evidence into one metric or ranking. Omnigent's observation is explicitly post-assessment temporal evidence and does not rewrite the earlier canonical review revision. The S3 primary remains gap until materially matched canonical-native evidence appears."
+  "non_claim": "This closure is not a zero S3 capability score and does not normalize the heterogeneous Multi-Agent Orchestration, Omnigent, or SMAS evidence into one metric or ranking. SupervisorAgent's result belongs to the composed SMAS boundary and does not establish S3 ownership for Smolagent or another wrapped framework. Omnigent's observation is explicitly post-assessment temporal evidence and does not rewrite the earlier canonical review revision. The S3 primary remains gap until materially matched canonical-native evidence appears."
 }
