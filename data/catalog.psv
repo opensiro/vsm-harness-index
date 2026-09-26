@@ -294,3 +294,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 279|toolgen|ToolGen|https://github.com/Reason-Wang/ToolGen|2024-10-04T13:10:23Z|index-addition|6839374a255810efe69deea4056eec5c55e25802|2026-09-27
 280|boundflow|BoundFlow|https://github.com/boundflow/boundflow|2026-03-22T05:02:02Z|index-addition|15c0b20a3a98d3413956cab7fba2fd77c1fa32e2|2026-09-27
 281|waggle|Waggle|https://github.com/CrewBeeLab/Waggle|2026-05-13T14:26:58Z|index-addition|db9e3d3aed66714d665fd1c5c40d66534bf44ed7|2026-09-27
+282|surogates|Surogates|https://github.com/invergent-ai/surogates|2026-04-09T10:41:06Z|index-addition|4069e5ad736f1b21584543f734c9481193bcde65|2026-09-27
