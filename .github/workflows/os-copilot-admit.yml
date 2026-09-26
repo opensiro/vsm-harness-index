@@ -1,0 +1,71 @@
+name: Assemble OS-Copilot admission
+
+on:
+  push:
+    branches:
+      - index/os-copilot-admission
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/os-copilot-admission
+          fetch-depth: 0
+
+      - name: Canonicalize assessment sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/os-copilot.md')
+          text = assessment.read_text(encoding='utf-8')
+          assert text.count('status: proposed') == 1, 'expected exactly one proposed lifecycle status'
+          assessment.write_text(text.replace('status: proposed', 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          assert '|os-copilot|' not in catalog_text, 'os-copilot already in catalog'
+          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          assert rows[-1].startswith('271|autoresearchclaw|'), f'unexpected catalog tail: {rows[-1]}'
+          catalog_row = '272|os-copilot|OS-Copilot / FRIDAY|https://github.com/OS-Copilot/OS-Copilot|2024-02-02T01:55:49Z|index-addition|f720af8807e49a92dda64572d2c6bc6c0ac7ee7e|2026-09-26'
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + catalog_row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          assert '|os-copilot|' not in signatures_text, 'os-copilot already in signatures'
+          signature = 'OS-Copilot / FRIDAY closes S1 through model-driven OS task execution with result-conditioned repair/replanning, and S4 through self-learning that designs lessons, persists generated tools and reuses them in later tasks; no first-party S2, S3, independent S3*, or S5 identity-policy closure is established.'
+          assert len(signature) <= 360
+          signatures.write_text(signatures_text.rstrip('\n') + '\n272|os-copilot|' + signature + '\n', encoding='utf-8')
+          PY
+
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate canonical state
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/os-copilot-admit.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/os-copilot.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md .github/workflows/os-copilot-admit.yml
+          git commit -m 'index: canonicalize OS-Copilot admission'
+          git push origin HEAD:index/os-copilot-admission
