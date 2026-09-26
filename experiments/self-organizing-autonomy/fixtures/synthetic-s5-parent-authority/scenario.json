@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "fixture_id": "synthetic-s5-higher-recursion-authority-v1",
+  "fixture_version": "1.0.0",
+  "status": "judgment-free-review-input",
+  "tracking_issue": 728,
+  "protocol": {
+    "repository": "opensiro/vsm-harness-skills",
+    "revision": "8ab5fcbcb96e38eb02be4a6157c5d4a48cd39b23",
+    "spec_path": "experiments/self-organizing-autonomy/SPEC.md",
+    "fixtures_path": "experiments/self-organizing-autonomy/FIXTURES.md"
+  },
+  "fixture_role": "synthetic-s5-higher-recursion-authority-counterexample",
+  "normative_effect": "none",
+  "target": {
+    "function": "S5",
+    "released_state_prerequisite": "P",
+    "candidate_eligible_under_S_test": false,
+    "candidate_distinction": "S",
+    "experimental_finding": null
+  },
+  "declared_boundary": {
+    "system_id": "synthetic-lower-organization-gamma",
+    "inside": [
+      "lower operational organization",
+      "lower policy council",
+      "local policy/configuration editor",
+      "internal S4 adaptation-support function"
+    ],
+    "outside": [
+      "parent root constitutional authority",
+      "fixture author",
+      "external maintainer/developer after T0"
+    ],
+    "higher_recursion_id": "parent-root",
+    "new_viable_recursion_created": false
+  },
+  "baseline": {
+    "released_s5_state": "P",
+    "lower_local_policy_discretion": true,
+    "lower_can_edit_proposed_policy": true,
+    "lower_can_activate_ultimate_identity_change_without_parent": false,
+    "ultimate_identity_authority_owner": "parent-root",
+    "constitutive_signature_required": true,
+    "effective_identity": "general-assistance",
+    "delegated_policy_envelope": "operate inside general-assistance identity; propose but do not self-ratify constitutive changes"
+  },
+  "adaptation_pressure": {
+    "condition": "regulated-medical-domain-request",
+    "domain_relation": "adjacent requested domain outside current lower identity envelope",
+    "materiality": "lower organization cannot legitimately admit the requested operating domain under current identity",
+    "requires_constitutive_change": true
+  },
+  "timeline": [
+    {
+      "time": "T0.1",
+      "event": "identity-boundary-disturbance",
+      "condition": "regulated-medical-domain-request",
+      "lower_can_authorize": false,
+      "escalated_to": "parent-root",
+      "reason": "requested domain is outside effective lower identity"
+    },
+    {
+      "time": "T1.1",
+      "event": "adaptation-pressure-recognition",
+      "owner": "internal-S4-support",
+      "recognized_need": "propose a constitutive identity extension for regulated medical work",
+      "external_constructor_involved": false
+    },
+    {
+      "time": "T1.2",
+      "event": "local-policy-construction",
+      "owner": "lower-policy-council",
+      "proposal_id": "constitution-C2",
+      "proposal": "extend identity to regulated-medical-assistance under explicit safety and escalation constraints",
+      "missing_policy_logic_supplied_by_parent": false,
+      "external_constructor_involved": false
+    },
+    {
+      "time": "T1.3",
+      "event": "local-staging",
+      "owner": "lower-policy-council",
+      "proposal_id": "constitution-C2",
+      "local_configuration_written": true,
+      "production_constitutive_verifier_accepts": false,
+      "effective_identity_changed": false,
+      "reason": "parent-root constitutive signature absent"
+    },
+    {
+      "time": "T1.4",
+      "event": "higher-recursion-ratification",
+      "owner": "parent-root",
+      "proposal_id": "constitution-C2",
+      "parent_supplies_missing_policy_logic": false,
+      "parent_exercises_decisive_constitutive_authority": true,
+      "constitutive_signature_added": true,
+      "effective_identity_changed": true,
+      "new_effective_identity": "regulated-medical-assistance"
+    },
+    {
+      "time": "T2.1",
+      "event": "post-change-operation",
+      "condition": "regulated-medical-domain-request-prime",
+      "materially_equivalent_to": "regulated-medical-domain-request",
+      "effective_identity": "regulated-medical-assistance",
+      "lower_operation_admitted": true,
+      "parent_ratification_required_for_effective_change": true,
+      "return_to_operation": true
+    }
+  ],
+  "candidate_test_edges": {
+    "released_A_prerequisite": false,
+    "released_parent_governed_S5": true,
+    "material_adaptation_pressure": true,
+    "lower_endogenous_policy_construction": true,
+    "local_staging": true,
+    "later_operational_closure": true,
+    "external_constructor_supplied_missing_policy_logic": false,
+    "ultimate_policy_authority_owned_by_lower_system": false,
+    "higher_recursion_authority_decisive": true,
+    "strong_recursive_witness": "no"
+  },
+  "designed_review_question": "Can local policy generation, self-editing and later closure support S5=S when the released S5 state is parent-governed and a higher recursion owns the decisive constitutive authority?",
+  "non_inferences": [
+    "local policy generation does not establish ultimate-policy ownership",
+    "writing a proposed constitution does not make it effective",
+    "parent ratification without supplying policy content still demonstrates parent ownership of constitutive authority",
+    "the current experiment does not define S(P) or permit P to jump to S",
+    "the fixture does not change any canonical Index assessment state",
+    "the counterexample role is a corpus design target, not a pre-filled experimental finding"
+  ]
+}
