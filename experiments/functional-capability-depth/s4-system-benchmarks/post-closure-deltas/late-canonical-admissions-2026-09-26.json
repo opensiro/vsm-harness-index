@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 735,
+  "reviewed_at": "2026-09-26",
+  "function": "S4",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "rsih",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "737bf1f5a5a56f0c49bbd5180e71d651113038ac",
+      "repository": "https://github.com/CosmosMind-ai/RSI-Harness",
+      "result_surface_review": "no-direct-s4-result",
+      "finding": "RSIH exposes an S4 constructor in GEE/harness-rsi: external operating history plus a future scenario are analyzed into a prospective Genome bundle that can change skills, tools, integrations, memory, prompts, models and settings. The public repository supplies the constructor, validation path and tests, but no capability result measures adaptation quality or later operational benefit through this canonical constructor path. No direct canonical S4 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/README.md",
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/src/gee/cli.ts",
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/docs/genome/harness-rsi.md"
+      ],
+      "reassess_if": [
+        "RSIH publishes an immutable GEE/Genome result measuring prospective adaptation and later use",
+        "a public downstream Genome specialization is evaluated with provenance that preserves the constructor relationship"
+      ]
+    },
+    {
+      "canonical_harness_id": "scion-gcp",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "bdf5b6d135bb7585e242d2f08f4c54b3de2c2940",
+      "repository": "https://github.com/GoogleCloudPlatform/scion",
+      "result_surface_review": "no-direct-s4-result",
+      "finding": "Scion establishes native S4 through the model-driven `team-creation` skill, which turns changed project requirements into future roles, collaboration topology, templates and reusable skills that later runs can instantiate. Public first-party evidence establishes the adaptation mechanism and return path into later operation, but no function-specific public result measures the quality or downstream effect of that prospective redesign. No direct canonical S4 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/resources/platform_skills/team-creation/SKILL.md",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/pkg/agent/provision.go",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/docs-site/src/content/docs/reference/agent-config.md"
+      ],
+      "reassess_if": [
+        "Scion publishes an immutable result measuring generated team/role adaptation and subsequent operating outcome",
+        "a matched public benchmark directly evaluates Scion native S4 under a prospective-change task"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
