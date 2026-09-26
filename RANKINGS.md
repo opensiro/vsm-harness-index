@@ -204,6 +204,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="voltagent"></a>[VoltAgent](https://github.com/VoltAgent/voltagent) | 2025-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="codex"></a>[Codex](https://github.com/openai/codex) | 2025-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="google-adk"></a>[Google ADK](https://github.com/google/adk-python) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="webthinker"></a>[WebThinker](https://github.com/RUC-NLPIR/WebThinker) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="dexto"></a>[Dexto](https://github.com/truffle-ai/dexto) | 2025-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="omnicoreagent"></a>[OmniCoreAgent](https://github.com/omnirexflora-labs/omnicoreagent) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openai-agents-sdk"></a>[OpenAI Agents SDK](https://github.com/openai/openai-agents-python) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
