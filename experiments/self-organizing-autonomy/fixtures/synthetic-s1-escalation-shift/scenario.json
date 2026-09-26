@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "fixture_id": "synthetic-s1-escalation-boundary-shift-v1",
+  "fixture_version": "1.0.0",
+  "status": "judgment-free-review-input",
+  "tracking_issue": 311,
+  "protocol": {
+    "repository": "opensiro/vsm-harness-skills",
+    "revision": "96e16eba5882e98c6261b541521bc88862e00195",
+    "spec_path": "experiments/self-organizing-autonomy/SPEC.md",
+    "fixtures_path": "experiments/self-organizing-autonomy/FIXTURES.md"
+  },
+  "fixture_role": "synthetic-positive-control-escalation-boundary-shift",
+  "normative_effect": "none",
+  "target": {
+    "function": "S1",
+    "released_state_prerequisite": "A",
+    "candidate_distinction": "S",
+    "experimental_finding": null
+  },
+  "declared_boundary": {
+    "system_id": "synthetic-viable-unit-alpha",
+    "purpose": "process in-domain work items while preserving the existing parent escalation contract",
+    "inside": [
+      "S1 operational unit",
+      "S3 current-control/escalation function",
+      "S4 learning/adaptation support function",
+      "pre-existing local-regulator authorization envelope"
+    ],
+    "outside": [
+      "fixture author",
+      "maintainer/developer intervention after T0",
+      "external model or agent supplying regulator R",
+      "parent-provided new functional logic"
+    ],
+    "new_viable_recursion_created": false
+  },
+  "baseline": {
+    "s1_autonomous_closure_established": true,
+    "s1_prior_repertoire": [
+      "regulator-known-a",
+      "regulator-known-b",
+      "escalate-unknown-to-s3"
+    ],
+    "s1_local_regulator_update_authority": "S1 may integrate locally learned regulators that remain inside purpose, budget, safety and parent-escalation constraints",
+    "s3_role": "resolve present-time disturbances outside S1's current local repertoire and preserve the escalation contract",
+    "s4_role": "apply one unchanged general learning procedure to recurring in-domain operating history and propose a new local regulator",
+    "regulator_r_pre_authored": false,
+    "disturbance_d_supported_locally": false
+  },
+  "disturbance_class": {
+    "id": "D",
+    "domain": "in-domain",
+    "materiality": "recurring disturbance requiring S3 intervention",
+    "equivalence_key": "supplier-v2-checksum-mismatch",
+    "ordinary_hard_task_only": false,
+    "pre_authored_route_exists": false
+  },
+  "timeline": [
+    {
+      "time": "T0.1",
+      "event": "disturbance",
+      "disturbance_id": "D-1",
+      "equivalence_key": "supplier-v2-checksum-mismatch",
+      "s1_regulator_available": false,
+      "s1_outcome": "cannot-absorb-locally",
+      "escalated_to": "S3",
+      "s3_resolves_instance": true,
+      "s1_return_to_operation": true
+    },
+    {
+      "time": "T0.2",
+      "event": "disturbance",
+      "disturbance_id": "D-2",
+      "equivalence_key": "supplier-v2-checksum-mismatch",
+      "s1_regulator_available": false,
+      "s1_outcome": "cannot-absorb-locally",
+      "escalated_to": "S3",
+      "s3_resolves_instance": true,
+      "s1_return_to_operation": true
+    },
+    {
+      "time": "T1.1",
+      "event": "adaptation-pressure-recognition",
+      "owner": "internal-S4-support",
+      "input": "recurring operating history containing D-1 and D-2 escalations",
+      "recognition": "existing S1 repertoire is inadequate for recurring disturbance class D",
+      "external_constructor_involved": false
+    },
+    {
+      "time": "T1.2",
+      "event": "functional-improvement-construction",
+      "owner": "internal-S4-support",
+      "target_function": "S1",
+      "new_regulator_id": "R",
+      "construction": "generalize the recurring disturbance signature and construct a local decision/feedback rule that detects the D class and applies a local corrective operation",
+      "pre_authored_specific_regulator_selected": false,
+      "external_constructor_involved": false,
+      "s4_repertoire_changed": false
+    },
+    {
+      "time": "T1.3",
+      "event": "authorization-and-integration",
+      "authorization_owner": "S1-operational-owner",
+      "authority_basis": "pre-existing local-regulator update envelope",
+      "missing_logic_supplied_by_authorizer": false,
+      "integrated_regulator": "R",
+      "target_function_repertoire_changed": "S1",
+      "integration_persistent": true,
+      "parent_or_external_approval_required": false
+    },
+    {
+      "time": "T2.1",
+      "event": "disturbance",
+      "disturbance_id": "D-prime",
+      "equivalence_key": "supplier-v2-checksum-mismatch",
+      "materially_equivalent_to": [
+        "D-1",
+        "D-2"
+      ],
+      "s1_regulator_available": true,
+      "regulator_used": "R",
+      "s1_outcome": "absorbed-locally",
+      "escalated_to": null,
+      "s1_return_to_operation": true
+    },
+    {
+      "time": "T2.2",
+      "event": "control-disturbance",
+      "disturbance_id": "E-1",
+      "equivalence_key": "unrelated-capacity-shock",
+      "s1_regulator_available": false,
+      "s1_outcome": "cannot-absorb-locally",
+      "escalated_to": "S3",
+      "purpose": "demonstrate that S3 remains necessary outside the newly absorbed disturbance class"
+    }
+  ],
+  "candidate_test_edges": {
+    "released_A_prerequisite": true,
+    "material_repertoire_inadequacy": true,
+    "endogenous_functional_improvement": true,
+    "legitimate_authorization": true,
+    "integration": true,
+    "post_change_closure": true,
+    "escalation_boundary_shift": true,
+    "external_constructor_absent": true,
+    "strong_recursive_witness": "no"
+  },
+  "non_inferences": [
+    "S4 support does not imply S4=S because the S4 learning repertoire is unchanged",
+    "S3 remains necessary for other present-time whole-system disturbances",
+    "no new viable recursion is created",
+    "the fixture does not change any canonical Index assessment state",
+    "the designed positive-control role is not itself an independent review judgment"
+  ]
+}
