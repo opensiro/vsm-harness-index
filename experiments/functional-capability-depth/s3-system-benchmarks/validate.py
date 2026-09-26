@@ -14,9 +14,11 @@ COVERAGE = HERE / "coverage.json"
 OBSERVATIONS = HERE / "observations.json"
 BENCHMARK_MAP = HERE.parent / "vsm-benchmark-family-map" / "map.json"
 OMNIGENT_DELTA = HERE / "post-closure-deltas" / "omnigent-post-assessment-recovery.json"
+SMAS_REVIEW = HERE / "matched-cell" / "supervisoragent-smas-s3-review.json"
 
 COVERAGE_CLASSES = {
     "direct-scaffolded",
+    "direct-composed",
     "direct-native",
     "native-proxy",
     "proxy-scaffolded",
@@ -32,11 +34,13 @@ SYSTEM_COMPATIBILITY = {
 DIRECT_S3_BENCHMARKS = {
     "clawarena-team",
     "loop-back-authority",
+    "supervisoragent-smas-runtime-control",
     "multi-agent-orchestration-supervisor-ablation",
 }
 REQUIRED_CASE_IDS = {
     "clawarena-team-direct-scaffolded",
     "loop-back-authority-direct-scaffolded",
+    "supervisoragent-smas-direct-composed",
     "autogen-magentic-one-native-proxy-s3",
     "enterprise-arena-proxy-scaffolded",
     "astra-cross-framework-wrong-native-s3-path",
@@ -56,6 +60,10 @@ OMNIGENT_HARNESS = "omnigent"
 OMNIGENT_REVIEW_REF = "4d963a360e798f076d4fdbd4665e7188e4da05df"
 OMNIGENT_OBSERVATION_REF = "d8d07168c05ce1385be19dbd6ea64f4574c8d144"
 OMNIGENT_MANUAL_REF = "15477855d289abdcead0399c1e5be7923f7deef7"
+
+SMAS_OBSERVATION_ID = "supervisoragent-smas-gaia-runtime-control-2026"
+SMAS_BENCHMARK_ID = "supervisoragent-smas-runtime-control"
+SMAS_REVIEW_REF = "ab116b557b095ae8d45bdf2d61057ce19519d4ff"
 
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
@@ -283,6 +291,89 @@ def validate_omnigent_observation(observation: dict) -> None:
         fail("Omnigent delta temporal relation drift")
 
 
+def validate_smas_observation(observation: dict) -> None:
+    if observation.get("observation_id") != SMAS_OBSERVATION_ID:
+        fail("SupervisorAgent observation_id drift")
+    if observation.get("function") != "S3":
+        fail("SupervisorAgent observation function must be S3")
+    if observation.get("benchmark_id") != SMAS_BENCHMARK_ID:
+        fail("SupervisorAgent benchmark_id drift")
+    if observation.get("benchmark_fit") != "direct":
+        fail("SupervisorAgent benchmark_fit must remain direct")
+    if observation.get("evidence_source_class") != "first-party-reported":
+        fail("SupervisorAgent evidence class drift")
+    if observation.get("boundary_class") != "composed-noncanonical-system":
+        fail("SupervisorAgent composed boundary drift")
+    if observation.get("canonical_harness_id") is not None:
+        fail("SupervisorAgent SMAS observation must remain non-canonical")
+    if observation.get("canonical_system_eligible") is not False:
+        fail("SupervisorAgent SMAS observation must not be canonical-system eligible")
+    if observation.get("system_compatibility") != "benchmark-scaffolded":
+        fail("SupervisorAgent compatibility drift")
+    if observation.get("benchmark_artifact_revision") != SMAS_REVIEW_REF:
+        fail("SupervisorAgent benchmark revision drift")
+    if observation.get("comparison_class") != "within-composed-system-treatment-control":
+        fail("SupervisorAgent comparison class drift")
+    if observation.get("benchmark") != "GAIA validation" or observation.get("model") != "GPT-4.1":
+        fail("SupervisorAgent benchmark/model metadata drift")
+
+    baseline = observation.get("baseline_arm")
+    treatment = observation.get("treatment_arm")
+    expected_baseline = {
+        "system": "Smolagent",
+        "accuracy_percent": 50.91,
+        "avg_tokens_k": 527.76,
+    }
+    expected_treatment = {
+        "system": "Smolagent + SMAS (SupervisorAgent)",
+        "accuracy_percent": 50.91,
+        "avg_tokens_k": 371.12,
+    }
+    if baseline != expected_baseline or treatment != expected_treatment:
+        fail("SupervisorAgent published pass@1 arm data drift")
+    if observation.get("reported_token_reduction_percent") != 29.68:
+        fail("SupervisorAgent token reduction drift")
+
+    actions = set(observation.get("runtime_intervention_actions", []))
+    if actions != {"approve", "provide_guidance", "correct_observation", "run_verification"}:
+        fail("SupervisorAgent intervention repertoire drift")
+    caveat = observation.get("mixed_function_caveat")
+    if not isinstance(caveat, str) or "S3*" not in caveat or "not as a pure causal estimate" not in caveat:
+        fail("SupervisorAgent mixed-function caveat lost")
+    limitation = observation.get("provenance_limitation")
+    if not isinstance(limitation, str) or "not independently reproduced by Opensiro" not in limitation:
+        fail("SupervisorAgent public-evidence-only provenance boundary lost")
+    if "Smolagent" not in limitation:
+        fail("SupervisorAgent non-attribution boundary lost")
+
+    sources = observation.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(s) for s in sources):
+        fail("SupervisorAgent requires pinned implementation/result sources")
+    required_fragments = (
+        f"/blob/{SMAS_REVIEW_REF}/README.md",
+        f"/blob/{SMAS_REVIEW_REF}/smolagents_SMAS/examples/open_deep_research/run_gaia.py",
+        f"/blob/{SMAS_REVIEW_REF}/smolagents_SMAS/src/smolagents/agents.py",
+        "openreview.net/forum?id=pzFhtpkabh",
+    )
+    for fragment in required_fragments:
+        if not any(fragment in source for source in sources):
+            fail(f"SupervisorAgent primary source missing: {fragment}")
+
+    review = json.loads(SMAS_REVIEW.read_text(encoding="utf-8"))
+    if review.get("tracking_issue") != 685 or review.get("function") != "S3":
+        fail("SupervisorAgent review tracking metadata drift")
+    if review.get("upstream_revision") != SMAS_REVIEW_REF:
+        fail("SupervisorAgent review revision drift")
+    if review.get("benchmark_id") != SMAS_BENCHMARK_ID:
+        fail("SupervisorAgent review benchmark id drift")
+    if review.get("canonical_harness_id") is not None:
+        fail("SupervisorAgent review must remain non-canonical")
+    if review.get("creates_observation") is not True or review.get("creates_canonical_direct_observation") is not False:
+        fail("SupervisorAgent review admission boundary drift")
+    if review.get("primary_baseline_after_review") != "gap":
+        fail("SupervisorAgent review must not select S3 primary")
+
+
 def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
@@ -312,11 +403,16 @@ def main() -> None:
         fail("direct_benchmark_family_count does not match reviewed direct-S3 map")
 
     by_observation_id = {o.get("observation_id"): o for o in observations if isinstance(o, dict)}
-    expected_observations = {MAO_OBSERVATION_ID, OMNIGENT_OBSERVATION_ID}
-    if set(by_observation_id) != expected_observations or len(observations) != 2:
-        fail("expected exactly two typed canonical direct S3 observations")
+    expected_observations = {MAO_OBSERVATION_ID, OMNIGENT_OBSERVATION_ID, SMAS_OBSERVATION_ID}
+    if set(by_observation_id) != expected_observations or len(observations) != 3:
+        fail("expected exactly three typed direct S3 observations")
     validate_mao_observation(by_observation_id[MAO_OBSERVATION_ID])
     validate_omnigent_observation(by_observation_id[OMNIGENT_OBSERVATION_ID])
+    validate_smas_observation(by_observation_id[SMAS_OBSERVATION_ID])
+
+    canonical_observation_count = sum(o.get("canonical_system_eligible") is True for o in observations)
+    if canonical_observation_count != 2:
+        fail("expected exactly two canonical direct S3 observations")
 
     cases = coverage.get("cases")
     if not isinstance(cases, list) or not cases:
@@ -338,11 +434,16 @@ def main() -> None:
             fail(f"{case_id}: invalid coverage_class")
         if case.get("system_compatibility") not in SYSTEM_COMPATIBILITY:
             fail(f"{case_id}: invalid system_compatibility")
-        if coverage_class == "direct-native":
+        if coverage_class in {"direct-native", "direct-composed"}:
             if case.get("admitted") is not True:
-                fail(f"{case_id}: direct-native coverage must be admitted")
+                fail(f"{case_id}: admitted direct coverage must be true")
         elif case.get("admitted") is not False:
-            fail(f"{case_id}: non-direct-native coverage case must remain non-admitted")
+            fail(f"{case_id}: non-admitted coverage case must remain false")
+        if coverage_class == "direct-composed":
+            if case.get("canonical_harness_id") is not None:
+                fail(f"{case_id}: direct-composed case must remain non-canonical")
+            if case.get("system_compatibility") != "benchmark-scaffolded":
+                fail(f"{case_id}: direct-composed case must remain benchmark-scaffolded")
         if not isinstance(case.get("finding"), str) or len(case["finding"].strip()) < 40:
             fail(f"{case_id}: explicit finding required")
 
@@ -370,6 +471,16 @@ def main() -> None:
     if loop_back.get("system_compatibility") != "benchmark-scaffolded" or loop_back.get("canonical_harness_id") is not None:
         fail("Loop-Back Authority must remain benchmark-scaffolded and non-canonical")
 
+    smas_case = by_id["supervisoragent-smas-direct-composed"]
+    if smas_case.get("canonical_harness_id") is not None:
+        fail("SupervisorAgent coverage must remain non-canonical")
+    if smas_case.get("coverage_class") != "direct-composed":
+        fail("SupervisorAgent coverage class drift")
+    if smas_case.get("observation_ref") != f"observations.json#{SMAS_OBSERVATION_ID}":
+        fail("SupervisorAgent observation_ref drift")
+    if smas_case.get("review_record") != "matched-cell/supervisoragent-smas-s3-review.json":
+        fail("SupervisorAgent review-record linkage drift")
+
     mao_case = by_id["multi-agent-orchestration-native-s3-direct"]
     if mao_case.get("canonical_harness_id") != MAO_HARNESS:
         fail("Multi-Agent Orchestration coverage linkage drift")
@@ -386,7 +497,7 @@ def main() -> None:
     if omnigent_case.get("revision_relation") != "post-assessment-descendant":
         fail("Omnigent coverage temporal relation drift")
     if omnigent_case.get("observation_ref") != f"observations.json#{OMNIGENT_OBSERVATION_ID}":
-        fail("Omnigent coverage observation_ref drift")
+        fail("Omnigent observation_ref drift")
     if omnigent_case.get("delta_record") != "post-closure-deltas/omnigent-post-assessment-recovery.json":
         fail("Omnigent delta-record linkage drift")
 
@@ -421,7 +532,8 @@ def main() -> None:
 
     print("ok: S3 coverage validated")
     print(f"reviewed direct S3 families: {len(reviewed_direct_s3)}")
-    print(f"canonical direct observations: {len(observations)}")
+    print(f"direct S3 observations: {len(observations)}")
+    print(f"canonical direct observations: {canonical_observation_count}")
     print(f"coverage cases: {len(cases)}")
     print(f"representative canonical S3 systems inspected: {len(representative)}")
 
