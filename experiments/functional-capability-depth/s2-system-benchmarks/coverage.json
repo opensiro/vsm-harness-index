@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-25",
+  "reviewed_at": "2026-09-26",
   "function": "S2",
   "direct_benchmark_family_count": 8,
-  "direct_observation_count": 5,
-  "canonical_direct_observation_count": 1,
+  "direct_observation_count": 6,
+  "canonical_direct_observation_count": 2,
   "proxy_projection_count": 2,
   "coverage_classes": [
     "direct-scaffolded",
@@ -358,6 +358,27 @@
         "https://www.tamirdresher.com/blog/2026/03/17/scaling-ai-part4-distributed"
       ],
       "finding": "Canonical Squad S2=A is independently established by the assessment. First-party operational history and a public case study record real concurrent shared-state merge interference, native merge=union preservation, per-agent decision inboxes and Scribe consolidation, followed by subsequent project/release operation with team state preserved. This is direct descriptive native S2 evidence, not a new benchmark family or matched causal comparison.",
+      "admitted": false
+    },
+    {
+      "case_id": "thclaws-team-workspace-interference-direct-native-canonical",
+      "benchmark": "thClaws Agent Teams workspace-interference attenuation operational evidence",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-native-canonical",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "thclaws",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "cd700937a71a391f052438d139b7b1c5a6456755",
+      "observation_ref": "observations.json#thclaws-team-workspace-interference-attenuation-2026",
+      "primary_sources": [
+        "https://github.com/thClaws/thClaws/commit/a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
+        "https://github.com/thClaws/thClaws/issues/125",
+        "https://github.com/thClaws/thClaws/commit/db0efe8a6f5ba49da0bafeba84ae4835a09a946b",
+        "https://github.com/thClaws/thClaws/blob/cd700937a71a391f052438d139b7b1c5a6456755/crates/core/src/tools/bash.rs",
+        "https://github.com/thClaws/thClaws/issues/200",
+        "https://github.com/thClaws/thClaws/issues/202"
+      ],
+      "finding": "Canonical thClaws S2=A is independently established by the assessment. First-party operational history records concrete cross-S1 workspace/process interference, including a cross-branch hard reset that wiped another teammate's worktree and repeated destructive lead operations that cascade-killed teammate worktrees/processes. Native Agent Teams role guards hard-block those operations; the #125 hardening closes shell-quoting/substitution bypasses; the assessed runtime also retries the specific transient shared-index race produced by concurrent team members. Later public Agent Teams reports show teammates continuing to boot, process mailbox/status transitions and participate in task/shutdown lifecycle in the same runtime lineage. This is direct descriptive native S2 evidence, not a new benchmark family or matched causal comparison.",
       "admitted": false
     },
     {
