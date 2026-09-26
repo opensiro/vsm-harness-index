@@ -31,6 +31,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="abhed"></a>[Abhed](https://github.com/zybuu-ai/abhed) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="appliedscientist"></a>[TheAppliedScientist](https://github.com/TheAppliedScientist/TheAppliedScientist) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="taixu"></a>[TaiXu](https://github.com/wkbin/taixu) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A C P —` |
+| 4 | <a id="caelis"></a>[Caelis](https://github.com/caelis-labs/caelis) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A A A C — —` |
 | 4 | <a id="deepseek-harness"></a>[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="kadath"></a>[KADATH](https://github.com/i3T4AN/KADATH) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A — C A A P` |
 | 4 | <a id="reigen"></a>[Reigen / Conductor](https://github.com/zachary-wilde/reigen) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
