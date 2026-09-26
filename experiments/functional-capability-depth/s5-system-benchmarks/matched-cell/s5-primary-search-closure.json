@@ -3,15 +3,15 @@
   "status": "experimental-non-normative",
   "tracking_issue": 569,
   "cohort_reconciliation_issue": 621,
-  "reviewed_at": "2026-09-25",
+  "reviewed_at": "2026-09-26",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
   "full_cohort_review_artifact": "full-canonical-cohort-review.json",
   "full_cohort_state": {
-    "canonical_s5_positive_systems": 20,
+    "canonical_s5_positive_systems": 21,
     "direct_canonical_observations": 1,
-    "no_direct_public_result": 19,
+    "no_direct_public_result": 20,
     "unresolved": 0
   },
   "evidence_depth": {
@@ -33,49 +33,69 @@
     {
       "route_id": "direct-composed-membership-authority",
       "status": "direct-composed-not-canonical-primary",
-      "examples": ["GovSim-SelfGovern"],
+      "examples": [
+        "GovSim-SelfGovern"
+      ],
       "blocking_reason": "GovSim-SelfGovern directly exercises legitimate membership/identity authority at its benchmark-defined society boundary, but the organization is benchmark-scaffolded and supplies no canonical native or adapter-preserved cross-harness S5 comparison."
     },
     {
       "route_id": "canonical-native-parent-governed-policy-change",
       "status": "single-system-descriptive-only",
-      "examples": ["Ouroboros PR #855"],
+      "examples": [
+        "Ouroboros PR #855"
+      ],
       "blocking_reason": "Canonical Ouroboros now supplies a direct descriptive parent-governed S5 policy-change witness with executable return and later-lineage persistence, but one system and one repository-history surface cannot form a materially matched cross-harness primary."
     },
     {
       "route_id": "fixed-policy-enforcement-and-governance",
       "status": "not-direct-s5",
-      "examples": ["AgentGovBench", "CMAG"],
+      "examples": [
+        "AgentGovBench",
+        "CMAG"
+      ],
       "blocking_reason": "These evaluate operation, enforcement or propagation under pre-existing policy rather than legitimate ultimate authority making and returning a new organizational policy decision."
     },
     {
       "route_id": "value-and-policy-reasoning-proxies",
       "status": "proxy",
-      "examples": ["RoleCDE", "Agent-ValueBench", "GPS-Bench"],
+      "examples": [
+        "RoleCDE",
+        "Agent-ValueBench",
+        "GPS-Bench"
+      ],
       "blocking_reason": "The evaluated system reasons about values or external policy but is not established as the legitimate ultimate authority of its own organization."
     },
     {
       "route_id": "live-constitutional-governance-processes",
       "status": "process-not-harness-benchmark",
-      "examples": ["Agent Parliament", "Constitutional Governance in Metric Spaces"],
+      "examples": [
+        "Agent Parliament",
+        "Constitutional Governance in Metric Spaces"
+      ],
       "blocking_reason": "Actual ratification/amendment processes exist, but they are governance records/protocols rather than reusable agent-harness capability benchmarks."
     },
     {
       "route_id": "parent-escalation-protocol",
       "status": "protocol-not-benchmark",
-      "examples": ["Human Escalation Mechanism"],
+      "examples": [
+        "Human Escalation Mechanism"
+      ],
       "blocking_reason": "The protocol can support parent-governed S5 but supplies no harness capability result."
     },
     {
       "route_id": "native-constitutional-mechanism",
       "status": "mechanism-not-benchmark",
-      "examples": ["constitutional-agent-governance"],
+      "examples": [
+        "constitutional-agent-governance"
+      ],
       "blocking_reason": "First-party tests exercise legitimate amendment mechanisms and authority guards, but the artifact is a conformance/regression suite rather than a reusable matched harness benchmark."
     },
     {
       "route_id": "constitution-policy-optimization",
       "status": "authority-not-established",
-      "examples": ["MAC"],
+      "examples": [
+        "MAC"
+      ],
       "blocking_reason": "Policy adaptation is measurable, but the evaluated system is not established as the legitimate ultimate organizational authority resolving an identity-level tension."
     }
   ],

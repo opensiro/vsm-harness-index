@@ -2,8 +2,8 @@
   "schema_version": 1,
   "status": "experimental-non-normative",
   "tracking_issue": 621,
-  "reviewed_at": "2026-09-25",
-  "index_revision_at_review": "38538480d2fdc0a1ea056d813b9bef5bf3736a5f",
+  "reviewed_at": "2026-09-26",
+  "index_revision_at_review": "0d200441c1a4e1a34ebdd2ffe6de34262d58bb98",
   "scope": "full-current-canonical-s5-positive-cohort",
   "selection_rule": "All included canonical systems with autonomy_s5 in A, P, A(P), or C(P) at the reviewed Index revision; ? is not positive.",
   "direct_chain": [
@@ -14,9 +14,9 @@
     "newly decided policy returned into subsequent operation"
   ],
   "counts": {
-    "canonical_s5_positive_systems": 20,
+    "canonical_s5_positive_systems": 21,
     "direct_canonical_observations": 1,
-    "no_direct_public_result": 19,
+    "no_direct_public_result": 20,
     "unresolved": 0
   },
   "current_direct_anchor": "ouroboros",
@@ -220,8 +220,18 @@
       "blocking_gate": "authority-regime-enactment-result",
       "finding": "Shep preserves parent final authority over delegated supervisor policy and protected approvals, but reviewed public evidence establishes the authority mechanism rather than an actual authority-regime or ultimate-policy decision followed by later fleet operation under a changed regime.",
       "reopen_when": "A public immutable Shep fleet trace records a legitimate user authority-policy decision or change, the actor-aware enacted state, and subsequent protected feature/fleet operation governed by it."
+    },
+    {
+      "canonical_harness_id": "company-brain",
+      "repository": "https://github.com/supermemoryai/company-brain",
+      "canonical_review_revision": "0071d6164991ce5dccddbd645bcac631ee477572",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "admin-workspace-policy-enactment-result",
+      "finding": "Company Brain gives the deployment owner/admin legitimate installation-wide policy authority through persistent workspace guidance that is stored on the organization agent and returned into later turn prompts, but reviewed public repository evidence does not publish an immutable real deployment result showing an actual admin policy change followed by subsequent Company Brain operation under that changed policy.",
+      "reopen_when": "A public immutable Company Brain deployment trace records a legitimate owner/admin workspace-policy decision, the persisted workspace prompt or equivalent organization-wide configuration change, and subsequent Slack/tool operation governed by that changed policy."
     }
   ],
-  "conclusion": "The full current 20-system canonical S5-positive cohort has been explicitly reconciled against public evidence. Ouroboros remains the only admitted canonical direct S5 observation; the other 19 systems expose qualifying S5 mechanisms/ownership but no reviewed public direct result satisfying the full authority/change/subsequent-operation chain. The S5 primary therefore remains an evidence-backed gap.",
+  "conclusion": "The full current 21-system canonical S5-positive cohort has been explicitly reconciled against public evidence. Ouroboros remains the only admitted canonical direct S5 observation; the other 20 systems expose qualifying S5 mechanisms/ownership but no reviewed public direct result satisfying the full authority/change/subsequent-operation chain. The S5 primary therefore remains an evidence-backed gap.",
   "non_claim": "No-direct-public-result is a temporal evidence disposition, not a claim of zero S5 capability or permanent absence. Mechanism evidence remains valid canonical assessment evidence but is not promoted into a capability observation without an actual public result chain."
 }

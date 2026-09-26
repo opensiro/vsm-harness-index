@@ -34,6 +34,7 @@ EXPECTED_FULL_COHORT = {
     "masters-of-ai-harness": ("3f5c4846a2f7ecdf48198d6d1116204132e967a5", "C(P)"),
     "tevarn": ("e5e8e204ca2baf8ff671104ab6bf5529d40213ef", "P"),
     "shep": ("a874b3238fd01ebdbafc11015cccd9a63ed6e2f2", "P"),
+    "company-brain": ("0071d6164991ce5dccddbd645bcac631ee477572", "P"),
 }
 
 
@@ -93,7 +94,7 @@ require(cohort["tracking_issue"] == 621, "full S5 cohort tracking issue drift")
 require(cohort["scope"] == "full-current-canonical-s5-positive-cohort", "full S5 cohort scope drift")
 require(cohort["direct_chain"] == closure["required_direct_chain"], "full S5 cohort direct-chain drift")
 rows = cohort.get("systems")
-require(isinstance(rows, list) and len(rows) == 20, "full S5 cohort must contain exactly 20 current positive-S5 systems")
+require(isinstance(rows, list) and len(rows) == 21, "full S5 cohort must contain exactly 21 current positive-S5 systems")
 by_id = {row.get("canonical_harness_id"): row for row in rows}
 require(len(by_id) == len(rows), "full S5 cohort contains duplicate or missing harness ids")
 require(set(by_id) == set(EXPECTED_FULL_COHORT), f"full S5 cohort identity drift: {set(by_id)!r}")
@@ -131,9 +132,9 @@ for harness_id, (expected_ref, expected_state) in EXPECTED_FULL_COHORT.items():
 
 counts = cohort["counts"]
 expected_counts = {
-    "canonical_s5_positive_systems": 20,
+    "canonical_s5_positive_systems": 21,
     "direct_canonical_observations": 1,
-    "no_direct_public_result": 19,
+    "no_direct_public_result": 20,
     "unresolved": 0,
 }
 require(counts == expected_counts, f"full S5 cohort counts drift: {counts!r}")
@@ -179,7 +180,7 @@ require(s5_baseline["status"] == "gap", "S5 primary was selected without matched
 require([row["benchmark_id"] for row in s5_baseline["reviewed_direct_families"]] == ["govsim-selfgovern"], "S5 gap metadata lost GovSim-SelfGovern identity")
 require(len(closure["reopen_when"]) >= 3, "S5 closure must retain explicit reopen conditions")
 require(len(closure["do_not_reopen_for"]) >= 4, "S5 closure must retain anti-churn conditions")
-require("20-system canonical S5-positive cohort" in cohort["conclusion"], "full S5 cohort conclusion drift")
+require("21-system canonical S5-positive cohort" in cohort["conclusion"], "full S5 cohort conclusion drift")
 require(cohort.get("non_claim"), "full S5 cohort must retain temporal non-claim")
 
-print("S5 primary-search closure validation passed: full current 20-system canonical S5 cohort reconciled; primary gap preserved")
+print("S5 primary-search closure validation passed: full current 21-system canonical S5 cohort reconciled; primary gap preserved")

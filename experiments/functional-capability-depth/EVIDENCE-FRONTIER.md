@@ -15,7 +15,7 @@ It is also not a second evidence database: every state, count, blocker and reope
 | S3 | `gap` | `direct_benchmark_families`: `3` · `canonical_direct_observations`: `1` · `native_proxy_projections`: `1` · `representative_canonical_s3_systems_inspected`: `14` | `2026-09-25` | [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json) |
 | S3* | `gap` | `direct_benchmark_families`: `5` · `composed_direct_observations`: `3` · `canonical_direct_observations`: `2` | `2026-09-24` | [`s3star-primary-search-closure.json`](s3star-system-benchmarks/matched-cell/s3star-primary-search-closure.json) |
 | S4 | `gap` | `canonical_native_observations`: `2` · `reviewed_routes`: `6` | `2026-09-25` | [`s4-primary-search-closure.json`](s4-system-benchmarks/matched-cell/s4-primary-search-closure.json) |
-| S5 | `gap` | `reviewed_cases`: `14` · `direct_benchmark_families`: `1` · `composed_direct_observations`: `1` · `canonical_direct_observations`: `1` · `representative_canonical_s5_systems`: `5` | `2026-09-25` | [`s5-primary-search-closure.json`](s5-system-benchmarks/matched-cell/s5-primary-search-closure.json) |
+| S5 | `gap` | `reviewed_cases`: `14` · `direct_benchmark_families`: `1` · `composed_direct_observations`: `1` · `canonical_direct_observations`: `1` · `representative_canonical_s5_systems`: `5` | `2026-09-26` | [`s5-primary-search-closure.json`](s5-system-benchmarks/matched-cell/s5-primary-search-closure.json) |
 
 A `gap` is an empirical evidence state, not a zero capability score and not a statement about canonical VSM ownership.
 
@@ -118,7 +118,7 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
 
 ## S5 — current `gap` frontier
 
-- **Reviewed through:** `2026-09-25`.
+- **Reviewed through:** `2026-09-26`.
 - **Primary blocking reason:** Reviewed direct S5 evidence now includes GovSim-SelfGovern's benchmark-scaffolded membership/identity authority path and one canonical native descriptive observation: Ouroboros PR #855 supplies a parent-governed constitutional/runtime policy-change witness with executable return and persistence into later canonical lineage. Public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface.
 - **Closure claim:** Current public evidence contains one direct composed S5 benchmark family/observation and one canonical native direct descriptive observation. GovSim-SelfGovern exercises benchmark-scaffolded membership/identity authority, while canonical Ouroboros supplies a parent-governed constitutional/runtime policy-change witness with executable return and persistence into later canonical lineage. The S5 primary remains a gap because public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface.
 - **Evidence depth:**
