@@ -12,7 +12,7 @@ It is also not a second evidence database: every state, count, blocker and reope
 | --- | --- | --- | --- | --- |
 | S1 | `selected` — PawBench v1.0 / `qwen3.6-35b-a3b` | `task_count`: `150` · `canonical_harnesses`: `3` | `2026-09-23` | [`primary-baselines.json`](primary-baselines.json) |
 | S2 | `gap` | `direct_benchmark_families`: `8` · `direct_observations`: `6` · `canonical_direct_observations`: `2` · `native_proxy_projections`: `2` · `representative_canonical_s2_systems_inspected`: `16` | `2026-09-26` | [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json) |
-| S3 | `gap` | `direct_benchmark_families`: `3` · `canonical_direct_observations`: `1` · `native_proxy_projections`: `1` · `representative_canonical_s3_systems_inspected`: `14` | `2026-09-25` | [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json) |
+| S3 | `gap` | `direct_benchmark_families`: `3` · `canonical_direct_observations`: `2` · `native_proxy_projections`: `1` · `representative_canonical_s3_systems_inspected`: `14` | `2026-09-26` | [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json) |
 | S3* | `gap` | `direct_benchmark_families`: `5` · `composed_direct_observations`: `3` · `canonical_direct_observations`: `2` | `2026-09-24` | [`s3star-primary-search-closure.json`](s3star-system-benchmarks/matched-cell/s3star-primary-search-closure.json) |
 | S4 | `gap` | `canonical_native_observations`: `2` · `reviewed_routes`: `6` | `2026-09-25` | [`s4-primary-search-closure.json`](s4-system-benchmarks/matched-cell/s4-primary-search-closure.json) |
 | S5 | `gap` | `reviewed_cases`: `14` · `direct_benchmark_families`: `1` · `composed_direct_observations`: `1` · `canonical_direct_observations`: `1` · `representative_canonical_s5_systems`: `5` | `2026-09-26` | [`s5-primary-search-closure.json`](s5-system-benchmarks/matched-cell/s5-primary-search-closure.json) |
@@ -56,24 +56,25 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
 
 ## S3 — current `gap` frontier
 
-- **Reviewed through:** `2026-09-25`.
-- **Primary blocking reason:** Reviewed direct S3 families now include a canonical native within-system current-control ablation, but public evidence still does not provide a matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.
-- **Closure claim:** Current public evidence contains direct S3 benchmarks and one canonical native direct S3 observation. Post-closure review of C.A.D.I.S., Awaken and ARES adds native mechanism coverage but no new direct capability observation, so no materially matched comparison of multiple canonical native or adapter-preserved S3 implementations exists.
+- **Reviewed through:** `2026-09-26`.
+- **Primary blocking reason:** Reviewed direct S3 evidence now includes two canonical native observations: Multi-Agent Orchestration provides a controlled within-system supervisor ablation, while Omnigent provides first-party descriptive operational/regression evidence for recovery of interrupted child commitments at a post-assessment descendant revision. These rows use different disturbances, models, metrics, result surfaces and comparison protocols, so public evidence still does not provide a materially matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.
+- **Closure claim:** Current public evidence contains three direct S3 benchmark families and two canonical direct S3 observations. Multi-Agent Orchestration provides a controlled native supervisor ablation; Omnigent provides first-party descriptive operational recovery evidence at a post-assessment descendant revision. These rows are not materially matched, so no cross-harness canonical-native S3 primary baseline is currently supported.
 - **Evidence depth:**
   - `direct_benchmark_families`: `3`
-  - `canonical_direct_observations`: `1`
+  - `canonical_direct_observations`: `2`
   - `native_proxy_projections`: `1`
   - `representative_canonical_s3_systems_inspected`: `14`
 - **Reopen when:**
-  1. a second canonical native or adapter-preserved direct S3 observation appears under a materially matched benchmark/model/configuration cell
-  1. an existing matched framework campaign proves that canonical S3 paths are actually active for two or more systems
-  1. a new direct orchestration benchmark binds immutable results to multiple canonical native S3 implementations
+  1. a materially matched benchmark/model/configuration cell evaluates two or more canonical systems through their own native or adapter-preserved S3 paths
+  1. an existing matched framework campaign proves that canonical S3 paths are actually active for two or more systems under one recoverable comparison protocol
+  1. a new direct orchestration benchmark binds immutable, comparable results to multiple canonical native S3 implementations
 - **Do not reopen for:**
+  - another descriptive canonical S3 observation without a materially comparable cross-harness cell
   - another benchmark-authored manager topology
   - another whole-task orchestration score without isolated current-control attribution
   - another framework comparison that does not activate canonical S3 paths
   - microperformance or mechanism tests that do not measure a current-control intervention and subsequent organizational outcome
-- **Non-claim:** This closure is not a zero S3 capability score and does not generalize the single Multi-Agent Orchestration result into a cross-harness ranking. It freezes the reviewed current canonical/public-evidence state until materially new matched-native evidence appears.
+- **Non-claim:** This closure is not a zero S3 capability score and does not normalize the heterogeneous Multi-Agent Orchestration and Omnigent evidence into one metric or ranking. Omnigent's observation is explicitly post-assessment temporal evidence and does not rewrite the earlier canonical review revision. The S3 primary remains gap until materially matched canonical-native evidence appears.
 - **Source:** [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json).
 
 ## S3* — current `gap` frontier
