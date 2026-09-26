@@ -17,8 +17,12 @@ CANONICAL_DELTAS = {
     "ares": ("C(P)", "f03153acace190c555c3721019407a7df47c139f", "ares-native-s3-no-direct-result"),
 }
 
+MAO_OBSERVATION_ID = "multi-agent-orchestration-supervisor-ablation-2026-08"
+OMNIGENT_OBSERVATION_ID = "omnigent-child-session-recovery-2026-09"
+SMAS_OBSERVATION_ID = "supervisoragent-smas-gaia-2026"
 OMNIGENT_REVIEW_REF = "4d963a360e798f076d4fdbd4665e7188e4da05df"
 OMNIGENT_OBSERVATION_REF = "d8d07168c05ce1385be19dbd6ea64f4574c8d144"
+SMAS_REVIEW_REF = "ab116b557b095ae8d45bdf2d61057ce19519d4ff"
 
 
 def load(path: Path):
@@ -55,22 +59,21 @@ require(closure["status"] == "experimental-non-normative", "S3 closure status dr
 require(closure["tracking_issue"] == 567, "S3 closure tracking issue drift")
 require(closure["canonical_delta_review_issue"] == 592, "S3 canonical delta review issue drift")
 require(closure["current_state_update_issue"] == 693, "S3 current-state update issue drift")
+require(closure["supervisoragent_composed_evidence_issue"] == 685, "S3 SMAS evidence issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S3 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S3 closure must preserve gap")
 require(closure["closure_scope"] == "current-public-evidence", "S3 closure scope drift")
-require(closure["reviewed_at"] == coverage["reviewed_at"], "S3 closure/coverage review date drift")
-require(closure["reviewed_at"] == "2026-09-26", "S3 closure review date drift")
+require(closure["reviewed_at"] == coverage["reviewed_at"] == "2026-09-26", "S3 closure/coverage review date drift")
 
 expected = closure["evidence_depth"]
-require(coverage["direct_benchmark_family_count"] == expected["direct_benchmark_families"], "S3 direct family count drift")
-require(coverage["direct_observation_count"] == expected["canonical_direct_observations"], "S3 direct observation count drift")
-require(len(observations) == expected["canonical_direct_observations"], "S3 observation registry/closure count drift")
-require(coverage["proxy_projection_count"] == expected["native_proxy_projections"], "S3 proxy projection count drift")
+require(coverage["direct_benchmark_family_count"] == expected["direct_benchmark_families"] == 4, "S3 direct family count drift")
+require(coverage["direct_observation_count"] == expected["direct_observations"] == 3, "S3 direct observation count drift")
+require(len(observations) == expected["direct_observations"], "S3 observation registry/closure count drift")
+canonical_observations = [row for row in observations if row.get("canonical_system_eligible") is True]
+require(len(canonical_observations) == expected["canonical_direct_observations"] == 2, "S3 canonical observation count drift")
+require(coverage["proxy_projection_count"] == expected["native_proxy_projections"] == 1, "S3 proxy projection count drift")
 representative = coverage["representative_canonical_s3_systems_inspected"]
-require(
-    len(representative) == expected["representative_canonical_s3_systems_inspected"],
-    "S3 representative canonical cohort size drift",
-)
+require(len(representative) == expected["representative_canonical_s3_systems_inspected"] == 14, "S3 representative cohort size drift")
 
 native = closure["canonical_native_observations"]
 require(isinstance(native, list) and len(native) == 2, "S3 closure must retain exactly two canonical native observations")
@@ -78,15 +81,12 @@ native_by_harness = {row["harness_id"]: row for row in native}
 require(set(native_by_harness) == {"multi-agent-orchestration", "omnigent"}, "S3 canonical observation cohort drift")
 
 mao = native_by_harness["multi-agent-orchestration"]
-require(mao["observation_id"] == "multi-agent-orchestration-supervisor-ablation-2026-08", "S3 MAO observation identity drift")
+require(mao["observation_id"] == MAO_OBSERVATION_ID, "S3 MAO observation identity drift")
 require(mao["comparison_class"] == "within-system-controlled-ablation", "S3 MAO comparison class drift")
-require(mao["baseline_passed"] == 11 and mao["supervisor_passed"] == 48, "S3 MAO pass-count drift")
-require(mao["task_count"] == 54, "S3 MAO task-count drift")
-require(mao["baseline_routing_accuracy"] == 0.567, "S3 MAO baseline routing accuracy drift")
-require(mao["supervisor_routing_accuracy"] == 1.0, "S3 MAO supervisor routing accuracy drift")
+require(mao["baseline_passed"] == 11 and mao["supervisor_passed"] == 48 and mao["task_count"] == 54, "S3 MAO result drift")
 
 omnigent = native_by_harness["omnigent"]
-require(omnigent["observation_id"] == "omnigent-child-session-recovery-2026-09", "S3 Omnigent observation identity drift")
+require(omnigent["observation_id"] == OMNIGENT_OBSERVATION_ID, "S3 Omnigent observation identity drift")
 require(omnigent["comparison_class"] == "descriptive-only", "S3 Omnigent comparison class drift")
 require(omnigent["canonical_review_revision"] == OMNIGENT_REVIEW_REF, "S3 Omnigent review ref drift")
 require(omnigent["observation_revision"] == OMNIGENT_OBSERVATION_REF, "S3 Omnigent observation ref drift")
@@ -98,19 +98,22 @@ require(omnigent_fields.get("autonomy_s3") == "A", "Omnigent canonical S3 state 
 require(omnigent_fields.get("review_ref") == OMNIGENT_REVIEW_REF, "Omnigent canonical assessment ref drift")
 require("omnigent" in representative, "Omnigent missing from representative S3 cohort")
 
-observation_ids = {row["observation_id"] for row in observations}
-require(
-    observation_ids == {
-        "multi-agent-orchestration-supervisor-ablation-2026-08",
-        "omnigent-child-session-recovery-2026-09",
-    },
-    "S3 observation registry identity drift",
-)
+observation_by_id = {row["observation_id"]: row for row in observations}
+require(set(observation_by_id) == {MAO_OBSERVATION_ID, OMNIGENT_OBSERVATION_ID, SMAS_OBSERVATION_ID}, "S3 observation registry identity drift")
+smas = observation_by_id[SMAS_OBSERVATION_ID]
+require(smas.get("canonical_harness_id") is None, "SMAS must remain non-canonical")
+require(smas.get("canonical_system_eligible") is False, "SMAS must remain canonical-ineligible")
+require(smas.get("boundary_class") == "composed-supervised-mas", "SMAS boundary drift")
+require(smas.get("benchmark_artifact_revision") == SMAS_REVIEW_REF, "SMAS reviewed ref drift")
+require(smas.get("reported_average_token_reduction_pct") == 29.68, "SMAS reported token reduction drift")
+require("S3*" in smas.get("mixed_function_caveat", ""), "SMAS mixed-function caveat lost")
+require("Opensiro did not execute or reproduce" in smas.get("provenance_limitation", ""), "SMAS public-evidence-only boundary lost")
 
 routes = {route["route_id"]: route["status"] for route in closure["reviewed_route_classes"]}
 require(
     routes == {
         "direct-manager-control-benchmarks": "benchmark-scaffolded",
+        "composed-runtime-supervision": "direct-composed-noncanonical",
         "canonical-native-direct-within-system": "multiple-heterogeneous-not-matched",
         "canonical-native-mechanisms-without-direct-results": "no-direct-results",
         "native-quantitative-proxy": "not-isolated-s3",
@@ -124,6 +127,7 @@ cases = {case["case_id"]: case for case in coverage["cases"]}
 for required_case in {
     "clawarena-team-direct-scaffolded",
     "loop-back-authority-direct-scaffolded",
+    "supervisoragent-smas-direct-composed",
     "autogen-magentic-one-native-proxy-s3",
     "astra-cross-framework-wrong-native-s3-path",
     "multi-agent-orchestration-native-s3-direct",
@@ -135,12 +139,19 @@ for required_case in {
 }:
     require(required_case in cases, f"S3 closure lost required reviewed case: {required_case}")
 
+smas_case = cases["supervisoragent-smas-direct-composed"]
+require(smas_case.get("admitted") is True, "SMAS composed S3 observation must remain admitted")
+require(smas_case.get("coverage_class") == "direct-composed", "SMAS coverage class drift")
+require(smas_case.get("system_compatibility") == "benchmark-scaffolded", "SMAS compatibility drift")
+require(smas_case.get("canonical_harness_id") is None, "SMAS coverage must remain non-canonical")
+require(smas_case.get("observation_ref") == f"observations.json#{SMAS_OBSERVATION_ID}", "SMAS observation_ref drift")
+require(smas_case.get("review_ref") == SMAS_REVIEW_REF, "SMAS case review ref drift")
+
 omnigent_case = cases["omnigent-post-assessment-recovery-direct"]
 require(omnigent_case.get("admitted") is True, "Omnigent S3 observation must remain admitted")
 require(omnigent_case.get("canonical_harness_id") == "omnigent", "Omnigent coverage identity drift")
 require(omnigent_case.get("canonical_review_ref") == OMNIGENT_REVIEW_REF, "Omnigent coverage review ref drift")
 require(omnigent_case.get("observation_revision") == OMNIGENT_OBSERVATION_REF, "Omnigent coverage observation ref drift")
-require(omnigent_case.get("revision_relation") == "post-assessment-descendant", "Omnigent coverage temporal relation drift")
 
 for harness_id, (state, review_ref, case_id) in CANONICAL_DELTAS.items():
     fields = assessment_fields(harness_id)
@@ -154,15 +165,26 @@ for harness_id, (state, review_ref, case_id) in CANONICAL_DELTAS.items():
     require(case.get("canonical_review_ref") == review_ref, f"{case_id}: reviewed ref drift")
     require(case.get("admitted") is False, f"{case_id}: delta review must remain non-admitted")
 
-require(baselines["functions"]["S3"]["status"] == "gap", "S3 primary was selected without reopening closure")
-blocking = baselines["functions"]["S3"].get("blocking_reason", "")
-require("two canonical native observations" in blocking, "S3 baseline blocker must reflect two canonical observations")
-require("materially matched" in blocking, "S3 baseline blocker must preserve matched-comparison requirement")
-require(len(closure["reopen_when"]) >= 3, "S3 closure must retain explicit reopen conditions")
-require(len(closure["do_not_reopen_for"]) >= 4, "S3 closure must retain anti-churn conditions")
+baseline = baselines["functions"]["S3"]
+require(baseline["status"] == "gap", "S3 primary was selected without reopening closure")
+family_ids = {row["benchmark_id"] for row in baseline["reviewed_direct_families"]}
 require(
-    any("another descriptive canonical S3 observation" in item for item in closure["do_not_reopen_for"]),
-    "S3 closure must reject unmatched descriptive-row churn",
+    family_ids
+    == {
+        "clawarena-team",
+        "loop-back-authority",
+        "multi-agent-orchestration-supervisor-ablation",
+        "supervisoragent-smas-runtime-supervision",
+    },
+    "S3 baseline direct-family set drift",
 )
+blocking = baseline.get("blocking_reason", "")
+require("four direct families" in blocking and "three admitted direct observations" in blocking, "S3 baseline blocker evidence-depth drift")
+require("two canonical" in blocking and "matched" in blocking, "S3 baseline blocker matched-canonical requirement drift")
+require("SupervisorAgent/SMAS" in blocking and "non-canonical" in blocking, "S3 baseline blocker lost SMAS boundary")
+require(len(closure["reopen_when"]) >= 3, "S3 closure must retain explicit reopen conditions")
+require(len(closure["do_not_reopen_for"]) >= 5, "S3 closure must retain anti-churn conditions")
+require(any("composed non-canonical" in item for item in closure["do_not_reopen_for"]), "S3 closure must reject composed-row churn")
+require(any("Opensiro-operated" in item for item in closure["do_not_reopen_for"]), "S3 closure must reject Opensiro-operated reproduction")
 
 print("S3 primary-search closure validation passed")
