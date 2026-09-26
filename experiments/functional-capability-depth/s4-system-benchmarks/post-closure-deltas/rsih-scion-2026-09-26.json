@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 735,
+  "reviewed_at": "2026-09-26",
+  "function": "S4",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "rsih",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "737bf1f5a5a56f0c49bbd5180e71d651113038ac",
+      "repository": "https://github.com/CosmosMind-ai/RSI-Harness",
+      "result_surface_review": "no-direct-s4-result",
+      "finding": "RSIH's canonical S4=C path uses the shipped harness-rsi/GEE constructor to analyze prior operating evidence plus a stated future scenario, propose prospective Genome capability changes, obtain plan approval and materialize a validated downstream specialization. The reviewed public repository establishes the constructor workflow, component contracts and validation tests, but publishes no capability result measuring adaptation quality or subsequent operational improvement through this canonical S4 path. No direct canonical S4 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/config/genomes/harness-rsi/components/instructions.json",
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/config/genomes/harness-rsi/skills/genome-authoring/pattern-to-component.md",
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/docs/genome/harness-rsi.md"
+      ]
+    },
+    {
+      "canonical_harness_id": "scion-gcp",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "bdf5b6d135bb7585e242d2f08f4c54b3de2c2940",
+      "repository": "https://github.com/GoogleCloudPlatform/scion",
+      "result_surface_review": "no-direct-s4-result",
+      "finding": "Scion's canonical S4=A path lets an agent use the standard team-creation capability to inspect an existing organization or a new high-level need and generate reusable executable team templates with changed roles, workflow, communication patterns and skills. The reviewed public repository establishes this prospective redesign and activation path, but no published result set measures the quality or subsequent operational effect of those organizational adaptations through the canonical runtime. No direct canonical S4 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/resources/platform_skills/team-creation/SKILL.md",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/docs-site/src/content/docs/concepts.md",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/README.md"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
