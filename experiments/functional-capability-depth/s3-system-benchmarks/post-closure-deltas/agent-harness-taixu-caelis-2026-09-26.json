@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 683,
+  "reviewed_at": "2026-09-26",
+  "function": "S3",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "haorui-agent-harness",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "109dde248cb44227a9ed3a204790432a6da843da",
+      "repository": "https://github.com/haorui-harry/agent-harness",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "Agent Harness' canonical S3=A path is the live `graph_replan` relation: a live model receives job-wide graph/execution state and can add tool, workspace or subagent commitments that are rewired into the active graph before completion. The reviewed public repository surfaces provide implementation and tests for replanning plus adjacent research/evaluation machinery, but no published result isolates this current-control intervention and measures its subsequent organizational outcome through the canonical runtime path. No direct canonical S3 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/haorui-harry/agent-harness/blob/109dde248cb44227a9ed3a204790432a6da843da/app/agents/task_actions.py",
+        "https://github.com/haorui-harry/agent-harness/blob/109dde248cb44227a9ed3a204790432a6da843da/app/harness/live_agent.py",
+        "https://github.com/haorui-harry/agent-harness/blob/109dde248cb44227a9ed3a204790432a6da843da/tests/test_agent_runtime.py"
+      ]
+    },
+    {
+      "canonical_harness_id": "taixu",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "037880a898ad503128dee7b2991dd6d351ad8cb3",
+      "repository": "https://github.com/wkbin/taixu",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "TaiXu's canonical S3=A path gives the main model whole-batch current-control feedback over child commitments, resumable lane identities, blocked writes, approvals, timeouts and returned results, with follow-up or redispatch available through the same first-party runtime. The reviewed public repository surfaces establish the mechanism and lifecycle contracts but do not publish an isolated current-control intervention and subsequent organizational outcome. No direct canonical S3 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/java/top/wkbin/taixu/harness/HarnessLoop.kt",
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/java/top/wkbin/taixu/harness/SubagentOrchestrator.kt",
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/java/top/wkbin/taixu/harness/subagent/SubagentLaneRunner.kt"
+      ]
+    },
+    {
+      "canonical_harness_id": "caelis",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "5aebbc6a750b8b2d472a0987fbf2e0942062c6d9",
+      "repository": "https://github.com/caelis-labs/caelis",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "Caelis' canonical S3=A path gives the current controller exclusive participant creation and result-observation rights plus model-visible steering, roster/thread feedback and responsibility for integration/validation. The reviewed public eval/development surfaces do not isolate that current-control relation in a capability measurement and do not report the subsequent organization-level outcome under a matched control. No direct canonical S3 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/caelis-labs/caelis/blob/5aebbc6a750b8b2d472a0987fbf2e0942062c6d9/control/collaboration/controller.go",
+        "https://github.com/caelis-labs/caelis/blob/5aebbc6a750b8b2d472a0987fbf2e0942062c6d9/control/collaboration/tools.go",
+        "https://github.com/caelis-labs/caelis/blob/5aebbc6a750b8b2d472a0987fbf2e0942062c6d9/docs/participants.md"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}

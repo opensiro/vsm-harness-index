@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 683,
+  "reviewed_at": "2026-09-26",
+  "function": "S4",
+  "disposition": "canonical-mechanism-no-direct-result",
+  "systems": [
+    {
+      "canonical_harness_id": "taixu",
+      "canonical_state_at_review": "P",
+      "canonical_review_ref": "037880a898ad503128dee7b2991dd6d351ad8cb3",
+      "repository": "https://github.com/wkbin/taixu",
+      "result_surface_review": "no-direct-s4-result",
+      "finding": "TaiXu's canonical S4=P path uses a post-run SkillEvolutionAdvisor to identify a reusable future capability gap or skill defect and propose a create/update action; the human can apply the suggestion through the first-party Chat UI into persistent custom-skill state used by later operation. The reviewed public repository surfaces establish this parent-governed adaptation mechanism, but no published result measures future capability improvement after the adaptation under a recoverable benchmark/model/configuration cell. No direct canonical S4 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/java/top/wkbin/taixu/harness/skill/SkillEvolutionAdvisor.kt",
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/feature/chat/src/main/java/top/wkbin/taixu/ui/chat/SkillSuggestionActions.kt",
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/feature/chat/src/main/java/top/wkbin/taixu/ui/chat/ChatViewModel.kt"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
