@@ -14,7 +14,7 @@ autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
 autonomy_s3_star: —
-autonomy_s4: A
+autonomy_s4: —
 autonomy_s5: —
 ---
 
@@ -45,7 +45,7 @@ The semantic work inside those stages is model-driven. The idea agent selects on
 
 This closes an autonomous research-operation path even though one execution substage is delegated to a supported external coding-agent runtime. The first-party launcher owns the research-task lifecycle and transfers generated state between stages; external coding-agent internals are not separately credited as MLR-Agent metasystem functions.
 
-The literature/proposal path is functionally distinct from ordinary current experiment execution. It looks outward to scientific prior work, identifies challenges, generates a prospective research methodology/experimental design and then passes that adaptation option into the experiment runner. The downstream coding agent is explicitly instructed to implement and test the proposal. That establishes an outside-and-then S4 closure back into current research capability/action, rather than mere retrieval for answering the current prompt.
+Literature search is externally oriented, but at this declared recursion it is part of the research product itself: the same S1 operation is tasked with discovering prior work, choosing a methodology, testing it and writing the paper. `proposal.md` changes the current research task that S1 executes; it does not redesign MLR-Agent's durable models, tools, strategy or capability for later independent runs. The assessment also finds no qualifying S3 whole-system current-control function with which a distinct S4 environmental model enters the Profile's required current/future conversation.
 
 By contrast, MLR-Judge is not in the standard MLR-Agent control loop. The README documents evaluation as separate commands under `mlrbench/evals/`; `run_mlr_agent.py` does not call those reviewers or return their findings into idea/proposal/experiment/paper regeneration. They are therefore benchmark/evaluation surfaces, not S3* of the assessed standalone MLR-Agent runtime.
 
@@ -147,23 +147,24 @@ The stage sequence itself is deterministic, but the substantive research choices
 
 ## S4 — Outside-and-then intelligence
 
-- State: A
-- Function: sense relevant external scientific work/challenges, turn that evidence into a prospective methodology/experimental option, and return the option into executable research.
-- Disturbance / variety regulated: existing recent research, known challenges/limitations and alternative methodological choices may make the initially selected direction weak, redundant or require a different experimental design.
-- Decisive decision or feedback right: select/synthesize relevant recent literature and challenges, then choose a detailed methodology and experimental design that determines what the later coding-agent operation will implement and test.
-- Decision owner: the model-driven literature-review and proposal-generation stages invoked by the first-party MLR-Agent pipeline.
-- Supporting / enforcement mechanisms: dedicated search-oriented literature engine, persisted `idea.md`/`related_work.md`/`proposal.md`, prompt contracts requiring recent papers/challenges/methodology/evaluation design, and the experiment runner's direct consumption of those artifacts.
-- Closure path: task + candidate idea -> literature engine gathers/synthesizes external scientific evidence -> proposal agent generates prospective methodology/experimental design -> `proposal.md` is supplied to the configured coding agent -> coding agent implements and executes that design -> current S1 research capability/action changes accordingly.
-- Boundary reachability: literature review and proposal generation are mandatory stages of the documented standard `run_mlr_agent.py` path before `run_experiment()`; no optional custom integration is needed.
-- Why this is / is not agent-owned: external search/model providers supply observations/computation, while relevance/challenge synthesis and methodology/experiment-option generation are model-driven stages selected and wired by the first-party runtime.
-- External distinction: recent arXiv/scientific literature and extracted prior-work challenges are environmental evidence beyond the local task workspace.
-- Future / prospective distinction: the proposal describes methodology, data collection, algorithms, experiment design and evaluation to be performed next rather than merely reporting current execution state.
-- Adaptation option generated: a concrete `proposal.md` research methodology and experimental plan grounded in the idea and literature review.
-- Path back into current capability / S3: `experiment_runner.py` explicitly instructs the selected coding agent to read `task.md`, `idea.md`, `related_work.md` and `proposal.md`, design/implement the experiment and run it; the prospective option therefore changes subsequent executable S1 work.
+- State: —
+- Function: no separate external-and-prospective organizational adaptation function is established at the MLR-Agent harness recursion.
+- Disturbance / variety regulated: changing scientific knowledge, related work and future experimental possibilities are investigated for the current research product, not to redesign the durable capability or posture of MLR-Agent itself.
+- Decisive decision or feedback right: none established for a persistent adaptation option affecting the harness future operational capability.
+- Decision owner: none established for qualifying S4.
+- Supporting / enforcement mechanisms: literature search, idea generation, proposal formulation and experiment-result analysis provide research intelligence for S1; they do not persist an organizational adaptation of the harness.
+- Closure path: no material S4-specific external/future distinction -> adaptation option -> present-capability change path is established.
+- Why this is / is not agent-owned: the runtime is externally informed, but that information is consumed directly as subject-matter evidence inside the current research task. It does not enter a separate S4/S3 homeostatic conversation that changes MLR-Agent future capabilities.
 - Evidence: [`mlrbench/agent/lit_review.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/lit_review.py); [`mlrbench/agent/proposal_generator.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/proposal_generator.py); [`mlrbench/agent/experiment_runner.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/experiment_runner.py); [`run_mlr_agent.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/run_mlr_agent.py).
-- Basis: explicit + structural.
+- Basis: explicit + structural absence.
 - Confidence: high.
-- Caveats: the initial idea is generated before the literature review rather than novelty-filtered by it; S4 credit rests on literature evidence changing the downstream prospective proposal/experimental design, not on a claim that MLR-Agent performs a separate novelty-admission gate.
+- Caveats: future-oriented scientific research is the product of this S1. A different system-in-focus could classify functions differently, but at the harness/task-run recursion subject-matter research is not organizational S4 merely because it studies external or future possibilities.
+
+### Absence scope
+
+- Surfaces inspected: idea generation, literature search, proposal generation, experiment design/results analysis, paper future-work synthesis, repeated task execution and evaluator surfaces.
+- Plausible first-party paths checked: external scientific-literature sensing; proposal-driven experiment planning; experiment-derived learning; generated future-work suggestions; repeated task-folder execution; benchmark/evaluation feedback.
+- Why no material first-party path remains: no first-party runtime path turns prospective distinctions into a durable change of MLR-Agent installed models, tools, strategy or capabilities for later independent operations, and no qualifying S3-S4 current/future conversation is present.
 
 ## S5 — Policy and identity
 
@@ -192,7 +193,7 @@ One assigned research project is the assessed recursion. Model roles and the con
 
 ## Variety and escalation
 
-MLR-Agent attenuates research variety by progressively materializing idea, literature, proposal, experiment and paper artifacts in one task workspace. External scientific uncertainty is handled prospectively through the literature/proposal S4 path before experiment execution. Implementation/runtime uncertainty is handled inside the coding-agent S1 stage. Stage failures are bounded by scripted retries/errors. No separate whole-system S3 or identity-level S5 escalation owner is established.
+MLR-Agent attenuates research variety by progressively materializing idea, literature, proposal, experiment and paper artifacts in one task workspace. External scientific uncertainty is absorbed as part of the current S1 research product through literature/proposal work; it is not a separate organizational S4 loop at this recursion. Implementation/runtime uncertainty is likewise handled inside S1. Stage failures are bounded by scripted retries/errors. No separate whole-system S3, prospective S4 or identity-level S5 escalation owner is established.
 
 ## Evidence gaps
 
