@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 683,
+  "reviewed_at": "2026-09-26",
+  "function": "S2",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "abhed",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "151b8ddceee7ae232e526b3c237356151dde780e",
+      "repository": "https://github.com/zybuu-ai/abhed",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "Abhed's canonical S2=A path lets the parent model choose worktree isolation for concurrent child agents when shared-checkout writes could overwrite or obscure one another, and the first-party runtime enforces separate workspaces and returns branch/merge facts. The reviewed public benchmark surface at the canonical revision measures serving-prefix/cache behavior rather than an inter-S1 write disturbance and its attenuation, while repository tests establish isolation mechanics rather than a capability outcome. No direct canonical S2 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/zybuu-ai/abhed/blob/151b8ddceee7ae232e526b3c237356151dde780e/internal/agent/parallel.go",
+        "https://github.com/zybuu-ai/abhed/blob/151b8ddceee7ae232e526b3c237356151dde780e/internal/agent/parallel_test.go",
+        "https://github.com/zybuu-ai/abhed/blob/151b8ddceee7ae232e526b3c237356151dde780e/cmd/abhed-bench/main.go"
+      ]
+    },
+    {
+      "canonical_harness_id": "taixu",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "037880a898ad503128dee7b2991dd6d351ad8cb3",
+      "repository": "https://github.com/wkbin/taixu",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "TaiXu's canonical S2=A path combines main-model-declared write scopes with first-party write-clean wave scheduling, runtime lease enforcement and blocked-write feedback to child lanes. The reviewed public repository surfaces establish that mechanism and its tests, but no published result set at the canonical boundary instantiates competing child work and measures disturbance attenuation plus the downstream S1 outcome. No direct canonical S2 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/java/top/wkbin/taixu/harness/SubagentOrchestrator.kt",
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/java/top/wkbin/taixu/harness/subagent/SubagentLaneContracts.kt",
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/assets/prompts/subagent_guidance.md"
+      ]
+    },
+    {
+      "canonical_harness_id": "caelis",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "5aebbc6a750b8b2d472a0987fbf2e0942062c6d9",
+      "repository": "https://github.com/caelis-labs/caelis",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "Caelis' canonical S2=A path uses controller-owned independent-work decomposition and task scope/edit permissions over concurrently running participants, with first-party revision/fence machinery constraining overlapping effects and participant feedback returning to the controller. The reviewed eval-harness surface is repository-development microbenchmark threshold machinery and does not measure a production inter-S1 interference → attenuation → subsequent-operation chain. No direct canonical S2 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/caelis-labs/caelis/blob/5aebbc6a750b8b2d472a0987fbf2e0942062c6d9/control/collaboration/tools.go",
+        "https://github.com/caelis-labs/caelis/blob/5aebbc6a750b8b2d472a0987fbf2e0942062c6d9/docs/agent-sdk-boundary.md",
+        "https://github.com/caelis-labs/caelis/blob/5aebbc6a750b8b2d472a0987fbf2e0942062c6d9/internal/evalharness/bench_threshold.go"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
