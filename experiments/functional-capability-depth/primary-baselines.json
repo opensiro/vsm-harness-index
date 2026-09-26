@@ -120,12 +120,17 @@
           "primary_source": "https://github.com/cihatburak/loop-back-authority-llm-agents/tree/6f26a97cafb0b463a45cdc40b5348351d844f7a5"
         },
         {
+          "benchmark_id": "supervisoragent-smas-runtime-control",
+          "benchmark_name": "SupervisorAgent / SMAS runtime-control evaluation",
+          "primary_source": "https://github.com/LINs-lab/SupervisorAgent/tree/ab116b557b095ae8d45bdf2d61057ce19519d4ff"
+        },
+        {
           "benchmark_id": "multi-agent-orchestration-supervisor-ablation",
           "benchmark_name": "Multi-Agent Orchestration native supervisor ablation",
           "primary_source": "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/docs/evaluation-benchmark.md"
         }
       ],
-      "blocking_reason": "Reviewed direct S3 evidence now includes two canonical native observations: Multi-Agent Orchestration provides a controlled within-system supervisor ablation, while Omnigent provides first-party descriptive operational/regression evidence for recovery of interrupted child commitments at a post-assessment descendant revision. These rows use different disturbances, models, metrics, result surfaces and comparison protocols, so public evidence still does not provide a materially matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell."
+      "blocking_reason": "Reviewed direct S3 evidence now includes four direct families and three admitted direct observations. SupervisorAgent/SMAS supplies one first-party-reported composed non-canonical treatment/control observation at the base-MAS-plus-SupervisorAgent boundary; its aggregate intervention repertoire mixes current-control S3 with verification-like S3* and does not establish native S3 ownership for Smolagent or another wrapped framework. Multi-Agent Orchestration and Omnigent provide two canonical native observations, but those canonical rows use different disturbances, models, metrics, result surfaces and comparison protocols. Public evidence therefore still does not provide a materially matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell."
     },
     "S3*": {
       "status": "gap",
