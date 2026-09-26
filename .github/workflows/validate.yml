@@ -98,6 +98,7 @@ jobs:
       - run: python experiments/functional-capability-depth/render_s1_baseline.py --check
       - run: python experiments/functional-capability-depth/s2-system-benchmarks/validate.py
       - run: python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_primary_search_closure.py
+      - run: python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_matched_canonical_search.py
       - run: python experiments/functional-capability-depth/s3-system-benchmarks/validate.py
       - run: python experiments/functional-capability-depth/s3-system-benchmarks/matched-cell/validate_s3_primary_search_closure.py
       - run: python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
