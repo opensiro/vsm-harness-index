@@ -54,13 +54,15 @@ This is an observation-provenance failure, not a semantic rejection of SWE Atlas
 
 **Reopen when:** an immutable public artifact binds a reported SWE Atlas row to the actual executed Claude Code / mini-SWE-agent / other scaffold version or repository revision, or committed Harbor job/trajectory metadata records the actual agent version for the row. Do not substitute a current project version or infer identity from a leaderboard display label.
 
-## DrugDiscoveryBench
+## DrugDiscoveryBench public system rows
 
-DrugDiscoveryBench may provide useful future S1 evidence.
+Reviewed benchmark repository: `scaleapi/DrugDiscoveryBench@d58c703841abbad0ba1cc439488e15fbbeae3bd2`. The benchmark family is reviewed in #721 as a direct S1 family with `drug-discovery-life-sciences` domain scope.
 
-**Decision:** deferred.
+**Decision:** system/result observation admission is deferred to a separate provenance transaction.
 
-**Reason:** it has not yet been reviewed as a `direct` S1 benchmark family in the committed function→benchmark map. Benchmark-family semantic admission must precede system observation admission.
+**Reason:** #721 is family semantics only. The reviewed repository is unusually promising for later row-level evidence because it pins Harbor `0.13.1`, trial image `drugdiscoverybench:1.0.0-lightweight`, and the image's supported agent CLIs (`claude-code 2.1.190`, `codex 0.122.0`, `gemini-cli 0.46.0`). Those facts do not by themselves establish a particular published result row, model/judge configuration, task set, trial count or canonical system linkage.
+
+A later transaction must bind any public result artifact to the exact agent CLI/version, model/configuration, judge, task set, run policy and result provenance before adding `observations.jsonl`. Do not run or reproduce the benchmark to fill that gap.
 
 ## FutureSim Codex runs
 
