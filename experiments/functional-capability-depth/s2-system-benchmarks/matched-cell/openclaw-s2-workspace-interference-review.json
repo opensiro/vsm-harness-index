@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 756,
+  "reviewed_at": "2026-09-27",
+  "function": "S2",
+  "review_scope": "post-matched-canonical-search-closure-delta",
+  "canonical_harness_id": "openclaw",
+  "canonical_repository": "https://github.com/openclaw/openclaw",
+  "canonical_assessment_ref": "387da5edaa9d6c6cfcfc15e167fe2e46d8647d86",
+  "canonical_s2_state": "C",
+  "canonical_semantic_rereview": {
+    "index_issue": 263,
+    "state_at_review": "open",
+    "reason": "OpenClaw is explicitly queued for current-contract re-review of its legacy S2=C witness. This capability review records the current canonical state but does not settle that semantic review."
+  },
+  "canonical_s2_mechanism": "The current canonical assessment credits authorized cross-session messaging plus session ownership/lifecycle controls as a constructor path for operational coordination; no stock autonomous anti-oscillation policy is closed out of the box.",
+  "upstream_disturbance_issue": {
+    "repository": "openclaw/openclaw",
+    "issue_number": 113166,
+    "title": "scope: \"shared\" sandboxes collapse all agents onto one workspace; no per-agent persona isolation",
+    "url": "https://github.com/openclaw/openclaw/issues/113166",
+    "state_at_review": "open",
+    "result_surface_state": "source-reproducible-disturbance-no-attenuation-result",
+    "reported_disturbance": "Multiple distinct agents using a shared sandbox can converge on one writable workspace mount, allowing a later agent to read or modify another agent's persona, memory or skills files.",
+    "upstream_review_kind": "repository-integrated ClawSweeper source review",
+    "upstream_review_revision": "a4fccb7734461c2e6d93ff8d182f5d38fb9b02a0",
+    "upstream_review_live_reproduction": false,
+    "upstream_review_source_reproducible": true,
+    "published_fix_at_review": false,
+    "published_native_attenuation_result_at_review": false,
+    "published_matched_before_after_result_at_review": false
+  },
+  "current_upstream_source_check": {
+    "head_at_review": "841f6f78e5f64baa73ad6f63b40648cf30b7943f",
+    "shared_scope_single_key_without_isolation_subject": true,
+    "rw_workspace_resolves_to_active_agent_workspace": true,
+    "separate_agent_mount_omitted_when_workspace_equals_agent_workspace": true,
+    "hot_config_mismatch_can_retain_running_container": true,
+    "interpretation": "Current source still supports the structural disturbance path described by issue #113166. This is disturbance evidence only; it does not demonstrate attenuation through a native S2 treatment."
+  },
+  "disposition": "canonical-current-s2-source-reproducible-disturbance-no-attenuation-result",
+  "result_surface_review": "no-direct-s2-attenuation-result",
+  "creates_direct_benchmark_family": false,
+  "creates_observation": false,
+  "creates_canonical_direct_observation": false,
+  "changes_primary_baseline": false,
+  "primary_baseline_after_review": "gap",
+  "reopen_condition_satisfied": false,
+  "historical_matched_search_snapshot": {
+    "tracking_issue": 696,
+    "primary_baseline": "gap",
+    "canonical_direct_anchor_ids": [
+      "squad",
+      "thclaws"
+    ],
+    "rewrite_allowed": false
+  },
+  "comparability_note": "The disturbance is in the same broad workspace/interference family as the existing thClaws canonical direct anchor, but OpenClaw currently contributes only a source-reproducible disturbance case. Without an exercised native attenuation treatment and outcome, it is not a second comparable canonical direct row.",
+  "reopen_when": "Public upstream evidence publishes a recoverable native or adapter-preserved treatment/result for distinct OpenClaw agents/workspaces that exercises the reported interference condition and demonstrates attenuation, with enough provenance to classify a direct observation and materially compare it with an existing canonical S2 workspace-interference row where appropriate. Any such transaction must also reconcile the then-current canonical S2 state after issue #263 or its successor semantic review.",
+  "do_not_reopen_for": [
+    "the source-reproducible disturbance report by itself",
+    "a fix commit without a recoverable exercised disturbance-to-attenuation result",
+    "generic sandbox isolation or mount tests that do not instantiate competing S1 agents and measure the affected outcome",
+    "issue closure without public result artifacts supporting attenuation",
+    "an Opensiro-operated OpenClaw benchmark or reproduction"
+  ],
+  "evidence_sources": [
+    "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/openclaw.md",
+    "https://github.com/opensiro/vsm-harness-index/issues/263",
+    "https://github.com/openclaw/openclaw/issues/113166",
+    "https://github.com/openclaw/openclaw/blob/841f6f78e5f64baa73ad6f63b40648cf30b7943f/src/agents/sandbox/shared.ts",
+    "https://github.com/openclaw/openclaw/blob/841f6f78e5f64baa73ad6f63b40648cf30b7943f/src/agents/sandbox/workspace-mounts.ts",
+    "https://github.com/openclaw/openclaw/blob/841f6f78e5f64baa73ad6f63b40648cf30b7943f/src/agents/sandbox/docker.ts"
+  ],
+  "non_claim": "This review does not score OpenClaw S2 capability, validate the current S2=C assessment under the latest methodology, admit an observation, add a benchmark family, or reopen the matched-canonical primary search. It records a strong public disturbance surface and the specific missing attenuation evidence."
+}
