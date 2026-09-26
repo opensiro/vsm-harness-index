@@ -272,3 +272,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 257|mingbird|Mingbird|https://github.com/Mingbird/Mingbird-agent|2026-09-17T12:00:14Z|index-addition|2e62a735b212aee3c72bce83134042c9ca885237|2026-09-26
 258|soothe|Soothe|https://github.com/mirasoth/soothe|2026-03-12T03:52:53Z|index-addition|be4fa14c0aa53203b8861dbff367eccb0df77668|2026-09-26
 259|haorui-agent-harness|Agent Harness|https://github.com/haorui-harry/agent-harness|2026-04-01T03:36:49Z|index-addition|109dde248cb44227a9ed3a204790432a6da843da|2026-09-26
+260|taixu|TaiXu|https://github.com/wkbin/taixu|2026-08-20T09:49:57Z|index-addition|037880a898ad503128dee7b2991dd6d351ad8cb3|2026-09-26
