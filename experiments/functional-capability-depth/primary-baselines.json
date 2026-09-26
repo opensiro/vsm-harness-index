@@ -123,9 +123,14 @@
           "benchmark_id": "multi-agent-orchestration-supervisor-ablation",
           "benchmark_name": "Multi-Agent Orchestration native supervisor ablation",
           "primary_source": "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/docs/evaluation-benchmark.md"
+        },
+        {
+          "benchmark_id": "supervisoragent-smas-runtime-supervision",
+          "benchmark_name": "SupervisorAgent / SMAS runtime supervision",
+          "primary_source": "https://github.com/LINs-lab/SupervisorAgent/tree/ab116b557b095ae8d45bdf2d61057ce19519d4ff"
         }
       ],
-      "blocking_reason": "Reviewed direct S3 evidence now includes two canonical native observations: Multi-Agent Orchestration provides a controlled within-system supervisor ablation, while Omnigent provides first-party descriptive operational/regression evidence for recovery of interrupted child commitments at a post-assessment descendant revision. These rows use different disturbances, models, metrics, result surfaces and comparison protocols, so public evidence still does not provide a materially matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell."
+      "blocking_reason": "Reviewed direct S3 evidence now includes four direct families and three admitted direct observations. Two observations are canonical native rows: Multi-Agent Orchestration provides a controlled within-system supervisor ablation, while Omnigent provides first-party descriptive operational/regression evidence for recovery of interrupted child commitments at a post-assessment descendant revision. SupervisorAgent/SMAS adds one direct composed non-canonical observation in which an external meta-level runtime supervisor changes current operation; the aggregate treatment also includes verification-like actions and is not a clean S3-only causal estimate. The two canonical rows remain materially heterogeneous, so public evidence still does not provide a matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell."
     },
     "S3*": {
       "status": "gap",
