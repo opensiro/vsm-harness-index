@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 688,
+  "reviewed_at": "2026-09-26",
+  "function": "S2",
+  "upstream_repository": "https://github.com/JeevaAnanthV/agentfaildb",
+  "upstream_revision": "870bade0db014281362cfe5a7c41e9be4bde86d0",
+  "candidate_surface": "750-run CrewAI / AutoGen / LangGraph failure benchmark",
+  "reported_model": "llama3.1:8b via Ollama",
+  "task_count": 250,
+  "framework_run_count": 250,
+  "total_run_count": 750,
+  "candidate_signal": "conflicting_outputs",
+  "candidate_signal_definition": "Post-hoc heuristic detector over final RESPONSE messages from different agents. It flags low semantic similarity while both outputs remain task-relevant; it is not a preregistered inter-S1 disturbance or attenuation treatment.",
+  "disposition": "matched-framework-non-direct-s2",
+  "creates_direct_benchmark_family": false,
+  "creates_observation": false,
+  "creates_canonical_direct_observation": false,
+  "changes_primary_baseline": false,
+  "primary_baseline_after_review": "gap",
+  "matched_surface_strengths": [
+    "same task corpus across compared framework runners",
+    "same reported local model family",
+    "same benchmark evaluator and failure-detector stack",
+    "complete 250 x 3 public result matrix"
+  ],
+  "direct_s2_gate_failures": [
+    "the benchmark does not define an explicit interaction-generated S2 disturbance whose attenuation is measured through a native coordination relation",
+    "conflicting_outputs is a post-hoc heuristic signal, not a treatment/control measure of disturbance attenuation",
+    "framework runners instantiate benchmark-authored organizations rather than holding one organizational relation constant across native S2 paths",
+    "only one compared canonical system has S2=A in the current Index cohort"
+  ],
+  "frameworks": [
+    {
+      "display_name": "AutoGen",
+      "canonical_harness_id": "autogen-agentchat",
+      "canonical_assessment_ref": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+      "canonical_s2_state": "A",
+      "runner_path": "agentfaildb/runners/autogen_runner.py",
+      "runner_organization": "benchmark configures AutoGen GroupChat + GroupChatManager with round_robin speaker selection",
+      "native_s2_comparison_eligible": false,
+      "blocking_reason": "Although AutoGen itself has canonical S2=A, this benchmark does not isolate an explicit native disturbance-to-attenuation outcome for that S2 path."
+    },
+    {
+      "display_name": "CrewAI",
+      "canonical_harness_id": "crewai",
+      "canonical_assessment_ref": "894898f84c4ac0a89f24bf7bee6c381eb0e67f51",
+      "canonical_s2_state": "—",
+      "runner_path": "agentfaildb/runners/crewai_runner.py",
+      "runner_organization": "benchmark creates a sequential CrewAI task pipeline with delegation disabled",
+      "native_s2_comparison_eligible": false,
+      "blocking_reason": "Canonical CrewAI does not establish S2 at the reviewed boundary, so this row cannot form a two-canonical-S2 comparison cell with AutoGen."
+    },
+    {
+      "display_name": "LangGraph",
+      "canonical_harness_id": "langgraph",
+      "canonical_assessment_ref": "e539ac122f4126f6dd850581c1494948cf620e31",
+      "canonical_s2_state": "—",
+      "runner_path": "agentfaildb/runners/langgraph_runner.py",
+      "runner_organization": "benchmark authors a linear StateGraph with one node per role and fixed linear edges",
+      "native_s2_comparison_eligible": false,
+      "blocking_reason": "Canonical LangGraph does not establish S2 at the reviewed runtime boundary; the benchmark-authored linear graph is not LangGraph-owned S2."
+    }
+  ],
+  "evidence_sources": [
+    "https://github.com/JeevaAnanthV/agentfaildb/tree/870bade0db014281362cfe5a7c41e9be4bde86d0",
+    "https://github.com/JeevaAnanthV/agentfaildb/blob/870bade0db014281362cfe5a7c41e9be4bde86d0/README.md",
+    "https://github.com/JeevaAnanthV/agentfaildb/blob/870bade0db014281362cfe5a7c41e9be4bde86d0/docs/RESULTS.md",
+    "https://github.com/JeevaAnanthV/agentfaildb/blob/870bade0db014281362cfe5a7c41e9be4bde86d0/agentfaildb/runners/autogen_runner.py",
+    "https://github.com/JeevaAnanthV/agentfaildb/blob/870bade0db014281362cfe5a7c41e9be4bde86d0/agentfaildb/runners/crewai_runner.py",
+    "https://github.com/JeevaAnanthV/agentfaildb/blob/870bade0db014281362cfe5a7c41e9be4bde86d0/agentfaildb/runners/langgraph_runner.py",
+    "https://github.com/JeevaAnanthV/agentfaildb/blob/870bade0db014281362cfe5a7c41e9be4bde86d0/agentfaildb/patterns/conflicting_outputs.py"
+  ],
+  "non_claim": "AgentFailDB is a useful matched multi-framework failure-analysis surface, but its conflicting-output signal does not satisfy the direct S2 disturbance-to-attenuation gate and its compared framework set contains only one canonical S2 system. It therefore does not create a direct S2 family, observation, matched canonical cell, or primary baseline."
+}
