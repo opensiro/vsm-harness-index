@@ -104,5 +104,44 @@
       "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/omnigent/server/child_session_recovery.py",
       "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/tests/server/test_child_session_recovery.py"
     ]
+  },
+  {
+    "observation_id": "supervisoragent-smas-gaia-pass1-2026",
+    "function": "S3",
+    "benchmark_id": "supervisoragent-smas-runtime-control",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "composed-supervised-mas",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "comparison_class": "within-base-system-composed-addition",
+    "benchmark_artifact_revision": "ab116b557b095ae8d45bdf2d61057ce19519d4ff",
+    "paper": "https://openreview.net/forum?id=pzFhtpkabh",
+    "experiment": "GAIA validation pass@1, Smolagent baseline versus Smolagent + SMAS",
+    "model": "GPT-4.1",
+    "disturbance": "During ongoing multi-agent execution, live agent-to-agent, agent-to-tool and agent-to-memory interactions can enter explicit-error, inefficient-loop or excessive-observation states that threaten current task regulation.",
+    "current_control_relation": "SupervisorAgent wraps live interactions, applies an LLM-free risk filter, builds global/local task-and-trace context when triggered, selects an approve/guidance/correction/verification action and returns the intervention into the continuing MAS operation.",
+    "baseline_arm": {
+      "system": "Smolagent",
+      "average_accuracy_percent": 50.91,
+      "average_tokens_k": 527.76
+    },
+    "supervised_arm": {
+      "system": "Smolagent + SMAS",
+      "average_accuracy_percent": 50.91,
+      "average_tokens_k": 371.12
+    },
+    "reported_average_token_reduction_percent": 29.68,
+    "mixed_function_caveat": "The full SMAS action repertoire includes verification-like intervention in addition to current-control guidance, correction and observation purification. The aggregate base-versus-SMAS result therefore demonstrates capability of the composed supervised organization but is not claimed as an isolated S3-only causal effect.",
+    "ownership_caveat": "The SupervisorAgent relation is added around the base MAS. The result must not be attributed as native S3 capability of Smolagent, AWorld, OAgents or another wrapped system by association.",
+    "provenance_limitation": "This is a first-party-reported published result from the pinned SupervisorAgent repository and ICLR 2026 paper. Opensiro did not execute or reproduce the benchmark.",
+    "vsm_interpretation": "At the declared composed SMAS boundary, SupervisorAgent performs whole-system inside-and-now regulation: it observes current interaction state, selects a corrective/control intervention and returns that intervention into subsequent operation. That makes the published base-versus-SMAS result direct composed S3 capability evidence. Because the supervisor is externally composed around the base MAS and the intervention repertoire is mixed, this observation is non-canonical and cannot select a canonical S3 primary baseline.",
+    "primary_sources": [
+      "https://github.com/LINs-lab/SupervisorAgent/tree/ab116b557b095ae8d45bdf2d61057ce19519d4ff",
+      "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/README.md",
+      "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/smolagents_SMAS/src/smolagents/agents.py",
+      "https://openreview.net/forum?id=pzFhtpkabh"
+    ]
   }
 ]

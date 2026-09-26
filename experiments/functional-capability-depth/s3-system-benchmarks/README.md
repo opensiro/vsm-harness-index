@@ -2,179 +2,145 @@
 
 Status: experimental, non-normative.
 
-Initial coverage issue: #390  
-Primary-baseline search follow-up: #427
-
-Parent semantic review: `../vsm-benchmark-family-map/`
-
-## Question
-
-Do canonical Index systems that already establish **S3 — Inside-and-now control** have published benchmark observations that exercise their own whole-system current-control implementation under a benchmark already reviewed as `direct` for S3?
-
-The answer may legitimately be zero.
-
-## Current result
+Current public-evidence state:
 
 ```text
-direct S3 benchmark families reviewed: 1
-native/adapter-preserved direct-S3 observations admitted: 0
+direct S3 benchmark families: 4
+direct S3 observations: 3
+canonical direct S3 observations: 2
+native proxy projections: 1
 S3 primary baseline: gap
 ```
 
-The one committed direct family remains `ClawArena-Team`.
+The capability layer is **public-evidence only**. Opensiro does not run or reproduce benchmark experiments on assessed harnesses to fill this gap.
 
-ClawArena-Team directly exercises S3 at its own benchmark boundary: the main agent has whole-team visibility and authority over worker creation, tools, workspace scopes, foreground/background execution, inspection, scheduling and dynamic workflow composition.
+## Function boundary
 
-Its published leaderboard nevertheless compares **models acting as managers inside the ClawArena-Team organization**. The worker pool, management tools and organizational boundary are supplied by the benchmark. Those runs are therefore `benchmark-scaffolded` with respect to canonical OpenSiro harnesses.
+S3 is **inside-and-now whole-system control**. A result is relevant only when the observed organization can inspect current operational state and exercise current-control authority over ongoing work, for example through live assignment/commitment regulation, lifecycle control, resource or privilege control, scheduling, or corrective intervention.
 
-## Rule — the native S3 path must actually run
-
-A controlled benchmark does not become an S3 baseline merely because it:
-
-- fixes one model across frameworks;
-- uses a `manager`, `supervisor`, `coordinator` or `orchestrator`;
-- delegates to several workers;
-- measures decomposition, recovery or end-task quality.
-
-For a canonical system-level S3 baseline, the benchmark must preserve the **same first-party current-control path that establishes S3 in the canonical assessment**.
+Names are not evidence:
 
 ```text
-fixed model + same workload + different frameworks
+manager / supervisor / orchestrator / delegation
                     ≠
-matched native S3 implementations
+                    S3
 ```
 
-If the benchmark substitutes a simpler framework mode, imposes its own manager organization, or bypasses the canonical S3 controller, it can still be useful framework/mechanism evidence but not a native S3 baseline row.
+Map the organizational function first, then classify the evidence boundary.
 
-## Why model-manager results are not canonical harness S3 results
+## Current direct families
 
-A row such as `gpt-*`, `claude-*`, `gemini-*` or `glm-*` in ClawArena-Team does not mean that Codex, AutoGen, DeepSeek Harness or another product's own S3 path was exercised.
+### ClawArena-Team — direct, benchmark-scaffolded
 
-The direct benchmark fit and system attribution remain separate:
+ClawArena-Team gives a benchmark-defined main agent whole-team visibility and authority over worker creation, privileges, inspection, scheduling and dynamic workflow control. It directly exercises S3 at that benchmark boundary, but the organization is supplied by the benchmark. Model rows are therefore not native S3 observations for canonical harnesses.
+
+### Loop-Back Authority — direct, benchmark-scaffolded
+
+The paired experiment holds the five-agent team, roles, prompts, tools, model assignment and data fixed while varying one current-control right: the hierarchical Manager may reject completed worker output and loop work back with corrective instructions, while the flat Manager must route forward. This directly exercises a benchmark-defined S3 authority relation, not LangGraph's own S3.
+
+### Multi-Agent Orchestration native supervisor ablation — direct, canonical-native
+
+Canonical `multi-agent-orchestration` establishes S3 through its first-party live-state supervisor. Its committed deterministic benchmark compares the same engine with that supervisor disabled versus enabled while retry and parallelism remain disabled in the clean arms.
+
+Published result:
 
 ```text
-ClawArena-Team exercises S3 directly
-             ≠
-ClawArena-Team exercises Codex.S3 / AutoGen.S3 / Headcount.S3
+baseline:    11 / 54 passed; routing accuracy 56.7%
+supervisor:  48 / 54 passed; routing accuracy 100%
 ```
+
+This is an admitted first-party-reported canonical direct S3 observation. It is a within-system ablation, not a matched cross-harness primary cell.
+
+### SupervisorAgent / SMAS — direct, composed non-canonical
+
+Pinned source: `LINs-lab/SupervisorAgent@ab116b557b095ae8d45bdf2d61057ce19519d4ff`.
+
+SupervisorAgent wraps a base MAS with a meta-level runtime control relation:
+
+```text
+live interaction / current risk
+        ↓
+risk filter + current context
+        ↓
+approve / guide / correct / verify
+        ↓
+intervention returns into ongoing operation
+```
+
+The published GAIA pass@1 Smolagent comparison with GPT-4.1 reports:
+
+```text
+Smolagent:        50.91% average accuracy; 527.76K average tokens
+Smolagent + SMAS: 50.91% average accuracy; 371.12K average tokens
+reported average token reduction: 29.68%
+```
+
+This is admitted as a **direct composed S3 observation at the supervised-MAS boundary**. It is not native S3 evidence for Smolagent, AWorld or OAgents. The complete SMAS action repertoire also contains verification-like interventions, so the aggregate base-versus-SMAS result is not treated as an isolated S3-only causal estimate.
+
+Opensiro did not execute or reproduce this benchmark.
+
+## Second canonical direct observation: Omnigent
+
+Canonical `omnigent` establishes `S3=A`. Later first-party operational history at post-assessment descendant revision `d8d07168c05ce1385be19dbd6ea64f4574c8d144` adds a descriptive current-control witness after parent-runner loss: unfinished children are recovered under their original child/dispatch identities, completed work remains closed, and no replacement worker is created.
+
+This is direct descriptive canonical S3 evidence, but it is materially heterogeneous with the Multi-Agent Orchestration supervisor ablation. It must not be relabeled as evidence at the earlier canonical assessment revision.
 
 ## Native proxy: AutoGen / Magentic-One
 
-Canonical AutoGen AgentChat independently establishes `S3=A` through the Magentic-One Orchestrator's whole-team task/progress ledger, agent assignments, stall detection, reset/replan and team direction.
+Canonical AutoGen AgentChat establishes S3 through Magentic-One's whole-team task/progress ledger, assignments, stall detection, reset/replan and direction. The Magentic-One orchestrator ablation changes end-task performance, but it simultaneously removes S2 and S3 mechanisms and uses general task benchmarks rather than an isolated S3 disturbance. It therefore remains a native quantitative proxy, not a direct S3 observation.
 
-The Magentic-One paper includes a native orchestrator ablation: replacing the full orchestrator with a simpler GroupChat-style selector removes ledgers, planning, progress tracking, loop detection and explicit direction and materially changes GAIA/AssistantBench/WebArena end-task performance.
+## Reviewed non-primary routes
 
-This is strong native mechanism/ablation evidence, but it remains a proxy for direct S3 capability because:
+- **Astra** — strongly matched framework campaign, but Agno and AutoGen are exercised through benchmark-selected organization modes rather than the canonical S3 paths used to establish their ownership states.
+- **PrincipalBench** — benchmark-defined principal plus simulated workers; useful S3-adjacent recovery/decomposition evidence, not a canonical harness current-control path.
+- **OrchestraBench** — direct orchestration-failure/recovery protocol, but the organization is benchmark-defined and public evidence does not bind results to canonical native S3 implementations.
+- **C.A.D.I.S., Awaken, ARES** — canonical S3 mechanisms exist, but current public result surfaces do not isolate a current-control intervention and its subsequent organizational outcome.
 
-- those benchmarks are general end-task benchmarks rather than S3 current-control disturbances;
-- the ablation simultaneously removes S2 and S3 mechanisms.
+## Why the primary remains `gap`
 
-It is not admitted into the direct S3 observation registry.
-
-## Recent controlled-benchmark search
-
-### Astra AGI five-framework benchmark — matched framework, wrong S3 paths
-
-Pinned source: `HeeManSu/astra-agi@129b440e531af9d053645f7fab966c172bfb3b3b`.
-
-This is a useful controlled comparison: `gemini-2.5-flash`, temperature, tools, workload and most prompts are held fixed while Astra, Agno, CrewAI, AutoGen and LangGraph vary. Trials run in fresh subprocesses and model calls are captured at the common Gemini boundary.
-
-However, the benchmark does not exercise the canonical S3 modes:
-
-- canonical Agno `S3=A` is established through `TeamMode.tasks`; the benchmark uses `TeamMode.coordinate`;
-- canonical AutoGen AgentChat `S3=A` is established through `MagenticOneOrchestrator`; the benchmark uses `SelectorGroupChat`;
-- CrewAI and LangGraph are current `S3=—` controls at their canonical boundaries.
-
-Therefore this benchmark is retained as `framework-scaffolded` evidence, not a native S3 comparison.
-
-### PrincipalBench — model orchestration proxy
-
-Pinned source: `KalarisLabs/Principal-Bench@89923dd855664165813c776ca9e77ce308d969c0`.
-
-PrincipalBench exposes useful S3-adjacent observables: decomposition quality, failure detection, adversarial recovery and context coherence over 500 multi-hop tasks and injected failures.
-
-But `harness/pipeline.py` constructs the organization itself: `WorkerSimulator` supplies worker outputs and failures, then one model receives those outputs through a benchmark-defined principal prompt. The evaluated object does not operate a canonical harness's native worker lifecycle, assignments, current resource/priority authority, retry/replan loop or completion control.
-
-It remains `proxy-scaffolded` evidence.
-
-### Multi-Agent Orchestration Engine — strong native candidate, not canonical yet
-
-Pinned source: `Vinay-veeragani/Multi-Agent-Orchestration@e6c34462af045d7e53d383103346362351c96353`.
-
-This repository is structurally much closer to the desired S3 object. Its first-party supervisor acts against live execution state and can choose delegation, fan-out, retry, replan, approval and finalization while deterministic runtime machinery enforces budgets, permissions, concurrency, persistence and recovery boundaries.
-
-The repository also commits a deterministic 54-scenario benchmark with baseline, supervisor, supervisor+retry and supervisor+parallel arms covering routing, fan-out, retry recovery, permission denial, human approval and budget exhaustion.
-
-This is a strong `candidate-direct` / `native-system` S3 case **at its own boundary**. It is not currently a canonical Index system, so it cannot populate the canonical S3 observation registry or primary baseline until independent assessment/admission establishes the relevant S3 function and boundary.
-
-### OrchestraBench — controlled failure/recovery protocol, scaffolded organization
-
-`arXiv:2608.05263` studies orchestration failure injection, routing, cascade radius and recovery over controlled dependency chains. Its observables are strongly S3-relevant.
-
-The reviewed public evidence still evaluates a benchmark-defined orchestration organization, and no authoritative code repository was recovered that links the reported runs to native canonical harness S3 implementations. It therefore remains a candidate protocol, not a canonical baseline row.
-
-## Proxy: EnterpriseArena
-
-EnterpriseArena stresses scarce-resource allocation over a long horizon and is useful for the resource-allocation dimension of S3. It remains a proxy because its CFO-style decision environment blends current regulation with prospective/environmental reasoning and is benchmark-defined rather than a native canonical harness control plane.
-
-## Representative canonical S3 cohort inspected
-
-The coverage layer checks mechanism-diverse canonical S3 systems, including:
-
-- `agno` — autonomous task-board/current-control path;
-- `autogen-agentchat` — autonomous whole-team progress/current control;
-- `headcount` — autonomous executive/current control;
-- `deepseek-harness` — parent-governed autonomous current-control path;
-- `reigen` — parent-governed current-control path;
-- `omnigent` — autonomous team/current control;
-- `loopx` — parent-governed current control;
-- `thclaws` — autonomous Team-mode current control;
-- `codex` — constructor MultiAgent V2 whole-tree control;
-- `pi-harness` — constructor/parent-governed current-control path.
-
-This is a representative mechanism-diverse set, not a claim that no other canonical S3 system exists.
-
-## S3 capability dimensions exposed by the gap
-
-A useful future benchmark program may need several disturbance/control dimensions inside S3:
+The two canonical direct observations are not materially matched:
 
 ```text
-S3 — Inside-and-now control
-├── worker/team lifecycle control
-├── live assignment and commitment regulation
-├── resource/budget allocation
-├── privilege/tool/workspace control
-├── progress/stall/failure intervention
-└── priority/scheduling control
+Multi-Agent Orchestration
+  controlled supervisor ablation
+  54 scripted scenarios
+  deterministic MockProvider surface
+
+Omnigent
+  descriptive operational/recovery witness
+  post-assessment descendant revision
+  real Polly/Codex recovery history
 ```
 
-These are S3 capability dimensions, not additional VSM systems and not an ordinal maturity ladder.
+SupervisorAgent / SMAS adds useful direct S3 evidence, but at a composed non-canonical boundary.
 
-## What would close the primary gap
+A primary can be selected only when public evidence supplies a materially matched comparison where two or more canonical systems exercise their own native or adapter-preserved S3 paths under a common benchmark/model/configuration/evaluator surface.
 
-A usable S3 primary should provide at least one matched cell where:
+## Reopen rule
 
-1. two or more canonical systems independently establish S3;
-2. each run exercises the exact native/adapter-preserved S3 path established by its assessment;
-3. model/configuration, disturbance/task set, environment, evaluator and budget are matched strongly enough for comparison;
-4. the benchmark stresses whole-system current control rather than only decomposition or delegation;
-5. persistent self-improvement is excluded/reset under the ordinary frozen-repertoire rule.
+Reopen the primary search when public evidence provides one of:
 
-Until then, `S3: gap` is the evidence-backed baseline state, not a zero capability score.
+1. a materially matched benchmark/model/configuration cell for two or more canonical native or adapter-preserved S3 implementations;
+2. an existing matched framework campaign proving that canonical S3 paths are actually active for multiple systems;
+3. a new direct orchestration benchmark with immutable comparable results linked to multiple canonical native S3 systems.
+
+Do not reopen merely for another benchmark-authored manager topology, another unmatched descriptive row, another composed non-canonical supervisor result, or microperformance/mechanism tests without current-control outcome closure.
 
 ## Source of truth
 
-- `observations.json` — admitted native/adapter-preserved direct-S3 observations; currently `[]`.
-- `coverage.json` — reviewed direct/proxy/boundary/candidate cases.
-- `validate.py` — checks the empty direct-observation contract, current direct-S3 map, reviewed search cases and canonical anchors.
+- `observations.json` — direct S3 observations, including canonical and composed/non-canonical rows;
+- `coverage.json` — reviewed direct/proxy/boundary/candidate cases;
+- `matched-cell/s3-primary-search-closure.json` — current gap disposition and reopen conditions;
+- `validate.py` — fail-closed evidence and boundary checks;
+- `../vsm-benchmark-family-map/map.json` — reviewed benchmark-family semantics.
 
 ## Non-goals
 
 This experiment does not:
 
-- treat delegation or a `manager` label as S3;
-- attribute benchmark-owned team control to a product by model/provider name;
-- infer S3 from benchmark performance;
-- turn a matched framework experiment into S3 evidence when the canonical S3 mode is not exercised;
-- convert management metrics into a universal S3 score;
-- change canonical assessments or benchmark-family semantics.
+- infer S3 from labels such as `manager`, `supervisor` or `orchestrator`;
+- transfer a benchmark/composed supervisor's S3 ownership to a wrapped product;
+- infer canonical autonomy from benchmark performance;
+- normalize heterogeneous S3 observations into one scalar score;
+- run harness experiments to manufacture missing capability evidence;
+- change canonical assessments, TLDRs, rankings or Full-A state.

@@ -4,12 +4,14 @@
   "tracking_issue": 567,
   "canonical_delta_review_issue": 592,
   "current_state_update_issue": 693,
+  "public_evidence_admission_issue": 685,
   "reviewed_at": "2026-09-26",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
   "evidence_depth": {
-    "direct_benchmark_families": 3,
+    "direct_benchmark_families": 4,
+    "direct_observations": 3,
     "canonical_direct_observations": 2,
     "native_proxy_projections": 1,
     "representative_canonical_s3_systems_inspected": 14
@@ -45,6 +47,12 @@
       "blocking_reason": "The benchmarks directly exercise whole-team current-control authority, but their management organization is authored by the benchmark rather than a canonical harness's own S3 path."
     },
     {
+      "route_id": "direct-composed-runtime-supervision",
+      "status": "composed-noncanonical",
+      "examples": ["SupervisorAgent / SMAS"],
+      "blocking_reason": "SupervisorAgent directly adds a live current-control loop around a base MAS and publishes a base-versus-SMAS result, but the S3 relation belongs to the composed supervised organization rather than the wrapped Smolagent/AWorld/OAgents boundary. The intervention repertoire also includes verification-like actions, so the aggregate result is not an isolated S3-only causal estimate and cannot form a canonical primary row."
+    },
+    {
       "route_id": "canonical-native-direct-within-system",
       "status": "multiple-heterogeneous-not-matched",
       "examples": ["Multi-Agent Orchestration", "Omnigent"],
@@ -75,7 +83,7 @@
       "blocking_reason": "The benchmark directly studies orchestration failures and recovery, but public evidence does not bind the measurements to native canonical harness S3 implementations."
     }
   ],
-  "closure_claim": "Current public evidence contains three direct S3 benchmark families and two canonical direct S3 observations. Multi-Agent Orchestration provides a controlled native supervisor ablation; Omnigent provides first-party descriptive operational recovery evidence at a post-assessment descendant revision. These rows are not materially matched, so no cross-harness canonical-native S3 primary baseline is currently supported.",
+  "closure_claim": "Current public evidence contains four direct S3 benchmark families and three admitted direct S3 observations. Multi-Agent Orchestration and Omnigent provide the two canonical direct observations; SupervisorAgent / SMAS adds one first-party-reported composed non-canonical observation. The canonical rows remain materially heterogeneous and the SMAS row belongs to a composed benchmark boundary, so no cross-harness canonical-native S3 primary baseline is currently supported.",
   "reopen_when": [
     "a materially matched benchmark/model/configuration cell evaluates two or more canonical systems through their own native or adapter-preserved S3 paths",
     "an existing matched framework campaign proves that canonical S3 paths are actually active for two or more systems under one recoverable comparison protocol",
@@ -83,10 +91,11 @@
   ],
   "do_not_reopen_for": [
     "another descriptive canonical S3 observation without a materially comparable cross-harness cell",
+    "another direct composed or benchmark-scaffolded S3 observation without canonical native or adapter-preserved linkage",
     "another benchmark-authored manager topology",
     "another whole-task orchestration score without isolated current-control attribution",
     "another framework comparison that does not activate canonical S3 paths",
     "microperformance or mechanism tests that do not measure a current-control intervention and subsequent organizational outcome"
   ],
-  "non_claim": "This closure is not a zero S3 capability score and does not normalize the heterogeneous Multi-Agent Orchestration and Omnigent evidence into one metric or ranking. Omnigent's observation is explicitly post-assessment temporal evidence and does not rewrite the earlier canonical review revision. The S3 primary remains gap until materially matched canonical-native evidence appears."
+  "non_claim": "This closure is not a zero S3 capability score and does not normalize the heterogeneous Multi-Agent Orchestration, Omnigent and SMAS evidence into one metric or ranking. Omnigent's observation is explicitly post-assessment temporal evidence and does not rewrite the earlier canonical review revision. SupervisorAgent / SMAS is direct evidence only at the composed supervised-MAS boundary and does not transfer S3 ownership to wrapped systems. The S3 primary remains gap until materially matched canonical-native evidence appears."
 }
