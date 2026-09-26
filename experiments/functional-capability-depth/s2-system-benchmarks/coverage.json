@@ -2,8 +2,8 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-26",
   "function": "S2",
-  "direct_benchmark_family_count": 8,
-  "direct_observation_count": 6,
+  "direct_benchmark_family_count": 9,
+  "direct_observation_count": 7,
   "canonical_direct_observation_count": 2,
   "proxy_projection_count": 2,
   "coverage_classes": [
@@ -181,6 +181,22 @@
         "https://github.com/rtk-ai/grit/commit/a2c48735e0a16c49ca1541c4865fce438c479405"
       ],
       "finding": "Grit directly instantiates S2 at its own first-party product boundary. Parallel coding branches create interaction-specific merge contention and lost-work variety; Grit attenuates that variety through symbol claims/locks, worktree isolation, queue/admission behavior and serialized integration. The selected immutable synthetic sweep commits five iterations of raw-git failure/conflict arrays and a zero-failure Grit series across the recorded agent counts. Generated per-run result directories are gitignored and the raw-git/Grit arms independently sample work allocation, so the admitted row remains first-party-reported and partially matched rather than independently reproduced or a matched primary. Grit is not a canonical Index harness.",
+      "admitted": false
+    },
+    {
+      "case_id": "agentroom-concurrent-coding-direct-native-noncanonical",
+      "benchmark": "AgentRoom concurrent coding coordination study",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-native-noncanonical",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": null,
+      "paper": "https://arxiv.org/abs/2608.23740",
+      "observation_ref": "observations.json#agentroom-parallel-merge-t4-sonnet46-2026-08",
+      "primary_sources": [
+        "https://arxiv.org/abs/2608.23740",
+        "https://arxiv.org/abs/2608.23740v1"
+      ],
+      "finding": "AgentRoom directly instantiates S2 at the system boundary defined in its public paper. Two concurrent coding workers share a CRDT-backed workspace and use first-party atomic file claims, room state and broadcast/read coordination; on claim conflicts workers are instructed to revise their plan and choose another file. On the T4 Sonnet 4.6 matched-compute comparison, the concurrent no-coordination parallel-merge control reports mean quality 0.456 (n=12) while AgentRoom reports 0.669 (n=14), a +0.213 difference with Welch p=0.003. The paper-cited GitHub repository was not publicly recoverable at review time, so no source revision or canonical Index identity is inferred; provenance is paper-backed and the full AgentRoom coordination bundle is treated as the varying S2 relation.",
       "admitted": false
     },
     {
