@@ -62,7 +62,9 @@ class MLRAgentS4Evidence757Test(unittest.TestCase):
         proposal = surfaces["mlrbench-proposal-generation-201-task"]
         self.assertEqual(proposal.get("task_count"), 201)
         self.assertEqual(len(proposal.get("models", [])), 6)
-        self.assertIn("does not isolate", proposal.get("interpretation", ""))
+        proposal_interpretation = proposal.get("interpretation", "")
+        self.assertIn("not the downstream benefit", proposal_interpretation)
+        self.assertIn("rather than isolating a harness S4 mechanism", proposal_interpretation)
 
         end_to_end = surfaces["mlrbench-end-to-end-10-task"]
         self.assertEqual(end_to_end.get("task_count"), 10)
