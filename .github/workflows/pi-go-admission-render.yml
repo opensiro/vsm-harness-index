@@ -1,0 +1,66 @@
+name: Render pi Go admission
+
+on:
+  push:
+    branches:
+      - assessment/pi-go-admit
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/pi-go-admit
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Admit canonical sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/pi-go.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed'
+          if old not in text and 'status: included' not in text:
+              raise SystemExit('unexpected pi-go status')
+          assessment.write_text(text.replace(old, 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '268|pi-go|pi (Go)|https://github.com/sky-valley/pi|2026-06-09T10:05:50Z|index-addition|1c1b674f7b7bf18885082e3cf39c29fc56858107|2026-09-26'
+          ctext = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|pi-go|' not in ctext:
+              ctext += '\n' + row
+          catalog.write_text(ctext + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signature = "pi (Go) closes autonomous S1 through its stateful model/tool loop. Parallel tool execution, steering/follow-up and session controls remain within one operational unit and do not establish S2 or whole-system S3; in-band hooks and development-only differential/parity checks do not close S3*. Compaction, skill/model configuration and prompt/trust controls do not close S4 or S5."
+          srow = '268|pi-go|' + signature
+          stext = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|pi-go|' not in stext:
+              stext += '\n' + srow
+          signatures.write_text(stext + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Commit rendered admission
+        shell: bash
+        run: |
+          rm .github/workflows/pi-go-admission-render.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git commit -m 'index: admit pi Go'
+          git push origin HEAD:assessment/pi-go-admit
