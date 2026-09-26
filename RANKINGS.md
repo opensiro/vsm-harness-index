@@ -107,6 +107,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="trpc-agent-go"></a>[tRPC-Agent-Go](https://github.com/trpc-group/trpc-agent-go) | 2025-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C — — A(P) —` |
 | 5 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025-Q1 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 5 | <a id="claude-code"></a>[Claude Code](https://github.com/anthropics/claude-code) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="worldgui"></a>[WorldGUI-Agent](https://github.com/showlab/WorldGUI) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="autoagent-hkuds"></a>[AutoAgent (HKUDS)](https://github.com/HKUDS/AutoAgent) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="agent-laboratory"></a>[Agent Laboratory](https://github.com/SamuelSchmidgall/AgentLaboratory) | 2025-Q1 | 2/6 | 1/5 | 0 | 1 | 1 | `A — — ? A(P) —` |
 | 5 | <a id="san"></a>[San](https://github.com/genai-io/san) | 2024-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
