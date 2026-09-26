@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 735,
+  "reviewed_at": "2026-09-26",
+  "function": "S2",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "agentharness-oklahomawhore",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "6bedcf45fad75e21df5e5cac827a898ef5c7d228",
+      "repository": "https://github.com/Oklahomawhore/AgentHarness",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "AgentHarness establishes native S2 through parent-model judgment over which separately persisted child Sessions may safely overlap in one shared workspace, plus later message/interruption feedback. The reviewed public repository documents and implements that shared-workspace race and coordination path, but publishes no immutable capability result that instantiates the interference, measures its attenuation through this native relation, and records the subsequent S1 outcome. No direct canonical S2 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/Oklahomawhore/AgentHarness/blob/6bedcf45fad75e21df5e5cac827a898ef5c7d228/packages/subagent/tool-subagent/README.md",
+        "https://github.com/Oklahomawhore/AgentHarness/blob/6bedcf45fad75e21df5e5cac827a898ef5c7d228/packages/subagent/tool-subagent-control/README.md",
+        "https://github.com/Oklahomawhore/AgentHarness/blob/6bedcf45fad75e21df5e5cac827a898ef5c7d228/.agents/notes/archived/feature/2026-08-09-parallel-subagent-delegations.md"
+      ],
+      "reassess_if": [
+        "the project publishes an immutable shared-workspace interference result exercising the shipped parent-model overlap/steering path",
+        "a third-party matched benchmark evaluates AgentHarness native S2 under an explicit inter-S1 disturbance"
+      ]
+    },
+    {
+      "canonical_harness_id": "kot",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab",
+      "repository": "https://github.com/Loqira-Labs/agentkot",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "KOT establishes native S2 through worktree/dependency-aware delegation and teammate coordination over a shared Plan board. Its README publishes a FrontierHarness whole-system software-engineering result, but that result scores end-task harness performance and does not isolate an inter-S1 disturbance or exercise the canonical S2 worktree/dependency choice as the measured attenuation relation. No direct canonical S2 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/README.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/tools/Agent.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/assets/frontier-harness-eval.svg"
+      ],
+      "reassess_if": [
+        "KOT publishes a result with an explicit multi-S1 interference variable and native worktree/dependency attenuation outcome",
+        "a matched public benchmark evaluates KOT native S2 alongside another canonical S2 system"
+      ]
+    },
+    {
+      "canonical_harness_id": "scion-gcp",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "bdf5b6d135bb7585e242d2f08f4c54b3de2c2940",
+      "repository": "https://github.com/GoogleCloudPlatform/scion",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "Scion establishes an S2 constructor through worktree-per-agent or clone-per-agent isolation, per-agent branches/state, and later Git reconciliation for concurrent project agents. The reviewed public product evidence establishes the interference boundary and attenuation mechanism, but no public result set measures conflict/contamination before and after that canonical Scion relation with immutable run provenance. No direct canonical S2 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/docs-site/src/content/docs/concepts.md",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/docs-site/src/content/docs/local/workspace.md",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/pkg/agent/provision.go"
+      ],
+      "reassess_if": [
+        "Scion publishes an immutable concurrency/conflict result exercising its own workspace-isolation path",
+        "a matched public benchmark evaluates Scion native or adapter-preserved S2 under an explicit interference definition"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
