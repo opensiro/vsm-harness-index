@@ -54,6 +54,18 @@ FutureSim publishes real Codex-harness evaluations and version metadata.
 
 **Reason:** FutureSim is currently classified as an S4 `proxy`, not as a direct S1 benchmark family for this experiment. It belongs in a later S4-proxy system layer rather than being repurposed here simply because Codex executes tools.
 
+## HarnessBench-Lite
+
+Reviewed repository: `reacher-z/HarnessBench` at `d7ff1255d623177b10b59f858a95f48b7bd070e5`.
+
+HarnessBench-Lite is structurally promising for S1 comparison. It reuses a fixed 20-task ClawBench subset, exposes harness-specific adapters over one shared benchmark stack, and documents a fixed-model matrix workflow whose examples include OpenClaw, Hermes and browser-use. The README identifies `claude-sonnet-4-6` as the model intended for published comparisons.
+
+**Decision:** unresolved candidate; no observation admitted and no S1 primary change.
+
+**Reason:** the reviewed immutable repository exposes fixtures, adapters, matrix/run commands and a leaderboard renderer, but no committed multi-harness result corpus or immutable published leaderboard rows for the advertised HarnessBench-Lite matrix. A runnable matched design is not itself a capability observation. Without recoverable result rows, exact executed harness/configuration provenance and observed scores cannot be bound to canonical systems.
+
+**Reopen when:** the project publishes recoverable multi-harness result artifacts under one fixed task/model configuration, with enough harness/version provenance to establish the executed system identities. At that point it can be reviewed as secondary S1 evidence or, only if it is materially stronger under the existing selection gate, as a PawBench primary challenger.
+
 ## Generic leaderboard-name matches
 
 Any result that merely names a model, provider, product family or `*-agent` string without sufficient evidence that the canonical harness's own operational loop ran is rejected.
