@@ -288,3 +288,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 273|llamar|LLaMAR|https://github.com/nsidn98/LLaMAR|2024-07-09T01:41:04Z|index-addition|d2b74cac79a0f070d87a150712f8e2ae174920be|2026-09-26
 274|cedar|CEDAR|https://github.com/Fraunhofer-IIS/cedar|2026-01-17T14:09:25Z|index-addition|ab5820b360eab75a84320f551642fe6386513bab|2026-09-26
 275|webthinker|WebThinker|https://github.com/RUC-NLPIR/WebThinker|2025-03-28T04:34:22Z|index-addition|db387eb3261de9b5e2db7d2d7fb20af2aceb7882|2026-09-26
+276|worldgui|WorldGUI-Agent|https://github.com/showlab/WorldGUI|2025-02-12T00:01:31Z|index-addition|2117f0a87bcd3b1f330d3727a7ec0643930e7d90|2026-09-26
