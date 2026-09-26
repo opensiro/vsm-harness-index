@@ -104,5 +104,49 @@
       "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/omnigent/server/child_session_recovery.py",
       "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/tests/server/test_child_session_recovery.py"
     ]
+  },
+  {
+    "observation_id": "supervisoragent-smas-gaia-2026",
+    "function": "S3",
+    "benchmark_id": "supervisoragent-smas-runtime-supervision",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "composed-supervised-mas",
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
+    "system_compatibility": "benchmark-scaffolded",
+    "benchmark_artifact_revision": "ab116b557b095ae8d45bdf2d61057ce19519d4ff",
+    "benchmark": "GAIA validation",
+    "model": "GPT-4.1",
+    "comparison_class": "within-composed-system-controlled-comparison",
+    "treatment_boundary": "Smolagent base MAS augmented with the external SupervisorAgent meta-level runtime controller to form SMAS",
+    "intervention_actions": [
+      "approve",
+      "provide_guidance",
+      "correct_observation",
+      "run_verification"
+    ],
+    "baseline_arm": {
+      "method": "Smolagent",
+      "average_accuracy_pct": 50.91,
+      "average_tokens_k": 527.76
+    },
+    "supervised_arm": {
+      "method": "Smolagent + SMAS",
+      "average_accuracy_pct": 50.91,
+      "average_tokens_k": 371.12
+    },
+    "reported_average_token_reduction_pct": 29.68,
+    "functional_chain": "live MAS interaction/risk -> runtime supervisor observes current state -> selective intervention -> intervention returns into current operation -> subsequent task path/resource use/outcome changes",
+    "mixed_function_caveat": "The aggregate SMAS treatment is not a clean S3-only ablation. Guidance, correction and observation purification contain current-control behavior, while run_verification introduces verification-like functionality that may overlap S3*. The observation is admitted as direct composed S3 evidence for the SMAS boundary, not as an isolated scalar estimate of S3 alone.",
+    "underlying_harness_attribution_boundary": "The published relation is Your MAS + SupervisorAgent -> SMAS. Smolagent, AWorld and OAgents are execution substrates/base systems in the reported comparisons and do not thereby acquire native S3 ownership or canonical S3 evidence from the external supervisor.",
+    "supporting_generalization": "The ICLR 2026 paper also reports composed SMAS variants over AWorld and OAgents on a GAIA high-token subset, supporting the portability of the external supervision layer without changing its ownership boundary.",
+    "provenance_limitation": "This is first-party-reported public repository/paper evidence. Opensiro did not execute or reproduce the benchmark, and no canonical harness linkage is inferred from the base framework names.",
+    "vsm_interpretation": "At the composed SMAS system boundary, SupervisorAgent performs direct S3-relevant current control by observing ongoing operations, selecting interventions and returning corrective/guidance actions into present work. The evidence is non-canonical and mixed-function, so it expands S3 capability depth without changing canonical autonomy states or selecting the S3 primary baseline.",
+    "primary_sources": [
+      "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/README.md",
+      "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/smolagents_SMAS/src/smolagents/agents.py",
+      "https://openreview.net/forum?id=pzFhtpkabh"
+    ]
   }
 ]
