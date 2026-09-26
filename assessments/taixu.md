@@ -151,6 +151,10 @@ Primary evidence:
 - Basis: explicit + structural
 - Confidence: medium-high
 - Caveats: generic memory/learning and current-task web research are not the S4 witness. The credited witness is specifically the post-run future-reuse/skill-gap analysis plus human-governed persistent capability update.
+- External distinction: completed user-facing work reveals an externally sourced workflow demand or skill defect that the current reusable skill inventory does not adequately cover.
+- Future / prospective distinction: the advisor explicitly asks whether the just-observed workflow should be reusable in future tasks or whether an existing skill should be evolved for future operation.
+- Adaptation option generated: a normalized `create` or `update` skill proposal containing persistent future instructions, description and optional trigger.
+- Path back into current capability / S3: the human applies the proposal through the standard Chat UI; `AgentSkillRepository.addCustom` persists the new/updated enabled skill so subsequent agent operation can select/use the changed capability.
 
 ## S5 — Policy and identity
 
