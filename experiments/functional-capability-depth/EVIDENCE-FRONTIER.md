@@ -12,7 +12,7 @@ It is also not a second evidence database: every state, count, blocker and reope
 | --- | --- | --- | --- | --- |
 | S1 | `selected` — PawBench v1.0 / `qwen3.6-35b-a3b` | `task_count`: `150` · `canonical_harnesses`: `3` | `2026-09-23` | [`primary-baselines.json`](primary-baselines.json) |
 | S2 | `gap` | `direct_benchmark_families`: `8` · `direct_observations`: `6` · `canonical_direct_observations`: `2` · `native_proxy_projections`: `2` · `representative_canonical_s2_systems_inspected`: `16` | `2026-09-26` | [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json) |
-| S3 | `gap` | `direct_benchmark_families`: `3` · `canonical_direct_observations`: `2` · `native_proxy_projections`: `1` · `representative_canonical_s3_systems_inspected`: `14` | `2026-09-26` | [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json) |
+| S3 | `gap` | `direct_benchmark_families`: `4` · `direct_observations`: `3` · `canonical_direct_observations`: `2` · `native_proxy_projections`: `1` · `representative_canonical_s3_systems_inspected`: `14` | `2026-09-26` | [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json) |
 | S3* | `gap` | `direct_benchmark_families`: `5` · `composed_direct_observations`: `3` · `canonical_direct_observations`: `2` | `2026-09-24` | [`s3star-primary-search-closure.json`](s3star-system-benchmarks/matched-cell/s3star-primary-search-closure.json) |
 | S4 | `gap` | `canonical_native_observations`: `2` · `reviewed_routes`: `6` | `2026-09-25` | [`s4-primary-search-closure.json`](s4-system-benchmarks/matched-cell/s4-primary-search-closure.json) |
 | S5 | `gap` | `reviewed_cases`: `14` · `direct_benchmark_families`: `1` · `composed_direct_observations`: `1` · `canonical_direct_observations`: `1` · `representative_canonical_s5_systems`: `5` | `2026-09-26` | [`s5-primary-search-closure.json`](s5-system-benchmarks/matched-cell/s5-primary-search-closure.json) |
@@ -57,10 +57,11 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
 ## S3 — current `gap` frontier
 
 - **Reviewed through:** `2026-09-26`.
-- **Primary blocking reason:** Reviewed direct S3 evidence now includes two canonical native observations: Multi-Agent Orchestration provides a controlled within-system supervisor ablation, while Omnigent provides first-party descriptive operational/regression evidence for recovery of interrupted child commitments at a post-assessment descendant revision. These rows use different disturbances, models, metrics, result surfaces and comparison protocols, so public evidence still does not provide a materially matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.
-- **Closure claim:** Current public evidence contains three direct S3 benchmark families and two canonical direct S3 observations. Multi-Agent Orchestration provides a controlled native supervisor ablation; Omnigent provides first-party descriptive operational recovery evidence at a post-assessment descendant revision. These rows are not materially matched, so no cross-harness canonical-native S3 primary baseline is currently supported.
+- **Primary blocking reason:** Reviewed direct S3 evidence now includes four direct families and three admitted direct observations. Multi-Agent Orchestration and Omnigent remain the two canonical native observations; SupervisorAgent / SMAS adds a first-party-reported composed non-canonical observation around a base MAS. The canonical rows use different disturbances, models, metrics, result surfaces and comparison protocols, while SMAS is benchmark-scaffolded/composed and cannot be attributed to its wrapped base systems. Public evidence therefore still does not provide a materially matched comparison of native S3 implementations across multiple canonical harnesses under one common benchmark/model/configuration cell.
+- **Closure claim:** Current public evidence contains four direct S3 benchmark families and three admitted direct S3 observations. Multi-Agent Orchestration and Omnigent provide the two canonical direct observations; SupervisorAgent / SMAS adds one first-party-reported composed non-canonical observation. The canonical rows remain materially heterogeneous and the SMAS row belongs to a composed benchmark boundary, so no cross-harness canonical-native S3 primary baseline is currently supported.
 - **Evidence depth:**
-  - `direct_benchmark_families`: `3`
+  - `direct_benchmark_families`: `4`
+  - `direct_observations`: `3`
   - `canonical_direct_observations`: `2`
   - `native_proxy_projections`: `1`
   - `representative_canonical_s3_systems_inspected`: `14`
@@ -70,11 +71,12 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
   1. a new direct orchestration benchmark binds immutable, comparable results to multiple canonical native S3 implementations
 - **Do not reopen for:**
   - another descriptive canonical S3 observation without a materially comparable cross-harness cell
+  - another direct composed or benchmark-scaffolded S3 observation without canonical native or adapter-preserved linkage
   - another benchmark-authored manager topology
   - another whole-task orchestration score without isolated current-control attribution
   - another framework comparison that does not activate canonical S3 paths
   - microperformance or mechanism tests that do not measure a current-control intervention and subsequent organizational outcome
-- **Non-claim:** This closure is not a zero S3 capability score and does not normalize the heterogeneous Multi-Agent Orchestration and Omnigent evidence into one metric or ranking. Omnigent's observation is explicitly post-assessment temporal evidence and does not rewrite the earlier canonical review revision. The S3 primary remains gap until materially matched canonical-native evidence appears.
+- **Non-claim:** This closure is not a zero S3 capability score and does not normalize the heterogeneous Multi-Agent Orchestration, Omnigent and SMAS evidence into one metric or ranking. Omnigent's observation is explicitly post-assessment temporal evidence and does not rewrite the earlier canonical review revision. SupervisorAgent / SMAS is direct evidence only at the composed supervised-MAS boundary and does not transfer S3 ownership to wrapped systems. The S3 primary remains gap until materially matched canonical-native evidence appears.
 - **Source:** [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json).
 
 ## S3* — current `gap` frontier
