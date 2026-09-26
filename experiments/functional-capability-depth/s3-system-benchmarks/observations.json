@@ -58,5 +58,51 @@
       "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/src/orchestration/evaluation/arms.py",
       "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/benchmarks/results/eval_c760d1ff9d464cbfa89e.json"
     ]
+  },
+  {
+    "observation_id": "omnigent-child-session-recovery-2026-09",
+    "function": "S3",
+    "benchmark_id": null,
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "canonical-native-system",
+    "canonical_harness_id": "omnigent",
+    "canonical_system_eligible": true,
+    "system_compatibility": "native-system",
+    "comparison_class": "descriptive-only",
+    "canonical_review_revision": "4d963a360e798f076d4fdbd4665e7188e4da05df",
+    "observation_revision": "d8d07168c05ce1385be19dbd6ea64f4574c8d144",
+    "manual_validation_revision": "15477855d289abdcead0399c1e5be7923f7deef7",
+    "revision_relation": "post-assessment-descendant",
+    "upstream_issue_number": 4838,
+    "upstream_pull_request_number": 7662,
+    "disturbance": "A parent runner interruption leaves unfinished child commitments interrupted or stale while completed descendants must remain closed.",
+    "current_control_relation": "First-party recovery enumerates the descendant work set, excludes stopped/closed/finished/differently-owned/live-elsewhere work, rebinds eligible unfinished children and resumes their original pending commitments rather than replacing them.",
+    "reported_operational_witness": {
+      "setup": "real Polly parent with two Codex children, one quick and one slow",
+      "parent_runner_interrupted": true,
+      "unfinished_child_resumed_in_original_conversation": true,
+      "finished_child_remained_completed": true,
+      "same_two_child_session_ids": true,
+      "original_dispatch_ids_preserved": true,
+      "replacement_workers_created": false,
+      "original_dispatch_receipts_acknowledged": true
+    },
+    "regression_evidence": {
+      "implementation_file": "omnigent/server/child_session_recovery.py",
+      "dedicated_test_file": "tests/server/test_child_session_recovery.py",
+      "reported_focused_runner_server_tests": 244,
+      "reported_runner_entry_tests": 111,
+      "targeted_regressions_reported_fail_before_pass_after": true
+    },
+    "provenance_limitation": "This is first-party-reported operational and regression evidence from a post-assessment descendant revision. It is not independently reproduced and must not be relabeled as an observation at the earlier canonical assessment revision.",
+    "scope_note": "The SQLite latency benchmark reported on PR #7662 is not used as an S3 capability metric; the S3 observation is the recovery decision and preserved continuation of current child commitments.",
+    "vsm_interpretation": "Canonical Omnigent independently establishes S3=A for Polly's whole-team current control. The later first-party recovery path observes a live current-control disturbance, classifies which child commitments remain active, preserves finished work, restores eligible unfinished work under original identities, and changes subsequent team operation. This is direct descriptive canonical S3 evidence, but it is heterogeneous with the Multi-Agent Orchestration supervisor ablation and does not create a matched cross-harness primary baseline.",
+    "primary_sources": [
+      "https://github.com/omnigent-ai/omnigent/issues/4838",
+      "https://github.com/omnigent-ai/omnigent/pull/7662",
+      "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/omnigent/server/child_session_recovery.py",
+      "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/tests/server/test_child_session_recovery.py"
+    ]
   }
 ]
