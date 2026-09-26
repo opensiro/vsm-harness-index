@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 735,
+  "reviewed_at": "2026-09-26",
+  "function": "S3*",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "kot",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab",
+      "repository": "https://github.com/Loqira-Labs/agentkot",
+      "result_surface_review": "no-direct-s3star-result",
+      "finding": "KOT's canonical S3*=A path independently checks a delegated worker in its working directory and can route a passing check through a separate supervisor/arbiter verdict of accept, continue or escalate, returning corrective specifics to later worker turns. KOT publishes a whole-system FrontierHarness result, but that evaluation does not activate or isolate the `until` direct-check plus supervisor chain and does not report discrepancy detection, corrective return and re-verification through this native path. No direct canonical S3* observation is admitted.",
+      "primary_sources": [
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/tools/Agent.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/README.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/assets/frontier-harness-eval.svg"
+      ]
+    },
+    {
+      "canonical_harness_id": "agentharness-alexandrmotologa",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "725ceee14b65bd95365e8e1c2394ac1b245e3b98",
+      "repository": "https://github.com/alexandrmotologa/agent-harness",
+      "result_surface_review": "no-direct-s3star-result",
+      "finding": "AgentHarness' canonical S3*=C path preserves host-authored typed tool/observation DAG evidence and checkpoints, exposes independent inspection, and lets an operator select a prior state for corrected rewind-and-branch execution. The repository also ships evaluation machinery, but no committed public result corpus measures a discrepancy-detection → corrective return → subsequent re-verification chain through this constructor path, and no autonomous audit verdict actor is supplied. No direct canonical S3* observation is admitted.",
+      "primary_sources": [
+        "https://github.com/alexandrmotologa/agent-harness/blob/725ceee14b65bd95365e8e1c2394ac1b245e3b98/src/agent_harness/core/loop.py",
+        "https://github.com/alexandrmotologa/agent-harness/blob/725ceee14b65bd95365e8e1c2394ac1b245e3b98/src/agent_harness/engine/debugger.py",
+        "https://github.com/alexandrmotologa/agent-harness/blob/725ceee14b65bd95365e8e1c2394ac1b245e3b98/src/agent_harness/eval/runner.py"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
