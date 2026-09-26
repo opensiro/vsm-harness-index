@@ -11,7 +11,7 @@ It is also not a second evidence database: every state, count, blocker and reope
 | Function | Primary state | Current evidence depth | Reviewed through | Source |
 | --- | --- | --- | --- | --- |
 | S1 | `selected` — PawBench v1.0 / `qwen3.6-35b-a3b` | `task_count`: `150` · `canonical_harnesses`: `3` | `2026-09-23` | [`primary-baselines.json`](primary-baselines.json) |
-| S2 | `gap` | `direct_benchmark_families`: `8` · `direct_observations`: `6` · `canonical_direct_observations`: `2` · `native_proxy_projections`: `2` · `representative_canonical_s2_systems_inspected`: `16` | `2026-09-26` | [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json) |
+| S2 | `gap` | `direct_benchmark_families`: `9` · `direct_observations`: `7` · `canonical_direct_observations`: `2` · `native_proxy_projections`: `2` · `representative_canonical_s2_systems_inspected`: `16` | `2026-09-26` | [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json) |
 | S3 | `gap` | `direct_benchmark_families`: `3` · `canonical_direct_observations`: `1` · `native_proxy_projections`: `1` · `representative_canonical_s3_systems_inspected`: `14` | `2026-09-25` | [`s3-primary-search-closure.json`](s3-system-benchmarks/matched-cell/s3-primary-search-closure.json) |
 | S3* | `gap` | `direct_benchmark_families`: `5` · `composed_direct_observations`: `3` · `canonical_direct_observations`: `2` | `2026-09-24` | [`s3star-primary-search-closure.json`](s3star-system-benchmarks/matched-cell/s3star-primary-search-closure.json) |
 | S4 | `gap` | `canonical_native_observations`: `2` · `reviewed_routes`: `6` | `2026-09-25` | [`s4-primary-search-closure.json`](s4-system-benchmarks/matched-cell/s4-primary-search-closure.json) |
@@ -32,11 +32,11 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
 ## S2 — current `gap` frontier
 
 - **Reviewed through:** `2026-09-26`.
-- **Primary blocking reason:** Reviewed direct S2 evidence includes 8 disturbance/attenuation benchmark families. Nool and The Specification Gap provide benchmark-scaffolded direct non-canonical observations; CodeCRDT and Grit provide direct observations at their own non-canonical native product boundaries; and Squad plus thClaws now provide two canonical native descriptive direct observations from first-party operational history. Twining lacks recoverable exact treatment revision and CooperBench lacks pinned flash-run logs for observation admission. The two canonical descriptive rows use heterogeneous disturbances and evidence surfaces rather than one materially matched benchmark/model/configuration cell, so public evidence still provides no matched primary comparison across multiple canonical native S2 implementations.
-- **Closure claim:** Current public evidence contains 8 direct S2 disturbance/attenuation benchmark families, 6 direct observations, 2 canonical native descriptive direct observations (Squad and thClaws), and 2 native quantitative S2 proxy projections. The canonical direct-evidence layer is therefore no longer sparse to a single row, but the two canonical observations are heterogeneous operational-history surfaces rather than a materially matched comparison cell, so no primary baseline is selected.
+- **Primary blocking reason:** Reviewed direct S2 evidence includes 9 disturbance/attenuation benchmark families. Nool and The Specification Gap provide benchmark-scaffolded direct non-canonical observations; CodeCRDT, Grit and AgentRoom provide direct observations at non-canonical native product/paper-defined boundaries; and Squad plus thClaws provide two canonical native descriptive direct observations from first-party operational history. Twining lacks recoverable exact treatment revision and CooperBench lacks pinned flash-run logs for observation admission. AgentRoom preserves concurrent workers in its strongest control but changes the full CRDT + MCP + collaboration-protocol bundle and has no recoverable canonical repository identity. The two canonical descriptive rows still use heterogeneous disturbances and evidence surfaces rather than one materially matched benchmark/model/configuration cell, so public evidence provides no matched primary comparison across multiple canonical native S2 implementations.
+- **Closure claim:** Current public evidence contains 9 direct S2 disturbance/attenuation benchmark families, 7 direct observations, 2 canonical native descriptive direct observations (Squad and thClaws), and 2 native quantitative S2 proxy projections. AgentRoom adds a direct paper-backed non-canonical row but no canonical comparison cell. The two canonical observations remain heterogeneous operational-history surfaces rather than a materially matched comparison cell, so no primary baseline is selected.
 - **Evidence depth:**
-  - `direct_benchmark_families`: `8`
-  - `direct_observations`: `6`
+  - `direct_benchmark_families`: `9`
+  - `direct_observations`: `7`
   - `canonical_direct_observations`: `2`
   - `native_proxy_projections`: `2`
   - `representative_canonical_s2_systems_inspected`: `16`
@@ -51,7 +51,7 @@ A `gap` is an empirical evidence state, not a zero capability score and not a st
   - another broad collaboration or task-success score without an explicit S2 disturbance
   - another topology or framework benchmark whose coordination organization is benchmark-authored
   - another communication or token-efficiency metric without disturbance-to-attenuation closure
-- **Non-claim:** This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Squad and thClaws now supply two canonical native descriptive direct observations; Nool, The Specification Gap, CodeCRDT and Grit remain direct non-canonical observations at their reviewed boundaries. Two heterogeneous descriptive canonical rows are still not a matched cross-harness primary; S2 primary remains a gap until materially matched canonical evidence appears.
+- **Non-claim:** This closure is not a zero S2 capability score and does not downgrade canonical S2 ownership. Squad and thClaws supply two canonical native descriptive direct observations; Nool, The Specification Gap, CodeCRDT, Grit and AgentRoom remain direct non-canonical observations at their reviewed boundaries. AgentRoom is paper-backed with no inferred repository revision/canonical identity and its treatment is a coordination bundle. Two heterogeneous descriptive canonical rows are still not a matched cross-harness primary; S2 primary remains a gap until materially matched canonical evidence appears.
 - **Source:** [`s2-primary-search-closure.json`](s2-system-benchmarks/matched-cell/s2-primary-search-closure.json).
 
 ## S3 — current `gap` frontier
