@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "tracking_issue": 709,
+  "status": "experimental-non-normative",
+  "function": "S3",
+  "reviewed_at": "2026-09-26",
+  "scope": "current-public-evidence",
+  "disposition": "no-materially-matched-canonical-cell",
+  "primary_baseline": "gap",
+  "current_evidence_depth": {
+    "direct_benchmark_families": 4,
+    "direct_observations": 3,
+    "canonical_direct_observations": 2,
+    "native_proxy_projections": 1
+  },
+  "canonical_direct_anchors": [
+    {
+      "canonical_harness_id": "multi-agent-orchestration",
+      "observation_id": "multi-agent-orchestration-supervisor-ablation-2026-08",
+      "comparison_class": "within-system-controlled-ablation",
+      "canonical_assessment_ref": "e6c34462af045d7e53d383103346362351c96353"
+    },
+    {
+      "canonical_harness_id": "omnigent",
+      "observation_id": "omnigent-child-session-recovery-2026-09",
+      "comparison_class": "descriptive-only",
+      "canonical_assessment_ref": "4d963a360e798f076d4fdbd4665e7188e4da05df",
+      "observation_revision": "d8d07168c05ce1385be19dbd6ea64f4574c8d144",
+      "revision_relation": "post-assessment-descendant"
+    }
+  ],
+  "reviewed_matched_routes": [
+    {
+      "route_id": "existing-canonical-pair",
+      "status": "heterogeneous-not-matched",
+      "systems": [
+        "multi-agent-orchestration",
+        "omnigent"
+      ],
+      "finding": "The two canonical direct S3 rows exercise different current-control disturbances and evidence surfaces. Multi-Agent Orchestration uses a 54-scenario deterministic supervisor on/off ablation with MockProvider and completion/routing metrics, while Omnigent supplies descriptive operational/regression evidence for parent-runner interruption and child-session recovery at a later post-assessment revision. They do not share a benchmark, model/configuration cell, disturbance, intervention, evaluator or metric protocol."
+    },
+    {
+      "route_id": "astra-cross-framework",
+      "repository": "HeeManSu/astra-agi",
+      "review_ref": "129b440e531af9d053645f7fab966c172bfb3b3b",
+      "status": "matched-framework-wrong-native-s3-paths",
+      "finding": "Astra holds model, tools and workload largely fixed across framework rows, but its Agno and AutoGen configurations do not activate the canonical S3 paths used by the Index assessments: Agno is evaluated through TeamMode.coordinate rather than TeamMode.tasks, and AutoGen through SelectorGroupChat rather than MagenticOneOrchestrator. The matched framework cell therefore cannot be promoted to matched canonical S3 capability."
+    },
+    {
+      "route_id": "supervisoragent-smas",
+      "repository": "LINs-lab/SupervisorAgent",
+      "review_ref": "ab116b557b095ae8d45bdf2d61057ce19519d4ff",
+      "status": "direct-composed-noncanonical",
+      "finding": "SupervisorAgent / SMAS publishes a direct base-versus-supervised current-control result, but the S3 relation belongs to the composed supervised-MAS boundary rather than the wrapped base harness. Its intervention repertoire also includes verification-like actions, so the row is not an isolated native canonical S3 comparison."
+    },
+    {
+      "route_id": "benchmark-defined-manager-control",
+      "status": "direct-but-no-multi-canonical-native-linkage",
+      "examples": [
+        "ClawArena-Team",
+        "Loop-Back Authority",
+        "OrchestraBench"
+      ],
+      "finding": "These public benchmark families directly study manager/current-control authority, failure or recovery at benchmark-defined organizations. The reviewed evidence does not bind one common result cell to two or more canonical harnesses exercising their own native or adapter-preserved S3 paths."
+    }
+  ],
+  "blocking_reason": "Two canonical direct S3 observations now exist, but Multi-Agent Orchestration and Omnigent are materially heterogeneous public evidence surfaces. No reviewed public benchmark currently evaluates two or more canonical systems under one matched current-control disturbance/intervention definition while preserving each system's native or adapter-preserved S3 path.",
+  "reopen_when": [
+    "a public benchmark publishes recoverable results for at least two canonical systems under one materially matched S3 current-control disturbance/intervention definition while exercising native or adapter-preserved S3 paths",
+    "an existing canonical direct S3 observation gains a second materially comparable canonical row through already-public upstream evidence",
+    "an existing matched framework campaign publishes configuration or trace evidence proving that canonical S3 paths are active for multiple compared systems under one recoverable protocol"
+  ],
+  "do_not_reopen_for": [
+    "another heterogeneous descriptive canonical S3 observation",
+    "another composed or benchmark-scaffolded supervisor result without canonical native or adapter-preserved linkage",
+    "another benchmark-authored manager topology",
+    "another whole-task quality, token, latency or orchestration score without isolated current-control attribution",
+    "an Opensiro-operated reproduction or harness benchmark run"
+  ],
+  "non_claim": "This search closure does not score S3 capability, compare Multi-Agent Orchestration against Omnigent, or imply that either canonical system is stronger. It records only the absence of a materially matched public canonical S3 comparison cell at the reviewed evidence boundary."
+}
