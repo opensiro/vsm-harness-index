@@ -1,0 +1,72 @@
+name: Assemble Scion GCP admission
+
+on:
+  push:
+    branches:
+      - index/scion-gcp-admission
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/scion-gcp-admission
+          fetch-depth: 0
+
+      - name: Canonicalize assessment sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/scion-gcp.md')
+          text = assessment.read_text()
+          needle = 'status: proposed'
+          assert text.count(needle) == 1, 'expected exactly one proposed status in scion-gcp assessment'
+          assessment.write_text(text.replace(needle, 'status: included', 1))
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text()
+          assert '|scion-gcp|' not in catalog_text, 'scion-gcp already in catalog'
+          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          assert rows[-1].startswith('269|trace-spec|'), f'unexpected catalog tail: {rows[-1]}'
+          catalog_row = '270|scion-gcp|Scion (Google Cloud)|https://github.com/GoogleCloudPlatform/scion|2026-03-10T00:19:58Z|index-addition|bdf5b6d135bb7585e242d2f08f4c54b3de2c2940|2026-09-26'
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + catalog_row + '\n')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text()
+          assert '|scion-gcp|' not in signatures_text, 'scion-gcp already in signatures'
+          signature = 'Scion (Google Cloud) closes autonomous S1 through provisioned model-driven workers, exposes S2=C through worktree/clone isolation of concurrent agents, closes S3=A through an orchestrator with live worker lifecycle control, and S4=A through agent-authored reusable team templates; no independent S3* audit or S5 identity-policy closure is established.'
+          assert len(signature) <= 360
+          signatures.write_text(signatures_text.rstrip('\n') + '\n270|scion-gcp|' + signature + '\n')
+          PY
+
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate canonical state
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/scion-gcp-admit.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/scion-gcp.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md .github/workflows/scion-gcp-admit.yml
+          git commit -m 'index: canonicalize Scion GCP admission'
+          git push origin HEAD:index/scion-gcp-admission
