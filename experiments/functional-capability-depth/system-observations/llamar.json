@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-26",
+  "system_name": "LLaMAR",
+  "canonical_harness_id": "llamar",
+  "canonical_assessment_ref": "assessments/llamar.md",
+  "canonical_review_ref": "d2b74cac79a0f070d87a150712f8e2ae174920be",
+  "canonical_states_at_review": {
+    "S2": "A",
+    "S3": "A"
+  },
+  "published_implementation": {
+    "platform": "first-party LLaMAR / MAP-THOR and SAR",
+    "system_compatibility": "native-system",
+    "canonical_revision_match": "first-party-published-artifacts-co-located-at-current-review-ref-run-revision-unknown",
+    "note": "The canonical review ref contains the runnable first-party LLaMAR implementation plus committed result TSVs and plotting artifacts. The paper does not identify the exact Git commit used for every reported experiment, so the paper results must not be relabeled as executions of review_ref d2b74cac79a0f070d87a150712f8e2ae174920be."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2407.10031",
+    "https://openreview.net/forum?id=Y1rOWS2Z4i",
+    "https://github.com/nsidn98/LLaMAR/tree/d2b74cac79a0f070d87a150712f8e2ae174920be",
+    "https://github.com/nsidn98/LLaMAR/tree/d2b74cac79a0f070d87a150712f8e2ae174920be/results"
+  ],
+  "observations": [
+    {
+      "observation_id": "llamar-mapthor-module-ablation-gpt4v",
+      "kind": "native-mechanism-ablation",
+      "benchmark": "MAP-THOR",
+      "scenario": "2-agent scenarios",
+      "model": "GPT-4V",
+      "provenance": "paper Table 3",
+      "arms": [
+        {
+          "modules": ["Actor"],
+          "success_rate": 0.33,
+          "transport_rate": 0.67,
+          "coverage": 0.91,
+          "balance": 0.59
+        },
+        {
+          "modules": ["Planner", "Actor", "Verifier"],
+          "success_rate": 0.45,
+          "transport_rate": 0.78,
+          "coverage": 0.92,
+          "balance": 0.69
+        },
+        {
+          "modules": ["Planner", "Actor", "Corrector"],
+          "success_rate": 0.67,
+          "transport_rate": 0.91,
+          "coverage": 0.97,
+          "balance": 0.84
+        },
+        {
+          "modules": ["Planner", "Actor", "Corrector", "Verifier"],
+          "success_rate": 0.66,
+          "transport_rate": 0.91,
+          "coverage": 0.97,
+          "balance": 0.82
+        }
+      ],
+      "function_interpretation": "The Planner plus whole-team progress/completion feedback are part of LLaMAR's canonical S3 current-control path. The published module ablation therefore provides native S3-relevant capability evidence, but the arms also change Corrector/Verifier mechanisms and the benchmark measures broad end-task outcomes rather than S3 current-control directly.",
+      "non_claim": "These module-ablation results are proxy evidence. They do not isolate a pure S3 causal effect, do not quantify S3 capability as a scalar, and do not establish canonical S3=A, which is determined independently from repository evidence."
+    },
+    {
+      "observation_id": "llamar-agent-count-interference-mapthor-sar",
+      "kind": "native-disturbance-characterization",
+      "benchmark": "MAP-THOR / SAR",
+      "provenance": "paper Table 4 and discussion",
+      "mapthor": [
+        {"agents": 1, "success_rate": 0.37, "transport_rate": 0.67, "coverage": 0.87, "balance": 1.0},
+        {"agents": 2, "success_rate": 0.62, "transport_rate": 0.87, "coverage": 0.95, "balance": 0.82},
+        {"agents": 3, "success_rate": 0.70, "transport_rate": 0.91, "coverage": 0.98, "balance": 0.66},
+        {"agents": 4, "success_rate": 0.68, "transport_rate": 0.90, "coverage": 0.99, "balance": 0.62},
+        {"agents": 5, "success_rate": 0.62, "transport_rate": 0.90, "coverage": 0.99, "balance": 0.54}
+      ],
+      "sar": [
+        {"agents": 1, "success_rate": 0.28, "transport_rate": 0.75, "coverage": 0.86, "balance": 1.0},
+        {"agents": 2, "success_rate": 0.44, "transport_rate": 0.86, "coverage": 0.94, "balance": 0.91},
+        {"agents": 3, "success_rate": 0.68, "transport_rate": 0.92, "coverage": 0.96, "balance": 0.80},
+        {"agents": 4, "success_rate": 0.72, "transport_rate": 0.94, "coverage": 0.98, "balance": 0.78},
+        {"agents": 5, "success_rate": 0.74, "transport_rate": 0.96, "coverage": 1.0, "balance": 0.73}
+      ],
+      "reported_disturbance": "The paper attributes the MAP-THOR success/transport decline from three to four/five agents to crowded rooms causing agents to block navigation and collide with one another; the roomier SAR environment does not show the same decline.",
+      "function_interpretation": "This independently corroborates the concrete inter-S1 physical-interference disturbance used by the canonical S2 assessment.",
+      "non_claim": "The agent-count comparison does not disable or enable LLaMAR's native anti-blocking coordination relation and therefore is not an S2 attenuation treatment or direct S2 capability observation."
+    }
+  ]
+}
