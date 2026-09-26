@@ -58,8 +58,7 @@ jobs:
               '- Why no material first-party path remains: no first-party runtime path turns prospective distinctions into a durable change of MLR-Agent installed models, tools, strategy or capabilities for later independent operations, and no qualifying S3-S4 current/future conversation is present.',
               '',
           ]
-          new_s4 = '\n'.join(s4_lines)
-          text = text[:start] + new_s4 + text[end:]
+          text = text[:start] + '\n'.join(s4_lines) + text[end:]
 
           old_variety = "MLR-Agent attenuates research variety by progressively materializing idea, literature, proposal, experiment and paper artifacts in one task workspace. External scientific uncertainty is handled prospectively through the literature/proposal S4 path before experiment execution. Implementation/runtime uncertainty is handled inside the coding-agent S1 stage. Stage failures are bounded by scripted retries/errors. No separate whole-system S3 or identity-level S5 escalation owner is established."
           new_variety = "MLR-Agent attenuates research variety by progressively materializing idea, literature, proposal, experiment and paper artifacts in one task workspace. External scientific uncertainty is absorbed as part of the current S1 research product through literature/proposal work; it is not a separate organizational S4 loop at this recursion. Implementation/runtime uncertainty is likewise handled inside S1. Stage failures are bounded by scripted retries/errors. No separate whole-system S3, prospective S4 or identity-level S5 escalation owner is established."
@@ -71,7 +70,7 @@ jobs:
           lines = signatures.read_text(encoding='utf-8').splitlines()
           matches = [i for i, line in enumerate(lines) if line.startswith('277|mlr-agent|')]
           assert len(matches) == 1
-          signature = 'MLR-Agent closes autonomous S1 through end-to-end model-driven research from idea and literature through real experiments and paper writing. Literature/proposal work belongs to the current research operation rather than a distinct S4 adaptation loop; deterministic routing is not S3, MLR-Judge stays adjacent evaluation, and no S2, S3*, S4 or S5 closure is established.'
+          signature = 'MLR-Agent closes autonomous S1 through model-driven research, experiments and paper writing. Literature/proposal work is current-operation research rather than a separate S4 adaptation loop; deterministic routing is not S3, MLR-Judge remains adjacent evaluation, and no S2, S3*, S4 or S5 closure is established.'
           assert len(signature) <= 360
           lines[matches[0]] = '277|mlr-agent|' + signature
           signatures.write_text('\n'.join(lines) + '\n', encoding='utf-8')
