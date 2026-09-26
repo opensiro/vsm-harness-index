@@ -285,3 +285,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 270|scion-gcp|Scion (Google Cloud)|https://github.com/GoogleCloudPlatform/scion|2026-03-10T00:19:58Z|index-addition|bdf5b6d135bb7585e242d2f08f4c54b3de2c2940|2026-09-26
 271|autoresearchclaw|AutoResearchClaw|https://github.com/aiming-lab/AutoResearchClaw|2026-03-15T03:38:49Z|index-addition|be4ba4755bf1b52220f25e13b2293b5956590070|2026-09-26
 272|os-copilot|OS-Copilot / FRIDAY|https://github.com/OS-Copilot/OS-Copilot|2024-02-02T01:55:49Z|index-addition|f720af8807e49a92dda64572d2c6bc6c0ac7ee7e|2026-09-26
+273|llamar|LLaMAR|https://github.com/nsidn98/LLaMAR|2024-07-09T01:41:04Z|index-addition|d2b74cac79a0f070d87a150712f8e2ae174920be|2026-09-26
