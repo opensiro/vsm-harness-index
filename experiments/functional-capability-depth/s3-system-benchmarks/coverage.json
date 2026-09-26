@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-25",
+  "reviewed_at": "2026-09-26",
   "function": "S3",
   "direct_benchmark_family_count": 3,
-  "direct_observation_count": 1,
+  "direct_observation_count": 2,
   "proxy_projection_count": 1,
   "coverage_classes": [
     "direct-scaffolded",
@@ -122,6 +122,27 @@
         "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/benchmarks/results/eval_c760d1ff9d464cbfa89e.json"
       ],
       "finding": "Canonical Multi-Agent Orchestration establishes S3=A from its standard live-state supervisor. Its first-party deterministic benchmark directly ablates that native supervisor path against the same engine using only HeuristicRouter while retry and parallelism remain disabled in both clean comparison arms. Published results move from 11/54 passed and 56.7% routing accuracy to 48/54 passed and 100% routing accuracy. This is admitted direct native S3 evidence; the separately retry-enabled recovery arm is outside the clean supervisor-only attribution, and the embedded historical run SHA is no longer publicly resolvable.",
+      "admitted": true
+    },
+    {
+      "case_id": "omnigent-child-recovery-native-s3-direct",
+      "benchmark": "Omnigent child-session recovery operational regression",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-native",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "omnigent",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "4d963a360e798f076d4fdbd4665e7188e4da05df",
+      "observation_revision": "d8d07168c05ce1385be19dbd6ea64f4574c8d144",
+      "revision_relation": "post-assessment-descendant",
+      "observation_ref": "observations.json#omnigent-child-recovery-current-control-2026-09",
+      "primary_sources": [
+        "https://github.com/omnigent-ai/omnigent/issues/4838",
+        "https://github.com/omnigent-ai/omnigent/pull/7662",
+        "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/omnigent/server/child_session_recovery.py",
+        "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/tests/server/test_child_session_recovery.py"
+      ],
+      "finding": "Canonical Omnigent establishes S3=A at review ref 4d963a3. A later merged descendant, PR #7662, supplies first-party descriptive current-control evidence after parent-runner failure: the runtime discovers the current descendant work set, excludes stopped/closed/finished/live-elsewhere or ownership-ineligible work, rebinds/resumes eligible interrupted commitments, preserves original child/dispatch identities, leaves completed work closed and avoids replacement workers. The observation is explicitly post-assessment temporal evidence, not behavior relabeled onto the exact canonical review ref. It is admitted as a second canonical direct S3 observation but is not materially matched to the Multi-Agent Orchestration supervisor ablation.",
       "admitted": true
     },
     {
