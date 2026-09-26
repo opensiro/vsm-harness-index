@@ -2,11 +2,12 @@
   "schema_version": 1,
   "reviewed_at": "2026-09-26",
   "function": "S3",
-  "direct_benchmark_family_count": 3,
-  "direct_observation_count": 2,
+  "direct_benchmark_family_count": 4,
+  "direct_observation_count": 3,
   "proxy_projection_count": 1,
   "coverage_classes": [
     "direct-scaffolded",
+    "direct-composed",
     "direct-native",
     "native-proxy",
     "proxy-scaffolded",
@@ -43,6 +44,23 @@
       ],
       "finding": "The paired experiment isolates a whole-team current-control right: the hierarchical Manager may reject completed worker output and loop work back with corrective instructions, while the flat Manager observes the same workflow but is forced to route forward. Five agents, roles, prompts, tools, model assignment and product data are otherwise held fixed. This directly exercises benchmark-defined S3 authority, but the organization is authored by the experiment and runs on LangGraph only as an execution substrate, so the published results are not native S3 observations for LangGraph or another canonical harness.",
       "admitted": false
+    },
+    {
+      "case_id": "supervisoragent-smas-direct-composed",
+      "benchmark": "SupervisorAgent / SMAS runtime supervision",
+      "benchmark_fit": "direct",
+      "coverage_class": "direct-composed",
+      "system_compatibility": "benchmark-scaffolded",
+      "canonical_harness_id": null,
+      "observation_ref": "observations.json#supervisoragent-smas-gaia-2026",
+      "review_ref": "ab116b557b095ae8d45bdf2d61057ce19519d4ff",
+      "primary_sources": [
+        "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/README.md",
+        "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/smolagents_SMAS/src/smolagents/agents.py",
+        "https://openreview.net/forum?id=pzFhtpkabh"
+      ],
+      "finding": "SupervisorAgent adds an external meta-level runtime controller around a base MAS to form SMAS. The controller observes ongoing interactions, filters high-risk situations and returns approve/guidance/correction/verification interventions into present operation. The published GPT-4.1 GAIA pass@1 comparison reports the same 50.91% average accuracy while average tokens fall from 527.76K for Smolagent to 371.12K for Smolagent+SMAS (29.68% reported reduction). This is admitted first-party direct composed S3 evidence at the SMAS boundary. It is not native S3 evidence for Smolagent, AWorld or OAgents, and the aggregate treatment is not a clean S3-only ablation because verification-like actions overlap S3*.",
+      "admitted": true
     },
     {
       "case_id": "autogen-magentic-one-native-proxy-s3",
