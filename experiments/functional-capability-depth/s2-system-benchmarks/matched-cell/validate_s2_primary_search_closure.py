@@ -77,6 +77,7 @@ require(closure["benchmark_family_review_issue"] == 596, "S2 benchmark-family re
 require(closure["public_evidence_admission_issue"] == 629, "S2 public evidence admission issue drift")
 require(closure["codecrdt_public_evidence_issue"] == 640, "S2 CodeCRDT public-evidence issue drift")
 require(closure["grit_public_evidence_issue"] == 663, "S2 Grit public-evidence issue drift")
+require(closure["agentroom_public_evidence_issue"] == 647, "S2 AgentRoom public-evidence issue drift")
 require(closure["squad_canonical_direct_issue"] == 644, "S2 Squad canonical-direct issue drift")
 require(closure["thclaws_canonical_direct_issue"] == 675, "S2 thClaws canonical-direct issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
@@ -127,6 +128,7 @@ for required_case in {
     "cooperbench-team-harness-direct-scaffolded",
     "codecrdt-observation-driven-direct-native-noncanonical",
     "grit-merge-contention-direct-native-noncanonical",
+    "agentroom-concurrent-coding-direct-native-noncanonical",
     "autogen-magentic-one-native-proxy",
     "squad-marble-native-proxy",
     "squad-shared-state-conflict-direct-native-canonical",
@@ -185,7 +187,7 @@ require(lime_row["canonical_state_at_review"] == lime_state, "lime: delta state 
 require(lime_row["canonical_review_ref"] == lime_ref, "lime: delta ref drift")
 require(lime_row["result_surface_review"] == "no-direct-s2-result", "lime: delta result disposition drift")
 
-require(len(observations) == 6, "S2 closure expects six direct observations")
+require(len(observations) == 7, "S2 closure expects seven direct observations")
 observation_rows = {row["observation_id"]: row for row in observations}
 require(
     set(observation_rows) == {
@@ -193,6 +195,7 @@ require(
         "specification-gap-recovery-2026-03",
         "codecrdt-parallel-convergence-2025-10",
         "grit-synthetic-merge-contention-2026-04",
+        "agentroom-parallel-merge-t4-sonnet46-2026-08",
         "squad-shared-state-conflict-attenuation-2026-03",
         "thclaws-team-workspace-interference-attenuation-2026",
     },
@@ -203,6 +206,7 @@ for observation_id, (benchmark_id, compatibility) in {
     "specification-gap-recovery-2026-03": ("specification-gap-recovery", "benchmark-scaffolded"),
     "codecrdt-parallel-convergence-2025-10": ("codecrdt-observation-coordination", "native-system"),
     "grit-synthetic-merge-contention-2026-04": ("grit-merge-contention", "native-system"),
+    "agentroom-parallel-merge-t4-sonnet46-2026-08": ("agentroom-concurrent-coding", "native-system"),
     "squad-shared-state-conflict-attenuation-2026-03": (None, "native-system"),
     "thclaws-team-workspace-interference-attenuation-2026": (None, "native-system"),
 }.items():
@@ -254,6 +258,11 @@ require(
     observation_rows["grit-synthetic-merge-contention-2026-04"].get("evidence_source_class") == "first-party-reported",
     "Grit direct observation must remain first-party-reported",
 )
+agentroom = observation_rows["agentroom-parallel-merge-t4-sonnet46-2026-08"]
+require(agentroom.get("comparison_class") == "partially-matched", "AgentRoom comparison class drift")
+require(agentroom.get("canonical_system_eligible") is False, "AgentRoom must remain non-canonical")
+require("benchmark_artifact_revision" not in agentroom, "AgentRoom must not invent a source repository revision")
+require(agentroom.get("paper") == "https://arxiv.org/abs/2608.23740", "AgentRoom paper provenance drift")
 
 thclaws = observation_rows["thclaws-team-workspace-interference-attenuation-2026"]
 require(
@@ -281,6 +290,7 @@ require(
         "cooperbench-team-harness",
         "codecrdt-observation-coordination",
         "grit-merge-contention",
+        "agentroom-concurrent-coding",
     ],
     "S2 gap metadata direct-family set drift",
 )
