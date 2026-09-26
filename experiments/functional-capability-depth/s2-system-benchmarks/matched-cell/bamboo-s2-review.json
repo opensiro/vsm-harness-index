@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 698,
+  "reviewed_at": "2026-09-26",
+  "function": "S2",
+  "review_scope": "post-matched-canonical-search-closure-delta",
+  "canonical_harness_id": "bamboo",
+  "canonical_repository": "https://github.com/bigduu/Bamboo-agent",
+  "canonical_assessment_ref": "eb1151378d513e820f80513c387056fb14f5c664",
+  "canonical_s2_state": "A",
+  "canonical_s2_mechanism": "The root Bamboo model partitions concurrently running child S1s into narrow, non-overlapping responsibilities and authoritative mutation scopes/workspaces, then uses child status, completion and error feedback to steer, update, rerun, cancel or otherwise change subsequent child behavior.",
+  "upstream_eval_issue": {
+    "repository": "bigduu/Bamboo-agent",
+    "issue_number": 902,
+    "title": "[bamboo] eval: measure SubAgent delegation-contract behavior",
+    "url": "https://github.com/bigduu/Bamboo-agent/issues/902",
+    "state_at_review": "open",
+    "comments_at_review": 0,
+    "result_surface_state": "planned-open-no-results",
+    "planned_control": "Freeze equivalent pre-contract control and post-contract treatment prompts with equivalent tasks, models, runtime and tool permissions.",
+    "planned_repetition": "Repeated trials sufficient to report variance rather than a single anecdote.",
+    "planned_direct_s2_fields": [
+      "scope violations",
+      "duplicate/overlapping assignment",
+      "unnecessary nested spawn",
+      "post-acceptance tool calls",
+      "accepted result",
+      "completion rate",
+      "parent rounds",
+      "parent+child tokens",
+      "wall time"
+    ],
+    "published_results_at_review": false,
+    "published_raw_fixtures_at_review": false,
+    "owner_reviewed_interpretation_at_review": false
+  },
+  "disposition": "canonical-mechanism-public-eval-planned-no-results",
+  "result_surface_review": "no-direct-s2-result",
+  "creates_direct_benchmark_family": false,
+  "creates_observation": false,
+  "creates_canonical_direct_observation": false,
+  "changes_primary_baseline": false,
+  "primary_baseline_after_review": "gap",
+  "reopen_condition_satisfied": false,
+  "historical_matched_search_snapshot": {
+    "tracking_issue": 696,
+    "primary_baseline": "gap",
+    "canonical_direct_anchor_ids": [
+      "squad",
+      "thclaws"
+    ],
+    "rewrite_allowed": false
+  },
+  "reopen_when": "Bamboo or a successor first-party public evaluation publishes recoverable result artifacts that directly measure interaction-specific scope/assignment interference and its attenuation through Bamboo's native or adapter-preserved S2 path, with enough provenance to classify the observation and any comparison cell without Opensiro-operated reproduction.",
+  "do_not_reopen_for": [
+    "completion of the upstream issue without public recoverable result artifacts",
+    "generic task-success or latency measurements without an explicit inter-S1 disturbance and attenuation variable",
+    "mechanism tests that only prove the SubAgent coordination contract exists",
+    "an Opensiro-operated Bamboo benchmark or reproduction"
+  ],
+  "evidence_sources": [
+    "https://github.com/bigduu/Bamboo-agent/blob/eb1151378d513e820f80513c387056fb14f5c664/crates/app/bamboo-server-tools/src/sub_agent.rs",
+    "https://github.com/bigduu/Bamboo-agent/blob/eb1151378d513e820f80513c387056fb14f5c664/crates/engine/bamboo-engine/src/session_app/child_session/helpers.rs",
+    "https://github.com/bigduu/Bamboo-agent/blob/eb1151378d513e820f80513c387056fb14f5c664/crates/engine/bamboo-engine/src/session_app/child_completion_coordinator.rs",
+    "https://github.com/bigduu/Bamboo-agent/issues/902"
+  ],
+  "non_claim": "This review does not score Bamboo S2 capability, admit an observation, change Bamboo's canonical S2=A ownership state, or reopen the closed matched-canonical S2 search. Upstream issue #902 is a promising planned first-party evaluation surface only; as reviewed, it contains no published results."
+}
