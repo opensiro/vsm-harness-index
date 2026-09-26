@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 735,
+  "reviewed_at": "2026-09-26",
+  "function": "S5",
+  "disposition": "canonical-mechanism-no-direct-result",
+  "systems": [
+    {
+      "canonical_harness_id": "rsih",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "737bf1f5a5a56f0c49bbd5180e71d651113038ac",
+      "repository": "https://github.com/CosmosMind-ai/RSI-Harness",
+      "result_surface_review": "no-direct-s5-result",
+      "finding": "RSIH exposes an S5 constructor through harness-rsi/GEE: the future specialization's purpose, standing instructions, capability/resource boundaries and long-lived policy configuration are proposed and approved before a validated Genome is materialized. Public source and tests establish that constructor, but no capability result measures identity/policy construction quality or subsequent operation under the produced constitution through this canonical path. No direct canonical S5 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/config/genomes/harness-rsi/components/instructions.json",
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/docs/genome/components/instructions.dev.md",
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/src/harness/genome.ts"
+      ],
+      "reassess_if": [
+        "RSIH publishes an immutable result measuring the purpose/policy constructor and subsequent operation under the resulting Genome",
+        "a public downstream Genome specialization supplies provenance sufficient to evaluate the constructed S5 closure separately"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
