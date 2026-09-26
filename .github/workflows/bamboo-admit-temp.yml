@@ -1,0 +1,72 @@
+name: Admit Bamboo (temporary)
+
+on:
+  push:
+    branches:
+      - assessment/bamboo
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/bamboo
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Promote assessment and add canonical source rows
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('assessments/bamboo.md')
+          text = p.read_text()
+          old = 'status: proposed\n'
+          if old not in text:
+              raise SystemExit('expected proposed Bamboo assessment')
+          p.write_text(text.replace(old, 'status: included\n', 1))
+          PY
+          catalog='263|bamboo|Bamboo|https://github.com/bigduu/Bamboo-agent|2026-02-23T13:29:34Z|index-addition|eb1151378d513e820f80513c387056fb14f5c664|2026-09-26'
+          signature='263|bamboo|Bamboo closes agent-owned S1, shared-workspace child coordination S2 and live root current-control S3; its independent Guardian audit remains a constructor path because standard server execution does not expose Guardian activation, while repeated successful traces generate review-only future Skill drafts as S4=C and no S5 closure is established.'
+          grep -Fqx "$catalog" data/catalog.psv || printf '%s\n' "$catalog" >> data/catalog.psv
+          grep -Fqx "$signature" data/signatures.psv || printf '%s\n' "$signature" >> data/signatures.psv
+
+      - name: Regenerate derived views
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate assessment and index
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet --depth 1 --branch v0.3.6 https://github.com/opensiro/vsm-harness-skills.git /tmp/vsm-harness-skills
+          python /tmp/vsm-harness-skills/scripts/check_assessment_contract.py assessments/bamboo.md
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Commit canonical admission and remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/bamboo-admit-temp.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'index: admit Bamboo'
+          git push origin HEAD:assessment/bamboo
