@@ -55,6 +55,7 @@ Review artifacts are experimental evidence about the candidate classification di
 - [`synthetic-s1-escalation-shift/`](fixtures/synthetic-s1-escalation-shift/) — synthetic escalation-boundary-shift positive-control input for S1; tracked by Index issue #311. It is judgment-free until two independent reviews are completed.
 - [`megaagent/`](fixtures/megaagent/) — real-system strong-recursive candidate packet pinned to the older experimental protocol revision used by Index issue #306. It is judgment-free until two independent reviews are completed.
 - [`synthetic-s3star-independence-loss/`](fixtures/synthetic-s3star-independence-loss/) — synthetic S3* counterexample where an apparently improved audit path loses complementary independence; tracked by Index issue #727. It is judgment-free until two independent reviews are completed.
+- [`synthetic-s5-parent-authority/`](fixtures/synthetic-s5-parent-authority/) — synthetic S5 counterexample where local policy generation remains parent-governed because higher-recursion constitutive authority is decisive; tracked by Index issue #728. It is judgment-free until two independent reviews are completed.
 
 ## Research notes
 
