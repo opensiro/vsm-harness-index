@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 683,
+  "reviewed_at": "2026-09-26",
+  "function": "S3*",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "abhed",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "151b8ddceee7ae232e526b3c237356151dde780e",
+      "repository": "https://github.com/zybuu-ai/abhed",
+      "result_surface_review": "no-direct-s3star-result",
+      "finding": "Abhed's canonical S3*=A path uses a fresh-context read-only `review` child that independently inspects repository reality and returns concrete correctness findings to the parent for subsequent repair or testing. The reviewed public surfaces establish this production review mechanism and its bounded-return contract, but no published capability result exercises the complete discrepancy detection → corrective return → re-verification chain through this canonical path. No direct canonical S3* observation is admitted.",
+      "primary_sources": [
+        "https://github.com/zybuu-ai/abhed/blob/151b8ddceee7ae232e526b3c237356151dde780e/internal/agent/prompt.go",
+        "https://github.com/zybuu-ai/abhed/blob/151b8ddceee7ae232e526b3c237356151dde780e/internal/agent/subagent.go",
+        "https://github.com/zybuu-ai/abhed/blob/151b8ddceee7ae232e526b3c237356151dde780e/internal/agent/subagent_test.go"
+      ]
+    },
+    {
+      "canonical_harness_id": "taixu",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "037880a898ad503128dee7b2991dd6d351ad8cb3",
+      "repository": "https://github.com/wkbin/taixu",
+      "result_surface_review": "no-direct-s3star-result",
+      "finding": "TaiXu's canonical S3*=C path independently adjudicates a subagent's completion claim against host-persisted command and file-write receipts and can downgrade unsupported completion before the result reaches the parent. The reviewed public repository surfaces establish that complementary claim-audit mechanism, but no published capability result measures discrepancy detection, corrective return and subsequent re-verification through this path. No direct canonical S3* observation is admitted.",
+      "primary_sources": [
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/java/top/wkbin/taixu/harness/subagent/SubagentClaim.kt",
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/java/top/wkbin/taixu/harness/subagent/SubagentLaneRunner.kt",
+        "https://github.com/wkbin/taixu/blob/037880a898ad503128dee7b2991dd6d351ad8cb3/harness/src/main/java/top/wkbin/taixu/harness/subagent/SubagentLaneContracts.kt"
+      ]
+    },
+    {
+      "canonical_harness_id": "caelis",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "5aebbc6a750b8b2d472a0987fbf2e0942062c6d9",
+      "repository": "https://github.com/caelis-labs/caelis",
+      "result_surface_review": "no-direct-s3star-result",
+      "finding": "Caelis' canonical S3*=C path is the shipped persistent Reviewer scene: a separately configured reviewer context directly inspects workspace changes and returns correctness, regression, architecture and test findings. Standard invocation remains the user `/review` constructor surface. The reviewed public evidence does not publish a discrepancy → corrective return → re-verification capability result through this reviewer path, so no direct canonical S3* observation is admitted.",
+      "primary_sources": [
+        "https://github.com/caelis-labs/caelis/blob/5aebbc6a750b8b2d472a0987fbf2e0942062c6d9/internal/controlprompt/review.go",
+        "https://github.com/caelis-labs/caelis/blob/5aebbc6a750b8b2d472a0987fbf2e0942062c6d9/internal/controlprompt/appserveradapter/participant.go",
+        "https://github.com/caelis-labs/caelis/blob/5aebbc6a750b8b2d472a0987fbf2e0942062c6d9/app/gatewayapp/review_scene.go"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
