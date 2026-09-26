@@ -1,0 +1,120 @@
+name: Reconcile Company Brain S5 cohort (temporary)
+
+on:
+  push:
+    branches:
+      - assessment/company-brain
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/company-brain
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Reconcile current canonical S5-positive cohort
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          root = Path('experiments/functional-capability-depth/s5-system-benchmarks')
+          matched = root / 'matched-cell'
+
+          def load(path):
+              return json.loads(path.read_text(encoding='utf-8'))
+
+          def dump(path, data):
+              path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          coverage_path = root / 'coverage.json'
+          coverage = load(coverage_path)
+          coverage['reviewed_at'] = '2026-09-26'
+          dump(coverage_path, coverage)
+
+          closure_path = matched / 's5-primary-search-closure.json'
+          closure = load(closure_path)
+          closure['reviewed_at'] = '2026-09-26'
+          closure['full_cohort_state'] = {
+              'canonical_s5_positive_systems': 21,
+              'direct_canonical_observations': 1,
+              'no_direct_public_result': 20,
+              'unresolved': 0,
+          }
+          dump(closure_path, closure)
+
+          cohort_path = matched / 'full-canonical-cohort-review.json'
+          cohort = load(cohort_path)
+          cohort['reviewed_at'] = '2026-09-26'
+          cohort['index_revision_at_review'] = '0d200441c1a4e1a34ebdd2ffe6de34262d58bb98'
+          cohort['counts'] = {
+              'canonical_s5_positive_systems': 21,
+              'direct_canonical_observations': 1,
+              'no_direct_public_result': 20,
+              'unresolved': 0,
+          }
+          if not any(row.get('canonical_harness_id') == 'company-brain' for row in cohort['systems']):
+              cohort['systems'].append({
+                  'canonical_harness_id': 'company-brain',
+                  'repository': 'https://github.com/supermemoryai/company-brain',
+                  'canonical_review_revision': '0071d6164991ce5dccddbd645bcac631ee477572',
+                  'canonical_s5_state': 'P',
+                  'disposition': 'no-direct-public-result',
+                  'blocking_gate': 'admin-workspace-policy-enactment-result',
+                  'finding': 'Company Brain gives the deployment owner/admin legitimate installation-wide policy authority through persistent workspace guidance that is stored on the organization agent and returned into later turn prompts, but reviewed public repository evidence does not publish an immutable real deployment result showing an actual admin policy change followed by subsequent Company Brain operation under that changed policy.',
+                  'reopen_when': 'A public immutable Company Brain deployment trace records a legitimate owner/admin workspace-policy decision, the persisted workspace prompt or equivalent organization-wide configuration change, and subsequent Slack/tool operation governed by that changed policy.',
+              })
+          cohort['conclusion'] = 'The full current 21-system canonical S5-positive cohort has been explicitly reconciled against public evidence. Ouroboros remains the only admitted canonical direct S5 observation; the other 20 systems expose qualifying S5 mechanisms/ownership but no reviewed public direct result satisfying the full authority/change/subsequent-operation chain. The S5 primary therefore remains an evidence-backed gap.'
+          dump(cohort_path, cohort)
+
+          validator_path = matched / 'validate_s5_primary_search_closure.py'
+          text = validator_path.read_text(encoding='utf-8')
+          anchor = '    "shep": ("a874b3238fd01ebdbafc11015cccd9a63ed6e2f2", "P"),\n'
+          company = '    "company-brain": ("0071d6164991ce5dccddbd645bcac631ee477572", "P"),\n'
+          if company not in text:
+              if anchor not in text:
+                  raise SystemExit('S5 validator cohort anchor drifted')
+              text = text.replace(anchor, anchor + company, 1)
+          text = text.replace('len(rows) == 20', 'len(rows) == 21')
+          text = text.replace('exactly 20 current positive-S5 systems', 'exactly 21 current positive-S5 systems')
+          text = text.replace('"canonical_s5_positive_systems": 20,\n    "direct_canonical_observations": 1,\n    "no_direct_public_result": 19,', '"canonical_s5_positive_systems": 21,\n    "direct_canonical_observations": 1,\n    "no_direct_public_result": 20,')
+          text = text.replace('"20-system canonical S5-positive cohort"', '"21-system canonical S5-positive cohort"')
+          text = text.replace('full current 20-system canonical S5 cohort reconciled', 'full current 21-system canonical S5 cohort reconciled')
+          validator_path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Validate reconciliation and index
+        shell: bash
+        run: |
+          set -euo pipefail
+          python experiments/functional-capability-depth/s5-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s5-system-benchmarks/matched-cell/validate_s5_primary_search_closure.py
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Commit reconciliation and remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/company-brain-s5-reconcile-temp.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'research: reconcile Company Brain in S5 positive cohort'
+          git push origin HEAD:assessment/company-brain
