@@ -11,7 +11,7 @@
     "direct_benchmark_families": 4,
     "direct_observations": 3,
     "canonical_direct_observations": 2,
-    "native_proxy_projections": 1
+    "native_proxy_projections": 2
   },
   "canonical_direct_anchors": [
     {
@@ -64,7 +64,7 @@
       "finding": "These public benchmark families directly study manager/current-control authority, failure or recovery at benchmark-defined organizations. The reviewed evidence does not bind one common result cell to two or more canonical harnesses exercising their own native or adapter-preserved S3 paths."
     }
   ],
-  "blocking_reason": "Two canonical direct S3 observations now exist, but Multi-Agent Orchestration and Omnigent are materially heterogeneous public evidence surfaces. No reviewed public benchmark currently evaluates two or more canonical systems under one matched current-control disturbance/intervention definition while preserving each system's native or adapter-preserved S3 path.",
+  "blocking_reason": "Two canonical direct S3 observations now exist, but Multi-Agent Orchestration and Omnigent are materially heterogeneous public evidence surfaces. LLaMAR adds native proxy evidence only and does not create another direct canonical row. No reviewed public benchmark currently evaluates two or more canonical systems under one matched current-control disturbance/intervention definition while preserving each system's native or adapter-preserved S3 path.",
   "reopen_when": [
     "a public benchmark publishes recoverable results for at least two canonical systems under one materially matched S3 current-control disturbance/intervention definition while exercising native or adapter-preserved S3 paths",
     "an existing canonical direct S3 observation gains a second materially comparable canonical row through already-public upstream evidence",
@@ -72,10 +72,11 @@
   ],
   "do_not_reopen_for": [
     "another heterogeneous descriptive canonical S3 observation",
+    "another native S3 proxy result without a direct materially matched canonical comparison cell",
     "another composed or benchmark-scaffolded supervisor result without canonical native or adapter-preserved linkage",
     "another benchmark-authored manager topology",
     "another whole-task quality, token, latency or orchestration score without isolated current-control attribution",
     "an Opensiro-operated reproduction or harness benchmark run"
   ],
-  "non_claim": "This search closure does not score S3 capability, compare Multi-Agent Orchestration against Omnigent, or imply that either canonical system is stronger. It records only the absence of a materially matched public canonical S3 comparison cell at the reviewed evidence boundary."
+  "non_claim": "This search closure does not score S3 capability, compare Multi-Agent Orchestration against Omnigent, or imply that either canonical system is stronger. LLaMAR's added native proxy does not create a direct canonical comparison row. It records only the absence of a materially matched public canonical S3 comparison cell at the reviewed evidence boundary."
 }
