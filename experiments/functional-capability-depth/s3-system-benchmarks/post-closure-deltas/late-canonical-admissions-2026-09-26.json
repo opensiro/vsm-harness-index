@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 735,
+  "reviewed_at": "2026-09-26",
+  "function": "S3",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "agentharness-oklahomawhore",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "6bedcf45fad75e21df5e5cac827a898ef5c7d228",
+      "repository": "https://github.com/Oklahomawhore/AgentHarness",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "AgentHarness establishes native S3 through the parent model's current control over continuable child Sessions: it can inspect descendant state, create commitments, send follow-up work and interrupt live children. Public first-party evidence establishes those shipped control surfaces, but no immutable result isolates a whole-current-control intervention and measures the later organizational outcome through that canonical path. No direct canonical S3 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/Oklahomawhore/AgentHarness/blob/6bedcf45fad75e21df5e5cac827a898ef5c7d228/packages/bundle/base/cordis.patch.yml",
+        "https://github.com/Oklahomawhore/AgentHarness/blob/6bedcf45fad75e21df5e5cac827a898ef5c7d228/packages/subagent/tool-subagent/README.md",
+        "https://github.com/Oklahomawhore/AgentHarness/blob/6bedcf45fad75e21df5e5cac827a898ef5c7d228/packages/subagent/tool-subagent-control/README.md"
+      ],
+      "reassess_if": [
+        "the project publishes a recoverable current-control intervention result over the complete continuable-child portfolio",
+        "a matched public benchmark isolates AgentHarness native S3 and reports the subsequent organization-level outcome"
+      ]
+    },
+    {
+      "canonical_harness_id": "kot",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab",
+      "repository": "https://github.com/Loqira-Labs/agentkot",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "KOT establishes native S3 through live teammate/delegate portfolio control, shared Plan state, messaging and stopping/continuation decisions. FrontierHarness provides a public whole-system task result for KOT, but it does not isolate the live-portfolio control relation or a specific S3 intervention and subsequent organizational response. The result therefore remains whole-system evidence rather than a direct canonical S3 observation.",
+      "primary_sources": [
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/README.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/tools/Agent.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/assets/frontier-harness-eval.svg"
+      ],
+      "reassess_if": [
+        "KOT publishes a result isolating a current portfolio-control intervention and its subsequent effect",
+        "a matched public benchmark directly exercises KOT S3 against another canonical S3 system"
+      ]
+    },
+    {
+      "canonical_harness_id": "scion-gcp",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "bdf5b6d135bb7585e242d2f08f4c54b3de2c2940",
+      "repository": "https://github.com/GoogleCloudPlatform/scion",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "Scion establishes native S3 through a model-driven orchestrator that can inspect the live project-agent portfolio and create, continue, interrupt, recover, recreate, stop or delete workers. The reviewed public skills and lifecycle documentation establish that current-control loop, but no public capability result isolates a specific orchestrator intervention and measures the resulting portfolio or task outcome. No direct canonical S3 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/resources/platform_skills/team-creation/SKILL.md",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/resources/platform_skills/scion-agent-manage/SKILL.md",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/resources/platform_skills/scion-scheduler/SKILL.md"
+      ],
+      "reassess_if": [
+        "Scion publishes an immutable result measuring an orchestrator current-control intervention and subsequent project-agent outcome",
+        "a matched public benchmark directly evaluates Scion native S3"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
