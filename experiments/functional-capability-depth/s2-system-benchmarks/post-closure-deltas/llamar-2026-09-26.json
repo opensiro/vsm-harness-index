@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 749,
+  "reviewed_at": "2026-09-26",
+  "function": "S2",
+  "canonical_harness_id": "llamar",
+  "canonical_state_at_review": "A",
+  "canonical_review_ref": "d2b74cac79a0f070d87a150712f8e2ae174920be",
+  "repository": "https://github.com/nsidn98/LLaMAR",
+  "disposition": "canonical-native-disturbance-evidence-no-direct-attenuation-result",
+  "result_surface_review": "no-direct-s2-result",
+  "raw_record": "../../system-observations/llamar.json",
+  "raw_observation_id": "llamar-agent-count-interference-mapthor-sar",
+  "finding": "LLaMAR publishes first-party evidence for the exact disturbance used by canonical S2=A: in MAP-THOR, moving from three robots to four/five slightly reduces success and transport despite increasing coverage, and the paper attributes the decline to crowding, blocking and collisions. The native actor/controller also contains the anti-blocking coordination relation, but the published experiments do not provide a matched treatment that disables/enables that relation while holding the rest of the system fixed. The result therefore corroborates the S2 disturbance boundary but is not a direct attenuation observation.",
+  "primary_sources": [
+    "https://openreview.net/forum?id=Y1rOWS2Z4i",
+    "https://arxiv.org/abs/2407.10031",
+    "https://github.com/nsidn98/LLaMAR/blob/d2b74cac79a0f070d87a150712f8e2ae174920be/AI2Thor/baselines/llamar/llamar_utils_multiagent.py",
+    "https://github.com/nsidn98/LLaMAR/tree/d2b74cac79a0f070d87a150712f8e2ae174920be/results"
+  ],
+  "reassess_if": [
+    "LLaMAR publishes an immutable matched ablation that disables or changes the native anti-blocking/interference attenuation relation while holding the remaining system materially fixed",
+    "a public matched benchmark directly evaluates LLaMAR native S2 against another canonical native S2 system under one disturbance definition"
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
