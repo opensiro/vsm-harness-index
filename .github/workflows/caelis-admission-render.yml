@@ -1,0 +1,74 @@
+name: Render Caelis admission
+
+on:
+  push:
+    branches:
+      - assessment/caelis-admission
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/caelis-admission
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Admit Caelis
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/caelis.md')
+          text = assessment.read_text()
+          old = 'status: proposed\n'
+          if text.count(old) != 1:
+              raise SystemExit(f'expected exactly one proposed status, found {text.count(old)}')
+          assessment.write_text(text.replace(old, 'status: included\n', 1))
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text()
+          if '|caelis|' in catalog_text:
+              raise SystemExit('caelis already present in catalog')
+          if not catalog_text.endswith('\n'):
+              catalog_text += '\n'
+          catalog_text += '262|caelis|Caelis|https://github.com/caelis-labs/caelis|2026-08-14T12:09:51Z|index-addition|5aebbc6a750b8b2d472a0987fbf2e0942062c6d9|2026-09-26\n'
+          catalog.write_text(catalog_text)
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text()
+          if '|caelis|' in signatures_text:
+              raise SystemExit('caelis already present in signatures')
+          if not signatures_text.endswith('\n'):
+              signatures_text += '\n'
+          signatures_text += '262|caelis|Caelis closes autonomous S1 through its main model/tool runtime, S2 through model-owned independent-work scoping plus steering/integration over shared-workspace participants, and S3 through controller-exclusive participant commitment, current-state observation and steering. Its separate Reviewer provides S3*=C because standard invocation is user /review; memory and tool discovery do not close S4, and prompts, approvals and controller policy do not close S5.\n'
+          signatures.write_text(signatures_text)
+          PY
+
+      - name: Render deterministic projections
+        run: |
+          python scripts/derive_full_a.py
+          python scripts/validate_catalog.py
+          python scripts/render_tldr.py
+          python scripts/render_rankings.py
+          python scripts/render_timeline.py
+          python scripts/render_readme.py
+          python scripts/render_metrics.py
+
+      - name: Remove branch-only renderer and commit
+        run: |
+          rm .github/workflows/caelis-admission-render.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m 'assessment: admit Caelis'
+          git push
