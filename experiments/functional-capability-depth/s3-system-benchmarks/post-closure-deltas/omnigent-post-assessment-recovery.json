@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "tracking_issue": 693,
+  "function": "S3",
+  "canonical_harness_id": "omnigent",
+  "canonical_review_revision": "4d963a360e798f076d4fdbd4665e7188e4da05df",
+  "canonical_state_at_review": "A",
+  "observation_revision": "d8d07168c05ce1385be19dbd6ea64f4574c8d144",
+  "manual_validation_revision": "15477855d289abdcead0399c1e5be7923f7deef7",
+  "revision_relation": "post-assessment-descendant",
+  "upstream_issue": "https://github.com/omnigent-ai/omnigent/issues/4838",
+  "upstream_pull_request": "https://github.com/omnigent-ai/omnigent/pull/7662",
+  "evidence_source_class": "first-party-reported",
+  "comparison_class": "descriptive-only",
+  "boundary_class": "canonical-native-system",
+  "system_compatibility": "native-system",
+  "functional_chain": [
+    "parent runner interruption leaves unfinished child commitments interrupted or stale",
+    "first-party recovery enumerates current descendants and filters terminal, stopped, separately hosted, differently owned, or live-elsewhere work",
+    "eligible unfinished commitments are rebound and resumed under their original child and dispatch identities",
+    "already completed child work remains completed and no replacement worker is created",
+    "the recovered team continues operation and the original dispatch results return to the parent"
+  ],
+  "reported_operational_witness": {
+    "setup": "real Polly parent with two Codex children; one quick child and one slow child",
+    "disturbance": "kill -9 the parent runner while the slow child is still active, then Retry the parent",
+    "unfinished_child": "received exactly one continuation in the original conversation and completed",
+    "finished_child": "remained completed and received no continuation",
+    "identity_preservation": "the same two child session IDs and original dispatch IDs were retained",
+    "replacement_workers_created": false,
+    "dispatch_receipts_acknowledged": true
+  },
+  "regression_evidence": {
+    "dedicated_test_file": "tests/server/test_child_session_recovery.py",
+    "implementation_file": "omnigent/server/child_session_recovery.py",
+    "reported_focused_runner_server_tests": 244,
+    "reported_runner_entry_tests": 111,
+    "targeted_regressions_reported_fail_before_pass_after": true
+  },
+  "non_claims": [
+    "this is not an independently reproduced result",
+    "this observation did not occur at the earlier canonical assessment revision",
+    "the PR latency benchmark is not used as an S3 capability metric",
+    "no scalar S3 capability score is inferred",
+    "the observation does not alter Omnigent's canonical autonomy state"
+  ],
+  "primary_sources": [
+    "https://github.com/omnigent-ai/omnigent/issues/4838",
+    "https://github.com/omnigent-ai/omnigent/pull/7662",
+    "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/omnigent/server/child_session_recovery.py",
+    "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/tests/server/test_child_session_recovery.py"
+  ]
+}
