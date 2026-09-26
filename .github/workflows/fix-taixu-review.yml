@@ -1,0 +1,35 @@
+name: fix TaiXu review contract
+
+on:
+  push:
+    branches:
+      - assessment/taixu-review
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add S4 witness labels
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('assessments/taixu.md')
+          t = p.read_text(encoding='utf-8')
+          anchor = "- Caveats: generic memory/learning and current-task web research are not the S4 witness. The credited witness is specifically the post-run future-reuse/skill-gap analysis plus human-governed persistent capability update.\n\n## S5 — Policy and identity"
+          replacement = "- Caveats: generic memory/learning and current-task web research are not the S4 witness. The credited witness is specifically the post-run future-reuse/skill-gap analysis plus human-governed persistent capability update.\n- External distinction: completed user-facing work reveals an externally sourced workflow demand or skill defect that the current reusable skill inventory does not adequately cover.\n- Future / prospective distinction: the advisor explicitly asks whether the just-observed workflow should be reusable in future tasks or whether an existing skill should be evolved for future operation.\n- Adaptation option generated: a normalized `create` or `update` skill proposal containing persistent future instructions, description and optional trigger.\n- Path back into current capability / S3: the human applies the proposal through the standard Chat UI; `AgentSkillRepository.addCustom` persists the new/updated enabled skill so subsequent agent operation can select/use the changed capability.\n\n## S5 — Policy and identity"
+          if anchor not in t:
+              raise SystemExit('anchor not found')
+          p.write_text(t.replace(anchor, replacement, 1), encoding='utf-8')
+          PY
+      - name: Remove temporary workflow and commit
+        run: |
+          rm .github/workflows/fix-taixu-review.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "assessment: complete TaiXu structural witness"
+          git push
