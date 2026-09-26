@@ -1,0 +1,71 @@
+name: Assemble CEDAR admission
+
+on:
+  push:
+    branches:
+      - index/cedar-admission
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/cedar-admission
+          fetch-depth: 0
+
+      - name: Canonicalize assessment sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/cedar.md')
+          text = assessment.read_text(encoding='utf-8')
+          assert text.count('status: proposed') == 1, 'expected exactly one proposed lifecycle status'
+          assessment.write_text(text.replace('status: proposed', 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          assert '|cedar|' not in catalog_text, 'cedar already in catalog'
+          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          assert rows[-1].startswith('273|llamar|'), f'unexpected catalog tail: {rows[-1]}'
+          catalog_row = '274|cedar|CEDAR|https://github.com/Fraunhofer-IIS/cedar|2026-01-17T14:09:25Z|index-addition|ab5820b360eab75a84320f551642fe6386513bab|2026-09-26'
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + catalog_row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          assert '|cedar|' not in signatures_text, 'cedar already in signatures'
+          signature = 'CEDAR closes autonomous S1 through model-routed data-science steps, local code execution and traceback-conditioned repair, while its optional Critique role exposes constructor-owned S3* by reviewing the current workflow and returning findings to later orchestration; no qualifying S2, superior S3, prospective S4 or runtime S5 closure is established.'
+          assert len(signature) <= 360
+          signatures.write_text(signatures_text.rstrip('\n') + '\n274|cedar|' + signature + '\n', encoding='utf-8')
+          PY
+
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate canonical state
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/cedar-admit.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/cedar.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md .github/workflows/cedar-admit.yml
+          git commit -m 'index: canonicalize CEDAR admission'
+          git push origin HEAD:index/cedar-admission
