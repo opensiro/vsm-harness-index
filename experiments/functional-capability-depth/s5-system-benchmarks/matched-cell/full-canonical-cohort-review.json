@@ -3,7 +3,7 @@
   "status": "experimental-non-normative",
   "tracking_issue": 621,
   "reviewed_at": "2026-09-27",
-  "index_revision_at_review": "3df9772776a2975b431bc84c35f6dad364104eef",
+  "index_revision_at_review": "8c0d236ea282656002a061ae0127fba672c8a928",
   "scope": "full-current-canonical-s5-positive-cohort",
   "selection_rule": "All included canonical systems with autonomy_s5 in A, P, A(P), or C(P) at the reviewed Index revision; ? is not positive.",
   "direct_chain": [
@@ -14,9 +14,9 @@
     "newly decided policy returned into subsequent operation"
   ],
   "counts": {
-    "canonical_s5_positive_systems": 22,
+    "canonical_s5_positive_systems": 23,
     "direct_canonical_observations": 1,
-    "no_direct_public_result": 21,
+    "no_direct_public_result": 22,
     "unresolved": 0
   },
   "current_direct_anchor": "ouroboros",
@@ -240,8 +240,18 @@
       "blocking_gate": "parent-rubric-amendment-runtime-result",
       "finding": "Surogates structurally separates judge-authored rubric refinement from parent-only accept/reject and returns an accepted rubric into the resumed Mission, but reviewed public first-party surfaces publish the mechanism rather than an immutable Mission execution showing a real parent enactment and subsequent operation under the amended rubric.",
       "reopen_when": "A public immutable Surogates Mission trace records a judge-proposed rubric replacement, authenticated parent accept/reject authority, persisted amended rubric, and subsequent coordinator/worker/evaluator operation governed by the enacted policy."
+    },
+    {
+      "canonical_harness_id": "chump",
+      "repository": "https://github.com/repairman29/chump",
+      "canonical_review_revision": "724c8ebe1911e986cc8af6883b6f05acd096d437",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "operator-ribbon-policy-subsequent-operation-result",
+      "finding": "Chump publicly records a legitimate operator amendment making the clean-install ribbon the singular focus of MISSION-010 and persists that policy in load-bearing mission guidance, while its picker/runtime exposes mission-return mechanisms. Reviewed frozen history does not provide one immutable trace binding that specific operator amendment to subsequent fleet work selected and executed under the amended focus; later ribbon-critical ships exist, but their provenance does not close the direct amendment-to-operation chain.",
+      "reopen_when": "A public immutable Chump fleet trace or repository-history chain explicitly binds the legitimate operator ribbon-only amendment to the persisted authoritative policy consumed by fleet selection and identifies subsequent claimed or executed work as chosen under that amended policy."
     }
   ],
-  "conclusion": "The full current 22-system canonical S5-positive cohort has been explicitly reconciled against public evidence. Ouroboros remains the only admitted canonical direct S5 observation; the other 20 systems expose qualifying S5 mechanisms/ownership but no reviewed public direct result satisfying the full authority/change/subsequent-operation chain. The S5 primary therefore remains an evidence-backed gap.",
+  "conclusion": "The full current 23-system canonical S5-positive cohort has been explicitly reconciled against public evidence. Ouroboros remains the only admitted canonical direct S5 observation; the other 22 systems expose qualifying S5 mechanisms/ownership but no reviewed public direct result satisfying the full authority/change/subsequent-operation chain. The S5 primary therefore remains an evidence-backed gap.",
   "non_claim": "No-direct-public-result is a temporal evidence disposition, not a claim of zero S5 capability or permanent absence. Mechanism evidence remains valid canonical assessment evidence but is not promoted into a capability observation without an actual public result chain."
 }
