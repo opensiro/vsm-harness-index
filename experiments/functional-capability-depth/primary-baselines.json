@@ -102,9 +102,14 @@
           "benchmark_id": "grit-merge-contention",
           "benchmark_name": "Grit synthetic merge-contention sweep",
           "primary_source": "https://github.com/rtk-ai/grit/tree/a2c48735e0a16c49ca1541c4865fce438c479405"
+        },
+        {
+          "benchmark_id": "agentroom-concurrent-coding",
+          "benchmark_name": "AgentRoom concurrent coding coordination study",
+          "primary_source": "https://arxiv.org/abs/2608.23740"
         }
       ],
-      "blocking_reason": "Reviewed direct S2 evidence includes 8 disturbance/attenuation benchmark families. Nool and The Specification Gap provide benchmark-scaffolded direct non-canonical observations; CodeCRDT and Grit provide direct observations at their own non-canonical native product boundaries; and Squad plus thClaws now provide two canonical native descriptive direct observations from first-party operational history. Twining lacks recoverable exact treatment revision and CooperBench lacks pinned flash-run logs for observation admission. The two canonical descriptive rows use heterogeneous disturbances and evidence surfaces rather than one materially matched benchmark/model/configuration cell, so public evidence still provides no matched primary comparison across multiple canonical native S2 implementations."
+      "blocking_reason": "Reviewed direct S2 evidence includes 9 disturbance/attenuation benchmark families. Nool and The Specification Gap provide benchmark-scaffolded direct non-canonical observations; CodeCRDT, Grit and AgentRoom provide direct observations at non-canonical native product/paper-defined boundaries; and Squad plus thClaws provide two canonical native descriptive direct observations from first-party operational history. Twining lacks recoverable exact treatment revision and CooperBench lacks pinned flash-run logs for observation admission. AgentRoom preserves concurrent workers in its strongest control but changes the full CRDT + MCP + collaboration-protocol bundle and has no recoverable canonical repository identity. The two canonical descriptive rows still use heterogeneous disturbances and evidence surfaces rather than one materially matched benchmark/model/configuration cell, so public evidence provides no matched primary comparison across multiple canonical native S2 implementations."
     },
     "S3": {
       "status": "gap",
