@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 735,
+  "reviewed_at": "2026-09-26",
+  "function": "S5",
+  "disposition": "canonical-mechanism-no-direct-result",
+  "systems": [
+    {
+      "canonical_harness_id": "rsih",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "737bf1f5a5a56f0c49bbd5180e71d651113038ac",
+      "repository": "https://github.com/CosmosMind-ai/RSI-Harness",
+      "result_surface_review": "no-direct-s5-result",
+      "finding": "RSIH's canonical S5=C constructor path uses the shipped harness-rsi/GEE workflow to turn operating-history evidence and the intended future specialization into standing Genome policy, instruction and identity/configuration components, with an explicit approved plan before materialization. The generated Genome is a separate downstream system-in-focus. The reviewed public repository establishes this constructor mechanism and validation tests, but publishes no capability result measuring identity/policy construction quality or its return into subsequent operation through the canonical base-RSIH path. No direct canonical S5 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/config/genomes/harness-rsi/components/instructions.json",
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/config/genomes/harness-rsi/skills/genome-authoring/pattern-to-component.md",
+        "https://github.com/CosmosMind-ai/RSI-Harness/blob/737bf1f5a5a56f0c49bbd5180e71d651113038ac/docs/genome/harness-rsi.md"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
