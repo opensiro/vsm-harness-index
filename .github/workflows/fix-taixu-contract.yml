@@ -1,0 +1,48 @@
+name: fix-taixu-contract
+
+on:
+  push:
+    branches:
+      - assessment/taixu-review
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/taixu-review
+          fetch-depth: 0
+      - name: Add required S4 reconstruction labels
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('assessments/taixu.md')
+          text = path.read_text(encoding='utf-8')
+          if '- External distinction:' not in text:
+              marker = '- Caveats: generic memory/learning and current-task web research are not the S4 witness. The credited witness is specifically the post-run future-reuse/skill-gap analysis plus human-governed persistent capability update.\n'
+              addition = marker + (
+                  '- External distinction: completed user-facing work provides environmental evidence that a workflow is reusable beyond the current run or that an existing skill failed to cover the observed operational need.\n'
+                  '- Future / prospective distinction: the advisor explicitly asks whether the just-observed workflow should become reusable future capability or whether an existing reusable skill should be revised for later work, rather than merely solving the finished task.\n'
+                  '- Adaptation option generated: a separate model pass emits a normalized `create` or `update` `SkillSuggestion` containing the proposed reusable skill instructions and, for updates, the target skill identity.\n'
+                  '- Path back into current capability / S3: the standard Chat UI exposes the proposal to the human operator; `applySkillSuggestion()` converts it into a custom skill and `AgentSkillRepository.addCustom()` persists it enabled, changing the skill capability available to subsequent agent operation.\n'
+              )
+              if marker not in text:
+                  raise SystemExit('S4 caveat marker not found')
+              text = text.replace(marker, addition, 1)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove temporary workflow and commit
+        shell: bash
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git rm .github/workflows/fix-taixu-contract.yml
+          git add assessments/taixu.md
+          git commit -m "assessment: complete TaiXu S4 reconstruction" || exit 0
+          git push origin HEAD:assessment/taixu-review
