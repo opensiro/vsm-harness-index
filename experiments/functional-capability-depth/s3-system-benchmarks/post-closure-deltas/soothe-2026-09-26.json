@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 671,
+  "reviewed_at": "2026-09-26",
+  "function": "S3",
+  "disposition": "canonical-mechanism-no-direct-result",
+  "systems": [
+    {
+      "canonical_harness_id": "soothe",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "be4fa14c0aa53203b8861dbff367eccb0df77668",
+      "repository": "https://github.com/mirasoth/soothe",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "Soothe's canonical constructor S3 path exposes rail/guard current-control decisions over maker lifecycle, merge/retry/replant, feedback and job progression. At the pinned revision the standard loop-native rail binding does not close that path with the shipped autonomous guard evaluator, and the reviewed public benchmark inventory does not isolate a current-control intervention through this path and measure the subsequent organizational outcome. Routing, daemon/API, security, planning and latency benchmarks therefore do not create a direct native S3 capability observation.",
+      "primary_sources": [
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/interpreter.py",
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/guards.py",
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtins_exec.py",
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/benchmarks/README.md"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}

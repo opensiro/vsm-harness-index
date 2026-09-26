@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 671,
+  "reviewed_at": "2026-09-26",
+  "function": "S2",
+  "disposition": "canonical-mechanism-no-direct-result",
+  "systems": [
+    {
+      "canonical_harness_id": "soothe",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "be4fa14c0aa53203b8861dbff367eccb0df77668",
+      "repository": "https://github.com/mirasoth/soothe",
+      "result_surface_review": "no-direct-s2-result",
+      "finding": "Soothe's canonical constructor S2 path exposes worktree/branch isolation, merge-state handling, retry/replant and guard-driven coordination for concurrently executing maker goals. The pinned public benchmark inventory covers workspace propagation, routing, daemon endpoints, security and baseline runtime behavior, while the additional public benchmark scripts are oriented toward planning, latency and service behavior. No reviewed public result instantiates inter-S1 workspace/merge interference and measures its attenuation through the canonical rail/guard/builtin S2 path together with the subsequent maker outcome. No direct S2 capability observation is admitted.",
+      "primary_sources": [
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml",
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtins_exec.py",
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/guards.py",
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/benchmarks/README.md"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}

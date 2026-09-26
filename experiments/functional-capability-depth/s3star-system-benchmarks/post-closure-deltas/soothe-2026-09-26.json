@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 671,
+  "reviewed_at": "2026-09-26",
+  "function": "S3*",
+  "disposition": "canonical-mechanism-no-direct-result",
+  "systems": [
+    {
+      "canonical_harness_id": "soothe",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "be4fa14c0aa53203b8861dbff367eccb0df77668",
+      "repository": "https://github.com/mirasoth/soothe",
+      "result_surface_review": "no-direct-s3star-result",
+      "finding": "Soothe ships maker-checker and greenfield rail patterns that can instantiate independent checker/review goals, corrective feedback, replant/retry and later QA/re-verification, which supports the canonical constructor S3* mapping. The reviewed public benchmark inventory does not publish a result that exercises this discrepancy-detection → corrective return → re-verification chain through the canonical rail path. Existing routing, daemon/API, security, baseline and performance benchmarks therefore do not add a direct canonical S3* capability observation.",
+      "primary_sources": [
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtin_rails/maker-checker.yml",
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtin_rails/greenfield-system.yml",
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/packages/soothe/src/soothe/rails/builtins_exec.py",
+        "https://github.com/mirasoth/soothe/blob/be4fa14c0aa53203b8861dbff367eccb0df77668/benchmarks/README.md"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
