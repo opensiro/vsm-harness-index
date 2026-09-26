@@ -156,6 +156,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="claw-code-agent"></a>[claw-code-agent](https://github.com/HarnessLab/claw-code-agent) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="harness-evolver"></a>[Harness Evolver](https://github.com/raphaelchristi/harness-evolver) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="herdr"></a>[Herdr](https://github.com/herdrdev/herdr) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="boundflow"></a>[BoundFlow](https://github.com/boundflow/boundflow) | 2026-Q1 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="orca-stablyai"></a>[Orca](https://github.com/stablyai/orca) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="talon"></a>[Talon](https://github.com/dylanneve1/talon) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ares"></a>[ARES](https://github.com/Timwood0x10/ARES) | 2026-Q1 | 1/6 | 0/5 | 3 | 2 | 0 | `A C C(P) — C(P) —` |
