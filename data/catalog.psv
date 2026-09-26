@@ -291,3 +291,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 276|worldgui|WorldGUI-Agent|https://github.com/showlab/WorldGUI|2025-02-12T00:01:31Z|index-addition|2117f0a87bcd3b1f330d3727a7ec0643930e7d90|2026-09-26
 277|mlr-agent|MLR-Agent|https://github.com/chchenhui/mlrbench|2025-05-14T13:56:07Z|index-addition|f728d571a992d71c8b526eeb4d9ab6bb5c8cc824|2026-09-27
 278|replicator-agent|ReplicatorAgent|https://github.com/CenterForOpenScience/llm-benchmarking|2025-06-16T20:34:45Z|index-addition|fb6a804fd710764f3ad3c8b84e1323c2804c4776|2026-09-27
+279|toolgen|ToolGen|https://github.com/Reason-Wang/ToolGen|2024-10-04T13:10:23Z|index-addition|6839374a255810efe69deea4056eec5c55e25802|2026-09-27
