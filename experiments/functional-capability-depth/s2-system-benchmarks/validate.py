@@ -40,6 +40,7 @@ EXPECTED_OBSERVATION_IDS = {
     "specification-gap-recovery-2026-03",
     "codecrdt-parallel-convergence-2025-10",
     "grit-synthetic-merge-contention-2026-04",
+    "agentroom-parallel-merge-t4-sonnet46-2026-08",
     "squad-shared-state-conflict-attenuation-2026-03",
     "thclaws-team-workspace-interference-attenuation-2026",
 }
@@ -56,6 +57,7 @@ EXPECTED_DIRECT_S2 = {
     "cooperbench-team-harness",
     "codecrdt-observation-coordination",
     "grit-merge-contention",
+    "agentroom-concurrent-coding",
 }
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
@@ -357,6 +359,51 @@ def validate_grit_observation(observations: list[dict]) -> None:
     require_sources(row, 4, "Grit observation")
 
 
+def validate_agentroom_observation(observations: list[dict]) -> None:
+    row = observation_by_id(observations, "agentroom-parallel-merge-t4-sonnet46-2026-08")
+    require_fields(row, {
+        "function": "S2",
+        "benchmark_id": "agentroom-concurrent-coding",
+        "benchmark_fit": "direct",
+        "evidence_source_class": "first-party-reported",
+        "boundary_class": "paper-defined-concurrent-coding-team",
+        "canonical_harness_id": None,
+        "canonical_system_eligible": False,
+        "system_compatibility": "native-system",
+        "comparison_class": "partially-matched",
+        "paper": "https://arxiv.org/abs/2608.23740",
+        "paper_version": "v1",
+        "paper_date": "2026-08-24",
+        "model": "Sonnet 4.6",
+        "worker_count": 2,
+        "task": "T4 financial ledger",
+        "task_budget_seconds": 600,
+    }, "AgentRoom direct S2 observation")
+    if "benchmark_artifact_revision" in row:
+        fail("AgentRoom must not invent a source repository revision")
+    if row.get("budget_fair_analysis_pool_seconds") != [30, 700]:
+        fail("AgentRoom budget-fair analysis pool drift")
+    control, treatment, comparison = row.get("control"), row.get("treatment"), row.get("reported_comparison")
+    if not all(isinstance(x, dict) for x in (control, treatment, comparison)):
+        fail("AgentRoom control/treatment/comparison records must remain objects")
+    if (control.get("condition"), control.get("mean_quality"), control.get("n"), control.get("sigma")) != ("parallel-merge", 0.456, 12, 0.178):
+        fail("AgentRoom parallel-merge control result drift")
+    if (treatment.get("condition"), treatment.get("mean_quality"), treatment.get("n"), treatment.get("sigma")) != ("AgentRoom", 0.669, 14, 0.140):
+        fail("AgentRoom treatment result drift")
+    if comparison != {"mean_difference": 0.213, "welch_t": 3.35, "p_value": 0.003}:
+        fail("AgentRoom reported comparison drift")
+    if "full AgentRoom coordination bundle" not in row.get("comparison_limitation", ""):
+        fail("AgentRoom bundle-treatment limitation must remain explicit")
+    if "no software revision" not in row.get("provenance_limitation", ""):
+        fail("AgentRoom paper-only provenance limitation must remain explicit")
+    if "404" not in row.get("source_repository_status_at_review", ""):
+        fail("AgentRoom source-repository availability status must remain explicit")
+    require_sources(row, 2, "AgentRoom direct observation", {
+        "https://arxiv.org/abs/2608.23740",
+        "https://arxiv.org/abs/2608.23740v1",
+    })
+
+
 def validate_squad_canonical_observation(observations: list[dict]) -> None:
     row = observation_by_id(observations, "squad-shared-state-conflict-attenuation-2026-03")
     expected = {
@@ -449,10 +496,10 @@ def main() -> None:
     if not isinstance(observations, list):
         fail("observations.json must contain a list")
     observation_ids = {row.get("observation_id") for row in observations if isinstance(row, dict)}
-    if len(observations) != 6 or observation_ids != EXPECTED_OBSERVATION_IDS:
+    if len(observations) != 7 or observation_ids != EXPECTED_OBSERVATION_IDS:
         fail(f"S2 observation set drift: {sorted(str(value) for value in observation_ids)}")
-    if coverage.get("direct_observation_count") != 6:
-        fail("S2 direct_observation_count must remain 6")
+    if coverage.get("direct_observation_count") != 7:
+        fail("S2 direct_observation_count must remain 7")
     canonical_observations = [row for row in observations if row.get("canonical_system_eligible") is True]
     canonical_ids = {row.get("observation_id") for row in canonical_observations}
     if coverage.get("canonical_direct_observation_count") != 2 or canonical_ids != EXPECTED_CANONICAL_OBSERVATION_IDS:
@@ -472,8 +519,8 @@ def main() -> None:
         fail("direct_benchmark_family_count does not match reviewed direct-S2 map")
 
     cases = coverage.get("cases")
-    if not isinstance(cases, list) or len(cases) != 23:
-        fail("S2 coverage must retain exactly 23 reviewed cases")
+    if not isinstance(cases, list) or len(cases) != 24:
+        fail("S2 coverage must retain exactly 24 reviewed cases")
     by_id: dict[str, dict] = {}
     for case in cases:
         case_id = case.get("case_id")
@@ -572,6 +619,16 @@ def main() -> None:
         "review_ref": "a2c48735e0a16c49ca1541c4865fce438c479405",
         "observation_ref": "observations.json#grit-synthetic-merge-contention-2026-04",
     })
+    agentroom = require_case(by_id, "agentroom-concurrent-coding-direct-native-noncanonical", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-native-noncanonical",
+        "system_compatibility": "native-system",
+        "canonical_harness_id": None,
+        "paper": "https://arxiv.org/abs/2608.23740",
+        "observation_ref": "observations.json#agentroom-parallel-merge-t4-sonnet46-2026-08",
+    })
+    if "review_ref" in agentroom:
+        fail("AgentRoom coverage must not invent a source repository revision")
     require_case(by_id, "squad-shared-state-conflict-direct-native-canonical", {
         "benchmark_fit": "direct",
         "coverage_class": "direct-native-canonical",
@@ -595,6 +652,7 @@ def main() -> None:
     validate_specification_gap_observation(observations)
     validate_codecrdt_observation(observations)
     validate_grit_observation(observations)
+    validate_agentroom_observation(observations)
     validate_squad_canonical_observation(observations)
     validate_thclaws_canonical_observation(observations)
     validate_proxy_links(coverage, by_id)
