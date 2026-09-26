@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 690,
+  "reviewed_at": "2026-09-26",
+  "function": "S2",
+  "upstream_repository": "https://github.com/genglongling/REALM-Bench",
+  "upstream_revision": "9c3aa2ae97d65198f6ee29fe942d99f9b3a9c6eb",
+  "paper": "arXiv:2502.18836 / REALM-Bench",
+  "candidate_surface": "cross-framework multi-agent planning/scheduling benchmark with inter-agent dependencies, resource constraints and dynamic disruptions",
+  "candidate_metric": "coordination_effectiveness",
+  "candidate_metric_definition": "Post-hoc schedule consistency: temporal dependency violations and resource-capacity violations are converted into consistency percentages. It is not a treatment/control measure of an interaction-generated disturbance being attenuated through a native S2 relation.",
+  "disposition": "matched-framework-non-direct-s2",
+  "creates_direct_benchmark_family": false,
+  "creates_observation": false,
+  "creates_canonical_direct_observation": false,
+  "changes_primary_baseline": false,
+  "primary_baseline_after_review": "gap",
+  "direct_s2_gate_failures": [
+    "coordination_effectiveness scores end-state temporal/resource consistency rather than an explicit disturbance-to-attenuation treatment",
+    "the AutoGen comparison row uses a benchmark-authored Manager/specialist GroupChat application and benchmark-specific manager prompt rather than isolating the canonical AutoGen S2 path as the intended varying factor",
+    "CrewAI and LangGraph are canonical Index systems but both have S2=— at their reviewed boundaries",
+    "OpenAI Swarm is not linked to a canonical Index system in the reviewed corpus",
+    "the compared framework set therefore contains only one linked canonical S2 system"
+  ],
+  "frameworks": [
+    {
+      "display_name": "AutoGen",
+      "canonical_harness_id": "autogen-agentchat",
+      "canonical_assessment_ref": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+      "canonical_s2_state": "A",
+      "runner_path": "agent_frameworks_general/autogen_multi_agent/router.py",
+      "runner_organization": "benchmark authors Calculator, Data Analyzer, SQL Query, Manager and User Proxy agents plus a benchmark-specific manager prompt and GroupChatManager application",
+      "native_s2_comparison_eligible": false,
+      "blocking_reason": "The benchmark does not isolate a direct disturbance-to-attenuation result attributable to the canonical first-party S2 boundary."
+    },
+    {
+      "display_name": "CrewAI",
+      "canonical_harness_id": "crewai",
+      "canonical_assessment_ref": "894898f84c4ac0a89f24bf7bee6c381eb0e67f51",
+      "canonical_s2_state": "—",
+      "native_s2_comparison_eligible": false,
+      "blocking_reason": "Canonical CrewAI does not establish S2 at the reviewed boundary."
+    },
+    {
+      "display_name": "LangGraph",
+      "canonical_harness_id": "langgraph",
+      "canonical_assessment_ref": "e539ac122f4126f6dd850581c1494948cf620e31",
+      "canonical_s2_state": "—",
+      "native_s2_comparison_eligible": false,
+      "blocking_reason": "Canonical LangGraph does not establish S2 at the reviewed runtime boundary; benchmark-authored graphs cannot donate S2 to that canonical system."
+    },
+    {
+      "display_name": "OpenAI Swarm",
+      "canonical_harness_id": null,
+      "canonical_assessment_ref": null,
+      "canonical_s2_state": null,
+      "native_s2_comparison_eligible": false,
+      "blocking_reason": "No canonical OpenAI Swarm assessment/linkage was found in the reviewed Index state."
+    }
+  ],
+  "evidence_sources": [
+    "https://github.com/genglongling/REALM-Bench/tree/9c3aa2ae97d65198f6ee29fe942d99f9b3a9c6eb",
+    "https://github.com/genglongling/REALM-Bench/blob/9c3aa2ae97d65198f6ee29fe942d99f9b3a9c6eb/evaluation/metrics.py",
+    "https://github.com/genglongling/REALM-Bench/blob/9c3aa2ae97d65198f6ee29fe942d99f9b3a9c6eb/evaluation/framework_runners.py",
+    "https://github.com/genglongling/REALM-Bench/blob/9c3aa2ae97d65198f6ee29fe942d99f9b3a9c6eb/agent_frameworks_general/autogen_multi_agent/router.py"
+  ],
+  "non_claim": "REALM-Bench is useful public multi-agent planning evidence, but coordination vocabulary, dynamic disruption and schedule-consistency metrics do not by themselves establish a direct S2 benchmark cell. The reviewed comparison contains only one canonical S2 system and does not create a direct family, observation, canonical matched cell, or primary baseline."
+}
