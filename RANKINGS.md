@@ -176,6 +176,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="shep"></a>[Shep](https://github.com/shep-ai/shep) | 2026-Q1 | 1/6 | 0/5 | 2 | 2 | 0 | `A C C(P) — — P` |
 | 6 | <a id="nanobot"></a>[nanobot](https://github.com/HKUDS/nanobot) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="hankweave"></a>[hankweave](https://github.com/SouthBridgeAI/hankweave-runtime) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="cedar"></a>[CEDAR](https://github.com/Fraunhofer-IIS/cedar) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="open-cowork"></a>[Open Cowork](https://github.com/OpenCoworkAI/open-cowork) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="opensre"></a>[OpenSRE](https://github.com/Tracer-Cloud/opensre) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="yylo"></a>[YYLO](https://github.com/yylo-dev/yylo) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
