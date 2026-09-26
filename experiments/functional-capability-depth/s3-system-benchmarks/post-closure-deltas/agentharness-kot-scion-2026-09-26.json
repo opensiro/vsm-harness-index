@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 735,
+  "reviewed_at": "2026-09-26",
+  "function": "S3",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "agentharness-oklahomawhore",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "6bedcf45fad75e21df5e5cac827a898ef5c7d228",
+      "repository": "https://github.com/Oklahomawhore/AgentHarness",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "AgentHarness' canonical S3=A path gives the parent model current visibility over its complete continuable descendant tree and authority to create commitments, send follow-up work and interrupt live children. The reviewed public product surfaces establish that current-control mechanism and durable child state, but no published capability result isolates an S3 intervention and reports the subsequent organization-level outcome through the native control path. No direct canonical S3 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/Oklahomawhore/AgentHarness/blob/6bedcf45fad75e21df5e5cac827a898ef5c7d228/packages/subagent/tool-subagent/README.md",
+        "https://github.com/Oklahomawhore/AgentHarness/blob/6bedcf45fad75e21df5e5cac827a898ef5c7d228/packages/subagent/tool-subagent-control/README.md",
+        "https://github.com/Oklahomawhore/AgentHarness/blob/6bedcf45fad75e21df5e5cac827a898ef5c7d228/packages/bundle/base/cordis.patch.yml"
+      ]
+    },
+    {
+      "canonical_harness_id": "kot",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab",
+      "repository": "https://github.com/Loqira-Labs/agentkot",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "KOT's canonical S3=A path gives the lead model a current view of owned child/delegate/teammate commitments plus authority to steer, stop, reassign dependencies and change a live teammate's provider/model. KOT's published whole-system FrontierHarness result does not isolate those current-control rights or measure their subsequent organizational effect. The reviewed evidence therefore establishes the native S3 mechanism without a direct canonical S3 capability observation.",
+      "primary_sources": [
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/tools/Agent.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/tools/Plan.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/README.md"
+      ]
+    },
+    {
+      "canonical_harness_id": "scion-gcp",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "bdf5b6d135bb7585e242d2f08f4c54b3de2c2940",
+      "repository": "https://github.com/GoogleCloudPlatform/scion",
+      "result_surface_review": "no-direct-s3-result",
+      "finding": "Scion's canonical S3=A path lets a model-driven team orchestrator inspect current project-agent state and choose worker creation, recovery, continuation, interruption, cleanup and scheduling actions through first-party platform skills. The reviewed repository establishes the lifecycle/state machinery and the agent-owned intervention surface, but no published capability result isolates those current-control decisions and measures a subsequent organization-level outcome. No direct canonical S3 observation is admitted.",
+      "primary_sources": [
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/resources/platform_skills/team-creation/SKILL.md",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/resources/platform_skills/scion-agent-manage/SKILL.md",
+        "https://github.com/GoogleCloudPlatform/scion/blob/bdf5b6d135bb7585e242d2f08f4c54b3de2c2940/resources/platform_skills/scion-scheduler/SKILL.md"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
