@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 685,
+  "reviewed_at": "2026-09-26",
+  "function": "S3",
+  "upstream_repository": "https://github.com/LINs-lab/SupervisorAgent",
+  "upstream_revision": "ab116b557b095ae8d45bdf2d61057ce19519d4ff",
+  "paper": "ICLR 2026 — Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems",
+  "benchmark_id": "supervisoragent-smas-runtime-control",
+  "benchmark_name": "SupervisorAgent / SMAS runtime-control evaluation",
+  "benchmark_fit": "direct",
+  "boundary_class": "composed-noncanonical-system",
+  "system_compatibility": "benchmark-scaffolded",
+  "canonical_harness_id": null,
+  "creates_direct_benchmark_family": true,
+  "creates_observation": true,
+  "creates_canonical_direct_observation": false,
+  "changes_primary_baseline": false,
+  "primary_baseline_after_review": "gap",
+  "organizational_boundary": "base MAS plus the external SupervisorAgent meta-level runtime controller (SMAS)",
+  "function_chain": [
+    "current MAS interaction step and trace are observed at runtime",
+    "a first-stage filter identifies explicit error, inefficient looping, excessive/noisy observation, or another supervision trigger",
+    "SupervisorAgent builds current local/global task context and chooses approve, guidance, observation correction, or verification",
+    "guidance/correction/purification is returned into the live agent step through the callback path",
+    "subsequent task trajectory, token use, and/or task success changes"
+  ],
+  "mixed_function_caveat": "The published SMAS intervention repertoire is not an isolated S3-only ablation. Guidance, error correction and observation purification instantiate current-control S3, while run_verification can instantiate verification-like S3* activity. The aggregate SMAS result is therefore admitted as direct composed S3 evidence for an organization that materially contains S3, but not as a pure causal estimate of S3 alone.",
+  "result": {
+    "benchmark": "GAIA validation",
+    "model": "GPT-4.1",
+    "comparison_class": "within-composed-system-treatment-control",
+    "baseline": "Smolagent",
+    "treatment": "Smolagent + SMAS (SupervisorAgent)",
+    "pass_at_1": {
+      "baseline_accuracy_percent": 50.91,
+      "treatment_accuracy_percent": 50.91,
+      "baseline_avg_tokens_k": 527.76,
+      "treatment_avg_tokens_k": 371.12,
+      "reported_token_reduction_percent": 29.68
+    },
+    "scope_note": "The pass@1 aggregate holds success rate constant while reducing reported average token cost. Higher-pass and level-specific rows are preserved in the primary source but are not duplicated into the Index observation unless needed for a later comparison."
+  },
+  "provenance": {
+    "evidence_source_class": "first-party-reported",
+    "result_table_committed_at_review_revision": true,
+    "implementation_committed_at_review_revision": true,
+    "independently_reproduced": false
+  },
+  "attribution_boundary": [
+    "Do not attribute SMAS S3 ownership or capability to Smolagent merely because Smolagent is the base MAS in one evaluation row.",
+    "Do not attribute SMAS S3 ownership or capability to AWorld, OAgents, or another base framework without independent first-party evidence for that framework's own S3 path.",
+    "The published result belongs to the composed SMAS boundary: base MAS + SupervisorAgent."
+  ],
+  "primary_sources": [
+    "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/README.md",
+    "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/smolagents_SMAS/examples/open_deep_research/run_gaia.py",
+    "https://github.com/LINs-lab/SupervisorAgent/blob/ab116b557b095ae8d45bdf2d61057ce19519d4ff/smolagents_SMAS/src/smolagents/agents.py",
+    "https://openreview.net/forum?id=pzFhtpkabh"
+  ],
+  "non_claim": "This review does not create a canonical harness identity for SMAS, does not assign S3 to Smolagent or another wrapped framework, does not isolate a pure S3 causal effect from verification-like interventions, and does not provide a materially matched canonical cross-harness S3 primary baseline."
+}
