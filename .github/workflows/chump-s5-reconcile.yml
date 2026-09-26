@@ -1,0 +1,122 @@
+name: Reconcile Chump S5 cohort
+
+on:
+  push:
+    branches:
+      - experiment/chump-s5-reconciliation-621
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/chump-s5-reconciliation-621
+          fetch-depth: 0
+
+      - name: Reconcile current canonical S5 cohort
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('experiments/functional-capability-depth')
+          matched = root / 's5-system-benchmarks' / 'matched-cell'
+          cohort_path = matched / 'full-canonical-cohort-review.json'
+          closure_path = matched / 's5-primary-search-closure.json'
+          validator_path = matched / 'validate_s5_primary_search_closure.py'
+
+          cohort = json.loads(cohort_path.read_text(encoding='utf-8'))
+          assert cohort['counts'] == {
+              'canonical_s5_positive_systems': 22,
+              'direct_canonical_observations': 1,
+              'no_direct_public_result': 21,
+              'unresolved': 0,
+          }
+          assert not any(row.get('canonical_harness_id') == 'chump' for row in cohort['systems'])
+          cohort['reviewed_at'] = '2026-09-27'
+          cohort['index_revision_at_review'] = '8c0d236ea282656002a061ae0127fba672c8a928'
+          cohort['counts'] = {
+              'canonical_s5_positive_systems': 23,
+              'direct_canonical_observations': 1,
+              'no_direct_public_result': 22,
+              'unresolved': 0,
+          }
+          cohort['systems'].append({
+              'canonical_harness_id': 'chump',
+              'repository': 'https://github.com/repairman29/chump',
+              'canonical_review_revision': '724c8ebe1911e986cc8af6883b6f05acd096d437',
+              'canonical_s5_state': 'P',
+              'disposition': 'no-direct-public-result',
+              'blocking_gate': 'operator-ribbon-policy-subsequent-operation-result',
+              'finding': 'Chump publicly records a legitimate operator amendment making the clean-install ribbon the singular focus of MISSION-010 and persists that policy in load-bearing mission guidance, while its picker/runtime exposes mission-return mechanisms. Reviewed frozen history does not provide one immutable trace binding that specific operator amendment to subsequent fleet work selected and executed under the amended focus; later ribbon-critical ships exist, but their provenance does not close the direct amendment-to-operation chain.',
+              'reopen_when': 'A public immutable Chump fleet trace or repository-history chain explicitly binds the legitimate operator ribbon-only amendment to the persisted authoritative policy consumed by fleet selection and identifies subsequent claimed or executed work as chosen under that amended policy.',
+          })
+          cohort['conclusion'] = 'The full current 23-system canonical S5-positive cohort has been explicitly reconciled against public evidence. Ouroboros remains the only admitted canonical direct S5 observation; the other 22 systems expose qualifying S5 mechanisms/ownership but no reviewed public direct result satisfying the full authority/change/subsequent-operation chain. The S5 primary therefore remains an evidence-backed gap.'
+          cohort_path.write_text(json.dumps(cohort, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          closure = json.loads(closure_path.read_text(encoding='utf-8'))
+          assert closure['full_cohort_state'] == {
+              'canonical_s5_positive_systems': 22,
+              'direct_canonical_observations': 1,
+              'no_direct_public_result': 21,
+              'unresolved': 0,
+          }
+          closure['reviewed_at'] = '2026-09-27'
+          closure['full_cohort_state'] = {
+              'canonical_s5_positive_systems': 23,
+              'direct_canonical_observations': 1,
+              'no_direct_public_result': 22,
+              'unresolved': 0,
+          }
+          chump_note = ' Full-cohort reconciliation now also covers canonical Chump; its operator-owned ribbon-only mission amendment is publicly recorded, but reviewed frozen history does not provide one immutable chain binding that amendment to subsequent fleet work selected and executed under the amended policy.'
+          assert 'canonical Chump' not in closure['closure_claim']
+          closure['closure_claim'] += chump_note
+          closure_path.write_text(json.dumps(closure, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          validator = validator_path.read_text(encoding='utf-8')
+          needle = '    "surogates": ("4069e5ad736f1b21584543f734c9481193bcde65", "P"),\n}'
+          replacement = '    "surogates": ("4069e5ad736f1b21584543f734c9481193bcde65", "P"),\n    "chump": ("724c8ebe1911e986cc8af6883b6f05acd096d437", "P"),\n}'
+          assert needle in validator
+          validator = validator.replace(needle, replacement, 1)
+          replacements = {
+              'len(rows) == 22': 'len(rows) == 23',
+              'exactly 22 current positive-S5 systems': 'exactly 23 current positive-S5 systems',
+              '"canonical_s5_positive_systems": 22,': '"canonical_s5_positive_systems": 23,',
+              '"no_direct_public_result": 21,': '"no_direct_public_result": 22,',
+              '"22-system canonical S5-positive cohort"': '"23-system canonical S5-positive cohort"',
+              'full current 22-system canonical S5 cohort reconciled': 'full current 23-system canonical S5 cohort reconciled',
+          }
+          for old, new in replacements.items():
+              assert old in validator, old
+              validator = validator.replace(old, new)
+          validator_path.write_text(validator, encoding='utf-8')
+          PY
+
+      - name: Render experimental projections
+        run: |
+          python experiments/functional-capability-depth/render_function_baselines.py
+          python experiments/functional-capability-depth/render_evidence_frontier.py
+
+      - name: Validate reconciliation
+        run: |
+          python scripts/check_index.py
+          python experiments/functional-capability-depth/s5-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s5-system-benchmarks/matched-cell/validate_s5_primary_search_closure.py
+          python experiments/functional-capability-depth/s5-system-benchmarks/matched-cell/validate_second_canonical_search.py
+          python experiments/functional-capability-depth/validate_synthesis.py
+          python -m unittest discover -s tests -v
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/chump-s5-reconcile.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add experiments/functional-capability-depth .github/workflows/chump-s5-reconcile.yml
+          git commit -m 'experiment: reconcile Chump into S5 cohort'
+          git push origin HEAD:experiment/chump-s5-reconciliation-621
