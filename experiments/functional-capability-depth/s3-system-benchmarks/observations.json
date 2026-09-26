@@ -58,5 +58,44 @@
       "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/src/orchestration/evaluation/arms.py",
       "https://github.com/Vinay-veeragani/Multi-Agent-Orchestration/blob/e6c34462af045d7e53d383103346362351c96353/benchmarks/results/eval_c760d1ff9d464cbfa89e.json"
     ]
+  },
+  {
+    "observation_id": "omnigent-child-recovery-current-control-2026-09",
+    "function": "S3",
+    "benchmark_id": "omnigent-child-recovery-operational-regression",
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "canonical-native-system",
+    "canonical_harness_id": "omnigent",
+    "canonical_system_eligible": true,
+    "system_compatibility": "native-system",
+    "canonical_review_revision": "4d963a360e798f076d4fdbd4665e7188e4da05df",
+    "observation_revision": "d8d07168c05ce1385be19dbd6ea64f4574c8d144",
+    "observation_head_revision": "15477855d289abdcead0399c1e5be7923f7deef7",
+    "revision_relation": "post-assessment-descendant",
+    "observation_date": "2026-09-18",
+    "upstream_issue": "omnigent-ai/omnigent#4838",
+    "upstream_pull_request": "omnigent-ai/omnigent#7662",
+    "comparison_class": "descriptive-operational-regression",
+    "disturbance": "A parent runner failure interrupts a live child-session organization. Active or waiting child commitments can remain bound to the dead runner, appear as final failures, or induce replacement workers after the parent returns, while already-completed children must remain closed.",
+    "current_control_relation": "After parent initialization, first-party Omnigent recovery enumerates the current descendant work tree, classifies which commitments are restorable/interrupted, excludes stopped, closed, archived, separately hosted, differently owned, finished or still-live-elsewhere work, conditionally rebinds eligible children, resumes unfinished turns in their original conversations, restores relays and preserves original session/dispatch identities.",
+    "reported_operational_outcome": "PR #7662 reports a manual Polly/Codex recovery run in which one quick child remained completed, one slow child resumed in its original conversation after the parent runner was killed and the parent retried, no replacement children appeared, and the parent received both original results with matching child and dispatch identities. A separate Interrupt check kept parent and children stopped without automatic continuation.",
+    "automated_regression_evidence": [
+      "restores active/running/waiting/disconnected descendants and required idle ancestors",
+      "does not restore closed, archived, intentionally stopped, separately hosted, live-elsewhere or ownership-ineligible children",
+      "does not restore a child that finishes during the recovery scan",
+      "preserves a child whose old runner reconnects during the scan",
+      "deduplicates concurrent recovery so a second continuation is not allocated",
+      "keeps repeated disconnect/recovery attempts pending until execution evidence clears interruption"
+    ],
+    "provenance_limitation": "This is first-party descriptive operational/regression evidence, not an independently reproduced benchmark. The merged recovery observation revision is 127 commits after the canonical Omnigent assessment ref. It is therefore preserved as a post-assessment descendant observation and must not be relabeled as behavior demonstrated at the exact canonical review revision.",
+    "matching_limitation": "The Omnigent observation is a crash/recovery operational-history surface with user-triggered parent Retry, while the Multi-Agent Orchestration observation is a deterministic within-system supervisor ablation over 54 scripted scenarios. Their tasks, intervention surfaces, models/providers, metrics and comparison designs are not materially matched.",
+    "vsm_interpretation": "The canonical Omnigent assessment independently establishes S3=A at the earlier review ref. This later public descendant supplies direct descriptive S3 capability evidence because the first-party runtime exercises current whole-team control over live commitments after a disturbance: it decides which unfinished work remains valid, which work must not resume, rebinds/resumes eligible commitments and changes subsequent organizational operation without treating completed work as open. The temporal observation does not alter the canonical autonomy state or establish a matched cross-harness primary baseline.",
+    "primary_sources": [
+      "https://github.com/omnigent-ai/omnigent/issues/4838",
+      "https://github.com/omnigent-ai/omnigent/pull/7662",
+      "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/omnigent/server/child_session_recovery.py",
+      "https://github.com/omnigent-ai/omnigent/blob/d8d07168c05ce1385be19dbd6ea64f4574c8d144/tests/server/test_child_session_recovery.py"
+    ]
   }
 ]
