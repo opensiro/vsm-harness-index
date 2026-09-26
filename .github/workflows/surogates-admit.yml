@@ -1,0 +1,71 @@
+name: Assemble Surogates admission
+
+on:
+  push:
+    branches:
+      - index/surogates-admission
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/surogates-admission
+          fetch-depth: 0
+
+      - name: Canonicalize assessment sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/surogates.md')
+          text = assessment.read_text(encoding='utf-8')
+          assert text.count('status: proposed') == 1
+          assessment.write_text(text.replace('status: proposed', 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          assert '|surogates|' not in catalog_text
+          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          assert rows[-1].startswith('281|waggle|'), f'unexpected catalog tail: {rows[-1]}'
+          row = '282|surogates|Surogates|https://github.com/invergent-ai/surogates|2026-04-09T10:41:06Z|index-addition|4069e5ad736f1b21584543f734c9481193bcde65|2026-09-27'
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          assert '|surogates|' not in signatures_text
+          signature = 'Surogates closes autonomous S1 through durable task workers, autonomous S2 through board claims/failure feedback, autonomous-plus-parent S3 through coordinator control plus mission-wide parent budget/cancel authority, and autonomous S3* through an independent mission judge. No mission-level S4 closes; parent-owned rubric refinement closes S5.'
+          assert len(signature) <= 360
+          signatures.write_text(signatures_text.rstrip('\n') + '\n282|surogates|' + signature + '\n', encoding='utf-8')
+          PY
+
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate canonical state
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/surogates-admit.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/surogates.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md .github/workflows/surogates-admit.yml
+          git commit -m 'index: canonicalize Surogates admission'
+          git push origin HEAD:index/surogates-admission
