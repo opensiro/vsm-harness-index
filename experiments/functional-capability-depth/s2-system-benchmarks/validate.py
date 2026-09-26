@@ -35,6 +35,28 @@ EXPECTED_PROXY_PROJECTIONS = {
     "autogen-magentic-one-native-proxy-s2": "autogen-agentchat",
     "squad-marble-native-proxy-s2": "squad",
 }
+EXPECTED_OBSERVATION_IDS = {
+    "nool-trackd-scaleup1-contention-2026-08-21",
+    "specification-gap-recovery-2026-03",
+    "codecrdt-parallel-convergence-2025-10",
+    "grit-synthetic-merge-contention-2026-04",
+    "squad-shared-state-conflict-attenuation-2026-03",
+    "thclaws-team-workspace-interference-attenuation-2026",
+}
+EXPECTED_CANONICAL_OBSERVATION_IDS = {
+    "squad-shared-state-conflict-attenuation-2026-03",
+    "thclaws-team-workspace-interference-attenuation-2026",
+}
+EXPECTED_DIRECT_S2 = {
+    "dpbench",
+    "stale-semantic-coordination",
+    "nool-fleet-coordination",
+    "twining-conflict-resolution",
+    "specification-gap-recovery",
+    "cooperbench-team-harness",
+    "codecrdt-observation-coordination",
+    "grit-merge-contention",
+}
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
 
@@ -65,6 +87,22 @@ def valid_https(value: object) -> bool:
     return parsed.scheme == "https" and bool(parsed.netloc)
 
 
+def require_fields(row: dict, expected: dict[str, object], label: str) -> None:
+    for field, value in expected.items():
+        if row.get(field) != value:
+            fail(f"{label} {field} drift: {row.get(field)!r}")
+
+
+def require_sources(row: dict, minimum: int, label: str, required: set[str] | None = None) -> None:
+    sources = row.get("primary_sources")
+    if not isinstance(sources, list) or len(sources) < minimum:
+        fail(f"{label} must retain at least {minimum} public sources")
+    if any(not valid_https(source) for source in sources):
+        fail(f"{label} must retain HTTPS provenance")
+    if required is not None and not required.issubset(set(sources)):
+        fail(f"{label} lost required immutable provenance")
+
+
 def observation_by_id(observations: list[dict], observation_id: str) -> dict:
     matches = [row for row in observations if row.get("observation_id") == observation_id]
     if len(matches) != 1:
@@ -90,10 +128,8 @@ def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
             fail(f"duplicate S2 proxy projection_id: {projection_id}")
         projections[projection_id] = projection
 
-        if projection.get("function") != "S2":
-            fail(f"{projection_id}: function must be S2")
-        if projection.get("benchmark_fit") != "proxy":
-            fail(f"{projection_id}: benchmark_fit must remain proxy")
+        if projection.get("function") != "S2" or projection.get("benchmark_fit") != "proxy":
+            fail(f"{projection_id}: proxy semantics drift")
         if projection.get("system_compatibility") != "native-system":
             fail(f"{projection_id}: proxy projection must remain native-system")
 
@@ -107,10 +143,7 @@ def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
         if current_s2 in {None, "—", "?"}:
             fail(f"{projection_id}: canonical system no longer establishes S2")
         if projection.get("canonical_state_at_review") != current_s2:
-            fail(
-                f"{projection_id}: canonical S2 state drifted from projection "
-                f"{projection.get('canonical_state_at_review')!r} to {current_s2!r}"
-            )
+            fail(f"{projection_id}: canonical S2 state drift")
 
         raw_record = projection.get("raw_record")
         if not isinstance(raw_record, str) or not raw_record.startswith("../system-observations/"):
@@ -135,7 +168,8 @@ def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
         if missing:
             fail(f"{projection_id}: raw observation ids missing from shared record: {sorted(missing)}")
 
-    if {key: projections[key].get("canonical_harness_id") for key in projections} != EXPECTED_PROXY_PROJECTIONS:
+    actual = {key: projections[key].get("canonical_harness_id") for key in projections}
+    if actual != EXPECTED_PROXY_PROJECTIONS:
         fail("S2 native proxy projection set drift")
 
     expected_cases = {
@@ -158,8 +192,8 @@ def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
 
 
 def validate_nool_observation(observations: list[dict]) -> None:
-    observation = observation_by_id(observations, "nool-trackd-scaleup1-contention-2026-08-21")
-    expected = {
+    row = observation_by_id(observations, "nool-trackd-scaleup1-contention-2026-08-21")
+    require_fields(row, {
         "function": "S2",
         "benchmark_id": "nool-fleet-coordination",
         "benchmark_fit": "direct",
@@ -174,37 +208,27 @@ def validate_nool_observation(observations: list[dict]) -> None:
         "worker_count": 10,
         "ticket_count": 20,
         "nool_version": "6.14.1",
-    }
-    for field, value in expected.items():
-        if observation.get(field) != value:
-            fail(f"Nool direct S2 observation {field} drift: {observation.get(field)!r}")
-
-    git_runs = observation.get("git_uncoordinated_runs")
-    coordinated_runs = observation.get("coordinated_runs")
-    if not isinstance(git_runs, list) or len(git_runs) != 2:
-        fail("Nool direct S2 observation must retain two uncoordinated primary replicates")
-    if not isinstance(coordinated_runs, list) or len(coordinated_runs) != 2:
-        fail("Nool direct S2 observation must retain two coordinated primary replicates")
-    if [(row.get("run_id"), row.get("accepted"), row.get("clean_merges")) for row in git_runs] != [
+    }, "Nool direct S2 observation")
+    git_runs = row.get("git_uncoordinated_runs")
+    coordinated_runs = row.get("coordinated_runs")
+    if [(r.get("run_id"), r.get("accepted"), r.get("clean_merges")) for r in git_runs or []] != [
         ("fleet_git_fleet_9a6eb70f", 1, 14),
         ("fleet_git_fleet_803f2288", 13, 13),
     ]:
         fail("Nool direct S2 uncoordinated primary results drift")
-    if [(row.get("run_id"), row.get("accepted"), row.get("clean_merges")) for row in coordinated_runs] != [
+    if [(r.get("run_id"), r.get("accepted"), r.get("clean_merges")) for r in coordinated_runs or []] != [
         ("fleet_nool_fleet_cb7ccf72", 19, 20),
         ("fleet_nool_fleet_2a51582f", 19, 20),
     ]:
         fail("Nool direct S2 coordinated primary results drift")
-    if observation.get("excluded_variant", {}).get("run_id") != "fleet_nool_fleet_16e2e1b0":
+    if row.get("excluded_variant", {}).get("run_id") != "fleet_nool_fleet_16e2e1b0":
         fail("Nool direct S2 excluded gate-hole variant drift")
-    sources = observation.get("primary_sources")
-    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(source) for source in sources):
-        fail("Nool direct S2 observation must retain immutable HTTPS provenance")
+    require_sources(row, 4, "Nool direct S2 observation")
 
 
 def validate_specification_gap_observation(observations: list[dict]) -> None:
-    observation = observation_by_id(observations, "specification-gap-recovery-2026-03")
-    expected = {
+    row = observation_by_id(observations, "specification-gap-recovery-2026-03")
+    require_fields(row, {
         "function": "S2",
         "benchmark_id": "specification-gap-recovery",
         "benchmark_fit": "direct",
@@ -219,38 +243,29 @@ def validate_specification_gap_observation(observations: list[dict]) -> None:
         "model": "claude-sonnet-4-20250514",
         "task_count": 53,
         "worker_count": 2,
-    }
-    for field, value in expected.items():
-        if observation.get(field) != value:
-            fail(f"Specification Gap direct S2 observation {field} drift: {observation.get(field)!r}")
-
-    conditions = observation.get("recovery_conditions")
-    if not isinstance(conditions, list):
-        fail("Specification Gap recovery_conditions must be a list")
-    actual = [(row.get("condition"), row.get("pass_rate")) for row in conditions]
+    }, "Specification Gap direct S2 observation")
     expected_conditions = [
         ("blind_l3_no_conflict_report", 0.527),
         ("guided_l3_with_conflict_report", 0.527),
         ("spec_only_l0_no_conflict_report", 0.889),
         ("resolve_l0_with_conflict_report", 0.823),
     ]
+    actual = [(r.get("condition"), r.get("pass_rate")) for r in row.get("recovery_conditions", [])]
     if actual != expected_conditions:
         fail("Specification Gap recovery condition results drift")
-    if observation.get("single_agent_l0_ceiling") != 0.883:
+    if row.get("single_agent_l0_ceiling") != 0.883:
         fail("Specification Gap single-agent L0 ceiling drift")
-    if observation.get("reported_effects") != {
+    if row.get("reported_effects") != {
         "full_specification_vs_blind_pp": 36.2,
         "conflict_report_at_l3_pp": 0.0,
     }:
         fail("Specification Gap reported effects drift")
-    sources = observation.get("primary_sources")
-    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(source) for source in sources):
-        fail("Specification Gap observation must retain immutable HTTPS provenance")
+    require_sources(row, 4, "Specification Gap observation")
 
 
 def validate_codecrdt_observation(observations: list[dict]) -> None:
-    observation = observation_by_id(observations, "codecrdt-parallel-convergence-2025-10")
-    expected = {
+    row = observation_by_id(observations, "codecrdt-parallel-convergence-2025-10")
+    require_fields(row, {
         "function": "S2",
         "benchmark_id": "codecrdt-observation-coordination",
         "benchmark_fit": "direct",
@@ -271,13 +286,8 @@ def validate_codecrdt_observation(observations: list[dict]) -> None:
         "total_evaluations": 600,
         "sequential_runs": 300,
         "parallel_runs": 300,
-    }
-    for field, value in expected.items():
-        if observation.get(field) != value:
-            fail(f"CodeCRDT direct S2 observation {field} drift: {observation.get(field)!r}")
-
-    environment = observation.get("environment")
-    if environment != {
+    }, "CodeCRDT direct S2 observation")
+    if row.get("environment") != {
         "platform": "Linux",
         "architecture": "aarch64",
         "python_version": "3.12.3",
@@ -286,26 +296,19 @@ def validate_codecrdt_observation(observations: list[dict]) -> None:
         "max_concurrent_requests": 1,
     }:
         fail("CodeCRDT environment provenance drift")
-
-    properties = observation.get("reported_parallel_properties")
-    if not isinstance(properties, dict):
-        fail("CodeCRDT reported_parallel_properties must be an object")
-    if properties.get("convergence_rate") != 1.0 or properties.get("merge_failures") != 0:
+    props = row.get("reported_parallel_properties", {})
+    if props.get("convergence_rate") != 1.0 or props.get("merge_failures") != 0:
         fail("CodeCRDT descriptive convergence/merge-failure report drift")
-    semantic_conflicts = properties.get("semantic_conflicts")
-    if not isinstance(semantic_conflicts, str) or "5-10%" not in semantic_conflicts:
+    if "5-10%" not in str(props.get("semantic_conflicts", "")):
         fail("CodeCRDT residual semantic-conflict limitation must remain explicit")
-    limitation = observation.get("comparison_limitation")
-    if not isinstance(limitation, str) or "does not include a matched uncoordinated-parallel arm" not in limitation:
+    if "does not include a matched uncoordinated-parallel arm" not in str(row.get("comparison_limitation", "")):
         fail("CodeCRDT must remain descriptive-only without an uncoordinated-parallel control")
-    sources = observation.get("primary_sources")
-    if not isinstance(sources, list) or len(sources) < 6 or any(not valid_https(source) for source in sources):
-        fail("CodeCRDT observation must retain immutable HTTPS provenance")
+    require_sources(row, 6, "CodeCRDT observation")
 
 
 def validate_grit_observation(observations: list[dict]) -> None:
-    observation = observation_by_id(observations, "grit-synthetic-merge-contention-2026-04")
-    expected = {
+    row = observation_by_id(observations, "grit-synthetic-merge-contention-2026-04")
+    require_fields(row, {
         "function": "S2",
         "benchmark_id": "grit-merge-contention",
         "benchmark_fit": "direct",
@@ -323,49 +326,39 @@ def validate_grit_observation(observations: list[dict]) -> None:
         "agent_counts": [1, 2, 5, 10, 20, 50],
         "rounds_per_iteration": 5,
         "iterations": 5,
-    }
-    for field, value in expected.items():
-        if observation.get(field) != value:
-            fail(f"Grit direct S2 observation {field} drift: {observation.get(field)!r}")
-
-    expected_failures = [
+    }, "Grit direct S2 observation")
+    if row.get("reported_raw_git_failures_per_iteration") != [
         [0, 5, 20, 43, 84, 175],
         [0, 5, 20, 42, 85, 175],
         [0, 5, 20, 43, 83, 175],
         [0, 5, 20, 44, 83, 175],
         [0, 5, 20, 44, 82, 175],
-    ]
-    expected_conflicts = [
+    ]:
+        fail("Grit committed raw-git failure arrays drift")
+    if row.get("reported_raw_git_conflicts_per_iteration") != [
         [0, 39, 88, 99, 136, 175],
         [0, 38, 85, 88, 129, 175],
         [0, 37, 77, 85, 122, 175],
         [0, 37, 63, 88, 126, 175],
         [0, 38, 85, 89, 136, 175],
-    ]
-    if observation.get("reported_raw_git_failures_per_iteration") != expected_failures:
-        fail("Grit committed raw-git failure arrays drift")
-    if observation.get("reported_raw_git_conflicts_per_iteration") != expected_conflicts:
+    ]:
         fail("Grit committed raw-git conflict arrays drift")
-    if observation.get("reported_grit_failures") != [0, 0, 0, 0, 0, 0]:
+    if row.get("reported_grit_failures") != [0, 0, 0, 0, 0, 0]:
         fail("Grit reported zero-failure series drift")
     expected_rates = {"1": 0.0, "2": 0.5, "5": 0.8, "10": 0.864, "20": 0.834, "50": 0.7}
-    if observation.get("reported_mean_raw_git_failure_rates") != expected_rates:
+    if row.get("reported_mean_raw_git_failure_rates") != expected_rates:
         fail("Grit mean raw-git failure rates drift")
-    if observation.get("reported_mean_grit_failure_rates") != {key: 0.0 for key in expected_rates}:
+    if row.get("reported_mean_grit_failure_rates") != {key: 0.0 for key in expected_rates}:
         fail("Grit mean Grit failure rates drift")
-    provenance_limitation = observation.get("provenance_limitation")
-    if not isinstance(provenance_limitation, str) or "gitignored" not in provenance_limitation:
+    if "gitignored" not in str(row.get("provenance_limitation", "")):
         fail("Grit observation must retain missing raw-run-ledger limitation")
-    comparison_limitation = observation.get("comparison_limitation")
-    if not isinstance(comparison_limitation, str) or "partially matched" not in comparison_limitation:
+    if "partially matched" not in str(row.get("comparison_limitation", "")):
         fail("Grit observation must remain partially matched")
-    sources = observation.get("primary_sources")
-    if not isinstance(sources, list) or len(sources) < 4 or any(not valid_https(source) for source in sources):
-        fail("Grit observation must retain immutable HTTPS provenance")
+    require_sources(row, 4, "Grit observation")
 
 
 def validate_squad_canonical_observation(observations: list[dict]) -> None:
-    observation = observation_by_id(observations, "squad-shared-state-conflict-attenuation-2026-03")
+    row = observation_by_id(observations, "squad-shared-state-conflict-attenuation-2026-03")
     expected = {
         "function": "S2",
         "benchmark_id": None,
@@ -379,25 +372,69 @@ def validate_squad_canonical_observation(observations: list[dict]) -> None:
         "system_compatibility": "native-system",
         "comparison_class": "descriptive-only",
     }
-    for field, value in expected.items():
-        if observation.get(field) != value:
-            fail(f"Squad canonical direct S2 observation {field} drift: {observation.get(field)!r}")
+    require_fields(row, expected, "Squad canonical direct S2 observation")
     fields = assessment_fields("squad")
-    if fields.get("status") != "included":
-        fail("Squad canonical assessment no longer included")
-    if fields.get("review_ref") != expected["canonical_assessment_ref"]:
-        fail("Squad canonical assessment ref drift")
+    if fields.get("status") != "included" or fields.get("review_ref") != expected["canonical_assessment_ref"]:
+        fail("Squad canonical assessment anchor drift")
     if fields.get("autonomy_s2") != "A":
         fail("Squad canonical S2 state drift")
-    if observation.get("operational_commits") != [
+    if row.get("operational_commits") != [
         "34925f2f5bec49742216ab9dd93c756fbe1aa8c9",
         "e7e6255aa84e04993d568a10331bf9da6661b478",
         "6e304ec6d2f1d385226fba074a1192a3eab7b5cb",
     ]:
         fail("Squad operational evidence lineage drift")
-    sources = observation.get("primary_sources")
-    if not isinstance(sources, list) or len(sources) < 5 or any(not valid_https(source) for source in sources):
-        fail("Squad canonical direct observation must retain public HTTPS provenance")
+    require_sources(row, 5, "Squad canonical direct observation")
+
+
+def validate_thclaws_canonical_observation(observations: list[dict]) -> None:
+    row = observation_by_id(observations, "thclaws-team-workspace-interference-attenuation-2026")
+    expected = {
+        "function": "S2",
+        "benchmark_id": None,
+        "benchmark_fit": "direct",
+        "evidence_source_class": "first-party-reported",
+        "boundary_class": "canonical-thclaws-agent-teams",
+        "canonical_harness_id": "thclaws",
+        "canonical_system_eligible": True,
+        "canonical_assessment_ref": "cd700937a71a391f052438d139b7b1c5a6456755",
+        "canonical_state_at_review": "A",
+        "system_compatibility": "native-system",
+        "comparison_class": "descriptive-only",
+    }
+    require_fields(row, expected, "thClaws canonical direct S2 observation")
+    fields = assessment_fields("thclaws")
+    if fields.get("status") != "included":
+        fail("thClaws canonical assessment no longer included")
+    if fields.get("review_ref") != expected["canonical_assessment_ref"]:
+        fail("thClaws canonical assessment ref drift")
+    if fields.get("autonomy_s2") != "A":
+        fail("thClaws canonical S2 state drift")
+    if row.get("operational_commits") != [
+        "a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
+        "db0efe8a6f5ba49da0bafeba84ae4835a09a946b",
+    ]:
+        fail("thClaws operational evidence lineage drift")
+    if row.get("operational_issues") != [125, 200, 202]:
+        fail("thClaws operational issue lineage drift")
+    if "257 commits" not in str(row.get("subsequent_operation", "")):
+        fail("thClaws canonical-lineage ancestry statement drift")
+    require_sources(row, 6, "thClaws canonical direct observation", {
+        "https://github.com/thClaws/thClaws/commit/a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
+        "https://github.com/thClaws/thClaws/issues/125",
+        "https://github.com/thClaws/thClaws/commit/db0efe8a6f5ba49da0bafeba84ae4835a09a946b",
+        "https://github.com/thClaws/thClaws/blob/cd700937a71a391f052438d139b7b1c5a6456755/crates/core/src/tools/bash.rs",
+        "https://github.com/thClaws/thClaws/issues/200",
+        "https://github.com/thClaws/thClaws/issues/202",
+    })
+
+
+def require_case(by_id: dict[str, dict], case_id: str, expected: dict[str, object]) -> dict:
+    case = by_id.get(case_id)
+    if case is None:
+        fail(f"missing S2 coverage case: {case_id}")
+    require_fields(case, expected, f"coverage case {case_id}")
+    return case
 
 
 def main() -> None:
@@ -405,24 +442,23 @@ def main() -> None:
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
     benchmark_map = json.loads(BENCHMARK_MAP.read_text(encoding="utf-8"))
 
-    if coverage.get("schema_version") != 1:
-        fail("coverage schema_version must be 1")
-    if coverage.get("function") != "S2":
-        fail("coverage function must be S2")
+    if coverage.get("schema_version") != 1 or coverage.get("function") != "S2":
+        fail("coverage schema/function drift")
+    if coverage.get("reviewed_at") != "2026-09-26":
+        fail("S2 coverage review date drift")
     if not isinstance(observations, list):
         fail("observations.json must contain a list")
-    if len(observations) != 5:
-        fail("S2 observations.json must contain exactly five direct observations")
-    if coverage.get("direct_observation_count") != len(observations):
-        fail("direct_observation_count does not match observations.json")
+    observation_ids = {row.get("observation_id") for row in observations if isinstance(row, dict)}
+    if len(observations) != 6 or observation_ids != EXPECTED_OBSERVATION_IDS:
+        fail(f"S2 observation set drift: {sorted(str(value) for value in observation_ids)}")
+    if coverage.get("direct_observation_count") != 6:
+        fail("S2 direct_observation_count must remain 6")
     canonical_observations = [row for row in observations if row.get("canonical_system_eligible") is True]
-    if coverage.get("canonical_direct_observation_count") != len(canonical_observations):
-        fail("canonical_direct_observation_count does not match canonical direct observations")
-    if len(canonical_observations) != 1:
-        fail("S2 must retain exactly one canonical direct observation in this snapshot")
+    canonical_ids = {row.get("observation_id") for row in canonical_observations}
+    if coverage.get("canonical_direct_observation_count") != 2 or canonical_ids != EXPECTED_CANONICAL_OBSERVATION_IDS:
+        fail(f"S2 canonical direct observation set drift: {sorted(str(value) for value in canonical_ids)}")
 
-    declared_classes = set(coverage.get("coverage_classes", []))
-    if declared_classes != COVERAGE_CLASSES:
+    if set(coverage.get("coverage_classes", [])) != COVERAGE_CLASSES:
         fail("coverage_classes vocabulary drift")
 
     reviewed_direct_s2 = {
@@ -430,179 +466,137 @@ def main() -> None:
         for entry in benchmark_map.get("entries", [])
         if entry.get("function") == "S2" and entry.get("fit") == "direct"
     }
-    expected_direct_s2 = {
-        "dpbench",
-        "stale-semantic-coordination",
-        "nool-fleet-coordination",
-        "twining-conflict-resolution",
-        "specification-gap-recovery",
-        "cooperbench-team-harness",
-        "codecrdt-observation-coordination",
-        "grit-merge-contention",
-    }
-    if reviewed_direct_s2 != expected_direct_s2:
+    if reviewed_direct_s2 != EXPECTED_DIRECT_S2:
         fail(f"unexpected committed direct-S2 benchmark map: {sorted(reviewed_direct_s2)}")
-    if coverage.get("direct_benchmark_family_count") != len(reviewed_direct_s2):
+    if coverage.get("direct_benchmark_family_count") != len(EXPECTED_DIRECT_S2):
         fail("direct_benchmark_family_count does not match reviewed direct-S2 map")
 
     cases = coverage.get("cases")
-    if not isinstance(cases, list) or not cases:
-        fail("coverage cases must be a non-empty list")
-
-    seen: set[str] = set()
+    if not isinstance(cases, list) or len(cases) != 23:
+        fail("S2 coverage must retain exactly 23 reviewed cases")
     by_id: dict[str, dict] = {}
     for case in cases:
         case_id = case.get("case_id")
         if not isinstance(case_id, str) or not case_id:
             fail("case_id is required")
-        if case_id in seen:
+        if case_id in by_id:
             fail(f"duplicate case_id: {case_id}")
-        seen.add(case_id)
         by_id[case_id] = case
-
         if case.get("coverage_class") not in COVERAGE_CLASSES:
             fail(f"{case_id}: invalid coverage_class")
         if case.get("system_compatibility") not in SYSTEM_COMPATIBILITY:
             fail(f"{case_id}: invalid system_compatibility")
         if case.get("admitted") is not False:
-            fail(f"{case_id}: coverage case must remain non-canonical/non-primary")
+            fail(f"{case_id}: coverage case must remain non-primary")
         if not isinstance(case.get("finding"), str) or len(case["finding"].strip()) < 40:
             fail(f"{case_id}: explicit finding required")
-
-        sources = case.get("primary_sources")
-        if not isinstance(sources, list) or not sources:
-            fail(f"{case_id}: primary_sources required")
-        if any(not valid_https(source) for source in sources):
-            fail(f"{case_id}: all primary_sources must be https URLs")
+        require_sources(case, 1, f"coverage case {case_id}")
 
         harness_id = case.get("canonical_harness_id")
         if harness_id is not None:
             fields = assessment_fields(harness_id)
             if fields.get("status") != "included":
                 fail(f"{case_id}: canonical assessment is not included")
-
             if harness_id == "langgraph":
                 if fields.get("autonomy_s2") != "—":
                     fail("LangGraph negative control no longer has S2=—; review coverage semantics")
-            elif case["coverage_class"] == "native-proxy":
+            elif case.get("coverage_class") == "native-proxy":
                 if fields.get("autonomy_s2") in {None, "—", "?"}:
                     fail(f"{case_id}: native-proxy system does not currently establish S2")
+            elif case.get("coverage_class") == "direct-native-canonical":
+                if fields.get("autonomy_s2") != case.get("canonical_state_at_review"):
+                    fail(f"{case_id}: canonical S2 state drift")
+                if fields.get("review_ref") != case.get("canonical_review_ref"):
+                    fail(f"{case_id}: canonical assessment ref drift")
 
-    stale = by_id.get("stale-semantic-coordination-direct-scaffolded")
-    if stale is None:
-        fail("missing STALE direct-S2 coverage case")
-    if stale.get("benchmark_fit") != "direct":
-        fail("STALE must remain direct S2 at its benchmark-defined boundary")
-    if stale.get("coverage_class") != "direct-scaffolded":
-        fail("STALE coverage class drift")
-    if stale.get("system_compatibility") != "benchmark-scaffolded":
-        fail("STALE must remain benchmark-scaffolded")
-    if stale.get("canonical_harness_id") is not None:
-        fail("STALE must not claim canonical harness S2 ownership")
-
-    nool = by_id.get("nool-fleet-coordination-direct-scaffolded")
-    if nool is None:
-        fail("missing Nool fleet direct-S2 coverage case")
-    if nool.get("benchmark_fit") != "direct" or nool.get("coverage_class") != "direct-scaffolded":
-        fail("Nool fleet coordination must remain direct-scaffolded S2 evidence")
-    if nool.get("system_compatibility") != "benchmark-scaffolded":
-        fail("Nool fleet coordination must remain benchmark-scaffolded")
-    if nool.get("canonical_harness_id") is not None:
-        fail("Nool fleet observation must not acquire a canonical harness id")
-    if nool.get("review_ref") != "126d69b5921be71daffd38c70ec4aa77252b4f39":
-        fail("Nool fleet benchmark review_ref drift")
-    if nool.get("observation_ref") != "observations.json#nool-trackd-scaleup1-contention-2026-08-21":
-        fail("Nool fleet coverage/observation linkage drift")
-
-    twining = by_id.get("twining-conflict-resolution-direct-scaffolded")
-    if twining is None:
-        fail("missing Twining conflict-resolution direct-S2 coverage case")
-    if twining.get("benchmark_fit") != "direct" or twining.get("coverage_class") != "direct-scaffolded":
-        fail("Twining conflict-resolution must remain direct-scaffolded S2 evidence")
-    if twining.get("system_compatibility") != "benchmark-scaffolded":
-        fail("Twining conflict-resolution must remain benchmark-scaffolded")
-    if twining.get("canonical_harness_id") is not None:
-        fail("Twining conflict-resolution must not acquire a canonical harness id")
-    if twining.get("review_ref") != "b6a4d5e5890c5617376ba5c8fb7a628014296663":
-        fail("Twining benchmark review_ref drift")
-    if twining.get("result_harness_ref") != "63004a1f7697c64a78bc9c83b6cafd461887bc75":
-        fail("Twining committed-result harness ref drift")
+    require_case(by_id, "dpbench-direct-scaffolded", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-scaffolded",
+        "system_compatibility": "benchmark-scaffolded",
+        "canonical_harness_id": None,
+    })
+    require_case(by_id, "stale-semantic-coordination-direct-scaffolded", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-scaffolded",
+        "system_compatibility": "benchmark-scaffolded",
+        "canonical_harness_id": None,
+    })
+    require_case(by_id, "nool-fleet-coordination-direct-scaffolded", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-scaffolded",
+        "system_compatibility": "benchmark-scaffolded",
+        "canonical_harness_id": None,
+        "review_ref": "126d69b5921be71daffd38c70ec4aa77252b4f39",
+        "observation_ref": "observations.json#nool-trackd-scaleup1-contention-2026-08-21",
+    })
+    twining = require_case(by_id, "twining-conflict-resolution-direct-scaffolded", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-scaffolded",
+        "system_compatibility": "benchmark-scaffolded",
+        "canonical_harness_id": None,
+        "review_ref": "b6a4d5e5890c5617376ba5c8fb7a628014296663",
+        "result_harness_ref": "63004a1f7697c64a78bc9c83b6cafd461887bc75",
+    })
     if "observation_ref" in twining:
         fail("Twining must not acquire an observation_ref without a new provenance review")
-
-    specification_gap = by_id.get("specification-gap-recovery-direct-scaffolded")
-    if specification_gap is None:
-        fail("missing Specification Gap direct-S2 coverage case")
-    if specification_gap.get("benchmark_fit") != "direct" or specification_gap.get("coverage_class") != "direct-scaffolded":
-        fail("Specification Gap recovery must remain direct-scaffolded S2 evidence")
-    if specification_gap.get("system_compatibility") != "benchmark-scaffolded":
-        fail("Specification Gap recovery must remain benchmark-scaffolded")
-    if specification_gap.get("canonical_harness_id") is not None:
-        fail("Specification Gap recovery must not acquire a canonical harness id")
-    if specification_gap.get("review_ref") != "b64059f3ee5cab9b71b834c7b5acc597791880d5":
-        fail("Specification Gap review_ref drift")
-    if specification_gap.get("observation_ref") != "observations.json#specification-gap-recovery-2026-03":
-        fail("Specification Gap coverage/observation linkage drift")
-
-    cooperbench = by_id.get("cooperbench-team-harness-direct-scaffolded")
-    if cooperbench is None:
-        fail("missing CooperBench team-harness direct-S2 coverage case")
-    if cooperbench.get("benchmark_fit") != "direct" or cooperbench.get("coverage_class") != "direct-scaffolded":
-        fail("CooperBench team harness must remain direct-scaffolded S2 evidence")
-    if cooperbench.get("system_compatibility") != "benchmark-scaffolded":
-        fail("CooperBench team harness must remain benchmark-scaffolded")
-    if cooperbench.get("canonical_harness_id") is not None:
-        fail("CooperBench team harness must not acquire a canonical harness id")
-    if cooperbench.get("review_ref") != "63b9d44d9f39a02fccf5bf0052db48a917a011fd":
-        fail("CooperBench review_ref drift")
+    require_case(by_id, "specification-gap-recovery-direct-scaffolded", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-scaffolded",
+        "system_compatibility": "benchmark-scaffolded",
+        "canonical_harness_id": None,
+        "review_ref": "b64059f3ee5cab9b71b834c7b5acc597791880d5",
+        "observation_ref": "observations.json#specification-gap-recovery-2026-03",
+    })
+    cooperbench = require_case(by_id, "cooperbench-team-harness-direct-scaffolded", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-scaffolded",
+        "system_compatibility": "benchmark-scaffolded",
+        "canonical_harness_id": None,
+        "review_ref": "63b9d44d9f39a02fccf5bf0052db48a917a011fd",
+    })
     if "observation_ref" in cooperbench:
         fail("CooperBench must not acquire an observation_ref without a new provenance review")
-
-    squad_direct = by_id.get("squad-shared-state-conflict-direct-native-canonical")
-    if squad_direct is None:
-        fail("missing Squad canonical direct-S2 coverage case")
-    if squad_direct.get("benchmark_fit") != "direct" or squad_direct.get("coverage_class") != "direct-native-canonical":
-        fail("Squad operational evidence must remain direct-native-canonical S2")
-    if squad_direct.get("system_compatibility") != "native-system" or squad_direct.get("canonical_harness_id") != "squad":
-        fail("Squad canonical direct S2 linkage drift")
-    if squad_direct.get("canonical_state_at_review") != "A" or squad_direct.get("canonical_review_ref") != "2099faf51c08a912c359209447011b06decf0565":
-        fail("Squad canonical direct S2 assessment anchor drift")
-    if squad_direct.get("observation_ref") != "observations.json#squad-shared-state-conflict-attenuation-2026-03":
-        fail("Squad canonical direct coverage/observation linkage drift")
-
-    codecrdt = by_id.get("codecrdt-observation-driven-direct-native-noncanonical")
-    if codecrdt is None:
-        fail("missing CodeCRDT direct-native-noncanonical S2 coverage case")
-    if codecrdt.get("benchmark_fit") != "direct" or codecrdt.get("coverage_class") != "direct-native-noncanonical":
-        fail("CodeCRDT must remain direct-native-noncanonical S2 evidence")
-    if codecrdt.get("system_compatibility") != "native-system":
-        fail("CodeCRDT must remain native-system at its external product boundary")
-    if codecrdt.get("canonical_harness_id") is not None:
-        fail("CodeCRDT must not acquire a canonical harness id through capability evidence")
-    if codecrdt.get("review_ref") != "8fa5a307062025c900e9de27696f4e804a0a7809":
-        fail("CodeCRDT review_ref drift")
-    if codecrdt.get("observation_ref") != "observations.json#codecrdt-parallel-convergence-2025-10":
-        fail("CodeCRDT coverage/observation linkage drift")
-
-    grit = by_id.get("grit-merge-contention-direct-native-noncanonical")
-    if grit is None:
-        fail("missing Grit direct-native-noncanonical S2 coverage case")
-    if grit.get("benchmark_fit") != "direct" or grit.get("coverage_class") != "direct-native-noncanonical":
-        fail("Grit must remain direct-native-noncanonical S2 evidence")
-    if grit.get("system_compatibility") != "native-system":
-        fail("Grit must remain native-system at its external product boundary")
-    if grit.get("canonical_harness_id") is not None:
-        fail("Grit must not acquire a canonical harness id through capability evidence")
-    if grit.get("review_ref") != "a2c48735e0a16c49ca1541c4865fce438c479405":
-        fail("Grit review_ref drift")
-    if grit.get("observation_ref") != "observations.json#grit-synthetic-merge-contention-2026-04":
-        fail("Grit coverage/observation linkage drift")
+    require_case(by_id, "codecrdt-observation-driven-direct-native-noncanonical", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-native-noncanonical",
+        "system_compatibility": "native-system",
+        "canonical_harness_id": None,
+        "review_ref": "8fa5a307062025c900e9de27696f4e804a0a7809",
+        "observation_ref": "observations.json#codecrdt-parallel-convergence-2025-10",
+    })
+    require_case(by_id, "grit-merge-contention-direct-native-noncanonical", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-native-noncanonical",
+        "system_compatibility": "native-system",
+        "canonical_harness_id": None,
+        "review_ref": "a2c48735e0a16c49ca1541c4865fce438c479405",
+        "observation_ref": "observations.json#grit-synthetic-merge-contention-2026-04",
+    })
+    require_case(by_id, "squad-shared-state-conflict-direct-native-canonical", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-native-canonical",
+        "system_compatibility": "native-system",
+        "canonical_harness_id": "squad",
+        "canonical_state_at_review": "A",
+        "canonical_review_ref": "2099faf51c08a912c359209447011b06decf0565",
+        "observation_ref": "observations.json#squad-shared-state-conflict-attenuation-2026-03",
+    })
+    require_case(by_id, "thclaws-team-workspace-interference-direct-native-canonical", {
+        "benchmark_fit": "direct",
+        "coverage_class": "direct-native-canonical",
+        "system_compatibility": "native-system",
+        "canonical_harness_id": "thclaws",
+        "canonical_state_at_review": "A",
+        "canonical_review_ref": "cd700937a71a391f052438d139b7b1c5a6456755",
+        "observation_ref": "observations.json#thclaws-team-workspace-interference-attenuation-2026",
+    })
 
     validate_nool_observation(observations)
     validate_specification_gap_observation(observations)
     validate_codecrdt_observation(observations)
     validate_grit_observation(observations)
     validate_squad_canonical_observation(observations)
+    validate_thclaws_canonical_observation(observations)
     validate_proxy_links(coverage, by_id)
 
     representative = coverage.get("representative_canonical_s2_systems_inspected")
@@ -610,7 +604,6 @@ def main() -> None:
         fail("representative canonical S2 cohort is required")
     if len(representative) != len(set(representative)):
         fail("duplicate harness_id in representative S2 cohort")
-
     for harness_id in representative:
         fields = assessment_fields(harness_id)
         if fields.get("status") != "included":

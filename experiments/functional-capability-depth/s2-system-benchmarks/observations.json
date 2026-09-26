@@ -282,5 +282,38 @@
       "https://github.com/bradygaster/squad/commit/6e304ec6d2f1d385226fba074a1192a3eab7b5cb",
       "https://www.tamirdresher.com/blog/2026/03/17/scaling-ai-part4-distributed"
     ]
+  },
+  {
+    "observation_id": "thclaws-team-workspace-interference-attenuation-2026",
+    "function": "S2",
+    "benchmark_id": null,
+    "benchmark_fit": "direct",
+    "evidence_source_class": "first-party-reported",
+    "boundary_class": "canonical-thclaws-agent-teams",
+    "canonical_harness_id": "thclaws",
+    "canonical_system_eligible": true,
+    "canonical_assessment_ref": "cd700937a71a391f052438d139b7b1c5a6456755",
+    "canonical_state_at_review": "A",
+    "system_compatibility": "native-system",
+    "comparison_class": "descriptive-only",
+    "evidence_surface": "immutable first-party release, issue, commit and assessed-runtime history plus later first-party Agent Teams operational reports",
+    "operational_commits": [
+      "a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
+      "db0efe8a6f5ba49da0bafeba84ae4835a09a946b"
+    ],
+    "operational_issues": [125, 200, 202],
+    "disturbance": "Distinct thClaws teammate S1s share a project/team workspace and can generate interaction-specific destructive or transient interference. First-party history records cross-branch `git reset --hard main` wiping another teammate's frontend worktree and repeated lead destructive workspace operations cascade-killing teammate worktrees/processes; the assessed runtime also records concurrent team members colliding on the shared `.git/index.lock`.",
+    "coordination_relation": "thClaws attenuates these disturbances inside its first-party Agent Teams runtime: role-specific Bash seatbelts hard-block lead destructive workspace commands and teammate cross-branch hard resets before shell execution; #125 hardens those guards against shell-quoting/substitution bypasses; the assessed Bash path additionally detects the specific transient `.git/index.lock` race and retries it with bounded backoff before surfacing failure.",
+    "subsequent_operation": "The hardening commit is an ancestor of the canonical assessed ref by 257 commits. Later first-party Agent Teams reports (#200/#202) show teammates booting, transitioning status, processing mailbox messages/replies and participating in task/shutdown lifecycle in the same runtime lineage; the canonical assessed source still applies the hardened guards before command execution and retains the concurrent-index retry path.",
+    "comparison_limitation": "This is descriptive canonical direct evidence from operational history and first-party runtime behavior, not a matched benchmark comparison or a causal numeric uplift estimate. The incident/guard and index-race paths are concrete S2 attenuation evidence but do not make thClaws materially matched to Squad or any external benchmark family.",
+    "vsm_interpretation": "This is direct descriptive S2 capability evidence at the canonical thClaws Agent Teams boundary. Distinct S1 teammates generate interaction-specific workspace/process/index variety; first-party role guards and transient-race retry attenuate that variety before or during subsequent operation. It does not create a benchmark family or a matched cross-harness primary cell.",
+    "primary_sources": [
+      "https://github.com/thClaws/thClaws/commit/a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
+      "https://github.com/thClaws/thClaws/issues/125",
+      "https://github.com/thClaws/thClaws/commit/db0efe8a6f5ba49da0bafeba84ae4835a09a946b",
+      "https://github.com/thClaws/thClaws/blob/cd700937a71a391f052438d139b7b1c5a6456755/crates/core/src/tools/bash.rs",
+      "https://github.com/thClaws/thClaws/issues/200",
+      "https://github.com/thClaws/thClaws/issues/202"
+    ]
   }
 ]
