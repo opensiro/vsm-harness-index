@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-26",
+  "system_name": "MLR-Agent",
+  "canonical_harness_id": "mlr-agent",
+  "canonical_assessment_ref": "assessments/mlr-agent.md",
+  "canonical_review_ref": "f728d571a992d71c8b526eeb4d9ab6bb5c8cc824",
+  "canonical_states_at_review": {
+    "S1": "A",
+    "S2": "—",
+    "S3": "—",
+    "S3*": "—",
+    "S4": "A",
+    "S5": "—"
+  },
+  "publication": {
+    "title": "MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research",
+    "arxiv": "2505.19955",
+    "venue": "NeurIPS 2025 D&B Track",
+    "evidence_source_class": "first-party-reported"
+  },
+  "published_implementation": {
+    "repository": "https://github.com/chchenhui/mlrbench",
+    "review_revision": "f728d571a992d71c8b526eeb4d9ab6bb5c8cc824",
+    "system_compatibility": "native-system",
+    "revision_relation": "first-party implementation and result artifacts are present at the canonical review ref, but the paper does not bind every reported run to that exact Git commit"
+  },
+  "s4_path": [
+    "generate a research idea from the assigned task",
+    "query recent external literature and synthesize relevant work/challenges with GPT-4o-Search-Preview",
+    "generate a prospective proposal/methodology/experimental design from task, idea and literature evidence",
+    "pass the proposal into the configured coding-agent experiment stage",
+    "execute experiments and return results into the research workspace and final paper"
+  ],
+  "public_result_surfaces": [
+    {
+      "surface_id": "mlrbench-proposal-generation-201-task",
+      "kind": "stepwise-prospective-output-evaluation",
+      "task_count": 201,
+      "models": [
+        "Ministral-8B",
+        "Deepseek-R1",
+        "Claude-3.7-Sonnet",
+        "Qwen3-235B-A22B",
+        "o4-mini-high",
+        "Gemini-2.5-Pro-Preview"
+      ],
+      "dimensions": [
+        "Consistency",
+        "Clarity",
+        "Novelty",
+        "Soundness",
+        "Feasibility",
+        "Significance",
+        "Overall"
+      ],
+      "literature_context": "MLR-Agent uniformly uses GPT-4o-Search-Preview between idea generation and proposal generation to provide recent related-work reference material.",
+      "interpretation": "This evaluates a prospective S4-relevant output, but not the downstream benefit after the proposal is returned into experimentation. Cross-model variation also changes the model substrate rather than isolating a harness S4 mechanism."
+    },
+    {
+      "surface_id": "mlrbench-end-to-end-10-task",
+      "kind": "whole-system-end-to-end-evaluation",
+      "task_count": 10,
+      "reported_average_results": [
+        {
+          "model": "o4-mini-high",
+          "clarity": 7.65,
+          "novelty": 6.90,
+          "soundness": 3.80,
+          "significance": 5.05,
+          "overall": 3.95,
+          "cost_usd": 1.15
+        },
+        {
+          "model": "Gemini-2.5-Pro-Preview",
+          "clarity": 7.40,
+          "novelty": 6.75,
+          "soundness": 3.35,
+          "significance": 4.55,
+          "overall": 3.75,
+          "cost_usd": 1.24
+        },
+        {
+          "model": "Claude-3.7-Sonnet",
+          "clarity": 7.75,
+          "novelty": 7.10,
+          "soundness": 4.05,
+          "significance": 5.50,
+          "overall": 4.70,
+          "cost_usd": 2.40
+        }
+      ],
+      "interpretation": "The full canonical S4 path is present in the end-to-end organization, but the final-paper score mixes prospective adaptation with experimentation reliability, coding-agent behavior and paper writing, so it is not an isolated S4 capability result."
+    }
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2505.19955",
+    "https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/README.md",
+    "https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/run_mlr_agent.py",
+    "https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/lit_review.py",
+    "https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/proposal_generator.py",
+    "https://github.com/chchenhui/mlrbench/tree/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/agent_results",
+    "https://github.com/chchenhui/mlrbench/tree/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/agent_reviews"
+  ],
+  "s4_classification": "native-result-surface-no-direct-s4-observation",
+  "non_claim": "The published proposal and end-to-end results are useful public evidence about MLR-Agent outputs, but they do not isolate the canonical S4 literature-to-proposal-to-later-operation relation. They are not a direct S4 observation, do not change S4=A ownership, and are not normalized into an S4 score."
+}

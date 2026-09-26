@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 757,
+  "reviewed_at": "2026-09-26",
+  "function": "S4",
+  "canonical_harness_id": "mlr-agent",
+  "canonical_state_at_review": "A",
+  "canonical_review_ref": "f728d571a992d71c8b526eeb4d9ab6bb5c8cc824",
+  "repository": "https://github.com/chchenhui/mlrbench",
+  "disposition": "canonical-native-public-results-no-direct-s4-observation",
+  "result_surface_review": "no-direct-s4-result",
+  "raw_record": "../../system-observations/mlr-agent.json",
+  "finding": "Canonical MLR-Agent establishes S4=A through a mandatory outside-and-then research path: recent external literature and challenge synthesis feed a prospective proposal/methodology which is then implemented by the experiment stage and returned into later research operation. MLR-Bench publishes rich first-party stepwise proposal scores and end-to-end paper-quality results, but those surfaces do not isolate that S4 relation. Proposal evaluation stops before downstream operational benefit, while end-to-end evaluation mixes S4 with coding-agent experimentation, execution reliability and paper writing. No matched public treatment disables or varies the native literature-to-proposal adaptation path while preserving the downstream execution membrane, so no direct canonical S4 observation is admitted.",
+  "primary_sources": [
+    "https://arxiv.org/abs/2505.19955",
+    "https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/README.md",
+    "https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/run_mlr_agent.py",
+    "https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/lit_review.py",
+    "https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/proposal_generator.py"
+  ],
+  "reassess_if": [
+    "MLR-Agent publishes a matched treatment that disables, replaces or materially varies the native external-literature/proposal adaptation relation while holding the downstream experiment membrane materially fixed",
+    "public evidence measures whether a prospective MLR-Agent adaptation changes later experimental capability or research outcome under a recoverable matched protocol",
+    "a matched public benchmark compares MLR-Agent native S4 with another canonical native or adapter-preserved S4 system under one common adaptation/return protocol"
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
