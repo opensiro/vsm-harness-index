@@ -38,13 +38,29 @@ Aider's project-maintained Polyglot benchmark exposes detailed model/edit-format
 
 **Reason:** the current reviewed function→benchmark map has not classified Aider Polyglot as a `direct` S1 benchmark family. Benchmark-family semantic admission must precede system observation admission.
 
-## Scale SWE Atlas / DrugDiscoveryBench
+## SWE Atlas public scaffold rows
 
-These sources explicitly label native harnesses in several runs and may be excellent future S1 evidence.
+Reviewed benchmark repository: `scaleapi/SWE-Atlas@49e4af3b6c803dd54a1cd60ead703aac25de4e21`. The benchmark family itself is now admitted as direct Coding/SWE S1 evidence by #717 / #718.
+
+The pinned repository publishes Harbor run configurations for Claude Code and mini-SWE-agent that recover benchmark component, model and substantial run configuration. For example, the Test Writing scripts use Claude Opus 4.6 with `reasoning_effort=high`; the Claude Code arm disables WebSearch/WebFetch and the mini-SWE-agent arm supplies the committed `mswea_tw_config.yaml` configuration.
+
+**Decision:** public Claude Code / mini-SWE-agent rows are not admitted as S1 system observations in this transaction.
+
+**Reason:** historical scaffold identity is not sufficiently recoverable. SWE Atlas documents Harbor `v0.18.0`, which resolves to `harbor-framework/harbor@527d50deb63a5d279e8c20593c18a2cbc7f61f9e`. At that exact Harbor revision, `BaseInstalledAgent` accepts a separate optional `version` field. `ClaudeCode.install()` checks/installs a specific Claude Code release only when that field is present; without it the installer accepts an existing binary or installs without a version pin. `MiniSweAgent.install()` likewise derives `version_spec = ==<version>` only when `_version` is set and otherwise executes `uv tool install mini-swe-agent` without a version constraint.
+
+The reviewed SWE Atlas launch scripts pass `-a claude-code` or `-a mini-swe-agent` plus model/configuration arguments, but do not pass an agent package version. The committed mini-SWE-agent YAML fixes prompts, step limits, environment and model kwargs, not the mini-SWE-agent package version. In addition, SWE Atlas gitignores `results/`, and the reviewed revision contains no committed `results/` directory from which the actual installed agent version could be recovered from immutable run metadata or trajectories.
+
+This is an observation-provenance failure, not a semantic rejection of SWE Atlas. Family-level direct-S1 admission remains valid, and the public rows may still be useful descriptive benchmark results; they are not bound tightly enough to a historical scaffold version/revision for this Index observation layer.
+
+**Reopen when:** an immutable public artifact binds a reported SWE Atlas row to the actual executed Claude Code / mini-SWE-agent / other scaffold version or repository revision, or committed Harbor job/trajectory metadata records the actual agent version for the row. Do not substitute a current project version or infer identity from a leaderboard display label.
+
+## DrugDiscoveryBench
+
+DrugDiscoveryBench may provide useful future S1 evidence.
 
 **Decision:** deferred.
 
-**Reason:** they are not yet reviewed as direct S1 families in the committed benchmark-family map. Add them only through a separate semantic-review change, then link system observations.
+**Reason:** it has not yet been reviewed as a `direct` S1 benchmark family in the committed function→benchmark map. Benchmark-family semantic admission must precede system observation admission.
 
 ## FutureSim Codex runs
 
