@@ -55,13 +55,11 @@ jobs:
 
       - name: Render deterministic projections
         run: |
-          python scripts/derive_full_a.py
-          python scripts/validate_catalog.py
+          python scripts/render_full_a.py
           python scripts/render_tldr.py
-          python scripts/render_rankings.py
-          python scripts/render_timeline.py
-          python scripts/render_readme.py
           python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
 
       - name: Remove branch-only renderer and commit
         run: |
