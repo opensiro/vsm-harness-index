@@ -280,3 +280,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 265|kot|KOT|https://github.com/Loqira-Labs/agentkot|2026-08-20T23:55:35Z|index-addition|7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab|2026-09-26
 266|rsih|RSIH|https://github.com/CosmosMind-ai/RSI-Harness|2026-09-03T08:45:37Z|index-addition|737bf1f5a5a56f0c49bbd5180e71d651113038ac|2026-09-26
 267|agentharness-alexandrmotologa|AgentHarness|https://github.com/alexandrmotologa/agent-harness|2026-09-11T15:22:24Z|index-addition|725ceee14b65bd95365e8e1c2394ac1b245e3b98|2026-09-26
+268|pi-go|pi (Go)|https://github.com/sky-valley/pi|2026-06-09T10:05:50Z|index-addition|1c1b674f7b7bf18885082e3cf39c29fc56858107|2026-09-26
