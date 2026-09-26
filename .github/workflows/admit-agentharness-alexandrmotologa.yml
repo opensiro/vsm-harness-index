@@ -1,0 +1,64 @@
+name: admit-agentharness-alexandrmotologa
+
+on:
+  push:
+    branches:
+      - assessment/agentharness-alexandrmotologa-admit
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit assessment and render canonical views
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+
+          assessment = Path('assessments/agentharness-alexandrmotologa.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' not in text:
+              raise SystemExit('AgentHarness assessment is not proposed')
+          assessment.write_text(text.replace('status: proposed', 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          with catalog.open(encoding='utf-8', newline='') as handle:
+              rows = list(csv.DictReader(handle, delimiter='|'))
+          if any(row['harness_id'] == 'agentharness-alexandrmotologa' for row in rows):
+              raise SystemExit('catalog row already exists')
+          position = len(rows) + 1
+          with catalog.open('a', encoding='utf-8', newline='') as handle:
+              handle.write(f"{position}|agentharness-alexandrmotologa|AgentHarness|https://github.com/alexandrmotologa/agent-harness|2026-09-11T15:22:24Z|index-addition|725ceee14b65bd95365e8e1c2394ac1b245e3b98|2026-09-26\n")
+
+          signatures = Path('data/signatures.psv')
+          with signatures.open(encoding='utf-8', newline='') as handle:
+              signature_rows = list(csv.DictReader(handle, delimiter='|'))
+          if any(row['harness_id'] == 'agentharness-alexandrmotologa' for row in signature_rows):
+              raise SystemExit('signature row already exists')
+          signature = "AgentHarness (alexandrmotologa) closes autonomous S1 through its model/tool loop. Host-recorded DAG observations, checkpoints and rewind expose S3*=C for complementary audit composition; no distinct concurrent S1s, whole-system current control, prospective adaptation closure or runtime identity-policy closure establishes S2, S3, S4 or S5."
+          if len(signature) > 360:
+              raise SystemExit(f'signature too long: {len(signature)}')
+          with signatures.open('a', encoding='utf-8', newline='') as handle:
+              handle.write(f"{position}|agentharness-alexandrmotologa|{signature}\n")
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          rm .github/workflows/admit-agentharness-alexandrmotologa.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'assessment: admit AgentHarness (alexandrmotologa)'
+          git push origin HEAD
