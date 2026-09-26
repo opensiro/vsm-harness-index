@@ -1,0 +1,37 @@
+name: Validate WebThinker review
+
+on:
+  push:
+    branches:
+      - assessment/webthinker-review
+
+permissions:
+  contents: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/webthinker-review
+          fetch-depth: 0
+
+      - name: Render review metrics
+        run: python scripts/render_metrics.py
+
+      - name: Validate review state
+        run: |
+          python scripts/check_index.py
+          python scripts/render_metrics.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/webthinker-review.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/webthinker.md METRICS.md data/metrics.json .github/workflows/webthinker-review.yml
+          git commit -m 'assessment: validate WebThinker review'
+          git push origin HEAD:assessment/webthinker-review
