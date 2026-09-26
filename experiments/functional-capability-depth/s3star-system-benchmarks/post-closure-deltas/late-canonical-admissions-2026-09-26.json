@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "status": "experimental-non-normative",
+  "tracking_issue": 735,
+  "reviewed_at": "2026-09-26",
+  "function": "S3*",
+  "disposition": "canonical-mechanisms-no-direct-results",
+  "systems": [
+    {
+      "canonical_harness_id": "kot",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab",
+      "repository": "https://github.com/Loqira-Labs/agentkot",
+      "result_surface_review": "no-direct-s3star-result",
+      "finding": "KOT establishes native S3* through the `until` loop: a worker is checked by a direct command and a supervisor independently returns an explicit accept/continue/escalate verdict that can send corrective specifics back into later work. The published FrontierHarness result measures whole-system software-engineering completion rather than discrepancy detection, corrective return and re-verification through this canonical audit chain. No direct canonical S3* observation is admitted.",
+      "primary_sources": [
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/tools/Agent.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/README.md",
+        "https://github.com/Loqira-Labs/agentkot/blob/7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab/assets/frontier-harness-eval.svg"
+      ],
+      "reassess_if": [
+        "KOT publishes an immutable result tracing discrepancy detection through supervisor correction and re-verification",
+        "a matched public benchmark exercises the native `until` audit chain"
+      ]
+    },
+    {
+      "canonical_harness_id": "agentharness-alexandrmotologa",
+      "canonical_state_at_review": "C",
+      "canonical_review_ref": "725ceee14b65bd95365e8e1c2394ac1b245e3b98",
+      "repository": "https://github.com/alexandrmotologa/agent-harness",
+      "result_surface_review": "no-direct-s3star-result",
+      "finding": "AgentHarness provides an S3* constructor through host-persisted execution DAG evidence, checkpoints, inspection and rewind/branch correction, while leaving the independent audit judgment to an operator or downstream composition. Public source and eval machinery establish those primitives, but no committed capability result demonstrates a discrepancy finding, corrective return and subsequent re-verification through this constructor path. No direct canonical S3* observation is admitted.",
+      "primary_sources": [
+        "https://github.com/alexandrmotologa/agent-harness/blob/725ceee14b65bd95365e8e1c2394ac1b245e3b98/docs/time-travel-debugger.md",
+        "https://github.com/alexandrmotologa/agent-harness/blob/725ceee14b65bd95365e8e1c2394ac1b245e3b98/src/agent_harness/engine/debugger.py",
+        "https://github.com/alexandrmotologa/agent-harness/blob/725ceee14b65bd95365e8e1c2394ac1b245e3b98/src/agent_harness/eval/runner.py"
+      ],
+      "reassess_if": [
+        "the project publishes a recoverable discrepancy-to-correction-to-reverification result using the shipped DAG/checkpoint path",
+        "a public downstream composition supplies and evaluates the missing independent audit judgment without changing the claimed constructor boundary"
+      ]
+    }
+  ],
+  "capability_counts_changed": false,
+  "observation_registry_mutated": false,
+  "primary_baseline_changed": false,
+  "reopen_condition_satisfied": false
+}
