@@ -1,0 +1,71 @@
+name: Assemble WorldGUI admission
+
+on:
+  push:
+    branches:
+      - index/worldgui-admission
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/worldgui-admission
+          fetch-depth: 0
+
+      - name: Canonicalize assessment sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/worldgui.md')
+          text = assessment.read_text(encoding='utf-8')
+          assert text.count('status: proposed') == 1
+          assessment.write_text(text.replace('status: proposed', 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          assert '|worldgui|' not in catalog_text
+          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          assert rows[-1].startswith('275|webthinker|'), f'unexpected catalog tail: {rows[-1]}'
+          row = '276|worldgui|WorldGUI-Agent|https://github.com/showlab/WorldGUI|2025-02-12T00:01:31Z|index-addition|2117f0a87bcd3b1f330d3727a7ec0643930e7d90|2026-09-26'
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          assert '|worldgui|' not in signatures_text
+          signature = 'WorldGUI-Agent closes autonomous desktop-operation S1 and autonomous S3* through a mandatory post-action critic that compares before/after GUI evidence and returns correction or advancement. Planner/Step-Check remain current-task control; no qualifying S2, superior S3, prospective S4 or runtime S5 closure is established.'
+          assert len(signature) <= 360
+          signatures.write_text(signatures_text.rstrip('\n') + '\n276|worldgui|' + signature + '\n', encoding='utf-8')
+          PY
+
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate canonical state
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/worldgui-admit.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/worldgui.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md .github/workflows/worldgui-admit.yml
+          git commit -m 'index: canonicalize WorldGUI admission'
+          git push origin HEAD:index/worldgui-admission
