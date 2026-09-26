@@ -66,6 +66,20 @@ HarnessBench-Lite is structurally promising for S1 comparison. It reuses a fixed
 
 **Reopen when:** the project publishes recoverable multi-harness result artifacts under one fixed task/model configuration, with enough harness/version provenance to establish the executed system identities. At that point it can be reviewed as secondary S1 evidence or, only if it is materially stronger under the existing selection gate, as a PawBench primary challenger.
 
+## AgentBoardTT Harness-Bench result corpus
+
+Reviewed repository: `AgentBoardTT/openharness` at `85c54682a209ca7c3fc8b1ab2e820b6724dc3028`. Reviewed result artifact: `eval-results/harness-bench-20260222-143334.json` / `.md`.
+
+This first-party corpus contains real per-task public results for the same eight coding tasks across `harness`, `claude-code`, `opencode` and `pi-mono`. The pinned runner explicitly fixes `claude-opus-4-6` across all four agent labels and also fixes `gpt-5.2` across Harness/OpenCode/pi-mono. The report records 8/8 for Harness and 7/8 for Claude Code, OpenCode and pi-mono in the Opus cell; in the GPT-5.2 cell it records 2/8 for Harness, 7/8 for OpenCode and 8/8 for pi-mono.
+
+**Decision:** unresolved result-bearing candidate; no S1 observation admitted and no primary change.
+
+**Reason:** the benchmark runner launches the competitor binaries `claude`, `opencode` and `pi` from the operator PATH but the committed result records do not preserve the exact competitor harness versions or repository revisions used for those rows. Current canonical Index state also does not provide assessed system identities for AgentBoardTT OpenHarness, OpenCode or pi-mono; Claude Code is not an open canonical Index system. Names plus a matched model/task surface therefore do not satisfy the canonical-linkage/provenance gate. The rows must not be silently attached to similarly named current projects or versions.
+
+The result corpus is useful evidence that the benchmark design executed, but it is not a PawBench primary challenger: PawBench's selected 150-task cell binds three canonical harness identities through version-known native adapters, whereas this eight-task corpus cannot yet establish the compared historical harness revisions.
+
+**Reopen when:** public artifacts bind the executed competitor binaries to recoverable versions/revisions and at least two rows can be linked to canonical Index systems. A separate semantic-review/admission transaction may also consider non-canonical historical observations if the benchmark family is first admitted as direct S1 evidence.
+
 ## Generic leaderboard-name matches
 
 Any result that merely names a model, provider, product family or `*-agent` string without sufficient evidence that the canonical harness's own operational loop ran is rejected.
