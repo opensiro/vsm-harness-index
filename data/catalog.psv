@@ -284,3 +284,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 269|trace-spec|TRACE Specification|https://github.com/agentrust-io/trace-spec|2026-06-03T19:32:21Z|index-addition|5222ed4e238627590fb21e801e0acdf7c9d78cbc|2026-09-26
 270|scion-gcp|Scion (Google Cloud)|https://github.com/GoogleCloudPlatform/scion|2026-03-10T00:19:58Z|index-addition|bdf5b6d135bb7585e242d2f08f4c54b3de2c2940|2026-09-26
 271|autoresearchclaw|AutoResearchClaw|https://github.com/aiming-lab/AutoResearchClaw|2026-03-15T03:38:49Z|index-addition|be4ba4755bf1b52220f25e13b2293b5956590070|2026-09-26
+272|os-copilot|OS-Copilot / FRIDAY|https://github.com/OS-Copilot/OS-Copilot|2024-02-02T01:55:49Z|index-addition|f720af8807e49a92dda64572d2c6bc6c0ac7ee7e|2026-09-26
