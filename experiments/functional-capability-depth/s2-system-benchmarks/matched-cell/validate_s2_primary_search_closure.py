@@ -19,6 +19,21 @@ CANONICAL_DELTAS = {
     "lime": ("C", "3823e9092d4106c877ae08a1d19d593b647cf27d", "lime-native-s2-no-direct-result"),
 }
 
+CANONICAL_DIRECT = {
+    "squad": (
+        "A",
+        "2099faf51c08a912c359209447011b06decf0565",
+        "squad-shared-state-conflict-direct-native-canonical",
+        "squad-shared-state-conflict-attenuation-2026-03",
+    ),
+    "thclaws": (
+        "A",
+        "cd700937a71a391f052438d139b7b1c5a6456755",
+        "thclaws-team-workspace-interference-direct-native-canonical",
+        "thclaws-team-workspace-interference-attenuation-2026",
+    ),
+}
+
 
 def load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -63,6 +78,7 @@ require(closure["public_evidence_admission_issue"] == 629, "S2 public evidence a
 require(closure["codecrdt_public_evidence_issue"] == 640, "S2 CodeCRDT public-evidence issue drift")
 require(closure["grit_public_evidence_issue"] == 663, "S2 Grit public-evidence issue drift")
 require(closure["squad_canonical_direct_issue"] == 644, "S2 Squad canonical-direct issue drift")
+require(closure["thclaws_canonical_direct_issue"] == 675, "S2 thClaws canonical-direct issue drift")
 require(closure["disposition"] == "evidence-backed-gap", "S2 closure disposition drift")
 require(closure["primary_baseline"] == "gap", "S2 closure must preserve gap")
 require(closure["closure_scope"] == "current-public-evidence", "S2 closure scope drift")
@@ -76,6 +92,11 @@ require(
     "S2 canonical direct observation count drift",
 )
 require(len(observations) == expected["direct_observations"], "S2 observation registry count drift")
+canonical_observations = [row for row in observations if row.get("canonical_system_eligible") is True]
+require(
+    len(canonical_observations) == expected["canonical_direct_observations"],
+    "S2 canonical observation registry count drift",
+)
 require(coverage["proxy_projection_count"] == expected["native_proxy_projections"], "S2 proxy projection count drift")
 representative = coverage["representative_canonical_s2_systems_inspected"]
 require(
@@ -87,6 +108,7 @@ routes = {route["route_id"]: route["status"] for route in closure["reviewed_rout
 require(
     routes == {
         "direct-disturbance-benchmarks": "mixed-noncanonical-boundaries",
+        "canonical-direct-operational-history": "direct-descriptive-not-matched",
         "native-quantitative-proxies": "native-but-not-direct-s2",
         "matched-framework-campaigns": "framework-scaffolded-or-no-s2-disturbance",
         "native-mechanism-without-direct-results": "no-direct-results",
@@ -108,6 +130,7 @@ for required_case in {
     "autogen-magentic-one-native-proxy",
     "squad-marble-native-proxy",
     "squad-shared-state-conflict-direct-native-canonical",
+    "thclaws-team-workspace-interference-direct-native-canonical",
     "deepseek-harness-native-mechanism-no-direct-benchmark",
     "cadis-native-s2-no-direct-result",
     "ares-native-s2-no-direct-result",
@@ -162,7 +185,7 @@ require(lime_row["canonical_state_at_review"] == lime_state, "lime: delta state 
 require(lime_row["canonical_review_ref"] == lime_ref, "lime: delta ref drift")
 require(lime_row["result_surface_review"] == "no-direct-s2-result", "lime: delta result disposition drift")
 
-require(len(observations) == 5, "S2 closure expects five direct observations")
+require(len(observations) == 6, "S2 closure expects six direct observations")
 observation_rows = {row["observation_id"]: row for row in observations}
 require(
     set(observation_rows) == {
@@ -171,6 +194,7 @@ require(
         "codecrdt-parallel-convergence-2025-10",
         "grit-synthetic-merge-contention-2026-04",
         "squad-shared-state-conflict-attenuation-2026-03",
+        "thclaws-team-workspace-interference-attenuation-2026",
     },
     "S2 direct observation identity set drift",
 )
@@ -180,18 +204,43 @@ for observation_id, (benchmark_id, compatibility) in {
     "codecrdt-parallel-convergence-2025-10": ("codecrdt-observation-coordination", "native-system"),
     "grit-synthetic-merge-contention-2026-04": ("grit-merge-contention", "native-system"),
     "squad-shared-state-conflict-attenuation-2026-03": (None, "native-system"),
+    "thclaws-team-workspace-interference-attenuation-2026": (None, "native-system"),
 }.items():
     observation = observation_rows[observation_id]
     require(observation["benchmark_id"] == benchmark_id, f"{observation_id}: benchmark drift")
     require(observation["system_compatibility"] == compatibility, f"{observation_id}: system compatibility drift")
-    if observation_id == "squad-shared-state-conflict-attenuation-2026-03":
-        require(observation["canonical_harness_id"] == "squad", "Squad canonical observation identity drift")
-        require(observation["canonical_system_eligible"] is True, "Squad canonical observation eligibility drift")
-        require(observation.get("canonical_assessment_ref") == "2099faf51c08a912c359209447011b06decf0565", "Squad canonical observation ref drift")
-        require(observation.get("canonical_state_at_review") == "A", "Squad canonical observation S2 state drift")
-    else:
-        require(observation["canonical_harness_id"] is None, f"{observation_id}: must remain non-canonical")
-        require(observation["canonical_system_eligible"] is False, f"{observation_id}: must remain non-canonical")
+
+for harness_id, (state, review_ref, case_id, observation_id) in CANONICAL_DIRECT.items():
+    fields = assessment_fields(harness_id)
+    require(fields.get("status") == "included", f"{harness_id}: canonical assessment no longer included")
+    require(fields.get("autonomy_s2") == state, f"{harness_id}: canonical direct S2 state drift")
+    require(fields.get("review_ref") == review_ref, f"{harness_id}: canonical direct review_ref drift")
+    require(harness_id in representative, f"{harness_id}: missing from representative S2 cohort")
+
+    case = cases[case_id]
+    require(case.get("coverage_class") == "direct-native-canonical", f"{case_id}: coverage class drift")
+    require(case.get("canonical_harness_id") == harness_id, f"{case_id}: canonical identity drift")
+    require(case.get("canonical_state_at_review") == state, f"{case_id}: reviewed state drift")
+    require(case.get("canonical_review_ref") == review_ref, f"{case_id}: reviewed ref drift")
+    require(case.get("observation_ref") == f"observations.json#{observation_id}", f"{case_id}: observation link drift")
+
+    observation = observation_rows[observation_id]
+    require(observation.get("canonical_harness_id") == harness_id, f"{observation_id}: canonical identity drift")
+    require(observation.get("canonical_system_eligible") is True, f"{observation_id}: canonical eligibility drift")
+    require(observation.get("canonical_assessment_ref") == review_ref, f"{observation_id}: canonical ref drift")
+    require(observation.get("canonical_state_at_review") == state, f"{observation_id}: canonical state drift")
+    require(observation.get("comparison_class") == "descriptive-only", f"{observation_id}: comparison class drift")
+    require(observation.get("evidence_source_class") == "first-party-reported", f"{observation_id}: evidence source drift")
+
+for observation_id in {
+    "nool-trackd-scaleup1-contention-2026-08-21",
+    "specification-gap-recovery-2026-03",
+    "codecrdt-parallel-convergence-2025-10",
+    "grit-synthetic-merge-contention-2026-04",
+}:
+    observation = observation_rows[observation_id]
+    require(observation["canonical_harness_id"] is None, f"{observation_id}: must remain non-canonical")
+    require(observation["canonical_system_eligible"] is False, f"{observation_id}: must remain non-canonical")
 
 require(
     observation_rows["codecrdt-parallel-convergence-2025-10"].get("comparison_class") == "descriptive-only",
@@ -205,14 +254,19 @@ require(
     observation_rows["grit-synthetic-merge-contention-2026-04"].get("evidence_source_class") == "first-party-reported",
     "Grit direct observation must remain first-party-reported",
 )
+
+thclaws = observation_rows["thclaws-team-workspace-interference-attenuation-2026"]
 require(
-    observation_rows["squad-shared-state-conflict-attenuation-2026-03"].get("comparison_class") == "descriptive-only",
-    "Squad canonical direct observation must remain descriptive-only",
+    set(thclaws.get("operational_commits", []))
+    == {
+        "a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
+        "db0efe8a6f5ba49da0bafeba84ae4835a09a946b",
+    },
+    "thClaws operational commit provenance drift",
 )
-require(
-    observation_rows["squad-shared-state-conflict-attenuation-2026-03"].get("evidence_source_class") == "first-party-reported",
-    "Squad canonical direct observation must remain first-party-reported",
-)
+require(thclaws.get("operational_issues") == [125, 200, 202], "thClaws operational issue provenance drift")
+require("index.lock" in thclaws.get("disturbance", ""), "thClaws observation lost shared-index disturbance")
+require("257 commits" in thclaws.get("subsequent_operation", ""), "thClaws observation lost lineage persistence")
 
 s2_baseline = baselines["functions"]["S2"]
 require(s2_baseline["status"] == "gap", "S2 primary was selected without reopening closure")
