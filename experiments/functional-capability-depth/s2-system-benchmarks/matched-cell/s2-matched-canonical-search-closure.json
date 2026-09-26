@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "tracking_issue": 696,
+  "status": "experimental-non-normative",
+  "function": "S2",
+  "reviewed_at": "2026-09-26",
+  "scope": "current-public-evidence",
+  "disposition": "no-materially-matched-canonical-cell",
+  "primary_baseline": "gap",
+  "current_evidence_depth": {
+    "direct_benchmark_families": 8,
+    "direct_observations": 6,
+    "canonical_direct_observations": 2,
+    "native_proxy_projections": 2
+  },
+  "canonical_direct_anchors": [
+    {
+      "canonical_harness_id": "squad",
+      "observation_id": "squad-shared-state-conflict-attenuation-2026-03",
+      "comparison_class": "descriptive-only",
+      "canonical_assessment_ref": "2099faf51c08a912c359209447011b06decf0565"
+    },
+    {
+      "canonical_harness_id": "thclaws",
+      "observation_id": "thclaws-team-workspace-interference-attenuation-2026",
+      "comparison_class": "descriptive-only",
+      "canonical_assessment_ref": "cd700937a71a391f052438d139b7b1c5a6456755"
+    }
+  ],
+  "reviewed_matched_routes": [
+    {
+      "route_id": "mao-bench",
+      "repository": "rachitpareek/multi-agent-orchestration-evals",
+      "review_ref": "3343fe1cf5a24211023a69374d31df3d6711b613",
+      "status": "no-published-multi-orchestrator-results",
+      "finding": "The benchmark exposes a promising multi-orchestrator adapter surface and adversarial/failure tasks, but the seeded leaderboard still contains no published result rows. There is therefore no public matched canonical S2 cell to admit."
+    },
+    {
+      "route_id": "cooperbench-team-harness",
+      "repository": "cooperbench/CooperBench",
+      "review_ref": "63b9d44d9f39a02fccf5bf0052db48a917a011fd",
+      "status": "unchanged-provenance-blocker",
+      "finding": "CooperBench remains a direct S2 family at its benchmark-defined team boundary. The reviewed upstream head is unchanged; the committed 50-pair flash ablation report still lacks the pinned flash-run logs used to generate it, so no new observation or canonical matched cell is available."
+    },
+    {
+      "route_id": "cross-framework-orchestration-benchmarks",
+      "status": "benchmark-authored-or-no-direct-s2-disturbance",
+      "examples": [
+        "agent-orchestration-benchmark",
+        "Astra",
+        "Agent Framework Benchmark"
+      ],
+      "finding": "Reviewed cross-framework comparisons either author the coordination organization inside the benchmark or score generic tool/quality/latency/replay behavior without an explicit interaction-generated S2 disturbance. Framework labels therefore do not create native canonical S2 comparability."
+    },
+    {
+      "route_id": "merge-resolution-model-benchmarks",
+      "status": "single-resolver-not-s2-organization",
+      "examples": [
+        "MergeConflictBench"
+      ],
+      "finding": "Merge-resolution benchmarks can expose conflict difficulty but evaluate a resolver against already-materialized conflicts rather than comparing native coordination relations among multiple canonical S1 systems. They do not form the required S2 matched cell."
+    },
+    {
+      "route_id": "verification-fault-injection-benchmarks",
+      "status": "different-vsm-function",
+      "examples": [
+        "Sabot"
+      ],
+      "finding": "Matched fault-injection campaigns across LangGraph, CrewAI and AutoGen primarily evaluate whether review/checking paths detect planted faults. That is not the required inter-S1 disturbance-to-attenuation S2 comparison."
+    }
+  ],
+  "blocking_reason": "Two canonical direct S2 observations now exist, but Squad and thClaws are heterogeneous descriptive operational-history surfaces. No reviewed public benchmark currently evaluates two or more canonical systems under one materially matched inter-S1 disturbance definition while preserving each system's native or adapter-preserved S2 path.",
+  "reopen_when": [
+    "MAO-Bench or another multi-orchestrator benchmark publishes recoverable result rows for at least two canonical systems under one direct S2 disturbance definition",
+    "CooperBench publishes immutable run artifacts that support a native or adapter-preserved canonical linkage for at least two systems under one matched protocol",
+    "two or more canonical S2 systems publish results under the same benchmark version, disturbance, model/configuration, evaluator and execution policy while exercising their own native or adapter-preserved S2 paths",
+    "an existing canonical direct observation gains a second materially comparable canonical row through already-public upstream evidence"
+  ],
+  "do_not_reopen_for": [
+    "another descriptive canonical observation on a heterogeneous operational-history surface",
+    "another non-canonical direct observation",
+    "another framework leaderboard whose orchestration topology is benchmark-authored",
+    "another generic quality, latency, token, replay or task-success comparison without an explicit inter-S1 disturbance-to-attenuation relation",
+    "an Opensiro-operated reproduction or benchmark run"
+  ],
+  "non_claim": "This search closure does not score S2 capability, compare Squad against thClaws, or imply that either canonical system is stronger. It records only the absence of a materially matched public canonical comparison cell at the reviewed evidence boundary."
+}
