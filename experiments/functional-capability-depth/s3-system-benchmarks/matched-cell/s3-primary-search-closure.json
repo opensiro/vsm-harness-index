@@ -3,13 +3,14 @@
   "status": "experimental-non-normative",
   "tracking_issue": 567,
   "canonical_delta_review_issue": 592,
-  "reviewed_at": "2026-09-25",
+  "current_state_update_issue": 693,
+  "reviewed_at": "2026-09-26",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
   "closure_scope": "current-public-evidence",
   "evidence_depth": {
     "direct_benchmark_families": 3,
-    "canonical_direct_observations": 1,
+    "canonical_direct_observations": 2,
     "native_proxy_projections": 1,
     "representative_canonical_s3_systems_inspected": 14
   },
@@ -24,6 +25,16 @@
     "supervisor_routing_accuracy": 1.0,
     "clean_arm_controls": "retry and parallelism disabled in both clean comparison arms"
   },
+  "additional_canonical_native_observation": {
+    "harness_id": "omnigent",
+    "observation_id": "omnigent-child-recovery-current-control-2026-09",
+    "comparison_class": "descriptive-operational-regression",
+    "canonical_review_revision": "4d963a360e798f076d4fdbd4665e7188e4da05df",
+    "observation_revision": "d8d07168c05ce1385be19dbd6ea64f4574c8d144",
+    "revision_relation": "post-assessment-descendant",
+    "disturbance": "parent runner failure interrupts active child commitments",
+    "reported_outcome": "eligible unfinished children resume under original identities while completed/stopped/ineligible work is not reopened"
+  },
   "reviewed_route_classes": [
     {
       "route_id": "direct-manager-control-benchmarks",
@@ -33,9 +44,9 @@
     },
     {
       "route_id": "canonical-native-direct-within-system",
-      "status": "single-system-only",
-      "examples": ["Multi-Agent Orchestration"],
-      "blocking_reason": "A clean canonical native direct S3 observation exists, but one system cannot form a matched cross-harness primary."
+      "status": "two-systems-unmatched",
+      "examples": ["Multi-Agent Orchestration", "Omnigent"],
+      "blocking_reason": "Two canonical direct S3 observations now exist, but they are heterogeneous evidence surfaces: a deterministic 54-scenario supervisor ablation versus a post-assessment crash/recovery operational regression. Their tasks, disturbance, model/provider, metrics and comparison design are not materially matched, so they cannot form a cross-harness primary cell."
     },
     {
       "route_id": "canonical-native-mechanisms-without-direct-results",
@@ -62,17 +73,18 @@
       "blocking_reason": "The benchmark directly studies orchestration failures and recovery, but public evidence does not bind the measurements to native canonical harness S3 implementations."
     }
   ],
-  "closure_claim": "Current public evidence contains direct S3 benchmarks and one canonical native direct S3 observation. Post-closure review of C.A.D.I.S., Awaken and ARES adds native mechanism coverage but no new direct capability observation, so no materially matched comparison of multiple canonical native or adapter-preserved S3 implementations exists.",
+  "closure_claim": "Current public evidence contains three direct S3 benchmark families and two canonical native direct S3 observations: Multi-Agent Orchestration provides a controlled supervisor ablation, while Omnigent provides a first-party post-assessment descendant crash/recovery current-control observation. Their evidence surfaces are not materially matched, so no cross-harness S3 primary cell is supported. C.A.D.I.S., Awaken and ARES add native mechanism coverage but no further direct capability observation.",
   "reopen_when": [
-    "a second canonical native or adapter-preserved direct S3 observation appears under a materially matched benchmark/model/configuration cell",
+    "two or more canonical native or adapter-preserved direct S3 observations appear under one materially matched benchmark/model/configuration cell",
     "an existing matched framework campaign proves that canonical S3 paths are actually active for two or more systems",
-    "a new direct orchestration benchmark binds immutable results to multiple canonical native S3 implementations"
+    "a new direct orchestration benchmark binds immutable results to multiple canonical native S3 implementations under materially comparable current-control conditions"
   ],
   "do_not_reopen_for": [
     "another benchmark-authored manager topology",
     "another whole-task orchestration score without isolated current-control attribution",
+    "another heterogeneous canonical operational-history observation that does not create a materially matched cell",
     "another framework comparison that does not activate canonical S3 paths",
     "microperformance or mechanism tests that do not measure a current-control intervention and subsequent organizational outcome"
   ],
-  "non_claim": "This closure is not a zero S3 capability score and does not generalize the single Multi-Agent Orchestration result into a cross-harness ranking. It freezes the reviewed current canonical/public-evidence state until materially new matched-native evidence appears."
+  "non_claim": "This closure is not a zero S3 capability score and does not rank Multi-Agent Orchestration against Omnigent. The Omnigent row is later temporal evidence from a post-assessment descendant and must not be relabeled as behavior proven at the exact canonical assessment ref. The S3 primary remains a gap until materially matched native evidence exists across multiple canonical systems."
 }
