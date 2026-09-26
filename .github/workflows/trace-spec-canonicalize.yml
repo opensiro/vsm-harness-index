@@ -1,0 +1,61 @@
+name: Canonicalize TRACE exclusion
+
+on:
+  push:
+    branches:
+      - index/trace-spec-exclusion
+
+permissions:
+  contents: write
+
+jobs:
+  canonicalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/trace-spec-exclusion
+          fetch-depth: 0
+
+      - name: Append catalog provenance
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          catalog = Path("data/catalog.psv")
+          text = catalog.read_text()
+          marker = "|trace-spec|TRACE Specification|https://github.com/agentrust-io/trace-spec|"
+          if marker in text:
+              raise SystemExit("TRACE catalog row already present")
+          row = "269|trace-spec|TRACE Specification|https://github.com/agentrust-io/trace-spec|2026-06-03T19:32:21Z|index-addition|5222ed4e238627590fb21e801e0acdf7c9d78cbc|2026-09-26\n"
+          if not text.endswith("\n"):
+              text += "\n"
+          catalog.write_text(text + row)
+
+          readme = Path("README.md")
+          readme_text = readme.read_text()
+          old = "| **251** | 268 | 81 | 1 |"
+          new = "| **251** | 269 | 81 | 1 |"
+          if old not in readme_text:
+              raise SystemExit("README metrics mirror did not match expected pre-state")
+          readme.write_text(readme_text.replace(old, new, 1))
+          PY
+
+      - name: Render deterministic metrics
+        run: python scripts/render_metrics.py
+
+      - name: Validate transaction
+        run: |
+          python scripts/check_index.py
+          python scripts/render_metrics.py --check
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/trace-spec-canonicalize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assessments/trace-spec.md data/catalog.psv METRICS.md data/metrics.json README.md .github/workflows/trace-spec-canonicalize.yml
+          git commit -m "index: canonicalize TRACE exclusion"
+          git push origin HEAD:index/trace-spec-exclusion
