@@ -4,7 +4,7 @@
   "function": "S3",
   "direct_benchmark_family_count": 4,
   "direct_observation_count": 3,
-  "proxy_projection_count": 1,
+  "proxy_projection_count": 2,
   "coverage_classes": [
     "direct-scaffolded",
     "direct-native",
@@ -76,6 +76,25 @@
         "https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/"
       ],
       "finding": "The native historical Magentic-One orchestrator ablation removes whole-team ledgers, progress tracking, planning/replanning, loop detection and explicit direction and changes end-task performance. The benchmarks do not isolate S3 and the ablation spans both S2 and S3, so it remains proxy evidence. Numeric results live only in the shared raw observation record.",
+      "admitted": false
+    },
+    {
+      "case_id": "llamar-mapthor-native-proxy-s3",
+      "benchmark": "LLaMAR / MAP-THOR module ablation",
+      "benchmark_fit": "proxy",
+      "coverage_class": "native-proxy",
+      "system_compatibility": "native-system",
+      "canonical_harness_id": "llamar",
+      "canonical_state_at_review": "A",
+      "canonical_review_ref": "d2b74cac79a0f070d87a150712f8e2ae174920be",
+      "proxy_projection_ref": "proxy_links.json#llamar-mapthor-native-proxy-s3",
+      "raw_observation_ref": "../system-observations/llamar.json",
+      "primary_sources": [
+        "https://arxiv.org/abs/2407.10031",
+        "https://openreview.net/forum?id=Y1rOWS2Z4i",
+        "https://github.com/nsidn98/LLaMAR/tree/d2b74cac79a0f070d87a150712f8e2ae174920be/results"
+      ],
+      "finding": "Canonical LLaMAR establishes S3=A through its whole-team planner/current-control loop. The first-party 2-agent MAP-THOR Table 3 ablation changes Planner/Verifier/Corrector combinations and moves broad task SR/TR/C/B outcomes, so it is native S3-relevant capability evidence. It is not direct S3 evidence because the benchmark targets end-task performance and the ablation does not isolate one S3 current-control right; the exact Git execution revision is also not identified by the paper. Numeric results live only in the shared raw observation record.",
       "admitted": false
     },
     {
@@ -241,7 +260,8 @@
     "multi-agent-orchestration",
     "cadis",
     "awaken",
-    "ares"
+    "ares",
+    "llamar"
   ],
   "capability_dimensions": [
     "worker-team-lifecycle-control",

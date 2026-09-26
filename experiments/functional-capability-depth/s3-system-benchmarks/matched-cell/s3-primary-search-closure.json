@@ -15,8 +15,8 @@
     "direct_benchmark_families": 4,
     "direct_observations": 3,
     "canonical_direct_observations": 2,
-    "native_proxy_projections": 1,
-    "representative_canonical_s3_systems_inspected": 14
+    "native_proxy_projections": 2,
+    "representative_canonical_s3_systems_inspected": 15
   },
   "canonical_native_observations": [
     {
@@ -69,8 +69,8 @@
     {
       "route_id": "native-quantitative-proxy",
       "status": "not-isolated-s3",
-      "examples": ["AutoGen/Magentic-One"],
-      "blocking_reason": "The native orchestrator ablation changes outcome but spans both S2 and S3 mechanisms rather than isolating current-control capability."
+      "examples": ["AutoGen/Magentic-One", "LLaMAR/MAP-THOR"],
+      "blocking_reason": "The native Magentic-One and LLaMAR ablations change whole-team outcomes but do not isolate S3 as the measured variable. Magentic-One removes an orchestrator bundle spanning S2/S3, while LLaMAR changes Planner/Verifier/Corrector combinations and reports broad MAP-THOR end-task metrics. Both remain proxy evidence rather than direct S3 observations."
     },
     {
       "route_id": "matched-framework-campaign",
@@ -85,7 +85,7 @@
       "blocking_reason": "The benchmark directly studies orchestration failures and recovery, but public evidence does not bind the measurements to native canonical harness S3 implementations."
     }
   ],
-  "closure_claim": "Current public evidence contains four direct S3 benchmark families and three admitted direct S3 observations. Multi-Agent Orchestration and Omnigent provide the two canonical direct observations; SupervisorAgent / SMAS adds one first-party-reported composed non-canonical observation. The canonical rows remain materially heterogeneous and the SMAS row belongs to a composed benchmark boundary, so no cross-harness canonical-native S3 primary baseline is currently supported.",
+  "closure_claim": "Current public evidence contains four direct S3 benchmark families, three admitted direct S3 observations and two native quantitative proxy projections. Multi-Agent Orchestration and Omnigent provide the two canonical direct observations; SupervisorAgent / SMAS adds one first-party-reported composed non-canonical observation. AutoGen/Magentic-One and LLaMAR add native proxy evidence but do not isolate S3. The canonical direct rows remain materially heterogeneous and the SMAS row belongs to a composed benchmark boundary, so no cross-harness canonical-native S3 primary baseline is currently supported.",
   "reopen_when": [
     "a materially matched benchmark/model/configuration cell evaluates two or more canonical systems through their own native or adapter-preserved S3 paths",
     "an existing matched framework campaign proves that canonical S3 paths are actually active for two or more systems under one recoverable comparison protocol",
@@ -99,5 +99,5 @@
     "another framework comparison that does not activate canonical S3 paths",
     "microperformance or mechanism tests that do not measure a current-control intervention and subsequent organizational outcome"
   ],
-  "non_claim": "This closure is not a zero S3 capability score and does not normalize the heterogeneous Multi-Agent Orchestration, Omnigent and SMAS evidence into one metric or ranking. Omnigent's observation is explicitly post-assessment temporal evidence and does not rewrite the earlier canonical review revision. SupervisorAgent / SMAS is direct evidence only at the composed supervised-MAS boundary and does not transfer S3 ownership to wrapped systems. The S3 primary remains gap until materially matched canonical-native evidence appears."
+  "non_claim": "This closure is not a zero S3 capability score and does not normalize the heterogeneous Multi-Agent Orchestration, Omnigent, SMAS, Magentic-One or LLaMAR evidence into one metric or ranking. Omnigent's observation is explicitly post-assessment temporal evidence and does not rewrite the earlier canonical review revision. SupervisorAgent / SMAS is direct evidence only at the composed supervised-MAS boundary and does not transfer S3 ownership to wrapped systems. LLaMAR's module ablation remains proxy evidence and does not establish a direct S3 observation. The S3 primary remains gap until materially matched canonical-native evidence appears."
 }
