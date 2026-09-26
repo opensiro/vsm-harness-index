@@ -35,27 +35,30 @@ jobs:
 
           start = text.index('## S4 — Outside-and-then intelligence')
           end = text.index('\n## S5 — Policy and identity', start)
-          new_s4 = '''## S4 — Outside-and-then intelligence
-
-- State: —
-- Function: no separate external-and-prospective organizational adaptation function is established at the MLR-Agent harness recursion.
-- Disturbance / variety regulated: changing scientific knowledge, related work and future experimental possibilities are investigated for the current research product, not to redesign the durable capability or posture of MLR-Agent itself.
-- Decisive decision or feedback right: none established for a persistent adaptation option affecting the harness's future operational capability.
-- Decision owner: none established for qualifying S4.
-- Supporting / enforcement mechanisms: literature search, idea generation, proposal formulation and experiment-result analysis provide research intelligence for S1; they do not persist an organizational adaptation of the harness.
-- Closure path: no material S4-specific external/future distinction -> adaptation option -> present-capability change path is established.
-- Why this is / is not agent-owned: the runtime is externally informed, but that information is consumed directly as subject-matter evidence inside the current research task. It does not enter a separate S4/S3 homeostatic conversation that changes MLR-Agent's future capabilities.
-- Evidence: [`mlrbench/agent/lit_review.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/lit_review.py); [`mlrbench/agent/proposal_generator.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/proposal_generator.py); [`mlrbench/agent/experiment_runner.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/experiment_runner.py); [`run_mlr_agent.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/run_mlr_agent.py).
-- Basis: explicit + structural absence.
-- Confidence: high.
-- Caveats: future-oriented scientific research is the product of this S1. A different system-in-focus could classify functions differently, but at the harness/task-run recursion subject-matter research is not organizational S4 merely because it studies external or future possibilities.
-
-### Absence scope
-
-- Surfaces inspected: idea generation, literature search, proposal generation, experiment design/results analysis, paper future-work synthesis, repeated task execution and evaluator surfaces.
-- Plausible first-party paths checked: external scientific-literature sensing; proposal-driven experiment planning; experiment-derived learning; generated future-work suggestions; repeated task-folder execution; benchmark/evaluation feedback.
-- Why no material first-party path remains: no first-party runtime path turns prospective distinctions into a durable change of MLR-Agent's installed models, tools, strategy or capabilities for later independent operations, and no qualifying S3-S4 current/future conversation is present.
-'''
+          s4_lines = [
+              '## S4 — Outside-and-then intelligence',
+              '',
+              '- State: —',
+              '- Function: no separate external-and-prospective organizational adaptation function is established at the MLR-Agent harness recursion.',
+              '- Disturbance / variety regulated: changing scientific knowledge, related work and future experimental possibilities are investigated for the current research product, not to redesign the durable capability or posture of MLR-Agent itself.',
+              '- Decisive decision or feedback right: none established for a persistent adaptation option affecting the harness future operational capability.',
+              '- Decision owner: none established for qualifying S4.',
+              '- Supporting / enforcement mechanisms: literature search, idea generation, proposal formulation and experiment-result analysis provide research intelligence for S1; they do not persist an organizational adaptation of the harness.',
+              '- Closure path: no material S4-specific external/future distinction -> adaptation option -> present-capability change path is established.',
+              '- Why this is / is not agent-owned: the runtime is externally informed, but that information is consumed directly as subject-matter evidence inside the current research task. It does not enter a separate S4/S3 homeostatic conversation that changes MLR-Agent future capabilities.',
+              '- Evidence: [`mlrbench/agent/lit_review.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/lit_review.py); [`mlrbench/agent/proposal_generator.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/proposal_generator.py); [`mlrbench/agent/experiment_runner.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/mlrbench/agent/experiment_runner.py); [`run_mlr_agent.py`](https://github.com/chchenhui/mlrbench/blob/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/run_mlr_agent.py).',
+              '- Basis: explicit + structural absence.',
+              '- Confidence: high.',
+              '- Caveats: future-oriented scientific research is the product of this S1. A different system-in-focus could classify functions differently, but at the harness/task-run recursion subject-matter research is not organizational S4 merely because it studies external or future possibilities.',
+              '',
+              '### Absence scope',
+              '',
+              '- Surfaces inspected: idea generation, literature search, proposal generation, experiment design/results analysis, paper future-work synthesis, repeated task execution and evaluator surfaces.',
+              '- Plausible first-party paths checked: external scientific-literature sensing; proposal-driven experiment planning; experiment-derived learning; generated future-work suggestions; repeated task-folder execution; benchmark/evaluation feedback.',
+              '- Why no material first-party path remains: no first-party runtime path turns prospective distinctions into a durable change of MLR-Agent installed models, tools, strategy or capabilities for later independent operations, and no qualifying S3-S4 current/future conversation is present.',
+              '',
+          ]
+          new_s4 = '\n'.join(s4_lines)
           text = text[:start] + new_s4 + text[end:]
 
           old_variety = "MLR-Agent attenuates research variety by progressively materializing idea, literature, proposal, experiment and paper artifacts in one task workspace. External scientific uncertainty is handled prospectively through the literature/proposal S4 path before experiment execution. Implementation/runtime uncertainty is handled inside the coding-agent S1 stage. Stage failures are bounded by scripted retries/errors. No separate whole-system S3 or identity-level S5 escalation owner is established."
