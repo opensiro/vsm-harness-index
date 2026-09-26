@@ -59,13 +59,19 @@ class TestS2PostClosureShepAxocoatl(unittest.TestCase):
         observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
         baselines = json.loads(BASELINES.read_text(encoding="utf-8"))
         reviewed_families = baselines["functions"]["S2"]["reviewed_direct_families"]
+        canonical_observations = [
+            row for row in observations if row.get("canonical_system_eligible") is True
+        ]
 
         self.assertEqual(
             coverage["direct_benchmark_family_count"],
             len(reviewed_families),
         )
         self.assertEqual(coverage["direct_observation_count"], len(observations))
-        self.assertEqual(coverage["canonical_direct_observation_count"], 1)
+        self.assertEqual(
+            coverage["canonical_direct_observation_count"],
+            len(canonical_observations),
+        )
         self.assertEqual(coverage["proxy_projection_count"], 2)
         self.assertGreaterEqual(len(coverage["representative_canonical_s2_systems_inspected"]), 15)
         self.assertIn("shep", coverage["representative_canonical_s2_systems_inspected"])
