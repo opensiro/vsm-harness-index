@@ -295,3 +295,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 280|boundflow|BoundFlow|https://github.com/boundflow/boundflow|2026-03-22T05:02:02Z|index-addition|15c0b20a3a98d3413956cab7fba2fd77c1fa32e2|2026-09-27
 281|waggle|Waggle|https://github.com/CrewBeeLab/Waggle|2026-05-13T14:26:58Z|index-addition|db9e3d3aed66714d665fd1c5c40d66534bf44ed7|2026-09-27
 282|surogates|Surogates|https://github.com/invergent-ai/surogates|2026-04-09T10:41:06Z|index-addition|4069e5ad736f1b21584543f734c9481193bcde65|2026-09-27
+283|chump|Chump|https://github.com/repairman29/chump|2026-03-10T20:57:54Z|index-addition|724c8ebe1911e986cc8af6883b6f05acd096d437|2026-09-27
