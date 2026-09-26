@@ -5,6 +5,8 @@
   "canonical_delta_review_issue": 592,
   "current_state_update_issue": 693,
   "public_evidence_admission_issue": 685,
+  "matched_canonical_search_issue": 709,
+  "matched_canonical_search_closure": "matched-cell/s3-matched-canonical-search-closure.json",
   "reviewed_at": "2026-09-26",
   "disposition": "evidence-backed-gap",
   "primary_baseline": "gap",
