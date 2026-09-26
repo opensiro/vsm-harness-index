@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.6
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-09-26
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -47,7 +47,7 @@ The optional intent bridge is also an evidence/authorization verifier. It signs 
 
 The counterfactual owner test is decisive. Remove the external agent/runtime while retaining the specification, models, adapters, schemas, signing keys, verifiers, revocation sources and transparency integration. The remaining first-party system can represent, sign, validate and appraise evidence and authorization bindings, but it cannot pursue an operational objective through a model/tool decision/action/feedback loop. Repository-relative autonomous S1 does not close.
 
-Under Methodology `0.3.6`, that first-party S1 admission failure yields a proposed terminal `excluded-no-agentic-vsm` result. Rich evidence, policy, provenance and verification machinery are not promoted into S2-S5 merely because they may serve those functions in a wider composed agent organization.
+Under Methodology `0.3.6`, that first-party S1 admission failure yields a terminal `excluded-no-agentic-vsm` result. Rich evidence, policy, provenance and verification machinery are not promoted into S2-S5 merely because they may serve those functions in a wider composed agent organization.
 
 Primary evidence:
 
