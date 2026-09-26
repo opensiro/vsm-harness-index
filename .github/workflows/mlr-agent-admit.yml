@@ -1,0 +1,71 @@
+name: Assemble MLR-Agent admission
+
+on:
+  push:
+    branches:
+      - index/mlr-agent-admission
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/mlr-agent-admission
+          fetch-depth: 0
+
+      - name: Canonicalize assessment sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/mlr-agent.md')
+          text = assessment.read_text(encoding='utf-8')
+          assert text.count('status: proposed') == 1
+          assessment.write_text(text.replace('status: proposed', 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          assert '|mlr-agent|' not in catalog_text
+          rows = [line for line in catalog_text.splitlines() if line.strip()]
+          assert rows[-1].startswith('276|worldgui|'), f'unexpected catalog tail: {rows[-1]}'
+          row = '277|mlr-agent|MLR-Agent|https://github.com/chchenhui/mlrbench|2025-05-14T13:56:07Z|index-addition|f728d571a992d71c8b526eeb4d9ab6bb5c8cc824|2026-09-27'
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          assert '|mlr-agent|' not in signatures_text
+          signature = 'MLR-Agent closes S1 through end-to-end model-driven research execution and S4 through literature-facing synthesis that becomes a proposal consumed by executable experimentation; deterministic stage routing is not S3, MLR-Judge remains adjacent evaluation rather than S3*, and no S2 or S5 closure is established.'
+          assert len(signature) <= 360
+          signatures.write_text(signatures_text.rstrip('\n') + '\n277|mlr-agent|' + signature + '\n', encoding='utf-8')
+          PY
+
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+
+      - name: Validate canonical state
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/mlr-agent-admit.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assessments/mlr-agent.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics/temporal.md FULL_A.md METRICS.md data/metrics.json README.md .github/workflows/mlr-agent-admit.yml
+          git commit -m 'index: canonicalize MLR-Agent admission'
+          git push origin HEAD:index/mlr-agent-admission
