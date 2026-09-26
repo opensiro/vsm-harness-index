@@ -52,6 +52,7 @@ Review artifacts are experimental evidence about the candidate classification di
 ## Current fixtures
 
 - [`ouroboros/`](fixtures/ouroboros/) — first real-system candidate fixture; tracked by Index issue #271.
+- [`synthetic-s1-escalation-shift/`](fixtures/synthetic-s1-escalation-shift/) — synthetic escalation-boundary-shift positive-control input for S1; tracked by Index issue #311. It is judgment-free until two independent reviews are completed.
 
 ## Research notes
 
