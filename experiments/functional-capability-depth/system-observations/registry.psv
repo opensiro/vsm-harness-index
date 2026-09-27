@@ -1,0 +1,8 @@
+observation_id|system_name|canonical_harness_id|benchmark_labels|kind|evidence_source_class|system_compatibility|record_ref
+llamar-agent-count-interference-mapthor-sar|LLaMAR|llamar|MAP-THOR / SAR|native-disturbance-characterization|first-party-reported|native-system|llamar.json
+llamar-mapthor-module-ablation-gpt4v|LLaMAR|llamar|MAP-THOR|native-mechanism-ablation|first-party-reported|native-system|llamar.json
+magentic-one-gpt4o-o1-test-results|Magentic-One|autogen-agentchat|GAIA; AssistantBench; WebArena|system-outcome|first-party-reported|native-system|magentic-one.json
+magentic-one-gpt4o-test-results|Magentic-One|autogen-agentchat|GAIA; AssistantBench; WebArena|system-outcome|first-party-reported|native-system|magentic-one.json
+magentic-one-simple-orchestrator-gaia-ablation|Magentic-One|autogen-agentchat|GAIA|native-mechanism-ablation|first-party-reported|native-system|magentic-one.json
+squad-marble-aligned-coordination-ablation|Squad|squad|MARBLE aligned four-domain re-run|native-mechanism-ablation|first-party-reported|native-system|squad.json
+squad-marble-completion-ablation|Squad|squad|MARBLE factorial ablation|native-mechanism-ablation|first-party-reported|native-system|squad.json
