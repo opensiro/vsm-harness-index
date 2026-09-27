@@ -1,149 +1,35 @@
 [
   {
-    "observation_id": "truecall-tau2-retail-silent-failure-2026-06",
-    "function": "S3*",
-    "benchmark_id": "truecall-runtime-verification",
-    "benchmark_fit": "direct",
-    "boundary_class": "composed-system",
-    "canonical_harness_id": null,
     "canonical_system_eligible": false,
-    "system_compatibility": "benchmark-scaffolded",
-    "reviewed_system_revision": "3b1d8ce253ad6d9908936f844bf5e0255785e8b9",
-    "environment": "tau2-bench retail",
-    "tau2_version": "1.0.0",
-    "agent_model": "gemini/gemini-2.5-flash",
-    "user_model": "gemini/gemini-2.5-flash",
-    "reasoning_effort": "disable",
-    "fault_model": "seeded injected silent failures on WRITE tools; success-shaped response retained while database mutation is undone",
-    "paired_runs": [
-      {
-        "fault_probability": 0.3,
-        "seed": 12345,
-        "tasks": 10,
-        "trials_per_task": 2,
-        "baseline_reward": 0.375,
-        "truecall_reward": 0.353
-      },
-      {
-        "fault_probability": 0.4,
-        "seed": 777,
-        "tasks": 16,
-        "trials_per_task": 2,
-        "baseline_reward": 0.321,
-        "truecall_reward": 0.467
-      },
-      {
-        "fault_probability": 0.4,
-        "seed": 2024,
-        "tasks": 20,
-        "trials_per_task": 2,
-        "baseline_reward": 0.389,
-        "truecall_reward": 0.333
-      }
-    ],
-    "reported_mean_baseline_reward": 0.362,
-    "reported_mean_truecall_reward": 0.384,
-    "reported_detection_rate": 1.0,
-    "reported_false_positive_count": 0,
-    "reported_detection_scope": "all injected silent failures across the published live runs",
-    "correction_uptake": [
-      {
-        "message_condition": "soft",
-        "corrections": 25,
-        "retry_rate": 0.08,
-        "give_up_rate": 0.84
-      },
-      {
-        "message_condition": "imperative",
-        "corrections": 11,
-        "retry_rate": 0.64,
-        "give_up_rate": 0.36
-      }
-    ],
-    "publisher_conclusion": "Detection was deterministic in the published runs; end-to-end task-reward recovery was not established at this scale/model because reward deltas were inconsistent across paired runs.",
+    "boundary_class": "composed-system",
+    "function": "S3*",
     "vsm_interpretation": "The observation directly exercises complementary reality access plus discrepancy feedback at the composed TrueCall boundary. It does not establish S1 recovery quality and is not attributable to a canonical harness S3* implementation.",
-    "primary_sources": [
-      "https://github.com/abhid1234/truecall/blob/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2/RESULTS.md",
-      "https://github.com/abhid1234/truecall/blob/3b1d8ce253ad6d9908936f844bf5e0255785e8b9/bench/tau2/seam.py"
-    ]
+    "benchmark_fit": "direct",
+    "benchmark_id": "truecall-runtime-verification",
+    "observation_id": "truecall-tau2-retail-silent-failure-2026-06",
+    "canonical_harness_id": null,
+    "raw_observation_ref": "../system-observations/truecall-tau2-silent-failure.json#truecall-tau2-retail-silent-failure-2026-06"
   },
   {
-    "observation_id": "swe-review-generate-review-revise-2026-07",
-    "function": "S3*",
-    "benchmark_id": "swe-review",
-    "benchmark_fit": "direct",
-    "boundary_class": "composed-system",
-    "canonical_harness_id": null,
     "canonical_system_eligible": false,
-    "system_compatibility": "benchmark-scaffolded",
-    "reviewed_system_revision": "95b652e095e5ac8f16f08ae52fd3b26513c56097",
-    "benchmark": "SWE-Review-Bench",
-    "benchmark_instances": 1384,
-    "source_issue_count": 500,
-    "quality_tiers": 3,
-    "source_benchmark": "SWE-bench Verified",
-    "audit_loop": [
-      "candidate PR generated for an issue",
-      "separate reviewer agent explores repository and patch",
-      "reviewer emits approve/reject decision plus structured feedback",
-      "rejected patch returns to the original PR generator for revision",
-      "revised patch is re-verified through SWE-bench"
-    ],
-    "revision_protocol": "approved patches remain unchanged; rejected patches are revised by the original PR generator for the split; model failures fall back to the original patch",
-    "reported_example_generator": "Qwen3-30B-A3B",
-    "reported_initial_resolve_rate_percent": 27.5,
-    "reported_iterative_resolve_rate_percent": 56.9,
-    "reported_absolute_gain_percentage_points": 29.4,
-    "reverification_surface": "SWE-Review-Bench/reverify_revision.py via SWE-bench",
-    "publisher_conclusion": "Agentic review continuously improves PRs through iterative review-revision and improves downstream issue resolution relative to one-shot generation and fixed-context review baselines.",
+    "boundary_class": "composed-system",
+    "function": "S3*",
     "vsm_interpretation": "The composed benchmark directly exercises a materially distinct complementary reviewer, discrepancy feedback returned to the operating generator for correction, and independent re-verification of the revised artifact. The benchmark-defined organization owns this S3* loop; no execution substrate or PR-generator harness inherits native S3* ownership by association.",
-    "primary_sources": [
-      "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/README.md",
-      "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench/README.md",
-      "https://github.com/LegoX/SWE-Review/blob/95b652e095e5ac8f16f08ae52fd3b26513c56097/SWE-Review-Bench/reverify_revision.py",
-      "https://arxiv.org/abs/2607.06065"
-    ]
+    "benchmark_fit": "direct",
+    "benchmark_id": "swe-review",
+    "observation_id": "swe-review-generate-review-revise-2026-07",
+    "canonical_harness_id": null,
+    "raw_observation_ref": "../system-observations/swe-review.json#swe-review-generate-review-revise-2026-07"
   },
   {
-    "observation_id": "harness-bench-pilot4-review-revise-reverify-2026-07",
-    "function": "S3*",
-    "benchmark_id": "harness-bench-adversarial-review",
-    "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
-    "boundary_class": "composed-system",
-    "canonical_harness_id": null,
     "canonical_system_eligible": false,
-    "system_compatibility": "benchmark-scaffolded",
-    "reviewed_system_revision": "f2fb12cc28ac90dce6eba873788b5632d6fc5431",
-    "benchmark": "harness-bench Pilot 4 planning-tier ablation",
-    "target_repository": "tdrml/telos",
-    "target_repository_revision": "c62bcf6420c24c7e43c078d72aade6afcf25a765",
-    "executor_model": "claude-haiku-4-5-20251001",
-    "planner_model": "claude-sonnet-5",
-    "task": "L2",
-    "arm": "FULL",
-    "reported_reviewed_runs": 2,
-    "reported_request_changes_runs": 2,
-    "reported_revision_runs": 2,
-    "post_revision_build_green_runs": 2,
-    "post_revision_visible_green_runs": 2,
-    "post_revision_holdout_pass_runs": 2,
-    "post_revision_success_runs": 2,
-    "audit_loop": [
-      "executor produces a candidate repository change and completion contract",
-      "a separate adversarial reviewer inspects the diff and repository against the task",
-      "reviewer emits REQUEST_CHANGES plus concrete discrepancy findings",
-      "the runner returns those findings to the original executor session",
-      "the executor performs one revision round",
-      "the benchmark independently reruns build, visible tests and held-out verification on the revised state"
-    ],
-    "comparison_scope_note": "FULL also contains a deterministic done-gate and schema-forced result contract. The two L2 records establish operation and closure of the complementary review-revision-reverification loop; they are not an isolated causal estimate of reviewer contribution to overall task success.",
-    "publisher_boundary_note": "The README describes the benchmark reviewer/harness as a minimal clean-room implementation of production patterns rather than production Telos code. No native Telos or Claude Code S3* ownership is inferred.",
+    "boundary_class": "composed-system",
+    "function": "S3*",
     "vsm_interpretation": "The observation directly exercises a materially distinct complementary reviewer, discrepancy feedback returned to the producing executor for correction, and independent post-revision verification. The benchmark-defined composed organization owns this S3* loop; no target repository, model, execution substrate, or canonical harness inherits native S3* ownership by association.",
-    "primary_sources": [
-      "https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/README.md",
-      "https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/runner/run-pilot4.mjs",
-      "https://github.com/tdrml/harness-bench/blob/f2fb12cc28ac90dce6eba873788b5632d6fc5431/results/pilot4.jsonl"
-    ]
+    "benchmark_fit": "direct",
+    "benchmark_id": "harness-bench-adversarial-review",
+    "observation_id": "harness-bench-pilot4-review-revise-reverify-2026-07",
+    "canonical_harness_id": null,
+    "raw_observation_ref": "../system-observations/harness-bench-pilot4.json#harness-bench-pilot4-review-revise-reverify-2026-07"
   }
 ]

@@ -14,6 +14,8 @@ MAP = HERE.parent / "vsm-benchmark-family-map" / "map.json"
 COVERAGE = HERE / "coverage.json"
 BENCHMARK_OBSERVATIONS = HERE / "benchmark_observations.json"
 CANONICAL_OBSERVATIONS = HERE / "canonical_observations.json"
+RAW_DIR = HERE.parent / "system-observations"
+RAW_PREFIX = "../system-observations/"
 
 COMPOSED_DIRECT_S3STAR = {"truecall-runtime-verification", "swe-review", "harness-bench-adversarial-review"}
 DIRECT_S3STAR = COMPOSED_DIRECT_S3STAR | {"appliedscientist-iterative-review", "data-to-paper-review-revision"}
@@ -91,6 +93,44 @@ def assessment_fields(harness_id: str) -> dict[str, str]:
         fields[key.strip()] = value.strip()
     return fields
 
+
+
+def hydrate_observation(link: dict) -> dict:
+    oid = link.get("observation_id")
+    ref = link.get("raw_observation_ref")
+    if not isinstance(oid, str) or not oid:
+        fail("S3* projection requires observation_id")
+    if not isinstance(ref, str) or not ref.startswith(RAW_PREFIX) or "#" not in ref:
+        fail(f"{oid}: invalid raw_observation_ref")
+    rel, ref_oid = ref[len(RAW_PREFIX):].rsplit("#", 1)
+    if ref_oid != oid or not rel.endswith(".json") or "/" in rel:
+        fail(f"{oid}: raw_observation_ref drift")
+    path = RAW_DIR / rel
+    if not path.is_file():
+        fail(f"{oid}: neutral raw record missing: {rel}")
+    record = json.loads(path.read_text(encoding="utf-8"))
+    matches = [obs for obs in record.get("observations", []) if obs.get("observation_id") == oid]
+    if len(matches) != 1:
+        fail(f"{oid}: expected exactly one neutral raw observation in {rel}")
+    raw = matches[0]
+    effective = dict(link)
+    for key, value in raw.items():
+        if key in {"kind", "evidence_surface", "non_claim"}:
+            continue
+        if key == "observation_id":
+            continue
+        if key in effective and effective[key] != value:
+            fail(f"{oid}: derived/raw field conflict: {key}")
+        effective[key] = value
+    effective["evidence_source_class"] = record.get("evidence_source_class")
+    effective["system_compatibility"] = (record.get("published_implementation") or {}).get("system_compatibility")
+    effective["primary_sources"] = record.get("primary_sources")
+    raw_harness = record.get("canonical_harness_id")
+    if effective.get("canonical_harness_id") != raw_harness:
+        fail(f"{oid}: canonical_harness_id raw/derived drift")
+    if raw_harness:
+        effective["canonical_review_revision"] = record.get("canonical_review_ref")
+    return effective
 
 def validate_canonical_observation(observation: dict) -> None:
     if observation.get("observation_id") != CANONICAL_OBSERVATION_ID:
@@ -233,8 +273,10 @@ def validate_data_to_paper_observation(observation: dict) -> None:
 def main() -> None:
     benchmark_map = json.loads(MAP.read_text(encoding="utf-8"))
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
-    benchmark_observations = json.loads(BENCHMARK_OBSERVATIONS.read_text(encoding="utf-8"))
-    canonical_observations = json.loads(CANONICAL_OBSERVATIONS.read_text(encoding="utf-8"))
+    benchmark_links = json.loads(BENCHMARK_OBSERVATIONS.read_text(encoding="utf-8"))
+    canonical_links = json.loads(CANONICAL_OBSERVATIONS.read_text(encoding="utf-8"))
+    benchmark_observations = [hydrate_observation(obs) for obs in benchmark_links]
+    canonical_observations = [hydrate_observation(obs) for obs in canonical_links]
 
     if coverage.get("schema_version") != 1:
         fail("coverage schema_version must be 1")
