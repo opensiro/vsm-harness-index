@@ -76,6 +76,61 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
     def test_absent_active_occupancy_is_none(self) -> None:
         self.assertIsNone(module.declared_active_occupancy("Batch frozen at 10/10."))
 
+    def test_frozen_batch_is_detected(self) -> None:
+        self.assertTrue(module.is_frozen_queue("Candidate intake. Batch complete and frozen at 10/10."))
+        self.assertTrue(module.is_frozen_queue("Manual assessment queue. Batch frozen at 10/10."))
+        self.assertFalse(module.is_frozen_queue("Candidate intake. Batch occupancy: 7/10."))
+
+    def test_frozen_completed_rows_become_historical(self) -> None:
+        entries = [module.QueueEntry(10, "[Candidate batch] X", "owner/done", frozen=True)]
+        active, errors, warnings = module.classify_queue_entries(
+            entries,
+            included={"owner/done": "owner/done"},
+            proposed={},
+            catalog_names={"owner/done": "owner/done"},
+        )
+        self.assertEqual(active, [])
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
+    def test_frozen_unprocessed_rows_remain_active(self) -> None:
+        entry = module.QueueEntry(10, "[Candidate batch] X", "owner/pending", frozen=True)
+        active, errors, warnings = module.classify_queue_entries(
+            [entry], included={}, proposed={}, catalog_names={}
+        )
+        self.assertEqual(active, [entry])
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
+    def test_remaining_active_occupancy_uses_filtered_rows(self) -> None:
+        entries = [
+            module.QueueEntry(12, "[Candidate batch] X", "owner/done", frozen=True),
+            module.QueueEntry(12, "[Candidate batch] X", "owner/pending", frozen=True),
+        ]
+        active, _errors, _warnings = module.classify_queue_entries(
+            entries,
+            included={"owner/done": "owner/done"},
+            proposed={},
+            catalog_names={"owner/done": "owner/done"},
+        )
+        self.assertEqual(module.validate_remaining_occupancies(active, {12: 1}), [])
+        self.assertEqual(
+            module.validate_remaining_occupancies(active, {12: 2}),
+            ["#12: declared remaining active occupancy 2/10 != 1/10 active rows"],
+        )
+
+    def test_live_queue_canonical_overlap_still_fails(self) -> None:
+        entry = module.QueueEntry(11, "[Candidate batch] X", "owner/already", frozen=False)
+        active, errors, _warnings = module.classify_queue_entries(
+            [entry],
+            included={"owner/already": "owner/already"},
+            proposed={},
+            catalog_names={"owner/already": "owner/already"},
+        )
+        self.assertEqual(active, [entry])
+        self.assertIn("#11: owner/already is already canonical status=included", errors)
+        self.assertIn("#11: owner/already is already present in data/catalog.psv", errors)
+
     def test_non_candidate_table_is_ignored(self) -> None:
         body = """| Project | Notes |
 | --- | --- |
