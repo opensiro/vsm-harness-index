@@ -6,7 +6,7 @@ EXP=ROOT/"experiments"/"functional-capability-depth"
 REG=EXP/"system-observations"; S3=EXP/"s3star-system-benchmarks"
 SOURCE_REF="6317c2c57070f50225949104911a90fcdcd58abd"
 FILES=("benchmark_observations.json","canonical_observations.json")
-DERIVED_ALLOWED={"observation_id","function","benchmark_id","benchmark_fit","boundary_class","canonical_harness_id","canonical_system_eligible","vsm_interpretation","raw_observation_ref"}
+DERIVED_ALLOWED={"observation_id","function","benchmark_id","benchmark_fit","boundary_class","canonical_harness_id","canonical_system_eligible","vsm_interpretation","aggregate_s3star_metric_reported","raw_observation_ref"}
 def old_rows():
     out=[]
     for name in FILES:
