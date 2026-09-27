@@ -57,6 +57,9 @@ EXPECTED_CANONICAL_OBSERVATION_IDS = {
     "squad-shared-state-conflict-attenuation-2026-03",
     "thclaws-team-workspace-interference-attenuation-2026",
 }
+RAW_OWNED_DIRECT_KEYS = {
+    "comparison_limitation",
+}
 EXPECTED_DIRECT_S2 = {
     "dpbench",
     "stale-semantic-coordination",
@@ -135,6 +138,9 @@ def hydrate_raw_observation(row: dict) -> dict:
     if len(matches) != 1 or raw_id != row.get("observation_id"):
         fail(f"{row.get('observation_id')}: neutral raw observation identity drift")
     raw = matches[0]
+    for key in RAW_OWNED_DIRECT_KEYS:
+        if key in raw and key in row:
+            fail(f"{row.get('observation_id')}: derived row duplicates neutral-owned {key}")
     for forbidden in ("function", "benchmark_fit", "vsm_interpretation"):
         if forbidden in record or forbidden in raw:
             fail(f"{row.get('observation_id')}: neutral raw record leaked VSM interpretation field {forbidden}")
