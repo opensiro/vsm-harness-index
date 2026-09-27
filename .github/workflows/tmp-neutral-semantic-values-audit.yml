@@ -1,0 +1,20 @@
+name: tmp neutral semantic values audit
+
+on:
+  push:
+    branches:
+      - audit/neutral-raw-semantic-values-20260928
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit neutral raw semantic values
+        run: python .github/tmp_audit_neutral_semantic_values.py
