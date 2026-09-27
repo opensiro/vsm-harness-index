@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "recorded_at": "2026-09-26",
+  "evidence_source_class": "first-party-reported",
   "system_name": "LLaMAR",
   "canonical_harness_id": "llamar",
   "canonical_assessment_ref": "assessments/llamar.md",
