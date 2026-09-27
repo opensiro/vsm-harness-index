@@ -10,6 +10,7 @@ HERE = Path(__file__).resolve().parent
 S2 = HERE.parent
 EXPERIMENT = S2.parent
 ROOT = EXPERIMENT.parents[1]
+SYSTEM_OBSERVATIONS = EXPERIMENT / "system-observations"
 
 CANONICAL_DELTAS = {
     "cadis": ("C", "52c55854b1abbcda82839b7a934cbdb16a69b635", "cadis-native-s2-no-direct-result"),
@@ -44,6 +45,22 @@ def require(condition: bool, message: str) -> None:
         raise SystemExit(message)
 
 
+def hydrate_raw_observation(row: dict) -> dict:
+    ref = row.get("raw_observation_ref")
+    if ref is None:
+        return row
+    require(isinstance(ref, str) and ref.startswith("../system-observations/") and "#" in ref, f"{row.get('observation_id')}: invalid raw observation ref")
+    path_part, raw_id = ref.split("#", 1)
+    raw_path = (S2 / path_part).resolve()
+    require(raw_path.parent == SYSTEM_OBSERVATIONS.resolve() and raw_path.is_file(), f"{row.get('observation_id')}: raw observation missing")
+    record = load(raw_path)
+    matches = [candidate for candidate in record.get("observations", []) if candidate.get("observation_id") == raw_id]
+    require(len(matches) == 1 and raw_id == row.get("observation_id"), f"{row.get('observation_id')}: raw observation identity drift")
+    hydrated = dict(matches[0])
+    hydrated.update(row)
+    return hydrated
+
+
 def assessment_fields(harness_id: str) -> dict[str, str]:
     path = ROOT / "assessments" / f"{harness_id}.md"
     require(path.exists(), f"missing canonical assessment for {harness_id}")
@@ -62,6 +79,7 @@ def assessment_fields(harness_id: str) -> dict[str, str]:
 closure = load(HERE / "s2-primary-search-closure.json")
 coverage = load(S2 / "coverage.json")
 observations = load(S2 / "observations.json")
+observations = [hydrate_raw_observation(row) for row in observations]
 baselines = load(EXPERIMENT / "primary-baselines.json")
 delta = load(S2 / "post-closure-deltas" / "shep-axocoatl-2026-09-25.json")
 lime_delta = load(S2 / "post-closure-deltas" / "lime-2026-09-25.json")

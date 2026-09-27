@@ -41,7 +41,7 @@ Different interpretations may disagree without changing the underlying raw resul
 ## The raw layer answers
 
 ```text
-what benchmark/version was used?
+what public evidence surface was used (benchmark, paper, repository history, operational evidence)?
 what concrete system/configuration was run?
 can that system be linked to a canonical Index harness?
 what model/configuration was used?

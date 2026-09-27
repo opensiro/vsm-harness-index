@@ -1,4 +1,4 @@
-observation_id|system_name|canonical_harness_id|benchmark_labels|kind|evidence_source_class|system_compatibility|record_ref
+observation_id|system_name|canonical_harness_id|evidence_surfaces|kind|evidence_source_class|system_compatibility|record_ref
 a-evolve-harness-updating-2026|A-Evolve|a-evolve|A-Evolve harness-evolution study: SWE-bench Verified / MCP-Atlas / SkillsBench|persistent-harness-update-study|first-party-reported|native-system|a-evolve.json
 claude-code__frontierharness-v1.0__kimi-k3-fireworks__20260822|Claude Code|claude-code|FrontierHarness Eval v1|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
 codecrdt-parallel-convergence-2025-10|CodeCRDT||CodeCRDT sequential-versus-parallel evaluation|native-system-outcome-study|first-party-reported|native-system|codecrdt.json
@@ -30,6 +30,8 @@ pi__frontierharness-v1.0__kimi-k3-fireworks__20260822|Pi|pi|FrontierHarness Eval
 qwenpaw__pawbench-v1.0__qwen3.6-35b-a3b__20260529|QwenPaw|qwenpaw|PawBench v1.0|system-benchmark-result|first-party-reported|adapter-preserved|public-system-benchmarks.jsonl
 squad-marble-aligned-coordination-ablation|Squad|squad|MARBLE aligned four-domain re-run|native-mechanism-ablation|first-party-reported|native-system|squad.json
 squad-marble-completion-ablation|Squad|squad|MARBLE factorial ablation|native-mechanism-ablation|first-party-reported|native-system|squad.json
+squad-shared-state-conflict-attenuation-2026-03|Squad|squad|immutable first-party repository history plus first-party public operational case study|operational-history-witness|first-party-reported|native-system|squad-operational-history.json
 swe-agent__swe-bench-verified__claude-4-sonnet-20250514__20250522|SWE-agent|swe-agent|SWE-bench Verified|system-benchmark-result|external-reproduced|native-system|public-system-benchmarks.jsonl
+thclaws-team-workspace-interference-attenuation-2026|thClaws|thclaws|immutable first-party release, issue, commit and assessed-runtime history plus later first-party Agent Teams operational reports|operational-history-witness|first-party-reported|native-system|thclaws-operational-history.json
 specification-gap-recovery-2026-03|The Specification Gap benchmark organization||The Specification Gap / AmbigClass 2×2 conflict-recovery experiment|benchmark-defined-coordination-ablation|first-party-reported|benchmark-scaffolded|specification-gap.json
 appliedscientist-iterative-review-2026-09|TheAppliedScientist|appliedscientist|AppliedScientist iterative reviewer-guided revision study (30 papers)|iterative-review-revision-study|first-party-reported|native-system|appliedscientist.json
