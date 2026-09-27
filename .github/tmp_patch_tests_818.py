@@ -16,7 +16,7 @@ path.write_text(text.replace(old, new, 1), encoding="utf-8")
 path = TESTS / "test_neutral_semantic_key_cleanup_818.py"
 text = path.read_text(encoding="utf-8")
 old = '        self.assertIn("rather than isolating", proxy["why_proxy_not_direct"] if "rather than isolating" in proxy["why_proxy_not_direct"] else "rather than isolating")\n'
-new = '        self.assertIn("does not isolate", proxy["why_proxy_not_direct"])\n'
+new = '        self.assertIn("rather than isolating", proxy["why_proxy_not_direct"])\n'
 if text.count(old) != 1:
     raise SystemExit("#818 LLaMAR regression assertion anchor drift")
 path.write_text(text.replace(old, new, 1), encoding="utf-8")
