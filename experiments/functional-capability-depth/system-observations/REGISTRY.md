@@ -2,14 +2,23 @@
 
 Status: **generated, experimental, non-normative**
 
-Generated from the raw JSON records in this directory by `render_registry.py`.
+Generated from the raw JSON/JSONL records in this directory by `render_registry.py`.
 Numeric benchmark payloads remain only in the raw record; this table is an identity/provenance projection, not a second result database.
 
-Raw observations: **11**
+Raw observations: **30**
 
 | System | Canonical harness | Observation | Benchmark surface(s) | Kind | Provenance | Compatibility | Raw record |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | A-Evolve | [a-evolve](../../../assessments/a-evolve.md) | `a-evolve-harness-updating-2026` | A-Evolve harness-evolution study: SWE-bench Verified / MCP-Atlas / SkillsBench | `persistent-harness-update-study` | `first-party-reported` | `native-system` | [a-evolve.json](a-evolve.json) |
+| Claude Code | [claude-code](../../../assessments/claude-code.md) | `claude-code__frontierharness-v1.0__kimi-k3-fireworks__20260822` | FrontierHarness Eval v1 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| Codex | [codex](../../../assessments/codex.md) | `codex__frontierharness-v1.0__kimi-k3-fireworks__20260822` | FrontierHarness Eval v1 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| Codex | [codex](../../../assessments/codex.md) | `codex__harbor-swe-bench-verified-parity__o4-mini__20250701` | SWE-bench Verified via Terminal-Bench/Harbor parity | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| Codex | [codex](../../../assessments/codex.md) | `codex__terminal-bench-4.0.0__gpt-5.6-sol__20260826` | Terminal-Bench 4.0.0 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| Codex | [codex](../../../assessments/codex.md) | `codex__terminal-bench-4.0.0__gpt-5.6-terra__20260826` | Terminal-Bench 4.0.0 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| Hermes Agent | [hermes-agent](../../../assessments/hermes-agent.md) | `hermes-agent__claw-swe-bench-full-350__glm-5.1__20260717` | Claw-SWE-Bench | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| Hermes Agent | [hermes-agent](../../../assessments/hermes-agent.md) | `hermes-agent__claw-swe-bench-full-350__qwen-3.6-flash__20260717` | Claw-SWE-Bench | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| Hermes Agent | [hermes-agent](../../../assessments/hermes-agent.md) | `hermes-agent__frontierharness-v1.0__kimi-k3-fireworks__20260822` | FrontierHarness Eval v1 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| Hermes Agent | [hermes-agent](../../../assessments/hermes-agent.md) | `hermes-agent__pawbench-v1.0__qwen3.6-35b-a3b__20260529` | PawBench v1.0 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
 | KADATH | [kadath](../../../assessments/kadath.md) | `kadath-ten-epoch-native-evolution-2026` | KADATH operator-approved run-specific locked fitness benchmark | `longitudinal-population-evolution` | `first-party-reported` | `native-system` | [kadath.json](kadath.json) |
 | LLaMAR | [llamar](../../../assessments/llamar.md) | `llamar-agent-count-interference-mapthor-sar` | MAP-THOR / SAR | `native-disturbance-characterization` | `first-party-reported` | `native-system` | [llamar.json](llamar.json) |
 | LLaMAR | [llamar](../../../assessments/llamar.md) | `llamar-mapthor-module-ablation-gpt4v` | MAP-THOR | `native-mechanism-ablation` | `first-party-reported` | `native-system` | [llamar.json](llamar.json) |
@@ -17,8 +26,18 @@ Raw observations: **11**
 | Magentic-One | [autogen-agentchat](../../../assessments/autogen-agentchat.md) | `magentic-one-gpt4o-test-results` | GAIA; AssistantBench; WebArena | `system-outcome` | `first-party-reported` | `native-system` | [magentic-one.json](magentic-one.json) |
 | Magentic-One | [autogen-agentchat](../../../assessments/autogen-agentchat.md) | `magentic-one-simple-orchestrator-gaia-ablation` | GAIA | `native-mechanism-ablation` | `first-party-reported` | `native-system` | [magentic-one.json](magentic-one.json) |
 | Multi-Agent Orchestration Engine | [multi-agent-orchestration](../../../assessments/multi-agent-orchestration.md) | `multi-agent-orchestration-supervisor-ablation-2026-08` | Multi-Agent Orchestration supervisor ablation (54 scripted scenarios) | `native-mechanism-ablation` | `first-party-reported` | `native-system` | [multi-agent-orchestration.json](multi-agent-orchestration.json) |
+| oh-my-pi | [oh-my-pi](../../../assessments/oh-my-pi.md) | `oh-my-pi__frontierharness-v1.0__kimi-k3-fireworks__20260822` | FrontierHarness Eval v1 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| OpenClaw | [openclaw](../../../assessments/openclaw.md) | `openclaw__claw-swe-bench-full-350__glm-5.1__20260717` | Claw-SWE-Bench | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| OpenClaw | [openclaw](../../../assessments/openclaw.md) | `openclaw__claw-swe-bench-full-350__qwen-3.6-flash__20260717` | Claw-SWE-Bench | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| OpenClaw | [openclaw](../../../assessments/openclaw.md) | `openclaw__pawbench-v1.0__qwen3.6-35b-a3b__20260529` | PawBench v1.0 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| OpenCode | [opencode](../../../assessments/opencode.md) | `opencode__frontierharness-v1.0__kimi-k3-fireworks__20260822` | FrontierHarness Eval v1 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| OpenHands | [openhands](../../../assessments/openhands.md) | `openhands__harbor-swe-bench-verified-parity__claude-4-sonnet__20250808` | SWE-bench Verified via Terminal-Bench/Harbor parity | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| OpenHands | [openhands](../../../assessments/openhands.md) | `openhands__swe-bench-verified__claude-4-sonnet-20250514__20250524` | SWE-bench Verified | `system-benchmark-result` | `external-reproduced` | `native-system` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| Pi | [pi](../../../assessments/pi.md) | `pi__frontierharness-v1.0__kimi-k3-fireworks__20260822` | FrontierHarness Eval v1 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
+| QwenPaw | [qwenpaw](../../../assessments/qwenpaw.md) | `qwenpaw__pawbench-v1.0__qwen3.6-35b-a3b__20260529` | PawBench v1.0 | `system-benchmark-result` | `first-party-reported` | `adapter-preserved` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
 | Squad | [squad](../../../assessments/squad.md) | `squad-marble-aligned-coordination-ablation` | MARBLE aligned four-domain re-run | `native-mechanism-ablation` | `first-party-reported` | `native-system` | [squad.json](squad.json) |
 | Squad | [squad](../../../assessments/squad.md) | `squad-marble-completion-ablation` | MARBLE factorial ablation | `native-mechanism-ablation` | `first-party-reported` | `native-system` | [squad.json](squad.json) |
+| SWE-agent | [swe-agent](../../../assessments/swe-agent.md) | `swe-agent__swe-bench-verified__claude-4-sonnet-20250514__20250522` | SWE-bench Verified | `system-benchmark-result` | `external-reproduced` | `native-system` | [public-system-benchmarks.jsonl](public-system-benchmarks.jsonl) |
 | TheAppliedScientist | [appliedscientist](../../../assessments/appliedscientist.md) | `appliedscientist-iterative-review-2026-09` | AppliedScientist iterative reviewer-guided revision study (30 papers) | `iterative-review-revision-study` | `first-party-reported` | `native-system` | [appliedscientist.json](appliedscientist.json) |
 
 VSM-function relevance is intentionally absent from this generated registry. Derived/community interpretations reference the raw `observation_id` separately.
