@@ -9,9 +9,9 @@
   "closure_scope": "current-public-evidence",
   "full_cohort_review_artifact": "full-canonical-cohort-review.json",
   "full_cohort_state": {
-    "canonical_s5_positive_systems": 24,
+    "canonical_s5_positive_systems": 25,
     "direct_canonical_observations": 1,
-    "no_direct_public_result": 23,
+    "no_direct_public_result": 24,
     "unresolved": 0
   },
   "evidence_depth": {
@@ -99,7 +99,7 @@
       "blocking_reason": "Policy adaptation is measurable, but the evaluated system is not established as the legitimate ultimate organizational authority resolving an identity-level tension."
     }
   ],
-  "closure_claim": "Current public evidence contains one direct composed S5 benchmark family/observation and one canonical native direct descriptive observation. GovSim-SelfGovern exercises benchmark-scaffolded membership/identity authority, while canonical Ouroboros supplies a parent-governed constitutional/runtime policy-change witness with executable return and persistence into later canonical lineage. The S5 primary remains a gap because public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface. Full-cohort reconciliation now also covers canonical Surogates; its parent-governed rubric-refinement path remains mechanism evidence only because no immutable public Mission execution records an enacted amendment and subsequent operation under it. Full-cohort reconciliation now also covers canonical Chump; its operator-owned ribbon-only mission amendment is publicly recorded, but reviewed frozen history does not provide one immutable chain binding that amendment to subsequent fleet work selected and executed under the amended policy. Full-cohort reconciliation now also covers canonical Tandem; its owner/admin-governed versioned orchestration and GoalPolicy publication are strong mechanism evidence, but the frozen public repository exposes no immutable real-world policy-amendment-to-subsequent-operation chain.",
+  "closure_claim": "Current public evidence contains one direct composed S5 benchmark family/observation and one canonical native direct descriptive observation. GovSim-SelfGovern exercises benchmark-scaffolded membership/identity authority, while canonical Ouroboros supplies a parent-governed constitutional/runtime policy-change witness with executable return and persistence into later canonical lineage. The S5 primary remains a gap because public evidence still lacks a materially matched comparison of multiple canonical native or adapter-preserved S5 implementations under one comparable authority/change/subsequent-operation surface. Full-cohort reconciliation now also covers canonical Surogates; its parent-governed rubric-refinement path remains mechanism evidence only because no immutable public Mission execution records an enacted amendment and subsequent operation under it. Full-cohort reconciliation now also covers canonical Chump; its operator-owned ribbon-only mission amendment is publicly recorded, but reviewed frozen history does not provide one immutable chain binding that amendment to subsequent fleet work selected and executed under the amended policy. Full-cohort reconciliation now also covers canonical Tandem; its owner/admin-governed versioned orchestration and GoalPolicy publication are strong mechanism evidence, but the frozen public repository exposes no immutable real-world policy-amendment-to-subsequent-operation chain. Full-cohort reconciliation now also covers canonical GitHub Agentic Workflows; repository-owner runtime-loaded workflow instructions establish a strong parent-governed S5 mechanism, but the frozen public repository exposes no immutable owner-amendment-to-subsequent-run result chain.",
   "reopen_when": [
     "a second canonical native or adapter-preserved direct S5 observation appears under a materially comparable authority/change/subsequent-operation surface",
     "a materially matched benchmark compares two or more canonical-linkable S5 systems under the same authority/change/subsequent-operation protocol",

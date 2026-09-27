@@ -102,6 +102,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="lime"></a>[Lime](https://github.com/limecloud/lime) | 2025-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="maestro"></a>[Maestro](https://github.com/RunMaestro/Maestro) | 2025-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="cuga"></a>[CUGA](https://github.com/cuga-project/cuga-agent) | 2025-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="gh-aw"></a>[GitHub Agentic Workflows](https://github.com/github/gh-aw) | 2025-Q3 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
 | 5 | <a id="deepagentsjs"></a>[Deep Agents JS](https://github.com/langchain-ai/deepagentsjs) | 2025-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025-Q3 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 5 | <a id="continual-harness"></a>[Continual Harness](https://github.com/sethkarten/continual-harness) | 2025-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
