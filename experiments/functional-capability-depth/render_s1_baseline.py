@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the experimental S1 capability baseline from selection + raw evidence."""
+"""Render the experimental S1 capability baseline from selection + neutral raw evidence."""
 
 from __future__ import annotations
 
@@ -12,13 +12,15 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 SELECTION = HERE / "primary-baselines.json"
-OBSERVATIONS = HERE / "s1-system-benchmarks" / "observations.jsonl"
+PROJECTION = HERE / "s1-system-benchmarks" / "observations.jsonl"
+RAW_OBSERVATIONS = HERE / "system-observations" / "public-system-benchmarks.jsonl"
 OUTPUT = HERE / "S1-BASELINE.md"
 ASSESSMENTS = ROOT / "assessments"
 
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 FUNCTION_ORDER = ("S1", "S2", "S3", "S3*", "S4", "S5")
 ESTABLISHED_S1 = {"A", "C", "P", "A(P)", "C(P)"}
+RAW_PREFIX = "../system-observations/public-system-benchmarks.jsonl#"
 
 
 def fail(message: str) -> None:
@@ -50,26 +52,48 @@ def canonical(harness_id: str) -> dict[str, str]:
     return fields
 
 
-def load_observations() -> list[dict]:
+def load_jsonl(path: Path, id_key: str) -> list[dict]:
     rows: list[dict] = []
     seen: set[str] = set()
-    for lineno, raw in enumerate(
-        OBSERVATIONS.read_text(encoding="utf-8").splitlines(), start=1
-    ):
+    for lineno, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
         if not raw.strip():
             continue
         try:
             row = json.loads(raw)
         except json.JSONDecodeError as exc:
-            fail(f"observations.jsonl:{lineno}: {exc}")
-        rid = row.get("record_id")
+            fail(f"{path.name}:{lineno}: {exc}")
+        rid = row.get(id_key)
         if not isinstance(rid, str) or not rid:
-            fail(f"observations.jsonl:{lineno}: missing record_id")
+            fail(f"{path.name}:{lineno}: missing {id_key}")
         if rid in seen:
-            fail(f"duplicate observation record_id: {rid}")
+            fail(f"duplicate {id_key}: {rid}")
         seen.add(rid)
         rows.append(row)
     return rows
+
+
+def load_observations() -> list[dict]:
+    projections = load_jsonl(PROJECTION, "record_id")
+    raw_rows = load_jsonl(RAW_OBSERVATIONS, "observation_id")
+    raw_by_id = {row["observation_id"]: row for row in raw_rows}
+
+    selected: list[dict] = []
+    for projection in projections:
+        rid = projection["record_id"]
+        if projection.get("function") != "S1":
+            fail(f"{rid}: projection function must be S1")
+        if projection.get("raw_observation_ref") != RAW_PREFIX + rid:
+            fail(f"{rid}: projection raw_observation_ref drift")
+        raw = raw_by_id.get(rid)
+        if raw is None:
+            fail(f"{rid}: neutral raw observation missing")
+        selected.append(raw)
+
+    if len(selected) != len(raw_rows):
+        selected_ids = {row["observation_id"] for row in selected}
+        extras = sorted(set(raw_by_id) - selected_ids)
+        fail(f"neutral raw S1 corpus has unprojected rows: {extras}")
+    return selected
 
 
 def matching(
@@ -78,7 +102,7 @@ def matching(
     out: list[dict] = []
     for row in rows:
         benchmark = row.get("benchmark") or {}
-        observation = row.get("observation") or {}
+        observation = row.get("result") or {}
         comparison = row.get("comparison") or {}
         if benchmark.get("family_id") != family:
             continue
@@ -103,7 +127,7 @@ def expected_cell(
     candidates = matching(rows, family=family, model=model, scope=scope)
     by_harness: dict[str, list[dict]] = {}
     for row in candidates:
-        by_harness.setdefault(row.get("harness_id"), []).append(row)
+        by_harness.setdefault(row.get("canonical_harness_id"), []).append(row)
 
     selected: list[dict] = []
     for harness_id in harness_ids:
@@ -114,30 +138,30 @@ def expected_cell(
                 f"{harness_id}, found {len(matches)}"
             )
         selected.append(matches[0])
-    return sorted(selected, key=lambda row: row["harness_id"])
+    return sorted(selected, key=lambda row: row["canonical_harness_id"])
 
 
 def extra_cell(
     rows: list[dict], *, family: str, model: str, scope: str
 ) -> list[dict]:
     selected = matching(rows, family=family, model=model, scope=scope)
-    if len({row.get("harness_id") for row in selected}) < 2:
+    if len({row.get("canonical_harness_id") for row in selected}) < 2:
         fail(f"{family}/{model}/{scope}: additional matched evidence needs >=2 systems")
-    return sorted(selected, key=lambda row: row["harness_id"])
+    return sorted(selected, key=lambda row: row["canonical_harness_id"])
 
 
 def validate_row(row: dict) -> tuple[dict[str, str], dict, dict]:
-    harness_id = row.get("harness_id")
+    harness_id = row.get("canonical_harness_id")
     if not isinstance(harness_id, str) or not harness_id:
-        fail("matched observation missing harness_id")
+        fail("matched observation missing canonical_harness_id")
     fields = canonical(harness_id)
     if row.get("canonical_repository") != fields.get("repository"):
         fail(f"{harness_id}: canonical_repository drift")
-    if row.get("assessment_ref") != fields.get("review_ref"):
-        fail(f"{harness_id}: assessment_ref drift")
+    if row.get("canonical_review_ref") != fields.get("review_ref"):
+        fail(f"{harness_id}: canonical_review_ref drift")
 
-    observation = row.get("observation") or {}
-    identity = row.get("identity") or {}
+    observation = row.get("result") or {}
+    identity = row.get("published_implementation") or {}
     if identity.get("system_compatibility") not in {"native-system", "adapter-preserved"}:
         fail(f"{harness_id}: invalid system compatibility for baseline view")
     if identity.get("revision_match") not in {
@@ -194,7 +218,7 @@ def render_rows(rows: list[dict]) -> list[str]:
     ]
     for row in rows:
         fields, observation, identity = validate_row(row)
-        harness_id = row["harness_id"]
+        harness_id = row["canonical_harness_id"]
         lines.append(
             "| "
             + " | ".join(
@@ -274,7 +298,7 @@ def render() -> str:
     lines = [
         "# S1 Capability Baseline",
         "",
-        "Generated experimental projection from `primary-baselines.json`, canonical assessments, and `s1-system-benchmarks/observations.jsonl`.",
+        "Generated experimental projection from `primary-baselines.json`, canonical assessments, the derived `s1-system-benchmarks/observations.jsonl` membership view, and neutral raw `system-observations/public-system-benchmarks.jsonl` results.",
         "",
         "This is not a global harness ranking. Canonical VSM ownership and benchmark performance remain separate evidence layers. Rows are ordered by harness ID, never by score.",
         "",
