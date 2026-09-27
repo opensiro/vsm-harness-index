@@ -19,7 +19,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Apply neutral semantic-key cleanup
-        run: python .github/tmp_apply_neutral_semantic_cleanup_818.py
+        run: |
+          python .github/tmp_apply_neutral_semantic_cleanup_818.py
+          python .github/tmp_patch_tests_818.py
       - name: Validate neutral registry and S2/S3
         run: |
           python experiments/functional-capability-depth/system-observations/validate.py
@@ -39,6 +41,7 @@ jobs:
       - name: Remove assembler artifacts
         run: |
           rm .github/tmp_apply_neutral_semantic_cleanup_818.py
+          rm .github/tmp_patch_tests_818.py
           rm .github/workflows/tmp-neutral-semantic-cleanup-818.yml
       - name: Commit assembled transaction
         shell: bash
