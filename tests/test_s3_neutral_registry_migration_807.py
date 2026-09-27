@@ -2,6 +2,7 @@ from __future__ import annotations
 import json, subprocess, unittest
 from pathlib import Path
 
+# Immutable pre-migration snapshot: moved raw evidence must reconstruct exactly.
 ROOT=Path(__file__).resolve().parents[1]
 EXP=ROOT/"experiments"/"functional-capability-depth"
 REG=EXP/"system-observations"
