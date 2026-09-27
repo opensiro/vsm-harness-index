@@ -88,6 +88,8 @@ jobs:
               'exactly 23 current positive-S5 systems': 'exactly 24 current positive-S5 systems',
               '"canonical_s5_positive_systems": 23,': '"canonical_s5_positive_systems": 24,',
               '"no_direct_public_result": 22,': '"no_direct_public_result": 23,',
+              '"23-system canonical S5-positive cohort"': '"24-system canonical S5-positive cohort"',
+              'full current 23-system canonical S5 cohort reconciled': 'full current 24-system canonical S5 cohort reconciled',
           }
           for old, new in replacements.items():
               assert old in validator, old
