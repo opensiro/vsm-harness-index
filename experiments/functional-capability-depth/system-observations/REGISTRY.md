@@ -5,7 +5,7 @@ Status: **generated, experimental, non-normative**
 Generated from the raw JSON records in this directory by `render_registry.py`.
 Raw evidence payloads remain only in the raw record; this table is an identity/provenance projection, not a second result database.
 
-Raw observations: **46**
+Raw observations: **48**
 
 | System | Canonical harness | Observation | Evidence surface(s) | Kind | Provenance | Compatibility | Raw record |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -20,6 +20,7 @@ Raw observations: **46**
 | data-to-paper | [data-to-paper](../../../assessments/data-to-paper.md) | `data-to-paper-review-revision-2024` | Data-to-Paper reviewer-feedback-to-revision publication example | `operational-publication-witness` | `first-party-reported` | `native-system` | [data-to-paper-review-revision.json](data-to-paper-review-revision.json) |
 | Evo-Bench benchmark organization | — | `evo-bench-heldout-harness-evolution-2026` | Evo-Bench held-out harness-evolution study | `persistent-adaptation-study` | `external-reproduced` | `benchmark-scaffolded` | [evo-bench.json](evo-bench.json) |
 | EvoHarnessBench self-evolving benchmark organization | — | `evoharnessbench-self-evolving-adaptation-v2` | EvoHarnessBench self-evolving adaptation protocol | `persistent-adaptation-study` | `first-party-reported` | `benchmark-scaffolded` | [evoharnessbench.json](evoharnessbench.json) |
+| GovSim-SelfGovern benchmark society | — | `govsim-selfgovern-membership-authority-2026-09` | GovSim-SelfGovern | `membership-authority-study` | `first-party-reported` | `benchmark-scaffolded` | [govsim-selfgovern.json](govsim-selfgovern.json) |
 | Grit | — | `grit-synthetic-merge-contention-2026-04` | Grit synthetic merge-contention sweep | `native-mechanism-ablation` | `first-party-reported` | `native-system` | [grit.json](grit.json) |
 | harness-bench Pilot 4 | — | `harness-bench-pilot4-review-revise-reverify-2026-07` | harness-bench Pilot 4 planning-tier ablation | `system-benchmark-result` | `first-party-reported` | `benchmark-scaffolded` | [harness-bench-pilot4.json](harness-bench-pilot4.json) |
 | Hermes Agent | [hermes-agent](../../../assessments/hermes-agent.md) | `hermes-agent__claw-swe-bench-full-350__glm-5.1__20260717` | Claw-SWE-Bench | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [hermes-agent-benchmark-results-external-reproduced-adapter-preserved.json](hermes-agent-benchmark-results-external-reproduced-adapter-preserved.json) |
@@ -42,6 +43,7 @@ Raw observations: **46**
 | OpenCode | [opencode](../../../assessments/opencode.md) | `opencode__frontierharness-v1.0__kimi-k3-fireworks__20260822` | FrontierHarness Eval v1 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [opencode-benchmark-results-external-reproduced-adapter-preserved.json](opencode-benchmark-results-external-reproduced-adapter-preserved.json) |
 | OpenHands | [openhands](../../../assessments/openhands.md) | `openhands__harbor-swe-bench-verified-parity__claude-4-sonnet__20250808` | SWE-bench Verified via Terminal-Bench/Harbor parity | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [openhands-benchmark-results-external-reproduced-adapter-preserved.json](openhands-benchmark-results-external-reproduced-adapter-preserved.json) |
 | OpenHands | [openhands](../../../assessments/openhands.md) | `openhands__swe-bench-verified__claude-4-sonnet-20250514__20250524` | SWE-bench Verified | `system-benchmark-result` | `external-reproduced` | `native-system` | [openhands-benchmark-results-external-reproduced-native-system.json](openhands-benchmark-results-external-reproduced-native-system.json) |
+| Ouroboros | [ouroboros](../../../assessments/ouroboros.md) | `ouroboros-parent-governed-cyber-pro-policy-enactment-2026-09` | immutable-repository-history | `repository-history-policy-enactment-witness` | `first-party-reported` | `native-system` | [ouroboros-policy-enactment.json](ouroboros-policy-enactment.json) |
 | Pi | [pi](../../../assessments/pi.md) | `pi__frontierharness-v1.0__kimi-k3-fireworks__20260822` | FrontierHarness Eval v1 | `system-benchmark-result` | `external-reproduced` | `adapter-preserved` | [pi-benchmark-results-external-reproduced-adapter-preserved.json](pi-benchmark-results-external-reproduced-adapter-preserved.json) |
 | QwenPaw | [qwenpaw](../../../assessments/qwenpaw.md) | `qwenpaw__pawbench-v1.0__qwen3.6-35b-a3b__20260529` | PawBench v1.0 | `system-benchmark-result` | `first-party-reported` | `adapter-preserved` | [qwenpaw-benchmark-results-first-party-reported-adapter-preserved.json](qwenpaw-benchmark-results-first-party-reported-adapter-preserved.json) |
 | SkillEvolBench benchmark organization | — | `skillevolbench-frozen-deployment-protocol-2026` | SkillEvolBench frozen-deployment protocol | `persistent-adaptation-study` | `first-party-reported` | `benchmark-scaffolded` | [skillevolbench.json](skillevolbench.json) |
