@@ -253,6 +253,8 @@ Historical/current per-function primary-baseline work may continue as a **derive
 
 A function-level `gap` means only that the reviewed derived view does not currently support a selected matched canonical-harness primary for that function.
 
+S2-S5 gaps therefore remain gaps until public upstream or third-party evidence supports a valid derived primary; the neutral raw registry does not need to wait for that interpretation before preserving a system-linked result.
+
 It does **not** mean:
 
 - the function has zero capability;
