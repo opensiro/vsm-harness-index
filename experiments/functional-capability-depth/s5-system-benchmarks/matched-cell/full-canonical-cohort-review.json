@@ -3,7 +3,7 @@
   "status": "experimental-non-normative",
   "tracking_issue": 621,
   "reviewed_at": "2026-09-27",
-  "index_revision_at_review": "9c8540f221561178d9c36889776d23f6c31470f4",
+  "index_revision_at_review": "ba863eaf455fd9a272f15cfff80e840aa8a6de07",
   "scope": "full-current-canonical-s5-positive-cohort",
   "selection_rule": "All included canonical systems with autonomy_s5 in A, P, A(P), or C(P) at the reviewed Index revision; ? is not positive.",
   "direct_chain": [
@@ -14,9 +14,9 @@
     "newly decided policy returned into subsequent operation"
   ],
   "counts": {
-    "canonical_s5_positive_systems": 24,
+    "canonical_s5_positive_systems": 25,
     "direct_canonical_observations": 1,
-    "no_direct_public_result": 23,
+    "no_direct_public_result": 24,
     "unresolved": 0
   },
   "current_direct_anchor": "ouroboros",
@@ -260,8 +260,18 @@
       "blocking_gate": "owner-published-policy-amendment-subsequent-operation-result",
       "finding": "Tandem publicly establishes owner/admin-governed versioned orchestration and GoalPolicy publication, immutable published versions, and a runtime that consumes published definitions for later long-running goals. The frozen repository does not expose a concrete immutable real-world amendment or ratification event tied to a subsequent operation demonstrably governed by that changed policy; implementation paths and proof/test fixtures are mechanism evidence rather than a direct S5 result.",
       "reopen_when": "A public immutable Tandem runtime or repository-history record identifies a legitimate owner/admin orchestration or GoalPolicy amendment, the authoritative published version created by that decision, and a subsequent long-running goal or workflow operation explicitly executed under the changed version."
+    },
+    {
+      "canonical_harness_id": "gh-aw",
+      "repository": "https://github.com/github/gh-aw",
+      "canonical_review_revision": "ff2eccd10a30d6a7bfaf0da449194e907a206555",
+      "canonical_s5_state": "P",
+      "disposition": "no-direct-public-result",
+      "blocking_gate": "repository-owner-instruction-amendment-subsequent-operation-result",
+      "finding": "GitHub Agentic Workflows publicly establishes repository-owner authority over the authoritative Markdown workflow instructions and loads that body at runtime so later runs can consume amended purpose or policy. The frozen public repository does not publish an immutable real-world record binding a legitimate owner instruction amendment to a subsequent agentic workflow run demonstrably governed by the changed instructions; documentation, examples and tests remain mechanism evidence rather than a direct S5 result.",
+      "reopen_when": "A public immutable GitHub Agentic Workflows repository or run history identifies a legitimate repository-owner purpose or instruction amendment, the authoritative workflow source produced by that decision, and a subsequent agentic workflow run explicitly shown executing under the changed instructions."
     }
   ],
-  "conclusion": "The full current 24-system canonical S5-positive cohort has been explicitly reconciled against public evidence. Ouroboros remains the only admitted canonical direct S5 observation; the other 23 systems expose qualifying S5 mechanisms/ownership but no reviewed public direct result satisfying the full authority/change/subsequent-operation chain. The S5 primary therefore remains an evidence-backed gap.",
+  "conclusion": "The full current 25-system canonical S5-positive cohort has been explicitly reconciled against public evidence. Ouroboros remains the only admitted canonical direct S5 observation; the other 24 systems expose qualifying S5 mechanisms/ownership but no reviewed public direct result satisfying the full authority/change/subsequent-operation chain. The S5 primary therefore remains an evidence-backed gap.",
   "non_claim": "No-direct-public-result is a temporal evidence disposition, not a claim of zero S5 capability or permanent absence. Mechanism evidence remains valid canonical assessment evidence but is not promoted into a capability observation without an actual public result chain."
 }
