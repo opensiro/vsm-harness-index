@@ -1,64 +1,112 @@
-# Shared system benchmark observations
+# Shared benchmark ↔ system observations
 
 Status: experimental, non-normative.
 
-Issue introducing this layer: #403
+Issue introducing this layer: #403  
+Current neutral-registry boundary: #782  
+Registry contract: [`../BENCHMARK-SYSTEM-REGISTRY.md`](../BENCHMARK-SYSTEM-REGISTRY.md)
 
 ## Purpose
 
-Some published benchmark results are relevant to more than one VSM function-specific capability analysis. Raw benchmark metrics should not be copied independently into each function directory because that would create multiple manually maintained sources of truth.
+This directory is the neutral raw evidence layer for public benchmark results that can be linked to concrete harness/system identities.
 
-This directory therefore stores **raw published system/configuration observations without assigning them a VSM score**.
+The raw layer records:
 
-Function-specific layers may reference observation IDs and interpret them independently:
+```text
+public benchmark/result
+        ↓
+benchmark identity
+        ↓
+concrete harness/system identity
+        ↓
+raw result + provenance
+```
+
+It does **not** require OpenSiro to decide what VSM function the benchmark measures before the observation can be stored.
+
+Community/research interpretations may reference the same raw observation later:
 
 ```text
 published system observation
         ↓
 shared raw record
-        ├── S2 proxy projection
-        ├── S3 proxy projection
-        └── other future function-specific projection
+        ├── possible VSM-function interpretation
+        ├── domain interpretation
+        └── comparison/capability view
 ```
 
-The raw layer answers:
+Different interpretations may disagree without changing the underlying raw result.
+
+## The raw layer answers
 
 ```text
-what system/configuration was run?
-on what benchmark?
-with what metric/result/provenance?
-what ablation was performed?
+what benchmark/version was used?
+what concrete system/configuration was run?
+can that system be linked to a canonical Index harness?
+what model/configuration was used?
+what metric/result was published?
+who published it?
+where is the public source/artifact?
+how does the historical run relate to the current canonical revision?
+was the native system path preserved or benchmark-scaffolded?
+what comparison metadata/confounders are known?
 ```
 
-It does **not** answer:
+## The raw layer does not answer
 
 ```text
-which VSM function exists?
-who owns it?
-is the benchmark direct/proxy for a specific VSM function?
+which VSM function does the benchmark measure?
+is the result direct/proxy evidence for S1/S2/S3/S3*/S4/S5?
+is that interpretation persuasive enough to use in a capability argument?
 ```
 
-Those questions remain in canonical assessments and function-specific benchmark layers.
+Those are separate interpretation questions.
+
+Canonical assessment independently answers which VSM functions exist and who owns their closure. Benchmark results do not change canonical autonomy states.
 
 ## Boundary requirements
 
 Each raw record should preserve where possible:
 
-- published system name/version/revision;
-- relationship to a current canonical Index system;
+- benchmark family/version/variant/split;
+- published system name and benchmark display label;
+- canonical harness ID/repository when the public provenance supports the linkage;
+- benchmarked harness version/revision/configuration;
+- relationship to the current canonical Index revision;
 - exact model/configuration;
-- benchmark split and metric;
-- confidence interval/replication information;
-- publisher relation;
-- raw ablation definition;
-- revision/version mismatch between historical benchmarked system and current canonical assessment;
-- primary-source provenance;
-- explicit non-claims preventing causal over-interpretation.
+- metric and raw result;
+- task/replicate/confidence information where published;
+- publisher/source relation;
+- `native-system`, `adapter-preserved`, `benchmark-scaffolded`, or `unclear` compatibility where supportable;
+- comparison group/quality and known confounders;
+- adaptation/reset state where the public protocol establishes it;
+- primary-source and immutable-artifact provenance;
+- explicit non-claims preventing causal or historical over-interpretation.
 
-A historical first-party result may be linked to a current canonical system lineage, but it must not be presented as if the current pinned assessment revision itself was benchmarked.
+Unknown values remain unknown. Do not infer historical run metadata from current repository state.
+
+A benchmark display label alone is not enough to establish canonical system identity. A link should be backed by recoverable public evidence such as an adapter, submission metadata, exact version/revision, or first-party artifact.
 
 ## Source-of-truth rule
 
-A numeric result belongs in one raw observation record. Function-specific projection files should reference `observation_id` / `ablation_id` rather than copying benchmark metrics.
+A numeric result belongs in one raw observation record.
 
-This layer is experimental infrastructure, not a second canonical assessment database and not a leaderboard.
+Function-specific, domain-specific, or comparison views should reference `observation_id` / `ablation_id` instead of copying the benchmark metric.
+
+Existing records may contain historical interpretation notes introduced before #782. Those notes are not part of raw observation identity and must not be treated as canonical benchmark semantics. New raw admissions should keep VSM-function relevance in separate derived/community interpretation artifacts.
+
+## Relationship to existing function-specific experiment artifacts
+
+The existing S1–S5 benchmark maps, projections, coverage records, and primary-gap closures remain useful historical/derived research outputs from `functional-capability-depth`.
+
+They are **not** admission prerequisites for this raw registry.
+
+The direction after #782 is:
+
+```text
+raw benchmark ↔ system evidence first
+        ↓
+optional/revisable interpretation later
+```
+
+This layer is experimental evidence infrastructure, not a leaderboard, not a second canonical assessment database, and not a canonical taxonomy of benchmark meaning.
