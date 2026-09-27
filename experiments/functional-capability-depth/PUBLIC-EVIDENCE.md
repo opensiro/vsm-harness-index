@@ -12,7 +12,7 @@ This document defines the active public-evidence operating model for `functional
 
 The VSM Harness Index is an evidence index, not a benchmark operator. OpenSiro does not need to operate a harness benchmark, nor canonically decide what VSM function a benchmark measures, in order to preserve an otherwise valid public benchmark ↔ system observation.
 
-**OpenSiro does not run or reproduce benchmark experiments on assessed harnesses to create capability evidence for this experiment.** A public-evidence gap remains a gap until suitable upstream or third-party evidence exists.
+**Opensiro does not run or reproduce benchmark experiments on assessed harnesses to create capability evidence for this experiment.** A public-evidence gap remains a gap until suitable upstream or third-party evidence exists.
 
 Historical controlled-execution designs, preregistrations, fixtures, fake artifacts, and execution harnesses may remain under `experiments/` as research history. They are not an active admission path and must not be treated as capability observations.
 
