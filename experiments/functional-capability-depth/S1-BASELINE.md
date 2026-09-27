@@ -1,6 +1,6 @@
 # S1 Capability Baseline
 
-Generated experimental projection from `primary-baselines.json`, canonical assessments, and `s1-system-benchmarks/observations.jsonl`.
+Generated experimental projection from `primary-baselines.json`, canonical assessments, the derived `s1-system-benchmarks/observations.jsonl` membership view, and neutral raw `system-observations/public-system-benchmarks.jsonl` results.
 
 This is not a global harness ranking. Canonical VSM ownership and benchmark performance remain separate evidence layers. Rows are ordered by harness ID, never by score.
 
