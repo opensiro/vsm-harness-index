@@ -1,0 +1,57 @@
+name: Assemble S2 neutral-registry migration
+
+on:
+  push:
+    branches:
+      - experiment/s2-neutral-registry-migration-797
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experiment/s2-neutral-registry-migration-797
+          fetch-depth: 0
+
+      - name: Migrate quantitative S2 observations
+        run: python .github/scripts/s2_neutral_registry_migration_797.py
+
+      - name: Regenerate neutral registry
+        run: python experiments/functional-capability-depth/system-observations/render_registry.py
+
+      - name: Validate migration
+        run: |
+          python experiments/functional-capability-depth/system-observations/validate.py
+          python experiments/functional-capability-depth/system-observations/render_registry.py --check
+          python experiments/functional-capability-depth/s2-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_primary_search_closure.py
+          python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_matched_canonical_search.py
+          python experiments/functional-capability-depth/validate_synthesis.py
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+
+      - name: Remove one-shot assembler and commit
+        shell: bash
+        run: |
+          rm .github/workflows/s2-neutral-registry-migration-797.yml
+          rm .github/scripts/s2_neutral_registry_migration_797.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            experiments/functional-capability-depth/system-observations/REGISTRY.md \
+            experiments/functional-capability-depth/system-observations/registry.psv \
+            experiments/functional-capability-depth/system-observations/nool-fleet-coordination.json \
+            experiments/functional-capability-depth/system-observations/specification-gap.json \
+            experiments/functional-capability-depth/system-observations/codecrdt.json \
+            experiments/functional-capability-depth/system-observations/grit.json \
+            experiments/functional-capability-depth/s2-system-benchmarks/observations.json \
+            experiments/functional-capability-depth/s2-system-benchmarks/validate.py \
+            tests/test_s2_neutral_registry_migration_797.py \
+            .github/workflows/s2-neutral-registry-migration-797.yml \
+            .github/scripts/s2_neutral_registry_migration_797.py
+          git commit -m 'experiment: migrate quantitative S2 evidence to neutral registry'
+          git push origin HEAD:experiment/s2-neutral-registry-migration-797
