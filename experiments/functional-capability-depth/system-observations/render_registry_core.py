@@ -42,6 +42,7 @@ FORBIDDEN_VSM_KEYS = {
     "vsm_interpretation",
     "function_interpretation",
     "mixed_function_caveat",
+    "aggregate_s3star_metric_reported",
     "canonical_state_at_review",
     "canonical_states_at_review",
     "canonical_system_eligible",

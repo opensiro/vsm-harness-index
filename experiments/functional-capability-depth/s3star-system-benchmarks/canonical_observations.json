@@ -19,6 +19,7 @@
     "benchmark_id": "data-to-paper-review-revision",
     "observation_id": "data-to-paper-review-revision-2024",
     "canonical_harness_id": "data-to-paper",
-    "raw_observation_ref": "../system-observations/data-to-paper-review-revision.json#data-to-paper-review-revision-2024"
+    "raw_observation_ref": "../system-observations/data-to-paper-review-revision.json#data-to-paper-review-revision-2024",
+    "aggregate_s3star_metric_reported": false
   }
 ]

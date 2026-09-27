@@ -21,7 +21,6 @@
       "comparison_class": "descriptive-only",
       "published_example_count": 1,
       "published_example_reference": "Figure 2B / Supplementary Run A5",
-      "aggregate_s3star_metric_reported": false,
       "metric_note": "The publication demonstrates native reviewer-feedback-to-revision closure but does not report an aggregate S3*-specific detection, correction, or re-verification score for this loop.",
       "audit_loop": [
         "the performer conversation creates a current research product",
