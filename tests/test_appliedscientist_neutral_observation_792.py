@@ -67,7 +67,11 @@ class AppliedScientistNeutralObservation792Tests(unittest.TestCase):
             "publication-system-lineage-run-revision-unbound",
         )
         self.assertIn("does not expose an exact Git revision", self.raw["published_implementation"]["note"])
-        self.assertIn("does not bind", self.observation["provenance_limitation"])
+        self.assertIn(
+            "does not expose an explicit repository URL binding",
+            self.observation["provenance_limitation"],
+        )
+        self.assertIn("not independently reproduced", self.observation["provenance_limitation"])
 
     def test_function_specific_file_is_only_a_derived_link(self) -> None:
         self.assertEqual(
