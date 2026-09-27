@@ -56,7 +56,6 @@
           "balance": 0.82
         }
       ],
-      "function_interpretation": "The Planner plus whole-team progress/completion feedback are part of LLaMAR's canonical S3 current-control path. The published module ablation therefore provides native S3-relevant capability evidence, but the arms also change Corrector/Verifier mechanisms and the benchmark measures broad end-task outcomes rather than S3 current-control directly.",
       "non_claim": "These module-ablation results are proxy evidence. They do not isolate a pure S3 causal effect, do not quantify S3 capability as a scalar, and do not establish canonical S3=A, which is determined independently from repository evidence."
     },
     {
@@ -79,7 +78,6 @@
         {"agents": 5, "success_rate": 0.74, "transport_rate": 0.96, "coverage": 1.0, "balance": 0.73}
       ],
       "reported_disturbance": "The paper attributes the MAP-THOR success/transport decline from three to four/five agents to crowded rooms causing agents to block navigation and collide with one another; the roomier SAR environment does not show the same decline.",
-      "function_interpretation": "This independently corroborates the concrete inter-S1 physical-interference disturbance used by the canonical S2 assessment.",
       "non_claim": "The agent-count comparison does not disable or enable LLaMAR's native anti-blocking coordination relation and therefore is not an S2 attenuation treatment or direct S2 capability observation."
     }
   ]

@@ -28,6 +28,7 @@
     "boundary_class": "composed-supervised-mas",
     "benchmark_fit": "direct",
     "vsm_interpretation": "At the declared composed SMAS boundary, SupervisorAgent performs whole-system inside-and-now regulation: it observes current interaction state, selects a corrective/control intervention and returns that intervention into subsequent operation. That makes the published base-versus-SMAS result direct composed S3 capability evidence. Because the supervisor is externally composed around the base MAS and the intervention repertoire is mixed, this observation is non-canonical and cannot select a canonical S3 primary baseline.",
+    "mixed_function_caveat": "The full SMAS action repertoire includes verification-like intervention in addition to current-control guidance, correction and observation purification. The aggregate base-versus-SMAS result therefore demonstrates capability of the composed supervised organization but is not claimed as an isolated S3-only causal effect.",
     "observation_id": "supervisoragent-smas-gaia-pass1-2026",
     "canonical_harness_id": null,
     "raw_observation_ref": "../system-observations/supervisoragent-smas.json#supervisoragent-smas-gaia-pass1-2026"
