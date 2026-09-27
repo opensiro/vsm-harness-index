@@ -297,3 +297,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 282|surogates|Surogates|https://github.com/invergent-ai/surogates|2026-04-09T10:41:06Z|index-addition|4069e5ad736f1b21584543f734c9481193bcde65|2026-09-27
 283|chump|Chump|https://github.com/repairman29/chump|2026-03-10T20:57:54Z|index-addition|724c8ebe1911e986cc8af6883b6f05acd096d437|2026-09-27
 284|tandem|Tandem|https://github.com/frumu-ai/tandem|2026-01-17T16:27:57Z|index-addition|3ee2d83d76497565680538ef00f1616f55650524|2026-09-27
+285|gh-aw|GitHub Agentic Workflows|https://github.com/github/gh-aw|2025-08-12T17:40:41Z|index-addition|ff2eccd10a30d6a7bfaf0da449194e907a206555|2026-09-27

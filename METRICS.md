@@ -6,11 +6,11 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 
 | Metric | Value | Definition |
 | --- | ---: | --- |
-| Included standalone assessments | 266 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
-| Canonical assessment records | 284 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
+| Included standalone assessments | 267 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
+| Canonical assessment records | 285 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
 | Canonical exclusions | 18 | Completed assessments with `status: excluded-no-agentic-vsm`. |
 | Proposed intake assessments | 1 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
-| Catalog entries | 284 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
+| Catalog entries | 285 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
 | Catalog entries without an included assessment | 18 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
 | Reassessment events | 81 | Recorded events in `data/reassessment-history.psv`. |
 | Full-A assessments | 1 | Included assessments whose base state is autonomous across S1, S2, S3, S3*, S4 and S5. `A(P)` counts as autonomous coverage. |
@@ -25,10 +25,10 @@ Milestones count included completed standalone assessments only. They are corpus
 
 | Target | Status | Progress |
 | ---: | --- | ---: |
-| 100 | Achieved | Achieved (current corpus: 266) |
-| 250 | Achieved | Achieved (current corpus: 266) |
-| 500 | Next | 266/500 (53.2%) |
-| 1000 | Planned | 266/1000 (26.6%) |
+| 100 | Achieved | Achieved (current corpus: 267) |
+| 250 | Achieved | Achieved (current corpus: 267) |
+| 500 | Next | 267/500 (53.4%) |
+| 1000 | Planned | 267/1000 (26.7%) |
 
 ## Machine-readable view
 
