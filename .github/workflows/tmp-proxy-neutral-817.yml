@@ -1,0 +1,54 @@
+name: tmp proxy neutral ownership 817
+
+on:
+  push:
+    branches:
+      - experiment/proxy-neutral-ownership-817
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply proxy neutral-ownership cleanup
+        run: python .github/tmp_apply_proxy_neutral_817.py
+      - name: Validate S2/S3 and synthesis
+        run: |
+          python experiments/functional-capability-depth/system-observations/validate.py
+          python experiments/functional-capability-depth/system-observations/render_registry.py --check
+          python experiments/functional-capability-depth/s2-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_primary_search_closure.py
+          python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_matched_canonical_search.py
+          python experiments/functional-capability-depth/s3-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s3-system-benchmarks/matched-cell/validate_s3_primary_search_closure.py
+          python experiments/functional-capability-depth/s3-system-benchmarks/matched-cell/validate_s3_matched_canonical_search.py
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+          python experiments/functional-capability-depth/render_evidence_frontier.py --check
+          python experiments/functional-capability-depth/validate_synthesis.py
+          python scripts/check_index.py
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Remove assembler artifacts
+        run: |
+          rm .github/tmp_apply_proxy_neutral_817.py
+          rm .github/workflows/tmp-proxy-neutral-817.yml
+      - name: Commit assembled transaction
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No assembled changes"
+            exit 1
+          fi
+          git commit -m "experiment: normalize S2/S3 proxy evidence ownership"
+          git push
