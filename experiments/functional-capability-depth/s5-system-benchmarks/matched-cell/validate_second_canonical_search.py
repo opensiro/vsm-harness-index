@@ -47,6 +47,33 @@ def frontmatter(path: Path) -> dict[str, str]:
     raise SystemExit(f"unterminated assessment frontmatter: {path}")
 
 
+
+
+def hydrate_canonical_projection(link: dict) -> dict:
+    oid = link.get("observation_id")
+    ref = link.get("raw_observation_ref")
+    prefix = "../system-observations/"
+    require(isinstance(oid, str) and oid, "S5 canonical projection requires observation_id")
+    require(isinstance(ref, str) and ref.startswith(prefix) and "#" in ref, f"{oid}: invalid raw_observation_ref")
+    rel, ref_oid = ref[len(prefix):].rsplit("#", 1)
+    require(ref_oid == oid and rel.endswith(".json") and "/" not in rel, f"{oid}: raw_observation_ref drift")
+    raw_path = EXPERIMENT / "system-observations" / rel
+    require(raw_path.is_file(), f"{oid}: neutral raw record missing: {rel}")
+    record = load(raw_path)
+    matches = [row for row in record.get("observations", []) if row.get("observation_id") == oid]
+    require(len(matches) == 1, f"{oid}: expected exactly one neutral raw observation in {rel}")
+    effective = dict(link)
+    for key, value in matches[0].items():
+        if key in {"observation_id", "kind"}:
+            continue
+        require(key not in effective or effective[key] == value, f"{oid}: derived/raw field conflict: {key}")
+        effective[key] = value
+    effective["evidence_source_class"] = record.get("evidence_source_class")
+    effective["system_compatibility"] = (record.get("published_implementation") or {}).get("system_compatibility")
+    effective["primary_sources"] = record.get("primary_sources")
+    effective["canonical_review_revision"] = record.get("canonical_review_ref")
+    return effective
+
 search = load(SEARCH_PATH)
 coverage = load(COVERAGE_PATH)
 canonical = load(CANONICAL_OBSERVATIONS_PATH)
@@ -78,7 +105,7 @@ require(
 
 require(len(canonical) == 1, "second-canonical search assumes exactly one admitted canonical S5 observation")
 anchor = search["current_anchor"]
-observation = canonical[0]
+observation = hydrate_canonical_projection(canonical[0])
 for field in (
     "canonical_harness_id",
     "canonical_review_revision",

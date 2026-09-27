@@ -99,10 +99,52 @@ def frontmatter(path: Path) -> dict[str, str]:
     fail(f"unterminated frontmatter: {path}")
 
 
+
+def hydrate_s5_projection(link: dict) -> dict:
+    oid = link.get("observation_id")
+    ref = link.get("raw_observation_ref")
+    prefix = "../system-observations/"
+    if not isinstance(oid, str) or not oid:
+        fail("S5 projection requires observation_id")
+    if not isinstance(ref, str) or not ref.startswith(prefix) or "#" not in ref:
+        fail(f"{oid}: invalid raw_observation_ref")
+    rel, ref_oid = ref[len(prefix):].rsplit("#", 1)
+    if ref_oid != oid or not rel.endswith(".json") or "/" in rel:
+        fail(f"{oid}: raw_observation_ref drift")
+    raw_path = HERE.parent / "system-observations" / rel
+    if not raw_path.is_file():
+        fail(f"{oid}: neutral raw record missing: {rel}")
+    record = json.loads(raw_path.read_text(encoding="utf-8"))
+    matches = [row for row in record.get("observations", []) if row.get("observation_id") == oid]
+    if len(matches) != 1:
+        fail(f"{oid}: expected exactly one neutral raw observation in {rel}")
+    effective = dict(link)
+    for key, value in matches[0].items():
+        if key in {"observation_id", "kind"}:
+            continue
+        if key in effective and effective[key] != value:
+            fail(f"{oid}: derived/raw field conflict: {key}")
+        effective[key] = value
+    effective["evidence_source_class"] = record.get("evidence_source_class")
+    effective["system_compatibility"] = (record.get("published_implementation") or {}).get("system_compatibility")
+    effective["primary_sources"] = record.get("primary_sources")
+    if (record.get("published_implementation") or {}).get("code_revision_status") is not None:
+        effective["code_revision_status"] = record["published_implementation"]["code_revision_status"]
+    if (record.get("published_implementation") or {}).get("paper_version") is not None:
+        effective["paper_version"] = record["published_implementation"]["paper_version"]
+    raw_harness = record.get("canonical_harness_id")
+    if effective.get("canonical_harness_id") != raw_harness:
+        fail(f"{oid}: canonical_harness_id raw/derived drift")
+    if raw_harness:
+        effective["canonical_review_revision"] = record.get("canonical_review_ref")
+    return effective
+
 def main() -> None:
     coverage = json.loads(COVERAGE_PATH.read_text(encoding="utf-8"))
-    benchmark_observations = json.loads(BENCHMARK_OBSERVATIONS_PATH.read_text(encoding="utf-8"))
-    canonical_observations = json.loads(CANONICAL_OBSERVATIONS_PATH.read_text(encoding="utf-8"))
+    benchmark_links = json.loads(BENCHMARK_OBSERVATIONS_PATH.read_text(encoding="utf-8"))
+    canonical_links = json.loads(CANONICAL_OBSERVATIONS_PATH.read_text(encoding="utf-8"))
+    benchmark_observations = [hydrate_s5_projection(row) for row in benchmark_links]
+    canonical_observations = [hydrate_s5_projection(row) for row in canonical_links]
     benchmark_map = json.loads(MAP_PATH.read_text(encoding="utf-8"))
     baselines = json.loads(BASELINES_PATH.read_text(encoding="utf-8"))
 
