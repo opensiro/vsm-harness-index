@@ -43,7 +43,7 @@ class SystemObservationRegistryTests(unittest.TestCase):
         self.assertIn("observation_id", fields)
         self.assertIn("system_name", fields)
         self.assertIn("canonical_harness_id", fields)
-        self.assertIn("benchmark_labels", fields)
+        self.assertIn("evidence_surfaces", fields)
         self.assertIn("evidence_source_class", fields)
         self.assertIn("system_compatibility", fields)
 
@@ -58,7 +58,7 @@ class SystemObservationRegistryTests(unittest.TestCase):
             "observation_id",
             "system_name",
             "canonical_harness_id",
-            "benchmark_labels",
+            "evidence_surfaces",
             "kind",
             "evidence_source_class",
             "system_compatibility",

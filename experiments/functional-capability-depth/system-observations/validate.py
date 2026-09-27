@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the neutral public benchmark <-> system observation registry."""
+"""Validate the neutral public-evidence <-> system observation registry."""
 
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ def main() -> None:
     compatibility = Counter(row.system_compatibility for row in rows)
     canonical_rows = sum(bool(row.canonical_harness_id) for row in rows)
 
-    print("ok: neutral benchmark-system registry validated")
+    print("ok: neutral public-evidence system registry validated")
     print(f"raw observations: {len(rows)}")
     print(f"systems: {len(systems)}")
     print(f"canonical-linked observations: {canonical_rows}")

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-27",
+  "evidence_source_class": "first-party-reported",
+  "system_name": "thClaws",
+  "canonical_harness_id": "thclaws",
+  "canonical_assessment_ref": "assessments/thclaws.md",
+  "canonical_review_ref": "cd700937a71a391f052438d139b7b1c5a6456755",
+  "canonical_states_at_review": {
+    "S2": "A"
+  },
+  "published_implementation": {
+    "system_compatibility": "native-system",
+    "source_revision": "cd700937a71a391f052438d139b7b1c5a6456755",
+    "historical_relation": "The cited incidents, hardening commits, assessed runtime source and later Agent Teams reports are preserved as one first-party operational evidence lineage; the raw record does not assign VSM-function meaning."
+  },
+  "primary_sources": [
+    "https://github.com/thClaws/thClaws/commit/a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
+    "https://github.com/thClaws/thClaws/issues/125",
+    "https://github.com/thClaws/thClaws/commit/db0efe8a6f5ba49da0bafeba84ae4835a09a946b",
+    "https://github.com/thClaws/thClaws/blob/cd700937a71a391f052438d139b7b1c5a6456755/crates/core/src/tools/bash.rs",
+    "https://github.com/thClaws/thClaws/issues/200",
+    "https://github.com/thClaws/thClaws/issues/202"
+  ],
+  "observations": [
+    {
+      "observation_id": "thclaws-team-workspace-interference-attenuation-2026",
+      "kind": "operational-history-witness",
+      "evidence_surface": "immutable first-party release, issue, commit and assessed-runtime history plus later first-party Agent Teams operational reports",
+      "comparison_class": "descriptive-only",
+      "operational_commits": [
+        "a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
+        "db0efe8a6f5ba49da0bafeba84ae4835a09a946b"
+      ],
+      "operational_issues": [
+        125,
+        200,
+        202
+      ],
+      "observed_events": [
+        "First-party history records a cross-branch hard reset wiping another teammate worktree and destructive workspace operations terminating teammate worktrees/processes.",
+        "The assessed runtime applies role-specific command guards before shell execution and includes bounded retry handling for the shared git index-lock race.",
+        "Later first-party Agent Teams reports show teammates booting, changing status, exchanging mailbox messages, and participating in task and shutdown lifecycle."
+      ],
+      "comparison_limitation": "This is descriptive canonical direct evidence from operational history and first-party runtime behavior, not a matched benchmark comparison or a causal numeric uplift estimate. The incident/guard and index-race paths are concrete S2 attenuation evidence but do not make thClaws materially matched to Squad or any external benchmark family."
+    }
+  ]
+}

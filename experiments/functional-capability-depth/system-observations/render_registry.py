@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the neutral benchmark <-> system observation registry from raw JSON records."""
+"""Render the neutral public-evidence <-> system observation registry from raw JSON records."""
 
 from __future__ import annotations
 
@@ -42,7 +42,7 @@ class RegistryRow:
     system_name: str
     canonical_harness_id: str
     canonical_assessment_ref: str
-    benchmark_labels: str
+    evidence_surfaces: str
     kind: str
     evidence_source_class: str
     system_compatibility: str
@@ -64,7 +64,7 @@ def _raw_paths() -> list[Path]:
     )
 
 
-def _benchmarks(observation: dict, record_ref: str) -> list[str]:
+def _evidence_surfaces(observation: dict, record_ref: str) -> list[str]:
     labels: list[str] = []
 
     benchmark = observation.get("benchmark")
@@ -93,13 +93,34 @@ def _benchmarks(observation: dict, record_ref: str) -> list[str]:
                 )
             labels.append(label.strip())
 
+    evidence_surface = observation.get("evidence_surface")
+    if evidence_surface is not None:
+        if not isinstance(evidence_surface, str) or not evidence_surface.strip():
+            raise RegistryError(
+                f"{record_ref}:{observation.get('observation_id')}: evidence_surface must be a non-empty string"
+            )
+        labels.append(evidence_surface.strip())
+
+    evidence_surfaces = observation.get("evidence_surfaces")
+    if evidence_surfaces is not None:
+        if not isinstance(evidence_surfaces, list) or not evidence_surfaces:
+            raise RegistryError(
+                f"{record_ref}:{observation.get('observation_id')}: evidence_surfaces must be a non-empty list"
+            )
+        for surface in evidence_surfaces:
+            if not isinstance(surface, str) or not surface.strip():
+                raise RegistryError(
+                    f"{record_ref}:{observation.get('observation_id')}: evidence_surfaces entries must be non-empty strings"
+                )
+            labels.append(surface.strip())
+
     unique: list[str] = []
     for label in labels:
         if label not in unique:
             unique.append(label)
     if not unique:
         raise RegistryError(
-            f"{record_ref}:{observation.get('observation_id')}: no benchmark identity is recoverable"
+            f"{record_ref}:{observation.get('observation_id')}: no public evidence-surface identity is recoverable"
         )
     return unique
 
@@ -197,13 +218,13 @@ def collect_rows() -> list[RegistryRow]:
             if not isinstance(kind, str) or not kind.strip():
                 raise RegistryError(f"{record_ref}:{observation_id}: kind must be a non-empty string")
 
-            benchmarks = _benchmarks(observation, record_ref)
+            surfaces = _evidence_surfaces(observation, record_ref)
             for value in (
                 observation_id,
                 system_name,
                 canonical_harness_id,
                 canonical_assessment_ref or "",
-                "; ".join(benchmarks),
+                "; ".join(surfaces),
                 kind,
                 source_class,
                 compatibility,
@@ -220,7 +241,7 @@ def collect_rows() -> list[RegistryRow]:
                     system_name=system_name.strip(),
                     canonical_harness_id=canonical_harness_id,
                     canonical_assessment_ref=canonical_assessment_ref or "",
-                    benchmark_labels="; ".join(benchmarks),
+                    evidence_surfaces="; ".join(surfaces),
                     kind=kind.strip(),
                     evidence_source_class=source_class,
                     system_compatibility=compatibility,
@@ -239,7 +260,7 @@ def render_psv(rows: list[RegistryRow]) -> str:
             "observation_id",
             "system_name",
             "canonical_harness_id",
-            "benchmark_labels",
+            "evidence_surfaces",
             "kind",
             "evidence_source_class",
             "system_compatibility",
@@ -252,7 +273,7 @@ def render_psv(rows: list[RegistryRow]) -> str:
                 row.observation_id,
                 row.system_name,
                 row.canonical_harness_id,
-                row.benchmark_labels,
+                row.evidence_surfaces,
                 row.kind,
                 row.evidence_source_class,
                 row.system_compatibility,
@@ -268,16 +289,16 @@ def _escape_md(value: str) -> str:
 
 def render_markdown(rows: list[RegistryRow]) -> str:
     lines = [
-        "# Benchmark ↔ system observation registry",
+        "# Public evidence ↔ system observation registry",
         "",
         "Status: **generated, experimental, non-normative**",
         "",
         "Generated from the raw JSON records in this directory by `render_registry.py`.",
-        "Numeric benchmark payloads remain only in the raw record; this table is an identity/provenance projection, not a second result database.",
+        "Raw evidence payloads remain only in the raw record; this table is an identity/provenance projection, not a second result database.",
         "",
         f"Raw observations: **{len(rows)}**",
         "",
-        "| System | Canonical harness | Observation | Benchmark surface(s) | Kind | Provenance | Compatibility | Raw record |",
+        "| System | Canonical harness | Observation | Evidence surface(s) | Kind | Provenance | Compatibility | Raw record |",
         "| --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for row in rows:
@@ -295,7 +316,7 @@ def render_markdown(rows: list[RegistryRow]) -> str:
                     _escape_md(row.system_name),
                     harness,
                     f"`{_escape_md(row.observation_id)}`",
-                    _escape_md(row.benchmark_labels),
+                    _escape_md(row.evidence_surfaces),
                     f"`{_escape_md(row.kind)}`",
                     f"`{_escape_md(row.evidence_source_class)}`",
                     f"`{_escape_md(row.system_compatibility)}`",
@@ -343,7 +364,7 @@ def main() -> None:
 
     PSV_PATH.write_text(psv, encoding="utf-8")
     MARKDOWN_PATH.write_text(markdown, encoding="utf-8")
-    print(f"rendered {len(rows)} neutral benchmark-system observations")
+    print(f"rendered {len(rows)} neutral public-evidence system observations")
 
 
 if __name__ == "__main__":

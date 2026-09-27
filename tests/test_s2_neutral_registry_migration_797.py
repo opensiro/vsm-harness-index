@@ -91,13 +91,22 @@ class S2NeutralRegistryMigration797Tests(unittest.TestCase):
         self.assertIsNone(record["canonical_harness_id"])
         self.assert_neutral(record, raw)
 
-    def test_descriptive_nonbenchmark_witnesses_remain_function_specific(self) -> None:
+    def test_descriptive_nonbenchmark_witnesses_reference_neutral_operational_records(self) -> None:
         squad = by_id(self.derived, "squad-shared-state-conflict-attenuation-2026-03")
         thclaws = by_id(self.derived, "thclaws-team-workspace-interference-attenuation-2026")
-        self.assertNotIn("raw_observation_ref", squad)
-        self.assertNotIn("raw_observation_ref", thclaws)
+        self.assertEqual(
+            squad["raw_observation_ref"],
+            "../system-observations/squad-operational-history.json#squad-shared-state-conflict-attenuation-2026-03",
+        )
+        self.assertEqual(
+            thclaws["raw_observation_ref"],
+            "../system-observations/thclaws-operational-history.json#thclaws-team-workspace-interference-attenuation-2026",
+        )
         self.assertIsNone(squad.get("benchmark_id"))
         self.assertIsNone(thclaws.get("benchmark_id"))
+        for row in (squad, thclaws):
+            self.assertNotIn("evidence_surface", row)
+            self.assertNotIn("operational_commits", row)
 
 
 if __name__ == "__main__":

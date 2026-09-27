@@ -1,4 +1,4 @@
-observation_id|system_name|canonical_harness_id|benchmark_labels|kind|evidence_source_class|system_compatibility|record_ref
+observation_id|system_name|canonical_harness_id|evidence_surfaces|kind|evidence_source_class|system_compatibility|record_ref
 a-evolve-harness-updating-2026|A-Evolve|a-evolve|A-Evolve harness-evolution study: SWE-bench Verified / MCP-Atlas / SkillsBench|persistent-harness-update-study|first-party-reported|native-system|a-evolve.json
 codecrdt-parallel-convergence-2025-10|CodeCRDT||CodeCRDT sequential-versus-parallel evaluation|native-system-outcome-study|first-party-reported|native-system|codecrdt.json
 grit-synthetic-merge-contention-2026-04|Grit||Grit synthetic merge-contention sweep|native-mechanism-ablation|first-party-reported|native-system|grit.json
@@ -12,5 +12,7 @@ multi-agent-orchestration-supervisor-ablation-2026-08|Multi-Agent Orchestration 
 nool-trackd-scaleup1-contention-2026-08-21|Nool fleet coordination benchmark organization||Nool coding-agent fleet coordination benchmark — Track D scale-up 1|benchmark-defined-coordination-ablation|first-party-reported|benchmark-scaffolded|nool-fleet-coordination.json
 squad-marble-aligned-coordination-ablation|Squad|squad|MARBLE aligned four-domain re-run|native-mechanism-ablation|first-party-reported|native-system|squad.json
 squad-marble-completion-ablation|Squad|squad|MARBLE factorial ablation|native-mechanism-ablation|first-party-reported|native-system|squad.json
+squad-shared-state-conflict-attenuation-2026-03|Squad|squad|immutable first-party repository history plus first-party public operational case study|operational-history-witness|first-party-reported|native-system|squad-operational-history.json
+thclaws-team-workspace-interference-attenuation-2026|thClaws|thclaws|immutable first-party release, issue, commit and assessed-runtime history plus later first-party Agent Teams operational reports|operational-history-witness|first-party-reported|native-system|thclaws-operational-history.json
 specification-gap-recovery-2026-03|The Specification Gap benchmark organization||The Specification Gap / AmbigClass 2×2 conflict-recovery experiment|benchmark-defined-coordination-ablation|first-party-reported|benchmark-scaffolded|specification-gap.json
 appliedscientist-iterative-review-2026-09|TheAppliedScientist|appliedscientist|AppliedScientist iterative reviewer-guided revision study (30 papers)|iterative-review-revision-study|first-party-reported|native-system|appliedscientist.json
