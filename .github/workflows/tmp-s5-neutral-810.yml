@@ -20,7 +20,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Migrate S5 evidence
-        run: python scripts/tmp_migrate_s5_neutral_810.py
+        run: |
+          python scripts/tmp_migrate_s5_neutral_810.py
+          python scripts/tmp_fix_s5_hydration_810.py
       - name: Regenerate neutral registry
         run: python experiments/functional-capability-depth/system-observations/render_registry.py
       - name: Validate neutral registry
@@ -42,6 +44,7 @@ jobs:
       - name: Remove assembler artifacts
         run: |
           rm scripts/tmp_migrate_s5_neutral_810.py
+          rm scripts/tmp_fix_s5_hydration_810.py
           rm .github/workflows/tmp-s5-neutral-810.yml
       - name: Commit assembled transaction
         run: |
