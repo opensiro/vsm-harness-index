@@ -6,9 +6,6 @@
   "canonical_harness_id": "squad",
   "canonical_assessment_ref": "assessments/squad.md",
   "canonical_review_ref": "2099faf51c08a912c359209447011b06decf0565",
-  "canonical_states_at_review": {
-    "S2": "A"
-  },
   "published_implementation": {
     "benchmark_repository": "tamirdresher/squad-marble-benchmark",
     "benchmark_ref": "f539d22557827292a664572536ca909ccbb4f8dc",

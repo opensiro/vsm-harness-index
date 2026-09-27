@@ -49,7 +49,12 @@ class NeutralRegistryBootstrap790Tests(unittest.TestCase):
         self.assertEqual(raw["supervisor_arm"]["scenarios_passed"], 48)
         self.assertEqual(raw["reported_completion_gain_percentage_points"], 68.5)
         self.assertEqual(raw["reported_routing_accuracy_gain_percentage_points"], 43.3333)
-        self.assertEqual(record["canonical_review_ref"], derived["canonical_review_revision"])
+        self.assertNotIn("canonical_review_revision", derived)
+        self.assertEqual(derived["canonical_harness_id"], "multi-agent-orchestration")
+        self.assertEqual(
+            record["canonical_review_ref"],
+            "e6c34462af045d7e53d383103346362351c96353",
+        )
 
     def test_a_evolve_neutral_record_owns_numeric_payload(self) -> None:
         historical = load(EXPERIMENT / "s4-system-benchmarks" / "canonical_observations.json")

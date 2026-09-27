@@ -6,10 +6,6 @@
   "canonical_harness_id": "autogen-agentchat",
   "canonical_assessment_ref": "assessments/autogen-agentchat.md",
   "canonical_review_ref": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
-  "canonical_states_at_review": {
-    "S2": "A",
-    "S3": "A"
-  },
   "published_implementation": {
     "platform": "AutoGen 0.4",
     "experiment_period": "August-October 2024",

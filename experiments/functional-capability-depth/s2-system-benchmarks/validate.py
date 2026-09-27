@@ -129,7 +129,21 @@ def hydrate_raw_observation(row: dict) -> dict:
         if forbidden in record or forbidden in raw:
             fail(f"{row.get('observation_id')}: neutral raw record leaked VSM interpretation field {forbidden}")
     hydrated = dict(raw)
-    hydrated.update(row)
+    record_level = {
+        "evidence_source_class": record.get("evidence_source_class"),
+        "system_compatibility": (record.get("published_implementation") or {}).get("system_compatibility"),
+        "primary_sources": record.get("primary_sources"),
+    }
+    for key, value in record_level.items():
+        if value is None:
+            fail(f"{row.get('observation_id')}: neutral raw record missing {key}")
+        if key in hydrated and hydrated[key] != value:
+            fail(f"{row.get('observation_id')}: neutral raw field conflict: {key}")
+        hydrated[key] = value
+    for key, value in row.items():
+        if key in hydrated and hydrated[key] != value:
+            fail(f"{row.get('observation_id')}: derived/raw field conflict: {key}")
+        hydrated[key] = value
     return hydrated
 
 

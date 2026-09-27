@@ -40,14 +40,40 @@ class GritS2PublicEvidenceReviewTest(unittest.TestCase):
         self.assertEqual(len(grit_rows), 1)
         observation = grit_rows[0]
         self.assertEqual(
-            observation["benchmark_artifact_revision"],
+            observation["raw_observation_ref"],
+            "../system-observations/grit.json#grit-synthetic-merge-contention-2026-04",
+        )
+        raw_record = json.loads(
+            (ROOT / "experiments" / "functional-capability-depth" / "system-observations" / "grit.json").read_text(encoding="utf-8")
+        )
+        raw_rows = [
+            row
+            for row in raw_record["observations"]
+            if row.get("observation_id") == "grit-synthetic-merge-contention-2026-04"
+        ]
+        self.assertEqual(len(raw_rows), 1)
+        raw = raw_rows[0]
+        self.assertEqual(
+            raw["benchmark_artifact_revision"],
             "a2c48735e0a16c49ca1541c4865fce438c479405",
         )
-        self.assertEqual(observation["evidence_source_class"], "first-party-reported")
-        self.assertEqual(observation["system_compatibility"], "native-system")
-        self.assertEqual(observation["comparison_class"], "partially-matched")
+        self.assertEqual(raw_record["evidence_source_class"], "first-party-reported")
+        self.assertEqual(
+            raw_record["published_implementation"]["system_compatibility"],
+            "native-system",
+        )
+        self.assertEqual(raw["comparison_class"], "partially-matched")
+        self.assertIsNone(raw_record["canonical_harness_id"])
         self.assertIsNone(observation["canonical_harness_id"])
         self.assertFalse(observation["canonical_system_eligible"])
+        for neutral_owned in (
+            "benchmark_artifact_revision",
+            "evidence_source_class",
+            "system_compatibility",
+            "comparison_class",
+            "primary_sources",
+        ):
+            self.assertNotIn(neutral_owned, observation)
 
         benchmark_map = json.loads(MAP.read_text(encoding="utf-8"))
         grit_families = [

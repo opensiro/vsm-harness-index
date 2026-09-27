@@ -6,10 +6,6 @@
   "canonical_harness_id": "llamar",
   "canonical_assessment_ref": "assessments/llamar.md",
   "canonical_review_ref": "d2b74cac79a0f070d87a150712f8e2ae174920be",
-  "canonical_states_at_review": {
-    "S2": "A",
-    "S3": "A"
-  },
   "published_implementation": {
     "platform": "first-party LLaMAR / MAP-THOR and SAR",
     "system_compatibility": "native-system",

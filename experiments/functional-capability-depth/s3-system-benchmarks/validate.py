@@ -146,11 +146,25 @@ def hydrate_s3_projection(link: dict) -> dict:
         fail(f"{oid}: canonical_harness_id raw/derived drift")
     if raw_harness:
         effective["canonical_review_revision"] = record.get("canonical_review_ref")
+    if oid == MAO_OBSERVATION_ID:
+        effective["benchmark_artifact_revision"] = record.get("canonical_review_ref")
+        if "comparison_class" not in effective and isinstance(raw.get("comparison_design"), str):
+            effective["comparison_class"] = raw["comparison_design"]
     return effective
 
 def validate_mao_observation(observation: dict) -> None:
     if observation.get("observation_id") != MAO_OBSERVATION_ID:
         fail("Multi-Agent Orchestration observation_id drift")
+    derived = observation
+    for key in (
+        "baseline_arm",
+        "supervisor_arm",
+        "reported_completion_gain_percentage_points",
+        "reported_routing_accuracy_gain_percentage_points",
+    ):
+        if key in derived:
+            fail(f"Multi-Agent Orchestration derived record duplicates neutral numeric payload: {key}")
+    observation = hydrate_s3_projection(derived)
     if observation.get("function") != "S3":
         fail("Multi-Agent Orchestration observation function must be S3")
     if observation.get("benchmark_id") != "multi-agent-orchestration-supervisor-ablation":
@@ -177,14 +191,6 @@ def validate_mao_observation(observation: dict) -> None:
     expected_raw_ref = "../system-observations/multi-agent-orchestration.json#" + MAO_OBSERVATION_ID
     if observation.get("raw_observation_ref") != expected_raw_ref:
         fail("Multi-Agent Orchestration raw observation linkage drift")
-    for key in (
-        "baseline_arm",
-        "supervisor_arm",
-        "reported_completion_gain_percentage_points",
-        "reported_routing_accuracy_gain_percentage_points",
-    ):
-        if key in observation:
-            fail(f"Multi-Agent Orchestration derived record duplicates neutral numeric payload: {key}")
     raw = load_raw_observation("multi-agent-orchestration.json", MAO_OBSERVATION_ID)
 
     require_canonical_s3(MAO_HARNESS, MAO_REVIEW_REF)
@@ -226,9 +232,17 @@ def validate_mao_observation(observation: dict) -> None:
     if observation.get("embedded_run_git_sha_publicly_resolvable_at_review") is not False:
         fail("Multi-Agent Orchestration unresolved-run caveat drift")
     limitation = observation.get("provenance_limitation")
-    if not isinstance(limitation, str) or MAO_UNRESOLVED_RUN_SHA not in limitation:
-        fail("Multi-Agent Orchestration provenance limitation lost unresolved SHA")
-    if "not relabeled as an independently reproduced run" not in limitation:
+    if not isinstance(limitation, str) or "no longer resolves publicly" not in limitation:
+        fail("Multi-Agent Orchestration provenance limitation lost unresolved-run boundary")
+    if "committed result artifact" not in limitation or "canonical review revision" not in limitation:
+        fail("Multi-Agent Orchestration provenance anchor boundary lost")
+    raw_record = json.loads((RAW_OBSERVATIONS / "multi-agent-orchestration.json").read_text(encoding="utf-8"))
+    implementation_note = (raw_record.get("published_implementation") or {}).get("note")
+    if (
+        not isinstance(implementation_note, str)
+        or "rather than relabeled" not in implementation_note
+        or "independently reproduced" not in implementation_note
+    ):
         fail("Multi-Agent Orchestration non-reproduction boundary lost")
 
     sources = observation.get("primary_sources")
