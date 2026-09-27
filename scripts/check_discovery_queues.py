@@ -7,8 +7,12 @@ It checks open candidate/assessment batches and evidence-intake queues for:
 - repositories already admitted as canonical `status: included` assessments;
 - repositories already present in the catalog;
 - the same repository queued in more than one active queue;
-- rename/transfer aliases by resolving stable GitHub repository IDs;
+- rename/transfer aliases among active queue entries and canonical current names;
 - declared active queue occupancy that disagrees with the candidate table.
+
+Frozen batches are historical intake artifacts. Rows that later become catalogued or
+canonical remain in those issues for provenance, but are no longer active queue rows.
+Unprocessed rows in the same frozen batch remain active for deduplication.
 
 `status: proposed` overlaps are reported as warnings because a proposed artifact can
 legitimately coexist with the queue that is currently reviewing it, but discovery
@@ -38,6 +42,7 @@ OCCUPANCY_RE = re.compile(
     r"(?:Remaining active candidate occupancy|Batch occupancy):\s*\*{0,2}(\d+)/10",
     re.IGNORECASE,
 )
+FROZEN_QUEUE_RE = re.compile(r"\bbatch\b[^\n]{0,120}\bfrozen\b", re.IGNORECASE)
 GITHUB_URL_RE = re.compile(r"(?:https://github\.com/)?([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
 
 
@@ -46,6 +51,7 @@ class QueueEntry:
     issue_number: int
     issue_title: str
     repository: str
+    frozen: bool = False
 
 
 def normalize_repo(value: str) -> str:
@@ -61,6 +67,10 @@ def normalize_repo(value: str) -> str:
 
 def is_tracked_queue_title(title: str) -> bool:
     return bool(QUEUE_TITLE_RE.search(title))
+
+
+def is_frozen_queue(body: str) -> bool:
+    return bool(FROZEN_QUEUE_RE.search(body))
 
 
 def declared_active_occupancy(body: str) -> int | None:
@@ -152,7 +162,13 @@ class GitHubAPI:
             with urllib.request.urlopen(request, timeout=30) as response:
                 return json.load(response)
         except urllib.error.HTTPError as exc:
-            raise RuntimeError(f"GitHub API {path} failed with HTTP {exc.code}") from exc
+            remaining = exc.headers.get("X-RateLimit-Remaining", "unknown")
+            reset = exc.headers.get("X-RateLimit-Reset", "unknown")
+            retry_after = exc.headers.get("Retry-After", "unknown")
+            raise RuntimeError(
+                f"GitHub API {path} failed with HTTP {exc.code} "
+                f"(remaining={remaining}, reset={reset}, retry-after={retry_after})"
+            ) from exc
 
     def open_issues(self, repository: str) -> list[dict[str, object]]:
         owner, repo = repository.split("/", 1)
@@ -182,8 +198,10 @@ class GitHubAPI:
             self.repo_cache[key] = identity
         return identity
 
-    def repository_identities(self, repositories: list[str], workers: int = 16) -> list[tuple[int, str]]:
-        with ThreadPoolExecutor(max_workers=workers) as pool:
+    def repository_identities(self, repositories: list[str], workers: int = 4) -> list[tuple[int, str]]:
+        if not repositories:
+            return []
+        with ThreadPoolExecutor(max_workers=min(workers, len(repositories))) as pool:
             return list(pool.map(self.repository_identity, repositories))
 
 
@@ -203,9 +221,37 @@ def active_queue_entries(api: GitHubAPI, index_repo: str) -> tuple[list[QueueEnt
         occupancy = declared_active_occupancy(body)
         if occupancy is not None and occupancy != len(repositories):
             errors.append(f"#{number}: declared occupancy {occupancy}/10 != {len(repositories)}/10 table rows")
+        frozen = is_frozen_queue(body)
         for repository in repositories:
-            entries.append(QueueEntry(number, title, repository))
+            entries.append(QueueEntry(number, title, repository, frozen=frozen))
     return entries, errors
+
+
+def classify_queue_entries(
+    entries: list[QueueEntry],
+    included: dict[str, str],
+    proposed: dict[str, str],
+    catalog_names: dict[str, str],
+) -> tuple[list[QueueEntry], list[str], list[str]]:
+    active: list[QueueEntry] = []
+    errors: list[str] = []
+    warnings: list[str] = []
+    for entry in entries:
+        key = entry.repository.lower()
+        completed_in_frozen_batch = entry.frozen and (key in included or key in catalog_names)
+        if completed_in_frozen_batch:
+            continue
+
+        active.append(entry)
+        if key in included:
+            errors.append(f"#{entry.issue_number}: {entry.repository} is already canonical status=included")
+        if key in catalog_names:
+            errors.append(f"#{entry.issue_number}: {entry.repository} is already present in data/catalog.psv")
+        if key in proposed:
+            warnings.append(
+                f"#{entry.issue_number}: {entry.repository} already has status=proposed; do not queue it elsewhere"
+            )
+    return active, errors, warnings
 
 
 def main() -> int:
@@ -231,20 +277,14 @@ def main() -> int:
 
     api = GitHubAPI(os.environ.get("GITHUB_TOKEN"))
     entries, errors = active_queue_entries(api, args.index_repo)
-    warnings: list[str] = []
+    active_entries, classification_errors, warnings = classify_queue_entries(
+        entries, included, proposed, catalog_names
+    )
+    errors.extend(classification_errors)
 
     by_name: dict[str, list[QueueEntry]] = {}
-    for entry in entries:
+    for entry in active_entries:
         by_name.setdefault(entry.repository.lower(), []).append(entry)
-        key = entry.repository.lower()
-        if key in included:
-            errors.append(f"#{entry.issue_number}: {entry.repository} is already canonical status=included")
-        if key in catalog_names:
-            errors.append(f"#{entry.issue_number}: {entry.repository} is already present in data/catalog.psv")
-        if key in proposed:
-            warnings.append(
-                f"#{entry.issue_number}: {entry.repository} already has status=proposed; do not queue it elsewhere"
-            )
 
     for repository, matches in by_name.items():
         issue_numbers = sorted({entry.issue_number for entry in matches})
@@ -252,19 +292,17 @@ def main() -> int:
             errors.append(f"{repository}: queued in multiple active candidate batches {issue_numbers}")
 
     if not args.no_github_id_resolution:
-        canonical_sources = sorted(set(assessments["included"] + catalog))
-        canonical_ids: dict[int, list[str]] = {}
-        for (repo_id, full_name) in api.repository_identities(canonical_sources):
-            canonical_ids.setdefault(repo_id, []).append(full_name)
-
+        canonical_names = set(included) | set(catalog_names)
         queued_ids: dict[int, list[QueueEntry]] = {}
-        queue_identities = api.repository_identities([entry.repository for entry in entries])
-        for entry, (repo_id, _full_name) in zip(entries, queue_identities, strict=True):
+        queue_identities = api.repository_identities([entry.repository for entry in active_entries])
+        for entry, (repo_id, full_name) in zip(active_entries, queue_identities, strict=True):
             queued_ids.setdefault(repo_id, []).append(entry)
-            if repo_id in canonical_ids:
+            resolved_key = full_name.lower()
+            if resolved_key in canonical_names:
+                canonical_name = included.get(resolved_key) or catalog_names[resolved_key]
                 errors.append(
-                    f"#{entry.issue_number}: {entry.repository} resolves to GitHub repository id {repo_id}, "
-                    f"already canonical as {sorted(set(canonical_ids[repo_id]))}"
+                    f"#{entry.issue_number}: {entry.repository} resolves to {full_name}, "
+                    f"already canonical as {canonical_name}"
                 )
 
         for repo_id, matches in queued_ids.items():
@@ -287,7 +325,8 @@ def main() -> int:
         return 1
 
     print(
-        f"Validated {len(entries)} active candidate queue entr{'y' if len(entries) == 1 else 'ies'} "
+        f"Validated {len(active_entries)} active candidate queue entr{'y' if len(active_entries) == 1 else 'ies'} "
+        f"({len(entries) - len(active_entries)} completed frozen rows ignored) "
         "against catalog, assessments, cross-queue identity, and GitHub repository IDs"
     )
     return 0
