@@ -14,6 +14,7 @@ COVERAGE = HERE / "coverage.json"
 OBSERVATIONS = HERE / "observations.json"
 BENCHMARK_MAP = HERE.parent / "vsm-benchmark-family-map" / "map.json"
 OMNIGENT_DELTA = HERE / "post-closure-deltas" / "omnigent-post-assessment-recovery.json"
+RAW_OBSERVATIONS = HERE.parent / "system-observations"
 
 COVERAGE_CLASSES = {
     "direct-scaffolded",
@@ -102,6 +103,14 @@ def require_canonical_s3(harness_id: str, review_ref: str) -> None:
         fail(f"{harness_id}: canonical review_ref drift")
 
 
+def load_raw_observation(filename: str, observation_id: str) -> dict:
+    record = json.loads((RAW_OBSERVATIONS / filename).read_text(encoding="utf-8"))
+    matches = [row for row in record.get("observations", []) if row.get("observation_id") == observation_id]
+    if len(matches) != 1:
+        fail(f"neutral raw observation lookup drift for {observation_id}: {len(matches)} matches")
+    return matches[0]
+
+
 def validate_mao_observation(observation: dict) -> None:
     if observation.get("observation_id") != MAO_OBSERVATION_ID:
         fail("Multi-Agent Orchestration observation_id drift")
@@ -128,13 +137,26 @@ def validate_mao_observation(observation: dict) -> None:
     if observation.get("comparison_class") != "within-system-controlled-ablation":
         fail("Multi-Agent Orchestration comparison class drift")
 
+    expected_raw_ref = "../system-observations/multi-agent-orchestration.json#" + MAO_OBSERVATION_ID
+    if observation.get("raw_observation_ref") != expected_raw_ref:
+        fail("Multi-Agent Orchestration raw observation linkage drift")
+    for key in (
+        "baseline_arm",
+        "supervisor_arm",
+        "reported_completion_gain_percentage_points",
+        "reported_routing_accuracy_gain_percentage_points",
+    ):
+        if key in observation:
+            fail(f"Multi-Agent Orchestration derived record duplicates neutral numeric payload: {key}")
+    raw = load_raw_observation("multi-agent-orchestration.json", MAO_OBSERVATION_ID)
+
     require_canonical_s3(MAO_HARNESS, MAO_REVIEW_REF)
 
     if observation.get("scenario_count") != 54 or observation.get("provider") != "MockProvider":
         fail("Multi-Agent Orchestration published scenario/provider metadata drift")
 
-    baseline = observation.get("baseline_arm")
-    supervisor = observation.get("supervisor_arm")
+    baseline = raw.get("baseline_arm")
+    supervisor = raw.get("supervisor_arm")
     expected_baseline = {
         "uses_supervisor": False,
         "retry_enabled": False,
@@ -157,9 +179,9 @@ def validate_mao_observation(observation: dict) -> None:
     }
     if baseline != expected_baseline or supervisor != expected_supervisor:
         fail("Multi-Agent Orchestration published arm data drift")
-    if observation.get("reported_completion_gain_percentage_points") != 68.5:
+    if raw.get("reported_completion_gain_percentage_points") != 68.5:
         fail("Multi-Agent Orchestration completion gain drift")
-    if observation.get("reported_routing_accuracy_gain_percentage_points") != 43.3333:
+    if raw.get("reported_routing_accuracy_gain_percentage_points") != 43.3333:
         fail("Multi-Agent Orchestration routing gain drift")
 
     if observation.get("embedded_run_git_sha") != MAO_UNRESOLVED_RUN_SHA:

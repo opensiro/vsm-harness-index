@@ -15,6 +15,7 @@ COVERAGE = HERE / "coverage.json"
 BENCHMARK_OBSERVATIONS = HERE / "benchmark_observations.json"
 CANONICAL_OBSERVATIONS = HERE / "canonical_observations.json"
 PROXY_OBSERVATIONS = HERE / "proxy_observations.json"
+RAW_OBSERVATIONS = HERE.parent / "system-observations"
 
 DIRECT_S4 = {
     "a-evolve-harness-evolution",
@@ -93,6 +94,14 @@ def assessment_fields(harness_id: str) -> dict[str, str]:
     return fields
 
 
+def load_raw_observation(filename: str, observation_id: str) -> dict:
+    record = json.loads((RAW_OBSERVATIONS / filename).read_text(encoding="utf-8"))
+    matches = [row for row in record.get("observations", []) if row.get("observation_id") == observation_id]
+    if len(matches) != 1:
+        fail(f"neutral raw observation lookup drift for {observation_id}: {len(matches)} matches")
+    return matches[0]
+
+
 def main() -> None:
     benchmark_map = json.loads(MAP.read_text(encoding="utf-8"))
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
@@ -166,11 +175,17 @@ def main() -> None:
         fail("canonical A-Evolve publication binding drift")
     if canonical_obs.get("comparison_class") != "controlled-within-system-evolver-study":
         fail("canonical A-Evolve comparison class drift")
+    expected_a_raw_ref = "../system-observations/a-evolve.json#a-evolve-harness-updating-2026"
+    if canonical_obs.get("raw_observation_ref") != expected_a_raw_ref:
+        fail("canonical A-Evolve raw observation linkage drift")
+    if "reported_harness_updating_metrics" in canonical_obs:
+        fail("canonical A-Evolve derived record duplicates neutral numeric payload")
+    a_evolve_raw = load_raw_observation("a-evolve.json", "a-evolve-harness-updating-2026")
     if canonical_obs.get("benchmarks") != ["SWE-bench Verified", "MCP-Atlas", "SkillsBench"]:
         fail("canonical A-Evolve benchmark set drift")
     if canonical_obs.get("anchor_agents") != ["Claude Opus 4.6", "Claude Sonnet 4.6", "Qwen3-235B-A22B"]:
         fail("canonical A-Evolve anchor-agent set drift")
-    metrics = canonical_obs.get("reported_harness_updating_metrics")
+    metrics = a_evolve_raw.get("reported_harness_updating_metrics")
     expected_metrics = {
         "maximum_best_vs_worst_evolver_spread_pp": 3.1,
         "qwen3_235b_swe_gain_pp": 8.2,
@@ -220,6 +235,12 @@ def main() -> None:
         fail("KADATH canonical/source revision drift")
     if kadath_obs.get("comparison_class") != "within-system-longitudinal-population-evolution":
         fail("KADATH comparison class drift")
+    expected_k_raw_ref = "../system-observations/kadath.json#kadath-ten-epoch-native-evolution-2026"
+    if kadath_obs.get("raw_observation_ref") != expected_k_raw_ref:
+        fail("KADATH raw observation linkage drift")
+    if "reported_population_metrics" in kadath_obs:
+        fail("KADATH derived record duplicates neutral numeric payload")
+    kadath_raw = load_raw_observation("kadath.json", "kadath-ten-epoch-native-evolution-2026")
     if kadath_obs.get("epochs") != 10:
         fail("KADATH epoch count drift")
     expected_kadath_metrics = {
@@ -233,7 +254,7 @@ def main() -> None:
         "top5_floor_epoch_10": 71,
         "top5_floor_improvement": 70,
     }
-    if kadath_obs.get("reported_population_metrics") != expected_kadath_metrics:
+    if kadath_raw.get("reported_population_metrics") != expected_kadath_metrics:
         fail("KADATH reported population metrics drift")
     if not isinstance(kadath_obs.get("ordinary_s4_boundary"), str) or len(kadath_obs["ordinary_s4_boundary"].strip()) < 100:
         fail("KADATH ordinary-S4 boundary required")
