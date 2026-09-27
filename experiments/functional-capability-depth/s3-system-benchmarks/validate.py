@@ -12,6 +12,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 COVERAGE = HERE / "coverage.json"
 OBSERVATIONS = HERE / "observations.json"
+PROXY_LINKS = HERE / "proxy_links.json"
 BENCHMARK_MAP = HERE.parent / "vsm-benchmark-family-map" / "map.json"
 OMNIGENT_DELTA = HERE / "post-closure-deltas" / "omnigent-post-assessment-recovery.json"
 RAW_OBSERVATIONS = HERE.parent / "system-observations"
@@ -29,6 +30,20 @@ SYSTEM_COMPATIBILITY = {
     "adapter-preserved",
     "benchmark-scaffolded",
     "unclear",
+}
+EXPECTED_PROXY_PROJECTIONS = {
+    "autogen-magentic-one-native-proxy-s3": "autogen-agentchat",
+    "llamar-mapthor-native-proxy-s3": "llamar",
+}
+EXPECTED_PROXY_RAW_METADATA = {
+    "autogen-magentic-one-native-proxy-s3": {
+        "system_compatibility": "native-system",
+        "revision_relation": "historical-first-party-lineage-not-current-review-ref",
+    },
+    "llamar-mapthor-native-proxy-s3": {
+        "system_compatibility": "native-system",
+        "revision_relation": "first-party-published-artifacts-co-located-at-current-review-ref-run-revision-unknown",
+    },
 }
 DIRECT_S3_BENCHMARKS = {
     "clawarena-team",
@@ -425,6 +440,106 @@ def validate_smas_observation(observation: dict) -> None:
         fail("SupervisorAgent / SMAS paper source missing")
 
 
+def hydrate_proxy_projection(projection: dict, raw_record: dict) -> dict:
+    projection_id = projection.get("projection_id")
+    effective = dict(projection)
+    published = raw_record.get("published_implementation")
+    if not isinstance(published, dict):
+        fail(f"{projection_id}: neutral raw record missing published_implementation")
+    raw_metadata = {
+        "system_compatibility": published.get("system_compatibility"),
+        "revision_relation": published.get("canonical_revision_match"),
+    }
+    for key, value in raw_metadata.items():
+        if key in projection:
+            fail(f"{projection_id}: proxy projection duplicates neutral-owned {key}")
+        if not isinstance(value, str) or not value:
+            fail(f"{projection_id}: neutral raw record missing {key}")
+        effective[key] = value
+    return effective
+
+
+def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
+    proxy_links = json.loads(PROXY_LINKS.read_text(encoding="utf-8"))
+    if not isinstance(proxy_links, list):
+        fail("proxy_links.json must contain a list")
+    if coverage.get("proxy_projection_count") != len(proxy_links):
+        fail("proxy_projection_count does not match proxy_links.json")
+
+    projections: dict[str, dict] = {}
+    for projection in proxy_links:
+        if not isinstance(projection, dict):
+            fail("every S3 proxy projection must be an object")
+        projection_id = projection.get("projection_id")
+        if not isinstance(projection_id, str) or not projection_id:
+            fail("every S3 proxy projection requires projection_id")
+        if projection_id in projections:
+            fail(f"duplicate S3 proxy projection_id: {projection_id}")
+        projections[projection_id] = projection
+
+        if projection.get("function") != "S3" or projection.get("benchmark_fit") != "proxy":
+            fail(f"{projection_id}: proxy semantics drift")
+        harness_id = projection.get("canonical_harness_id")
+        if harness_id != EXPECTED_PROXY_PROJECTIONS.get(projection_id):
+            fail(f"{projection_id}: canonical proxy linkage drift")
+        fields = assessment_fields(harness_id)
+        if fields.get("status") != "included":
+            fail(f"{projection_id}: canonical assessment is not included")
+        current_s3 = fields.get("autonomy_s3")
+        if current_s3 in {None, "—", "?"}:
+            fail(f"{projection_id}: canonical system no longer establishes S3")
+        if projection.get("canonical_state_at_review") != current_s3:
+            fail(f"{projection_id}: canonical S3 state drift")
+
+        raw_record = projection.get("raw_record")
+        if not isinstance(raw_record, str) or not raw_record.startswith("../system-observations/"):
+            fail(f"{projection_id}: raw_record must point to shared system-observations")
+        raw_path = (HERE / raw_record).resolve()
+        if raw_path.parent != RAW_OBSERVATIONS.resolve() or not raw_path.is_file():
+            fail(f"{projection_id}: raw observation record missing or outside shared directory")
+        raw = json.loads(raw_path.read_text(encoding="utf-8"))
+        if raw.get("canonical_harness_id") != harness_id:
+            fail(f"{projection_id}: raw record canonical_harness_id mismatch")
+        effective_projection = hydrate_proxy_projection(projection, raw)
+        actual_raw_metadata = {
+            "system_compatibility": effective_projection.get("system_compatibility"),
+            "revision_relation": effective_projection.get("revision_relation"),
+        }
+        if actual_raw_metadata != EXPECTED_PROXY_RAW_METADATA.get(projection_id):
+            fail(f"{projection_id}: neutral raw proxy metadata drift: {actual_raw_metadata!r}")
+
+        raw_ids = {
+            row.get("observation_id")
+            for row in raw.get("observations", [])
+            if isinstance(row, dict)
+        }
+        requested_ids = projection.get("raw_observation_ids")
+        if not isinstance(requested_ids, list) or not requested_ids:
+            fail(f"{projection_id}: raw_observation_ids required")
+        if any(not isinstance(value, str) or not value for value in requested_ids):
+            fail(f"{projection_id}: invalid raw_observation_ids")
+        missing = set(requested_ids) - raw_ids
+        if missing:
+            fail(f"{projection_id}: raw observation ids missing from shared record: {sorted(missing)}")
+
+        case = by_id.get(projection_id)
+        if case is None:
+            fail(f"missing S3 coverage case for proxy projection {projection_id}")
+        if case.get("benchmark_fit") != "proxy" or case.get("coverage_class") != "native-proxy":
+            fail(f"{projection_id}: coverage case proxy semantics drift")
+        if case.get("canonical_harness_id") != harness_id:
+            fail(f"{projection_id}: coverage case canonical linkage drift")
+        if case.get("proxy_projection_ref") != f"proxy_links.json#{projection_id}":
+            fail(f"{projection_id}: coverage proxy_projection_ref drift")
+        if case.get("raw_observation_ref") != raw_record:
+            fail(f"{projection_id}: coverage raw_observation_ref drift")
+        if case.get("system_compatibility") != effective_projection.get("system_compatibility"):
+            fail(f"{projection_id}: coverage/raw system compatibility drift")
+
+    if {key: projections[key].get("canonical_harness_id") for key in projections} != EXPECTED_PROXY_PROJECTIONS:
+        fail("S3 native proxy projection set drift")
+
+
 def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
@@ -506,6 +621,8 @@ def main() -> None:
                 fail(f"{case_id}: canonical assessment is not included")
             if coverage_class in {"native-proxy", "direct-native"} and fields.get("autonomy_s3") in {None, "—", "?"}:
                 fail(f"{case_id}: canonical system does not currently establish S3")
+
+    validate_proxy_links(coverage, by_id)
 
     missing_cases = REQUIRED_CASE_IDS - seen
     if missing_cases:

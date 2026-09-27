@@ -35,6 +35,16 @@ EXPECTED_PROXY_PROJECTIONS = {
     "autogen-magentic-one-native-proxy-s2": "autogen-agentchat",
     "squad-marble-native-proxy-s2": "squad",
 }
+EXPECTED_PROXY_RAW_METADATA = {
+    "autogen-magentic-one-native-proxy-s2": {
+        "system_compatibility": "native-system",
+        "revision_relation": "historical-first-party-lineage-not-current-review-ref",
+    },
+    "squad-marble-native-proxy-s2": {
+        "system_compatibility": "native-system",
+        "revision_relation": "historical-first-party-lineage-not-current-review-ref",
+    },
+}
 EXPECTED_OBSERVATION_IDS = {
     "nool-trackd-scaleup1-contention-2026-08-21",
     "specification-gap-recovery-2026-03",
@@ -147,6 +157,25 @@ def hydrate_raw_observation(row: dict) -> dict:
     return hydrated
 
 
+def hydrate_proxy_projection(projection: dict, raw_record: dict) -> dict:
+    projection_id = projection.get("projection_id")
+    effective = dict(projection)
+    published = raw_record.get("published_implementation")
+    if not isinstance(published, dict):
+        fail(f"{projection_id}: neutral raw record missing published_implementation")
+    raw_metadata = {
+        "system_compatibility": published.get("system_compatibility"),
+        "revision_relation": published.get("canonical_revision_match"),
+    }
+    for key, value in raw_metadata.items():
+        if key in projection:
+            fail(f"{projection_id}: proxy projection duplicates neutral-owned {key}")
+        if not isinstance(value, str) or not value:
+            fail(f"{projection_id}: neutral raw record missing {key}")
+        effective[key] = value
+    return effective
+
+
 def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
     proxy_links = json.loads(PROXY_LINKS.read_text(encoding="utf-8"))
     if not isinstance(proxy_links, list):
@@ -167,8 +196,6 @@ def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
 
         if projection.get("function") != "S2" or projection.get("benchmark_fit") != "proxy":
             fail(f"{projection_id}: proxy semantics drift")
-        if projection.get("system_compatibility") != "native-system":
-            fail(f"{projection_id}: proxy projection must remain native-system")
 
         harness_id = projection.get("canonical_harness_id")
         if not isinstance(harness_id, str) or not harness_id:
@@ -191,6 +218,13 @@ def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
         raw = json.loads(raw_path.read_text(encoding="utf-8"))
         if raw.get("canonical_harness_id") != harness_id:
             fail(f"{projection_id}: raw record canonical_harness_id mismatch")
+        effective_projection = hydrate_proxy_projection(projection, raw)
+        actual_raw_metadata = {
+            "system_compatibility": effective_projection.get("system_compatibility"),
+            "revision_relation": effective_projection.get("revision_relation"),
+        }
+        if actual_raw_metadata != EXPECTED_PROXY_RAW_METADATA.get(projection_id):
+            fail(f"{projection_id}: neutral raw proxy metadata drift: {actual_raw_metadata!r}")
         raw_ids = {
             row.get("observation_id")
             for row in raw.get("observations", [])
