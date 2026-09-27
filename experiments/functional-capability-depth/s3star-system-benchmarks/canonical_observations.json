@@ -1,88 +1,24 @@
 [
   {
-    "observation_id": "appliedscientist-iterative-review-2026-09",
-    "function": "S3*",
-    "benchmark_id": "appliedscientist-iterative-review",
-    "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
-    "boundary_class": "canonical-native-system",
-    "canonical_harness_id": "appliedscientist",
     "canonical_system_eligible": true,
-    "system_compatibility": "native-system",
-    "canonical_review_revision": "762824fd41598370e75588861b48991b0a9fd784",
-    "publication_id": "arXiv:2609.14738",
-    "publication_version_at_review": "v2",
-    "paper_count": 30,
-    "rejected_paper_count": 25,
-    "borderline_paper_count": 5,
-    "revision_rounds": 5,
-    "comparison_class": "within-system-guidance-comparison",
-    "revision_conditions": [
-      "human-initialized reviewer-guided revision",
-      "AI-initialized reviewer-guided revision",
-      "autonomous fixed-prompt self-revision"
-    ],
-    "audit_loop": [
-      "Scientist produces a revised implementation, experiments and manuscript",
-      "a separate fresh Reviewer sees only the current manuscript and independently searches literature",
-      "Reviewer emits weaknesses, suggestions and a new evaluation without memory of prior feedback or scores",
-      "review feedback becomes guidance for the next Scientist revision",
-      "Scientist edits code, runs experiments, analyzes results and revises the manuscript",
-      "the new manuscript is submitted to another fresh independent review"
-    ],
-    "reported_execution_weaknesses_total": 150,
-    "reported_execution_weaknesses_resolved": 128,
-    "reported_execution_weakness_resolution_rate": 0.853,
-    "reported_idea_weaknesses_total": 18,
-    "reported_idea_weaknesses_resolved": 2,
-    "reported_idea_weakness_resolution_rate": 0.111,
-    "external_validation_surface": "Stanford Reviewer scores saved human-initialized versions independently and is never shown to the Scientist; it is supporting validation, not the native S3* owner.",
-    "comparison_scope_note": "The paper compares reviewer-guided revision with fixed-prompt self-revision inside AppliedScientist. The weakness-resolution counts are aggregate closure evidence for the native review-guided loop, not a matched cross-harness S3* score.",
-    "provenance_limitation": "The public AppliedScientist repository at canonical review ref 762824fd41598370e75588861b48991b0a9fd784 is first-party and implements the same Scientist-to-separate-Reviewer-to-correction-to-fresh-review architecture described in the publication. The fetched publication HTML does not expose an explicit repository URL binding the reported experimental runs to that exact Git commit. Preserve this result as first-party-reported; it is not independently reproduced at the pinned revision.",
+    "boundary_class": "canonical-native-system",
+    "function": "S3*",
     "vsm_interpretation": "The canonical assessment independently establishes S3*=A for AppliedScientist. The publication directly exercises that native complementary-audit organization: a separate fresh reviewer gathers independent evidence, returns concrete findings into the Scientist current revision loop, and the corrected artifact is reviewed again. The result is therefore direct native S3* capability evidence, while one within-system result remains insufficient for a matched cross-harness primary baseline.",
-    "primary_sources": [
-      "https://arxiv.org/abs/2609.14738",
-      "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-scientist/.claude/CLAUDE.md",
-      "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-scientist/scripts/submit_for_review.sh",
-      "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-reviewer/review_api.py",
-      "https://github.com/TheAppliedScientist/TheAppliedScientist/blob/762824fd41598370e75588861b48991b0a9fd784/components/ai-reviewer/prompts/paper_reviewer_instruction_template.md"
-    ]
+    "benchmark_fit": "direct",
+    "benchmark_id": "appliedscientist-iterative-review",
+    "observation_id": "appliedscientist-iterative-review-2026-09",
+    "canonical_harness_id": "appliedscientist",
+    "raw_observation_ref": "../system-observations/appliedscientist.json#appliedscientist-iterative-review-2026-09"
   },
   {
-    "observation_id": "data-to-paper-review-revision-2024",
-    "function": "S3*",
-    "benchmark_id": "data-to-paper-review-revision",
-    "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
-    "boundary_class": "canonical-native-system",
-    "canonical_harness_id": "data-to-paper",
     "canonical_system_eligible": true,
-    "system_compatibility": "native-system",
-    "canonical_review_revision": "81df14c4b9600466e645c3b2b336cc54daa3df3a",
-    "publication_id": "DOI:10.1056/AIoa2400555",
-    "publication_date": "2024-12-03",
-    "comparison_class": "descriptive-only",
-    "published_example_count": 1,
-    "published_example_reference": "Figure 2B / Supplementary Run A5",
-    "aggregate_s3star_metric_reported": false,
-    "metric_note": "The publication demonstrates native reviewer-feedback-to-revision closure but does not report an aggregate S3*-specific detection, correction, or re-verification score for this loop.",
-    "audit_loop": [
-      "the performer conversation creates a current research product",
-      "a separate role-inverted Reviewer conversation receives the product and relevant prior research context",
-      "Reviewer emits concrete feedback on the candidate product",
-      "the feedback is transferred back into the performer conversation as corrective input",
-      "the performer revises the product according to the reviewer findings",
-      "the research step concludes only after the product passes rule-based and LLM review, so rejected products remain in the correction/review loop"
-    ],
-    "published_result_summary": "The first-party paper Figure 2B, drawn from Supplementary Run A5, shows reviewer comments on a Discussion draft being returned to the performer and producing a corrected revised response. The Methods state that products must pass LLM review before the research step concludes.",
-    "comparison_scope_note": "This is a direct descriptive within-system closure witness. It is not a quantitative comparison with AppliedScientist or any other harness and must not be normalized into a common S3* score.",
-    "provenance_limitation": "The publication identifies the first-party data-to-paper project and codebase, and the canonical repository at review ref 81df14c4b9600466e645c3b2b336cc54daa3df3a implements the same separate reviewer-to-performer correction loop. The publication does not bind Supplementary Run A5 to the exact canonical review revision. Preserve this as first-party-reported historical evidence; it is not independently reproduced at the pinned revision.",
+    "boundary_class": "canonical-native-system",
+    "function": "S3*",
     "vsm_interpretation": "The canonical assessment independently establishes S3*=A for data-to-paper. The publication directly observes that native complementary-audit path in operation: a separate reviewer challenges a performer product, findings return to the producer, and the product is revised before review completion. This is direct native S3* capability evidence, but descriptive-only evidence under a different task/model/evaluator surface from AppliedScientist.",
-    "primary_sources": [
-      "https://doi.org/10.1056/AIoa2400555",
-      "https://github.com/Technion-Kishony-lab/data-to-paper/blob/81df14c4b9600466e645c3b2b336cc54daa3df3a/src/data_to_paper/base_steps/dual_converser.py",
-      "https://github.com/Technion-Kishony-lab/data-to-paper/blob/81df14c4b9600466e645c3b2b336cc54daa3df3a/src/data_to_paper/base_steps/request_code.py",
-      "https://github.com/Technion-Kishony-lab/data-to-paper/blob/81df14c4b9600466e645c3b2b336cc54daa3df3a/src/data_to_paper/research_types/hypothesis_testing/steps_runner.py"
-    ]
+    "benchmark_fit": "direct",
+    "benchmark_id": "data-to-paper-review-revision",
+    "observation_id": "data-to-paper-review-revision-2024",
+    "canonical_harness_id": "data-to-paper",
+    "raw_observation_ref": "../system-observations/data-to-paper-review-revision.json#data-to-paper-review-revision-2024"
   }
 ]

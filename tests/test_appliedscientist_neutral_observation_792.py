@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -8,23 +9,35 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EXPERIMENT = ROOT / "experiments" / "functional-capability-depth"
 RAW_PATH = EXPERIMENT / "system-observations" / "appliedscientist.json"
-HISTORICAL_PATH = EXPERIMENT / "s3star-system-benchmarks" / "canonical_observations.json"
+DERIVED_PATH = EXPERIMENT / "s3star-system-benchmarks" / "canonical_observations.json"
+SOURCE_REF = "6317c2c57070f50225949104911a90fcdcd58abd"
+SOURCE_PATH = "experiments/functional-capability-depth/s3star-system-benchmarks/canonical_observations.json"
+OBSERVATION_ID = "appliedscientist-iterative-review-2026-09"
 
 
 def load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_pre_migration_observation() -> dict:
+    text = subprocess.check_output(
+        ["git", "show", f"{SOURCE_REF}:{SOURCE_PATH}"],
+        cwd=ROOT,
+        text=True,
+    )
+    rows = json.loads(text)
+    return next(row for row in rows if row["observation_id"] == OBSERVATION_ID)
+
+
 class AppliedScientistNeutralObservation792Tests(unittest.TestCase):
     def setUp(self) -> None:
         self.raw = load(RAW_PATH)
-        self.observation = self.raw["observations"][0]
-        historical = load(HISTORICAL_PATH)
-        self.old = next(
-            row
-            for row in historical
-            if row["observation_id"] == "appliedscientist-iterative-review-2026-09"
+        self.observation = next(
+            row for row in self.raw["observations"] if row["observation_id"] == OBSERVATION_ID
         )
+        self.old = load_pre_migration_observation()
+        derived = load(DERIVED_PATH)
+        self.link = next(row for row in derived if row["observation_id"] == OBSERVATION_ID)
 
     def test_published_quantitative_payload_is_preserved(self) -> None:
         fields = (
@@ -54,7 +67,25 @@ class AppliedScientistNeutralObservation792Tests(unittest.TestCase):
             "publication-system-lineage-run-revision-unbound",
         )
         self.assertIn("does not expose an exact Git revision", self.raw["published_implementation"]["note"])
-        self.assertIn("does not bind", self.observation["provenance_limitation"])
+        self.assertIn(
+            "does not expose an explicit repository URL binding",
+            self.observation["provenance_limitation"],
+        )
+        self.assertIn("not independently reproduced", self.observation["provenance_limitation"])
+
+    def test_function_specific_file_is_only_a_derived_link(self) -> None:
+        self.assertEqual(
+            self.link["raw_observation_ref"],
+            "../system-observations/appliedscientist.json#" + OBSERVATION_ID,
+        )
+        for field in (
+            "paper_count",
+            "reported_execution_weaknesses_total",
+            "reported_idea_weaknesses_total",
+            "primary_sources",
+            "audit_loop",
+        ):
+            self.assertNotIn(field, self.link)
 
     def test_raw_record_contains_no_vsm_function_attribution(self) -> None:
         for container in (self.raw, self.observation):
