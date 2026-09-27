@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-28",
+  "evidence_source_class": "external-reproduced",
+  "system_name": "OpenCode",
+  "canonical_harness_id": "opencode",
+  "canonical_assessment_ref": "assessments/opencode.md",
+  "canonical_review_ref": "95daf90670b7c039c436c85537da5fbfe2205b41",
+  "canonical_repository": "https://github.com/anomalyco/opencode",
+  "published_implementation": {
+    "system_compatibility": "adapter-preserved",
+    "historical_relation": "Published FutureSim v1 recommended/native-harness configuration; benchmark supplies chronological environment, search interface and forecast actions. This neutral record does not imply canonical S4 ownership or isolate a harness effect."
+  },
+  "primary_sources": [
+    "https://arxiv.org/pdf/2605.15188",
+    "https://github.com/OpenForecaster/futuresim"
+  ],
+  "observations": [
+    {
+      "observation_id": "futuresim-v1-opencode-1411-qwen36plus",
+      "kind": "forecasting-benchmark-result",
+      "benchmark": "FutureSim v1",
+      "published_harness_version": "1.4.11",
+      "model": "Qwen 3.6 Plus",
+      "benchmark_revision": "arXiv:2605.15188v1",
+      "benchmark_window": "2025-12-24 through 2026-03-28",
+      "question_count": 330,
+      "seeds": 3,
+      "reasoning_setting": "maximum reasoning effort",
+      "prompt_condition": "recommended harness plus additional update-encouragement prompting",
+      "final_top1_accuracy_percent": 5,
+      "final_brier_skill_score": -0.07,
+      "metric_provenance": "Figure 1 final rounded labels",
+      "comparability_group": "futuresim-v1-recommended-harness-cross-system-confounded",
+      "confounders": [
+        "model differs across harness configurations",
+        "additional prompting was added for Qwen to encourage forecast updates",
+        "the benchmark supplies its chronological environment, search interface and forecast actions"
+      ]
+    }
+  ]
+}
