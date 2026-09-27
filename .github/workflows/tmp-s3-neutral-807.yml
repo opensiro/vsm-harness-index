@@ -1,0 +1,51 @@
+name: tmp S3 neutral migration 807
+
+on:
+  push:
+    branches:
+      - experiment/s3-neutral-registry-807
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Migrate remaining S3 evidence
+        run: python scripts/tmp_migrate_s3_neutral_807.py
+      - name: Regenerate neutral registry
+        run: python experiments/functional-capability-depth/system-observations/render_registry.py
+      - name: Validate neutral registry
+        run: |
+          python experiments/functional-capability-depth/system-observations/validate.py
+          python experiments/functional-capability-depth/system-observations/render_registry.py --check
+      - name: Validate S3 and synthesis
+        run: |
+          python experiments/functional-capability-depth/s3-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+          python experiments/functional-capability-depth/render_evidence_frontier.py --check
+          python experiments/functional-capability-depth/validate_synthesis.py
+      - name: Check Index and unit tests
+        run: |
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Remove assembler artifacts
+        run: |
+          rm scripts/tmp_migrate_s3_neutral_807.py
+          rm .github/workflows/tmp-s3-neutral-807.yml
+      - name: Commit assembled transaction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --stat
+          git commit -m "experiment: move remaining S3 evidence to neutral registry"
+          git push origin HEAD:experiment/s3-neutral-registry-807
