@@ -72,7 +72,7 @@ VSM relevance is a separate research/community interpretation layer.
 ## Admission sequence for a raw public result
 
 1. identify the public source and preserve an immutable source revision/artifact where available;
-2. identify the benchmark family, version, task set/split, metric, model, and published system configuration;
+2. identify the public evidence surface; for benchmarked results preserve family, version, task set/split, metric, model and published system configuration; for non-benchmark evidence preserve the explicit repository/paper/operational surface identity;
 3. link the benchmarked system identity to a canonical Index harness only when the public provenance supports that link;
 4. classify whether the benchmark exercised a native system path, preserved it through an adapter, supplied a benchmark-scaffolded organization, or remains unclear;
 5. preserve the raw metric/result and historical execution identity;

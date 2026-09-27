@@ -37,7 +37,7 @@ The first four steps are the registry. The final interpretation layer is not a p
 
 For every admitted observation, establish as far as the public record allows:
 
-- **benchmark identity** — family, version/variant, task set/split, metric;
+- **evidence-surface identity** — benchmark family/version/task split when benchmarked, or an explicit paper/repository/operational surface when not benchmark-based;
 - **system identity** — canonical harness ID when linkable, repository, benchmark display label, historical harness version/revision/configuration;
 - **execution identity** — model/configuration, evaluator, environment, budget, timeout, repetition policy where published;
 - **result identity** — raw metric/result, result date, task/replicate counts where published;
@@ -80,6 +80,12 @@ A system link should be backed by public evidence such as:
 - another recoverable public provenance chain.
 
 If the benchmark supplies the organization itself and no canonical harness identity is supportable, keep the observation benchmark-scaffolded/non-canonical rather than inventing a harness mapping.
+
+## Non-benchmark evidence surfaces
+
+The neutral layer also accepts public system evidence that is not a benchmark result, such as immutable repository history, public operational incident/case-study evidence, or another explicitly named evidence surface.
+
+Such an observation MUST use `evidence_surface` or `evidence_surfaces` rather than inventing a benchmark label. Function-specific interpretation remains downstream exactly as it does for benchmark observations.
 
 ## Result provenance classes
 

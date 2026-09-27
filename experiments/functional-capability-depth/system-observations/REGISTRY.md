@@ -1,13 +1,13 @@
-# Benchmark ↔ system observation registry
+# Public evidence ↔ system observation registry
 
 Status: **generated, experimental, non-normative**
 
 Generated from the raw JSON records in this directory by `render_registry.py`.
-Numeric benchmark payloads remain only in the raw record; this table is an identity/provenance projection, not a second result database.
+Raw evidence payloads remain only in the raw record; this table is an identity/provenance projection, not a second result database.
 
-Raw observations: **15**
+Raw observations: **17**
 
-| System | Canonical harness | Observation | Benchmark surface(s) | Kind | Provenance | Compatibility | Raw record |
+| System | Canonical harness | Observation | Evidence surface(s) | Kind | Provenance | Compatibility | Raw record |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | A-Evolve | [a-evolve](../../../assessments/a-evolve.md) | `a-evolve-harness-updating-2026` | A-Evolve harness-evolution study: SWE-bench Verified / MCP-Atlas / SkillsBench | `persistent-harness-update-study` | `first-party-reported` | `native-system` | [a-evolve.json](a-evolve.json) |
 | CodeCRDT | — | `codecrdt-parallel-convergence-2025-10` | CodeCRDT sequential-versus-parallel evaluation | `native-system-outcome-study` | `first-party-reported` | `native-system` | [codecrdt.json](codecrdt.json) |
@@ -22,6 +22,8 @@ Raw observations: **15**
 | Nool fleet coordination benchmark organization | — | `nool-trackd-scaleup1-contention-2026-08-21` | Nool coding-agent fleet coordination benchmark — Track D scale-up 1 | `benchmark-defined-coordination-ablation` | `first-party-reported` | `benchmark-scaffolded` | [nool-fleet-coordination.json](nool-fleet-coordination.json) |
 | Squad | [squad](../../../assessments/squad.md) | `squad-marble-aligned-coordination-ablation` | MARBLE aligned four-domain re-run | `native-mechanism-ablation` | `first-party-reported` | `native-system` | [squad.json](squad.json) |
 | Squad | [squad](../../../assessments/squad.md) | `squad-marble-completion-ablation` | MARBLE factorial ablation | `native-mechanism-ablation` | `first-party-reported` | `native-system` | [squad.json](squad.json) |
+| Squad | [squad](../../../assessments/squad.md) | `squad-shared-state-conflict-attenuation-2026-03` | immutable first-party repository history plus first-party public operational case study | `operational-history-witness` | `first-party-reported` | `native-system` | [squad-operational-history.json](squad-operational-history.json) |
+| thClaws | [thclaws](../../../assessments/thclaws.md) | `thclaws-team-workspace-interference-attenuation-2026` | immutable first-party release, issue, commit and assessed-runtime history plus later first-party Agent Teams operational reports | `operational-history-witness` | `first-party-reported` | `native-system` | [thclaws-operational-history.json](thclaws-operational-history.json) |
 | The Specification Gap benchmark organization | — | `specification-gap-recovery-2026-03` | The Specification Gap / AmbigClass 2×2 conflict-recovery experiment | `benchmark-defined-coordination-ablation` | `first-party-reported` | `benchmark-scaffolded` | [specification-gap.json](specification-gap.json) |
 | TheAppliedScientist | [appliedscientist](../../../assessments/appliedscientist.md) | `appliedscientist-iterative-review-2026-09` | AppliedScientist iterative reviewer-guided revision study (30 papers) | `iterative-review-revision-study` | `first-party-reported` | `native-system` | [appliedscientist.json](appliedscientist.json) |
 
