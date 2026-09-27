@@ -3,30 +3,36 @@
 Status: **experimental, non-normative**
 
 Tracking issue: #452  
-Operating-model clarification: #617
+Operating-model clarification: #617  
+Neutral benchmark-system registry boundary: #782
 
-This document defines the active operating model for `functional-capability-depth`.
+Current registry contract: [`BENCHMARK-SYSTEM-REGISTRY.md`](BENCHMARK-SYSTEM-REGISTRY.md).
 
-The VSM Harness Index is an evidence index, not a benchmark operator. Per-function capability evidence is built from already-public benchmark, leaderboard, paper, repository, and result artifacts that can be provenance-bound and semantically mapped to a VSM function.
+This document defines the active public-evidence operating model for `functional-capability-depth`.
 
-**Opensiro does not run or reproduce benchmark experiments on assessed harnesses to create capability evidence for this experiment.** A function-level evidence gap remains a gap until suitable public upstream or third-party evidence exists.
+The VSM Harness Index is an evidence index, not a benchmark operator. OpenSiro does not need to operate a harness benchmark, nor canonically decide what VSM function a benchmark measures, in order to preserve an otherwise valid public benchmark ↔ system observation.
+
+**Opensiro does not run or reproduce benchmark experiments on assessed harnesses to create capability evidence for this experiment.** A public-evidence gap remains a gap until suitable upstream or third-party evidence exists.
 
 Historical controlled-execution designs, preregistrations, fixtures, fake artifacts, and execution harnesses may remain under `experiments/` as research history. They are not an active admission path and must not be treated as capability observations.
 
-## Operating model
+## Active operating model
 
 ```text
 public upstream / third-party benchmark, paper, leaderboard, repository result
                     ↓
+              benchmark identity
+                    ↓
+          concrete system identity
+                    ↓
+       raw system-linked observation
+                    ↓
           provenance + normalization
                     ↓
-       VSM-function attribution
-                    ↓
-      canonical/native linkage when supported
-                    ↓
-         comparable evidence groups
-                    ↓
-        capability projections
+      optional derived interpretations
+        ├── VSM-function relevance
+        ├── domain relevance
+        └── capability/comparison views
 ```
 
 The canonical VSM assessment remains separate:
@@ -35,51 +41,57 @@ The canonical VSM assessment remains separate:
 repository @ pinned revision
         ↓
 canonical VSM function / ownership state
-
-public capability evidence
-        ↓
-function-specific observations
 ```
 
 Benchmark performance does not create or change `A`, `C`, `P`, `—`, `?`, `A(P)`, or `C(P)` states.
 
-The following is explicitly **not** part of the active capability-depth workflow:
+The following is explicitly **not** part of the active workflow:
 
 ```text
 capability gap
         ↓
-Opensiro operates the harness / benchmark
+OpenSiro operates the harness / benchmark
         ↓
 newly generated result
         ↓
-Index capability evidence
+Index evidence
 ```
 
-## Admission sequence
+Nor is this required for raw observation admission:
 
-For a public result:
+```text
+public benchmark result
+        ↓
+OpenSiro must first decide one canonical VSM-function meaning
+        ↓
+only then preserve the result
+```
+
+VSM relevance is a separate research/community interpretation layer.
+
+## Admission sequence for a raw public result
 
 1. identify the public source and preserve an immutable source revision/artifact where available;
-2. identify the benchmark family, version, task set/split, metric, model, and published harness configuration;
-3. link the benchmarked harness identity to a canonical Index system without silently equating an ambiguous display label with a repository;
-4. establish that the benchmark actually exercises the relevant first-party function boundary rather than supplying that function entirely from benchmark scaffolding;
-5. classify system compatibility and comparison quality;
-6. store the raw public observation once;
-7. project the observation into one or more VSM functions only after function-specific semantic review.
+2. identify the benchmark family, version, task set/split, metric, model, and published system configuration;
+3. link the benchmarked system identity to a canonical Index harness only when the public provenance supports that link;
+4. classify whether the benchmark exercised a native system path, preserved it through an adapter, supplied a benchmark-scaffolded organization, or remains unclear;
+5. preserve the raw metric/result and historical execution identity;
+6. record comparison metadata and known confounders without manufacturing comparability;
+7. store the raw observation once.
 
-Do not infer VSM functions from benchmark slice names such as planning, verification, memory, coordination, governance, or learning.
+A later VSM-function, domain, or capability interpretation references the raw observation ID and may be revised independently.
+
+Do not infer system identity from a benchmark display label alone. Do not infer historical versions or run configuration from current repository state.
 
 ## Evidence-source classes
 
-These source classes describe **who produced the public result**, not whether the result is semantically valid for a VSM function.
+These source classes describe **who produced the public result**, not what the benchmark means semantically.
 
 ### `external-reproduced`
 
-A public result produced by an evaluator, benchmark operator, leaderboard operator, research group, or other party that is independent of the harness/project being measured.
+A public result produced by an evaluator, benchmark operator, leaderboard operator, research group, or other party independent of the harness/project being measured.
 
-Examples include public third-party benchmark campaigns that run several harnesses under one evaluation surface.
-
-This class is preferred for cross-harness comparison when the comparison cell is also materially matched.
+This class is preferred for cross-system comparison when the comparison cell is also materially matched.
 
 ### `first-party-reported`
 
@@ -89,34 +101,32 @@ It may be admitted when provenance and configuration are recoverable, but it mus
 
 ### `mechanism-only`
 
-Primary executable or repository evidence establishes a relevant capability mechanism or VSM function path, but there is no admitted public performance observation for that mechanism/system under a reviewed benchmark family.
+Primary executable or repository evidence establishes a relevant mechanism/system path, but there is no admitted public performance observation.
 
 `mechanism-only` is not a numeric result and must not be converted into one.
 
-A later external or first-party public result may add a performance observation without rewriting the earlier mechanism evidence.
-
 ## Orthogonal evidence dimensions
 
-Evidence-source class is separate from existing compatibility and comparison classes.
+Evidence-source class, system compatibility, comparison quality, canonical VSM state, and later function interpretation are separate questions.
 
-System compatibility may remain, for example:
+System compatibility may include:
 
 - `native-system`;
 - `adapter-preserved`;
 - `benchmark-scaffolded`;
 - `unclear`.
 
-Comparison quality may remain, for example:
+Comparison quality may include:
 
 - `matched-model`;
 - `partially-matched`;
 - `descriptive-only`.
 
-A third-party result is not automatically comparable. A first-party result is not automatically unusable. Function validity, system identity, compatibility, and comparison matching are separate questions.
+A third-party result is not automatically comparable. A first-party result is not automatically unusable. A result linked to a canonical harness is not automatically evidence for any particular VSM function.
 
 ## Matched-comparison rule
 
-A direct cross-harness capability comparison should use a public comparison cell that keeps constant, as far as the published evidence permits:
+A direct cross-harness comparison should use a public comparison cell that keeps constant, as far as the published evidence permits:
 
 - benchmark family/version and task set or split;
 - model and materially relevant model configuration;
@@ -127,16 +137,16 @@ A direct cross-harness capability comparison should use a public comparison cell
 
 The harness/system should be the intended varying factor.
 
-If those conditions are not materially matched, preserve the observation as `partially-matched`, `descriptive-only`, proxy, or another explicit weaker class rather than manufacturing a direct comparison.
+If those conditions are not materially matched, preserve the observation as `partially-matched`, `descriptive-only`, or another explicit weaker class rather than manufacturing a direct comparison.
 
-Raw metrics from different benchmark families must not be normalized into one universal function score.
+Raw metrics from different benchmark families must not be normalized into one universal score.
 
 ## Required provenance
 
 Preserve, where available:
 
-- canonical harness ID and repository;
-- benchmarked harness display label;
+- canonical harness ID and repository when linkable;
+- benchmarked harness/system display label;
 - benchmarked harness version, source revision, and configuration;
 - relationship to the current canonical assessment revision;
 - benchmark family, version, variant, and split;
@@ -152,15 +162,29 @@ Preserve, where available:
 - budget, timeout, and repetition settings;
 - system compatibility class;
 - comparison group and comparison class;
+- reset/adaptation state where public evidence establishes it;
 - known discrepancies and confounders.
 
-Unknown values remain unknown. Do not infer an exact historical harness revision, model configuration, or environment from a current repository state.
+Unknown values remain unknown.
 
-## Function attribution
+## System linkage
 
-A benchmark observation becomes S1/S2/S3/S3*/S4/S5 capability evidence only after the benchmark boundary is mapped to the corresponding organizational function.
+The registry's first semantic responsibility is **identity**, not benchmark meaning.
 
-Examples of invalid shortcuts:
+A canonical harness linkage should be supported by public evidence such as:
+
+- an adapter that installs or invokes the first-party harness;
+- benchmark/submission metadata with a recoverable version or repository identity;
+- first-party benchmark artifacts identifying the implementation;
+- another reconstructable provenance chain.
+
+If the benchmark authors supply the evaluated organization and no canonical harness identity is supportable, preserve that boundary as benchmark-scaffolded/non-canonical instead of inventing a harness mapping.
+
+## VSM-function relevance is a derived interpretation
+
+A raw observation may later be interpreted as relevant to one or more VSM functions, or to none.
+
+Examples of invalid automatic shortcuts remain:
 
 ```text
 planning score       → S3
@@ -170,22 +194,33 @@ learning score       → S4
 governance score     → S5
 ```
 
-The benchmark scaffold may itself own the named behavior. A direct VSM benchmark can therefore still fail to provide a native canonical-harness comparison.
+But rejecting those shortcuts does **not** mean raw evidence must wait for OpenSiro to produce an authoritative replacement classification.
 
-Map the organizational function first; only then use the public benchmark result as capability evidence for that function.
+Community/research views may instead reference the raw observation and argue:
+
+```text
+observation X → S2-relevant
+observation X → S2 + S3 proxy
+observation X → not direct S2
+observation X → no useful VSM attribution
+```
+
+Such interpretation may change without rewriting the benchmark/system/result identity.
+
+Existing function-specific maps, projections, and closure artifacts remain historical/derived outputs from this experiment. They are not prerequisites for admitting new raw public observations.
 
 ## Capability ownership interpretation
 
 Outcome provenance and causal ownership are distinct.
 
-Where independently supported, a capability interpretation may use:
+Where independently supported, a derived capability interpretation may use:
 
-- `native` — material capability is owned inside the assessed first-party function boundary;
+- `native` — material capability is owned inside the assessed first-party boundary;
 - `inherited` — capability is supplied primarily by an external model, host, runtime, tool service, or other substrate;
 - `mixed` — material first-party control/transformation acts over inherited capability;
 - `unclear` — evidence is insufficient for causal ownership attribution.
 
-A benchmark score alone normally establishes behavior of the measured system plus its published substrate. It does not by itself prove that the observed difference was caused by the harness implementation.
+A benchmark score alone normally establishes behavior of the measured system plus its published substrate. It does not by itself prove what caused the observed difference.
 
 ## Historical observations
 
@@ -195,50 +230,63 @@ A result for `Harness X v1.2` remains valid historical evidence even if the cano
 
 New upstream releases may justify new observations or a new comparison cell; they do not invalidate an older correctly identified observation.
 
-## Primary baselines and gaps
+## Shared raw source of truth
 
-The baseline view may select one primary benchmark family per VSM function when public evidence supplies a sufficiently matched canonical-harness comparison.
+Store a published numeric result once in the neutral observation layer.
 
-A function-level `gap` means:
+```text
+raw observation
+        ↓
+        ├── VSM interpretation view
+        ├── domain view
+        ├── comparison view
+        └── other community/research view
+```
 
-> no selected matched canonical-harness primary baseline is currently supported by the reviewed public evidence.
+Derived views reference observation IDs rather than copying the metric into parallel manually maintained tables.
+
+The current neutral seed is [`system-observations/`](system-observations/).
+
+## Function-level primary baselines and gaps
+
+Historical/current per-function primary-baseline work may continue as a **derived research view** when someone chooses a VSM interpretation and enough matched evidence exists.
+
+A function-level `gap` means only that the reviewed derived view does not currently support a selected matched canonical-harness primary for that function.
+
+S2-S5 gaps therefore remain gaps until public upstream or third-party evidence supports a valid derived primary; the neutral raw registry does not need to wait for that interpretation before preserving a system-linked result.
 
 It does **not** mean:
 
 - the function has zero capability;
 - no relevant benchmark family exists;
-- Opensiro should run its own benchmark to fill the gap.
-
-S2-S5 gaps therefore remain gaps until public upstream or third-party evidence supports a valid primary.
+- the raw registry lacks system-linked evidence;
+- OpenSiro should run its own benchmark to fill the gap.
 
 ## Controlled-execution history
 
-Controlled-execution work that already exists under this experiment is historical research material only.
+Controlled-execution work already present under this experiment is historical research material only.
 
-This includes the frozen Batch 02 controlled-replication design/attempt records and the LoopX S2 preregistration/execution-harness artifacts produced before the operating-model clarification in #617.
+This includes frozen Batch 02 controlled-replication design/attempt records and LoopX S2 preregistration/execution-harness artifacts produced before #617.
 
-These artifacts may document methodology questions such as identifiability, adapter preservation, or why a proposed comparison would be invalid. They must not be scheduled for live harness execution as part of capability-depth, and fake/stub results must never be promoted into capability observations.
+These artifacts may document methodology questions such as identifiability, adapter preservation, or why a proposed comparison would be invalid. They must not be scheduled for live harness execution as part of this evidence registry, and fake/stub results must never be promoted into capability observations.
 
-If a future Opensiro research track intentionally studies controlled reproduction, it must be scoped separately from `functional-capability-depth` and cannot silently become an evidence source for this Index experiment.
+If a future OpenSiro research track intentionally studies controlled reproduction, it must be scoped separately from this registry.
 
 ## Relationship to self-organizing `S`
 
-Public capability evidence and the self-organizing-autonomy experiment remain separate.
+Raw public benchmark evidence and the self-organizing-autonomy experiment remain separate.
 
-A high benchmark score does not establish experimental `S`. Persistent adaptation observed inside a public benchmark must be identified explicitly rather than silently mixed with an ordinary frozen-repertoire comparison.
+Persistent adaptation observed inside a public benchmark should be recorded explicitly where the protocol establishes it rather than silently mixed with an ordinary frozen/reset comparison.
 
-## Source-of-truth rule
-
-Store raw published metrics once in the shared observation layer. Function-specific files and generated views should reference those observations rather than copying values into parallel manually maintained tables.
-
-The current S1 observation layer already follows this direction through `s1-system-benchmarks/observations.jsonl` and generated projections.
+A high benchmark score does not establish experimental `S`.
 
 ## Non-goals
 
+- no canonical benchmark-to-VSM-function taxonomy required for raw admission;
 - no global harness winner;
 - no scalar score across S1-S5;
 - no replacement of canonical VSM assessment;
-- no Opensiro-operated harness benchmark runs to create capability-depth evidence;
+- no OpenSiro-operated harness benchmark runs to create evidence;
 - no inference of organizational function from benchmark vocabulary;
 - no forced filling of S2-S5 gaps;
 - no rewrite of frozen controlled-execution history.
