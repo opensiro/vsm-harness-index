@@ -102,11 +102,51 @@ def load_raw_observation(filename: str, observation_id: str) -> dict:
     return matches[0]
 
 
+
+def hydrate_s4_projection(link: dict) -> dict:
+    oid = link.get("observation_id")
+    ref = link.get("raw_observation_ref")
+    prefix = "../system-observations/"
+    if not isinstance(oid, str) or not oid:
+        fail("S4 projection requires observation_id")
+    if not isinstance(ref, str) or not ref.startswith(prefix) or "#" not in ref:
+        fail(f"{oid}: invalid raw_observation_ref")
+    rel, ref_oid = ref[len(prefix):].rsplit("#", 1)
+    if ref_oid != oid or not rel.endswith(".json") or "/" in rel:
+        fail(f"{oid}: raw_observation_ref drift")
+    path = RAW_OBSERVATIONS / rel
+    if not path.is_file():
+        fail(f"{oid}: neutral raw record missing: {rel}")
+    record = json.loads(path.read_text(encoding="utf-8"))
+    matches = [row for row in record.get("observations", []) if row.get("observation_id") == oid]
+    if len(matches) != 1:
+        fail(f"{oid}: expected exactly one neutral raw observation in {rel}")
+    effective = dict(link)
+    for key, value in matches[0].items():
+        if key in {"observation_id", "kind", "benchmark", "evidence_surface", "non_claim"}:
+            continue
+        if key in effective and effective[key] != value:
+            fail(f"{oid}: derived/raw field conflict: {key}")
+        effective[key] = value
+    effective["evidence_source_class"] = record.get("evidence_source_class")
+    effective["system_compatibility"] = (record.get("published_implementation") or {}).get("system_compatibility")
+    effective["primary_sources"] = record.get("primary_sources")
+    raw_harness = record.get("canonical_harness_id")
+    if effective.get("canonical_harness_id") != raw_harness:
+        fail(f"{oid}: canonical_harness_id raw/derived drift")
+    if raw_harness:
+        effective["canonical_review_revision"] = record.get("canonical_review_ref")
+        if "canonical_assessment_ref" not in effective:
+            effective["canonical_assessment_ref"] = record.get("canonical_assessment_ref")
+    return effective
+
 def main() -> None:
     benchmark_map = json.loads(MAP.read_text(encoding="utf-8"))
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
-    benchmark_observations = json.loads(BENCHMARK_OBSERVATIONS.read_text(encoding="utf-8"))
-    canonical_observations = json.loads(CANONICAL_OBSERVATIONS.read_text(encoding="utf-8"))
+    benchmark_links = json.loads(BENCHMARK_OBSERVATIONS.read_text(encoding="utf-8"))
+    canonical_links = json.loads(CANONICAL_OBSERVATIONS.read_text(encoding="utf-8"))
+    benchmark_observations = [hydrate_s4_projection(row) for row in benchmark_links]
+    canonical_observations = [hydrate_s4_projection(row) for row in canonical_links]
     proxy_observations = json.loads(PROXY_OBSERVATIONS.read_text(encoding="utf-8"))
 
     if coverage.get("schema_version") != 1:
@@ -178,7 +218,7 @@ def main() -> None:
     expected_a_raw_ref = "../system-observations/a-evolve.json#a-evolve-harness-updating-2026"
     if canonical_obs.get("raw_observation_ref") != expected_a_raw_ref:
         fail("canonical A-Evolve raw observation linkage drift")
-    if "reported_harness_updating_metrics" in canonical_obs:
+    if "reported_harness_updating_metrics" in canonical_links[0]:
         fail("canonical A-Evolve derived record duplicates neutral numeric payload")
     a_evolve_raw = load_raw_observation("a-evolve.json", "a-evolve-harness-updating-2026")
     if canonical_obs.get("benchmarks") != ["SWE-bench Verified", "MCP-Atlas", "SkillsBench"]:
@@ -238,7 +278,7 @@ def main() -> None:
     expected_k_raw_ref = "../system-observations/kadath.json#kadath-ten-epoch-native-evolution-2026"
     if kadath_obs.get("raw_observation_ref") != expected_k_raw_ref:
         fail("KADATH raw observation linkage drift")
-    if "reported_population_metrics" in kadath_obs:
+    if "reported_population_metrics" in canonical_links[1]:
         fail("KADATH derived record duplicates neutral numeric payload")
     kadath_raw = load_raw_observation("kadath.json", "kadath-ten-epoch-native-evolution-2026")
     if kadath_obs.get("epochs") != 10:
