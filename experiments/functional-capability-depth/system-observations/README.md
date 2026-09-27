@@ -4,6 +4,7 @@ Status: experimental, non-normative.
 
 Issue introducing this layer: #403  
 Current neutral-registry boundary: #782  
+Machine-readable registry: #786  
 Registry contract: [`../BENCHMARK-SYSTEM-REGISTRY.md`](../BENCHMARK-SYSTEM-REGISTRY.md)
 
 ## Purpose
@@ -77,6 +78,7 @@ Each raw record should preserve where possible:
 - metric and raw result;
 - task/replicate/confidence information where published;
 - publisher/source relation;
+- `external-reproduced`, `first-party-reported`, or `mechanism-only` source class where applicable;
 - `native-system`, `adapter-preserved`, `benchmark-scaffolded`, or `unclear` compatibility where supportable;
 - comparison group/quality and known confounders;
 - adaptation/reset state where the public protocol establishes it;
@@ -86,6 +88,30 @@ Each raw record should preserve where possible:
 Unknown values remain unknown. Do not infer historical run metadata from current repository state.
 
 A benchmark display label alone is not enough to establish canonical system identity. A link should be backed by recoverable public evidence such as an adapter, submission metadata, exact version/revision, or first-party artifact.
+
+## Machine-readable registry
+
+The raw JSON files are the source of truth. Two generated projections make the linkage easy to consume:
+
+- [`registry.psv`](registry.psv) — compact machine-readable manifest, one row per `observation_id`;
+- [`REGISTRY.md`](REGISTRY.md) — human-readable table over the same rows.
+
+Generate them with:
+
+```bash
+python experiments/functional-capability-depth/system-observations/render_registry.py
+```
+
+Validate the raw registry with:
+
+```bash
+python experiments/functional-capability-depth/system-observations/validate.py
+python experiments/functional-capability-depth/system-observations/render_registry.py --check
+```
+
+The generated manifest deliberately contains identity/provenance metadata only. Heterogeneous numeric benchmark payloads remain in their raw JSON record and are not copied into a second manually maintained result database.
+
+The neutral validator checks global `observation_id` uniqueness, public HTTPS provenance, canonical linkage shape when present, supported source/compatibility classes, and recoverable benchmark identity. It does **not** require a `function`, `benchmark_fit`, canonical S-state, or VSM interpretation.
 
 ## Source-of-truth rule
 
