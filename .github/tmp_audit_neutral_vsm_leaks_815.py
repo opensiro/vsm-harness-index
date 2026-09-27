@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,21 +13,25 @@ FORBIDDEN_EXACT = {
     "vsm_interpretation",
     "canonical_state_at_review",
     "canonical_states_at_review",
-    "canonical_s1_state",
-    "canonical_s2_state",
-    "canonical_s3_state",
-    "canonical_s3star_state",
-    "canonical_s4_state",
-    "canonical_s5_state",
+    "canonical_system_eligible",
+    "coverage_class",
 }
-FORBIDDEN_PREFIXES = ("autonomy_s",)
+
+
+def forbidden_key(key: str) -> bool:
+    return (
+        key in FORBIDDEN_EXACT
+        or key.startswith("autonomy_s")
+        or key.startswith("vsm_")
+        or re.match(r"^canonical_.*state", key) is not None
+    )
 
 
 def walk(value, path="$"):
     if isinstance(value, dict):
         for key, child in value.items():
             key_path = f"{path}.{key}"
-            if key in FORBIDDEN_EXACT or key.startswith(FORBIDDEN_PREFIXES):
+            if forbidden_key(key):
                 yield key_path, child
             yield from walk(child, key_path)
     elif isinstance(value, list):
