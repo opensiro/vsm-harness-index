@@ -10,74 +10,14 @@
     "canonical_system_eligible": false,
     "system_compatibility": "benchmark-scaffolded",
     "benchmark_artifact_revision": "126d69b5921be71daffd38c70ec4aa77252b4f39",
-    "result_artifact": "results/trackc/fleet_runs.jsonl",
-    "result_manifest": "results/replications/MANIFEST.md",
-    "findings_artifact": "docs/findings/2026-08-21-findings.md",
-    "experiment": "Track D scale-up 1",
-    "date": "2026-08-21",
-    "model": "claude-sonnet-5",
-    "worker_count": 10,
-    "ticket_count": 20,
-    "nool_version": "6.14.1",
-    "held_constant": [
-      "same 20-ticket corpus-v2 contention workload",
-      "same claude-sonnet-5 model",
-      "same prompts",
-      "same N=10 worker count",
-      "same per-ticket worktree isolation",
-      "serialized worktree creation in both primary arms"
-    ],
-    "disturbance": "Parallel coding agents work against one shared codebase while nine tickets form three overlapping-footprint contention clusters. Without pre-start attenuation, second/third members can branch from stale shared state and collide at integration or silently poison composed behavior.",
-    "treatment": "Pre-start coordination gates dispatch of footprint-overlapping tickets until the prior overlapping ticket has integrated, so later work branches from the updated integrated state.",
-    "git_uncoordinated_runs": [
-      {
-        "run_id": "fleet_git_fleet_9a6eb70f",
-        "accepted": 1,
-        "clean_merges": 14,
-        "tickets": 20,
-        "final_main_health": "build-broken",
-        "failed_integration_spend_usd": 1.40
-      },
-      {
-        "run_id": "fleet_git_fleet_803f2288",
-        "accepted": 13,
-        "clean_merges": 13,
-        "tickets": 20,
-        "final_main_health": "green",
-        "failed_integration_spend_usd": 1.57
-      }
-    ],
-    "coordinated_runs": [
-      {
-        "run_id": "fleet_nool_fleet_cb7ccf72",
-        "accepted": 19,
-        "clean_merges": 20,
-        "tickets": 20,
-        "final_main_health": "green",
-        "failed_integration_spend_usd": 0.0
-      },
-      {
-        "run_id": "fleet_nool_fleet_2a51582f",
-        "accepted": 19,
-        "clean_merges": 20,
-        "tickets": 20,
-        "final_main_health": "green",
-        "failed_integration_spend_usd": 0.0
-      }
-    ],
-    "reported_conflict_structure": "All conflicts in the two primary uncoordinated runs occur on second or third members of the designed contention clusters. The coordinated arm integrates all nine contention-cluster tickets in both primary replicates.",
-    "excluded_variant": {
-      "run_id": "fleet_nool_fleet_16e2e1b0",
-      "reason": "same-batch dispatch-gate bug allowed overlapping tickets admitted in one batch to race; retained in raw data and excluded from the primary comparison"
-    },
-    "causal_control_note": "The same benchmark later reports that a git-only scheduler using the same pre-start check-in logic can match the coordinated Nool arm when declared footprints are accurate. This supports attribution to the coordination relation rather than to product branding alone.",
     "vsm_interpretation": "This is direct S2 capability evidence at the benchmark-defined fleet boundary: distinct S1 workers generate interaction-specific variety through overlapping concurrent work; the coordination treatment attenuates that interference before execution by delaying overlapping work; later workers then operate on integrated state, changing subsequent S1 behavior and integration outcomes. The public benchmark repository does not establish the external Nool runtime as a canonical Index harness, so this observation is non-canonical and cannot select the S2 primary baseline.",
     "primary_sources": [
       "https://github.com/noolinc/nool_long_eval_bench/tree/126d69b5921be71daffd38c70ec4aa77252b4f39",
       "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/docs/findings/2026-08-21-findings.md",
       "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/replications/MANIFEST.md",
       "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/trackc/fleet_runs.jsonl"
-    ]
+    ],
+    "raw_observation_ref": "../system-observations/nool-fleet-coordination.json#nool-trackd-scaleup1-contention-2026-08-21"
   },
   {
     "observation_id": "specification-gap-recovery-2026-03",
@@ -90,51 +30,14 @@
     "canonical_system_eligible": false,
     "system_compatibility": "benchmark-scaffolded",
     "benchmark_artifact_revision": "b64059f3ee5cab9b71b834c7b5acc597791880d5",
-    "result_artifact": "data/conflict_results/",
-    "experiment_artifact": "scripts/conflict_experiment.py",
-    "paper": "https://arxiv.org/abs/2603.24284",
-    "experiment": "2x2 conflict-recovery experiment",
-    "model": "claude-sonnet-4-20250514",
-    "task_count": 53,
-    "worker_count": 2,
-    "disturbance": "Two independent coding workers implement disjoint methods under intentionally opposing list-versus-dictionary structural priors and partial L3 specification, creating incompatible shared internal representations that appear only when their outputs are integrated.",
-    "treatment": "The merger receives a richer shared L0 specification that exposes the common class contract while operating on the same split-worker outputs. This shared specification attenuates the representation mismatch without changing the worker implementations themselves.",
-    "held_constant": [
-      "same per-task pair of split-worker outputs is reused across recovery conditions",
-      "same Claude Sonnet conflict-experiment model family",
-      "same ClassEval-derived task and tests within each recovery comparison",
-      "same merger role; recovery condition changes the information membrane supplied to integration"
-    ],
-    "recovery_conditions": [
-      {
-        "condition": "blind_l3_no_conflict_report",
-        "pass_rate": 0.527
-      },
-      {
-        "condition": "guided_l3_with_conflict_report",
-        "pass_rate": 0.527
-      },
-      {
-        "condition": "spec_only_l0_no_conflict_report",
-        "pass_rate": 0.889
-      },
-      {
-        "condition": "resolve_l0_with_conflict_report",
-        "pass_rate": 0.823
-      }
-    ],
-    "single_agent_l0_ceiling": 0.883,
-    "reported_effects": {
-      "full_specification_vs_blind_pp": 36.2,
-      "conflict_report_at_l3_pp": 0.0
-    },
     "vsm_interpretation": "This is direct S2 capability evidence at the benchmark-defined two-worker integration boundary. The workers generate interaction-specific variety through incompatible hidden representation choices; a richer shared specification supplied at integration attenuates that variety and materially changes the composed outcome. The organization and coordination membrane are benchmark-defined, so the observation is non-canonical and does not establish native S2 ownership for any external harness.",
     "primary_sources": [
       "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5",
       "https://github.com/camilochs/the_specification_gap/blob/b64059f3ee5cab9b71b834c7b5acc597791880d5/scripts/conflict_experiment.py",
       "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5/data/conflict_results",
       "https://arxiv.org/abs/2603.24284"
-    ]
+    ],
+    "raw_observation_ref": "../system-observations/specification-gap.json#specification-gap-recovery-2026-03"
   },
   {
     "observation_id": "codecrdt-parallel-convergence-2025-10",
@@ -148,35 +51,6 @@
     "system_compatibility": "native-system",
     "comparison_class": "descriptive-only",
     "benchmark_artifact_revision": "8fa5a307062025c900e9de27696f4e804a0a7809",
-    "result_artifact": "evaluation/evaluation_results/checkpoint.json",
-    "result_report": "evaluation/evaluation_results/evaluation_report.yaml",
-    "environment_artifact": "evaluation/evaluation_results/environment_info.json",
-    "objective_metrics_artifact": "evaluation/evaluation_results/objective_metrics.csv",
-    "paper": "https://arxiv.org/abs/2510.18893",
-    "experiment": "CodeCRDT sequential-versus-parallel evaluation",
-    "date": "2025-10-15",
-    "model": "Claude Sonnet 4.5",
-    "task_count": 6,
-    "runs_per_task_per_mode": 50,
-    "total_evaluations": 600,
-    "sequential_runs": 300,
-    "parallel_runs": 300,
-    "environment": {
-      "platform": "Linux",
-      "architecture": "aarch64",
-      "python_version": "3.12.3",
-      "temperature": 0.0,
-      "random_seed": 42,
-      "max_concurrent_requests": 1
-    },
-    "disturbance": "Multiple coding agents in the parallel CodeCRDT organization update one shared code artifact concurrently. Their useful local edits create interaction-specific integration variety, including the possibility of overlapping or semantically incompatible concurrent changes.",
-    "coordination_relation": "CodeCRDT supplies first-party observation-driven coordination over shared CRDT state: agents observe concurrent edits, incorporate the shared state and rely on strong eventual consistency to converge concurrent updates without a separate textual merge-resolution step.",
-    "reported_parallel_properties": {
-      "convergence_rate": 1.0,
-      "merge_failures": 0,
-      "semantic_conflicts": "preliminary first-party estimate of 5-10%; requires reconciliation and is retained as a limitation"
-    },
-    "comparison_limitation": "The public evaluation compares sequential generation with CodeCRDT-coordinated parallel generation and does not include a matched uncoordinated-parallel arm. This observation is therefore descriptive direct evidence of the coordinated product boundary, not a causal estimate of CodeCRDT uplift versus no coordination.",
     "vsm_interpretation": "This is direct descriptive S2 capability evidence at the external CodeCRDT product boundary. Distinct concurrent coding activities generate interaction-specific integration variety and the first-party shared CRDT relation attenuates merge-level variety by maintaining deterministic convergence. The absence of an uncoordinated-parallel control prevents a causal effect claim, and CodeCRDT is not a canonical Index harness, so this row cannot create canonical S2 ownership or select the S2 primary baseline.",
     "primary_sources": [
       "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809",
@@ -186,7 +60,8 @@
       "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/evaluation_results",
       "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/SCIENCE.md",
       "https://arxiv.org/abs/2510.18893"
-    ]
+    ],
+    "raw_observation_ref": "../system-observations/codecrdt.json#codecrdt-parallel-convergence-2025-10"
   },
   {
     "observation_id": "grit-synthetic-merge-contention-2026-04",
@@ -200,55 +75,14 @@
     "system_compatibility": "native-system",
     "comparison_class": "partially-matched",
     "benchmark_artifact_revision": "a2c48735e0a16c49ca1541c4865fce438c479405",
-    "result_artifact": "tests/gen_graph.py",
-    "protocol_artifact": "scripts/sweep/bench.sh",
-    "experiment": "synthetic merge-contention sweep",
-    "date": "2026-04-06",
-    "agent_counts": [1, 2, 5, 10, 20, 50],
-    "rounds_per_iteration": 5,
-    "iterations": 5,
-    "reported_raw_git_failures_per_iteration": [
-      [0, 5, 20, 43, 84, 175],
-      [0, 5, 20, 42, 85, 175],
-      [0, 5, 20, 43, 83, 175],
-      [0, 5, 20, 44, 83, 175],
-      [0, 5, 20, 44, 82, 175]
-    ],
-    "reported_raw_git_conflicts_per_iteration": [
-      [0, 39, 88, 99, 136, 175],
-      [0, 38, 85, 88, 129, 175],
-      [0, 37, 77, 85, 122, 175],
-      [0, 37, 63, 88, 126, 175],
-      [0, 38, 85, 89, 136, 175]
-    ],
-    "reported_grit_failures": [0, 0, 0, 0, 0, 0],
-    "reported_mean_raw_git_failure_rates": {
-      "1": 0.0,
-      "2": 0.5,
-      "5": 0.8,
-      "10": 0.864,
-      "20": 0.834,
-      "50": 0.7
-    },
-    "reported_mean_grit_failure_rates": {
-      "1": 0.0,
-      "2": 0.0,
-      "5": 0.0,
-      "10": 0.0,
-      "20": 0.0,
-      "50": 0.0
-    },
-    "disturbance": "Parallel coding branches start from shared repository state and create interaction-specific merge variety when independently useful edits collide during integration; the benchmark records failed raw-git merges and conflict files as agent count grows.",
-    "coordination_relation": "Grit supplies its first-party symbol-claim and locking path, isolated worktrees, queue/admission behavior and serialized integration so conflicting or overlapping work is attenuated before or during merge rather than being discarded as raw-git merge failure.",
-    "provenance_limitation": "The repository commits the benchmark protocol, the five-iteration result arrays and the derived zero-failure Grit series, but generated scripts/*/results directories are intentionally gitignored. This row is therefore first-party-reported and is not independently reproduced or raw-run-ledger-backed.",
-    "comparison_limitation": "The committed sweep script samples symbol allocation separately for the raw-git and Grit arms. The published comparison is therefore treated as partially matched first-party evidence rather than a paired causal estimate or a matched cross-harness primary cell.",
     "vsm_interpretation": "This is direct S2 capability evidence at the external Grit product boundary: parallel S1-like coding activities generate integration-specific variety and Grit's first-party claim/lock/worktree/merge relation attenuates that variety, with the published sweep reporting zero Grit merge failures across the recorded agent-count series. Grit is not a canonical Index harness, so the observation remains non-canonical and cannot select the S2 primary baseline.",
     "primary_sources": [
       "https://github.com/rtk-ai/grit/tree/a2c48735e0a16c49ca1541c4865fce438c479405",
       "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/scripts/sweep/bench.sh",
       "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/tests/gen_graph.py",
       "https://github.com/rtk-ai/grit/commit/a2c48735e0a16c49ca1541c4865fce438c479405"
-    ]
+    ],
+    "raw_observation_ref": "../system-observations/grit.json#grit-synthetic-merge-contention-2026-04"
   },
   {
     "observation_id": "squad-shared-state-conflict-attenuation-2026-03",
@@ -301,7 +135,11 @@
       "a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
       "db0efe8a6f5ba49da0bafeba84ae4835a09a946b"
     ],
-    "operational_issues": [125, 200, 202],
+    "operational_issues": [
+      125,
+      200,
+      202
+    ],
     "disturbance": "Distinct thClaws teammate S1s share a project/team workspace and can generate interaction-specific destructive or transient interference. First-party history records cross-branch `git reset --hard main` wiping another teammate's frontend worktree and repeated lead destructive workspace operations cascade-killing teammate worktrees/processes; the assessed runtime also records concurrent team members colliding on the shared `.git/index.lock`.",
     "coordination_relation": "thClaws attenuates these disturbances inside its first-party Agent Teams runtime: role-specific Bash seatbelts hard-block lead destructive workspace commands and teammate cross-branch hard resets before shell execution; #125 hardens those guards against shell-quoting/substitution bypasses; the assessed Bash path additionally detects the specific transient `.git/index.lock` race and retries it with bounded backoff before surfacing failure.",
     "subsequent_operation": "The hardening commit is an ancestor of the canonical assessed ref by 257 commits. Later first-party Agent Teams reports (#200/#202) show teammates booting, transitioning status, processing mailbox messages/replies and participating in task/shutdown lifecycle in the same runtime lineage; the canonical assessed source still applies the hardened guards before command execution and retains the concurrent-index retry path.",

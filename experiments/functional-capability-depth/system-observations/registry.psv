@@ -1,10 +1,12 @@
 observation_id|system_name|canonical_harness_id|benchmark_labels|kind|evidence_source_class|system_compatibility|record_ref
 a-evolve-harness-updating-2026|A-Evolve|a-evolve|A-Evolve harness-evolution study: SWE-bench Verified / MCP-Atlas / SkillsBench|persistent-harness-update-study|first-party-reported|native-system|a-evolve.json
 claude-code__frontierharness-v1.0__kimi-k3-fireworks__20260822|Claude Code|claude-code|FrontierHarness Eval v1|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
+codecrdt-parallel-convergence-2025-10|CodeCRDT||CodeCRDT sequential-versus-parallel evaluation|native-system-outcome-study|first-party-reported|native-system|codecrdt.json
 codex__frontierharness-v1.0__kimi-k3-fireworks__20260822|Codex|codex|FrontierHarness Eval v1|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
 codex__harbor-swe-bench-verified-parity__o4-mini__20250701|Codex|codex|SWE-bench Verified via Terminal-Bench/Harbor parity|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
 codex__terminal-bench-4.0.0__gpt-5.6-sol__20260826|Codex|codex|Terminal-Bench 4.0.0|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
 codex__terminal-bench-4.0.0__gpt-5.6-terra__20260826|Codex|codex|Terminal-Bench 4.0.0|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
+grit-synthetic-merge-contention-2026-04|Grit||Grit synthetic merge-contention sweep|native-mechanism-ablation|first-party-reported|native-system|grit.json
 hermes-agent__claw-swe-bench-full-350__glm-5.1__20260717|Hermes Agent|hermes-agent|Claw-SWE-Bench|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
 hermes-agent__claw-swe-bench-full-350__qwen-3.6-flash__20260717|Hermes Agent|hermes-agent|Claw-SWE-Bench|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
 hermes-agent__frontierharness-v1.0__kimi-k3-fireworks__20260822|Hermes Agent|hermes-agent|FrontierHarness Eval v1|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
@@ -16,6 +18,7 @@ magentic-one-gpt4o-o1-test-results|Magentic-One|autogen-agentchat|GAIA; Assistan
 magentic-one-gpt4o-test-results|Magentic-One|autogen-agentchat|GAIA; AssistantBench; WebArena|system-outcome|first-party-reported|native-system|magentic-one.json
 magentic-one-simple-orchestrator-gaia-ablation|Magentic-One|autogen-agentchat|GAIA|native-mechanism-ablation|first-party-reported|native-system|magentic-one.json
 multi-agent-orchestration-supervisor-ablation-2026-08|Multi-Agent Orchestration Engine|multi-agent-orchestration|Multi-Agent Orchestration supervisor ablation (54 scripted scenarios)|native-mechanism-ablation|first-party-reported|native-system|multi-agent-orchestration.json
+nool-trackd-scaleup1-contention-2026-08-21|Nool fleet coordination benchmark organization||Nool coding-agent fleet coordination benchmark — Track D scale-up 1|benchmark-defined-coordination-ablation|first-party-reported|benchmark-scaffolded|nool-fleet-coordination.json
 oh-my-pi__frontierharness-v1.0__kimi-k3-fireworks__20260822|oh-my-pi|oh-my-pi|FrontierHarness Eval v1|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
 openclaw__claw-swe-bench-full-350__glm-5.1__20260717|OpenClaw|openclaw|Claw-SWE-Bench|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
 openclaw__claw-swe-bench-full-350__qwen-3.6-flash__20260717|OpenClaw|openclaw|Claw-SWE-Bench|system-benchmark-result|external-reproduced|adapter-preserved|public-system-benchmarks.jsonl
@@ -28,4 +31,5 @@ qwenpaw__pawbench-v1.0__qwen3.6-35b-a3b__20260529|QwenPaw|qwenpaw|PawBench v1.0|
 squad-marble-aligned-coordination-ablation|Squad|squad|MARBLE aligned four-domain re-run|native-mechanism-ablation|first-party-reported|native-system|squad.json
 squad-marble-completion-ablation|Squad|squad|MARBLE factorial ablation|native-mechanism-ablation|first-party-reported|native-system|squad.json
 swe-agent__swe-bench-verified__claude-4-sonnet-20250514__20250522|SWE-agent|swe-agent|SWE-bench Verified|system-benchmark-result|external-reproduced|native-system|public-system-benchmarks.jsonl
+specification-gap-recovery-2026-03|The Specification Gap benchmark organization||The Specification Gap / AmbigClass 2×2 conflict-recovery experiment|benchmark-defined-coordination-ablation|first-party-reported|benchmark-scaffolded|specification-gap.json
 appliedscientist-iterative-review-2026-09|TheAppliedScientist|appliedscientist|AppliedScientist iterative reviewer-guided revision study (30 papers)|iterative-review-revision-study|first-party-reported|native-system|appliedscientist.json
