@@ -55,14 +55,6 @@
       "the updated harness becomes the next agent state",
       "later task execution measures whether the changed persistent capability is useful"
     ],
-    "reported_harness_updating_metrics": {
-      "maximum_best_vs_worst_evolver_spread_pp": 3.1,
-      "qwen3_235b_swe_gain_pp": 8.2,
-      "qwen3_235b_mcp_gain_pp": 0.6,
-      "qwen3_5_9b_skillsbench_gain_pp": 3.8,
-      "opus_4_6_skillsbench_gain_pp": 2.3,
-      "qwen3_235b_skillsbench_gain_pp": 1.5
-    },
     "metric_note": "The publication defines harness-updating capability as mean pairwise evolution gain across fixed anchor agents and reports pass-rate gains in percentage points. These values are preserved as a vector of reported observations, not collapsed into a global S4 score.",
     "comparison_scope_note": "This is direct quantitative capability evidence for one canonical native S4 system across three task domains and several evolver backbones. It is not a matched cross-harness S4 comparison and does not close the primary-baseline gap.",
     "provenance_limitation": "The reported experimental runs come from the first-party harness-evolution release lineage at 96ed93ba7ee0b9519fc55c963afb47a1975eb1ae. That release lineage and canonical review ref 18ba996dac9843f2759b2cdf8a94022f58fbfeb9 diverge in Git history. The canonical review ref nevertheless contains the first-party harness-disentangling artifact and UnifiedEngine port implementing the published Exp0/Exp1 protocol. Preserve the result as first-party-reported historical evidence; it is not independently reproduced at the canonical review revision.",
@@ -72,7 +64,8 @@
       "https://github.com/A-EVO-Lab/a-evolve/tree/96ed93ba7ee0b9519fc55c963afb47a1975eb1ae",
       "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/examples/harness-disentangling/README.md",
       "https://github.com/A-EVO-Lab/a-evolve/blob/18ba996dac9843f2759b2cdf8a94022f58fbfeb9/agent_evolve/algorithms/unified/engine.py"
-    ]
+    ],
+    "raw_observation_ref": "../system-observations/a-evolve.json#a-evolve-harness-updating-2026"
   },
   {
     "observation_id": "kadath-ten-epoch-native-evolution-2026",
@@ -98,23 +91,13 @@
       "valid prompt/source/dependency/file genome mutations are committed after grading",
       "the changed population is activated and later epochs execute the changed capabilities"
     ],
-    "reported_population_metrics": {
-      "best_fitness_epoch_1": 18,
-      "best_fitness_epoch_10": 91,
-      "best_fitness_improvement": 73,
-      "top5_median_epoch_1": 8,
-      "top5_median_epoch_10": 77,
-      "top5_median_improvement": 69,
-      "top5_floor_epoch_1": 1,
-      "top5_floor_epoch_10": 71,
-      "top5_floor_improvement": 70
-    },
     "metric_note": "The first-party README reports a ten-epoch upward shift in the leading cohort. Each epoch point may represent a different top-performing agent, so these metrics describe population-level evolutionary improvement rather than one individual trajectory.",
     "comparability_limitation": "The fitness benchmark is generated from the user goal and explicitly approved and locked per run. The published proof does not expose enough run metadata to reconstruct a common model/goal/population/configuration cell with A-Evolve or another canonical S4 system. Preserve this as a heterogeneous within-system observation, not a matched cross-harness score.",
     "vsm_interpretation": "The canonical assessment independently establishes KADATH S4=A. The published proof exercises that same native path: independently graded current performance feeds model-driven mutation and reproduction of persistent organism frameworks, and changed genomes execute in later epochs while the S4 control boundary remains fixed. This supplies a second canonical native direct S4 observation but does not close the matched primary-baseline gap.",
     "primary_sources": [
       "https://github.com/i3T4AN/KADATH/blob/db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef/README.md",
       "https://github.com/i3T4AN/KADATH/blob/db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef/kadath/engine.py"
-    ]
+    ],
+    "raw_observation_ref": "../system-observations/kadath.json#kadath-ten-epoch-native-evolution-2026"
   }
 ]
