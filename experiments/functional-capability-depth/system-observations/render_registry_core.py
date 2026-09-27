@@ -40,6 +40,8 @@ FORBIDDEN_VSM_KEYS = {
     "function",
     "benchmark_fit",
     "vsm_interpretation",
+    "function_interpretation",
+    "mixed_function_caveat",
     "canonical_state_at_review",
     "canonical_states_at_review",
     "canonical_system_eligible",

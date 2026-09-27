@@ -11,7 +11,7 @@ S3=EXP/"s3-system-benchmarks"
 SOURCE_REF="da303195717b9db468e1993d3e1f988637141d73"
 SOURCE_PATH="experiments/functional-capability-depth/s3-system-benchmarks/observations.json"
 IDS={"omnigent-child-session-recovery-2026-09","supervisoragent-smas-gaia-pass1-2026"}
-DERIVED_ALLOWED={"observation_id","function","benchmark_id","benchmark_fit","boundary_class","canonical_harness_id","canonical_system_eligible","vsm_interpretation","raw_observation_ref"}
+DERIVED_ALLOWED={"observation_id","function","benchmark_id","benchmark_fit","boundary_class","canonical_harness_id","canonical_system_eligible","vsm_interpretation","mixed_function_caveat","raw_observation_ref"}
 
 def old_rows():
     text=subprocess.check_output(["git","show",f"{SOURCE_REF}:{SOURCE_PATH}"],cwd=ROOT,text=True)
