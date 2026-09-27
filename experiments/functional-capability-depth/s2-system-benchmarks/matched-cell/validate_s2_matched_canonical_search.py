@@ -58,6 +58,19 @@ def hydrate_raw_observation(row: dict) -> dict:
             f"{row.get('observation_id')}: neutral raw field conflict: {key}",
         )
         hydrated[key] = value
+    raw_harness = record.get("canonical_harness_id")
+    if raw_harness is not None:
+        canonical_review_ref = record.get("canonical_review_ref")
+        require(
+            isinstance(canonical_review_ref, str) and bool(canonical_review_ref),
+            f"{row.get('observation_id')}: canonical neutral raw record missing canonical_review_ref",
+        )
+        require(
+            "canonical_review_ref" not in hydrated
+            or hydrated["canonical_review_ref"] == canonical_review_ref,
+            f"{row.get('observation_id')}: canonical_review_ref raw field conflict",
+        )
+        hydrated["canonical_review_ref"] = canonical_review_ref
     for key, value in row.items():
         require(
             key not in hydrated or hydrated[key] == value,
@@ -122,7 +135,7 @@ for harness_id, (observation_id, review_ref) in expected_anchors.items():
     observation = observation_rows[observation_id]
     require(observation.get("canonical_harness_id") == harness_id, f"{harness_id}: canonical observation identity drift")
     require(observation.get("canonical_system_eligible") is True, f"{harness_id}: canonical observation eligibility drift")
-    require(observation.get("canonical_assessment_ref") == review_ref, f"{harness_id}: canonical observation ref drift")
+    require(observation.get("canonical_review_ref") == review_ref, f"{harness_id}: canonical observation review ref drift")
     require(observation.get("comparison_class") == "descriptive-only", f"{harness_id}: canonical observation became matched without reopening search")
 
 routes = {row["route_id"]: row for row in search["reviewed_matched_routes"]}

@@ -66,6 +66,19 @@ def hydrate_raw_observation(row: dict) -> dict:
         require(value is not None, f"{row.get('observation_id')}: neutral raw record missing {key}")
         require(key not in hydrated or hydrated[key] == value, f"{row.get('observation_id')}: neutral raw field conflict: {key}")
         hydrated[key] = value
+    raw_harness = record.get("canonical_harness_id")
+    if raw_harness is not None:
+        canonical_review_ref = record.get("canonical_review_ref")
+        require(
+            isinstance(canonical_review_ref, str) and bool(canonical_review_ref),
+            f"{row.get('observation_id')}: canonical neutral raw record missing canonical_review_ref",
+        )
+        require(
+            "canonical_review_ref" not in hydrated
+            or hydrated["canonical_review_ref"] == canonical_review_ref,
+            f"{row.get('observation_id')}: canonical_review_ref raw field conflict",
+        )
+        hydrated["canonical_review_ref"] = canonical_review_ref
     for key, value in row.items():
         require(key not in hydrated or hydrated[key] == value, f"{row.get('observation_id')}: derived/raw field conflict: {key}")
         hydrated[key] = value
@@ -256,7 +269,7 @@ for harness_id, (state, review_ref, case_id, observation_id) in CANONICAL_DIRECT
     observation = observation_rows[observation_id]
     require(observation.get("canonical_harness_id") == harness_id, f"{observation_id}: canonical identity drift")
     require(observation.get("canonical_system_eligible") is True, f"{observation_id}: canonical eligibility drift")
-    require(observation.get("canonical_assessment_ref") == review_ref, f"{observation_id}: canonical ref drift")
+    require(observation.get("canonical_review_ref") == review_ref, f"{observation_id}: canonical review ref drift")
     require(observation.get("canonical_state_at_review") == state, f"{observation_id}: canonical state drift")
     require(observation.get("comparison_class") == "descriptive-only", f"{observation_id}: comparison class drift")
     require(observation.get("evidence_source_class") == "first-party-reported", f"{observation_id}: evidence source drift")
