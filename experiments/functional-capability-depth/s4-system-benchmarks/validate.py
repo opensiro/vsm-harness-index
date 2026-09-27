@@ -147,7 +147,8 @@ def main() -> None:
     canonical_links = json.loads(CANONICAL_OBSERVATIONS.read_text(encoding="utf-8"))
     benchmark_observations = [hydrate_s4_projection(row) for row in benchmark_links]
     canonical_observations = [hydrate_s4_projection(row) for row in canonical_links]
-    proxy_observations = json.loads(PROXY_OBSERVATIONS.read_text(encoding="utf-8"))
+    proxy_links = json.loads(PROXY_OBSERVATIONS.read_text(encoding="utf-8"))
+    proxy_observations = [hydrate_s4_projection(row) for row in proxy_links]
 
     if coverage.get("schema_version") != 1:
         fail("coverage schema_version must be 1")
