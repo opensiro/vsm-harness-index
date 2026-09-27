@@ -18,7 +18,9 @@ jobs:
           fetch-depth: 0
 
       - name: Generalize registry and migrate operational witnesses
-        run: python .github/scripts/operational_evidence_surfaces_799.py
+        run: |
+          python .github/scripts/operational_evidence_surfaces_799.py
+          python .github/scripts/fix_operational_renderer_799.py
 
       - name: Regenerate neutral registry
         run: python experiments/functional-capability-depth/system-observations/render_registry.py
@@ -39,6 +41,7 @@ jobs:
         run: |
           rm .github/workflows/operational-evidence-surfaces-799.yml
           rm .github/scripts/operational_evidence_surfaces_799.py
+          rm .github/scripts/fix_operational_renderer_799.py
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add \
@@ -56,6 +59,7 @@ jobs:
             tests/test_s2_neutral_registry_migration_797.py \
             tests/test_operational_evidence_surfaces_799.py \
             .github/workflows/operational-evidence-surfaces-799.yml \
-            .github/scripts/operational_evidence_surfaces_799.py
+            .github/scripts/operational_evidence_surfaces_799.py \
+            .github/scripts/fix_operational_renderer_799.py
           git commit -m 'experiment: generalize neutral registry to operational evidence surfaces'
           git push origin HEAD:experiment/operational-evidence-surfaces-799
