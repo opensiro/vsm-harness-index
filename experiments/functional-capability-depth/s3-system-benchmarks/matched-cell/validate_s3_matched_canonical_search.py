@@ -20,6 +20,36 @@ def require(condition: bool, message: str) -> None:
         raise SystemExit(message)
 
 
+RAW_OBSERVATIONS = EXPERIMENT / "system-observations"
+RAW_PREFIX = "../system-observations/"
+
+
+def hydrate_projection(link: dict) -> dict:
+    oid = link.get("observation_id")
+    ref = link.get("raw_observation_ref")
+    require(isinstance(oid, str) and oid, "S3 closure projection requires observation_id")
+    require(isinstance(ref, str) and ref.startswith(RAW_PREFIX) and "#" in ref, f"{oid}: invalid raw_observation_ref")
+    rel, ref_oid = ref[len(RAW_PREFIX):].rsplit("#", 1)
+    require(ref_oid == oid and rel.endswith(".json") and "/" not in rel, f"{oid}: raw_observation_ref drift")
+    raw_path = RAW_OBSERVATIONS / rel
+    require(raw_path.is_file(), f"{oid}: neutral raw record missing: {rel}")
+    record = load(raw_path)
+    matches = [row for row in record.get("observations", []) if row.get("observation_id") == oid]
+    require(len(matches) == 1, f"{oid}: expected exactly one neutral raw observation in {rel}")
+    effective = dict(link)
+    for key, value in matches[0].items():
+        if key in {"observation_id", "kind", "evidence_surface", "benchmark"}:
+            continue
+        require(key not in effective or effective[key] == value, f"{oid}: derived/raw field conflict: {key}")
+        effective[key] = value
+    effective["evidence_source_class"] = record.get("evidence_source_class")
+    effective["system_compatibility"] = (record.get("published_implementation") or {}).get("system_compatibility")
+    effective["primary_sources"] = record.get("primary_sources")
+    if record.get("canonical_harness_id"):
+        effective["canonical_review_revision"] = record.get("canonical_review_ref")
+    return effective
+
+
 search = load(HERE / "s3-matched-canonical-search-closure.json")
 primary = load(HERE / "s3-primary-search-closure.json")
 coverage = load(S3 / "coverage.json")
@@ -91,7 +121,7 @@ require(omnigent["observation_revision"] == omnigent_observation_ref, "Omnigent 
 require(omnigent["revision_relation"] == "post-assessment-descendant", "Omnigent matched-search temporal relation drift")
 require(omnigent["comparison_class"] == "descriptive-only", "Omnigent matched-search comparison class drift")
 require(omnigent_id in observation_rows, "Omnigent canonical S3 observation missing")
-omnigent_obs = observation_rows[omnigent_id]
+omnigent_obs = hydrate_projection(observation_rows[omnigent_id])
 require(omnigent_obs.get("canonical_harness_id") == "omnigent", "Omnigent canonical identity drift")
 require(omnigent_obs.get("canonical_system_eligible") is True, "Omnigent canonical eligibility drift")
 require(omnigent_obs.get("canonical_review_revision") == omnigent_ref, "Omnigent canonical observation ref drift")

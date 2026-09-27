@@ -47,6 +47,36 @@ def assessment_fields(harness_id: str) -> dict[str, str]:
     return fields
 
 
+RAW_OBSERVATIONS = EXPERIMENT / "system-observations"
+RAW_PREFIX = "../system-observations/"
+
+
+def hydrate_projection(link: dict) -> dict:
+    oid = link.get("observation_id")
+    ref = link.get("raw_observation_ref")
+    require(isinstance(oid, str) and oid, "S3 closure projection requires observation_id")
+    require(isinstance(ref, str) and ref.startswith(RAW_PREFIX) and "#" in ref, f"{oid}: invalid raw_observation_ref")
+    rel, ref_oid = ref[len(RAW_PREFIX):].rsplit("#", 1)
+    require(ref_oid == oid and rel.endswith(".json") and "/" not in rel, f"{oid}: raw_observation_ref drift")
+    raw_path = RAW_OBSERVATIONS / rel
+    require(raw_path.is_file(), f"{oid}: neutral raw record missing: {rel}")
+    record = load(raw_path)
+    matches = [row for row in record.get("observations", []) if row.get("observation_id") == oid]
+    require(len(matches) == 1, f"{oid}: expected exactly one neutral raw observation in {rel}")
+    effective = dict(link)
+    for key, value in matches[0].items():
+        if key in {"observation_id", "kind", "evidence_surface", "benchmark"}:
+            continue
+        require(key not in effective or effective[key] == value, f"{oid}: derived/raw field conflict: {key}")
+        effective[key] = value
+    effective["evidence_source_class"] = record.get("evidence_source_class")
+    effective["system_compatibility"] = (record.get("published_implementation") or {}).get("system_compatibility")
+    effective["primary_sources"] = record.get("primary_sources")
+    if record.get("canonical_harness_id"):
+        effective["canonical_review_revision"] = record.get("canonical_review_ref")
+    return effective
+
+
 closure = load(HERE / "s3-primary-search-closure.json")
 coverage = load(S3 / "coverage.json")
 observations = load(S3 / "observations.json")
@@ -120,7 +150,7 @@ require(
     },
     "S3 canonical observation identity drift",
 )
-smas = observation_by_id[SMAS_OBSERVATION_ID]
+smas = hydrate_projection(observation_by_id[SMAS_OBSERVATION_ID])
 require(smas.get("canonical_harness_id") is None, "SMAS observation must remain non-canonical")
 require(smas.get("canonical_system_eligible") is False, "SMAS observation must remain canonical-ineligible")
 require(smas.get("boundary_class") == "composed-supervised-mas", "SMAS composed boundary drift")
