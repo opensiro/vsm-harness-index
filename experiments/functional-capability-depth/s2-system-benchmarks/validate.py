@@ -156,6 +156,14 @@ def hydrate_raw_observation(row: dict) -> dict:
         if key in hydrated and hydrated[key] != value:
             fail(f"{row.get('observation_id')}: neutral raw field conflict: {key}")
         hydrated[key] = value
+    raw_harness = record.get("canonical_harness_id")
+    if raw_harness is not None:
+        canonical_review_ref = record.get("canonical_review_ref")
+        if not isinstance(canonical_review_ref, str) or not canonical_review_ref:
+            fail(f"{row.get('observation_id')}: canonical neutral raw record missing canonical_review_ref")
+        if "canonical_review_ref" in hydrated and hydrated["canonical_review_ref"] != canonical_review_ref:
+            fail(f"{row.get('observation_id')}: canonical_review_ref raw field conflict")
+        hydrated["canonical_review_ref"] = canonical_review_ref
     for key, value in row.items():
         if key in hydrated and hydrated[key] != value:
             fail(f"{row.get('observation_id')}: derived/raw field conflict: {key}")
@@ -444,14 +452,14 @@ def validate_squad_canonical_observation(observations: list[dict]) -> None:
         "boundary_class": "canonical-squad-project-team",
         "canonical_harness_id": "squad",
         "canonical_system_eligible": True,
-        "canonical_assessment_ref": "2099faf51c08a912c359209447011b06decf0565",
+        "canonical_review_ref": "2099faf51c08a912c359209447011b06decf0565",
         "canonical_state_at_review": "A",
         "system_compatibility": "native-system",
         "comparison_class": "descriptive-only",
     }
     require_fields(row, expected, "Squad canonical direct S2 observation")
     fields = assessment_fields("squad")
-    if fields.get("status") != "included" or fields.get("review_ref") != expected["canonical_assessment_ref"]:
+    if fields.get("status") != "included" or fields.get("review_ref") != expected["canonical_review_ref"]:
         fail("Squad canonical assessment anchor drift")
     if fields.get("autonomy_s2") != "A":
         fail("Squad canonical S2 state drift")
@@ -474,7 +482,7 @@ def validate_thclaws_canonical_observation(observations: list[dict]) -> None:
         "boundary_class": "canonical-thclaws-agent-teams",
         "canonical_harness_id": "thclaws",
         "canonical_system_eligible": True,
-        "canonical_assessment_ref": "cd700937a71a391f052438d139b7b1c5a6456755",
+        "canonical_review_ref": "cd700937a71a391f052438d139b7b1c5a6456755",
         "canonical_state_at_review": "A",
         "system_compatibility": "native-system",
         "comparison_class": "descriptive-only",
@@ -483,7 +491,7 @@ def validate_thclaws_canonical_observation(observations: list[dict]) -> None:
     fields = assessment_fields("thclaws")
     if fields.get("status") != "included":
         fail("thClaws canonical assessment no longer included")
-    if fields.get("review_ref") != expected["canonical_assessment_ref"]:
+    if fields.get("review_ref") != expected["canonical_review_ref"]:
         fail("thClaws canonical assessment ref drift")
     if fields.get("autonomy_s2") != "A":
         fail("thClaws canonical S2 state drift")

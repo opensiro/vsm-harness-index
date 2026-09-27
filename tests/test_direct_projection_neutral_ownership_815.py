@@ -47,6 +47,8 @@ def hydrate_s2(row: dict, *, inject_record_level: bool) -> dict:
         effective["evidence_source_class"] = record["evidence_source_class"]
         effective["system_compatibility"] = record["published_implementation"]["system_compatibility"]
         effective["primary_sources"] = record["primary_sources"]
+        if record.get("canonical_harness_id"):
+            effective["canonical_review_ref"] = record["canonical_review_ref"]
     effective.update(row)
     return effective
 
@@ -97,6 +99,8 @@ class DirectProjectionNeutralOwnership815Tests(unittest.TestCase):
         old_by_id = {r["observation_id"]: r for r in old_rows}
         for row in new_rows:
             before = hydrate_s2(old_by_id[row["observation_id"]], inject_record_level=False)
+            if before.get("canonical_harness_id"):
+                before["canonical_review_ref"] = before.pop("canonical_assessment_ref")
             after = hydrate_s2(row, inject_record_level=True)
             self.assertEqual(after, before, row["observation_id"])
             self.assertFalse(NEUTRAL_OWNED & set(row), row["observation_id"])
