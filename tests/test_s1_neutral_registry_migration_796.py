@@ -1,104 +1,47 @@
 from __future__ import annotations
-
-import json
-import subprocess
-import unittest
+import json, subprocess, unittest
 from pathlib import Path
 
+ROOT=Path(__file__).resolve().parents[1]
+REG=ROOT/"experiments"/"functional-capability-depth"/"system-observations"
+SOURCE_REF="fe99079baaf48d6fdb23310c13751cbfaef9e2b8"
+SOURCE_PATH="experiments/functional-capability-depth/system-observations/public-system-benchmarks.jsonl"
 
-ROOT = Path(__file__).resolve().parents[1]
-LEGACY_REF = "cb9378131d19eb8362b1a2e5800ca366baefb094"
-LEGACY_PATH = "experiments/functional-capability-depth/s1-system-benchmarks/observations.jsonl"
-RAW_PATH = ROOT / "experiments" / "functional-capability-depth" / "system-observations" / "public-system-benchmarks.jsonl"
-
-SYSTEM_NAMES = {
-    "codex": "Codex",
-    "openhands": "OpenHands",
-    "swe-agent": "SWE-agent",
-    "qwenpaw": "QwenPaw",
-    "openclaw": "OpenClaw",
-    "hermes-agent": "Hermes Agent",
-    "claude-code": "Claude Code",
-    "pi": "Pi",
-    "oh-my-pi": "oh-my-pi",
-    "opencode": "OpenCode",
-}
-
-
-def load_jsonl(text: str) -> list[dict]:
-    return [json.loads(line) for line in text.splitlines() if line.strip()]
-
-
-def expected_neutral(old: dict) -> dict:
-    harness_id = old["harness_id"]
-    return {
-        "schema_version": 1,
-        "observation_id": old["record_id"],
-        "evidence_source_class": (
-            "first-party-reported"
-            if harness_id == "qwenpaw" and old["benchmark"]["family_id"] == "pawbench"
-            else "external-reproduced"
-        ),
-        "system_name": SYSTEM_NAMES[harness_id],
-        "canonical_harness_id": harness_id,
-        "canonical_assessment_ref": f"assessments/{harness_id}.md",
-        "canonical_review_ref": old["assessment_ref"],
-        "canonical_repository": old["canonical_repository"],
-        "published_implementation": old["identity"],
-        "benchmark": old["benchmark"],
-        "result": old["observation"],
-        "provenance": old["provenance"],
-        "comparison": old["comparison"],
-        "notes": old["notes"],
-    }
-
-
+def load_jsonl(text:str)->list[dict]: return [json.loads(line) for line in text.splitlines() if line.strip()]
+def expand(record:dict,obs:dict)->dict:
+    return {"schema_version":record["schema_version"],"observation_id":obs["observation_id"],
+        "evidence_source_class":record["evidence_source_class"],"system_name":record["system_name"],
+        "canonical_harness_id":record["canonical_harness_id"],"canonical_assessment_ref":record["canonical_assessment_ref"],
+        "canonical_review_ref":record["canonical_review_ref"],"canonical_repository":record["canonical_repository"],
+        "published_implementation":obs["published_implementation"],"benchmark":obs["benchmark"],"result":obs["result"],
+        "provenance":obs["provenance"],"comparison":obs["comparison"],"notes":obs["notes"]}
 class S1NeutralRegistryMigration796Tests(unittest.TestCase):
     @classmethod
-    def setUpClass(cls) -> None:
-        legacy = subprocess.check_output(
-            ["git", "show", f"{LEGACY_REF}:{LEGACY_PATH}"],
-            cwd=ROOT,
-            text=True,
-        )
-        cls.old_rows = load_jsonl(legacy)
-        cls.new_rows = load_jsonl(RAW_PATH.read_text(encoding="utf-8"))
-
-    def test_all_19_legacy_rows_are_migrated_once(self) -> None:
-        self.assertEqual(len(self.old_rows), 19)
-        self.assertEqual(len(self.new_rows), 19)
-        old_ids = [row["record_id"] for row in self.old_rows]
-        new_ids = [row["observation_id"] for row in self.new_rows]
-        self.assertEqual(len(new_ids), len(set(new_ids)))
-        self.assertEqual(set(new_ids), set(old_ids))
-
-    def test_migration_is_lossless_except_for_neutral_schema_mapping(self) -> None:
-        new_by_id = {row["observation_id"]: row for row in self.new_rows}
-        for old in self.old_rows:
-            expected = expected_neutral(old)
-            self.assertEqual(new_by_id[old["record_id"]], expected, old["record_id"])
-
-    def test_raw_rows_have_no_vsm_function_attribution(self) -> None:
-        for row in self.new_rows:
-            self.assertNotIn("function", row)
-            self.assertNotIn("benchmark_fit", row)
-            self.assertNotIn("vsm_interpretation", row)
-
-    def test_qwenpaw_pawbench_does_not_overstate_independence(self) -> None:
-        qwenpaw = next(
-            row
-            for row in self.new_rows
-            if row["observation_id"]
-            == "qwenpaw__pawbench-v1.0__qwen3.6-35b-a3b__20260529"
-        )
-        self.assertEqual(qwenpaw["evidence_source_class"], "first-party-reported")
-        other = [
-            row
-            for row in self.new_rows
-            if row["observation_id"] != qwenpaw["observation_id"]
-        ]
-        self.assertTrue(all(row["evidence_source_class"] == "external-reproduced" for row in other))
-
-
-if __name__ == "__main__":
-    unittest.main()
+    def setUpClass(cls)->None:
+        old=subprocess.check_output(["git","show",f"{SOURCE_REF}:{SOURCE_PATH}"],cwd=ROOT,text=True)
+        cls.old=load_jsonl(old); ids={r["observation_id"] for r in cls.old}; cls.new=[]
+        for path in sorted(REG.glob("*.json")):
+            record=json.loads(path.read_text(encoding="utf-8"))
+            for obs in record.get("observations",[]):
+                if obs.get("observation_id") in ids: cls.new.append(expand(record,obs))
+    def test_all_19_rows_are_migrated_once(self):
+        self.assertEqual(len(self.old),19); self.assertEqual(len(self.new),19)
+        self.assertEqual({r["observation_id"] for r in self.old},{r["observation_id"] for r in self.new})
+    def test_migration_is_lossless_from_801(self):
+        by={r["observation_id"]:r for r in self.new}
+        for old in self.old: self.assertEqual(by[old["observation_id"]],old,old["observation_id"])
+    def test_raw_records_have_no_vsm_attribution(self):
+        ids={r["observation_id"] for r in self.old}
+        for path in sorted(REG.glob("*.json")):
+            record=json.loads(path.read_text(encoding="utf-8"))
+            selected=[o for o in record.get("observations",[]) if o.get("observation_id") in ids]
+            if not selected: continue
+            for forbidden in ("function","benchmark_fit","vsm_interpretation"):
+                self.assertNotIn(forbidden,record)
+                for obs in selected: self.assertNotIn(forbidden,obs)
+    def test_qwenpaw_pawbench_provenance_preserved(self):
+        target=next(r for r in self.new if r["observation_id"]=="qwenpaw__pawbench-v1.0__qwen3.6-35b-a3b__20260529")
+        self.assertEqual(target["evidence_source_class"],"first-party-reported")
+    def test_neutral_registry_has_one_raw_format(self):
+        self.assertEqual(list(REG.glob("*.jsonl")),[])
+if __name__=="__main__": unittest.main()

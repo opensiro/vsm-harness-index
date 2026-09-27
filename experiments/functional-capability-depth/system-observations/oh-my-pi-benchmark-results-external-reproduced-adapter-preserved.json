@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-27",
+  "evidence_source_class": "external-reproduced",
+  "system_name": "oh-my-pi",
+  "canonical_harness_id": "oh-my-pi",
+  "canonical_assessment_ref": "assessments/oh-my-pi.md",
+  "canonical_review_ref": "dbf3afad4894bde827d90f965e77b3fe1c5a95e5",
+  "canonical_repository": "https://github.com/can1357/oh-my-pi",
+  "published_implementation": {
+    "system_compatibility": "adapter-preserved",
+    "historical_relation": "S1 public benchmark results normalized from the #801 neutral row corpus; row-specific historical revision identity remains inside each observation."
+  },
+  "primary_sources": [
+    "https://github.com/frontier-harness-eval/eval/tree/e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63",
+    "https://github.com/frontier-harness-eval/eval/blob/e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63/results/eval-data.json"
+  ],
+  "observations": [
+    {
+      "observation_id": "oh-my-pi__frontierharness-v1.0__kimi-k3-fireworks__20260822",
+      "kind": "system-benchmark-result",
+      "benchmark": {
+        "family_id": "frontierharness-v1.0",
+        "name": "FrontierHarness Eval v1",
+        "variant": "frozen-30",
+        "task_count": 30,
+        "primary_source": "https://github.com/frontier-harness-eval/eval/tree/e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63",
+        "artifact_source": "https://github.com/frontier-harness-eval/eval/blob/e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63/results/eval-data.json"
+      },
+      "result": {
+        "date": "2026-08-22",
+        "agent_label": "Oh My Pi",
+        "harness_version": "17.4.0",
+        "harness_revision": null,
+        "model": "Kimi K3",
+        "model_config": "Fireworks provider; canonical first valid attempt 1; 21 Terminal-Bench 2.1 tasks + 9 DeepSWE v1.1 tasks; fresh golden-checkpoint restore per trial",
+        "metric": "pass_rate",
+        "value": 0.5666666666666667,
+        "passed": 17,
+        "valid": 30,
+        "expected": 30
+      },
+      "published_implementation": {
+        "system_compatibility": "adapter-preserved",
+        "revision_match": "version-known"
+      },
+      "provenance": {
+        "publisher": "FrontierHarness Eval / Runta",
+        "checked": true,
+        "os_system": true,
+        "public_logs": null,
+        "public_trajectories": null
+      },
+      "comparison": {
+        "group": "frontierharness-v1.0__kimi-k3-fireworks__20260822",
+        "mode": "matched-model",
+        "scope": "coding-swe"
+      },
+      "notes": "FrontierHarness pins historical Oh My Pi 17.4.0 while the external Runta/Harbor membrane supplies the matched runtime and evaluation boundary. This is technical Coding/SWE-domain S1 evidence only; the mixed task set and historical missing egress allowlist must remain visible when interpreting or reproducing it. No higher VSM function, ownership state, or self-organizing S claim follows from the score."
+    }
+  ]
+}

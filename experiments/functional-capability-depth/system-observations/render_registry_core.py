@@ -69,11 +69,28 @@ def _evidence_surfaces(observation: dict, record_ref: str) -> list[str]:
 
     benchmark = observation.get("benchmark")
     if benchmark is not None:
-        if not isinstance(benchmark, str) or not benchmark.strip():
+        if isinstance(benchmark, str):
+            if not benchmark.strip():
+                raise RegistryError(
+                    f"{record_ref}:{observation.get('observation_id')}: benchmark must be non-empty"
+                )
+            labels.append(benchmark.strip())
+        elif isinstance(benchmark, dict):
+            label = benchmark.get("name")
+            if not isinstance(label, str) or not label.strip():
+                raise RegistryError(
+                    f"{record_ref}:{observation.get('observation_id')}: structured benchmark lacks name"
+                )
+            for key in ("primary_source", "artifact_source"):
+                if not _valid_https(benchmark.get(key)):
+                    raise RegistryError(
+                        f"{record_ref}:{observation.get('observation_id')}: benchmark.{key} must be public HTTPS"
+                    )
+            labels.append(label.strip())
+        else:
             raise RegistryError(
-                f"{record_ref}:{observation.get('observation_id')}: benchmark must be a non-empty string"
+                f"{record_ref}:{observation.get('observation_id')}: benchmark must be a string or object"
             )
-        labels.append(benchmark.strip())
 
     benchmark_results = observation.get("benchmark_results")
     if benchmark_results is not None:

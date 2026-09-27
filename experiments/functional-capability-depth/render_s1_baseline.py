@@ -13,14 +13,14 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 SELECTION = HERE / "primary-baselines.json"
 PROJECTION = HERE / "s1-system-benchmarks" / "observations.jsonl"
-RAW_OBSERVATIONS = HERE / "system-observations" / "public-system-benchmarks.jsonl"
+RAW_DIR = HERE / "system-observations"
 OUTPUT = HERE / "S1-BASELINE.md"
 ASSESSMENTS = ROOT / "assessments"
 
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 FUNCTION_ORDER = ("S1", "S2", "S3", "S3*", "S4", "S5")
 ESTABLISHED_S1 = {"A", "C", "P", "A(P)", "C(P)"}
-RAW_PREFIX = "../system-observations/public-system-benchmarks.jsonl#"
+RAW_PREFIX = "../system-observations/"
 
 
 def fail(message: str) -> None:
@@ -72,27 +72,50 @@ def load_jsonl(path: Path, id_key: str) -> list[dict]:
     return rows
 
 
+def hydrate_raw(ref: str, rid: str) -> dict:
+    if not isinstance(ref, str) or not ref.startswith(RAW_PREFIX) or "#" not in ref:
+        fail(f"{rid}: invalid raw_observation_ref")
+    rel, oid = ref[len(RAW_PREFIX):].rsplit("#", 1)
+    if oid != rid or not rel.endswith(".json") or "/" in rel:
+        fail(f"{rid}: raw_observation_ref drift")
+    path = RAW_DIR / rel
+    if not path.is_file():
+        fail(f"{rid}: neutral raw record missing: {rel}")
+    record = json.loads(path.read_text(encoding="utf-8"))
+    matches = [obs for obs in record.get("observations", []) if obs.get("observation_id") == rid]
+    if len(matches) != 1:
+        fail(f"{rid}: expected exactly one raw observation in {rel}")
+    obs = matches[0]
+    return {
+        "schema_version": record["schema_version"],
+        "observation_id": rid,
+        "evidence_source_class": record["evidence_source_class"],
+        "system_name": record["system_name"],
+        "canonical_harness_id": record["canonical_harness_id"],
+        "canonical_assessment_ref": record["canonical_assessment_ref"],
+        "canonical_review_ref": record["canonical_review_ref"],
+        "canonical_repository": record["canonical_repository"],
+        "published_implementation": obs["published_implementation"],
+        "benchmark": obs["benchmark"],
+        "result": obs["result"],
+        "provenance": obs["provenance"],
+        "comparison": obs["comparison"],
+        "notes": obs["notes"],
+    }
+
+
 def load_observations() -> list[dict]:
     projections = load_jsonl(PROJECTION, "record_id")
-    raw_rows = load_jsonl(RAW_OBSERVATIONS, "observation_id")
-    raw_by_id = {row["observation_id"]: row for row in raw_rows}
-
     selected: list[dict] = []
+    seen: set[str] = set()
     for projection in projections:
         rid = projection["record_id"]
         if projection.get("function") != "S1":
             fail(f"{rid}: projection function must be S1")
-        if projection.get("raw_observation_ref") != RAW_PREFIX + rid:
-            fail(f"{rid}: projection raw_observation_ref drift")
-        raw = raw_by_id.get(rid)
-        if raw is None:
-            fail(f"{rid}: neutral raw observation missing")
-        selected.append(raw)
-
-    if len(selected) != len(raw_rows):
-        selected_ids = {row["observation_id"] for row in selected}
-        extras = sorted(set(raw_by_id) - selected_ids)
-        fail(f"neutral raw S1 corpus has unprojected rows: {extras}")
+        if rid in seen:
+            fail(f"duplicate S1 projection record_id: {rid}")
+        seen.add(rid)
+        selected.append(hydrate_raw(projection.get("raw_observation_ref"), rid))
     return selected
 
 
@@ -298,7 +321,7 @@ def render() -> str:
     lines = [
         "# S1 Capability Baseline",
         "",
-        "Generated experimental projection from `primary-baselines.json`, canonical assessments, the derived `s1-system-benchmarks/observations.jsonl` membership view, and neutral raw `system-observations/public-system-benchmarks.jsonl` results.",
+        "Generated experimental projection from `primary-baselines.json`, canonical assessments, the derived `s1-system-benchmarks/observations.jsonl` membership view, and neutral raw `system-observations/*.json` results.",
         "",
         "This is not a global harness ranking. Canonical VSM ownership and benchmark performance remain separate evidence layers. Rows are ordered by harness ID, never by score.",
         "",

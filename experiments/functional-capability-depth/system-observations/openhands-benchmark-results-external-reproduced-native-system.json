@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-27",
+  "evidence_source_class": "external-reproduced",
+  "system_name": "OpenHands",
+  "canonical_harness_id": "openhands",
+  "canonical_assessment_ref": "assessments/openhands.md",
+  "canonical_review_ref": "28464621d879e3e9b3ceeae9d70a71d96da6212d",
+  "canonical_repository": "https://github.com/OpenHands/OpenHands",
+  "published_implementation": {
+    "system_compatibility": "native-system",
+    "historical_relation": "S1 public benchmark results normalized from the #801 neutral row corpus; row-specific historical revision identity remains inside each observation."
+  },
+  "primary_sources": [
+    "https://www.swebench.com/",
+    "https://github.com/SWE-bench/experiments/tree/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20250524_openhands_claude_4_sonnet"
+  ],
+  "observations": [
+    {
+      "observation_id": "openhands__swe-bench-verified__claude-4-sonnet-20250514__20250524",
+      "kind": "system-benchmark-result",
+      "benchmark": {
+        "family_id": "swe-bench",
+        "name": "SWE-bench Verified",
+        "variant": "verified-500",
+        "task_count": 500,
+        "primary_source": "https://www.swebench.com/",
+        "artifact_source": "https://github.com/SWE-bench/experiments/tree/40f164d5b8f1d249bf95a6df8b74b577fd8e519d/evaluation/verified/20250524_openhands_claude_4_sonnet"
+      },
+      "result": {
+        "date": "2025-05-24",
+        "agent_label": "OpenHands + Claude 4 Sonnet",
+        "harness_version": null,
+        "harness_revision": "d839f3690fd16c1df0d9613982ac3235ff9a82bd",
+        "model": "claude-4-sonnet-20250514",
+        "model_config": "submission metadata model label; README uses anthropic/claude-sonnet-4-20250514; temperature=0; 1 run; 500 max iterations; browsing disabled",
+        "metric": "resolved_percent",
+        "value": 70.4,
+        "resolved": 352,
+        "attempts_per_task": 1
+      },
+      "published_implementation": {
+        "system_compatibility": "native-system",
+        "revision_match": "exact-historical"
+      },
+      "provenance": {
+        "publisher": "SWE-bench",
+        "checked": true,
+        "os_system": true,
+        "public_logs": true,
+        "public_trajectories": true
+      },
+      "comparison": {
+        "group": "swe-bench-verified__claude-4-sonnet-20250514__openhands-vs-swe-agent",
+        "mode": "partially-matched"
+      },
+      "notes": "Native historical OpenHands run with an exact reproducibility commit. The current canonical OpenHands assessment boundary has since evolved to Agent Canvas plus first-party SDK/server surfaces, so this result describes historical OpenHands S1 execution and must not be treated as a score for every current first-party surface."
+    }
+  ]
+}
