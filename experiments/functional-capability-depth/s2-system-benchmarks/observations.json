@@ -4,19 +4,10 @@
     "function": "S2",
     "benchmark_id": "nool-fleet-coordination",
     "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
     "boundary_class": "benchmark-defined-agent-fleet",
     "canonical_harness_id": null,
     "canonical_system_eligible": false,
-    "system_compatibility": "benchmark-scaffolded",
-    "benchmark_artifact_revision": "126d69b5921be71daffd38c70ec4aa77252b4f39",
     "vsm_interpretation": "This is direct S2 capability evidence at the benchmark-defined fleet boundary: distinct S1 workers generate interaction-specific variety through overlapping concurrent work; the coordination treatment attenuates that interference before execution by delaying overlapping work; later workers then operate on integrated state, changing subsequent S1 behavior and integration outcomes. The public benchmark repository does not establish the external Nool runtime as a canonical Index harness, so this observation is non-canonical and cannot select the S2 primary baseline.",
-    "primary_sources": [
-      "https://github.com/noolinc/nool_long_eval_bench/tree/126d69b5921be71daffd38c70ec4aa77252b4f39",
-      "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/docs/findings/2026-08-21-findings.md",
-      "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/replications/MANIFEST.md",
-      "https://github.com/noolinc/nool_long_eval_bench/blob/126d69b5921be71daffd38c70ec4aa77252b4f39/results/trackc/fleet_runs.jsonl"
-    ],
     "raw_observation_ref": "../system-observations/nool-fleet-coordination.json#nool-trackd-scaleup1-contention-2026-08-21"
   },
   {
@@ -24,19 +15,10 @@
     "function": "S2",
     "benchmark_id": "specification-gap-recovery",
     "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
     "boundary_class": "benchmark-defined-two-worker-integration",
     "canonical_harness_id": null,
     "canonical_system_eligible": false,
-    "system_compatibility": "benchmark-scaffolded",
-    "benchmark_artifact_revision": "b64059f3ee5cab9b71b834c7b5acc597791880d5",
     "vsm_interpretation": "This is direct S2 capability evidence at the benchmark-defined two-worker integration boundary. The workers generate interaction-specific variety through incompatible hidden representation choices; a richer shared specification supplied at integration attenuates that variety and materially changes the composed outcome. The organization and coordination membrane are benchmark-defined, so the observation is non-canonical and does not establish native S2 ownership for any external harness.",
-    "primary_sources": [
-      "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5",
-      "https://github.com/camilochs/the_specification_gap/blob/b64059f3ee5cab9b71b834c7b5acc597791880d5/scripts/conflict_experiment.py",
-      "https://github.com/camilochs/the_specification_gap/tree/b64059f3ee5cab9b71b834c7b5acc597791880d5/data/conflict_results",
-      "https://arxiv.org/abs/2603.24284"
-    ],
     "raw_observation_ref": "../system-observations/specification-gap.json#specification-gap-recovery-2026-03"
   },
   {
@@ -44,23 +26,10 @@
     "function": "S2",
     "benchmark_id": "codecrdt-observation-coordination",
     "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
     "boundary_class": "product-defined-parallel-coding-team",
     "canonical_harness_id": null,
     "canonical_system_eligible": false,
-    "system_compatibility": "native-system",
-    "comparison_class": "descriptive-only",
-    "benchmark_artifact_revision": "8fa5a307062025c900e9de27696f4e804a0a7809",
     "vsm_interpretation": "This is direct descriptive S2 capability evidence at the external CodeCRDT product boundary. Distinct concurrent coding activities generate interaction-specific integration variety and the first-party shared CRDT relation attenuates merge-level variety by maintaining deterministic convergence. The absence of an uncoordinated-parallel control prevents a causal effect claim, and CodeCRDT is not a canonical Index harness, so this row cannot create canonical S2 ownership or select the S2 primary baseline.",
-    "primary_sources": [
-      "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809",
-      "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/README.md",
-      "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/evaluation_results/environment_info.json",
-      "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/evaluation_results/evaluation_report.yaml",
-      "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809/evaluation/evaluation_results",
-      "https://github.com/spugachev/CodeCRDT/blob/8fa5a307062025c900e9de27696f4e804a0a7809/SCIENCE.md",
-      "https://arxiv.org/abs/2510.18893"
-    ],
     "raw_observation_ref": "../system-observations/codecrdt.json#codecrdt-parallel-convergence-2025-10"
   },
   {
@@ -68,20 +37,10 @@
     "function": "S2",
     "benchmark_id": "grit-merge-contention",
     "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
     "boundary_class": "product-defined-parallel-coding-coordination",
     "canonical_harness_id": null,
     "canonical_system_eligible": false,
-    "system_compatibility": "native-system",
-    "comparison_class": "partially-matched",
-    "benchmark_artifact_revision": "a2c48735e0a16c49ca1541c4865fce438c479405",
     "vsm_interpretation": "This is direct S2 capability evidence at the external Grit product boundary: parallel S1-like coding activities generate integration-specific variety and Grit's first-party claim/lock/worktree/merge relation attenuates that variety, with the published sweep reporting zero Grit merge failures across the recorded agent-count series. Grit is not a canonical Index harness, so the observation remains non-canonical and cannot select the S2 primary baseline.",
-    "primary_sources": [
-      "https://github.com/rtk-ai/grit/tree/a2c48735e0a16c49ca1541c4865fce438c479405",
-      "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/scripts/sweep/bench.sh",
-      "https://github.com/rtk-ai/grit/blob/a2c48735e0a16c49ca1541c4865fce438c479405/tests/gen_graph.py",
-      "https://github.com/rtk-ai/grit/commit/a2c48735e0a16c49ca1541c4865fce438c479405"
-    ],
     "raw_observation_ref": "../system-observations/grit.json#grit-synthetic-merge-contention-2026-04"
   },
   {
@@ -89,26 +48,16 @@
     "function": "S2",
     "benchmark_id": null,
     "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
     "boundary_class": "canonical-squad-project-team",
     "canonical_harness_id": "squad",
     "canonical_system_eligible": true,
     "canonical_assessment_ref": "2099faf51c08a912c359209447011b06decf0565",
     "canonical_state_at_review": "A",
-    "system_compatibility": "native-system",
-    "comparison_class": "descriptive-only",
     "disturbance": "Parallel Squad S1 agents append to shared team-state and decision surfaces; simultaneous completion can create merge interference on canonical shared state.",
     "coordination_relation": "Squad's first-party merge=union rules preserve concurrent append-only team-state contributions, while per-agent decision inbox files and Scribe consolidation separate structured concurrent writes before returning them to canonical decisions.md.",
     "subsequent_operation": "First-party operational history records decision-inbox consolidation followed by later multi-PR release work with team state preserved via merge=union.",
     "comparison_limitation": "This is descriptive canonical direct evidence from operational history, not a matched benchmark comparison or a causal numeric uplift estimate.",
     "vsm_interpretation": "This is direct descriptive S2 capability evidence at the canonical Squad project-team boundary. Distinct parallel S1 agents generate interaction-specific shared-state interference; native merge=union and Scribe/inbox coordination attenuate that interference and preserve/consolidate state for subsequent operation. It does not create a benchmark family or a matched cross-harness primary cell.",
-    "primary_sources": [
-      "https://github.com/bradygaster/squad/tree/2099faf51c08a912c359209447011b06decf0565",
-      "https://github.com/bradygaster/squad/commit/34925f2f5bec49742216ab9dd93c756fbe1aa8c9",
-      "https://github.com/bradygaster/squad/commit/e7e6255aa84e04993d568a10331bf9da6661b478",
-      "https://github.com/bradygaster/squad/commit/6e304ec6d2f1d385226fba074a1192a3eab7b5cb",
-      "https://www.tamirdresher.com/blog/2026/03/17/scaling-ai-part4-distributed"
-    ],
     "raw_observation_ref": "../system-observations/squad-operational-history.json#squad-shared-state-conflict-attenuation-2026-03"
   },
   {
@@ -116,27 +65,16 @@
     "function": "S2",
     "benchmark_id": null,
     "benchmark_fit": "direct",
-    "evidence_source_class": "first-party-reported",
     "boundary_class": "canonical-thclaws-agent-teams",
     "canonical_harness_id": "thclaws",
     "canonical_system_eligible": true,
     "canonical_assessment_ref": "cd700937a71a391f052438d139b7b1c5a6456755",
     "canonical_state_at_review": "A",
-    "system_compatibility": "native-system",
-    "comparison_class": "descriptive-only",
     "disturbance": "Distinct thClaws teammate S1s share a project/team workspace and can generate interaction-specific destructive or transient interference. First-party history records cross-branch `git reset --hard main` wiping another teammate's frontend worktree and repeated lead destructive workspace operations cascade-killing teammate worktrees/processes; the assessed runtime also records concurrent team members colliding on the shared `.git/index.lock`.",
     "coordination_relation": "thClaws attenuates these disturbances inside its first-party Agent Teams runtime: role-specific Bash seatbelts hard-block lead destructive workspace commands and teammate cross-branch hard resets before shell execution; #125 hardens those guards against shell-quoting/substitution bypasses; the assessed Bash path additionally detects the specific transient `.git/index.lock` race and retries it with bounded backoff before surfacing failure.",
     "subsequent_operation": "The hardening commit is an ancestor of the canonical assessed ref by 257 commits. Later first-party Agent Teams reports (#200/#202) show teammates booting, transitioning status, processing mailbox messages/replies and participating in task/shutdown lifecycle in the same runtime lineage; the canonical assessed source still applies the hardened guards before command execution and retains the concurrent-index retry path.",
     "comparison_limitation": "This is descriptive canonical direct evidence from operational history and first-party runtime behavior, not a matched benchmark comparison or a causal numeric uplift estimate. The incident/guard and index-race paths are concrete S2 attenuation evidence but do not make thClaws materially matched to Squad or any external benchmark family.",
     "vsm_interpretation": "This is direct descriptive S2 capability evidence at the canonical thClaws Agent Teams boundary. Distinct S1 teammates generate interaction-specific workspace/process/index variety; first-party role guards and transient-race retry attenuate that variety before or during subsequent operation. It does not create a benchmark family or a matched cross-harness primary cell.",
-    "primary_sources": [
-      "https://github.com/thClaws/thClaws/commit/a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",
-      "https://github.com/thClaws/thClaws/issues/125",
-      "https://github.com/thClaws/thClaws/commit/db0efe8a6f5ba49da0bafeba84ae4835a09a946b",
-      "https://github.com/thClaws/thClaws/blob/cd700937a71a391f052438d139b7b1c5a6456755/crates/core/src/tools/bash.rs",
-      "https://github.com/thClaws/thClaws/issues/200",
-      "https://github.com/thClaws/thClaws/issues/202"
-    ],
     "raw_observation_ref": "../system-observations/thclaws-operational-history.json#thclaws-team-workspace-interference-attenuation-2026"
   }
 ]

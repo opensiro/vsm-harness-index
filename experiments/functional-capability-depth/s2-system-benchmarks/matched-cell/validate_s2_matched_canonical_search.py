@@ -9,6 +9,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 S2 = HERE.parent
 EXPERIMENT = S2.parent
+SYSTEM_OBSERVATIONS = EXPERIMENT / "system-observations"
 
 
 def load(path: Path):
@@ -20,10 +21,56 @@ def require(condition: bool, message: str) -> None:
         raise SystemExit(message)
 
 
+def hydrate_raw_observation(row: dict) -> dict:
+    ref = row.get("raw_observation_ref")
+    if ref is None:
+        return row
+    require(
+        isinstance(ref, str) and ref.startswith("../system-observations/") and "#" in ref,
+        f"{row.get('observation_id')}: invalid raw observation ref",
+    )
+    path_part, raw_id = ref.split("#", 1)
+    raw_path = (S2 / path_part).resolve()
+    require(
+        raw_path.parent == SYSTEM_OBSERVATIONS.resolve() and raw_path.is_file(),
+        f"{row.get('observation_id')}: raw observation missing",
+    )
+    record = load(raw_path)
+    matches = [
+        candidate
+        for candidate in record.get("observations", [])
+        if candidate.get("observation_id") == raw_id
+    ]
+    require(
+        len(matches) == 1 and raw_id == row.get("observation_id"),
+        f"{row.get('observation_id')}: raw observation identity drift",
+    )
+    hydrated = dict(matches[0])
+    record_level = {
+        "evidence_source_class": record.get("evidence_source_class"),
+        "system_compatibility": (record.get("published_implementation") or {}).get("system_compatibility"),
+        "primary_sources": record.get("primary_sources"),
+    }
+    for key, value in record_level.items():
+        require(value is not None, f"{row.get('observation_id')}: neutral raw record missing {key}")
+        require(
+            key not in hydrated or hydrated[key] == value,
+            f"{row.get('observation_id')}: neutral raw field conflict: {key}",
+        )
+        hydrated[key] = value
+    for key, value in row.items():
+        require(
+            key not in hydrated or hydrated[key] == value,
+            f"{row.get('observation_id')}: derived/raw field conflict: {key}",
+        )
+        hydrated[key] = value
+    return hydrated
+
+
 search = load(HERE / "s2-matched-canonical-search-closure.json")
 primary = load(HERE / "s2-primary-search-closure.json")
 coverage = load(S2 / "coverage.json")
-observations = load(S2 / "observations.json")
+observations = [hydrate_raw_observation(row) for row in load(S2 / "observations.json")]
 baselines = load(EXPERIMENT / "primary-baselines.json")
 
 require(search["schema_version"] == 1, "S2 matched-canonical closure schema drift")

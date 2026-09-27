@@ -47,6 +47,9 @@ def hydrate_projection(link: dict) -> dict:
     effective["primary_sources"] = record.get("primary_sources")
     if record.get("canonical_harness_id"):
         effective["canonical_review_revision"] = record.get("canonical_review_ref")
+    raw = matches[0]
+    if "comparison_class" not in effective and isinstance(raw.get("comparison_design"), str):
+        effective["comparison_class"] = raw["comparison_design"]
     return effective
 
 
@@ -105,7 +108,7 @@ require(mao["observation_id"] == mao_id, "MAO matched-search observation drift")
 require(mao["canonical_assessment_ref"] == mao_ref, "MAO matched-search review ref drift")
 require(mao["comparison_class"] == "within-system-controlled-ablation", "MAO matched-search comparison class drift")
 require(mao_id in observation_rows, "MAO canonical S3 observation missing")
-mao_obs = observation_rows[mao_id]
+mao_obs = hydrate_projection(observation_rows[mao_id])
 require(mao_obs.get("canonical_harness_id") == "multi-agent-orchestration", "MAO canonical identity drift")
 require(mao_obs.get("canonical_system_eligible") is True, "MAO canonical eligibility drift")
 require(mao_obs.get("canonical_review_revision") == mao_ref, "MAO canonical observation ref drift")

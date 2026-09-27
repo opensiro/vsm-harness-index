@@ -36,6 +36,40 @@ class RegistryError(ValueError):
     pass
 
 
+FORBIDDEN_VSM_KEYS = {
+    "function",
+    "benchmark_fit",
+    "vsm_interpretation",
+    "canonical_state_at_review",
+    "canonical_states_at_review",
+    "canonical_system_eligible",
+    "coverage_class",
+}
+
+
+def _forbidden_vsm_key(key: str) -> bool:
+    return (
+        key in FORBIDDEN_VSM_KEYS
+        or key.startswith("autonomy_s")
+        or key.startswith("vsm_")
+        or re.match(r"^canonical_.*state", key) is not None
+    )
+
+
+def _validate_vsm_neutral(value: object, record_ref: str, path: str = "$") -> None:
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f"{path}.{key}"
+            if _forbidden_vsm_key(key):
+                raise RegistryError(
+                    f"{record_ref}:{child_path}: raw neutral evidence must not encode VSM-function/state attribution"
+                )
+            _validate_vsm_neutral(child, record_ref, child_path)
+    elif isinstance(value, list):
+        for idx, child in enumerate(value):
+            _validate_vsm_neutral(child, record_ref, f"{path}[{idx}]")
+
+
 @dataclass(frozen=True)
 class RegistryRow:
     observation_id: str
@@ -155,6 +189,7 @@ def collect_rows() -> list[RegistryRow]:
 
         if not isinstance(record, dict):
             raise RegistryError(f"{record_ref}: raw record must be a JSON object")
+        _validate_vsm_neutral(record, record_ref)
         if not isinstance(record.get("schema_version"), int) or record["schema_version"] < 1:
             raise RegistryError(f"{record_ref}: schema_version must be an integer >= 1")
 

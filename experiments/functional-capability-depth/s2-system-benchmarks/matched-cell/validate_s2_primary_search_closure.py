@@ -57,7 +57,18 @@ def hydrate_raw_observation(row: dict) -> dict:
     matches = [candidate for candidate in record.get("observations", []) if candidate.get("observation_id") == raw_id]
     require(len(matches) == 1 and raw_id == row.get("observation_id"), f"{row.get('observation_id')}: raw observation identity drift")
     hydrated = dict(matches[0])
-    hydrated.update(row)
+    record_level = {
+        "evidence_source_class": record.get("evidence_source_class"),
+        "system_compatibility": (record.get("published_implementation") or {}).get("system_compatibility"),
+        "primary_sources": record.get("primary_sources"),
+    }
+    for key, value in record_level.items():
+        require(value is not None, f"{row.get('observation_id')}: neutral raw record missing {key}")
+        require(key not in hydrated or hydrated[key] == value, f"{row.get('observation_id')}: neutral raw field conflict: {key}")
+        hydrated[key] = value
+    for key, value in row.items():
+        require(key not in hydrated or hydrated[key] == value, f"{row.get('observation_id')}: derived/raw field conflict: {key}")
+        hydrated[key] = value
     return hydrated
 
 

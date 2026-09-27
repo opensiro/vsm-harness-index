@@ -6,9 +6,6 @@
   "canonical_harness_id": "thclaws",
   "canonical_assessment_ref": "assessments/thclaws.md",
   "canonical_review_ref": "cd700937a71a391f052438d139b7b1c5a6456755",
-  "canonical_states_at_review": {
-    "S2": "A"
-  },
   "published_implementation": {
     "system_compatibility": "native-system",
     "source_revision": "cd700937a71a391f052438d139b7b1c5a6456755",

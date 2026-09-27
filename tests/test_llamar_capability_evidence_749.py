@@ -49,7 +49,10 @@ class LLaMARCapabilityEvidence749Test(unittest.TestCase):
         raw = load(EXP / "system-observations" / "llamar.json")
         self.assertEqual(raw.get("canonical_harness_id"), "llamar")
         self.assertEqual(raw.get("canonical_review_ref"), REVIEW_REF)
-        self.assertEqual(raw.get("canonical_states_at_review"), {"S2": "A", "S3": "A"})
+        self.assertNotIn("canonical_states_at_review", raw)
+        self.assertNotIn("function", raw)
+        self.assertNotIn("benchmark_fit", raw)
+        self.assertNotIn("vsm_interpretation", raw)
         relation = raw["published_implementation"]["canonical_revision_match"]
         self.assertEqual(
             relation,
