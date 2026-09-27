@@ -102,6 +102,23 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertEqual(warnings, [])
 
+    def test_remaining_active_occupancy_uses_filtered_rows(self) -> None:
+        entries = [
+            module.QueueEntry(12, "[Candidate batch] X", "owner/done", frozen=True),
+            module.QueueEntry(12, "[Candidate batch] X", "owner/pending", frozen=True),
+        ]
+        active, _errors, _warnings = module.classify_queue_entries(
+            entries,
+            included={"owner/done": "owner/done"},
+            proposed={},
+            catalog_names={"owner/done": "owner/done"},
+        )
+        self.assertEqual(module.validate_remaining_occupancies(active, {12: 1}), [])
+        self.assertEqual(
+            module.validate_remaining_occupancies(active, {12: 2}),
+            ["#12: declared remaining active occupancy 2/10 != 1/10 active rows"],
+        )
+
     def test_live_queue_canonical_overlap_still_fails(self) -> None:
         entry = module.QueueEntry(11, "[Candidate batch] X", "owner/already", frozen=False)
         active, errors, _warnings = module.classify_queue_entries(
