@@ -6,8 +6,6 @@ ROOT = Path(__file__).resolve().parents[1]
 PATH = ROOT / "experiments/functional-capability-depth/s3-system-benchmarks/validate.py"
 text = PATH.read_text(encoding="utf-8")
 
-# MAO must enter validation as the physical derived row. validate_mao_observation
-# checks projection minimality first, then hydrates the effective evidence view.
 call_old = '''    validate_mao_observation(by_observation_id[MAO_OBSERVATION_ID])\n'''
 if call_old not in text:
     raise SystemExit("S3 MAO validation call anchor drift")
@@ -31,7 +29,7 @@ if old_absence not in text:
 text = text.replace(old_absence, new_absence, 1)
 
 prov_old = '''    limitation = observation.get("provenance_limitation")\n    if not isinstance(limitation, str) or MAO_UNRESOLVED_RUN_SHA not in limitation:\n        fail("Multi-Agent Orchestration provenance limitation lost unresolved SHA")\n    if "not relabeled as an independently reproduced run" not in limitation:\n        fail("Multi-Agent Orchestration non-reproduction boundary lost")\n'''
-prov_new = '''    limitation = observation.get("provenance_limitation")\n    if not isinstance(limitation, str) or "no longer resolves publicly" not in limitation:\n        fail("Multi-Agent Orchestration provenance limitation lost unresolved-run boundary")\n    if "committed result artifact" not in limitation or "canonical review revision" not in limitation:\n        fail("Multi-Agent Orchestration provenance anchor boundary lost")\n    raw_record = json.loads((RAW_OBSERVATIONS / "multi-agent-orchestration.json").read_text(encoding="utf-8"))\n    implementation_note = (raw_record.get("published_implementation") or {}).get("note")\n    if not isinstance(implementation_note, str) or "not relabeled as an independently reproduced" not in implementation_note:\n        fail("Multi-Agent Orchestration non-reproduction boundary lost")\n'''
+prov_new = '''    limitation = observation.get("provenance_limitation")\n    if not isinstance(limitation, str) or "no longer resolves publicly" not in limitation:\n        fail("Multi-Agent Orchestration provenance limitation lost unresolved-run boundary")\n    if "committed result artifact" not in limitation or "canonical review revision" not in limitation:\n        fail("Multi-Agent Orchestration provenance anchor boundary lost")\n    raw_record = json.loads((RAW_OBSERVATIONS / "multi-agent-orchestration.json").read_text(encoding="utf-8"))\n    implementation_note = (raw_record.get("published_implementation") or {}).get("note")\n    if (\n        not isinstance(implementation_note, str)\n        or "rather than relabeled" not in implementation_note\n        or "independently reproduced" not in implementation_note\n    ):\n        fail("Multi-Agent Orchestration non-reproduction boundary lost")\n'''
 if prov_old not in text:
     raise SystemExit("S3 MAO provenance validation anchor drift")
 text = text.replace(prov_old, prov_new, 1)
