@@ -25,6 +25,8 @@ The current protocol source is:
 
 Every fixture packet MUST pin the exact Skills revision it uses.
 
+Current packet-class coverage and remaining experiment gates are tracked in [`CORPUS-STATUS.md`](CORPUS-STATUS.md), backed by [`corpus-status.json`](corpus-status.json). Packet coverage is not equivalent to review completion or experiment stability.
+
 ## Separation from canonical assessments
 
 Experimental findings are not canonical autonomy states.
@@ -51,11 +53,22 @@ Review artifacts are experimental evidence about the candidate classification di
 
 ## Current fixtures
 
-- [`ouroboros/`](fixtures/ouroboros/) — first real-system candidate fixture; tracked by Index issue #271.
-- [`synthetic-s1-escalation-shift/`](fixtures/synthetic-s1-escalation-shift/) — synthetic escalation-boundary-shift positive-control input for S1; tracked by Index issue #311. It is judgment-free until two independent reviews are completed.
-- [`megaagent/`](fixtures/megaagent/) — real-system strong-recursive candidate packet pinned to the older experimental protocol revision used by Index issue #306. It is judgment-free until two independent reviews are completed.
-- [`synthetic-s3star-independence-loss/`](fixtures/synthetic-s3star-independence-loss/) — synthetic S3* counterexample where an apparently improved audit path loses complementary independence; tracked by Index issue #727. It is judgment-free until two independent reviews are completed.
-- [`synthetic-s5-parent-authority/`](fixtures/synthetic-s5-parent-authority/) — synthetic S5 counterexample where local policy generation remains parent-governed because higher-recursion constitutive authority is decisive; tracked by Index issue #728. It is judgment-free until two independent reviews are completed.
+Required-class packets:
+
+- [`chief/`](fixtures/chief/) — clear `C` control; tracked by Index issue #302.
+- [`trueforge/`](fixtures/trueforge/) — clear `A` control; tracked by Index issue #301.
+- [`harness-evolver/`](fixtures/harness-evolver/) — self-modification boundary / non-`S` control; tracked by Index issue #292.
+- [`synthetic-s1-escalation-shift/`](fixtures/synthetic-s1-escalation-shift/) — escalation-boundary-shift positive-control input for S1; tracked by Index issue #724/#311.
+- [`scion/`](fixtures/scion/) — repertoire-change without assumed recursion candidate; tracked by Index issue #287.
+- [`megaagent/`](fixtures/megaagent/) — strong recursive-realization candidate pinned to the older experimental protocol revision used by Index issue #306.
+- [`synthetic-s3star-independence-loss/`](fixtures/synthetic-s3star-independence-loss/) — S3* counterexample where an apparently improved audit path loses complementary independence; packet merged from issue #727.
+- [`synthetic-s5-parent-authority/`](fixtures/synthetic-s5-parent-authority/) — S5 counterexample where local policy generation remains parent-governed because higher-recursion constitutive authority is decisive; packet merged from issue #728.
+
+Additional candidate:
+
+- [`ouroboros/`](fixtures/ouroboros/) — first real-system multi-function candidate fixture; tracked by Index issue #271.
+
+These packets were frozen across multiple experimental Skills revisions. See `CORPUS-STATUS.md` before making any corpus-level statement about current-protocol alignment or stability.
 
 ## Research notes
 
