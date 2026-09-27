@@ -1,0 +1,52 @@
+name: tmp normalize S1 neutral JSON 803
+
+on:
+  push:
+    branches:
+      - experiment/normalize-neutral-json-803
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Normalize raw storage
+        run: python scripts/tmp_normalize_s1_neutral_json_803.py
+      - name: Regenerate neutral registry
+        run: python experiments/functional-capability-depth/system-observations/render_registry.py
+      - name: Regenerate S1 baseline
+        run: python experiments/functional-capability-depth/render_s1_baseline.py
+      - name: Validate neutral registry
+        run: |
+          python experiments/functional-capability-depth/system-observations/validate.py
+          python experiments/functional-capability-depth/system-observations/render_registry.py --check
+      - name: Validate S1 and synthesis
+        run: |
+          python experiments/functional-capability-depth/s1-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/render_s1_baseline.py --check
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+          python experiments/functional-capability-depth/render_evidence_frontier.py --check
+          python experiments/functional-capability-depth/validate_synthesis.py
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Remove assembler artifacts
+        run: |
+          rm scripts/tmp_normalize_s1_neutral_json_803.py
+          rm .github/workflows/tmp-normalize-s1-neutral-json-803.yml
+      - name: Commit assembled transaction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --stat
+          git commit -m "experiment: normalize S1 neutral evidence storage"
+          git push origin HEAD:experiment/normalize-neutral-json-803
