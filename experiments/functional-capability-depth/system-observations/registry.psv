@@ -1,5 +1,7 @@
 observation_id|system_name|canonical_harness_id|benchmark_labels|kind|evidence_source_class|system_compatibility|record_ref
 a-evolve-harness-updating-2026|A-Evolve|a-evolve|A-Evolve harness-evolution study: SWE-bench Verified / MCP-Atlas / SkillsBench|persistent-harness-update-study|first-party-reported|native-system|a-evolve.json
+codecrdt-parallel-convergence-2025-10|CodeCRDT||CodeCRDT sequential-versus-parallel evaluation|native-system-outcome-study|first-party-reported|native-system|codecrdt.json
+grit-synthetic-merge-contention-2026-04|Grit||Grit synthetic merge-contention sweep|native-mechanism-ablation|first-party-reported|native-system|grit.json
 kadath-ten-epoch-native-evolution-2026|KADATH|kadath|KADATH operator-approved run-specific locked fitness benchmark|longitudinal-population-evolution|first-party-reported|native-system|kadath.json
 llamar-agent-count-interference-mapthor-sar|LLaMAR|llamar|MAP-THOR / SAR|native-disturbance-characterization|first-party-reported|native-system|llamar.json
 llamar-mapthor-module-ablation-gpt4v|LLaMAR|llamar|MAP-THOR|native-mechanism-ablation|first-party-reported|native-system|llamar.json
@@ -7,6 +9,8 @@ magentic-one-gpt4o-o1-test-results|Magentic-One|autogen-agentchat|GAIA; Assistan
 magentic-one-gpt4o-test-results|Magentic-One|autogen-agentchat|GAIA; AssistantBench; WebArena|system-outcome|first-party-reported|native-system|magentic-one.json
 magentic-one-simple-orchestrator-gaia-ablation|Magentic-One|autogen-agentchat|GAIA|native-mechanism-ablation|first-party-reported|native-system|magentic-one.json
 multi-agent-orchestration-supervisor-ablation-2026-08|Multi-Agent Orchestration Engine|multi-agent-orchestration|Multi-Agent Orchestration supervisor ablation (54 scripted scenarios)|native-mechanism-ablation|first-party-reported|native-system|multi-agent-orchestration.json
+nool-trackd-scaleup1-contention-2026-08-21|Nool fleet coordination benchmark organization||Nool coding-agent fleet coordination benchmark — Track D scale-up 1|benchmark-defined-coordination-ablation|first-party-reported|benchmark-scaffolded|nool-fleet-coordination.json
 squad-marble-aligned-coordination-ablation|Squad|squad|MARBLE aligned four-domain re-run|native-mechanism-ablation|first-party-reported|native-system|squad.json
 squad-marble-completion-ablation|Squad|squad|MARBLE factorial ablation|native-mechanism-ablation|first-party-reported|native-system|squad.json
+specification-gap-recovery-2026-03|The Specification Gap benchmark organization||The Specification Gap / AmbigClass 2×2 conflict-recovery experiment|benchmark-defined-coordination-ablation|first-party-reported|benchmark-scaffolded|specification-gap.json
 appliedscientist-iterative-review-2026-09|TheAppliedScientist|appliedscientist|AppliedScientist iterative reviewer-guided revision study (30 papers)|iterative-review-revision-study|first-party-reported|native-system|appliedscientist.json

@@ -110,6 +110,29 @@ def observation_by_id(observations: list[dict], observation_id: str) -> dict:
     return matches[0]
 
 
+def hydrate_raw_observation(row: dict) -> dict:
+    ref = row.get("raw_observation_ref")
+    if ref is None:
+        return row
+    if not isinstance(ref, str) or not ref.startswith("../system-observations/") or "#" not in ref:
+        fail(f"{row.get('observation_id')}: invalid raw_observation_ref")
+    path_part, raw_id = ref.split("#", 1)
+    raw_path = (HERE / path_part).resolve()
+    if raw_path.parent != SYSTEM_OBSERVATIONS.resolve() or not raw_path.is_file():
+        fail(f"{row.get('observation_id')}: raw observation record missing or outside shared directory")
+    record = json.loads(raw_path.read_text(encoding="utf-8"))
+    matches = [candidate for candidate in record.get("observations", []) if candidate.get("observation_id") == raw_id]
+    if len(matches) != 1 or raw_id != row.get("observation_id"):
+        fail(f"{row.get('observation_id')}: neutral raw observation identity drift")
+    raw = matches[0]
+    for forbidden in ("function", "benchmark_fit", "vsm_interpretation"):
+        if forbidden in record or forbidden in raw:
+            fail(f"{row.get('observation_id')}: neutral raw record leaked VSM interpretation field {forbidden}")
+    hydrated = dict(raw)
+    hydrated.update(row)
+    return hydrated
+
+
 def validate_proxy_links(coverage: dict, by_id: dict[str, dict]) -> None:
     proxy_links = json.loads(PROXY_LINKS.read_text(encoding="utf-8"))
     if not isinstance(proxy_links, list):
@@ -440,6 +463,7 @@ def require_case(by_id: dict[str, dict], case_id: str, expected: dict[str, objec
 def main() -> None:
     coverage = json.loads(COVERAGE.read_text(encoding="utf-8"))
     observations = json.loads(OBSERVATIONS.read_text(encoding="utf-8"))
+    observations = [hydrate_raw_observation(row) for row in observations]
     benchmark_map = json.loads(BENCHMARK_MAP.read_text(encoding="utf-8"))
 
     if coverage.get("schema_version") != 1 or coverage.get("function") != "S2":
