@@ -15,7 +15,7 @@ S3_REL = "experiments/functional-capability-depth/s3-system-benchmarks/observati
 MAO_ID = "multi-agent-orchestration-supervisor-ablation-2026-08"
 NEUTRAL_OWNED = {
     "evidence_source_class", "system_compatibility", "primary_sources",
-    "benchmark_artifact_revision", "comparison_class",
+    "benchmark_artifact_revision", "comparison_class", "comparison_limitation",
 }
 FORBIDDEN_EXACT = {
     "function", "benchmark_fit", "vsm_interpretation",
