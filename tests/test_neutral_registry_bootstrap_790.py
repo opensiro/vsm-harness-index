@@ -60,6 +60,7 @@ class NeutralRegistryBootstrap790Tests(unittest.TestCase):
             "../system-observations/a-evolve.json#a-evolve-harness-updating-2026",
         )
         self.assertNotIn("reported_harness_updating_metrics", derived)
+        self.assertNotIn("canonical_review_revision", derived)
         self.assertEqual(
             raw["reported_harness_updating_metrics"],
             {
@@ -71,7 +72,7 @@ class NeutralRegistryBootstrap790Tests(unittest.TestCase):
                 "qwen3_235b_skillsbench_gain_pp": 1.5,
             },
         )
-        self.assertEqual(record["canonical_review_ref"], derived["canonical_review_revision"])
+        self.assertEqual(record["canonical_review_ref"], "18ba996dac9843f2759b2cdf8a94022f58fbfeb9")
 
     def test_kadath_neutral_record_owns_numeric_payload(self) -> None:
         historical = load(EXPERIMENT / "s4-system-benchmarks" / "canonical_observations.json")
@@ -82,6 +83,7 @@ class NeutralRegistryBootstrap790Tests(unittest.TestCase):
             "../system-observations/kadath.json#kadath-ten-epoch-native-evolution-2026",
         )
         self.assertNotIn("reported_population_metrics", derived)
+        self.assertNotIn("canonical_review_revision", derived)
         self.assertEqual(
             raw["reported_population_metrics"],
             {
@@ -96,7 +98,7 @@ class NeutralRegistryBootstrap790Tests(unittest.TestCase):
                 "top5_floor_improvement": 70,
             },
         )
-        self.assertEqual(record["canonical_review_ref"], derived["canonical_review_revision"])
+        self.assertEqual(record["canonical_review_ref"], "db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef")
 
     def test_bootstrap_raw_records_do_not_encode_function_attribution(self) -> None:
         for filename, observation_id in (
