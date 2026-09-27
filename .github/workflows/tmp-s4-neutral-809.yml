@@ -1,0 +1,59 @@
+name: tmp S4 neutral migration 809
+
+on:
+  push:
+    branches:
+      - experiment/s4-neutral-registry-809
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Migrate direct S4 evidence
+        run: python scripts/tmp_migrate_s4_neutral_809.py
+      - name: Regenerate neutral registry
+        run: python experiments/functional-capability-depth/system-observations/render_registry.py
+      - name: Validate neutral registry
+        run: |
+          python experiments/functional-capability-depth/system-observations/validate.py
+          python experiments/functional-capability-depth/system-observations/render_registry.py --check
+      - name: Validate S4 stack and synthesis
+        run: |
+          python experiments/functional-capability-depth/s4-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate.py
+          python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench.py
+          python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_paper_controls.py
+          python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_continual_linkage.py
+          python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_gepa_linkage.py
+          python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_meta_harness_linkage.py
+          python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_public_polybench_skillos_linkage.py
+          python experiments/functional-capability-depth/s4-system-benchmarks/matched-cell/validate_s4_primary_search_closure.py
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+          python experiments/functional-capability-depth/render_evidence_frontier.py --check
+          python experiments/functional-capability-depth/validate_synthesis.py
+      - name: Check Index and unit tests
+        run: |
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Remove assembler artifacts
+        run: |
+          rm scripts/tmp_migrate_s4_neutral_809.py
+          rm .github/workflows/tmp-s4-neutral-809.yml
+      - name: Commit assembled transaction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --stat
+          git commit -m "experiment: move direct S4 evidence to neutral registry"
+          git push origin HEAD:experiment/s4-neutral-registry-809
