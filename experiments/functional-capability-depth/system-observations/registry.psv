@@ -9,3 +9,4 @@ magentic-one-simple-orchestrator-gaia-ablation|Magentic-One|autogen-agentchat|GA
 multi-agent-orchestration-supervisor-ablation-2026-08|Multi-Agent Orchestration Engine|multi-agent-orchestration|Multi-Agent Orchestration supervisor ablation (54 scripted scenarios)|native-mechanism-ablation|first-party-reported|native-system|multi-agent-orchestration.json
 squad-marble-aligned-coordination-ablation|Squad|squad|MARBLE aligned four-domain re-run|native-mechanism-ablation|first-party-reported|native-system|squad.json
 squad-marble-completion-ablation|Squad|squad|MARBLE factorial ablation|native-mechanism-ablation|first-party-reported|native-system|squad.json
+appliedscientist-iterative-review-2026-09|TheAppliedScientist|appliedscientist|AppliedScientist iterative reviewer-guided revision study (30 papers)|iterative-review-revision-study|first-party-reported|native-system|appliedscientist.json
