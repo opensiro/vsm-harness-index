@@ -36,9 +36,18 @@
         "top5_floor_epoch_10": 71,
         "top5_floor_improvement": 70
       },
-      "metric_note": "The first-party README reports a ten-epoch upward shift in the leading cohort. Each epoch point may represent a different top-performing agent, so the metrics describe population-level evolutionary improvement rather than one individual trajectory.",
-      "comparability_limitation": "The fitness benchmark is generated from the user goal and approved and locked per run. Public metadata is insufficient to reconstruct a shared model/goal/population/configuration cell with another harness.",
-      "non_claim": "This longitudinal within-system result is not a matched cross-harness score and does not determine canonical VSM autonomy states."
+      "metric_note": "The first-party README reports a ten-epoch upward shift in the leading cohort. Each epoch point may represent a different top-performing agent, so these metrics describe population-level evolutionary improvement rather than one individual trajectory.",
+      "comparability_limitation": "The fitness benchmark is generated from the user goal and explicitly approved and locked per run. The published proof does not expose enough run metadata to reconstruct a common model/goal/population/configuration cell with A-Evolve or another canonical S4 system. Preserve this as a heterogeneous within-system observation, not a matched cross-harness score.",
+      "non_claim": "This longitudinal within-system result is not a matched cross-harness score and does not determine canonical VSM autonomy states.",
+      "source_artifact_revision": "db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef",
+      "comparison_class": "within-system-longitudinal-population-evolution",
+      "adaptation_loop": [
+        "organisms execute under the current genome against the locked environment/fitness definition",
+        "the kernel freezes attempts and an independent Grader extracts benchmark evidence",
+        "verified scores, population evidence and elite evidence enter model-driven reflection, Tweaker and Birther adaptation paths",
+        "valid prompt/source/dependency/file genome mutations are committed after grading",
+        "the changed population is activated and later epochs execute the changed capabilities"
+      ]
     }
   ]
 }

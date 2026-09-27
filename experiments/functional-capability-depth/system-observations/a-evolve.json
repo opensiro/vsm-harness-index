@@ -47,9 +47,17 @@
         "Qwen3.5-9B"
       ],
       "adaptation_target_by_benchmark": {
-        "SWE-bench Verified": ["skills"],
-        "MCP-Atlas": ["skills", "prompts", "memories"],
-        "SkillsBench": ["skills"]
+        "SWE-bench Verified": [
+          "skills"
+        ],
+        "MCP-Atlas": [
+          "skills",
+          "prompts",
+          "memories"
+        ],
+        "SkillsBench": [
+          "skills"
+        ]
       },
       "reported_harness_updating_metrics": {
         "maximum_best_vs_worst_evolver_spread_pp": 3.1,
@@ -59,10 +67,18 @@
         "opus_4_6_skillsbench_gain_pp": 2.3,
         "qwen3_235b_skillsbench_gain_pp": 1.5
       },
-      "metric_note": "The publication defines harness-updating capability as mean pairwise evolution gain across fixed anchor agents and reports pass-rate gains in percentage points. Values are preserved as a vector rather than collapsed into one score.",
+      "metric_note": "The publication defines harness-updating capability as mean pairwise evolution gain across fixed anchor agents and reports pass-rate gains in percentage points. These values are preserved as a vector of reported observations, not collapsed into a global S4 score.",
       "comparability_limitation": "This is a within-system quantitative study across three task domains and several evolver backbones, not a matched cross-harness comparison.",
-      "provenance_limitation": "The reported run lineage and current canonical review ref diverge in Git history. Preserve the result as historical first-party evidence rather than a reproduced run at the canonical ref.",
-      "non_claim": "These heterogeneous gains are not a global harness score and do not determine canonical VSM autonomy states."
+      "provenance_limitation": "The reported experimental runs come from the first-party harness-evolution release lineage at 96ed93ba7ee0b9519fc55c963afb47a1975eb1ae. That release lineage and canonical review ref 18ba996dac9843f2759b2cdf8a94022f58fbfeb9 diverge in Git history. The canonical review ref nevertheless contains the first-party harness-disentangling artifact and UnifiedEngine port implementing the published Exp0/Exp1 protocol. Preserve the result as first-party-reported historical evidence; it is not independently reproduced at the canonical review revision.",
+      "non_claim": "These heterogeneous gains are not a global harness score and do not determine canonical VSM autonomy states.",
+      "comparison_class": "controlled-within-system-evolver-study",
+      "adaptation_loop": [
+        "operational agent executes the next task batch under the current harness",
+        "execution trajectories and outputs become evidence for the A-Evolve evolver",
+        "the fixed evolver procedure proposes and applies a persistent harness update",
+        "the updated harness becomes the next agent state",
+        "later task execution measures whether the changed persistent capability is useful"
+      ]
     }
   ]
 }

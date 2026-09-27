@@ -1,123 +1,46 @@
 [
   {
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
     "observation_id": "a-evolve-harness-evolution-protocol-2026",
-    "function": "S4",
-    "benchmark_id": "a-evolve-harness-evolution",
     "benchmark_fit": "direct",
-    "boundary_class": "benchmark-defined-evolving-system",
-    "canonical_harness_id": null,
-    "canonical_system_eligible": false,
-    "system_compatibility": "benchmark-scaffolded",
-    "reviewed_revision": "96ed93ba7ee0b9519fc55c963afb47a1975eb1ae",
-    "evidence_type": "published-protocol-and-results",
-    "adaptation_loop": [
-      "external task batch",
-      "execution trajectories/evidence",
-      "evolver proposes persistent harness delta",
-      "updated harness workspace",
-      "later task-solving agent uses evolved harness"
-    ],
-    "future_evaluation": "Exp0 isolates harness-updating by varying the evolver with fixed solver anchors; Exp1 isolates harness-benefit by varying the solver with fixed evolver anchors, with an additional train/test split route.",
+    "function": "S4",
     "vsm_interpretation": "The benchmark directly exercises external/operational evidence -> adaptation option -> persistent capability change -> later operation. The adaptation organization is supplied by A-Evolve and must not be attributed to a task solver by association.",
-    "primary_sources": [
-      "https://github.com/A-EVO-Lab/a-evolve/tree/96ed93ba7ee0b9519fc55c963afb47a1975eb1ae",
-      "https://arxiv.org/abs/2605.30621"
-    ]
+    "benchmark_id": "a-evolve-harness-evolution",
+    "boundary_class": "benchmark-defined-evolving-system",
+    "raw_observation_ref": "../system-observations/a-evolve-composed.json#a-evolve-harness-evolution-protocol-2026"
   },
   {
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
     "observation_id": "skillevolbench-frozen-deployment-protocol-2026",
-    "function": "S4",
-    "benchmark_id": "skillevolbench",
     "benchmark_fit": "direct",
-    "boundary_class": "benchmark-defined-skill-evolving-system",
-    "canonical_harness_id": null,
-    "canonical_system_eligible": false,
-    "system_compatibility": "benchmark-scaffolded",
-    "reviewed_revision": "9e3daa339987c3cfa624121e1be442593a53d43c",
-    "evidence_type": "published-protocol-and-results",
-    "task_structure": "6 environments x 5 latent skill families x 6 tasks; T1-T3 acquisition, T4 context shift, T5 adversarial variant, T6 skill composition",
-    "adaptation_loop": [
-      "acquisition-task execution",
-      "compacted trajectories and verifier feedback",
-      "Skill Author induces/revises persistent skill library",
-      "skill library frozen",
-      "future deployment tasks test transfer"
-    ],
-    "controls": [
-      "no-skill",
-      "raw-trajectory RAG",
-      "self-generated static/dynamic skills",
-      "curated static/dynamic skills"
-    ],
+    "function": "S4",
     "vsm_interpretation": "Frozen deployment makes the persistent return-to-capability path explicit and separates durable procedural adaptation from current-episode repair and raw episodic reuse. The Skill Author is benchmark-hosted.",
-    "primary_sources": [
-      "https://github.com/AIoT-MLSys-Lab/SkillEvolBench/tree/9e3daa339987c3cfa624121e1be442593a53d43c",
-      "https://arxiv.org/abs/2605.24117"
-    ]
+    "benchmark_id": "skillevolbench",
+    "boundary_class": "benchmark-defined-skill-evolving-system",
+    "raw_observation_ref": "../system-observations/skillevolbench.json#skillevolbench-frozen-deployment-protocol-2026"
   },
   {
+    "canonical_harness_id": null,
+    "canonical_system_eligible": false,
     "observation_id": "evoharnessbench-self-evolving-adaptation-v2",
-    "function": "S4",
-    "benchmark_id": "evoharnessbench-self-evolving",
     "benchmark_fit": "direct",
-    "boundary_class": "benchmark-defined-self-evolving-system",
-    "canonical_harness_id": null,
-    "canonical_system_eligible": false,
-    "system_compatibility": "benchmark-scaffolded",
-    "reviewed_revision": null,
-    "protocol_version": "arXiv 2609.04280 v2 (2026-09-10)",
-    "code_revision_status": "unresolved-official-github-repository",
-    "evidence_type": "published-protocol-and-results",
-    "external_change": "tools, reusable skills and specialist agents are introduced across multi-stage harness streams",
-    "adaptation_loop": [
-      "observe experience under current harness version",
-      "update persistent inner adaptation state",
-      "carry memories/skills/prompts across subsequent harness versions",
-      "evaluate held-out performance under later harness stages"
-    ],
-    "mode_boundary": "Only self-evolving adaptation is classified direct. Deployment-only evaluation without persistent inner adaptation is a retention/robustness control, not direct S4.",
+    "function": "S4",
     "vsm_interpretation": "The self-evolving mode closes external harness change plus accumulated experience into persistent adaptation that affects later operation. No unrelated GitHub repository is attached by name similarity.",
-    "primary_sources": [
-      "https://arxiv.org/abs/2609.04280",
-      "https://mas-orchestra.salesforceresearch.ai/evoharness/"
-    ]
+    "benchmark_id": "evoharnessbench-self-evolving",
+    "boundary_class": "benchmark-defined-self-evolving-system",
+    "raw_observation_ref": "../system-observations/evoharnessbench.json#evoharnessbench-self-evolving-adaptation-v2"
   },
   {
-    "observation_id": "evo-bench-heldout-harness-evolution-2026",
-    "function": "S4",
-    "benchmark_id": "evo-bench",
-    "benchmark_fit": "direct",
-    "boundary_class": "benchmark-defined-harness-evolving-system",
     "canonical_harness_id": null,
     "canonical_system_eligible": false,
-    "system_compatibility": "benchmark-scaffolded",
-    "reviewed_revision": "889e4fc8b197f426b444dbf8de217ea15b596fd2",
-    "evidence_type": "published-protocol-and-results",
-    "evidence_source_class": "external-reproduced",
-    "policy_model": "DeepSeek-V4-Flash",
-    "seed_harness": "minimal CodeAct policy harness",
-    "validation_task_count": 160,
-    "heldout_evaluation_task_count": 448,
-    "evolution_budget": "20 validation iterations, 1000 evolver steps, 48 hours",
-    "published_results": {
-      "seed_overall_score": 29.7,
-      "best_autonomous_overall_score": 46.3,
-      "best_absolute_gain": 16.6,
-      "human_engineered_reference": 47.5
-    },
-    "adaptation_loop": [
-      "execute current harness on validation tasks",
-      "evolver diagnoses failures and edits persistent executable harness",
-      "validation-only feedback selects later harness state",
-      "selected harness is frozen and evolver sandbox destroyed",
-      "disjoint held-out evaluation measures future capability"
-    ],
-    "future_evaluation": "The evolver cannot access the 448-task evaluation suite during evolution; only the 160-task validation suite is available. Final evaluation occurs after the selected harness is frozen.",
+    "observation_id": "evo-bench-heldout-harness-evolution-2026",
+    "benchmark_fit": "direct",
+    "function": "S4",
     "vsm_interpretation": "The benchmark directly converts operating evidence into a persistent executable capability change and then measures later operation under a disjoint future evaluation surface. The S4 owner is the benchmark-defined evolver plus evolving harness organization, not the fixed policy model or a canonical Index harness.",
-    "primary_sources": [
-      "https://github.com/RUCAIBox/Evo-Bench/tree/889e4fc8b197f426b444dbf8de217ea15b596fd2",
-      "https://arxiv.org/abs/2608.09096",
-      "https://evobench.org/"
-    ]
+    "benchmark_id": "evo-bench",
+    "boundary_class": "benchmark-defined-harness-evolving-system",
+    "raw_observation_ref": "../system-observations/evo-bench.json#evo-bench-heldout-harness-evolution-2026"
   }
 ]
