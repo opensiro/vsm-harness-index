@@ -1,0 +1,52 @@
+name: tmp S3star neutral migration 802
+
+on:
+  push:
+    branches:
+      - experiment/s3star-neutral-registry-802
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Migrate S3star evidence
+        run: python scripts/tmp_migrate_s3star_neutral_802.py
+      - name: Regenerate neutral registry
+        run: python experiments/functional-capability-depth/system-observations/render_registry.py
+      - name: Validate neutral registry
+        run: |
+          python experiments/functional-capability-depth/system-observations/validate.py
+          python experiments/functional-capability-depth/system-observations/render_registry.py --check
+      - name: Validate S3star and synthesis
+        run: |
+          python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s3star-system-benchmarks/matched-cell/validate_s3star_primary_search_closure.py
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+          python experiments/functional-capability-depth/render_evidence_frontier.py --check
+          python experiments/functional-capability-depth/validate_synthesis.py
+      - name: Check Index and unit tests
+        run: |
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Remove assembler artifacts
+        run: |
+          rm scripts/tmp_migrate_s3star_neutral_802.py
+          rm .github/workflows/tmp-s3star-neutral-802.yml
+      - name: Commit assembled transaction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --stat
+          git commit -m "experiment: move S3star evidence to neutral registry"
+          git push origin HEAD:experiment/s3star-neutral-registry-802
