@@ -1,0 +1,55 @@
+name: tmp s2 comparison ownership 822
+
+on:
+  push:
+    branches:
+      - experiment/s2-comparison-ownership-822
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply S2 comparison ownership cleanup
+        run: python .github/tmp_apply_s2_comparison_ownership_822.py
+      - name: Validate neutral registry and capability stack
+        run: |
+          python experiments/functional-capability-depth/system-observations/validate.py
+          python experiments/functional-capability-depth/system-observations/render_registry.py --check
+          python experiments/functional-capability-depth/s2-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_primary_search_closure.py
+          python experiments/functional-capability-depth/s2-system-benchmarks/matched-cell/validate_s2_matched_canonical_search.py
+          python experiments/functional-capability-depth/s3-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s3star-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s4-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/s5-system-benchmarks/validate.py
+          python experiments/functional-capability-depth/render_function_baselines.py --check
+          python experiments/functional-capability-depth/render_evidence_frontier.py --check
+          python experiments/functional-capability-depth/validate_synthesis.py
+          python scripts/check_index.py
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Remove assembler artifacts
+        run: |
+          rm .github/tmp_apply_s2_comparison_ownership_822.py
+          rm .github/workflows/tmp-s2-comparison-ownership-822.yml
+      - name: Commit assembled transaction
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No assembled changes"
+            exit 1
+          fi
+          git commit -m "experiment: remove residual raw-owned S2 comparison metadata"
+          git push
