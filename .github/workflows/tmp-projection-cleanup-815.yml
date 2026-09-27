@@ -22,6 +22,7 @@ jobs:
         run: |
           python .github/tmp_apply_neutral_projection_cleanup_815.py
           python .github/tmp_patch_s2_closure_815.py
+          python .github/tmp_patch_s2_matched_closure_815.py
       - name: Validate neutral registry
         run: |
           python experiments/functional-capability-depth/system-observations/validate.py
@@ -50,6 +51,7 @@ jobs:
           rm .github/workflows/tmp-audit-neutral-vsm-leaks-815.yml
           rm .github/tmp_apply_neutral_projection_cleanup_815.py
           rm .github/tmp_patch_s2_closure_815.py
+          rm .github/tmp_patch_s2_matched_closure_815.py
           rm .github/workflows/tmp-projection-cleanup-815.yml
       - name: Commit assembled transaction
         shell: bash
