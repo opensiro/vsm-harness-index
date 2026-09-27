@@ -5,11 +5,12 @@ Status: **generated, experimental, non-normative**
 Generated from the raw JSON records in this directory by `render_registry.py`.
 Numeric benchmark payloads remain only in the raw record; this table is an identity/provenance projection, not a second result database.
 
-Raw observations: **10**
+Raw observations: **11**
 
 | System | Canonical harness | Observation | Benchmark surface(s) | Kind | Provenance | Compatibility | Raw record |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | A-Evolve | [a-evolve](../../../assessments/a-evolve.md) | `a-evolve-harness-updating-2026` | A-Evolve harness-evolution study: SWE-bench Verified / MCP-Atlas / SkillsBench | `persistent-harness-update-study` | `first-party-reported` | `native-system` | [a-evolve.json](a-evolve.json) |
+| TheAppliedScientist | [appliedscientist](../../../assessments/appliedscientist.md) | `appliedscientist-iterative-review-2026-09` | AppliedScientist iterative reviewer-guided revision study (30 papers) | `iterative-review-revision-study` | `first-party-reported` | `native-system` | [appliedscientist.json](appliedscientist.json) |
 | KADATH | [kadath](../../../assessments/kadath.md) | `kadath-ten-epoch-native-evolution-2026` | KADATH operator-approved run-specific locked fitness benchmark | `longitudinal-population-evolution` | `first-party-reported` | `native-system` | [kadath.json](kadath.json) |
 | LLaMAR | [llamar](../../../assessments/llamar.md) | `llamar-agent-count-interference-mapthor-sar` | MAP-THOR / SAR | `native-disturbance-characterization` | `first-party-reported` | `native-system` | [llamar.json](llamar.json) |
 | LLaMAR | [llamar](../../../assessments/llamar.md) | `llamar-mapthor-module-ablation-gpt4v` | MAP-THOR | `native-mechanism-ablation` | `first-party-reported` | `native-system` | [llamar.json](llamar.json) |
