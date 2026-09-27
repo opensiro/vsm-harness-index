@@ -38,10 +38,11 @@ QUEUE_TITLE_RE = re.compile(
     r"\[(?:(?:candidate|assessment)(?:-| )batch|evidence(?:-| )intake)\]",
     re.IGNORECASE,
 )
-OCCUPANCY_RE = re.compile(
-    r"(?:Remaining active candidate occupancy|Batch occupancy):\s*\*{0,2}(\d+)/10",
+REMAINING_OCCUPANCY_RE = re.compile(
+    r"Remaining active candidate occupancy:\s*\*{0,2}(\d+)/10",
     re.IGNORECASE,
 )
+BATCH_OCCUPANCY_RE = re.compile(r"Batch occupancy:\s*\*{0,2}(\d+)/10", re.IGNORECASE)
 FROZEN_QUEUE_RE = re.compile(r"\bbatch\b[^\n]{0,120}\bfrozen\b", re.IGNORECASE)
 GITHUB_URL_RE = re.compile(r"(?:https://github\.com/)?([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
 
@@ -74,7 +75,12 @@ def is_frozen_queue(body: str) -> bool:
 
 
 def declared_active_occupancy(body: str) -> int | None:
-    match = OCCUPANCY_RE.search(body)
+    match = REMAINING_OCCUPANCY_RE.search(body) or BATCH_OCCUPANCY_RE.search(body)
+    return int(match.group(1)) if match else None
+
+
+def declared_remaining_active_occupancy(body: str) -> int | None:
+    match = REMAINING_OCCUPANCY_RE.search(body)
     return int(match.group(1)) if match else None
 
 
@@ -205,8 +211,11 @@ class GitHubAPI:
             return list(pool.map(self.repository_identity, repositories))
 
 
-def active_queue_entries(api: GitHubAPI, index_repo: str) -> tuple[list[QueueEntry], list[str]]:
+def active_queue_entries(
+    api: GitHubAPI, index_repo: str
+) -> tuple[list[QueueEntry], dict[int, int], list[str]]:
     entries: list[QueueEntry] = []
+    remaining_occupancies: dict[int, int] = {}
     errors: list[str] = []
     for issue in api.open_issues(index_repo):
         title = str(issue.get("title", ""))
@@ -218,13 +227,17 @@ def active_queue_entries(api: GitHubAPI, index_repo: str) -> tuple[list[QueueEnt
         if not repositories:
             errors.append(f"#{number}: tracked queue has no parseable candidate table")
             continue
-        occupancy = declared_active_occupancy(body)
-        if occupancy is not None and occupancy != len(repositories):
-            errors.append(f"#{number}: declared occupancy {occupancy}/10 != {len(repositories)}/10 table rows")
+        remaining_occupancy = declared_remaining_active_occupancy(body)
+        if remaining_occupancy is not None:
+            remaining_occupancies[number] = remaining_occupancy
+        else:
+            occupancy = declared_active_occupancy(body)
+            if occupancy is not None and occupancy != len(repositories):
+                errors.append(f"#{number}: declared occupancy {occupancy}/10 != {len(repositories)}/10 table rows")
         frozen = is_frozen_queue(body)
         for repository in repositories:
             entries.append(QueueEntry(number, title, repository, frozen=frozen))
-    return entries, errors
+    return entries, remaining_occupancies, errors
 
 
 def classify_queue_entries(
@@ -254,6 +267,23 @@ def classify_queue_entries(
     return active, errors, warnings
 
 
+def validate_remaining_occupancies(
+    active_entries: list[QueueEntry], remaining_occupancies: dict[int, int]
+) -> list[str]:
+    active_counts: dict[int, int] = {}
+    for entry in active_entries:
+        active_counts[entry.issue_number] = active_counts.get(entry.issue_number, 0) + 1
+
+    errors: list[str] = []
+    for issue_number, declared in remaining_occupancies.items():
+        actual = active_counts.get(issue_number, 0)
+        if declared != actual:
+            errors.append(
+                f"#{issue_number}: declared remaining active occupancy {declared}/10 != {actual}/10 active rows"
+            )
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -276,11 +306,12 @@ def main() -> int:
     catalog_names = {repo.lower(): repo for repo in catalog}
 
     api = GitHubAPI(os.environ.get("GITHUB_TOKEN"))
-    entries, errors = active_queue_entries(api, args.index_repo)
+    entries, remaining_occupancies, errors = active_queue_entries(api, args.index_repo)
     active_entries, classification_errors, warnings = classify_queue_entries(
         entries, included, proposed, catalog_names
     )
     errors.extend(classification_errors)
+    errors.extend(validate_remaining_occupancies(active_entries, remaining_occupancies))
 
     by_name: dict[str, list[QueueEntry]] = {}
     for entry in active_entries:
