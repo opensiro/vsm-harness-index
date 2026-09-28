@@ -47,7 +47,7 @@ The first-party Claude/Gemini surfaces are explicitly composition and evaluation
 
 The counterfactual owner test is decisive for S1. Remove the external Claude/Gemini/other coding agent while leaving the installed Grit CLI, AST index, lock stores, queues, worktrees, sessions and merge machinery in place. Grit can still index code, reserve symbols, report contention and manipulate Git structure when commanded, but there is no first-party actor that takes a coding objective, decides substantive edits from changing repository feedback and performs the work. The repository-relative autonomous S1 loop therefore does not close.
 
-This result does not negate Grit's strong S2 evidence at a wider system boundary. OpenSiro's separate `functional-capability-depth` experiment already records public first-party Grit evidence for a direct non-canonical S2 coordination relation. That experimental observation concerns the composed product boundary where external coding workers are present; it is not imported into this standalone autonomy vector.
+This result does not negate Grit's strong S2 evidence at a wider system boundary. The separate experimental [`opensiro/vsm-harness-capability`](https://github.com/opensiro/vsm-harness-capability) corpus records public first-party Grit evidence for a direct non-canonical S2 coordination relation. That experimental observation concerns the composed product boundary where external coding workers are present; it is not imported into this standalone autonomy vector.
 
 Primary evidence:
 
