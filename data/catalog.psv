@@ -304,3 +304,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 289|polyphemus|Polyphemus|https://github.com/polyphemus-ai/release-rehearsal|2026-09-24T00:04:36Z|index-addition|02020f3bc2829c350fd726273a7721254068925f|2026-09-28
 290|hugagentos|HugAgentOS|https://github.com/ZJU-REAL/HugAgentOS|2026-07-19T08:41:07Z|index-addition|9436fcb77261bc995e6e7a45cdc5e192eae9bc74|2026-09-28
 291|superharness|superharness|https://github.com/artificemachine/superharness|2026-06-25T14:30:35Z|index-addition|8bd54bc1ea7db2391190de25087bc638d503e549|2026-09-28
+292|waku-agent|Waku Agent|https://github.com/ShenSeanChen/waku-agent|2026-07-10T12:20:50Z|index-addition|b8310c08029732475b68076df02a6cc44e3e41e7|2026-09-28
