@@ -70,6 +70,17 @@ if text.count(anchor) != 1:
 text = text.replace(anchor, insert, 1)
 RENDER.write_text(text, encoding="utf-8")
 
+# Compose with #824's older pinned whole-record regression. #824 continues to prove
+# that exactly one function-specific key moved; #831 separately owns and proves the
+# later historical_relation-only provenance rewrite.
+legacy_test = TESTS / "test_s3star_metric_boundary_824.py"
+text = legacy_test.read_text(encoding="utf-8")
+old = '''        self.assertIs(observations[0].pop("aggregate_s3star_metric_reported"), False)\n        self.assertEqual(after, before_without_boundary)\n'''
+new = '''        self.assertIs(observations[0].pop("aggregate_s3star_metric_reported"), False)\n        before_without_boundary["published_implementation"]["historical_relation"] = (\n            after["published_implementation"]["historical_relation"]\n        )\n        self.assertEqual(after, before_without_boundary)\n'''
+if text.count(old) != 1:
+    raise SystemExit("#824 whole-record regression anchor drift")
+legacy_test.write_text(text.replace(old, new, 1), encoding="utf-8")
+
 (TESTS / "test_neutral_migration_provenance_values_831.py").write_text(
     f'''from __future__ import annotations\n\nimport copy\nimport json\nimport re\nimport subprocess\nimport unittest\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parents[1]\nRAW = ROOT / "experiments" / "functional-capability-depth" / "system-observations"\nBASE_REF = "{BASE_REF}"\nTOKEN_RE = re.compile(\n    r"(?<![A-Za-z0-9])(?:S3\\*|S[1-5]|VSM|Viable System Model)(?![A-Za-z0-9])",\n    re.IGNORECASE,\n)\n\n\ndef old_json(path: Path):\n    rel = path.relative_to(ROOT).as_posix()\n    text = subprocess.check_output(["git", "show", f"{{BASE_REF}}:{{rel}}"], cwd=ROOT, text=True)\n    return json.loads(text)\n\n\nclass NeutralMigrationProvenanceValues831Tests(unittest.TestCase):\n    def test_only_historical_relation_changed_in_exact_28_raw_records(self):\n        changed = []\n        for path in sorted(RAW.glob("*.json")):\n            before = old_json(path)\n            after = json.loads(path.read_text(encoding="utf-8"))\n            before_relation = (before.get("published_implementation") or {{}}).get("historical_relation")\n            after_relation = (after.get("published_implementation") or {{}}).get("historical_relation")\n\n            if before_relation == after_relation:\n                continue\n\n            changed.append(path.name)\n            self.assertIsInstance(before_relation, str, path.name)\n            self.assertRegex(before_relation, TOKEN_RE, path.name)\n            self.assertIsInstance(after_relation, str, path.name)\n            self.assertIsNone(TOKEN_RE.search(after_relation), path.name)\n\n            normalized = copy.deepcopy(before)\n            normalized["published_implementation"]["historical_relation"] = after_relation\n            self.assertEqual(normalized, after, path.name)\n\n        self.assertEqual(len(changed), 28, changed)\n\n    def test_all_current_historical_relation_values_are_vsm_neutral(self):\n        for path in sorted(RAW.glob("*.json")):\n            data = json.loads(path.read_text(encoding="utf-8"))\n            relation = (data.get("published_implementation") or {{}}).get("historical_relation")\n            if relation is not None:\n                self.assertIsInstance(relation, str, path.name)\n                self.assertIsNone(TOKEN_RE.search(relation), (path.name, relation))\n\n\nif __name__ == "__main__":\n    unittest.main()\n''',
     encoding="utf-8",
