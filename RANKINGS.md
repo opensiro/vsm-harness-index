@@ -283,3 +283,4 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="n8n"></a>[n8n](https://github.com/n8n-io/n8n) | 2019-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="botpress"></a>[Botpress](https://github.com/botpress/botpress) | 2016-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rasa"></a>[Rasa](https://github.com/RasaHQ/rasa) | 2016-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="atmosphere"></a>[Atmosphere](https://github.com/Atmosphere/atmosphere) | 2010-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
