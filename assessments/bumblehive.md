@@ -2,13 +2,16 @@
 harness_id: bumblehive
 project_name: BumbleHive
 repository: https://github.com/wxhcore/bumblehive
-review_ref: c09189ae47a19b8e1acbf220d0b60eaa804cd4e7
-reviewed_at: 2026-09-25
+review_ref: fabc24443319f56c4ea49b5e8ba4227a8d091105
+reviewed_at: 2026-09-29
 generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.6
+last_checked_ref: fabc24443319f56c4ea49b5e8ba4227a8d091105
+last_checked_at: 2026-09-29
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-09-25
+last_reassessment_round: R3
 status: included
 autonomy_s1: A
 autonomy_s2: —
@@ -22,7 +25,7 @@ autonomy_s5: —
 
 ## Review boundary
 
-- System in focus: one instantiated first-party BumbleHive Python SDK/runtime at pinned revision `c09189ae47a19b8e1acbf220d0b60eaa804cd4e7`, centered on `BumblehiveRuntime`, `AgentLoop`, `ToolCallingRunner`, tool/MCP execution, runtime context, sessions/history and user-installed skills.
+- System in focus: one instantiated first-party BumbleHive Python SDK/runtime at pinned revision `fabc24443319f56c4ea49b5e8ba4227a8d091105`, centered on `BumblehiveRuntime`, `AgentLoop`, `ToolCallingRunner`, tool/MCP execution, runtime context, sessions/history and user-installed skills.
 - Purpose and identity: provide a lightweight reusable Python runtime that closes a model/tool Agent Loop for application developers while owning tool lifecycle, context construction, session persistence, Skills and provider adaptation around the model call.
 - Relevant environment: application/user requests, external model-provider responses, file/shell/API/MCP tool results, caller-selected workspace and runtime configuration, user-installed skills and persisted conversation state.
 - Standard-distribution boundary: the installable reusable Python SDK under `src/bumblehive/**` and its first-party runtime mechanisms. External model endpoints and MCP/business services remain environmental dependencies and do not donate organizational ownership.
@@ -30,8 +33,8 @@ autonomy_s5: —
 - Adjacent first-party surfaces excluded from ownership: the repository's optional Desktop reference application, `server/**`, `webui/**`, runnable `examples/**`, tests/CI and contributor/development surfaces. In particular, the server-added `sub_agent` tool and the example multi-agent composition demonstrate a downstream construction pattern but are not part of the reusable SDK boundary declared by the project README and therefore do not donate S2/S3*/other ownership to this standalone assessment.
 - First-party operating / deployment modes considered: direct stateless `runtime.run`/`stream`/`run_console`; caller-owned `MessageHistory`; managed persisted `session_id`; configured built-in/Python/MCP tools; configured Skills; model-provider-backed operation.
 - Recursion level: one instantiated reusable BumbleHive runtime/agent loop is the system-in-focus. Multiple separately instantiated runtimes or server-created sub-agents are separate downstream/application composition unless the core standard distribution itself establishes the higher-level organizational relation.
-- Reviewed revision: `c09189ae47a19b8e1acbf220d0b60eaa804cd4e7`.
-- Observation date: 2026-09-25.
+- Reviewed revision: `fabc24443319f56c4ea49b5e8ba4227a8d091105`.
+- Observation date: 2026-09-29.
 - Generated Profile version: `0.2.4`.
 - Generated Methodology version: `0.3.6`.
 - Current Profile version: `0.2.4`.
@@ -39,7 +42,7 @@ autonomy_s5: —
 
 ## Repository architecture
 
-BumbleHive's installable SDK contains a substantive first-party autonomous operating loop. `BumblehiveRuntime._run_agent` resolves the configured provider, builds an `AgentLoop`, constrains filesystem/tool reach through `ToolPathPolicy`, and passes the request into `ToolCallingRunner`. `ToolCallingRunner` repeatedly asks the model for the next action. When the model emits tool calls, the runtime executes those calls, appends each tool result to the message sequence, checkpoints the updated sequence when configured, and invokes the model again. When the model no longer requests tools, its final content closes the turn. Deterministic iteration/context/path/approval constraints bound this autonomy without selecting the substantive tool call or completion decision.
+BumbleHive's installable SDK contains a substantive first-party autonomous operating loop. `BumblehiveRuntime._run_agent` resolves the configured provider, builds an `AgentLoop`, initializes the first-party tool/MCP runtime, passes any caller-provided approval handler into tool execution, and sends the request into `ToolCallingRunner`. `ToolCallingRunner` repeatedly asks the model for the next action. When the model emits tool calls, the runtime executes those calls, appends each tool result to the message sequence, checkpoints the updated sequence when configured, and invokes the model again. When the model no longer requests tools, its final content closes the turn. Deterministic iteration/context/path/approval constraints bound this autonomy without selecting the substantive tool call or completion decision.
 
 The runtime also owns conversation/session continuity. A managed `session_id` is loaded and recovered under a per-session lock; the triggering user message is persisted before model execution; model/tool checkpoints are atomically persisted; and interrupted sequences are repaired before later turns. These mechanisms provide continuity and integrity for one conversation, not a cross-S1 coordination or whole-system management function.
 
@@ -51,15 +54,15 @@ Observability hooks, runtime events and checkpoints expose ordinary execution st
 
 Primary evidence:
 
-- [`README.md`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/README.md) — public reusable-SDK boundary and explicit optional Desktop reference-application status.
-- [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/runtime.py) — high-level runtime, provider/tool lifecycle, stateless/history/session modes and core loop construction.
-- [`src/bumblehive/agent/loop.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/agent/loop.py) — context construction and handoff to the model/tool runner.
-- [`src/bumblehive/agent/runner.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/agent/runner.py) — model-owned tool-call decisions, tool-result feedback and iterative completion loop.
-- [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/session/manager.py) — persisted conversation checkpoints, per-session locking and interrupted-turn recovery inspected for S2/S3/S4.
-- [`src/bumblehive/skills/manager.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/skills/manager.py) — user-installed skill loading/install/remove/reload and prompt-context rendering inspected for S4.
-- [`src/bumblehive/config/schema.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/config/schema.py) — caller-owned model, generation, agent-instruction, tool, skill and runtime constraints inspected for S3/S5.
-- [`src/bumblehive/agent/context/builder.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/agent/context/builder.py) — configured agent instructions, platform policy, capability context and runtime/environment context inspected for S4/S5.
-- [`server/src/bumblehive_server/runtime_service.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/server/src/bumblehive_server/runtime_service.py) and [`server/src/bumblehive_server/subagents.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/server/src/bumblehive_server/subagents.py) — adjacent optional product/reference surfaces inspected for boundary provenance; not credited as owners of the reusable SDK organization.
+- [`README.md`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/README.md) — public reusable-SDK boundary and explicit optional Desktop reference-application status.
+- [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/runtime.py) — high-level runtime, provider/tool lifecycle, stateless/history/session modes and core loop construction.
+- [`src/bumblehive/agent/loop.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/agent/loop.py) — context construction and handoff to the model/tool runner.
+- [`src/bumblehive/agent/runner.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/agent/runner.py) — model-owned tool-call decisions, tool-result feedback and iterative completion loop.
+- [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/session/manager.py) — persisted conversation checkpoints, per-session locking and interrupted-turn recovery inspected for S2/S3/S4.
+- [`src/bumblehive/skills/manager.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/skills/manager.py) — user-installed skill loading/install/remove/reload and prompt-context rendering inspected for S4.
+- [`src/bumblehive/config/schema.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/config/schema.py) — caller-owned model, generation, agent-instruction, tool, skill and runtime constraints inspected for S3/S5.
+- [`src/bumblehive/agent/context/builder.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/agent/context/builder.py) — configured agent instructions, platform policy, capability context and runtime/environment context inspected for S4/S5.
+- [`server/src/bumblehive_server/runtime_service.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/server/src/bumblehive_server/runtime_service.py) and [`server/src/bumblehive_server/subagents.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/server/src/bumblehive_server/subagents.py) — adjacent optional product/reference surfaces inspected for boundary provenance; not credited as owners of the reusable SDK organization.
 
 ## S1 — Operations
 
@@ -68,11 +71,11 @@ Primary evidence:
 - Disturbance / variety regulated: ambiguous requests, changing model/tool observations, filesystem/API/MCP results, tool failures, changing conversation context and tasks requiring multiple environment interactions.
 - Decisive decision or feedback right: choose whether another tool call is required, which exposed tool(s) and arguments to invoke, and when to stop tool use and return the final result.
 - Decision owner: the model acting through the first-party `ToolCallingRunner` loop.
-- Supporting / enforcement mechanisms: `BumblehiveRuntime` provider/tool setup, ContextBuilder, ToolManager, path policy, tool approval handler, context governance, deterministic maximum iterations, session checkpoints/recovery and observability events.
+- Supporting / enforcement mechanisms: `BumblehiveRuntime` provider/tool setup, ContextBuilder, ToolManager, optional tool approval handler, context governance, deterministic maximum iterations, session checkpoints/recovery and observability events.
 - Closure path: request/history/context enter `AgentLoop` → model receives exposed tools → model selects tool calls or completion → first-party ToolManager executes selected calls → tool observations are appended to the model context → the model takes another decision → final content is returned and, in managed-session mode, checkpoints persist the changed conversation state.
 - Boundary reachability: this loop is the core documented `run`/`stream`/`run_console` path of the installable Python SDK, not behavior borrowed from the optional Desktop/server application.
 - Why this is / is not agent-owned: deterministic runtime controls bound the action space and enforce safety/lifecycle constraints, but do not choose the substantive tool names, arguments or completion point. Removing the model decision maker while leaving those mechanisms in place removes the task-level adaptive choice.
-- Evidence: [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/runtime.py); [`src/bumblehive/agent/loop.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/agent/loop.py); [`src/bumblehive/agent/runner.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/agent/runner.py).
+- Evidence: [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/runtime.py); [`src/bumblehive/agent/loop.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/agent/loop.py); [`src/bumblehive/agent/runner.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/agent/runner.py).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: external model providers supply the model inference capability and external MCP services may supply tools, but the first-party BumbleHive runtime owns the iterative operating organization around those dependencies. Stateless and deterministic support mechanisms do not themselves earn `A`; the reachable model-owned tool/action feedback loop does.
@@ -87,7 +90,7 @@ Primary evidence:
 - Supporting / enforcement mechanisms: per-session locks, independent runtime/session construction, tool execution, caller-defined parallel applications and adjacent server/example sub-agent composition were inspected.
 - Closure path: no first-party disturbance-specific inter-S1 attenuation → changed subsequent S1 behavior loop is packaged by the core SDK.
 - Why this is / is not agent-owned: a developer can instantiate multiple BumbleHive runtimes or construct an agent-as-tool pattern, but constructor capability alone does not establish S2. The core `SessionManager` lock serializes access to one conversation's persisted history; it does not coordinate separate operational units. The optional server's read-only child-agent tool deliberately gives children separate sessions and restricted permissions, but that application-level topology is outside the credited core boundary and still does not by itself identify a concrete sibling disturbance and adaptive coordination right.
-- Evidence: [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/runtime.py); [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/session/manager.py); [`README.md`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/README.md); [`server/src/bumblehive_server/subagents.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/server/src/bumblehive_server/subagents.py).
+- Evidence: [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/runtime.py); [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/session/manager.py); [`README.md`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/README.md); [`server/src/bumblehive_server/subagents.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/server/src/bumblehive_server/subagents.py).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: a downstream product composed from BumbleHive may establish genuine S2 and must be assessed as its own system-in-focus.
@@ -108,7 +111,7 @@ Primary evidence:
 - Supporting / enforcement mechanisms: per-run iteration/context limits, path/tool restrictions, approvals, session locks/recovery, provider/tool resource lifecycle and server-side active-run guarding of settings changes were inspected.
 - Closure path: no standard whole-system current view → current resource/commitment/priority decision → changed multi-unit operation loop is packaged.
 - Why this is / is not agent-owned: `max_iterations`, path policies and approvals constrain one operating loop; session locks protect one conversation; provider/tool managers own technical resources. The adjacent server counts `_active_runs` primarily to reject configuration/skill/MCP changes while work is active, but that reference-application safeguard neither belongs to the core SDK boundary nor exercises a discretionary current-control right over the active runs themselves.
-- Evidence: [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/runtime.py); [`src/bumblehive/config/schema.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/config/schema.py); [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/session/manager.py); [`server/src/bumblehive_server/runtime_service.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/server/src/bumblehive_server/runtime_service.py).
+- Evidence: [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/runtime.py); [`src/bumblehive/config/schema.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/config/schema.py); [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/session/manager.py); [`server/src/bumblehive_server/runtime_service.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/server/src/bumblehive_server/runtime_service.py).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: a host application can construct current-control behavior around hooks/configuration/cancellation; that downstream owner is not present as a core BumbleHive S3 function.
@@ -129,7 +132,7 @@ Primary evidence:
 - Supporting / enforcement mechanisms: runtime observability hooks/events, model/tool checkpoints, session recovery, tool approvals and the adjacent server's read-only `sub_agent` second-perspective path were inspected.
 - Closure path: no core-SDK independent complementary-access findings → corrective current-operation return loop is packaged.
 - Why this is / is not agent-owned: events and checkpoints report the same normal execution path and therefore do not add independent access to operational reality. The server-level `sub_agent` can open a separate conversation with direct read-only workspace access and return a second perspective, but it is registered by the optional product/reference layer rather than the reusable SDK. Boundary provenance therefore prevents it from upgrading the standalone core assessment.
-- Evidence: [`src/bumblehive/agent/runner.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/agent/runner.py); [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/session/manager.py); [`README.md`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/README.md); [`server/src/bumblehive_server/subagents.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/server/src/bumblehive_server/subagents.py).
+- Evidence: [`src/bumblehive/agent/runner.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/agent/runner.py); [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/session/manager.py); [`README.md`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/README.md); [`server/src/bumblehive_server/subagents.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/server/src/bumblehive_server/subagents.py).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: the optional server/reference application is a plausible separate system-in-focus for a future assessment; this assessment does not claim that its read-only child-agent path could never realize S3* in that wider product boundary.
@@ -150,7 +153,7 @@ Primary evidence:
 - Supporting / enforcement mechanisms: persisted conversation history, dynamic runtime context, external tool/MCP observations, user-installed Skills, skill file snapshot/reload behavior and parent-controlled server skill/MCP configuration were inspected.
 - Closure path: no first-party external/future distinction → generated/selected adaptation option → durable capability change → later-operation loop is packaged.
 - Why this is / is not agent-owned: SkillsManager can install, remove, reload and render user-provided `SKILL.md` packages into future prompts, but it does not itself detect environmental/future change or decide how a skill should be revised. Session history records prior operation; dynamic context reflects current environment; neither is prospective adaptation merely because it influences later prompts.
-- Evidence: [`src/bumblehive/skills/manager.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/skills/manager.py); [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/session/manager.py); [`src/bumblehive/agent/context/builder.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/agent/context/builder.py); [`server/src/bumblehive_server/runtime_service.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/server/src/bumblehive_server/runtime_service.py).
+- Evidence: [`src/bumblehive/skills/manager.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/skills/manager.py); [`src/bumblehive/session/manager.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/session/manager.py); [`src/bumblehive/agent/context/builder.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/agent/context/builder.py); [`server/src/bumblehive_server/runtime_service.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/server/src/bumblehive_server/runtime_service.py).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: an adopter can use hooks, external evaluations or human skill editing to build an adaptation organization. The reusable framework does not package that missing decision/feedback path.
@@ -171,7 +174,7 @@ Primary evidence:
 - Supporting / enforcement mechanisms: caller-configured agent instructions, static built-in platform/tool-use instructions, tool/path restrictions, approval handlers, generation settings, selected skills/tools and external provider configuration were inspected.
 - Closure path: no identity/ultimate-policy issue → legitimate ultimate authority decision → returned decision governing later operation loop is packaged.
 - Why this is / is not agent-owned: `agent.instructions` and prompt context can describe behavior, while path/tool/approval settings constrain it, but generic prompts and configured constraints are not S5. The core exposes no function-specific runtime process that raises identity-level tension to an ultimate authority and returns the resulting policy decision into operation.
-- Evidence: [`src/bumblehive/config/schema.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/config/schema.py); [`src/bumblehive/agent/context/builder.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/agent/context/builder.py); [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/c09189ae47a19b8e1acbf220d0b60eaa804cd4e7/src/bumblehive/runtime.py).
+- Evidence: [`src/bumblehive/config/schema.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/config/schema.py); [`src/bumblehive/agent/context/builder.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/agent/context/builder.py); [`src/bumblehive/runtime.py`](https://github.com/wxhcore/bumblehive/blob/fabc24443319f56c4ea49b5e8ba4227a8d091105/src/bumblehive/runtime.py).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: a parent application may define identity/governance around BumbleHive. That authority is not a first-party S5 closure of the reusable SDK itself.
