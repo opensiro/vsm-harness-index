@@ -50,6 +50,7 @@ jobs:
           - derived VSM-function projections;
           - general-capability baselines and evidence frontier;
           - predecessor checksums and source-ref provenance;
+          - predecessor experiment-specific tests as historical artifacts;
           - Batch 01, Batch 02, LoopX and the frozen predecessor synthesis as historical artifacts.
 
           The migrated corpus preserved **53 unique raw observation IDs** at extraction.
@@ -66,16 +67,35 @@ jobs:
           Capability remains **experimental and non-normative**. Its existence does not by itself change the bounded `vsm-oss-organization` system boundary.
           EOF
 
-      - name: Remove Capability-owned validators from Index CI
+      - name: Remove Capability-owned CI and tests from Index
         shell: bash
         run: |
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
-          p = Path('.github/workflows/validate.yml')
-          lines = p.read_text().splitlines()
+          import subprocess
+
+          workflow = Path('.github/workflows/validate.yml')
+          lines = workflow.read_text().splitlines()
           lines = [line for line in lines if 'experiments/functional-capability-depth/' not in line]
-          p.write_text('\n'.join(lines) + '\n')
+          workflow.write_text('\n'.join(lines) + '\n')
+
+          result = subprocess.run(
+              ['git', 'grep', '-l', 'functional-capability-depth', '--', 'tests/*.py'],
+              text=True, capture_output=True,
+          )
+          for rel in result.stdout.splitlines():
+              path = Path(rel.strip())
+              if path.is_file():
+                  path.unlink()
+
+          grit = Path('assessments/grit.md')
+          text = grit.read_text()
+          old = "OpenSiro's separate `functional-capability-depth` experiment already records public first-party Grit evidence for a direct non-canonical S2 coordination relation."
+          new = "The separate experimental [`opensiro/vsm-harness-capability`](https://github.com/opensiro/vsm-harness-capability) corpus records public first-party Grit evidence for a direct non-canonical S2 coordination relation."
+          if old not in text:
+              raise SystemExit('expected Grit capability cross-reference not found')
+          grit.write_text(text.replace(old, new))
           PY
 
       - name: Check for stale active references
