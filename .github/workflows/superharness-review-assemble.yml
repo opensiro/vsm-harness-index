@@ -1,0 +1,54 @@
+name: assemble-superharness-review
+
+on:
+  push:
+    branches:
+      - assessment/superharness-review
+    paths:
+      - .github/workflows/superharness-review-assemble.yml
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/superharness-review
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Add required S3 reconstruction labels
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('assessments/superharness.md')
+          text = path.read_text(encoding='utf-8')
+          needle = ('- Decision owner: the deterministic first-party watcher/lifecycle engine.\n'
+                    '- Supporting / enforcement mechanisms: authoritative SQLite task/inbox state, dependency checks, watcher lock/heartbeat, launcher liveness checks, lifecycle rules, retry writers, task-status writers, auto-dispatch and operator-command reconciliation.\n')
+          repl = ('- Decision owner: the deterministic first-party watcher/lifecycle engine.\n'
+                  '- Whole-system current view: authoritative SQLite task/inbox state plus dependencies, statuses, launcher/heartbeat liveness and lifecycle timestamps provide one current project-wide view across active work.\n'
+                  '- Current-control decision scope: admit/dispatch ready work and apply retry, recovery, failure, archival and related current-state transitions across the active project portfolio.\n'
+                  '- Supporting / enforcement mechanisms: authoritative SQLite task/inbox state, dependency checks, watcher lock/heartbeat, launcher liveness checks, lifecycle rules, retry writers, task-status writers, auto-dispatch and operator-command reconciliation.\n')
+          if text.count(needle) != 1:
+              raise SystemExit(f'expected exact S3 insertion point once, got {text.count(needle)}')
+          path.write_text(text.replace(needle, repl, 1), encoding='utf-8')
+          PY
+      - name: Regenerate proposed metrics and validate
+        run: |
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Remove one-shot workflow and commit
+        run: |
+          rm .github/workflows/superharness-review-assemble.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status --short
+          git commit -m "assessment: finalize superharness review"
+          git push origin HEAD:assessment/superharness-review
