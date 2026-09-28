@@ -158,6 +158,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="cascaide-ts"></a>[cascaide-ts](https://github.com/Airavat-Research/cascaide-ts) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="waggle"></a>[Waggle](https://github.com/CrewBeeLab/Waggle) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentbox"></a>[AgentBox](https://github.com/madarco/agentbox) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="harness"></a>[Harness](https://github.com/sausheong/harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
 | 6 | <a id="reasonix"></a>[Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="browser-harness"></a>[Browser Harness](https://github.com/browser-use/browser-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="korus"></a>[Korus](https://github.com/surefire-ai/korus) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
