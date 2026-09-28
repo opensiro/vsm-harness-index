@@ -299,3 +299,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 284|tandem|Tandem|https://github.com/frumu-ai/tandem|2026-01-17T16:27:57Z|index-addition|3ee2d83d76497565680538ef00f1616f55650524|2026-09-27
 285|grit|Grit|https://github.com/rtk-ai/grit|2026-03-17T13:29:09Z|index-addition|0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe|2026-09-27
 286|gh-aw|GitHub Agentic Workflows|https://github.com/github/gh-aw|2025-08-12T17:40:41Z|index-addition|ff2eccd10a30d6a7bfaf0da449194e907a206555|2026-09-27
+287|ascension|Ascension|https://github.com/AI-Ascension/sts2-harness|2026-09-02T05:59:59Z|index-addition|53312ddbb074f7c187e5f59d88b6585da797fe17|2026-09-28
