@@ -231,7 +231,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="toolgen"></a>[ToolGen](https://github.com/Reason-Wang/ToolGen) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="beeai-framework"></a>[BeeAI Framework](https://github.com/i-am-bee/beeai-framework) | 2024-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mastra"></a>[Mastra](https://github.com/mastra-ai/mastra) | 2024-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
-| 6 | <a id="agent-squad"></a>[Agent Squad](https://github.com/2FastLabs/agent-squad) | 2024-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="agent-squad"></a>[Agent Squad](https://github.com/2FastLabs/agent-squad) | 2024-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="eliza"></a>[Eliza](https://github.com/elizaOS/eliza) | 2024-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="cline"></a>[Cline](https://github.com/cline/cline) | 2024-Q3 | 1/6 | 0/5 | 3 | 0 | 0 | `A C C C — —` |
 | 6 | <a id="pydantic-ai"></a>[Pydantic AI](https://github.com/pydantic/pydantic-ai) | 2024-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
