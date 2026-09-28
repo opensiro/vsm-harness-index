@@ -1,0 +1,82 @@
+name: assemble-platypus-admission
+
+on:
+  push:
+    branches:
+      - index/platypus-admission-295
+    paths:
+      - .github/workflows/platypus-admission-assemble.yml
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/platypus-admission-295
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply canonical admission inputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/platypus.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed'
+          new = 'status: included'
+          if text.count(old) != 1:
+              raise SystemExit(f'expected exactly one {old!r}, got {text.count(old)}')
+          assessment.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          row = '295|platypus|Platypus|https://github.com/willdady/platypus|2025-06-15T08:08:10Z|index-addition|5dda4dcdb92c209c8c8df953f0e9261cd018c2d7|2026-09-28'
+          if '|platypus|' in catalog_text:
+              raise SystemExit('platypus already present in catalog')
+          expected_tail = '294|aesop|Aesop|https://github.com/matt82198/aesop|2026-07-11T20:57:51Z|index-addition|2a661c12007c5484f964176da3d5532c6bdf070d|2026-09-28'
+          if not catalog_text.rstrip().endswith(expected_tail):
+              raise SystemExit('catalog tail changed; fail closed')
+          catalog.write_text(catalog_text.rstrip() + '\n' + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          sig = ('295|platypus|Platypus closes autonomous S1 through model-driven Workspace Agent runs, '
+                 'constructor-owned S2 through a rolling Trigger-by-entity breaker that attenuates event-driven shared-entity oscillation, '
+                 'and parent-owned S5 through durable Workspace Context returned to later Agent system prompts; generic management, '
+                 'delegation/reviewer composition, memory and event reaction do not establish S3, S3* or S4.')
+          if '|platypus|' in signatures_text:
+              raise SystemExit('platypus already present in signatures')
+          expected_sig_tail = ('294|aesop|Aesop closes autonomous S1 through model-driven coding workers, '
+                               'constructor-owned S2 through ownership partitioning and worktree isolation against concurrent edit interference, '
+                               'autonomous S3 through a model-driven whole-wave orchestrator over current priorities, assignments and exceptions, '
+                               'constructor-owned S3* through independent exact-test replay that revokes fake-green status, and autonomous-plus-parent '
+                               'S5 through /power-synthesized durable CLAUDE.md rules plus legitimate owner authority over the same policy layer; '
+                               'internal retrospective learning does not establish S4.')
+          if not signatures_text.rstrip().endswith(expected_sig_tail):
+              raise SystemExit('signature tail changed; fail closed')
+          signatures.write_text(signatures_text.rstrip() + '\n' + sig + '\n', encoding='utf-8')
+          PY
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Remove one-shot workflow and commit
+        run: |
+          rm .github/workflows/platypus-admission-assemble.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status --short
+          git commit -m "index: admit Platypus"
+          git push origin HEAD:index/platypus-admission-295
