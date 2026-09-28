@@ -7,7 +7,7 @@
   "published_implementation": {
     "system_compatibility": "native-system",
     "source_revision": "8fa5a307062025c900e9de27696f4e804a0a7809",
-    "historical_relation": "preserved from the pre-neutral S2 evidence record; no canonical S2 linkage is introduced by this migration"
+    "historical_relation": "preserved from the predecessor function-specific evidence record; no canonical organizational-function linkage is introduced by this migration"
   },
   "primary_sources": [
     "https://github.com/spugachev/CodeCRDT/tree/8fa5a307062025c900e9de27696f4e804a0a7809",

@@ -9,7 +9,7 @@
   "published_implementation": {
     "system_compatibility": "native-system",
     "source_revision": "cd700937a71a391f052438d139b7b1c5a6456755",
-    "historical_relation": "The cited incidents, hardening commits, assessed runtime source and later Agent Teams reports are preserved as one first-party operational evidence lineage; the raw record does not assign VSM-function meaning."
+    "historical_relation": "The cited incidents, hardening commits, assessed runtime source and later Agent Teams reports are preserved as one first-party operational evidence lineage; the raw record does not assign organizational-function meaning."
   },
   "primary_sources": [
     "https://github.com/thClaws/thClaws/commit/a64d1ff47f5c4ca7361087dc5e771b2a18422e4d",

@@ -9,7 +9,7 @@
   "canonical_repository": "https://github.com/NousResearch/hermes-agent",
   "published_implementation": {
     "system_compatibility": "adapter-preserved",
-    "historical_relation": "S1 public benchmark results normalized from the #801 neutral row corpus; row-specific historical revision identity remains inside each observation."
+    "historical_relation": "Public benchmark results normalized from the #801 neutral row corpus; row-specific historical revision identity remains inside each observation."
   },
   "primary_sources": [
     "https://github.com/agentscope-ai/PawBench/tree/0f794a8bb6c27aa9ee4091b2691fa30e4ed9cc8f",

@@ -9,7 +9,7 @@
   "canonical_repository": "https://github.com/OpenHands/OpenHands",
   "published_implementation": {
     "system_compatibility": "adapter-preserved",
-    "historical_relation": "S1 public benchmark results normalized from the #801 neutral row corpus; row-specific historical revision identity remains inside each observation."
+    "historical_relation": "Public benchmark results normalized from the #801 neutral row corpus; row-specific historical revision identity remains inside each observation."
   },
   "primary_sources": [
     "https://hub.harborframework.com/datasets/swe-bench/swe-bench-verified",

@@ -9,7 +9,7 @@
   "canonical_repository": "https://github.com/can1357/oh-my-pi",
   "published_implementation": {
     "system_compatibility": "adapter-preserved",
-    "historical_relation": "S1 public benchmark results normalized from the #801 neutral row corpus; row-specific historical revision identity remains inside each observation."
+    "historical_relation": "Public benchmark results normalized from the #801 neutral row corpus; row-specific historical revision identity remains inside each observation."
   },
   "primary_sources": [
     "https://github.com/frontier-harness-eval/eval/tree/e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63",
