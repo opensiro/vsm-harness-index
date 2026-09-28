@@ -26,19 +26,11 @@ jobs:
           from pathlib import Path
           p = Path('.github/tmp_apply_neutral_observation_notes_833.py')
           s = p.read_text(encoding='utf-8')
-          anchor = '''    (
-              "No S2-S5, ownership, or self-organizing S inference",
-              "No other organizational-function, ownership, or self-organizing behavior inference",
-          ),
-          '''
-          insert = anchor + '''    (
-              "No S2-S5 or self-organizing S inference",
-              "No other organizational-function or self-organizing behavior inference",
-          ),
-          '''
-          if s.count(anchor) != 1 or '"No S2-S5 or self-organizing S inference"' in s:
+          needle = '        "No other organizational-function, ownership, or self-organizing behavior inference",\n    ),\n'
+          addition = needle + '    (\n        "No S2-S5 or self-organizing S inference",\n        "No other organizational-function or self-organizing behavior inference",\n    ),\n'
+          if s.count(needle) != 1 or '"No S2-S5 or self-organizing S inference"' in s:
               raise SystemExit('notes mapping anchor drift')
-          p.write_text(s.replace(anchor, insert, 1), encoding='utf-8')
+          p.write_text(s.replace(needle, addition, 1), encoding='utf-8')
           PY
       - name: Apply #833 transaction
         run: python .github/tmp_apply_neutral_observation_notes_833.py
