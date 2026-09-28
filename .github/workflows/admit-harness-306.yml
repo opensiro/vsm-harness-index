@@ -1,0 +1,72 @@
+name: temporary Harness admission renderer
+
+on:
+  push:
+    branches:
+      - admit-harness-306
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: admit-harness-306
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Apply canonical Harness admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/harness.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed'
+          if text.count(old) != 1:
+              raise SystemExit(f'expected exactly one {old!r}, got {text.count(old)}')
+          assessment.write_text(text.replace(old, 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          row = '306|harness|Harness|https://github.com/sausheong/harness|2026-05-08T06:03:49Z|index-addition|1e5b6599bbc68519e83d156150d70f793653ca7d|2026-09-29'
+          if '|harness|Harness|https://github.com/sausheong/harness|' in catalog_text:
+              raise SystemExit('Harness already present in catalog')
+          if not catalog_text.endswith('\n'):
+              catalog_text += '\n'
+          catalog.write_text(catalog_text + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          signature = ('306|harness|Harness closes autonomous S1 through its first-party model/tool/result loop and exposes constructor-owned S4 through a separate future-session review that turns completed user/project evidence into durable memory and reusable skills returned to later model context; subagent transport, locks, budgets, steering, review naming and prompt/permission surfaces do not establish S2, S3, S3* or S5.')
+          if '\n306|harness|' in '\n' + signatures_text:
+              raise SystemExit('Harness signature already present')
+          if not signatures_text.endswith('\n'):
+              signatures_text += '\n'
+          signatures.write_text(signatures_text + signature + '\n', encoding='utf-8')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+      - name: Commit rendered canonical admission and remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/admit-harness-306.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'index: admit Harness at catalog #306'
+          git push origin HEAD:admit-harness-306
