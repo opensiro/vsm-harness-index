@@ -9,7 +9,7 @@
   "canonical_repository": "https://github.com/anomalyco/opencode",
   "published_implementation": {
     "system_compatibility": "adapter-preserved",
-    "historical_relation": "Published FutureSim v1 recommended/native-harness configuration; benchmark supplies chronological environment, search interface and forecast actions. This neutral record does not imply canonical S4 ownership or isolate a harness effect."
+    "historical_relation": "Published FutureSim v1 recommended/native-harness configuration; benchmark supplies chronological environment, search interface and forecast actions. This neutral record does not imply canonical organizational-function ownership or isolate a harness effect."
   },
   "primary_sources": [
     "https://arxiv.org/pdf/2605.15188",

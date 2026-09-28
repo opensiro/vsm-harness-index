@@ -30,6 +30,10 @@ SYSTEM_COMPATIBILITY = {
 }
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
 HEX40_RE = re.compile(r"^[0-9a-f]{40}$")
+FORBIDDEN_VSM_VALUE_RE = re.compile(
+    r"(?<![A-Za-z0-9])(?:S3\*|S[1-5]|VSM|Viable System Model)(?![A-Za-z0-9])",
+    re.IGNORECASE,
+)
 
 
 class RegistryError(ValueError):
@@ -242,6 +246,17 @@ def collect_rows() -> list[RegistryRow]:
             raise RegistryError(
                 f"{record_ref}: system_compatibility must be one of {sorted(SYSTEM_COMPATIBILITY)}"
             )
+
+        historical_relation = implementation.get("historical_relation")
+        if historical_relation is not None:
+            if not isinstance(historical_relation, str) or not historical_relation.strip():
+                raise RegistryError(
+                    f"{record_ref}: published_implementation.historical_relation must be a non-empty string when present"
+                )
+            if FORBIDDEN_VSM_VALUE_RE.search(historical_relation):
+                raise RegistryError(
+                    f"{record_ref}: published_implementation.historical_relation must remain implementation-independent and VSM-neutral"
+                )
 
         sources = record.get("primary_sources")
         if not isinstance(sources, list) or not sources:

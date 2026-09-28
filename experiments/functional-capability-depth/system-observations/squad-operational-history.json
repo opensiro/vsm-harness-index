@@ -9,7 +9,7 @@
   "published_implementation": {
     "system_compatibility": "native-system",
     "source_revision": "2099faf51c08a912c359209447011b06decf0565",
-    "historical_relation": "The cited operational commits and public case study are preserved as historical evidence linked to the canonical Squad lineage; the raw record does not assign VSM-function meaning."
+    "historical_relation": "The cited operational commits and public case study are preserved as historical evidence linked to the canonical Squad lineage; the raw record does not assign organizational-function meaning."
   },
   "primary_sources": [
     "https://github.com/bradygaster/squad/tree/2099faf51c08a912c359209447011b06decf0565",

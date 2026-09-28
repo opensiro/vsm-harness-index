@@ -6,7 +6,7 @@
   "canonical_harness_id": null,
   "published_implementation": {
     "system_compatibility": "benchmark-scaffolded",
-    "historical_relation": "Benchmark-defined S4 evidence migrated from the function-specific direct-observation registry. The neutral record preserves public protocol/result provenance without assigning canonical harness ownership.",
+    "historical_relation": "Benchmark-defined evidence migrated from the function-specific direct-observation registry. The neutral record preserves public protocol/result provenance without assigning canonical harness ownership.",
     "source_revision": "889e4fc8b197f426b444dbf8de217ea15b596fd2"
   },
   "primary_sources": [

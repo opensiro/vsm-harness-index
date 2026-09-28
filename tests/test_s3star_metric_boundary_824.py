@@ -41,6 +41,9 @@ class S3StarMetricBoundary824Tests(unittest.TestCase):
         ]
         self.assertEqual(len(observations), 1)
         self.assertIs(observations[0].pop("aggregate_s3star_metric_reported"), False)
+        before_without_boundary["published_implementation"]["historical_relation"] = (
+            after["published_implementation"]["historical_relation"]
+        )
         self.assertEqual(after, before_without_boundary)
 
     def test_function_specific_metric_absence_is_derived_only(self):
