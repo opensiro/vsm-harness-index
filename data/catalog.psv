@@ -306,3 +306,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 291|superharness|superharness|https://github.com/artificemachine/superharness|2026-06-25T14:30:35Z|index-addition|8bd54bc1ea7db2391190de25087bc638d503e549|2026-09-28
 292|waku-agent|Waku Agent|https://github.com/ShenSeanChen/waku-agent|2026-07-10T12:20:50Z|index-addition|b8310c08029732475b68076df02a6cc44e3e41e7|2026-09-28
 293|dotcraft|DotCraft|https://github.com/DotHarness/dotcraft|2026-05-28T12:24:06Z|index-addition|a08c8b35497f6ba9148f6ede80839835dcc8812a|2026-09-28
+294|aesop|Aesop|https://github.com/matt82198/aesop|2026-07-11T20:57:51Z|index-addition|2a661c12007c5484f964176da3d5532c6bdf070d|2026-09-28
