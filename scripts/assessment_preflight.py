@@ -108,13 +108,19 @@ def fetch_issue(repository: str, issue_number: int) -> tuple[dict[str, Any], lis
 
 
 def extract_next_row(texts: list[str]) -> tuple[int, str, str]:
-    for text in reversed(texts):
-        if "Manual assessment board" not in text:
-            continue
-        match = BOARD_ROW.search(text)
-        if match:
-            return int(match.group("row")), match.group("project").strip(), match.group("ref")
-    raise PreflightError("no Manual assessment board row marked NEXT was found")
+    # Manual assessment boards are snapshots, not an append-only source of NEXT
+    # rows. Only the newest board is authoritative. Falling back through old
+    # snapshots after a terminal board would resurrect a completed row.
+    latest_board = next(
+        (text for text in reversed(texts) if "Manual assessment board" in text),
+        None,
+    )
+    if latest_board is None:
+        raise PreflightError("no Manual assessment board was found")
+    match = BOARD_ROW.search(latest_board)
+    if not match:
+        raise PreflightError("latest Manual assessment board has no row marked NEXT")
+    return int(match.group("row")), match.group("project").strip(), match.group("ref")
 
 
 def extract_candidate(issue_body: str, row_number: int, review_ref: str) -> tuple[str, str]:
