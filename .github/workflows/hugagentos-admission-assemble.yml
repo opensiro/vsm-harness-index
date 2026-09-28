@@ -1,0 +1,75 @@
+name: assemble-hugagentos-admission
+
+on:
+  push:
+    branches:
+      - index/hugagentos-admission-290
+    paths:
+      - .github/workflows/hugagentos-admission-assemble.yml
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/hugagentos-admission-290
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply canonical admission inputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/hugagentos.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed'
+          new = 'status: included'
+          if text.count(old) != 1:
+              raise SystemExit(f'expected exactly one {old!r}, got {text.count(old)}')
+          assessment.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          row = '290|hugagentos|HugAgentOS|https://github.com/ZJU-REAL/HugAgentOS|2026-07-19T08:41:07Z|index-addition|9436fcb77261bc995e6e7a45cdc5e192eae9bc74|2026-09-28'
+          if '|hugagentos|' in catalog_text:
+              raise SystemExit('hugagentos already present in catalog')
+          expected_tail = '289|polyphemus|Polyphemus|https://github.com/polyphemus-ai/release-rehearsal|2026-09-24T00:04:36Z|index-addition|02020f3bc2829c350fd726273a7721254068925f|2026-09-28'
+          if not catalog_text.rstrip().endswith(expected_tail):
+              raise SystemExit('catalog tail changed; fail closed')
+          catalog.write_text(catalog_text.rstrip() + '\n' + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          sig = ('290|hugagentos|HugAgentOS closes autonomous S1 through its project ReAct loop, '
+                 'constructor-owned S2 through per-child async isolation against cross-task cancellation interference, '
+                 'autonomous S3* through an independent read-only project reviewer, and autonomous-plus-parent S5 '
+                 'through model-authored /init project rules plus editor/admin authority over authoritative AGENTS.md; '
+                 'no whole-project S3 or external-prospective S4 loop is established.')
+          if '|hugagentos|' in signatures_text:
+              raise SystemExit('hugagentos already present in signatures')
+          signatures.write_text(signatures_text.rstrip() + '\n' + sig + '\n', encoding='utf-8')
+          PY
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Remove one-shot workflow and commit
+        run: |
+          rm .github/workflows/hugagentos-admission-assemble.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status --short
+          git commit -m "index: admit HugAgentOS"
+          git push origin HEAD:index/hugagentos-admission-290
