@@ -311,3 +311,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 296|octos|Octos|https://github.com/octos-org/octos|2026-03-15T23:56:24Z|index-addition|9f6311afd4e00324cdb89d957461cf861f4f2630|2026-09-28
 297|conductor|Conductor|https://github.com/microsoft/conductor|2026-02-02T14:29:41Z|index-addition|87f7788e60c7cbb8895832b9edfb4e63f3924590|2026-09-28
 298|roast|Roast|https://github.com/Shopify/roast|2025-04-09T21:05:31Z|index-addition|0cd5406ea02ac8f64b8b7a697270fd4d84a57b2c|2026-09-28
+299|sandcastle|Sandcastle|https://github.com/mattpocock/sandcastle|2026-03-17T14:49:05Z|index-addition|e99f832f26dc9d245c019a9ddd19fa5dee792427|2026-09-28
