@@ -307,3 +307,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 292|waku-agent|Waku Agent|https://github.com/ShenSeanChen/waku-agent|2026-07-10T12:20:50Z|index-addition|b8310c08029732475b68076df02a6cc44e3e41e7|2026-09-28
 293|dotcraft|DotCraft|https://github.com/DotHarness/dotcraft|2026-05-28T12:24:06Z|index-addition|a08c8b35497f6ba9148f6ede80839835dcc8812a|2026-09-28
 294|aesop|Aesop|https://github.com/matt82198/aesop|2026-07-11T20:57:51Z|index-addition|2a661c12007c5484f964176da3d5532c6bdf070d|2026-09-28
+295|platypus|Platypus|https://github.com/willdady/platypus|2025-06-15T08:08:10Z|index-addition|5dda4dcdb92c209c8c8df953f0e9261cd018c2d7|2026-09-28
