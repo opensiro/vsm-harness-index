@@ -314,3 +314,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 299|sandcastle|Sandcastle|https://github.com/mattpocock/sandcastle|2026-03-17T14:49:05Z|index-addition|e99f832f26dc9d245c019a9ddd19fa5dee792427|2026-09-28
 300|bernstein|Bernstein|https://github.com/sipyourdrink-ltd/bernstein|2026-03-22T14:52:26Z|index-addition|c3d317385a058ae2b5f478399373d09d84d80962|2026-09-29
 301|harmonist|Harmonist|https://github.com/GammaLabTechnologies/harmonist|2026-04-23T05:42:29Z|index-addition|6fd5941cce8c3f6f411fd14cde0daa663ccffa8f|2026-09-29
+302|harnessrouter|HarnessRouter|https://github.com/HarnessRouter/harnessrouter|2026-08-09T20:19:14Z|index-addition|9ae33e77a92f240853e6d67a374c545d736c0f2d|2026-09-29
