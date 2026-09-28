@@ -73,7 +73,7 @@ At deployment level, Ascension also exposes a distinct current-control conversat
 - Supporting / enforcement mechanisms: `EpisodeRunner`, legal-action validation, action ledger, episode state machine, bounded step/abstention/repetition rules, runtime port, recovery controller and settlement checks.
 - Closure path: authoritative observation + legal-action catalog → `DecisionInput` → model/provider decision → harness admission/dispatch → host settlement and changed observation → next runner step returns changed evidence to the model.
 - Boundary reachability: the README documents the live runtime-v3 gameplay profile, and the shipped runner/policy types are production code rather than test-only fixtures.
-- Why this is agent-owned: removing the model decision source while leaving deterministic runner/admission/recovery machinery in place removes the task-specific discretion selecting the next gameplay action; the remaining machinery does not supply a materially equivalent gameplay policy.
+- Why this is / is not agent-owned: removing the model decision source while leaving deterministic runner/admission/recovery machinery in place removes the task-specific discretion selecting the next gameplay action; the remaining machinery does not supply a materially equivalent gameplay policy.
 - Evidence: `README.md`, `episode/runner.rs`, `episode/policy_router.rs`, `coordinator.rs`, `episode/postconditions.rs`.
 - Basis: explicit + structural
 - Confidence: high
@@ -83,15 +83,16 @@ At deployment level, Ascension also exposes a distinct current-control conversat
 
 - State: —
 - Function: no material first-party inter-S1 coordination function is established at the declared deployment recursion.
-- Disturbance / variety regulated: not established for two first-party S1 units.
-- Decisive decision or feedback right: not established.
+- Disturbance / variety regulated: no qualifying disturbance is established between two first-party S1 units.
+- Decisive decision or feedback right: no qualifying inter-S1 coordination decision is established.
 - Decision owner: none established for S2.
-- Supporting / enforcement mechanisms inspected: independent run/episode routing, leases/fences, `CoopCoordinator`, co-op peer generations, shared-vote/rejoin protocol state and native co-op recovery records.
-- Closure path: not applicable.
-- Why this is not a positive S2 mapping: the implementation exposes synchronization and co-op protocol mechanisms, but the reviewed standard boundary does not establish two first-party autonomous S1 units in one organization plus a concrete interaction-generated disturbance whose attenuation changes their subsequent behaviour. External/local/ally peers cannot donate their internal S1 autonomy to this repository.
+- Supporting / enforcement mechanisms: independent run/episode routing, leases/fences, `CoopCoordinator`, co-op peer generations, shared-vote/rejoin protocol state and native co-op recovery records were inspected as possible coordination mechanisms.
+- Closure path: not applicable because the required multi-S1 disturbance relation is not established.
+- Why this is / is not agent-owned: there is no qualifying S2 function to classify. Synchronization and co-op protocol machinery do not establish two first-party autonomous S1 units in one organization plus a concrete interaction-generated disturbance whose attenuation changes later S1 behaviour; external/local/ally peers cannot donate their internal autonomy to this repository.
 - Evidence: `coordinator.rs`, `episode/coop.rs`, `coop_native_coordinator_impl.rs`, `README.md`.
 - Basis: explicit + structural
 - Confidence: high
+- Caveats: protocol and synchronization readiness could support a future S2 mapping only if a deployed boundary establishes multiple first-party S1 units plus a concrete inter-unit disturbance and feedback closure.
 
 ### Absence scope
 
@@ -109,10 +110,11 @@ At deployment level, Ascension also exposes a distinct current-control conversat
 - Supporting / enforcement mechanisms: `RunSnapshot`, workflow store, per-run lock, expected revision/definition binding, runtime/session pause/resume, cancellation cleanup, pending-effect reconciliation and authentication/scopes.
 - Closure path: live workflow state → whole-run management snapshot → controller/operator chooses current-control command → `execution_commands.rs` mutates the corresponding live session/runtime → updated status/revision and subsequent execution reflect the intervention.
 - Boundary reachability: the management types and execution commands operate on the same live workflow/runtime state, not a post-hoc dashboard copy; the repository documents and ships the management/runtime composition.
-- Why this is not `A`: deterministic machinery enforces the selected command and recovery rules, but no shipped autonomous metasystem actor reads the whole-run view and chooses intervention on behalf of the whole.
+- Why this is / is not agent-owned: no shipped autonomous metasystem actor reads the whole-run view and chooses an intervention, so the base arrangement is Constructor rather than `A`; deterministic machinery enforces the selected command, while the bundled parent mode gives the discretionary intervention to the authenticated operator.
 - Evidence: `management/contract_types.rs`, `management/execution_commands.rs`, live workflow/runtime composition documented in `README.md`.
 - Basis: explicit + structural
 - Confidence: high
+- Caveats: ordinary episode progression, fixed budgets and deterministic recovery enforcement are not the S3 witness; the positive mapping depends on the separate whole-run management view and current-intervention authority.
 - Whole-system current view: run identity/revision, status, terminal/nonterminal outcome, graph/node cursor, pending operation classification, provider/node/replan budget and cleanup state.
 - Current-control decision scope: pause/resume present commitments, advance one bounded workflow step, cancel/cleanup, or withhold progression while a current effect needs resolution.
 
@@ -125,15 +127,16 @@ At deployment level, Ascension also exposes a distinct current-control conversat
 
 - State: —
 - Function: no separate complementary-audit function is established at the declared operating boundary.
-- Disturbance / variety regulated: not established outside ordinary operational action/effect feedback.
-- Decisive decision or feedback right: not established for a distinct audit judgment.
+- Disturbance / variety regulated: no audit-specific variety is established outside ordinary operational action/effect feedback.
+- Decisive decision or feedback right: no distinct complementary audit judgment is established.
 - Decision owner: none established for S3*.
-- Supporting / enforcement mechanisms inspected: action settlement verification, recovery/re-observation, receipt reconciliation, replay, records, caller-fed `Evaluator`, context/memory review and management events.
-- Closure path: not applicable for S3*.
-- Why this is not S3*: `verify_settlement` and recovery/re-observation are mandatory parts of the normal S1 action→effect→next-state loop. They confirm the immediate operational transition before the next gameplay decision; they are not a sporadic or alternative metasystem audit of S1/S3 reporting. The offline `Evaluator` consumes samples supplied by its caller and is not wired as an independent current auditor whose findings return into control. Replay/records expose evidence but do not themselves supply an audit judgment and corrective return.
+- Supporting / enforcement mechanisms: action settlement verification, recovery/re-observation, receipt reconciliation, replay, records, caller-fed `Evaluator`, context/memory review and management events were inspected as possible audit surfaces.
+- Closure path: not applicable because no separate S3* judgment closes into live control.
+- Why this is / is not agent-owned: `verify_settlement` and recovery/re-observation are mandatory parts of the normal S1 action→effect→next-state loop, not a sporadic or alternative metasystem audit of S1/S3 reporting. The offline `Evaluator` consumes caller-supplied samples and is not wired as an independent current auditor whose findings return into control; replay/records expose evidence but do not themselves supply an audit judgment.
 - Evidence: `episode/postconditions.rs`, episode recovery/runner surfaces, `evaluation.rs`, `README.md`.
 - Basis: explicit + structural
 - Confidence: high
+- Caveats: host-derived settlement evidence can be independent of the model choice without constituting a separate metasystem audit; at this boundary it is required ordinary operational feedback.
 
 ### Absence scope
 
@@ -146,14 +149,15 @@ At deployment level, Ascension also exposes a distinct current-control conversat
 - State: —
 - Function: no material external-and-prospective adaptation loop is established for the deployed harness organization.
 - Disturbance / variety regulated: provider/model capabilities, context sources, memory, evaluation evidence and research artifacts may change, but no qualifying operating process turns external/future distinctions into adaptation options and returns an adopted option into present capability.
-- Decisive decision or feedback right: not established for an S4 adaptation judgment.
+- Decisive decision or feedback right: no qualifying S4 adaptation judgment is established.
 - Decision owner: none established for S4.
-- Supporting / enforcement mechanisms inspected: provider-session policy changes, inference/context profiles, context-memory selection, replay/evaluation and research/generated expert-state artifacts.
-- Closure path: not applicable.
-- Why this is not S4: live management can apply already-authored configuration/policy values and the gameplay model adapts within the current task, but neither is an external-and-prospective organizational intelligence conversation that develops future capability options and returns them to current operations.
+- Supporting / enforcement mechanisms: provider-session policy changes, inference/context profiles, context-memory selection, replay/evaluation and research/generated expert-state artifacts were inspected as possible adaptive mechanisms.
+- Closure path: not applicable because no external/prospective distinction → adaptation option → adoption → changed current-capability path is established.
+- Why this is / is not agent-owned: live management can apply already-authored configuration/policy values and the gameplay model adapts within the current task, but neither is an external-and-prospective organizational intelligence process developing future capability options and returning them to current operations.
 - Evidence: management/provider-policy and context surfaces, `evaluation.rs`, `README.md`.
 - Basis: explicit + structural
 - Confidence: high
+- Caveats: repository research, campaign evidence and policy/context editing are rich adjacent mechanisms, but no deployed prospective intelligence loop closes them into adaptation ownership.
 
 ### Absence scope
 
@@ -166,14 +170,15 @@ At deployment level, Ascension also exposes a distinct current-control conversat
 - State: —
 - Function: no material identity/ultimate-policy closure is established at the Ascension deployment recursion.
 - Disturbance / variety regulated: objectives, hard constraints, admission rules, provider/context policy, authentication scopes and compatibility pins constrain operation but remain below identity/ultimate-policy level.
-- Decisive decision or feedback right: not established for a system-identity or ultimate-policy issue.
+- Decisive decision or feedback right: no system-identity or ultimate-policy judgment is established.
 - Decision owner: none established for S5.
-- Supporting / enforcement mechanisms inspected: objective/constraint configuration, provider/context policy, target admission, authentication/scopes, schema/revision pins and operator controls.
-- Closure path: not applicable.
-- Why this is not S5: configuration and authenticated intervention govern ordinary current execution; no runtime path detects an identity/ultimate-policy tension, reaches a legitimate ultimate authority and returns that identity-level decision to govern later operation.
+- Supporting / enforcement mechanisms: objective/constraint configuration, provider/context policy, target admission, authentication/scopes, schema/revision pins and operator controls were inspected as possible policy mechanisms.
+- Closure path: not applicable because no identity/ultimate-policy issue → legitimate ultimate authority → returned identity-level decision path is established.
+- Why this is / is not agent-owned: configuration and authenticated intervention govern ordinary current execution; neither the gameplay model nor management runtime owns an ultimate identity/policy judgment at this recursion.
 - Evidence: `episode/runner.rs`, management configuration/control surfaces, `README.md`.
 - Basis: explicit + structural
 - Confidence: high
+- Caveats: operator authentication and configuration authority are real constraints/current-control mechanisms, but no identity-level issue/ultimate-authority/returned-policy conversation is established.
 
 ### Absence scope
 
@@ -183,7 +188,7 @@ At deployment level, Ascension also exposes a distinct current-control conversat
 
 ## Recursion
 
-The declared recursion is one Ascension deployment. One live model-driven episode is its operational S1. Independent episodes and co-op protocol participants are not promoted into additional first-party S1 units without evidence of their own autonomous operational ownership inside the assessed boundary. The management surface sits at the deployment-level metasystem recursion and supplies current-control composition/parent closure for S3 only.
+The declared recursion is one Ascension deployment. One live model-driven episode is its operational S1. Independent episodes and co-op protocol participants are not promoted into additional first-party S1 units without evidence of autonomous operational ownership inside the assessed boundary. The management surface sits at the deployment-level metasystem recursion and supplies current-control composition/parent closure for S3 only.
 
 ## Variety and escalation
 
