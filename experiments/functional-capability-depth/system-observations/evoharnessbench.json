@@ -27,7 +27,7 @@
         "carry memories/skills/prompts across subsequent harness versions",
         "evaluate held-out performance under later harness stages"
       ],
-      "mode_boundary": "Only self-evolving adaptation is classified direct. Deployment-only evaluation without persistent inner adaptation is a retention/robustness control, not direct S4.",
+      "mode_boundary": "Only self-evolving adaptation is classified direct. Deployment-only evaluation without persistent inner adaptation is a retention/robustness control, not direct adaptation evidence.",
       "observation_id": "evoharnessbench-self-evolving-adaptation-v2",
       "kind": "persistent-adaptation-study",
       "benchmark": "EvoHarnessBench self-evolving adaptation protocol"

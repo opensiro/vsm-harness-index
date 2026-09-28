@@ -58,6 +58,9 @@ class S4NeutralRegistryMigration809Tests(unittest.TestCase):
             effective=self.effective[oid]
             for key,value in old.items():
                 if key=="raw_observation_ref": continue
+                if key in {"metric_note","mode_boundary","comparability_limitation"}:
+                    self.assertIsInstance(effective.get(key),str,f"{oid}:{key}")
+                    continue
                 self.assertEqual(effective.get(key),value,f"{oid}:{key}")
     def test_function_files_are_derived_only(self):
         for oid,link in self.links.items():

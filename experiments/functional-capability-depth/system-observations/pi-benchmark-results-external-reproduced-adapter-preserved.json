@@ -56,7 +56,7 @@
         "mode": "matched-model",
         "scope": "coding-swe"
       },
-      "notes": "FrontierHarness identifies this configuration as pi-responses and pins Pi 0.84.2. The external benchmark membrane controls runtime/evaluation while the first-party Pi operational loop remains the S1 implementation under test. The task mix is a Coding/SWE projection only, and the unrecorded historical egress allowlist limits future reproduction comparability without a matched control. No S2-S5 or self-organizing S inference is made."
+      "notes": "FrontierHarness identifies this configuration as pi-responses and pins Pi 0.84.2. The external benchmark membrane controls runtime/evaluation while the first-party Pi operational loop remains the operational implementation under test. The task mix is a Coding/SWE projection only, and the unrecorded historical egress allowlist limits future reproduction comparability without a matched control. No broader organizational-function or self-organizing inference is made."
     }
   ]
 }

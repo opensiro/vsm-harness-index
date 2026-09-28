@@ -54,7 +54,7 @@
         "group": "swe-bench-verified__claude-4-sonnet-20250514__openhands-vs-swe-agent",
         "mode": "partially-matched"
       },
-      "notes": "Native historical OpenHands run with an exact reproducibility commit. The current canonical OpenHands assessment boundary has since evolved to Agent Canvas plus first-party SDK/server surfaces, so this result describes historical OpenHands S1 execution and must not be treated as a score for every current first-party surface."
+      "notes": "Native historical OpenHands run with an exact reproducibility commit. The current canonical OpenHands assessment boundary has since evolved to Agent Canvas plus first-party SDK/server surfaces, so this result describes historical OpenHands operational execution and must not be treated as a score for every current first-party surface."
     }
   ]
 }

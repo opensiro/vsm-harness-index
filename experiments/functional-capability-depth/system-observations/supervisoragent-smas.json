@@ -35,7 +35,7 @@
         "average_tokens_k": 371.12
       },
       "reported_average_token_reduction_percent": 29.68,
-      "ownership_caveat": "The SupervisorAgent relation is added around the base MAS. The result must not be attributed as native S3 capability of Smolagent, AWorld, OAgents or another wrapped system by association.",
+      "ownership_caveat": "The SupervisorAgent relation is added around the base MAS. The result must not be attributed as native current-control capability of Smolagent, AWorld, OAgents or another wrapped system by association.",
       "provenance_limitation": "This is a first-party-reported published result from the pinned SupervisorAgent repository and ICLR 2026 paper. Opensiro did not execute or reproduce the benchmark.",
       "observation_id": "supervisoragent-smas-gaia-pass1-2026",
       "kind": "system-benchmark-result",

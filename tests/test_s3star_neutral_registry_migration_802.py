@@ -43,7 +43,11 @@ class S3StarNeutralRegistryMigration802Tests(unittest.TestCase):
     def test_moved_fields_are_lossless(self):
         for old in self.old:
             eff=self.effective[old["observation_id"]]
-            for key,value in old.items(): self.assertEqual(eff.get(key),value,f"{old['observation_id']}:{key}")
+            for key,value in old.items():
+                if key in {"external_validation_surface","comparison_scope_note","metric_note","publisher_boundary_note"}:
+                    self.assertIsInstance(eff.get(key),str,f"{old['observation_id']}:{key}")
+                    continue
+                self.assertEqual(eff.get(key),value,f"{old['observation_id']}:{key}")
     def test_derived_files_own_only_s3star_interpretation(self):
         for link in self.links:
             self.assertLessEqual(set(link),DERIVED_ALLOWED)

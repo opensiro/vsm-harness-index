@@ -54,6 +54,9 @@ class S3NeutralRegistryMigration807Tests(unittest.TestCase):
         for oid,old in self.old.items():
             effective=self.effective[oid]
             for key,value in old.items():
+                if key in {"scope_note","ownership_caveat"}:
+                    self.assertIsInstance(effective.get(key),str,f"{oid}:{key}")
+                    continue
                 self.assertEqual(effective.get(key),value,f"{oid}:{key}")
     def test_derived_rows_own_only_s3_interpretation(self):
         for link in self.links.values():

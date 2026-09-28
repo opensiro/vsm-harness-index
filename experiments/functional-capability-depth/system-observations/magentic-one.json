@@ -62,7 +62,7 @@
           "caveat": "WebArena has no hidden test set; the paper reports its own validation/test split and notes possible mild over-fitting."
         }
       ],
-      "non_claim": "These end-task outcomes do not isolate S2 or S3 and must not be converted into a VSM function score."
+      "non_claim": "These end-task outcomes do not isolate coordination or current-control effects and must not be converted into an organizational-function score."
     },
     {
       "observation_id": "magentic-one-gpt4o-o1-test-results",
@@ -109,7 +109,7 @@
           "caveat": "The paper does not report this configuration because o1-preview refused 26% of WebArena GitLab tasks and 12% of Shopping Administration tasks, making a fair comparison impossible."
         }
       ],
-      "non_claim": "Differences from the GPT-4o-only configuration are model-configuration effects inside the same system and do not isolate a harness or VSM-function effect."
+      "non_claim": "Differences from the GPT-4o-only configuration are model-configuration effects inside the same system and do not isolate a harness or organizational-function effect."
     },
     {
       "observation_id": "magentic-one-simple-orchestrator-gaia-ablation",
@@ -131,7 +131,7 @@
         ]
       },
       "provenance": "Section 5.3 and Figure 3",
-      "non_claim": "The 31% end-task performance drop is not '31% of S2' or '31% of S3'. The ablation changes mechanisms relevant to both functions and GAIA is not a direct S2/S3 benchmark."
+      "non_claim": "The 31% end-task performance drop is not '31% of coordination capability' or '31% of current-control capability'. The ablation changes mechanisms relevant to both organizational functions and GAIA is not a direct coordination/current-control benchmark."
     }
   ]
 }

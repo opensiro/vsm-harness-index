@@ -45,13 +45,13 @@
       "reported_idea_weaknesses_total": 18,
       "reported_idea_weaknesses_resolved": 2,
       "reported_idea_weakness_resolution_rate": 0.111,
-      "external_validation_surface": "Stanford Reviewer scores saved human-initialized versions independently and is never shown to the Scientist; it is supporting validation, not the native S3* owner.",
-      "comparison_scope_note": "The paper compares reviewer-guided revision with fixed-prompt self-revision inside AppliedScientist. The weakness-resolution counts are aggregate closure evidence for the native review-guided loop, not a matched cross-harness S3* score.",
+      "external_validation_surface": "Stanford Reviewer scores saved human-initialized versions independently and is never shown to the Scientist; it is supporting validation, not the owner of the native independent-review loop.",
+      "comparison_scope_note": "The paper compares reviewer-guided revision with fixed-prompt self-revision inside AppliedScientist. The weakness-resolution counts are aggregate closure evidence for the native review-guided loop, not a matched cross-harness independent-review score.",
       "provenance_limitation": "The public AppliedScientist repository at canonical review ref 762824fd41598370e75588861b48991b0a9fd784 is first-party and implements the same Scientist-to-separate-Reviewer-to-correction-to-fresh-review architecture described in the publication. The fetched publication HTML does not expose an explicit repository URL binding the reported experimental runs to that exact Git commit. Preserve this result as first-party-reported; it is not independently reproduced at the pinned revision.",
       "observation_id": "appliedscientist-iterative-review-2026-09",
       "kind": "iterative-review-revision-study",
       "benchmark": "AppliedScientist iterative reviewer-guided revision study (30 papers)",
-      "non_claim": "This result does not establish a cross-harness ranking, does not prove an exact run revision, and does not determine any canonical VSM autonomy state."
+      "non_claim": "This result does not establish a cross-harness ranking, does not prove an exact run revision, and does not determine any downstream canonical organizational classification."
     }
   ],
   "canonical_assessment_ref": "assessments/appliedscientist.md",

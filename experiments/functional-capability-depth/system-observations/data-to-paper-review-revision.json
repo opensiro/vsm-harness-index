@@ -21,7 +21,7 @@
       "comparison_class": "descriptive-only",
       "published_example_count": 1,
       "published_example_reference": "Figure 2B / Supplementary Run A5",
-      "metric_note": "The publication demonstrates native reviewer-feedback-to-revision closure but does not report an aggregate S3*-specific detection, correction, or re-verification score for this loop.",
+      "metric_note": "The publication demonstrates native reviewer-feedback-to-revision closure but does not report an aggregate independent-review-specific detection, correction, or re-verification score for this loop.",
       "audit_loop": [
         "the performer conversation creates a current research product",
         "a separate role-inverted Reviewer conversation receives the product and relevant prior research context",
@@ -31,7 +31,7 @@
         "the research step concludes only after the product passes rule-based and LLM review, so rejected products remain in the correction/review loop"
       ],
       "published_result_summary": "The first-party paper Figure 2B, drawn from Supplementary Run A5, shows reviewer comments on a Discussion draft being returned to the performer and producing a corrected revised response. The Methods state that products must pass LLM review before the research step concludes.",
-      "comparison_scope_note": "This is a direct descriptive within-system closure witness. It is not a quantitative comparison with AppliedScientist or any other harness and must not be normalized into a common S3* score.",
+      "comparison_scope_note": "This is a direct descriptive within-system closure witness. It is not a quantitative comparison with AppliedScientist or any other harness and must not be normalized into a common independent-review score.",
       "provenance_limitation": "The publication identifies the first-party data-to-paper project and codebase, and the canonical repository at review ref 81df14c4b9600466e645c3b2b336cc54daa3df3a implements the same separate reviewer-to-performer correction loop. The publication does not bind Supplementary Run A5 to the exact canonical review revision. Preserve this as first-party-reported historical evidence; it is not independently reproduced at the pinned revision.",
       "observation_id": "data-to-paper-review-revision-2024",
       "kind": "operational-publication-witness",

@@ -54,7 +54,7 @@
         "group": "harbor-swe-bench-parity__openhands-c677f728__claude-4-sonnet",
         "mode": "descriptive-only"
       },
-      "notes": "Harbor's installed OpenHands agent uses the first-party OpenHands tool. This parity record is adapter-preserved evidence for a historical OpenHands S1 implementation, not a measurement of the full current Agent Canvas boundary. Model-label normalization differs between Harbor's parity JSON and README and is preserved explicitly."
+      "notes": "Harbor's installed OpenHands agent uses the first-party OpenHands tool. This parity record is adapter-preserved evidence for a historical OpenHands operational implementation, not a measurement of the full current Agent Canvas boundary. Model-label normalization differs between Harbor's parity JSON and README and is preserved explicitly."
     }
   ]
 }

@@ -53,6 +53,21 @@ FORBIDDEN_VSM_KEYS = {
     "coverage_class",
 }
 
+NEUTRAL_PROSE_FIELDS = {
+    "historical_relation",
+    "notes",
+    "non_claim",
+    "metric_note",
+    "comparison_scope_note",
+    "scope_note",
+    "external_validation_surface",
+    "mode_boundary",
+    "publisher_boundary_note",
+    "comparability_limitation",
+    "ownership_caveat",
+    "comparison_limitation",
+}
+
 
 def _forbidden_vsm_key(key: str) -> bool:
     return (
@@ -70,6 +85,10 @@ def _validate_vsm_neutral(value: object, record_ref: str, path: str = "$") -> No
             if _forbidden_vsm_key(key):
                 raise RegistryError(
                     f"{record_ref}:{child_path}: raw neutral evidence must not encode VSM-function/state attribution"
+                )
+            if key in NEUTRAL_PROSE_FIELDS and isinstance(child, str) and FORBIDDEN_VSM_VALUE_RE.search(child):
+                raise RegistryError(
+                    f"{record_ref}:{child_path}: neutral prose must remain implementation-independent and VSM-neutral"
                 )
             _validate_vsm_neutral(child, record_ref, child_path)
     elif isinstance(value, list):
