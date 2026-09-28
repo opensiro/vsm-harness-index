@@ -305,3 +305,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 290|hugagentos|HugAgentOS|https://github.com/ZJU-REAL/HugAgentOS|2026-07-19T08:41:07Z|index-addition|9436fcb77261bc995e6e7a45cdc5e192eae9bc74|2026-09-28
 291|superharness|superharness|https://github.com/artificemachine/superharness|2026-06-25T14:30:35Z|index-addition|8bd54bc1ea7db2391190de25087bc638d503e549|2026-09-28
 292|waku-agent|Waku Agent|https://github.com/ShenSeanChen/waku-agent|2026-07-10T12:20:50Z|index-addition|b8310c08029732475b68076df02a6cc44e3e41e7|2026-09-28
+293|dotcraft|DotCraft|https://github.com/DotHarness/dotcraft|2026-05-28T12:24:06Z|index-addition|a08c8b35497f6ba9148f6ede80839835dcc8812a|2026-09-28
