@@ -309,3 +309,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 294|aesop|Aesop|https://github.com/matt82198/aesop|2026-07-11T20:57:51Z|index-addition|2a661c12007c5484f964176da3d5532c6bdf070d|2026-09-28
 295|platypus|Platypus|https://github.com/willdady/platypus|2025-06-15T08:08:10Z|index-addition|5dda4dcdb92c209c8c8df953f0e9261cd018c2d7|2026-09-28
 296|octos|Octos|https://github.com/octos-org/octos|2026-03-15T23:56:24Z|index-addition|9f6311afd4e00324cdb89d957461cf861f4f2630|2026-09-28
+297|conductor|Conductor|https://github.com/microsoft/conductor|2026-02-02T14:29:41Z|index-addition|87f7788e60c7cbb8895832b9edfb4e63f3924590|2026-09-28
