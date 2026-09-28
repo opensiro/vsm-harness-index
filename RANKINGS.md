@@ -18,6 +18,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="marveen"></a>[Marveen](https://github.com/Szotasz/marveen) | 2026-Q2 | 4/6 | 3/5 | 1 | 3 | 0 | `A A A(P) A C(P) P` |
 | 3 | <a id="mateclaw"></a>[MateClaw](https://github.com/mateaix/mateclaw) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) — A(P) —` |
 | 3 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](https://github.com/HKUDS/OpenHarness) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="openrig"></a>[OpenRig](https://github.com/mvschwarz/openrig) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="cc-haha"></a>[cc-haha](https://github.com/NanmiCoder/cc-haha) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="nac"></a>[nac](https://github.com/arcee-ai/nac) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="autoresearchclaw"></a>[AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
