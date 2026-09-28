@@ -316,3 +316,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 301|harmonist|Harmonist|https://github.com/GammaLabTechnologies/harmonist|2026-04-23T05:42:29Z|index-addition|6fd5941cce8c3f6f411fd14cde0daa663ccffa8f|2026-09-29
 302|harnessrouter|HarnessRouter|https://github.com/HarnessRouter/harnessrouter|2026-08-09T20:19:14Z|index-addition|9ae33e77a92f240853e6d67a374c545d736c0f2d|2026-09-29
 303|longhorizon-harness|LongHorizon-Harness|https://github.com/AMAP-ML/LongHorizon-Harness|2026-08-04T04:30:58Z|index-addition|a1dd930614972b92361c1b9cd6aac441a6db5a65|2026-09-29
+304|synth-agent-runtime|Synth Agent Runtime|https://github.com/taituo/synth-agent-runtime|2026-09-19T17:50:13Z|index-addition|0ca8075281039d934fce8751ddd8b006ddc7de8d|2026-09-29
