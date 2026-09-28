@@ -82,7 +82,7 @@ class LLaMARCapabilityEvidence749Test(unittest.TestCase):
             ],
         )
         self.assertIn("proxy evidence", ablation.get("non_claim", ""))
-        self.assertIn("do not isolate a pure S3", ablation.get("non_claim", ""))
+        self.assertIn("do not isolate a pure current-control", ablation.get("non_claim", ""))
 
         disturbance = observations["llamar-agent-count-interference-mapthor-sar"]
         self.assertEqual(disturbance.get("kind"), "native-disturbance-characterization")
@@ -91,7 +91,7 @@ class LLaMARCapabilityEvidence749Test(unittest.TestCase):
         self.assertEqual(mapthor[4]["success_rate"], 0.68)
         self.assertEqual(mapthor[5]["success_rate"], 0.62)
         self.assertIn("block", disturbance.get("reported_disturbance", ""))
-        self.assertIn("not an S2 attenuation treatment", disturbance.get("non_claim", ""))
+        self.assertIn("not a coordination-attenuation treatment", disturbance.get("non_claim", ""))
 
     def test_s2_remains_non_admitted(self):
         delta = load(

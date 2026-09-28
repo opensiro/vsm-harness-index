@@ -63,7 +63,7 @@
       "reported_routing_accuracy_gain_percentage_points": 43.3333,
       "scope_note": "The supervisor arm fails exactly the six retry scenarios; those require node-level retry and are not credited to the supervisor-only treatment.",
       "provenance_limitation": "The embedded run git SHA no longer resolves publicly. The committed result artifact at the canonical review revision is the recoverable provenance anchor.",
-      "non_claim": "This within-system ablation does not establish a cross-harness ranking and does not by itself determine any canonical VSM autonomy state."
+      "non_claim": "This within-system ablation does not establish a cross-harness ranking and does not by itself determine any downstream canonical organizational classification."
     }
   ]
 }

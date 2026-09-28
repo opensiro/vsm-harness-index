@@ -44,6 +44,12 @@ class S3StarMetricBoundary824Tests(unittest.TestCase):
         before_without_boundary["published_implementation"]["historical_relation"] = (
             after["published_implementation"]["historical_relation"]
         )
+        after_observation = next(
+            row for row in after["observations"]
+            if row.get("observation_id") == OBSERVATION_ID
+        )
+        for key in ("metric_note", "comparison_scope_note"):
+            observations[0][key] = after_observation[key]
         self.assertEqual(after, before_without_boundary)
 
     def test_function_specific_metric_absence_is_derived_only(self):
@@ -53,7 +59,7 @@ class S3StarMetricBoundary824Tests(unittest.TestCase):
             if row["observation_id"] == OBSERVATION_ID
         )
         self.assertNotIn("aggregate_s3star_metric_reported", raw_observation)
-        self.assertIn("does not report an aggregate S3*-specific", raw_observation["metric_note"])
+        self.assertIn("does not report an aggregate independent-review-specific", raw_observation["metric_note"])
 
         projections = load(PROJECTION_PATH)
         derived = next(

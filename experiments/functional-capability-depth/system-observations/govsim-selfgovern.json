@@ -50,7 +50,7 @@
         "ungoverned": 0.45,
         "governed": 0.725,
         "absolute_gain": 0.275,
-        "scope_note": "This aggregate governance gain mixes multiple mechanisms and is not an S5-only effect."
+        "scope_note": "This aggregate governance gain mixes multiple mechanisms and is not attributable to membership-policy authority alone."
       },
       "provenance_note": "The paper is the authoritative public result artifact recovered in this review. No authoritative public code repository/revision for GovSim-SelfGovern was recovered, so no unrelated GovSim repository is attached by name similarity.",
       "observation_id": "govsim-selfgovern-membership-authority-2026-09",

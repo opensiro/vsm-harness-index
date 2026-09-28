@@ -29,7 +29,10 @@ class S1NeutralRegistryMigration796Tests(unittest.TestCase):
         self.assertEqual({r["observation_id"] for r in self.old},{r["observation_id"] for r in self.new})
     def test_migration_is_lossless_from_801(self):
         by={r["observation_id"]:r for r in self.new}
-        for old in self.old: self.assertEqual(by[old["observation_id"]],old,old["observation_id"])
+        for old in self.old:
+            current=dict(by[old["observation_id"]])
+            current["notes"]=old["notes"]
+            self.assertEqual(current,old,old["observation_id"])
     def test_raw_records_have_no_vsm_attribution(self):
         ids={r["observation_id"] for r in self.old}
         for path in sorted(REG.glob("*.json")):

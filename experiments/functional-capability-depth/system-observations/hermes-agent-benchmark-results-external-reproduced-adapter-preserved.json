@@ -62,7 +62,7 @@
         "mode": "matched-model",
         "scope": "general-baseline"
       },
-      "notes": "Pinned PawBench adapter code installs Hermes Agent 2026.4.23 and runs the native hermes CLI. This is historical adapter-preserved S1 evidence relative to the current canonical September 2026 review ref. PawBench capability slice labels do not establish S2, S3, S3*, S4 or S5 ownership or capability by naming alone."
+      "notes": "Pinned PawBench adapter code installs Hermes Agent 2026.4.23 and runs the native hermes CLI. This is historical adapter-preserved operational evidence relative to the current canonical September 2026 review ref. PawBench capability slice labels do not establish organizational-function ownership or capability by naming alone."
     },
     {
       "observation_id": "hermes-agent__claw-swe-bench-full-350__qwen-3.6-flash__20260717",
@@ -106,7 +106,7 @@
         "mode": "matched-model",
         "scope": "coding-swe"
       },
-      "notes": "Claw-SWE-Bench preserves the first-party Hermes Agent operational loop behind an external adapter/evaluation membrane and uses a fresh container per instance. Historical Hermes version/revision is not published in the pinned benchmark sources and is not inferred. This is Coding/SWE-specific S1 evidence, not universal S1 capability, and it does not establish S2-S5 or self-organizing S."
+      "notes": "Claw-SWE-Bench preserves the first-party Hermes Agent operational loop behind an external adapter/evaluation membrane and uses a fresh container per instance. Historical Hermes version/revision is not published in the pinned benchmark sources and is not inferred. This is Coding/SWE-specific operational evidence, not universal operational capability, and it does not establish broader organizational-function or self-organizing claims."
     },
     {
       "observation_id": "hermes-agent__claw-swe-bench-full-350__glm-5.1__20260717",
@@ -192,7 +192,7 @@
         "mode": "matched-model",
         "scope": "coding-swe"
       },
-      "notes": "FrontierHarness publishes Hermes Agent 0.20.4 with exact source revision 044acf2bf700b8452e903f035406091146eb0245, so this row is exact-historical rather than merely version-known. The external benchmark membrane preserves the first-party operational loop. This mixed Terminal-Bench/DeepSWE result is Coding/SWE-domain evidence only; the historical campaign's unrecorded egress allowlist limits future reproduction comparability. No S2-S5, ownership, or self-organizing S inference follows."
+      "notes": "FrontierHarness publishes Hermes Agent 0.20.4 with exact source revision 044acf2bf700b8452e903f035406091146eb0245, so this row is exact-historical rather than merely version-known. The external benchmark membrane preserves the first-party operational loop. This mixed Terminal-Bench/DeepSWE result is Coding/SWE-domain evidence only; the historical campaign's unrecorded egress allowlist limits future reproduction comparability. No broader organizational-function, ownership, or self-organizing inference follows."
     }
   ]
 }

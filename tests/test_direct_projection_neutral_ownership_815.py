@@ -102,6 +102,8 @@ class DirectProjectionNeutralOwnership815Tests(unittest.TestCase):
             if before.get("canonical_harness_id"):
                 before["canonical_review_ref"] = before.pop("canonical_assessment_ref")
             after = hydrate_s2(row, inject_record_level=True)
+            if "comparison_limitation" in before and "comparison_limitation" in after:
+                before["comparison_limitation"] = after["comparison_limitation"]
             self.assertEqual(after, before, row["observation_id"])
             self.assertFalse(NEUTRAL_OWNED & set(row), row["observation_id"])
 

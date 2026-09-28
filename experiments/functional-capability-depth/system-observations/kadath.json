@@ -37,8 +37,8 @@
         "top5_floor_improvement": 70
       },
       "metric_note": "The first-party README reports a ten-epoch upward shift in the leading cohort. Each epoch point may represent a different top-performing agent, so these metrics describe population-level evolutionary improvement rather than one individual trajectory.",
-      "comparability_limitation": "The fitness benchmark is generated from the user goal and explicitly approved and locked per run. The published proof does not expose enough run metadata to reconstruct a common model/goal/population/configuration cell with A-Evolve or another canonical S4 system. Preserve this as a heterogeneous within-system observation, not a matched cross-harness score.",
-      "non_claim": "This longitudinal within-system result is not a matched cross-harness score and does not determine canonical VSM autonomy states.",
+      "comparability_limitation": "The fitness benchmark is generated from the user goal and explicitly approved and locked per run. The published proof does not expose enough run metadata to reconstruct a common model/goal/population/configuration cell with A-Evolve or another canonical adaptation system. Preserve this as a heterogeneous within-system observation, not a matched cross-harness score.",
+      "non_claim": "This longitudinal within-system result is not a matched cross-harness score and does not determine downstream canonical organizational classifications.",
       "source_artifact_revision": "db7a6438d98c18d590b78b2146dc3bcd2c4ea0ef",
       "comparison_class": "within-system-longitudinal-population-evolution",
       "adaptation_loop": [

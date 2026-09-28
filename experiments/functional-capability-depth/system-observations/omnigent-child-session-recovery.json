@@ -48,7 +48,7 @@
         "targeted_regressions_reported_fail_before_pass_after": true
       },
       "provenance_limitation": "This is first-party-reported operational and regression evidence from a post-assessment descendant revision. It is not independently reproduced and must not be relabeled as an observation at the earlier canonical assessment revision.",
-      "scope_note": "The SQLite latency benchmark reported on PR #7662 is not used as an S3 capability metric; the S3 observation is the recovery decision and preserved continuation of current child commitments.",
+      "scope_note": "The SQLite latency benchmark reported on PR #7662 is not used as a current-control capability metric; the retained organizational observation is the recovery decision and preserved continuation of current child commitments.",
       "observation_id": "omnigent-child-session-recovery-2026-09",
       "kind": "operational-recovery-witness",
       "evidence_surface": "Omnigent child-session recovery operational witness"

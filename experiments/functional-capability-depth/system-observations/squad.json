@@ -33,7 +33,7 @@
           "coordination": true,
           "squad_memory": true,
           "milestone_kpi_percent": 81.1,
-          "quality_1_to_5": 4.10
+          "quality_1_to_5": 4.1
         },
         "coord_only": {
           "coordination": true,
@@ -68,7 +68,7 @@
       ],
       "provenance": "README Correctness & quality aligned re-run",
       "caveat": "The benchmark notes small per-domain samples and an LLM judge; exact deltas should be treated as directional.",
-      "non_claim": "The controlled coordination effect is native Squad evidence, but MARBLE scores broad collaborative task outcomes rather than an explicit inter-S1 interference/oscillation quantity. These values are not an S2 score and do not determine canonical S2=A."
+      "non_claim": "The controlled coordination effect is native Squad evidence, but MARBLE scores broad collaborative task outcomes rather than an explicit inter-worker interference/oscillation quantity. These values are not a coordination score and do not determine the downstream canonical coordination classification."
     },
     {
       "observation_id": "squad-marble-completion-ablation",
@@ -87,7 +87,7 @@
         "memory_only": 42.5
       },
       "provenance": "README Controlled Ablation (MARBLE)",
-      "non_claim": "Completion measures whether usable output was produced within the benchmark budget. It supports the native coordination ablation but does not directly measure VSM S2 disturbance attenuation."
+      "non_claim": "Completion measures whether usable output was produced within the benchmark budget. It supports the native coordination ablation but does not directly measure coordination disturbance attenuation."
     }
   ]
 }

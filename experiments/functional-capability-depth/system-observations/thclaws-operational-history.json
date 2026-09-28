@@ -39,7 +39,7 @@
         "The assessed runtime applies role-specific command guards before shell execution and includes bounded retry handling for the shared git index-lock race.",
         "Later first-party Agent Teams reports show teammates booting, changing status, exchanging mailbox messages, and participating in task and shutdown lifecycle."
       ],
-      "comparison_limitation": "This is descriptive canonical direct evidence from operational history and first-party runtime behavior, not a matched benchmark comparison or a causal numeric uplift estimate. The incident/guard and index-race paths are concrete S2 attenuation evidence but do not make thClaws materially matched to Squad or any external benchmark family."
+      "comparison_limitation": "This is descriptive canonical direct evidence from operational history and first-party runtime behavior, not a matched benchmark comparison or a causal numeric uplift estimate. The incident/guard and index-race paths are concrete interference-attenuation evidence but do not make thClaws materially matched to Squad or any external benchmark family."
     }
   ]
 }

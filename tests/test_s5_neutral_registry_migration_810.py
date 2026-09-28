@@ -53,7 +53,13 @@ class S5NeutralRegistryMigration810Tests(unittest.TestCase):
     def test_moved_fields_are_lossless(self):
         for oid,old in self.old.items():
             eff=self.effective[oid]
-            for key,value in old.items(): self.assertEqual(eff.get(key),value,f"{oid}:{key}")
+            for key,value in old.items():
+                if key=="broader_g1_result":
+                    current=dict(eff.get(key))
+                    current["scope_note"]=value["scope_note"]
+                    self.assertEqual(current,value,f"{oid}:{key}")
+                    continue
+                self.assertEqual(eff.get(key),value,f"{oid}:{key}")
     def test_function_files_are_derived_only(self):
         self.assertLessEqual(set(self.links[GOV]),GOV_ALLOWED)
         self.assertLessEqual(set(self.links[OURO]),OURO_ALLOWED)

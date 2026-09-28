@@ -40,7 +40,7 @@
         "the benchmark independently reruns build, visible tests and held-out verification on the revised state"
       ],
       "comparison_scope_note": "FULL also contains a deterministic done-gate and schema-forced result contract. The two L2 records establish operation and closure of the complementary review-revision-reverification loop; they are not an isolated causal estimate of reviewer contribution to overall task success.",
-      "publisher_boundary_note": "The README describes the benchmark reviewer/harness as a minimal clean-room implementation of production patterns rather than production Telos code. No native Telos or Claude Code S3* ownership is inferred.",
+      "publisher_boundary_note": "The README describes the benchmark reviewer/harness as a minimal clean-room implementation of production patterns rather than production Telos code. No native Telos or Claude Code independent-review ownership is inferred.",
       "observation_id": "harness-bench-pilot4-review-revise-reverify-2026-07",
       "kind": "system-benchmark-result"
     }

@@ -267,7 +267,7 @@ def validate_data_to_paper_observation(observation: dict) -> None:
     if not any(DATA_TO_PAPER_REVIEW_REF in source for source in sources if "github.com" in source):
         fail("data-to-paper observation must retain pinned repository evidence")
     metric_note = observation.get("metric_note")
-    if not isinstance(metric_note, str) or "does not report an aggregate S3*-specific" not in metric_note:
+    if not isinstance(metric_note, str) or "does not report an aggregate independent-review-specific" not in metric_note:
         fail("data-to-paper no-score boundary must remain explicit")
 
 def main() -> None:
