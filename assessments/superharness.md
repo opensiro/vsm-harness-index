@@ -97,6 +97,8 @@ At the assessed recursion, dispatched model-driven coding agents are S1 operatio
 - Disturbance / variety regulated: blocked dependencies, stale/overdue tasks, dead launcher processes, retryable failures, missing heartbeats, lifecycle timeouts, concurrent inbox load and tasks that are not yet dispatchable.
 - Decisive decision or feedback right: decide whether current project work is dispatchable and apply current-control state transitions across the active portfolio, including dispatch, retry, failure/recovery and archival actions.
 - Decision owner: the deterministic first-party watcher/lifecycle engine.
+- Whole-system current view: authoritative SQLite task/inbox state plus dependencies, statuses, launcher/heartbeat liveness and lifecycle timestamps provide one current project-wide view across active work.
+- Current-control decision scope: admit/dispatch ready work and apply retry, recovery, failure, archival and related current-state transitions across the active project portfolio.
 - Supporting / enforcement mechanisms: authoritative SQLite task/inbox state, dependency checks, watcher lock/heartbeat, launcher liveness checks, lifecycle rules, retry writers, task-status writers, auto-dispatch and operator-command reconciliation.
 - Closure path: current project portfolio/state is read from the shared SoT → watcher evaluates dependencies, status, liveness, timestamps and policy → runtime selects dispatch/retry/recover/fail/archive transition → shared current state changes → later watcher/agent behaviour uses that updated portfolio state.
 - Boundary reachability: the watcher is a shipped background operating mode (`inbox_watch`) and can run unattended; current-control rules are first-party runtime code rather than repository-maintainer procedure.
