@@ -1,0 +1,74 @@
+name: aesop-admission-assemble
+
+on:
+  push:
+    branches:
+      - admission/aesop-294
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admission/aesop-294
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Apply canonical Aesop admission inputs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/aesop.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed\n'
+          new = 'status: included\n'
+          if text.count(old) != 1:
+              raise SystemExit(f'expected exactly one proposed status, found {text.count(old)}')
+          assessment.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          lines = catalog.read_text(encoding='utf-8').rstrip('\n').splitlines()
+          if any('|aesop|' in line for line in lines):
+              raise SystemExit('aesop already present in catalog')
+          last_pos = int(lines[-1].split('|', 1)[0])
+          if last_pos != 293:
+              raise SystemExit(f'expected catalog tail 293, got {last_pos}')
+          lines.append('294|aesop|Aesop|https://github.com/matt82198/aesop|2026-07-11T20:57:51Z|index-addition|2a661c12007c5484f964176da3d5532c6bdf070d|2026-09-28')
+          catalog.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_lines = signatures.read_text(encoding='utf-8').rstrip('\n').splitlines()
+          if any('|aesop|' in line for line in sig_lines):
+              raise SystemExit('aesop already present in signatures')
+          last_sig = int(sig_lines[-1].split('|', 1)[0])
+          if last_sig != 293:
+              raise SystemExit(f'expected signature tail 293, got {last_sig}')
+          sig_lines.append('294|aesop|Aesop closes autonomous S1 through model-driven coding workers, constructor-owned S2 through file-ownership and worktree interference attenuation, autonomous S3 through whole-wave model orchestration, constructor-owned S3* through orchestrator-side exact-gate replay, and autonomous-plus-parent S5 through model-synthesized plus owner-governed project CLAUDE.md rules; no deployed external-prospective S4 loop is established.')
+          signatures.write_text('\n'.join(sig_lines) + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate assembled state
+        run: |
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Commit assembled admission and remove one-shot workflow
+        run: |
+          rm .github/workflows/aesop-admission-assemble.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git diff --cached --check
+          git commit -m 'index: assemble Aesop admission'
+          git push origin HEAD:admission/aesop-294
