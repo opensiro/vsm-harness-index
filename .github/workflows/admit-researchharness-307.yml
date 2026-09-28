@@ -1,0 +1,72 @@
+name: temporary ResearchHarness admission renderer
+
+on:
+  push:
+    branches:
+      - admit-researchharness-307
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: admit-researchharness-307
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Apply canonical ResearchHarness admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/researchharness.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed'
+          if text.count(old) != 1:
+              raise SystemExit(f'expected exactly one {old!r}, got {text.count(old)}')
+          assessment.write_text(text.replace(old, 'status: included', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          row = '307|researchharness|ResearchHarness|https://github.com/InternScience/ResearchHarness|2026-03-31T06:57:51Z|index-addition|72e8a44737aadabc8c3f9e5c7ea76883b9c7032f|2026-09-29'
+          if '|researchharness|ResearchHarness|https://github.com/InternScience/ResearchHarness|' in catalog_text:
+              raise SystemExit('ResearchHarness already present in catalog')
+          if not catalog_text.endswith('\n'):
+              catalog_text += '\n'
+          catalog.write_text(catalog_text + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          signature = ('307|researchharness|ResearchHarness closes autonomous S1 through its first-party ReAct model/tool/result loop; its single-agent runtime, request/tool concurrency, session and compaction machinery, verification guidance, extension hooks and static prompts do not establish S2, S3, S3*, S4 or S5 at the reviewed boundary.')
+          if '\n307|researchharness|' in '\n' + signatures_text:
+              raise SystemExit('ResearchHarness signature already present')
+          if not signatures_text.endswith('\n'):
+              signatures_text += '\n'
+          signatures.write_text(signatures_text + signature + '\n', encoding='utf-8')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+      - name: Commit rendered canonical admission and remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/admit-researchharness-307.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'index: admit ResearchHarness at catalog #307'
+          git push origin HEAD:admit-researchharness-307
