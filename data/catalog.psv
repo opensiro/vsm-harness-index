@@ -302,3 +302,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 287|ascension|Ascension|https://github.com/AI-Ascension/sts2-harness|2026-09-02T05:59:59Z|index-addition|53312ddbb074f7c187e5f59d88b6585da797fe17|2026-09-28
 288|openrig|OpenRig|https://github.com/mvschwarz/openrig|2026-04-01T06:22:40Z|index-addition|c8fca9d5c436e5357807e05254bf6735613eea3f|2026-09-28
 289|polyphemus|Polyphemus|https://github.com/polyphemus-ai/release-rehearsal|2026-09-24T00:04:36Z|index-addition|02020f3bc2829c350fd726273a7721254068925f|2026-09-28
+290|hugagentos|HugAgentOS|https://github.com/ZJU-REAL/HugAgentOS|2026-07-19T08:41:07Z|index-addition|9436fcb77261bc995e6e7a45cdc5e192eae9bc74|2026-09-28
