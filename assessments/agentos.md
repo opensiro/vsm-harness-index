@@ -2,13 +2,16 @@
 harness_id: agentos
 project_name: AgentOS
 repository: https://github.com/framerslab/agentos
-review_ref: 1e9921837385b8218774955b699d949c233e52ea
-reviewed_at: 2026-09-25
+review_ref: fa3ec4a47f8521026e8c10aa876d082152b289d8
+reviewed_at: 2026-09-29
 generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.6
+last_checked_ref: fa3ec4a47f8521026e8c10aa876d082152b289d8
+last_checked_at: 2026-09-29
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-09-25
+last_reassessment_round: R3
 status: included
 autonomy_s1: A
 autonomy_s2: A
@@ -22,7 +25,7 @@ autonomy_s5: P
 
 ## Review boundary
 
-- System in focus: one first-party AgentOS runtime/agency organization at pinned revision `1e9921837385b8218774955b699d949c233e52ea`, including the high-level agent/agency runtime, multi-agent strategy compilers, WorkflowEngine current-control surfaces, the full-runtime emergent capability engine, and the SOUL workspace identity loader.
+- System in focus: one first-party AgentOS runtime/agency organization at pinned revision `fa3ec4a47f8521026e8c10aa876d082152b289d8`, including the high-level agent/agency runtime, multi-agent strategy compilers, WorkflowEngine current-control surfaces, the full-runtime emergent capability engine, and the SOUL workspace identity loader.
 - Purpose and identity: operate model-driven agents and multi-agent teams that can execute user goals, coordinate distinct agent perspectives, regulate whole-runtime commitments through configured controls, extend their executable capability repertoire, and run under durable parent-authored identity and hard-limit definitions.
 - Relevant environment: user/operator requests, peer-agent outputs, model-provider responses, tool/API/file results, capability gaps encountered during work, workflow load and aggregate resource usage, and parent-authored identity/policy material in the agent workspace.
 - Standard-distribution boundary: the first-party `@framers/agentos` runtime and documented public constructors at the pinned revision. External model providers, external tools/services, channel providers, caller infrastructure, and downstream applications are environmental dependencies and do not donate VSM ownership.
@@ -30,8 +33,8 @@ autonomy_s5: P
 - Adjacent first-party surfaces excluded from ownership: repository CI/release workflows; tests and benchmark/evaluation packages as evidence-only unless wired into the operating path; standalone `Evaluator`/LLMJudge library usage not wired into ordinary runtime control; examples as corroboration rather than owners; lightweight `agent()` emergent configuration where the repository explicitly states that `forge_tool` is not activated; generic observability/provenance surfaces where they only report events.
 - First-party operating / deployment modes considered: ordinary single-agent model/tool operation; configured multi-agent `agency()` operation; debate-mode mutual adjustment; host-configured workflow/resource-regulation mode; full `AgentOS` runtime with `emergent: true`; SOUL-backed agents whose workspace identity is authored by the parent/operator.
 - Recursion level: one AgentOS runtime/agency is the primary system-in-focus. Named roster agents are treated as distinct S1 units only where the evidence establishes separate agent loops contributing different operational perspectives/outcomes inside the same agency; merely spawning or naming a worker is not taken as recursive viability.
-- Reviewed revision: `1e9921837385b8218774955b699d949c233e52ea`.
-- Observation date: 2026-09-25.
+- Reviewed revision: `fa3ec4a47f8521026e8c10aa876d082152b289d8`.
+- Observation date: 2026-09-29.
 - Generated Profile version: `0.2.4`.
 - Generated Methodology version: `0.3.6`.
 - Current Profile version: `0.2.4`.
@@ -53,15 +56,15 @@ S5 remains parent-governed. The SOUL workspace separates identity from ordinary 
 
 Primary evidence:
 
-- [`README.md`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/README.md) — standard agent/agency surface, multi-agent strategies, runtime tool forging and SOUL identity overview.
-- [`src/api/agency.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/api/agency.ts) — one-request agency boundary, strategy compilation, aggregate resource controls, validation/retry and HITL wiring.
-- [`src/api/runtime/strategies/hierarchical.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/api/runtime/strategies/hierarchical.ts) — model-owned delegation decisions and runtime specialist synthesis; used as S1 evidence but not treated as S3 merely because it is called a manager.
-- [`src/api/runtime/strategies/debate.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/api/runtime/strategies/debate.ts) — explicit inter-agent argumentative conflict, peer-feedback into subsequent rounds and model-driven synthesis.
-- [`src/api/runtime/strategies/review-loop.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/api/runtime/strategies/review-loop.ts) — routine producer/reviewer QA path considered and rejected as S3* evidence.
-- [`src/orchestration/workflows/WorkflowEngine.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/orchestration/workflows/WorkflowEngine.ts) — active-workflow count, concurrency admission ceiling, workflow state/progress surfaces and host-set control regime.
-- [`docs/architecture/EMERGENT_CAPABILITIES.md`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/docs/architecture/EMERGENT_CAPABILITIES.md) — full-runtime capability-gap → forge/test/judge → session registration → later promotion loop and explicit lightweight-runtime boundary.
-- [`src/cognition/emergent/SelfImprovementConfig.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/cognition/emergent/SelfImprovementConfig.ts) and [`SelfEvaluateTool.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/cognition/emergent/SelfEvaluateTool.ts) — opt-in bounded self-evaluation/parameter adjustment considered but not used alone to establish S4 or S3*.
-- [`docs/SOUL_FILES.md`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/docs/SOUL_FILES.md) — parent-authored identity, values and hard limits loaded back into subsequent runtime operation.
+- [`README.md`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/README.md) — standard agent/agency surface, multi-agent strategies, runtime tool forging and SOUL identity overview.
+- [`src/api/agency.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/api/agency.ts) — one-request agency boundary, strategy compilation, aggregate resource controls, validation/retry and HITL wiring.
+- [`src/api/runtime/strategies/hierarchical.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/api/runtime/strategies/hierarchical.ts) — model-owned delegation decisions and runtime specialist synthesis; used as S1 evidence but not treated as S3 merely because it is called a manager.
+- [`src/api/runtime/strategies/debate.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/api/runtime/strategies/debate.ts) — explicit inter-agent argumentative conflict, peer-feedback into subsequent rounds and model-driven synthesis.
+- [`src/api/runtime/strategies/review-loop.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/api/runtime/strategies/review-loop.ts) — routine producer/reviewer QA path considered and rejected as S3* evidence.
+- [`src/orchestration/workflows/WorkflowEngine.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/orchestration/workflows/WorkflowEngine.ts) — active-workflow count, concurrency admission ceiling, workflow state/progress surfaces and host-set control regime.
+- [`docs/architecture/EMERGENT_CAPABILITIES.md`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/docs/architecture/EMERGENT_CAPABILITIES.md) — full-runtime capability-gap → forge/test/judge → session registration → later promotion loop and explicit lightweight-runtime boundary.
+- [`src/cognition/emergent/SelfImprovementConfig.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/cognition/emergent/SelfImprovementConfig.ts) and [`SelfEvaluateTool.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/cognition/emergent/SelfEvaluateTool.ts) — opt-in bounded self-evaluation/parameter adjustment considered but not used alone to establish S4 or S3*.
+- [`docs/SOUL_FILES.md`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/docs/SOUL_FILES.md) — parent-authored identity, values and hard limits loaded back into subsequent runtime operation.
 
 ## S1 — Operations
 
@@ -74,7 +77,7 @@ Primary evidence:
 - Closure path: request enters AgentOS → model selects response/tool/delegation → first-party runtime executes the selected path → observations/sub-agent outputs return into model context → model chooses subsequent action or completes → result returns to the user/environment.
 - Boundary reachability: ordinary `agent`/`agency` operation and hierarchical model-driven delegation are first-party documented runtime paths at the pinned revision.
 - Why this is / is not agent-owned: deterministic compilers and execution machinery transport/enforce decisions, but removing the model actor removes the substantive selection of tools, delegated work and response progression; the same decisions are not reproduced by static runtime rules.
-- Evidence: [`README.md`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/README.md); [`src/api/runtime/strategies/hierarchical.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/api/runtime/strategies/hierarchical.ts).
+- Evidence: [`README.md`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/README.md); [`src/api/runtime/strategies/hierarchical.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/api/runtime/strategies/hierarchical.ts).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: deterministic sequential/graph paths and lightweight helper modes also exist. `A` is based on reachable model-owned operating paths, not on every strategy transition being autonomous.
@@ -90,7 +93,7 @@ Primary evidence:
 - Closure path: multiple S1 agents produce positions → accumulated peer arguments are injected into later agent turns → agents autonomously rebut/refine in response → changed arguments enter subsequent rounds → synthesizer autonomously resolves the collected conflict into one agency result.
 - Boundary reachability: `debate` is a shipped first-party `agency()` strategy; callers select it directly without supplying their own coordination transport or reconciliation implementation.
 - Why this is / is not agent-owned: the runtime determines when transcript material is passed, but it does not predetermine how an S1 responds to another S1's claim or which arguments ultimately prevail; those coordination judgments are model-owned.
-- Evidence: [`src/api/runtime/strategies/debate.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/api/runtime/strategies/debate.ts); [`README.md`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/README.md).
+- Evidence: [`src/api/runtime/strategies/debate.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/api/runtime/strategies/debate.ts); [`README.md`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/README.md).
 - Basis: explicit + structural
 - Confidence: medium-high
 - Caveats: generic graph dependencies, sequential routing, shared memory and message buses are not credited as S2. The positive mapping is specifically the debate-mode conflict/mutual-adjustment relation.
@@ -111,7 +114,7 @@ Primary evidence:
 - Closure path: current workflow/agency load is observed → configured whole-system threshold is evaluated → excess new workflow commitment is rejected or a configured agency-limit response is raised → subsequent admitted work is constrained by that regime.
 - Boundary reachability: `WorkflowEngine` and agency `controls` are shipped first-party runtime surfaces and are directly configurable by an adopter without replacing the underlying control machinery.
 - Why this is / is not agent-owned: the runtime has real whole-system state and enforcement authority, but the organizational choice of concurrency/resource budget and limit-response policy is not made by an autonomous model actor. The function-specific decision path is therefore left for downstream construction, yielding `C`.
-- Evidence: [`src/orchestration/workflows/WorkflowEngine.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/orchestration/workflows/WorkflowEngine.ts); [`src/api/agency.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/api/agency.ts).
+- Evidence: [`src/orchestration/workflows/WorkflowEngine.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/orchestration/workflows/WorkflowEngine.ts); [`src/api/agency.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/api/agency.ts).
 - Basis: structural
 - Confidence: medium-high
 - Caveats: the hierarchical `manager` is not credited as S3 merely because it delegates work. Its documented scope is one-request task accomplishment. Likewise static limits do not become autonomous simply because the runtime enforces them.
@@ -128,7 +131,7 @@ Primary evidence:
 - Supporting / enforcement mechanisms: `review-loop`, standalone Evaluator/LLMJudge utilities, emergent capability judges, tests, tracing and provenance were inspected but do not close S3* for ordinary operations.
 - Closure path: no complementary operating-audit closure established.
 - Why this is / is not agent-owned: the review-loop reviewer consumes the producer's ordinary draft plus task and is part of the normal production QA path; standalone evaluator surfaces are not wired into current operational control; emergent judges audit proposed capabilities inside S4 adaptation rather than independently sampling ordinary S1/S3 reality.
-- Evidence: [`src/api/runtime/strategies/review-loop.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/api/runtime/strategies/review-loop.ts); [`src/safety/evaluation/Evaluator.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/safety/evaluation/Evaluator.ts); [`docs/architecture/EMERGENT_CAPABILITIES.md`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/docs/architecture/EMERGENT_CAPABILITIES.md).
+- Evidence: [`src/api/runtime/strategies/review-loop.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/api/runtime/strategies/review-loop.ts); [`src/safety/evaluation/Evaluator.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/safety/evaluation/Evaluator.ts); [`docs/architecture/EMERGENT_CAPABILITIES.md`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/docs/architecture/EMERGENT_CAPABILITIES.md).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: a downstream application can compose evaluators or external evidence into an audit loop, but that does not donate S3* ownership to this repository-relative assessment.
@@ -150,7 +153,7 @@ Primary evidence:
 - Closure path: an external task exposes a missing capability → model invokes `forge_tool` and proposes/composes implementation → first-party tests and LLM judge evaluate the option → approved capability is registered at session tier → subsequent turns can invoke it by name → sufficiently proven capabilities can move to a longer-lived agent tier, changing future operating capability.
 - Boundary reachability: the repository documents `AgentOS.create({ emergent: true })` as a full-runtime first-party entry point that initializes emergent support and exposes `forge_tool`; the positive claim does not rely on the lightweight `agent()` helper, which explicitly does not activate the path on its own.
 - Why this is / is not agent-owned: deterministic sandbox, schemas and thresholds constrain the search space, but they do not decide which missing capability to invent or semantically judge the candidate. Removing the model proposal/judge actors removes those adaptation decisions.
-- Evidence: [`docs/architecture/EMERGENT_CAPABILITIES.md`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/docs/architecture/EMERGENT_CAPABILITIES.md); [`src/cognition/emergent/ForgeToolMetaTool.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/cognition/emergent/ForgeToolMetaTool.ts); [`src/cognition/emergent/EmergentCapabilityEngine.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/cognition/emergent/EmergentCapabilityEngine.ts).
+- Evidence: [`docs/architecture/EMERGENT_CAPABILITIES.md`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/docs/architecture/EMERGENT_CAPABILITIES.md); [`src/cognition/emergent/ForgeToolMetaTool.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/cognition/emergent/ForgeToolMetaTool.ts); [`src/cognition/emergent/EmergentCapabilityEngine.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/cognition/emergent/EmergentCapabilityEngine.ts).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: emergent capability creation is opt-in rather than default. Opt-in does not negate boundary reachability because the full runtime ships the complete decision/feedback path. Generic memory/self-improvement alone is not used as the S4 witness.
@@ -170,7 +173,7 @@ Primary evidence:
 - Closure path: identity/policy content is authored or revised by the parent in `SOUL.md` → first-party loader reads it at agent boot → structured identity/hard limits and prose enter runtime persona/system context → subsequent model operation is governed by that parent decision.
 - Boundary reachability: SOUL workspaces and `souledAgent()`/`loadSoul` are documented first-party runtime paths, with `SOUL.md` explicitly required for the souled identity mode.
 - Why this is / is not agent-owned: AgentOS can autonomously edit its memory wiki and can optionally adapt bounded personality parameters, but those lower-level adaptation paths do not transfer ultimate authority over the durable SOUL identity, values and hard limits away from the parent.
-- Evidence: [`docs/SOUL_FILES.md`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/docs/SOUL_FILES.md); [`src/cognition/substrate/personas/SoulLoader.ts`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/cognition/substrate/personas/SoulLoader.ts); [`src/cognition/substrate/personas/SOUL.template.md`](https://github.com/framerslab/agentos/blob/1e9921837385b8218774955b699d949c233e52ea/src/cognition/substrate/personas/SOUL.template.md).
+- Evidence: [`docs/SOUL_FILES.md`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/docs/SOUL_FILES.md); [`src/cognition/substrate/personas/SoulLoader.ts`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/cognition/substrate/personas/SoulLoader.ts); [`src/cognition/substrate/personas/SOUL.template.md`](https://github.com/framerslab/agentos/blob/fa3ec4a47f8521026e8c10aa876d082152b289d8/src/cognition/substrate/personas/SOUL.template.md).
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: a generic system prompt alone would not establish S5. Credit is based on the repository's identity-specific SOUL boundary, explicit values/hard-limit semantics and closed load-back path. Bounded runtime personality adaptation is not treated as autonomous ultimate-policy authority.
