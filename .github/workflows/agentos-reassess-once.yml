@@ -1,0 +1,104 @@
+name: agentos-reassess-once
+
+on:
+  push:
+    branches:
+      - reassess-agentos-901
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: reassess-agentos-901
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply accepted-ref reassessment bookkeeping
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          old = '1e9921837385b8218774955b699d949c233e52ea'
+          new = 'fa3ec4a47f8521026e8c10aa876d082152b289d8'
+          day = '2026-09-29'
+
+          assessment_path = Path('assessments/agentos.md')
+          text = assessment_path.read_text(encoding='utf-8')
+          if old not in text:
+              raise SystemExit('old AgentOS review ref not found in assessment')
+          text = text.replace(old, new)
+          text = text.replace('reviewed_at: 2026-09-25', f'reviewed_at: {day}', 1)
+          marker = 'assessment_procedure_version: 0.3.6\n'
+          if 'last_checked_ref:' not in text:
+              text = text.replace(
+                  marker,
+                  marker + f'last_checked_ref: {new}\nlast_checked_at: {day}\n',
+                  1,
+              )
+          else:
+              import re
+              text = re.sub(r'^last_checked_ref:.*$', f'last_checked_ref: {new}', text, count=1, flags=re.M)
+              text = re.sub(r'^last_checked_at:.*$', f'last_checked_at: {day}', text, count=1, flags=re.M)
+          if 'last_reassessment_round:' not in text:
+              text = text.replace('assessment_changed_at: 2026-09-25\n', 'assessment_changed_at: 2026-09-25\nlast_reassessment_round: R3\n', 1)
+          else:
+              import re
+              text = re.sub(r'^last_reassessment_round:.*$', 'last_reassessment_round: R3', text, count=1, flags=re.M)
+          text = text.replace('- Observation date: 2026-09-25.', f'- Observation date: {day}.', 1)
+          assessment_path.write_text(text, encoding='utf-8')
+
+          catalog_path = Path('data/catalog.psv')
+          lines = catalog_path.read_text(encoding='utf-8').splitlines()
+          found = False
+          out = []
+          for line in lines:
+              if '|agentos|' in line and line.split('|', 2)[1] == 'agentos':
+                  cols = line.split('|')
+                  if cols[6] != old:
+                      raise SystemExit(f'unexpected AgentOS catalog ref: {cols[6]}')
+                  cols[6] = new
+                  cols[7] = day
+                  line = '|'.join(cols)
+                  found = True
+              out.append(line)
+          if not found:
+              raise SystemExit('AgentOS catalog row not found')
+          catalog_path.write_text('\n'.join(out) + '\n', encoding='utf-8')
+
+          history_path = Path('data/reassessment-history.psv')
+          history = history_path.read_text(encoding='utf-8')
+          row = (
+              'R3|agentos|'
+              f'{old}|{new}|{new}|{day}|0.2.4|0.3.6|reassessed-unchanged|—|'
+              f'https://github.com/framerslab/agentos/compare/{old}...{new} ; '
+              f'https://github.com/framerslab/agentos/blob/{new}/src/cognition/memory/retrieval/store/MemoryStore.ts\n'
+          )
+          if f'R3|agentos|{old}|{new}|' not in history:
+              if not history.endswith('\n'):
+                  history += '\n'
+              history += row
+              history_path.write_text(history, encoding='utf-8')
+          PY
+
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_tldr.py --check
+          python scripts/check_index.py
+
+      - name: Commit reassessment and retire helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/agentos-reassess-once.yml
+          git add assessments/agentos.md data/catalog.psv data/reassessment-history.psv METRICS.md data/metrics.json README.md
+          git commit -m 'assessment: reassess AgentOS at current upstream head'
+          git push origin HEAD:reassess-agentos-901
