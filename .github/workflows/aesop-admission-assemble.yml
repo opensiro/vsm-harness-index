@@ -1,0 +1,83 @@
+name: assemble-aesop-admission
+
+on:
+  push:
+    branches:
+      - index/aesop-admission-294
+    paths:
+      - .github/workflows/aesop-admission-assemble.yml
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/aesop-admission-294
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply canonical admission inputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/aesop.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed'
+          new = 'status: included'
+          if text.count(old) != 1:
+              raise SystemExit(f'expected exactly one {old!r}, got {text.count(old)}')
+          assessment.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          row = '294|aesop|Aesop|https://github.com/matt82198/aesop|2026-07-11T20:57:51Z|index-addition|2a661c12007c5484f964176da3d5532c6bdf070d|2026-09-28'
+          if '|aesop|' in catalog_text:
+              raise SystemExit('aesop already present in catalog')
+          expected_tail = '293|dotcraft|DotCraft|https://github.com/DotHarness/dotcraft|2026-05-28T12:24:06Z|index-addition|a08c8b35497f6ba9148f6ede80839835dcc8812a|2026-09-28'
+          if not catalog_text.rstrip().endswith(expected_tail):
+              raise SystemExit('catalog tail changed; fail closed')
+          catalog.write_text(catalog_text.rstrip() + '\n' + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          sig = ('294|aesop|Aesop closes autonomous S1 through model-driven coding workers, '
+                 'constructor-owned S2 through ownership partitioning and worktree isolation against concurrent edit interference, '
+                 'autonomous S3 through a model-driven whole-wave orchestrator over current priorities, assignments and exceptions, '
+                 'constructor-owned S3* through independent exact-test replay that revokes fake-green status, and autonomous-plus-parent '
+                 'S5 through /power-synthesized durable CLAUDE.md rules plus legitimate owner authority over the same policy layer; '
+                 'internal retrospective learning does not establish S4.')
+          if '|aesop|' in signatures_text:
+              raise SystemExit('aesop already present in signatures')
+          expected_sig_tail = ('293|dotcraft|DotCraft closes autonomous S1 through model-driven workspace agents, '
+                               'constructor-owned S2 through bounded subagent concurrency against provider rate-limit interference, '
+                               'constructor-owned S3 through Oratorio deployment-wide run scheduling and recovery, autonomous S3* '
+                               'through separate read-only review-analysis runs over pinned PR/MR heads, and parent-owned S5 through '
+                               'saved Agent Profiles returned to later work; Dreams and internal-history adaptation do not establish S4.')
+          if not signatures_text.rstrip().endswith(expected_sig_tail):
+              raise SystemExit('signature tail changed; fail closed')
+          signatures.write_text(signatures_text.rstrip() + '\n' + sig + '\n', encoding='utf-8')
+          PY
+      - name: Regenerate canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Remove one-shot workflow and commit
+        run: |
+          rm .github/workflows/aesop-admission-assemble.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status --short
+          git commit -m "index: admit Aesop"
+          git push origin HEAD:index/aesop-admission-294
