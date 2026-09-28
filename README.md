@@ -2,7 +2,9 @@
 
 VSM Harness Index is the evidence-backed corpus of real agent-harness assessments in the OpenSiro VSM ecosystem.
 
-## Start here before choosing work
+> **New to the OpenSiro VSM Harness ecosystem?** Start with the shared [`START_HERE.md`](https://github.com/opensiro/vsm-oss-organization/blob/main/START_HERE.md). It establishes the current public source-of-truth chain before you choose or execute work.
+
+## Choosing work
 
 If the request names a specific Index issue, assessment, file, or concrete change, work from that owning artifact.
 
