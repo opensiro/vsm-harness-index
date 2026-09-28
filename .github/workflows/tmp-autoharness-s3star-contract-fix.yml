@@ -1,0 +1,44 @@
+name: tmp autoharness s3star contract fix
+
+on:
+  push:
+    branches:
+      - assessment/autoharness-s2-correction-263
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Add explicit S3star witness fields
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("assessments/autoharness.md")
+          text = path.read_text(encoding="utf-8")
+          needle = "## S3* — Complementary audit\n\n- State: C\n"
+          replacement = """## S3* — Complementary audit\n\n- State: C\n- Claim being audited: the producing agent's claim that the requested implementation/work is complete and correctly verified.\n- Ordinary reporting path: the producing `AgentLoop` returns its own task result and ordinary tool observations to the caller.\n- Complementary access path: the separately invoked built-in Verification agent directly runs build/tests/lint/type checks and adversarial workspace probes; `VerificationEngine` can independently compare claimed results with recorded tool-call/result evidence.\n- Independence boundary: the verifier is a distinct first-party agent role/evaluation path with its own prompt and direct workspace evidence, rather than merely trusting the producer's completion report; forked history can be shared, so independence is complementary-evidence rather than complete informational isolation.\n- Who acts on findings: the embedding application/coordinator receives `PASS`/`FAIL`/`PARTIAL` findings and must compose corrective execution and re-verification, which is why the published ownership remains constructor `C`.\n"""
+          if text.count(needle) != 1:
+              raise SystemExit(f"expected one S3* insertion point, found {text.count(needle)}")
+          path.write_text(text.replace(needle, replacement), encoding="utf-8")
+          PY
+      - name: Check structural contract
+        run: |
+          git clone --depth 1 --branch v0.3.6 https://github.com/opensiro/vsm-harness-skills.git /tmp/methodology
+          python /tmp/methodology/scripts/check_assessment_contract.py assessments/autoharness.md
+          python scripts/check_index.py
+      - name: Remove workflow and commit
+        run: |
+          rm .github/workflows/tmp-autoharness-s3star-contract-fix.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "assessment: complete AutoHarness S3star witness"
+          git push origin HEAD:assessment/autoharness-s2-correction-263
