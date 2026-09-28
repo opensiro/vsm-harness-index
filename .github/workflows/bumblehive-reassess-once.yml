@@ -1,0 +1,114 @@
+name: bumblehive-reassess-once
+
+on:
+  push:
+    branches:
+      - reassess-bumblehive-907
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: reassess-bumblehive-907
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply accepted-ref reassessment bookkeeping
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          old = 'c09189ae47a19b8e1acbf220d0b60eaa804cd4e7'
+          new = 'fabc24443319f56c4ea49b5e8ba4227a8d091105'
+          day = '2026-09-29'
+
+          assessment_path = Path('assessments/bumblehive.md')
+          text = assessment_path.read_text(encoding='utf-8')
+          if old not in text:
+              raise SystemExit('old BumbleHive review ref not found')
+          text = text.replace(old, new)
+          text = text.replace('reviewed_at: 2026-09-25', f'reviewed_at: {day}', 1)
+          marker = 'assessment_procedure_version: 0.3.6\n'
+          text = text.replace(
+              marker,
+              marker + f'last_checked_ref: {new}\nlast_checked_at: {day}\n',
+              1,
+          )
+          text = text.replace(
+              'assessment_changed_at: 2026-09-25\n',
+              'assessment_changed_at: 2026-09-25\nlast_reassessment_round: R3\n',
+              1,
+          )
+          text = text.replace('- Observation date: 2026-09-25.', f'- Observation date: {day}.', 1)
+
+          # 0.3.1 refactor removed the old core ToolPathPolicy object; keep the
+          # assessment architectural description aligned with current core while
+          # preserving the ownership conclusion.
+          text = text.replace(
+              'constrains filesystem/tool reach through `ToolPathPolicy`, and passes the request into `ToolCallingRunner`.',
+              'initializes the first-party tool/MCP runtime, passes any caller-provided approval handler into tool execution, and sends the request into `ToolCallingRunner`.',
+          )
+          text = text.replace(
+              'ToolManager, path policy, tool approval handler, context governance, deterministic maximum iterations, session checkpoints/recovery and observability events.',
+              'ToolManager, optional tool approval handler, context governance, deterministic maximum iterations, session checkpoints/recovery and observability events.',
+          )
+          assessment_path.write_text(text, encoding='utf-8')
+
+          catalog_path = Path('data/catalog.psv')
+          lines = catalog_path.read_text(encoding='utf-8').splitlines()
+          found = False
+          out = []
+          for line in lines:
+              cols = line.split('|')
+              if len(cols) >= 8 and cols[1] == 'bumblehive':
+                  if cols[6] != old:
+                      raise SystemExit(f'unexpected BumbleHive catalog ref: {cols[6]}')
+                  cols[6] = new
+                  cols[7] = day
+                  line = '|'.join(cols)
+                  found = True
+              out.append(line)
+          if not found:
+              raise SystemExit('BumbleHive catalog row not found')
+          catalog_path.write_text('\n'.join(out) + '\n', encoding='utf-8')
+
+          history_path = Path('data/reassessment-history.psv')
+          history = history_path.read_text(encoding='utf-8')
+          row = (
+              'R3|bumblehive|'
+              f'{old}|{new}|{new}|{day}|0.2.4|0.3.6|reassessed-unchanged|—|'
+              f'https://github.com/wxhcore/bumblehive/compare/{old}...{new} ; '
+              f'https://github.com/wxhcore/bumblehive/blob/{new}/README.md ; '
+              f'https://github.com/wxhcore/bumblehive/blob/{new}/src/bumblehive/runtime.py ; '
+              f'https://github.com/wxhcore/bumblehive/blob/{new}/server/src/bumblehive_server/subagents.py\n'
+          )
+          if f'R3|bumblehive|{old}|{new}|' not in history:
+              if not history.endswith('\n'):
+                  history += '\n'
+              history += row
+              history_path.write_text(history, encoding='utf-8')
+          PY
+
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_tldr.py --check
+          python scripts/check_index.py
+
+      - name: Commit reassessment and retire helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/bumblehive-reassess-once.yml
+          git add assessments/bumblehive.md data/catalog.psv data/reassessment-history.psv METRICS.md data/metrics.json README.md
+          git commit -m 'assessment: reassess BumbleHive at current upstream head'
+          git push origin HEAD:reassess-bumblehive-907
