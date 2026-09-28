@@ -78,6 +78,7 @@ At the fleet level, autonomous S1 units may be composed under one coordinator. A
 - Evidence: [`BuiltInAgentRuntime.java`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/modules/ai/src/main/java/org/atmosphere/ai/llm/BuiltInAgentRuntime.java); [`OpenAiCompatibleClient.java`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/modules/ai/src/main/java/org/atmosphere/ai/llm/OpenAiCompatibleClient.java); [`docs/deep-agent.md`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/docs/deep-agent.md).
 - Basis: explicit + structural.
 - Confidence: high.
+- Boundary reachability: the built-in runtime ships in `modules/ai`, and `@Agent` / `@Coordinator` receive the deep-agent harness in the standard distribution; no development-only actor is required for the model/tool/result loop.
 - Caveats: provider/model internals are environment; credit rests on Atmosphere's first-party loop and standard harness reachability, not on importing provider-side organizational functions.
 
 ## S2 — Coordination
@@ -93,6 +94,12 @@ At the fleet level, autonomous S1 units may be composed under one coordinator. A
 - Evidence: [`GovernanceFleetInterceptor.java`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/modules/coordinator/src/main/java/org/atmosphere/coordinator/fleet/GovernanceFleetInterceptor.java); [`CoordinatorProcessor.java`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/modules/coordinator/src/main/java/org/atmosphere/coordinator/processor/CoordinatorProcessor.java); [`modules/coordinator/README.md`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/modules/coordinator/README.md).
 - Basis: explicit + structural.
 - Confidence: high.
+- Distinct S1 units: the source coordinator agent and the separately addressed target fleet agent/subagent are distinct model-driven operational units with separate prompt/runtime invocations.
+- Inter-S1 disturbance: an outbound source-agent dispatch can attempt a skill/payload outside the target or fleet governance scope, creating the documented agent-to-agent goal-hijacking interference.
+- Attenuating coordination relation: `GovernanceFleetInterceptor` evaluates every outbound `AgentCall` against installed policies and can deny the call or transform its message-bearing arguments before target execution.
+- Feedback into subsequent S1 behaviour: a denial prevents the target S1 from running the conflicting request; a transform changes the exact payload that the target S1 subsequently receives and acts on.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the credited path exists specifically to attenuate the documented cross-agent goal-hijacking/scope-conflict disturbance at the dispatch edge; generic fleet routing, fan-out, voting and delegation are not used as the witness.
+- Boundary reachability: `CoordinatorProcessor` wraps the standard delegation-enabled fleet with `applyPresetGovernance(...)`; the S2-specific seam is first-party product runtime code rather than a test/development-only hook.
 - Caveats: fan-out, pipelines, routing, voting and delegation are not independently credited as S2; the positive mapping rests specifically on the documented inter-agent goal-hijack/scope-conflict path.
 
 ## S3 — Inside-and-now control
@@ -129,6 +136,7 @@ At the fleet level, autonomous S1 units may be composed under one coordinator. A
 - Evidence: [`AgentFleet.java`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/modules/coordinator/src/main/java/org/atmosphere/coordinator/fleet/AgentFleet.java); [`SanityCheckEvaluator.java`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/modules/coordinator/src/main/java/org/atmosphere/coordinator/evaluation/SanityCheckEvaluator.java); [`LlmResultEvaluator.java`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/modules/coordinator/src/main/java/org/atmosphere/coordinator/evaluation/LlmResultEvaluator.java); [`modules/coordinator/README.md`](https://github.com/Atmosphere/atmosphere/blob/5eaac40919357742ac0d67c59840d0b6eb909d53/modules/coordinator/README.md).
 - Basis: structural.
 - Confidence: medium-high.
+- Boundary reachability: `AgentFleet.refineUntil` is a shipped coordinator/fleet API and `ResultEvaluator` is a shipped runtime SPI discovered by the coordinator; the verification/return constructor is reachable in product code without repository-development machinery.
 - Caveats: the default ServiceLoader evaluator is `SanityCheckEvaluator`; that helper alone is not claimed as materially independent audit. The `C` credit rests on the dedicated evaluator + feedback/retry constructor that lets an independent evaluator own the missing audit judgment without reimplementing closure.
 - Claim being audited: whether a worker agent's result is acceptable under the deployment's evaluation criterion before the result is allowed to terminate the refinement process.
 - Ordinary reporting path: worker `AgentResult` returned from the fleet call.
