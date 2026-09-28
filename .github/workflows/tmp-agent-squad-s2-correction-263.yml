@@ -1,0 +1,65 @@
+name: tmp agent-squad S2 correction 263
+
+on:
+  push:
+    branches:
+      - assessment/agent-squad-s2-correction-263
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply reassessment provenance and signature
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          history = Path("data/reassessment-history.psv")
+          text = history.read_text(encoding="utf-8")
+          row = "R3|agent-squad|31eccfeb0d546262d1d0ec2e2e5239186f8d2954|3d67629ca564eaf35ec7779115c45a42ee23a2bd|31eccfeb0d546262d1d0ec2e2e5239186f8d2954|2026-09-28|0.2.4|0.3.6|same-ref-correction|S2|https://github.com/2FastLabs/agent-squad/blob/31eccfeb0d546262d1d0ec2e2e5239186f8d2954/python/src/agent_squad/agents/supervisor_agent.py ; https://github.com/2FastLabs/agent-squad/blob/31eccfeb0d546262d1d0ec2e2e5239186f8d2954/python/src/agent_squad/agent_overlap_analyzer.py ; https://github.com/2FastLabs/agent-squad/compare/31eccfeb0d546262d1d0ec2e2e5239186f8d2954...3d67629ca564eaf35ec7779115c45a42ee23a2bd"
+          if "|agent-squad|31eccfeb0d546262d1d0ec2e2e5239186f8d2954|3d67629ca564eaf35ec7779115c45a42ee23a2bd|" in text:
+              raise SystemExit("agent-squad R3 reassessment row already present")
+          history.write_text(text.rstrip("\n") + "\n" + row + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          text = signatures.read_text(encoding="utf-8")
+          old = "41|agent-squad|Optional SupervisorAgent actively mediates information among otherwise unaware specialists and chooses necessary contacts, exposing composable S2 without a persistent S3 control ledger."
+          new = "41|agent-squad|Agent Squad routes autonomous specialists and can compose an optional SupervisorAgent, but its mediation and parallel fan-out lack a concrete inter-S1 disturbance-to-attenuation feedback loop, so the current contract credits only S1."
+          if text.count(old) != 1:
+              raise SystemExit(f"expected exactly one old agent-squad signature, found {text.count(old)}")
+          signatures.write_text(text.replace(old, new), encoding="utf-8")
+          PY
+      - name: Regenerate derived views
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Validate Index and generated views
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Remove assembler workflow
+        run: rm .github/workflows/tmp-agent-squad-s2-correction-263.yml
+      - name: Commit assembled correction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "assessment: assemble Agent Squad S2 correction"
+          git push origin HEAD:assessment/agent-squad-s2-correction-263
