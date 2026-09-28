@@ -6,11 +6,11 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | 1 | <a id="ouroboros"></a>[Ouroboros](https://github.com/razzant/ouroboros) | 2026-Q1 | 6/6 | 5/5 | 0 | 2 | 0 | `A A A A A(P) A(P)` |
 | 2 | <a id="headcount"></a>[Headcount](https://github.com/cbrock84/headcount) | 2026-Q3 | 5/6 | 4/5 | 1 | 0 | 0 | `A A A C A A` |
+| 2 | <a id="argus-agent"></a>[Argus](https://github.com/microsoft/ArgusAgent) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="octos"></a>[Octos](https://github.com/octos-org/octos) | 2026-Q1 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="oh-my-agent"></a>[oh-my-agent](https://github.com/first-fluke/oh-my-agent) | 2026-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 3 | <a id="henterprise"></a>[Henterprise](https://github.com/humbertobellor/henterprise) | 2026-Q3 | 4/6 | 3/5 | 2 | 0 | 0 | `A C A C A A` |
 | 3 | <a id="kot"></a>[KOT](https://github.com/Loqira-Labs/agentkot) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
-| 3 | <a id="argus-agent"></a>[Argus](https://github.com/microsoft/ArgusAgent) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A — A(P) A A P` |
 | 3 | <a id="omnigent"></a>[Omnigent](https://github.com/omnigent-ai/omnigent) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="loopx"></a>[LoopX](https://github.com/huangruiteng/loopx) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="loushang"></a>[Loushang](https://github.com/zhnt/loushang) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
