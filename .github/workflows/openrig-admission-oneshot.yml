@@ -1,0 +1,80 @@
+name: openrig-admission-oneshot
+
+on:
+  push:
+    branches:
+      - index/openrig-admission-288
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: index/openrig-admission-288
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Canonicalize OpenRig and regenerate projections
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/openrig.md')
+          text = assessment.read_text(encoding='utf-8')
+          old = 'status: proposed\n'
+          if old not in text:
+              raise SystemExit('OpenRig assessment is not proposed')
+          assessment.write_text(text.replace(old, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          cat = catalog.read_text(encoding='utf-8')
+          row = '288|openrig|OpenRig|https://github.com/mvschwarz/openrig|2026-04-01T06:22:40Z|index-addition|c8fca9d5c436e5357807e05254bf6735613eea3f|2026-09-28'
+          if '|openrig|' in cat:
+              raise SystemExit('OpenRig already exists in catalog')
+          nonempty = [line for line in cat.splitlines() if line.strip()]
+          if not nonempty[-1].startswith('287|ascension|'):
+              raise SystemExit(f'unexpected catalog tail: {nonempty[-1]}')
+          catalog.write_text(cat.rstrip('\n') + '\n' + row + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig = signatures.read_text(encoding='utf-8')
+          sigrow = ('288|openrig|OpenRig closes autonomous S1 through managed coding-agent seats, '
+                    'autonomous S3 through a live whole-rig orchestrator, autonomous S3* through '
+                    'author-independent exact-candidate review, and autonomous S4 through '
+                    'shipped-product dogfood feeding the next build cycle; durable queue/handoff '
+                    'machinery does not establish S2, and no runtime S5 identity-policy closure is established.')
+          if '|openrig|' in sig:
+              raise SystemExit('OpenRig already exists in signatures')
+          signatures.write_text(sig.rstrip('\n') + '\n' + sigrow + '\n', encoding='utf-8')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+
+          rm .github/workflows/openrig-admission-oneshot.yml
+
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+
+      - name: Commit assembled admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'index: admit OpenRig'
+          git push origin HEAD:index/openrig-admission-288
