@@ -131,6 +131,11 @@ S3* remains `C` for a different reason: AutoHarness deliberately ships a special
 ## S3* — Complementary audit
 
 - State: C
+- Claim being audited: the producing agent's claim that the requested implementation/work is complete and correctly verified.
+- Ordinary reporting path: the producing `AgentLoop` returns its own task result and ordinary tool observations to the caller.
+- Complementary access path: the separately invoked built-in Verification agent directly runs build/tests/lint/type checks and adversarial workspace probes; `VerificationEngine` can independently compare claimed results with recorded tool-call/result evidence.
+- Independence boundary: the verifier is a distinct first-party agent role/evaluation path with its own prompt and direct workspace evidence, rather than merely trusting the producer's completion report; forked history can be shared, so independence is complementary-evidence rather than complete informational isolation.
+- Who acts on findings: the embedding application/coordinator receives `PASS`/`FAIL`/`PARTIAL` findings and must compose corrective execution and re-verification, which is why the published ownership remains constructor `C`.
 - Function: challenge an operational completion/quality claim using materially different direct evidence from the project/workspace rather than relying on the producing agent's ordinary report.
 - Disturbance / variety regulated: false completion, verification avoidance, superficially passing work, missed edge cases, unrun tests/build/lint/type checks and claims inconsistent with actual tool-result evidence.
 - Decisive decision or feedback right: produce an audit judgment such as `PASS`, `FAIL`, or `PARTIAL` from direct build/test/lint/type-check/adversarial observations; the deterministic verification surface can likewise flag claim/evidence mismatch from audit history.
