@@ -19,7 +19,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Apply exact neutral raw prose rewrites
-        run: python .github/tmp_apply_neutral_raw_prose_834.py
+        run: |
+          python .github/tmp_apply_neutral_raw_prose_834.py
+          python .github/tmp_patch_neutral_prose_consumers_834.py
       - name: Validate neutral registry
         run: |
           python experiments/functional-capability-depth/system-observations/validate.py
@@ -63,6 +65,7 @@ jobs:
       - name: Remove assembler artifacts
         run: |
           rm .github/tmp_apply_neutral_raw_prose_834.py
+          rm .github/tmp_patch_neutral_prose_consumers_834.py
           rm .github/workflows/tmp-neutral-raw-prose-834.yml
       - name: Commit assembled transaction
         run: |
