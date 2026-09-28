@@ -288,6 +288,17 @@ def collect_rows() -> list[RegistryRow]:
             if not isinstance(kind, str) or not kind.strip():
                 raise RegistryError(f"{record_ref}:{observation_id}: kind must be a non-empty string")
 
+            notes = observation.get("notes")
+            if notes is not None:
+                if not isinstance(notes, str) or not notes.strip():
+                    raise RegistryError(
+                        f"{record_ref}:{observation_id}: notes must be a non-empty string when present"
+                    )
+                if FORBIDDEN_VSM_VALUE_RE.search(notes):
+                    raise RegistryError(
+                        f"{record_ref}:{observation_id}: notes must remain implementation-independent and VSM-neutral"
+                    )
+
             surfaces = _evidence_surfaces(observation, record_ref)
             for value in (
                 observation_id,

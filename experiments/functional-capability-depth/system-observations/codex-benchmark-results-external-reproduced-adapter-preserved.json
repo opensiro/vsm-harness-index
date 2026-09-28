@@ -58,7 +58,7 @@
         "group": "harbor-swe-bench-parity__codex-0.2.0__o4-mini",
         "mode": "descriptive-only"
       },
-      "notes": "Harbor's installed Codex agent explicitly uses OpenAI's Codex CLI and installs the requested @openai/codex version. The parity result is therefore adapter-preserved S1 evidence rather than a Harbor-owned substitute agent loop. Historical version differs from the current canonical assessment revision."
+      "notes": "Harbor's installed Codex agent explicitly uses OpenAI's Codex CLI and installs the requested @openai/codex version. The parity result is therefore adapter-preserved operational-execution evidence rather than a Harbor-owned substitute agent loop. Historical version differs from the current canonical assessment revision."
     },
     {
       "observation_id": "codex__terminal-bench-4.0.0__gpt-5.6-sol__20260826",
@@ -182,7 +182,7 @@
         "mode": "matched-model",
         "scope": "coding-swe"
       },
-      "notes": "FrontierHarness pins historical Codex 0.148.0 and preserves the first-party operational loop behind an external Runta/Harbor evaluation membrane. This mixed technical task set contains 21 Terminal-Bench and 9 DeepSWE tasks, so it is Coding/SWE-domain evidence rather than universal S1 capability. The published baseline did not record its applied egress allowlist; future reproduction runs need a matched control before claiming methodology comparability. No S2-S5, ownership, or self-organizing S inference follows from this result."
+      "notes": "FrontierHarness pins historical Codex 0.148.0 and preserves the first-party operational loop behind an external Runta/Harbor evaluation membrane. This mixed technical task set contains 21 Terminal-Bench and 9 DeepSWE tasks, so it is Coding/SWE-domain evidence rather than universal operational-execution capability. The published baseline did not record its applied egress allowlist; future reproduction runs need a matched control before claiming methodology comparability. No other organizational-function, ownership, or self-organizing behavior inference follows from this result."
     }
   ]
 }

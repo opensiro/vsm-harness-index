@@ -60,7 +60,7 @@
         "mode": "matched-model",
         "scope": "general-baseline"
       },
-      "notes": "Pinned PawBench adapter code installs OpenClaw 2026.4.24 and runs the native openclaw CLI. The committed submission artifact reports overall=0.6779 with one missing task; PawBench README prose reports 68.2 for this cell, so the immutable submission artifact is used and the discrepancy is preserved. This is historical adapter-preserved S1 evidence; PawBench slice names do not establish any other VSM function."
+      "notes": "Pinned PawBench adapter code installs OpenClaw 2026.4.24 and runs the native openclaw CLI. The committed submission artifact reports overall=0.6779 with one missing task; PawBench README prose reports 68.2 for this cell, so the immutable submission artifact is used and the discrepancy is preserved. This is historical adapter-preserved operational-execution evidence; PawBench slice names do not establish any other organizational function."
     },
     {
       "observation_id": "openclaw__claw-swe-bench-full-350__qwen-3.6-flash__20260717",
@@ -104,7 +104,7 @@
         "mode": "matched-model",
         "scope": "coding-swe"
       },
-      "notes": "Claw-SWE-Bench preserves the first-party OpenClaw operational loop behind an external adapter/evaluation membrane and runs each instance in a fresh container; OpenClaw also receives a throwaway agent per instance. Historical OpenClaw version/revision is not published in the pinned benchmark sources and is not inferred. This is Coding/SWE-specific S1 evidence, not universal S1 capability, and it does not establish S2-S5 or self-organizing S."
+      "notes": "Claw-SWE-Bench preserves the first-party OpenClaw operational loop behind an external adapter/evaluation membrane and runs each instance in a fresh container; OpenClaw also receives a throwaway agent per instance. Historical OpenClaw version/revision is not published in the pinned benchmark sources and is not inferred. This is Coding/SWE-specific operational-execution evidence, not universal operational-execution capability, and it does not establish other organizational functions or self-organizing behavior."
     },
     {
       "observation_id": "openclaw__claw-swe-bench-full-350__glm-5.1__20260717",

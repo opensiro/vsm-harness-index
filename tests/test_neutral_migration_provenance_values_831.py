@@ -42,6 +42,16 @@ class NeutralMigrationProvenanceValues831Tests(unittest.TestCase):
 
             normalized = copy.deepcopy(before)
             normalized["published_implementation"]["historical_relation"] = after_relation
+
+            # #833 later neutralizes function vocabulary in observation notes.
+            # Its pinned regression owns the exact notes-only deltas; keep #831
+            # strict for every other field in these same raw records.
+            after_by_id = {row["observation_id"]: row for row in after.get("observations", [])}
+            for row in normalized.get("observations", []):
+                current = after_by_id[row["observation_id"]]
+                if row.get("notes") != current.get("notes"):
+                    row["notes"] = current.get("notes")
+
             self.assertEqual(normalized, after, path.name)
 
         self.assertEqual(len(changed), 28, changed)
