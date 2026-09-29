@@ -1,0 +1,70 @@
+name: tmp-admit-agent-runtime-309
+
+on:
+  push:
+    branches:
+      - admit-agent-runtime-309
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-agent-runtime-309
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical admission and render
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/agent-runtime.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' in text:
+              text = text.replace('status: proposed', 'status: included', 1)
+          elif 'status: included' not in text:
+              raise SystemExit('unexpected agent-runtime status')
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '309|agent-runtime|agent-runtime|https://github.com/tsharp/agent-runtime|2026-01-26T22:40:25Z|index-addition|07ebca8ec36d15eae2d264d4998fa6857f9e0b51|2026-09-29'
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('309|') or '|agent-runtime|' in line for line in rows):
+              rows.append(row)
+              catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+          elif row not in rows:
+              raise SystemExit('catalog #309 or agent-runtime already present with different data')
+
+          signatures = Path('data/signatures.psv')
+          sig = '309|agent-runtime|agent-runtime closes autonomous S1 through its first-party model/tool/result loop; caller-authored workflow sequencing/conditions, retries/timeouts, events, context pruning/forking, tool-loop prevention and the separate multi-agent demo do not establish S2, S3, S3*, S4 or S5 ownership in the standalone runtime.'
+          sigrows = signatures.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('309|') or '|agent-runtime|' in line for line in sigrows):
+              sigrows.append(sig)
+              signatures.write_text('\n'.join(sigrows) + '\n', encoding='utf-8')
+          elif sig not in sigrows:
+              raise SystemExit('signature for agent-runtime/#309 already present with different data')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+          rm .github/workflows/tmp-admit-agent-runtime-309.yml
+          git config user.name 'OpenSiro Automation'
+          git config user.email 'founders@opensiro.com'
+          git add -A
+          git commit -m 'index: admit agent-runtime at catalog #309'
+          git push origin HEAD:admit-agent-runtime-309
