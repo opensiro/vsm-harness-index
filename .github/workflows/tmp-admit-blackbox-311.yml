@@ -1,0 +1,70 @@
+name: tmp-admit-blackbox-311
+
+on:
+  push:
+    branches:
+      - admit-blackbox-311
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-blackbox-311
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical admission and render
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/blackbox.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' in text:
+              text = text.replace('status: proposed', 'status: included', 1)
+          elif 'status: included' not in text:
+              raise SystemExit('unexpected Blackbox status')
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '311|blackbox|Blackbox|https://github.com/tyxter-dev/blackbox|2026-04-30T17:46:56Z|index-addition|d5be68e03ca7750920569578710a2ee25d25530c|2026-09-29'
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('311|') or '|blackbox|' in line for line in rows):
+              rows.append(row)
+              catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+          elif row not in rows:
+              raise SystemExit('catalog #311 or blackbox already present with different data')
+
+          signatures = Path('data/signatures.psv')
+          sig = '311|blackbox|Blackbox closes autonomous S1 through its first-party shared model/tool AgentLoop; session lifecycle, schedules, queue/lease contracts, trace evaluators, persistence, permissions, and package machinery do not independently close S2, S3, S3*, S4, or S5 at the frozen boundary.'
+          sigrows = signatures.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('311|') or '|blackbox|' in line for line in sigrows):
+              sigrows.append(sig)
+              signatures.write_text('\n'.join(sigrows) + '\n', encoding='utf-8')
+          elif sig not in sigrows:
+              raise SystemExit('signature for blackbox/#311 already present with different data')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+          rm .github/workflows/tmp-admit-blackbox-311.yml
+          git config user.name 'OpenSiro Automation'
+          git config user.email 'founders@opensiro.com'
+          git add -A
+          git commit -m 'index: admit Blackbox at catalog #311'
+          git push origin HEAD:admit-blackbox-311
