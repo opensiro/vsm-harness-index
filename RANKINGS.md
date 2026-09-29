@@ -231,6 +231,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="deerflow"></a>[DeerFlow](https://github.com/bytedance/deer-flow) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentsilex"></a>[AgentSilex](https://github.com/howl-anderson/agentsilex) | 2025-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="opencode"></a>[OpenCode](https://github.com/anomalyco/opencode) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="nexent"></a>[Nexent](https://github.com/ModelEngine-Group/nexent) | 2025-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A — — — C(P) —` |
 | 6 | <a id="gemini-cli"></a>[Gemini CLI](https://github.com/google-gemini/gemini-cli) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="voltagent"></a>[VoltAgent](https://github.com/VoltAgent/voltagent) | 2025-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="codex"></a>[Codex](https://github.com/openai/codex) | 2025-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
