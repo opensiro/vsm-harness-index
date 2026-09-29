@@ -1,0 +1,70 @@
+name: tmp-admit-crewlet-313
+
+on:
+  push:
+    branches:
+      - admit-crewlet-313
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-crewlet-313
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical admission and render
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/crewlet.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' in text:
+              text = text.replace('status: proposed', 'status: included', 1)
+          elif 'status: included' not in text:
+              raise SystemExit('unexpected Crewlet status')
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '313|crewlet|Crewlet|https://github.com/crewlet/crewlet|2026-08-11T21:33:54Z|index-addition|346d58ee3f3627a7f1213e441c6b0e330ab48030|2026-09-29'
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('313|') or '|crewlet|' in line for line in rows):
+              rows.append(row)
+              catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+          elif row not in rows:
+              raise SystemExit('catalog #313 or crewlet already present with different data')
+
+          signatures = Path('data/signatures.psv')
+          sig = '313|crewlet|Crewlet closes autonomous S1, agent-led S3 and independent corrective S3*, with constructor S2 for shared-work collision control; learning provides autonomous and parent-governed S4 modes, human leads provide parent S3, and founder-owned live mission/vision/policies close parent-governed S5.'
+          sigrows = signatures.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('313|') or '|crewlet|' in line for line in sigrows):
+              sigrows.append(sig)
+              signatures.write_text('\n'.join(sigrows) + '\n', encoding='utf-8')
+          elif sig not in sigrows:
+              raise SystemExit('signature for crewlet/#313 already present with different data')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+          rm .github/workflows/tmp-admit-crewlet-313.yml
+          git config user.name 'OpenSiro Automation'
+          git config user.email 'founders@opensiro.com'
+          git add -A
+          git commit -m 'index: admit Crewlet at catalog #313'
+          git push origin HEAD:admit-crewlet-313
