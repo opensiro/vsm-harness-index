@@ -1,0 +1,90 @@
+name: AHE admission one-shot
+
+on:
+  push:
+    branches:
+      - admission/ahe-320
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-commit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: admission/ahe-320
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify frozen admission base
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "02d41f9f425d168d0b1593039edd51770ec144fa"
+          grep -qx 'status: proposed' <(grep '^status:' assessments/ahe.md)
+          tail -n 1 data/catalog.psv | grep -qx '319|pipecat|Pipecat|https://github.com/pipecat-ai/pipecat|2023-12-27T12:59:00Z|index-addition|dbdf21a017f86624fb7768e35730417169524e0d|2026-09-29'
+          ! grep -q '^320|ahe|' data/catalog.psv
+          ! grep -q '^320|ahe|' data/signatures.psv
+
+      - name: Apply admission source changes
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          assessment = Path('assessments/ahe.md')
+          text = assessment.read_text(encoding='utf-8')
+          assert text.count('status: proposed\n') == 1
+          assessment.write_text(text.replace('status: proposed\n', 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          text = catalog.read_text(encoding='utf-8').rstrip('\n')
+          text += '\n320|ahe|Agentic Harness Engineering|https://github.com/china-qijizhifeng/agentic-harness-engineering|2026-04-23T07:01:18Z|index-addition|8b2a55d97590363fe50c3cc6b5e833b020a4bb4c|2026-09-29\n'
+          catalog.write_text(text, encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          text = signatures.read_text(encoding='utf-8').rstrip('\n')
+          text += '\n320|ahe|AHE closes autonomous S1 through its model-driven coding loop, complementary S3* through a distinct Debugger that reconciles traces with verifier evidence, and autonomous S4 through external research plus evaluation-informed persistent harness mutation; concurrency/orchestration and fixed optimization constraints do not establish S2, S3 or S5.\n'
+          signatures.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Render deterministic views
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_analytics.py
+
+      - name: Validate generated admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_analytics.py --check
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/ahe-admission-once.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add METRICS.md RANKINGS.md README.md TLDR.md analytics/cooccurrence.md analytics/organizational-forms.md analytics/ownership.md analytics/temporal.md assessments/ahe.md data/catalog.psv data/metrics.json data/signatures.psv .github/workflows/ahe-admission-once.yml
+          git commit -m 'index: admit AHE at catalog #320'
+          git push origin HEAD:admission/ahe-320
