@@ -1,0 +1,70 @@
+name: tmp-admit-cheetahclaws-314
+
+on:
+  push:
+    branches:
+      - admit-cheetahclaws-314
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-cheetahclaws-314
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical admission and render
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/cheetahclaws.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' in text:
+              text = text.replace('status: proposed', 'status: included', 1)
+          elif 'status: included' not in text:
+              raise SystemExit('unexpected CheetahClaws status')
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '314|cheetahclaws|CheetahClaws|https://github.com/SAIL-Research-Lab/cheetahclaws|2026-04-01T15:23:36Z|index-addition|ec5d091b53c70f6685f1330f509b11c3a51aa214|2026-09-29'
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('314|') or '|cheetahclaws|' in line for line in rows):
+              rows.append(row)
+              catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+          elif row not in rows:
+              raise SystemExit('catalog #314 or cheetahclaws already present with different data')
+
+          signatures = Path('data/signatures.psv')
+          sig = '314|cheetahclaws|CheetahClaws adds agent-owned S2 through parent-selected worktree isolation for parallel coder S1 units, pairs it with an autonomous post-finalization Research Lab audit/rewind loop, and exposes parent-governed S4 through trading calibration and stacker retraining; no S3 or S5 closure is established.'
+          sigrows = signatures.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('314|') or '|cheetahclaws|' in line for line in sigrows):
+              sigrows.append(sig)
+              signatures.write_text('\n'.join(sigrows) + '\n', encoding='utf-8')
+          elif sig not in sigrows:
+              raise SystemExit('signature for cheetahclaws/#314 already present with different data')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+          rm .github/workflows/tmp-admit-cheetahclaws-314.yml
+          git config user.name 'OpenSiro Automation'
+          git config user.email 'founders@opensiro.com'
+          git add -A
+          git commit -m 'index: admit CheetahClaws at catalog #314'
+          git push origin HEAD:admit-cheetahclaws-314
