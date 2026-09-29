@@ -1,0 +1,90 @@
+name: OMC admission one-shot
+
+on:
+  push:
+    branches:
+      - admission/oh-my-claudecode-321
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify frozen admission base
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "b2a8e203b025e7cb28173553b5842c836ce9e27b"
+          grep -q '^status: proposed$' assessments/oh-my-claudecode.md
+          test "$(tail -1 data/catalog.psv | cut -d'|' -f1)" = "320"
+          ! grep -q '|oh-my-claudecode|' data/catalog.psv
+          ! grep -q '^321|' data/catalog.psv
+
+      - name: Apply admission source changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("assessments/oh-my-claudecode.md")
+          s=p.read_text(encoding="utf-8")
+          assert s.count("status: proposed\n") == 1
+          p.write_text(s.replace("status: proposed\n","status: included\n",1),encoding="utf-8")
+          p=Path("data/catalog.psv")
+          s=p.read_text(encoding="utf-8").rstrip("\n")
+          s += "\n321|oh-my-claudecode|oh-my-claudecode|https://github.com/Yeachan-Heo/oh-my-claudecode|2026-01-09T03:36:29Z|index-addition|5281b19e0d64f8e6dc6767f2130299a88af2dc71|2026-09-29\n"
+          p.write_text(s,encoding="utf-8")
+          p=Path("data/signatures.psv")
+          s=p.read_text(encoding="utf-8").rstrip("\n")
+          s += "\n321|oh-my-claudecode|oh-my-claudecode closes autonomous S1 with model-backed software workers, S2 through lead-owned race/file/merge conflict coordination, S3 through live whole-team commitment regulation, S3* through separate read-only verifier/reviewer audit, and S4 through external research plus tournament-selected persistent self-improvement; no S5 identity-policy closure is established.\n"
+          p.write_text(s,encoding="utf-8")
+          PY
+
+      - name: Render deterministic views
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_analytics.py
+
+      - name: Validate generated admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_tldr.py
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_analytics.py --check
+          python -m unittest discover -s tests -v
+          git diff --check
+          rm -rf /tmp/vsm-harness-skills
+          git clone --depth 1 --branch v0.3.6 https://github.com/opensiro/vsm-harness-skills.git /tmp/vsm-harness-skills
+          python /tmp/vsm-harness-skills/scripts/check_assessment_contract.py assessments/oh-my-claudecode.md
+          python scripts/check_generation_provenance.py --base-ref b2a8e203b025e7cb28173553b5842c836ce9e27b
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/omc-admission-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "index: admit oh-my-claudecode at catalog #321"
+          git push
