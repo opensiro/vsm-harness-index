@@ -330,3 +330,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 315|nexent|Nexent|https://github.com/ModelEngine-Group/nexent|2025-04-28T10:44:33Z|index-addition|9713e7823eb2b11410776acf40d2633eef425af7|2026-09-29
 316|raven|Raven|https://github.com/EverMind-AI/Raven|2026-05-21T08:45:07Z|index-addition|e6c0344cb7ce00db25d554e4bb671ec1909a8f9f|2026-09-29
 317|qwen-audio-agent|Qwen Audio Agent|https://github.com/QwenAudio/qwen-audio-agent|2026-07-27T05:04:26Z|index-addition|7b5913a05666a6cab9681c301807206ffa66c106|2026-09-29
+318|metaharness|MetaHarness|https://github.com/ruvnet/metaharness|2026-06-13T18:29:11Z|index-addition|d5833dc6512ac1adeeef91a331c29055cd8a4dbb|2026-09-29
