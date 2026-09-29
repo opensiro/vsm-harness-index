@@ -47,6 +47,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="aesop"></a>[Aesop](https://github.com/matt82198/aesop) | 2026-Q3 | 3/6 | 2/5 | 2 | 1 | 0 | `A C A C — A(P)` |
 | 4 | <a id="inferoa"></a>[Inferoa](https://github.com/agentic-in/inferoa) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="continuum"></a>[Continuum](https://github.com/shyftlabs/continuum) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 4 | <a id="raven"></a>[Raven](https://github.com/EverMind-AI/Raven) | 2026-Q2 | 3/6 | 2/5 | 2 | 2 | 0 | `A C A(P) C A P` |
 | 4 | <a id="exo"></a>[Exo](https://github.com/exoharness/exo) | 2026-Q2 | 3/6 | 2/5 | 0 | 3 | 0 | `A — P — A(P) A(P)` |
 | 4 | <a id="omniharness"></a>[omniHarness](https://github.com/archimedes-run/omniHarness) | 2026-Q2 | 3/6 | 2/5 | 0 | 2 | 0 | `A — A — A(P) P` |
 | 4 | <a id="nanoharness"></a>[NanoHarness](https://github.com/semi-hollow/NanoHarness) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
@@ -97,7 +98,6 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="dotcraft"></a>[DotCraft](https://github.com/DotHarness/dotcraft) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
 | 5 | <a id="super-agent"></a>[super-agent](https://github.com/FedericoCasarella/super-agent) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P — A —` |
 | 5 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
-| 5 | <a id="raven"></a>[Raven](https://github.com/EverMind-AI/Raven) | 2026-Q2 | 2/6 | 1/5 | 2 | 2 | 0 | `A C A(P) C — P` |
 | 5 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="tangle-agent-runtime"></a>[Tangle Agent Runtime](https://github.com/tangle-network/agent-runtime) | 2026-Q2 | 2/6 | 1/5 | 3 | 0 | 0 | `A C A C C —` |
 | 5 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
