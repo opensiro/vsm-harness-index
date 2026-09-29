@@ -14,7 +14,7 @@ autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
 autonomy_s3_star: —
-autonomy_s4: —
+autonomy_s4: C(P)
 autonomy_s5: —
 ---
 
@@ -154,29 +154,28 @@ A user task enters a stateful ReAct/code-tool loop. The model chooses executable
 
 ## S4 — Outside-and-then intelligence
 
-- State: —
-- Function: no material first-party external-and-prospective adaptation loop was established for the Nexent organization/harness itself.
-- Disturbance / variety regulated: memory relevance, prior interactions, tool/data changes and agent configuration can affect work, but no evidenced future-oriented environmental distinction is converted into an adaptation option for the harness and returned to current capability.
-- External distinction: not established at S4 level. External retrieval/A2A/tool data are inputs to operational tasks rather than an evidenced environment-modeling function for organizational adaptation.
-- Future / prospective distinction: not established.
-- Adaptation option generated: not established. Dreaming creates bounded long-term memory versions from prior memory evidence; agent publish/rollback snapshots operator-authored configurations.
-- Path back into current capability / S3: memory can influence later answers and an operator can publish/rollback agent versions, but no external/prospective option-generation conversation with current capability is evidenced.
-- Decisive decision or feedback right: not established.
-- Decision owner: not applicable.
-- Supporting / enforcement mechanisms: memory retrieval, Dreaming candidate scoring/summarization, context management, agent version snapshots/publish/rollback and external tools/A2A.
-- Closure path: no S4-specific closure established.
-- Boundary reachability: all cited mechanisms are reachable first-party surfaces; the negative finding is functional, not merely boundary-based.
-- Why this is / is not agent-owned: autonomous summarization/retrieval is internal memory consolidation; user-driven configuration publication is administration. Neither meets the external-and-prospective S4 test.
-- Evidence: [`memory/dreaming/service.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/sdk/nexent/memory/dreaming/service.py); [`memory/dreaming/version_builder.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/sdk/nexent/memory/dreaming/version_builder.py); [`agent_version_service.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/backend/services/agent_version_service.py); [`a2a_agent_proxy.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/sdk/nexent/core/agents/a2a_agent_proxy.py).
-- Basis: explicit + structural negative finding.
+- State: C(P)
+- Function: convert accumulated production interaction evidence into reusable future context, with a first-party automatic Dreaming path and a distinct parent-governed agent-development/version path.
+- Disturbance / variety regulated: user preferences, repeated task context, corrective reflections, errors/failed results and observed Q&A performance can reveal that future agent behaviour or configuration should differ from the current one.
+- External distinction: production conversations generate short-term memories from user preferences, objectives, progress, feedback, errors and failed results; the version-management path separately exposes Q&A performance differences between historical and latest agent versions.
+- Future / prospective distinction: Dreaming explicitly selects information that remains stable and reusable across future conversations; version comparison is used to decide which published configuration should govern later production use.
+- Adaptation option generated: Dreaming promotes stable short-term evidence into a new User long-term memory version; the parent mode can publish a revised configuration or roll back to a historical agent version after comparing behaviour.
+- Path back into current capability / S3: the active User long-term memory version is loaded directly into subsequent agent runs; publish/rollback changes the production agent version used by later Start Chat/API execution.
+- Decisive decision or feedback right: in the base path, code-owned promotion thresholds and evidence ranking select which short-term memories qualify while a summarizer constructs the bounded long-term version; an autonomous owner of that decisive promotion policy is not established. In the parent mode, the authorized user/operator compares Q&A behaviour and decides whether to publish/rollback the agent configuration.
+- Decision owner: base constructor path has no established autonomous agent owner for the decisive promotion policy (`C`); parent mode is owned by the authorized human/operator (`P`).
+- Supporting / enforcement mechanisms: production memory-save decision, short-term recall counters/query diversity, Dreaming score/recall/query thresholds, version builder and validation, long-term version history/activation, debug trace, version comparison and rollback service.
+- Closure path: production interactions → short-term evidence → Dreaming candidate selection/version construction → active long-term memory → future runs consume it; separately, debug/Q&A comparison → operator publish/rollback decision → selected agent version → future production runs use that configuration.
+- Boundary reachability: both production memory/Dreaming and agent publish/version management are documented shipped platform surfaces. Debug-only traces are not borrowed as an autonomous owner; they are evidence inputs to the explicit parent development mode.
+- Why this is / is not agent-owned: the automatic path is function-specific and returns adaptation into later operation, but decisive promotion eligibility is code-owned rather than an autonomous agent judgment, so it is classified `C`, not `A`. The distinct version-selection path is explicitly human/operator-owned.
+- Evidence: [`memory-configuration.md`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/doc/docs/en/user-guide/agent-development/memory-configuration.md); [`service.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/sdk/nexent/memory/dreaming/service.py); [`version_builder.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/sdk/nexent/memory/dreaming/version_builder.py); [`agent-configuration.md`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/doc/docs/en/user-guide/agent-development/agent-configuration.md); [`agent_version_service.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/backend/services/agent_version_service.py).
+- Basis: explicit + structural.
 - Confidence: high.
-- Caveats: applications can assign future-oriented research tasks to Nexent agents, but operational task research is not automatically an S4 function of the harness.
+- Caveats: generic retrieval or memory existence is not the witness. The positive base path rests on repeated/validated production evidence being promoted into an active future-used version; the parent mode rests on explicit Q&A comparison plus publish/rollback return.
 
-### Absence scope
-
-- Surfaces inspected: memory service/Dreaming, context runtime, A2A/tool integration, agent versioning/rollback, scheduler and agent-generation/configuration surfaces identified in the distribution.
-- Plausible first-party paths checked: memory consolidation, learned user facts, external retrieval, remote-agent calls, agent version evolution, scheduled work and generated agent/skill configuration.
-- Why no material first-party path remains: reviewed mechanisms either support present operational tasks, summarize internal history or enact operator-selected configuration. No first-party path was found that senses future-relevant external distinctions, develops adaptation options and returns them into present organizational capability.
+| Mode | Decisive owner | Trigger | Closure | Evidence |
+| --- | --- | --- | --- | --- |
+| Base (`C`) | Code-owned promotion/ranking path; autonomous owner must be composed for `A` | Accumulated stable short-term production evidence reaches score/recall/query thresholds | Candidate selection + version build → active User long-term memory → loaded into later runs | memory configuration; Dreaming service/version builder |
+| Parent (`P`) | Authorized user/operator | Debug/Q&A comparison shows a configuration/version should change | Human publish/rollback → selected production version → later runs use it | agent configuration/version management; agent version service |
 
 ## S5 — Policy and identity
 
@@ -209,6 +208,6 @@ Nexent attenuates runtime variety with context management, sandboxing, concurren
 
 ## Evidence gaps / terminal outcome
 
-Proposed vector: `S1=A / S2=— / S3=— / S3*=— / S4=— / S5=—`.
+Proposed vector: `S1=A / S2=— / S3=— / S3*=— / S4=C(P) / S5=—`.
 
 The classification intentionally resists name-based promotion. Managed agents/A2A establish delegation, not S2. Capacity/scheduler/version controls enforce lifecycle and administration, not S3. Verification has a real repair loop but remains routine same-path QA rather than complementary S3*. Dreaming is durable memory consolidation, not external/prospective S4. RBAC, guardrails and HITL constrain or steer ordinary operation without an S5 identity/ultimate-policy closure path.
