@@ -84,6 +84,7 @@ A user task enters a stateful ReAct/code-tool loop. The model chooses executable
 
 - State: —
 - Function: no material function-specific inter-S1 coordination relation was established at the reviewed boundary.
+- Disturbance / variety regulated: the candidate S2 disturbance would be oscillation, contention or destructive interference among distinct S1 operational units; no such function-specific disturbance was established with a first-party attenuation path at this boundary.
 - Distinct S1 units: Nexent can instantiate multiple full managed agents and can call external A2A agents, but their coexistence alone is not an S2 witness.
 - Inter-S1 disturbance: no specific actual or structurally evidenced oscillation/conflict among distinct Nexent S1 units was found with a corresponding first-party attenuation relation.
 - Attenuating coordination relation: not established. Run reservations, per-agent capacity limits, scheduler leases/fencing and nested invocation serialize/admit infrastructure work but are not tied to a demonstrated inter-S1 operational disturbance.
@@ -130,6 +131,7 @@ A user task enters a stateful ReAct/code-tool loop. The model chooses executable
 
 - State: —
 - Function: no sufficiently independent complementary audit path was established beyond the ordinary production/verification path.
+- Disturbance / variety regulated: the candidate S3* disturbance would be uncertainty about whether ordinary operational reporting faithfully reflects actual execution; the reviewed verification/guardrail path reuses the same run evidence/model surface and does not independently regulate that uncertainty.
 - Claim being audited: Nexent can check tool results and final-answer candidates for syntax/errors/evidence/format and related criteria.
 - Ordinary reporting path: `CoreAgent` records its own action/tool observations and candidate answer in the same run memory used by verification.
 - Complementary access path: not established. The optional LLM final verifier reads a summary of that same run and calls the same configured model object; deterministic pre/post checks and guardrails are routine in-path gates.
