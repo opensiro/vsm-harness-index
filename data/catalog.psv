@@ -331,3 +331,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 316|raven|Raven|https://github.com/EverMind-AI/Raven|2026-05-21T08:45:07Z|index-addition|e6c0344cb7ce00db25d554e4bb671ec1909a8f9f|2026-09-29
 317|qwen-audio-agent|Qwen Audio Agent|https://github.com/QwenAudio/qwen-audio-agent|2026-07-27T05:04:26Z|index-addition|7b5913a05666a6cab9681c301807206ffa66c106|2026-09-29
 318|metaharness|MetaHarness|https://github.com/ruvnet/metaharness|2026-06-13T18:29:11Z|index-addition|d5833dc6512ac1adeeef91a331c29055cd8a4dbb|2026-09-29
+319|pipecat|Pipecat|https://github.com/pipecat-ai/pipecat|2023-12-27T12:59:00Z|index-addition|dbdf21a017f86624fb7768e35730417169524e0d|2026-09-29
