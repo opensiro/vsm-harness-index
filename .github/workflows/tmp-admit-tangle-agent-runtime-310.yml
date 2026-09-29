@@ -1,0 +1,70 @@
+name: tmp-admit-tangle-agent-runtime-310
+
+on:
+  push:
+    branches:
+      - admit-tangle-agent-runtime-310
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-tangle-agent-runtime-310
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical admission and render
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/tangle-agent-runtime.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' in text:
+              text = text.replace('status: proposed', 'status: included', 1)
+          elif 'status: included' not in text:
+              raise SystemExit('unexpected Tangle Agent Runtime status')
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '310|tangle-agent-runtime|Tangle Agent Runtime|https://github.com/tangle-network/agent-runtime|2026-05-03T18:44:42Z|index-addition|ed008c7623362720c47b1e628dbc19073e196b91|2026-09-29'
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('310|') or '|tangle-agent-runtime|' in line for line in rows):
+              rows.append(row)
+              catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+          elif row not in rows:
+              raise SystemExit('catalog #310 or tangle-agent-runtime already present with different data')
+
+          signatures = Path('data/signatures.psv')
+          sig = '310|tangle-agent-runtime|Tangle Agent Runtime closes autonomous S1 through model-driven worker loops and autonomous S3 through recursive live supervision; constructor S2 comes from conserved resource admission, S3* from independent completion/trace evidence paths, and S4 from detached improvement/proposal/activation, while no S5 identity loop is established.'
+          sigrows = signatures.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('310|') or '|tangle-agent-runtime|' in line for line in sigrows):
+              sigrows.append(sig)
+              signatures.write_text('\n'.join(sigrows) + '\n', encoding='utf-8')
+          elif sig not in sigrows:
+              raise SystemExit('signature for tangle-agent-runtime/#310 already present with different data')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+          rm .github/workflows/tmp-admit-tangle-agent-runtime-310.yml
+          git config user.name 'OpenSiro Automation'
+          git config user.email 'founders@opensiro.com'
+          git add -A
+          git commit -m 'index: admit Tangle Agent Runtime at catalog #310'
+          git push origin HEAD:admit-tangle-agent-runtime-310
