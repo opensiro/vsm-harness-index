@@ -1,0 +1,72 @@
+name: tmp-admit-nexent-315
+
+on:
+  push:
+    branches:
+      - admit-nexent-315
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-nexent-315
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit Nexent at catalog 315
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/nexent.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' not in text:
+              raise SystemExit('expected Nexent status: proposed')
+          text = text.replace('status: proposed', 'status: included', 1)
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          ctext = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|nexent|' in ctext:
+              raise SystemExit('Nexent already present in catalog')
+          ctext += '\n315|nexent|Nexent|https://github.com/ModelEngine-Group/nexent|2025-04-28T10:44:33Z|index-addition|9713e7823eb2b11410776acf40d2633eef425af7|2026-09-29\n'
+          catalog.write_text(ctext, encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          stext = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|nexent|' in stext:
+              raise SystemExit('Nexent already present in signatures')
+          signature = (
+              'Nexent closes autonomous S1 through its first-party model/tool/action/observation loop and provides '
+              'constructor plus parent-governed S4 through Dreaming memory promotion and operator version selection; '
+              'managed-agent/A2A delegation, run/capacity control, verification/guardrails, and RBAC do not independently '
+              'establish S2, S3, S3*, or S5 at the frozen boundary.'
+          )
+          stext += f'\n315|nexent|{signature}\n'
+          signatures.write_text(stext, encoding='utf-8')
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+          git diff --check
+          rm .github/workflows/tmp-admit-nexent-315.yml
+          git config user.name 'OpenSiro Automation'
+          git config user.email 'founders@opensiro.com'
+          git add -A
+          git commit -m 'index: admit Nexent at catalog #315'
+          git push origin HEAD:admit-nexent-315
