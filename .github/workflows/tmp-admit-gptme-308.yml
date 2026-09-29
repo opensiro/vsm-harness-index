@@ -1,0 +1,70 @@
+name: tmp-admit-gptme-308
+
+on:
+  push:
+    branches:
+      - admit-gptme-308
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-gptme-308
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical admission and render
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/gptme.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' in text:
+              text = text.replace('status: proposed', 'status: included', 1)
+          elif 'status: included' not in text:
+              raise SystemExit('unexpected gptme status')
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '308|gptme|gptme|https://github.com/gptme/gptme|2023-03-24T16:25:01Z|index-addition|0e4ef82bd6a6090bf9cefd357acc8f1dbebf2662|2026-09-29'
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('308|') or '|gptme|' in line for line in rows):
+              rows.append(row)
+              catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+          elif row not in rows:
+              raise SystemExit('catalog #308 or gptme already present with different data')
+
+          signatures = Path('data/signatures.psv')
+          sig = '308|gptme|gptme closes autonomous S1 through its first-party model/tool/result loop, autonomous S2 through parent-selected worktree isolation that attenuates concurrent child workspace interference, autonomous S3 through model-owned fleet status/steer/cancel/resource control, autonomous S3* through an isolated verifier child with direct artifact access and returned findings, and autonomous S4 through model-selected persistent memory reused in later sessions; no runtime identity/ultimate-policy closure establishes S5.'
+          sigrows = signatures.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('308|') or line.startswith('307|gptme|') or '|gptme|' in line for line in sigrows):
+              sigrows.append(sig)
+              signatures.write_text('\n'.join(sigrows) + '\n', encoding='utf-8')
+          elif sig not in sigrows:
+              raise SystemExit('signature for gptme/#308 already present with different data')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+          rm .github/workflows/tmp-admit-gptme-308.yml
+          git config user.name 'OpenSiro Automation'
+          git config user.email 'founders@opensiro.com'
+          git add -A
+          git commit -m 'index: admit gptme at catalog #308'
+          git push origin HEAD:admit-gptme-308
