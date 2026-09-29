@@ -1,0 +1,34 @@
+name: temporary render analytics 958
+
+on:
+  push:
+    branches:
+      - analytics/corpus-pivots-958
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: analytics/corpus-pivots-958
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/render_analytics.py
+      - name: Commit generated analytics when needed
+        shell: bash
+        run: |
+          if git diff --quiet -- analytics; then
+            echo "analytics already current"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analytics/ownership.md analytics/organizational-forms.md analytics/cooccurrence.md analytics/reassessments.md
+          git commit -m "analytics: materialize corpus pivots"
+          git push origin HEAD:analytics/corpus-pivots-958
