@@ -26,6 +26,8 @@ autonomy_s5: —
 - Purpose and identity: autonomously research, implement and ship ML-related work through the Hugging Face ecosystem while retaining a conversational/headless execution loop and first-party tool feedback.
 - Relevant environment: user ML-engineering goals, the local working directory or opted-in HF Space sandbox, Hugging Face documentation/papers/datasets/repos/jobs, GitHub repositories, provider responses, tool results/failures, approval decisions and spend/runtime constraints.
 - Standard-distribution boundary: the preserved `ml-intern` CLI/runtime and its first-party Python modules are inside. Hugging Face hosted services, inference providers, GitHub, external MCP servers and HF Space/job execution substrates are dependencies. The retirement notice and archived maintenance state are provenance/current-relevance facts, not VSM functions.
+- Credited operating / distribution surfaces: `README.md`; `agent/core/agent_loop.py`; `agent/core/tools.py`; `agent/tools/research_tool.py`; `agent/core/doom_loop.py`; and the CLI-reachable session/context, planning, approval, budget, model-routing, local/sandbox-tool and persistence machinery those surfaces invoke.
+- Adjacent first-party surfaces excluded from ownership: repository-maintenance automation and CI/review workflows removed or retained around the retirement commit; development tests/fixtures and repository-review artifacts that do not supply the shipped agent loop; hosted web-product lifecycle/maintenance decisions; and anonymized telemetry/KPI aggregation whose data does not exercise an organizational decision right in the focal CLI runtime.
 - First-party operating modes considered: interactive CLI, headless auto-approve mode, local tool runtime, opted-in HF sandbox tools, local or hosted model providers, the built-in independent-context `research` subagent, planning, context compaction, approvals and session trace persistence.
 - Recursion level: the focal ML Intern session is the assessed organization. The `research` tool can instantiate a separate read-only research actor with its own context, but its task is subordinate evidence gathering for the focal operation and does not by itself establish a same-recursion coordination/metasystem organization.
 - Reviewed revision: `3555becf822ab9b71be9678b2332f542a9fde0b5`.
@@ -67,7 +69,7 @@ A user request enters the focal session. The first-party loop forms a provider r
 - Supporting / enforcement mechanisms: session/context manager; LiteLLM provider call; ToolRouter; planning tool; research subagent; local/sandbox execution; approval policy; spend/budget guards; doom-loop detector; unfinished-plan continuation; context compaction; session persistence and trace export.
 - Closure path: user goal → focal model call from current context → selected tool/research action → first-party execution/approval handling → observed result returned into context → later model choice changes from that evidence → final response or artifact effect.
 - Boundary reachability: this is the shipped interactive/headless CLI path. No downstream workflow composition is required to obtain the model→tool→feedback cycle.
-- Why this is agent-owned: if the model-backed decision actor is removed while ToolRouter, approval checks, persistence and deterministic guards remain, the system loses contextual selection and sequencing of ML research/implementation actions. The decisive operational discretion is therefore agent-owned.
+- Why this is / is not agent-owned: if the model-backed decision actor is removed while ToolRouter, approval checks, persistence and deterministic guards remain, the system loses contextual selection and sequencing of ML research/implementation actions. The decisive operational discretion is therefore agent-owned.
 - Evidence: [`agent/core/agent_loop.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/core/agent_loop.py); [`agent/core/tools.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/core/tools.py); [`README.md`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/README.md).
 - Basis: explicit + structural.
 - Confidence: high.
@@ -86,6 +88,7 @@ A user request enters the focal session. The first-party loop forms a provider r
 - Evidence: [`agent/core/tools.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/core/tools.py); [`agent/tools/research_tool.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/tools/research_tool.py); [`README.md`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/README.md).
 - Basis: structural absence conclusion.
 - Confidence: high.
+- Caveats: the separate research context is a substantive subagent mechanism, but no peer-interference detection/attenuation/right-of-return path was found; it is therefore not promoted from decomposition into S2.
 
 ### Absence scope
 
@@ -106,6 +109,7 @@ A user request enters the focal session. The first-party loop forms a provider r
 - Evidence: [`agent/core/agent_loop.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/core/agent_loop.py); [`agent/core/doom_loop.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/core/doom_loop.py).
 - Basis: structural absence conclusion.
 - Confidence: high.
+- Caveats: the runtime has unusually strong current-execution guards and budget/approval policy, but their scope is the focal operating loop; local regulation is not reclassified as whole-system S3.
 
 ### Absence scope
 
@@ -126,6 +130,7 @@ A user request enters the focal session. The first-party loop forms a provider r
 - Evidence: [`agent/tools/research_tool.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/tools/research_tool.py); [`README.md`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/README.md).
 - Basis: structural absence conclusion.
 - Confidence: high.
+- Caveats: independent context and read-only evidence access are necessary-looking ingredients for audit, but the research actor's declared function is ordinary research support and no focal-claim challenge/corrective-return contract was found.
 
 ### Absence scope
 
@@ -146,6 +151,7 @@ A user request enters the focal session. The first-party loop forms a provider r
 - Evidence: [`agent/tools/research_tool.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/tools/research_tool.py); [`agent/core/tools.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/core/tools.py); [`README.md`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/README.md).
 - Basis: structural absence conclusion.
 - Confidence: high.
+- Caveats: literature/citation crawling is strong external sensing, but the reviewed return path terminates in current-task recommendations/implementation rather than durable prospective change to ML Intern's own capability or organization.
 
 ### Absence scope
 
@@ -166,6 +172,7 @@ A user request enters the focal session. The first-party loop forms a provider r
 - Evidence: [`agent/core/agent_loop.py`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/agent/core/agent_loop.py); [`README.md`](https://github.com/huggingface/ml-intern/blob/3555becf822ab9b71be9678b2332f542a9fde0b5/README.md).
 - Basis: structural absence conclusion.
 - Confidence: high.
+- Caveats: human approval and maintainer retirement decisions are real authority, but they address operational actions or project lifecycle rather than a runtime identity/ultimate-policy question with returned governing closure.
 
 ### Absence scope
 
