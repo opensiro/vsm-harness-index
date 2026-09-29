@@ -1,0 +1,25 @@
+## S4 — Outside-and-then intelligence
+
+- State: C(P)
+- Function: convert accumulated production interaction evidence into reusable future context, with a first-party automatic Dreaming path and a distinct parent-governed agent-development/version path.
+- Disturbance / variety regulated: user preferences, repeated task context, corrective reflections, errors/failed results and observed Q&A performance can reveal that future agent behaviour or configuration should differ from the current one.
+- External distinction: production conversations generate short-term memories from user preferences, objectives, progress, feedback, errors and failed results; the version-management path separately exposes Q&A performance differences between historical and latest agent versions.
+- Future / prospective distinction: Dreaming explicitly selects information that remains stable and reusable across future conversations; version comparison is used to decide which published configuration should govern later production use.
+- Adaptation option generated: Dreaming promotes stable short-term evidence into a new User long-term memory version; the parent mode can publish a revised configuration or roll back to a historical agent version after comparing behaviour.
+- Path back into current capability / S3: the active User long-term memory version is loaded directly into subsequent agent runs; publish/rollback changes the production agent version used by later Start Chat/API execution.
+- Decisive decision or feedback right: in the base path, code-owned promotion thresholds and evidence ranking select which short-term memories qualify while a summarizer constructs the bounded long-term version; an autonomous owner of that decisive promotion policy is not established. In the parent mode, the authorized user/operator compares Q&A behaviour and decides whether to publish/rollback the agent configuration.
+- Decision owner: base constructor path has no established autonomous agent owner for the decisive promotion policy (`C`); parent mode is owned by the authorized human/operator (`P`).
+- Supporting / enforcement mechanisms: production memory-save decision, short-term recall counters/query diversity, Dreaming score/recall/query thresholds, version builder and validation, long-term version history/activation, debug trace, version comparison and rollback service.
+- Closure path: production interactions → short-term evidence → Dreaming candidate selection/version construction → active long-term memory → future runs consume it; separately, debug/Q&A comparison → operator publish/rollback decision → selected agent version → future production runs use that configuration.
+- Boundary reachability: both production memory/Dreaming and agent publish/version management are documented shipped platform surfaces. Debug-only traces are not borrowed as an autonomous owner; they are evidence inputs to the explicit parent development mode.
+- Why this is / is not agent-owned: the automatic path is function-specific and returns adaptation into later operation, but decisive promotion eligibility is code-owned rather than an autonomous agent judgment, so it is classified `C`, not `A`. The distinct version-selection path is explicitly human/operator-owned.
+- Evidence: [`memory-configuration.md`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/doc/docs/en/user-guide/agent-development/memory-configuration.md); [`service.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/sdk/nexent/memory/dreaming/service.py); [`version_builder.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/sdk/nexent/memory/dreaming/version_builder.py); [`agent-configuration.md`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/doc/docs/en/user-guide/agent-development/agent-configuration.md); [`agent_version_service.py`](https://github.com/ModelEngine-Group/nexent/blob/9713e7823eb2b11410776acf40d2633eef425af7/backend/services/agent_version_service.py).
+- Basis: explicit + structural.
+- Confidence: high.
+- Caveats: generic retrieval or memory existence is not the witness. The positive base path rests on repeated/validated production evidence being promoted into an active future-used version; the parent mode rests on explicit Q&A comparison plus publish/rollback return.
+
+| Mode | Decisive owner | Trigger | Closure | Evidence |
+| --- | --- | --- | --- | --- |
+| Base (`C`) | Code-owned promotion/ranking path; autonomous owner must be composed for `A` | Accumulated stable short-term production evidence reaches score/recall/query thresholds | Candidate selection + version build → active User long-term memory → loaded into later runs | memory configuration; Dreaming service/version builder |
+| Parent (`P`) | Authorized user/operator | Debug/Q&A comparison shows a configuration/version should change | Human publish/rollback → selected production version → later runs use it | agent configuration/version management; agent version service |
+
