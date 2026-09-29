@@ -23,7 +23,7 @@ jobs:
       - name: Commit generated analytics when needed
         shell: bash
         run: |
-          if git diff --quiet -- analytics; then
+          if [[ -z "$(git status --porcelain -- analytics)" ]]; then
             echo "analytics already current"
             exit 0
           fi
