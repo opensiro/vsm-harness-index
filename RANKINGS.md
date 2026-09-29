@@ -51,6 +51,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="exo"></a>[Exo](https://github.com/exoharness/exo) | 2026-Q2 | 3/6 | 2/5 | 0 | 3 | 0 | `A — P — A(P) A(P)` |
 | 4 | <a id="omniharness"></a>[omniHarness](https://github.com/archimedes-run/omniHarness) | 2026-Q2 | 3/6 | 2/5 | 0 | 2 | 0 | `A — A — A(P) P` |
 | 4 | <a id="nanoharness"></a>[NanoHarness](https://github.com/semi-hollow/NanoHarness) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
+| 4 | <a id="ahe"></a>[Agentic Harness Engineering](https://github.com/china-qijizhifeng/agentic-harness-engineering) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="cheetahclaws"></a>[CheetahClaws](https://github.com/SAIL-Research-Lab/cheetahclaws) | 2026-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A A — A P —` |
 | 4 | <a id="bernstein"></a>[Bernstein](https://github.com/sipyourdrink-ltd/bernstein) | 2026-Q1 | 3/6 | 2/5 | 2 | 1 | 0 | `A C A A C P` |
 | 4 | <a id="pydantic-ai-harness"></a>[Pydantic AI Harness](https://github.com/pydantic/pydantic-ai-harness) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A — A A C —` |
