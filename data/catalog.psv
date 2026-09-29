@@ -321,3 +321,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 306|harness|Harness|https://github.com/sausheong/harness|2026-05-08T06:03:49Z|index-addition|1e5b6599bbc68519e83d156150d70f793653ca7d|2026-09-29
 307|researchharness|ResearchHarness|https://github.com/InternScience/ResearchHarness|2026-03-31T06:57:51Z|index-addition|72e8a44737aadabc8c3f9e5c7ea76883b9c7032f|2026-09-29
 308|gptme|gptme|https://github.com/gptme/gptme|2023-03-24T16:25:01Z|index-addition|0e4ef82bd6a6090bf9cefd357acc8f1dbebf2662|2026-09-29
+309|agent-runtime|agent-runtime|https://github.com/tsharp/agent-runtime|2026-01-26T22:40:25Z|index-addition|07ebca8ec36d15eae2d264d4998fa6857f9e0b51|2026-09-29
