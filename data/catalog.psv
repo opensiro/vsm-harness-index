@@ -328,3 +328,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 313|crewlet|Crewlet|https://github.com/crewlet/crewlet|2026-08-11T21:33:54Z|index-addition|346d58ee3f3627a7f1213e441c6b0e330ab48030|2026-09-29
 314|cheetahclaws|CheetahClaws|https://github.com/SAIL-Research-Lab/cheetahclaws|2026-04-01T15:23:36Z|index-addition|ec5d091b53c70f6685f1330f509b11c3a51aa214|2026-09-29
 315|nexent|Nexent|https://github.com/ModelEngine-Group/nexent|2025-04-28T10:44:33Z|index-addition|9713e7823eb2b11410776acf40d2633eef425af7|2026-09-29
+316|raven|Raven|https://github.com/EverMind-AI/Raven|2026-05-21T08:45:07Z|index-addition|e6c0344cb7ce00db25d554e4bb671ec1909a8f9f|2026-09-29
+317|qwen-audio-agent|Qwen Audio Agent|https://github.com/QwenAudio/qwen-audio-agent|2026-07-27T05:04:26Z|index-addition|7b5913a05666a6cab9681c301807206ffa66c106|2026-09-29

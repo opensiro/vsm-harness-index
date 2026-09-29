@@ -47,6 +47,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="aesop"></a>[Aesop](https://github.com/matt82198/aesop) | 2026-Q3 | 3/6 | 2/5 | 2 | 1 | 0 | `A C A C — A(P)` |
 | 4 | <a id="inferoa"></a>[Inferoa](https://github.com/agentic-in/inferoa) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="continuum"></a>[Continuum](https://github.com/shyftlabs/continuum) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 4 | <a id="raven"></a>[Raven](https://github.com/EverMind-AI/Raven) | 2026-Q2 | 3/6 | 2/5 | 2 | 2 | 0 | `A C A(P) C A P` |
 | 4 | <a id="exo"></a>[Exo](https://github.com/exoharness/exo) | 2026-Q2 | 3/6 | 2/5 | 0 | 3 | 0 | `A — P — A(P) A(P)` |
 | 4 | <a id="omniharness"></a>[omniHarness](https://github.com/archimedes-run/omniHarness) | 2026-Q2 | 3/6 | 2/5 | 0 | 2 | 0 | `A — A — A(P) P` |
 | 4 | <a id="nanoharness"></a>[NanoHarness](https://github.com/semi-hollow/NanoHarness) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
@@ -84,6 +85,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="pi-harness"></a>[Pi-Harness](https://github.com/wangmiaozero/pi-harness) | 2026-Q3 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
 | 5 | <a id="swe-mux"></a>[swe-mux](https://github.com/jatoran/swe-mux) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C A(P) C P —` |
 | 5 | <a id="omniscientist"></a>[OmniScientist](https://github.com/Omni-Scientist/OmniScientist) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
+| 5 | <a id="qwen-audio-agent"></a>[Qwen Audio Agent](https://github.com/QwenAudio/qwen-audio-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 2 | 0 | `A — — — A(P) P` |
 | 5 | <a id="bossconsole"></a>[BossConsole](https://github.com/risa-labs-inc/BossConsole) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C C(P) — A(P) —` |
 | 5 | <a id="foreman"></a>[Foreman](https://github.com/marcelsud/claude-foreman) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — A(P) C — —` |
 | 5 | <a id="penguin-harness"></a>[PenguinHarness](https://github.com/Prism-Shadow/penguin-harness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
