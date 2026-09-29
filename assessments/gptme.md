@@ -89,6 +89,11 @@ The vector below therefore describes first-party capabilities across declared su
 - State: A
 - Function: attenuate filesystem/workspace interference among concurrently delegated first-party child S1 units while preserving a controlled reintegration path.
 - Disturbance / variety regulated: multiple implementation-capable child agents operating concurrently against one repository could overwrite, expose or otherwise interfere with one another's in-progress workspace changes.
+- Distinct S1 units: independently executing first-party gptme child agent loops delegated by the parent in the supported `subagent` mode.
+- Inter-S1 disturbance: concurrent mutation-capable children sharing one repository workspace can collide, overwrite, or expose in-progress changes across operational units.
+- Attenuating coordination relation: the parent selects first-party worktree isolation, giving each selected child a separate Git working tree/branch so its mutations do not directly alter the parent or sibling workspace.
+- Feedback into subsequent S1 behaviour: changed isolated branches and child results return to the parent; the parent can inspect/integrate them before later delegated work, so subsequent S1s operate on the reconciled repository state rather than uncontrolled concurrent mutations.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: credit rests on a concrete cross-S1 filesystem-interference disturbance and the worktree separation/reintegration mechanism that specifically attenuates it, not on fan-out, messaging, routing, or delegation by themselves.
 - Decisive decision or feedback right: decide which delegated work should execute in isolated worktrees and how/when returned branches should be inspected or integrated relative to other S1 work.
 - Decision owner: the autonomous parent gptme agent in the supported `subagent`-enabled mode.
 - Supporting / enforcement mechanisms: `isolation="worktree"` / isolated execution, per-child workdirs, separate subprocess/thread contexts, smart worktree cleanup, preserved changed branches, completion results and optional parallel/pipeline scheduling.
@@ -105,6 +110,8 @@ The vector below therefore describes first-party capabilities across declared su
 - State: A
 - Function: maintain a current view of delegated S1 work and exercise present-tense authority over fleet execution, resource bounds and intervention.
 - Disturbance / variety regulated: child tasks can stall, drift, consume excessive resources, need clarification, complete/fail at different times or require course correction while other work remains active.
+- Whole-system current view: the parent can list/inspect all registered children and receives first-party progress/completion notifications, status, logs and persisted child metadata across the active delegated fleet.
+- Current-control decision scope: present-tense spawn/continue/wait/steer/cancel choices plus shared concurrency/token-budget allocation across current child commitments.
 - Decisive decision or feedback right: decide which children to spawn/continue, inspect, steer, cancel or await and how to allocate current concurrency/token budget across delegated work.
 - Decision owner: the autonomous parent gptme agent in `subagent` mode.
 - Supporting / enforcement mechanisms: `subagent_list`, status/wait/read-log functions, progress/completion queues, persisted child registry, `SubagentBudget`, max-concurrency semaphore, timeout/cancel machinery and durable steer/control queues.
@@ -121,6 +128,11 @@ The vector below therefore describes first-party capabilities across declared su
 - State: A
 - Function: independently challenge and verify work produced by another operational agent using a separate audit trajectory with direct access to operational artifacts.
 - Disturbance / variety regulated: an implementation-producing S1 may report success while code, tests, edge cases, security properties or regression behavior remain wrong or incomplete.
+- Claim being audited: the producer child's substantive claim that its implementation/work product is correct, complete and ready for parent acceptance/integration.
+- Ordinary reporting path: the producing child returns its own `complete` result/summary and any preserved branch to the parent through the normal subagent completion path.
+- Complementary access path: a separate `verify`-role child runs in subprocess + isolated workspace and directly reads the artifacts and can execute local checks/tests through its restricted verifier tool surface.
+- Independence boundary: the verifier is a distinct model trajectory/process with fresh child context, an isolated worktree and verifier-specific tool/profile constraints rather than the producing child re-reading its own report.
+- Who acts on findings: the autonomous parent gptme agent receives the verifier completion through the first-party completion hook and can reject, retry, steer, re-delegate or integrate subsequent work.
 - Decisive decision or feedback right: make the substantive audit judgment about whether the producer's work withstands direct independent inspection/checking and report findings back for correction or acceptance.
 - Decision owner: the autonomous verifier gptme child agent; the parent agent owns the subsequent current-control response to the audit result.
 - Supporting / enforcement mechanisms: built-in `verifier` profile, `role="verify"` defaults, subprocess execution, isolated worktree, fresh child context, verifier tool restrictions, direct `read`/`shell`/`ipython` access, `complete` result and parent completion hook. Attestation hashes/provenance can support evidence integrity but are not treated as the audit decision owner.
@@ -137,6 +149,10 @@ The vector below therefore describes first-party capabilities across declared su
 - State: A
 - Function: convert newly learned future-relevant distinctions from present work into durable context that alters later-session capability/behavior.
 - Disturbance / variety regulated: later sessions would otherwise repeat discovery of user preferences, project facts, decisions/rationales and recurring problem-solving context learned from prior interaction with the environment.
+- External distinction: a user preference, project/environment fact, decision rationale or recurring problem pattern encountered through present interaction/tool work and judged relevant beyond the current turn.
+- Future / prospective distinction: the agent explicitly evaluates whether that newly learned distinction is worth remembering for future sessions rather than only preserving same-task working context.
+- Adaptation option generated: the model formulates a named durable memory containing the selected reusable distinction for later-session use.
+- Path back into current capability / S3: first-party memory storage/indexing persists the option and later `prompt_workspace` construction automatically injects persistent memory into subsequent sessions, changing the context available to future operational/current-control decisions.
 - Decisive decision or feedback right: judge which learned distinction is worth preserving for future work and formulate the durable memory content.
 - Decision owner: the autonomous gptme model using the built-in `memory` tool in an autonomous/non-interactive mode.
 - Supporting / enforcement mechanisms: `memory` ToolSpec and memory store/index, layered memory roots, future-session `prompt_workspace` loading, confirmation hooks and the autonomous `auto_confirm` hook.
