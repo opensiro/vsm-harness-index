@@ -1,0 +1,70 @@
+name: tmp-admit-easylink-agent-runtime-312
+
+on:
+  push:
+    branches:
+      - admit-easylink-agent-runtime-312
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-easylink-agent-runtime-312
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical admission and render
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/easylink-agent-runtime.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' in text:
+              text = text.replace('status: proposed', 'status: included', 1)
+          elif 'status: included' not in text:
+              raise SystemExit('unexpected Easylink Agent Runtime status')
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          row = '312|easylink-agent-runtime|Easylink Agent Runtime|https://github.com/easylink-ai-open/agent-runtime|2026-07-01T06:57:21Z|index-addition|a9447bb5d9f3ab3b258fd399e9a1619c97e621fd|2026-09-29'
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('312|') or '|easylink-agent-runtime|' in line for line in rows):
+              rows.append(row)
+              catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+          elif row not in rows:
+              raise SystemExit('catalog #312 or easylink-agent-runtime already present with different data')
+
+          signatures = Path('data/signatures.psv')
+          sig = '312|easylink-agent-runtime|Easylink Agent Runtime closes autonomous S1 through its first-party request→tool→observation loop and provides constructor S3 through model-callable subagent tree control; no function-specific S2, independent corrective S3*, prospective S4, or S5 identity closure is established at the frozen standalone boundary.'
+          sigrows = signatures.read_text(encoding='utf-8').splitlines()
+          if not any(line.startswith('312|') or '|easylink-agent-runtime|' in line for line in sigrows):
+              sigrows.append(sig)
+              signatures.write_text('\n'.join(sigrows) + '\n', encoding='utf-8')
+          elif sig not in sigrows:
+              raise SystemExit('signature for easylink-agent-runtime/#312 already present with different data')
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+          rm .github/workflows/tmp-admit-easylink-agent-runtime-312.yml
+          git config user.name 'OpenSiro Automation'
+          git config user.email 'founders@opensiro.com'
+          git add -A
+          git commit -m 'index: admit Easylink Agent Runtime at catalog #312'
+          git push origin HEAD:admit-easylink-agent-runtime-312
