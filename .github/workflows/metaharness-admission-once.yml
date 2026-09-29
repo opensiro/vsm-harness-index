@@ -1,0 +1,89 @@
+name: MetaHarness admission one-shot
+
+on:
+  push:
+    branches:
+      - admission/metaharness-318
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-commit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: admission/metaharness-318
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify frozen admission base
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "6ebcfe07342472830f0e044ed7e037f62ebd5c7e"
+          grep -qx 'status: proposed' <(grep '^status:' assessments/metaharness.md)
+          tail -n 1 data/catalog.psv | grep -qx '317|qwen-audio-agent|Qwen Audio Agent|https://github.com/QwenAudio/qwen-audio-agent|2026-07-27T05:04:26Z|index-addition|7b5913a05666a6cab9681c301807206ffa66c106|2026-09-29'
+          ! grep -q '^318|metaharness|' data/catalog.psv
+          ! grep -q '^318|metaharness|' data/signatures.psv
+
+      - name: Apply admission source changes
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          assessment = Path('assessments/metaharness.md')
+          text = assessment.read_text(encoding='utf-8')
+          assert text.count('status: proposed\n') == 1
+          assessment.write_text(text.replace('status: proposed\n', 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          text = catalog.read_text(encoding='utf-8').rstrip('\n')
+          text += '\n318|metaharness|MetaHarness|https://github.com/ruvnet/metaharness|2026-06-13T18:29:11Z|index-addition|d5833dc6512ac1adeeef91a331c29055cd8a4dbb|2026-09-29\n'
+          catalog.write_text(text, encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          text = signatures.read_text(encoding='utf-8').rstrip('\n')
+          text += '\n318|metaharness|MetaHarness combines model-backed agentic harness mutation and real-agent execution with constructor-owned current-control and complementary candidate audit; Darwin turns external failure evidence into later model-chosen harness adaptations, while no distinct S2 coordination or S5 identity-policy closure is established.\n'
+          signatures.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Render deterministic views
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_analytics.py
+
+      - name: Validate generated admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_tldr.py
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_analytics.py --check
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+          git diff --check
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/metaharness-admission-once.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add METRICS.md RANKINGS.md README.md TLDR.md analytics/cooccurrence.md analytics/organizational-forms.md analytics/ownership.md analytics/temporal.md assessments/metaharness.md data/catalog.psv data/metrics.json data/signatures.psv .github/workflows/metaharness-admission-once.yml
+          git commit -m 'index: admit MetaHarness at catalog #318'
+          git push origin HEAD:admission/metaharness-318
