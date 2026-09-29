@@ -1,0 +1,72 @@
+name: tmp-admit-qwen-audio-agent-317
+
+on:
+  push:
+    branches:
+      - admit-qwen-audio-agent-317
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admit-qwen-audio-agent-317
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Admit Qwen Audio Agent at catalog 317
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/qwen-audio-agent.md')
+          text = assessment.read_text(encoding='utf-8')
+          if 'status: proposed' not in text:
+              raise SystemExit('expected Qwen Audio Agent status: proposed')
+          text = text.replace('status: proposed', 'status: included', 1)
+          assessment.write_text(text, encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          ctext = catalog.read_text(encoding='utf-8').rstrip('\n')
+          if '|qwen-audio-agent|' in ctext:
+              raise SystemExit('Qwen Audio Agent already present in catalog')
+          ctext += '\n317|qwen-audio-agent|Qwen Audio Agent|https://github.com/QwenAudio/qwen-audio-agent|2026-07-27T05:04:26Z|index-addition|7b5913a05666a6cab9681c301807206ffa66c106|2026-09-29\n'
+          catalog.write_text(ctext, encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          stext = signatures.read_text(encoding='utf-8').rstrip('\n')
+          if '|qwen-audio-agent|' in stext:
+              raise SystemExit('Qwen Audio Agent already present in signatures')
+          signature = (
+              'Qwen Audio Agent closes autonomous S1 through its realtime model/context/tool loop; optional cross-session '
+              'preference inference plus explicit user settings provide autonomous and parent-governed S4 modes, while '
+              'operator-owned ASSISTANT.md closes parent S5. Backend-private agents are excluded; queues, lifecycle controls '
+              'and integrity gates do not establish S2, S3 or S3*.'
+          )
+          stext += f'\n317|qwen-audio-agent|{signature}\n'
+          signatures.write_text(stext, encoding='utf-8')
+          PY
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+          git diff --check
+          rm .github/workflows/tmp-admit-qwen-audio-agent-317.yml
+          git config user.name 'OpenSiro Automation'
+          git config user.email 'founders@opensiro.com'
+          git add -A
+          git commit -m 'index: admit Qwen Audio Agent at catalog #317'
+          git push origin HEAD:admit-qwen-audio-agent-317
