@@ -324,3 +324,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 309|agent-runtime|agent-runtime|https://github.com/tsharp/agent-runtime|2026-01-26T22:40:25Z|index-addition|07ebca8ec36d15eae2d264d4998fa6857f9e0b51|2026-09-29
 310|tangle-agent-runtime|Tangle Agent Runtime|https://github.com/tangle-network/agent-runtime|2026-05-03T18:44:42Z|index-addition|ed008c7623362720c47b1e628dbc19073e196b91|2026-09-29
 311|blackbox|Blackbox|https://github.com/tyxter-dev/blackbox|2026-04-30T17:46:56Z|index-addition|d5be68e03ca7750920569578710a2ee25d25530c|2026-09-29
+312|easylink-agent-runtime|Easylink Agent Runtime|https://github.com/easylink-ai-open/agent-runtime|2026-07-01T06:57:21Z|index-addition|a9447bb5d9f3ab3b258fd399e9a1619c97e621fd|2026-09-29
