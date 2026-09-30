@@ -337,3 +337,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 322|openclaw-dotnet|OpenClaw.NET|https://github.com/clawdotnet/openclaw.net|2026-02-22T03:21:36Z|index-addition|a5d1b7ee689967baf4097c5bf8b578f00e2da87e|2026-09-20
 323|frontieragent|FrontierAgent|https://github.com/ApodexAI/FrontierAgent|2026-08-22T05:07:35Z|index-addition|9e533db6f6c34d16037ee5ec964c479d0eb51cde|2026-09-20
 324|sandbase-harness|SandBase Harness|https://github.com/sandbaseai/sandbase-harness|2026-07-11T08:48:07Z|index-addition|f4534553352bc22baf226367ab987a611cc30eca|2026-09-20
+325|agentlas-os|Agentlas OS|https://github.com/agentlas-ai/Agentlas-OS|2026-06-04T04:33:26Z|index-addition|7032c0b0a660983dcdfdb14cb215d8e93af97d4b|2026-09-20
