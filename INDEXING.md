@@ -2,7 +2,7 @@
 
 `vsm-harness-index` is the evidence-backed **general assessment corpus and publication layer** for VSM Harness assessments. It does **not** define VSM semantics or the assessment/classification Methodology.
 
-See [`GENERAL_ASSESSMENT.md`](GENERAL_ASSESSMENT.md) for the boundary between this canonical general corpus and future domain-specific assessment indexes.
+See [`docs/general-assessment.md`](docs/general-assessment.md) for the boundary between this canonical general corpus and future domain-specific assessment indexes. The adjacent [`docs/assessment-lifecycle.md`](docs/assessment-lifecycle.md) owns Index-local publication-state transitions.
 
 The source-of-truth chain is:
 
