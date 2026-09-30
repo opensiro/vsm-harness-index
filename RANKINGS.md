@@ -156,6 +156,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="qm"></a>[QM](https://github.com/yc-software/qm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="actweave"></a>[ActWeave](https://github.com/chenow9/act-weave) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="trueforge"></a>[TrueForge](https://github.com/truefoundry/trueforge) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="sandbase-harness"></a>[SandBase Harness](https://github.com/sandbaseai/sandbase-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="waku-agent"></a>[Waku Agent](https://github.com/ShenSeanChen/waku-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="easylink-agent-runtime"></a>[Easylink Agent Runtime](https://github.com/easylink-ai-open/agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
