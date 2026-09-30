@@ -339,3 +339,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 324|sandbase-harness|SandBase Harness|https://github.com/sandbaseai/sandbase-harness|2026-07-11T08:48:07Z|index-addition|f4534553352bc22baf226367ab987a611cc30eca|2026-09-20
 325|agentlas-os|Agentlas OS|https://github.com/agentlas-ai/Agentlas-OS|2026-06-04T04:33:26Z|index-addition|7032c0b0a660983dcdfdb14cb215d8e93af97d4b|2026-09-20
 326|orkas|Orkas|https://github.com/Orkas-AI/Orkas|2026-04-29T12:19:08Z|index-addition|bc21869913e30b72f83998d79c030b290d10f140|2026-09-20
+327|rust-norion|rust-norion|https://github.com/yanghao1143/rust-norion|2026-06-20T10:51:04Z|index-addition|386363fac8db39a40bd5940b2016aecf26c095d1|2026-09-20

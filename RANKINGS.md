@@ -163,6 +163,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="easylink-agent-runtime"></a>[Easylink Agent Runtime](https://github.com/easylink-ai-open/agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="hypha"></a>[Hypha](https://github.com/CodeSoul-co/Hypha) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="rust-norion"></a>[rust-norion](https://github.com/yanghao1143/rust-norion) | 2026-Q2 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C — C(P) —` |
 | 6 | <a id="temporal-agent-harness"></a>[Temporal Agent Harness](https://github.com/temporal-community/temporal-agent-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A — C(P) — — —` |
 | 6 | <a id="pi-go"></a>[pi (Go)](https://github.com/sky-valley/pi) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentyou"></a>[AgentYou](https://github.com/shreyasic77/agentyou) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
