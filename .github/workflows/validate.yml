@@ -1,14 +1,16 @@
-name: validate
+name: build-openclaw-admission
 
 on:
-  pull_request:
   push:
+    branches:
+      - admission/openclaw-dotnet-322
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  index:
+  build:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,86 +20,71 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Resolve active semantic contract
-        id: active_contract
+      - name: Build canonical admission
         shell: bash
         run: |
-          python - <<'PY' >> "$GITHUB_OUTPUT"
-          import csv
+          set -euo pipefail
+          git fetch origin main
+          MAIN="$(git rev-parse origin/main)"
+          test "$MAIN" = "df11581535def99a6e98e01789a002c89de8f455"
+          git show "${MAIN}:assessments/openclaw-dotnet.md" | grep -q '^status: proposed$'
+          test "$(git show "${MAIN}:data/catalog.psv" | tail -1 | cut -d'|' -f1)" = "321"
+          ! git show "${MAIN}:data/catalog.psv" | grep -q '|openclaw-dotnet|'
+          ! git show "${MAIN}:data/signatures.psv" | grep -q '|openclaw-dotnet|'
+
+          python - <<'PY'
           from pathlib import Path
 
-          path = Path("data/active-contract.psv")
-          with path.open(encoding="utf-8", newline="") as handle:
-              rows = list(csv.DictReader(handle, delimiter="|"))
-          if len(rows) != 1:
-              raise SystemExit("active-contract.psv must contain exactly one row")
-          row = rows[0]
-          print(f"profile={row['profile_version']}")
-          print(f"methodology={row['methodology_version']}")
+          assessment = Path("assessments/openclaw-dotnet.md")
+          text = assessment.read_text(encoding="utf-8")
+          old = "status: proposed\n"
+          if text.count(old) != 1:
+              raise SystemExit(f"expected one proposed status, found {text.count(old)}")
+          assessment.write_text(text.replace(old, "status: included\n", 1), encoding="utf-8")
+
+          catalog = Path("data/catalog.psv")
+          rows = catalog.read_text(encoding="utf-8").rstrip("\n").splitlines()
+          if int(rows[-1].split("|", 1)[0]) != 321:
+              raise SystemExit("catalog tail moved from 321")
+          if any("|openclaw-dotnet|" in row for row in rows):
+              raise SystemExit("OpenClaw.NET already present in catalog")
+          rows.append("322|openclaw-dotnet|OpenClaw.NET|https://github.com/clawdotnet/openclaw.net|2026-02-22T03:21:36Z|index-addition|a5d1b7ee689967baf4097c5bf8b578f00e2da87e|2026-09-20")
+          catalog.write_text("\n".join(rows) + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          rows = signatures.read_text(encoding="utf-8").rstrip("\n").splitlines()
+          if int(rows[-1].split("|", 1)[0]) != 321:
+              raise SystemExit("signature tail moved from 321")
+          if any("|openclaw-dotnet|" in row for row in rows):
+              raise SystemExit("OpenClaw.NET already present in signatures")
+          rows.append("322|openclaw-dotnet|OpenClaw.NET closes autonomous S1 through its shipped model/tool feedback loop; delegated child sessions, passive shared-state conflict detection, in-path Plan-Execute-Verify checks, Runtime Pulse, and review-first learning/governance surfaces do not establish S2, whole-system S3, independent S3*, prospective S4, or runtime S5 closure.")
+          signatures.write_text("\n".join(rows) + "\n", encoding="utf-8")
           PY
 
-      - name: Checkout active VSM Harness Methodology release
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository_owner }}/vsm-harness-skills
-          ref: v${{ steps.active_contract.outputs.methodology }}
-          path: .methodology
-          fetch-depth: 1
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_analytics.py
 
-      - name: Check active-version assessment structural contract
-        shell: bash
-        env:
-          ACTIVE_METHODOLOGY: ${{ steps.active_contract.outputs.methodology }}
-        run: |
-          python - <<'PY' > /tmp/active-assessments.txt
-          import os
-          import re
-          from pathlib import Path
+          python scripts/validate_tldr.py
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_analytics.py --check
+          python -m unittest discover -s tests -v
+          python scripts/check_generation_provenance.py --base-ref "$MAIN"
 
-          target = os.environ["ACTIVE_METHODOLOGY"]
-          methodology_pattern = re.compile(
-              r"^assessment_procedure_version:\s*(\S+)\s*$", re.MULTILINE
-          )
-          status_pattern = re.compile(r"^status:\s*(\S+)\s*$", re.MULTILINE)
-          proposed_dir = Path("/tmp/proposed-assessment-contract")
-          proposed_dir.mkdir(parents=True, exist_ok=True)
+          rm -rf /tmp/vsm-harness-skills
+          git clone --depth 1 --branch v0.3.6 https://github.com/opensiro/vsm-harness-skills.git /tmp/vsm-harness-skills
+          python /tmp/vsm-harness-skills/scripts/check_assessment_contract.py assessments/openclaw-dotnet.md
 
-          for path in sorted(Path("assessments").glob("*.md")):
-              text = path.read_text(encoding="utf-8")
-              methodology_match = methodology_pattern.search(text)
-              if not methodology_match or methodology_match.group(1) != target:
-                  continue
-
-              status_match = status_pattern.search(text)
-              if status_match and status_match.group(1) == "proposed":
-                  # `proposed` is an Index-local pre-admission lifecycle state,
-                  # not a canonical Methodology state. Validate the prospective
-                  # canonical artifact by normalizing only that lifecycle field
-                  # in a temporary copy; the repository file remains proposed
-                  # and check_index.py keeps it outside the canonical corpus.
-                  normalized = status_pattern.sub("status: included", text, count=1)
-                  tmp_path = proposed_dir / path.name
-                  tmp_path.write_text(normalized, encoding="utf-8")
-                  print(tmp_path)
-              else:
-                  print(path)
-          PY
-          mapfile -t active_assessments < /tmp/active-assessments.txt
-          if (( ${#active_assessments[@]} == 0 )); then
-            echo "No assessments currently use active Methodology ${ACTIVE_METHODOLOGY}; structural gate ready for new work."
-          else
-            python .methodology/scripts/check_assessment_contract.py "${active_assessments[@]}"
-          fi
-
-      - run: python scripts/check_index.py
-      - run: python scripts/render_full_a.py --check
-      - run: python scripts/render_analytics.py --check
-      - run: python scripts/render_metrics.py --check
-      - run: python scripts/sync_metrics_readme.py --check
-      - run: python -m unittest discover -s tests -v
-      - name: Check immutable generation provenance against PR base
-        if: github.event_name == 'pull_request'
-        run: python scripts/check_generation_provenance.py --base-ref "${{ github.event.pull_request.base.sha }}"
-      - name: Check immutable generation provenance against previous push
-        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
-        run: python scripts/check_generation_provenance.py --base-ref "${{ github.event.before }}"
+          git checkout origin/main -- .github/workflows/validate.yml
+          git add -A
+          git diff --cached --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "index: admit OpenClaw.NET at catalog #322"
+          git push origin HEAD:admission/openclaw-dotnet-322
