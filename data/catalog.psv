@@ -341,3 +341,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 326|orkas|Orkas|https://github.com/Orkas-AI/Orkas|2026-04-29T12:19:08Z|index-addition|bc21869913e30b72f83998d79c030b290d10f140|2026-09-20
 327|rust-norion|rust-norion|https://github.com/yanghao1143/rust-norion|2026-06-20T10:51:04Z|index-addition|386363fac8db39a40bd5940b2016aecf26c095d1|2026-09-20
 328|clear-ideas-agent-runtime|Clear Ideas Agent Runtime|https://github.com/clearideas/agent-runtime|2026-07-27T14:49:17Z|index-addition|6abb6fa1ae2455dfe3eb86414b617e1fa84a47b1|2026-09-20
+329|harness-cgast|Harness|https://github.com/cgast/harness|2026-02-18T09:20:39Z|index-addition|b3a9edde79f332f86189da742c5313f25f210b79|2026-09-20
