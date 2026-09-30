@@ -1,6 +1,8 @@
 # Index operations
 
-`vsm-harness-index` is the evidence-backed corpus and publication layer for VSM Harness assessments. It does **not** define VSM semantics or the assessment/classification Methodology.
+`vsm-harness-index` is the evidence-backed **general assessment corpus and publication layer** for VSM Harness assessments. It does **not** define VSM semantics or the assessment/classification Methodology.
+
+See [`GENERAL_ASSESSMENT.md`](GENERAL_ASSESSMENT.md) for the boundary between this canonical general corpus and future domain-specific assessment indexes.
 
 The source-of-truth chain is:
 
@@ -9,31 +11,33 @@ vsm-harness-profile
     VSM organizational semantics
         ↓
 vsm-harness-skills
-    assessment format + classification + synthesis procedure
+    general assessment format + classification + synthesis procedure
         ↓
 vsm-harness-index
-    corpus instances + provenance + generated views
+    general corpus instances + provenance + generated views
 ```
 
 Use the upstream owners directly:
 
 - [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md) — S1, S2, S3, S3*, S4, S5, recursion, autonomy, variety, closure, authority, and organizational semantics;
-- [`assess-vsm-harness`](https://github.com/opensiro/vsm-harness-skills/tree/main/skills/assess-vsm-harness) — evidence collection, standalone assessment procedure, artifact format, and publication-state classification;
-- [`vsm-harness-skills/SYNTHESIS.md`](https://github.com/opensiro/vsm-harness-skills/blob/main/SYNTHESIS.md) — cohort-relative signature synthesis and deterministic ranking projection.
+- [`assess-vsm-harness`](https://github.com/opensiro/vsm-harness-skills/tree/main/skills/assess-vsm-harness) — general evidence collection, standalone assessment procedure, artifact format, and publication-state classification;
+- [`vsm-harness-skills/SYNTHESIS.md`](https://github.com/opensiro/vsm-harness-skills/blob/main/SYNTHESIS.md) — general cohort-relative signature synthesis and deterministic ranking projection.
 
-This document owns only Index-local publication, intake, provenance, reassessment bookkeeping, and materialization rules.
+This document owns only Index-local publication, intake, provenance, reassessment bookkeeping, and materialization rules for the general corpus.
 
 ## Artifact separation
 
 The Index keeps the following artifacts separate.
 
-### Canonical assessment
+### Canonical general assessment
 
-`assessments/<harness_id>.md` is a repository-relative, revision-relative instance produced under a recorded Profile/Methodology contract.
+`assessments/<harness_id>.md` is a repository-relative, revision-relative **general VSM assessment** produced under a recorded Profile/Methodology contract.
 
 The **format and semantic validity of the assessment are owned by `vsm-harness-skills`**. The Index stores the accepted instance and its provenance.
 
 Adding another harness must not change an existing standalone assessment merely because the cohort changed.
+
+A domain-specific assessment of the same upstream system belongs to its own assessment/index contract and must not overwrite this artifact.
 
 ### Catalog
 
@@ -43,19 +47,19 @@ It is not a second assessment database and must not carry VSM classifications.
 
 ### Signature
 
-`data/signatures.psv` is cohort-relative. It materializes the signature produced by applying the active Methodology synthesis procedure to accepted standalone assessments in catalog order.
+`data/signatures.psv` is cohort-relative. It materializes the signature produced by applying the active general Methodology synthesis procedure to accepted standalone assessments in catalog order.
 
-A signature may change when the earlier comparison cohort changes. It must not change an assessment state or introduce a repository claim absent from the canonical assessment.
+A signature may change when the earlier comparison cohort changes. It must not change an assessment state or introduce a repository claim absent from the canonical general assessment.
 
 ### Generated views
 
-`TLDR.md`, `RANKINGS.md`, `FULL_A.md`, metrics, and analytics are materialized projections. Their semantics come from the active Methodology; their exact checked-in output identity is the Index Git revision.
+`TLDR.md`, `RANKINGS.md`, `FULL_A.md`, metrics, and analytics are materialized projections. Their semantics come from the active general Methodology; their exact checked-in output identity is the Index Git revision.
 
 Index renderer code is a **consumer implementation** of the Methodology projection contract. It is not an independent semantic definition.
 
 ## Active contract
 
-`data/active-contract.psv` records the Profile/Methodology pair expected for new Index work.
+`data/active-contract.psv` records the Profile/Methodology pair expected for new general Index work.
 
 It is configuration/provenance infrastructure, not a semantic specification. Changing the active pair does not retroactively rewrite historical assessment provenance.
 
@@ -81,12 +85,12 @@ discover
 The responsibilities are deliberately split:
 
 - discovery, queueing, pinning, admission, and publication state live in this repository;
-- assessment meaning and artifact requirements come from Skills;
-- VSM semantics come from Profile.
+- general assessment meaning and artifact requirements come from Skills;
+- VSM semantics and independent Profile versions come from Profile.
 
 ## Admission lifecycle
 
-Assessment intake can temporarily use `status: proposed` as an Index-local workflow state. Proposed artifacts are review surfaces, not admitted corpus facts.
+Assessment intake can temporarily use `status: proposed` as an Index-local workflow state. Proposed artifacts are review surfaces, not admitted general corpus facts.
 
 Canonical admission resolves the proposal to the status allowed by the active assessment contract and updates Index-owned registry/projection artifacts atomically as needed.
 
@@ -101,7 +105,7 @@ The semantic synthesis procedure is defined only in `vsm-harness-skills/SYNTHESI
 Index-local rules are operational:
 
 1. preserve immutable `catalog_position` as discovery/comparison order;
-2. apply the active synthesis procedure to accepted standalone assessments;
+2. apply the active synthesis procedure to accepted standalone general assessments;
 3. store the resulting cohort-relative signature in `data/signatures.psv`;
 4. if an earlier assessment is admitted or corrected, revisit later signatures whose comparison basis may have changed;
 5. never modify a standalone assessment solely to produce a different signature;
@@ -120,6 +124,27 @@ Two repository-boundary cases are recorded:
 
 A newer upstream commit does not by itself force an assessment rewrite. First inspect whether it materially changes the evidence relevant to the current assessment under the applicable Methodology.
 
+### Deprecated universal Profile-impact routing
+
+Historical general-Index releases and frozen reassessment rounds may rely on the Profile's legacy `assessment_impact` / selector facade. Preserve that provenance and do not rewrite those historical contracts.
+
+For future architecture, however, treating Profile-owned impact metadata as a **universal reassessment instruction** is deprecated.
+
+The forward responsibility split is:
+
+```text
+Profile version
+    → records normative model changes
+
+Skills assessment specification
+    → decides how those changes affect its evidence / classification contract
+
+Index
+    → applies and records the resulting general-corpus migration or reassessment
+```
+
+A future domain-specific assessment may track the same Profile version and legitimately use a different reassessment policy.
+
 ## Reassessment rounds
 
 Longitudinal checks are grouped into dated rounds under `reassessments/`.
@@ -136,13 +161,13 @@ Harnesses admitted after the cutoff enter a later round rather than extending th
 
 Per-harness outcomes are stored in `data/reassessment-history.psv`. The currently supported outcome vocabulary is an Index-local workflow contract because it describes longitudinal bookkeeping, not VSM classification.
 
-A completed successful check records how far upstream was inspected, when it was inspected, under which Profile/Methodology pair it was judged, and whether the canonical assessment changed.
+A completed successful check records how far upstream was inspected, when it was inspected, under which Profile/Methodology pair it was judged, and whether the canonical general assessment changed.
 
 A blocked check remains in history but does not advance accepted freshness or assessment provenance.
 
 ## Freshness and provenance
 
-The canonical assessment carries the currently accepted boundary and latest successful freshness metadata. Reassessment history remains append-only.
+The canonical general assessment carries the currently accepted boundary and latest successful freshness metadata. Reassessment history remains append-only.
 
 Important distinctions:
 
@@ -167,7 +192,7 @@ Round-level scope and progress live under `reassessments/`.
 
 ## Consumer implementation boundary
 
-The Index contains parsers, validators, and renderers because it must materialize and protect a concrete corpus revision.
+The Index contains parsers, validators, and renderers because it must materialize and protect a concrete general corpus revision.
 
 Those implementations may encode compatibility with currently supported Methodology releases, but they do not own the meaning of a publication state or the assessment body contract.
 
@@ -180,7 +205,7 @@ update Index consumer compatibility if required
         ↓
 activate the released contract for new work
         ↓
-explicitly migrate/revalidate affected assessments
+explicitly migrate/revalidate affected general assessments
         ↓
 regenerate Index projections
 ```
@@ -206,7 +231,8 @@ CI additionally checks the active `vsm-harness-skills` release and validates act
 ## Boundary summary
 
 ```text
-Profile says what VSM means.
-Skills says what a valid assessment and projection mean.
-Index stores accepted assessment instances and materializes the corpus.
+Profile says what VSM means and versions that model independently.
+Skills says what a valid general or domain-specific assessment means.
+Index stores accepted general assessment instances and materializes the general corpus.
+Domain-specific indexes own their own additional assessment conclusions.
 ```
