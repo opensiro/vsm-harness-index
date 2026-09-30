@@ -334,3 +334,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 319|pipecat|Pipecat|https://github.com/pipecat-ai/pipecat|2023-12-27T12:59:00Z|index-addition|dbdf21a017f86624fb7768e35730417169524e0d|2026-09-29
 320|ahe|Agentic Harness Engineering|https://github.com/china-qijizhifeng/agentic-harness-engineering|2026-04-23T07:01:18Z|index-addition|8b2a55d97590363fe50c3cc6b5e833b020a4bb4c|2026-09-29
 321|oh-my-claudecode|oh-my-claudecode|https://github.com/Yeachan-Heo/oh-my-claudecode|2026-01-09T03:36:29Z|index-addition|5281b19e0d64f8e6dc6767f2130299a88af2dc71|2026-09-29
+322|openclaw-dotnet|OpenClaw.NET|https://github.com/clawdotnet/openclaw.net|2026-02-22T03:21:36Z|index-addition|a5d1b7ee689967baf4097c5bf8b578f00e2da87e|2026-09-20
