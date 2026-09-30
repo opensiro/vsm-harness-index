@@ -34,14 +34,16 @@ vsm-harness-skills
     assessment + classification + synthesis Methodology
         ↓
 vsm-harness-index
-    accepted corpus + provenance + generated views
+    accepted general-assessment corpus + provenance + generated views
 ```
+
+This repository is the canonical corpus for the **general OpenSiro VSM Harness assessment**. A future domain-specific assessment should publish to a distinct domain-specific index or equivalent assessment-owned corpus rather than being mixed into `assessments/` here. See [GENERAL_ASSESSMENT_BOUNDARY.md](GENERAL_ASSESSMENT_BOUNDARY.md).
 
 The Index does **not** define VSM functions, publication-state semantics, or the assessment artifact format.
 
 - [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md) is authoritative for VSM semantics.
-- [`assess-vsm-harness`](https://github.com/opensiro/vsm-harness-skills/tree/main/skills/assess-vsm-harness) is authoritative for standalone assessment procedure, format, and classification.
-- [`vsm-harness-skills/SYNTHESIS.md`](https://github.com/opensiro/vsm-harness-skills/blob/main/SYNTHESIS.md) is authoritative for cohort-relative synthesis and deterministic ranking projection.
+- [`assess-vsm-harness`](https://github.com/opensiro/vsm-harness-skills/tree/main/skills/assess-vsm-harness) is authoritative for the **general** standalone assessment procedure, format, and classification.
+- [`vsm-harness-skills/SYNTHESIS.md`](https://github.com/opensiro/vsm-harness-skills/blob/main/SYNTHESIS.md) is authoritative for general cohort-relative synthesis and deterministic ranking projection.
 - [`INDEXING.md`](INDEXING.md) defines only Index-local intake, provenance, reassessment bookkeeping, and publication/materialization rules.
 
 The primary artifact flow is:
@@ -49,7 +51,7 @@ The primary artifact flow is:
 ```text
 repository @ pinned revision
         ↓
-assessment produced under Profile + Methodology
+general assessment produced under Profile + Methodology
         ↓
 assessments/<harness_id>.md
         ↓
@@ -75,13 +77,15 @@ Active semantic contract: **Profile 0.2.4 / Methodology 0.3.6**.
 
 ## Assessments
 
-`assessments/<harness_id>.md` contains accepted repository-relative findings at a pinned revision.
+`assessments/<harness_id>.md` contains accepted repository-relative findings at a pinned revision under the **general assessment contract**.
 
 Adding another harness must not change an existing assessment merely because the comparison cohort changed.
 
 The assessment body, required evidence fields, allowed publication notation, negative-state requirements, parent-mode rules, and function-specific decision tests are all owned by the active `vsm-harness-skills` Methodology rather than repeated here.
 
 CI checks out the version-pinned active Skills release and runs its structural assessment contract checker before accepting active-version artifacts.
+
+Links to assessment artifacts in this repository identify the canonical **general assessment**. Domain-specific conclusions, when they exist, must use their own assessment/corpus identity and must not be presented as though they were the canonical general finding.
 
 ## Signatures
 
@@ -110,7 +114,9 @@ Index bookkeeping distinguishes:
 
 How the repository is semantically reassessed comes from the applicable Skills Methodology. How the accepted boundary, freshness, history, signatures, and generated views are recorded is Index-local.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [INDEXING.md](INDEXING.md), and `reassessments/`.
+**Deprecated architectural assumption:** a newer Profile release does not, by itself, give the Index authority to determine the required reassessment migration. Profile version changes remain semantic provenance and compatibility input; the applicable assessment specification decides whether and how its corpus must migrate or be revalidated. Existing historical reassessment rounds remain valid provenance.
+
+See [GENERAL_ASSESSMENT_BOUNDARY.md](GENERAL_ASSESSMENT_BOUNDARY.md), [CONTRIBUTING.md](CONTRIBUTING.md), [INDEXING.md](INDEXING.md), and `reassessments/`.
 
 ## Continuous index
 
@@ -124,11 +130,11 @@ discover → deduplicate → queue → pin → assess → admit → synthesize �
 
 ## Contributing and organization
 
-Use this repository for harness discovery/intake, assessment instances, reassessment history, catalog/provenance maintenance, signatures, generated Index views, and Index-local tooling.
+Use this repository for harness discovery/intake, **general assessment instances**, reassessment history, catalog/provenance maintenance, signatures, generated Index views, and Index-local tooling.
 
 For **currently tracked work across the bounded VSM Harness OSS group**, start with the shared [`OpenSiro VSM OSS TODO`](https://github.com/opensiro/vsm-oss-organization/blob/main/TODO.md). When it selects an Index task, return to the linked Index issue: that issue remains authoritative for the batch/row, frozen `review_ref`, evidence boundary, validation and admission state.
 
-Use `vsm-harness-skills` for changes to assessment format, classification procedure, publication states, synthesis semantics, and ranking projection.
+Use `vsm-harness-skills` for changes to assessment format, classification procedure, publication states, synthesis semantics, ranking projection, or additional assessment specifications.
 
 Use `vsm-harness-profile` for changes to VSM semantics.
 
