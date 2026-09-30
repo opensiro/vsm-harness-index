@@ -11,7 +11,7 @@ assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-09-30
 status: proposed
 autonomy_s1: A
-autonomy_s2: A(P)
+autonomy_s2: A
 autonomy_s3: A(P)
 autonomy_s3_star: —
 autonomy_s4: —
@@ -45,7 +45,7 @@ Durable background work is a separate first-party execution plane. `background_a
 
 The primary model receives durable task IDs when it launches work. Model-facing `task_status` returns current task status/output and `task_cancel` can terminate queued/running work. `TaskManager` stores status, PID, output, session identity and scope paths, maintains cross-process locks/event records, recovers stale workers and sends process termination on cancellation. This gives the primary actor both a bounded concurrent S1 population and concrete current-control rights over that population.
 
-The same S2/S3 decisions have two supported ownership configurations. `PermissionGate` allows all tool actions automatically when `approvals='auto'`; the default `ask` mode pauses non-read tools for Allow once / Always allow / Reject. Because `parallel_agents`, `background_agent` and `task_cancel` are shell-risk tools, the primary model owns their decisive action in `auto`, while the operator is decisive for the same organizational commitment action in `ask`.
+S3 has two supported ownership configurations. `PermissionGate` allows all tool actions automatically when `approvals='auto'`; the default `ask` mode pauses non-read tools for Allow once / Always allow / Reject. Because `background_agent` and `task_cancel` are shell-risk tools, the primary model owns their decisive current-control action in `auto`, while the operator is decisive for the same organizational commitment action in `ask`. For S2, Methodology 0.3.x intentionally publishes no parent modifier: the autonomous `auto` mode establishes `A`, while human authorization in `ask` remains an operating caveat rather than an `A(P)` state.
 
 The autonomous workflow's verification phase is not credited as S3*. `verify_project` is a required production completion gate inside the same first-party execution controller. It supplies ordinary QA/feedback to the main coding loop, not a materially independent complementary auditor with a separate claim-access path.
 
@@ -84,7 +84,7 @@ This separates three functions cleanly: S1 is the child or foreground coding loo
 
 ## S2 — Coordination
 
-- State: A(P)
+- State: A
 - Function: attenuate destructive interference among multiple simultaneously active subordinate coding S1s sharing one project by bounding concurrency and enforcing non-overlapping writable workspace scopes.
 - Disturbance / variety regulated: concurrent background coding agents could edit the same or nested paths, overwrite one another, create non-reviewable shared-state races or exceed the bounded worker capacity for one session.
 - Distinct S1 units: each `parallel_agents` task becomes a separately persisted `agent` task with its own detached worker process, provider configuration, prompt, status/output and declared `scopePaths`.
@@ -93,24 +93,15 @@ This separates three functions cleanly: S1 is the child or foreground coding loo
 - Feedback into subsequent S1 behaviour: accepted scopes constrain child write behavior; rejected overlap/capacity calls return errors to the primary model, which can redesign task decomposition/scopes or run work sequentially. Active scoped commitments are persisted and considered by later admissions.
 - Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the mechanism is expressly conditional on a concrete inter-S1 interference class—overlapping concurrent workspace mutation—and alters admission/write behavior specifically to attenuate it. Mere multiplicity or task routing is not the basis of the positive state.
 - Decisive decision or feedback right: select which child S1 tasks may be launched together and assign their non-overlapping workspace ownership scopes; after scheduler feedback, revise those task/scope choices.
-- Decision owner: primary model-backed TermAgent actor in `approvals='auto'`; interactive operator is decisive in `ask` for authorization of the shell-risk launch.
+- Decision owner: primary model-backed TermAgent actor in `approvals='auto'`. Interactive `ask` can parent-gate launch authorization, but Methodology 0.3.x does not encode parent-mode notation for S2.
 - Supporting / enforcement mechanisms: `parallel_agents`; scope normalization/overlap checks; `activeAgentTasks`; per-session capacity; cross-process session lock; scoped worker write checks; durable task records.
 - Closure path: primary actor decomposes work and proposes tasks/scopes → scheduler compares requested/current active scopes → launch is admitted or rejected → accepted children operate inside constrained scopes / rejection returns conflict evidence → subsequent primary decomposition can change.
 - Boundary reachability: `parallel_agents` is registered in the standard CLI/server runtime together with first-party worker/task machinery; no application-authored coordinator is required.
-- Why this is / is not agent-owned: deterministic code enforces safety once task/scopes are proposed, but without the primary model there is no task-specific choice of which independent coding commitments to create together or how to partition their work. In `ask`, the operator additionally owns launch authorization.
+- Why this is / is not agent-owned: deterministic code enforces safety once task/scopes are proposed, but without the primary model there is no task-specific choice of which independent coding commitments to create together or how to partition their work. The supported `auto` mode closes that discretion without parent approval.
 - Evidence: [`src/tools/parallel.ts`](https://github.com/whoops-1/termagent/blob/33aa966551fcc2c050c0a213642d9966c3dd4a21/src/tools/parallel.ts); [`src/tasks/manager.ts`](https://github.com/whoops-1/termagent/blob/33aa966551fcc2c050c0a213642d9966c3dd4a21/src/tasks/manager.ts); [`docs/PHASE3_EXECUTION.md`](https://github.com/whoops-1/termagent/blob/33aa966551fcc2c050c0a213642d9966c3dd4a21/docs/PHASE3_EXECUTION.md); [`src/tools/permissions.ts`](https://github.com/whoops-1/termagent/blob/33aa966551fcc2c050c0a213642d9966c3dd4a21/src/tools/permissions.ts).
 - Basis: explicit + structural.
 - Confidence: high.
-- Caveats: S2 is deliberately bounded to declared workspace-scope interference; it does not imply generic semantic coordination among agents whose declared scopes are disjoint.
-
-### S2 mode matrix
-
-| Mode | Decisive owner | Trigger | Closure | Evidence |
-| --- | --- | --- | --- | --- |
-| Base (`A`) | Primary model-backed TermAgent actor | Model calls `parallel_agents` with 2–4 task/scope assignments under `approvals='auto'` | Runtime immediately checks active scopes/capacity, admits only non-overlapping commitments and returns launch/conflict feedback | `parallel.ts`; `manager.ts`; `permissions.ts` |
-| Parent (`P`) | Interactive operator | Model proposes the same shell-risk orchestration under `approvals='ask'` | Operator allows once/always or rejects; only an approved launch reaches the scheduler and children | `permissions.ts`; `parallel.ts` |
-
-The parent mode is credited because the approved action is itself the creation of the coordinated multi-S1 configuration, not an incidental file edit inside one S1.
+- Caveats: S2 is deliberately bounded to declared workspace-scope interference; it does not imply generic semantic coordination among agents whose declared scopes are disjoint. Human-gated `ask` runs remain supported, but S2 has no `(P)` publication state in Methodology 0.3.x.
 
 ## S3 — Inside-and-now control
 
