@@ -1,0 +1,90 @@
+name: admission-materialize-orkas
+
+on:
+  push:
+    branches:
+      - admission/orkas-1015
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical Orkas admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/orkas.md')
+          text = assessment.read_text(encoding='utf-8')
+          expected = 'status: proposed\n'
+          if text.count(expected) != 1:
+              raise SystemExit('expected exactly one proposed Orkas status')
+          if 'review_ref: bc21869913e30b72f83998d79c030b290d10f140\n' not in text:
+              raise SystemExit('unexpected Orkas review ref')
+          assessment.write_text(text.replace(expected, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if any('|orkas|' in row or 'https://github.com/Orkas-AI/Orkas' in row for row in rows[1:]):
+              raise SystemExit('Orkas already present in catalog')
+          positions = [int(row.split('|', 1)[0]) for row in rows[1:] if row.strip()]
+          next_position = max(positions) + 1
+          if next_position != 326:
+              raise SystemExit(f'unexpected next catalog position: {next_position}')
+          rows.append('326|orkas|Orkas|https://github.com/Orkas-AI/Orkas|2026-04-29T12:19:08Z|index-addition|bc21869913e30b72f83998d79c030b290d10f140|2026-09-20')
+          catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_rows = signatures.read_text(encoding='utf-8').splitlines()
+          if any('|orkas|' in row for row in sig_rows[1:]):
+              raise SystemExit('Orkas signature already present')
+          signature = (
+              'Orkas closes autonomous S1 through its shipped Commander/specialist model-tool loops, '
+              'constructor-owned S2 through same-path shared-workspace collision attenuation, and autonomous S3 '
+              'through Commander whole-goal ownership, sequencing and recovery; no complementary project/team S3* '
+              'path is established, while background reflection closes autonomous S4 by reinjecting learned '
+              'competence and strategies into future Commander turns, and ultimate project goal/rule authority '
+              'remains parent-owned S5.'
+          )
+          sig_rows.append(f'326|orkas|{signature}')
+          signatures.write_text('\n'.join(sig_rows) + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        shell: bash
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Verify generated tree
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/admission-materialize-orkas.yml
+          git add assessments/orkas.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics METRICS.md data/metrics.json README.md FULL_A.md 2>/dev/null || true
+          git diff --cached --check
+          git commit -m 'Index: admit Orkas at catalog #326'
+          git push origin HEAD:admission/orkas-1015
