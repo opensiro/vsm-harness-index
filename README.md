@@ -42,7 +42,8 @@ The Index does **not** define VSM functions, publication-state semantics, or the
 - [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md) is authoritative for VSM semantics.
 - [`assess-vsm-harness`](https://github.com/opensiro/vsm-harness-skills/tree/main/skills/assess-vsm-harness) is authoritative for standalone assessment procedure, format, and classification.
 - [`vsm-harness-skills/SYNTHESIS.md`](https://github.com/opensiro/vsm-harness-skills/blob/main/SYNTHESIS.md) is authoritative for cohort-relative synthesis and deterministic ranking projection.
-- [`INDEXING.md`](INDEXING.md) defines only Index-local intake, provenance, reassessment bookkeeping, and publication/materialization rules.
+- [`docs/general-assessment.md`](docs/general-assessment.md) defines this repository's general-assessment scope and its boundary with future domain-specific indexes.
+- [`INDEXING.md`](INDEXING.md) defines Index-local intake, provenance, reassessment bookkeeping, and publication/materialization rules; [`docs/assessment-lifecycle.md`](docs/assessment-lifecycle.md) owns the publication lifecycle.
 
 The primary artifact flow is:
 
