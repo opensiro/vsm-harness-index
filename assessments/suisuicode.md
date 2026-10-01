@@ -3,18 +3,18 @@ harness_id: suisuicode
 project_name: SuisuiCode
 repository: https://github.com/Yangtianspike/suisui-code
 review_ref: c9017b0613b22151325a5904a521aefe4c62abbc
-reviewed_at: 2026-09-30
+reviewed_at: 2026-10-02
 generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.6
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
-assessment_changed_at: 2026-09-30
+assessment_changed_at: 2026-10-02
 status: proposed
 autonomy_s1: A
 autonomy_s2: C
-autonomy_s3: A(P)
+autonomy_s3: A
 autonomy_s3_star: —
-autonomy_s4: —
+autonomy_s4: A
 autonomy_s5: —
 ---
 
@@ -22,16 +22,16 @@ autonomy_s5: —
 
 ## Review boundary
 
-- System in focus: SuisuiCode's first-party Python terminal coding-agent runtime at frozen revision `c9017b0613b22151325a5904a521aefe4c62abbc`, including the primary model/tool loop, built-in coding tools, permissions, sessions/context, background/fork subagents, Team/Coordinator machinery, shared team task state, mailbox/message transport and per-teammate worktree lifecycle.
-- Purpose and identity: perform software-engineering work in a project and, in supported Team/Coordinator modes, decompose current work across multiple first-party coding agents while keeping their mutable work isolated and their current commitments visible to a Lead actor.
-- Relevant environment: user objectives, repository/worktree state, provider responses, filesystem/shell evidence, team task-board state, teammate lifecycle/status, team messages, project instructions, skills/hooks/MCP tools and operator permission decisions.
-- Standard-distribution boundary: SuisuiCode's own Agent runtime, built-in tools, permission/session/context state, Team manager/backends/tools, Coordinator mode and worktree manager are inside. External model providers and MCP servers are dependencies. User-authored skills/hooks/instructions configure the runtime but do not donate unshipped organizational functions.
-- Credited operating / distribution surfaces: `README.md`; `src/suisuicode/agent/agent.py`; `src/suisuicode/agent/agent_tool.py`; `src/suisuicode/agent/team_hook.py`; `src/suisuicode/team/spawn.py`; `src/suisuicode/team/manager.py`; `src/suisuicode/team/tasks/__init__.py`; team tools; `src/suisuicode/coordinator/__init__.py`; `src/suisuicode/permission/engine.py`; `src/suisuicode/cli.py`; worktree machinery.
-- Adjacent first-party surfaces excluded from ownership: tests as authority by themselves, contributor/release activity, external provider/MCP behavior, user-supplied skills and application-authored hooks. Documentation or prompts are credited only where the frozen implementation exposes the corresponding runtime path.
-- First-party operating / deployment modes considered: ordinary terminal coding sessions; foreground/background/fork Agent calls; Team teammates on supported backends; Coordinator mode; permission modes including default interactive approval and `BYPASS`/YOLO; worktree-isolated teammate execution.
-- Recursion level: the assessed organization is one primary/Lead SuisuiCode session plus first-party teammate Agent runtimes that it can create and govern through Team state. Each teammate is a complete model/tool coding loop and therefore a distinct subordinate S1 at this recursion.
+- System in focus: the first-party SuisuiCode terminal coding-agent composition at frozen revision `c9017b0613b22151325a5904a521aefe4c62abbc`, including the main ReAct loop, coding tools, permission/session/context machinery, background SubAgent runtime, task-control tools, worktree isolation, memory updater, and the shipped Team/Coordinator surfaces insofar as their frozen implementation is operationally reachable.
+- Purpose and identity: perform repository-facing coding work in a terminal, optionally delegate bounded work to autonomous subagents, regulate those active subordinate runs, preserve project/user guidance across later operation, and expose richer team/worktree collaboration machinery.
+- Relevant environment: user coding objectives and approvals; repository/workspace state; model-provider responses; tool/process results; Git/worktree state; configured MCP servers; project/user instructions and memory; optional user/project subagent definitions.
+- Standard-distribution boundary: shipped `src/suisuicode` runtime, built-in tools/subagent definitions, standard user/project subagent-definition loader, TaskManager, worktree manager, memory manager, permission/context/session/hook machinery, and model-facing Team/Coordinator primitives are inside. External model providers, MCP servers, tmux/iTerm applications, user-authored hooks/skills/subagent prompts, and Git itself are dependencies. Their internal organizational functions are not inherited.
+- Credited operating / distribution surfaces: `README.md`; `src/suisuicode/cli.py`; `src/suisuicode/agent/agent.py`; `src/suisuicode/agent/run_to_completion.py`; `src/suisuicode/agent/agent_tool.py`; `src/suisuicode/agent/agent_worktree.py`; `src/suisuicode/task/manager.py`; `src/suisuicode/task/tools.py`; `src/suisuicode/subagent/definition.py`; `src/suisuicode/subagent/parser.py`; `src/suisuicode/memory/manager.py`; `src/suisuicode/memory/prompts.py`; and the inspected Team/Coordinator implementation.
+- Adjacent first-party surfaces excluded from ownership: tests and chapter/spec commentary as authority by themselves; generic hooks and externally supplied MCP/skill logic; operator slash commands; development-only examples; and any advertised Team behavior that does not close through the frozen runtime implementation.
+- First-party operating / deployment modes considered: ordinary terminal main-agent operation; built-in and forked foreground/background SubAgents; standard project/user subagent definitions including `isolation: worktree`; task-list/status/stop/re-task control; persistent memory update/load; and opt-in Coordinator/Team mode as an inspected but partially non-closing path.
+- Recursion level: one SuisuiCode coding organization. Autonomous coding subagents are operational S1 cells when delegation is used; the main agent can act as the current-control lead over that population. In single-agent use the same model/tool loop directly supplies S1.
 - Reviewed revision: `c9017b0613b22151325a5904a521aefe4c62abbc`.
-- Observation date: 2026-09-30.
+- Observation date: 2026-10-02.
 - Generated Profile version: `0.2.4`.
 - Generated Methodology version: `0.3.6`.
 - Current Profile version: `0.2.4`.
@@ -39,177 +39,148 @@ autonomy_s5: —
 
 ## Repository architecture
 
-The primary `Agent` owns the repository-facing model/tool feedback loop. Model-selected tool calls run through SuisuiCode's first-party registry and permission engine; results return into the same conversation so subsequent model action can change from observed evidence. Sessions, context compaction/recovery, hooks, skills and MCP extend this operational loop without replacing its decision owner.
+The ordinary path is a first-party ReAct coding loop. `cli.py` constructs the provider-backed main `Agent`, tool registry, permission engine, context/session state and optional extensions. `Agent.run` repeatedly presents the model with currently permitted tool definitions, executes selected tool calls, returns actual results into the conversation and lets the same model choose the next action until a final response or bounded stop condition.
 
-`AgentTool` can construct additional full `Agent` runtimes with narrowed tools and independent runtime/conversation state. Team spawning is stronger than ordinary awaited delegation: when `team_name` is supplied, the call enters `TeamHook`/Team manager machinery and launches a teammate that is persisted as a team member. The supported tmux backend starts a separate teammate process in an automatically created dedicated Git worktree. Thus multiple teammates can be simultaneously active while remaining separate S1 units.
+SubAgent delegation is also operational in the frozen distribution independently of Team mode. The model-facing `Agent` tool resolves a built-in, user/project-defined or fork definition; constructs a child `Agent` with the parent provider, registry and permission engine; optionally switches model/tool scope; and executes it foreground or through `task.Manager`. `general-purpose` is a shipped full-tool operational role. Background tasks retain status, result, tool activity and usage. The main agent receives `TaskList`, `TaskGet`, `TaskStop` and `SendMessage`, giving the same autonomous lead a current view and intervention surface over its delegated S1 population.
 
-The Team subsystem persists a shared task board with task status, assignee and dependency relationships under file locks. Model-facing Team tools let a Lead create/list/get/update those commitments and send directed or broadcast messages. Coordinator Mode is a shipped opt-in first-party mode, enabled by a feature flag plus environment switch, that narrows the Lead's tools and explicitly instructs it to research, synthesize a work allocation, create tasks, spawn teammates, wait for reports, verify results and merge teammate worktree branches.
+Worktree isolation is a function-specific constructor on this subagent path. A standard subagent definition can request `isolation: worktree`; `AgentTool` then creates a dedicated Git worktree and `_execute_with_worktree` executes the child under `with_cwd(wt.path)`, explicitly telling it that it is isolated from the parent and must reread local files before edits. The isolation relation is selected by definition/configuration rather than by a shipped autonomous coordination policy, so it supports S2 at constructor level rather than S2=A.
 
-Every Team teammate receives a dedicated worktree as part of the spawn path. This mechanically separates mutable repository state between concurrent S1s. The isolation decision itself is fixed first-party runtime policy rather than a task-specific model judgment, so the coordination function is classified `C`, not `A`.
+The advertised Agent Team/Coordinator path is not used to establish the positive findings below because the frozen implementation contains a material closure gap. The tmux backend starts `python -m suisuicode --team-member ...`, but `cli.py` calls `run_team_member` without a constructed `sub_agent`/provider/registry/engine; `run_team_member` only executes mailbox tasks when `agent is not None`. The in-process Team builder likewise creates a child `Agent` with `provider=None`, `registry=None` and `engine=None`. Team task/mailbox/worktree structures are therefore evidence of intended organization and useful primitives, but this assessment does not silently promote the advertised Team topology into autonomous S2/S3 closure.
 
-Mutating Team/Agent actions pass through the ordinary permission engine. In `BYPASS`, the runtime automatically permits them, so the Coordinator model can autonomously create/update current commitments and spawn teammates. In default interactive modes the same mutating organization-level actions can require operator approval, yielding a parent-governed S3 path.
-
-Teammate completion is persisted into Team communication state, but no standard Lead-side consumer of `Manager.poll_lead_mailboxes()` was found in the reviewed TUI integration. The S3 claim therefore does not rely on an automatic Lead wake-up. It relies on the explicit Team task-board view and model-facing current-control tools available during Lead turns.
-
-Primary evidence:
-
-- [`README.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/README.md)
-- [`src/suisuicode/agent/agent.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent.py)
-- [`src/suisuicode/agent/agent_tool.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent_tool.py)
-- [`src/suisuicode/agent/team_hook.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/team_hook.py)
-- [`src/suisuicode/team/spawn.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/team/spawn.py)
-- [`src/suisuicode/team/manager.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/team/manager.py)
-- [`src/suisuicode/team/tasks/__init__.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/team/tasks/__init__.py)
-- [`src/suisuicode/coordinator/__init__.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/coordinator/__init__.py)
-- [`src/suisuicode/permission/engine.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/permission/engine.py)
-- [`src/suisuicode/cli.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py)
+SuisuiCode also ships a separate future-facing memory loop. After each completed main turn, `Agent.run` asynchronously asks `memory.Manager` to update durable memory. A model receives the recent conversation plus existing notes and independently chooses structured create/update/delete actions for information worth remembering long term. The prompt explicitly distinguishes user feedback that should prevent future mistakes and project knowledge with `Why` / `How to apply`. Stores persist the selected notes; on later startup `cli.py` loads the memory index and the main agent places that memory back into its system prompt. This is a closed outside-and-then adaptation path rather than passive transcript persistence.
 
 ## Operational model
 
-An ordinary SuisuiCode actor can perform repository work itself or create subordinate Agents. In Team mode, the Lead creates a persistent team/task structure and can spawn multiple teammates. Every teammate obtains an isolated worktree and runs its own coding loop. The Lead can inspect the team's current task board, create new commitments, change assignments/status/dependencies, message teammates, and in Coordinator mode converge the work by inspecting and merging teammate branches.
-
-This separates the relevant functions. S1 is each model/tool coding loop. S2 is the deterministic worktree-isolation policy that attenuates concurrent repository-mutation interference. S3 is the Lead's current organizational control over which tasks and teammate commitments exist now and how they are assigned/updated. Coordinator verification/merge is part of that production-control path rather than an independent S3* audit role.
+A user gives the main model a coding objective. The model chooses coding/tool actions from the live registry and revises later choices from returned file/process/tool evidence. It can also delegate operational work to child model loops. For background children, first-party task state provides a whole subordinate-population view and model-facing controls to inspect, cancel or re-task work. Separately, isolated-subagent definitions can attenuate concurrent workspace interference, while the memory updater converts durable distinctions from completed work into future operating guidance.
 
 ## S1 — Operations
 
 - State: A
-- Function: perform environment-facing coding work by interpreting an objective, selecting permitted repository/tool actions, executing them and revising later actions from returned evidence.
-- Disturbance / variety regulated: source/worktree state, implementation alternatives, provider uncertainty, file/shell results, tool failures, context pressure and changing task evidence.
-- Decisive decision or feedback right: choose the next task-specific coding/tool action and revise it after observing the result.
-- Decision owner: the model-backed SuisuiCode Agent in the primary session or each teammate/subagent runtime.
-- Supporting / enforcement mechanisms: first-party tool registry; permission engine; provider adapters; sessions/context compaction; hooks; skills; MCP; runtime turn bounds and tool filtering.
-- Closure path: task/current context → model decision → first-party tool execution → tool result appended to conversation → same model actor chooses another action or final response.
-- Boundary reachability: the shipped CLI directly instantiates the primary Agent and Team/subagent paths instantiate the same first-party Agent class or supported teammate process.
-- Why this is / is not agent-owned: removing the model actor leaves tools, permissions and state machinery but removes the open-ended task-specific choice of which repository action to take next.
-- Evidence: [`src/suisuicode/agent/agent.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent.py); [`src/suisuicode/agent/agent_tool.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent_tool.py); [`README.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/README.md).
+- Function: transform a coding objective into repository/process actions and a task result through iterative model-selected tool use with environment feedback.
+- Disturbance / variety regulated: repository state, implementation alternatives, tool/process outcomes, context pressure, provider responses, permission outcomes and user corrections.
+- Decisive decision or feedback right: choose the next substantive coding/delegation/tool action and revise subsequent action from returned evidence.
+- Decision owner: the configured model actor in the first-party main `Agent` loop; spawned child `Agent` instances own the same task-local operational discretion for delegated S1 work.
+- Supporting / enforcement mechanisms: tool registry/executor, permission engine, context manager and compaction, session persistence, iteration bounds, hooks, MCP adapters, TaskManager and worktree machinery.
+- Closure path: user objective/current context → model chooses a tool/action → SuisuiCode executes it → actual tool/environment result is appended to the conversation → the same model receives that result and chooses another action or a final answer.
+- Boundary reachability: `suisuicode` constructs this shipped provider-backed `Agent` directly; built-in coding tools and standard subagent runtime are wired by `cli.py` without requiring an external orchestration framework.
+- Why this is / is not agent-owned: if the model actor is removed while deterministic permissions, tool execution, context management and persistence remain, those mechanisms can enforce constraints but cannot choose open-ended coding actions. The substantive operational discretion is therefore agent-owned.
+- Evidence: [`README.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/README.md); [`src/suisuicode/cli.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py); [`src/suisuicode/agent/agent.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent.py); [`src/suisuicode/agent/run_to_completion.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/run_to_completion.py); [`src/suisuicode/agent/agent_tool.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent_tool.py).
 - Basis: explicit + structural.
 - Confidence: high.
-- Caveats: mutating actions can be human-gated depending on permission mode; `BYPASS` is a first-party supported autonomous operating mode.
+- Caveats: model inference is supplied by an external provider. The finding credits SuisuiCode's first-party loop that places the model in the operational decision role, not provider-side internals.
 
 ## S2 — Coordination
 
 - State: C
-- Function: attenuate a concrete interference class among concurrently active teammate S1s by separating their mutable repository state into dedicated Git worktrees and serializing shared Team metadata updates.
-- Disturbance / variety regulated: simultaneous coding teammates could otherwise edit the same working tree, overwrite one another's changes or race on shared Team/task persistence.
-- Distinct S1 units: Team spawn creates separately executing teammate Agents, including a supported tmux backend that launches a teammate process with its own Agent runtime and worktree.
-- Inter-S1 disturbance: the teammates act on one project's source state and can make concurrent mutations whose effects would conflict if they shared a working tree; shared task/team metadata is also concurrently mutable.
-- Attenuating coordination relation: Team spawn mechanically creates a distinct Git worktree for each teammate before launch; teammate execution is rooted there, while file locks protect shared Team/task persistence. Spawn fails if the required worktree cannot be established.
-- Feedback into subsequent S1 behaviour: each teammate's filesystem actions occur against its isolated branch/worktree; the Lead later sees separate outputs/branches and merges them explicitly rather than allowing uncontrolled same-tree mutation. Team/task state updates are serialized before later actors read them.
-- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the credited mechanism is not teammate plurality or messaging. It directly changes the mutable environment presented to simultaneous S1s in response to a specific cross-S1 conflict class: concurrent edits to shared project state.
-- Decisive decision or feedback right: apply per-teammate workspace separation and serialize shared coordination-state mutation whenever a Team teammate is admitted.
-- Decision owner: first-party deterministic runtime policy. The Lead chooses what work to delegate, but it does not choose whether the teammate receives the isolation response; the worktree is created as a mandatory spawn step.
-- Supporting / enforcement mechanisms: Team spawn lifecycle; worktree manager/create/lifecycle code; Team file locks; task-store persistence; backend launch rooted in teammate worktree.
-- Closure path: Team teammate admission → runtime creates isolated worktree / serializes Team state → child S1 executes against isolated mutable state → separate branch/result returns for later convergence; failed isolation blocks spawn rather than exposing shared mutable state.
-- Boundary reachability: Team spawning, worktree creation and Team/task persistence are wired into the standard first-party CLI/Team runtime and require no application-authored coordinator.
-- Why this is / is not agent-owned: the material attenuation decision is code-owned and deterministic. Removing the Lead model does not remove the rule that any admitted teammate is isolated; conversely the model cannot elect to bypass that coordination rule within this Team spawn path.
-- Evidence: [`src/suisuicode/team/spawn.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/team/spawn.py); [`src/suisuicode/team/tasks/__init__.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/team/tasks/__init__.py); [`src/suisuicode/team/backend/tmux.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/team/backend/tmux.py); [`README.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/README.md).
+- Function: attenuate workspace interference among distinct delegated coding S1 cells by assigning an isolated Git worktree execution root to subagents whose standard definition requests worktree isolation.
+- Disturbance / variety regulated: concurrent coding agents operating against one checkout can overwrite or observe one another's in-progress file changes and lose clear ownership of a change set.
+- Distinct S1 units: the main Agent tool can instantiate multiple independent child `Agent` loops, including the shipped full-tool `general-purpose` role and fork/user/project roles, with separate conversations/runtime state and foreground/background lifecycles.
+- Inter-S1 disturbance: mutating child agents can otherwise act against the same repository workspace, coupling independent work through shared files and stale observations.
+- Attenuating coordination relation: `Definition.isolation` exposes the explicit `worktree` mode; `AgentTool` routes such a child through `_execute_with_worktree`, which creates a dedicated worktree and runs the child's full model/tool loop under that worktree cwd.
+- Feedback into subsequent S1 behaviour: the isolation result changes the actual filesystem root seen by that child; the injected worktree notice also requires local rereads before editing, so subsequent S1 file decisions/actions occur against the isolated checkout rather than the parent's live workspace.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the credited relation is specifically an interference-attenuation mechanism for concurrent mutating S1s. Generic background delegation, TaskManager state and mailbox surfaces are not by themselves used as S2 evidence.
+- Decisive decision or feedback right: bind an operational child to a dedicated worktree so its mutable workspace is separated from other S1 work.
+- Decision owner: no shipped autonomous coordination actor owns that isolation choice as an organizational policy. The developer/operator selects it in the subagent definition; first-party runtime then deterministically enforces the relation.
+- Supporting / enforcement mechanisms: subagent-definition parser; worktree manager; unique worktree creation; `with_cwd`; worktree context notice; auto-cleanup/preservation reporting.
+- Closure path: a standard subagent definition specifies `isolation: worktree` → the model delegates work to that role → SuisuiCode creates a dedicated worktree → the child Agent executes with that worktree as cwd → its later reads/writes remain separated from the parent's checkout → cleanup preserves or removes the isolated branch/worktree according to result state.
+- Boundary reachability: `isolation: worktree` is an explicit first-party definition field accepted from the standard user/project subagent-definition surfaces and executed by the ordinary model-facing `Agent` tool. The user supplies the role/configuration but does not have to invent the isolation path.
+- Why this is / is not agent-owned: removing the main model's discretion leaves the same definition-selected worktree relation available to any invocation; the decisive coordination policy is not autonomously selected by a shipped coordinator. The S2-specific constructor is therefore `C`, not `A`.
+- Evidence: [`src/suisuicode/subagent/definition.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/subagent/definition.py); [`src/suisuicode/subagent/parser.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/subagent/parser.py); [`src/suisuicode/agent/agent_tool.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent_tool.py); [`src/suisuicode/agent/agent_worktree.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent_worktree.py); [`src/suisuicode/subagent/builtin/general-purpose.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/subagent/builtin/general-purpose.md).
 - Basis: explicit + structural.
 - Confidence: medium-high.
-- Caveats: the positive S2 claim is bounded to workspace/persistence interference. It does not imply autonomous semantic negotiation among teammates. The in-process backend is not needed for the claim; the supported tmux path supplies concrete simultaneous teammate execution.
+- Caveats: none of the inspected built-in role files makes worktree isolation the autonomous default; the positive finding is intentionally constructor-level. The frozen Team mode is not used to strengthen this state because its teammate execution path does not close reliably.
 
 ## S3 — Inside-and-now control
 
-- State: A(P)
-- Function: regulate the current Team's operational commitments by deciding what tasks should exist, how they are assigned/dependent, which teammates should be spawned, what instructions they receive and how current work is converged or removed.
-- Disturbance / variety regulated: changing workload decomposition, multiple active teammate commitments, task dependencies/readiness, reassignment, blocked/incomplete work, teammate reports and the need to converge isolated branches into the current project.
-- Whole-system current view: `TeamTaskList` exposes the Team's task population with status, assignee, dependency and readiness state; `TeamTaskGet` exposes selected commitment detail. Team/member persistence records the active organization. The S3 claim relies on these explicit queryable views, not on an unverified automatic Lead-mailbox wake-up.
-- Current-control decision scope: the Lead can create tasks, update their status/assignee/dependencies, create/delete a Team, spawn Team teammates with `Agent(team_name=...)`, send directed/broadcast instructions, and in Coordinator mode inspect and merge teammate worktree branches. These actions change the current set, assignment and convergence of operational commitments.
-- Decisive decision or feedback right: decide what current work should be delegated, which teammate/assignment structure should exist now, revise task state/dependencies after observed evidence, message teammates and decide how/when isolated results are merged.
-- Decision owner: model-backed Lead in supported `BYPASS`/YOLO permission mode; interactive operator becomes decisive for mutating organization-tool authorization in parent-governed modes.
-- Supporting / enforcement mechanisms: Coordinator tool whitelist/prompt; TeamCreate/TeamDelete; TaskCreate/TeamTaskGet/TeamTaskList/TaskUpdate; `Agent` Team spawn; TeamSendMessage; Team/task persistence; teammate worktrees; permission engine.
-- Closure path: current Team task/member/worktree evidence → Lead model queries task state and selects create/update/spawn/message/merge action → permission path → Team/task/runtime state changes → later TeamTaskList/Get, repository state and teammate outputs provide changed evidence for subsequent Lead decisions.
-- Boundary reachability: Coordinator mode and Team tools are registered/wired in the shipped CLI; the Team spawn path launches first-party SuisuiCode teammate runtimes. No application-authored orchestration is required.
-- Why this is / is not agent-owned: in `BYPASS`, retaining Team stores and deterministic worktree machinery without the Lead model removes the task-specific judgment about decomposition, assignment, teammate creation and branch convergence. In parent-governed modes, the operator owns final authorization for the same mutating organization-level actions.
-- Evidence: [`src/suisuicode/coordinator/__init__.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/coordinator/__init__.py); [`src/suisuicode/team/tools/task_list.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/team/tools/task_list.py); [`src/suisuicode/team/tools/task_update.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/team/tools/task_update.py); [`src/suisuicode/agent/agent_tool.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent_tool.py); [`src/suisuicode/team/tools/send_message.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/team/tools/send_message.py); [`src/suisuicode/permission/engine.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/permission/engine.py); [`src/suisuicode/cli.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py).
+- State: A
+- Function: regulate the current population of delegated operational subagents by deciding which work to spawn, observing all background-run status/activity, cancelling work and re-tasking retained agents.
+- Disturbance / variety regulated: changing workload decomposition, long-running or failed delegated work, redundant/obsolete current tasks, child-agent completion and the need to redirect follow-up work while the main objective is still active.
+- Decisive decision or feedback right: decide whether/what to delegate, which child role/model/task to instantiate, whether a running task should be cancelled, and what follow-up task should be sent to a completed named agent.
+- Decision owner: the autonomous main model actor, because `Agent`, `TaskList`, `TaskGet`, `TaskStop` and `SendMessage` are registered as model-facing tools in the ordinary first-party composition.
+- Supporting / enforcement mechanisms: TaskManager's task registry/status/result/activity accounting; background asyncio lifecycle; name registry; completion queue; tool schemas; deterministic cancel/restart execution.
+- Closure path: main model delegates via `Agent` → child Agent runs as an independent S1 under TaskManager → TaskManager records current status/activity/result → model can inspect the population through `TaskList`/`TaskGet` → model decides to wait, stop or issue follow-up work → `TaskStop` cancels or `SendMessage` restarts the retained child conversation, changing subsequent current operation.
+- Whole-system current view: `TaskList` returns all tracked background tasks, with id, name, status, tool count and last activity; `TaskGet` adds result/error, timing and usage. At the declared delegated-subagent recursion this is a current view of the operational child population managed by the main agent.
+- Current-control decision scope: the main model can create operational commitments through `Agent`, terminate an active commitment through `TaskStop`, inspect completion/failure, and assign follow-up work through `SendMessage`; these decisions alter which S1 work remains active and what retained agents do next.
+- Boundary reachability: `cli.py` registers the `Agent`, `TaskList`, `TaskGet`, `TaskStop` and `SendMessage` tools in the ordinary shipped main-agent registry, and `AgentTool`/TaskManager instantiate and track the same first-party child Agent loops; no Team-mode path or application-authored supervisor is required.
+- Why this is / is not agent-owned: TaskManager itself only records/enforces lifecycle transitions. Without the main model actor, the registry can list or cancel only preselected ids but does not decide which current work should exist, be stopped or be re-tasked. The substantive supervisory discretion belongs to the model.
+- Evidence: [`src/suisuicode/cli.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py); [`src/suisuicode/agent/agent_tool.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent_tool.py); [`src/suisuicode/task/manager.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/task/manager.py); [`src/suisuicode/task/tools.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/task/tools.py).
 - Basis: explicit + structural.
 - Confidence: medium-high.
-- Caveats: Coordinator mode is opt-in behind a feature flag plus environment switch. Automatic Team Lead mailbox consumption was not found in the reviewed TUI integration, so the positive closure is episodic/query-driven through the task board and repository/worktree evidence rather than credited as push-driven wake-up.
-
-### S3 mode matrix
-
-| Mode | Decisive owner | Trigger | Closure | Evidence |
-| --- | --- | --- | --- | --- |
-| Base (`A`) | Model-backed Coordinator/Lead | Coordinator/Team mode is enabled and Lead selects mutating Team/Agent/task actions while permission mode is `BYPASS` | Runtime executes commitment/allocation changes directly; Team task/worktree state is queryable on later Lead turns | `coordinator/__init__.py`; Team tools; `agent_tool.py`; `permission/engine.py` |
-| Parent (`P`) | Interactive operator | Lead proposes the same mutating organization action in a mode where the permission engine returns `ASK` | Operator approval permits the Team/task/spawn change and its result returns to the Lead loop; denial prevents it | `permission/engine.py`; `agent.py`; Team tools |
-
-The parent leg is credited because approval controls organization-level commitments—creation/update of Team tasks or teammate execution—not merely an incidental file edit inside one S1.
+- Caveats: this S3 finding is the ordinary functional SubAgent/TaskManager composition, not the richer advertised Coordinator/Team composition. `SendMessage` resumes completed named agents rather than modifying an already-running child's prompt; a currently wrong run is instead stopped and replaced/redelegated.
 
 ## S3* — Complementary audit
 
 - State: —
-- Function: no material boundary-reachable complementary audit role with sufficiently independent evidence access, audit judgment and corrective return was established.
-- Disturbance / variety regulated: Coordinator verification/merge and teammate reports regulate production convergence, but no separate audit-specific disturbance/claim channel was established.
-- Decisive decision or feedback right: not established for a complementary auditor.
-- Decision owner: not established.
-- Supporting / enforcement mechanisms: Coordinator verification/merge phase; ordinary tests/bash/git diff; teammate reporting; Explore/Plan/general-purpose subagents; hooks/skills.
-- Closure path: absent at S3* level. Coordinator verification belongs to the same Lead production-control path, and generic subagent/skill primitives do not instantiate a default independent challenger whose audit verdict returns into corrective control.
-- Why this is / is not agent-owned: multiplicity, plan roles, test execution and branch review by the governing Lead are not sufficient complementary independence. No first-party default reviewer/adversary with an independent claim-access path was found.
-- Evidence: [`src/suisuicode/coordinator/__init__.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/coordinator/__init__.py); [`src/suisuicode/subagent/builtin/`](https://github.com/Yangtianspike/suisui-code/tree/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/subagent/builtin); [`README.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/README.md).
-- Basis: explicit + structural absence review.
+- Function: no material first-party complementary operational-audit loop with sufficiently independent access, audit judgment and corrective return is established at the assessed recursion.
+- Disturbance / variety regulated: permission checks, hooks, tests, worktree isolation and lead-side result inspection provide safety/visibility, but none closes a materially independent audit channel over current operational S1 claims.
+- Decisive decision or feedback right: no distinct first-party auditor is shown owning an independent approve/reject/escalate judgment over the operating subagent population.
+- Decision owner: not established for S3*.
+- Supporting / enforcement mechanisms: permission engine; lifecycle hooks; task result/status inspection; worktree cleanup; ordinary user review; repository tests.
+- Closure path: not applicable for the negative finding.
+- Claim being audited: no distinct operational claim is assigned to an independent first-party auditor in the standard runtime.
+- Ordinary reporting path: child results/status/tool activity return through TaskManager and ordinary model/tool results to the same main supervisory agent.
+- Complementary access path: not established. Hooks are configurable extension points supplied by operator/project configuration, while worktree and permission checks are inline execution/support mechanisms rather than a separate route to operational reality.
+- Independence boundary: no qualifying shipped autonomous auditor with materially different access from the ordinary lead/task path was found. Development tests and user review remain outside runtime S3* ownership.
+- Who acts on findings: the main model or human can react to normal task/tool results; there is no distinct S3* finding-and-return closure.
+- Why this is / is not agent-owned: autonomous main/subagents can inspect work, but the same operating/supervisory actors do not become a complementary audit function merely by reviewing their own outputs.
+- Evidence: [`src/suisuicode/task/tools.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/task/tools.py); [`src/suisuicode/agent/agent.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent.py); [`README.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/README.md).
+- Basis: explicit + structural negative search.
 - Confidence: high.
-- Caveats: user-authored skills or Team compositions could instantiate a reviewer, but uninstantiated composition is not credited as first-party closed S3*.
+- Caveats: a downstream project can configure hooks or specialist agents to perform review, but generic extensibility does not establish first-party S3*.
 
 ### Absence scope
 
-- Surfaces inspected: Coordinator verification/merge; built-in subagent definitions; Team messaging/reporting; task board; hooks/skills; repository/test tooling; worktree convergence.
-- Plausible first-party paths checked: default reviewer/adversary teammate, independent evidence channel, post-implementation audit worker, test/verifier role, branch-review gate and skill-based grading as possible S3*.
-- Why no material first-party path remains: shipped verification is part of the governing Lead's production convergence, while generic role/skill primitives do not instantiate a materially independent complementary audit actor by default.
+- Surfaces inspected: main/subagent event loops; TaskManager and result tools; Team/Coordinator task/mailbox surfaces; permission engine role; hook lifecycle; worktree execution/cleanup; built-in subagent definitions; tests/development surfaces.
+- Plausible first-party paths checked: main lead verification as audit; TaskGet/result inspection; worktree isolation as independent observation; hooks as reviewer; Plan mode; permission approval; project tests.
+- Why no material first-party path remains: the inspected checks either belong to ordinary production/supervision, are deterministic enforcement, are generic user-configurable extensions, or are development evidence. None supplies a distinct complementary access route plus independent audit judgment and corrective return.
 
-## S4 — Outside-and-then intelligence
+## S4 — Outside-and-then adaptation
 
-- State: —
-- Function: no material first-party external-and-prospective adaptation loop over SuisuiCode's own organizational capability was established.
-- Disturbance / variety regulated: memory, MCP, skills, remote skill installation, provider/model choice and context recovery can extend or reuse capabilities but do not close an outside-and-then strategy/adaptation function.
-- Decisive decision or feedback right: not established for prospective organizational adaptation.
-- Decision owner: not established.
-- Supporting / enforcement mechanisms: memory manager/store; MCP; skill catalog/load/install; `InstallSkill`; hooks; provider configuration; compaction/recovery.
-- Closure path: no closed environmental/future sensing → adaptation-option generation/evaluation → adopted change to present organizational capability/S3 loop was found. `InstallSkill` consumes a supplied GitHub URL and installs it under the normal permission path; it does not itself discover/evaluate external future-relevant capabilities.
-- Why this is / is not agent-owned: current-task use or installation of a preselected extension is not evidence of a distinct future-facing intelligence function that develops and adopts strategy/capability change for the organization.
-- Evidence: [`src/suisuicode/tool/install_skill.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/tool/install_skill.py); [`src/suisuicode/memory/`](https://github.com/Yangtianspike/suisui-code/tree/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/memory); [`src/suisuicode/skills/`](https://github.com/Yangtianspike/suisui-code/tree/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/skills); [`README.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/README.md).
-- Basis: explicit + structural absence review.
+- State: A
+- Function: convert durable project/user distinctions learned from completed work into model-selected long-term operating guidance that changes later SuisuiCode sessions.
+- Disturbance / variety regulated: recurring user corrections, stable preferences, project architecture/conventions, ongoing work/decisions and reference knowledge that later tasks would otherwise need to rediscover or could repeatedly mishandle.
+- Decisive decision or feedback right: decide whether observed information is worth retaining long term and whether to create, update, merge or delete project/user notes, including what `How to apply` guidance future work should receive.
+- Decision owner: the autonomous model actor invoked by the first-party memory-update loop.
+- Supporting / enforcement mechanisms: asynchronous per-turn trigger; existing-index/note retrieval; JSON action parser; project/user Store persistence; `MEMORY.md` index; startup `load_index`; system-prompt assembly.
+- Closure path: a main coding turn completes → `Agent.run` extracts the recent turn and schedules `memory.Manager.update_async` → memory model compares recent evidence with existing memory and selects create/update/delete actions → deterministic stores persist the chosen long-term guidance → a later SuisuiCode startup loads the memory index → that memory enters the main Agent system prompt and changes subsequent operating context.
+- Boundary reachability: the memory Manager is constructed by the standard CLI, passed into the main Agent, and invoked automatically after completed main turns when a provider is configured; persisted memory is loaded again by the same standard CLI path.
+- External distinction: actual conversation/project evidence includes user corrections/preferences and project knowledge learned during repository-facing work rather than only internal scheduler state.
+- Future / prospective distinction: the updater is explicitly told to retain only information worth remembering long term; `feedback` is framed as information to remember to avoid the same future error, while project notes encode ongoing goals/conventions and future `How to apply` guidance.
+- Adaptation option generated: the memory model autonomously generates structured `create`, `update` or `delete` actions and the content/type/level of each durable note, merging old and new evidence when appropriate.
+- Path back into current capability / S3: persisted notes are indexed by the memory stores; `cli.py` loads that index at startup and passes it as `memory_text` to the main Agent, whose system prompt uses it on later coding work. The returned adaptation therefore changes the information and operating guidance available to present S1/S3 decisions in later sessions.
+- Why this is / is not agent-owned: deterministic stores apply a structured action, but they do not decide what is strategically worth remembering, whether old guidance is obsolete, or how future work should apply a distinction. Removing the memory model leaves persistence machinery but no adaptation judgment.
+- Evidence: [`src/suisuicode/agent/agent.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent.py); [`src/suisuicode/memory/manager.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/memory/manager.py); [`src/suisuicode/memory/prompts.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/memory/prompts.py); [`src/suisuicode/cli.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py).
+- Basis: explicit + structural.
 - Confidence: high.
-- Caveats: an operator or application can deliberately add new skills/MCP servers/providers, but external configuration is not imported as runtime S4 without a closed first-party prospective decision loop.
-
-### Absence scope
-
-- Surfaces inspected: memory; skills/catalog/install; MCP; hooks; provider configuration; Coordinator/Team modes; session/context recovery; remote skill installation.
-- Plausible first-party paths checked: environment scanning, future-scenario modeling, autonomous skill/provider/tool scouting, evaluation of candidate capabilities, strategy generation and return of an adopted capability change into current control.
-- Why no material first-party path remains: inspected mechanisms consume configured or directly supplied extensions for present work; no first-party actor closes a distinct future-facing adaptation cycle.
+- Caveats: the freshly written memory is not shown being hot-reloaded into the already-running main Agent's cached `memory_text`; the established return path is durable adaptation into later startup/session operation, which is sufficient for the prospective loop but should not be read as same-turn adaptation.
 
 ## S5 — Policy and identity
 
 - State: —
-- Function: no material first-party runtime identity/ultimate-policy closure was established at the assessed recursion.
-- Disturbance / variety regulated: permission modes/rules, Coordinator feature locks, system prompts, teammate tool filters, project instructions and configuration constrain operation but do not constitute legitimate ultimate-policy/identity authority.
-- Decisive decision or feedback right: not established for identity or ultimate policy.
-- Decision owner: developer/operator configuration remains the ultimate source of these constraints outside a qualifying runtime S5 loop.
-- Supporting / enforcement mechanisms: permission engine and modes; feature flags/environment gates; Coordinator prompt/tool whitelist; teammate tool filtering; configuration/project instructions; hook/skill settings.
-- Closure path: absent at S5 level; no identity/ultimate-policy issue → legitimate runtime authority → authoritative policy decision → returned policy governing subsequent organization was found.
-- Why this is / is not agent-owned: the Lead and teammates act within externally authored policy. They can make current operational commitments, but they do not possess the legitimate right to redefine SuisuiCode's identity or ultimate rules.
-- Evidence: [`src/suisuicode/permission/engine.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/permission/engine.py); [`src/suisuicode/coordinator/__init__.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/coordinator/__init__.py); [`src/suisuicode/config/config.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/config/config.py).
-- Basis: explicit + structural absence review.
+- Function: no runtime identity/ultimate-policy tension-and-resolution loop is established at the chosen recursion.
+- Disturbance / variety regulated: permissions, modes, system prompts, subagent definitions, coordinator instructions and memory constrain or inform operation, but none is shown resolving a dispute about the organization's identity or ultimate policy.
+- Decisive decision or feedback right: not established for S5.
+- Decision owner: not established.
+- Supporting / enforcement mechanisms: permission modes/rules; user approvals; configuration; system/subagent prompts; Coordinator feature flag; memory/instructions; hook policies.
+- Closure path: not applicable for the negative finding.
+- Why this is / is not agent-owned: models make task, supervisory and memory-adaptation decisions, but no first-party actor is given ultimate authority to resolve identity/policy tensions and return such a resolution into subsequent organization-wide operation.
+- Evidence: [`README.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/README.md); [`src/suisuicode/cli.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py); [`src/suisuicode/coordinator/__init__.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/coordinator/__init__.py).
+- Basis: explicit + structural negative search.
 - Confidence: high.
-- Caveats: operator approval of a Team/task action is parent governance of S3, not evidence that the runtime has S5 identity authority.
+- Caveats: human control over permissions or feature/configuration choices is ordinary parent/operator control over implementation and task execution; it is not promoted to S5 without an identity/ultimate-policy function.
 
 ### Absence scope
 
-- Surfaces inspected: permission/configuration; Coordinator dual-lock and tool whitelist; teammate filters; system/project instructions; Team management; skills/hooks/MCP settings; repository-governance adjacency.
-- Plausible first-party paths checked: runtime constitutional revision, autonomous ultimate-policy adjudication, identity-level escalation, authoritative persistent rule change returned into subsequent organization and repository governance as parent identity authority.
-- Why no material first-party path remains: first-party mechanisms enforce externally authored constraints; no runtime actor owns legitimate ultimate-policy/identity closure.
+- Surfaces inspected: system prompt and Coordinator prompt; permission modes/rules/approvals; user/project subagent definitions; Team creation/deletion; hooks; project/user memory; CLI/configuration surfaces.
+- Plausible first-party paths checked: permission approval as ultimate authority; Coordinator role as identity owner; Team lifecycle as policy; memory/user preferences as identity adaptation; system prompts and feature flags as S5 policy.
+- Why no material first-party path remains: these surfaces configure, constrain or adapt coding operation but do not present an identity/ultimate-policy issue to a legitimate ultimate authority and close the resulting resolution back into organization-wide operation.
 
-## Recursion
+## Team-mode closure caveat
 
-Team teammates are complete first-party Agent runtimes with independent model/tool loops and isolated mutable worktrees. They therefore qualify as distinct S1 units for S2/S3 analysis. The review does not establish that each teammate recursively carries the same full Team metasystem, and the implementation deliberately constrains recursive teammate spawning.
+The frozen repository advertises Agent Team and Coordinator Mode and ships substantial Team persistence, mailbox, dependency and worktree machinery. Those surfaces are not ignored; they were inspected as plausible S2/S3 evidence. However the frozen executable path does not close teammate cognition in the standard Team backends: tmux/iTerm subprocesses enter `run_team_member` without a constructed agent/provider/registry/engine, while the in-process builder creates an `Agent` with those core dependencies unset. The positive S2/S3 findings above therefore rely only on the independently operational ordinary SubAgent/TaskManager/worktree composition. This prevents architecture intent from being credited as runtime autonomy.
 
-## Variety and escalation
+## Assessment summary
 
-SuisuiCode attenuates operational variety through permission modes, tool filtering, task dependencies, file locks, dedicated teammate worktrees, non-recursive teammate controls, session/context recovery and explicit Team state. It amplifies capability through background/subagents, Team parallelism, skills/hooks/MCP and multiple providers.
+SuisuiCode establishes autonomous coding operations, a constructor-level worktree coordination mechanism, autonomous current control over functional background subagents, and an autonomous long-term adaptation loop. It does not establish a materially independent complementary audit function or identity/ultimate-policy authority loop at the reviewed boundary.
 
-Escalation from subordinate operation to current control is explicit but query-driven: the Lead can inspect the shared Team task board, change assignments/dependencies/status, spawn teammates, message them and converge separate branches. Teammate completion is persisted to Team communication state, but no standard Lead-side automatic mailbox poll/wake-up path was verified at this revision and is not required for the credited S3 closure.
-
-## Evidence gaps
-
-- No standard TUI caller of `Manager.poll_lead_mailboxes()` was found; automatic teammate-completion wake-up to the Lead is therefore not credited.
-- The positive S2 claim is specifically deterministic workspace/persistence isolation, not evidence of autonomous semantic negotiation among teammates.
-- The in-process Team backend showed a less complete construction surface than the tmux path; the positive multi-S1 claim relies on the supported concrete tmux teammate path and common Team/worktree machinery.
-- No default complementary audit actor, outside-and-then adaptation loop or runtime ultimate-policy closure was found for S3*/S4/S5.
+**Vector:** `A · C · A · — · A · —`
