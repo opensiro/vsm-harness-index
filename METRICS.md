@@ -6,11 +6,11 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 
 | Metric | Value | Definition |
 | --- | ---: | --- |
-| Included standalone assessments | 320 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
-| Canonical assessment records | 346 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
+| Included standalone assessments | 321 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
+| Canonical assessment records | 347 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
 | Canonical exclusions | 26 | Completed assessments with `status: excluded-no-agentic-vsm`. |
-| Proposed intake assessments | 17 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
-| Catalog entries | 346 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
+| Proposed intake assessments | 16 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
+| Catalog entries | 347 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
 | Catalog entries without an included assessment | 26 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
 | Reassessment events | 88 | Recorded events in `data/reassessment-history.psv`. |
 | Full-A assessments | 1 | Included assessments whose base state is autonomous across S1, S2, S3, S3*, S4 and S5. `A(P)` counts as autonomous coverage. |
@@ -25,10 +25,10 @@ Milestones count included completed standalone assessments only. They are corpus
 
 | Target | Status | Progress |
 | ---: | --- | ---: |
-| 100 | Achieved | Achieved (current corpus: 320) |
-| 250 | Achieved | Achieved (current corpus: 320) |
-| 500 | Next | 320/500 (64.0%) |
-| 1000 | Planned | 320/1000 (32.0%) |
+| 100 | Achieved | Achieved (current corpus: 321) |
+| 250 | Achieved | Achieved (current corpus: 321) |
+| 500 | Next | 321/500 (64.2%) |
+| 1000 | Planned | 321/1000 (32.1%) |
 
 ## Machine-readable view
 
