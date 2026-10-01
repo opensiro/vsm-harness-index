@@ -346,3 +346,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 331|zhizhi-agent-runtime|Zhizhi Agent Runtime|https://github.com/cocoyes/zhizhi-agent-runtime|2026-08-31T10:23:49Z|index-addition|02465df2afbe6d511d20fa275ccffe0c40b1b31c|2026-09-20
 332|codex-autorunner|codex-autorunner (CAR)|https://github.com/Git-on-my-level/codex-autorunner|2025-12-09T15:57:56Z|index-addition|065f435d6120f95135425d8cc2df52760872a2d3|2026-09-20
 333|beagle|Beagle|https://github.com/SalesforceAIResearch/Beagle|2026-08-20T22:15:18Z|index-addition|165343b46a85b5d28c6370e6197ac665c7eda871|2026-09-29
+334|commons|Commons|https://github.com/t54-labs/agent-commons|2026-07-26T16:24:27Z|index-addition|6e911236127dc6cf0d231add87e302974151a7f4|2026-09-20
