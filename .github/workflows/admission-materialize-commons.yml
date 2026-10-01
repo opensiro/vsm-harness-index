@@ -1,0 +1,86 @@
+name: admission-materialize-commons
+
+on:
+  push:
+    branches:
+      - admission/commons-1009
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical Commons admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/commons.md')
+          text = assessment.read_text(encoding='utf-8')
+          expected = 'status: proposed\n'
+          if text.count(expected) != 1:
+              raise SystemExit('expected exactly one proposed Commons status')
+          if 'review_ref: 6e911236127dc6cf0d231add87e302974151a7f4\n' not in text:
+              raise SystemExit('unexpected Commons review ref')
+          assessment.write_text(text.replace(expected, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if any('|commons|' in row or 'https://github.com/t54-labs/agent-commons' in row for row in rows[1:]):
+              raise SystemExit('Commons already present in catalog')
+          positions = [int(row.split('|', 1)[0]) for row in rows[1:] if row.strip()]
+          next_position = max(positions) + 1
+          if next_position != 334:
+              raise SystemExit(f'unexpected next catalog position: {next_position}')
+          rows.append('334|commons|Commons|https://github.com/t54-labs/agent-commons|2026-07-26T16:24:27Z|index-addition|6e911236127dc6cf0d231add87e302974151a7f4|2026-09-20')
+          catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_rows = signatures.read_text(encoding='utf-8').splitlines()
+          if any('|commons|' in row for row in sig_rows[1:]):
+              raise SystemExit('Commons signature already present')
+          signature = (
+              'Commons closes autonomous S1 through Commons-enabled coding-agent work cells and autonomous S2 through agent-owned mutual adjustment over leased shared resources; '
+              'workspace membership/privacy scope closes parent-governed S5, while no qualifying S3, S3* or S4 path is established.'
+          )
+          sig_rows.append(f'334|commons|{signature}')
+          signatures.write_text('\n'.join(sig_rows) + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        shell: bash
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Verify generated tree
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/admission-materialize-commons.yml
+          git add assessments/commons.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics METRICS.md data/metrics.json README.md FULL_A.md 2>/dev/null || true
+          git diff --cached --check
+          git commit -m 'Index: admit Commons at catalog #334'
+          git push origin HEAD:admission/commons-1009
