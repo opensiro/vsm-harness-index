@@ -1,0 +1,102 @@
+name: admission-materialize-suisuicode
+on:
+  push:
+    branches:
+      - admission/suisuicode-1006
+permissions:
+  contents: write
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admission/suisuicode-1006
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical SuisuiCode admission sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/suisuicode.md')
+          text = assessment.read_text(encoding='utf-8')
+          required = [
+              'harness_id: suisuicode',
+              'repository: https://github.com/Yangtianspike/suisui-code',
+              'review_ref: c9017b0613b22151325a5904a521aefe4c62abbc',
+              'status: proposed',
+              'autonomy_s1: A',
+              'autonomy_s2: C',
+              'autonomy_s3: A',
+              'autonomy_s3_star: —',
+              'autonomy_s4: A',
+              'autonomy_s5: —',
+          ]
+          missing = [item for item in required if item not in text]
+          if missing:
+              raise SystemExit(f'assessment precondition failed: {missing}')
+          if text.count('status: proposed') != 1:
+              raise SystemExit('expected exactly one proposed lifecycle marker')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          rows = [line for line in catalog_text.splitlines()[1:] if line.strip()]
+          positions = [int(line.split('|', 1)[0]) for line in rows]
+          if max(positions) != 343:
+              raise SystemExit(f'catalog race: expected max 343, got {max(positions)}')
+          if any('|suisuicode|' in line or 'https://github.com/Yangtianspike/suisui-code' in line for line in rows):
+              raise SystemExit('catalog already contains SuisuiCode identity')
+
+          signatures = Path('data/signatures.psv')
+          signatures_text = signatures.read_text(encoding='utf-8')
+          if any('|suisuicode|' in line for line in signatures_text.splitlines()[1:]):
+              raise SystemExit('signatures already contain SuisuiCode identity')
+
+          assessment.write_text(text.replace('status: proposed', 'status: included', 1), encoding='utf-8')
+
+          catalog_row = (
+              '344|suisuicode|SuisuiCode|https://github.com/Yangtianspike/suisui-code|'
+              '2026-09-21T17:50:36Z|index-addition|'
+              'c9017b0613b22151325a5904a521aefe4c62abbc|2026-09-28'
+          )
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + catalog_row + '\n', encoding='utf-8')
+
+          signature = (
+              'SuisuiCode closes autonomous S1 through its model/tool loop, constructor S2 through '
+              'definition-selected worktree isolation, autonomous S3 through model-facing background '
+              'subagent control, and autonomous S4 through LLM-selected durable memory adaptation; '
+              'no qualifying complementary S3* or S5 identity-policy closure is established.'
+          )
+          signatures.write_text(
+              signatures_text.rstrip('\n') + f'\n344|suisuicode|{signature}\n',
+              encoding='utf-8',
+          )
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Verify generated tree
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        run: |
+          rm .github/workflows/admission-materialize-suisuicode.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Index: admit SuisuiCode at catalog #344'
+          git push origin HEAD:admission/suisuicode-1006
