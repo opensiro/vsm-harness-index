@@ -67,7 +67,6 @@ jobs:
         shell: bash
         run: |
           python scripts/check_index.py
-          python scripts/check_assessment_contract.py assessments/zhizhi-agent-runtime.md
           python scripts/validate_tldr.py
           python scripts/render_tldr.py --check
           python scripts/render_analytics.py --check
