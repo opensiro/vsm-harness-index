@@ -1,0 +1,86 @@
+name: admission-materialize-labunbun-code
+
+on:
+  push:
+    branches:
+      - admission/labunbun-code-1011
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical LaBunbun Code admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/labunbun-code.md')
+          text = assessment.read_text(encoding='utf-8')
+          expected = 'status: proposed\n'
+          if text.count(expected) != 1:
+              raise SystemExit('expected exactly one proposed labunbun-code status')
+          if 'review_ref: 1470556287af8325a2c7971f7858f42c0d8241a2\n' not in text:
+              raise SystemExit('unexpected labunbun-code review ref')
+          assessment.write_text(text.replace(expected, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if any('|labunbun-code|' in row or 'https://github.com/zayokami/labunbun-code' in row for row in rows[1:]):
+              raise SystemExit('labunbun-code already present in catalog')
+          positions = [int(row.split('|', 1)[0]) for row in rows[1:] if row.strip()]
+          next_position = max(positions) + 1
+          if next_position != 339:
+              raise SystemExit(f'unexpected next catalog position: {next_position}')
+          rows.append('339|labunbun-code|LaBunbun Code|https://github.com/zayokami/labunbun-code|2026-08-21T09:41:38Z|index-addition|1470556287af8325a2c7971f7858f42c0d8241a2|2026-09-28')
+          catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_rows = signatures.read_text(encoding='utf-8').splitlines()
+          if any('|labunbun-code|' in row for row in sig_rows[1:]):
+              raise SystemExit('labunbun-code signature already present')
+          signature = (
+              'LaBunbun Code closes an autonomous model/tool coding loop (S1=A). '
+              'Nested Task sessions, concurrency/task tracking, hooks/review surfaces, memory, permissions, trust and plan approval do not close S2/S3/S3*/S4/S5 at the assessed boundary.'
+          )
+          sig_rows.append(f'339|labunbun-code|{signature}')
+          signatures.write_text('\n'.join(sig_rows) + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        shell: bash
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Verify generated tree
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/admission-materialize-labunbun-code.yml
+          git add assessments/labunbun-code.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics METRICS.md data/metrics.json README.md FULL_A.md 2>/dev/null || true
+          git diff --cached --check
+          git commit -m 'Index: admit LaBunbun Code at catalog #339'
+          git push origin HEAD:admission/labunbun-code-1011
