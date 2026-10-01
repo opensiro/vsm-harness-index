@@ -1,0 +1,87 @@
+name: admission-materialize-harnessdesk
+
+on:
+  push:
+    branches:
+      - admission/harnessdesk-1009
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical HarnessDesk admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/harnessdesk.md')
+          text = assessment.read_text(encoding='utf-8')
+          expected = 'status: proposed\n'
+          if text.count(expected) != 1:
+              raise SystemExit('expected exactly one proposed HarnessDesk status')
+          if 'review_ref: 24add77185eebe321b0aa0b578933acf4a8e05d3\n' not in text:
+              raise SystemExit('unexpected HarnessDesk review ref')
+          assessment.write_text(text.replace(expected, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if any('|harnessdesk|' in row or 'https://github.com/HarnessDesk/HarnessDesk' in row for row in rows[1:]):
+              raise SystemExit('HarnessDesk already present in catalog')
+          positions = [int(row.split('|', 1)[0]) for row in rows[1:] if row.strip()]
+          next_position = max(positions) + 1
+          if next_position != 337:
+              raise SystemExit(f'unexpected next catalog position: {next_position}')
+          rows.append('337|harnessdesk|HarnessDesk|https://github.com/HarnessDesk/HarnessDesk|2026-09-08T01:14:39Z|index-addition|24add77185eebe321b0aa0b578933acf4a8e05d3|2026-09-20')
+          catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_rows = signatures.read_text(encoding='utf-8').splitlines()
+          if any('|harnessdesk|' in row for row in sig_rows[1:]):
+              raise SystemExit('HarnessDesk signature already present')
+          signature = (
+              'HarnessDesk closes autonomous S1 through seated coding-agent work cells and autonomous S2 through agent-owned adjustment over atomic task/file conflicts; '
+              'S3 is constructor-plus-parent C(P) through declared Flow control and a human Room referee, while a shipped independent-review Flow closes autonomous S3*. '
+              'No qualifying prospective S4 or identity/ultimate-policy S5 closure is established.'
+          )
+          sig_rows.append(f'337|harnessdesk|{signature}')
+          signatures.write_text('\n'.join(sig_rows) + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        shell: bash
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Verify generated tree
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/admission-materialize-harnessdesk.yml
+          git add assessments/harnessdesk.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics METRICS.md data/metrics.json README.md FULL_A.md 2>/dev/null || true
+          git diff --cached --check
+          git commit -m 'Index: admit HarnessDesk at catalog #337'
+          git push origin HEAD:admission/harnessdesk-1009
