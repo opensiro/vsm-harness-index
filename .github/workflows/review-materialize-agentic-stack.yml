@@ -1,0 +1,42 @@
+name: review-materialize-agentic-stack
+
+on:
+  push:
+    branches:
+      - assessment/agentic-stack-review-1009
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: assessment/agentic-stack-review-1009
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Render proposed review metrics
+        run: |
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Verify review tree
+        run: |
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit generated review snapshots and remove helper
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add METRICS.md data/metrics.json README.md
+          git rm .github/workflows/review-materialize-agentic-stack.yml
+          git commit -m 'Metrics: materialize proposed agentic-stack assessment'
+          git push origin HEAD:assessment/agentic-stack-review-1009
