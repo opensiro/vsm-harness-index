@@ -349,3 +349,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 334|commons|Commons|https://github.com/t54-labs/agent-commons|2026-07-26T16:24:27Z|index-addition|6e911236127dc6cf0d231add87e302974151a7f4|2026-09-20
 335|life-harness|Life-Harness|https://github.com/Tianshi-Xu/Life-Harness|2026-05-21T05:49:33Z|index-addition|22c299b83d888405d34d2c7efc0fcf4d2ccfdcef|2026-09-29
 336|agentspex|AgentSPEX|https://github.com/ScaleML/AgentSPEX|2026-04-14T21:24:46Z|index-addition|db99b7b6802fe15ef2997c82ec1d49e5228128f6|2026-09-29
+337|harnessdesk|HarnessDesk|https://github.com/HarnessDesk/HarnessDesk|2026-09-08T01:14:39Z|index-addition|24add77185eebe321b0aa0b578933acf4a8e05d3|2026-09-20
