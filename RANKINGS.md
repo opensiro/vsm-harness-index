@@ -85,6 +85,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="data-to-paper"></a>[data-to-paper](https://github.com/Technion-Kishony-lab/data-to-paper) | 2023-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A — — A A(P) —` |
 | 4 | <a id="cowagent"></a>[CowAgent](https://github.com/zhayujie/CowAgent) | 2022-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A C P — A A(P)` |
 | 4 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 5 | <a id="minagent"></a>[MinAgent](https://github.com/Nichonauta/MinAgent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="polyphemus"></a>[Polyphemus](https://github.com/polyphemus-ai/release-rehearsal) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C — A — P` |
 | 5 | <a id="multi-agent-orchestration"></a>[Multi-Agent Orchestration Engine](https://github.com/Vinay-veeragani/Multi-Agent-Orchestration) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="pibot"></a>[pibot](https://github.com/glebis/pibot) | 2026-Q3 | 2/6 | 1/5 | 1 | 3 | 0 | `A — P C A(P) P` |
