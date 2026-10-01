@@ -1,0 +1,115 @@
+name: admission-materialize-agentic-stack
+
+on:
+  push:
+    branches:
+      - admission/agentic-stack-1009
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admission/agentic-stack-1009
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical agentic-stack admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv
+          import re
+          from pathlib import Path
+
+          EXPECTED_POSITION = 343
+          HARNESS_ID = "agentic-stack"
+          REPOSITORY = "https://github.com/codejunkie99/agentic-stack"
+          REVIEW_REF = "8fd5726aaebbd421b835ad1c71f2c66064b74caf"
+          EXPECTED_VECTOR = {
+              "autonomy_s1": "A",
+              "autonomy_s2": "C",
+              "autonomy_s3": "—",
+              "autonomy_s3_star": "C",
+              "autonomy_s4": "—",
+              "autonomy_s5": "—",
+          }
+
+          catalog_path = Path("data/catalog.psv")
+          with catalog_path.open(encoding="utf-8", newline="") as handle:
+              rows = list(csv.DictReader(handle, delimiter="|"))
+          if not rows:
+              raise SystemExit("catalog is empty")
+          positions = [int(row["catalog_position"]) for row in rows]
+          actual_next = max(positions) + 1
+          if actual_next != EXPECTED_POSITION:
+              raise SystemExit(f"catalog race: expected next #{EXPECTED_POSITION}, found #{actual_next}")
+          if any(row["harness_id"] == HARNESS_ID for row in rows):
+              raise SystemExit(f"duplicate harness_id: {HARNESS_ID}")
+          if any(row["repository"] == REPOSITORY for row in rows):
+              raise SystemExit(f"duplicate repository: {REPOSITORY}")
+
+          assessment_path = Path("assessments/agentic-stack.md")
+          text = assessment_path.read_text(encoding="utf-8")
+          def field(name):
+              match = re.search(rf"^{re.escape(name)}:\s*(.*?)\s*$", text, re.MULTILINE)
+              if not match:
+                  raise SystemExit(f"missing assessment field: {name}")
+              return match.group(1)
+
+          if field("harness_id") != HARNESS_ID:
+              raise SystemExit("assessment harness_id mismatch")
+          if field("repository") != REPOSITORY:
+              raise SystemExit("assessment repository mismatch")
+          if field("review_ref") != REVIEW_REF:
+              raise SystemExit("assessment frozen review_ref mismatch")
+          if field("status") != "proposed":
+              raise SystemExit("assessment is not proposed")
+          for name, expected in EXPECTED_VECTOR.items():
+              if field(name) != expected:
+                  raise SystemExit(f"assessment vector mismatch for {name}: expected {expected!r}, found {field(name)!r}")
+
+          updated, count = re.subn(r"^status:\s*proposed\s*$", "status: included", text, count=1, flags=re.MULTILINE)
+          if count != 1:
+              raise SystemExit("could not promote assessment status exactly once")
+          assessment_path.write_text(updated, encoding="utf-8")
+
+          catalog_line = "343|agentic-stack|agentic-stack|https://github.com/codejunkie99/agentic-stack|2026-04-15T13:45:41Z|index-addition|8fd5726aaebbd421b835ad1c71f2c66064b74caf|2026-09-20\n"
+          with catalog_path.open("a", encoding="utf-8") as handle:
+              handle.write(catalog_line)
+
+          signature_path = Path("data/signatures.psv")
+          signature_line = "343|agentic-stack|agentic-stack closes autonomous S1 through its shipped standalone model/conductor loop, exposes constructor S2 through per-run worktree isolation against shared-checkout collisions, and exposes constructor S3* through a distinct checker feedback path; Mission Control and bounded-loop controls do not close whole-system S3, while retrospective memory/skill evolution and static permissions do not establish S4 or S5.\n"
+          with signature_path.open("a", encoding="utf-8") as handle:
+              handle.write(signature_line)
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Verify generated tree
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/admission-materialize-agentic-stack.yml
+          git add -A
+          git commit -m 'Index: admit agentic-stack at catalog #343'
+          git push origin HEAD:admission/agentic-stack-1009
