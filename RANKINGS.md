@@ -40,6 +40,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 4 | <a id="agentharness-oklahomawhore"></a>[AgentHarness](https://github.com/Oklahomawhore/AgentHarness) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="abhed"></a>[Abhed](https://github.com/zybuu-ai/abhed) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
+| 4 | <a id="harnessdesk"></a>[HarnessDesk](https://github.com/HarnessDesk/HarnessDesk) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A C(P) A — —` |
 | 4 | <a id="appliedscientist"></a>[TheAppliedScientist](https://github.com/TheAppliedScientist/TheAppliedScientist) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="taixu"></a>[TaiXu](https://github.com/wkbin/taixu) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A C P —` |
 | 4 | <a id="caelis"></a>[Caelis](https://github.com/caelis-labs/caelis) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A A A C — —` |
