@@ -1,0 +1,86 @@
+name: admission-materialize-swarm-code
+
+on:
+  push:
+    branches:
+      - admission/swarm-code-1011
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical swarm-code admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/swarm-code.md')
+          text = assessment.read_text(encoding='utf-8')
+          expected = 'status: proposed\n'
+          if text.count(expected) != 1:
+              raise SystemExit('expected exactly one proposed swarm-code status')
+          if 'review_ref: 53007abac1d521e32c2508af5328412bd6bbb67b\n' not in text:
+              raise SystemExit('unexpected swarm-code review ref')
+          assessment.write_text(text.replace(expected, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if any('|swarm-code|' in row or 'https://github.com/skyblanket/swarm-code' in row for row in rows[1:]):
+              raise SystemExit('swarm-code already present in catalog')
+          positions = [int(row.split('|', 1)[0]) for row in rows[1:] if row.strip()]
+          next_position = max(positions) + 1
+          if next_position != 338:
+              raise SystemExit(f'unexpected next catalog position: {next_position}')
+          rows.append('338|swarm-code|swarm-code|https://github.com/skyblanket/swarm-code|2026-05-15T12:39:55Z|index-addition|53007abac1d521e32c2508af5328412bd6bbb67b|2026-09-28')
+          catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_rows = signatures.read_text(encoding='utf-8').splitlines()
+          if any('|swarm-code|' in row for row in sig_rows[1:]):
+              raise SystemExit('swarm-code signature already present')
+          signature = (
+              'swarm-code closes autonomous coding S1; /flows provides deterministic concurrency attenuation and whole-flow current-control constructors (S2=C, S3=C). '
+              'Its council remains advisory without corrective return; scheduler/memory do not close S4, and permissions/trust do not close S5.'
+          )
+          sig_rows.append(f'338|swarm-code|{signature}')
+          signatures.write_text('\n'.join(sig_rows) + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        shell: bash
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Verify generated tree
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/admission-materialize-swarm-code.yml
+          git add assessments/swarm-code.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics METRICS.md data/metrics.json README.md FULL_A.md 2>/dev/null || true
+          git diff --cached --check
+          git commit -m 'Index: admit swarm-code at catalog #338'
+          git push origin HEAD:admission/swarm-code-1011
