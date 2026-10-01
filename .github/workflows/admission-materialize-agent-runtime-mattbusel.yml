@@ -1,0 +1,87 @@
+name: admission-materialize-agent-runtime-mattbusel
+
+on:
+  push:
+    branches:
+      - admission/agent-runtime-mattbusel-1015
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical agent-runtime admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/agent-runtime-mattbusel.md')
+          text = assessment.read_text(encoding='utf-8')
+          expected = 'status: proposed\n'
+          if text.count(expected) != 1:
+              raise SystemExit('expected exactly one proposed agent-runtime status')
+          if 'review_ref: c398a209d0e503c4d47ce6e27888e13e83790ed1\n' not in text:
+              raise SystemExit('unexpected agent-runtime review ref')
+          assessment.write_text(text.replace(expected, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if any('|agent-runtime-mattbusel|' in row or 'https://github.com/Mattbusel/agent-runtime' in row for row in rows[1:]):
+              raise SystemExit('agent-runtime already present in catalog')
+          positions = [int(row.split('|', 1)[0]) for row in rows[1:] if row.strip()]
+          next_position = max(positions) + 1
+          if next_position != 330:
+              raise SystemExit(f'unexpected next catalog position: {next_position}')
+          rows.append('330|agent-runtime-mattbusel|agent-runtime|https://github.com/Mattbusel/agent-runtime|2026-03-09T20:33:35Z|index-addition|c398a209d0e503c4d47ce6e27888e13e83790ed1|2026-09-20')
+          catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_rows = signatures.read_text(encoding='utf-8').splitlines()
+          if any('|agent-runtime-mattbusel|' in row for row in sig_rows[1:]):
+              raise SystemExit('agent-runtime signature already present')
+          signature = (
+              'agent-runtime closes autonomous S1 through its first-party ReAct action/observation loop, exposes constructor-owned S2 through '
+              'explicit inter-agent resource negotiation, constructor-owned S3 through group supervision/restart/escalation, and constructor-owned '
+              'S3* through shadow-agent divergence comparison; no prospective S4 adaptation or runtime identity/ultimate-policy S5 loop is established.'
+          )
+          sig_rows.append(f'330|agent-runtime-mattbusel|{signature}')
+          signatures.write_text('\n'.join(sig_rows) + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        shell: bash
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Verify generated tree
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/admission-materialize-agent-runtime-mattbusel.yml
+          git add assessments/agent-runtime-mattbusel.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics METRICS.md data/metrics.json README.md FULL_A.md 2>/dev/null || true
+          git diff --cached --check
+          git commit -m 'Index: admit agent-runtime at catalog #330'
+          git push origin HEAD:admission/agent-runtime-mattbusel-1015
