@@ -1,0 +1,87 @@
+name: admission-materialize-agentspex
+
+on:
+  push:
+    branches:
+      - admission/agentspex-934
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical AgentSPEX admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/agentspex.md')
+          text = assessment.read_text(encoding='utf-8')
+          expected = 'status: proposed\n'
+          if text.count(expected) != 1:
+              raise SystemExit('expected exactly one proposed AgentSPEX status')
+          if 'review_ref: db99b7b6802fe15ef2997c82ec1d49e5228128f6\n' not in text:
+              raise SystemExit('unexpected AgentSPEX review ref')
+          assessment.write_text(text.replace(expected, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if any('|agentspex|' in row or 'https://github.com/ScaleML/AgentSPEX' in row for row in rows[1:]):
+              raise SystemExit('AgentSPEX already present in catalog')
+          positions = [int(row.split('|', 1)[0]) for row in rows[1:] if row.strip()]
+          next_position = max(positions) + 1
+          if next_position != 336:
+              raise SystemExit(f'unexpected next catalog position: {next_position}')
+          rows.append('336|agentspex|AgentSPEX|https://github.com/ScaleML/AgentSPEX|2026-04-14T21:24:46Z|index-addition|db99b7b6802fe15ef2997c82ec1d49e5228128f6|2026-09-29')
+          catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_rows = signatures.read_text(encoding='utf-8').splitlines()
+          if any('|agentspex|' in row for row in sig_rows[1:]):
+              raise SystemExit('AgentSPEX signature already present')
+          signature = (
+              'AgentSPEX closes autonomous S1 through its first-party model/tool and LLM-planned workflow execution loops; '
+              'declarative parallelism/task-board orchestration do not establish S2/S3, structural verification/telemetry do not close complementary S3*, '
+              'memory/checkpoints do not create prospective S4 adaptation, and static workflow/config/approval surfaces do not close S5.'
+          )
+          sig_rows.append(f'336|agentspex|{signature}')
+          signatures.write_text('\n'.join(sig_rows) + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        shell: bash
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Verify generated tree
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/admission-materialize-agentspex.yml
+          git add assessments/agentspex.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics METRICS.md data/metrics.json README.md FULL_A.md 2>/dev/null || true
+          git diff --cached --check
+          git commit -m 'Index: admit AgentSPEX at catalog #336'
+          git push origin HEAD:admission/agentspex-934
