@@ -356,3 +356,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 341|minagent|MinAgent|https://github.com/Nichonauta/MinAgent|2026-09-24T23:08:17Z|index-addition|02880e3c981ba57cd95d2266d6c0ea07b1abe44c|2026-09-28
 342|rex-harness|rex-harness|https://github.com/rexleimo/rex-harness|2026-07-16T02:49:30Z|index-addition|beee2b4e1d25ef03a87b4b0d8b57c815ff6828b5|2026-09-20
 343|agentic-stack|agentic-stack|https://github.com/codejunkie99/agentic-stack|2026-04-15T13:45:41Z|index-addition|8fd5726aaebbd421b835ad1c71f2c66064b74caf|2026-09-20
+344|suisuicode|SuisuiCode|https://github.com/Yangtianspike/suisui-code|2026-09-21T17:50:36Z|index-addition|c9017b0613b22151325a5904a521aefe4c62abbc|2026-09-28
