@@ -344,3 +344,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 329|harness-cgast|Harness|https://github.com/cgast/harness|2026-02-18T09:20:39Z|index-addition|b3a9edde79f332f86189da742c5313f25f210b79|2026-09-20
 330|agent-runtime-mattbusel|agent-runtime|https://github.com/Mattbusel/agent-runtime|2026-03-09T20:33:35Z|index-addition|c398a209d0e503c4d47ce6e27888e13e83790ed1|2026-09-20
 331|zhizhi-agent-runtime|Zhizhi Agent Runtime|https://github.com/cocoyes/zhizhi-agent-runtime|2026-08-31T10:23:49Z|index-addition|02465df2afbe6d511d20fa275ccffe0c40b1b31c|2026-09-20
+332|codex-autorunner|codex-autorunner (CAR)|https://github.com/Git-on-my-level/codex-autorunner|2025-12-09T15:57:56Z|index-addition|065f435d6120f95135425d8cc2df52760872a2d3|2026-09-20
