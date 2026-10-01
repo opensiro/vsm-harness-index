@@ -195,6 +195,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="soothe"></a>[Soothe](https://github.com/mirasoth/soothe) | 2026-Q1 | 1/6 | 0/5 | 3 | 0 | 0 | `A C C C — —` |
 | 6 | <a id="nerve"></a>[Nerve](https://github.com/ClickHouse/nerve) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chump"></a>[Chump](https://github.com/repairman29/chump) | 2026-Q1 | 1/6 | 0/5 | 3 | 2 | 0 | `A C C(P) C — P` |
+| 6 | <a id="agent-runtime-mattbusel"></a>[agent-runtime](https://github.com/Mattbusel/agent-runtime) | 2026-Q1 | 1/6 | 0/5 | 3 | 0 | 0 | `A C C C — —` |
 | 6 | <a id="buzz"></a>[Buzz](https://github.com/block/buzz) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="bitrouter"></a>[BitRouter](https://github.com/bitrouter/bitrouter) | 2026-Q1 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
 | 6 | <a id="looptroop"></a>[LoopTroop](https://github.com/looptroop-ai/LoopTroop) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
