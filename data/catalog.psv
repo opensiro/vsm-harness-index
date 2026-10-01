@@ -354,3 +354,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 339|labunbun-code|LaBunbun Code|https://github.com/zayokami/labunbun-code|2026-08-21T09:41:38Z|index-addition|1470556287af8325a2c7971f7858f42c0d8241a2|2026-09-28
 340|agent-os|Agent OS|https://github.com/andrewgolovanov/agent-os|2026-08-15T12:23:51Z|index-addition|9f45e60058b51bc69ea746876b798f995d8bebc2|2026-09-20
 341|minagent|MinAgent|https://github.com/Nichonauta/MinAgent|2026-09-24T23:08:17Z|index-addition|02880e3c981ba57cd95d2266d6c0ea07b1abe44c|2026-09-28
+342|rex-harness|rex-harness|https://github.com/rexleimo/rex-harness|2026-07-16T02:49:30Z|index-addition|beee2b4e1d25ef03a87b4b0d8b57c815ff6828b5|2026-09-20

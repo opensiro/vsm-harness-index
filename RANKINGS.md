@@ -168,6 +168,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="clear-ideas-agent-runtime"></a>[Clear Ideas Agent Runtime](https://github.com/clearideas/agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="actweave"></a>[ActWeave](https://github.com/chenow9/act-weave) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="trueforge"></a>[TrueForge](https://github.com/truefoundry/trueforge) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="rex-harness"></a>[rex-harness](https://github.com/rexleimo/rex-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="sandbase-harness"></a>[SandBase Harness](https://github.com/sandbaseai/sandbase-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="waku-agent"></a>[Waku Agent](https://github.com/ShenSeanChen/waku-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
