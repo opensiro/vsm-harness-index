@@ -1,0 +1,86 @@
+name: exclusion-materialize-zigent
+on:
+  push:
+    branches:
+      - exclusion/zigent-1006
+permissions:
+  contents: write
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: exclusion/zigent-1006
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical Zigent exclusion sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/zigent.md')
+          text = assessment.read_text(encoding='utf-8')
+          required = [
+              'harness_id: zigent',
+              'repository: https://github.com/chhuax/Zigent',
+              'review_ref: f6252e65dc28b202b71f54a9a5d70424cc7010b5',
+              'status: proposed',
+              'autonomy_s1: —',
+              'autonomy_s2: —',
+              'autonomy_s3: —',
+              'autonomy_s3_star: —',
+              'autonomy_s4: —',
+              'autonomy_s5: —',
+          ]
+          missing = [item for item in required if item not in text]
+          if missing:
+              raise SystemExit(f'assessment precondition failed: {missing}')
+          if text.count('status: proposed') != 1:
+              raise SystemExit('expected exactly one proposed lifecycle marker')
+
+          catalog = Path('data/catalog.psv')
+          catalog_text = catalog.read_text(encoding='utf-8')
+          rows = [line for line in catalog_text.splitlines()[1:] if line.strip()]
+          positions = [int(line.split('|', 1)[0]) for line in rows]
+          if max(positions) != 344:
+              raise SystemExit(f'catalog race: expected max 344, got {max(positions)}')
+          if any('|zigent|' in line or 'https://github.com/chhuax/Zigent' in line for line in rows):
+              raise SystemExit('catalog already contains Zigent identity')
+
+          assessment.write_text(
+              text.replace('status: proposed', 'status: excluded-no-agentic-vsm', 1),
+              encoding='utf-8',
+          )
+
+          catalog_row = (
+              '345|zigent|Zigent|https://github.com/chhuax/Zigent|'
+              '2026-09-20T17:33:01Z|index-addition|'
+              'f6252e65dc28b202b71f54a9a5d70424cc7010b5|2026-09-28'
+          )
+          catalog.write_text(catalog_text.rstrip('\n') + '\n' + catalog_row + '\n', encoding='utf-8')
+          PY
+      - name: Render exclusion projections
+        run: |
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Verify canonical exclusion tree
+        run: |
+          python scripts/check_index.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized exclusion and remove helper
+        run: |
+          rm .github/workflows/exclusion-materialize-zigent.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Index: exclude Zigent at catalog #345'
+          git push origin HEAD:exclusion/zigent-1006
