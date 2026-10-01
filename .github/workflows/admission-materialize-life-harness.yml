@@ -1,0 +1,87 @@
+name: admission-materialize-life-harness
+
+on:
+  push:
+    branches:
+      - admission/life-harness-934
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply canonical Life-Harness admission sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path('assessments/life-harness.md')
+          text = assessment.read_text(encoding='utf-8')
+          expected = 'status: proposed\n'
+          if text.count(expected) != 1:
+              raise SystemExit('expected exactly one proposed Life-Harness status')
+          if 'review_ref: 22c299b83d888405d34d2c7efc0fcf4d2ccfdcef\n' not in text:
+              raise SystemExit('unexpected Life-Harness review ref')
+          assessment.write_text(text.replace(expected, 'status: included\n', 1), encoding='utf-8')
+
+          catalog = Path('data/catalog.psv')
+          rows = catalog.read_text(encoding='utf-8').splitlines()
+          if any('|life-harness|' in row or 'https://github.com/Tianshi-Xu/Life-Harness' in row for row in rows[1:]):
+              raise SystemExit('Life-Harness already present in catalog')
+          positions = [int(row.split('|', 1)[0]) for row in rows[1:] if row.strip()]
+          next_position = max(positions) + 1
+          if next_position != 335:
+              raise SystemExit(f'unexpected next catalog position: {next_position}')
+          rows.append('335|life-harness|Life-Harness|https://github.com/Tianshi-Xu/Life-Harness|2026-05-21T05:49:33Z|index-addition|22c299b83d888405d34d2c7efc0fcf4d2ccfdcef|2026-09-29')
+          catalog.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+
+          signatures = Path('data/signatures.psv')
+          sig_rows = signatures.read_text(encoding='utf-8').splitlines()
+          if any('|life-harness|' in row for row in sig_rows[1:]):
+              raise SystemExit('Life-Harness signature already present')
+          signature = (
+              'Life-Harness closes autonomous S1 through its model-driven task/tool feedback loop and S4 through '
+              'model-generated persistent H2-H5 adaptations selected by benchmark evidence; a separate benchmark-native '
+              'evaluator exposes constructor S3*, while parallel search does not establish S2/S3 and no S5 identity-policy closure is shown.'
+          )
+          sig_rows.append(f'335|life-harness|{signature}')
+          signatures.write_text('\n'.join(sig_rows) + '\n', encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        shell: bash
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/render_full_a.py
+      - name: Verify generated tree
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/render_full_a.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit materialized admission and remove helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/admission-materialize-life-harness.yml
+          git add assessments/life-harness.md data/catalog.psv data/signatures.psv TLDR.md RANKINGS.md analytics METRICS.md data/metrics.json README.md FULL_A.md 2>/dev/null || true
+          git diff --cached --check
+          git commit -m 'Index: admit Life-Harness at catalog #335'
+          git push origin HEAD:admission/life-harness-934
