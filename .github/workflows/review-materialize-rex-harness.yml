@@ -1,0 +1,42 @@
+name: review-materialize-rex-harness
+
+on:
+  push:
+    branches:
+      - assessment/rex-harness-review-1009
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Render review-stage projections
+        shell: bash
+        run: |
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Verify generated review tree
+        shell: bash
+        run: |
+          python scripts/check_index.py
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+      - name: Commit generated snapshots and remove helper
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/review-materialize-rex-harness.yml
+          git add METRICS.md data/metrics.json README.md 2>/dev/null || true
+          git diff --cached --check
+          git commit -m 'Metrics: rerender proposed rex-harness assessment after catalog #341'
+          git push origin HEAD:assessment/rex-harness-review-1009
