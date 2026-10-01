@@ -35,9 +35,10 @@ jobs:
 
           catalog = Path('data/catalog.psv')
           rows = catalog.read_text(encoding='utf-8').splitlines()
-          if any('|agent-os|' in row or 'https://github.com/andrewgolovanov/agent-os' in row for row in rows[1:]):
+          parsed = [row.split('|') for row in rows[1:] if row.strip()]
+          if any(len(parts) >= 4 and (parts[1] == 'agent-os' or parts[3] == 'https://github.com/andrewgolovanov/agent-os') for parts in parsed):
               raise SystemExit('Agent OS already present in catalog')
-          positions = [int(row.split('|', 1)[0]) for row in rows[1:] if row.strip()]
+          positions = [int(parts[0]) for parts in parsed]
           next_position = max(positions) + 1
           if next_position != 340:
               raise SystemExit(f'unexpected next catalog position: {next_position}')
@@ -46,7 +47,8 @@ jobs:
 
           signatures = Path('data/signatures.psv')
           sig_rows = signatures.read_text(encoding='utf-8').splitlines()
-          if any('|agent-os|' in row for row in sig_rows[1:]):
+          sig_parsed = [row.split('|', 2) for row in sig_rows[1:] if row.strip()]
+          if any(len(parts) >= 2 and parts[1] == 'agent-os' for parts in sig_parsed):
               raise SystemExit('Agent OS signature already present')
           signature = (
               'Agent OS closes autonomous S1 through supported Codex work cells running its first-party plugin and Task Bridge continuity envelope, '
