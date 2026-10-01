@@ -352,3 +352,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 337|harnessdesk|HarnessDesk|https://github.com/HarnessDesk/HarnessDesk|2026-09-08T01:14:39Z|index-addition|24add77185eebe321b0aa0b578933acf4a8e05d3|2026-09-20
 338|swarm-code|swarm-code|https://github.com/skyblanket/swarm-code|2026-05-15T12:39:55Z|index-addition|53007abac1d521e32c2508af5328412bd6bbb67b|2026-09-28
 339|labunbun-code|LaBunbun Code|https://github.com/zayokami/labunbun-code|2026-08-21T09:41:38Z|index-addition|1470556287af8325a2c7971f7858f42c0d8241a2|2026-09-28
+340|agent-os|Agent OS|https://github.com/andrewgolovanov/agent-os|2026-08-15T12:23:51Z|index-addition|9f45e60058b51bc69ea746876b798f995d8bebc2|2026-09-20
