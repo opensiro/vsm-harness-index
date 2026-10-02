@@ -361,3 +361,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 346|truecoder|TrueCoder|https://github.com/Shivam583-hue/TrueCoder|2026-07-18T22:52:12Z|index-addition|0db47102068596eccaf26d16a6c4eb0f24936a8a|2026-09-29
 347|agent-harness-core|Agent Harness Core|https://github.com/phenomenoner/agent-harness-core|2026-06-10T09:48:39Z|index-addition|1e247e064061e4427f4b78e8afd8671e6e7f06f0|2026-09-20
 348|codeagent|CodeAgent|https://github.com/WSH-4380/CodeAgent|2026-09-21T14:10:08Z|index-addition|0ca84f16e5c4c09675d9d91be334a203bb672bb2|2026-09-29
+349|cloud-coding-agent-node|Cloud Coding Agent Node|https://github.com/fred1433/cloud-coding-agent-node|2026-09-29T13:44:31Z|index-addition|a6758498055b54d765f6ca3423c58c67e0ead18e|2026-09-29
