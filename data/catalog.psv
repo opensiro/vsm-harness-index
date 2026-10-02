@@ -376,3 +376,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 361|crabot|Crabot|https://github.com/J-F-Liu/crabot|2026-06-17T12:26:05Z|index-addition|09324dba3036f9033bb8a7dc5b88cc62959db8a2|2026-09-29
 362|ogcode|Ogcode|https://github.com/prasenjeet-symon/ogcode|2026-05-01T10:24:31Z|index-addition|b9077a0fcca60195da4426b3f733933b533be705|2026-09-29
 363|rho|rho|https://github.com/crustyrustacean/rho-coding-agent|2026-04-25T02:34:55Z|index-addition|172700e7dbfd6b11dc3b86177e2927cd1eeb4d1c|2026-09-29
+364|sponsio|Sponsio|https://github.com/SponsioLabs/Sponsio|2026-04-04T18:05:47Z|index-addition|dfbdca2a224cdcdd56710283c60f48a45cdbbb17|2026-09-20
