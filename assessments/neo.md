@@ -110,8 +110,8 @@ The assessed multi-agent functions are credited only where a concrete organizati
 
 | Mode | Decisive owner | Trigger | Closure | Evidence |
 | --- | --- | --- | --- | --- |
-| Base (A) | main model-backed Neo agent | current delegate/swarm/task state reveals need for redirection, continuation or cancellation | inspect fleet → choose message/resume/interrupt/current-task action → runtime applies it → later child/workflow state reflects the intervention | delegate_controls.rs, delegate.rs, background_tasks.rs |
-| Parent (P) | human operator | operator opens /tasks and decides a current workflow commitment should pause, resume, stop or answer pending input | task browser projects current workflow/children → operator chooses control → BackgroundTaskManager records WorkflowActor::Human and changes run state → subsequent operation follows returned state | interactive/input.rs, task_browser.rs, background_tasks.rs |
+| Base (`A`) | main model-backed Neo agent | current delegate/swarm/task state reveals need for redirection, continuation or cancellation | inspect fleet → choose message/resume/interrupt/current-task action → runtime applies it → later child/workflow state reflects the intervention | delegate_controls.rs, delegate.rs, background_tasks.rs |
+| Parent (`P`) | human operator | operator opens /tasks and decides a current workflow commitment should pause, resume, stop or answer pending input | task browser projects current workflow/children → operator chooses control → BackgroundTaskManager records WorkflowActor::Human and changes run state → subsequent operation follows returned state | interactive/input.rs, task_browser.rs, background_tasks.rs |
 
 ## S3* — Complementary audit
 
@@ -176,8 +176,8 @@ The assessed multi-agent functions are credited only where a concrete organizati
 
 | Mode | Decisive owner | Trigger | Closure | Evidence |
 | --- | --- | --- | --- | --- |
-| Base (A) | model-backed main Neo agent | user invokes shipped /init for a project instruction gap/update | inspect repository/user context → synthesize and write root AGENTS.md → resolver admits its revision → later model requests receive the durable project authority | init_command.rs, interactive/mod.rs, resolver.rs, instruction_context.rs |
-| Parent (P) | legitimate project owner/editor | owner directly creates/edits project AGENTS.md or supplies an explicit authoritative project-policy change | owner changes durable project authority → resolver detects the revision → instruction epoch is injected/re-pinned → subsequent coding behavior follows returned policy | resolver.rs, instruction_context.rs, turn_loop.rs |
+| Base (`A`) | model-backed main Neo agent | user invokes shipped /init for a project instruction gap/update | inspect repository/user context → synthesize and write root AGENTS.md → resolver admits its revision → later model requests receive the durable project authority | init_command.rs, interactive/mod.rs, resolver.rs, instruction_context.rs |
+| Parent (`P`) | legitimate project owner/editor | owner directly creates/edits project AGENTS.md or supplies an explicit authoritative project-policy change | owner changes durable project authority → resolver detects the revision → instruction epoch is injected/re-pinned → subsequent coding behavior follows returned policy | resolver.rs, instruction_context.rs, turn_loop.rs |
 
 ## Distributed OSS parent arrangement
 
