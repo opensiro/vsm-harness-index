@@ -14,6 +14,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="henterprise"></a>[Henterprise](https://github.com/humbertobellor/henterprise) | 2026-Q3 | 4/6 | 3/5 | 2 | 0 | 0 | `A C A C A A` |
 | 3 | <a id="frontieragent"></a>[FrontierAgent](https://github.com/ApodexAI/FrontierAgent) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="kot"></a>[KOT](https://github.com/Loqira-Labs/agentkot) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="litecode"></a>[LiteCode](https://github.com/itissika/litecode) | 2026-Q3 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
 | 3 | <a id="crewlet"></a>[Crewlet](https://github.com/crewlet/crewlet) | 2026-Q3 | 4/6 | 3/5 | 1 | 3 | 0 | `A C A(P) A A(P) P` |
 | 3 | <a id="omnigent"></a>[Omnigent](https://github.com/omnigent-ai/omnigent) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="neo"></a>[Neo](https://github.com/matrixheaven/neo) | 2026-Q2 | 4/6 | 3/5 | 1 | 2 | 0 | `A C A(P) A — A(P)` |
