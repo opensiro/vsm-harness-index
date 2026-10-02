@@ -11,7 +11,7 @@ assessment_procedure_version: 0.3.6
 assessment_changed_at: 2026-10-02
 status: proposed
 autonomy_s1: A
-autonomy_s2: C
+autonomy_s2: —
 autonomy_s3: A
 autonomy_s3_star: A
 autonomy_s4: —
@@ -45,7 +45,7 @@ Sub-agents are not prompt-only placeholders. The shipped sub-agent runner create
 
 Yode ships two related coordination layers. `coordinate_agents` accepts model-authored workstreams/dependencies and executes dependency phases with bounded parallel batches while feeding prerequisite outputs to later workstreams. Separately, the team planner/runtime exposes ready/blocked/running/completed/failed state and can launch only dependency-ready members.
 
-Mutating background/team agents can be automatically isolated into git worktrees. Worktree finalization is serialized by a merge lock, refuses integration when the parent is dirty, detects merge conflicts, aborts the merge and retains the agent branch when safe integration is impossible. This is a concrete constructor-owned attenuation path for concurrent shared-workspace interference.
+Yode contains worktree primitives and a `WorktreeCoordinator`, and its multi-repository executor uses that coordinator for mutating multi-repo steps. However, at the assessed desktop/team recursion the `coordinate_agents` and ordinary team/sub-agent paths do not wire `WorktreeCoordinator::should_auto_isolate`; `coordinate_agents` launches its workstreams with `isolation: None`. Explicit worktree isolation is therefore a capability a caller may request, not an established automatic inter-S1 coordination loop for the supported team path.
 
 Verification is a separate first-party agent path. The `verification_agent` launches a dedicated verification sub-agent with a restricted inspection/test-oriented tool set. `review_pipeline` combines review plus verification results and, by default, returns a recoverable validation error and skips commit when either path reports findings. `review_then_commit` likewise aborts commit on review findings unless explicitly overridden.
 
@@ -55,7 +55,7 @@ Yode also stores postmortems and derived lessons. At the frozen revision, howeve
 
 A user starts a desktop coding turn. The model-backed Yode agent receives current instructions/context and selects first-party tools. It may work directly or construct sub-agent/team work, inspect live team state, message members, run ready work, invoke verification/review, and react to returned evidence. Sub-agents execute in separate model/tool loops and return results through tool/task/team state.
 
-When concurrent mutating agents are used in a team/background context, first-party worktree logic can isolate their writes and serialize merge-back, converting shared-workspace interference into isolated branches plus explicit merge outcomes. Team/DAG state and monitor artifacts give the main agent a current view of active, completed, failed and blocked work. The main agent can then change current execution through further delegation, messages, ready-step dispatch and other tool decisions.
+Team/DAG state and monitor artifacts give the main agent a current view of active, completed, failed and blocked work. The main agent can then change current execution through further delegation, messages, ready-step dispatch and other tool decisions. Although Yode exposes worktree isolation primitives, the reviewed standard team/coordinator path does not automatically connect them to concurrent mutating team members, so that mechanism is not credited as S2 closure here.
 
 ## S1 — Operations
 
@@ -75,18 +75,24 @@ When concurrent mutating agents are used in a team/background context, first-par
 
 ## S2 — Coordination
 
-- State: C
-- Function: attenuate concrete interference among concurrently active coding S1 units that can otherwise mutate the same repository/workspace and collide during integration.
-- Disturbance / variety regulated: concurrent mutating sub-agents can create conflicting filesystem/git changes or unsafe merge races in one parent repository.
-- Decisive decision or feedback right: enforce isolation for qualifying mutating background/team agents and serialize/accept/refuse merge-back based on parent cleanliness and actual merge outcome.
-- Decision owner: first-party deterministic Yode runtime/worktree coordination logic.
-- Supporting / enforcement mechanisms: team/DAG dependency phases; bounded ready batches; `WorktreeCoordinator::should_auto_isolate`; per-agent worktree allocation; merge mutex; dirty-parent refusal; conflict detection; merge abort; retained branches on failed integration.
-- Closure path: mutating team/background S1 qualifies for isolation → separate worktree/branch is allocated → worker operates without simultaneous parent-tree writes → merge-back is serialized → dirty/conflict outcome is detected → unsafe integration is refused/aborted and retained for later handling; successful merge changes the shared repository seen by later S1 work.
-- Why this is / is not agent-owned: the main model may choose what work to delegate, but the load-bearing anti-interference decision and merge-safety behavior remain in deterministic runtime code and still occur without a distinct model judgment.
-- Evidence: [`crates/yode-tools/src/worktree_coordinator.rs`](https://github.com/anYuJia/yode/blob/964d6230afb5e779e3157a452dac1c0ac0d24f16/crates/yode-tools/src/worktree_coordinator.rs); [`crates/yode-agent/src/planning.rs`](https://github.com/anYuJia/yode/blob/964d6230afb5e779e3157a452dac1c0ac0d24f16/crates/yode-agent/src/planning.rs); [`crates/yode-agent/src/orchestration.rs`](https://github.com/anYuJia/yode/blob/964d6230afb5e779e3157a452dac1c0ac0d24f16/crates/yode-agent/src/orchestration.rs).
-- Basis: explicit + structural.
+- State: —
+- Function: no material first-party S2 loop was established at the selected desktop/team recursion.
+- Disturbance / variety regulated: concurrent model-backed team members can in principle contend over shared repository state, but the reviewed standard team/coordinator path does not itself connect that disturbance to an operational attenuation loop.
+- Decisive decision or feedback right: none established for S2. The main agent may choose dependencies, `max_parallel`, or explicit worktree isolation, but those are delegation/scheduling/capability choices without a demonstrated shipped relation that detects or structurally maps an actual inter-S1 interference and feeds attenuation back into the affected S1 units.
+- Decision owner: none established.
+- Supporting / enforcement mechanisms: dependency DAGs, bounded parallel batches, team messaging/state, optional explicit sub-agent `isolation: "worktree"`, standalone worktree tools, and a `WorktreeCoordinator` used by the separate multi-repository executor.
+- Closure path: not applicable at this recursion; no standard desktop/team path was found that takes a concrete inter-S1 conflict/oscillation, applies a coordination relation to it, and returns the result into subsequent behavior of the affected team S1s.
+- Why this is / is not agent-owned: the model can decide how to delegate and can explicitly request isolation, but generic sequencing, concurrency limits, messaging and optional isolation capability do not by themselves establish the S2 function.
+- Evidence: [`crates/yode-agent/src/planning.rs`](https://github.com/anYuJia/yode/blob/964d6230afb5e779e3157a452dac1c0ac0d24f16/crates/yode-agent/src/planning.rs); [`crates/yode-tools/src/builtin/coordinator/mod.rs`](https://github.com/anYuJia/yode/blob/964d6230afb5e779e3157a452dac1c0ac0d24f16/crates/yode-tools/src/builtin/coordinator/mod.rs); [`crates/yode-core/src/engine/subagent_runner.rs`](https://github.com/anYuJia/yode/blob/964d6230afb5e779e3157a452dac1c0ac0d24f16/crates/yode-core/src/engine/subagent_runner.rs); [`crates/yode-tools/src/worktree_coordinator.rs`](https://github.com/anYuJia/yode/blob/964d6230afb5e779e3157a452dac1c0ac0d24f16/crates/yode-tools/src/worktree_coordinator.rs).
+- Basis: explicit + structural absence review.
 - Confidence: high.
-- Caveats: generic team messaging and dependency graphs are not the reason for S2=C; the classification rests on the concrete shared-workspace interference and the first-party isolation/merge closure.
+- Caveats: `yode-runtime::multirepo` does use `WorktreeCoordinator` for mutating multi-repository steps, but PRODUCT.md places Multi-repo Agent in P2 and the reviewed supported desktop/team organization does not establish that as its normal inter-S1 coordination path.
+
+### Absence scope
+
+- Surfaces inspected: team planner and ready-batch scheduler; `coordinate_agents`; ordinary and background sub-agent runner; team messages/monitoring; explicit sub-agent isolation; standalone worktree tools; `WorktreeCoordinator`; multi-repository runtime; product/runtime boundary documentation.
+- Plausible first-party paths checked: dependency ordering as conflict attenuation; `max_parallel` as S2; team mailboxes/shared state as S2; automatic worktree isolation for mutating team members; explicit `isolation: "worktree"`; multi-repo worktree merge serialization.
+- Why no material first-party path remains: dependency/sequencing and messaging are generic mechanisms, `coordinate_agents` passes `isolation: None`, code search finds `should_auto_isolate` only at its definition, explicit isolation is not tied to a demonstrated conflict/feedback relation, and the multi-repo executor is not established as the supported desktop/team recursion being assessed.
 
 ## S3 — Inside-and-now control
 
@@ -95,6 +101,8 @@ When concurrent mutating agents are used in a team/background context, first-par
 - Disturbance / variety regulated: changing worker/task status, dependency readiness, background execution, failures, pending messages, returned workstream results and current orchestration progress.
 - Decisive decision or feedback right: the main model-backed agent can choose team/workstream decomposition, dependencies and concurrency, inspect current team state, send new guidance/handoffs, invoke ready-step execution, request/inspect background task output, and choose subsequent current-work interventions.
 - Decision owner: the main model-backed Yode agent using first-party team/coordinator/task tools.
+- Whole-system current view: `team_monitor` and persisted `AgentTeamState` expose the current team goal/plan plus member counts and member-level planned/running/completed/failed status, ready/blocked/running/completed/failed plan progress, runtime task IDs, result previews and pending team messages.
+- Current-control decision scope: the main agent can choose/decompose workstreams, dependencies and concurrency, launch or continue current team work through `team_run_ready` / sub-agent tools, send mid-course guidance through `send_message`, inspect current/background results, and create follow-up work in response to failures or completion evidence.
 - Supporting / enforcement mechanisms: `AgentTeamManager`; persisted team state/monitor/bundle artifacts; `team_monitor`; `team_run_ready`; `send_message`; runtime task store; dependency planner; deterministic status reconciliation.
 - Closure path: current team/task state is exposed to the main agent → the agent interprets current progress/failure/blocked state → selects a current-control action such as dispatching ready work, changing decomposition/concurrency, sending guidance or launching follow-up work → first-party runtime updates worker/team state → the resulting state/output returns for subsequent decisions.
 - Boundary reachability: team/coordinator tools are part of the shipped desktop agent tool surface and sub-agent runtime; they are not merely an external SDK substrate.
@@ -111,6 +119,12 @@ When concurrent mutating agents are used in a team/background context, first-par
 - Disturbance / variety regulated: false completion, regressions, missing test coverage, risky assumptions, build/test failures and implementation errors not caught by the implementing S1.
 - Decisive decision or feedback right: a separate model-backed review/verification agent inspects current workspace evidence and produces findings/judgment; that judgment determines whether the review pipeline may proceed to commit absent explicit override.
 - Decision owner: the dedicated model-backed verification/review sub-agent.
+- Claim being audited: that the implementation/current workspace changes are correct and safe enough to proceed toward delivery or commit.
+- Ordinary reporting path: the implementing main/worker S1 returns its own completion text, tool results and team/task result state through the normal coding loop.
+- Complementary access path: `verification_agent`, `review_changes`, `review_pipeline`, and `review_then_commit` launch a separate sub-agent that directly inspects git/workspace state and may run targeted tests/commands with a review-specific tool allowlist.
+- Independence boundary: the audit actor is a fresh model-backed `AgentEngine`/sub-agent with a distinct review or verification prompt, conversation context and restricted evidence-gathering tool surface; it is not the implementing S1 merely rereading its own conclusion.
+- Who acts on findings: the first-party review pipeline deterministically returns a recoverable validation failure and skips commit by default; the parent/main agent receives the findings/error and can correct the implementation and rerun the audit.
+- Boundary reachability: the dedicated verification/review tools and sub-agent runner are shipped in the first-party `yode-tools` / `yode-core` runtime used by the supported desktop composition; no downstream application-authored auditor is required.
 - Supporting / enforcement mechanisms: isolated sub-agent runner; restricted inspection/test tool set; persisted review artifacts; findings parsing/counting; deterministic review-pipeline gate; `review_then_commit` commit suppression.
 - Closure path: implementation exists → fresh verification/review sub-agent inspects repository/git/test evidence → findings are returned to the parent/tool pipeline → findings cause a recoverable validation failure and commit is skipped by default → subsequent agent work can address findings before retrying verification/commit.
 - Why this is / is not agent-owned: the runtime gate is deterministic support, but the complementary audit judgment is produced by a separate model-backed actor with direct workspace/test access rather than by the implementing S1.
@@ -183,6 +197,6 @@ The main residual uncertainty is S3 breadth across every desktop workflow: the r
 
 ## Assessment summary
 
-Yode closes autonomous coding S1, constructor-owned S2 through concrete worktree/merge anti-interference control, autonomous S3 through the main agent's live team orchestration, and autonomous S3* through separate verification/review agents whose findings can block commit. Its retrospective learning, current-run recovery and external policy layers do not establish S4 or S5.
+Yode closes autonomous coding S1, autonomous S3 through the main agent's live team orchestration, and autonomous S3* through separate verification/review agents whose findings can block commit. The reviewed standard team path does not establish S2 beyond generic scheduling/messaging/optional isolation capability, while retrospective learning/current-run recovery and external policy layers do not establish S4 or S5.
 
-Proposed vector: **`A · C · A · A · — · —`**.
+Proposed vector: **`A · — · A · A · — · —`**.
