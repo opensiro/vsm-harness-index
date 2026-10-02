@@ -362,3 +362,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 347|agent-harness-core|Agent Harness Core|https://github.com/phenomenoner/agent-harness-core|2026-06-10T09:48:39Z|index-addition|1e247e064061e4427f4b78e8afd8671e6e7f06f0|2026-09-20
 348|codeagent|CodeAgent|https://github.com/WSH-4380/CodeAgent|2026-09-21T14:10:08Z|index-addition|0ca84f16e5c4c09675d9d91be334a203bb672bb2|2026-09-29
 349|cloud-coding-agent-node|Cloud Coding Agent Node|https://github.com/fred1433/cloud-coding-agent-node|2026-09-29T13:44:31Z|index-addition|a6758498055b54d765f6ca3423c58c67e0ead18e|2026-09-29
+350|railwarden|RailWarden|https://github.com/advaith-1212/railwarden|2026-06-27T10:36:14Z|index-addition|9e63f75baced5b1e246ed2470d59bc092905c1ad|2026-09-20
