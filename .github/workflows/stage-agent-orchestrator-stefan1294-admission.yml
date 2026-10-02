@@ -1,0 +1,78 @@
+name: stage-agent-orchestrator-stefan1294-admission
+on:
+  push:
+    branches: [admission/agent-orchestrator-stefan1294-1009]
+permissions:
+  contents: write
+jobs:
+  stage:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: admission/agent-orchestrator-stefan1294-1009
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.x'}
+      - name: Fail-closed source admission
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('assessments/agent-orchestrator-stefan1294.md')
+          text=p.read_text(encoding='utf-8')
+          required={
+            'harness_id':'agent-orchestrator-stefan1294',
+            'project_name':'Agent Orchestrator (tracks)',
+            'repository':'https://github.com/stefan1294/agent-orchestrator',
+            'review_ref':'f78e1b06d80ed43803029a14f14df69908782fee',
+            'status':'proposed',
+            'autonomy_s1':'A','autonomy_s2':'C','autonomy_s3':'C(P)',
+            'autonomy_s3_star':'A','autonomy_s4':'—','autonomy_s5':'—',
+          }
+          for k,v in required.items():
+            needle=f'{k}: {v}'
+            if needle not in text: raise SystemExit(f'assessment gate failed: missing {needle!r}')
+          if text.count('status: proposed') != 1: raise SystemExit('expected exactly one proposed status')
+          p.write_text(text.replace('status: proposed','status: included',1),encoding='utf-8')
+
+          cp=Path('data/catalog.psv'); catalog=cp.read_text(encoding='utf-8')
+          rows=[x for x in catalog.splitlines() if x.strip()]
+          if any('|agent-orchestrator-stefan1294|' in x for x in rows[1:]): raise SystemExit('catalog identity already present')
+          tail=int(rows[-1].split('|',1)[0])
+          if tail != 352: raise SystemExit(f'expected catalog tail 352, found {tail}')
+          cp.write_text(catalog.rstrip('\n')+'\n'+'353|agent-orchestrator-stefan1294|Agent Orchestrator (tracks)|https://github.com/stefan1294/agent-orchestrator|2026-02-16T12:58:11Z|index-addition|f78e1b06d80ed43803029a14f14df69908782fee|2026-09-20\n',encoding='utf-8')
+
+          sp=Path('data/signatures.psv'); sigs=sp.read_text(encoding='utf-8')
+          if any('|agent-orchestrator-stefan1294|' in x for x in sigs.splitlines()[1:]): raise SystemExit('signature identity already present')
+          signature=('353|agent-orchestrator-stefan1294|Agent Orchestrator (tracks) closes autonomous S1 through model-backed implementation sessions, constructor S2 through track/worktree/integration controls, S3 as C(P) through deterministic fleet recovery plus operator intervention, and autonomous S3* through separate live verification-to-fix-to-reverify; S4 and S5 are not established.')
+          sp.write_text(sigs.rstrip('\n')+'\n'+signature+'\n',encoding='utf-8')
+          PY
+      - name: Render canonical projections
+        run: |
+          python scripts/render_tldr.py
+          python scripts/render_full_a.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+      - name: Verify rendered tree
+        run: |
+          python scripts/validate_tldr.py
+          python scripts/render_tldr.py --check
+          python scripts/render_full_a.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python scripts/check_index.py
+          python -m unittest discover -s tests -v
+      - name: Commit staged admission
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --exit-code && { echo 'expected changes but tree is clean'; exit 1; } || true
+          git commit -m 'Index: stage Agent Orchestrator (tracks) admission at #353'
+          git push origin HEAD:admission/agent-orchestrator-stefan1294-1009
