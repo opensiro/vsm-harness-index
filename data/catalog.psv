@@ -373,3 +373,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 358|nemocode|NemoCode|https://github.com/SampleBias/nemocode|2026-07-16T14:17:40Z|index-addition|6f5489f289d0963cf0c6b7562c9491670000ccd2|2026-09-29
 359|neo|Neo|https://github.com/matrixheaven/neo|2026-06-07T12:33:23Z|index-addition|2828e253852a98cace95dc404caf3ac8a3e45bce|2026-09-29
 360|litecode|LiteCode|https://github.com/itissika/litecode|2026-08-15T23:57:54Z|index-addition|146a9feff9edee2204138f18473b9bef83c41c5a|2026-09-29
+361|crabot|Crabot|https://github.com/J-F-Liu/crabot|2026-06-17T12:26:05Z|index-addition|09324dba3036f9033bb8a7dc5b88cc62959db8a2|2026-09-29
