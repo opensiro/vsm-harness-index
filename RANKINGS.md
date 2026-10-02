@@ -19,6 +19,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="agentlas-os"></a>[Agentlas OS](https://github.com/agentlas-ai/Agentlas-OS) | 2026-Q2 | 4/6 | 3/5 | 1 | 2 | 0 | `A C A A A(P) P` |
 | 3 | <a id="loopx"></a>[LoopX](https://github.com/huangruiteng/loopx) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="loushang"></a>[Loushang](https://github.com/zhnt/loushang) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="recursive"></a>[Recursive](https://github.com/jeffkit/recursive) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="thclaws"></a>[thClaws](https://github.com/thClaws/thClaws) | 2026-Q2 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
 | 3 | <a id="surogates"></a>[Surogates](https://github.com/invergent-ai/surogates) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="marveen"></a>[Marveen](https://github.com/Szotasz/marveen) | 2026-Q2 | 4/6 | 3/5 | 1 | 3 | 0 | `A A A(P) A C(P) P` |
