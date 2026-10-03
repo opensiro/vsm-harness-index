@@ -69,6 +69,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="yode"></a>[Yode](https://github.com/anYuJia/yode) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="bernstein"></a>[Bernstein](https://github.com/sipyourdrink-ltd/bernstein) | 2026-Q1 | 3/6 | 2/5 | 2 | 1 | 0 | `A C A A C P` |
 | 4 | <a id="pydantic-ai-harness"></a>[Pydantic AI Harness](https://github.com/pydantic/pydantic-ai-harness) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A — A A C —` |
+| 4 | <a id="clawkeeper"></a>[ClawKeeper](https://github.com/SafeAI-Lab-X/ClawKeeper) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
 | 4 | <a id="scion-gcp"></a>[Scion (Google Cloud)](https://github.com/GoogleCloudPlatform/scion) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="bamboo"></a>[Bamboo](https://github.com/bigduu/Bamboo-agent) | 2026-Q1 | 3/6 | 2/5 | 2 | 0 | 0 | `A A A C C —` |
 | 4 | <a id="zeroclaw"></a>[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
