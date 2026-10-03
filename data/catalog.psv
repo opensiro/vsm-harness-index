@@ -394,3 +394,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 379|raincode|RainCode|https://github.com/Rainmemery/RainCode|2026-09-29T01:08:15Z|index-addition|1fc73183d396e4935dd96dbeaf288be87a0d6f66|2026-09-29
 380|operandi|Operandi|https://github.com/modus-lisp/operandi|2026-07-16T09:02:49Z|index-addition|1d1c6b5c28ff4f5cb80a31aed709145527c1a78f|2026-09-29
 381|mindweave|Mindweave|https://github.com/mindweave-cli/mindweave|2026-09-16T20:07:43Z|index-addition|7a108f043dbfca273dd420d193803f41040a64b7|2026-09-29
+382|autonomous-swe-platform|Autonomous SWE Platform|https://github.com/SurjitW/Autonomous-Software-Engineering-and-Coding-Agent-Platform|2026-09-27T02:23:36Z|index-addition|057045d8c107417358416c8b97c0249d1359f18d|2026-09-29
