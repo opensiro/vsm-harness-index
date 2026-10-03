@@ -5,7 +5,7 @@
     "included_assessments": 342,
     "canonical_assessments": 377,
     "excluded_assessments": 35,
-    "proposed_assessments": 14,
+    "proposed_assessments": 15,
     "catalog_entries": 377,
     "catalog_entries_without_included_assessment": 35,
     "reassessment_events": 88,
@@ -20,13 +20,13 @@
       "target": 100,
       "status": "achieved",
       "completed": 342,
-      "progress_fraction": 1.0
+      "progress_fraction": 1
     },
     {
       "target": 250,
       "status": "achieved",
       "completed": 342,
-      "progress_fraction": 1.0
+      "progress_fraction": 1
     },
     {
       "target": 500,
