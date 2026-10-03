@@ -399,3 +399,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 384|genesis-agent|Genesis Agent|https://github.com/me7ko-dev/genesis-agent|2026-07-27T22:25:37Z|index-addition|0e24818a9fd0788c6fe68b2e51ba3a3083f6d2fc|2026-09-29
 385|lca-code-agent|LCA Code Agent|https://github.com/Kandog/lca-code-agent|2026-09-17T22:42:25Z|index-addition|3049426ad46a0a4eab2ed896a8f87160f76689e4|2026-09-29
 386|pasclaude|PasClaude|https://github.com/seanrobertwright/PasClaude|2026-08-07T01:28:41Z|index-addition|9ea5295a10fcdd6343e2a0e2012aab4790136488|2026-09-28
+387|cycode|CYCode|https://github.com/ChaoYue0307/CYCode|2026-06-11T07:35:09Z|index-addition|8b09d0a8cbca739a8d5598127b00edd3e5955fb5|2026-09-28
