@@ -380,3 +380,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 365|multica|Multica|https://github.com/multica-ai/multica|2026-01-13T17:59:46Z|index-addition|8c4f4328f6e3baff08394b309034463b5db9d7af|2026-09-20
 366|paseo|Paseo|https://github.com/getpaseo/paseo|2025-10-13T12:27:02Z|index-addition|d636abd7a4ce302e7ccb9eb6074f637c6dd4d83b|2026-09-20
 367|superset|Superset|https://github.com/superset-sh/superset|2025-10-21T09:16:51Z|index-addition|e60856bd825b1fca5d47ffff289db0830a4f6820|2026-09-20
+368|tyrion|Tyrion|https://github.com/Xtejasveer/tyrion|2026-08-12T23:23:19Z|index-addition|35806697ba873e069b6ec6346216baea8b94a72f|2026-09-29
