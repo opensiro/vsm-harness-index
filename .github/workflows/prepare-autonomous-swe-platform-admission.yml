@@ -1,0 +1,58 @@
+name: Prepare Autonomous SWE Platform admission
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    if: github.head_ref == 'admission/autonomous-swe-platform-975'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - name: Apply canonical admission and render projections
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          assessment = Path("assessments/autonomous-swe-platform.md")
+          text = assessment.read_text(encoding="utf-8")
+          assert "status: proposed" in text
+          assessment.write_text(text.replace("status: proposed", "status: included", 1), encoding="utf-8")
+
+          catalog = Path("data/catalog.psv")
+          c = catalog.read_text(encoding="utf-8").rstrip("\n")
+          row = "382|autonomous-swe-platform|Autonomous SWE Platform|https://github.com/SurjitW/Autonomous-Software-Engineering-and-Coding-Agent-Platform|2026-09-27T02:23:36Z|index-addition|057045d8c107417358416c8b97c0249d1359f18d|2026-09-29"
+          assert "|autonomous-swe-platform|" not in c
+          catalog.write_text(c + "\n" + row + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          s = signatures.read_text(encoding="utf-8").rstrip("\n")
+          signature = "382|autonomous-swe-platform|Autonomous SWE Platform closes agent-owned S1 in its shipped ReAct coding mode, exposes constructor-owned S3 through test-failure routing into bounded debugging/re-test, and constructor-owned S3* through independent test-process verdicts; its sequential SDLC does not establish S2, and planning/memory/configuration do not establish S4 or S5."
+          assert "|autonomous-swe-platform|" not in s
+          signatures.write_text(s + "\n" + signature + "\n", encoding="utf-8")
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+          rm .github/workflows/prepare-autonomous-swe-platform-admission.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Autonomous SWE Platform admission"
+          git push origin HEAD:admission/autonomous-swe-platform-975
