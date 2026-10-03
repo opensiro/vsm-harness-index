@@ -30,7 +30,7 @@ jobs:
           catalog = Path("data/catalog.psv")
           c = catalog.read_text(encoding="utf-8").rstrip("\n")
           rows = c.splitlines()
-          position = max(int(row.split("|", 1)[0]) for row in rows[1:]) + 1
+          position = max(int(row.split("|", 1)[0]) for row in rows[1:] if row.split("|", 1)[0].isdigit()) + 1
           assert "|orca-agent|" not in c
           catalog_row = f"{position}|orca-agent|Orca Agent|https://github.com/echoVic/orca-agent|2026-06-05T07:19:56Z|index-addition|5838259b5f9622021db04d6fdda4d80963f17de3|2026-09-29"
           catalog.write_text(c + "\n" + catalog_row + "\n", encoding="utf-8")
