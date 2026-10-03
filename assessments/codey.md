@@ -133,6 +133,11 @@ A task enters the main Codey session, the model chooses one repository/tool/dele
 - Basis: explicit + structural.
 - Confidence: medium-high.
 - Caveats: the reviewer can use the same underlying provider/model family as the main actor and invocation is discretionary rather than mandatory. Independence is nevertheless materially improved by a separate context/persona plus read-only direct workspace access, and its findings return through a distinct audit path.
+- Claim being audited: the main coding actor's implicit claim that the inspected code/change is correct, safe and stylistically acceptable for the requested task.
+- Ordinary reporting path: the producing main Codey agent sees its own tool results and may run ordinary tests or reads while performing the task.
+- Complementary access path: a separately instantiated `reviewer` subagent receives a focused audit task, directly reads/searches the workspace under a read-only allowlist, and returns a prioritized independent findings report.
+- Independence boundary: reviewer execution uses a fresh `Session`, reviewer-specific persona and non-mutating tool boundary; it does not inherit the parent's conversation or edit authority, although it may use the same configured provider/model family.
+- Who acts on findings: the parent autonomous Codey agent receives the reviewer report as the `delegate_subagent` tool result and owns subsequent corrective edits, tests or follow-up actions.
 
 ## S4 — Outside-and-then intelligence
 
