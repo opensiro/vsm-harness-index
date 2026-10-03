@@ -27,6 +27,7 @@ import os
 import re
 import sys
 import threading
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -53,6 +54,15 @@ class QueueEntry:
     issue_title: str
     repository: str
     frozen: bool = False
+
+
+class GitHubAPIError(RuntimeError):
+    def __init__(self, message: str, *, status_code: int | None = None) -> None:
+        super().__init__(message)
+        self.status_code = status_code
+
+
+RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
 
 
 def normalize_repo(value: str) -> str:
@@ -155,7 +165,7 @@ class GitHubAPI:
         self.repo_cache: dict[str, tuple[int, str]] = {}
         self.cache_lock = threading.Lock()
 
-    def get(self, path: str) -> object:
+    def get(self, path: str, *, max_attempts: int = 3) -> object:
         request = urllib.request.Request(
             f"https://api.github.com{path}",
             headers={
@@ -164,17 +174,31 @@ class GitHubAPI:
                 **({"Authorization": f"Bearer {self.token}"} if self.token else {}),
             },
         )
-        try:
-            with urllib.request.urlopen(request, timeout=30) as response:
-                return json.load(response)
-        except urllib.error.HTTPError as exc:
-            remaining = exc.headers.get("X-RateLimit-Remaining", "unknown")
-            reset = exc.headers.get("X-RateLimit-Reset", "unknown")
-            retry_after = exc.headers.get("Retry-After", "unknown")
-            raise RuntimeError(
-                f"GitHub API {path} failed with HTTP {exc.code} "
-                f"(remaining={remaining}, reset={reset}, retry-after={retry_after})"
-            ) from exc
+        for attempt in range(1, max_attempts + 1):
+            try:
+                with urllib.request.urlopen(request, timeout=30) as response:
+                    return json.load(response)
+            except urllib.error.HTTPError as exc:
+                remaining = exc.headers.get("X-RateLimit-Remaining", "unknown")
+                reset = exc.headers.get("X-RateLimit-Reset", "unknown")
+                retry_after = exc.headers.get("Retry-After", "unknown")
+                error = GitHubAPIError(
+                    f"GitHub API {path} failed with HTTP {exc.code} "
+                    f"(remaining={remaining}, reset={reset}, retry-after={retry_after})",
+                    status_code=exc.code,
+                )
+                if exc.code in RETRYABLE_STATUS_CODES and attempt < max_attempts:
+                    time.sleep(min(2 ** (attempt - 1), 4))
+                    continue
+                raise error from exc
+            except (TimeoutError, urllib.error.URLError) as exc:
+                if attempt < max_attempts:
+                    time.sleep(min(2 ** (attempt - 1), 4))
+                    continue
+                raise GitHubAPIError(
+                    f"GitHub API {path} failed after {max_attempts} attempts: {exc}"
+                ) from exc
+        raise AssertionError("unreachable")
 
     def open_issues(self, repository: str) -> list[dict[str, object]]:
         owner, repo = repository.split("/", 1)
@@ -191,20 +215,27 @@ class GitHubAPI:
             page += 1
         return issues
 
-    def repository_identity(self, repository: str) -> tuple[int, str]:
+    def repository_identity(self, repository: str) -> tuple[int, str] | None:
         key = repository.lower()
         with self.cache_lock:
             cached = self.repo_cache.get(key)
         if cached is not None:
             return cached
-        payload = self.get(f"/repos/{repository}")
+        try:
+            payload = self.get(f"/repos/{repository}")
+        except GitHubAPIError as exc:
+            if exc.status_code == 404:
+                return None
+            raise
         assert isinstance(payload, dict)
         identity = (int(payload["id"]), normalize_repo(str(payload["full_name"])))
         with self.cache_lock:
             self.repo_cache[key] = identity
         return identity
 
-    def repository_identities(self, repositories: list[str], workers: int = 4) -> list[tuple[int, str]]:
+    def repository_identities(
+        self, repositories: list[str], workers: int = 4
+    ) -> list[tuple[int, str] | None]:
         if not repositories:
             return []
         with ThreadPoolExecutor(max_workers=min(workers, len(repositories))) as pool:
@@ -326,7 +357,14 @@ def main() -> int:
         canonical_names = set(included) | set(catalog_names)
         queued_ids: dict[int, list[QueueEntry]] = {}
         queue_identities = api.repository_identities([entry.repository for entry in active_entries])
-        for entry, (repo_id, full_name) in zip(active_entries, queue_identities, strict=True):
+        for entry, identity in zip(active_entries, queue_identities, strict=True):
+            if identity is None:
+                warnings.append(
+                    f"#{entry.issue_number}: {entry.repository} returned HTTP 404 during GitHub identity "
+                    "resolution; retaining string-based dedupe only"
+                )
+                continue
+            repo_id, full_name = identity
             queued_ids.setdefault(repo_id, []).append(entry)
             resolved_key = full_name.lower()
             if resolved_key in canonical_names:
