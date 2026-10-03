@@ -186,6 +186,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="swarm"></a>[SWARM](https://github.com/KhanUzeb/SWARM) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="tyrion"></a>[Tyrion](https://github.com/Xtejasveer/tyrion) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-orchestrator-mohamedwaleed"></a>[Agent Orchestrator (waves)](https://github.com/mohamedwaleed/agent-orchestrator) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="pasclaude"></a>[PasClaude](https://github.com/seanrobertwright/PasClaude) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openharness"></a>[OpenHarness](https://github.com/autonomous-ai/openharness) | 2026-Q3 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
 | 6 | <a id="qm"></a>[QM](https://github.com/yc-software/qm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="clear-ideas-agent-runtime"></a>[Clear Ideas Agent Runtime](https://github.com/clearideas/agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
