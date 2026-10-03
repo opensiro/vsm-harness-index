@@ -1,0 +1,59 @@
+name: Prepare Operandi admission
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    if: github.head_ref == 'admission/operandi-975'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - name: Apply canonical admission and render projections
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          assessment = Path("assessments/operandi.md")
+          text = assessment.read_text(encoding="utf-8")
+          assert "status: proposed" in text
+          assessment.write_text(text.replace("status: proposed", "status: included", 1), encoding="utf-8")
+
+          catalog = Path("data/catalog.psv")
+          c = catalog.read_text(encoding="utf-8").rstrip("\n")
+          row = "380|operandi|Operandi|https://github.com/modus-lisp/operandi|2026-07-16T09:02:49Z|index-addition|1d1c6b5c28ff4f5cb80a31aed709145527c1a78f|2026-09-29"
+          assert "|operandi|" not in c
+          catalog.write_text(c + "\n" + row + "\n", encoding="utf-8")
+
+          signatures = Path("data/signatures.psv")
+          s = signatures.read_text(encoding="utf-8").rstrip("\n")
+          signature = "380|operandi|Operandi closes agent-owned S1; exposes constructor-owned S2 through per-unit isolated worker copies and constructor-owned S3* through independent post-worker oracle re-verification; delegation, fan-out, fixed limits, web/memory/session/cron and configuration surfaces do not establish S3, S4, or S5."
+          assert "|operandi|" not in s
+          signatures.write_text(s + "\n" + signature + "\n", encoding="utf-8")
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+          rm .github/workflows/prepare-operandi-admission.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Operandi admission"
+          git push origin HEAD:admission/operandi-975
