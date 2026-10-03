@@ -398,3 +398,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 383|easy-agent|Easy Agent|https://github.com/vietor/easy-agent|2026-06-24T14:35:41Z|index-addition|f13207671ad142fb89d1c36d413f7e42d60b18a6|2026-09-29
 384|genesis-agent|Genesis Agent|https://github.com/me7ko-dev/genesis-agent|2026-07-27T22:25:37Z|index-addition|0e24818a9fd0788c6fe68b2e51ba3a3083f6d2fc|2026-09-29
 385|lca-code-agent|LCA Code Agent|https://github.com/Kandog/lca-code-agent|2026-09-17T22:42:25Z|index-addition|3049426ad46a0a4eab2ed896a8f87160f76689e4|2026-09-29
+386|pasclaude|PasClaude|https://github.com/seanrobertwright/PasClaude|2026-08-07T01:28:41Z|index-addition|9ea5295a10fcdd6343e2a0e2012aab4790136488|2026-09-28
