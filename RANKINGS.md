@@ -104,6 +104,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="pi-harness"></a>[Pi-Harness](https://github.com/wangmiaozero/pi-harness) | 2026-Q3 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
 | 5 | <a id="swe-mux"></a>[swe-mux](https://github.com/jatoran/swe-mux) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C A(P) C P —` |
 | 5 | <a id="omniscientist"></a>[OmniScientist](https://github.com/Omni-Scientist/OmniScientist) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
+| 5 | <a id="codey"></a>[Codey](https://github.com/codesbyjit/codey) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="qwen-audio-agent"></a>[Qwen Audio Agent](https://github.com/QwenAudio/qwen-audio-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 2 | 0 | `A — — — A(P) P` |
 | 5 | <a id="commons"></a>[Commons](https://github.com/t54-labs/agent-commons) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A A — — — P` |
 | 5 | <a id="bossconsole"></a>[BossConsole](https://github.com/risa-labs-inc/BossConsole) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C C(P) — A(P) —` |
