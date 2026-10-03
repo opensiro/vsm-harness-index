@@ -406,3 +406,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 391|sandbox-agent|Sandbox Agent|https://github.com/rivet-dev/sandbox-agent|2026-01-25T10:03:02Z|index-addition|bbc195cc3fb5a1dd9cb05d8437442768c511e17e|2026-09-20
 392|sandboxed-sh|sandboxed.sh|https://github.com/Th0rgal/sandboxed.sh|2025-12-15T10:15:26Z|index-addition|8595836b5f7d23102d1b89b9ac3b59b0842b11a7|2026-09-20
 393|clawmanager|ClawManager|https://github.com/Yuan-lab-LLM/ClawManager|2026-03-20T10:43:22Z|index-addition|576e4bb5440d453fd25300586e57ce81cb616f31|2026-09-20
+394|haft|Haft|https://github.com/m0n0x41d/haft|2025-12-10T19:16:51Z|index-addition|8a5f0384a10003bda7b2b65edc86f0f1a656a345|2026-09-20
