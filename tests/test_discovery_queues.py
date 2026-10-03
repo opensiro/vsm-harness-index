@@ -76,6 +76,11 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
         body = "Source candidate batch: #918\nFrozen refs: copied unchanged from #918"
         self.assertEqual(module.source_candidate_batch(body), 918)
 
+
+    def test_assessment_control_is_frozen_by_source_routing(self) -> None:
+        body = "Source candidate batch: #918\nFrozen refs: copied unchanged from #918"
+        self.assertTrue(module.is_frozen_control_queue(body))
+
     def test_logical_queue_numbers_collapse_source_and_assessment_control(self) -> None:
         entries = [
             module.QueueEntry(918, "[Candidate batch] X", "owner/alpha", frozen=True),
