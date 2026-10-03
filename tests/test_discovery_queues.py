@@ -64,6 +64,38 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
 """
         self.assertEqual(module.parse_candidate_repositories(body), ["owner/alpha"])
 
+
+    def test_parse_frozen_review_ref_header(self) -> None:
+        body = """| # | Project | Canonical repository | Frozen review ref |
+| ---: | --- | --- | --- |
+| 1 | Alpha | `owner/alpha` | `1111111111111111111111111111111111111111` |
+"""
+        self.assertEqual(module.parse_candidate_repositories(body), ["owner/alpha"])
+
+    def test_source_candidate_batch_routes_assessment_control(self) -> None:
+        body = "Source candidate batch: #918\nFrozen refs: copied unchanged from #918"
+        self.assertEqual(module.source_candidate_batch(body), 918)
+
+    def test_logical_queue_numbers_collapse_source_and_assessment_control(self) -> None:
+        entries = [
+            module.QueueEntry(918, "[Candidate batch] X", "owner/alpha", frozen=True),
+            module.QueueEntry(
+                989,
+                "[Assessment batch] X",
+                "owner/alpha",
+                frozen=True,
+                source_issue_number=918,
+            ),
+        ]
+        self.assertEqual(module.logical_queue_numbers(entries), [918])
+
+    def test_logical_queue_numbers_preserve_independent_batches(self) -> None:
+        entries = [
+            module.QueueEntry(918, "[Candidate batch] X", "owner/alpha", frozen=True),
+            module.QueueEntry(966, "[Candidate batch] Y", "owner/alpha", frozen=True),
+        ]
+        self.assertEqual(module.logical_queue_numbers(entries), [918, 966])
+
     def test_parse_legacy_batch_occupancy(self) -> None:
         self.assertEqual(module.declared_active_occupancy("Batch occupancy: **7/10**"), 7)
 

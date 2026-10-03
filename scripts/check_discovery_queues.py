@@ -45,6 +45,7 @@ REMAINING_OCCUPANCY_RE = re.compile(
 )
 BATCH_OCCUPANCY_RE = re.compile(r"Batch occupancy:\s*\*{0,2}(\d+)/10", re.IGNORECASE)
 FROZEN_QUEUE_RE = re.compile(r"\bbatch\b[^\n]{0,120}\bfrozen\b", re.IGNORECASE)
+SOURCE_CANDIDATE_RE = re.compile(r"Source candidate batch:\s*#(\d+)", re.IGNORECASE)
 GITHUB_URL_RE = re.compile(r"(?:https://github\.com/)?([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
 
 
@@ -54,6 +55,11 @@ class QueueEntry:
     issue_title: str
     repository: str
     frozen: bool = False
+    source_issue_number: int | None = None
+
+    @property
+    def logical_queue_number(self) -> int:
+        return self.source_issue_number or self.issue_number
 
 
 class GitHubAPIError(RuntimeError):
@@ -91,6 +97,11 @@ def declared_active_occupancy(body: str) -> int | None:
 
 def declared_remaining_active_occupancy(body: str) -> int | None:
     match = REMAINING_OCCUPANCY_RE.search(body)
+    return int(match.group(1)) if match else None
+
+
+def source_candidate_batch(body: str) -> int | None:
+    match = SOURCE_CANDIDATE_RE.search(body)
     return int(match.group(1)) if match else None
 
 
@@ -138,7 +149,7 @@ def parse_candidate_repositories(body: str) -> list[str]:
         if not line.lstrip().startswith("|"):
             continue
         header = [cell.lower() for cell in table_cells(line)]
-        if "project" not in header or "review ref" not in header:
+        if "project" not in header or not any("review ref" in cell for cell in header):
             continue
         repo_index = next(
             (i for i, cell in enumerate(header) if cell in {"repository", "canonical repository"}),
@@ -258,6 +269,7 @@ def active_queue_entries(
         if not repositories:
             errors.append(f"#{number}: tracked queue has no parseable candidate table")
             continue
+        source_issue_number = source_candidate_batch(body)
         remaining_occupancy = declared_remaining_active_occupancy(body)
         if remaining_occupancy is not None:
             remaining_occupancies[number] = remaining_occupancy
@@ -267,7 +279,15 @@ def active_queue_entries(
                 errors.append(f"#{number}: declared occupancy {occupancy}/10 != {len(repositories)}/10 table rows")
         frozen = is_frozen_queue(body)
         for repository in repositories:
-            entries.append(QueueEntry(number, title, repository, frozen=frozen))
+            entries.append(
+                QueueEntry(
+                    number,
+                    title,
+                    repository,
+                    frozen=frozen,
+                    source_issue_number=source_issue_number,
+                )
+            )
     return entries, remaining_occupancies, errors
 
 
@@ -296,6 +316,10 @@ def classify_queue_entries(
                 f"#{entry.issue_number}: {entry.repository} already has status=proposed; do not queue it elsewhere"
             )
     return active, errors, warnings
+
+
+def logical_queue_numbers(entries: list[QueueEntry]) -> list[int]:
+    return sorted({entry.logical_queue_number for entry in entries})
 
 
 def validate_remaining_occupancies(
@@ -349,9 +373,9 @@ def main() -> int:
         by_name.setdefault(entry.repository.lower(), []).append(entry)
 
     for repository, matches in by_name.items():
-        issue_numbers = sorted({entry.issue_number for entry in matches})
-        if len(issue_numbers) > 1:
-            errors.append(f"{repository}: queued in multiple active candidate batches {issue_numbers}")
+        queue_numbers = logical_queue_numbers(matches)
+        if len(queue_numbers) > 1:
+            errors.append(f"{repository}: queued in multiple active candidate batches {queue_numbers}")
 
     if not args.no_github_id_resolution:
         canonical_names = set(included) | set(catalog_names)
@@ -375,11 +399,11 @@ def main() -> int:
                 )
 
         for repo_id, matches in queued_ids.items():
-            issue_numbers = sorted({entry.issue_number for entry in matches})
-            if len(issue_numbers) > 1:
+            queue_numbers = logical_queue_numbers(matches)
+            if len(queue_numbers) > 1:
                 names = sorted({entry.repository for entry in matches})
                 errors.append(
-                    f"GitHub repository id {repo_id} ({names}) is queued in multiple active batches {issue_numbers}"
+                    f"GitHub repository id {repo_id} ({names}) is queued in multiple active batches {queue_numbers}"
                 )
 
     if warnings:
