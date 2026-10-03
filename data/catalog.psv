@@ -385,3 +385,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 370|axiom|Axiom|https://github.com/amuluze/axiom-agent|2026-09-12T14:08:39Z|index-addition|da7b98b739a824713d230b2635edb56868553696|2026-09-29
 371|zeron|Zeron|https://github.com/zeronsh/zeron|2026-07-20T15:04:04Z|index-addition|6ecea055877e1f560adbc4545b8d8fd7dffa6d75|2026-09-20
 372|github-copilot-sdk|GitHub Copilot SDK|https://github.com/github/copilot-sdk|2026-01-14T00:23:22Z|index-addition|8045fb74c7d8684fd388b09e324c00b02e9347a5|2026-09-20
+373|diodide-harness|Harness|https://github.com/DIodide/Harness|2026-02-13T04:39:01Z|index-addition|471b22a2214dc0e4d056ecb05cf2ca48801384ac|2026-09-20
