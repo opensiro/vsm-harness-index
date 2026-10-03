@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import importlib.util
+from io import BytesIO
 from pathlib import Path
 import sys
 import unittest
+from unittest import mock
 
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts" / "check_discovery_queues.py"
@@ -137,6 +139,36 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
 | Alpha | `owner/alpha` |
 """
         self.assertEqual(module.parse_candidate_repositories(body), [])
+
+
+class DiscoveryQueueGitHubAPITests(unittest.TestCase):
+    def test_get_retries_transient_timeout(self) -> None:
+        api = module.GitHubAPI("token")
+        response = BytesIO(b'{"ok": true}')
+        with (
+            mock.patch.object(
+                module.urllib.request,
+                "urlopen",
+                side_effect=[TimeoutError("temporary timeout"), response],
+            ) as urlopen,
+            mock.patch.object(module.time, "sleep") as sleep,
+        ):
+            self.assertEqual(api.get("/example"), {"ok": True})
+
+        self.assertEqual(urlopen.call_count, 2)
+        sleep.assert_called_once_with(1)
+
+    def test_repository_identity_404_is_unresolved_not_fatal(self) -> None:
+        api = module.GitHubAPI("token")
+        not_found = module.urllib.error.HTTPError(
+            "https://api.github.com/repos/gone/repo",
+            404,
+            "Not Found",
+            {},
+            None,
+        )
+        with mock.patch.object(module.urllib.request, "urlopen", side_effect=not_found):
+            self.assertIsNone(api.repository_identity("gone/repo"))
 
 
 if __name__ == "__main__":
