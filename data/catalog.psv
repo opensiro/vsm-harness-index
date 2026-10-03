@@ -395,3 +395,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 380|operandi|Operandi|https://github.com/modus-lisp/operandi|2026-07-16T09:02:49Z|index-addition|1d1c6b5c28ff4f5cb80a31aed709145527c1a78f|2026-09-29
 381|mindweave|Mindweave|https://github.com/mindweave-cli/mindweave|2026-09-16T20:07:43Z|index-addition|7a108f043dbfca273dd420d193803f41040a64b7|2026-09-29
 382|autonomous-swe-platform|Autonomous SWE Platform|https://github.com/SurjitW/Autonomous-Software-Engineering-and-Coding-Agent-Platform|2026-09-27T02:23:36Z|index-addition|057045d8c107417358416c8b97c0249d1359f18d|2026-09-29
+383|easy-agent|Easy Agent|https://github.com/vietor/easy-agent|2026-06-24T14:35:41Z|index-addition|f13207671ad142fb89d1c36d413f7e42d60b18a6|2026-09-29
