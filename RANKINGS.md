@@ -162,6 +162,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 6 | <a id="cloud-coding-agent-node"></a>[Cloud Coding Agent Node](https://github.com/fred1433/cloud-coding-agent-node) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
+| 6 | <a id="raincode"></a>[RainCode](https://github.com/Rainmemery/RainCode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="company-brain"></a>[Company Brain](https://github.com/supermemoryai/company-brain) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="froe"></a>[Froe](https://github.com/dcoldeira/froe) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="atlias"></a>[atlias](https://github.com/ridelink0/atlias) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
