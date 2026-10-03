@@ -1,0 +1,57 @@
+name: Prepare Genesis Agent admission
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    if: github.head_ref == 'admission/genesis-agent-975'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - name: Apply canonical admission and render projections
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p=Path("assessments/genesis-agent.md")
+          t=p.read_text(encoding="utf-8")
+          assert "status: proposed" in t
+          p.write_text(t.replace("status: proposed","status: included",1),encoding="utf-8")
+
+          p=Path("data/catalog.psv")
+          t=p.read_text(encoding="utf-8").rstrip("\n")
+          assert "|genesis-agent|" not in t
+          p.write_text(t+"\n384|genesis-agent|Genesis Agent|https://github.com/me7ko-dev/genesis-agent|2026-07-27T22:25:37Z|index-addition|0e24818a9fd0788c6fe68b2e51ba3a3083f6d2fc|2026-09-29\n",encoding="utf-8")
+
+          p=Path("data/signatures.psv")
+          t=p.read_text(encoding="utf-8").rstrip("\n")
+          assert "|genesis-agent|" not in t
+          p.write_text(t+"\n384|genesis-agent|Genesis Agent closes autonomous S1, exposes constructor-owned S2 through serialization of parallel autonomous skill-library writes, closes autonomous S3* through a writer-independent semantic critic, and closes autonomous S4 by promoting audited mission solutions and failure lessons into persistent capabilities reused by later missions; no whole-current S3 or runtime S5 closure is established.\n",encoding="utf-8")
+          PY
+
+          python scripts/render_tldr.py
+          python scripts/render_analytics.py
+          python scripts/render_metrics.py
+          python scripts/sync_metrics_readme.py
+          python scripts/check_index.py
+          python scripts/render_full_a.py --check
+          python scripts/render_analytics.py --check
+          python scripts/render_metrics.py --check
+          python scripts/sync_metrics_readme.py --check
+          python -m unittest discover -s tests -v
+
+          rm .github/workflows/prepare-genesis-agent-admission.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Genesis Agent admission"
+          git push origin HEAD:admission/genesis-agent-975
