@@ -386,3 +386,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 371|zeron|Zeron|https://github.com/zeronsh/zeron|2026-07-20T15:04:04Z|index-addition|6ecea055877e1f560adbc4545b8d8fd7dffa6d75|2026-09-20
 372|github-copilot-sdk|GitHub Copilot SDK|https://github.com/github/copilot-sdk|2026-01-14T00:23:22Z|index-addition|8045fb74c7d8684fd388b09e324c00b02e9347a5|2026-09-20
 373|diodide-harness|Harness|https://github.com/DIodide/Harness|2026-02-13T04:39:01Z|index-addition|471b22a2214dc0e4d056ecb05cf2ca48801384ac|2026-09-20
+374|1code|1Code|https://github.com/21st-dev/1code|2026-01-14T02:12:40Z|index-addition|9f1bc76fa4372c18c565b5a4f8daf38ae3595f0e|2026-09-20
