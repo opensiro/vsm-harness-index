@@ -72,6 +72,17 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
 """
         self.assertEqual(module.parse_candidate_repositories(body), ["owner/alpha"])
 
+
+    def test_parse_candidate_rows_preserves_review_ref(self) -> None:
+        body = """| # | Project | Canonical repository | Frozen review ref |
+| ---: | --- | --- | --- |
+| 1 | Alpha | `owner/alpha` | `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa` |
+"""
+        self.assertEqual(
+            module.parse_candidate_rows(body),
+            [("owner/alpha", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")],
+        )
+
     def test_source_candidate_batch_routes_assessment_control(self) -> None:
         body = "Source candidate batch: #918\nFrozen refs: copied unchanged from #918"
         self.assertEqual(module.source_candidate_batch(body), 918)
@@ -100,6 +111,47 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
             module.QueueEntry(966, "[Candidate batch] Y", "owner/alpha", frozen=True),
         ]
         self.assertEqual(module.logical_queue_numbers(entries), [918, 966])
+
+
+    def test_exact_snapshot_duplicate_requires_same_ref_across_queues(self) -> None:
+        ref = "cd7ec0ee2031d1723e1d38593d43385778fd5d30"
+        entries = [
+            module.QueueEntry(918, "[Candidate batch] X", "owner/old", frozen=True, review_ref=ref),
+            module.QueueEntry(966, "[Candidate batch] Y", "owner/new", frozen=True, review_ref=ref),
+        ]
+        self.assertTrue(module.is_exact_snapshot_duplicate(entries))
+
+    def test_exact_snapshot_duplicate_rejects_different_refs(self) -> None:
+        entries = [
+            module.QueueEntry(
+                918,
+                "[Candidate batch] X",
+                "owner/old",
+                frozen=True,
+                review_ref="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            ),
+            module.QueueEntry(
+                966,
+                "[Candidate batch] Y",
+                "owner/new",
+                frozen=True,
+                review_ref="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            ),
+        ]
+        self.assertFalse(module.is_exact_snapshot_duplicate(entries))
+
+    def test_exact_snapshot_duplicate_rejects_missing_ref(self) -> None:
+        entries = [
+            module.QueueEntry(
+                918,
+                "[Candidate batch] X",
+                "owner/old",
+                frozen=True,
+                review_ref="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            ),
+            module.QueueEntry(966, "[Candidate batch] Y", "owner/new", frozen=True),
+        ]
+        self.assertFalse(module.is_exact_snapshot_duplicate(entries))
 
     def test_parse_legacy_batch_occupancy(self) -> None:
         self.assertEqual(module.declared_active_occupancy("Batch occupancy: **7/10**"), 7)

@@ -47,6 +47,7 @@ BATCH_OCCUPANCY_RE = re.compile(r"Batch occupancy:\s*\*{0,2}(\d+)/10", re.IGNORE
 FROZEN_QUEUE_RE = re.compile(r"\bbatch\b[^\n]{0,120}\bfrozen\b", re.IGNORECASE)
 SOURCE_CANDIDATE_RE = re.compile(r"Source candidate batch:\s*#(\d+)", re.IGNORECASE)
 GITHUB_URL_RE = re.compile(r"(?:https://github\.com/)?([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
+REVIEW_REF_RE = re.compile(r"\b[0-9a-fA-F]{40}\b")
 
 
 @dataclass(frozen=True)
@@ -56,6 +57,7 @@ class QueueEntry:
     repository: str
     frozen: bool = False
     source_issue_number: int | None = None
+    review_ref: str | None = None
 
     @property
     def logical_queue_number(self) -> int:
@@ -146,9 +148,9 @@ def table_cells(line: str) -> list[str]:
     return [cell.strip() for cell in line.strip().strip("|").split("|")]
 
 
-def parse_candidate_repositories(body: str) -> list[str]:
+def parse_candidate_rows(body: str) -> list[tuple[str, str | None]]:
     lines = body.splitlines()
-    repositories: list[str] = []
+    rows: list[tuple[str, str | None]] = []
     for index, line in enumerate(lines):
         if not line.lstrip().startswith("|"):
             continue
@@ -159,19 +161,29 @@ def parse_candidate_repositories(body: str) -> list[str]:
             (i for i, cell in enumerate(header) if cell in {"repository", "canonical repository"}),
             None,
         )
-        if repo_index is None:
+        ref_index = next((i for i, cell in enumerate(header) if "review ref" in cell), None)
+        if repo_index is None or ref_index is None:
             continue
         row_index = index + 2  # skip markdown separator
         while row_index < len(lines) and lines[row_index].lstrip().startswith("|"):
             cells = table_cells(lines[row_index])
             if repo_index < len(cells):
-                cell = cells[repo_index].strip().strip("`")
-                match = GITHUB_URL_RE.search(cell)
-                if match:
-                    repositories.append(f"{match.group(1)}/{match.group(2)}")
+                repo_cell = cells[repo_index].strip().strip("`")
+                repo_match = GITHUB_URL_RE.search(repo_cell)
+                if repo_match:
+                    review_ref = None
+                    if ref_index < len(cells):
+                        ref_match = REVIEW_REF_RE.search(cells[ref_index])
+                        if ref_match:
+                            review_ref = ref_match.group(0).lower()
+                    rows.append((f"{repo_match.group(1)}/{repo_match.group(2)}", review_ref))
             row_index += 1
         break
-    return repositories
+    return rows
+
+
+def parse_candidate_repositories(body: str) -> list[str]:
+    return [repository for repository, _review_ref in parse_candidate_rows(body)]
 
 
 class GitHubAPI:
@@ -269,8 +281,8 @@ def active_queue_entries(
             continue
         number = int(issue["number"])
         body = str(issue.get("body") or "")
-        repositories = parse_candidate_repositories(body)
-        if not repositories:
+        candidate_rows = parse_candidate_rows(body)
+        if not candidate_rows:
             errors.append(f"#{number}: tracked queue has no parseable candidate table")
             continue
         source_issue_number = source_candidate_batch(body)
@@ -279,10 +291,10 @@ def active_queue_entries(
             remaining_occupancies[number] = remaining_occupancy
         else:
             occupancy = declared_active_occupancy(body)
-            if occupancy is not None and occupancy != len(repositories):
-                errors.append(f"#{number}: declared occupancy {occupancy}/10 != {len(repositories)}/10 table rows")
+            if occupancy is not None and occupancy != len(candidate_rows):
+                errors.append(f"#{number}: declared occupancy {occupancy}/10 != {len(candidate_rows)}/10 table rows")
         frozen = is_frozen_control_queue(body)
-        for repository in repositories:
+        for repository, review_ref in candidate_rows:
             entries.append(
                 QueueEntry(
                     number,
@@ -290,6 +302,7 @@ def active_queue_entries(
                     repository,
                     frozen=frozen,
                     source_issue_number=source_issue_number,
+                    review_ref=review_ref,
                 )
             )
     return entries, remaining_occupancies, errors
@@ -324,6 +337,13 @@ def classify_queue_entries(
 
 def logical_queue_numbers(entries: list[QueueEntry]) -> list[int]:
     return sorted({entry.logical_queue_number for entry in entries})
+
+
+def is_exact_snapshot_duplicate(entries: list[QueueEntry]) -> bool:
+    if len(logical_queue_numbers(entries)) <= 1:
+        return False
+    refs = [entry.review_ref for entry in entries]
+    return all(refs) and len(set(refs)) == 1
 
 
 def validate_remaining_occupancies(
@@ -379,7 +399,13 @@ def main() -> int:
     for repository, matches in by_name.items():
         queue_numbers = logical_queue_numbers(matches)
         if len(queue_numbers) > 1:
-            errors.append(f"{repository}: queued in multiple active candidate batches {queue_numbers}")
+            if is_exact_snapshot_duplicate(matches):
+                warnings.append(
+                    f"{repository}: same immutable snapshot {matches[0].review_ref} is duplicated across "
+                    f"active candidate batches {queue_numbers}; reconcile queue ownership before assessment"
+                )
+            else:
+                errors.append(f"{repository}: queued in multiple active candidate batches {queue_numbers}")
 
     if not args.no_github_id_resolution:
         canonical_names = set(included) | set(catalog_names)
@@ -406,9 +432,16 @@ def main() -> int:
             queue_numbers = logical_queue_numbers(matches)
             if len(queue_numbers) > 1:
                 names = sorted({entry.repository for entry in matches})
-                errors.append(
-                    f"GitHub repository id {repo_id} ({names}) is queued in multiple active batches {queue_numbers}"
-                )
+                if is_exact_snapshot_duplicate(matches):
+                    warnings.append(
+                        f"GitHub repository id {repo_id} ({names}) is the same immutable snapshot "
+                        f"{matches[0].review_ref} across active batches {queue_numbers}; "
+                        "reconcile queue ownership before assessment"
+                    )
+                else:
+                    errors.append(
+                        f"GitHub repository id {repo_id} ({names}) is queued in multiple active batches {queue_numbers}"
+                    )
 
     if warnings:
         print("Discovery queue warnings:")
