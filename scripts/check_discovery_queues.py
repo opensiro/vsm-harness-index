@@ -105,6 +105,10 @@ def source_candidate_batch(body: str) -> int | None:
     return int(match.group(1)) if match else None
 
 
+def is_frozen_control_queue(body: str) -> bool:
+    return is_frozen_queue(body) or source_candidate_batch(body) is not None
+
+
 def parse_frontmatter(path: Path) -> dict[str, str]:
     text = path.read_text(encoding="utf-8")
     if not text.startswith("---\n"):
@@ -277,7 +281,7 @@ def active_queue_entries(
             occupancy = declared_active_occupancy(body)
             if occupancy is not None and occupancy != len(repositories):
                 errors.append(f"#{number}: declared occupancy {occupancy}/10 != {len(repositories)}/10 table rows")
-        frozen = is_frozen_queue(body)
+        frozen = is_frozen_control_queue(body)
         for repository in repositories:
             entries.append(
                 QueueEntry(
