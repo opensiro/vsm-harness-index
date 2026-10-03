@@ -143,6 +143,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="ironclaw"></a>[IronClaw](https://github.com/nearai/ironclaw) | 2026-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A — P —` |
 | 5 | <a id="preloop"></a>[Preloop](https://github.com/preloop/preloop) | 2026-Q1 | 2/6 | 1/5 | 1 | 2 | 0 | `A — C(P) A P —` |
 | 5 | <a id="lime"></a>[Lime](https://github.com/limecloud/lime) | 2025-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
+| 5 | <a id="haft"></a>[Haft](https://github.com/m0n0x41d/haft) | 2025-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P A — —` |
 | 5 | <a id="codex-autorunner"></a>[codex-autorunner (CAR)](https://github.com/Git-on-my-level/codex-autorunner) | 2025-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="maestro"></a>[Maestro](https://github.com/RunMaestro/Maestro) | 2025-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="cuga"></a>[CUGA](https://github.com/cuga-project/cuga-agent) | 2025-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
