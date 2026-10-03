@@ -31,6 +31,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="openrig"></a>[OpenRig](https://github.com/mvschwarz/openrig) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="cc-haha"></a>[cc-haha](https://github.com/NanmiCoder/cc-haha) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="nac"></a>[nac](https://github.com/arcee-ai/nac) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="clawmanager"></a>[ClawManager](https://github.com/Yuan-lab-LLM/ClawManager) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="autoresearchclaw"></a>[AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="paperclip"></a>[Paperclip](https://github.com/paperclipai/paperclip) | 2026-Q1 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="harness-kit"></a>[Harness Kit](https://github.com/deepklarity/harness-kit) | 2026-Q1 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A P —` |
