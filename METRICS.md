@@ -9,7 +9,7 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 | Included standalone assessments | 362 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
 | Canonical assessment records | 400 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
 | Canonical exclusions | 38 | Completed assessments with `status: excluded-no-agentic-vsm`. |
-| Proposed intake assessments | 14 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
+| Proposed intake assessments | 15 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
 | Catalog entries | 400 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
 | Catalog entries without an included assessment | 38 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
 | Reassessment events | 88 | Recorded events in `data/reassessment-history.psv`. |
