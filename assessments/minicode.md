@@ -170,7 +170,7 @@ Primary evidence:
 - Decision owner: not established at S5 level.
 - Supporting / enforcement mechanisms: system prompt, permission modes, sandbox policy, trusted/local configuration, operator approval and project context files.
 - Closure path: ordinary approvals/configuration alter execution posture, but no identity/ultimate-policy issue is escalated through a qualifying first-party parent loop and returned to govern subsequent operation.
-- Why not parent-owned: `buildSystemPrompt` explicitly marks MEMORY, repo map, skills, steering and agent files as untrusted data that “never override the instructions above”; AGENTS/CLAUDE/steering therefore do not act as authoritative parent constitutions.
+- Why this is / is not agent-owned: no agent or qualifying first-party parent owns an identity-level decision path here. `buildSystemPrompt` explicitly marks MEMORY, repo map, skills, steering and agent files as untrusted data that “never override the instructions above”; AGENTS/CLAUDE/steering therefore do not act as authoritative parent constitutions.
 - Evidence: `src/policy/context.ts`; `src/policy/permission.ts`; `src/app/session.ts`.
 - Basis: explicit + structural absence review.
 - Confidence: high.
