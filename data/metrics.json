@@ -20,13 +20,13 @@
       "target": 100,
       "status": "achieved",
       "completed": 367,
-      "progress_fraction": 1
+      "progress_fraction": 1.0
     },
     {
       "target": 250,
       "status": "achieved",
       "completed": 367,
-      "progress_fraction": 1
+      "progress_fraction": 1.0
     },
     {
       "target": 500,
