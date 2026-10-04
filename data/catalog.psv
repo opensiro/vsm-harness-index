@@ -418,3 +418,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 403|dscode|DSCode|https://github.com/thinkany-ai/dscode|2026-07-31T13:33:13Z|index-addition|1ce0328cfa856700f6c955f5429ca00b08d99ea5|2026-09-28
 404|pooled|Pooled|https://github.com/Nehanth/pooled|2026-09-01T00:05:54Z|index-addition|b749f99c524f7a7c51f9e8c539e6b001dfdcdcd4|2026-09-28
 405|oh-my-cli|oh-my-cli|https://github.com/qwen-code-dev-bot/oh-my-cli|2026-07-13T11:43:52Z|index-addition|8dce0123dabfdae34093088281aaeb890e62d4fd|2026-09-28
+406|minicode|Minicode|https://github.com/startupmini/minicode|2026-08-21T20:17:38Z|index-addition|aa76dfbea2c3d262b7ff4951e532277135793487|2026-09-28
