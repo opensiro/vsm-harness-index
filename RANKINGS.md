@@ -206,6 +206,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="nemocode"></a>[NemoCode](https://github.com/SampleBias/nemocode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="operandi"></a>[Operandi](https://github.com/modus-lisp/operandi) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="rex-harness"></a>[rex-harness](https://github.com/rexleimo/rex-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="oh-my-cli"></a>[oh-my-cli](https://github.com/qwen-code-dev-bot/oh-my-cli) | 2026-Q3 | 1/6 | 0/5 | 0 | 2 | 0 | `A — — — P P` |
 | 6 | <a id="ally"></a>[Ally](https://github.com/Bronya0/ally-agent) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="sandbase-harness"></a>[SandBase Harness](https://github.com/sandbaseai/sandbase-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="waku-agent"></a>[Waku Agent](https://github.com/ShenSeanChen/waku-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
