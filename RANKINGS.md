@@ -281,6 +281,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="conductor"></a>[Conductor](https://github.com/microsoft/conductor) | 2026-Q1 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="shep"></a>[Shep](https://github.com/shep-ai/shep) | 2026-Q1 | 1/6 | 0/5 | 2 | 2 | 0 | `A C C(P) — — P` |
 | 6 | <a id="nanobot"></a>[nanobot](https://github.com/HKUDS/nanobot) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
+| 6 | <a id="grinta"></a>[Grinta](https://github.com/josephsenior/Grinta-Coding-Agent) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-runtime"></a>[agent-runtime](https://github.com/tsharp/agent-runtime) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hankweave"></a>[hankweave](https://github.com/SouthBridgeAI/hankweave-runtime) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="tandem"></a>[Tandem](https://github.com/frumu-ai/tandem) | 2026-Q1 | 1/6 | 0/5 | 4 | 2 | 0 | `A C C(P) C — C(P)` |
