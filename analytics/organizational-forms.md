@@ -34,8 +34,8 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A — — — — —` | 110 | 29.3% |
 | `A — — C — —` | 16 | 4.3% |
 | `A C — — — —` | 14 | 3.7% |
-| `A A A A — —` | 12 | 3.2% |
 | `A — A — — —` | 13 | 3.5% |
+| `A A A A — —` | 12 | 3.2% |
 | `A A A — — —` | 11 | 2.9% |
 | `A — — A — —` | 11 | 2.9% |
 | `A — — — A —` | 7 | 1.9% |
