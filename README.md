@@ -16,14 +16,6 @@ Treat this README as the public handoff surface, then continue with the current 
 
 If the bootstrap resolves Index work to this repository, repository-local assessment instances, accepted corpus state, provenance, reassessment bookkeeping, generated views, validation, and admission remain authoritative here.
 
-## Choosing work
-
-If the request names a specific Index issue, assessment, file, or concrete change, work from that owning artifact.
-
-If the request is open-ended — for example, “continue current work”, “pick up the next task”, or “find something useful to work on” — start with the shared [`OpenSiro VSM OSS TODO`](https://github.com/opensiro/vsm-oss-organization/blob/main/TODO.md), then follow the selected issue back to its owning repository. **Do not choose current work by scanning open issues or unfinished batches.**
-
-For new, unclassified, or cross-repository work, use the [`OpenSiro VSM OSS contributor entry`](https://github.com/opensiro/vsm-oss-organization/blob/main/CONTRIBUTOR_START.md). The selected owning issue/repository remains authoritative for task scope, evidence, validation, and acceptance.
-
 The ownership chain is intentionally split:
 
 ```text
@@ -123,17 +115,11 @@ discover → deduplicate → queue → pin → assess → admit → synthesize �
 
 `data/catalog.psv` owns discovery/order/provenance; `assessments/` stores accepted repository-relative research artifacts; `data/signatures.psv` stores cohort-relative synthesis results; generated Markdown and analytics are materialized views.
 
-## Contributing and organization
+## Contributing
 
-Use this repository for harness discovery/intake, assessment instances, reassessment history, catalog/provenance maintenance, signatures, generated Index views, and Index-local tooling.
+Use this repository for harness discovery/intake, assessment instances, reassessment history, catalog/provenance maintenance, signatures, generated Index views, and Index-local tooling. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the actionable workflow and [`INDEXING.md`](INDEXING.md) for Index-owned lifecycle and provenance rules.
 
-For **currently tracked work across the bounded VSM Harness OSS group**, start with the shared [`OpenSiro VSM OSS TODO`](https://github.com/opensiro/vsm-oss-organization/blob/main/TODO.md). When it selects an Index task, return to the linked Index issue: that issue remains authoritative for the batch/row, frozen `review_ref`, evidence boundary, validation and admission state.
-
-Use `vsm-harness-skills` for changes to assessment format, classification procedure, publication states, synthesis semantics, and ranking projection.
-
-Use `vsm-harness-profile` for changes to VSM semantics.
-
-For questions about contributor authority, escalation, cross-repository coordination, current-work ordering, or the shared OpenSiro control plane, use [`opensiro/vsm-oss-organization`](https://github.com/opensiro/vsm-oss-organization).
+Changes to assessment format, classification procedure, publication states, synthesis semantics, or ranking projection belong in `vsm-harness-skills`; changes to VSM semantics belong in `vsm-harness-profile`. The shared entry routes at the top of this README own current-work and cross-repository routing.
 
 ## Validation
 
