@@ -104,6 +104,8 @@ In autopilot mode, a scheduled supervisor is itself a model-backed decision acto
 - Decision owner: the model-backed scheduled autopilot supervisor session.
 - Supporting / enforcement mechanisms: `list_failed_sessions`, `list_autopilot_workers`, `dispatch_autopilot_worker`, cron scheduling, worker goal state, max-three rule and ntfy notification.
 - Closure path: cross-section failure evidence + prior worker state → supervisor judgment → new goal-driven worker dispatch or no-dispatch/pause → workers update status/open draft PRs → later supervisor run reads worker/failure state and adjusts subsequent dispatch.
+- Whole-system current view: the supervisor consumes a cross-section of Worker exceptions, grouped client errors, stalled scheduled sessions and the current/recent autopilot-worker roster for the deployed Dodo instance.
+- Current-control decision scope: it chooses whether current failures merit intervention, which concrete issues receive scarce worker slots now, suppresses duplicate/in-flight work, and pauses/escalates repeated stuck patterns.
 - Boundary reachability: README documents installation of the scheduled supervisor; `src/index.ts` exposes the supervisor schedule; `src/mcp.ts` ships the exact control tools; `src/autopilot.ts` supplies the model-owned decision procedure.
 - Why this is / is not agent-owned: removing the supervisor model while leaving logs, cron and dispatch endpoints intact removes the judgment that selects actionable issues, deduplicates them semantically and chooses current worker allocation.
 - Evidence: README Autopilot; `src/autopilot.ts`; `src/mcp.ts`; supervisor routes.
