@@ -409,3 +409,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 394|haft|Haft|https://github.com/m0n0x41d/haft|2025-12-10T19:16:51Z|index-addition|8a5f0384a10003bda7b2b65edc86f0f1a656a345|2026-09-20
 395|clawkeeper|ClawKeeper|https://github.com/SafeAI-Lab-X/ClawKeeper|2026-03-20T08:26:54Z|index-addition|69db077317bd8a89777c7670295539ed93145f46|2026-09-20
 396|defenseclaw|DefenseClaw|https://github.com/cisco-ai-defense/defenseclaw|2026-03-23T00:51:19Z|index-addition|85029e57e9094debd9366a7d5a9f7e6d5c3ef6fc|2026-09-20
+397|dashclaw|DashClaw|https://github.com/ucsandman/DashClaw|2026-02-08T02:34:15Z|index-addition|c6754674f98b73bba73046687c683e9bf685851c|2026-09-20
