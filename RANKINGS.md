@@ -127,6 +127,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="super-agent"></a>[super-agent](https://github.com/FedericoCasarella/super-agent) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P — A —` |
 | 5 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="life-harness"></a>[Life-Harness](https://github.com/Tianshi-Xu/Life-Harness) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
+| 5 | <a id="openseek"></a>[OpenSeek](https://github.com/moonbitlang/openseek) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="tangle-agent-runtime"></a>[Tangle Agent Runtime](https://github.com/tangle-network/agent-runtime) | 2026-Q2 | 2/6 | 1/5 | 3 | 0 | 0 | `A C A C C —` |
 | 5 | <a id="ogcode"></a>[Ogcode](https://github.com/prasenjeet-symon/ogcode) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |
