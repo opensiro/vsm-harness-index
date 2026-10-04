@@ -262,6 +262,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agentoven"></a>[AgentOven](https://github.com/agentoven/agentoven) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="diodide-harness"></a>[Harness](https://github.com/DIodide/Harness) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="s18share"></a>[S18Share](https://github.com/riteshverma/s18) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A — C(P) — — —` |
+| 6 | <a id="soloncode"></a>[SolonCode](https://github.com/opensolon/soloncode) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="dashclaw"></a>[DashClaw](https://github.com/ucsandman/DashClaw) | 2026-Q1 | 1/6 | 0/5 | 2 | 1 | 0 | `A — C — C(P) —` |
 | 6 | <a id="flue"></a>[Flue](https://github.com/withastro/flue) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="awaken"></a>[Awaken](https://github.com/awakenworks/awaken) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A — C(P) — — —` |
