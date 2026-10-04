@@ -413,3 +413,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 398|cordum|Cordum|https://github.com/cordum-io/cordum|2026-01-11T16:56:02Z|index-addition|5f58ad4e0efd309956310ec27a11ce455226268b|2026-09-20
 399|soloncode|SolonCode|https://github.com/opensolon/soloncode|2026-02-10T07:31:57Z|index-addition|123e7a2d19e33b0fff72b5518062b020b3c96bc3|2026-09-28
 400|openseek|OpenSeek|https://github.com/moonbitlang/openseek|2026-05-19T07:04:13Z|index-addition|3999e3c1a804651f7d59b2f69dad6c6dae48de71|2026-09-28
+401|aivo-code|Aivo Code|https://github.com/yuanchuan/aivo|2026-02-26T05:08:24Z|index-addition|b26438571e80ae28fa489f07c2c22fd595e10269|2026-09-28
