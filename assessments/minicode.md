@@ -26,7 +26,8 @@ autonomy_s5: —
 - Purpose and identity: execute software-engineering tasks through a transparent permission-first model/tool coding loop with first-party file, shell, Git, memory, planning, MCP/LSP, delegated-child, session, recovery and optional verification facilities.
 - Relevant environment: user objective, workspace files and Git state, provider responses, tool results, local permission/sandbox decisions, durable session/checkpoint state, MCP/LSP responses and optional verification-command output.
 - Standard-distribution boundary: Minicode's `src/` and `cli/` composition plus the pinned `vendor/minicore` tree are inside. Upstream MiniCore behavior not present in that vendored tree, sibling clones, external providers/MCP servers, host OS facilities and repository-development documents that are not runtime authority are outside.
-- Credited operating/deployment surfaces: interactive CLI, one-shot/headless execution, the production-wired `delegate_task` path, optional `--verify`, permissions/sandboxing, sessions/recovery and the pinned vendored kernel.
+- Credited operating / distribution surfaces: interactive CLI, one-shot/headless execution, the production-wired `delegate_task` path, optional `--verify`, permissions/sandboxing, sessions/recovery and the pinned vendored kernel.
+- Adjacent first-party surfaces excluded from ownership: benchmark/experiment artifacts, design/implementation plans, test-only fixtures, upstream MiniCore behavior absent from the vendored tree, and repository-development prose that is not wired as runtime authority.
 - First-party modes considered: default/auto coding, ask/allowlist/readonly/plan/allow-all permission modes, headless/interactive execution, delegated explore/plan children and opt-in verification/self-heal.
 - Recursion level: one Minicode coding session is the focal operation. Production-wired child sessions are subordinate operational delegates. They are considered for S2/S3 only where the required same-recursion disturbance/control closure is actually established.
 - Frozen Minicode revision: `aa76dfbea2c3d262b7ff4951e532277135793487`.
@@ -67,10 +68,10 @@ Primary evidence:
 - Disturbance / variety regulated: heterogeneous user objectives, repository structure, source-code defects, tool/shell outcomes, provider failures, context pressure, permission restrictions and test feedback.
 - Decisive decision or feedback right: choose the next permitted coding/tool action from current task context and returned observations, revise the approach after errors/results and decide when to produce a terminal response.
 - Decision owner: the model-backed Minicode coding actor running through the vendored MiniCore loop.
-- Supporting/enforcement mechanisms: first-party tool registry, permission handler, sandbox policy, bounded executor, provider recovery, context compaction, sessions/checkpoints, todo/memory surfaces and optional verification.
+- Supporting / enforcement mechanisms: first-party tool registry, permission handler, sandbox policy, bounded executor, provider recovery, context compaction, sessions/checkpoints, todo/memory surfaces and optional verification.
 - Closure path: user objective + current session/workspace evidence → model selects tool/action → Minicode permission/executor path runs it → tool result is committed to the turn context → next model step observes it → revised action or terminal answer.
 - Boundary reachability: this is the ordinary Minicode interactive/headless execution path.
-- Why agent-owned: removing the model actor leaves deterministic transport, policy and execution machinery, but removes the open-ended choice of coding actions and revisions.
+- Why this is / is not agent-owned: removing the model actor leaves deterministic transport, policy and execution machinery, but removes the open-ended choice of coding actions and revisions.
 - Evidence: pinned vendored `loop.ts`; `src/app/session.ts`; `src/tools/index.ts`; README.
 - Basis: explicit + structural.
 - Confidence: high.
@@ -83,9 +84,9 @@ Primary evidence:
 - Disturbance / variety regulated: delegated children can run concurrently, and concurrent mutating work in one parent workspace could in principle interfere; however the production delegation path does not expose a concrete first-party relation that detects/negotiates/attenuates such collisions and feeds the result into subsequent peer behavior.
 - Decisive decision or feedback right: not established.
 - Decision owner: not established.
-- Supporting/enforcement mechanisms: `Pool` limits simultaneous delegated children; child scopes restrict tools/permissions; child journals isolate evidence; parent receives child summaries/events.
+- Supporting / enforcement mechanisms: `Pool` limits simultaneous delegated children; child scopes restrict tools/permissions; child journals isolate evidence; parent receives child summaries/events.
 - Closure path: absent at S2 level. The pool supplies a capacity limit, not disturbance-specific coordination among operational children.
-- Why not agent-owned: choosing to delegate and returning child summaries is task decomposition. Children do not negotiate shared-workspace conflict, reserve edit regions or receive a coordination decision that changes their later behavior.
+- Why this is / is not agent-owned: choosing to delegate and returning child summaries is task decomposition. Children do not negotiate shared-workspace conflict, reserve edit regions or receive a coordination decision that changes their later behavior.
 - Evidence: `src/tools/task.ts`; `src/agents/pool.ts`; `cli/index.ts`.
 - Basis: explicit + structural absence review.
 - Confidence: high.
@@ -94,8 +95,8 @@ Primary evidence:
 ### Absence scope
 
 - Surfaces inspected: production delegation factory/wiring, child tool restrictions, pool scheduling, journals/event forwarding, permission modes and vendored executor.
-- Plausible positive paths checked: concurrency pool as coordination; child isolation as collision control; parent delegation/result integration.
-- Why no material path remains: children normally share the parent `cwd`; the pool regulates quantity, while delegation/result integration is explicitly parent-task decomposition rather than a concrete interference → attenuation → feedback relation.
+- Plausible first-party paths checked: concurrency pool as coordination; child isolation as collision control; parent delegation/result integration.
+- Why no material first-party path remains: children normally share the parent `cwd`; the pool regulates quantity, while delegation/result integration is explicitly parent-task decomposition rather than a concrete interference → attenuation → feedback relation.
 
 ## S3 — Inside-and-now control
 
@@ -104,18 +105,19 @@ Primary evidence:
 - Disturbance / variety regulated: current session steps, child concurrency, budgets, permissions, todo state and background processes are bounded/observable, but no actor has a whole-current operational portfolio plus discretionary authority over shared commitments/resources on behalf of a multi-S1 whole.
 - Decisive decision or feedback right: not established at S3 level.
 - Decision owner: not established.
-- Supporting/enforcement mechanisms: max steps/timeouts, sub-agent pool limit, rate limiting, permissions, todo state, journals, session state and cancellation.
+- Supporting / enforcement mechanisms: max steps/timeouts, sub-agent pool limit, rate limiting, permissions, todo state, journals, session state and cancellation.
 - Closure path: no whole-system current view → resource/priority/commitment intervention → changed multi-S1 operation loop was reconstructed.
-- Why not agent-owned: the parent agent's choice to invoke a child and consume its result remains decomposition. Static/bounded runtime gates enforce constraints rather than choose whole-system current policy.
+- Why this is / is not agent-owned: the parent agent's choice to invoke a child and consume its result remains decomposition. Static/bounded runtime gates enforce constraints rather than choose whole-system current policy.
 - Evidence: vendored kernel session/loop; `src/tools/task.ts`; `src/agents/pool.ts`; `cli/setup.ts`.
 - Basis: explicit + structural absence review.
 - Confidence: high.
+- Caveats: this negative mapping does not deny that Minicode exposes useful supervisory telemetry or limits; it means those controls do not establish the Profile's distinct whole-system S3 function at the reviewed recursion.
 
 ### Absence scope
 
 - Surfaces inspected: child pool/current lifecycle, todo state, session state, budgets/rate limits, executor concurrency, cancellation and delegation result path.
-- Plausible positive paths checked: parent as manager; concurrency limits as resource control; todo state as whole-current state.
-- Why no material path remains: no distinct S3 whole-system regulation is established beyond the focal coding actor's own task execution and deterministic limits.
+- Plausible first-party paths checked: parent as manager; concurrency limits as resource control; todo state as whole-current state.
+- Why no material first-party path remains: no distinct S3 whole-system regulation is established beyond the focal coding actor's own task execution and deterministic limits.
 
 ## S3* — Complementary audit
 
@@ -124,18 +126,19 @@ Primary evidence:
 - Disturbance / variety regulated: faulty code or incorrect completion claims can be caught by opt-in verification, tests, LSP diagnostics and other checks.
 - Decisive decision or feedback right: no separate independent audit judgment owner is established.
 - Decision owner: not established.
-- Supporting/enforcement mechanisms: `--verify`, baseline verification, deterministic verification commands, completion-evidence reconciliation, test/LSP output and self-heal cycles.
+- Supporting / enforcement mechanisms: `--verify`, baseline verification, deterministic verification commands, completion-evidence reconciliation, test/LSP output and self-heal cycles.
 - Closure path: verification evidence does return into further coding, but failed verification is fed back to the same Minicode coding session for self-heal. This is routine operational QA rather than a complementary independent audit channel.
-- Why not agent-owned: there is no separate reviewer/model/evaluator with materially different access to operational reality and its own audit judgment.
+- Why this is / is not agent-owned: there is no separate reviewer/model/evaluator with materially different access to operational reality and its own audit judgment.
 - Evidence: `cli/setup.ts` `runPromptWithVerify` / `runPromptWithVerifyInner`.
 - Basis: explicit + structural absence review.
 - Confidence: high.
+- Caveats: deterministic test evidence can be strong operational verification, but independence is the missing organizational property; the same coding session owns the corrective judgment after failures.
 
 ### Absence scope
 
 - Surfaces inspected: `--verify`, baseline verification, self-heal driver, test evidence presentation, LSP diagnostics, benchmark/audit references and child delegation.
-- Plausible positive paths checked: deterministic verifier as S3*; delegated child as reviewer.
-- Why no material path remains: the standard verify path is deterministic same-production-path QA, and no standard independent reviewer child is wired as a mandatory/complementary audit path.
+- Plausible first-party paths checked: deterministic verifier as S3*; delegated child as reviewer.
+- Why no material first-party path remains: the standard verify path is deterministic same-production-path QA, and no standard independent reviewer child is wired as a mandatory/complementary audit path.
 
 ## S4 — Outside-and-then intelligence
 
@@ -144,18 +147,19 @@ Primary evidence:
 - Disturbance / variety regulated: current-task web/MCP information, memory retrieval, verified-run snippets and provider/model changes can influence later work, but none of these surfaces establishes the required environmental sensing → adaptation-option development → returned capability-change loop.
 - Decisive decision or feedback right: not established at S4 level.
 - Decision owner: not established.
-- Supporting/enforcement mechanisms: web tools, MCP, memory RAG, session persistence, verified-run snippet memory, model/provider selection and repo-map/context loading.
+- Supporting / enforcement mechanisms: web tools, MCP, memory RAG, session persistence, verified-run snippet memory, model/provider selection and repo-map/context loading.
 - Closure path: no first-party prospective adaptation option is shown changing Minicode's reusable capability/configuration through an S4 loop.
-- Why not agent-owned: memory and current-task research preserve/use evidence but do not themselves make future-oriented capability adaptations.
+- Why this is / is not agent-owned: memory and current-task research preserve/use evidence but do not themselves make future-oriented capability adaptations.
 - Evidence: README; `src/policy/context.ts`; memory/session surfaces; verify snippet behavior in `cli/setup.ts`.
 - Basis: explicit + structural absence review.
 - Confidence: high.
+- Caveats: durable memory and externally sourced task evidence may improve later answers, but no first-party mechanism on this frozen ref converts them into a prospective change of reusable Minicode capability.
 
 ### Absence scope
 
 - Surfaces inspected: memory/RAG, verified-run snippets, web/MCP, skills/context, provider/model selection, session persistence and repository plans/docs.
-- Plausible positive paths checked: learning from verification; persistent memory as adaptation; external research as S4.
-- Why no material path remains: these paths inform present/future prompts but do not establish a closed prospective adaptation decision that modifies current system capability.
+- Plausible first-party paths checked: learning from verification; persistent memory as adaptation; external research as S4.
+- Why no material first-party path remains: these paths inform present/future prompts but do not establish a closed prospective adaptation decision that modifies current system capability.
 
 ## S5 — Policy and identity
 
@@ -164,18 +168,19 @@ Primary evidence:
 - Disturbance / variety regulated: permissions, sandboxing and project context constrain coding behavior, but constraints are not by themselves S5.
 - Decisive decision or feedback right: no first-party identity-level decision path with legitimate ultimate authority and returned governance was reconstructed.
 - Decision owner: not established at S5 level.
-- Supporting/enforcement mechanisms: system prompt, permission modes, sandbox policy, trusted/local configuration, operator approval and project context files.
+- Supporting / enforcement mechanisms: system prompt, permission modes, sandbox policy, trusted/local configuration, operator approval and project context files.
 - Closure path: ordinary approvals/configuration alter execution posture, but no identity/ultimate-policy issue is escalated through a qualifying first-party parent loop and returned to govern subsequent operation.
 - Why not parent-owned: `buildSystemPrompt` explicitly marks MEMORY, repo map, skills, steering and agent files as untrusted data that “never override the instructions above”; AGENTS/CLAUDE/steering therefore do not act as authoritative parent constitutions.
 - Evidence: `src/policy/context.ts`; `src/policy/permission.ts`; `src/app/session.ts`.
 - Basis: explicit + structural absence review.
 - Confidence: high.
+- Caveats: human approval remains meaningful execution authority, but the inspected approvals are action-level decisions rather than an identity/ultimate-policy loop with a returned governance decision.
 
 ### Absence scope
 
 - Surfaces inspected: system prompt/context construction, AGENTS/CLAUDE/steering loading, permission modes, sandbox policy, local configuration, human approval and repository governance documents.
-- Plausible positive paths checked: operator approval as S5; project instructions as parent policy; static permission/safety policy as S5.
-- Why no material path remains: approvals are task/action-level, project files are explicitly non-authoritative data, and static policy/configuration does not provide runtime identity-level decision closure.
+- Plausible first-party paths checked: operator approval as S5; project instructions as parent policy; static permission/safety policy as S5.
+- Why no material first-party path remains: approvals are task/action-level, project files are explicitly non-authoritative data, and static policy/configuration does not provide runtime identity-level decision closure.
 
 ## Recursion
 
