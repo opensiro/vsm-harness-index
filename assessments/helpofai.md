@@ -87,7 +87,7 @@ A coding goal enters the main model/tool loop, which selects actions from worksp
 - Inter-S1 disturbance: worker processes can contend for bounded per-run, per-host and per-task-class execution capacity, while stale leases can leave capacity falsely occupied.
 - Attenuating coordination relation: the scheduler applies concurrency ceilings and leases, recovers stale work and controls which queued worker/task is admitted to execution.
 - Feedback into subsequent S1 behaviour: admitted workers start/restart while deferred workers remain queued; lease/heartbeat/recovery events alter later worker availability and task execution.
-- Why S2-specific rather than generic communication/routing/sequencing/shared state/delegation: the relation exists specifically to attenuate concurrent worker interference over scarce execution capacity and stale ownership, not merely to pass messages or order a workflow.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the relation exists specifically to attenuate concurrent worker interference over scarce execution capacity and stale ownership, not merely to pass messages or order a workflow.
 
 ## S3 — Inside-and-now control
 
