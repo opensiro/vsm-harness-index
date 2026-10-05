@@ -431,3 +431,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 416|marspi-cli|Marspi CLI|https://github.com/mars01pi/marspi-cli|2026-07-03T03:51:02Z|index-addition|e8e46a39e9da2dac1444c175ad241f2cfa71c7dc|2026-09-28
 417|autonomouscodingagent|AutonomousCodingAgent|https://github.com/robertnathe/AutonomousCodingAgent|2026-03-18T01:02:12Z|index-addition|5054511c80659281747e2d2530b772bed0ca8b18|2026-09-28
 418|primusclaw|PrimusClaw|https://github.com/AMD-AGI/PrimusClaw|2026-08-28T11:19:31Z|index-addition|bbd925a5b12b4ffe425c5ff01f00e9bc93863dfc|2026-09-28
+419|sema-coder|Sema Coder|https://github.com/sema-lisp/sema-coder|2026-07-10T10:18:41Z|index-addition|284cffba02090f996da2d60524bcbb26651b4ed3|2026-09-28
