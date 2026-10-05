@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import importlib.util
+from io import BytesIO
 from pathlib import Path
 import sys
 import unittest
+from unittest import mock
 
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts" / "check_discovery_queues.py"
@@ -61,6 +63,95 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
 | Alpha | `owner/alpha` | `1111111111111111111111111111111111111111` |
 """
         self.assertEqual(module.parse_candidate_repositories(body), ["owner/alpha"])
+
+
+    def test_parse_frozen_review_ref_header(self) -> None:
+        body = """| # | Project | Canonical repository | Frozen review ref |
+| ---: | --- | --- | --- |
+| 1 | Alpha | `owner/alpha` | `1111111111111111111111111111111111111111` |
+"""
+        self.assertEqual(module.parse_candidate_repositories(body), ["owner/alpha"])
+
+
+    def test_parse_candidate_rows_preserves_review_ref(self) -> None:
+        body = """| # | Project | Canonical repository | Frozen review ref |
+| ---: | --- | --- | --- |
+| 1 | Alpha | `owner/alpha` | `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa` |
+"""
+        self.assertEqual(
+            module.parse_candidate_rows(body),
+            [("owner/alpha", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")],
+        )
+
+    def test_source_candidate_batch_routes_assessment_control(self) -> None:
+        body = "Source candidate batch: #918\nFrozen refs: copied unchanged from #918"
+        self.assertEqual(module.source_candidate_batch(body), 918)
+
+
+    def test_assessment_control_is_frozen_by_source_routing(self) -> None:
+        body = "Source candidate batch: #918\nFrozen refs: copied unchanged from #918"
+        self.assertTrue(module.is_frozen_control_queue(body))
+
+    def test_logical_queue_numbers_collapse_source_and_assessment_control(self) -> None:
+        entries = [
+            module.QueueEntry(918, "[Candidate batch] X", "owner/alpha", frozen=True),
+            module.QueueEntry(
+                989,
+                "[Assessment batch] X",
+                "owner/alpha",
+                frozen=True,
+                source_issue_number=918,
+            ),
+        ]
+        self.assertEqual(module.logical_queue_numbers(entries), [918])
+
+    def test_logical_queue_numbers_preserve_independent_batches(self) -> None:
+        entries = [
+            module.QueueEntry(918, "[Candidate batch] X", "owner/alpha", frozen=True),
+            module.QueueEntry(966, "[Candidate batch] Y", "owner/alpha", frozen=True),
+        ]
+        self.assertEqual(module.logical_queue_numbers(entries), [918, 966])
+
+
+    def test_exact_snapshot_duplicate_requires_same_ref_across_queues(self) -> None:
+        ref = "cd7ec0ee2031d1723e1d38593d43385778fd5d30"
+        entries = [
+            module.QueueEntry(918, "[Candidate batch] X", "owner/old", frozen=True, review_ref=ref),
+            module.QueueEntry(966, "[Candidate batch] Y", "owner/new", frozen=True, review_ref=ref),
+        ]
+        self.assertTrue(module.is_exact_snapshot_duplicate(entries))
+
+    def test_exact_snapshot_duplicate_rejects_different_refs(self) -> None:
+        entries = [
+            module.QueueEntry(
+                918,
+                "[Candidate batch] X",
+                "owner/old",
+                frozen=True,
+                review_ref="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            ),
+            module.QueueEntry(
+                966,
+                "[Candidate batch] Y",
+                "owner/new",
+                frozen=True,
+                review_ref="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            ),
+        ]
+        self.assertFalse(module.is_exact_snapshot_duplicate(entries))
+
+    def test_exact_snapshot_duplicate_rejects_missing_ref(self) -> None:
+        entries = [
+            module.QueueEntry(
+                918,
+                "[Candidate batch] X",
+                "owner/old",
+                frozen=True,
+                review_ref="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            ),
+            module.QueueEntry(966, "[Candidate batch] Y", "owner/new", frozen=True),
+        ]
+        self.assertFalse(module.is_exact_snapshot_duplicate(entries))
 
     def test_parse_legacy_batch_occupancy(self) -> None:
         self.assertEqual(module.declared_active_occupancy("Batch occupancy: **7/10**"), 7)
@@ -137,6 +228,36 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
 | Alpha | `owner/alpha` |
 """
         self.assertEqual(module.parse_candidate_repositories(body), [])
+
+
+class DiscoveryQueueGitHubAPITests(unittest.TestCase):
+    def test_get_retries_transient_timeout(self) -> None:
+        api = module.GitHubAPI("token")
+        response = BytesIO(b'{"ok": true}')
+        with (
+            mock.patch.object(
+                module.urllib.request,
+                "urlopen",
+                side_effect=[TimeoutError("temporary timeout"), response],
+            ) as urlopen,
+            mock.patch.object(module.time, "sleep") as sleep,
+        ):
+            self.assertEqual(api.get("/example"), {"ok": True})
+
+        self.assertEqual(urlopen.call_count, 2)
+        sleep.assert_called_once_with(1)
+
+    def test_repository_identity_404_is_unresolved_not_fatal(self) -> None:
+        api = module.GitHubAPI("token")
+        not_found = module.urllib.error.HTTPError(
+            "https://api.github.com/repos/gone/repo",
+            404,
+            "Not Found",
+            {},
+            None,
+        )
+        with mock.patch.object(module.urllib.request, "urlopen", side_effect=not_found):
+            self.assertIsNone(api.repository_identity("gone/repo"))
 
 
 if __name__ == "__main__":
