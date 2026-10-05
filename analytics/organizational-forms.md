@@ -60,6 +60,7 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A C P — — —` | 3 | 0.8% |
 | `A — ? ? ? ?` | 3 | 0.8% |
 | `A — A A A —` | 3 | 0.8% |
+| `A — P — — —` | 3 | 0.8% |
 | `A — — C A —` | 3 | 0.8% |
 | `A A A A — P` | 2 | 0.5% |
 | `A A A(P) A A P` | 2 | 0.5% |
@@ -71,7 +72,6 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A C C(P) A C(P) —` | 2 | 0.5% |
 | `A C C(P) A — —` | 2 | 0.5% |
 | `A — C(P) — C(P) —` | 2 | 0.5% |
-| `A — P — — —` | 3 | 0.8% |
 | `A — — — C —` | 2 | 0.5% |
 | `A A A A A(P) A(P)` | 1 | 0.3% |
 | `A A A C A A` | 1 | 0.3% |
