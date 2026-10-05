@@ -151,4 +151,3 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A — — — C C` | 1 | 0.3% |
 | `A — — — C(P) —` | 1 | 0.3% |
 | `A — — — P P` | 1 | 0.3% |
-
