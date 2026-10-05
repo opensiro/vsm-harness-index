@@ -432,3 +432,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 417|autonomouscodingagent|AutonomousCodingAgent|https://github.com/robertnathe/AutonomousCodingAgent|2026-03-18T01:02:12Z|index-addition|5054511c80659281747e2d2530b772bed0ca8b18|2026-09-28
 418|primusclaw|PrimusClaw|https://github.com/AMD-AGI/PrimusClaw|2026-08-28T11:19:31Z|index-addition|bbd925a5b12b4ffe425c5ff01f00e9bc93863dfc|2026-09-28
 419|sema-coder|Sema Coder|https://github.com/sema-lisp/sema-coder|2026-07-10T10:18:41Z|index-addition|284cffba02090f996da2d60524bcbb26651b4ed3|2026-09-28
+420|autohand-code-cli|Autohand Code CLI|https://github.com/autohandai/code-cli|2025-12-12T01:01:40Z|index-addition|feaa8df7dcc5ee0152bc0d961bc271759fced45a|2026-09-28
