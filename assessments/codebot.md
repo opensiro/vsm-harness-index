@@ -89,7 +89,7 @@ When an agent definition declares worktree isolation, the runtime places that te
 - Inter-S1 disturbance: simultaneous peers writing the same checkout can overwrite or clobber each other's changes; concurrent sandbox creation can also contend on the same git index.
 - Attenuating coordination relation: configured teammate types are placed in separate git worktrees, with creation serialized and silent fallback to the shared workspace forbidden.
 - Feedback into subsequent S1 behaviour: the selected isolation changes every later filesystem/tool action by binding that teammate to its private cwd, while cleanup messages return surviving work/branch state to the leader for later integration decisions.
-- Why S2-specific rather than generic communication/routing/sequencing/shared state/delegation: this path exists specifically to attenuate concrete write interference between distinct operational coding peers, not merely to pass messages or order tasks.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: this path exists specifically to attenuate concrete write interference between distinct operational coding peers, not merely to pass messages or order tasks.
 
 ## S3 — Inside-and-now control
 
