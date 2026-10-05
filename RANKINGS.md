@@ -102,6 +102,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="minagent"></a>[MinAgent](https://github.com/Nichonauta/MinAgent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="polyphemus"></a>[Polyphemus](https://github.com/polyphemus-ai/release-rehearsal) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C — A — P` |
 | 5 | <a id="mindweave"></a>[Mindweave](https://github.com/mindweave-cli/mindweave) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
+| 5 | <a id="myharness"></a>[MyHarness](https://github.com/woolcoxm/MyHarness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="axiom"></a>[Axiom](https://github.com/amuluze/axiom-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="multi-agent-orchestration"></a>[Multi-Agent Orchestration Engine](https://github.com/Vinay-veeragani/Multi-Agent-Orchestration) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="primusclaw"></a>[PrimusClaw](https://github.com/AMD-AGI/PrimusClaw) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C — A —` |
