@@ -436,3 +436,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 421|codebot|Codebot|https://github.com/voocel/codebot|2026-02-17T07:33:22Z|index-addition|098c5f3cf3e8708bd87138d666b08cd7888ec3b1|2026-09-28
 422|shai|SHAI|https://github.com/ovh/shai|2025-07-16T13:31:16Z|index-addition|f076f6128a826a96a28e47d0d674284b1552905e|2026-09-28
 423|riffer-rig|riffer-rig|https://github.com/bottrall/riffer-rig|2026-05-25T03:10:14Z|index-addition|e2e914195f7c15c75ee2ae6bb55d772d754a2f37|2026-09-28
+424|llm|llm|https://github.com/imjiaoyuan/llm|2026-08-15T14:28:51Z|index-addition|fa532244bc543a02850151a692feca74b15f713c|2026-09-28

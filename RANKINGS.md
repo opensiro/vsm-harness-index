@@ -200,6 +200,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="zhizhi-agent-runtime"></a>[Zhizhi Agent Runtime](https://github.com/cocoyes/zhizhi-agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="minicode"></a>[Minicode](https://github.com/startupmini/minicode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="labunbun-code"></a>[LaBunbun Code](https://github.com/zayokami/labunbun-code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="llm"></a>[llm](https://github.com/imjiaoyuan/llm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-os"></a>[Agent OS](https://github.com/andrewgolovanov/agent-os) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="loopex"></a>[Loopex](https://github.com/lexlapax/loopex) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarm"></a>[SWARM](https://github.com/KhanUzeb/SWARM) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
