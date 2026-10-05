@@ -429,3 +429,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 414|forja|Forja|https://github.com/lex0c/forja|2026-04-27T14:00:48Z|index-addition|db34341cfacbca3a50029530d2e95a3ae3e5072e|2026-09-28
 415|autonomous-coding-agent|Autonomous Coding Agent|https://github.com/Quality-Max/autonomous-coding-agent|2026-06-11T10:53:44Z|index-addition|eda302b5a93c877a4138855ea712000971c3abcf|2026-09-28
 416|marspi-cli|Marspi CLI|https://github.com/mars01pi/marspi-cli|2026-07-03T03:51:02Z|index-addition|e8e46a39e9da2dac1444c175ad241f2cfa71c7dc|2026-09-28
+417|autonomouscodingagent|AutonomousCodingAgent|https://github.com/robertnathe/AutonomousCodingAgent|2026-03-18T01:02:12Z|index-addition|5054511c80659281747e2d2530b772bed0ca8b18|2026-09-28
