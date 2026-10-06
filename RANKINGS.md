@@ -251,6 +251,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="gagans-agent-os"></a>[agent-os](https://github.com/gagans23/agent-os) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C — — P —` |
 | 6 | <a id="aohp"></a>[AOHP](https://github.com/aohp-os/aohp) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="open-code-review"></a>[OpenCodeReview](https://github.com/alibaba/open-code-review) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="peezy"></a>[Peezy](https://github.com/p0systems/peezy-cli) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cascaide-ts"></a>[cascaide-ts](https://github.com/Airavat-Research/cascaide-ts) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarm-code"></a>[swarm-code](https://github.com/skyblanket/swarm-code) | 2026-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="waggle"></a>[Waggle](https://github.com/CrewBeeLab/Waggle) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
