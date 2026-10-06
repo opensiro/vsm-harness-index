@@ -137,7 +137,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="axocoatl"></a>[Axocoatl](https://github.com/axocoatl/axocoatl) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="dotcraft"></a>[DotCraft](https://github.com/DotHarness/dotcraft) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
 | 5 | <a id="super-agent"></a>[super-agent](https://github.com/FedericoCasarella/super-agent) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P — A —` |
-| 5 | <a id="get-shit-done"></a>[get-shit-done](https://github.com/open-gsd/gsd-core) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="get-shit-done"></a>[GSD](https://github.com/open-gsd/gsd-core) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="life-harness"></a>[Life-Harness](https://github.com/Tianshi-Xu/Life-Harness) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
 | 5 | <a id="openseek"></a>[OpenSeek](https://github.com/moonbitlang/openseek) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="deep-code"></a>[deep-code](https://github.com/liwenka1/deep-code) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
