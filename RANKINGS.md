@@ -312,6 +312,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="open-cowork"></a>[Open Cowork](https://github.com/OpenCoworkAI/open-cowork) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="opensre"></a>[OpenSRE](https://github.com/Tracer-Cloud/opensre) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="yylo"></a>[YYLO](https://github.com/yylo-dev/yylo) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
+| 6 | <a id="shelley"></a>[Shelley](https://github.com/boldsoftware/shelley) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openclaw"></a>[OpenClaw](https://github.com/openclaw/openclaw) | 2025-Q4 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="cascadeflow"></a>[cascadeflow](https://github.com/lemony-ai/cascadeflow) | 2025-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="go-agent"></a>[go-agent](https://github.com/Protocol-Lattice/go-agent) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
