@@ -460,3 +460,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 445|smelt|Smelt|https://github.com/leonardcser/smelt|2026-02-25T21:37:53Z|index-addition|bc44da1696a74fde792c26cdb1dca3e5a42e3e28|2026-09-28
 446|termide|TermIDE|https://github.com/termide/termide|2025-11-20T14:30:41Z|index-addition|351a551ad234ea5071a8a4fe226e172dcb5d76ee|2026-09-28
 447|alphacode|AlphaCode|https://github.com/dragonked2/alphacode|2026-09-01T09:57:03Z|index-addition|a28db8978a5b336e244973c8db01f625dfcc0983|2026-09-28
+448|blade-code|Blade Code|https://github.com/echoVic/blade-code|2025-05-30T10:08:27Z|index-addition|30f868411df4f7da095aadb7a2a8ca3310315613|2026-09-28

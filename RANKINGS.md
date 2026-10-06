@@ -47,6 +47,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="squad"></a>[Squad](https://github.com/bradygaster/squad) | 2026-Q1 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="gastown"></a>[Gas Town](https://github.com/gastownhall/gastown) | 2025-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="blade-code"></a>[Blade Code](https://github.com/echoVic/blade-code) | 2025-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="cocoplus"></a>[CocoPlus](https://github.com/Snowflake-Labs/cocoplus) | 2024-Q4 | 4/6 | 3/5 | 1 | 1 | 0 | `A A A(P) A C —` |
 | 3 | <a id="megaagent"></a>[MegaAgent](https://github.com/Xtra-Computing/MegaAgent) | 2024-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
