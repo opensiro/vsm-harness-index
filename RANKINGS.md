@@ -146,6 +146,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="ogcode"></a>[Ogcode](https://github.com/prasenjeet-symon/ogcode) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |
 | 5 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="cadis"></a>[C.A.D.I.S.](https://github.com/Growth-Circle/cadis) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
+| 5 | <a id="vix"></a>[Vix](https://github.com/get-vix/vix) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — A C —` |
 | 5 | <a id="clawgui"></a>[ClawGUI](https://github.com/ZJU-REAL/ClawGUI) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="haorui-agent-harness"></a>[Agent Harness](https://github.com/haorui-harry/agent-harness) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="open-multi-agent"></a>[OMA / Open Multi-Agent](https://github.com/open-multi-agent/open-multi-agent) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
