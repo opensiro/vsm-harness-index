@@ -13,6 +13,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="autohand-code-cli"></a>[Autohand Code CLI](https://github.com/autohandai/code-cli) | 2025-Q4 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A A A(P) —` |
 | 2 | <a id="gptme"></a>[gptme](https://github.com/gptme/gptme) | 2023-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 3 | <a id="henterprise"></a>[Henterprise](https://github.com/humbertobellor/henterprise) | 2026-Q3 | 4/6 | 3/5 | 2 | 0 | 0 | `A C A C A A` |
+| 3 | <a id="alphacode"></a>[AlphaCode](https://github.com/dragonked2/alphacode) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="horse-code"></a>[Horse Code](https://github.com/hizliemre/horse-code) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A P A A P` |
 | 3 | <a id="frontieragent"></a>[FrontierAgent](https://github.com/ApodexAI/FrontierAgent) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="kot"></a>[KOT](https://github.com/Loqira-Labs/agentkot) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
