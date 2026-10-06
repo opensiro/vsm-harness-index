@@ -450,3 +450,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 435|zerostack|zerostack|https://github.com/gi-dellav/zerostack|2026-05-12T19:31:49Z|index-addition|16fadb3b8f29238a5716eaf937ecf9d41a42f946|2026-09-28
 436|vix|Vix|https://github.com/get-vix/vix|2026-04-07T12:02:47Z|index-addition|e68a25c7df685335f5a202844988d492fe3c1b16|2026-09-28
 437|shelley|Shelley|https://github.com/boldsoftware/shelley|2026-01-02T22:41:34Z|index-addition|3fa4e71b10469495800c33843b9ff162735320f2|2026-09-28
+438|codehamr|codehamr|https://github.com/plaxtoris/codehamr|2026-04-29T10:56:17Z|index-addition|24482811592f44c4e3b7e28561b8faa74cb3f1b1|2026-09-28
