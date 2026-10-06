@@ -27,6 +27,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="recursive"></a>[Recursive](https://github.com/jeffkit/recursive) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="zerostack"></a>[zerostack](https://github.com/gi-dellav/zerostack) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="muonroi-cli"></a>[muonroi-cli](https://github.com/muonroi/muonroi-cli) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
+| 3 | <a id="sudo-code"></a>[Sudo Code](https://github.com/sudoprivacy/sudocode) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="thclaws"></a>[thClaws](https://github.com/thClaws/thClaws) | 2026-Q2 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
 | 3 | <a id="otherside"></a>[Otherside](https://github.com/daanielcruz/otherside-cli) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="surogates"></a>[Surogates](https://github.com/invergent-ai/surogates) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
