@@ -465,3 +465,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 450|klaat-code|Klaat Code|https://github.com/KlaatAI/klaatcode|2026-07-17T11:38:10Z|index-addition|b988be7cf6ffe7878e87ed3e720759e0f7247c33|2026-09-28
 451|metis|Metis|https://github.com/Wholiver/metis|2026-07-11T07:02:59Z|index-addition|8dc0d6da31e878b620ef3c3a412a5c7dff8164a2|2026-09-28
 452|sharpcoder|SharpCoder|https://github.com/robkaandorp/SharpCoder|2026-03-20T09:04:00Z|index-addition|f35e4003b41020204897aa8f6da3ba9bc1cdf590|2026-09-28
+453|marvis|Marvis|https://github.com/meloer101/Marvis-codingAgent|2026-09-07T07:42:13Z|index-addition|3363617c15bdd2f773ef169fc5a44dd321e631a5|2026-09-28
