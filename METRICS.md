@@ -26,7 +26,7 @@ Milestones count included completed standalone assessments only. They are corpus
 | Target | Status | Progress |
 | ---: | --- | ---: |
 | 100 | Achieved | Achieved (current corpus: 398) |
-| 250 | Achieved | Achieved (current corpus: 397) |
+| 250 | Achieved | Achieved (current corpus: 398) |
 | 500 | Next | 398/500 (79.6%) |
 | 1000 | Planned | 398/1000 (39.8%) |
 
