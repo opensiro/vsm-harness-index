@@ -458,3 +458,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 443|synth|synth|https://github.com/aw1875/synth|2026-08-24T22:09:19Z|index-addition|545f1c2dbef396a2a693fd3a6c7f11ea4d00ce19|2026-09-28
 444|sudo-code|Sudo Code|https://github.com/sudoprivacy/sudocode|2026-04-22T18:35:30Z|index-addition|dad7da543b53db4a4946156c9d60187a088539c2|2026-09-28
 445|smelt|Smelt|https://github.com/leonardcser/smelt|2026-02-25T21:37:53Z|index-addition|bc44da1696a74fde792c26cdb1dca3e5a42e3e28|2026-09-28
+446|termide|TermIDE|https://github.com/termide/termide|2025-11-20T14:30:41Z|index-addition|351a551ad234ea5071a8a4fe226e172dcb5d76ee|2026-09-28
