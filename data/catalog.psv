@@ -456,3 +456,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 441|otherside|Otherside|https://github.com/daanielcruz/otherside-cli|2026-04-18T03:39:46Z|index-addition|202aa86c9d182c63f8ba9c0facf2718618de02eb|2026-09-28
 442|ava|AVA|https://github.com/Artificial-Source/AVA|2026-01-30T23:00:58Z|index-addition|1b886dc5b80c6bf459cfe47550aa197537d5916d|2026-09-28
 443|synth|synth|https://github.com/aw1875/synth|2026-08-24T22:09:19Z|index-addition|545f1c2dbef396a2a693fd3a6c7f11ea4d00ce19|2026-09-28
+444|sudo-code|Sudo Code|https://github.com/sudoprivacy/sudocode|2026-04-22T18:35:30Z|index-addition|dad7da543b53db4a4946156c9d60187a088539c2|2026-09-28
