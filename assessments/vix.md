@@ -154,6 +154,10 @@ Goal verification is complementary rather than ordinary self-report: the complet
 - Basis: explicit + structural.
 - Confidence: high.
 - Caveats: a reminder or event reaction alone is not S4; C rests on the first-party watcher/workflow construction path being specifically capable of sensing external/future distinctions, invoking an autonomous option-developing agent and returning action into project capability.
+- External distinction: the polling recipe explicitly senses changes outside the current coding run, such as newly opened pull requests or analogous remote/project-environment events.
+- Future / prospective distinction: cron/at triggers and persisted jobs defer sensing and model judgment to later environmental states rather than only reacting inside the current turn.
+- Adaptation option generated: the conditionally invoked general agent can interpret the new external evidence and develop a project response, such as a risk treatment or code/configuration change, under the composed workflow objective.
+- Path back into current capability / S3: the scheduled agent runs in the target project cwd with workflow/tool authority (including unattended writes when enabled), so a composed adaptation decision can change current project capability/operation; Vix supplies this return path while the concrete S4 loop remains constructor-composed.
 
 ## S5 — Policy and identity
 
