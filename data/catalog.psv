@@ -445,3 +445,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 430|gyrfalcon|Gyrfalcon|https://github.com/cargopete/gyrfalcon|2026-08-23T08:13:18Z|index-addition|090615a2f13a062fd91896950106aeb505376c55|2026-09-28
 431|nabd|Nabd|https://github.com/amiraq1/Nabd|2026-09-01T09:50:09Z|index-addition|1b7c36a5d79a20c055e688474b0ebc9fd916b7b3|2026-09-28
 432|muonroi-cli|muonroi-cli|https://github.com/muonroi/muonroi-cli|2026-04-29T09:21:07Z|index-addition|0e263b8c8ff142b1d643e64a6b0825fdf477c626|2026-09-28
+433|relaycli|RelayCLI|https://github.com/joshuasetiawann/relaycli|2026-07-02T04:34:15Z|index-addition|2102796a136f996cbc48402cfb00304f5614e03e|2026-09-28
