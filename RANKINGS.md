@@ -168,6 +168,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="haft"></a>[Haft](https://github.com/m0n0x41d/haft) | 2025-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P A — —` |
 | 5 | <a id="codex-autorunner"></a>[codex-autorunner (CAR)](https://github.com/Git-on-my-level/codex-autorunner) | 2025-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="maestro"></a>[Maestro](https://github.com/RunMaestro/Maestro) | 2025-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
+| 5 | <a id="termide"></a>[TermIDE](https://github.com/termide/termide) | 2025-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="cuga"></a>[CUGA](https://github.com/cuga-project/cuga-agent) | 2025-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="gh-aw"></a>[GitHub Agentic Workflows](https://github.com/github/gh-aw) | 2025-Q3 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
 | 5 | <a id="deepagentsjs"></a>[Deep Agents JS](https://github.com/langchain-ai/deepagentsjs) | 2025-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
