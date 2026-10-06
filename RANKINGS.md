@@ -218,6 +218,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="wtsup-code"></a>[wtsup-code](https://github.com/Shrit1401/wtsup-code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="tyrion"></a>[Tyrion](https://github.com/Xtejasveer/tyrion) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="golum"></a>[Golum](https://github.com/Vignesh-Rajarajan/golum) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
+| 6 | <a id="acc"></a>[acc](https://github.com/Xuxyyy/terminal-coding-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-orchestrator-mohamedwaleed"></a>[Agent Orchestrator (waves)](https://github.com/mohamedwaleed/agent-orchestrator) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="pasclaude"></a>[PasClaude](https://github.com/seanrobertwright/PasClaude) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openharness"></a>[OpenHarness](https://github.com/autonomous-ai/openharness) | 2026-Q3 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
