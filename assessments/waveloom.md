@@ -25,6 +25,8 @@ autonomy_s5: —
 - Purpose and identity: a local coding agent that autonomously inspects and changes a user-selected codebase, runs commands/tests, delegates bounded work to first-party subagents, and returns results to the user.
 - Relevant environment: the current workspace, local shell/filesystem, configured model/provider, optional MCP servers, project/global configuration, and local user approval surface.
 - Standard-distribution boundary: Waveloom repository code and shipped prompts/configuration. Model providers, MCP servers, OS sandbox primitives, and external skills/tools are dependencies rather than owners of credited VSM functions.
+- Credited operating / distribution surfaces: `pkg/agentloop`, `pkg/subagent`, first-party built-in tools, permission/sandbox/session/todo/task/hook runtime, `pkg/prompt/default.md`, and supported TUI/ACP entry points that directly instantiate those mechanisms.
+- Adjacent first-party surfaces excluded from ownership: repository CI/release machinery, eval/experiments, documentation-only comparisons, and external MCP/provider/skill behavior except where shipped runtime wiring makes a first-party decision path reachable.
 - First-party modes considered: interactive TUI and non-interactive ACP paths where the same agent loop and registered tools are instantiated; normal permission mode; optional sandbox/bypass mode; fork/cold subagents; background shell tasks; plan mode.
 - Recursion level: one Waveloom coding session as the viable system, with delegated fork/cold subagents treated as subordinate operational units when their work is coordinated by the parent agent.
 - Reviewed revision: `daccab5d4816803a82eb6eabfe44a68c75bc1f58`.
@@ -72,7 +74,7 @@ The permission guard, sandbox, hook runner, background-task registry, todo store
 - Supporting / enforcement mechanisms: Think-Act-Observe loop, tool registry, permission guard, sandbox, hooks, todo reminders, context compaction, session persistence, error backoff, background-task notifications.
 - Closure path: user request → model decision → first-party tool/subagent action → returned result/event → next model decision → further action or terminal response.
 - Boundary reachability: the shipped loop directly registers/executes first-party coding tools and receives their outputs; the supported agent tool creates nested first-party loops from that same runtime.
-- Why this is agent-owned: the model chooses and sequences operational actions from available tools and changes behavior from observed results. Deterministic runtime layers execute and constrain those choices rather than replacing the discretionary operation.
+- Why this is / is not agent-owned: the model chooses and sequences operational actions from available tools and changes behavior from observed results. Deterministic runtime layers execute and constrain those choices rather than replacing the discretionary operation.
 - Evidence: [pkg/agentloop/loop.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/agentloop/loop.go), [pkg/agentloop/execute.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/agentloop/execute.go), [pkg/prompt/default.md](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/prompt/default.md).
 - Basis: structural + explicit.
 - Confidence: high.
@@ -86,9 +88,14 @@ The permission guard, sandbox, hook runner, background-task registry, todo store
 - Decisive decision or feedback right: the parent agent chooses subtask boundaries, selects parallel versus serial execution, launches multiple first-party agents together for independent work, and consumes their returned results before continuing dependent work.
 - Decision owner: the parent Waveloom agent.
 - Supporting / enforcement mechanisms: `agent` tool marked `ConcurrentSafe`; fork/cold subagent construction; parent todo lifecycle; returned tool results; system-prompt coordination rules.
+- Distinct S1 units: first-party fork/cold subagents instantiated as separate model-backed operational loops under one parent session.
+- Inter-S1 disturbance: dependency-bearing delegated work can invalidate assumptions or duplicate/conflict with peer work if run concurrently; writable fork work also creates concrete shared-workspace collision risk when scopes are not independent.
+- Attenuating coordination relation: the parent agent is instructed to partition independent work into parallel agent calls and keep dependent work sequential, with scoped prompts and parent-managed task lifecycle.
+- Feedback into subsequent S1 behaviour: each subagent's final result is returned as a parent `agent` tool result; the parent then updates task status and uses those results to decide dependent follow-up, repair, or completion.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the parallel-versus-serial decision is explicitly tied to whether subordinate S1 work is independent or dependency-constrained, regulating concrete interference among concurrently viable operational units rather than merely transporting prompts.
 - Closure path: parent identifies independent/dependent subtasks → launches independent agent calls together or serializes dependent work → subordinate S1 units execute → each final result returns as a tool result → parent updates task state and decides subsequent work.
 - Boundary reachability: the coordination policy is in the shipped default system prompt and the model-visible first-party `agent` tool implements concurrent subordinate execution.
-- Why this is agent-owned: the runtime can execute concurrent tool calls, but it does not decide which work is independent or dependency-constrained. That discretionary partitioning/ordering right is assigned to the parent model.
+- Why this is / is not agent-owned: the runtime can execute concurrent tool calls, but it does not decide which work is independent or dependency-constrained. That discretionary partitioning/ordering right is assigned to the parent model.
 - Evidence: [pkg/prompt/default.md](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/prompt/default.md), [pkg/subagent/agent.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/subagent/agent.go), [pkg/agentloop/execute.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/agentloop/execute.go).
 - Basis: explicit + structural.
 - Confidence: high.
@@ -104,7 +111,7 @@ The permission guard, sandbox, hook runner, background-task registry, todo store
 - Supporting / enforcement mechanisms: todo list/status, step/error limits, background-task registry/kill tool, permission/sandbox state, subagent events shown to the TUI, session statistics.
 - Closure path: not applicable.
 - Boundary reachability: no positive S3 path claimed.
-- Why this is not agent-owned: the parent can plan/delegate and later consume subagent results, but subagent execution is a synchronous tool boundary from the parent's perspective; streamed subagent events are routed for UI visibility rather than exposed as a whole-current model control surface with live steer/kill/reprioritize rights across subordinate agents. Background shell tasks have a kill path, but they are tool processes rather than a whole-system S1 control plane.
+- Why this is / is not agent-owned: the parent can plan/delegate and later consume subagent results, but subagent execution is a synchronous tool boundary from the parent's perspective; streamed subagent events are routed for UI visibility rather than exposed as a whole-current model control surface with live steer/kill/reprioritize rights across subordinate agents. Background shell tasks have a kill path, but they are tool processes rather than a whole-system S1 control plane.
 - Evidence: [pkg/subagent/agent.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/subagent/agent.go), [pkg/tool/kill_background_task.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/tool/kill_background_task.go), [pkg/session/session_persist.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/session/session_persist.go).
 - Basis: structural.
 - Confidence: high.
@@ -124,9 +131,14 @@ The permission guard, sandbox, hook runner, background-task registry, todo store
 - Decisive decision or feedback right: a cold `evaluate` or `verification` agent independently inspects/tests the repository and produces an assessment or PASS/FAIL verdict; the parent receives that output and decides corrective follow-up before completion.
 - Decision owner: the cold review/verification agent owns the audit judgment; the parent agent owns subsequent operational correction.
 - Supporting / enforcement mechanisms: cold context construction, project-write tools removed from the cold registry, read-only subagent shell, dedicated evaluate/verification prompts, returned `agent` tool result, subagent transcript/events.
+- Claim being audited: the parent coding agent's claim that a substantive implementation/change is correct and ready to report as complete.
+- Ordinary reporting path: the parent agent's own tool results, implementation reasoning, local build/test attempts, and completion narrative.
+- Complementary access path: a separate cold evaluate/verification model directly reads the repository and, for verification, runs builds/tests/adversarial checks under a read-only project boundary.
+- Independence boundary: fresh cold model context without inherited parent conversation, project write/edit tools removed, dedicated review/verification instructions, and an explicit independent assessment or PASS/FAIL verdict returned to the parent.
+- Who acts on findings: the parent coding agent receives the review/verdict as a tool result and is instructed to repair failed verification or re-check before claiming completion.
 - Closure path: parent coding work/change → parent invokes cold evaluate/verification → fresh agent directly inspects repository and/or runs tests/adversarial checks → review/verdict returned as parent tool result → parent context incorporates finding → parent can fix/re-verify or report completion.
 - Boundary reachability: evaluate/verification are accepted values of the shipped model-visible `agent` tool; their registries and dedicated prompts are constructed in first-party code.
-- Why this is agent-owned: the audit conclusion is generated by a distinct cold model invocation with direct evidence access, not by deterministic logging or the same parent reasoning trace.
+- Why this is / is not agent-owned: the audit conclusion is generated by a distinct cold model invocation with direct evidence access, not by deterministic logging or the same parent reasoning trace.
 - Evidence: [pkg/subagent/agent.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/subagent/agent.go), [pkg/prompt/default.md](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/prompt/default.md).
 - Basis: explicit + structural.
 - Confidence: high.
@@ -142,7 +154,7 @@ The permission guard, sandbox, hook runner, background-task registry, todo store
 - Supporting / enforcement mechanisms: web tools, AGENTS.md/project memory, skills/plugins, provider/model configuration, compaction, session persistence, environment probing.
 - Closure path: not applicable.
 - Boundary reachability: no positive S4 path claimed.
-- Why this is not agent-owned: external information can be gathered for a current coding task, and configuration can change available capability, but there is no first-party loop that scans the external/future environment, generates adaptation options, selects an adaptation, and changes the harness's continuing capability/policy.
+- Why this is / is not agent-owned: external information can be gathered for a current coding task, and configuration can change available capability, but there is no first-party loop that scans the external/future environment, generates adaptation options, selects an adaptation, and changes the harness's continuing capability/policy.
 - Evidence: [pkg/prompt/default.md](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/prompt/default.md), [README.md](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/README.md).
 - Basis: structural.
 - Confidence: high.
@@ -164,7 +176,7 @@ The permission guard, sandbox, hook runner, background-task registry, todo store
 - Supporting / enforcement mechanisms: system prompt, permission rules, sandbox policy, plan approval, hooks, configuration, bypass mode, user approval dialogs.
 - Closure path: not applicable.
 - Boundary reachability: no positive S5 path claimed.
-- Why this is not agent-owned: these surfaces constrain or authorize individual actions and modes; they do not frame identity/ultimate-policy questions, route them to a legitimate S5 authority, and return authoritative governance decisions into subsequent operation.
+- Why this is / is not agent-owned: these surfaces constrain or authorize individual actions and modes; they do not frame identity/ultimate-policy questions, route them to a legitimate S5 authority, and return authoritative governance decisions into subsequent operation.
 - Evidence: [pkg/permission/types.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/permission/types.go), [pkg/agentloop/loop.go](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/pkg/agentloop/loop.go), [README.md](https://github.com/Menfre01/waveloom/blob/daccab5d4816803a82eb6eabfe44a68c75bc1f58/README.md).
 - Basis: structural.
 - Confidence: high.
