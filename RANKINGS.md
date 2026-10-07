@@ -78,6 +78,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="omniharness"></a>[omniHarness](https://github.com/archimedes-run/omniHarness) | 2026-Q2 | 3/6 | 2/5 | 0 | 2 | 0 | `A — A — A(P) P` |
 | 4 | <a id="orkas"></a>[Orkas](https://github.com/Orkas-AI/Orkas) | 2026-Q2 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A — A P` |
 | 4 | <a id="nanoharness"></a>[NanoHarness](https://github.com/semi-hollow/NanoHarness) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
+| 4 | <a id="dendrophis"></a>[Dendrophis](https://github.com/sp1d3rx/dendrophis) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="ahe"></a>[Agentic Harness Engineering](https://github.com/china-qijizhifeng/agentic-harness-engineering) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="cheetahclaws"></a>[CheetahClaws](https://github.com/SAIL-Research-Lab/cheetahclaws) | 2026-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A A — A P —` |
 | 4 | <a id="yode"></a>[Yode](https://github.com/anYuJia/yode) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
