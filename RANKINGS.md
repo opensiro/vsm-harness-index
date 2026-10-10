@@ -272,6 +272,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="autonomous-coding-agent"></a>[Autonomous Coding Agent](https://github.com/Quality-Max/autonomous-coding-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cycode"></a>[CYCode](https://github.com/ChaoYue0307/CYCode) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pi-go"></a>[pi (Go)](https://github.com/sky-valley/pi) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="ghostycode"></a>[GhostyCode](https://github.com/blissito/ghostycode) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 2 | `A C ? ? — —` |
 | 6 | <a id="agentyou"></a>[AgentYou](https://github.com/shreyasic77/agentyou) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
 | 6 | <a id="ferrum"></a>[Ferrum](https://github.com/ominiverdi/ferrum) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="reflex"></a>[Reflex](https://github.com/reflex-agent/reflex-agent) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
