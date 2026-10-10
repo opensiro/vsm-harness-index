@@ -239,6 +239,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="llm"></a>[llm](https://github.com/imjiaoyuan/llm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-os"></a>[Agent OS](https://github.com/andrewgolovanov/agent-os) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="loopex"></a>[Loopex](https://github.com/lexlapax/loopex) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="micro"></a>[Micro](https://github.com/rmonvfer/micro) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarm"></a>[SWARM](https://github.com/KhanUzeb/SWARM) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="foxagent"></a>[FoxAgent](https://github.com/douzifox/foxagent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="wtsup-code"></a>[wtsup-code](https://github.com/Shrit1401/wtsup-code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
