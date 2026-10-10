@@ -484,3 +484,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 469|gnosis|Gnosis|https://github.com/DOMCHURCH/Gnosis|2026-08-20T10:37:00Z|index-addition|e94a861bda5e35ee3a1e7df5afcc6a93a9162fbc|2026-09-28
 470|bbarit-oss|bbarit-oss|https://github.com/bbarit/bbarit-agent-oss|2026-07-16T04:00:27Z|index-addition|2cb8b723f2787aa587ef063d366b7cb408ead4aa|2026-09-28
 471|radiant|Radiant|https://github.com/templetongroup/radiant|2026-08-19T02:51:36Z|index-addition|1186d16d2c08bb45a7fa489dcce8dc74e73e7eba|2026-09-28
+472|jive|Jive|https://github.com/merijjeyn/jive|2026-09-21T15:07:55Z|index-addition|7b12a061ac77aca94851a0c2f53e6140fae95e74|2026-09-28
