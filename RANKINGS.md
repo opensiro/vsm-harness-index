@@ -373,6 +373,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="claude-squad"></a>[Claude Squad](https://github.com/smtg-ai/claude-squad) | 2025-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="openmanus"></a>[OpenManus](https://github.com/FoundationAgents/OpenManus) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="langgraph-bigtool"></a>[LangGraph BigTool](https://github.com/langchain-ai/langgraph-bigtool) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="commonly"></a>[Commonly](https://github.com/Team-Commonly/commonly) | 2025-Q1 | 1/6 | 0/5 | 1 | 1 | 3 | `A C P ? ? ?` |
 | 6 | <a id="cloudflare-agents"></a>[Cloudflare Agents](https://github.com/cloudflare/agents) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="smolagents"></a>[smolagents](https://github.com/huggingface/smolagents) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ag2"></a>[AG2](https://github.com/ag2ai/ag2) | 2024-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
