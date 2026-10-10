@@ -491,3 +491,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 476|plank|Plank|https://github.com/aovestdipaperino/plank|2026-07-18T11:47:24Z|index-addition|7b69b23341e3500959fd39f43a7d395b6cdd2255|2026-09-28
 477|nasiko|Nasiko|https://github.com/Nasiko-Labs/nasiko|2026-02-12T10:45:29Z|index-addition|58cfe600559c67d58100ec2856d7b29838e2859f|2026-09-23
 478|ghostycode|GhostyCode|https://github.com/blissito/ghostycode|2026-06-08T04:37:07Z|index-addition|c025ba29f3a55734ac05ff16ba677765a2845cfb|2026-09-28
+479|agency-os|Agency-OS|https://github.com/swarm-ai-research/agency-os|2026-03-22T02:22:42Z|index-addition|010d216b10cb6f504de27312de0112dc7782e4ee|2026-09-23

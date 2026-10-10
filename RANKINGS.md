@@ -306,6 +306,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="harness-evolver"></a>[Harness Evolver](https://github.com/raphaelchristi/harness-evolver) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="herdr"></a>[Herdr](https://github.com/herdrdev/herdr) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="boundflow"></a>[BoundFlow](https://github.com/boundflow/boundflow) | 2026-Q1 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
+| 6 | <a id="agency-os"></a>[Agency-OS](https://github.com/swarm-ai-research/agency-os) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
 | 6 | <a id="sharpcoder"></a>[SharpCoder](https://github.com/robkaandorp/SharpCoder) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="autonomouscodingagent"></a>[AutonomousCodingAgent](https://github.com/robertnathe/AutonomousCodingAgent) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="orca-stablyai"></a>[Orca](https://github.com/stablyai/orca) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
