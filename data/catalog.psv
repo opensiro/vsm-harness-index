@@ -482,3 +482,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 467|hashcortx|HashCortX|https://github.com/Hash-7777/HashCortX|2026-05-16T01:25:46Z|index-addition|ab3fb74a61928dfb98985eac5ec3eeac8c85afe7|2026-09-28
 468|harness-remote|Harness Remote|https://github.com/giuliastro/harness-remote|2026-02-07T11:36:02Z|index-addition|ee9d315c7a3329ab6ef5588d1565210167d47a9d|2026-09-23
 469|gnosis|Gnosis|https://github.com/DOMCHURCH/Gnosis|2026-08-20T10:37:00Z|index-addition|e94a861bda5e35ee3a1e7df5afcc6a93a9162fbc|2026-09-28
+470|bbarit-oss|bbarit-oss|https://github.com/bbarit/bbarit-agent-oss|2026-07-16T04:00:27Z|index-addition|2cb8b723f2787aa587ef063d366b7cb408ead4aa|2026-09-28
