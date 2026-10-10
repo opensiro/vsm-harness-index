@@ -212,6 +212,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="froe"></a>[Froe](https://github.com/dcoldeira/froe) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="atlias"></a>[atlias](https://github.com/ridelink0/atlias) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="unreal-agent"></a>[Unreal Agent](https://github.com/unreallabsai/unreal-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="jive"></a>[Jive](https://github.com/merijjeyn/jive) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 2 | `A — ? ? — —` |
 | 6 | <a id="codeagent"></a>[CodeAgent](https://github.com/WSH-4380/CodeAgent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="lca-code-agent"></a>[LCA Code Agent](https://github.com/Kandog/lca-code-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="mingbird"></a>[Mingbird](https://github.com/Mingbird/Mingbird-agent) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
