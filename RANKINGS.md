@@ -311,6 +311,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="smelt"></a>[Smelt](https://github.com/leonardcser/smelt) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="bumblehive"></a>[BumbleHive](https://github.com/wxhcore/bumblehive) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="open-harness"></a>[open-harness](https://github.com/MaxGfeller/open-harness) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="garcon"></a>[Garcon](https://github.com/cfal/garcon) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 3 | `A C P ? ? ?` |
 | 6 | <a id="openclaw-dotnet"></a>[OpenClaw.NET](https://github.com/clawdotnet/openclaw.net) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarmclaw"></a>[SwarmClaw](https://github.com/swarmclawai/swarmclaw) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="harness-cgast"></a>[Harness](https://github.com/cgast/harness) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
