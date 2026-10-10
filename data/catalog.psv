@@ -475,3 +475,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 460|monomind|Monomind|https://github.com/monoes/monomind|2026-04-26T21:57:29Z|index-addition|4e875ea1b957a8715cef59be7b0bf1684208577a|2026-09-21
 461|commonly|Commonly|https://github.com/Team-Commonly/commonly|2025-02-03T02:13:30Z|index-addition|669889886a9436b8349e4e60e5197bab504909e8|2026-09-21
 462|octo|Octo|https://github.com/open-octo/octo-agent|2026-05-25T03:09:29Z|index-addition|d68cd81aed46c999e1d413ac8c0b4c3f7b324b23|2026-09-28
+463|garcon|Garcon|https://github.com/cfal/garcon|2026-02-23T13:42:57Z|index-addition|c278477494960465fe5aab71004588a46f6539ce|2026-09-22
