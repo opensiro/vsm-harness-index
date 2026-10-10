@@ -83,8 +83,11 @@ The main model controls file/task tool actions and can direct isolated researche
 - Confidence: medium.
 - Caveats: Inter-agent message caps and anti-reply safeguards are narrow communications-oscillation attenuation only; they do not establish global coordination quality. C requires externally composed decision ownership for broader autonomy..
 
-Distinct S1 units: real running tabs each owning independent Engine, model, context, task and tool loop. Actual interference: runaway circular exchange of delegated messages across those tabs. S2-specific attenuation: no immediate reverse reply + hop/count limits and rejected-message feedback to original sender; not just generic routing. Follow-up S1 behavior changes when a prohibited reply is refused, or an accepted message runs a different recipient turn.
-
+- Distinct S1 units: Each independent live coding tab has its own Engine, model, task, history and message queue.
+- Inter-S1 disturbance: Circular inter-agent replies amplify into uncontrolled messaging turns and token-cost oscillation across multiple tabs.
+- Attenuating coordination relation: Native TabsController rejects same-turn replies to the sender, recursive message chains beyond three hops, and global traffic beyond twenty inter-agent messages per session.
+- Feedback into subsequent S1 behaviour: A rejected send returns an explicit error as a tool result to the autonomous sender, allowing a different action, while accepted messages enqueue real next turns in receiving operating tabs.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: The guards specifically attenuate actual inter-tab circular-feedback oscillation with inter-unit loop suppression and explicit rejection return, not merely message delivery. The primitive is C-level, without a proved autonomous global coordinator.
 
 ## S3 — Inside-and-now control
 
@@ -103,6 +106,12 @@ Distinct S1 units: real running tabs each owning independent Engine, model, cont
 
 
 ## S3* — Complementary audit
+
+- Claim being audited: Whether the coding agent's changes to source files actually fulfill the original request or active standing goal.
+- Ordinary reporting path: The coding Engine's messages, recorded tool actions, tests and self-reported completion are the normal operational report.
+- Complementary access path: Fresh first-party Git diff against the original request/goal is acquired outside the coding agent's account and given to a separate skeptical verifier Engine with no tools.
+- Independence boundary: A new ephemeral verifier session, separate directive and model judgment, no inherited coder reasoning or conversation and no tool grants. Its available source evidence is strictly the original request and capped diff.
+- Who acts on findings: Goal Bar uses TabsController.reviewGoal to enqueue a FAIL correction ahead of the coding tab's next turn; that autonomous coder then acts on the finding. Passive default automatic outcome reporting alone is not counted as corrective closure.
 
 - State: A
 - Function: Complementary independent audit of operational coding changes with a corrective return into the coding agent.
