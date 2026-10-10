@@ -248,6 +248,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="truecoder"></a>[TrueCoder](https://github.com/Shivam583-hue/TrueCoder) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nemocode"></a>[NemoCode](https://github.com/SampleBias/nemocode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="operandi"></a>[Operandi](https://github.com/modus-lisp/operandi) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
+| 6 | <a id="bbarit-oss"></a>[bbarit-oss](https://github.com/bbarit/bbarit-agent-oss) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="rex-harness"></a>[rex-harness](https://github.com/rexleimo/rex-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="oh-my-cli"></a>[oh-my-cli](https://github.com/qwen-code-dev-bot/oh-my-cli) | 2026-Q3 | 1/6 | 0/5 | 0 | 2 | 0 | `A — — — P P` |
 | 6 | <a id="ally"></a>[Ally](https://github.com/Bronya0/ally-agent) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
