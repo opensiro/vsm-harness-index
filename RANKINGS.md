@@ -279,6 +279,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agentyou"></a>[AgentYou](https://github.com/shreyasic77/agentyou) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
 | 6 | <a id="ferrum"></a>[Ferrum](https://github.com/ominiverdi/ferrum) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="reflex"></a>[Reflex](https://github.com/reflex-agent/reflex-agent) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="michin"></a>[MichiN](https://github.com/rohaquinlop/michin) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="riffer-rig"></a>[riffer-rig](https://github.com/bottrall/riffer-rig) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gagans-agent-os"></a>[agent-os](https://github.com/gagans23/agent-os) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C — — P —` |
 | 6 | <a id="aohp"></a>[AOHP](https://github.com/aohp-os/aohp) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
