@@ -28,6 +28,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="loopx"></a>[LoopX](https://github.com/huangruiteng/loopx) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="loushang"></a>[Loushang](https://github.com/zhnt/loushang) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="recursive"></a>[Recursive](https://github.com/jeffkit/recursive) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="octo"></a>[Octo](https://github.com/open-octo/octo-agent) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 1 | `A A A A ? —` |
 | 3 | <a id="zerostack"></a>[zerostack](https://github.com/gi-dellav/zerostack) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="muonroi-cli"></a>[muonroi-cli](https://github.com/muonroi/muonroi-cli) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="monomind"></a>[Monomind](https://github.com/monoes/monomind) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 2 | `A A A A ? ?` |
