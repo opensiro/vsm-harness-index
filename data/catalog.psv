@@ -486,3 +486,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 471|radiant|Radiant|https://github.com/templetongroup/radiant|2026-08-19T02:51:36Z|index-addition|1186d16d2c08bb45a7fa489dcce8dc74e73e7eba|2026-09-28
 472|jive|Jive|https://github.com/merijjeyn/jive|2026-09-21T15:07:55Z|index-addition|7b12a061ac77aca94851a0c2f53e6140fae95e74|2026-09-28
 473|prismor|Prismor|https://github.com/PrismorSec/prismor|2026-02-20T16:43:19Z|index-addition|4cdcfb62197e01da280e21b3f3534bb791109065|2026-09-23
+474|hazzel|Hazzel|https://github.com/mukundzha/hazzel|2026-09-07T10:19:08Z|index-addition|86f15f052d7a0314fb28dca5592b4aada95a7db9|2026-09-28
