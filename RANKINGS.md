@@ -276,6 +276,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="waggle"></a>[Waggle](https://github.com/CrewBeeLab/Waggle) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentbox"></a>[AgentBox](https://github.com/madarco/agentbox) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="harness"></a>[Harness](https://github.com/sausheong/harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
+| 6 | <a id="miii"></a>[miii](https://github.com/maruakshay/miii-cli) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="blackbox"></a>[Blackbox](https://github.com/tyxter-dev/blackbox) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="codehamr"></a>[codehamr](https://github.com/plaxtoris/codehamr) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="forja"></a>[Forja](https://github.com/lex0c/forja) | 2026-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
