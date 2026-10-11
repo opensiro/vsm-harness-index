@@ -27,6 +27,11 @@ BOARD_ROW = re.compile(
     r"^\|\s*(?P<row>\d+)\s*\|\s*(?P<project>[^|]+?)\s*\|\s*`(?P<ref>[0-9a-f]{40})`\s*\|\s*\*\*?NEXT\*\*?\s*\|\s*$",
     re.MULTILINE | re.IGNORECASE,
 )
+# Only an actual Markdown board heading starts a superseding snapshot.
+# A checkpoint merely mentioning "Manual assessment board" is not one.
+BOARD_HEADING = re.compile(
+    r"(?im)^ {0,3}#{1,6}[ \t]+Manual assessment board(?:[ \t]*(?:[—–:-][^\n]*)?)?[ \t]*$"
+)
 CANDIDATE_ROW = re.compile(
     r"^\|\s*(?P<row>\d+)\s*\|\s*(?P<project>[^|]+?)\s*\|\s*`(?P<repository>[^`|]+/[^`|]+)`\s*\|\s*`(?P<ref>[0-9a-f]{40})`\s*\|",
     re.MULTILINE,
@@ -112,7 +117,7 @@ def extract_next_row(texts: list[str]) -> tuple[int, str, str]:
     # rows. Only the newest board is authoritative. Falling back through old
     # snapshots after a terminal board would resurrect a completed row.
     latest_board = next(
-        (text for text in reversed(texts) if "Manual assessment board" in text),
+        (text for text in reversed(texts) if BOARD_HEADING.search(text)),
         None,
     )
     if latest_board is None:
