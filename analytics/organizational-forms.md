@@ -16,13 +16,13 @@ Autonomous coverage follows the existing base-state projection: `A(P)` counts as
 | 1/6 | 253 | 55.2% |
 | 2/6 | 96 | 21.0% |
 | 3/6 | 58 | 12.7% |
-| 4/6 | 42 | 9.2% |
+| 4/6 | 41 | 9.0% |
 | 5/6 | 8 | 1.7% |
-| 6/6 | 1 | 0.2% |
+| 6/6 | 2 | 0.4% |
 
 ## Descriptive incidence
 
-- Full base-agent-owned coverage (6/6): **1 (0.2%)**.
+- Full base-agent-owned coverage (6/6): **2 (0.4%)**.
 - Exactly 5/6 base-agent-owned functions: **8 (1.7%)**.
 
 These are descriptive coverage incidences, not maturity tiers or quality labels.
@@ -84,6 +84,7 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A ? A ? ? ?` | 1 | 0.2% |
 | `A A A A ? ?` | 1 | 0.2% |
 | `A A A A ? —` | 1 | 0.2% |
+| `A A A A A A` | 1 | 0.2% |
 | `A A A A A(P) A(P)` | 1 | 0.2% |
 | `A A A A A(P) —` | 1 | 0.2% |
 | `A A A C A A` | 1 | 0.2% |
@@ -112,7 +113,6 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A C A A A(P) P` | 1 | 0.2% |
 | `A C A A C P` | 1 | 0.2% |
 | `A C A A — —` | 1 | 0.2% |
-| `A C A C A A` | 1 | 0.2% |
 | `A C A C A —` | 1 | 0.2% |
 | `A C A C C —` | 1 | 0.2% |
 | `A C A C — A(P)` | 1 | 0.2% |

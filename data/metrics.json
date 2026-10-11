@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-09-29",
+  "snapshot_date": "2026-10-11",
   "corpus": {
     "included_assessments": 458,
     "canonical_assessments": 498,
@@ -9,7 +9,7 @@
     "catalog_entries": 498,
     "catalog_entries_without_included_assessment": 40,
     "reassessment_events": 88,
-    "full_a_assessments": 1
+    "full_a_assessments": 2
   },
   "active_contract": {
     "profile_version": "0.2.4",

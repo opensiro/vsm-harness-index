@@ -4,6 +4,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 
 | Rank | Harness | Period | Agent-owned | Metasystem A | C | P | ? | Vector |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 1 | <a id="henterprise"></a>[Henterprise](https://github.com/humbertobellor/henterprise) | 2026-Q3 | 6/6 | 5/5 | 0 | 0 | 0 | `A A A A A A` |
 | 1 | <a id="ouroboros"></a>[Ouroboros](https://github.com/razzant/ouroboros) | 2026-Q1 | 6/6 | 5/5 | 0 | 2 | 0 | `A A A A A(P) A(P)` |
 | 2 | <a id="headcount"></a>[Headcount](https://github.com/cbrock84/headcount) | 2026-Q3 | 5/6 | 4/5 | 1 | 0 | 0 | `A A A C A A` |
 | 2 | <a id="pi-rs"></a>[pi-rs](https://github.com/CCherry07/pi-rs) | 2026-Q3 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
@@ -13,7 +14,6 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="oh-my-claudecode"></a>[oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | 2026-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="autohand-code-cli"></a>[Autohand Code CLI](https://github.com/autohandai/code-cli) | 2025-Q4 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A A A(P) —` |
 | 2 | <a id="gptme"></a>[gptme](https://github.com/gptme/gptme) | 2023-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
-| 3 | <a id="henterprise"></a>[Henterprise](https://github.com/humbertobellor/henterprise) | 2026-Q3 | 4/6 | 3/5 | 2 | 0 | 0 | `A C A C A A` |
 | 3 | <a id="alphacode"></a>[AlphaCode](https://github.com/dragonked2/alphacode) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="horse-code"></a>[Horse Code](https://github.com/hizliemre/horse-code) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A P A A P` |
 | 3 | <a id="frontieragent"></a>[FrontierAgent](https://github.com/ApodexAI/FrontierAgent) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |

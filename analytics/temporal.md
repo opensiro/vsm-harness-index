@@ -5,7 +5,7 @@ Deterministic descriptive cohorts derived from canonical included assessments an
 - **Period meaning:** GitHub repository creation quarter from `data/catalog.psv:repository_created_at`
 - **Quarter convention:** Q1 Jan-Mar, Q2 Apr-Jun, Q3 Jul-Sep, Q4 Oct-Dec
 - **Current year:** 2026 is marked **YTD**
-- **Current quarter:** 2026-Q3 is marked **partial**
+- **Current quarter:** 2026-Q4 is marked **partial**
 
 Repository creation time selects cohorts only. VSM states come from standalone canonical assessments. These projections describe ownership arrangements; they are not product-quality, maturity, or viability rankings.
 
@@ -38,7 +38,7 @@ Strict counts include literal `A` only; `A(P)` remains visible as a distinct sta
 | 2025-Q4 | 15 | 15/15 (100.0%) | 6/15 (40.0%) | 6/15 (40.0%) | 5/15 (33.3%) | 3/15 (20.0%) | 0/15 (0.0%) |
 | 2026-Q1 | 93 | 93/93 (100.0%) | 16/93 (17.2%) | 25/93 (26.9%) | 21/93 (22.6%) | 13/93 (14.0%) | 0/93 (0.0%) |
 | 2026-Q2 | 102 | 102/102 (100.0%) | 22/102 (21.6%) | 25/102 (24.5%) | 38/102 (37.3%) | 9/102 (8.8%) | 0/102 (0.0%) |
-| 2026-Q3 (partial) | 119 | 119/119 (100.0%) | 19/119 (16.0%) | 17/119 (14.3%) | 31/119 (26.1%) | 14/119 (11.8%) | 2/119 (1.7%) |
+| 2026-Q3 | 119 | 119/119 (100.0%) | 20/119 (16.8%) | 17/119 (14.3%) | 32/119 (26.9%) | 14/119 (11.8%) | 2/119 (1.7%) |
 
 ## Quarterly base `A` share
 
@@ -69,7 +69,7 @@ Base ownership follows ranking semantics: `A(P)` collapses to base `A`; `C`, `C(
 | 2025-Q4 | 15 | 15/15 (100.0%) | 6/15 (40.0%) | 8/15 (53.3%) | 5/15 (33.3%) | 4/15 (26.7%) | 0/15 (0.0%) |
 | 2026-Q1 | 93 | 93/93 (100.0%) | 16/93 (17.2%) | 30/93 (32.3%) | 21/93 (22.6%) | 15/93 (16.1%) | 1/93 (1.1%) |
 | 2026-Q2 | 102 | 102/102 (100.0%) | 22/102 (21.6%) | 32/102 (31.4%) | 38/102 (37.3%) | 13/102 (12.7%) | 2/102 (2.0%) |
-| 2026-Q3 (partial) | 119 | 119/119 (100.0%) | 19/119 (16.0%) | 23/119 (19.3%) | 31/119 (26.1%) | 18/119 (15.1%) | 5/119 (4.2%) |
+| 2026-Q3 | 119 | 119/119 (100.0%) | 20/119 (16.8%) | 23/119 (19.3%) | 32/119 (26.9%) | 18/119 (15.1%) | 5/119 (4.2%) |
 
 ## Annual strict `A` share
 
@@ -84,7 +84,7 @@ Base ownership follows ranking semantics: `A(P)` collapses to base `A`; `C`, `C(
 | 2023 | 28 | 28/28 (100.0%) | 4/28 (14.3%) | 5/28 (17.9%) | 3/28 (10.7%) | 1/28 (3.6%) | 0/28 (0.0%) |
 | 2024 | 32 | 32/32 (100.0%) | 3/32 (9.4%) | 6/32 (18.8%) | 4/32 (12.5%) | 4/32 (12.5%) | 0/32 (0.0%) |
 | 2025 | 72 | 72/72 (100.0%) | 13/72 (18.1%) | 15/72 (20.8%) | 10/72 (13.9%) | 7/72 (9.7%) | 0/72 (0.0%) |
-| 2026 (YTD) | 314 | 314/314 (100.0%) | 57/314 (18.2%) | 67/314 (21.3%) | 90/314 (28.7%) | 36/314 (11.5%) | 2/314 (0.6%) |
+| 2026 (YTD) | 314 | 314/314 (100.0%) | 58/314 (18.5%) | 67/314 (21.3%) | 91/314 (29.0%) | 36/314 (11.5%) | 2/314 (0.6%) |
 
 ## Annual base `A` share
 
@@ -99,6 +99,6 @@ Base ownership follows ranking semantics: `A(P)` collapses to base `A`; `C`, `C(
 | 2023 | 28 | 28/28 (100.0%) | 4/28 (14.3%) | 5/28 (17.9%) | 3/28 (10.7%) | 2/28 (7.1%) | 0/28 (0.0%) |
 | 2024 | 32 | 32/32 (100.0%) | 3/32 (9.4%) | 7/32 (21.9%) | 4/32 (12.5%) | 4/32 (12.5%) | 0/32 (0.0%) |
 | 2025 | 72 | 72/72 (100.0%) | 13/72 (18.1%) | 19/72 (26.4%) | 10/72 (13.9%) | 10/72 (13.9%) | 0/72 (0.0%) |
-| 2026 (YTD) | 314 | 314/314 (100.0%) | 57/314 (18.2%) | 85/314 (27.1%) | 90/314 (28.7%) | 46/314 (14.6%) | 8/314 (2.5%) |
+| 2026 (YTD) | 314 | 314/314 (100.0%) | 58/314 (18.5%) | 85/314 (27.1%) | 91/314 (29.0%) | 46/314 (14.6%) | 8/314 (2.5%) |
 
 The current year and quarter are incomplete observation windows. Compare closed periods directly; treat YTD/partial rows as provisional temporal slices.
