@@ -79,6 +79,20 @@ class AssessmentPreflightTests(unittest.TestCase):
         with self.assertRaises(preflight.PreflightError):
             preflight.extract_next_row(["## Manual assessment board\n| 1 | IronClaw | `b0b999d96781516ee05e6ba961d6f3ead900da96` | QUEUED |"])
 
+    def test_checkpoint_mention_does_not_shadow_actual_board(self):
+        checkpoint = """## Row 1 follow-up — review gate
+
+**Manual assessment board remains unchanged:** 0/10 terminal;
+Impulse row 1 NEXT; all remaining rows WAITING. This is not a new snapshot.
+"""
+        result = preflight.extract_next_row([COMMENTS[0]["body"], checkpoint])
+        self.assertEqual(result[0], 1)
+        self.assertEqual(result[1], "IronClaw")
+
+    def test_non_board_heading_does_not_shadow_snapshot(self):
+        note = "## Manual assessment board remains unchanged\n\nNo new row admitted."
+        self.assertEqual(preflight.extract_next_row([COMMENTS[0]["body"], note])[0], 1)
+
     def test_terminal_latest_board_does_not_fall_back_to_stale_next(self):
         terminal = """## Manual assessment board — runtime/orchestration batch 07 — COMPLETE\n\n| # | Project | Frozen ref | State |\n| ---: | --- | --- | --- |\n| 1 | IronClaw | `b0b999d96781516ee05e6ba961d6f3ead900da96` | DONE |\n| 2 | ZeroClaw | `757db6c356c61861256a87222e30c7c92e8f166f` | DONE |\n\nQueue complete. No `NEXT` row remains.\n"""
         with self.assertRaisesRegex(
