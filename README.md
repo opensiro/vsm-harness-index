@@ -94,6 +94,8 @@ A signature may change when an earlier comparison item is admitted or corrected.
 
 ## Rankings and derived views
 
+For a non-canonical, date-inferred breakdown of ChatGPT Chat model eras used in assessment production, see [Assessment by model era](analytics/assessed-by-model.md). This is not per-run model attestation.
+
 `RANKINGS.md`, `FULL_A.md`, metrics, and analytics are deterministic materializations from canonical Index data under the active Methodology projection rules.
 
 They are not independent assessment layers and they do not own publication-state meaning.
