@@ -333,7 +333,7 @@ def render_assessed_by_model(assessments: dict[str, dict[str, str]]) -> str:
     included_total = sum(counts[key]["included"] for key in MODEL_ERA_KEYS)
     names = {
         "before": ("GPT-5.6 Sol era (date-inferred)", "Before 2026-10-07"),
-        "transition": ("Rollout day (model indeterminate)", "2026-10-07"),
+        "transition": ("GPT-5.6 Sol / GPT-6 Sol (rollout; model uncertain)", "2026-10-07"),
         "after": ("GPT-6 Sol era (date-inferred)", "After 2026-10-07"),
     }
     lines = [
@@ -365,7 +365,7 @@ def render_assessed_by_model(assessments: dict[str, dict[str, str]]) -> str:
     lines += [
         f"| **Total** | — | **{total_by_status[0]}** | **{total_by_status[1]}** | **{total_by_status[2]}** | **{sum(total_by_status)}** |",
         "",
-        f"**Included denominator:** {included_total}. The rollout day is left unassigned rather than forced into either model generation.",
+        f"**Included denominator:** {included_total}. On the rollout day, GPT-5.6 Sol or GPT-6 Sol could have been used. The slash denotes possible alternatives, **not evidence that both models worked on the same assessment**; the day remains unassigned to either generation.",
         "",
         "## Interpretation and boundaries",
         "",
