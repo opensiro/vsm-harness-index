@@ -8,13 +8,13 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.6
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
-assessment_changed_at: 2026-10-02
+assessment_changed_at: 2026-10-11
 status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: A
 autonomy_s3_star: —
-autonomy_s4: A
+autonomy_s4: C
 autonomy_s5: —
 ---
 
@@ -47,11 +47,11 @@ Worktree isolation is a function-specific constructor on this subagent path. A s
 
 The advertised Agent Team/Coordinator path is not used to establish the positive findings below because the frozen implementation contains a material closure gap. The tmux backend starts `python -m suisuicode --team-member ...`, but `cli.py` calls `run_team_member` without a constructed `sub_agent`/provider/registry/engine; `run_team_member` only executes mailbox tasks when `agent is not None`. The in-process Team builder likewise creates a child `Agent` with `provider=None`, `registry=None` and `engine=None`. Team task/mailbox/worktree structures are therefore evidence of intended organization and useful primitives, but this assessment does not silently promote the advertised Team topology into autonomous S2/S3 closure.
 
-SuisuiCode also ships a separate future-facing memory loop. After each completed main turn, `Agent.run` asynchronously asks `memory.Manager` to update durable memory. A model receives the recent conversation plus existing notes and independently chooses structured create/update/delete actions for information worth remembering long term. The prompt explicitly distinguishes user feedback that should prevent future mistakes and project knowledge with `Why` / `How to apply`. Stores persist the selected notes; on later startup `cli.py` loads the memory index and the main agent places that memory back into its system prompt. This is a closed outside-and-then adaptation path rather than passive transcript persistence.
+SuisuiCode ships a memory-update **constructor**, but the frozen standard CLI does not close its autonomous model-to-memory loop. After a main turn, `Agent.run` schedules `memory.Manager.update_async`; however `cli.py` builds `Manager(provider=None, model="")`, and `tui/app.py` attaches the selected provider only to the main `Agent`, not to this Manager. `update_async` returns immediately when its own provider is `None`. The first-party `Manager.set_provider` method can compose a provider-dependent memory updater, but the frozen tracked `src/suisuicode` tree has no call to that setter or direct replacement of the Manager provider. Existing/manually maintained memory still loads into later session prompts. This supports a proposed *constructor-level* S4 rather than the original claim that automatic model-authored S4 adaptation is operational in the ordinary CLI.
 
 ## Operational model
 
-A user gives the main model a coding objective. The model chooses coding/tool actions from the live registry and revises later choices from returned file/process/tool evidence. It can also delegate operational work to child model loops. For background children, first-party task state provides a whole subordinate-population view and model-facing controls to inspect, cancel or re-task work. Separately, isolated-subagent definitions can attenuate concurrent workspace interference, while the memory updater converts durable distinctions from completed work into future operating guidance.
+A user gives the main model a coding objective. The model chooses coding/tool actions from the live registry and revises later choices from returned file/process/tool evidence. It can also delegate operational work to child model loops. For background children, first-party task state provides a whole subordinate-population view and model-facing controls to inspect, cancel or re-task work. Separately, isolated-subagent definitions can attenuate concurrent workspace interference, while a memory-updater constructor could convert completed-turn distinctions into future guidance **if a developer binds its provider**; the pinned ordinary CLI does not bind it.
 
 ## S1 — Operations
 
@@ -136,23 +136,23 @@ A user gives the main model a coding objective. The model chooses coding/tool ac
 
 ## S4 — Outside-and-then adaptation
 
-- State: A
-- Function: convert durable project/user distinctions learned from completed work into model-selected long-term operating guidance that changes later SuisuiCode sessions.
-- Disturbance / variety regulated: recurring user corrections, stable preferences, project architecture/conventions, ongoing work/decisions and reference knowledge that later tasks would otherwise need to rediscover or could repeatedly mishandle.
-- Decisive decision or feedback right: decide whether observed information is worth retaining long term and whether to create, update, merge or delete project/user notes, including what `How to apply` guidance future work should receive.
-- Decision owner: the autonomous model actor invoked by the first-party memory-update loop.
-- Supporting / enforcement mechanisms: asynchronous per-turn trigger; existing-index/note retrieval; JSON action parser; project/user Store persistence; `MEMORY.md` index; startup `load_index`; system-prompt assembly.
-- Closure path: a main coding turn completes → `Agent.run` extracts the recent turn and schedules `memory.Manager.update_async` → memory model compares recent evidence with existing memory and selects create/update/delete actions → deterministic stores persist the chosen long-term guidance → a later SuisuiCode startup loads the memory index → that memory enters the main Agent system prompt and changes subsequent operating context.
-- Boundary reachability: the memory Manager is constructed by the standard CLI, passed into the main Agent, and invoked automatically after completed main turns when a provider is configured; persisted memory is loaded again by the same standard CLI path.
-- External distinction: actual conversation/project evidence includes user corrections/preferences and project knowledge learned during repository-facing work rather than only internal scheduler state.
-- Future / prospective distinction: the updater is explicitly told to retain only information worth remembering long term; `feedback` is framed as information to remember to avoid the same future error, while project notes encode ongoing goals/conventions and future `How to apply` guidance.
-- Adaptation option generated: the memory model autonomously generates structured `create`, `update` or `delete` actions and the content/type/level of each durable note, merging old and new evidence when appropriate.
-- Path back into current capability / S3: persisted notes are indexed by the memory stores; `cli.py` loads that index at startup and passes it as `memory_text` to the main Agent, whose system prompt uses it on later coding work. The returned adaptation therefore changes the information and operating guidance available to present S1/S3 decisions in later sessions.
-- Why this is / is not agent-owned: deterministic stores apply a structured action, but they do not decide what is strategically worth remembering, whether old guidance is obsolete, or how future work should apply a distinction. Removing the memory model leaves persistence machinery but no adaptation judgment.
-- Evidence: [`src/suisuicode/agent/agent.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent.py); [`src/suisuicode/memory/manager.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/memory/manager.py); [`src/suisuicode/memory/prompts.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/memory/prompts.py); [`src/suisuicode/cli.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py).
-- Basis: explicit + structural.
-- Confidence: high.
-- Caveats: the freshly written memory is not shown being hot-reloaded into the already-running main Agent's cached `memory_text`; the established return path is durable adaptation into later startup/session operation, which is sufficient for the prospective loop but should not be read as same-turn adaptation.
+- State: C
+- Function: first-party provider-injectable memory updater can select and persist future-oriented notes from completed work; the original standard CLI leaves its provider unbound.
+- Disturbance / variety regulated: recurring user corrections, conventions and project decisions whose future reuse can avoid rediscovery or repeated mistakes.
+- Decisive decision or feedback right: **when externally composed**, a model may decide which past observations merit future retention and select structured note create/update/delete actions.
+- Decision owner: the injected model could own the memory-update judgment, but there is **no configured memory-update model** in the frozen standard CLI. Its built-in storage and event scheduling do not decide what to adapt.
+- Supporting / enforcement mechanisms: `Agent.run` per-turn trigger; `Manager.update_async`; explicit `Manager.set_provider`; provider guard; JSON action parsing; two note stores; `MEMORY.md`; `load_index` at next startup.
+- Closure path: conditional first-party constructor: external developer calls `Manager.set_provider` → later completed Agent turn triggers `update_async` → supplied model may select note actions → Store writes them → later startup reloads notes into Agent context. **Ordinary CLI instead:** `Manager(provider=None)` → selected provider goes into the main Agent only → scheduled memory update returns at its `None` guard → no model-written update occurs from this path.
+- Boundary reachability: `cli.py#L139-L151` instantiates unbound Manager and `cli.py#L307-L325` passes it to `new_app`. `tui/app.py#L702-L788` configures a main provider and passes the unchanged manager to Agent. Frozen tracked-source search finds the sole `set_provider` *definition* in `memory/manager.py#L117` and no call site. The purpose-specific setter and update/store/load machinery remain available to a developer-composed caller, not a default autonomous mode.
+- External distinction: completed user/project discussions can supply feedback and project conventions if a model is attached.
+- Future / prospective distinction: the memory updater's prompt explicitly requests lessons worth retaining for future sessions, not only storing raw transcript text.
+- Adaptation option generated: with an attached provider, the model can select structured create/update/delete actions; without the binding, no such model-generated output is produced by the CLI route.
+- Path back into current capability / S3: previously stored notes are loaded into future session prompts, but **new model-selected memory** is not created through the original unbound provider path.
+- Why this is / is not agent-owned: `A` cannot be credited where the decisive actor is never wired in the claimed first-party standard mode. `C` is proposed because `Manager.set_provider` and its integrated turn-trigger/store/load machinery deliberately expose a function-specific, developer-composable adaptation loop. Whether this constitutes S4 rather than task-local preference persistence still requires independent semantic review under the original Methodology.
+- Evidence: [`cli.py#L139-L151`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py#L139-L151); [`cli.py#L307-L325`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py#L307-L325); [`tui/app.py#L702-L788`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/tui/app.py#L702-L788); [`agent.py#L545-L569`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/agent/agent.py#L545-L569); [`manager.py#L117-L164`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/memory/manager.py#L117-L164); [`memory/prompts.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/memory/prompts.py).
+- Basis: exact original frozen-tree call-path audit and existing in-process conditional memory-manager reproduction; no full CLI end-to-end success is claimed.
+- Confidence: high for missing provider in standard CLI; medium for proposed S4 constructor `C` until independent Index review.
+- Caveats: a blank `MEMORY.md`, user-managed notes, or the mere existence of an LLM prompt is not autonomous adaptation. No unseen external integration may be silently credited to the standard distribution.
 
 ## S5 — Policy and identity
 
@@ -163,7 +163,7 @@ A user gives the main model a coding objective. The model chooses coding/tool ac
 - Decision owner: not established.
 - Supporting / enforcement mechanisms: permission modes/rules; user approvals; configuration; system/subagent prompts; Coordinator feature flag; memory/instructions; hook policies.
 - Closure path: not applicable for the negative finding.
-- Why this is / is not agent-owned: models make task, supervisory and memory-adaptation decisions, but no first-party actor is given ultimate authority to resolve identity/policy tensions and return such a resolution into subsequent organization-wide operation.
+- Why this is / is not agent-owned: models make task and supervisory decisions, and a memory model could decide note adaptations **if externally bound**, but no first-party actor is given ultimate authority to resolve identity/policy tensions and return such a resolution into subsequent organization-wide operation.
 - Evidence: [`README.md`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/README.md); [`src/suisuicode/cli.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/cli.py); [`src/suisuicode/coordinator/__init__.py`](https://github.com/Yangtianspike/suisui-code/blob/c9017b0613b22151325a5904a521aefe4c62abbc/src/suisuicode/coordinator/__init__.py).
 - Basis: explicit + structural negative search.
 - Confidence: high.
@@ -181,6 +181,6 @@ The frozen repository advertises Agent Team and Coordinator Mode and ships subst
 
 ## Assessment summary
 
-SuisuiCode establishes autonomous coding operations, a constructor-level worktree coordination mechanism, autonomous current control over functional background subagents, and an autonomous long-term adaptation loop. It does not establish a materially independent complementary audit function or identity/ultimate-policy authority loop at the reviewed boundary.
+SuisuiCode closes autonomous S1 operations and S3 delegated-task current control; S2 worktree isolation is constructor-level. Its memory updater exposes an S4-specific provider-binding interface and store/load path, but the standard CLI never binds the memory provider, so the originally claimed autonomous S4 loop is not evidenced at the pinned revision. The proposed `S4=C` constructor interpretation is subject to independent Index semantic review. No S3* corrective-audit or S5 ultimate-policy loop is established.
 
-**Vector:** `A · C · A · — · A · —`
+**Author-proposed corrected vector (review required):** `A · C · A · — · C · —`

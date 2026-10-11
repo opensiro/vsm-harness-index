@@ -14,8 +14,8 @@ Autonomous coverage follows the existing base-state projection: `A(P)` counts as
 | ---: | ---: | ---: |
 | 0/6 | 0 | 0.0% |
 | 1/6 | 246 | 54.8% |
-| 2/6 | 94 | 20.9% |
-| 3/6 | 58 | 12.9% |
+| 2/6 | 95 | 21.2% |
+| 3/6 | 57 | 12.7% |
 | 4/6 | 42 | 9.4% |
 | 5/6 | 8 | 1.8% |
 | 6/6 | 1 | 0.2% |
@@ -70,7 +70,6 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A A C(P) C — —` | 2 | 0.4% |
 | `A A — — — —` | 2 | 0.4% |
 | `A C A ? ? ?` | 2 | 0.4% |
-| `A C A — A —` | 2 | 0.4% |
 | `A C A(P) — — —` | 2 | 0.4% |
 | `A C C(P) A C(P) —` | 2 | 0.4% |
 | `A C C(P) A — —` | 2 | 0.4% |
@@ -116,6 +115,8 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A C A C C —` | 1 | 0.2% |
 | `A C A C — A(P)` | 1 | 0.2% |
 | `A C A — A P` | 1 | 0.2% |
+| `A C A — A —` | 1 | 0.2% |
+| `A C A — C —` | 1 | 0.2% |
 | `A C A — P —` | 1 | 0.2% |
 | `A C A(P) A A(P) P` | 1 | 0.2% |
 | `A C A(P) A — A(P)` | 1 | 0.2% |

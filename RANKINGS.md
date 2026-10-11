@@ -56,7 +56,6 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="megaagent"></a>[MegaAgent](https://github.com/Xtra-Computing/MegaAgent) | 2024-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 4 | <a id="agentharness-oklahomawhore"></a>[AgentHarness](https://github.com/Oklahomawhore/AgentHarness) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
-| 4 | <a id="suisuicode"></a>[SuisuiCode](https://github.com/Yangtianspike/suisui-code) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="abhed"></a>[Abhed](https://github.com/zybuu-ai/abhed) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="harnessdesk"></a>[HarnessDesk](https://github.com/HarnessDesk/HarnessDesk) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A C(P) A — —` |
 | 4 | <a id="appliedscientist"></a>[TheAppliedScientist](https://github.com/TheAppliedScientist/TheAppliedScientist) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
@@ -115,6 +114,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 5 | <a id="minagent"></a>[MinAgent](https://github.com/Nichonauta/MinAgent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="polyphemus"></a>[Polyphemus](https://github.com/polyphemus-ai/release-rehearsal) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C — A — P` |
+| 5 | <a id="suisuicode"></a>[SuisuiCode](https://github.com/Yangtianspike/suisui-code) | 2026-Q3 | 2/6 | 1/5 | 2 | 0 | 0 | `A C A — C —` |
 | 5 | <a id="mindweave"></a>[Mindweave](https://github.com/mindweave-cli/mindweave) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="myharness"></a>[MyHarness](https://github.com/woolcoxm/MyHarness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="axiom"></a>[Axiom](https://github.com/amuluze/axiom-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
