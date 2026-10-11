@@ -1,0 +1,50 @@
+name: GitHub stars snapshot
+
+on:
+  schedule:
+    - cron: "17 5 * * 1" # Monday 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: github-stars-snapshot
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Refresh point-in-time GitHub stars
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/github_stars.py refresh
+      - name: Check deterministic outputs and unit tests
+        run: |
+          python scripts/github_stars.py check
+          python -m unittest discover -s tests -p 'test_github_stars.py' -v
+      - name: Propose external analytics refresh (no direct main mutation)
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ github.token }}
+          add-paths: |
+            data/github-stars.json
+            analytics/github-stars.md
+            analytics/github-stars.svg
+          branch: automation/github-stars-weekly
+          delete-branch: true
+          commit-message: "chore(analytics): refresh observed GitHub stars"
+          title: "chore(analytics): refresh GitHub star distribution"
+          body: |
+            Automated, date-stamped GitHub star census for the checked-out Included cohort.
+            These are external popularity observations, **not** VSM grades, assessment evidence,
+            canonical metrics, or a change to the Index methodology.
+            Please review cohort source SHA and unavailable repositories before merge.
