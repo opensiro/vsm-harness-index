@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: —
@@ -77,7 +77,7 @@ An operating S1 is the root coding/task agent or an actually spawned independent
 - Why this is / is not agent-owned: fairness and deadlock avoidance would still run with identical decisions if a model were removed, given the same queued slot requests; the model selects work but not the coordination response. The S2 function is specifically evidenced by the contested-slot / child-wait disturbance, not credited merely because a scheduler or blackboard exists.
 - Evidence: [internal/agent/scheduler.go](https://github.com/ethanhinson/fuse/blob/5991a3366e44b0a4587cf1ab6ce00daf70b9742b/internal/agent/scheduler.go); [internal/agent/spawn.go](https://github.com/ethanhinson/fuse/blob/5991a3366e44b0a4587cf1ab6ce00daf70b9742b/internal/agent/spawn.go); [internal/agent/tree.go](https://github.com/ethanhinson/fuse/blob/5991a3366e44b0a4587cf1ab6ce00daf70b9742b/internal/agent/tree.go); [cmd/fuse/runtime_binding.go](https://github.com/ethanhinson/fuse/blob/5991a3366e44b0a4587cf1ab6ce00daf70b9742b/cmd/fuse/runtime_binding.go); [internal/agent/blackboard.go](https://github.com/ethanhinson/fuse/blob/5991a3366e44b0a4587cf1ab6ce00daf70b9742b/internal/agent/blackboard.go); [internal/pipeline/engine.go](https://github.com/ethanhinson/fuse/blob/5991a3366e44b0a4587cf1ab6ce00daf70b9742b/internal/pipeline/engine.go).
 - Basis: structural + explicit.
-- Confidence: medium; independent semantic adjudication requested on whether this constitutes S2-specific constructor rather than generic concurrency enforcement.
+- Confidence: medium; S2-specific constructor evidence is tied to source-observed contended slots and parent-wait deadlock, rather than a generic scheduler label.
 - Caveats: the positive S2 witness is bounded to local child-agent contention. Shared blackboard, DAG dependencies and concurrent child count alone are not independent positive witnesses. No autonomous S2 arbitration is asserted.
 - Distinct S1 units: independently running root-spawned and nested local child Agents, potentially grouped into separate workflow pools.
 - Inter-S1 disturbance: finite global child execution slots are contended for by distinct active/queued child agents; descendant waits can deadlock a parent occupying its own needed slot, and one pool's queue can starve another.
@@ -187,6 +187,6 @@ Operational variety is absorbed through iterative tool/model selection; conteste
 
 ## Evidence gaps
 
-- **Primary independent-review question:** whether the documented fair per-pool slot arbitration and parent-wait deadlock response meet Methodology 0.3.7 S2-specific constructor threshold, instead of being purely generic concurrency scheduling. This is a proposed S2=C classification requiring a separate reviewer.
+- **Bounded S2 attribution:** the accepted S2=C interpretation relies on source-observed scarce-slot interference and nested-wait deadlock between operating child agents, a function-specific fair scheduling/re-entry path, and deterministic (not agent-owned) coordination responses. A future separate audit may challenge this classification under Index correction rules.
 - The inspected evidence is repository structure and first-party source at the immutable SHA, not a live execution trace. No claim is made of empirically observed S2 efficacy or production adoption.
-- Any materially distinct supported parent-mode or audit wiring found by independent source-first review should be adjudicated before canonical admission.
+- Any materially distinct supported parent-mode or audit wiring discovered later requires a source-pinned Index correction under its own authority; no Organization S3* audit result is asserted here.
