@@ -506,3 +506,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 491|agnostic-agent|agnostic-agent|https://github.com/ucsandman/agnostic-agent|2026-09-06T16:14:20Z|index-addition|8b1f4d85c9220822aacea3921a78c4c2f0c58491|2026-09-28
 492|self-improving-agent|self-improving-agent|https://github.com/xmaks82/self-improving-agent|2026-01-29T19:35:58Z|index-addition|fd59417b91292b48711410a91d2cbf3eaeb0c060|2026-09-28
 493|sjmun09-harness|Harness|https://github.com/sjMun09/Harness|2026-04-20T13:44:37Z|index-addition|c1bc066f5608167790d229f818d989a15a265ad4|2026-09-28
+494|impulse|Impulse|https://github.com/spenceriam/impulse|2026-01-20T03:17:38Z|index-addition|87f7019be3d73768baae8a1e330be436e1f167d4|2026-09-28
