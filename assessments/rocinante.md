@@ -72,7 +72,7 @@ Root actor selects coding actions and subagent goals. Independent task children 
 - Inter-S1 disturbance: two spawned write-capable child agents may edit or shell-mutate the same workspace; different large local Ollama child model sessions may thrash constrained GPU memory.
 - Attenuating coordination relation: `TaskTool::run` holds a shared `write_gate` mutex across any write-capable child task, while allowing read-only children to execute in parallel; `LocalModelGate` serializes different-model local children for the duration of their run.
 - Feedback into subsequent S1 behaviour: contenders await gate release, then proceed with a nonoverlapping editing/model-compute window; their results and progress return via the task tool/event channel to the parent for further task work.
-- Why this is S2-specific: named concrete child-child worktree write collision and local model residency conflict are regulated, not merely parent-child task routing or generic queues.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: named concrete child-child worktree write collision and local-model residency interference are prevented by mutex admission boundaries for distinct model-driven S1 children; this is not merely moving tasks or messages.
 - Disturbance / variety regulated: concurrent child write and VRAM-resource contention.
 - Decisive decision or feedback right: choose execution admission order for conflicting child work based on scoped child profile/capabilities and resource locality.
 - Decision owner: deterministic runtime mutex gates, not an autonomous mediator model; therefore constructor class C.
@@ -109,6 +109,11 @@ Root actor selects coding actions and subagent goals. Independent task children 
 ## S3* — Complementary audit
 
 - State: C
+- Claim being audited: a producing coding turn has satisfied the original user request and its claimed file/test changes work as reported.
+- Ordinary reporting path: root coding model's final_text and own tool-action work_summary, which alone could contain mistaken success assertions.
+- Complementary access path: a separately invoked Verifier model compares original ask/work summary/output and, in the configured check-command mode, first-party code runs a trusted build/test command directly against the real workspace, overriding positive text-only judgments on failure.
+- Independence boundary: verifier is a distinct invocation and independent direct test source in the optional check-command mode, but shares a first-party runtime/provider configuration and can fail open if the model/checker is unavailable; no external independent auditor is claimed.
+- Who acts on findings: Agent::iterate_verification issues the findings as a corrective_prompt into the producing Agent, reruns its coding loop and calls Verifier::check again up to max_iterations, then emits a residual-failure report.
 - Function: source-independent-in-principle configured checker/test corroboration of the task's claimed completion with consequential corrective return.
 - Disturbance / variety regulated: erroneous coding completion claims, missed compilation/test failures and unfulfilled user requirements.
 - Decisive decision or feedback right: after actual tool work, dedicated verifier model judges the user's original ask vs result/work summary; when configured, a direct trusted check command runs against real workspace and **overrides** model optimism on failure.
@@ -125,6 +130,9 @@ Root actor selects coding actions and subagent goals. Independent task children 
 ## S4 — Outside-and-then intelligence
 
 - State: C
+- External distinction: observed *user*-originated corrections/repeated complaints reflect preference and behavioral variety originating beyond the coding agent's own report, not its static task memory.
+- Future / prospective distinction: Lessons capture requests rules for how this user wants the agent to behave across future projects/sessions; a separate model extracts only generalizable do/don't changes, rather than planning today's tool actions.
+- Path back into current capability / S3: the model-curated LESSONS.md is loaded by the shipped CLI setup and injected into the active future system prompt, changing operational behavior under user governance; this is constructor-based adaptation and does not prove S3 ownership.
 - Function: encode external user corrections into durable cross-session future operating-behavior rules and activate those rules as future session context.
 - External / future distinction: actual user corrections and repeated complaints about response behavior are external environment signals about future preferences, not current repository content. Learned rules explicitly target all subsequent projects/sessions.
 - Adaptation option generated: separate low-temperature model job conservatively extracts reusable global rules/preferences from interaction transcript and merges into `LESSONS.md`.
