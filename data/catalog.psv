@@ -503,3 +503,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 488|rum|Rum|https://github.com/KAJdev/rum|2026-03-12T21:33:49Z|index-addition|9c00bdb35f2a55959d6e56bd0d27b9573aac6fdd|2026-09-28
 489|fuse|Fuse|https://github.com/ethanhinson/fuse|2026-08-04T00:34:30Z|index-addition|5991a3366e44b0a4587cf1ab6ce00daf70b9742b|2026-09-28
 490|ashcode|AshCode|https://github.com/AuthRan/AshCode|2026-07-29T06:32:41Z|index-addition|74f30ddac455175d4a18cb105a00ae1bde42cd69|2026-09-28
+491|agnostic-agent|agnostic-agent|https://github.com/ucsandman/agnostic-agent|2026-09-06T16:14:20Z|index-addition|8b1f4d85c9220822aacea3921a78c4c2f0c58491|2026-09-28
+492|self-improving-agent|self-improving-agent|https://github.com/xmaks82/self-improving-agent|2026-01-29T19:35:58Z|index-addition|fd59417b91292b48711410a91d2cbf3eaeb0c060|2026-09-28
