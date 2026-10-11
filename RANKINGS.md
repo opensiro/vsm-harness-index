@@ -289,6 +289,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="ghostycode"></a>[GhostyCode](https://github.com/blissito/ghostycode) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 2 | `A C ? ? — —` |
 | 6 | <a id="agentyou"></a>[AgentYou](https://github.com/shreyasic77/agentyou) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
 | 6 | <a id="ferrum"></a>[Ferrum](https://github.com/ominiverdi/ferrum) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="luckycli"></a>[LuckyCLI](https://github.com/Fenix46/LuckyCLI) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="reflex"></a>[Reflex](https://github.com/reflex-agent/reflex-agent) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="michin"></a>[MichiN](https://github.com/rohaquinlop/michin) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="riffer-rig"></a>[riffer-rig](https://github.com/bottrall/riffer-rig) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
