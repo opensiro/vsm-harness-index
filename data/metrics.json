@@ -2,11 +2,11 @@
   "schema_version": 1,
   "snapshot_date": "2026-09-29",
   "corpus": {
-    "included_assessments": 460,
-    "canonical_assessments": 500,
+    "included_assessments": 461,
+    "canonical_assessments": 501,
     "excluded_assessments": 40,
-    "proposed_assessments": 16,
-    "catalog_entries": 500,
+    "proposed_assessments": 15,
+    "catalog_entries": 501,
     "catalog_entries_without_included_assessment": 40,
     "reassessment_events": 88,
     "full_a_assessments": 1
@@ -19,26 +19,26 @@
     {
       "target": 100,
       "status": "achieved",
-      "completed": 460,
+      "completed": 461,
       "progress_fraction": 1.0
     },
     {
       "target": 250,
       "status": "achieved",
-      "completed": 460,
+      "completed": 461,
       "progress_fraction": 1.0
     },
     {
       "target": 500,
       "status": "next",
-      "completed": 460,
-      "progress_fraction": 0.92
+      "completed": 461,
+      "progress_fraction": 0.922
     },
     {
       "target": 1000,
       "status": "planned",
-      "completed": 460,
-      "progress_fraction": 0.46
+      "completed": 461,
+      "progress_fraction": 0.461
     }
   ]
 }
