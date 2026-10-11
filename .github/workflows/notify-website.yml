@@ -1,0 +1,71 @@
+name: Notify website after canonical Index validation
+
+# A successful validation of an Index main push is the source event.
+# The website always reconciles against *current* Index main, never an
+# arbitrary event SHA, and retains its independent hourly fallback.
+on:
+  workflow_run:
+    workflows: ["validate"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.event == 'push' &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    env:
+      WEBSITE_DISPATCH_APP_ID: ${{ secrets.WEBSITE_DISPATCH_APP_ID }}
+      WEBSITE_DISPATCH_PRIVATE_KEY: ${{ secrets.WEBSITE_DISPATCH_PRIVATE_KEY }}
+    steps:
+      - name: Mint website-only GitHub App token when configured
+        id: app
+        if: ${{ env.WEBSITE_DISPATCH_APP_ID != '' && env.WEBSITE_DISPATCH_PRIVATE_KEY != '' }}
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ env.WEBSITE_DISPATCH_APP_ID }}
+          private-key: ${{ env.WEBSITE_DISPATCH_PRIVATE_KEY }}
+          owner: opensiro
+          repositories: opensiro.com
+          permission-contents: write
+
+      - name: Dispatch canonical main revision to website
+        shell: bash
+        env:
+          DISPATCH_TOKEN: ${{ steps.app.outputs.token || secrets.WEBSITE_DISPATCH_TOKEN }}
+          EVENT_SHA: ${{ github.event.workflow_run.head_sha }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          if [ -z "$DISPATCH_TOKEN" ]; then
+            echo "::warning::No website dispatch credential. Hourly site reconciliation remains active."
+            echo "Configure WEBSITE_DISPATCH_APP_ID + WEBSITE_DISPATCH_PRIVATE_KEY (preferred),"
+            echo "or a website-scoped WEBSITE_DISPATCH_TOKEN, to enable event-driven delivery."
+            exit 0
+          fi
+
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            EVENT_SHA="$(git ls-remote https://github.com/opensiro/vsm-harness-index.git refs/heads/main | cut -f1)"
+          fi
+          if ! [[ "$EVENT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::Could not resolve canonical Index revision"
+            exit 1
+          fi
+          jq -n --arg sha "$EVENT_SHA" \
+            '{event_type:"vsm-index-main-updated",client_payload:{index_sha:$sha,source_repository:"opensiro/vsm-harness-index"}}' \
+            > "$RUNNER_TEMP/website-dispatch.json"
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            --header "Authorization: Bearer $DISPATCH_TOKEN" \
+            --header "Accept: application/vnd.github+json" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            --data-binary "@$RUNNER_TEMP/website-dispatch.json" \
+            https://api.github.com/repos/opensiro/opensiro.com/dispatches
+          echo "Website synchronization dispatched for canonical Index revision $EVENT_SHA"
