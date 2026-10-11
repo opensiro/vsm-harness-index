@@ -1,31 +1,13 @@
 # Contributor start
 
-There are three common ways to contribute to the Index.
+This is a short Index-local contribution menu. Shared bootstrap and cross-repository routing live in the root [`README.md`](README.md); detailed Index contribution rules live in [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-## Review a queued harness assessment
+Choose the workflow that matches the contribution:
 
-Start with an open frozen `[Assessment batch]` issue. Read its Manual assessment board, take only the row marked `NEXT`, and keep the supplied repository revision pinned.
+- **Review a queued harness assessment:** follow [Review queued assessment work](CONTRIBUTING.md#review-queued-assessment-work).
+- **Suggest a new harness:** follow [Suggest a harness](CONTRIBUTING.md#suggest-a-harness).
+- **Request an assessment re-review:** follow [Request an assessment re-review](CONTRIBUTING.md#request-an-assessment-re-review).
+- **Claim or perform a re-review:** follow [Claim a re-review](CONTRIBUTING.md#claim-a-re-review).
+- **Integrate a new canonical assessment:** follow [Maintainer / full assessment integration](CONTRIBUTING.md#maintainer--full-assessment-integration).
 
-Before semantic work, read current `main` of:
-
-- `opensiro/vsm-harness-profile` for VSM semantics;
-- `opensiro/vsm-harness-skills` for the assessment Methodology and artifact contract.
-
-This repository owns the queue/admission/provenance workflow, not a separate assessment format.
-
-## Suggest a new harness
-
-Open a `[Harness suggestion]` issue with the primary repository URL and a short explanation of why it belongs in an agent-harness index. Maintainers own catalog placement, provenance normalization, deduplication, and batching.
-
-## Request or perform an assessment re-review
-
-Open an `[Assessment re-review]` issue when stronger primary evidence may change a canonical assessment or a newer upstream revision materially changes the harness.
-
-Index bookkeeping distinguishes:
-
-- **same-ref correction / semantic revalidation** — the accepted `review_ref` stays fixed;
-- **new-ref reassessment** — a newer commit becomes the accepted review boundary.
-
-The semantic reassessment itself must follow the applicable `vsm-harness-skills` Methodology. The Index records the accepted boundary, freshness, reassessment history, signatures, and generated views.
-
-For the full repository workflow, see [`CONTRIBUTING.md`](CONTRIBUTING.md). For Index-owned lifecycle/provenance rules, see [`INDEXING.md`](INDEXING.md).
+For Index-owned lifecycle, provenance, admission, reassessment bookkeeping, and publication/materialization rules, see [`INDEXING.md`](INDEXING.md).
