@@ -516,3 +516,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 501|aether|Aether|https://github.com/Aetherdz/aether|2026-08-09T07:46:49Z|index-addition|7476a0336bd47fa01dc2feb03d9572155395da47|2026-09-28
 502|atlas-agent|Atlas Agent|https://github.com/Omerfaruk-aydn/Atlas-Agent|2026-08-29T09:56:54Z|index-addition|3d0d63e20d9d2221be9a6e6ab4fc0350df5237f5|2026-09-28
 503|octopus|Octopus|https://github.com/zwpdbh/octopus-in-rust|2026-05-21T07:58:58Z|index-addition|88695f8e9209c76522d5943a2207751fd382dd43|2026-09-28
+504|bharatcode|BharatCode|https://github.com/arbazkhan971/bharatcode-cli|2026-06-20T14:46:45Z|index-addition|430e3047c705aa84762a8a46be4ff838cb159451|2026-09-28
