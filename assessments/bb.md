@@ -8,12 +8,12 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.6
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.6
-assessment_changed_at: 2026-10-06
+assessment_changed_at: 2026-10-11
 status: proposed
 autonomy_s1: A
 autonomy_s2: A
 autonomy_s3: A
-autonomy_s3_star: A
+autonomy_s3_star: ?
 autonomy_s4: —
 autonomy_s5: —
 ---
@@ -51,7 +51,7 @@ An active coding thread is a model-backed operational actor. It receives the bb 
 
 Parallel coding can be separated into different Git worktrees. First-party product documentation describes that isolation specifically as the way to prevent parallel agents from overwriting one another's changes. This establishes a concrete inter-S1 disturbance and attenuation path rather than treating generic delegation as S2.
 
-Complementary audit is reachable through a separate child thread. The first-party software-factory guide gives the explicit example of one coding agent spawning a different-provider worker to review its code; when the reviewer finishes, the parent is notified and can implement the feedback. That independent model context and return path are the basis of S3*, not ordinary self-review.
+The first-party software-factory guide documents a **user-instructed** example: an authoring agent may spawn a distinct model/provider-backed child to review code; the parent is notified when the child completes and may act on feedback. This supports actual separate agent/thread execution and a generic feedback channel, but does not by itself establish a first-party S3*-specific audit mandate, independent evidence selection and accountable corrective-return control. The generic child-thread/Workflows primitives remain function-agnostic when the *review task* is supplied by the caller. Therefore the proposed S3* state below is held at `?` pending an independently authorized Index semantic decision; this does not assert that bb lacks any qualifying installed opt-in audit path.
 
 ## S1 — Operations
 
@@ -110,24 +110,24 @@ Complementary audit is reachable through a separate child thread. The first-part
 
 ## S3* — Complementary audit
 
-- State: A
-- Function: independently challenge implementation claims through a separate fresh coding-agent thread that reviews the parent's work and returns findings before the parent proceeds.
-- Disturbance / variety regulated: incorrect implementation claims, defects or omissions that the authoring thread may miss through self-review.
-- Decisive decision or feedback right: independently inspect the code/repository in a separate model context and return review findings that can change the parent agent's subsequent implementation.
-- Decision owner: the separately spawned reviewer model/thread.
-- Supporting / enforcement mechanisms: cross-provider child-thread creation, separate thread/provider context, repository/environment access, parent notification on child completion and parent-to-child messaging.
-- Closure path: authoring/manager thread produces work → spawns a separate reviewer child (including a different provider) → reviewer directly inspects the code and produces findings → bb reports child completion/output to the parent → parent implements feedback or otherwise resolves the findings.
-- Boundary reachability: first-party bb product documentation gives this exact cross-provider reviewer pattern as a normal child-thread use case; it uses the shipped child-thread/notification path rather than a third-party plugin.
-- Why this is / is not agent-owned: the substantive review judgment is made by a separate model instance with direct repository access; bb's notification/routing only carries the independent finding back.
-- Claim being audited: correctness/readiness of code produced by the ordinary authoring thread.
-- Ordinary reporting path: the authoring thread's own implementation, test evidence and completion account.
-- Complementary access path: a separate child coding thread directly inspects the repository/change, optionally using a different provider/model.
-- Independence boundary: separate provider-backed thread/context with its own model execution; the documented example explicitly uses a different-provider reviewer.
-- Who acts on findings: the parent authoring/manager thread receives completion and can implement the review feedback before proceeding.
-- Evidence: [apps/web/src/blog/posts/building-a-restrained-software-factory.md](https://github.com/get-bb/bb/blob/c41e0bb485f8ec3fb5b002c1aa151cd66e531aaf/apps/web/src/blog/posts/building-a-restrained-software-factory.md); [plugins/bb-guide/skills/bb-cli/references/thread-creation.md](https://github.com/get-bb/bb/blob/c41e0bb485f8ec3fb5b002c1aa151cd66e531aaf/plugins/bb-guide/skills/bb-cli/references/thread-creation.md); [apps/server/src/services/threads/child-thread-notifications.ts](https://github.com/get-bb/bb/blob/c41e0bb485f8ec3fb5b002c1aa151cd66e531aaf/apps/server/src/services/threads/child-thread-notifications.ts).
-- Basis: explicit + structural.
-- Confidence: medium-high.
-- Caveats: bb does not require every coding task to pass this reviewer path. The positive claim is for the documented first-party child-review operating mode, not a universal completion gate.
+- State: ?
+- Function: unresolved at the assessed first-party boundary. A separate coding thread **can** review the parent's work, but this source witness alone does not establish a first-party audit-specific organizational function rather than generic S1 delegation.
+- Disturbance / variety regulated: errors, omissions and false implementation claims potentially overlooked by the authoring S1, **if** an independent reviewer is explicitly tasked and its findings are acted on.
+- Decisive decision or feedback right: an instructed child model can independently inspect code and propose review findings, but the standard bb runtime is not shown assigning a distinct audit mandate/trigger or ensuring independent source-selection and corrective disposition.
+- Decision owner: candidate reviewer model, **only after separately composed/assigned review responsibility**. Normal thread spawning and notification transport do not supply the audit-specific decision owner.
+- Supporting / enforcement mechanisms: agent-facing `bb thread spawn`, distinct provider-backed child threads and workspaces, child completion/output return, parent notifications, generic Workflows child calls and result collection.
+- Closure path: conditional authored scenario: a user/parent requests review → ordinary child coding thread examines the code → generic completion/output flows to the parent → parent may act. There is no source-established first-party reviewer-judgment admission, enforced contradictory-evidence review, or accountable corrective-return step distinguishing this from arbitrary child-task orchestration.
+- Boundary reachability: independently instantiated child context and returned child output **are** shipped standard behavior. The official first-party blog describes asking the agent to compose that path. The investigated server/CLI/bb-guide/Tasks/Workflows source does not establish a separately packaged function-specific audit role/trigger/decision/return constructor; this is an evidence limitation, not an exhaustive repository-wide no-path conclusion.
+- Why this is / is not agent-owned: the reviewer can exercise model discretion when asked to review; a second model/context does not alone make its role organizational S3*. The same child system can perform an arbitrary coding task if the externally supplied reviewer instruction is removed. Conversely a distinct legitimate installed audit mode could warrant positive `A`/`C` if a separate reviewer identifies it.
+- Claim being audited: readiness or correctness of code written by the main authoring thread in the optional user-composed example.
+- Ordinary reporting path: author's code, self-reported completion, own tests and tool observations.
+- Complementary access path: an explicitly instructed separate child model can read the repository directly and, with a different provider, independently inspect the same implementation evidence.
+- Independence boundary: separate execution context is demonstrated; audit mission, source independence, reviewer authority and disposition ownership are not automatically granted by generic child-thread identity.
+- Who acts on findings: the parent thread can receive a completion message and choose to implement review feedback; no first-party requirement to process or resolve a reviewer finding is established by these generic return signals.
+- Evidence: [official documented reviewer example](https://github.com/get-bb/bb/blob/c41e0bb485f8ec3fb5b002c1aa151cd66e531aaf/apps/web/src/blog/posts/building-a-restrained-software-factory.md#L17-L28); [first-party child thread guide](https://github.com/get-bb/bb/blob/c41e0bb485f8ec3fb5b002c1aa151cd66e531aaf/plugins/bb-guide/skills/bb-cli/references/thread-creation.md); [child thread completion/output notification code](https://github.com/get-bb/bb/blob/c41e0bb485f8ec3fb5b002c1aa151cd66e531aaf/apps/server/src/services/threads/child-thread-notifications.ts); [generic Workflows worker-result lifecycle](https://github.com/get-bb/bb/blob/c41e0bb485f8ec3fb5b002c1aa151cd66e531aaf/plugins/workflows/src/service.ts#L826-L987).
+- Basis: explicit separate-agent/thread and documented user-prompt scenario; insufficient source evidence for a function-specific first-party audit owner and correction-return path.
+- Confidence: high in general child/task/notification reachability; unresolved for an `A`, `C`, `—` or `?` S3* classification under frozen Methodology.
+- Caveats: `?` is a **noncanonical author-proposed evidence-sufficiency hold**, not a conclusion that S3* is impossible in bb or that a documentarily supported configured audit mode could never qualify. Original `status: proposed` remains. Do not import external third-party plugins, developer CI, user-authored personal manager prompts or provider internal reviewer roles as default first-party audit ownership. The Index's separate semantic reviewer must decide the actual grade before any canonical admission of batch #1300.
 
 ## S4 — Outside-and-then intelligence
 
@@ -179,16 +179,16 @@ The assessed organization is the running bb project/work organization, not the g
 
 ## Self-hosted and non-human modes
 
-bb is explicitly self-hostable and provider-agnostic across supported coding-agent providers. Positive S1–S3* claims do not depend on a specific vendor model. Human app/CLI steering is available, but no parent-mode annotation is needed for the claimed vector because the positive decision paths identified here can be exercised by model-backed bb threads through first-party agent-accessible controls.
+bb is explicitly self-hostable and provider-agnostic across supported coding-agent providers. Positive S1–S3 claims do not depend on a specific model vendor. S3* remains `?` while the first-party audit-specific decision/feedback mode is unresolved; human app/CLI steering does not independently establish that function.
 
 ## Recursion
 
-At the selected recursion, provider-backed coding threads are operational S1 units. A parent/manager thread can create and regulate the current worker set, while separate reviewer children can provide complementary assurance. Server, daemon, database, UI, worktrees, Tasks and Workflows are supporting/control mechanisms unless a model-owned function-specific decision path is identified.
+At the selected recursion, provider-backed coding threads are operational S1 units. A parent/manager thread can create and regulate the current worker set, while ordinary child threads can be **assigned** a complementary review role, without proving a first-party audit function. Server, daemon, database, UI, worktrees, Tasks and Workflows are supporting/control mechanisms unless a model-owned function-specific decision path is identified.
 
 ## Variety and escalation
 
-S1 absorbs ordinary coding variety. S2 attenuates a concrete parallel-mutation hazard through isolated worktrees. S3 handles live worker/current-commitment variety through model-accessible inspection and targeted lifecycle/messaging controls. S3* can challenge author claims through an independent child reviewer. Higher prospective-intelligence and identity-governance functions are not credited from generic scheduling, persistence, plugins, prompts or permissions.
+S1 absorbs ordinary coding variety. S2 attenuates a concrete parallel-mutation hazard through isolated worktrees. S3 handles live worker/current-commitment variety through model-accessible inspection and targeted lifecycle/messaging controls. A separately instructed child can challenge author claims, but installed S3* audit ownership and return remain unresolved. Higher prospective-intelligence and identity-governance functions are not credited from generic scheduling, persistence, plugins, prompts or permissions.
 
 ## Evidence gaps
 
-No `?` state is required. The main residual uncertainty is classification strength for S3*: the reviewer mode is explicitly documented and fully reachable through first-party child-thread mechanisms, but it is an optional operating mode rather than a mandatory gate. Under Methodology 0.3.6 that affects universality, not the existence of the autonomous first-party mode, so the proposed state remains `A`.
+**S3*=? (author-proposed)**: separate model/provider-backed child execution and returned output are first-party and evidenced, but the original positive grade relies on a user-instructed reviewer *use case* assembled from generic operations. Before canonical admission, [Index #1382](https://github.com/opensiro/vsm-harness-index/issues/1382) requires an independently attributable semantic determination of whether there is a first-party S3*-specific complementary-audit mode, its decisive judgment owner, alternative evidence source/independence boundary and corrective return, or an evidenced absence/uncertainty state. This proposed hold neither establishes universal absence nor asserts a final alternative classification. The other five proposed states, frozen upstream SHA and original generation provenance are not touched.
