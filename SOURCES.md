@@ -27,6 +27,40 @@ A second ecosystem reference used for recall is **Awesome Agent Harnesses** by N
 
 It is a broader survey of harness research, production harnesses, essays, and talks. No catalog data in this repository is adapted from that survey unless a future change explicitly records such provenance.
 
+### HARNESS-DB — external research/discovery corpus
+
+**HARNESS-DB** (Bhaskar Gurram) is an independent systematic review and
+architecture-coded dataset of LLM agent harnesses:
+
+- project: <https://github.com/harness-db/harness-db>
+- machine-readable corpus: `data/systems.json` (1,256 coded systems, 38
+  design dimensions) and `data/coding_frame.csv` (6,504-system sampling
+  frame; **not** 6,504 completed system assessments);
+- dataset: <https://huggingface.co/datasets/bhaskar-ai/harness-db>
+- release/attribution: HARNESS-DB v1.0.0,
+  DOI <https://doi.org/10.5281/zenodo.23031354>;
+- reviewed upstream revision: `e5f5f6ede8d1d85a8eed1a83098d33b1d5a69fb5`
+  (2026-10-11 source check);
+- upstream data license: **CC BY 4.0** (code is MIT).
+
+Use this as an **external discovery and source-recall surface**, including
+systems that do not use the GitHub `agent-harness` topic. Link/normalize
+upstream GitHub repository identity (including redirects, aliases and
+multiple versions) before deduplication. Non-repository and paper-primary
+systems may be research context, but do not become automatically eligible
+for the repository-relative Index.
+
+**Boundary:** HARNESS-DB's design-characteristic labels, citations, author
+judgments, `not_reported` values, sampling weights, and counts are *not*
+OpenSiro VSM evidence or autonomy classifications. Do not import the data
+into `data/catalog.psv`, assessment artifacts, signatures or generated
+rankings just by listing this source. Every newly accepted candidate
+requires an independently selected exact upstream revision, first-party
+primary-source examination under current Profile/Skills, global
+deduplication, and the ordinary Index lifecycle. If data is later adapted
+or redistributed, add separate item-level attribution and license
+compliance; this entry only cites the external source.
+
 ### OpenSiro-adjacent OSS discovery
 
 Discovery is intentionally broader than repositories that self-identify as `agent-harness`.
