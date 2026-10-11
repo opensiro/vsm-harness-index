@@ -297,6 +297,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="riffer-rig"></a>[riffer-rig](https://github.com/bottrall/riffer-rig) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gagans-agent-os"></a>[agent-os](https://github.com/gagans23/agent-os) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C — — P —` |
 | 6 | <a id="aohp"></a>[AOHP](https://github.com/aohp-os/aohp) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="octopus"></a>[Octopus](https://github.com/zwpdbh/octopus-in-rust) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="open-code-review"></a>[OpenCodeReview](https://github.com/alibaba/open-code-review) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="peezy"></a>[Peezy](https://github.com/p0systems/peezy-cli) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hashcortx"></a>[HashCortX](https://github.com/Hash-7777/HashCortX) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
