@@ -60,6 +60,36 @@ class AssessmentPreflightTests(unittest.TestCase):
         self.assertEqual(task.profile_version, "0.2.3")
         self.assertEqual(task.methodology_version, "0.3.5")
 
+    def test_occupied_project_slug_uses_owner_qualified_path(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "assessments").mkdir()
+            (root / "assessments/agent-os.md").write_text(
+                "repository: https://github.com/andrewgolovanov/agent-os\n"
+            )
+            self.assertEqual(
+                preflight.resolve_assessment_path(root, "Agent OS", "earthwalker17/agent-os"),
+                ("assessments/earthwalker17-agent-os.md", "new"),
+            )
+            (root / "assessments/earthwalker17-agent-os.md").write_text(
+                "repository: https://github.com/earthwalker17/agent-os\n"
+            )
+            self.assertEqual(
+                preflight.resolve_assessment_path(root, "Agent OS", "earthwalker17/agent-os"),
+                ("assessments/earthwalker17-agent-os.md", "existing"),
+            )
+
+    def test_occupied_owner_qualified_slug_fails_closed(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "assessments").mkdir()
+            for name in ("agent-os", "earthwalker17-agent-os"):
+                (root / "assessments" / f"{name}.md").write_text(
+                    "repository: https://github.com/different/project\n"
+                )
+            with self.assertRaisesRegex(preflight.PreflightError, "slug collision"):
+                preflight.resolve_assessment_path(root, "Agent OS", "earthwalker17/agent-os")
+
     def test_rejects_board_ref_drift(self):
         comments = [{"body": COMMENTS[0]["body"].replace(
             "b0b999d96781516ee05e6ba961d6f3ead900da96",
