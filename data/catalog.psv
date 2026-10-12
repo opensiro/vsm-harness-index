@@ -532,3 +532,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 517|skyvern|Skyvern|https://github.com/Skyvern-AI/skyvern|2024-02-28T15:45:19Z|index-addition|f5f3f28a9ce0021a1db24286928a7bff6582a1eb|2026-10-11
 518|superagi|SuperAGI|https://github.com/TransformerOptimus/SuperAGI|2023-05-13T08:55:24Z|index-addition|c3c1982e7bd6a11cfed53c5a193ea502f924b1b6|2026-10-11
 519|cli-agent-orchestrator|CLI Agent Orchestrator|https://github.com/awslabs/cli-agent-orchestrator|2025-07-29T14:16:56Z|index-addition|ffa9fc742c7d47ce038d3d951ccc5527ba0c0218|2026-10-11
+520|openhuman|OpenHuman|https://github.com/tinyhumansai/openhuman|2026-02-18T20:01:27Z|index-addition|eb4fdc0f4f4a036d8ab7c12bd52f16128e4a6b5d|2026-09-21
