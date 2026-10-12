@@ -103,6 +103,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="agentos"></a>[AgentOS](https://github.com/framerslab/agentos) | 2025-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A A C — A P` |
 | 4 | <a id="aionui"></a>[AionUi](https://github.com/iOfficeAI/AionUi) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="eigent"></a>[Eigent](https://github.com/eigent-ai/eigent) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 4 | <a id="cli-agent-orchestrator"></a>[CLI Agent Orchestrator](https://github.com/awslabs/cli-agent-orchestrator) | 2025-Q3 | 3/6 | 2/5 | 1 | 0 | 2 | `A C A A ? ?` |
 | 4 | <a id="deepagents"></a>[Deep Agents](https://github.com/langchain-ai/deepagents) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="qwen-code"></a>[Qwen Code](https://github.com/QwenLM/qwen-code) | 2025-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="microsoft-agent-framework"></a>[Microsoft Agent Framework](https://github.com/microsoft/agent-framework) | 2025-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
