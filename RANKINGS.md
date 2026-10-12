@@ -464,6 +464,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="anythingllm"></a>[AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="continue"></a>[Continue](https://github.com/continuedev/continue) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="vercel-ai"></a>[Vercel AI SDK](https://github.com/vercel/ai) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="superagi"></a>[SuperAGI](https://github.com/TransformerOptimus/SuperAGI) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 2 | `A — ? — — ?` |
 | 6 | <a id="gpt-researcher"></a>[GPT Researcher](https://github.com/assafelovic/gpt-researcher) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="aider"></a>[Aider](https://github.com/Aider-AI/aider) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentverse"></a>[AgentVerse](https://github.com/OpenBMB/AgentVerse) | 2023-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
