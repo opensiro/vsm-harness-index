@@ -537,3 +537,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 522|agentscope-2-0|AgentScope 2.0|https://github.com/agentscope-ai/agentscope|2024-01-12T03:41:59Z|index-addition|5ff52f877de12d66a30d55af279dd4f42b1590f3|2026-09-19
 523|grok-build|Grok Build|https://github.com/xai-org/grok-build|2026-07-14T20:04:23Z|index-addition|4247f661689354b831191f11eeeac8424993fe3d|2026-09-20
 524|zcode|ZCode|https://github.com/zai-org/ZCode|2026-09-20T12:01:16Z|index-addition|872ad960de7ec172591f7e1952f7849229f94521|2026-09-22
+525|swarms|Swarms|https://github.com/kyegomez/swarms|2023-05-11T01:09:00Z|index-addition|3009364a7e44dc3e55fec238b56b3a4fa6949a05|2026-09-21
