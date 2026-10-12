@@ -141,6 +141,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="travis234"></a>[Travis234](https://github.com/taikkyithar/travis234) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="qwen-audio-agent"></a>[Qwen Audio Agent](https://github.com/QwenAudio/qwen-audio-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 2 | 0 | `A — — — A(P) P` |
 | 5 | <a id="commons"></a>[Commons](https://github.com/t54-labs/agent-commons) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A A — — — P` |
+| 5 | <a id="capstan"></a>[Capstan](https://github.com/theStrangeAdventurer/capstan) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 1 | `A — — ? A —` |
 | 5 | <a id="bossconsole"></a>[BossConsole](https://github.com/risa-labs-inc/BossConsole) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C C(P) — A(P) —` |
 | 5 | <a id="foreman"></a>[Foreman](https://github.com/marcelsud/claude-foreman) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — A(P) C — —` |
 | 5 | <a id="penguin-harness"></a>[PenguinHarness](https://github.com/Prism-Shadow/penguin-harness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
