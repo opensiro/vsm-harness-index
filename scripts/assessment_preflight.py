@@ -77,6 +77,28 @@ def slugify_project(project: str) -> str:
     return slug
 
 
+def resolve_assessment_path(root: Path, project: str, repository: str) -> tuple[str, str]:
+    """Disambiguate same-label repositories without changing frozen source identity.
+
+    The owner-prefixed fallback is used only when an existing slug names a
+    *different* upstream. A second collision must fail closed, not overwrite.
+    """
+    canonical = repository.casefold().strip("/")
+    slug = slugify_project(project)
+    for candidate in (slug, f"{slugify_project(canonical.split('/')[0])}-{slug}"):
+        path = root / "assessments" / f"{candidate}.md"
+        if not path.exists():
+            return f"assessments/{candidate}.md", "new"
+        text = path.read_text(encoding="utf-8")
+        match = re.search(r"(?m)^repository:\s*https?://github\.com/([^\s#]+)", text)
+        if match and match.group(1).casefold().strip("/") == canonical:
+            return f"assessments/{candidate}.md", "existing"
+    raise PreflightError(
+        f"assessment slug collision for {project!r} ({repository}); "
+        f"both base and owner-qualified paths are already occupied"
+    )
+
+
 def _request_json(url: str, token: str | None = None) -> Any:
     headers = {
         "Accept": "application/vnd.github+json",
@@ -161,8 +183,7 @@ def build_envelope(
         )
 
     profile, methodology = read_active_contract(contract_path)
-    assessment_path = f"assessments/{slugify_project(candidate_project)}.md"
-    state = "existing" if (root / assessment_path).exists() else "new"
+    assessment_path, state = resolve_assessment_path(root, candidate_project, repository)
 
     return TaskEnvelope(
         issue_number=issue_number,
