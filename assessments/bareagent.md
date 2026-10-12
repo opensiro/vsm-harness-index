@@ -103,6 +103,16 @@ The root coding agent controls tool selection during a local developer task. In 
 - Confidence: medium: meaningful current-control reachability is clear; a live multi-worker strategy adaptation trace has not been independently reproduced
 - Caveats: Default solo mode is only one S1 and does not exercise a team-level S3. Positive S3 is credited to the documented first-party team mode, not the bare presence of a queue or generic model planning.
 
+
+### S3 ownership mode matrix
+
+| Mode | Decisive owner | Trigger | Closure | Evidence |
+| --- | --- | --- | --- | --- |
+| Base (`A`) | Root model managing multiple running autonomous teammate S1 workers | team_list and task_list status, worker responses, current staffing/task needs | Model selects team_spawn/team_send/team_shutdown or changes tasks; handlers update team commitments and the following worker execution | [team/task tools](https://github.com/525300887039/BareAgent/blob/1dfd1057d372e872f54c0a666f375dce2bc11a26/src/bareagent/core/tools.py), [live handlers](https://github.com/525300887039/BareAgent/blob/1dfd1057d372e872f54c0a666f375dce2bc11a26/src/bareagent/main.py) |
+| Parent (`P`) | Human REPL operator | /team list and task inspection plus explicit change of active team obligations | Operator chooses send/spawn/shutdown/task change; standard first-party handlers change subsequent background worker execution | [REPL /team operator mode](https://github.com/525300887039/BareAgent/blob/1dfd1057d372e872f54c0a666f375dce2bc11a26/src/bareagent/main.py) |
+
+The alternative modes do not claim simultaneous dual ownership. This S3 mapping applies to the shipped multi-teammate operating mode rather than standalone solo operation.
+
 ## S3* — Complementary audit
 
 - Function: No operationally guaranteed complementary independent audit of claims about teammate execution with a return to whole-current control was established.
@@ -165,15 +175,6 @@ The root coding agent controls tool selection during a local developer task. In 
 - Surfaces inspected: Tool authorization, role configuration, config hierarchy, user command controls, contributor governance outside runtime.
 - Plausible first-party paths checked: Ultimate-policy disputes, legitimate S5 choice, and specific identity-level return into the operating team.
 - Why no material first-party path remains: Available rights govern tools and teammate execution; no operational constitutional policy/identity adjudication path is supplied.
-## S3 mode matrix
-
-| First-party mode | Decisive owner | Trigger | Closure / return | Primary evidence |
-| --- | --- | --- | --- | --- |
-| Autonomous `A` | Root model acting over multiple background teammate S1 workers | Tool-invoked team list/task list, subordinate response or model-chosen staffing/task intervention | Root chooses task creation/change, team_send/spawn/shutdown; actual handler updates active workers/tasks and returns observations to model | [team/task schemas](https://github.com/525300887039/BareAgent/blob/1dfd1057d372e872f54c0a666f375dce2bc11a26/src/bareagent/core/tools.py), [team handlers](https://github.com/525300887039/BareAgent/blob/1dfd1057d372e872f54c0a666f375dce2bc11a26/src/bareagent/main.py), [worker loop](https://github.com/525300887039/BareAgent/blob/1dfd1057d372e872f54c0a666f375dce2bc11a26/src/bareagent/team/autonomous.py) |
-| Parent `P` | Legitimate human REPL operator | `/team list`, `/team send`, `/team spawn`, `/team shutdown`, task commands | Operator reads running roster/task state, makes current intervention and the same first-party handlers change worker commitments/lifecycle | [/team command path](https://github.com/525300887039/BareAgent/blob/1dfd1057d372e872f54c0a666f375dce2bc11a26/src/bareagent/main.py), [team operator mode](https://github.com/525300887039/BareAgent/blob/1dfd1057d372e872f54c0a666f375dce2bc11a26/docs/guide/ch10-team.md) |
-
-The two modes are not asserted to occur simultaneously. Agentic current-control is present only when a root model manages an actual multi-S1 team; standalone solo-mode work remains S1.
-
 ## Recursion
 
 A root agent with concurrently running background teammates is a first-party team organization. Workers are autonomous S1s at the declared recursion; within a delegated worker, local tool execution is an operative loop at a lower task recursion. TaskManager collision regulation and root team controls are mapped at the multi-teammate organization boundary, not inflated from isolated tools. The repo's `.trellis` contributor planning infrastructure is a different development context and is not counted as runtime management.
