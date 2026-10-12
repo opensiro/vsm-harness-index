@@ -207,6 +207,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="hermes-agent"></a>[Hermes Agent](https://github.com/NousResearch/hermes-agent) | 2025-Q3 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 5 | <a id="continual-harness"></a>[Continual Harness](https://github.com/sethkarten/continual-harness) | 2025-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="trpc-agent-go"></a>[tRPC-Agent-Go](https://github.com/trpc-group/trpc-agent-go) | 2025-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C — — A(P) —` |
+| 5 | <a id="deepcode"></a>[DeepCode](https://github.com/HKUDS/DeepCode) | 2025-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025-Q1 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 5 | <a id="claude-code"></a>[Claude Code](https://github.com/anthropics/claude-code) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="worldgui"></a>[WorldGUI-Agent](https://github.com/showlab/WorldGUI) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
