@@ -527,3 +527,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 512|bareagent|BareAgent|https://github.com/525300887039/BareAgent|2026-04-01T16:27:34Z|index-addition|1dfd1057d372e872f54c0a666f375dce2bc11a26|2026-09-28
 513|travis234|Travis234|https://github.com/taikkyithar/travis234|2026-08-07T07:56:50Z|index-addition|97aff8b174fe95064b390f30da07093b33de3c0b|2026-09-28
 514|forcecode|ForceCode|https://github.com/samansarmasik-alt/forcecode|2026-07-17T10:00:51Z|index-addition|518672e170f570f59c2d2abdeb4b5cf148e1603b|2026-09-28
+515|lean-coder|lean-coder|https://github.com/codemonkeying/lean-coder|2026-07-04T01:42:37Z|index-addition|f143f85344c0b0e5b3dcb68b5a1f884ac1c5ec63|2026-09-28
