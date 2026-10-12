@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: ?
@@ -77,7 +77,7 @@ An ordinary task is one agentic operating unit: external prompt/goals and page o
 - Evidence: [skyvern/services/workflow_run_group_service.py](https://github.com/Skyvern-AI/skyvern/blob/f5f3f28a9ce0021a1db24286928a7bff6582a1eb/skyvern/services/workflow_run_group_service.py#L322-L355); [skyvern/services/workflow_run_group_service.py](https://github.com/Skyvern-AI/skyvern/blob/f5f3f28a9ce0021a1db24286928a7bff6582a1eb/skyvern/services/workflow_run_group_service.py#L504-L608); [skyvern/forge/sdk/executor/background_task_executor.py](https://github.com/Skyvern-AI/skyvern/blob/f5f3f28a9ce0021a1db24286928a7bff6582a1eb/skyvern/forge/sdk/executor/background_task_executor.py#L762-L912).
 - Basis: structural
 - Confidence: medium
-- Caveats: Scope is the optional serial group mode only. Recheck that the conflict is organizational inter-S1 interference rather than solely transport-level duplicate-delivery protection before canonical admission.
+- Caveats: Scope is the optional serial group mode only. The credited S2 interference is limited to active overlapping child runs within the shipped serial run-group mode, not generic task queueing or idempotency outside it.
 
 ## S3 — Inside-and-now control
 - State: ?
