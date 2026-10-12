@@ -454,6 +454,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agent-zero"></a>[Agent Zero](https://github.com/agent0ai/agent-zero) | 2024-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swe-agent"></a>[SWE-agent](https://github.com/SWE-agent/SWE-agent) | 2024-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="stagehand"></a>[Stagehand](https://github.com/browserbase/stagehand) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="devika"></a>[Devika](https://github.com/stitionai/devika) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="praisonai"></a>[PraisonAI](https://github.com/MervinPraison/PraisonAI) | 2024-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="openhands"></a>[OpenHands](https://github.com/OpenHands/OpenHands) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="skyvern"></a>[Skyvern](https://github.com/Skyvern-AI/skyvern) | 2024-Q1 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
