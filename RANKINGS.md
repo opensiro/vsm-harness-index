@@ -157,6 +157,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="leviath"></a>[Leviath](https://github.com/GEMISIS/leviath) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C(P) A — —` |
 | 5 | <a id="superharness"></a>[superharness](https://github.com/artificemachine/superharness) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
 | 5 | <a id="easy-agent"></a>[Easy Agent](https://github.com/vietor/easy-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
+| 5 | <a id="kairocode"></a>[KairoCode](https://github.com/yangf-Veda/KairoCode) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 1 | `A — A ? — —` |
 | 5 | <a id="agent-harness"></a>[Agent Harness](https://github.com/0xenzyme/agent-harness) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 2 | `A ? A ? — —` |
 | 5 | <a id="bharatcode"></a>[BharatCode](https://github.com/arbazkhan971/bharatcode-cli) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C A C — —` |
 | 5 | <a id="crabot"></a>[Crabot](https://github.com/J-F-Liu/crabot) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A — P A — P` |
