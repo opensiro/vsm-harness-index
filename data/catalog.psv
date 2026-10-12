@@ -546,3 +546,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 531|earthwalker17-agent-os|Agent OS (earthwalker17)|https://github.com/earthwalker17/agent-os|2026-04-30T18:42:11Z|index-addition|59833d3f436bd1fd842860af2aa1c081d4b20363|2026-09-20
 532|capstan|Capstan|https://github.com/theStrangeAdventurer/capstan|2026-07-24T05:22:27Z|index-addition|60f284fc94ce96d05e72b52d2ffe55b4096b0177|2026-09-28
 533|kai-linux-agent-os|Agent-OS (kai-linux)|https://github.com/kai-linux/agent-os|2026-03-16T18:56:37Z|index-addition|d7330ebc5e117f06df1fdf23118af8da2c327507|2026-09-20
+534|agent-harness|Agent Harness|https://github.com/0xenzyme/agent-harness|2026-06-21T08:25:12Z|index-addition|0c30ff12476898543246912a3d49d653ae86b874|2026-09-20
