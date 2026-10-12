@@ -126,6 +126,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="atlas-agent"></a>[Atlas Agent](https://github.com/Omerfaruk-aydn/Atlas-Agent) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C — A — —` |
 | 5 | <a id="primusclaw"></a>[PrimusClaw](https://github.com/AMD-AGI/PrimusClaw) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C — A —` |
 | 5 | <a id="pibot"></a>[pibot](https://github.com/glebis/pibot) | 2026-Q3 | 2/6 | 1/5 | 1 | 3 | 0 | `A — P C A(P) P` |
+| 5 | <a id="shelracode"></a>[ShelraCode](https://github.com/Shelra/ShelraCode) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="mission-control"></a>[Mission Control](https://github.com/CosmonautJones/mission-control) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — C(P) A — —` |
 | 5 | <a id="beagle"></a>[Beagle](https://github.com/SalesforceAIResearch/Beagle) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
 | 5 | <a id="pi-harness"></a>[Pi-Harness](https://github.com/wangmiaozero/pi-harness) | 2026-Q3 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
