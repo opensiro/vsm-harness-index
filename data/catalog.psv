@@ -543,3 +543,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 528|deepcode|DeepCode|https://github.com/HKUDS/DeepCode|2025-05-14T05:23:02Z|index-addition|2b223c13fd36a574157751e3812c1cdebd8921c6|2026-09-20
 529|open-swe|Open SWE|https://github.com/langchain-ai/open-swe|2025-05-21T21:44:24Z|index-addition|d0e0fe3ef76f2d84f49ac222f5274be6e60eb7b5|2026-09-20
 530|mini-swe-agent|mini-swe-agent|https://github.com/SWE-agent/mini-swe-agent|2025-06-28T20:18:15Z|index-addition|04d809ceab9df28f9adaed044884180159172930|2026-09-20
+531|earthwalker17-agent-os|Agent OS (earthwalker17)|https://github.com/earthwalker17/agent-os|2026-04-30T18:42:11Z|index-addition|59833d3f436bd1fd842860af2aa1c081d4b20363|2026-09-20
