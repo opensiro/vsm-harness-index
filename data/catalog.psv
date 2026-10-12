@@ -541,3 +541,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 526|claw-code|Claw Code|https://github.com/ultraworkers/claw-code|2026-03-31T08:58:08Z|index-addition|08106b0c3771ef5b4a5aa176acccd460e88b7325|2026-09-20
 527|devika|Devika|https://github.com/stitionai/devika|2024-03-21T03:03:21Z|index-addition|80bb343cbe4a4e5f5a0ba08d2524920139baceb6|2026-09-20
 528|deepcode|DeepCode|https://github.com/HKUDS/DeepCode|2025-05-14T05:23:02Z|index-addition|2b223c13fd36a574157751e3812c1cdebd8921c6|2026-09-20
+529|open-swe|Open SWE|https://github.com/langchain-ai/open-swe|2025-05-21T21:44:24Z|index-addition|d0e0fe3ef76f2d84f49ac222f5274be6e60eb7b5|2026-09-20
