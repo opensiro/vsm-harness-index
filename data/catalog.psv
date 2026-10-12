@@ -522,3 +522,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 507|venux-code|Venux Code|https://github.com/venux/venux-code|2026-06-22T19:40:41Z|index-addition|598ef18a3f3372be0178693af69748f0049058ca|2026-09-28
 508|moss-agent|moss-agent|https://github.com/peterxiemin/moss-agent|2026-08-02T02:50:07Z|index-addition|82fe64446e88af07b5ed397f365be721fca4da49|2026-09-28
 509|visvoai|VisvoAI|https://github.com/VisvoAI/visvoai|2026-06-21T23:33:01Z|index-addition|25602903497dfeca8a4d7e654467ab046e32071c|2026-09-28
+510|termcoder|Termcoder|https://github.com/nattergabriel/termcoder|2026-05-15T22:35:17Z|index-addition|c642c36e8d65ca42a8ae05172c527f73cb2017d7|2026-09-28
