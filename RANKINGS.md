@@ -335,6 +335,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="octopus"></a>[Octopus](https://github.com/zwpdbh/octopus-in-rust) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="open-code-review"></a>[OpenCodeReview](https://github.com/alibaba/open-code-review) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="peezy"></a>[Peezy](https://github.com/p0systems/peezy-cli) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="zap"></a>[Zap](https://github.com/zap-coding-agent/zap-coding-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hashcortx"></a>[HashCortX](https://github.com/Hash-7777/HashCortX) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="termcoder"></a>[Termcoder](https://github.com/nattergabriel/termcoder) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cascaide-ts"></a>[cascaide-ts](https://github.com/Airavat-Research/cascaide-ts) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
