@@ -559,3 +559,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 544|hax|Hax|https://github.com/OleksandrChekhovskyi/hax|2026-04-24T12:12:50Z|index-addition|6753f30e5f79c01b47925f690b90daaa4630b409|2026-09-28
 545|tura|Tura|https://github.com/Tura-AI/tura|2026-07-06T13:58:44Z|index-addition|81fc96729115c85bd5be3e6f6b6a13893d4065c5|2026-09-28
 546|zero|Zero|https://github.com/Gitlawb/zero|2026-05-28T14:11:35Z|index-addition|99721c762f37cd43ac511007a5f51d1846df959e|2026-09-28
+547|agent-code|Agent Code|https://github.com/avala-ai/agent-code|2026-03-31T17:51:18Z|index-addition|2734ab5f18939b20c774b39c4406788383e35255|2026-09-28
