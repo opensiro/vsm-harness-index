@@ -560,3 +560,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 545|tura|Tura|https://github.com/Tura-AI/tura|2026-07-06T13:58:44Z|index-addition|81fc96729115c85bd5be3e6f6b6a13893d4065c5|2026-09-28
 546|zero|Zero|https://github.com/Gitlawb/zero|2026-05-28T14:11:35Z|index-addition|99721c762f37cd43ac511007a5f51d1846df959e|2026-09-28
 547|agent-code|Agent Code|https://github.com/avala-ai/agent-code|2026-03-31T17:51:18Z|index-addition|2734ab5f18939b20c774b39c4406788383e35255|2026-09-28
+548|zap|Zap|https://github.com/zap-coding-agent/zap-coding-agent|2026-05-16T09:23:50Z|index-addition|9812a142b1d12c894c98a6f5d08cc776ecc760da|2026-09-28
