@@ -346,6 +346,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="asi-code"></a>[ASI Code](https://github.com/AloneMath/ASI-Code) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 2 | `A ? ? — — —` |
 | 6 | <a id="forja"></a>[Forja](https://github.com/lex0c/forja) | 2026-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="rho"></a>[rho](https://github.com/crustyrustacean/rho-coding-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
+| 6 | <a id="hax"></a>[Hax](https://github.com/OleksandrChekhovskyi/hax) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="reasonix"></a>[Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="sjmun09-harness"></a>[Harness](https://github.com/sjMun09/Harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="browser-harness"></a>[Browser Harness](https://github.com/browser-use/browser-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
