@@ -79,6 +79,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="helpofai"></a>[HelpOfAi](https://github.com/helpofai/HelpOfAi-Cli) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="tianshu-harness"></a>[Tianshu Harness](https://github.com/huiliyi37/Tianshu-harness) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="inferoa"></a>[Inferoa](https://github.com/agentic-in/inferoa) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
+| 4 | <a id="zero"></a>[Zero](https://github.com/Gitlawb/zero) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="continuum"></a>[Continuum](https://github.com/shyftlabs/continuum) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="raven"></a>[Raven](https://github.com/EverMind-AI/Raven) | 2026-Q2 | 3/6 | 2/5 | 2 | 2 | 0 | `A C A(P) C A P` |
 | 4 | <a id="exo"></a>[Exo](https://github.com/exoharness/exo) | 2026-Q2 | 3/6 | 2/5 | 0 | 3 | 0 | `A — P — A(P) A(P)` |
