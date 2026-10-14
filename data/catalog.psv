@@ -562,3 +562,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 547|agent-code|Agent Code|https://github.com/avala-ai/agent-code|2026-03-31T17:51:18Z|index-addition|2734ab5f18939b20c774b39c4406788383e35255|2026-09-28
 548|zap|Zap|https://github.com/zap-coding-agent/zap-coding-agent|2026-05-16T09:23:50Z|index-addition|9812a142b1d12c894c98a6f5d08cc776ecc760da|2026-09-28
 549|whycodes|WhyCodes|https://github.com/whycorporation/whycodes|2026-07-09T20:50:07Z|index-addition|ef5126824739673d93815b29456ba3e5bdddf87c|2026-09-28
+550|agent-mission-control|Agent Mission Control|https://github.com/ipanalytics/Agent-Mission-Control|2026-07-02T07:07:30Z|index-addition|0fe9acd4807b149a5c9c07390d195b95ffa87780|2026-10-06

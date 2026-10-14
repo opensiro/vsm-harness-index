@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-14
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: —
 
 # Agent Mission Control
 
-**Proposed canonical outcome (not yet admitted):** `excluded-no-agentic-vsm`. This is a source-first proposal for [Index batch #1537](https://github.com/opensiro/vsm-harness-index/issues/1537), row 1, frozen from intake #1281.
+**Canonical disposition:** `excluded-no-agentic-vsm`. This is the reviewed source-first disposition for [Index batch #1537](https://github.com/opensiro/vsm-harness-index/issues/1537), row 1, frozen from intake #1281.
 
 ## Review boundary
 
@@ -206,4 +207,4 @@ Human-set contract constraints reduce file and command variety. Check failures a
 
 ## Publication
 
-This file is **proposed**, not canonical. Review and canonical exclusion must use separate Index PRs; no catalog, signature, ranking or corpus claim is changed by this proposal.
+This file is **canonical** after the separate admission PR merges; review was published in PR #1538. Its exclusion is recorded in the catalog/projections without creating any included-corpus signature or rank.
