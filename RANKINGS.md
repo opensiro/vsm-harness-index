@@ -77,6 +77,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="relaycli"></a>[RelayCLI](https://github.com/joshuasetiawann/relaycli) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A P A — —` |
 | 4 | <a id="waveloom"></a>[Waveloom](https://github.com/Menfre01/waveloom) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="helpofai"></a>[HelpOfAi](https://github.com/helpofai/HelpOfAi-Cli) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
+| 4 | <a id="pythinker-code"></a>[Pythinker Code](https://github.com/PyModel/pythinker-code) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="tianshu-harness"></a>[Tianshu Harness](https://github.com/huiliyi37/Tianshu-harness) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="inferoa"></a>[Inferoa](https://github.com/agentic-in/inferoa) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="zero"></a>[Zero](https://github.com/Gitlawb/zero) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
