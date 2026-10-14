@@ -179,6 +179,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="life-harness"></a>[Life-Harness](https://github.com/Tianshi-Xu/Life-Harness) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
 | 5 | <a id="openseek"></a>[OpenSeek](https://github.com/moonbitlang/openseek) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="deep-code"></a>[deep-code](https://github.com/liwenka1/deep-code) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="wrongstack"></a>[WrongStack](https://github.com/WrongStack/WrongStack) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 2 | `A C A ? ? —` |
 | 5 | <a id="astro-code"></a>[Astro Code](https://github.com/Aliivihu786/astro-code) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 1 | `A C A ? — —` |
 | 5 | <a id="alysis-code"></a>[Alysis Code](https://github.com/AlysisAi/alysis-code) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
