@@ -20,7 +20,7 @@ This backlog is **experiment-local and non-canonical**. Completion here does not
   feedback closes into later operation
   ```
 
-  For Raven, use Index PR #939 as the current provisional experiment input:
+  Raven is now a canonical Index input after merged PR #939:
 
   ```text
   S1=A / S2=C / S3=A(P) / S3*=C / S4=A / S5=P
@@ -30,7 +30,7 @@ This backlog is **experiment-local and non-canonical**. Completion here does not
 
   Initial Raven trials:
 
-  - [ ] `Raven + Maestro` — primary S2 ownership-lift trial. Maestro's model-driven moderator should own which Raven workers run/continue while Raven's read-ledger stale-edit guard remains deterministic enforcement.
+  - [ ] `Raven + Maestro` — primary S2 ownership-lift trial. Maestro's model-driven moderator should own which Raven workers run/continue while Raven's read-ledger stale-edit guard remains deterministic enforcement. Preregistered as [Trial 001](trials/001-raven-maestro-s2/CONTRACT.md), governed by Index issue #950. Execution is fail-closed on proving a real Raven↔Maestro participant seam.
   - [ ] `Raven + redteam reviewer` — primary S3* ownership-lift trial. A distinct reviewer should inspect actual Raven-produced branch evidence and return a binding `APPROVED` / `CHANGES_REQUESTED` / escalation verdict into Raven current control; Raven's Harness Manifest remains complementary machine evidence.
   - [ ] `Raven + Maestro + Grit` — S2 separation trial: Maestro owns the coordination decision, while Grit adds claim/worktree/merge enforcement below it. Compare with Raven's native stale-edit guard rather than assuming multiple C mechanisms automatically improve S2.
   - [ ] `Raven + Maestro + redteam reviewer` — combined two-function trial only after the single-function S2 and S3* loops close independently.

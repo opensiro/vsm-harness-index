@@ -1,0 +1,22 @@
+{
+  "trial_id": "001-raven-maestro-s2",
+  "status": "preregistered",
+  "governing_issue": "https://github.com/opensiro/vsm-harness-index/issues/950",
+  "components": {
+    "raven": {
+      "repository": "https://github.com/EverMind-AI/Raven",
+      "revision": "e6c0344cb7ce00db25d554e4bb671ec1909a8f9f",
+      "catalog_position": 316,
+      "standalone_s2": "C",
+      "canonical_admission_pr": "https://github.com/opensiro/vsm-harness-index/pull/939"
+    },
+    "maestro": {
+      "repository": "https://github.com/RunMaestro/Maestro",
+      "revision": "32ecbc14fe832138e9a7af4f263d1026a8aa8a5b",
+      "catalog_position": 128,
+      "standalone_s2": "A"
+    }
+  },
+  "adapter": null,
+  "finding": null
+}
