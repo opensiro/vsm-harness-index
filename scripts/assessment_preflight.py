@@ -27,6 +27,11 @@ BOARD_ROW = re.compile(
     r"^\|\s*(?P<row>\d+)\s*\|\s*(?P<project>[^|]+?)\s*\|\s*`(?P<ref>[0-9a-f]{40})`\s*\|\s*\*\*?NEXT\*\*?\s*\|\s*$",
     re.MULTILINE | re.IGNORECASE,
 )
+# Only an actual Markdown board heading starts a superseding snapshot.
+# A checkpoint merely mentioning "Manual assessment board" is not one.
+BOARD_HEADING = re.compile(
+    r"(?im)^ {0,3}#{1,6}[ \t]+Manual assessment board(?:[ \t]*(?:[—–:-][^\n]*)?)?[ \t]*$"
+)
 CANDIDATE_ROW = re.compile(
     r"^\|\s*(?P<row>\d+)\s*\|\s*(?P<project>[^|]+?)\s*\|\s*`(?P<repository>[^`|]+/[^`|]+)`\s*\|\s*`(?P<ref>[0-9a-f]{40})`\s*\|",
     re.MULTILINE,
@@ -72,6 +77,28 @@ def slugify_project(project: str) -> str:
     return slug
 
 
+def resolve_assessment_path(root: Path, project: str, repository: str) -> tuple[str, str]:
+    """Disambiguate same-label repositories without changing frozen source identity.
+
+    The owner-prefixed fallback is used only when an existing slug names a
+    *different* upstream. A second collision must fail closed, not overwrite.
+    """
+    canonical = repository.casefold().strip("/")
+    slug = slugify_project(project)
+    for candidate in (slug, f"{slugify_project(canonical.split('/')[0])}-{slug}"):
+        path = root / "assessments" / f"{candidate}.md"
+        if not path.exists():
+            return f"assessments/{candidate}.md", "new"
+        text = path.read_text(encoding="utf-8")
+        match = re.search(r"(?m)^repository:\s*https?://github\.com/([^\s#]+)", text)
+        if match and match.group(1).casefold().strip("/") == canonical:
+            return f"assessments/{candidate}.md", "existing"
+    raise PreflightError(
+        f"assessment slug collision for {project!r} ({repository}); "
+        f"both base and owner-qualified paths are already occupied"
+    )
+
+
 def _request_json(url: str, token: str | None = None) -> Any:
     headers = {
         "Accept": "application/vnd.github+json",
@@ -112,7 +139,7 @@ def extract_next_row(texts: list[str]) -> tuple[int, str, str]:
     # rows. Only the newest board is authoritative. Falling back through old
     # snapshots after a terminal board would resurrect a completed row.
     latest_board = next(
-        (text for text in reversed(texts) if "Manual assessment board" in text),
+        (text for text in reversed(texts) if BOARD_HEADING.search(text)),
         None,
     )
     if latest_board is None:
@@ -156,8 +183,7 @@ def build_envelope(
         )
 
     profile, methodology = read_active_contract(contract_path)
-    assessment_path = f"assessments/{slugify_project(candidate_project)}.md"
-    state = "existing" if (root / assessment_path).exists() else "new"
+    assessment_path, state = resolve_assessment_path(root, candidate_project, repository)
 
     return TaskEnvelope(
         issue_number=issue_number,

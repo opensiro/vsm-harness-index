@@ -6,6 +6,7 @@ VSM Harness Index is the evidence-backed corpus of real agent-harness assessment
 
 - **Web overview:** [opensiro.com](https://opensiro.com)
 - **Repository statistics:** [Corpus metrics](METRICS.md)
+- **GitHub stars histogram:** [Popularity snapshot](analytics/github-stars.md) (external, non-canonical)
 - **How do I contribute?** [Contribute to OpenSiro with AI](https://github.com/opensiro/vsm-oss-organization/blob/main/CONTRIBUTE_WITH_AI.md)
 
 You can browse assessments, corpus views, and provenance directly without first learning the OpenSiro control structure. The contribution guide gives you a copy-paste route for handing an idea, issue, or open-ended contribution to an AI agent.
@@ -65,9 +66,9 @@ assessments/<harness_id>.md
 
 | Included | Catalog | Reassessments | Full-A |
 | ---: | ---: | ---: | ---: |
-| **449** | 488 | 88 | 1 |
+| **519** | 562 | 88 | 2 |
 
-**Next corpus milestone:** 449/500 (89.8%).
+**Next corpus milestone:** 519/1000 (51.9%).
 
 Active semantic contract: **Profile 0.2.4 / Methodology 0.3.7**.
 
@@ -93,6 +94,8 @@ A signature may change when an earlier comparison item is admitted or corrected.
 `TLDR.md` is the materialized public view of those signatures.
 
 ## Rankings and derived views
+
+For a non-canonical, date-inferred breakdown of ChatGPT Chat model eras used in assessment production, see [Assessment by model era](analytics/assessed-by-model.md). This is not per-run model attestation.
 
 `RANKINGS.md`, `FULL_A.md`, metrics, and analytics are deterministic materializations from canonical Index data under the active Methodology projection rules.
 

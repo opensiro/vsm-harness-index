@@ -127,7 +127,7 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 126|lobehub|LobeHub|https://github.com/lobehub/lobehub|2023-05-21T07:19:12Z|adapted-source|3af256caae11796da471bec5f57d882853f30f19|2026-09-18
 127|parlant|Parlant|https://github.com/emcie-co/parlant|2024-02-15T20:16:15Z|adapted-source|ea737442b8ae65854a842542e544fbe7e6144bad|2026-09-18
 128|maestro|Maestro|https://github.com/RunMaestro/Maestro|2025-11-23T01:59:55Z|adapted-source|32ecbc14fe832138e9a7af4f263d1026a8aa8a5b|2026-09-18
-129|henterprise|Henterprise|https://github.com/humbertobellor/henterprise|2026-09-09T02:47:28Z|index-addition|0bd56397676462e216f92b5b7800919a3597a99a|2026-09-19
+129|henterprise|Henterprise|https://github.com/humbertobellor/henterprise|2026-09-09T02:47:28Z|index-addition|193e8fdac0d17abf833ab68e5179b273a6084e4c|2026-10-11
 130|buzz|Buzz|https://github.com/block/buzz|2026-03-06T21:00:56Z|index-addition|8953cbfff58ed768d996677fed3af0e3bac64a20|2026-09-18
 131|gastown|Gas Town|https://github.com/gastownhall/gastown|2025-12-16T00:33:33Z|index-addition|649b832b7672bc7a2dbef26f5983aba6198b819b|2026-09-18
 132|voltagent|VoltAgent|https://github.com/VoltAgent/voltagent|2025-04-16T15:41:18Z|index-addition|44b4c8e4998ce56095b2f0e4eaf1a988f5e6d0de|2026-09-18
@@ -501,3 +501,77 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 486|micro|Micro|https://github.com/rmonvfer/micro|2026-08-14T11:39:50Z|index-addition|563dc1e6a6957cefbcfdd503fc5c4b754dfc5240|2026-09-28
 487|cassady|Cassady|https://github.com/owenqwenstarsky/cassady|2026-06-21T19:58:54Z|index-addition|1d3c354b8b92a7c3020a414ab510679459431556|2026-09-28
 488|rum|Rum|https://github.com/KAJdev/rum|2026-03-12T21:33:49Z|index-addition|9c00bdb35f2a55959d6e56bd0d27b9573aac6fdd|2026-09-28
+489|fuse|Fuse|https://github.com/ethanhinson/fuse|2026-08-04T00:34:30Z|index-addition|5991a3366e44b0a4587cf1ab6ce00daf70b9742b|2026-09-28
+490|ashcode|AshCode|https://github.com/AuthRan/AshCode|2026-07-29T06:32:41Z|index-addition|74f30ddac455175d4a18cb105a00ae1bde42cd69|2026-09-28
+491|agnostic-agent|agnostic-agent|https://github.com/ucsandman/agnostic-agent|2026-09-06T16:14:20Z|index-addition|8b1f4d85c9220822aacea3921a78c4c2f0c58491|2026-09-28
+492|self-improving-agent|self-improving-agent|https://github.com/xmaks82/self-improving-agent|2026-01-29T19:35:58Z|index-addition|fd59417b91292b48711410a91d2cbf3eaeb0c060|2026-09-28
+493|sjmun09-harness|Harness|https://github.com/sjMun09/Harness|2026-04-20T13:44:37Z|index-addition|c1bc066f5608167790d229f818d989a15a265ad4|2026-09-28
+494|impulse|Impulse|https://github.com/spenceriam/impulse|2026-01-20T03:17:38Z|index-addition|87f7019be3d73768baae8a1e330be436e1f167d4|2026-09-28
+495|oblivion-ai|Oblivion AI|https://github.com/Rohith-s-hub/Oblivion-agent|2026-06-23T16:20:38Z|index-addition|7c57fd23ddd9abb5a2795788364f5dcdf3ec87cb|2026-09-28
+496|rocinante|Rocinante|https://github.com/djynnius/rocinante|2026-07-08T04:33:15Z|index-addition|86aa7369bc775c583d46f8c3bb286c76d0401220|2026-09-28
+497|astro-code|Astro Code|https://github.com/Aliivihu786/astro-code|2026-05-11T09:23:18Z|index-addition|5aae2bddfc364bc492a8cae509b20eb94455560c|2026-09-28
+498|rabbit-code|rabbit-code|https://github.com/2456868764/rabbit-code|2026-04-01T05:34:09Z|index-addition|c49562fc92b7d6d6930e3ae5e49de8737c580b4f|2026-09-28
+499|deimos|Deimos|https://github.com/dxiv/dxa-deimos|2026-04-05T20:29:51Z|index-addition|933a20c064294cb84dafaae2fe0dae617eb44c48|2026-09-28
+500|luckycli|LuckyCLI|https://github.com/Fenix46/LuckyCLI|2026-05-28T15:45:10Z|index-addition|496c89124c9a349c36337df35df6581533e26581|2026-09-28
+501|aether|Aether|https://github.com/Aetherdz/aether|2026-08-09T07:46:49Z|index-addition|7476a0336bd47fa01dc2feb03d9572155395da47|2026-09-28
+502|atlas-agent|Atlas Agent|https://github.com/Omerfaruk-aydn/Atlas-Agent|2026-08-29T09:56:54Z|index-addition|3d0d63e20d9d2221be9a6e6ab4fc0350df5237f5|2026-09-28
+503|octopus|Octopus|https://github.com/zwpdbh/octopus-in-rust|2026-05-21T07:58:58Z|index-addition|88695f8e9209c76522d5943a2207751fd382dd43|2026-09-28
+504|bharatcode|BharatCode|https://github.com/arbazkhan971/bharatcode-cli|2026-06-20T14:46:45Z|index-addition|430e3047c705aa84762a8a46be4ff838cb159451|2026-09-28
+505|alysis-code|Alysis Code|https://github.com/AlysisAi/alysis-code|2026-05-08T20:02:23Z|index-addition|ff6682acb4a339dbbf9ce687c46374ce536ad641|2026-09-28
+506|sica|SICA|https://github.com/MaximeRobeyns/self_improving_coding_agent|2025-04-11T20:44:12Z|index-addition|ed8275dca4d3c5dbf77229964351fe9b424797dc|2026-09-28
+507|venux-code|Venux Code|https://github.com/venux/venux-code|2026-06-22T19:40:41Z|index-addition|598ef18a3f3372be0178693af69748f0049058ca|2026-09-28
+508|moss-agent|moss-agent|https://github.com/peterxiemin/moss-agent|2026-08-02T02:50:07Z|index-addition|82fe64446e88af07b5ed397f365be721fca4da49|2026-09-28
+509|visvoai|VisvoAI|https://github.com/VisvoAI/visvoai|2026-06-21T23:33:01Z|index-addition|25602903497dfeca8a4d7e654467ab046e32071c|2026-09-28
+510|termcoder|Termcoder|https://github.com/nattergabriel/termcoder|2026-05-15T22:35:17Z|index-addition|c642c36e8d65ca42a8ae05172c527f73cb2017d7|2026-09-28
+511|deepseekfathom|DeepSeekFathom|https://github.com/ffffff233/DeepSeekFathom|2026-06-02T02:08:21Z|index-addition|2c68eff7bb7ae2eabf4d36a0331386f06af2d356|2026-09-28
+512|bareagent|BareAgent|https://github.com/525300887039/BareAgent|2026-04-01T16:27:34Z|index-addition|1dfd1057d372e872f54c0a666f375dce2bc11a26|2026-09-28
+513|travis234|Travis234|https://github.com/taikkyithar/travis234|2026-08-07T07:56:50Z|index-addition|97aff8b174fe95064b390f30da07093b33de3c0b|2026-09-28
+514|forcecode|ForceCode|https://github.com/samansarmasik-alt/forcecode|2026-07-17T10:00:51Z|index-addition|518672e170f570f59c2d2abdeb4b5cf148e1603b|2026-09-28
+515|lean-coder|lean-coder|https://github.com/codemonkeying/lean-coder|2026-07-04T01:42:37Z|index-addition|f143f85344c0b0e5b3dcb68b5a1f884ac1c5ec63|2026-09-28
+516|stcode|stcode|https://github.com/Ming-doan/stcode|2026-08-14T02:47:33Z|index-addition|c8ea59204776d6ed1a4bbe395872f32027833905|2026-09-28
+517|skyvern|Skyvern|https://github.com/Skyvern-AI/skyvern|2024-02-28T15:45:19Z|index-addition|f5f3f28a9ce0021a1db24286928a7bff6582a1eb|2026-10-11
+518|superagi|SuperAGI|https://github.com/TransformerOptimus/SuperAGI|2023-05-13T08:55:24Z|index-addition|c3c1982e7bd6a11cfed53c5a193ea502f924b1b6|2026-10-11
+519|cli-agent-orchestrator|CLI Agent Orchestrator|https://github.com/awslabs/cli-agent-orchestrator|2025-07-29T14:16:56Z|index-addition|ffa9fc742c7d47ce038d3d951ccc5527ba0c0218|2026-10-11
+520|openhuman|OpenHuman|https://github.com/tinyhumansai/openhuman|2026-02-18T20:01:27Z|index-addition|eb4fdc0f4f4a036d8ab7c12bd52f16128e4a6b5d|2026-09-21
+521|shelracode|ShelraCode|https://github.com/Shelra/ShelraCode|2026-08-25T03:08:20Z|index-addition|45f87d1f7f71d5f6bba07405167893fa74d7c2a4|2026-09-28
+522|agentscope-2-0|AgentScope 2.0|https://github.com/agentscope-ai/agentscope|2024-01-12T03:41:59Z|index-addition|5ff52f877de12d66a30d55af279dd4f42b1590f3|2026-09-19
+523|grok-build|Grok Build|https://github.com/xai-org/grok-build|2026-07-14T20:04:23Z|index-addition|4247f661689354b831191f11eeeac8424993fe3d|2026-09-20
+524|zcode|ZCode|https://github.com/zai-org/ZCode|2026-09-20T12:01:16Z|index-addition|872ad960de7ec172591f7e1952f7849229f94521|2026-09-22
+525|swarms|Swarms|https://github.com/kyegomez/swarms|2023-05-11T01:09:00Z|index-addition|3009364a7e44dc3e55fec238b56b3a4fa6949a05|2026-09-21
+526|claw-code|Claw Code|https://github.com/ultraworkers/claw-code|2026-03-31T08:58:08Z|index-addition|08106b0c3771ef5b4a5aa176acccd460e88b7325|2026-09-20
+527|devika|Devika|https://github.com/stitionai/devika|2024-03-21T03:03:21Z|index-addition|80bb343cbe4a4e5f5a0ba08d2524920139baceb6|2026-09-20
+528|deepcode|DeepCode|https://github.com/HKUDS/DeepCode|2025-05-14T05:23:02Z|index-addition|2b223c13fd36a574157751e3812c1cdebd8921c6|2026-09-20
+529|open-swe|Open SWE|https://github.com/langchain-ai/open-swe|2025-05-21T21:44:24Z|index-addition|d0e0fe3ef76f2d84f49ac222f5274be6e60eb7b5|2026-09-20
+530|mini-swe-agent|mini-swe-agent|https://github.com/SWE-agent/mini-swe-agent|2025-06-28T20:18:15Z|index-addition|04d809ceab9df28f9adaed044884180159172930|2026-09-20
+531|earthwalker17-agent-os|Agent OS (earthwalker17)|https://github.com/earthwalker17/agent-os|2026-04-30T18:42:11Z|index-addition|59833d3f436bd1fd842860af2aa1c081d4b20363|2026-09-20
+532|capstan|Capstan|https://github.com/theStrangeAdventurer/capstan|2026-07-24T05:22:27Z|index-addition|60f284fc94ce96d05e72b52d2ffe55b4096b0177|2026-09-28
+533|kai-linux-agent-os|Agent-OS (kai-linux)|https://github.com/kai-linux/agent-os|2026-03-16T18:56:37Z|index-addition|d7330ebc5e117f06df1fdf23118af8da2c327507|2026-09-20
+534|agent-harness|Agent Harness|https://github.com/0xenzyme/agent-harness|2026-06-21T08:25:12Z|index-addition|0c30ff12476898543246912a3d49d653ae86b874|2026-09-20
+535|orchestra|Orchestra|https://github.com/DrSeedon/orchestra|2026-04-30T09:35:17Z|index-addition|72d48a93210c3cf12da91f7e693a4a6aae0e40f2|2026-09-20
+536|xoder|Xoder|https://github.com/BANGHlxbackout/Xoder|2026-08-06T08:33:10Z|index-addition|5a13d1cd4471cf95bb89befe2ac7634d93a610a7|2026-09-28
+537|cxagent|CXAgent|https://github.com/nickprotop/cxagent|2026-08-07T08:48:01Z|index-addition|e2b2551fc8897d5be5833441e9ec6e3c4e63cdf1|2026-09-28
+538|kairocode|KairoCode|https://github.com/yangf-Veda/KairoCode|2026-06-23T09:25:32Z|index-addition|018c74035de1354f69a92eda626ddbb210fbebcc|2026-09-28
+539|atomcode|AtomCode|https://github.com/karlorz/atomcode|2026-07-04T13:45:09Z|index-addition|152b2cc132dda9b177c3a030e21cfacd95494ea3|2026-09-28
+540|fx|FX|https://github.com/vercel-labs/fx|2026-08-11T08:57:04Z|index-addition|b8ca67ac4531e63be57520ccfb313626d9b17f2f|2026-09-28
+541|opencursor|OpenCursor|https://github.com/PawanOsman/OpenCursor|2022-12-06T16:39:11Z|index-addition|b4528f95ca5ab4cddf22bef3e19431fad00feb01|2026-09-28
+542|liumengxuan04-minicode|MiniCode|https://github.com/LiuMengxuan04/MiniCode|2026-03-31T16:13:54Z|index-addition|55dca55e13b7f34364893f3190914406be860b70|2026-09-28
+543|tianshu-harness|Tianshu Harness|https://github.com/huiliyi37/Tianshu-harness|2026-06-09T13:40:47Z|index-addition|6dbf1e0482cf5338b7587d029cbfadc3306b05f5|2026-09-28
+544|hax|Hax|https://github.com/OleksandrChekhovskyi/hax|2026-04-24T12:12:50Z|index-addition|6753f30e5f79c01b47925f690b90daaa4630b409|2026-09-28
+545|tura|Tura|https://github.com/Tura-AI/tura|2026-07-06T13:58:44Z|index-addition|81fc96729115c85bd5be3e6f6b6a13893d4065c5|2026-09-28
+546|zero|Zero|https://github.com/Gitlawb/zero|2026-05-28T14:11:35Z|index-addition|99721c762f37cd43ac511007a5f51d1846df959e|2026-09-28
+547|agent-code|Agent Code|https://github.com/avala-ai/agent-code|2026-03-31T17:51:18Z|index-addition|2734ab5f18939b20c774b39c4406788383e35255|2026-09-28
+548|zap|Zap|https://github.com/zap-coding-agent/zap-coding-agent|2026-05-16T09:23:50Z|index-addition|9812a142b1d12c894c98a6f5d08cc776ecc760da|2026-09-28
+549|whycodes|WhyCodes|https://github.com/whycorporation/whycodes|2026-07-09T20:50:07Z|index-addition|ef5126824739673d93815b29456ba3e5bdddf87c|2026-09-28
+550|agent-mission-control|Agent Mission Control|https://github.com/ipanalytics/Agent-Mission-Control|2026-07-02T07:07:30Z|index-addition|0fe9acd4807b149a5c9c07390d195b95ffa87780|2026-10-06
+551|ekuelkpodar-agent-control-plane|Agent Control Plane|https://github.com/ekuelkpodar/agent-control-plane|2026-09-14T18:19:20Z|index-addition|895283b28a2a7a69d5c7078002e5613720e1c97f|2026-10-06
+552|aevum|Aevum|https://github.com/aevum-labs/aevum|2026-04-22T23:15:13Z|index-addition|72a31ba909be20f41cf4ac9d587de30b5dda13f8|2026-10-06
+553|postal|Postal|https://github.com/andrefetch/postal|2026-06-26T02:37:41Z|index-addition|8631e85f01cd42d72470289c29ecb3c738a87f0d|2026-09-29
+554|openzot|OpenZot|https://github.com/openzot/openzot|2026-06-15T23:31:04Z|index-addition|d33ccbe444f25b45c708120d22f42eab961f6b9e|2026-09-29
+555|wrongstack|WrongStack|https://github.com/WrongStack/WrongStack|2026-05-12T23:57:23Z|index-addition|42d410f938ba644e70771e200f39903117507a72|2026-09-29
+556|wardayacode|WardayaCode|https://github.com/fawwazmw/wardayacode|2026-06-17T10:19:32Z|index-addition|e2758f09fc706669e5be7cdc1a0ca4e957f02058|2026-09-29
+557|scoot|scoot|https://github.com/sergenes/scootcli|2026-09-05T19:38:07Z|index-addition|b6712481f1ba8b1b5694713ee60fb33d1afd5771|2026-09-29
+558|errander|errander|https://github.com/EVAE-AL/errander|2026-09-19T07:20:23Z|index-addition|699f597971f13de9cf1f22b94a4c8177ad9c3863|2026-09-29
+559|terminal-native-coding-agent|terminal-native-coding-agent|https://github.com/RushilBuilds/terminal-native-coding-agent|2026-07-15T04:40:00Z|index-addition|5bf915097472aee9df4273845f9f8d1e33e22885|2026-09-29
+560|clai|clai|https://github.com/pentoshi007/clai|2026-05-05T10:21:04Z|index-addition|630d85f9eb7c2b5b3e499c503abf5834610c6939|2026-09-29
+561|firstcoder|FirstCoder|https://github.com/KomorGiaoGiao/FirstCoder|2026-05-19T12:19:35Z|index-addition|3856a10203bc21b8f78a7060be3a99bc44f2e0ac|2026-09-29
+562|pythinker-code|Pythinker Code|https://github.com/PyModel/pythinker-code|2026-06-17T21:39:06Z|index-addition|5c5a2053116c1e18c7e1e22710d846fc27945f08|2026-09-29
