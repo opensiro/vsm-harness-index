@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-14
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: —
 
 # Aevum
 
-**Proposed disposition, not yet canonical:** excluded-no-agentic-vsm. Frozen source-first review for Index batch #1537 row 3, originally intake #1281. The kernel owns real enforcement and evidence; it must not inherit the external agent's autonomous S1.
+**Canonical disposition:** excluded-no-agentic-vsm. Frozen source-first review for Index batch #1537 row 3, originally intake #1281. The kernel owns real enforcement and evidence; it must not inherit the external agent's autonomous S1.
 
 ## Review boundary
 
@@ -206,5 +207,5 @@ Hard barriers, consent, fail-closed human GOVERN checkpoints, capture-gap record
 
 ## Publication
 
-This is a proposed assessment only. The canonical disposition, catalog row and generated projections must be in a separate admission PR after review/CI. No included corpus/signature/rank change is implied.
+This assessment became canonical following merged review PR #1542 and a separate admission PR. It is excluded, with catalog and deterministic projections updated and without any included-corpus signature or rank.
 
