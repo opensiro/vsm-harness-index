@@ -483,6 +483,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="eliza"></a>[Eliza](https://github.com/elizaOS/eliza) | 2024-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="cline"></a>[Cline](https://github.com/cline/cline) | 2024-Q3 | 1/6 | 0/5 | 3 | 0 | 0 | `A C C C — —` |
 | 6 | <a id="pydantic-ai"></a>[Pydantic AI](https://github.com/pydantic/pydantic-ai) | 2024-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="covia"></a>[Covia](https://github.com/covia-ai/covia) | 2024-Q2 | 1/6 | 0/5 | 0 | 0 | 1 | `A — ? — — —` |
 | 6 | <a id="agent-zero"></a>[Agent Zero](https://github.com/agent0ai/agent-zero) | 2024-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swe-agent"></a>[SWE-agent](https://github.com/SWE-agent/SWE-agent) | 2024-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="stagehand"></a>[Stagehand](https://github.com/browserbase/stagehand) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
