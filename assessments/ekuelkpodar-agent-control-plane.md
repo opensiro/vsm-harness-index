@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-14
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: —
 
 # Agent Control Plane
 
-**Proposed canonical disposition:** `excluded-no-agentic-vsm`. Frozen source-first review for [batch #1537](https://github.com/opensiro/vsm-harness-index/issues/1537) row 2; canonical admission requires a separate PR and CI.
+**Canonical disposition:** `excluded-no-agentic-vsm`. Frozen source-first review for [batch #1537](https://github.com/opensiro/vsm-harness-index/issues/1537) row 2, reviewed and merged in PR #1540 with this separate canonical exclusion transaction.
 
 ## Review boundary
 
@@ -207,4 +208,4 @@ Policy, risk, budget, credential and human approval paths constrain operational 
 
 ## Publication
 
-`status: proposed` is not canonical. Review phase and canonical Index admission/exclusion must remain separate; no catalog, signature or rank may be changed by this proposal.
+`status: excluded-no-agentic-vsm` is canonical after this separate admission PR merges, with catalog and derived projections updated but no included-agent signature or rank.
