@@ -321,6 +321,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="cassady"></a>[Cassady](https://github.com/owenqwenstarsky/cassady) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rust-norion"></a>[rust-norion](https://github.com/yanghao1143/rust-norion) | 2026-Q2 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C — C(P) —` |
 | 6 | <a id="temporal-agent-harness"></a>[Temporal Agent Harness](https://github.com/temporal-community/temporal-agent-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A — C(P) — — —` |
+| 6 | <a id="wardayacode"></a>[WardayaCode](https://github.com/fawwazmw/wardayacode) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openzot"></a>[OpenZot](https://github.com/openzot/openzot) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="smolcode"></a>[Smolcode](https://github.com/seanpoyner/smolcode) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 3 | `A ? ? ? — —` |
 | 6 | <a id="autonomous-coding-agent"></a>[Autonomous Coding Agent](https://github.com/Quality-Max/autonomous-coding-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
