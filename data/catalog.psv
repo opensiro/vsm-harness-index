@@ -565,3 +565,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 550|agent-mission-control|Agent Mission Control|https://github.com/ipanalytics/Agent-Mission-Control|2026-07-02T07:07:30Z|index-addition|0fe9acd4807b149a5c9c07390d195b95ffa87780|2026-10-06
 551|ekuelkpodar-agent-control-plane|Agent Control Plane|https://github.com/ekuelkpodar/agent-control-plane|2026-09-14T18:19:20Z|index-addition|895283b28a2a7a69d5c7078002e5613720e1c97f|2026-10-06
 552|aevum|Aevum|https://github.com/aevum-labs/aevum|2026-04-22T23:15:13Z|index-addition|72a31ba909be20f41cf4ac9d587de30b5dda13f8|2026-10-06
+553|postal|Postal|https://github.com/andrefetch/postal|2026-06-26T02:37:41Z|index-addition|8631e85f01cd42d72470289c29ecb3c738a87f0d|2026-09-29

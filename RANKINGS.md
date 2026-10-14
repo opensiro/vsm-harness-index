@@ -160,6 +160,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="marspi-cli"></a>[Marspi CLI](https://github.com/mars01pi/marspi-cli) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 1 | `A — ? A — —` |
 | 5 | <a id="holt"></a>[Holt](https://github.com/holt-os/holt) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — P C A —` |
 | 5 | <a id="leviath"></a>[Leviath](https://github.com/GEMISIS/leviath) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C(P) A — —` |
+| 5 | <a id="postal"></a>[Postal](https://github.com/andrefetch/postal) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="superharness"></a>[superharness](https://github.com/artificemachine/superharness) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
 | 5 | <a id="easy-agent"></a>[Easy Agent](https://github.com/vietor/easy-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="kairocode"></a>[KairoCode](https://github.com/yangf-Veda/KairoCode) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 1 | `A — A ? — —` |
