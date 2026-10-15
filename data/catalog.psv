@@ -590,3 +590,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 575|bash-agent|bash-agent|https://github.com/lloydzhou/bash-agent|2026-04-10T14:07:53Z|index-addition|e0062d42f7016f40639a8e69070131d521194cc1|2026-09-28
 576|codeagent-harvil1|CodeAgent (Harvil1)|https://github.com/Harvil1/codeAgent|2026-10-02T05:15:41Z|index-addition|e48780be52949dfcf17338025f6beab48ca01428|2026-10-15
 577|nanocoder-haoyuzhang0214|NanoCoder (HaoyuZhang0214)|https://github.com/HaoyuZhang0214/NanoCoder|2026-10-09T15:05:35Z|index-addition|1ac25d166295ae9339fa4f96586d01a94b4f559e|2026-10-15
+578|openjiuwen-core|openJiuwen Core|https://github.com/openJiuwen-ai/agent-core|2026-02-26T08:50:35Z|index-addition|e23806c1073275780dced2b71ddd592ffb0a21fd|2026-09-21
