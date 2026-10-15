@@ -72,6 +72,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="dscode"></a>[DSCode](https://github.com/thinkany-ai/dscode) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="reigen"></a>[Reigen / Conductor](https://github.com/zachary-wilde/reigen) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
 | 4 | <a id="genesis-agent"></a>[Genesis Agent](https://github.com/me7ko-dev/genesis-agent) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C — A A —` |
+| 4 | <a id="qcode"></a>[QCode](https://github.com/fwtllh-png/QCode) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 1 | `A A A ? — —` |
 | 4 | <a id="hugagentos"></a>[HugAgentOS](https://github.com/ZJU-REAL/HugAgentOS) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A C — A — A(P)` |
 | 4 | <a id="forcecode"></a>[ForceCode](https://github.com/samansarmasik-alt/forcecode) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="aesop"></a>[Aesop](https://github.com/matt82198/aesop) | 2026-Q3 | 3/6 | 2/5 | 2 | 1 | 0 | `A C A C — A(P)` |
