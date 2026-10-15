@@ -248,6 +248,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="swarms"></a>[Swarms](https://github.com/kyegomez/swarms) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
+| 6 | <a id="nanocoder-haoyuzhang0214"></a>[NanoCoder (HaoyuZhang0214)](https://github.com/HaoyuZhang0214/NanoCoder) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cloud-coding-agent-node"></a>[Cloud Coding Agent Node](https://github.com/fred1433/cloud-coding-agent-node) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="raincode"></a>[RainCode](https://github.com/Rainmemery/RainCode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="autonomous-swe-platform"></a>[Autonomous SWE Platform](https://github.com/SurjitW/Autonomous-Software-Engineering-and-Coding-Agent-Platform) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |

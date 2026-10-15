@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -187,4 +187,4 @@ Static code review only; no provider credentials or benchmark runs used. Paralle
 
 ## Assessment summary
 
-**Proposed included**, source-first vector `S1=A / S2=— / S3=— / S3*=— / S4=— / S5=—`. This is distinct from CodeAgent's verified team-wide control/conditional-task ownership at its separate pinned revision. Proposal status is not canonical admission; Skills validation, Index checks, CI, and separate canonical admission remain required.
+**Canonical included**, source-first vector `S1=A / S2=— / S3=— / S3*=— / S4=— / S5=—`. This is distinct from CodeAgent's verified team-wide control/conditional-task ownership at its separate pinned revision. This canonical result follows source-first assessment, structural validation and separate proposal integration; capability performance is not inferred.
