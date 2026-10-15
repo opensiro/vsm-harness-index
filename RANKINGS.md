@@ -300,6 +300,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="qm"></a>[QM](https://github.com/yc-software/qm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ashcode"></a>[AshCode](https://github.com/AuthRan/AshCode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="clear-ideas-agent-runtime"></a>[Clear Ideas Agent Runtime](https://github.com/clearideas/agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
+| 6 | <a id="purrcode"></a>[PurrCode](https://github.com/Weilin0723/PurrCode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="actweave"></a>[ActWeave](https://github.com/chenow9/act-weave) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="trueforge"></a>[TrueForge](https://github.com/truefoundry/trueforge) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="truecoder"></a>[TrueCoder](https://github.com/Shivam583-hue/TrueCoder) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
