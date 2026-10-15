@@ -588,3 +588,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 573|forge-agent|Forge Agent|https://github.com/guoyang1982/forge-agent|2026-07-14T05:33:27Z|index-addition|9ee359b8f5a1cd172ad358b357238d2174dee12b|2026-09-28
 574|covalo|Covalo|https://github.com/bzcsk2/covalo|2026-05-29T07:09:14Z|index-addition|2521674d0f2295226ee5075d03c851387a6c5d9b|2026-09-28
 575|bash-agent|bash-agent|https://github.com/lloydzhou/bash-agent|2026-04-10T14:07:53Z|index-addition|e0062d42f7016f40639a8e69070131d521194cc1|2026-09-28
+576|codeagent-harvil1|CodeAgent (Harvil1)|https://github.com/Harvil1/codeAgent|2026-10-02T05:15:41Z|index-addition|e48780be52949dfcf17338025f6beab48ca01428|2026-10-15
