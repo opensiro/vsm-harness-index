@@ -580,3 +580,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 565|nvidia-nemo-guardrails|NVIDIA NeMo Guardrails|https://github.com/NVIDIA-NeMo/Guardrails|2023-04-18T12:32:47Z|index-addition|0e2efcb55a61ef3f7c875f55d54dc1bbc9ccc4a1|2026-10-15
 566|foe|Foe|https://github.com/pedapudi/foe|2026-08-21T05:43:09Z|index-addition|167455955b79ee31e7e8ac3c2ecfff40a6b14ec2|2026-09-28
 567|qcode|QCode|https://github.com/fwtllh-png/QCode|2026-07-25T14:38:48Z|index-addition|0807662a3bd41efe4e7fdf74b3d260971d9e1cf0|2026-09-28
+568|rigorix|Rigorix|https://github.com/arman-jalili/rigorix-oss|2026-06-13T05:28:27Z|index-addition|4700f60c6296542a1d36d3cea2318c1300549498|2026-09-28
