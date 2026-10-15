@@ -577,3 +577,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 562|pythinker-code|Pythinker Code|https://github.com/PyModel/pythinker-code|2026-06-17T21:39:06Z|index-addition|5c5a2053116c1e18c7e1e22710d846fc27945f08|2026-09-29
 563|covia|Covia|https://github.com/covia-ai/covia|2024-06-11T08:42:44Z|index-addition|8838132b99e91fc287ac7b2b4b7125c88e7adef2|2026-10-06
 564|openwop|OpenWOP|https://github.com/openwop/openwop|2026-05-11T03:42:40Z|index-addition|26e6deb5a3554c77f90ba338a8eb2f5244e136ce|2026-10-06
+565|nvidia-nemo-guardrails|NVIDIA NeMo Guardrails|https://github.com/NVIDIA-NeMo/Guardrails|2023-04-18T12:32:47Z|index-addition|0e2efcb55a61ef3f7c875f55d54dc1bbc9ccc4a1|2026-10-15
