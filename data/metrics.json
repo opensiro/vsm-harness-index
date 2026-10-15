@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-09-29",
+  "snapshot_date": "2026-10-15",
   "corpus": {
-    "included_assessments": 449,
-    "canonical_assessments": 488,
-    "excluded_assessments": 39,
-    "proposed_assessments": 14,
-    "catalog_entries": 488,
-    "catalog_entries_without_included_assessment": 39,
+    "included_assessments": 532,
+    "canonical_assessments": 577,
+    "excluded_assessments": 45,
+    "proposed_assessments": 12,
+    "catalog_entries": 577,
+    "catalog_entries_without_included_assessment": 45,
     "reassessment_events": 88,
-    "full_a_assessments": 1
+    "full_a_assessments": 2
   },
   "active_contract": {
     "profile_version": "0.2.4",
@@ -19,26 +19,26 @@
     {
       "target": 100,
       "status": "achieved",
-      "completed": 449,
+      "completed": 532,
       "progress_fraction": 1.0
     },
     {
       "target": 250,
       "status": "achieved",
-      "completed": 449,
+      "completed": 532,
       "progress_fraction": 1.0
     },
     {
       "target": 500,
-      "status": "next",
-      "completed": 449,
-      "progress_fraction": 0.898
+      "status": "achieved",
+      "completed": 532,
+      "progress_fraction": 1.0
     },
     {
       "target": 1000,
-      "status": "planned",
-      "completed": 449,
-      "progress_fraction": 0.449
+      "status": "next",
+      "completed": 532,
+      "progress_fraction": 0.532
     }
   ]
 }
