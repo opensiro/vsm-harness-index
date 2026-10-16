@@ -607,3 +607,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 592|team-agent|Team Agent|https://github.com/Florious95/team-agent|2026-05-17T11:16:52Z|index-addition|1107b2881b7c55bde14a270f472db034cfefcc9a|2026-10-16
 593|paseka|Paseka|https://github.com/russ-p/paseka|2026-07-07T20:43:06Z|index-addition|11bc0b91e1442e74ccadd9bbe591ebaa8afcc8ac|2026-10-16
 594|fleetq|FleetQ|https://github.com/escapeboy/agent-fleet-o|2026-02-08T19:27:13Z|index-addition|d949ff4510548171b8a8648c794a7efd9d9d8c8c|2026-10-16
+595|cafleet|CAFleet|https://github.com/himkt/cafleet|2026-03-28T05:56:46Z|index-addition|a991fe8f818a5e65770f32db3867f50b178c2e73|2026-10-16
