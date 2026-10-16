@@ -600,3 +600,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 585|atomic|Atomic|https://github.com/bastani-inc/atomic|2025-10-23T04:24:21Z|index-addition|d6bc44cf753bd2748ffac6dd994205a170216741|2026-10-16
 586|octomind|Octomind|https://github.com/Muvon/octomind|2025-06-01T11:09:23Z|index-addition|fceb8cbe970d2ad097e59d266ae915a3ebb43779|2026-10-16
 587|kit|Kit|https://github.com/speakeasy-api/kit|2026-08-24T16:55:28Z|index-addition|3fd1fd5fda269569ceba0c2dd884c988d31f53d0|2026-10-16
+588|ankaloop|AnkaLoop|https://github.com/tao12345666333/ankaloop|2025-12-15T09:49:03Z|index-addition|6a4aec4b258d4980dad4d8ea0e455ba5d6cd2216|2026-10-16
