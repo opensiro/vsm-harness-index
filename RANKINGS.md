@@ -380,6 +380,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agentspex"></a>[AgentSPEX](https://github.com/ScaleML/AgentSPEX) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="bash-agent"></a>[bash-agent](https://github.com/lloydzhou/bash-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="auto-harness"></a>[Auto Harness](https://github.com/neosigmaai/auto-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="urbanbreach-harness"></a>[urbanbreach Harness](https://github.com/urbanbreach/agent-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="autoagent"></a>[AutoAgent](https://github.com/thirdlayerinc/autoagent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="claw-code-agent"></a>[claw-code-agent](https://github.com/HarnessLab/claw-code-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
