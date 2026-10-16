@@ -333,6 +333,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="waku-agent"></a>[Waku Agent](https://github.com/ShenSeanChen/waku-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="sema-coder"></a>[Sema Coder](https://github.com/sema-lisp/sema-coder) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="rocinante"></a>[Rocinante](https://github.com/djynnius/rocinante) | 2026-Q3 | 1/6 | 0/5 | 3 | 0 | 0 | `A C — C C —` |
+| 6 | <a id="paseka"></a>[Paseka](https://github.com/russ-p/paseka) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="tura"></a>[Tura](https://github.com/Tura-AI/tura) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="easylink-agent-runtime"></a>[Easylink Agent Runtime](https://github.com/easylink-ai-open/agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
