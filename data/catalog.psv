@@ -601,3 +601,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 586|octomind|Octomind|https://github.com/Muvon/octomind|2025-06-01T11:09:23Z|index-addition|fceb8cbe970d2ad097e59d266ae915a3ebb43779|2026-10-16
 587|kit|Kit|https://github.com/speakeasy-api/kit|2026-08-24T16:55:28Z|index-addition|3fd1fd5fda269569ceba0c2dd884c988d31f53d0|2026-10-16
 588|ankaloop|AnkaLoop|https://github.com/tao12345666333/ankaloop|2025-12-15T09:49:03Z|index-addition|6a4aec4b258d4980dad4d8ea0e455ba5d6cd2216|2026-10-16
+589|rpi|rpi|https://github.com/bigfish1913/pi-rust|2026-08-15T07:44:11Z|index-addition|db4eacd64e8c24939345fb6bd4efc2ef4328ee13|2026-10-16
