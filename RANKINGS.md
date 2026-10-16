@@ -282,6 +282,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="zhizhi-agent-runtime"></a>[Zhizhi Agent Runtime](https://github.com/cocoyes/zhizhi-agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kite"></a>[Kite](https://github.com/KhanUzeb/kite) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="synth"></a>[synth](https://github.com/aw1875/synth) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="kit"></a>[Kit](https://github.com/speakeasy-api/kit) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gyrfalcon"></a>[Gyrfalcon](https://github.com/cargopete/gyrfalcon) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="few"></a>[Few](https://github.com/moloo4ni/few) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="minicode"></a>[Minicode](https://github.com/startupmini/minicode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
