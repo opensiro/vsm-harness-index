@@ -12,9 +12,9 @@ status: proposed
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: P
-autonomy_s3_star: ?
-autonomy_s4: ?
-autonomy_s5: ?
+autonomy_s3_star: —
+autonomy_s4: —
+autonomy_s5: —
 ---
 
 # Gemba
@@ -107,60 +107,78 @@ In the supported model-assisted start mode, a user proposes a project, the in-pr
 
 ## S3* — Complementary audit
 
-- State: ?
-- Function: potential distinct source-backed assessment of delivery claims and project drift, beyond ordinary worker status reporting; binding complementary corrective closure not yet established here.
-- Disturbance / variety regulated: incorrect or unsupported worker completion, stale milestones, delivery/QA drift.
-- Decisive decision or feedback right: a sufficiently independent audit finding must reach a control path changing subsequent work; the reviewed persona/walk assembly and general QA packages have not yet shown this as an end-to-end, standard-mode requirement.
-- Decision owner: unresolved; specialized persona consults may rely on separately launched external model CLIs while the operator remains a parent, and no first-party autonomous auditor has been proven.
-- Supporting / enforcement mechanisms: persona dispatcher, audit log, walk agenda, candidate QA/review gates and corrections.
-- Closure path: candidate operational records → walk/persona/QA evidence gathering → potential findings → *unproven* independent corrective return.
-- Boundary reachability: walk agenda and persona consult APIs are shipped, but the distinct independent judgment and its mandatory or optional findings-to-operations path require targeted review.
-- Why this is / is not agent-owned: a consult log or test result alone does not establish a distinct auditor's decision right, independence and corrective closure.
-- Evidence: [internal/persona/dispatcher.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/persona/dispatcher.go); [internal/persona/applier.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/persona/applier.go); [internal/walk/agenda.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/walk/agenda.go); [internal/qa/regression/suite.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/qa/regression/suite.go); [internal/server/consults_post.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/server/consults_post.go).
-- Basis: structural candidate; insufficient evidence for either positive grade or bounded absence.
-- Confidence: high in uncertainty, not in an autonomous audit claim.
-- Caveats: investigate whether user-applied persona corrections offer a genuinely complementary source rather than worker self-report.
+- State: —
+- Function: no *reachable first-party* complementary audit owner with materially independent operational access and findings-to-current-control closure is established in the pinned supported modes.
+- Disturbance / variety regulated: worker completion claims, QA correctness, declared-vs-actual modification drift and escalation findings are plausible audit subjects.
+- Decisive decision or feedback right: independent challenge of ordinary S1/S3 operational claims based on separate observed evidence, with findings causing an actual later correction or control adjustment. Not furnished end-to-end.
+- Decision owner: none identified for an independent audit function within the credited Gemba runtime; the operator reviews escalations, and optional persona suggestions depend on external Claude Code consultations rather than an installed complementary auditor.
+- Supporting / enforcement mechanisms: walk agenda, persona consult audit log, `bootstrap_review` advisory batch review, regression suite *registry*, offline retrospective comparator and evidence adapters.
+- Closure path: the shipped walk lists current work and escalations for an operator, and persona recommendations may be applied by operator action, but no separately sourced independent completion audit regularly or optionally reaches binding corrective operations in the evidenced first-party standard mode.
+- Boundary reachability: `serve` wires `AttachWalk`, but Witness/Refinery sources are nil/no-op; the consult-inside-walk handler returns **501**, and `qa/regression` explicitly registers potential suites without executing them. `retro.Runner` has logic to compare actual Git diffs with declarations and update profiles but is not wired into `serve` by the reviewed production code; `gemba retro list` only reads existing/offline grades.
+- Why this is / is not agent-owned: neither advisory user-led review nor an unwired retrospective or future witness adapter grants a Gemba first-party independent audit actor a decisive judgment-and-return right. External vendor agent reasoning is not credited.
+- Evidence: [internal/cli/serve.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/cli/serve.go); [internal/server/walks.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/server/walks.go); [internal/walk/sources/witness.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/walk/sources/witness.go); [internal/walk/sources/refinery.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/walk/sources/refinery.go); [internal/qa/regression/suite.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/qa/regression/suite.go); [internal/planner/retro/runner.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/planner/retro/runner.go); [internal/cli/retro.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/cli/retro.go); [internal/skills/bootstrap_review/skill.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/skills/bootstrap_review/skill.go).
+- Basis: explicit non-execution/no-op/501 production paths plus structural comparison of possible audit sources.
+- Confidence: medium-high for bounded shipped-mode absence; does not rule out operator-attached independent review integrations outside the pinned standard distribution.
+- Caveats: if an externally integrated worker/witness supplies its own independent audit, it belongs to that enlarged composed system, not to Gemba by inference.
+
+### Absence scope
+
+- Surfaces inspected: production `serve` persona and walk wiring, live witness/refinery default sources, walk consult handler, bootstrap-review advisor, QA regression registration, retro comparison/runner and the `gemba retro` CLI.
+- Plausible first-party paths checked: independent witness findings, separate QA execution against raw code, declared-vs-actual Git change audit feeding follow-on regulation, independently consulted coach and walk decision/applier loop.
+- Why no material first-party path remains: default witness/refinery sources contribute no independently gathered observations, consult-inside-walk is not implemented, regression suites are inspection-only, and retro corrective processing is not connected into the normal serving path. Operator acknowledgement and advisory persona output do not substitute for a first-party complementary audit closure.
 
 ## S4 — Outside-and-then intelligence
 
-- State: ?
-- Function: possible prospective adaptation through roadmap/planning, drift, retrospective and agent-profile calibration, but distinct external-environment sensing and effect on future capability not established.
-- Disturbance / variety regulated: changing project environment, incoming external requirements, changing worker capability/availability.
-- Decisive decision or feedback right: propose/choose a future capability change from external-facing evidence and return that change into working policy/tools; not yet traced end-to-end.
-- Decision owner: unresolved; operator-owned planning, model persona suggestions and deterministic score/profile refresh are not necessarily S4.
-- Supporting / enforcement mechanisms: planning personas and epic-order skill, retro comparison/calibration, workflow scheduling and project history.
-- Closure path: possible observations → prospective recommendations → **unverified** choice/installation into subsequent current operational capability.
-- Boundary reachability: planner/retrospective code ships; whether the credited S4-specific path is actually selected and closed in standard modes remains open.
-- Why this is / is not agent-owned: memory, backlog reprioritization, planned epics or retrospective scores are not sufficient without a separately evidenced outside-and-then loop.
-- Evidence: [internal/planner/retro/runner.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/planner/retro/runner.go); [internal/planner/scanscheduler/scheduler.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/planner/scanscheduler/scheduler.go); [internal/planner/profile.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/planner/profile.go); [internal/persona/dispatcher.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/persona/dispatcher.go).
-- Basis: plausible first-party candidate, not enough to grade.
-- Confidence: high in recorded coverage gap.
-- Caveats: follow live wiring to discriminate present-work S3 from genuine prospective S4.
+- State: —
+- Function: no supported Gemba-owned external-and-prospective intelligence/adaptation loop with a new capability option and returned installation into current operating capacity is established.
+- Disturbance / variety regulated: incoming project demands, changing technological environment, worker effectiveness, evolving dependencies and future requirements.
+- Decisive decision or feedback right: independently or parent-governedly recognize future/environment distinctions and choose/install an adaptation of organizational capability. No such function-specific path is evidenced.
+- Decision owner: the operator may change task strategy and configuration; onboarder/PM personas may propose milestones and epic order. These are current/project planning and operator decisions, not demonstrated outside-and-then capability governance.
+- Supporting / enforcement mechanisms: PM `epic_order`, project Onboarder, source scan scheduling, agent-profile scoring and retrospective comparison/calibration.
+- Closure path: future milestone plans and current work rankings can enter WorkPlane and affect today’s task order, but no outside-world forecast/option development → capability adaptation decision → updated Gemba operational repertoire was found.
+- Boundary reachability: shipped Onboarder and PM skill are wired, but their prompts are scoped to task plan/sprint-order; source scan scheduler is a deterministic trigger/coalescer, and retro runner is not wired into production `serve`.
+- Why this is / is not agent-owned: bounded planning about later *tasks* and updated affinity scores are not an organizational future/environment intelligence process. External model or developer modification is not attributed to Gemba.
+- Evidence: [internal/skills/newproject/skill.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/skills/newproject/skill.go); [internal/server/embedded_personas/project-manager.toml](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/server/embedded_personas/project-manager.toml); [internal/skills/epic_order/skill.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/skills/epic_order/skill.go); [internal/planner/scanscheduler/scheduler.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/planner/scanscheduler/scheduler.go); [internal/planner/retro/runner.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/planner/retro/runner.go); [internal/cli/serve.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/cli/serve.go).
+- Basis: first-party role and production-wire scrutiny, explicit distinction of prospective capability vs current-task planning.
+- Confidence: medium-high for bounded present distribution, not universal impossibility.
+- Caveats: future extensions may provide environment intelligence or evolutionary selection; unshipped/injected components are outside the frozen scope.
+
+### Absence scope
+
+- Surfaces inspected: shipped new-project and PM persona prompts, production consult/applier setup, planner source-scans, session affinity/profile/retro machinery, project/workflow orchestration.
+- Plausible first-party paths checked: evolving epic priorities, new milestones, completed-work learning, external source scans, revised worker policies and capability promotion.
+- Why no material first-party path remains: found behavior orders *current and known* work, schedules source scans or recalibrates dispatch scoring; it does not construct and choose externally grounded future options that revise the organization's capability model and return that decision to operating S1/S3.
 
 ## S5 — Identity and ultimate policy
 
-- State: ?
-- Function: possible project-purpose identity and parent ratification of a new project's work plan; does not yet establish ongoing ultimate policy and identity regulation for the whole Gemba organization.
-- Disturbance / variety regulated: what this project's ultimate purpose and binding operator policy are.
-- Decisive decision or feedback right: final parent ratification of proposed project identity/plan and any later ultimate-policy changes; ordinary approval of plan data is not enough by itself.
-- Decision owner: project operator for ratification; whether an actual higher-level S5 closure lives in the same first-party recursion is unresolved.
-- Supporting / enforcement mechanisms: Onboarder state and ratifier, per-project configuration and host access policy.
-- Closure path: model-generated proposal → explicit ratification → WorkPlane mutations; ongoing ultimate identity/policy review and binding return **not established**.
-- Boundary reachability: production ratifier exists, but its project-creation transaction is not automatically the VSM S5 identity organ.
-- Why this is / is not agent-owned: authorization remains human-owned; no distinct ultimate-policy decision by the Onboarder or scheduler is demonstrated.
-- Evidence: [internal/server/newproject_ratify.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/server/newproject_ratify.go); [internal/cli/serve.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/cli/serve.go); [internal/personas/onboarder/onboarder.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/personas/onboarder/onboarder.go); [internal/auth/](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/auth/).
-- Basis: structural candidate and material policy-boundary uncertainty.
-- Confidence: medium-high for absence of established autonomous ownership; unresolved parent-mode qualification.
-- Caveats: test whether project initialization or tenant policy constitutes a first-party and complete S5 loop rather than local setup authorization.
+- State: —
+- Function: no first-party ultimate-identity or ethos/policy *regulatory decision* with appropriate authority and return to whole-system operation is demonstrated beyond project setup.
+- Disturbance / variety regulated: fundamental organizational mission, operating identity and tensions between current commitments and future adaptation.
+- Decisive decision or feedback right: establish/revise identity or ultimate policy, resolve S3–S4-level tensions and govern subsequent operations. Not evidenced for the assessed deployed harness.
+- Decision owner: a human project user selects and ratifies the *initial project plan*; repository developers/operators own app configuration. Neither is shown making a function-specific ultimate-policy decision through a shipped Gemba identity/governance loop.
+- Supporting / enforcement mechanisms: Onboarder validation and separate project-ratification transaction, workspace configs, permission flags, credentials, tenant/auth layer, static persona role descriptions.
+- Closure path: model-proposed project draft → user authorizes creation → directory/WorkPlane is initialized. This is operative *project creation* and does not exhibit identity/ultimate-policy choice after environmental adaptation tension or a later policy return that governs the organizational whole.
+- Boundary reachability: the initial project ratifier is production-wired, but no S5-specific identity-policy channel and subsequent policy-effect loop is evidenced in the audited surface. This is not a negative claim about human ultimate authority outside Gemba.
+- Why this is / is not agent-owned: LLM plan construction, human consent and static enforcement do not turn the model, ratifier or permission checks into an S5 organ. A parent-owned S5 `P` needs a real policy-level decision route, not only a normal project-creation confirmation.
+- Evidence: [internal/server/newproject_ratify.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/server/newproject_ratify.go); [internal/cli/serve.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/cli/serve.go); [internal/personas/onboarder/onboarder.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/personas/onboarder/onboarder.go); [internal/server/newproject.go](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/server/newproject.go); [internal/auth/](https://github.com/GembaCore/gemba-core/blob/64c266f889c6d6a579904c5e336676fa1c49b216/internal/auth/).
+- Basis: source-confirmed setup/authorization boundary; no distinct S5 policy closure in shipped runtime.
+- Confidence: medium-high for bounded reviewed first-party modes.
+- Caveats: a separate institution or user can hold S5 for a wider organization that deploys Gemba; that wider owner is outside this repository-relative assessment.
+
+### Absence scope
+
+- Surfaces inspected: creation/ratification, project/workspace setup, auth and permissions, persona configuration, planner and operator work-control routes.
+- Plausible first-party paths checked: project mission ratification, policy/identity revision, human decision return and permission enforcement, future/current adaptation arbitration.
+- Why no material first-party path remains: the established ratifier creates the initial work context; controls are operational permissions or static configuration. No supported identity/ultimate-policy *regulatory* loop exists at the declared Gemba recursion rather than operator governance external to this artifact.
 
 ## Evidence gaps
 
-- Source-based structure and shipped wiring were inspected at frozen commit; there was no provider-backed Onboarder dialogue, real multi-worker collision trial or human operator observation. Those missing live witnesses do not erase source-confirmed paths, but limit outcome claims.
-- S3* remains `?` pending independent-vs-producer access and a demonstrable correction return in one supported mode.
-- S4 remains `?` pending first-party external-and-prospective sensing, option selection, capability change and operational effect trace.
-- S5 remains `?` pending proof that parent-approved mission/policy selection is an ongoing identity-level function with returned implementation, not just a new-project form.
-- The external coding-agent subprocesses and Beads/Dolt data-plane internals were not assessed as Gemba-owned autonomous cognitive actors.
+- There was no provider-backed Onboarder dialogue, real multi-worker workspace collision trial or independently witnessed operator current-control decision. Source-wired capability and live effectiveness remain separate evidence types.
+- The S1 claim is **bounded to the installed model-driven conversational plan unit**. Gemba does not own the tool-level coding S1 inside vendor CLIs or the mandatory external WorkPlane.
+- S2 is **optional configured** auto-dispatch workspace collision attenuation, not generic scheduling or a default Beads-only capability.
+- Three negative higher-function results are **bounded source-inspection findings**, not claims that integrated external agents/rigs or future plugin modes could never provide them.
+- One legitimate follow-up would be a new frozen-revision assessment if upstream ships a real witness adaptor, serving-mode retrospective corrective loop or independent QA source; none can be credited ahead of the frozen commit.
 
 ## Conclusion
 
-**Proposed, not canonical.** At the narrow shipped Gemba organization boundary, the first-party Onboarder provides bounded model-driven planning S1; optional first-party worker-pool collision gates provide S2 construction; the shipped project board/native dispatch exposes a parent-owned current-control path. No external coding-agent cognition is borrowed. S3*/S4/S5 are left unresolved where adjacent mechanisms do not yet show decisive organizational ownership and closure. This assessment should not be admitted until remaining evidence gaps and its operator-S3 interpretation receive a complete source-first disposition.
+**Proposed general assessment, not yet canonical:** `S1=A / S2=C / S3=P / S3*=— / S4=— / S5=—` in the explicitly reviewed supported modes. Gemba's first-party model-mediated Onboarder produces plans via a validated feedback loop; opt-in native pool dispatch attenuates inter-session workspace collisions; human project operators exercise current whole-project priority and dispatch rights. The built-in consult/QA/walk/retro and project-creation mechanisms do **not** establish independent complementary audit, future-environment capability adaptation or ultimate identity governance under the frozen first-party evidence boundary. No external coding-agent reasoning is inherited. Source-first decision rests on shipped wiring and bounded counterfactuals, not on the structural checker or unobserved model performance.
