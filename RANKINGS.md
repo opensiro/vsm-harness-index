@@ -217,6 +217,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="animaworks"></a>[AnimaWorks](https://github.com/xuiltul/animaworks) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 4 | `A ? A ? ? ?` |
 | 5 | <a id="codebot"></a>[Codebot](https://github.com/voocel/codebot) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="agent-orchestrator-stefan1294"></a>[Agent Orchestrator (tracks)](https://github.com/stefan1294/agent-orchestrator) | 2026-Q1 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C(P) A — —` |
+| 5 | <a id="fleetq"></a>[FleetQ](https://github.com/escapeboy/agent-fleet-o) | 2026-Q1 | 2/6 | 1/5 | 2 | 1 | 0 | `A C A C P —` |
 | 5 | <a id="ironclaw"></a>[IronClaw](https://github.com/nearai/ironclaw) | 2026-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A — P —` |
 | 5 | <a id="ava"></a>[AVA](https://github.com/Artificial-Source/AVA) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="self-improving-agent"></a>[self-improving-agent](https://github.com/xmaks82/self-improving-agent) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 1 | `A — — ? A —` |

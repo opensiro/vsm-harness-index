@@ -606,3 +606,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 591|gemba|Gemba|https://github.com/GembaCore/gemba-core|2026-04-18T22:13:37Z|index-addition|64c266f889c6d6a579904c5e336676fa1c49b216|2026-10-16
 592|team-agent|Team Agent|https://github.com/Florious95/team-agent|2026-05-17T11:16:52Z|index-addition|1107b2881b7c55bde14a270f472db034cfefcc9a|2026-10-16
 593|paseka|Paseka|https://github.com/russ-p/paseka|2026-07-07T20:43:06Z|index-addition|11bc0b91e1442e74ccadd9bbe591ebaa8afcc8ac|2026-10-16
+594|fleetq|FleetQ|https://github.com/escapeboy/agent-fleet-o|2026-02-08T19:27:13Z|index-addition|d949ff4510548171b8a8648c794a7efd9d9d8c8c|2026-10-16
