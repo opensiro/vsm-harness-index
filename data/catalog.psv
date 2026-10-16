@@ -603,3 +603,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 588|ankaloop|AnkaLoop|https://github.com/tao12345666333/ankaloop|2025-12-15T09:49:03Z|index-addition|6a4aec4b258d4980dad4d8ea0e455ba5d6cd2216|2026-10-16
 589|rpi|rpi|https://github.com/bigfish1913/pi-rust|2026-08-15T07:44:11Z|index-addition|db4eacd64e8c24939345fb6bd4efc2ef4328ee13|2026-10-16
 590|atman|Atman|https://github.com/W-Mai/atman|2026-07-17T07:02:11Z|index-addition|56933fc40e38ccb5575cbfdda341d86a449643ac|2026-10-16
+591|gemba|Gemba|https://github.com/GembaCore/gemba-core|2026-04-18T22:13:37Z|index-addition|64c266f889c6d6a579904c5e336676fa1c49b216|2026-10-16
