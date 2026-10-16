@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -192,4 +192,4 @@ A user submits a task: TS records a pending row and returns its metadata. A user
 
 ## Conclusion
 
-**Proposed canonical exclusion, not yet admitted:** `status: proposed` for intake; terminal candidate `excluded-no-agentic-vsm`, vector `S1=— / S2=— / S3=— / S3*=— / S4=— / S5=—`. The frozen deployed AtlasAgent TypeScript runtime performs task-data storage and one-shot chat text completion but no model-driven tool/action-observation operational loop. Current external app/wider actor and unwired legacy Python controls are excluded by the explicit shipping boundary. All six absences are scoped to **current first-party supported deployment**, not theoretical capability of future versions.
+**Canonical exclusion:** terminal status `excluded-no-agentic-vsm`, vector `S1=— / S2=— / S3=— / S3*=— / S4=— / S5=—`. The frozen deployed AtlasAgent TypeScript runtime performs task-data storage and one-shot chat text completion but no model-driven tool/action-observation operational loop. Current external app/wider actor and unwired legacy Python controls are excluded by the explicit shipping boundary. All six absences are scoped to **current first-party supported deployment**, not theoretical capability of future versions.

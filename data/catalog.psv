@@ -608,3 +608,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 593|paseka|Paseka|https://github.com/russ-p/paseka|2026-07-07T20:43:06Z|index-addition|11bc0b91e1442e74ccadd9bbe591ebaa8afcc8ac|2026-10-16
 594|fleetq|FleetQ|https://github.com/escapeboy/agent-fleet-o|2026-02-08T19:27:13Z|index-addition|d949ff4510548171b8a8648c794a7efd9d9d8c8c|2026-10-16
 595|cafleet|CAFleet|https://github.com/himkt/cafleet|2026-03-28T05:56:46Z|index-addition|a991fe8f818a5e65770f32db3867f50b178c2e73|2026-10-16
+596|atlasagent|AtlasAgent|https://github.com/malevrigns/atlas-agent-control-plane|2026-08-01T12:59:24Z|index-addition|9e7dbe23409f82c8c111e8035843c1d69aae8b28|2026-10-16
