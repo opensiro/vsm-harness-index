@@ -217,6 +217,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="ironclaw"></a>[IronClaw](https://github.com/nearai/ironclaw) | 2026-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A — P —` |
 | 5 | <a id="ava"></a>[AVA](https://github.com/Artificial-Source/AVA) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="self-improving-agent"></a>[self-improving-agent](https://github.com/xmaks82/self-improving-agent) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 1 | `A — — ? A —` |
+| 5 | <a id="superqode"></a>[SuperQode](https://github.com/SuperagenticAI/superqode) | 2026-Q1 | 2/6 | 1/5 | 1 | 2 | 0 | `A C P A P —` |
 | 5 | <a id="preloop"></a>[Preloop](https://github.com/preloop/preloop) | 2026-Q1 | 2/6 | 1/5 | 1 | 2 | 0 | `A — C(P) A P —` |
 | 5 | <a id="lime"></a>[Lime](https://github.com/limecloud/lime) | 2025-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="haft"></a>[Haft](https://github.com/m0n0x41d/haft) | 2025-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P A — —` |
