@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: A
@@ -180,4 +180,4 @@ An operator installs the pinned-supported Citadel plugin in an agent-hosted Git 
 
 ## Conclusion
 
-**Proposed general assessment, not canonical.** In separately supported explicit first-party modes: `S1=A / S2=C / S3=A / S3*=? / S4=A / S5=—`. Model-backed coding/delegate operation is S1; scope claims bound one actual inter-S1 interference as S2=C; the model Archon controls whole present multi-phase work (S3=A); complementary independent audit is unresolved; user-invoked /evolve applies verified future skill capability improvements with model judgment (S4=A); ordinary approvals and project identity do not prove S5. Modes are not claimed simultaneous or empirically witnessed.
+**Canonical general assessment.** In separately supported explicit first-party modes: `S1=A / S2=C / S3=A / S3*=? / S4=A / S5=—`. Model-backed coding/delegate operation is S1; scope claims bound one actual inter-S1 interference as S2=C; the model Archon controls whole present multi-phase work (S3=A); complementary independent audit is unresolved; user-invoked /evolve applies verified future skill capability improvements with model judgment (S4=A); ordinary approvals and project identity do not prove S5. Modes are not claimed simultaneous or empirically witnessed.

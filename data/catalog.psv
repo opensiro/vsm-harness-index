@@ -611,3 +611,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 596|atlasagent|AtlasAgent|https://github.com/malevrigns/atlas-agent-control-plane|2026-08-01T12:59:24Z|index-addition|9e7dbe23409f82c8c111e8035843c1d69aae8b28|2026-10-16
 597|agent-fleet-chankov|Agent Fleet|https://github.com/chankov/agent-fleet|2026-07-16T14:51:22Z|index-addition|d260099e67911d38f7cfbe90bd30b2639c2fd4b6|2026-10-17
 598|herd|Herd|https://github.com/NickGuAI/Herd|2026-03-03T16:26:17Z|index-addition|fbda6618c7b53524faddbed070e4fbc14970e412|2026-10-17
+599|citadel|Citadel|https://github.com/SethGammon/Citadel|2026-03-20T05:42:54Z|index-addition|38f3a4e7fa13cd48cfbedde872778b847af6c842|2026-10-17
