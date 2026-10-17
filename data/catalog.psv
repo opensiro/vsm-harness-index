@@ -618,3 +618,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 603|threatclaw|ThreatClaw|https://github.com/threatclaw/threatclaw|2026-04-14T20:24:39Z|index-addition|71540e5da1fc4dd5ff62c37842de25efab67a3f1|2026-09-20
 604|turix-cua|TuriX-CUA|https://github.com/TurixAI/TuriX-CUA|2025-08-04T08:59:43Z|index-addition|88c777bddfec9796667445873886a3563aa27246|2026-09-20
 605|fara|Fara|https://github.com/microsoft/fara|2025-10-29T16:23:22Z|index-addition|a675d6d61c41c47ae87bacefeab22caad18e3e84|2026-09-20
+606|evidence-bench|Evidence Bench|https://github.com/kstawiski/evidence-gated-scientific-agent|2026-07-13T17:50:09Z|index-addition|85b396a824dfad6ec0880cbe07d86d3e24920ae8|2026-09-20
