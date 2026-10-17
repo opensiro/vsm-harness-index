@@ -481,6 +481,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="pi"></a>[Pi](https://github.com/earendil-works/pi) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mirothinker"></a>[MiroThinker](https://github.com/MiroMindAI/MiroThinker) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="turix-cua"></a>[TuriX-CUA](https://github.com/TurixAI/TuriX-CUA) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="connectonion"></a>[ConnectOnion](https://github.com/openonion/connectonion) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — — ? —` |
 | 6 | <a id="shai"></a>[SHAI](https://github.com/ovh/shai) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="shadow"></a>[Shadow](https://github.com/ishaan1013/shadow) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mini-swe-agent"></a>[mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
