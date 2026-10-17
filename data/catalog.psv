@@ -625,3 +625,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 610|airecon|AIRecon|https://github.com/pikpikcu/airecon|2026-03-05T20:02:08Z|index-addition|6bd19df88506df754a3abc95f14de5488d02c4e4|2026-09-20
 611|infiagent|infiAgent|https://github.com/polyuiislab/infiAgent|2025-12-24T09:22:22Z|index-addition|cf6e04e60a3ed3b3107aebe5f4ed0af52893ed19|2026-09-20
 612|botsharp|BotSharp|https://github.com/SciSharp/BotSharp|2017-12-17T13:51:22Z|index-addition|dbc3103afc5cc6e03892ab9da066b9955f45c1aa|2026-09-20
+613|reachai-enterpriseagentframework|ReachAI / EnterpriseAgentFramework|https://github.com/w8123/EnterpriseAgentFramework|2026-04-02T03:24:58Z|index-addition|44bc68d3670709b4b6ab490af8a699f8934aab38|2026-09-20
