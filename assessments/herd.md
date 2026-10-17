@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: A
@@ -178,4 +178,4 @@ A human installs Herd, configures provider access and machines and uses a bundle
 
 ## Conclusion
 
-**Proposed, not canonical.** The source-supported qualified mapping is `S1=A / S2=C / S3=A / S3*=? / S4=? / S5=—`. Executing model-backed commanders/workers comprise S1; exclusive active quest claims attenuate duplicate inter-S1 work (S2=C); a configured model commander controls present quest and worker commitments (S3=A). Separate audit and prospective adaptation closure are unresolved at the declared boundary; identity and ordinary approval controls do not establish S5.
+**Canonical general assessment.** The source-supported qualified mapping is `S1=A / S2=C / S3=A / S3*=? / S4=? / S5=—`. Executing model-backed commanders/workers comprise S1; exclusive active quest claims attenuate duplicate inter-S1 work (S2=C); a configured model commander controls present quest and worker commitments (S3=A). Separate audit and prospective adaptation closure are unresolved at the declared boundary; identity and ordinary approval controls do not establish S5.
