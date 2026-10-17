@@ -615,3 +615,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 600|centian|Centian|https://github.com/T4cceptor/centian|2025-09-13T17:41:52Z|index-addition|97ae63779dec8117c7bfe1eb007539e46651358b|2026-10-17
 601|fractale|fractale|https://github.com/converged-computing/fractale|2026-02-11T17:36:44Z|index-addition|b62ff1bce01e191828b90c5fa468f81197629e32|2026-09-20
 602|ursa|URSA|https://github.com/lanl/ursa|2025-08-15T01:46:33Z|index-addition|470b841d83e88457d5677fc824aea32e2d5a5e22|2026-09-20
+603|threatclaw|ThreatClaw|https://github.com/threatclaw/threatclaw|2026-04-14T20:24:39Z|index-addition|71540e5da1fc4dd5ff62c37842de25efab67a3f1|2026-09-20
