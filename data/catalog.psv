@@ -632,3 +632,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 617|microsoft-agent-framework-for-go|Microsoft Agent Framework for Go|https://github.com/microsoft/agent-framework-go|2025-10-24T19:01:18Z|index-addition|f66340335e973986cbb8e9a1ae95e23596e4dc3d|2026-09-20
 618|project-oagents|Project OAgents|https://github.com/microsoft/project-oagents|2023-08-08T16:36:24Z|index-addition|e4d262386860fbc586fe9af5fb13c0e293bf7b33|2026-09-20
 619|agentuniverse|agentUniverse|https://github.com/agentuniverse-ai/agentUniverse|2024-04-23T11:28:18Z|index-addition|254ecd280f54c2d2de654bbe5373e9f947d2dedf|2026-09-20
+620|revka|Revka|https://github.com/KumihoIO/Revka|2026-04-23T12:00:44Z|index-addition|a1acd826502e12a6c2f3d147e488a7d2982c480b|2026-09-20
