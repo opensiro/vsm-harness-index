@@ -548,6 +548,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="chatdev"></a>[ChatDev](https://github.com/OpenBMB/ChatDev) | 2023-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="autoagents"></a>[AutoAgents](https://github.com/OWD-AI/AutoAgents) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="langgraph"></a>[LangGraph](https://github.com/langchain-ai/langgraph) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="project-oagents"></a>[Project OAgents](https://github.com/microsoft/project-oagents) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="open-interpreter"></a>[Open Interpreter](https://github.com/openinterpreter/openinterpreter) | 2023-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="besser-agentic-framework"></a>[BESSER Agentic Framework](https://github.com/BESSER-PEARL/BESSER-Agentic-Framework) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="anythingllm"></a>[AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
