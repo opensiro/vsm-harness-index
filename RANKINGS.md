@@ -429,6 +429,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="heddle"></a>[Heddle](https://github.com/roackb2/heddle) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 1 | `A ? — — — —` |
 | 6 | <a id="buzz"></a>[Buzz](https://github.com/block/buzz) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="bitrouter"></a>[BitRouter](https://github.com/bitrouter/bitrouter) | 2026-Q1 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
+| 6 | <a id="airecon"></a>[AIRecon](https://github.com/pikpikcu/airecon) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A — — C C —` |
 | 6 | <a id="looptroop"></a>[LoopTroop](https://github.com/looptroop-ai/LoopTroop) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="masters-of-ai-harness"></a>[Masters of AI Harness](https://github.com/mastersof-ai/harness) | 2026-Q1 | 1/6 | 0/5 | 3 | 3 | 0 | `A — C(P) — C(P) C(P)` |
 | 6 | <a id="symphony"></a>[Symphony](https://github.com/openai/symphony) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
