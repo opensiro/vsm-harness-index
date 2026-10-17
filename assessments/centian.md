@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -195,4 +195,4 @@ The operator configures MCP servers and starts Centian. A separately installed a
 
 ## Conclusion
 
-**Proposed canonical disposition: `excluded-no-agentic-vsm`** at frozen source `97ae63779dec8117c7bfe1eb007539e46651358b`; six-state vector `S1=— / S2=— / S3=— / S3*=— / S4=— / S5=—`. Centian is a functioning MCP policy/verification proxy, with real audit trails and quality gates, but in its supported operating deployment it does not own the agentic S1 task/action/feedback loop: clients provide it from outside. Auxiliary benchmarking/deprecated demo model launches and test-only infrastructure do not donate first-party agentic VSM ownership.
+**Canonical disposition: `excluded-no-agentic-vsm`** at frozen source `97ae63779dec8117c7bfe1eb007539e46651358b`; six-state vector `S1=— / S2=— / S3=— / S3*=— / S4=— / S5=—`. Centian is a functioning MCP policy/verification proxy, with real audit trails and quality gates, but in its supported operating deployment it does not own the agentic S1 task/action/feedback loop: clients provide it from outside. Auxiliary benchmarking/deprecated demo model launches and test-only infrastructure do not donate first-party agentic VSM ownership.
