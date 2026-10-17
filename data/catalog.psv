@@ -617,3 +617,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 602|ursa|URSA|https://github.com/lanl/ursa|2025-08-15T01:46:33Z|index-addition|470b841d83e88457d5677fc824aea32e2d5a5e22|2026-09-20
 603|threatclaw|ThreatClaw|https://github.com/threatclaw/threatclaw|2026-04-14T20:24:39Z|index-addition|71540e5da1fc4dd5ff62c37842de25efab67a3f1|2026-09-20
 604|turix-cua|TuriX-CUA|https://github.com/TurixAI/TuriX-CUA|2025-08-04T08:59:43Z|index-addition|88c777bddfec9796667445873886a3563aa27246|2026-09-20
+605|fara|Fara|https://github.com/microsoft/fara|2025-10-29T16:23:22Z|index-addition|a675d6d61c41c47ae87bacefeab22caad18e3e84|2026-09-20
