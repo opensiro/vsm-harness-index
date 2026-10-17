@@ -631,3 +631,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 616|blades|Blades|https://github.com/go-kratos/blades|2025-09-15T16:43:22Z|index-addition|b78fec59029d11e02c135ea10da8986ed006521f|2026-09-20
 617|microsoft-agent-framework-for-go|Microsoft Agent Framework for Go|https://github.com/microsoft/agent-framework-go|2025-10-24T19:01:18Z|index-addition|f66340335e973986cbb8e9a1ae95e23596e4dc3d|2026-09-20
 618|project-oagents|Project OAgents|https://github.com/microsoft/project-oagents|2023-08-08T16:36:24Z|index-addition|e4d262386860fbc586fe9af5fb13c0e293bf7b33|2026-09-20
+619|agentuniverse|agentUniverse|https://github.com/agentuniverse-ai/agentUniverse|2024-04-23T11:28:18Z|index-addition|254ecd280f54c2d2de654bbe5373e9f947d2dedf|2026-09-20
