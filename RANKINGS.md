@@ -172,6 +172,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="atomcode"></a>[AtomCode](https://github.com/karlorz/atomcode) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="lean-coder"></a>[lean-coder](https://github.com/codemonkeying/lean-coder) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="marspi-cli"></a>[Marspi CLI](https://github.com/mars01pi/marspi-cli) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 1 | `A — ? A — —` |
+| 5 | <a id="aipoch-open-science"></a>[AIPOCH Open-Science](https://github.com/aipoch/open-science) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — C(P) A — —` |
 | 5 | <a id="holt"></a>[Holt](https://github.com/holt-os/holt) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — P C A —` |
 | 5 | <a id="leviath"></a>[Leviath](https://github.com/GEMISIS/leviath) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C(P) A — —` |
 | 5 | <a id="postal"></a>[Postal](https://github.com/andrefetch/postal) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
