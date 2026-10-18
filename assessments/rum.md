@@ -40,7 +40,7 @@ autonomy_s5: —
 
 Rum ships its own Rust provider/tool coding loop. The model requests read/edit/write/bash/search/LSP and other tools, the runtime executes and streams actual results into the same conversation, then the model continues or ends. Tool calls may run in parallel without creating independent coding S1 units. Its read-only Explore tool launches a separately prompted model with read/bash/web actions and returns a researched report to the parent; task delegation and research handoff alone do not establish S2 coordination over actual competing S1 activities.
 
-A source-specific complementary audit connector is shipped in the interactive TUI. Once a tool result indicates git push, the TUI sets pending_ci_watch. The main runtime invokes ci_watch, queries independent GitHub Actions by the exact current SHA using authenticated gh, extracts failed-check job logs, then sends findings as a CI failed message back into the same coding agent input/queued prompt. The external test workflows and checks belong to the user's project and must be configured. Rum owns only the function-specific constructor/feedback bridge, not an autonomous audit judgment and not guaranteed code repair. This supports narrowly scoped S3*=C in an eligible configured TUI mode rather than S3*=A.
+A source-specific complementary CI-feedback connector is shipped in the interactive TUI, subject to a material pushed-ref identity limitation. After a successful bash tool result, `src/tui.rs` checks whether the command *text contains* `git push`; it does not parse the actual push destination/ref or verify that a push occurred. When scheduled, `ci_watch` later obtains local `git rev-parse HEAD` from the working directory and queries `gh run list --commit <that-local-HEAD>`; **the watcher does not establish that this SHA equals the commit/ref actually pushed**. In the conditional case where local HEAD is the pushed commit and independently configured GitHub Actions checks exist, failed-job logs can return through a first-party TUI feedback bridge to the same coder. External CI workflows belong to the user's repository and require configuration; mere test status transport does not establish an autonomous Rum audit-judgment owner or guaranteed repair. This narrows the evidence for the currently accepted `S3*=C` and preserves that historical grade for separate Index owner adjudication under [#1381](https://github.com/opensiro/vsm-harness-index/issues/1381).
 
 The file editor, LSP, session branches, compaction, operator interventions and asynchronous command jobs are substantial usability mechanisms without separately evidenced S3 whole-current management or strategic S4/identity S5 governance. CI failure signalling is complementary feedback and does not automatically upgrade S3.
 
@@ -48,7 +48,7 @@ Source evidence: [src/agent.rs](https://github.com/KAJdev/rum/blob/9c00bdb35f2a5
 
 ## Operational model
 
-The coder autonomously owns S1. A conditional external CI check can audit a pushed commit independently and Rum delivers failed findings to the coder. No separately autonomous Rum audit decision, guaranteed repair, inter-S1 conflict regulator or whole-current task supervisor is credited.
+The coder autonomously owns S1. Conditional external CI may supply complementarily sourced failed-check logs that Rum returns to the coder, but the watcher looks up runs for **local HEAD at watch time**, not a verified pushed ref. No separately autonomous Rum audit decision, guaranteed repair, inter-S1 conflict regulator or whole-current task supervisor is credited.
 
 ## S1 — Operations
 
@@ -111,23 +111,23 @@ The coder autonomously owns S1. A conditional external CI check can audit a push
 ## S3* — Complementary audit
 
 - State: C
-- Function: First-party optional constructor conveys independent configured CI failures of pushed code to the coding S1 for possible correction.
+- Function: First-party optional TUI constructor can convey failed configured CI checks selected by local-HEAD lookup back to the coding S1 for possible correction; identity of the *pushed* ref is not checked.
 - Disturbance / variety regulated: Coding results could fail independent tests, builds or safety checks even when the coder judged them successful.
-- Decisive decision or feedback right: Repository-configured external GitHub Actions checks make audit verdicts; Rum bridges exact-commit failure logs back to coding agent; later repair is model-decided.
-- Decision owner: Configured repository CI workflow and authenticated gh are externally supplied judges; first-party Rust watcher/feedback connector specifically creates a complementary feedback path, but no native autonomous auditor owns the judgment.
+- Decisive decision or feedback right: Repository-configured external GitHub Actions checks produce their own conclusions/logs; Rum transports failures from `gh` runs selected by **local HEAD** to the coding agent, which may decide a repair. This selection does not bind the actual pushed SHA.
+- Decision owner: The configured external repository CI/check policy supplies the candidate complementary outcome. `gh` is retrieval/transport, **not** a discretionary auditor; the concrete source of independently owned audit judgment depends on the external workflow configuration. Rum's Rust watcher exposes the feedback constructor but does not autonomously own that judgment.
 - Supporting / enforcement mechanisms: TUI pending_ci_watch after git push, main.rs ci_watch, gh run list --commit, gh run view --log-failed, TUI job event and queued user messages.
-- Closure path: Coder pushes commit → TUI detects push → watcher polls independent CI against SHA → failed audit logs retrieved → TUI passes CI failed findings back to the model's next input → model may repair and re-push.
-- Boundary reachability: The supported interactive TUI calls the watcher on actual pushed tool commands and injects retrieved failure logs into user_tx or queued agent input; this is executable runtime code, not demo-only.
-- Why this is / is not agent-owned: The external CI can independently contradict the coder's account, and Rum includes a function-specific feedback constructor. Audit rights still require external workflow configuration and gh, so C rather than autonomous A.
+- Closure path: Bash tool exits zero with command text containing `git push` → TUI requests a watch (not necessarily a verified push) → watcher reads local `HEAD` and polls CI for that SHA → available failed logs may be retrieved → TUI injects only matching failure summaries into the model's next input/queue → model may repair and re-push. No pushed-ref match, successful-check return, or repair is guaranteed.
+- Boundary reachability: The supported interactive TUI calls the watcher after *successful bash commands whose argument text contains* `git push`. Actual push completion/ref and local-HEAD equivalence are not verified; available failed-log summaries can reach `user_tx` or the queued agent input. This is shipped runtime code, not demo-only.
+- Why this is / is not agent-owned: Appropriately configured external CI can contradict the coder's own account, and Rum has a function-specific feedback constructor, but independently configured checks, `gh`, an eligible matching local HEAD and failure logs remain external/conditional. The original `C` classification is not upgraded; this narrowly conditional constructor interpretation received an attributable, non-independent Index S1 source-first semantic disposition in #1381, and the remaining publication/verification gates are distinct.
 - Evidence: [src/tui.rs](https://github.com/KAJdev/rum/blob/9c00bdb35f2a55959d6e56bd0d27b9573aac6fdd/src/tui.rs); [src/main.rs](https://github.com/KAJdev/rum/blob/9c00bdb35f2a55959d6e56bd0d27b9573aac6fdd/src/main.rs); [src/agent.rs](https://github.com/KAJdev/rum/blob/9c00bdb35f2a55959d6e56bd0d27b9573aac6fdd/src/agent.rs).
 - Basis: structural + explicit.
 - Confidence: medium.
-- Caveats: Only in a configured TUI run with a git push, authenticated gh and independent repository CI checks; without failed logs the message is not injected, and correction is not guaranteed.
+- Caveats: Only in interactive TUI with an exit-zero bash command containing `git push`, authenticated `gh`, independently configured project checks **and a matching local HEAD**. A successful `echo git push` can trigger a watch; pushing another ref can select the wrong commit. Missing failed logs prevent model injection, and repair is not guaranteed.
 
-- Claim being audited: Code pushed by the main coder that might violate project tests/checks.
-- Ordinary reporting path: Ordinary successful git push shell output and local code tool results.
-- Complementary access path: Independent GitHub Actions run for exact commit plus failure logs retrieved through authenticated gh.
-- Independence boundary: CI workflows and runners execute outside Rum/model; independently configured by project's maintainer.
+- Claim being audited: Coder changes whose **local HEAD selected by the watcher** may have external check failures; equivalence to the most recently pushed ref is unverified.
+- Ordinary reporting path: Exit-zero bash tool output/command text (which need not prove an actual push) and local code/tool results.
+- Complementary access path: Authenticated `gh` retrieves external GitHub Actions runs/logs by the *watched local HEAD SHA*; this is not an identity-verified receipt for the actual pushed ref.
+- Independence boundary: GitHub Actions workflows/runners are outside Rum/model and can supply distinct project checks where configured; whether their policy represents an independently controlled audit judgment is case- and workflow-specific, not proven by the watcher alone.
 - Who acts on findings: The coding agent receives failure findings in a subsequent input and decides possible repairs.
 
 ## S4 — Outside-and-then intelligence
@@ -174,11 +174,11 @@ The coder autonomously owns S1. A conditional external CI check can audit a push
 
 ## Distributed OSS parent arrangement
 
-Rum's own GitHub maintainer/release CI is external to an installed user coding session. The separately configured user's GitHub Actions check may supply a complementarily independent audit verdict; Rum only owns the feedback connector, not the independent check's source/judgment.
+Rum's own maintainer/release CI is external to an installed coding session. A user repository's separately configured GitHub Actions check may supply complementary evidence; Rum owns the conditional feedback connector, not that check's policy or discretionary judgment. The locally queried SHA is not guaranteed to equal the last pushed ref.
 
 ## Self-hosted and non-human modes
 
-Primary coding and read-only Explore are operational first-party modes. S3*=C is strictly configured interactive TUI: headless print mode, missing CI workflows, unavailable gh, missing logs, or unpushed code do not establish the same path.
+Primary coding and read-only Explore are operational first-party modes. The accepted `S3*=C` witness is restricted to configured interactive TUI with a relevant successful push whose checked-out local HEAD matches the pushed revision and available CI failure logs. Headless print, missing CI/`gh`/logs, nonmatching pushed ref, or text-only false push detection do not establish that same complementary return path.
 
 ## Recursion
 
@@ -186,10 +186,10 @@ One coding project is served by a primary code-editing S1, with optional read-on
 
 ## Variety and escalation
 
-Code/tool failures inform subsequent coding choices. Failed CI is a special externally sourced audit signal, delivered after a pushed revision, which may induce a code repair; it does not establish whole-current S3 or future S4 management.
+Code/tool failures inform subsequent coding choices. Failed externally sourced CI logs can inform coding when the TUI's local-HEAD watch matches the pushed revision; the watcher itself cannot prove that relation. They do not establish whole-current S3 or future S4 management.
 
 ## Evidence gaps
 
-- S3* constructor mode requires external CI configuration and authenticated gh; its presence, test quality and eventual repair outcomes are not guaranteed by Rum and are not measured here.
+- S3* constructor mode requires externally configured checks, authenticated `gh`, appropriate local-HEAD/pushed-ref alignment and available failure logs. The shipped watcher does not verify a real push or pushed ref. Independence, audit quality, and eventual repair are not established by the constructor alone; #1381 retains the owner adjudication.
 - The read-only Explore child exists but no first-party inter-S1 conflict damping is evidenced; parallel tool calls are not autonomous code-work cells.
 - No benchmark capability or efficacy is inferred from README descriptions or static code structure.
