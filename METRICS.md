@@ -37,7 +37,7 @@ The same snapshot is available in [`data/metrics.json`](data/metrics.json) for d
 Source-of-truth relationship:
 
 ```text
-assessments/*.md + data/catalog.psv + data/reassessment-history.psv
+assessments/**/*.md + data/catalog.psv + data/reassessment-history.psv
                   + data/active-contract.psv
                          ↓
               scripts/render_metrics.py

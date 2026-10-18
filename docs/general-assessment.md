@@ -6,7 +6,7 @@ It sits alongside [`assessment-lifecycle.md`](assessment-lifecycle.md): this doc
 
 `opensiro/vsm-harness-index` is the canonical **general VSM assessment corpus** for the released `assess-vsm-harness` Methodology.
 
-A link to `assessments/<harness_id>.md` in this repository means:
+A link to `assessments/<harness_id[:2]>/<harness_id>.md` in this repository means:
 
 > **General VSM assessment under the recorded Profile + Methodology contract.**
 

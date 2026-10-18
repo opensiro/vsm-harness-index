@@ -23,7 +23,7 @@ body:
     attributes:
       label: Current assessment
       description: Link to the current assessment file.
-      placeholder: "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/..."
+      placeholder: "https://github.com/opensiro/vsm-harness-index/blob/main/assessments/<shard>/<harness_id>.md"
     validations:
       required: true
 

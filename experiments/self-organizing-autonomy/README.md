@@ -37,7 +37,7 @@ A fixture may record only the experimental findings allowed by the pinned Skills
 - `does-not-support-S`
 - `inconclusive`
 
-These findings MUST NOT be written into `assessments/<harness_id>.md`, `data/catalog.psv`, `data/signatures.psv`, `TLDR.md`, `RANKINGS.md`, `FULL_A.md`, metrics, or other released-state projections unless `S` is later adopted by an explicit Methodology release and migration contract.
+These findings MUST NOT be written into `assessments/<harness_id[:2]>/<harness_id>.md`, `data/catalog.psv`, `data/signatures.psv`, `TLDR.md`, `RANKINGS.md`, `FULL_A.md`, metrics, or other released-state projections unless `S` is later adopted by an explicit Methodology release and migration contract.
 
 ## Independent-review rule
 

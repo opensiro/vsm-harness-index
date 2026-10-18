@@ -31,7 +31,7 @@ The Index keeps the following artifacts separate.
 
 ### Canonical general assessment
 
-`assessments/<harness_id>.md` (pre-migration) or `assessments/<first-two-slug-characters>/<harness_id>.md` (after #55 migration) is a repository-relative, revision-relative **general VSM assessment** produced under a recorded Profile/Methodology contract.
+`assessments/<first-two-slug-characters>/<harness_id>.md` is a repository-relative, revision-relative **general VSM assessment** produced under a recorded Profile/Methodology contract.
 
 The **format and semantic validity of the assessment are owned by `vsm-harness-skills`**. The Index stores the accepted instance and its provenance.
 
@@ -237,8 +237,8 @@ Index stores accepted general assessment instances and materializes the general 
 Domain-specific indexes own their own additional assessment conclusions.
 ```
 
-## Planned assessment-directory sharding (Index #55)
+## Assessment-directory sharding (Index #55)
 
-Issue [#55](https://github.com/opensiro/vsm-harness-index/issues/55) records the scale boundary of GitHub Contents API directory listings (1,000 entries). The repository currently retains the historical flat `assessments/<slug>.md` layout. Before physical cutover, readers, CI and preflight support both flat and deterministic shallow `assessments/<slug[:2]>/<slug>.md` layout; mixed trees are allowed only during migration. Duplicate `harness_id`, unexpected nesting or incorrect shards fail closed.
+Canonical assessment records are stored at `assessments/<slug[:2]>/<slug>.md`, where `slug` is the exact existing assessment filename stem (the stable `harness_id`). The shallow directory sharding avoids exceeding GitHub Contents API's 1,000-entry listing ceiling in one directory. Readers, CI, and preflight accept legacy flat records only to support historical and transitional trees; new assessments belong in the deterministic shard. A mis-sharded path, duplicate ID, or unexpected nested Markdown assessment fails closed.
 
-Physical migration must be **separately atomic and source-preserving**: retain all frontmatter and body bytes, update repository-relative links and downstream consumers, keep catalogue/signature identities unchanged, regenerate or validate derived views, and recheck the batch's original frozen revision and independent CI. This compatibility change does not itself move a record or authorize a batch state transition.
+This is **only a storage-location migration**, not a source revision, VSM re-assessment, contract change, new admission or change to `data/catalog.psv`, `data/signatures.psv`, provenance metadata, or synthesis. The audit and source-byte checks for the physical migration belong to [#55](https://github.com/opensiro/vsm-harness-index/issues/55). Existing external links pointing to old default-branch file paths need consumer updates; old commit-pinned paths continue to resolve historically.
