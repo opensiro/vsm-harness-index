@@ -635,3 +635,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 620|revka|Revka|https://github.com/KumihoIO/Revka|2026-04-23T12:00:44Z|index-addition|a1acd826502e12a6c2f3d147e488a7d2982c480b|2026-09-20
 621|harness2|Harness²|https://github.com/google-research/harness2|2026-10-06T21:48:11Z|index-addition|1cfe254e8d25b15f37048c3730134686abe60335|2026-10-17
 622|soket-loop|Soket Loop|https://github.com/soketlabs/loop|2026-08-02T15:22:20Z|index-addition|cb4a0c1de4a495236958d2da5845f3b976e522e8|2026-10-18
+623|harnessx|HarnessX|https://github.com/Darwin-Agent/HarnessX|2026-04-30T13:17:28Z|index-addition|915520584c92cc35ed24aef1af17eec1d60c0b01|2026-10-18
