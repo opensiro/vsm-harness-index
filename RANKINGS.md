@@ -321,6 +321,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="xoder"></a>[Xoder](https://github.com/BANGHlxbackout/Xoder) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openharness"></a>[OpenHarness](https://github.com/autonomous-ai/openharness) | 2026-Q3 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
 | 6 | <a id="fuse"></a>[Fuse](https://github.com/ethanhinson/fuse) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="soket-loop"></a>[Soket Loop](https://github.com/soketlabs/loop) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="moss-agent"></a>[moss-agent](https://github.com/peterxiemin/moss-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="qm"></a>[QM](https://github.com/yc-software/qm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ashcode"></a>[AshCode](https://github.com/AuthRan/AshCode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
