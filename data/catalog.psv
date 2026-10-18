@@ -637,3 +637,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 622|soket-loop|Soket Loop|https://github.com/soketlabs/loop|2026-08-02T15:22:20Z|index-addition|cb4a0c1de4a495236958d2da5845f3b976e522e8|2026-10-18
 623|harnessx|HarnessX|https://github.com/Darwin-Agent/HarnessX|2026-04-30T13:17:28Z|index-addition|915520584c92cc35ed24aef1af17eec1d60c0b01|2026-10-18
 624|harness-r1|Harness-R1|https://github.com/DeepExperience/Harness-R1|2026-07-31T10:30:10Z|index-addition|2b3f125710ed14ea8a863e6b39a2eb9951cc7181|2026-10-18
+625|rust-harness|Rust Harness|https://github.com/majiayu000/harness|2026-03-02T10:34:21Z|index-addition|7f75dee2cb2eaf7195c9b8938ac76db691f1d157|2026-10-18
