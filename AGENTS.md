@@ -29,7 +29,7 @@ The preflight is Index routing/tooling only. It does not perform VSM interpretat
 - Do not take a later queued row.
 - Do not silently replace the issue's frozen `review_ref` with a newer upstream head.
 - Use the assessment artifact format and classification procedure from the active Skills Methodology.
-- Treat `assessments/<harness_id>.md` as the repository-relative research artifact; `TLDR.md`, `RANKINGS.md`, and other views are derived materializations.
+- Treat `assessments/<harness_id>.md` (pre-migration) or `assessments/<first-two-slug-characters>/<harness_id>.md` (after #55 migration) as the repository-relative research artifact; `TLDR.md`, `RANKINGS.md`, and other views are derived materializations.
 
 The `review PR` of an assessment is its **proposed artifact** and ordinary repository integration stage, not a request for a second independently executing reviewer. Do not automatically announce/request an additional review or S3* audit after each row or completed batch. Separate source-first review or Organization S3* sampling requires a concrete owning contract; GitHub approval follows the live ruleset. See [CONTRIBUTING.md](CONTRIBUTING.md#pr-review-versus-independent-review-and-s3-audit) for the gate split.
 

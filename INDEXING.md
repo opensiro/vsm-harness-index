@@ -31,7 +31,7 @@ The Index keeps the following artifacts separate.
 
 ### Canonical general assessment
 
-`assessments/<harness_id>.md` is a repository-relative, revision-relative **general VSM assessment** produced under a recorded Profile/Methodology contract.
+`assessments/<harness_id>.md` (pre-migration) or `assessments/<first-two-slug-characters>/<harness_id>.md` (after #55 migration) is a repository-relative, revision-relative **general VSM assessment** produced under a recorded Profile/Methodology contract.
 
 The **format and semantic validity of the assessment are owned by `vsm-harness-skills`**. The Index stores the accepted instance and its provenance.
 
@@ -236,3 +236,9 @@ Skills says what a valid general or domain-specific assessment means.
 Index stores accepted general assessment instances and materializes the general corpus.
 Domain-specific indexes own their own additional assessment conclusions.
 ```
+
+## Planned assessment-directory sharding (Index #55)
+
+Issue [#55](https://github.com/opensiro/vsm-harness-index/issues/55) records the scale boundary of GitHub Contents API directory listings (1,000 entries). The repository currently retains the historical flat `assessments/<slug>.md` layout. Before physical cutover, readers, CI and preflight support both flat and deterministic shallow `assessments/<slug[:2]>/<slug>.md` layout; mixed trees are allowed only during migration. Duplicate `harness_id`, unexpected nesting or incorrect shards fail closed.
+
+Physical migration must be **separately atomic and source-preserving**: retain all frontmatter and body bytes, update repository-relative links and downstream consumers, keep catalogue/signature identities unchanged, regenerate or validate derived views, and recheck the batch's original frozen revision and independent CI. This compatibility change does not itself move a record or authorize a batch state transition.

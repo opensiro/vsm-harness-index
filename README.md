@@ -77,7 +77,7 @@ Active semantic contract: **Profile 0.2.4 / Methodology 0.3.7**.
 
 ## Assessments
 
-`assessments/<harness_id>.md` contains accepted repository-relative findings at a pinned revision.
+`assessments/<harness_id>.md` (pre-migration) or `assessments/<first-two-slug-characters>/<harness_id>.md` (after #55 migration) contains accepted repository-relative findings at a pinned revision.
 
 Adding another harness must not change an existing assessment merely because the comparison cohort changed.
 

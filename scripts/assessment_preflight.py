@@ -17,6 +17,8 @@ import urllib.error
 import urllib.request
 from dataclasses import asdict, dataclass
 from pathlib import Path
+
+from assessment_paths import flat_path, sharded_path, is_sharded
 from typing import Any
 
 DEFAULT_REPOSITORY = "opensiro/vsm-harness-index"
@@ -85,14 +87,20 @@ def resolve_assessment_path(root: Path, project: str, repository: str) -> tuple[
     """
     canonical = repository.casefold().strip("/")
     slug = slugify_project(project)
+    directory = root / "assessments"
     for candidate in (slug, f"{slugify_project(canonical.split('/')[0])}-{slug}"):
-        path = root / "assessments" / f"{candidate}.md"
-        if not path.exists():
-            return f"assessments/{candidate}.md", "new"
+        locations = (flat_path(directory, candidate), sharded_path(directory, candidate))
+        existing = [path for path in locations if path.is_file()]
+        if len(existing) > 1:
+            raise PreflightError(f"duplicate assessment across flat and shard: {candidate}")
+        if not existing:
+            target = locations[1] if is_sharded(directory) else locations[0]
+            return target.relative_to(root).as_posix(), "new"
+        path = existing[0]
         text = path.read_text(encoding="utf-8")
         match = re.search(r"(?m)^repository:\s*https?://github\.com/([^\s#]+)", text)
         if match and match.group(1).casefold().strip("/") == canonical:
-            return f"assessments/{candidate}.md", "existing"
+            return path.relative_to(root).as_posix(), "existing"
     raise PreflightError(
         f"assessment slug collision for {project!r} ({repository}); "
         f"both base and owner-qualified paths are already occupied"

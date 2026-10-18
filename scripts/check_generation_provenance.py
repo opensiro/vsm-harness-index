@@ -8,6 +8,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from assessment_paths import paths as assessment_paths
+
 
 GENERATION_KEYS = (
     "generated_profile_version",
@@ -71,7 +73,7 @@ def base_assessments(base_ref: str) -> dict[str, tuple[str, dict[str, str]]]:
 
 def current_assessments(repo: Path) -> dict[str, tuple[str, dict[str, str]]]:
     rows: dict[str, tuple[str, dict[str, str]]] = {}
-    for path in sorted((repo / "assessments").glob("*.md")):
+    for path in assessment_paths(repo / "assessments"):
         rel = path.relative_to(repo).as_posix()
         row = parse_frontmatter(path.read_text(encoding="utf-8"), rel)
         harness_id = row.get("harness_id", "")
