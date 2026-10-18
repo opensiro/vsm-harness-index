@@ -158,6 +158,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="omniscientist"></a>[OmniScientist](https://github.com/Omni-Scientist/OmniScientist) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="codey"></a>[Codey](https://github.com/codesbyjit/codey) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="travis234"></a>[Travis234](https://github.com/taikkyithar/travis234) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="harness-r1"></a>[Harness-R1](https://github.com/DeepExperience/Harness-R1) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="qwen-audio-agent"></a>[Qwen Audio Agent](https://github.com/QwenAudio/qwen-audio-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 2 | 0 | `A — — — A(P) P` |
 | 5 | <a id="commons"></a>[Commons](https://github.com/t54-labs/agent-commons) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A A — — — P` |
 | 5 | <a id="capstan"></a>[Capstan](https://github.com/theStrangeAdventurer/capstan) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 1 | `A — — ? A —` |
