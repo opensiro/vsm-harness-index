@@ -207,6 +207,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="clai"></a>[clai](https://github.com/pentoshi007/clai) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="tangle-agent-runtime"></a>[Tangle Agent Runtime](https://github.com/tangle-network/agent-runtime) | 2026-Q2 | 2/6 | 1/5 | 3 | 0 | 0 | `A C A C C —` |
+| 5 | <a id="henrik-agent-harness"></a>[Henrik Agent Harness](https://github.com/henrik-me/agent-harness) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="ogcode"></a>[Ogcode](https://github.com/prasenjeet-symon/ogcode) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |
 | 5 | <a id="proliferate"></a>[Proliferate](https://github.com/proliferate-ai/proliferate) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harnessx"></a>[HarnessX](https://github.com/Darwin-Agent/HarnessX) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
