@@ -3,6 +3,8 @@
 from __future__ import annotations
 from datetime import date
 from pathlib import Path
+
+from assessment_paths import paths as assessment_paths
 import re
 
 SYSTEM_KEYS = ("s1", "s2", "s3", "s3_star", "s4", "s5")
@@ -44,7 +46,7 @@ def parse_assessment(path: Path) -> dict[str, str]:
 
 def load_assessments(directory: Path) -> dict[str, dict[str, str]]:
     rows: dict[str, dict[str, str]] = {}
-    for path in sorted(directory.glob("*.md")):
+    for path in assessment_paths(directory):
         row = parse_assessment(path)
         harness_id = row.get("harness_id", "")
         if not harness_id or harness_id in rows:

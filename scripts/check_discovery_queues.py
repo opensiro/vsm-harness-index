@@ -34,6 +34,8 @@ import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
+from assessment_paths import paths as assessment_paths
+
 
 QUEUE_TITLE_RE = re.compile(
     r"\[(?:(?:candidate|assessment)(?:-| )batch|evidence(?:-| )intake)\]",
@@ -129,7 +131,7 @@ def parse_frontmatter(path: Path) -> dict[str, str]:
 
 def load_assessments(repo_root: Path) -> dict[str, list[str]]:
     by_status: dict[str, list[str]] = {"included": [], "proposed": []}
-    for path in sorted((repo_root / "assessments").glob("*.md")):
+    for path in assessment_paths(repo_root / "assessments"):
         meta = parse_frontmatter(path)
         status = meta.get("status")
         repository = meta.get("repository")

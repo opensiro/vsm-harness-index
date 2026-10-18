@@ -112,7 +112,7 @@ A blocked event records an attempted review but does not advance successful fres
 For a new canonical assessment:
 
 1. confirm the discovery/catalog record and frozen `review_ref`;
-2. use `assess-vsm-harness` from the active Skills Methodology to produce `assessments/<harness_id>.md`;
+2. use `assess-vsm-harness` from the active Skills Methodology to produce `assessments/<harness_id>.md` (pre-migration) or `assessments/<first-two-slug-characters>/<harness_id>.md` (after #55 migration);
 3. validate the assessment using the version-pinned Skills structural checker;
 4. resolve Index admission lifecycle;
 5. apply the Skills synthesis procedure to accepted assessments and store the resulting signature;
