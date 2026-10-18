@@ -641,3 +641,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 626|git-meta-harness|git-meta-harness|https://github.com/brenonaraujo/git-meta-harness|2026-07-18T20:37:12Z|index-addition|167b13c66993fa0a5216e4be2fc9bf911cd02cf8|2026-10-18
 627|react-agent-harness|react-agent-harness|https://github.com/ramannanda9/agent-harness|2026-05-11T19:47:42Z|index-addition|6b399e57daeef6475f2dc37c11a1e8fc097ca7e4|2026-10-18
 628|henrik-agent-harness|Henrik Agent Harness|https://github.com/henrik-me/agent-harness|2026-05-03T05:08:11Z|index-addition|9168fa451b69c5d53b961ab5c805b3067597ade4|2026-10-18
+629|phoenix-agent-harness|Phoenix Agent Harness|https://github.com/Phoenixrr2113/agent-harness|2026-04-08T10:55:31Z|index-addition|0f67103affd30a3c778874b890dbd5801cdbd94f|2026-10-18
