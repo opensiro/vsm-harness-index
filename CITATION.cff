@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use OpenSiro VSM Harness Index assessments, cite this corpus and identify the exact Git commit or immutable snapshot used."
+title: "OpenSiro VSM Harness Index"
+authors:
+  - name: "OpenSiro contributors"
+type: dataset
+abstract: >-
+  Versioned-through-Git corpus of evidence-backed VSM assessments of agent
+  harnesses. The Index owns assessment records and provenance, not VSM Profile
+  semantics or the released assessment methodology.
+repository-code: "https://github.com/opensiro/vsm-harness-index"
+url: "https://github.com/opensiro/vsm-harness-index"
+keywords:
+  - "agent harness"
+  - "Viable System Model"
+  - "assessment corpus"
+  - "research dataset"
