@@ -70,7 +70,7 @@ See `METHODOLOGY.md` for semantics.
 
 ## Canonical assessment updates
 
-The round file and history are append-only historical records. `assessments/<harness_id>.md` remains the canonical current assessment.
+The round file and history are append-only historical records. `assessments/<harness_id[:2]>/<harness_id>.md` remains the canonical current assessment.
 
 After a successful round check (any outcome except `blocked`), update its front matter with the complete freshness set and the spec pair used for that successful check:
 

@@ -58,6 +58,16 @@ class ShardingTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "shard"):
                 paths(directory)
 
+    def test_live_corpus_uses_shards_only(self):
+        repo = Path(__file__).resolve().parents[1]
+        directory = repo / "assessments"
+        self.assertFalse(list(directory.glob("*.md")), "flat assessment files remain")
+        records = paths(directory)
+        self.assertGreater(len(records), 0)
+        self.assertEqual(len(records), len(load_assessments(directory)))
+        for path in records:
+            self.assertEqual(path.parent.name, shard(path.stem))
+
     def test_shard_is_stable(self):
         self.assertEqual(shard("agent-zero"), "ag")
         self.assertEqual(shard("1code"), "1c")

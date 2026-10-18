@@ -4,7 +4,7 @@ Deterministic aggregate views over the canonical VSM Harness Index corpus.
 
 The canonical analytical sources remain:
 
-- `assessments/*.md` for standalone assessment state and metadata;
+- `assessments/**/*.md` for standalone assessment state and metadata;
 - `data/catalog.psv` for catalog provenance and repository creation time;
 - `data/reassessment-history.psv` for reassessment events.
 
