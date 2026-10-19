@@ -658,3 +658,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 643|tinyagents|TinyAgents|https://github.com/tinyhumansai/tinyagents|2026-06-29T04:42:44Z|index-addition|39e5835ddd2cf77830e68438135b251eb904438f|2026-10-19
 644|agent-loop|agent-loop|https://github.com/Onipounds/agent-loop|2026-05-31T22:18:19Z|index-addition|49525dc12a9861f71c99050de3b4a4b8b897e9fa|2026-10-20
 645|reins|Reins|https://github.com/shamspias/reins|2023-04-09T14:12:26Z|index-addition|69d5ae7e3f2336366e7567b7a476e7c71608f226|2026-10-20
+646|cubeloop|CubeLoop|https://github.com/cubeplexai/cubeloop|2026-05-09T07:42:05Z|index-addition|eb798f9a20c1f516d6a59a991a63a9d4c630f4bf|2026-10-20
