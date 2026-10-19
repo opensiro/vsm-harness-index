@@ -645,3 +645,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 630|balrog|BALROG|https://github.com/balrog-ai/BALROG|2024-11-20T22:08:12Z|index-addition|b7afe79e3e4265811cfa985ed7c95c4d1a11e3f5|2026-10-19
 631|babyai|BabyAI|https://github.com/mila-iqia/babyai|2018-10-02T17:58:24Z|index-addition|65fb0cb6f816532a65014bf034a758244e2d5ae7|2026-10-19
 632|wedow-harness|wedow Harness|https://github.com/wedow/harness|2026-03-24T15:15:44Z|index-addition|5f5d968a86b9762f4c69a6e4d0fe3bf1c5cb5c44|2026-10-19
+633|ui-harness|UI Harness|https://github.com/awizemann/harness|2026-05-03T22:10:19Z|index-addition|3f58c077ded131cca71d75efb05c5d325f0ed18f|2026-10-19
