@@ -654,3 +654,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 639|fennec-agent-runtime|Fennec Agent Runtime|https://github.com/Fennec-AI/agent-runtime|2026-05-25T20:02:17Z|index-addition|3441fbde350df50cc070851856c343680babefb4|2026-10-19
 640|agentflow|AgentFlow|https://github.com/agentenv/agentflow|2026-03-08T01:35:11Z|index-addition|eb51a2e7a5c7d65da5718c4a41843098b60c80e0|2026-10-19
 641|recuris|Recuris|https://github.com/Gen-Verse/Recuris|2026-08-25T05:33:44Z|index-addition|7d3745ab787b1206ccd981cb1511100476097266|2026-10-19
+642|active-graph|Active Graph|https://github.com/yoheinakajima/activegraph|2026-05-16T05:39:44Z|index-addition|50d8405923b79e4e823a73a3045bb969436a872c|2026-10-19
