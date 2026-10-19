@@ -656,3 +656,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 641|recuris|Recuris|https://github.com/Gen-Verse/Recuris|2026-08-25T05:33:44Z|index-addition|7d3745ab787b1206ccd981cb1511100476097266|2026-10-19
 642|active-graph|Active Graph|https://github.com/yoheinakajima/activegraph|2026-05-16T05:39:44Z|index-addition|50d8405923b79e4e823a73a3045bb969436a872c|2026-10-19
 643|tinyagents|TinyAgents|https://github.com/tinyhumansai/tinyagents|2026-06-29T04:42:44Z|index-addition|39e5835ddd2cf77830e68438135b251eb904438f|2026-10-19
+644|agent-loop|agent-loop|https://github.com/Onipounds/agent-loop|2026-05-31T22:18:19Z|index-addition|49525dc12a9861f71c99050de3b4a4b8b897e9fa|2026-10-20
