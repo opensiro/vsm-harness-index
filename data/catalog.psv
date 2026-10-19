@@ -648,3 +648,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 633|ui-harness|UI Harness|https://github.com/awizemann/harness|2026-05-03T22:10:19Z|index-addition|3f58c077ded131cca71d75efb05c5d325f0ed18f|2026-10-19
 634|yielded-agent|Yielded Agent|https://github.com/yielded-dev/agent|2026-07-29T22:08:15Z|index-addition|1866af9f9ec153f7db0ba56d76082e9a34a2e660|2026-10-19
 635|revfactory-harness|Revfactory Harness|https://github.com/revfactory/harness|2026-03-26T21:22:07Z|index-addition|92d9f1b29e7af81acebf51a9fcd1832e739a1414|2026-10-19
+636|pyflue|PyFlue|https://github.com/SuperagenticAI/pyflue|2026-05-03T06:29:13Z|index-addition|657c2d1a1b024a0bc137ff3bb252339fa0d5f692|2026-10-19
