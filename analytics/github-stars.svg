@@ -1,73 +1,73 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 805" role="img" aria-labelledby="title desc">
   <title id="title">OpenSiro: GitHub stars per included harness (snapshot)</title>
-  <desc id="desc">Horizontal bar chart across 16 unequal-width star bins; 452 included harnesses observed, 1 unavailable. Stars retrieved 2026-10-11T18:15:03Z.</desc>
+  <desc id="desc">Horizontal bar chart across 16 unequal-width star bins; 577 included harnesses observed, 4 unavailable. Stars retrieved 2026-10-19T10:44:53Z.</desc>
   <rect width="1100" height="805" fill="#ffffff"/>
   <style>text{font-family:system-ui,-apple-system,Segoe UI,sans-serif} .axis{fill:#334155;font-size:17px} .value{fill:#0f172a;font-size:16px;font-weight:650}</style>
   <text x="48" y="50" fill="#0f172a" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="28" font-weight="700">GitHub stars across OpenSiro harnesses</text>
-  <text x="48" y="84" class="axis">452 observed of 453 included · 2026-10-11 · unequal star bins</text>
+  <text x="48" y="84" class="axis">577 observed of 581 included · 2026-10-19 · unequal star bins</text>
   <text class="axis" x="162" y="150" text-anchor="end">0</text>
   <rect x="180" y="130" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="130" width="533" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="151">38</text>
+  <rect x="180" y="130" width="459" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="151">45</text>
   <text class="axis" x="162" y="188" text-anchor="end">1–4</text>
   <rect x="180" y="168" width="785" height="28" rx="4" fill="#e2e8f0"/>
   <rect x="180" y="168" width="785" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="189">56</text>
+  <text class="value" x="977" y="189">77</text>
   <text class="axis" x="162" y="226" text-anchor="end">5–9</text>
   <rect x="180" y="206" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="206" width="435" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="227">31</text>
+  <rect x="180" y="206" width="438" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="227">43</text>
   <text class="axis" x="162" y="264" text-anchor="end">10–24</text>
   <rect x="180" y="244" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="244" width="308" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="265">22</text>
+  <rect x="180" y="244" width="377" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="265">37</text>
   <text class="axis" x="162" y="302" text-anchor="end">25–49</text>
   <rect x="180" y="282" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="282" width="182" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="303">13</text>
+  <rect x="180" y="282" width="234" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="303">23</text>
   <text class="axis" x="162" y="340" text-anchor="end">50–99</text>
   <rect x="180" y="320" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="320" width="294" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="341">21</text>
+  <rect x="180" y="320" width="275" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="341">27</text>
   <text class="axis" x="162" y="378" text-anchor="end">100–249</text>
   <rect x="180" y="358" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="358" width="519" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="379">37</text>
+  <rect x="180" y="358" width="469" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="379">46</text>
   <text class="axis" x="162" y="416" text-anchor="end">250–499</text>
   <rect x="180" y="396" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="396" width="364" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="417">26</text>
+  <rect x="180" y="396" width="347" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="417">34</text>
   <text class="axis" x="162" y="454" text-anchor="end">500–999</text>
   <rect x="180" y="434" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="434" width="463" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="455">33</text>
+  <rect x="180" y="434" width="418" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="455">41</text>
   <text class="axis" x="162" y="492" text-anchor="end">1k–2.5k</text>
   <rect x="180" y="472" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="472" width="575" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="493">41</text>
+  <rect x="180" y="472" width="500" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="493">49</text>
   <text class="axis" x="162" y="530" text-anchor="end">2.5k–5k</text>
   <rect x="180" y="510" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="510" width="168" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="531">12</text>
+  <rect x="180" y="510" width="153" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="531">15</text>
   <text class="axis" x="162" y="568" text-anchor="end">5k–10k</text>
   <rect x="180" y="548" width="785" height="28" rx="4" fill="#e2e8f0"/>
   <rect x="180" y="548" width="336" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="569">24</text>
+  <text class="value" x="977" y="569">33</text>
   <text class="axis" x="162" y="606" text-anchor="end">10k–25k</text>
   <rect x="180" y="586" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="586" width="477" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="607">34</text>
+  <rect x="180" y="586" width="398" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="607">39</text>
   <text class="axis" x="162" y="644" text-anchor="end">25k–50k</text>
   <rect x="180" y="624" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="624" width="449" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="645">32</text>
+  <rect x="180" y="624" width="357" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="645">35</text>
   <text class="axis" x="162" y="682" text-anchor="end">50k–100k</text>
   <rect x="180" y="662" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="662" width="224" height="28" rx="4" fill="#2563eb"/>
+  <rect x="180" y="662" width="163" height="28" rx="4" fill="#2563eb"/>
   <text class="value" x="977" y="683">16</text>
   <text class="axis" x="162" y="720" text-anchor="end">100k+</text>
   <rect x="180" y="700" width="785" height="28" rx="4" fill="#e2e8f0"/>
-  <rect x="180" y="700" width="224" height="28" rx="4" fill="#2563eb"/>
-  <text class="value" x="977" y="721">16</text>
+  <rect x="180" y="700" width="173" height="28" rx="4" fill="#2563eb"/>
+  <text class="value" x="977" y="721">17</text>
   <text x="48" y="778" class="axis">Counts per category · popularity only, not VSM autonomy or quality</text>
 </svg>

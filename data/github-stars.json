@@ -2,218 +2,218 @@
   "schema_version": 1,
   "source": "GitHub repository stargazerCount / REST stargazers_count",
   "cohort": "canonical included at source_commit; catalog order",
-  "source_commit": "a7c59ff1e31797fecb7230dc6eb2292f5df1029d",
-  "started_at_utc": "2026-10-11T18:13:11Z",
-  "finished_at_utc": "2026-10-11T18:15:03Z",
+  "source_commit": "b48b13e74d6938f833094d3f9afc1a11e61a8515",
+  "started_at_utc": "2026-10-19T10:44:26Z",
+  "finished_at_utc": "2026-10-19T10:44:53Z",
   "records": [
     {
       "harness_id": "rasa",
       "project_name": "Rasa",
       "repository": "https://github.com/RasaHQ/rasa",
-      "stars": 21346,
+      "stars": 21355,
       "fetch_status": "ok"
     },
     {
       "harness_id": "botpress",
       "project_name": "Botpress",
       "repository": "https://github.com/botpress/botpress",
-      "stars": 14946,
+      "stars": 14957,
       "fetch_status": "ok"
     },
     {
       "harness_id": "n8n",
       "project_name": "n8n",
       "repository": "https://github.com/n8n-io/n8n",
-      "stars": 207002,
+      "stars": 207983,
       "fetch_status": "ok"
     },
     {
       "harness_id": "khoj",
       "project_name": "Khoj",
       "repository": "https://github.com/khoj-ai/khoj",
-      "stars": 37637,
+      "stars": 37744,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agno",
       "project_name": "Agno",
       "repository": "https://github.com/agno-agi/agno",
-      "stars": 42668,
+      "stars": 42806,
       "fetch_status": "ok"
     },
     {
       "harness_id": "langchain",
       "project_name": "LangChain",
       "repository": "https://github.com/langchain-ai/langchain",
-      "stars": 147618,
+      "stars": 148069,
       "fetch_status": "ok"
     },
     {
       "harness_id": "llama-index",
       "project_name": "LlamaIndex",
       "repository": "https://github.com/run-llama/llama_index",
-      "stars": 52464,
+      "stars": 52566,
       "fetch_status": "ok"
     },
     {
       "harness_id": "langflow",
       "project_name": "Langflow",
       "repository": "https://github.com/langflow-ai/langflow",
-      "stars": 155500,
+      "stars": 155831,
       "fetch_status": "ok"
     },
     {
       "harness_id": "semantic-kernel",
       "project_name": "Semantic Kernel",
       "repository": "https://github.com/microsoft/semantic-kernel",
-      "stars": 28645,
+      "stars": 28672,
       "fetch_status": "ok"
     },
     {
       "harness_id": "autogpt",
       "project_name": "AutoGPT",
       "repository": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 187521,
+      "stars": 187650,
       "fetch_status": "ok"
     },
     {
       "harness_id": "camel-workforce",
       "project_name": "CAMEL Workforce",
       "repository": "https://github.com/camel-ai/camel",
-      "stars": 17867,
+      "stars": 17932,
       "fetch_status": "ok"
     },
     {
       "harness_id": "flowise",
       "project_name": "Flowise",
       "repository": "https://github.com/FlowiseAI/Flowise",
-      "stars": 55495,
+      "stars": 55511,
       "fetch_status": "ok"
     },
     {
       "harness_id": "dify",
       "project_name": "Dify",
       "repository": "https://github.com/langgenius/dify",
-      "stars": 158154,
+      "stars": 158872,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agentverse",
       "project_name": "AgentVerse",
       "repository": "https://github.com/OpenBMB/AgentVerse",
-      "stars": 5156,
+      "stars": 5158,
       "fetch_status": "ok"
     },
     {
       "harness_id": "aider",
       "project_name": "Aider",
       "repository": "https://github.com/Aider-AI/aider",
-      "stars": 49474,
+      "stars": 49630,
       "fetch_status": "ok"
     },
     {
       "harness_id": "gpt-researcher",
       "project_name": "GPT Researcher",
       "repository": "https://github.com/assafelovic/gpt-researcher",
-      "stars": 30018,
+      "stars": 30167,
       "fetch_status": "ok"
     },
     {
       "harness_id": "vercel-ai",
       "project_name": "Vercel AI SDK",
       "repository": "https://github.com/vercel/ai",
-      "stars": 27245,
+      "stars": 27394,
       "fetch_status": "ok"
     },
     {
       "harness_id": "continue",
       "project_name": "Continue",
       "repository": "https://github.com/continuedev/continue",
-      "stars": 36184,
+      "stars": 36258,
       "fetch_status": "ok"
     },
     {
       "harness_id": "anythingllm",
       "project_name": "AnythingLLM",
       "repository": "https://github.com/Mintplex-Labs/anything-llm",
-      "stars": 66942,
+      "stars": 67307,
       "fetch_status": "ok"
     },
     {
       "harness_id": "metagpt",
       "project_name": "MetaGPT",
       "repository": "https://github.com/FoundationAgents/MetaGPT",
-      "stars": 70800,
+      "stars": 70919,
       "fetch_status": "ok"
     },
     {
       "harness_id": "open-interpreter",
       "project_name": "Open Interpreter",
       "repository": "https://github.com/openinterpreter/openinterpreter",
-      "stars": 68550,
+      "stars": 68602,
       "fetch_status": "ok"
     },
     {
       "harness_id": "langgraph",
       "project_name": "LangGraph",
       "repository": "https://github.com/langchain-ai/langgraph",
-      "stars": 43070,
+      "stars": 43494,
       "fetch_status": "ok"
     },
     {
       "harness_id": "autogen-agentchat",
       "project_name": "Microsoft AutoGen AgentChat",
       "repository": "https://github.com/microsoft/autogen",
-      "stars": 61352,
+      "stars": 61478,
       "fetch_status": "ok"
     },
     {
       "harness_id": "chatdev",
       "project_name": "ChatDev",
       "repository": "https://github.com/OpenBMB/ChatDev",
-      "stars": 34480,
+      "stars": 34549,
       "fetch_status": "ok"
     },
     {
       "harness_id": "letta",
       "project_name": "Letta",
       "repository": "https://github.com/letta-ai/letta",
-      "stars": 25104,
+      "stars": 25187,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ailice",
       "project_name": "AIlice",
       "repository": "https://github.com/myshell-ai/AIlice",
-      "stars": 1419,
+      "stars": 1420,
       "fetch_status": "ok"
     },
     {
       "harness_id": "crewai",
       "project_name": "CrewAI",
       "repository": "https://github.com/crewAIInc/crewAI",
-      "stars": 59570,
+      "stars": 59861,
       "fetch_status": "ok"
     },
     {
       "harness_id": "openagents",
       "project_name": "OpenAgents",
       "repository": "https://github.com/OpenAgentsInc/openagents",
-      "stars": 455,
+      "stars": 457,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agency-swarm",
       "project_name": "Agency Swarm",
       "repository": "https://github.com/VRSEN/agency-swarm",
-      "stars": 4600,
+      "stars": 4604,
       "fetch_status": "ok"
     },
     {
       "harness_id": "concordia",
       "project_name": "Concordia",
       "repository": "https://github.com/google-deepmind/concordia",
-      "stars": 1772,
+      "stars": 1800,
       "fetch_status": "ok"
     },
     {
@@ -227,126 +227,126 @@
       "harness_id": "r2r",
       "project_name": "R2R",
       "repository": "https://github.com/SciPhi-AI/R2R",
-      "stars": 8016,
+      "stars": 8029,
       "fetch_status": "ok"
     },
     {
       "harness_id": "openhands",
       "project_name": "OpenHands",
       "repository": "https://github.com/OpenHands/OpenHands",
-      "stars": 90596,
+      "stars": 91251,
       "fetch_status": "ok"
     },
     {
       "harness_id": "praisonai",
       "project_name": "PraisonAI",
       "repository": "https://github.com/MervinPraison/PraisonAI",
-      "stars": 9223,
+      "stars": 9270,
       "fetch_status": "ok"
     },
     {
       "harness_id": "stagehand",
       "project_name": "Stagehand",
       "repository": "https://github.com/browserbase/stagehand",
-      "stars": 25622,
+      "stars": 25732,
       "fetch_status": "ok"
     },
     {
       "harness_id": "swe-agent",
       "project_name": "SWE-agent",
       "repository": "https://github.com/SWE-agent/SWE-agent",
-      "stars": 20524,
+      "stars": 20596,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agent-zero",
       "project_name": "Agent Zero",
       "repository": "https://github.com/agent0ai/agent-zero",
-      "stars": 19427,
+      "stars": 19511,
       "fetch_status": "ok"
     },
     {
       "harness_id": "pydantic-ai",
       "project_name": "Pydantic AI",
       "repository": "https://github.com/pydantic/pydantic-ai",
-      "stars": 20550,
+      "stars": 20725,
       "fetch_status": "ok"
     },
     {
       "harness_id": "cline",
       "project_name": "Cline",
       "repository": "https://github.com/cline/cline",
-      "stars": 70172,
+      "stars": 70538,
       "fetch_status": "ok"
     },
     {
       "harness_id": "eliza",
       "project_name": "Eliza",
       "repository": "https://github.com/elizaOS/eliza",
-      "stars": 19571,
+      "stars": 19622,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agent-squad",
       "project_name": "Agent Squad",
       "repository": "https://github.com/2FastLabs/agent-squad",
-      "stars": 7790,
+      "stars": 7792,
       "fetch_status": "ok"
     },
     {
       "harness_id": "mastra",
       "project_name": "Mastra",
       "repository": "https://github.com/mastra-ai/mastra",
-      "stars": 28714,
+      "stars": 28905,
       "fetch_status": "ok"
     },
     {
       "harness_id": "beeai-framework",
       "project_name": "BeeAI Framework",
       "repository": "https://github.com/i-am-bee/beeai-framework",
-      "stars": 3430,
+      "stars": 3435,
       "fetch_status": "ok"
     },
     {
       "harness_id": "goose",
       "project_name": "Goose",
       "repository": "https://github.com/aaif-goose/goose",
-      "stars": 55163,
+      "stars": 55429,
       "fetch_status": "ok"
     },
     {
       "harness_id": "superagentx",
       "project_name": "SuperAgentX",
       "repository": "https://github.com/superagentxai/superagentx",
-      "stars": 202,
+      "stars": 203,
       "fetch_status": "ok"
     },
     {
       "harness_id": "browser-use",
       "project_name": "Browser Use",
       "repository": "https://github.com/browser-use/browser-use",
-      "stars": 117645,
+      "stars": 118471,
       "fetch_status": "ok"
     },
     {
       "harness_id": "roo-code",
       "project_name": "Roo Code",
       "repository": "https://github.com/RooCodeInc/Roo-Code",
-      "stars": 24283,
+      "stars": 24274,
       "fetch_status": "ok"
     },
     {
       "harness_id": "smolagents",
       "project_name": "smolagents",
       "repository": "https://github.com/huggingface/smolagents",
-      "stars": 29782,
+      "stars": 29922,
       "fetch_status": "ok"
     },
     {
       "harness_id": "cloudflare-agents",
       "project_name": "Cloudflare Agents",
       "repository": "https://github.com/cloudflare/agents",
-      "stars": 5808,
+      "stars": 5849,
       "fetch_status": "ok"
     },
     {
@@ -360,413 +360,413 @@
       "harness_id": "openmanus",
       "project_name": "OpenManus",
       "repository": "https://github.com/FoundationAgents/OpenManus",
-      "stars": 58612,
+      "stars": 58729,
       "fetch_status": "ok"
     },
     {
       "harness_id": "kilo-code",
       "project_name": "Kilo Code",
       "repository": "https://github.com/Kilo-Org/kilocode",
-      "stars": 27565,
+      "stars": 27658,
       "fetch_status": "ok"
     },
     {
       "harness_id": "openai-agents-sdk",
       "project_name": "OpenAI Agents SDK",
       "repository": "https://github.com/openai/openai-agents-python",
-      "stars": 29968,
+      "stars": 30133,
       "fetch_status": "ok"
     },
     {
       "harness_id": "google-adk",
       "project_name": "Google ADK",
       "repository": "https://github.com/google/adk-python",
-      "stars": 21778,
+      "stars": 21908,
       "fetch_status": "ok"
     },
     {
       "harness_id": "codex",
       "project_name": "Codex",
       "repository": "https://github.com/openai/codex",
-      "stars": 128660,
+      "stars": 129872,
       "fetch_status": "ok"
     },
     {
       "harness_id": "gemini-cli",
       "project_name": "Gemini CLI",
       "repository": "https://github.com/google-gemini/gemini-cli",
-      "stars": 107285,
+      "stars": 107450,
       "fetch_status": "ok"
     },
     {
       "harness_id": "microsoft-agent-framework",
       "project_name": "Microsoft Agent Framework",
       "repository": "https://github.com/microsoft/agent-framework",
-      "stars": 14059,
+      "stars": 14204,
       "fetch_status": "ok"
     },
     {
       "harness_id": "opencode",
       "project_name": "OpenCode",
       "repository": "https://github.com/anomalyco/opencode",
-      "stars": 212699,
+      "stars": 217117,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agentsilex",
       "project_name": "AgentSilex",
       "repository": "https://github.com/howl-anderson/agentsilex",
-      "stars": 457,
+      "stars": 458,
       "fetch_status": "ok"
     },
     {
       "harness_id": "deerflow",
       "project_name": "DeerFlow",
       "repository": "https://github.com/bytedance/deer-flow",
-      "stars": 83688,
+      "stars": 84120,
       "fetch_status": "ok"
     },
     {
       "harness_id": "strands-agents",
       "project_name": "Strands Agents",
       "repository": "https://github.com/strands-agents/harness-sdk",
-      "stars": 8769,
+      "stars": 8863,
       "fetch_status": "ok"
     },
     {
       "harness_id": "crush",
       "project_name": "Crush",
       "repository": "https://github.com/charmbracelet/crush",
-      "stars": 28595,
+      "stars": 28703,
       "fetch_status": "ok"
     },
     {
       "harness_id": "openai-agents-js",
       "project_name": "OpenAI Agents SDK for JavaScript",
       "repository": "https://github.com/openai/openai-agents-js",
-      "stars": 3905,
+      "stars": 3927,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ruflo",
       "project_name": "Ruflo",
       "repository": "https://github.com/ruvnet/ruflo",
-      "stars": 74346,
+      "stars": 76813,
       "fetch_status": "ok"
     },
     {
       "harness_id": "claude-agent-sdk",
       "project_name": "Claude Agent SDK",
       "repository": "https://github.com/anthropics/claude-agent-sdk-python",
-      "stars": 8249,
+      "stars": 8298,
       "fetch_status": "ok"
     },
     {
       "harness_id": "vibe-kanban",
       "project_name": "Vibe Kanban",
       "repository": "https://github.com/BloopAI/vibe-kanban",
-      "stars": 28327,
+      "stars": 28392,
       "fetch_status": "ok"
     },
     {
       "harness_id": "qwen-code",
       "project_name": "Qwen Code",
       "repository": "https://github.com/QwenLM/qwen-code",
-      "stars": 28417,
+      "stars": 28574,
       "fetch_status": "ok"
     },
     {
       "harness_id": "hermes-agent",
       "project_name": "Hermes Agent",
       "repository": "https://github.com/NousResearch/hermes-agent",
-      "stars": 252753,
+      "stars": 255096,
       "fetch_status": "ok"
     },
     {
       "harness_id": "deepagents",
       "project_name": "Deep Agents",
       "repository": "https://github.com/langchain-ai/deepagents",
-      "stars": 30128,
+      "stars": 30408,
       "fetch_status": "ok"
     },
     {
       "harness_id": "eigent",
       "project_name": "Eigent",
       "repository": "https://github.com/eigent-ai/eigent",
-      "stars": 15499,
+      "stars": 15601,
       "fetch_status": "ok"
     },
     {
       "harness_id": "aionui",
       "project_name": "AionUi",
       "repository": "https://github.com/iOfficeAI/AionUi",
-      "stars": 33432,
+      "stars": 33631,
       "fetch_status": "ok"
     },
     {
       "harness_id": "mirothinker",
       "project_name": "MiroThinker",
       "repository": "https://github.com/MiroMindAI/MiroThinker",
-      "stars": 8426,
+      "stars": 8421,
       "fetch_status": "ok"
     },
     {
       "harness_id": "pi",
       "project_name": "Pi",
       "repository": "https://github.com/earendil-works/pi",
-      "stars": 114291,
+      "stars": 116317,
       "fetch_status": "ok"
     },
     {
       "harness_id": "repomaster",
       "project_name": "RepoMaster",
       "repository": "https://github.com/QuantaAlpha/RepoMaster",
-      "stars": 552,
+      "stars": 555,
       "fetch_status": "ok"
     },
     {
       "harness_id": "youtu-agent",
       "project_name": "Youtu-Agent",
       "repository": "https://github.com/TencentCloudADP/youtu-agent",
-      "stars": 4623,
+      "stars": 4625,
       "fetch_status": "ok"
     },
     {
       "harness_id": "shannon",
       "project_name": "Shannon",
       "repository": "https://github.com/Kocoro-lab/Shannon",
-      "stars": 2283,
+      "stars": 2291,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agentrl",
       "project_name": "AgentRL",
       "repository": "https://github.com/THUDM/AgentRL",
-      "stars": 359,
+      "stars": 360,
       "fetch_status": "ok"
     },
     {
       "harness_id": "openclaw",
       "project_name": "OpenClaw",
       "repository": "https://github.com/openclaw/openclaw",
-      "stars": 391686,
+      "stars": 392441,
       "fetch_status": "ok"
     },
     {
       "harness_id": "oh-my-openagent",
       "project_name": "oh-my-openagent",
       "repository": "https://github.com/code-yeongyu/oh-my-openagent",
-      "stars": 69961,
+      "stars": 70180,
       "fetch_status": "ok"
     },
     {
       "harness_id": "oh-my-pi",
       "project_name": "oh-my-pi",
       "repository": "https://github.com/can1357/oh-my-pi",
-      "stars": 35036,
+      "stars": 35915,
       "fetch_status": "ok"
     },
     {
       "harness_id": "jcode",
       "project_name": "jcode",
       "repository": "https://github.com/1jehuang/jcode",
-      "stars": 20433,
+      "stars": 21025,
       "fetch_status": "ok"
     },
     {
       "harness_id": "hive",
       "project_name": "Hive",
       "repository": "https://github.com/aden-hive/hive",
-      "stars": 11096,
+      "stars": 11108,
       "fetch_status": "ok"
     },
     {
       "harness_id": "openjarvis",
       "project_name": "OpenJarvis",
       "repository": "https://github.com/open-jarvis/OpenJarvis",
-      "stars": 10973,
+      "stars": 11572,
       "fetch_status": "ok"
     },
     {
       "harness_id": "swarmclaw",
       "project_name": "SwarmClaw",
       "repository": "https://github.com/swarmclawai/swarmclaw",
-      "stars": 689,
+      "stars": 692,
       "fetch_status": "ok"
     },
     {
       "harness_id": "open-harness",
       "project_name": "open-harness",
       "repository": "https://github.com/MaxGfeller/open-harness",
-      "stars": 617,
+      "stars": 619,
       "fetch_status": "ok"
     },
     {
       "harness_id": "symphony",
       "project_name": "Symphony",
       "repository": "https://github.com/openai/symphony",
-      "stars": 27635,
+      "stars": 27743,
       "fetch_status": "ok"
     },
     {
       "harness_id": "looptroop",
       "project_name": "LoopTroop",
       "repository": "https://github.com/looptroop-ai/LoopTroop",
-      "stars": 161,
+      "stars": 163,
       "fetch_status": "ok"
     },
     {
       "harness_id": "nerve",
       "project_name": "Nerve",
       "repository": "https://github.com/ClickHouse/nerve",
-      "stars": 89,
+      "stars": 91,
       "fetch_status": "ok"
     },
     {
       "harness_id": "talon",
       "project_name": "Talon",
       "repository": "https://github.com/dylanneve1/talon",
-      "stars": 78,
+      "stars": 79,
       "fetch_status": "ok"
     },
     {
       "harness_id": "orca-stablyai",
       "project_name": "Orca",
       "repository": "https://github.com/stablyai/orca",
-      "stars": 89636,
+      "stars": 97424,
       "fetch_status": "ok"
     },
     {
       "harness_id": "herdr",
       "project_name": "Herdr",
       "repository": "https://github.com/herdrdev/herdr",
-      "stars": 43382,
+      "stars": 44737,
       "fetch_status": "ok"
     },
     {
       "harness_id": "openharness-hkuds",
       "project_name": "OpenHarness (HKUDS)",
       "repository": "https://github.com/HKUDS/OpenHarness",
-      "stars": 15961,
+      "stars": 16015,
       "fetch_status": "ok"
     },
     {
       "harness_id": "claw-code-agent",
       "project_name": "claw-code-agent",
       "repository": "https://github.com/HarnessLab/claw-code-agent",
-      "stars": 546,
+      "stars": 549,
       "fetch_status": "ok"
     },
     {
       "harness_id": "autoharness",
       "project_name": "AutoHarness",
       "repository": "https://github.com/aiming-lab/AutoHarness",
-      "stars": 441,
+      "stars": 451,
       "fetch_status": "ok"
     },
     {
       "harness_id": "meta-harness",
       "project_name": "Meta-Harness",
       "repository": "https://github.com/stanford-iris-lab/meta-harness",
-      "stars": 1650,
+      "stars": 1683,
       "fetch_status": "ok"
     },
     {
       "harness_id": "reasonix",
       "project_name": "Reasonix",
       "repository": "https://github.com/esengine/DeepSeek-Reasonix",
-      "stars": 35764,
+      "stars": 35863,
       "fetch_status": "ok"
     },
     {
       "harness_id": "proliferate",
       "project_name": "Proliferate",
       "repository": "https://github.com/proliferate-ai/proliferate",
-      "stars": 515,
+      "stars": 516,
       "fetch_status": "ok"
     },
     {
       "harness_id": "get-shit-done",
       "project_name": "get-shit-done",
       "repository": "https://github.com/open-gsd/gsd-core",
-      "stars": 10410,
+      "stars": 10671,
       "fetch_status": "ok"
     },
     {
       "harness_id": "omnigent",
       "project_name": "Omnigent",
       "repository": "https://github.com/omnigent-ai/omnigent",
-      "stars": 10746,
+      "stars": 10897,
       "fetch_status": "ok"
     },
     {
       "harness_id": "penguin-harness",
       "project_name": "PenguinHarness",
       "repository": "https://github.com/Prism-Shadow/penguin-harness",
-      "stars": 2480,
+      "stars": 2854,
       "fetch_status": "ok"
     },
     {
       "harness_id": "mini-harness",
       "project_name": "mini-harness",
       "repository": "https://github.com/mini-harness/mini-harness",
-      "stars": 203,
+      "stars": 208,
       "fetch_status": "ok"
     },
     {
       "harness_id": "claude-code",
       "project_name": "Claude Code",
       "repository": "https://github.com/anthropics/claude-code",
-      "stars": 150190,
+      "stars": 152324,
       "fetch_status": "ok"
     },
     {
       "harness_id": "prime-agent",
       "project_name": "Prime Agent",
       "repository": "https://github.com/PrimeIntellect-ai/prime-agent",
-      "stars": 21897,
+      "stars": 22162,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agentbox",
       "project_name": "AgentBox",
       "repository": "https://github.com/madarco/agentbox",
-      "stars": 529,
+      "stars": 538,
       "fetch_status": "ok"
     },
     {
       "harness_id": "cc-haha",
       "project_name": "cc-haha",
       "repository": "https://github.com/NanmiCoder/cc-haha",
-      "stars": 14967,
+      "stars": 15073,
       "fetch_status": "ok"
     },
     {
       "harness_id": "yylo",
       "project_name": "YYLO",
       "repository": "https://github.com/yylo-dev/yylo",
-      "stars": 63,
+      "stars": 65,
       "fetch_status": "ok"
     },
     {
       "harness_id": "haystack",
       "project_name": "Haystack",
       "repository": "https://github.com/deepset-ai/haystack",
-      "stars": 26719,
+      "stars": 26774,
       "fetch_status": "ok"
     },
     {
       "harness_id": "deepseek-harness",
       "project_name": "DeepSeek Harness",
       "repository": "https://github.com/deepseek-ai/deepseek-harness",
-      "stars": 247437,
+      "stars": 253999,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ag2",
       "project_name": "AG2",
       "repository": "https://github.com/ag2ai/ag2",
-      "stars": 4988,
+      "stars": 5004,
       "fetch_status": "ok"
     },
     {
@@ -780,77 +780,77 @@
       "harness_id": "auto-harness",
       "project_name": "Auto Harness",
       "repository": "https://github.com/neosigmaai/auto-harness",
-      "stars": 550,
+      "stars": 552,
       "fetch_status": "ok"
     },
     {
       "harness_id": "browser-harness",
       "project_name": "Browser Harness",
       "repository": "https://github.com/browser-use/browser-harness",
-      "stars": 18391,
+      "stars": 18494,
       "fetch_status": "ok"
     },
     {
       "harness_id": "autoagent",
       "project_name": "AutoAgent",
       "repository": "https://github.com/thirdlayerinc/autoagent",
-      "stars": 4575,
+      "stars": 4570,
       "fetch_status": "ok"
     },
     {
       "harness_id": "squad",
       "project_name": "Squad",
       "repository": "https://github.com/bradygaster/squad",
-      "stars": 3263,
+      "stars": 3285,
       "fetch_status": "ok"
     },
     {
       "harness_id": "aohp",
       "project_name": "AOHP",
       "repository": "https://github.com/aohp-os/aohp",
-      "stars": 155,
+      "stars": 156,
       "fetch_status": "ok"
     },
     {
       "harness_id": "open-code-review",
       "project_name": "OpenCodeReview",
       "repository": "https://github.com/alibaba/open-code-review",
-      "stars": 46116,
+      "stars": 47630,
       "fetch_status": "ok"
     },
     {
       "harness_id": "clawgui",
       "project_name": "ClawGUI",
       "repository": "https://github.com/ZJU-REAL/ClawGUI",
-      "stars": 1360,
+      "stars": 1362,
       "fetch_status": "ok"
     },
     {
       "harness_id": "opensre",
       "project_name": "OpenSRE",
       "repository": "https://github.com/Tracer-Cloud/opensre",
-      "stars": 11775,
+      "stars": 12195,
       "fetch_status": "ok"
     },
     {
       "harness_id": "loopx",
       "project_name": "LoopX",
       "repository": "https://github.com/huangruiteng/loopx",
-      "stars": 6239,
+      "stars": 6368,
       "fetch_status": "ok"
     },
     {
       "harness_id": "headcount",
       "project_name": "Headcount",
       "repository": "https://github.com/cbrock84/headcount",
-      "stars": 2031,
+      "stars": 2072,
       "fetch_status": "ok"
     },
     {
       "harness_id": "qm",
       "project_name": "QM",
       "repository": "https://github.com/yc-software/qm",
-      "stars": 15382,
+      "stars": 15445,
       "fetch_status": "ok"
     },
     {
@@ -864,63 +864,63 @@
       "harness_id": "chief",
       "project_name": "Chief",
       "repository": "https://github.com/SmileLikeYe/agent-chief",
-      "stars": 1,
+      "stars": 21,
       "fetch_status": "ok"
     },
     {
       "harness_id": "paperclip",
       "project_name": "Paperclip",
       "repository": "https://github.com/paperclipai/paperclip",
-      "stars": 100227,
+      "stars": 104405,
       "fetch_status": "ok"
     },
     {
       "harness_id": "lobehub",
       "project_name": "LobeHub",
       "repository": "https://github.com/lobehub/lobehub",
-      "stars": 83146,
+      "stars": 83319,
       "fetch_status": "ok"
     },
     {
       "harness_id": "parlant",
       "project_name": "Parlant",
       "repository": "https://github.com/emcie-co/parlant",
-      "stars": 18297,
+      "stars": 18300,
       "fetch_status": "ok"
     },
     {
       "harness_id": "maestro",
       "project_name": "Maestro",
       "repository": "https://github.com/RunMaestro/Maestro",
-      "stars": 3436,
+      "stars": 3478,
       "fetch_status": "ok"
     },
     {
       "harness_id": "henterprise",
       "project_name": "Henterprise",
       "repository": "https://github.com/humbertobellor/henterprise",
-      "stars": 3,
+      "stars": 4,
       "fetch_status": "ok"
     },
     {
       "harness_id": "buzz",
       "project_name": "Buzz",
       "repository": "https://github.com/block/buzz",
-      "stars": 35846,
+      "stars": 36141,
       "fetch_status": "ok"
     },
     {
       "harness_id": "gastown",
       "project_name": "Gas Town",
       "repository": "https://github.com/gastownhall/gastown",
-      "stars": 18327,
+      "stars": 18424,
       "fetch_status": "ok"
     },
     {
       "harness_id": "voltagent",
       "project_name": "VoltAgent",
       "repository": "https://github.com/VoltAgent/voltagent",
-      "stars": 10768,
+      "stars": 10836,
       "fetch_status": "ok"
     },
     {
@@ -934,105 +934,105 @@
       "harness_id": "trpc-agent-go",
       "project_name": "tRPC-Agent-Go",
       "repository": "https://github.com/trpc-group/trpc-agent-go",
-      "stars": 1857,
+      "stars": 1871,
       "fetch_status": "ok"
     },
     {
       "harness_id": "deepagentsjs",
       "project_name": "Deep Agents JS",
       "repository": "https://github.com/langchain-ai/deepagentsjs",
-      "stars": 1597,
+      "stars": 1610,
       "fetch_status": "ok"
     },
     {
       "harness_id": "oh-my-agent",
       "project_name": "oh-my-agent",
       "repository": "https://github.com/first-fluke/oh-my-agent",
-      "stars": 1337,
+      "stars": 1346,
       "fetch_status": "ok"
     },
     {
       "harness_id": "autoagent-hkuds",
       "project_name": "AutoAgent (HKUDS)",
       "repository": "https://github.com/HKUDS/AutoAgent",
-      "stars": 9804,
+      "stars": 9819,
       "fetch_status": "ok"
     },
     {
       "harness_id": "thclaws",
       "project_name": "thClaws",
       "repository": "https://github.com/thClaws/thClaws",
-      "stars": 1239,
+      "stars": 1241,
       "fetch_status": "ok"
     },
     {
       "harness_id": "flock",
       "project_name": "Flock",
       "repository": "https://github.com/Onelevenvy/flock",
-      "stars": 1117,
+      "stars": 1120,
       "fetch_status": "ok"
     },
     {
       "harness_id": "open-cowork",
       "project_name": "Open Cowork",
       "repository": "https://github.com/OpenCoworkAI/open-cowork",
-      "stars": 2199,
+      "stars": 2219,
       "fetch_status": "ok"
     },
     {
       "harness_id": "mateclaw",
       "project_name": "MateClaw",
       "repository": "https://github.com/mateaix/mateclaw",
-      "stars": 1154,
+      "stars": 1164,
       "fetch_status": "ok"
     },
     {
       "harness_id": "flue",
       "project_name": "Flue",
       "repository": "https://github.com/withastro/flue",
-      "stars": 8446,
+      "stars": 8494,
       "fetch_status": "ok"
     },
     {
       "harness_id": "open-multi-agent",
       "project_name": "OMA / Open Multi-Agent",
       "repository": "https://github.com/open-multi-agent/open-multi-agent",
-      "stars": 6995,
+      "stars": 7005,
       "fetch_status": "ok"
     },
     {
       "harness_id": "go-micro",
       "project_name": "Go Micro",
       "repository": "https://github.com/micro/go-micro",
-      "stars": 23085,
+      "stars": 23086,
       "fetch_status": "ok"
     },
     {
       "harness_id": "claude-squad",
       "project_name": "Claude Squad",
       "repository": "https://github.com/smtg-ai/claude-squad",
-      "stars": 8590,
+      "stars": 8623,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ai-scientist",
       "project_name": "The AI Scientist",
       "repository": "https://github.com/SakanaAI/AI-Scientist",
-      "stars": 14696,
+      "stars": 14764,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ai-scientist-v2",
       "project_name": "The AI Scientist-v2",
       "repository": "https://github.com/SakanaAI/AI-Scientist-v2",
-      "stars": 7299,
+      "stars": 7373,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agent-laboratory",
       "project_name": "Agent Laboratory",
       "repository": "https://github.com/SamuelSchmidgall/AgentLaboratory",
-      "stars": 5899,
+      "stars": 5904,
       "fetch_status": "ok"
     },
     {
@@ -1060,14 +1060,14 @@
       "harness_id": "omniscientist",
       "project_name": "OmniScientist",
       "repository": "https://github.com/Omni-Scientist/OmniScientist",
-      "stars": 166,
+      "stars": 171,
       "fetch_status": "ok"
     },
     {
       "harness_id": "cais",
       "project_name": "Causal AI Scientist (CAIS)",
       "repository": "https://github.com/causalNLP/causal-agent",
-      "stars": 39,
+      "stars": 40,
       "fetch_status": "ok"
     },
     {
@@ -1081,35 +1081,35 @@
       "harness_id": "veritas",
       "project_name": "Veritas",
       "repository": "https://github.com/matiasrodlo/veritas",
-      "stars": 0,
-      "fetch_status": "ok"
+      "stars": null,
+      "fetch_status": "not_found"
     },
     {
       "harness_id": "chorus",
       "project_name": "Chorus",
       "repository": "https://github.com/Chorus-AIDLC/Chorus",
-      "stars": 1195,
+      "stars": 1203,
       "fetch_status": "ok"
     },
     {
       "harness_id": "omnicoreagent",
       "project_name": "OmniCoreAgent",
       "repository": "https://github.com/omnirexflora-labs/omnicoreagent",
-      "stars": 252,
+      "stars": 253,
       "fetch_status": "ok"
     },
     {
       "harness_id": "hankweave",
       "project_name": "hankweave",
       "repository": "https://github.com/SouthBridgeAI/hankweave-runtime",
-      "stars": 137,
+      "stars": 161,
       "fetch_status": "ok"
     },
     {
       "harness_id": "trueforge",
       "project_name": "TrueForge",
       "repository": "https://github.com/truefoundry/trueforge",
-      "stars": 6139,
+      "stars": 6295,
       "fetch_status": "ok"
     },
     {
@@ -1123,14 +1123,14 @@
       "harness_id": "agent-orchestrator",
       "project_name": "Agent Orchestrator",
       "repository": "https://github.com/Untrivial-ai/agent-orchestrator",
-      "stars": 13073,
+      "stars": 13345,
       "fetch_status": "ok"
     },
     {
       "harness_id": "pydantic-ai-harness",
       "project_name": "Pydantic AI Harness",
       "repository": "https://github.com/pydantic/pydantic-ai-harness",
-      "stars": 954,
+      "stars": 958,
       "fetch_status": "ok"
     },
     {
@@ -1144,7 +1144,7 @@
       "harness_id": "openfang",
       "project_name": "OpenFang",
       "repository": "https://github.com/RightNow-AI/openfang",
-      "stars": 18218,
+      "stars": 18210,
       "fetch_status": "ok"
     },
     {
@@ -1158,63 +1158,63 @@
       "harness_id": "megaagent",
       "project_name": "MegaAgent",
       "repository": "https://github.com/Xtra-Computing/MegaAgent",
-      "stars": 250,
+      "stars": 251,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ironclaw",
       "project_name": "IronClaw",
       "repository": "https://github.com/nearai/ironclaw",
-      "stars": 12648,
+      "stars": 12663,
       "fetch_status": "ok"
     },
     {
       "harness_id": "zeroclaw",
       "project_name": "ZeroClaw",
       "repository": "https://github.com/zeroclaw-labs/zeroclaw",
-      "stars": 32961,
+      "stars": 32998,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ouroboros",
       "project_name": "Ouroboros",
       "repository": "https://github.com/razzant/ouroboros",
-      "stars": 1436,
+      "stars": 1561,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ecc",
       "project_name": "Everything Claude Code (ECC)",
       "repository": "https://github.com/affaan-m/ECC",
-      "stars": 277026,
+      "stars": 283602,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agent-s",
       "project_name": "Agent S",
       "repository": "https://github.com/simular-ai/Agent-S",
-      "stars": 12582,
+      "stars": 12652,
       "fetch_status": "ok"
     },
     {
       "harness_id": "nanobot",
       "project_name": "nanobot",
       "repository": "https://github.com/HKUDS/nanobot",
-      "stars": 48956,
+      "stars": 49173,
       "fetch_status": "ok"
     },
     {
       "harness_id": "cowagent",
       "project_name": "CowAgent",
       "repository": "https://github.com/zhayujie/CowAgent",
-      "stars": 47344,
+      "stars": 47464,
       "fetch_status": "ok"
     },
     {
       "harness_id": "exo",
       "project_name": "Exo",
       "repository": "https://github.com/exoharness/exo",
-      "stars": 1497,
+      "stars": 1513,
       "fetch_status": "ok"
     },
     {
@@ -1235,7 +1235,7 @@
       "harness_id": "cuga",
       "project_name": "CUGA",
       "repository": "https://github.com/cuga-project/cuga-agent",
-      "stars": 896,
+      "stars": 1042,
       "fetch_status": "ok"
     },
     {
@@ -1249,14 +1249,14 @@
       "harness_id": "yuxi",
       "project_name": "Yuxi",
       "repository": "https://github.com/xerrors/Yuxi",
-      "stars": 7360,
+      "stars": 7430,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ante",
       "project_name": "Ante",
       "repository": "https://github.com/AntigmaLabs/ante",
-      "stars": 2011,
+      "stars": 2010,
       "fetch_status": "ok"
     },
     {
@@ -1298,21 +1298,21 @@
       "harness_id": "holt",
       "project_name": "Holt",
       "repository": "https://github.com/holt-os/holt",
-      "stars": 5,
+      "stars": 6,
       "fetch_status": "ok"
     },
     {
       "harness_id": "qwenpaw",
       "project_name": "QwenPaw",
       "repository": "https://github.com/agentscope-ai/QwenPaw",
-      "stars": 35603,
+      "stars": 35850,
       "fetch_status": "ok"
     },
     {
       "harness_id": "marveen",
       "project_name": "Marveen",
       "repository": "https://github.com/Szotasz/marveen",
-      "stars": 117,
+      "stars": 123,
       "fetch_status": "ok"
     },
     {
@@ -1326,7 +1326,7 @@
       "harness_id": "openharness",
       "project_name": "OpenHarness",
       "repository": "https://github.com/autonomous-ai/openharness",
-      "stars": 1225,
+      "stars": 1315,
       "fetch_status": "ok"
     },
     {
@@ -1340,21 +1340,21 @@
       "harness_id": "pi-harness",
       "project_name": "Pi-Harness",
       "repository": "https://github.com/wangmiaozero/pi-harness",
-      "stars": 164,
+      "stars": 1017,
       "fetch_status": "ok"
     },
     {
       "harness_id": "bossconsole",
       "project_name": "BossConsole",
       "repository": "https://github.com/risa-labs-inc/BossConsole",
-      "stars": 812,
+      "stars": 814,
       "fetch_status": "ok"
     },
     {
       "harness_id": "preloop",
       "project_name": "Preloop",
       "repository": "https://github.com/preloop/preloop",
-      "stars": 77,
+      "stars": 78,
       "fetch_status": "ok"
     },
     {
@@ -1382,7 +1382,7 @@
       "harness_id": "unreal-agent",
       "project_name": "Unreal Agent",
       "repository": "https://github.com/unreallabsai/unreal-agent",
-      "stars": 2190,
+      "stars": 2207,
       "fetch_status": "ok"
     },
     {
@@ -1396,21 +1396,21 @@
       "harness_id": "bitrouter",
       "project_name": "BitRouter",
       "repository": "https://github.com/bitrouter/bitrouter",
-      "stars": 236,
+      "stars": 235,
       "fetch_status": "ok"
     },
     {
       "harness_id": "starnet",
       "project_name": "StarNet",
       "repository": "https://github.com/androoAGI/starnet",
-      "stars": 1336,
+      "stars": 1525,
       "fetch_status": "ok"
     },
     {
       "harness_id": "temporal-agent-harness",
       "project_name": "Temporal Agent Harness",
       "repository": "https://github.com/temporal-community/temporal-agent-harness",
-      "stars": 90,
+      "stars": 105,
       "fetch_status": "ok"
     },
     {
@@ -1424,7 +1424,7 @@
       "harness_id": "nac",
       "project_name": "nac",
       "repository": "https://github.com/arcee-ai/nac",
-      "stars": 281,
+      "stars": 283,
       "fetch_status": "ok"
     },
     {
@@ -1473,35 +1473,35 @@
       "harness_id": "yao-agents",
       "project_name": "Yao Agents",
       "repository": "https://github.com/YaoApp/yao",
-      "stars": 8117,
+      "stars": 8142,
       "fetch_status": "ok"
     },
     {
       "harness_id": "swe-mux",
       "project_name": "swe-mux",
       "repository": "https://github.com/jatoran/swe-mux",
-      "stars": 8,
+      "stars": 12,
       "fetch_status": "ok"
     },
     {
       "harness_id": "a-evolve",
       "project_name": "A-Evolve",
       "repository": "https://github.com/A-EVO-Lab/a-evolve",
-      "stars": 811,
+      "stars": 820,
       "fetch_status": "ok"
     },
     {
       "harness_id": "humanlayer-agent-control-plane",
       "project_name": "Agent Control Plane",
       "repository": "https://github.com/humanlayer/agentcontrolplane",
-      "stars": 503,
+      "stars": 509,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agentoven",
       "project_name": "AgentOven",
       "repository": "https://github.com/agentoven/agentoven",
-      "stars": 93,
+      "stars": 94,
       "fetch_status": "ok"
     },
     {
@@ -1543,28 +1543,28 @@
       "harness_id": "continual-harness",
       "project_name": "Continual Harness",
       "repository": "https://github.com/sethkarten/continual-harness",
-      "stars": 334,
+      "stars": 338,
       "fetch_status": "ok"
     },
     {
       "harness_id": "argus-agent",
       "project_name": "Argus",
       "repository": "https://github.com/microsoft/ArgusAgent",
-      "stars": 138,
+      "stars": 140,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agentos",
       "project_name": "AgentOS",
       "repository": "https://github.com/framerslab/agentos",
-      "stars": 677,
+      "stars": 681,
       "fetch_status": "ok"
     },
     {
       "harness_id": "go-agent",
       "project_name": "go-agent",
       "repository": "https://github.com/Protocol-Lattice/go-agent",
-      "stars": 258,
+      "stars": 259,
       "fetch_status": "ok"
     },
     {
@@ -1578,7 +1578,7 @@
       "harness_id": "awaken",
       "project_name": "Awaken",
       "repository": "https://github.com/awakenworks/awaken",
-      "stars": 98,
+      "stars": 97,
       "fetch_status": "ok"
     },
     {
@@ -1620,28 +1620,28 @@
       "harness_id": "shep",
       "project_name": "Shep",
       "repository": "https://github.com/shep-ai/shep",
-      "stars": 263,
+      "stars": 266,
       "fetch_status": "ok"
     },
     {
       "harness_id": "loushang",
       "project_name": "Loushang",
       "repository": "https://github.com/zhnt/loushang",
-      "stars": 1726,
+      "stars": 1808,
       "fetch_status": "ok"
     },
     {
       "harness_id": "inferoa",
       "project_name": "Inferoa",
       "repository": "https://github.com/agentic-in/inferoa",
-      "stars": 565,
+      "stars": 566,
       "fetch_status": "ok"
     },
     {
       "harness_id": "san",
       "project_name": "San",
       "repository": "https://github.com/genai-io/san",
-      "stars": 85,
+      "stars": 109,
       "fetch_status": "ok"
     },
     {
@@ -1655,14 +1655,14 @@
       "harness_id": "hypha",
       "project_name": "Hypha",
       "repository": "https://github.com/CodeSoul-co/Hypha",
-      "stars": 447,
+      "stars": 448,
       "fetch_status": "ok"
     },
     {
       "harness_id": "lime",
       "project_name": "Lime",
       "repository": "https://github.com/limecloud/lime",
-      "stars": 1485,
+      "stars": 1486,
       "fetch_status": "ok"
     },
     {
@@ -1683,7 +1683,7 @@
       "harness_id": "mingbird",
       "project_name": "Mingbird",
       "repository": "https://github.com/Mingbird/Mingbird-agent",
-      "stars": 16,
+      "stars": 21,
       "fetch_status": "ok"
     },
     {
@@ -1704,14 +1704,14 @@
       "harness_id": "taixu",
       "project_name": "TaiXu",
       "repository": "https://github.com/wkbin/taixu",
-      "stars": 136,
+      "stars": 149,
       "fetch_status": "ok"
     },
     {
       "harness_id": "company-brain",
       "project_name": "Company Brain",
       "repository": "https://github.com/supermemoryai/company-brain",
-      "stars": 990,
+      "stars": 1020,
       "fetch_status": "ok"
     },
     {
@@ -1725,7 +1725,7 @@
       "harness_id": "bamboo",
       "project_name": "Bamboo",
       "repository": "https://github.com/bigduu/Bamboo-agent",
-      "stars": 20,
+      "stars": 21,
       "fetch_status": "ok"
     },
     {
@@ -1746,7 +1746,7 @@
       "harness_id": "rsih",
       "project_name": "RSIH",
       "repository": "https://github.com/CosmosMind-ai/RSI-Harness",
-      "stars": 616,
+      "stars": 522,
       "fetch_status": "ok"
     },
     {
@@ -1760,35 +1760,35 @@
       "harness_id": "pi-go",
       "project_name": "pi (Go)",
       "repository": "https://github.com/sky-valley/pi",
-      "stars": 72,
+      "stars": 78,
       "fetch_status": "ok"
     },
     {
       "harness_id": "scion-gcp",
       "project_name": "Scion (Google Cloud)",
       "repository": "https://github.com/GoogleCloudPlatform/scion",
-      "stars": 1737,
+      "stars": 1979,
       "fetch_status": "ok"
     },
     {
       "harness_id": "autoresearchclaw",
       "project_name": "AutoResearchClaw",
       "repository": "https://github.com/aiming-lab/AutoResearchClaw",
-      "stars": 14619,
+      "stars": 14710,
       "fetch_status": "ok"
     },
     {
       "harness_id": "os-copilot",
       "project_name": "OS-Copilot / FRIDAY",
       "repository": "https://github.com/OS-Copilot/OS-Copilot",
-      "stars": 1794,
+      "stars": 1795,
       "fetch_status": "ok"
     },
     {
       "harness_id": "llamar",
       "project_name": "LLaMAR",
       "repository": "https://github.com/nsidn98/LLaMAR",
-      "stars": 42,
+      "stars": 43,
       "fetch_status": "ok"
     },
     {
@@ -1816,7 +1816,7 @@
       "harness_id": "mlr-agent",
       "project_name": "MLR-Agent",
       "repository": "https://github.com/chchenhui/mlrbench",
-      "stars": 36,
+      "stars": 37,
       "fetch_status": "ok"
     },
     {
@@ -1865,14 +1865,14 @@
       "harness_id": "tandem",
       "project_name": "Tandem",
       "repository": "https://github.com/frumu-ai/tandem",
-      "stars": 121,
+      "stars": 123,
       "fetch_status": "ok"
     },
     {
       "harness_id": "gh-aw",
       "project_name": "GitHub Agentic Workflows",
       "repository": "https://github.com/github/gh-aw",
-      "stars": 5381,
+      "stars": 5420,
       "fetch_status": "ok"
     },
     {
@@ -1886,7 +1886,7 @@
       "harness_id": "openrig",
       "project_name": "OpenRig",
       "repository": "https://github.com/mvschwarz/openrig",
-      "stars": 6901,
+      "stars": 7843,
       "fetch_status": "ok"
     },
     {
@@ -1900,63 +1900,63 @@
       "harness_id": "hugagentos",
       "project_name": "HugAgentOS",
       "repository": "https://github.com/ZJU-REAL/HugAgentOS",
-      "stars": 1126,
+      "stars": 620,
       "fetch_status": "ok"
     },
     {
       "harness_id": "superharness",
       "project_name": "superharness",
       "repository": "https://github.com/artificemachine/superharness",
-      "stars": 5,
+      "stars": 10,
       "fetch_status": "ok"
     },
     {
       "harness_id": "waku-agent",
       "project_name": "Waku Agent",
       "repository": "https://github.com/ShenSeanChen/waku-agent",
-      "stars": 1982,
+      "stars": 2053,
       "fetch_status": "ok"
     },
     {
       "harness_id": "dotcraft",
       "project_name": "DotCraft",
       "repository": "https://github.com/DotHarness/dotcraft",
-      "stars": 403,
+      "stars": 404,
       "fetch_status": "ok"
     },
     {
       "harness_id": "aesop",
       "project_name": "Aesop",
       "repository": "https://github.com/matt82198/aesop",
-      "stars": 5,
+      "stars": 7,
       "fetch_status": "ok"
     },
     {
       "harness_id": "platypus",
       "project_name": "Platypus",
       "repository": "https://github.com/willdady/platypus",
-      "stars": 117,
+      "stars": 123,
       "fetch_status": "ok"
     },
     {
       "harness_id": "octos",
       "project_name": "Octos",
       "repository": "https://github.com/octos-org/octos",
-      "stars": 1044,
+      "stars": 764,
       "fetch_status": "ok"
     },
     {
       "harness_id": "conductor",
       "project_name": "Conductor",
       "repository": "https://github.com/microsoft/conductor",
-      "stars": 470,
+      "stars": 478,
       "fetch_status": "ok"
     },
     {
       "harness_id": "bernstein",
       "project_name": "Bernstein",
       "repository": "https://github.com/sipyourdrink-ltd/bernstein",
-      "stars": 1216,
+      "stars": 1296,
       "fetch_status": "ok"
     },
     {
@@ -1970,7 +1970,7 @@
       "harness_id": "harness",
       "project_name": "Harness",
       "repository": "https://github.com/sausheong/harness",
-      "stars": 15,
+      "stars": 17,
       "fetch_status": "ok"
     },
     {
@@ -1984,7 +1984,7 @@
       "harness_id": "gptme",
       "project_name": "gptme",
       "repository": "https://github.com/gptme/gptme",
-      "stars": 4448,
+      "stars": 4456,
       "fetch_status": "ok"
     },
     {
@@ -2012,7 +2012,7 @@
       "harness_id": "easylink-agent-runtime",
       "project_name": "Easylink Agent Runtime",
       "repository": "https://github.com/easylink-ai-open/agent-runtime",
-      "stars": 291,
+      "stars": 287,
       "fetch_status": "ok"
     },
     {
@@ -2026,91 +2026,91 @@
       "harness_id": "cheetahclaws",
       "project_name": "CheetahClaws",
       "repository": "https://github.com/SAIL-Research-Lab/cheetahclaws",
-      "stars": 784,
+      "stars": 789,
       "fetch_status": "ok"
     },
     {
       "harness_id": "nexent",
       "project_name": "Nexent",
       "repository": "https://github.com/ModelEngine-Group/nexent",
-      "stars": 5918,
+      "stars": 5984,
       "fetch_status": "ok"
     },
     {
       "harness_id": "raven",
       "project_name": "Raven",
       "repository": "https://github.com/EverMind-AI/Raven",
-      "stars": 5379,
+      "stars": 5513,
       "fetch_status": "ok"
     },
     {
       "harness_id": "qwen-audio-agent",
       "project_name": "Qwen Audio Agent",
       "repository": "https://github.com/QwenAudio/qwen-audio-agent",
-      "stars": 2891,
+      "stars": 2945,
       "fetch_status": "ok"
     },
     {
       "harness_id": "metaharness",
       "project_name": "MetaHarness",
       "repository": "https://github.com/ruvnet/metaharness",
-      "stars": 696,
+      "stars": 708,
       "fetch_status": "ok"
     },
     {
       "harness_id": "pipecat",
       "project_name": "Pipecat",
       "repository": "https://github.com/pipecat-ai/pipecat",
-      "stars": 16358,
+      "stars": 16591,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ahe",
       "project_name": "Agentic Harness Engineering",
       "repository": "https://github.com/china-qijizhifeng/agentic-harness-engineering",
-      "stars": 915,
+      "stars": 930,
       "fetch_status": "ok"
     },
     {
       "harness_id": "oh-my-claudecode",
       "project_name": "oh-my-claudecode",
       "repository": "https://github.com/Yeachan-Heo/oh-my-claudecode",
-      "stars": 39792,
+      "stars": 40059,
       "fetch_status": "ok"
     },
     {
       "harness_id": "openclaw-dotnet",
       "project_name": "OpenClaw.NET",
       "repository": "https://github.com/clawdotnet/openclaw.net",
-      "stars": 522,
+      "stars": 525,
       "fetch_status": "ok"
     },
     {
       "harness_id": "frontieragent",
       "project_name": "FrontierAgent",
       "repository": "https://github.com/ApodexAI/FrontierAgent",
-      "stars": 5224,
+      "stars": 5337,
       "fetch_status": "ok"
     },
     {
       "harness_id": "sandbase-harness",
       "project_name": "SandBase Harness",
       "repository": "https://github.com/sandbaseai/sandbase-harness",
-      "stars": 708,
+      "stars": 639,
       "fetch_status": "ok"
     },
     {
       "harness_id": "agentlas-os",
       "project_name": "Agentlas OS",
       "repository": "https://github.com/agentlas-ai/Agentlas-OS",
-      "stars": 1577,
+      "stars": 1606,
       "fetch_status": "ok"
     },
     {
       "harness_id": "orkas",
       "project_name": "Orkas",
       "repository": "https://github.com/Orkas-AI/Orkas",
-      "stars": 2168,
+      "stars": 2213,
       "fetch_status": "ok"
     },
     {
@@ -2145,7 +2145,7 @@
       "harness_id": "zhizhi-agent-runtime",
       "project_name": "Zhizhi Agent Runtime",
       "repository": "https://github.com/cocoyes/zhizhi-agent-runtime",
-      "stars": 193,
+      "stars": 189,
       "fetch_status": "ok"
     },
     {
@@ -2159,21 +2159,21 @@
       "harness_id": "beagle",
       "project_name": "Beagle",
       "repository": "https://github.com/SalesforceAIResearch/Beagle",
-      "stars": 85,
+      "stars": 93,
       "fetch_status": "ok"
     },
     {
       "harness_id": "commons",
       "project_name": "Commons",
       "repository": "https://github.com/t54-labs/agent-commons",
-      "stars": 6,
+      "stars": 7,
       "fetch_status": "ok"
     },
     {
       "harness_id": "life-harness",
       "project_name": "Life-Harness",
       "repository": "https://github.com/Tianshi-Xu/Life-Harness",
-      "stars": 225,
+      "stars": 226,
       "fetch_status": "ok"
     },
     {
@@ -2201,7 +2201,7 @@
       "harness_id": "labunbun-code",
       "project_name": "LaBunbun Code",
       "repository": "https://github.com/zayokami/labunbun-code",
-      "stars": 5,
+      "stars": 7,
       "fetch_status": "ok"
     },
     {
@@ -2215,7 +2215,7 @@
       "harness_id": "minagent",
       "project_name": "MinAgent",
       "repository": "https://github.com/Nichonauta/MinAgent",
-      "stars": 19,
+      "stars": 22,
       "fetch_status": "ok"
     },
     {
@@ -2229,7 +2229,7 @@
       "harness_id": "agentic-stack",
       "project_name": "agentic-stack",
       "repository": "https://github.com/codejunkie99/agentic-stack",
-      "stars": 2295,
+      "stars": 2299,
       "fetch_status": "ok"
     },
     {
@@ -2285,7 +2285,7 @@
       "harness_id": "carbon",
       "project_name": "Carbon",
       "repository": "https://github.com/thecarbonlayer/carbon",
-      "stars": 79,
+      "stars": 80,
       "fetch_status": "ok"
     },
     {
@@ -2348,14 +2348,14 @@
       "harness_id": "crabot",
       "project_name": "Crabot",
       "repository": "https://github.com/J-F-Liu/crabot",
-      "stars": 4,
+      "stars": 5,
       "fetch_status": "ok"
     },
     {
       "harness_id": "ogcode",
       "project_name": "Ogcode",
       "repository": "https://github.com/prasenjeet-symon/ogcode",
-      "stars": 140,
+      "stars": 143,
       "fetch_status": "ok"
     },
     {
@@ -2397,14 +2397,14 @@
       "harness_id": "ally",
       "project_name": "Ally",
       "repository": "https://github.com/Bronya0/ally-agent",
-      "stars": 119,
+      "stars": 123,
       "fetch_status": "ok"
     },
     {
       "harness_id": "orca-agent",
       "project_name": "Orca Agent",
       "repository": "https://github.com/echoVic/orca-agent",
-      "stars": 508,
+      "stars": 510,
       "fetch_status": "ok"
     },
     {
@@ -2418,7 +2418,7 @@
       "harness_id": "operandi",
       "project_name": "Operandi",
       "repository": "https://github.com/modus-lisp/operandi",
-      "stars": 0,
+      "stars": 1,
       "fetch_status": "ok"
     },
     {
@@ -2481,21 +2481,21 @@
       "harness_id": "archon",
       "project_name": "Archon",
       "repository": "https://github.com/coleam00/Archon",
-      "stars": 23662,
+      "stars": 23720,
       "fetch_status": "ok"
     },
     {
       "harness_id": "cascadeflow",
       "project_name": "cascadeflow",
       "repository": "https://github.com/lemony-ai/cascadeflow",
-      "stars": 3966,
+      "stars": 3942,
       "fetch_status": "ok"
     },
     {
       "harness_id": "clawmanager",
       "project_name": "ClawManager",
       "repository": "https://github.com/Yuan-lab-LLM/ClawManager",
-      "stars": 1902,
+      "stars": 1892,
       "fetch_status": "ok"
     },
     {
@@ -2509,21 +2509,21 @@
       "harness_id": "clawkeeper",
       "project_name": "ClawKeeper",
       "repository": "https://github.com/SafeAI-Lab-X/ClawKeeper",
-      "stars": 1023,
+      "stars": 1018,
       "fetch_status": "ok"
     },
     {
       "harness_id": "defenseclaw",
       "project_name": "DefenseClaw",
       "repository": "https://github.com/cisco-ai-defense/defenseclaw",
-      "stars": 874,
+      "stars": 882,
       "fetch_status": "ok"
     },
     {
       "harness_id": "dashclaw",
       "project_name": "DashClaw",
       "repository": "https://github.com/ucsandman/DashClaw",
-      "stars": 312,
+      "stars": 313,
       "fetch_status": "ok"
     },
     {
@@ -2537,14 +2537,14 @@
       "harness_id": "openseek",
       "project_name": "OpenSeek",
       "repository": "https://github.com/moonbitlang/openseek",
-      "stars": 99,
+      "stars": 101,
       "fetch_status": "ok"
     },
     {
       "harness_id": "aivo-code",
       "project_name": "Aivo Code",
       "repository": "https://github.com/yuanchuan/aivo",
-      "stars": 194,
+      "stars": 192,
       "fetch_status": "ok"
     },
     {
@@ -2558,28 +2558,28 @@
       "harness_id": "dscode",
       "project_name": "DSCode",
       "repository": "https://github.com/thinkany-ai/dscode",
-      "stars": 362,
+      "stars": 365,
       "fetch_status": "ok"
     },
     {
       "harness_id": "pooled",
       "project_name": "Pooled",
       "repository": "https://github.com/Nehanth/pooled",
-      "stars": 583,
+      "stars": 599,
       "fetch_status": "ok"
     },
     {
       "harness_id": "oh-my-cli",
       "project_name": "oh-my-cli",
       "repository": "https://github.com/qwen-code-dev-bot/oh-my-cli",
-      "stars": 828,
+      "stars": 834,
       "fetch_status": "ok"
     },
     {
       "harness_id": "minicode",
       "project_name": "Minicode",
       "repository": "https://github.com/startupmini/minicode",
-      "stars": 1,
+      "stars": 2,
       "fetch_status": "ok"
     },
     {
@@ -2628,7 +2628,7 @@
       "harness_id": "dodo",
       "project_name": "Dodo",
       "repository": "https://github.com/jonnyparris/dodo",
-      "stars": 13,
+      "stars": 14,
       "fetch_status": "ok"
     },
     {
@@ -2663,7 +2663,7 @@
       "harness_id": "primusclaw",
       "project_name": "PrimusClaw",
       "repository": "https://github.com/AMD-AGI/PrimusClaw",
-      "stars": 3,
+      "stars": 5,
       "fetch_status": "ok"
     },
     {
@@ -2677,7 +2677,7 @@
       "harness_id": "autohand-code-cli",
       "project_name": "Autohand Code CLI",
       "repository": "https://github.com/autohandai/code-cli",
-      "stars": 203,
+      "stars": 206,
       "fetch_status": "ok"
     },
     {
@@ -2691,7 +2691,7 @@
       "harness_id": "shai",
       "project_name": "SHAI",
       "repository": "https://github.com/ovh/shai",
-      "stars": 627,
+      "stars": 626,
       "fetch_status": "ok"
     },
     {
@@ -2775,35 +2775,35 @@
       "harness_id": "maki",
       "project_name": "Maki",
       "repository": "https://github.com/tontinton/maki",
-      "stars": 1221,
+      "stars": 1247,
       "fetch_status": "ok"
     },
     {
       "harness_id": "zerostack",
       "project_name": "zerostack",
       "repository": "https://github.com/gi-dellav/zerostack",
-      "stars": 1702,
+      "stars": 1713,
       "fetch_status": "ok"
     },
     {
       "harness_id": "vix",
       "project_name": "Vix",
       "repository": "https://github.com/get-vix/vix",
-      "stars": 281,
+      "stars": 282,
       "fetch_status": "ok"
     },
     {
       "harness_id": "shelley",
       "project_name": "Shelley",
       "repository": "https://github.com/boldsoftware/shelley",
-      "stars": 686,
+      "stars": 706,
       "fetch_status": "ok"
     },
     {
       "harness_id": "codehamr",
       "project_name": "codehamr",
       "repository": "https://github.com/plaxtoris/codehamr",
-      "stars": 219,
+      "stars": 220,
       "fetch_status": "ok"
     },
     {
@@ -2845,42 +2845,42 @@
       "harness_id": "sudo-code",
       "project_name": "Sudo Code",
       "repository": "https://github.com/sudoprivacy/sudocode",
-      "stars": 434,
+      "stars": 499,
       "fetch_status": "ok"
     },
     {
       "harness_id": "smelt",
       "project_name": "Smelt",
       "repository": "https://github.com/leonardcser/smelt",
-      "stars": 54,
+      "stars": 55,
       "fetch_status": "ok"
     },
     {
       "harness_id": "termide",
       "project_name": "TermIDE",
       "repository": "https://github.com/termide/termide",
-      "stars": 171,
+      "stars": 179,
       "fetch_status": "ok"
     },
     {
       "harness_id": "alphacode",
       "project_name": "AlphaCode",
       "repository": "https://github.com/dragonked2/alphacode",
-      "stars": 269,
+      "stars": 343,
       "fetch_status": "ok"
     },
     {
       "harness_id": "blade-code",
       "project_name": "Blade Code",
       "repository": "https://github.com/echoVic/blade-code",
-      "stars": 181,
+      "stars": 180,
       "fetch_status": "ok"
     },
     {
       "harness_id": "chad",
       "project_name": "chad",
       "repository": "https://github.com/nathansutton/chad",
-      "stars": 137,
+      "stars": 140,
       "fetch_status": "ok"
     },
     {
@@ -2894,7 +2894,7 @@
       "harness_id": "metis",
       "project_name": "Metis",
       "repository": "https://github.com/Wholiver/metis",
-      "stars": 343,
+      "stars": 403,
       "fetch_status": "ok"
     },
     {
@@ -2950,42 +2950,42 @@
       "harness_id": "monomind",
       "project_name": "Monomind",
       "repository": "https://github.com/monoes/monomind",
-      "stars": 22,
+      "stars": 23,
       "fetch_status": "ok"
     },
     {
       "harness_id": "commonly",
       "project_name": "Commonly",
       "repository": "https://github.com/Team-Commonly/commonly",
-      "stars": 1361,
+      "stars": 1367,
       "fetch_status": "ok"
     },
     {
       "harness_id": "octo",
       "project_name": "Octo",
       "repository": "https://github.com/open-octo/octo-agent",
-      "stars": 126,
+      "stars": 131,
       "fetch_status": "ok"
     },
     {
       "harness_id": "garcon",
       "project_name": "Garcon",
       "repository": "https://github.com/cfal/garcon",
-      "stars": 92,
+      "stars": 94,
       "fetch_status": "ok"
     },
     {
       "harness_id": "miii",
       "project_name": "miii",
       "repository": "https://github.com/maruakshay/miii-cli",
-      "stars": 40,
+      "stars": 42,
       "fetch_status": "ok"
     },
     {
       "harness_id": "polter",
       "project_name": "Polter",
       "repository": "https://github.com/Lugia123/polter",
-      "stars": 18,
+      "stars": 19,
       "fetch_status": "ok"
     },
     {
@@ -2999,14 +2999,14 @@
       "harness_id": "hashcortx",
       "project_name": "HashCortX",
       "repository": "https://github.com/Hash-7777/HashCortX",
-      "stars": 168,
+      "stars": 170,
       "fetch_status": "ok"
     },
     {
       "harness_id": "harness-remote",
       "project_name": "Harness Remote",
       "repository": "https://github.com/giuliastro/harness-remote",
-      "stars": 406,
+      "stars": 417,
       "fetch_status": "ok"
     },
     {
@@ -3020,56 +3020,56 @@
       "harness_id": "bbarit-oss",
       "project_name": "bbarit-oss",
       "repository": "https://github.com/bbarit/bbarit-agent-oss",
-      "stars": 150,
+      "stars": 148,
       "fetch_status": "ok"
     },
     {
       "harness_id": "radiant",
       "project_name": "Radiant",
       "repository": "https://github.com/templetongroup/radiant",
-      "stars": 113,
+      "stars": 115,
       "fetch_status": "ok"
     },
     {
       "harness_id": "jive",
       "project_name": "Jive",
       "repository": "https://github.com/merijjeyn/jive",
-      "stars": 179,
+      "stars": 186,
       "fetch_status": "ok"
     },
     {
       "harness_id": "prismor",
       "project_name": "Prismor",
       "repository": "https://github.com/PrismorSec/prismor",
-      "stars": 415,
+      "stars": 420,
       "fetch_status": "ok"
     },
     {
       "harness_id": "hazzel",
       "project_name": "Hazzel",
       "repository": "https://github.com/mukundzha/hazzel",
-      "stars": 21,
+      "stars": 29,
       "fetch_status": "ok"
     },
     {
       "harness_id": "orgtree",
       "project_name": "Orgtree",
       "repository": "https://github.com/Maurdekye/orgtree",
-      "stars": 129,
+      "stars": 158,
       "fetch_status": "ok"
     },
     {
       "harness_id": "plank",
       "project_name": "Plank",
       "repository": "https://github.com/aovestdipaperino/plank",
-      "stars": 35,
+      "stars": 36,
       "fetch_status": "ok"
     },
     {
       "harness_id": "nasiko",
       "project_name": "Nasiko",
       "repository": "https://github.com/Nasiko-Labs/nasiko",
-      "stars": 9502,
+      "stars": 9467,
       "fetch_status": "ok"
     },
     {
@@ -3090,14 +3090,14 @@
       "harness_id": "kloop",
       "project_name": "Kloop",
       "repository": "https://github.com/lizc2003/kloop",
-      "stars": 5,
+      "stars": 14,
       "fetch_status": "ok"
     },
     {
       "harness_id": "animaworks",
       "project_name": "AnimaWorks",
       "repository": "https://github.com/xuiltul/animaworks",
-      "stars": 266,
+      "stars": 267,
       "fetch_status": "ok"
     },
     {
@@ -3175,6 +3175,902 @@
       "project_name": "self-improving-agent",
       "repository": "https://github.com/xmaks82/self-improving-agent",
       "stars": 5,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "sjmun09-harness",
+      "project_name": "Harness",
+      "repository": "https://github.com/sjMun09/Harness",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "impulse",
+      "project_name": "Impulse",
+      "repository": "https://github.com/spenceriam/impulse",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "oblivion-ai",
+      "project_name": "Oblivion AI",
+      "repository": "https://github.com/Rohith-s-hub/Oblivion-agent",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "rocinante",
+      "project_name": "Rocinante",
+      "repository": "https://github.com/djynnius/rocinante",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "astro-code",
+      "project_name": "Astro Code",
+      "repository": "https://github.com/Aliivihu786/astro-code",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "deimos",
+      "project_name": "Deimos",
+      "repository": "https://github.com/dxiv/dxa-deimos",
+      "stars": 6,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "luckycli",
+      "project_name": "LuckyCLI",
+      "repository": "https://github.com/Fenix46/LuckyCLI",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "aether",
+      "project_name": "Aether",
+      "repository": "https://github.com/Aetherdz/aether",
+      "stars": 2,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "atlas-agent",
+      "project_name": "Atlas Agent",
+      "repository": "https://github.com/Omerfaruk-aydn/Atlas-Agent",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "octopus",
+      "project_name": "Octopus",
+      "repository": "https://github.com/zwpdbh/octopus-in-rust",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "bharatcode",
+      "project_name": "BharatCode",
+      "repository": "https://github.com/arbazkhan971/bharatcode-cli",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "alysis-code",
+      "project_name": "Alysis Code",
+      "repository": "https://github.com/AlysisAi/alysis-code",
+      "stars": 179,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "sica",
+      "project_name": "SICA",
+      "repository": "https://github.com/MaximeRobeyns/self_improving_coding_agent",
+      "stars": 411,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "venux-code",
+      "project_name": "Venux Code",
+      "repository": "https://github.com/venux/venux-code",
+      "stars": 0,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "moss-agent",
+      "project_name": "moss-agent",
+      "repository": "https://github.com/peterxiemin/moss-agent",
+      "stars": 0,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "visvoai",
+      "project_name": "VisvoAI",
+      "repository": "https://github.com/VisvoAI/visvoai",
+      "stars": null,
+      "fetch_status": "not_found"
+    },
+    {
+      "harness_id": "termcoder",
+      "project_name": "Termcoder",
+      "repository": "https://github.com/nattergabriel/termcoder",
+      "stars": 4,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "deepseekfathom",
+      "project_name": "DeepSeekFathom",
+      "repository": "https://github.com/ffffff233/DeepSeekFathom",
+      "stars": 5,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "bareagent",
+      "project_name": "BareAgent",
+      "repository": "https://github.com/525300887039/BareAgent",
+      "stars": 2,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "travis234",
+      "project_name": "Travis234",
+      "repository": "https://github.com/taikkyithar/travis234",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "forcecode",
+      "project_name": "ForceCode",
+      "repository": "https://github.com/samansarmasik-alt/forcecode",
+      "stars": 6,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "lean-coder",
+      "project_name": "lean-coder",
+      "repository": "https://github.com/codemonkeying/lean-coder",
+      "stars": 3,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "stcode",
+      "project_name": "stcode",
+      "repository": "https://github.com/Ming-doan/stcode",
+      "stars": 0,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "skyvern",
+      "project_name": "Skyvern",
+      "repository": "https://github.com/Skyvern-AI/skyvern",
+      "stars": 23228,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "superagi",
+      "project_name": "SuperAGI",
+      "repository": "https://github.com/TransformerOptimus/SuperAGI",
+      "stars": 17707,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "cli-agent-orchestrator",
+      "project_name": "CLI Agent Orchestrator",
+      "repository": "https://github.com/awslabs/cli-agent-orchestrator",
+      "stars": 1452,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "openhuman",
+      "project_name": "OpenHuman",
+      "repository": "https://github.com/tinyhumansai/openhuman",
+      "stars": 42157,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "shelracode",
+      "project_name": "ShelraCode",
+      "repository": "https://github.com/Shelra/ShelraCode",
+      "stars": 3,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "agentscope-2-0",
+      "project_name": "AgentScope 2.0",
+      "repository": "https://github.com/agentscope-ai/agentscope",
+      "stars": 33498,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "grok-build",
+      "project_name": "Grok Build",
+      "repository": "https://github.com/xai-org/grok-build",
+      "stars": 27454,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "zcode",
+      "project_name": "ZCode",
+      "repository": "https://github.com/zai-org/ZCode",
+      "stars": 7956,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "swarms",
+      "project_name": "Swarms",
+      "repository": "https://github.com/kyegomez/swarms",
+      "stars": 7278,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "claw-code",
+      "project_name": "Claw Code",
+      "repository": "https://github.com/ultraworkers/claw-code",
+      "stars": 194910,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "devika",
+      "project_name": "Devika",
+      "repository": "https://github.com/stitionai/devika",
+      "stars": 19552,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "deepcode",
+      "project_name": "DeepCode",
+      "repository": "https://github.com/HKUDS/DeepCode",
+      "stars": 16729,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "open-swe",
+      "project_name": "Open SWE",
+      "repository": "https://github.com/langchain-ai/open-swe",
+      "stars": 11039,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "mini-swe-agent",
+      "project_name": "mini-swe-agent",
+      "repository": "https://github.com/SWE-agent/mini-swe-agent",
+      "stars": 8652,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "earthwalker17-agent-os",
+      "project_name": "Agent OS (earthwalker17)",
+      "repository": "https://github.com/earthwalker17/agent-os",
+      "stars": 26,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "capstan",
+      "project_name": "Capstan",
+      "repository": "https://github.com/theStrangeAdventurer/capstan",
+      "stars": 16,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "kai-linux-agent-os",
+      "project_name": "Agent-OS (kai-linux)",
+      "repository": "https://github.com/kai-linux/agent-os",
+      "stars": 7,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "agent-harness",
+      "project_name": "Agent Harness",
+      "repository": "https://github.com/0xenzyme/agent-harness",
+      "stars": 49,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "orchestra",
+      "project_name": "Orchestra",
+      "repository": "https://github.com/DrSeedon/orchestra",
+      "stars": 20,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "xoder",
+      "project_name": "Xoder",
+      "repository": "https://github.com/BANGHlxbackout/Xoder",
+      "stars": 9,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "cxagent",
+      "project_name": "CXAgent",
+      "repository": "https://github.com/nickprotop/cxagent",
+      "stars": 3,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "kairocode",
+      "project_name": "KairoCode",
+      "repository": "https://github.com/yangf-Veda/KairoCode",
+      "stars": 2,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "atomcode",
+      "project_name": "AtomCode",
+      "repository": "https://github.com/karlorz/atomcode",
+      "stars": 0,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "fx",
+      "project_name": "FX",
+      "repository": "https://github.com/vercel-labs/fx",
+      "stars": 3477,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "opencursor",
+      "project_name": "OpenCursor",
+      "repository": "https://github.com/PawanOsman/OpenCursor",
+      "stars": 6035,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "liumengxuan04-minicode",
+      "project_name": "MiniCode",
+      "repository": "https://github.com/LiuMengxuan04/MiniCode",
+      "stars": 1145,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "tianshu-harness",
+      "project_name": "Tianshu Harness",
+      "repository": "https://github.com/huiliyi37/Tianshu-harness",
+      "stars": 1139,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "hax",
+      "project_name": "Hax",
+      "repository": "https://github.com/OleksandrChekhovskyi/hax",
+      "stars": 924,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "tura",
+      "project_name": "Tura",
+      "repository": "https://github.com/Tura-AI/tura",
+      "stars": 661,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "zero",
+      "project_name": "Zero",
+      "repository": "https://github.com/Gitlawb/zero",
+      "stars": 1737,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "agent-code",
+      "project_name": "Agent Code",
+      "repository": "https://github.com/avala-ai/agent-code",
+      "stars": 31,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "zap",
+      "project_name": "Zap",
+      "repository": "https://github.com/zap-coding-agent/zap-coding-agent",
+      "stars": 37,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "whycodes",
+      "project_name": "WhyCodes",
+      "repository": "https://github.com/whycorporation/whycodes",
+      "stars": 22,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "postal",
+      "project_name": "Postal",
+      "repository": "https://github.com/andrefetch/postal",
+      "stars": 124,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "openzot",
+      "project_name": "OpenZot",
+      "repository": "https://github.com/openzot/openzot",
+      "stars": 24,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "wrongstack",
+      "project_name": "WrongStack",
+      "repository": "https://github.com/WrongStack/WrongStack",
+      "stars": 385,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "wardayacode",
+      "project_name": "WardayaCode",
+      "repository": "https://github.com/fawwazmw/wardayacode",
+      "stars": 0,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "scoot",
+      "project_name": "scoot",
+      "repository": "https://github.com/sergenes/scootcli",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "errander",
+      "project_name": "errander",
+      "repository": "https://github.com/EVAE-AL/errander",
+      "stars": 0,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "terminal-native-coding-agent",
+      "project_name": "terminal-native-coding-agent",
+      "repository": "https://github.com/RushilBuilds/terminal-native-coding-agent",
+      "stars": 0,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "clai",
+      "project_name": "clai",
+      "repository": "https://github.com/pentoshi007/clai",
+      "stars": 16,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "firstcoder",
+      "project_name": "FirstCoder",
+      "repository": "https://github.com/KomorGiaoGiao/FirstCoder",
+      "stars": 225,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "pythinker-code",
+      "project_name": "Pythinker Code",
+      "repository": "https://github.com/PyModel/pythinker-code",
+      "stars": 29,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "covia",
+      "project_name": "Covia",
+      "repository": "https://github.com/covia-ai/covia",
+      "stars": 6,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "nvidia-nemo-guardrails",
+      "project_name": "NVIDIA NeMo Guardrails",
+      "repository": "https://github.com/NVIDIA-NeMo/Guardrails",
+      "stars": 7326,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "foe",
+      "project_name": "Foe",
+      "repository": "https://github.com/pedapudi/foe",
+      "stars": 1,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "qcode",
+      "project_name": "QCode",
+      "repository": "https://github.com/fwtllh-png/QCode",
+      "stars": null,
+      "fetch_status": "not_found"
+    },
+    {
+      "harness_id": "purrcode",
+      "project_name": "PurrCode",
+      "repository": "https://github.com/Weilin0723/PurrCode",
+      "stars": 165,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "heddle",
+      "project_name": "Heddle",
+      "repository": "https://github.com/roackb2/heddle",
+      "stars": 25,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "kram",
+      "project_name": "Kram",
+      "repository": "https://github.com/codexmark/kram",
+      "stars": 12,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "pxx",
+      "project_name": "pxx",
+      "repository": "https://github.com/cdnwetzel/pxx",
+      "stars": 17,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "forge-agent",
+      "project_name": "Forge Agent",
+      "repository": "https://github.com/guoyang1982/forge-agent",
+      "stars": 5,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "covalo",
+      "project_name": "Covalo",
+      "repository": "https://github.com/bzcsk2/covalo",
+      "stars": 10,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "bash-agent",
+      "project_name": "bash-agent",
+      "repository": "https://github.com/lloydzhou/bash-agent",
+      "stars": 85,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "codeagent-harvil1",
+      "project_name": "CodeAgent (Harvil1)",
+      "repository": "https://github.com/Harvil1/codeAgent",
+      "stars": 995,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "nanocoder-haoyuzhang0214",
+      "project_name": "NanoCoder (HaoyuZhang0214)",
+      "repository": "https://github.com/HaoyuZhang0214/NanoCoder",
+      "stars": 22,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "openjiuwen-core",
+      "project_name": "openJiuwen Core",
+      "repository": "https://github.com/openJiuwen-ai/agent-core",
+      "stars": 452,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "urbanbreach-harness",
+      "project_name": "urbanbreach Harness",
+      "repository": "https://github.com/urbanbreach/agent-harness",
+      "stars": 0,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "kite",
+      "project_name": "Kite",
+      "repository": "https://github.com/KhanUzeb/kite",
+      "stars": 6,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "motifcode",
+      "project_name": "Motifcode",
+      "repository": "https://github.com/TaewoooPark/Motifcode",
+      "stars": 77,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "superqode",
+      "project_name": "SuperQode",
+      "repository": "https://github.com/SuperagenticAI/superqode",
+      "stars": 62,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "zot",
+      "project_name": "Zot",
+      "repository": "https://github.com/patriceckhart/zot",
+      "stars": 350,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "atomic",
+      "project_name": "Atomic",
+      "repository": "https://github.com/bastani-inc/atomic",
+      "stars": 862,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "octomind",
+      "project_name": "Octomind",
+      "repository": "https://github.com/Muvon/octomind",
+      "stars": 168,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "kit",
+      "project_name": "Kit",
+      "repository": "https://github.com/speakeasy-api/kit",
+      "stars": 44,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "ankaloop",
+      "project_name": "AnkaLoop",
+      "repository": "https://github.com/tao12345666333/ankaloop",
+      "stars": 52,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "rpi",
+      "project_name": "rpi",
+      "repository": "https://github.com/bigfish1913/pi-rust",
+      "stars": 116,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "atman",
+      "project_name": "Atman",
+      "repository": "https://github.com/W-Mai/atman",
+      "stars": 10,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "gemba",
+      "project_name": "Gemba",
+      "repository": "https://github.com/GembaCore/gemba-core",
+      "stars": 8,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "team-agent",
+      "project_name": "Team Agent",
+      "repository": "https://github.com/Florious95/team-agent",
+      "stars": 9,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "paseka",
+      "project_name": "Paseka",
+      "repository": "https://github.com/russ-p/paseka",
+      "stars": 7,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "fleetq",
+      "project_name": "FleetQ",
+      "repository": "https://github.com/escapeboy/agent-fleet-o",
+      "stars": 74,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "cafleet",
+      "project_name": "CAFleet",
+      "repository": "https://github.com/himkt/cafleet",
+      "stars": 52,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "agent-fleet-chankov",
+      "project_name": "Agent Fleet",
+      "repository": "https://github.com/chankov/agent-fleet",
+      "stars": 19,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "herd",
+      "project_name": "Herd",
+      "repository": "https://github.com/NickGuAI/Herd",
+      "stars": 17,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "citadel",
+      "project_name": "Citadel",
+      "repository": "https://github.com/SethGammon/Citadel",
+      "stars": 924,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "fractale",
+      "project_name": "fractale",
+      "repository": "https://github.com/converged-computing/fractale",
+      "stars": 6,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "ursa",
+      "project_name": "URSA",
+      "repository": "https://github.com/lanl/ursa",
+      "stars": 86,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "threatclaw",
+      "project_name": "ThreatClaw",
+      "repository": "https://github.com/threatclaw/threatclaw",
+      "stars": 4,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "turix-cua",
+      "project_name": "TuriX-CUA",
+      "repository": "https://github.com/TurixAI/TuriX-CUA",
+      "stars": 3173,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "fara",
+      "project_name": "Fara",
+      "repository": "https://github.com/microsoft/fara",
+      "stars": 6222,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "evidence-bench",
+      "project_name": "Evidence Bench",
+      "repository": "https://github.com/kstawiski/evidence-gated-scientific-agent",
+      "stars": 2,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "sciencebuddy-simple-scibuddy",
+      "project_name": "ScienceBuddy / Simple-SciBuddy",
+      "repository": "https://github.com/Gen-Verse/ScienceBuddy",
+      "stars": 371,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "aipoch-open-science",
+      "project_name": "AIPOCH Open-Science",
+      "repository": "https://github.com/aipoch/open-science",
+      "stars": 5238,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "lyrie",
+      "project_name": "Lyrie",
+      "repository": "https://github.com/OTT-Cybersecurity-LLC/lyrie-ai",
+      "stars": 327,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "airecon",
+      "project_name": "AIRecon",
+      "repository": "https://github.com/pikpikcu/airecon",
+      "stars": 1076,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "infiagent",
+      "project_name": "infiAgent",
+      "repository": "https://github.com/polyuiislab/infiAgent",
+      "stars": 1188,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "botsharp",
+      "project_name": "BotSharp",
+      "repository": "https://github.com/SciSharp/BotSharp",
+      "stars": 3114,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "reachai-enterpriseagentframework",
+      "project_name": "ReachAI / EnterpriseAgentFramework",
+      "repository": "https://github.com/w8123/EnterpriseAgentFramework",
+      "stars": 952,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "connectonion",
+      "project_name": "ConnectOnion",
+      "repository": "https://github.com/openonion/connectonion",
+      "stars": 1499,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "besser-agentic-framework",
+      "project_name": "BESSER Agentic Framework",
+      "repository": "https://github.com/BESSER-PEARL/BESSER-Agentic-Framework",
+      "stars": 71,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "blades",
+      "project_name": "Blades",
+      "repository": "https://github.com/go-kratos/blades",
+      "stars": 816,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "microsoft-agent-framework-for-go",
+      "project_name": "Microsoft Agent Framework for Go",
+      "repository": "https://github.com/microsoft/agent-framework-go",
+      "stars": 649,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "project-oagents",
+      "project_name": "Project OAgents",
+      "repository": "https://github.com/microsoft/project-oagents",
+      "stars": 310,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "agentuniverse",
+      "project_name": "agentUniverse",
+      "repository": "https://github.com/agentuniverse-ai/agentUniverse",
+      "stars": 2383,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "revka",
+      "project_name": "Revka",
+      "repository": "https://github.com/KumihoIO/Revka",
+      "stars": 47,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "harness2",
+      "project_name": "Harness²",
+      "repository": "https://github.com/google-research/harness2",
+      "stars": 9183,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "soket-loop",
+      "project_name": "Soket Loop",
+      "repository": "https://github.com/soketlabs/loop",
+      "stars": 32,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "harnessx",
+      "project_name": "HarnessX",
+      "repository": "https://github.com/Darwin-Agent/HarnessX",
+      "stars": 497,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "harness-r1",
+      "project_name": "Harness-R1",
+      "repository": "https://github.com/DeepExperience/Harness-R1",
+      "stars": 118,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "rust-harness",
+      "project_name": "Rust Harness",
+      "repository": "https://github.com/majiayu000/harness",
+      "stars": 85,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "git-meta-harness",
+      "project_name": "git-meta-harness",
+      "repository": "https://github.com/brenonaraujo/git-meta-harness",
+      "stars": 2,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "react-agent-harness",
+      "project_name": "react-agent-harness",
+      "repository": "https://github.com/ramannanda9/agent-harness",
+      "stars": 5,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "henrik-agent-harness",
+      "project_name": "Henrik Agent Harness",
+      "repository": "https://github.com/henrik-me/agent-harness",
+      "stars": 0,
+      "fetch_status": "ok"
+    },
+    {
+      "harness_id": "phoenix-agent-harness",
+      "project_name": "Phoenix Agent Harness",
+      "repository": "https://github.com/Phoenixrr2113/agent-harness",
+      "stars": 1,
       "fetch_status": "ok"
     }
   ]

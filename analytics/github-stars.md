@@ -7,36 +7,36 @@ rating, VSM ownership measurement, or admission criterion. GitHub stars change,
 and GitHub popularity is neither an assessment criterion nor evidence of S1–S5.
 
 - Included-cohort boundary: `data/catalog.psv` joined to `data/signatures.psv`
-  at commit `a7c59ff1e31797fecb7230dc6eb2292f5df1029d`. Proposed and excluded rows are not counted.
-- GitHub observation window (UTC): 2026-10-11T18:13:11Z to 2026-10-11T18:15:03Z.
-- Included: **453**; observed: **452**;
-  unavailable: **1** (shown as missing, *not* zero).
-- Median: **281.0** stars; mean: **13 414** stars.
-- Under 10: **125** (27.7%);
-  under 100: **181** (40.0%);
-  at least 10,000: **98** (21.7%).
-- Unavailable repository: [korus](https://github.com/surefire-ai/korus).
+  at commit `b48b13e74d6938f833094d3f9afc1a11e61a8515`. Proposed and excluded rows are not counted.
+- GitHub observation window (UTC): 2026-10-19T10:44:26Z to 2026-10-19T10:44:53Z.
+- Included: **581**; observed: **577**;
+  unavailable: **4** (shown as missing, *not* zero).
+- Median: **189** stars; mean: **11 448** stars.
+- Under 10: **165** (28.6%);
+  under 100: **252** (43.7%);
+  at least 10,000: **107** (18.5%).
+- Unavailable repository: [veritas](https://github.com/matiasrodlo/veritas), [korus](https://github.com/surefire-ai/korus), [visvoai](https://github.com/VisvoAI/visvoai), [qcode](https://github.com/fwtllh-png/QCode).
 
 ## Histogram
 
 | GitHub stars (bin) | Harnesses | Share of observed |
 | --- | ---: | ---: |
-| 0 | 38 | 8.4% |
-| 1–4 | 56 | 12.4% |
-| 5–9 | 31 | 6.9% |
-| 10–24 | 22 | 4.9% |
-| 25–49 | 13 | 2.9% |
-| 50–99 | 21 | 4.6% |
-| 100–249 | 37 | 8.2% |
-| 250–499 | 26 | 5.8% |
-| 500–999 | 33 | 7.3% |
-| 1k–2.5k | 41 | 9.1% |
-| 2.5k–5k | 12 | 2.7% |
-| 5k–10k | 24 | 5.3% |
-| 10k–25k | 34 | 7.5% |
-| 25k–50k | 32 | 7.1% |
-| 50k–100k | 16 | 3.5% |
-| 100k+ | 16 | 3.5% |
+| 0 | 45 | 7.8% |
+| 1–4 | 77 | 13.3% |
+| 5–9 | 43 | 7.5% |
+| 10–24 | 37 | 6.4% |
+| 25–49 | 23 | 4.0% |
+| 50–99 | 27 | 4.7% |
+| 100–249 | 46 | 8.0% |
+| 250–499 | 34 | 5.9% |
+| 500–999 | 41 | 7.1% |
+| 1k–2.5k | 49 | 8.5% |
+| 2.5k–5k | 15 | 2.6% |
+| 5k–10k | 33 | 5.7% |
+| 10k–25k | 39 | 6.8% |
+| 25k–50k | 35 | 6.1% |
+| 50k–100k | 16 | 2.8% |
+| 100k+ | 17 | 2.9% |
 
 Bins are **unequal-width categories**; bars show the number of projects in
 each category, not a density and not a continuous linear-scale histogram.
