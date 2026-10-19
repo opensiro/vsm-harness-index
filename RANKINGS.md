@@ -220,6 +220,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="haorui-agent-harness"></a>[Agent Harness](https://github.com/haorui-harry/agent-harness) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="open-multi-agent"></a>[OMA / Open Multi-Agent](https://github.com/open-multi-agent/open-multi-agent) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
 | 5 | <a id="dodo"></a>[Dodo](https://github.com/jonnyparris/dodo) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="revfactory-harness"></a>[Revfactory Harness](https://github.com/revfactory/harness) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="defenseclaw"></a>[DefenseClaw](https://github.com/cisco-ai-defense/defenseclaw) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="kai-linux-agent-os"></a>[Agent-OS (kai-linux)](https://github.com/kai-linux/agent-os) | 2026-Q1 | 2/6 | 1/5 | 2 | 1 | 1 | `A C C A P ?` |
 | 5 | <a id="wasp"></a>[WASP](https://github.com/agentwasp/agentwasp) | 2026-Q1 | 2/6 | 1/5 | 4 | 2 | 0 | `A C C(P) C A C(P)` |
