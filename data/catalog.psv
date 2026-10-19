@@ -651,3 +651,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 636|pyflue|PyFlue|https://github.com/SuperagenticAI/pyflue|2026-05-03T06:29:13Z|index-addition|657c2d1a1b024a0bc137ff3bb252339fa0d5f692|2026-10-19
 637|agentdescent|AgentDescent|https://github.com/Birfy/agentdescent|2026-07-24T13:48:05Z|index-addition|d1cfa8f6eb570d927826278c70aa23b86d3c5264|2026-10-19
 638|harness-rs|Harness RS|https://github.com/liliang-cn/harness-rs|2026-05-16T06:20:43Z|index-addition|eb26e73fa4ca3e581e8e61be7a6c9bb91bd5f329|2026-10-19
+639|fennec-agent-runtime|Fennec Agent Runtime|https://github.com/Fennec-AI/agent-runtime|2026-05-25T20:02:17Z|index-addition|3441fbde350df50cc070851856c343680babefb4|2026-10-19
