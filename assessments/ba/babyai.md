@@ -8,12 +8,12 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
 autonomy_s3_star: —
-autonomy_s4: ?
+autonomy_s4: —
 autonomy_s5: —
 ---
 
@@ -131,18 +131,24 @@ The learned-policy agent independently selects actions in an instruction-followi
 
 ## S4 — Outside-and-then intelligence
 
-- State: ?
-- Function: Potential learning and capability modification is genuinely present in the first-party trainer, but a separate externally/prospectively oriented VSM adaptation function at the selected recursion is not established by the inspected operating paths.
-- Disturbance / variety regulated: Future unfamiliar task distributions, policy generalization and learning from prior episodes may motivate adaptation, but the distinction between ordinary RL optimization and organization-level outside-and-then intelligence is unresolved.
-- Decisive decision or feedback right: `algo.update_parameters()` adapts weights and a deterministic metric comparison writes `_best`; it is unclear whether a first-party actor generates and adopts a prospective strategic adaptation option rather than following preset optimizer and experiment criteria.
-- Decision owner: Researcher presets objectives/hyperparameters; optimizer implements weight updates/selection. No separate autonomous S4 strategy owner is confirmed from inspected historic scripts.
-- Supporting / enforcement mechanisms: PPO training, imitation learning, held-out evaluation, saved models, success-rate checkpoints.
-- Closure path: Episode/reward → preset optimization → policy weights/checkpoints → later model evaluation is documented, but a distinct external and future-options → governance/adoption → altered operational capability return is not established.
-- Why this is / is not agent-owned: Model training and reward-driven updating do not alone settle whether the VSM S4 organizational function exists; publishing either a strong positive or bounded `—` requires finer boundary adjudication.
-- Evidence: [scripts/train_rl.py](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/scripts/train_rl.py#L177); [scripts/train_il.py](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/scripts/train_il.py#L1); [babyai/evaluate.py](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/babyai/evaluate.py#L7); [scripts/README.md](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/scripts/README.md#L1); [babyai/utils/agent.py](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/babyai/utils/agent.py#L9).
-- Basis: Material in-boundary optimization path whose S4 interpretation remains unresolved; explicit `?` instead of invented certainty.
-- Confidence: Medium for existence of model-training loop; insufficient to classify S4.
-- Caveats: Resolve using full first-party trainer/rollout/adoption source review, with a function-first distinction from S1 learning and external researcher selection; do not infer modern deployment.
+- State: —
+- Function: No separately closed first-party outside-and-then strategic adaptation of this game-playing agent's future operating capability was established in the pinned historical distribution. PPO/imitation learning can produce trained policy weights, but their researcher-specified optimization objective and manually selected deployment/evaluation are a training process, not an independently owned organizational S4 function.
+- Disturbance / variety regulated: Encountering new BabyAI tasks and held-out environments motivates training and generalization; the shipped trainer optimizes a predefined reward/demonstration objective, rather than sensing a changing external future and selecting/adopting alternative viable organizational strategies.
+- Decisive decision or feedback right: `scripts/train_rl.py` applies preconfigured PPO weight updates and saves `<model>_best` when deterministic success-rate/return thresholds improve. `scripts/evaluate.py` independently requires an operator-supplied `--model`; it does not consume a trainer-selected future strategy or automatically deploy the best checkpoint. `babyai/efficiency.py` passes an optional researcher-supplied `pretrained_model` to a generated training command, not an S4-owned environmental strategy choice.
+- Decision owner: The researcher selects levels, reward function, hyperparameters, pretrained model, and subsequent evaluation/model invocation. The optimizer and checkpoint comparator mechanically enforce those choices; no distinct agentic or legitimate first-party parent S4 decision owner is wired into this operating boundary.
+- Supporting / enforcement mechanisms: PPO and IL optimization, held-out validation, `_best` checkpoint file, model loader, training/evaluation scripts, optional pretrained-model argument, and research efficiency utilities.
+- Closure path: Reward/demonstration → fixed optimizer → candidate weights/checkpoint → optional explicit researcher choice of model for a later run. No in-boundary outside/then signal → prospective organizational option decision → authorized adoption and returned operating capability loop is present.
+- Why this is / is not agent-owned: The recurrent `ModelAgent` owns S1 gameplay decisions; learning from past training traces is not by itself a separate S4 owner. Removing the researcher-selected model/environment/training regimen leaves an optimizer without the discretionary future organizational adaptation decision.
+- Evidence: [training source](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/scripts/train_rl.py#L91); [checkpoint comparison](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/scripts/train_rl.py#L232); [explicit model evaluation](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/scripts/evaluate.py#L19); [efficiency pretrained-model path](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/babyai/efficiency.py#L17); [research usage instructions](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/scripts/README.md#L139); [operating agent](https://github.com/mila-iqia/babyai/blob/65fb0cb6f816532a65014bf034a758244e2d5ae7/babyai/utils/agent.py#L9).
+- Basis: Bounded negative established through pinned code inspection of the trainer, checkpoint selection, explicit model loader/evaluation and project-level efficiency/pretraining orchestration; this resolves the proposed `?` without inventing an external strategic loop.
+- Confidence: Medium-high for this historical first-party distribution; not a universal assertion that reinforcement learning systems cannot realize S4.
+- Caveats: No historical dependency/inference execution, model success rate, modern MiniGrid compatibility or later unreviewed deployment is claimed.
+
+### Absence scope
+
+- Surfaces inspected: Pinned `scripts/train_rl.py`, `scripts/train_il.py`, `scripts/evaluate.py`, `scripts/README.md`, `babyai/efficiency.py`, `babyai/utils/agent.py`, and `babyai/evaluate.py`.
+- Plausible first-party paths checked: PPO policy updates; periodic held-out success/return and `_best` saves; optional pretrained transfer/curriculum research scripts; subsequent explicit learned-policy evaluation; offline imitation from demonstrations.
+- Why no material first-party path remains: Each candidate is fixed reward/model optimization, a deterministic checkpoint comparator, a researcher-parameterized launcher or an explicitly selected model run. None couples an environmental future-options function and a legitimate S4 adoption owner to a returned modification of subsequent autonomous operating organization.
 
 ## S5 — Policy and identity
 
@@ -177,5 +183,5 @@ Partial observation and environmental feedback change recurrent model state and 
 
 - Historical repository is declared unmaintained (since 2023); **no claim of successful runtime execution or compatibility with 2026 Minigrid**, no model/checkpoint run and no measured game/learning results.
 - The actual supported status and standard first-party packaging of historical `ModelAgent` are source-backed; a particular trained model must be supplied before inference.
-- S4 unresolved: distinguish fixed RL/PPO + validation/checkpoint selection from separately controlled outside-and-then strategic option/adoption and later operational feedback; do not treat `_best` save as automatic proof.
-- This is an **Index proposed** standalone assessment, not a canonical inclusion. Structural checker, generated views, exact-head CI, admission preflight and a separate canonical publication PR remain necessary.
+- S4 bounded-negative adjudication (2026-10-19): frozen trainer, model-selection, evaluation, efficiency/pretraining and usage paths contain fixed optimization or researcher-selected continuation, not a separately owned prospective option→adoption→later-operation loop; see S4 absence scope. Historical external deployments remain outside the inspected boundary.
+- Canonical inclusion requires separate exact-head CI, admission preflight and publication verification; this record makes no claim that source-only inspection reproduces historical trained-model runs.

@@ -643,3 +643,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 628|henrik-agent-harness|Henrik Agent Harness|https://github.com/henrik-me/agent-harness|2026-05-03T05:08:11Z|index-addition|9168fa451b69c5d53b961ab5c805b3067597ade4|2026-10-18
 629|phoenix-agent-harness|Phoenix Agent Harness|https://github.com/Phoenixrr2113/agent-harness|2026-04-08T10:55:31Z|index-addition|0f67103affd30a3c778874b890dbd5801cdbd94f|2026-10-18
 630|balrog|BALROG|https://github.com/balrog-ai/BALROG|2024-11-20T22:08:12Z|index-addition|b7afe79e3e4265811cfa985ed7c95c4d1a11e3f5|2026-10-19
+631|babyai|BabyAI|https://github.com/mila-iqia/babyai|2018-10-02T17:58:24Z|index-addition|65fb0cb6f816532a65014bf034a758244e2d5ae7|2026-10-19
