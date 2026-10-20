@@ -322,6 +322,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="kram"></a>[Kram](https://github.com/codexmark/kram) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="llm"></a>[llm](https://github.com/imjiaoyuan/llm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-os"></a>[Agent OS](https://github.com/andrewgolovanov/agent-os) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
+| 6 | <a id="autonomous-cloud-workforce"></a>[Autonomous Cloud Workforce](https://github.com/Idkwhattonametsbro/autonomous-cloud-workforce) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rpi"></a>[rpi](https://github.com/bigfish1913/pi-rust) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="loopex"></a>[Loopex](https://github.com/lexlapax/loopex) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="micro"></a>[Micro](https://github.com/rmonvfer/micro) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
