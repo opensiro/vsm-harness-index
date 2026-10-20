@@ -671,3 +671,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 656|openorbit|OpenOrbit|https://github.com/maneja81/OpenOrbit|2026-07-29T23:20:15Z|index-addition|2c30242310c3f2e8453b1116d657e65634e6973e|2026-10-20
 657|orch|orch|https://github.com/fbrubacher/orch|2026-08-24T14:53:46Z|index-addition|16960b40ed6293e27e4536bbd99d62989264a87e|2026-10-20
 658|sifra|SIFRA|https://github.com/atharva1407-sys/SIFRA-Agent-Orchestration-Multi-Agent-Runtime|2026-08-12T17:09:10Z|index-addition|6856b054ba67e4dc4ef499a46732eeed80b5ac68|2026-10-20
+659|multi-agent-orchestrator-rs|multi-agent-orchestrator-rs|https://github.com/formiat/multi-agent-orchestrator-rs|2026-05-09T17:43:59Z|index-addition|ea6c114a40c005256d125984b3d77cc758bdc8fe|2026-10-20
