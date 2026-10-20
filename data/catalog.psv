@@ -663,3 +663,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 648|agent-context-lab|Agent Context Lab|https://github.com/Qin-sor/agent-context-lab|2026-07-22T17:07:47Z|index-addition|372ecc514d48d8e1e5f92d672a9c2b16f4826b5d|2026-10-20
 649|dsh-harness-one|Workflow One|https://github.com/chumingjun/dsh-harness-one|2026-08-20T10:41:49Z|index-addition|08aef04761e8c6586efaa4077b49d349d4f0f920|2026-10-20
 650|matterloop|MatterLoop|https://github.com/huleidada/matterloop|2026-07-16T04:51:51Z|index-addition|a98e384fb02814de3e6ba3902cfee2c041e2d40f|2026-10-20
+651|spartan|Spartan|https://github.com/CorticalComputer/Spartan|2026-07-08T21:03:46Z|index-addition|8f7b36a2326c0157a82040f8e04b474f4899c3da|2026-10-20
