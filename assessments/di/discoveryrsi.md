@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -186,4 +186,4 @@ The configurable model can handle open-ended proposal variety; `max_candidates` 
 - The next generation prompt includes only parent ID, not predecessor contents/score/critique, limiting observable critique-driven iterative adaptation in the shipped mode.
 - The default `ToolRegistry` is callable directly, but does not supply model-driven live tool execution or data collection from the shipped `ResearchHarness.run`.
 - No assumption of S3*/S4/S5 ownership imported from externally hosted inference providers, operators, laboratories, live arena, or benchmark evaluator.
-- Proposal remains `status: proposed` pending Index admission, correct catalog allocation and repository validation; the vector must not be treated as a canonical indexed result until admitted.
+- This mapping enters the canonical Index only through a separately validated catalog/signature admission transaction; it is not evidence of live scientific quality or model training.
