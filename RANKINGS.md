@@ -329,6 +329,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="foxagent"></a>[FoxAgent](https://github.com/douzifox/foxagent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="wtsup-code"></a>[wtsup-code](https://github.com/Shrit1401/wtsup-code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="tyrion"></a>[Tyrion](https://github.com/Xtejasveer/tyrion) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="sifra"></a>[SIFRA](https://github.com/atharva1407-sys/SIFRA-Agent-Orchestration-Multi-Agent-Runtime) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="golum"></a>[Golum](https://github.com/Vignesh-Rajarajan/golum) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="acc"></a>[acc](https://github.com/Xuxyyy/terminal-coding-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="fx"></a>[FX](https://github.com/vercel-labs/fx) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
