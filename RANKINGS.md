@@ -346,6 +346,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="actweave"></a>[ActWeave](https://github.com/chenow9/act-weave) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="trueforge"></a>[TrueForge](https://github.com/truefoundry/trueforge) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-context-lab"></a>[Agent Context Lab](https://github.com/Qin-sor/agent-context-lab) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="evidenceloom"></a>[Evidence Loom](https://github.com/simonguo/evidenceloom) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pxx"></a>[pxx](https://github.com/cdnwetzel/pxx) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="truecoder"></a>[TrueCoder](https://github.com/Shivam583-hue/TrueCoder) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="plank"></a>[Plank](https://github.com/aovestdipaperino/plank) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 2 | `A C ? ? — —` |
