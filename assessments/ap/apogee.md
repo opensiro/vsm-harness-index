@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
 assessment_changed_at: 2026-10-21
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: —
@@ -20,7 +20,7 @@ autonomy_s5: —
 
 # Apogee
 
-**Proposed, not canonical.** Index serial batch [#1842](https://github.com/opensiro/vsm-harness-index/issues/1842) row 2, immutable candidate intake [#860](https://github.com/opensiro/vsm-harness-index/issues/860). Judgments below are limited to the source-shipped supported runtime at the exact frozen commit, not to production adoption or outcomes. The inspection machine did not expose a Go toolchain: present unit tests were read as source evidence but **not run** in this assessment.
+**Canonical general assessment.** Index serial batch [#1842](https://github.com/opensiro/vsm-harness-index/issues/1842) row 2, immutable candidate intake [#860](https://github.com/opensiro/vsm-harness-index/issues/860). Judgments below are limited to the source-shipped supported runtime at the exact frozen commit, not to production adoption or outcomes. The inspection machine did not expose a Go toolchain: present unit tests were read as source evidence but **not run** in this assessment.
 
 ## Review boundary
 

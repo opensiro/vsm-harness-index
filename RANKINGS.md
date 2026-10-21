@@ -383,6 +383,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="railwarden"></a>[RailWarden](https://github.com/advaith-1212/railwarden) | 2026-Q2 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="oblivion-ai"></a>[Oblivion AI](https://github.com/Rohith-s-hub/Oblivion-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="venux-code"></a>[Venux Code](https://github.com/venux/venux-code) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="apogee"></a>[Apogee](https://github.com/airiclenz/apogee) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="einoclaw"></a>[Einoclaw](https://github.com/YellowDusk04/einoclaw) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="visvoai"></a>[VisvoAI](https://github.com/VisvoAI/visvoai) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cassady"></a>[Cassady](https://github.com/owenqwenstarsky/cassady) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
