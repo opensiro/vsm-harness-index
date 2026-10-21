@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-21
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: P
 
 # Politik
 
-**Proposed, noncanonical** source-first general VSM assessment for [Index batch #1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 3, frozen from intake #1281 position 6. Hypothesized canonical disposition: **included**, vector `A / — / — / — / — / P`. Assessment is grounded in this first-party CLI's concrete run mode and constitutionally bounded human authority, not the README's ambition of a permanent, self-governing enterprise of agents.
+**Canonical included** source-first general VSM assessment for [Index batch #1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 3, frozen from intake #1281 position 6. Admitted canonical vector `A / — / — / — / — / P`. Assessment is grounded in this first-party CLI's concrete run mode and constitutionally bounded human authority, not the README's ambition of a permanent, self-governing enterprise of agents.
 
 ## Review boundary
 
