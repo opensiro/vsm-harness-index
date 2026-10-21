@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-21
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: —
 
 # CRDD (Context Repository-Driven Development)
 
-**Proposed noncanonical disposition:** `included` as a narrowly bounded first-party model-driven task execution harness, not as a fully implemented autonomous enterprise organization. Index batch [#1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 5, original intake #1281 position 8.
+**Canonical disposition:** `included` as a narrowly bounded first-party model-driven task execution harness, not as a fully implemented autonomous enterprise organization. Index batch [#1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 5, original intake #1281 position 8.
 
 ## Review boundary
 
