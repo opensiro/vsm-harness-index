@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-21
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: ?
@@ -19,7 +20,7 @@ autonomy_s5: P
 
 # Ateles
 
-**Proposed, noncanonical disposition:** eligible agentic harness for Index batch [#1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 2 (original candidate intake #1281 position 5). The vector is a source-first hypothesis for review and is not admitted Index state.
+**Canonical disposition:** included agentic harness for Index batch [#1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 2 (original candidate intake #1281 position 5). The function evidence and boundary are accepted for this exact frozen source revision.
 
 ## Review boundary
 
