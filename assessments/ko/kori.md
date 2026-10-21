@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-21
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: —
 
 # Kori
 
-**Proposed, not canonical:** the frozen [intake #860](https://github.com/opensiro/vsm-harness-index/issues/860) row 4 and [assessment batch #1842](https://github.com/opensiro/vsm-harness-index/issues/1842) support an included, first-party *assembled coding-agent product* with the proposed vector **S1=A / S2=— / S3=— / S3*=— / S4=— / S5=—**. The underlying Nacelle SDK is a separately owned dependency; this assessment credits only mechanisms wired into the shipped Kori executable and does not claim Kori authored Nacelle's agent-loop implementation.
+**Canonical disposition: included.** the frozen [intake #860](https://github.com/opensiro/vsm-harness-index/issues/860) row 4 and [assessment batch #1842](https://github.com/opensiro/vsm-harness-index/issues/1842) support an included, first-party *assembled coding-agent product* with the proposed vector **S1=A / S2=— / S3=— / S3*=— / S4=— / S5=—**. The underlying Nacelle SDK is a separately owned dependency; this assessment credits only mechanisms wired into the shipped Kori executable and does not claim Kori authored Nacelle's agent-loop implementation.
 
 ## Review boundary
 
