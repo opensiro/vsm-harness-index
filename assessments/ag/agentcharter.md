@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-21
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: —
 
 # AgentCharter
 
-**Proposed noncanonical disposition:** `excluded-no-agentic-vsm` under [Index #1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 6, original frozen #1281 position 9. This excludes the pinned default distribution from the agentic VSM corpus; it does not deny the practical value of role protocols, mutual auditing, reproducible prompts or executable Git guardrails.
+**Canonical disposition:** `excluded-no-agentic-vsm` under [Index #1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 6, original frozen #1281 position 9. This excludes the pinned default distribution from the agentic VSM corpus; it does not deny the practical value of role protocols, mutual auditing, reproducible prompts or executable Git guardrails.
 
 ## Review boundary
 
