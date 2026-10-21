@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-21
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: —
 
 # MAREF (Multi-Agent Recursive Evolution Framework)
 
-**Proposed, noncanonical disposition:** include the first-party configured recursive code-evolution work cell as an agentic harness, **not** all first-party governance claims as VSM ownership. Batch [#1827](https://github.com/opensiro/vsm-harness-index/issues/1827), row 4; original frozen intake [#1281](https://github.com/opensiro/vsm-harness-index/issues/1281), position 7.
+**Canonical disposition:** included first-party configured recursive code-evolution work cell as an agentic harness, **not** all first-party governance claims as VSM ownership. Batch [#1827](https://github.com/opensiro/vsm-harness-index/issues/1827), row 4; original frozen intake [#1281](https://github.com/opensiro/vsm-harness-index/issues/1281), position 7.
 
 ## Review boundary
 
