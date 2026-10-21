@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
 assessment_changed_at: 2026-10-21
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: —
@@ -20,7 +20,7 @@ autonomy_s5: —
 
 # Bough
 
-**Proposed general assessment** for Index batch [#1842](https://github.com/opensiro/vsm-harness-index/issues/1842), row 1, sourced from immutable intake [#860](https://github.com/opensiro/vsm-harness-index/issues/860). This source-relative interpretation is *not* an accepted Index grade until the separate canonical admission transaction. No live provider session, developer-performance benchmark, or Bough Go tests were run as part of this inspection; the inspected host did not have a Go executable.
+**Canonical general assessment** for Index batch [#1842](https://github.com/opensiro/vsm-harness-index/issues/1842), row 1, sourced from immutable intake [#860](https://github.com/opensiro/vsm-harness-index/issues/860). The function evidence and boundary are accepted for this exact frozen source revision. No live provider session, developer-performance benchmark, or Bough Go tests were run as part of this inspection; the inspected host did not have a Go executable.
 
 ## Review boundary
 
