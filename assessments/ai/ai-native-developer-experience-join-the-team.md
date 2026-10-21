@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-21
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: —
 
 # AI-Native Developer Experience / join-the-team
 
-**Proposed noncanonical disposition:** `included` on a **supported installed host-backed plugin skill mode only**, not as a self-hosted standalone agent service or validated production multiagent organization. Batch [Index #1827](https://github.com/opensiro/vsm-harness-index/issues/1827), row 7; original frozen intake [#1281](https://github.com/opensiro/vsm-harness-index/issues/1281), position 10.
+**Canonical disposition:** `included` on a **supported installed host-backed plugin skill mode only**, not as a self-hosted standalone agent service or validated production multiagent organization. Batch [Index #1827](https://github.com/opensiro/vsm-harness-index/issues/1827), row 7; original frozen intake [#1281](https://github.com/opensiro/vsm-harness-index/issues/1281), position 10.
 
 ## Review boundary
 
