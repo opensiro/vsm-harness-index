@@ -682,3 +682,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 667|ateles|Ateles|https://github.com/markmhendrickson/ateles|2026-05-22T12:11:06Z|index-addition|516edbf0bf6a96654f69b8a797fd2998aa4983cb|2026-10-21
 668|politik|Politik|https://github.com/cordfuse/politik|2026-04-10T01:06:56Z|index-addition|c1fa7312c75599d72b187bf20088f51f5dda2247|2026-10-21
 669|maref|MAREF (Multi-Agent Recursive Evolution Framework)|https://github.com/maref-org/maref|2026-06-01T13:28:36Z|index-addition|35b1d8108887bf162711c2212b7a67d6e21d9342|2026-10-21
+670|crdd|CRDD (Context Repository-Driven Development)|https://github.com/qual-lab/CRDD|2026-07-15T11:03:48Z|index-addition|e9947d4f733c3c46b90ee9f78c70898d1920bae9|2026-10-21
