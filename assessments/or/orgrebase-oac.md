@@ -8,7 +8,8 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+assessment_changed_at: 2026-10-21
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +20,7 @@ autonomy_s5: —
 
 # OrgRebase / OAC
 
-**Proposed, noncanonical disposition:** §excluded-no-agentic-vsm§ under [Index #1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 1, original frozen #1281 position 4. This does **not** deny OrgRebase's executable control plane, business governance, or optional model integration. The claim is narrower: an autonomous organizational S1 unit with material first-party outcome/feedback discretion was not established in this pinned standard distribution. No system was executed for this source-first static review.
+**Canonical disposition:** §excluded-no-agentic-vsm§ under [Index #1827](https://github.com/opensiro/vsm-harness-index/issues/1827) row 1, original frozen #1281 position 4. This does **not** deny OrgRebase's executable control plane, business governance, or optional model integration. The claim is narrower: an autonomous organizational S1 unit with material first-party outcome/feedback discretion was not established in this pinned standard distribution. No system was executed for this source-first static review.
 
 ## Review boundary
 
