@@ -454,6 +454,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="lyrie"></a>[Lyrie](https://github.com/OTT-Cybersecurity-LLC/lyrie-ai) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="auto-harness"></a>[Auto Harness](https://github.com/neosigmaai/auto-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="urbanbreach-harness"></a>[urbanbreach Harness](https://github.com/urbanbreach/agent-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
+| 6 | <a id="xin-code"></a>[Xin Code](https://github.com/xincode-ai/xin-code) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="autoagent"></a>[AutoAgent](https://github.com/thirdlayerinc/autoagent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="reachai-enterpriseagentframework"></a>[ReachAI / EnterpriseAgentFramework](https://github.com/w8123/EnterpriseAgentFramework) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 2 | `A — — ? ? —` |
 | 6 | <a id="autoharness"></a>[AutoHarness](https://github.com/aiming-lab/AutoHarness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |

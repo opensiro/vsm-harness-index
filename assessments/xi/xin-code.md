@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +19,7 @@ autonomy_s5: —
 
 # Xin Code
 
-**WORKING DRAFT ONLY — NOT CANONICAL / NOT ADMITTED.** Frozen Index batch [#1842](https://github.com/opensiro/vsm-harness-index/issues/1842), source intake [#860](https://github.com/opensiro/vsm-harness-index/issues/860), row 6. Source-first provisional vector `A / — / — / — / — / —`; incumbent reviewer must make the semantic disposition.
+**Source-first canonical general VSM assessment** of the frozen Index batch [#1842](https://github.com/opensiro/vsm-harness-index/issues/1842), source intake [#860](https://github.com/opensiro/vsm-harness-index/issues/860), row 6. Evidence-bounded vector `A / — / — / — / — / —`; this is a review of the pinned first-party source, not task benchmark performance.
 
 ## Review boundary
 
@@ -185,4 +185,4 @@ User tasks and tool observations are operational variety (S1). API retry, token 
 
 1. No live provider-assisted execution or Xin Code Go unit tests were run: the inspection host lacked Go. Code-wiring is source evidence, not runtime attestation.
 2. An alternate user-installed plugin/MCP could implement additional functions but is outside the first-party supported default boundary; no upgrade without exact shipped reachability.
-3. The remote branch `assessment/b1842-xin-review` currently exists and points at the Index main baseline with no change; this draft is a **handoff**, not an independent parallel review, a canonical claim, a PR, a semantic approval or a release.
+3. GitHub PR checks and the Skills structure checker validate artifact consistency, not the correctness of every VSM interpretation. No independent semantic review, live model evaluation, or deployed higher-function owner is claimed.
