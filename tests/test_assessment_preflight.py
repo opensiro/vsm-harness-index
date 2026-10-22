@@ -109,6 +109,47 @@ class AssessmentPreflightTests(unittest.TestCase):
         with self.assertRaises(preflight.PreflightError):
             preflight.extract_next_row(["## Manual assessment board\n| 1 | IronClaw | `b0b999d96781516ee05e6ba961d6f3ead900da96` | QUEUED |"])
 
+    def test_compact_board_resolves_ref_only_from_frozen_map(self):
+        compact = """## Manual assessment board
+
+| # | Project | Status |
+| ---: | --- | --- |
+| 1 | IronClaw | ADMITTED |
+| 2 | ZeroClaw | **NEXT** |
+"""
+        with tempfile.TemporaryDirectory() as temp:
+            contract = Path(temp) / "active-contract.psv"
+            contract.write_text(
+                "profile_version|methodology_version\n0.2.4|0.3.7\n", encoding="utf-8"
+            )
+            task = preflight.build_envelope(
+                159, ISSUE, [{"body": compact}], root=Path(temp), contract_path=contract
+            )
+        self.assertEqual(task.row, 2)
+        self.assertEqual(task.repository, "zeroclaw-labs/zeroclaw")
+        self.assertEqual(task.review_ref, "757db6c356c61861256a87222e30c7c92e8f166f")
+
+    def test_compact_board_project_mismatch_fails_closed(self):
+        compact = "## Manual assessment board\n| 1 | Wrong Project | **NEXT** |"
+        with self.assertRaisesRegex(preflight.PreflightError, "project mismatch"):
+            preflight.build_envelope(159, ISSUE, [{"body": compact}])
+
+    def test_multiple_next_rows_fail_closed_in_compact_board(self):
+        compact = """## Manual assessment board
+| 1 | IronClaw | **NEXT** |
+| 2 | ZeroClaw | **NEXT** |
+"""
+        with self.assertRaisesRegex(preflight.PreflightError, "multiple NEXT"):
+            preflight.extract_next_row([compact])
+
+    def test_duplicate_frozen_candidate_row_fails_closed(self):
+        duplicated = ISSUE["body"] + (
+            "| 2 | Another | `elsewhere/project` | "
+            "`757db6c356c61861256a87222e30c7c92e8f166f` | duplicate |\n"
+        )
+        with self.assertRaisesRegex(preflight.PreflightError, "exactly one frozen"):
+            preflight.extract_candidate(duplicated, 2, None)
+
     def test_checkpoint_mention_does_not_shadow_actual_board(self):
         checkpoint = """## Row 1 follow-up — review gate
 

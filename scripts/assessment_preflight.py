@@ -29,6 +29,10 @@ BOARD_ROW = re.compile(
     r"^\|\s*(?P<row>\d+)\s*\|\s*(?P<project>[^|]+?)\s*\|\s*`(?P<ref>[0-9a-f]{40})`\s*\|\s*\*\*?NEXT\*\*?\s*\|\s*$",
     re.MULTILINE | re.IGNORECASE,
 )
+COMPACT_BOARD_ROW = re.compile(
+    r"^\|\s*(?P<row>\d+)\s*\|\s*(?P<project>[^|]+?)\s*\|\s*\*\*?NEXT\*\*?\s*\|\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
 # Only an actual Markdown board heading starts a superseding snapshot.
 # A checkpoint merely mentioning "Manual assessment board" is not one.
 BOARD_HEADING = re.compile(
@@ -142,7 +146,7 @@ def fetch_issue(repository: str, issue_number: int) -> tuple[dict[str, Any], lis
     return issue, comments
 
 
-def extract_next_row(texts: list[str]) -> tuple[int, str, str]:
+def extract_next_row(texts: list[str]) -> tuple[int, str, str | None]:
     # Manual assessment boards are snapshots, not an append-only source of NEXT
     # rows. Only the newest board is authoritative. Falling back through old
     # snapshots after a terminal board would resurrect a completed row.
@@ -152,22 +156,36 @@ def extract_next_row(texts: list[str]) -> tuple[int, str, str]:
     )
     if latest_board is None:
         raise PreflightError("no Manual assessment board was found")
-    match = BOARD_ROW.search(latest_board)
-    if not match:
+    matches = [
+        (match, match.group("ref"))
+        for match in BOARD_ROW.finditer(latest_board)
+    ] + [
+        (match, None)
+        for match in COMPACT_BOARD_ROW.finditer(latest_board)
+    ]
+    if not matches:
         raise PreflightError("latest Manual assessment board has no row marked NEXT")
-    return int(match.group("row")), match.group("project").strip(), match.group("ref")
+    if len(matches) != 1:
+        raise PreflightError("latest Manual assessment board has multiple NEXT rows")
+    match, review_ref = matches[0]
+    return int(match.group("row")), match.group("project").strip(), review_ref
 
 
-def extract_candidate(issue_body: str, row_number: int, review_ref: str) -> tuple[str, str]:
-    for match in CANDIDATE_ROW.finditer(issue_body):
-        if int(match.group("row")) != row_number:
-            continue
-        if match.group("ref") != review_ref:
-            raise PreflightError(
-                f"row {row_number} board ref {review_ref} disagrees with frozen candidate ref {match.group('ref')}"
-            )
-        return match.group("project").strip(), match.group("repository").strip()
-    raise PreflightError(f"could not resolve frozen candidate row {row_number} from the issue body")
+def extract_candidate(issue_body: str, row_number: int,
+                      review_ref: str | None) -> tuple[str, str, str]:
+    candidates = [match for match in CANDIDATE_ROW.finditer(issue_body)
+                  if int(match.group("row")) == row_number]
+    if len(candidates) != 1:
+        raise PreflightError(
+            f"expected exactly one frozen candidate row {row_number}, found {len(candidates)}"
+        )
+    match = candidates[0]
+    frozen_ref = match.group("ref")
+    if review_ref is not None and frozen_ref != review_ref:
+        raise PreflightError(
+            f"row {row_number} board ref {review_ref} disagrees with frozen candidate ref {frozen_ref}"
+        )
+    return match.group("project").strip(), match.group("repository").strip(), frozen_ref
 
 
 def build_envelope(
@@ -184,7 +202,7 @@ def build_envelope(
 
     texts = [body] + [str(comment.get("body") or "") for comment in comments]
     row_number, board_project, review_ref = extract_next_row(texts)
-    candidate_project, repository = extract_candidate(body, row_number, review_ref)
+    candidate_project, repository, frozen_ref = extract_candidate(body, row_number, review_ref)
     if candidate_project.casefold() != board_project.casefold():
         raise PreflightError(
             f"row {row_number} project mismatch: board={board_project!r}, candidate={candidate_project!r}"
@@ -200,7 +218,7 @@ def build_envelope(
         row=row_number,
         project=candidate_project,
         repository=repository,
-        review_ref=review_ref,
+        review_ref=frozen_ref,
         assessment_path=assessment_path,
         assessment_path_state=state,
         profile_version=profile,
