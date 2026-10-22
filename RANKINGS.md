@@ -536,6 +536,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="jazz"></a>[Jazz](https://github.com/lvndry/jazz) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentrl"></a>[AgentRL](https://github.com/THUDM/AgentRL) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="shannon"></a>[Shannon](https://github.com/Kocoro-lab/Shannon) | 2025-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
+| 6 | <a id="vtcode"></a>[VTCode](https://github.com/vinhnx/VTCode) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="youtu-agent"></a>[Youtu-Agent](https://github.com/TencentCloudADP/youtu-agent) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="repomaster"></a>[RepoMaster](https://github.com/QuantaAlpha/RepoMaster) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pi"></a>[Pi](https://github.com/earendil-works/pi) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |

@@ -698,3 +698,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 683|tau|Tau|https://github.com/huggingface/tau|2026-06-11T16:33:44Z|index-addition|9fe6a719ac0bda3696e9fc8413643cfe9786c73c|2026-10-22
 684|rust-code|rust-code|https://github.com/fortunto2/rust-code|2026-03-05T01:11:30Z|index-addition|fcc91a93deb69fab3de2c96a32129cbd69beea72|2026-10-22
 685|g-rump|G-Rump|https://github.com/Aphrodine-wq/G-Rump|2026-02-22T00:03:03Z|index-addition|876766327171eed40df89ef1d58c8c9a475c8def|2026-10-22
+686|vtcode|VTCode|https://github.com/vinhnx/VTCode|2025-08-29T09:01:48Z|index-addition|dc32271158bec3c37b81ad7bf57157a801307517|2026-10-22
