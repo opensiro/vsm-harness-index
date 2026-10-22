@@ -604,6 +604,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="stagehand"></a>[Stagehand](https://github.com/browserbase/stagehand) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="devika"></a>[Devika](https://github.com/stitionai/devika) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="praisonai"></a>[PraisonAI](https://github.com/MervinPraison/PraisonAI) | 2024-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
+| 6 | <a id="devon"></a>[Devon](https://github.com/entropy-research/Devon) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openhands"></a>[OpenHands](https://github.com/OpenHands/OpenHands) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="skyvern"></a>[Skyvern](https://github.com/Skyvern-AI/skyvern) | 2024-Q1 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
 | 6 | <a id="parlant"></a>[Parlant](https://github.com/emcie-co/parlant) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
