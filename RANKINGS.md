@@ -381,6 +381,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="paseka"></a>[Paseka](https://github.com/russ-p/paseka) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="tura"></a>[Tura](https://github.com/Tura-AI/tura) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="rook"></a>[Rook](https://github.com/martian56/rook) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="easylink-agent-runtime"></a>[Easylink Agent Runtime](https://github.com/easylink-ai-open/agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="hypha"></a>[Hypha](https://github.com/CodeSoul-co/Hypha) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chad"></a>[chad](https://github.com/nathansutton/chad) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
