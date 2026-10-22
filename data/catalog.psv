@@ -695,3 +695,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 680|gopi|Gopi|https://github.com/cgund98/gopi|2026-09-25T05:35:39Z|index-addition|c5aaae8acc169c9c0a0d6c7a1a872074515cb485|2026-10-22
 681|zaino|Zaino|https://github.com/zenodea/zaino|2026-08-14T13:59:47Z|index-addition|f842bd0589471972bf680aaa35a8a6159eb8c8df|2026-10-22
 682|freebuff|Freebuff|https://github.com/CodebuffAI/freebuff|2024-07-09T21:21:56Z|index-addition|8ed5d3e5e58b6a7ea1351efcbaa967b2dc015073|2026-10-22
+683|tau|Tau|https://github.com/huggingface/tau|2026-06-11T16:33:44Z|index-addition|9fe6a719ac0bda3696e9fc8413643cfe9786c73c|2026-10-22

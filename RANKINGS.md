@@ -398,6 +398,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="wardayacode"></a>[WardayaCode](https://github.com/fawwazmw/wardayacode) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openzot"></a>[OpenZot](https://github.com/openzot/openzot) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="smolcode"></a>[Smolcode](https://github.com/seanpoyner/smolcode) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 3 | `A ? ? ? — —` |
+| 6 | <a id="tau"></a>[Tau](https://github.com/huggingface/tau) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="autonomous-coding-agent"></a>[Autonomous Coding Agent](https://github.com/Quality-Max/autonomous-coding-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cycode"></a>[CYCode](https://github.com/ChaoYue0307/CYCode) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pi-go"></a>[pi (Go)](https://github.com/sky-valley/pi) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
