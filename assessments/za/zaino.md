@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: —
@@ -19,7 +19,7 @@ autonomy_s5: —
 
 # Zaino
 
-**Proposed, noncanonical general VSM assessment** for [Index batch #1842](https://github.com/opensiro/vsm-harness-index/issues/1842) row 9 from original frozen intake [#860](https://github.com/opensiro/vsm-harness-index/issues/860). Evidence-bounded source vector `A / C / — / — / — / —` is not provider task benchmark or proof of perfect conflict isolation.
+**Canonical general VSM assessment** for [Index batch #1842](https://github.com/opensiro/vsm-harness-index/issues/1842) row 9 from original frozen intake [#860](https://github.com/opensiro/vsm-harness-index/issues/860). Evidence-bounded source vector `A / C / — / — / — / —` is not provider task benchmark or proof of perfect conflict isolation.
 
 ## Review boundary
 

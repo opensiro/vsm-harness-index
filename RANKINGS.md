@@ -329,6 +329,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="autonomous-cloud-workforce"></a>[Autonomous Cloud Workforce](https://github.com/Idkwhattonametsbro/autonomous-cloud-workforce) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rpi"></a>[rpi](https://github.com/bigfish1913/pi-rust) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="loopex"></a>[Loopex](https://github.com/lexlapax/loopex) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="zaino"></a>[Zaino](https://github.com/zenodea/zaino) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="micro"></a>[Micro](https://github.com/rmonvfer/micro) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="stcode"></a>[stcode](https://github.com/Ming-doan/stcode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarm"></a>[SWARM](https://github.com/KhanUzeb/SWARM) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
