@@ -709,3 +709,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 694|devon|Devon|https://github.com/entropy-research/Devon|2024-03-15T04:52:31Z|index-addition|8f68f1d7467161562d64138aefee7d26c7e68130|2026-10-22
 695|moatless-tools|Moatless Tools|https://github.com/aorwall/moatless-tools|2023-08-20T15:55:05Z|index-addition|011ead57a5c81664e9c45e07e1f50b17e695cc63|2026-10-22
 696|no-human|no_human|https://github.com/no-human-ai/no_human|2026-08-05T14:51:58Z|index-addition|5f99b7af3142bf9fc562bd35d127b852a99bc113|2026-10-22
+697|codeaf|CodeAF|https://github.com/Agent-Field/CodeAF|2026-08-05T16:00:07Z|index-addition|9258f70523791330bf5128fd5aed6c70a70f138f|2026-10-23
