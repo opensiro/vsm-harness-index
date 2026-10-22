@@ -7,6 +7,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 1 | <a id="henterprise"></a>[Henterprise](https://github.com/humbertobellor/henterprise) | 2026-Q3 | 6/6 | 5/5 | 0 | 0 | 0 | `A A A A A A` |
 | 1 | <a id="ouroboros"></a>[Ouroboros](https://github.com/razzant/ouroboros) | 2026-Q1 | 6/6 | 5/5 | 0 | 2 | 0 | `A A A A A(P) A(P)` |
 | 2 | <a id="headcount"></a>[Headcount](https://github.com/cbrock84/headcount) | 2026-Q3 | 5/6 | 4/5 | 1 | 0 | 0 | `A A A C A A` |
+| 2 | <a id="cluxmate"></a>[CluxMate](https://github.com/r1c7/CluxMate) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="pi-rs"></a>[pi-rs](https://github.com/CCherry07/pi-rs) | 2026-Q3 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="argus-agent"></a>[Argus](https://github.com/microsoft/ArgusAgent) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="octos"></a>[Octos](https://github.com/octos-org/octos) | 2026-Q1 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
