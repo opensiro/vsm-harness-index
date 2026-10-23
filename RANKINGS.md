@@ -380,6 +380,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="oniroute-swarmagents"></a>[OniRoute SwarmAgents](https://github.com/AniruddhaDas1/OniRoute_SwarmAgents) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="phi"></a>[Phi](https://github.com/pulseaiclub/phi) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="soket-loop"></a>[Soket Loop](https://github.com/soketlabs/loop) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="ti"></a>[ti](https://github.com/tmjwjx/ti) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="moss-agent"></a>[moss-agent](https://github.com/peterxiemin/moss-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="microcodex"></a>[MicroCodex](https://github.com/paoloanzn/microcodex) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openorbit"></a>[OpenOrbit](https://github.com/maneja81/OpenOrbit) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
