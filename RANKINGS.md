@@ -171,6 +171,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="swe-mux"></a>[swe-mux](https://github.com/jatoran/swe-mux) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C A(P) C P —` |
 | 5 | <a id="omniscientist"></a>[OmniScientist](https://github.com/Omni-Scientist/OmniScientist) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="codey"></a>[Codey](https://github.com/codesbyjit/codey) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="yagent"></a>[Yagent](https://github.com/Mechres/Yagent) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 5 | <a id="travis234"></a>[Travis234](https://github.com/taikkyithar/travis234) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harness-r1"></a>[Harness-R1](https://github.com/DeepExperience/Harness-R1) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="qwen-audio-agent"></a>[Qwen Audio Agent](https://github.com/QwenAudio/qwen-audio-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 2 | 0 | `A — — — A(P) P` |
