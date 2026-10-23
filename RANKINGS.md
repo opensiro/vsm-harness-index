@@ -443,6 +443,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="swarm-code"></a>[swarm-code](https://github.com/skyblanket/swarm-code) | 2026-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="waggle"></a>[Waggle](https://github.com/CrewBeeLab/Waggle) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentbox"></a>[AgentBox](https://github.com/madarco/agentbox) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="yottacode"></a>[yottacode](https://github.com/yottadynamics/yottacode) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="multi-agent-orchestrator-rs"></a>[multi-agent-orchestrator-rs](https://github.com/formiat/multi-agent-orchestrator-rs) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cubeloop"></a>[CubeLoop](https://github.com/cubeplexai/cubeloop) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="harness"></a>[Harness](https://github.com/sausheong/harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
