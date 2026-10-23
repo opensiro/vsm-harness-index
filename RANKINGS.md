@@ -23,6 +23,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="crewlet"></a>[Crewlet](https://github.com/crewlet/crewlet) | 2026-Q3 | 4/6 | 3/5 | 1 | 3 | 0 | `A C A(P) A A(P) P` |
 | 3 | <a id="codeaf"></a>[CodeAF](https://github.com/Agent-Field/CodeAF) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) — A P` |
 | 3 | <a id="metis"></a>[Metis](https://github.com/Wholiver/metis) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="sanook-cli"></a>[Sanook CLI](https://github.com/Sir-chawakorn/sanook-cli) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
 | 3 | <a id="omnigent"></a>[Omnigent](https://github.com/omnigent-ai/omnigent) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="neo"></a>[Neo](https://github.com/matrixheaven/neo) | 2026-Q2 | 4/6 | 3/5 | 1 | 2 | 0 | `A C A(P) A — A(P)` |
 | 3 | <a id="orca-agent"></a>[Orca Agent](https://github.com/echoVic/orca-agent) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
