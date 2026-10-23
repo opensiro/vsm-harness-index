@@ -87,6 +87,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="spartan"></a>[Spartan](https://github.com/CorticalComputer/Spartan) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — — A A` |
 | 4 | <a id="relaycli"></a>[RelayCLI](https://github.com/joshuasetiawann/relaycli) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A P A — —` |
 | 4 | <a id="cast"></a>[cast](https://github.com/aa-blinov/cast) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A C P A A —` |
+| 4 | <a id="ada"></a>[Ada](https://github.com/black141312/ada) | 2026-Q2 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) — A —` |
 | 4 | <a id="waveloom"></a>[Waveloom](https://github.com/Menfre01/waveloom) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="helpofai"></a>[HelpOfAi](https://github.com/helpofai/HelpOfAi-Cli) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="pythinker-code"></a>[Pythinker Code](https://github.com/PyModel/pythinker-code) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
