@@ -149,6 +149,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="aadixc0de-rune"></a>[Rune](https://github.com/AadiXC0DE/Rune) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A — — P` |
 | 5 | <a id="zcode"></a>[ZCode](https://github.com/zai-org/ZCode) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 4 | `A ? A ? ? ?` |
 | 5 | <a id="mindweave"></a>[Mindweave](https://github.com/mindweave-cli/mindweave) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
+| 5 | <a id="karmx"></a>[karmX](https://github.com/KarmSakha/karmx-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="sciencebuddy-simple-scibuddy"></a>[ScienceBuddy / Simple-SciBuddy](https://github.com/Gen-Verse/ScienceBuddy) | 2026-Q3 | 2/6 | 1/5 | 2 | 0 | 0 | `A — C C A —` |
 | 5 | <a id="myharness"></a>[MyHarness](https://github.com/woolcoxm/MyHarness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="axiom"></a>[Axiom](https://github.com/amuluze/axiom-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
