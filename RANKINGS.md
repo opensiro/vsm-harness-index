@@ -199,6 +199,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="agent-harness"></a>[Agent Harness](https://github.com/0xenzyme/agent-harness) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 2 | `A ? A ? — —` |
 | 5 | <a id="bharatcode"></a>[BharatCode](https://github.com/arbazkhan971/bharatcode-cli) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C A C — —` |
 | 5 | <a id="crabot"></a>[Crabot](https://github.com/J-F-Liu/crabot) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A — P A — P` |
+| 5 | <a id="polycode"></a>[polycode](https://github.com/gasantiago16/polycode) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C A(P) C — —` |
 | 5 | <a id="starnet"></a>[StarNet](https://github.com/androoAGI/starnet) | 2026-Q2 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
 | 5 | <a id="metaharness"></a>[MetaHarness](https://github.com/ruvnet/metaharness) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A — C C A —` |
 | 5 | <a id="agent-harness-core"></a>[Agent Harness Core](https://github.com/phenomenoner/agent-harness-core) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
