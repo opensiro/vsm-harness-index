@@ -320,6 +320,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agnostic-agent"></a>[agnostic-agent](https://github.com/ucsandman/agnostic-agent) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="scoot"></a>[scoot](https://github.com/sergenes/scootcli) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mini-harness"></a>[mini-harness](https://github.com/mini-harness/mini-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="cortexterm"></a>[CortexTerm](https://github.com/Toge-1/CortexTerm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rsih"></a>[RSIH](https://github.com/CosmosMind-ai/RSI-Harness) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A — — — C C` |
 | 6 | <a id="lobstah"></a>[lobstah](https://github.com/aequitas-labs/lobstah) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="ascension"></a>[Ascension](https://github.com/AI-Ascension/sts2-harness) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 0 | `A — C(P) — — —` |
