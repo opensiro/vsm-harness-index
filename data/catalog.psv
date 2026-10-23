@@ -736,3 +736,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 721|yagent|Yagent|https://github.com/Mechres/Yagent|2026-08-11T07:51:57Z|index-addition|14d2999bf2abb280645fcafe2f15552ad9e49922|2026-10-23
 722|sanook-cli|Sanook CLI|https://github.com/Sir-chawakorn/sanook-cli|2026-06-13T16:59:37Z|index-addition|c7bbede1823b68f4c48959dc34d864a5404762c8|2026-10-23
 723|tesseractcli-agent|TesseractCLI-Agent|https://github.com/tesseractai-lab/TesseractCLI-Agent|2026-06-10T14:01:40Z|index-addition|2ad0d2f5874034fa74797bb95737091748e01372|2026-10-23
+724|mini-code-agent|Mini-Code-Agent|https://github.com/ccxxxyy/mini-code-agent|2026-07-23T07:33:22Z|index-addition|ee8c4339b0dd04088377f0c27e04abc1bf9904b9|2026-10-23
