@@ -26,8 +26,8 @@ autonomy_s5: —
 - Purpose and identity: let user-chosen models inspect and change a local project through bounded tools, optionally delegating specialized work or running subscribed skills when project events occur.
 - Relevant environment: user instructions, repository files and conflicts, model/provider outputs, tool errors, filesystem/cron triggers, project skill definitions and operator approvals.
 - Standard-distribution boundary: Node CLI/Ink chat or `run`, the main conversation/model tool execution loop, model-backed subagents with isolated contexts, tool filtering and permissions, optional daemon with registered skill subscriptions, cron/file watchers and IPC.
-- Credited first-party operating surfaces: `source/hooks/chat-handler/conversation/`, `source/tools/agent-tool.tsx`, `source/subagents/`, `source/skills/{bootstrap,dispatcher,registrar}.ts`, `source/events/`, `source/daemon/`, the checked-in configuration and mode policy.
-- Adjacent first-party surfaces excluded: AVA specs and fixtures, benchmarks, VS Code packaging, repository development and maintainer governance, example skill proposals, external MCP providers and any user-supplied reviewer or future-planning skill not actually wired by the default distribution.
+- Credited operating / distribution surfaces: `source/hooks/chat-handler/conversation/`, `source/tools/agent-tool.tsx`, `source/subagents/`, `source/skills/{bootstrap,dispatcher,registrar}.ts`, `source/events/`, `source/daemon/`, the checked-in configuration and mode policy.
+- Adjacent first-party surfaces excluded from ownership: AVA specs and fixtures, benchmarks, VS Code packaging, repository development and maintainer governance, example skill proposals, external MCP providers and any user-supplied reviewer or future-planning skill not actually wired by the default distribution.
 - Reviewed modes: attended normal/auto-accept/yolo/plan/architect, non-interactive runs, concurrently delegated first-party subagents, optional daemon file/cron subscriptions and `confirm: true` plan-only runs.
 - Recursion level: a local Nanocoder session and its delegated operating units, or a single project's daemon-triggered operating cohort. The daemon mode is explicitly narrower than all processes, independent repositories or the Nano Collective maintainer organization.
 - License screen: `LICENSE.md` and `package.json` both declare MIT at the frozen ref. GitHub's API `NOASSERTION` metadata does not negate the checked-in license text.
@@ -70,6 +70,7 @@ The agent model owns its choices of tools and arguments in the main session and 
 - Disturbance / variety regulated: a burst of file changes or another cron/file event can start multiple concurrent project-mutating agents for the same skill before a previous run completes.
 - Distinct S1 units: potential overlapping `SubagentExecutor` run instances from one registered `agent:`/`command:` subscription; each is a separately deciding model agent, not a mere tool call.
 - Inter-S1 disturbance: duplicate concurrent executions of one skill could race over the same work surface and overload local resources.
+- Decisive decision or feedback right: fixed first-party per-subscription admission/suppression of overlapping triggered runs, not the model's choice of downstream task work.
 - Attenuating coordination relation: the subscription ID identifies the shared project task cell; a deterministic in-flight exclusion gate prevents two such independently deciding cells from running at the same time, and the file watcher coalesces repeated changes.
 - Feedback into subsequent S1 behaviour: permitted event delivery starts the model worker; suppressed concurrent events do not start competing workers, while subsequent eligible events can again launch one after the previous run exits.
 - Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the code enforces an exclusion precisely against duplicate concurrently mutating agent runs for the same subscription, not merely moving messages or assigning children; unlike a global mutex it is narrowly scoped to this inter-run disturbance.
@@ -108,7 +109,7 @@ The agent model owns its choices of tools and arguments in the main session and 
 ### Absence scope
 
 - Surfaces inspected: `agent` concurrency/fan-out, parent result aggregation, subagent progress UI/store, abort handling, skill daemon, task manager and approval settings.
-- Plausible paths checked: progress display as a management roster, global cancellation as resource intervention, plan/task tools as manager, event backpressure as S3.
+- Plausible first-party paths checked: progress display as a management roster, global cancellation as resource intervention, plan/task tools as manager, event backpressure as S3.
 - Why no material first-party path remains: progress has no evidenced model-facing selective intervention operation; task delegation and fixed constraints do not themselves make whole-system operating-resource decisions.
 
 ## S3* — Complementary audit
@@ -129,7 +130,7 @@ The agent model owns its choices of tools and arguments in the main session and 
 ### Absence scope
 
 - Surfaces inspected: built-in `explore` agent, custom agents/skills, pre/post-tool hooks, test and diff mechanisms, source AVA test suite.
-- Plausible paths checked: a custom `code-reviewer` agent, verification command, git checkpoint, diagnostics, lifecycle hook audit logs and developer tests.
+- Plausible first-party paths checked: a custom `code-reviewer` agent, verification command, git checkpoint, diagnostics, lifecycle hook audit logs and developer tests.
 - Why no material first-party path remains: none is evidenced as a default independent auditor with direct complementary access whose judgment returns to first-party whole-current S3 control.
 
 ## S4 — Outside-and-then intelligence
@@ -150,7 +151,7 @@ The agent model owns its choices of tools and arguments in the main session and 
 ### Absence scope
 
 - Surfaces inspected: model/tool loop, project memory, plan/architect modes, events/daemon, skill creation and bundled subscriptions.
-- Plausible paths checked: memory as learning, cron watcher as external horizon scan, custom skills as organizational evolution, internal architect planning.
+- Plausible first-party paths checked: memory as learning, cron watcher as external horizon scan, custom skills as organizational evolution, internal architect planning.
 - Why no material first-party path remains: none shows a shipped feedback loop that forms future-relevant options from external distinctions and changes subsequent harness capability through a management dialogue.
 
 ## S5 — Policy and identity
@@ -171,7 +172,7 @@ The agent model owns its choices of tools and arguments in the main session and 
 ### Absence scope
 
 - Surfaces inspected: modes, approvals, per-tool custom policies, scoped tool visibility, skill permissions, headless and daemon safety gates.
-- Plausible paths checked: user approval as S5, system prompt as identity mandate, maintainers as governance, `architect` review as an ultimate policy decision.
+- Plausible first-party paths checked: user approval as S5, system prompt as identity mandate, maintainers as governance, `architect` review as an ultimate policy decision.
 - Why no material first-party path remains: these decisions affect tactical actions and work products, not a recognized identity/ultimate-policy question returned as a durable operating constraint.
 
 ## Distributed OSS parent arrangement
