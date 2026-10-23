@@ -225,6 +225,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="harnessx"></a>[HarnessX](https://github.com/Darwin-Agent/HarnessX) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="cadis"></a>[C.A.D.I.S.](https://github.com/Growth-Circle/cadis) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="ndx"></a>[ndx](https://github.com/hikaMaeng/ndx) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="stemcode"></a>[StemCode](https://github.com/rizwan3d/StemCode) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A A — C — —` |
 | 5 | <a id="vix"></a>[Vix](https://github.com/get-vix/vix) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — A C —` |
 | 5 | <a id="clawgui"></a>[ClawGUI](https://github.com/ZJU-REAL/ClawGUI) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="deimos"></a>[Deimos](https://github.com/dxiv/dxa-deimos) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
