@@ -717,3 +717,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 702|cast|cast|https://github.com/aa-blinov/cast|2026-07-01T15:14:12Z|index-addition|8eb5142ed05b2d835c4da64487b12aff4712c6c7|2026-10-23
 703|glm-code|GLM Code|https://github.com/MikuBlog/glm-code|2026-09-12T13:43:12Z|index-addition|77049c2e3c3b76b293445fbac6b536bf330bbcd9|2026-10-23
 704|ranapriyansh-agent-loop|agent-loop|https://github.com/RanaPriyansh/agent-loop|2026-08-29T17:19:00Z|index-addition|c4c5dcd35bf89a36b6b477f4d9cb66c4b838a4eb|2026-10-23
+705|scout|Scout|https://github.com/dairycow/scout|2026-08-22T04:15:04Z|index-addition|1c7b51f4b03f719bedaf6a81dcdf896f6f39f806|2026-10-23
