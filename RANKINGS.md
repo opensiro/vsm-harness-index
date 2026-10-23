@@ -423,6 +423,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="carbon"></a>[Carbon](https://github.com/thecarbonlayer/carbon) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="tinyagents"></a>[TinyAgents](https://github.com/tinyhumansai/tinyagents) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="railwarden"></a>[RailWarden](https://github.com/advaith-1212/railwarden) | 2026-Q2 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
+| 6 | <a id="mocode"></a>[MoCode](https://github.com/wanxunyang/mocode) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="oblivion-ai"></a>[Oblivion AI](https://github.com/Rohith-s-hub/Oblivion-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="venux-code"></a>[Venux Code](https://github.com/venux/venux-code) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="apogee"></a>[Apogee](https://github.com/airiclenz/apogee) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
