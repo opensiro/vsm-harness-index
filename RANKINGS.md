@@ -61,6 +61,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="megaagent"></a>[MegaAgent](https://github.com/Xtra-Computing/MegaAgent) | 2024-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="opencursor"></a>[OpenCursor](https://github.com/PawanOsman/OpenCursor) | 2022-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 4 | <a id="termagent"></a>[TermAgent](https://github.com/whoops-1/termagent) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="agentharness-oklahomawhore"></a>[AgentHarness](https://github.com/Oklahomawhore/AgentHarness) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="suisuicode"></a>[SuisuiCode](https://github.com/Yangtianspike/suisui-code) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="abhed"></a>[Abhed](https://github.com/zybuu-ai/abhed) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
