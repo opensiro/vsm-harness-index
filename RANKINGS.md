@@ -397,6 +397,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="iteron"></a>[Iteron](https://github.com/Plantcore-AI/Iteron) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="terminal-native-coding-agent"></a>[terminal-native-coding-agent](https://github.com/RushilBuilds/terminal-native-coding-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="forge-agent"></a>[Forge Agent](https://github.com/guoyang1982/forge-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A ? — — — —` |
+| 6 | <a id="neil-agent"></a>[Neil-Agent](https://github.com/zyohhh/Neil-Agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="oh-my-cli"></a>[oh-my-cli](https://github.com/qwen-code-dev-bot/oh-my-cli) | 2026-Q3 | 1/6 | 0/5 | 0 | 2 | 0 | `A — — — P P` |
 | 6 | <a id="woopcode"></a>[Woopcode](https://github.com/mangit955/woop-code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ally"></a>[Ally](https://github.com/Bronya0/ally-agent) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
