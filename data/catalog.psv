@@ -763,3 +763,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 748|workbench|Workbench|https://github.com/proactive-agent/workbench|2026-10-05T12:32:42Z|index-addition|4dbda41ac47809ce74ebc39408183c428ec55436|2026-10-24
 749|harness-cli|Harness² CLI|https://github.com/3ae3ae/harness2-cli|2026-10-19T10:37:43Z|index-addition|0c811344a4edfe34960b2fc8f286369d7e81fb27|2026-10-24
 750|autoresearchlab|AutoResearchLab|https://github.com/TaewiKim/autoresearchlab|2026-10-19T01:29:50Z|index-addition|bd70a67aafa172a4e7c5a3f4477d6e438cfeb0d8|2026-10-24
+751|knowwork|KnowWork|https://github.com/knowflow-ai/KnowWork|2026-10-21T10:02:26Z|index-addition|83c763e4fe2d63cd59e0344268afa94321d35585|2026-10-24
