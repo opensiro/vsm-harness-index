@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -180,6 +180,6 @@ A user can select a persona in React, and the client is written to POST a reques
 | --- | --- | --- | --- | --- | --- | --- |
 | State | — | — | — | — | — | — |
 
-**Proposed disposition: `excluded-no-agentic-vsm`**, not because the product *claims too little*, but because the exact standard Git distribution does not include its indispensable `api/chat` implementation. The shell/Node syntax-independent checks `git ls-tree -r --name-only HEAD` and filesystem existence tests confirm this concrete import gap. A developer can repair it and seek a later new-ref assessment; this frozen review cannot silently use earlier code, an unrelated clone or the hosted website.
+**Canonical disposition: `excluded-no-agentic-vsm`**, not because the product *claims too little*, but because the exact standard Git distribution does not include its indispensable `api/chat` implementation. The shell/Node syntax-independent checks `git ls-tree -r --name-only HEAD` and filesystem existence tests confirm this concrete import gap. A developer can repair it and seek a later new-ref assessment; this frozen review cannot silently use earlier code, an unrelated clone or the hosted website.
 
 No real LLM, provider, Browser, code-execution agent or task-completion run was performed. The source import-resolution conclusion is bounded to the pinned Git tree; no claim is made about private hosted service availability, benchmark validity or model output quality.
