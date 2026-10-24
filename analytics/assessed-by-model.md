@@ -18,8 +18,8 @@ Each assessment file counts once, at its **current `reviewed_at`**. This date is
 | --- | --- | ---: | ---: | ---: | ---: |
 | GPT-5.6 Sol era (date-inferred) | Before 2026-10-07 | 418 | 39 | 10 | 467 |
 | GPT-5.6 Sol / GPT-6 Sol (rollout; model uncertain) | 2026-10-07 | 5 | 0 | 0 | 5 |
-| GPT-6 Sol era (date-inferred) | After 2026-10-07 | 282 | 18 | 1 | 301 |
-| **Total** | — | **705** | **57** | **11** | **773** |
+| GPT-6 Sol era (date-inferred) | After 2026-10-07 | 282 | 18 | 2 | 302 |
+| **Total** | — | **705** | **57** | **12** | **774** |
 
 **Included denominator:** 705. On the rollout day, GPT-5.6 Sol or GPT-6 Sol could have been used. The slash denotes possible alternatives, **not evidence that both models worked on the same assessment**; the day remains unassigned to either generation.
 
