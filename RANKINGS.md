@@ -156,6 +156,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="sangxia-ai"></a>[Sangxia.ai](https://github.com/EthanYin-0701/sangxia-ai) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="likecc"></a>[LikeCC](https://github.com/KNIGHT15235/likecc) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
 | 5 | <a id="zcode"></a>[ZCode](https://github.com/zai-org/ZCode) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 4 | `A ? A ? ? ?` |
+| 5 | <a id="coding"></a>[CODING](https://github.com/Guo-Yixin/coding-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="mindweave"></a>[Mindweave](https://github.com/mindweave-cli/mindweave) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="karmx"></a>[karmX](https://github.com/KarmSakha/karmx-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="sciencebuddy-simple-scibuddy"></a>[ScienceBuddy / Simple-SciBuddy](https://github.com/Gen-Verse/ScienceBuddy) | 2026-Q3 | 2/6 | 1/5 | 2 | 0 | 0 | `A — C C A —` |
