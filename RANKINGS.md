@@ -292,6 +292,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="deepcode"></a>[DeepCode](https://github.com/HKUDS/DeepCode) | 2025-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="kilo-code"></a>[Kilo Code](https://github.com/Kilo-Org/kilocode) | 2025-Q1 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
 | 5 | <a id="claude-code"></a>[Claude Code](https://github.com/anthropics/claude-code) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="agenticseek"></a>[AgenticSeek](https://github.com/Fosowl/agenticSeek) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="worldgui"></a>[WorldGUI-Agent](https://github.com/showlab/WorldGUI) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="archon"></a>[Archon](https://github.com/coleam00/Archon) | 2025-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="autoagent-hkuds"></a>[AutoAgent (HKUDS)](https://github.com/HKUDS/AutoAgent) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
