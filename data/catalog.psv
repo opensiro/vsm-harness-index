@@ -760,3 +760,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 745|davecode|DaveCode|https://github.com/DMRLZZ/DaveCode|2026-10-06T18:03:08Z|index-addition|271910253a005845174c2410dc15675877a9883e|2026-10-24
 746|open-agent-harness|open-agent-harness|https://github.com/KenSuh/open-agent-harness|2026-10-22T22:55:57Z|index-addition|a74fae79eee54fe5b095224d7c451e762e3b6554|2026-10-24
 747|durable-harness|durable-harness|https://github.com/vercel-labs/durable-harness|2026-10-16T04:54:47Z|index-addition|ea8aa4060cf4fb8cd39737ce8ab21c4e0f40c741|2026-10-24
+748|workbench|Workbench|https://github.com/proactive-agent/workbench|2026-10-05T12:32:42Z|index-addition|4dbda41ac47809ce74ebc39408183c428ec55436|2026-10-24
