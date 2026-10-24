@@ -756,3 +756,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 741|cox|cox|https://github.com/listepo/cox|2026-09-02T09:20:30Z|index-addition|d4eb49f1f283f95d233785c452e3be8ea28cb5eb|2026-10-24
 742|ambient-cli|Ambient CLI|https://github.com/AmbientCrypto/ambient-cli|2026-09-26T05:28:32Z|index-addition|46dfd8aada3eb73f4446b6b2e3c34c6b3c7a68b9|2026-10-24
 743|rohanasudani-termagent|TermAgent|https://github.com/Rohanasudani/terminal-coding-agent|2026-09-03T20:03:26Z|index-addition|707fa15455d34e87fb30d929669f3b1b9a9f22e0|2026-10-24
+744|swarms-code|Swarms Code|https://github.com/The-Swarm-Corporation/swarms-code|2026-10-13T13:59:35Z|index-addition|eb00b2a5a84d0a07461e0d264d9727b6367555b0|2026-10-24
