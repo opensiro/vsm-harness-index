@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: A
@@ -174,4 +174,4 @@ In normal mode a request maps to a specialist, the specialist receives a model r
 
 The distinguishing first-party topology is specialized **model/tool S1 loops plus a separate model-backed, optional complex-task whole-current Planner S3** that actually dispatches domain agents and revises outstanding work after reported results. This does not establish peer-interference S2, complementary independent S3*, prospective S4 or ultimate S5. The source test `tests/test_planner_agent_parsing.py` is deliberately mock-backed; executing it in the assessment environment stopped at an undeclared local dependency (`colorama` unavailable), so **no upstream test PASS is asserted**. This is a test-environment observation, not a source-function failure.
 
-All ownership conclusions use frozen-source static inspection and deterministic Index checks only. No live LLM, provider, browser, coding agent, Docker sandbox or effectiveness evaluation was performed. `status: proposed` is a review state and does not enter the included corpus until a separate canonical transaction.
+All ownership conclusions use frozen-source static inspection and deterministic Index checks only. No live LLM, provider, browser, coding agent, Docker sandbox or effectiveness evaluation was performed. This record is the canonical included assessment at the frozen review ref.
