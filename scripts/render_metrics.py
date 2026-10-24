@@ -152,7 +152,7 @@ def render_markdown(repo: Path) -> str:
         "Source-of-truth relationship:",
         "",
         "```text",
-        "assessments/*.md + data/catalog.psv + data/reassessment-history.psv",
+        "assessments/**/*.md + data/catalog.psv + data/reassessment-history.psv",
         "                  + data/active-contract.psv",
         "                         ↓",
         "              scripts/render_metrics.py",

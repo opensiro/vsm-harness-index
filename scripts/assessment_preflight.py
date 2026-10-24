@@ -17,6 +17,8 @@ import urllib.error
 import urllib.request
 from dataclasses import asdict, dataclass
 from pathlib import Path
+
+from assessment_paths import flat_path, sharded_path, is_sharded
 from typing import Any
 
 DEFAULT_REPOSITORY = "opensiro/vsm-harness-index"
@@ -26,6 +28,15 @@ ACTIVE_CONTRACT = ROOT / "data" / "active-contract.psv"
 BOARD_ROW = re.compile(
     r"^\|\s*(?P<row>\d+)\s*\|\s*(?P<project>[^|]+?)\s*\|\s*`(?P<ref>[0-9a-f]{40})`\s*\|\s*\*\*?NEXT\*\*?\s*\|\s*$",
     re.MULTILINE | re.IGNORECASE,
+)
+COMPACT_BOARD_ROW = re.compile(
+    r"^\|\s*(?P<row>\d+)\s*\|\s*(?P<project>[^|]+?)\s*\|\s*\*\*?NEXT\*\*?\s*\|\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
+# Only an actual Markdown board heading starts a superseding snapshot.
+# A checkpoint merely mentioning "Manual assessment board" is not one.
+BOARD_HEADING = re.compile(
+    r"(?im)^ {0,3}#{1,6}[ \t]+Manual assessment board(?:[ \t]*(?:[—–:-][^\n]*)?)?[ \t]*$"
 )
 CANDIDATE_ROW = re.compile(
     r"^\|\s*(?P<row>\d+)\s*\|\s*(?P<project>[^|]+?)\s*\|\s*`(?P<repository>[^`|]+/[^`|]+)`\s*\|\s*`(?P<ref>[0-9a-f]{40})`\s*\|",
@@ -72,6 +83,34 @@ def slugify_project(project: str) -> str:
     return slug
 
 
+def resolve_assessment_path(root: Path, project: str, repository: str) -> tuple[str, str]:
+    """Disambiguate same-label repositories without changing frozen source identity.
+
+    The owner-prefixed fallback is used only when an existing slug names a
+    *different* upstream. A second collision must fail closed, not overwrite.
+    """
+    canonical = repository.casefold().strip("/")
+    slug = slugify_project(project)
+    directory = root / "assessments"
+    for candidate in (slug, f"{slugify_project(canonical.split('/')[0])}-{slug}"):
+        locations = (flat_path(directory, candidate), sharded_path(directory, candidate))
+        existing = [path for path in locations if path.is_file()]
+        if len(existing) > 1:
+            raise PreflightError(f"duplicate assessment across flat and shard: {candidate}")
+        if not existing:
+            target = locations[1] if is_sharded(directory) else locations[0]
+            return target.relative_to(root).as_posix(), "new"
+        path = existing[0]
+        text = path.read_text(encoding="utf-8")
+        match = re.search(r"(?m)^repository:\s*https?://github\.com/([^\s#]+)", text)
+        if match and match.group(1).casefold().strip("/") == canonical:
+            return path.relative_to(root).as_posix(), "existing"
+    raise PreflightError(
+        f"assessment slug collision for {project!r} ({repository}); "
+        f"both base and owner-qualified paths are already occupied"
+    )
+
+
 def _request_json(url: str, token: str | None = None) -> Any:
     headers = {
         "Accept": "application/vnd.github+json",
@@ -107,32 +146,46 @@ def fetch_issue(repository: str, issue_number: int) -> tuple[dict[str, Any], lis
     return issue, comments
 
 
-def extract_next_row(texts: list[str]) -> tuple[int, str, str]:
+def extract_next_row(texts: list[str]) -> tuple[int, str, str | None]:
     # Manual assessment boards are snapshots, not an append-only source of NEXT
     # rows. Only the newest board is authoritative. Falling back through old
     # snapshots after a terminal board would resurrect a completed row.
     latest_board = next(
-        (text for text in reversed(texts) if "Manual assessment board" in text),
+        (text for text in reversed(texts) if BOARD_HEADING.search(text)),
         None,
     )
     if latest_board is None:
         raise PreflightError("no Manual assessment board was found")
-    match = BOARD_ROW.search(latest_board)
-    if not match:
+    matches = [
+        (match, match.group("ref"))
+        for match in BOARD_ROW.finditer(latest_board)
+    ] + [
+        (match, None)
+        for match in COMPACT_BOARD_ROW.finditer(latest_board)
+    ]
+    if not matches:
         raise PreflightError("latest Manual assessment board has no row marked NEXT")
-    return int(match.group("row")), match.group("project").strip(), match.group("ref")
+    if len(matches) != 1:
+        raise PreflightError("latest Manual assessment board has multiple NEXT rows")
+    match, review_ref = matches[0]
+    return int(match.group("row")), match.group("project").strip(), review_ref
 
 
-def extract_candidate(issue_body: str, row_number: int, review_ref: str) -> tuple[str, str]:
-    for match in CANDIDATE_ROW.finditer(issue_body):
-        if int(match.group("row")) != row_number:
-            continue
-        if match.group("ref") != review_ref:
-            raise PreflightError(
-                f"row {row_number} board ref {review_ref} disagrees with frozen candidate ref {match.group('ref')}"
-            )
-        return match.group("project").strip(), match.group("repository").strip()
-    raise PreflightError(f"could not resolve frozen candidate row {row_number} from the issue body")
+def extract_candidate(issue_body: str, row_number: int,
+                      review_ref: str | None) -> tuple[str, str, str]:
+    candidates = [match for match in CANDIDATE_ROW.finditer(issue_body)
+                  if int(match.group("row")) == row_number]
+    if len(candidates) != 1:
+        raise PreflightError(
+            f"expected exactly one frozen candidate row {row_number}, found {len(candidates)}"
+        )
+    match = candidates[0]
+    frozen_ref = match.group("ref")
+    if review_ref is not None and frozen_ref != review_ref:
+        raise PreflightError(
+            f"row {row_number} board ref {review_ref} disagrees with frozen candidate ref {frozen_ref}"
+        )
+    return match.group("project").strip(), match.group("repository").strip(), frozen_ref
 
 
 def build_envelope(
@@ -149,15 +202,14 @@ def build_envelope(
 
     texts = [body] + [str(comment.get("body") or "") for comment in comments]
     row_number, board_project, review_ref = extract_next_row(texts)
-    candidate_project, repository = extract_candidate(body, row_number, review_ref)
+    candidate_project, repository, frozen_ref = extract_candidate(body, row_number, review_ref)
     if candidate_project.casefold() != board_project.casefold():
         raise PreflightError(
             f"row {row_number} project mismatch: board={board_project!r}, candidate={candidate_project!r}"
         )
 
     profile, methodology = read_active_contract(contract_path)
-    assessment_path = f"assessments/{slugify_project(candidate_project)}.md"
-    state = "existing" if (root / assessment_path).exists() else "new"
+    assessment_path, state = resolve_assessment_path(root, candidate_project, repository)
 
     return TaskEnvelope(
         issue_number=issue_number,
@@ -166,7 +218,7 @@ def build_envelope(
         row=row_number,
         project=candidate_project,
         repository=repository,
-        review_ref=review_ref,
+        review_ref=frozen_ref,
         assessment_path=assessment_path,
         assessment_path_state=state,
         profile_version=profile,

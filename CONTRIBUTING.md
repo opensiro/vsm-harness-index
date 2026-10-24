@@ -23,10 +23,17 @@ For the sequential workflow:
 5. re-read current Profile and Skills before semantic work;
 6. assess only the frozen repository/ref;
 7. write the assessment artifact required by the active Skills Methodology;
-8. submit the row through normal PR review;
-9. advance the board only after the current row reaches a terminal state.
+8. submit and integrate the proposed assessment through the actual GitHub PR/CI and task-specific gates;
+9. complete the separate canonical admission/exclusion transaction and verify the resulting `main` before advancing the row;
+10. advance the board only after the current row reaches a terminal state.
 
-Do not silently repin a queued assessment to a newer upstream commit.
+### PR review versus independent review and S3* audit
+
+The **assessment review PR** is the proposed assessment artifact in the Index lifecycle; its name is not a request to commission another reviewer. Normal PR integration means satisfying the repository's actual branch protection, checks, permissions, and any concrete issue-specific review findings. **A separate human/agent independent semantic review is not a default requirement for every row or batch.** A zero-required-approvals ruleset does not create an unwritten second-review gate; a structural validator or author review is not falsely described as independent approval.
+
+**Completing an assessment batch does not automatically trigger a separate review issue, independent reviewer assignment, or Organization S3* audit**, nor does it require a new chat. Do not create a `REVIEW_REQUESTED / UNASSIGNED` handoff merely because a batch/row reached its normal PR or canonical terminal step. Organization [#188](https://github.com/opensiro/vsm-oss-organization/issues/188) owns separately selected complementary audit waves; [#189](https://github.com/opensiro/vsm-oss-organization/issues/189) is a prospective reviewer mechanism for **specifically applicable** gates, not a universal assessment step. Audit findings are routed to Index owner decisions through their own governed workflow, not promoted to automatic admission or merge conditions.
+
+An **explicit, still-governing task contract** can require a genuinely independent semantic reviewer, and actual GitHub protection can require eligible approval. Preserve those real gates until they are changed by their owner; never bypass them because of this default. Conversely, distinguish an assessment author's source-first evidence assessment from a separately executed independent review before reporting a blocked state. Do not silently repin a queued assessment to a newer upstream commit.
 
 ## Suggest a harness
 
@@ -105,7 +112,7 @@ A blocked event records an attempted review but does not advance successful fres
 For a new canonical assessment:
 
 1. confirm the discovery/catalog record and frozen `review_ref`;
-2. use `assess-vsm-harness` from the active Skills Methodology to produce `assessments/<harness_id>.md`;
+2. use `assess-vsm-harness` from the active Skills Methodology to produce `assessments/<first-two-slug-characters>/<harness_id>.md`;
 3. validate the assessment using the version-pinned Skills structural checker;
 4. resolve Index admission lifecycle;
 5. apply the Skills synthesis procedure to accepted assessments and store the resulting signature;

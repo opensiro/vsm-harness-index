@@ -27,6 +27,17 @@ A second ecosystem reference used for recall is **Awesome Agent Harnesses** by N
 
 It is a broader survey of harness research, production harnesses, essays, and talks. No catalog data in this repository is adapted from that survey unless a future change explicitly records such provenance.
 
+A complementary systematic-review and coded-data source is **HARNESS-DB** (Bhaskar et al., agent harness taxonomy and dataset):
+
+- source and methodology: <https://github.com/harness-db/harness-db>
+- research dataset: <https://huggingface.co/datasets/bhaskar-ai/harness-db>
+- discovery surfaces: `data/coding_frame.csv` (screened system frame), `data/systems.json` (coded systems with source links), and `docs/protocol_prisma_p.md` (scope/search/screening protocol)
+- source revision initially reviewed for inclusion here: `e5f5f6ede8d1d85a8eed1a83098d33b1d5a69fb5` (2026-10-06)
+- upstream dataset license: CC BY 4.0; upstream code license: MIT (verify the applicable license before any reuse)
+
+HARNESS-DB's released snapshot contains 1,256 coded systems drawn from a 6,504-system literature/repository sampling frame. **These are upstream counts at the recorded revision, not OpenSiro Included counts or a claim of 6,504 source-validated OSS harnesses.** Its definition of an agent harness, unit of analysis, architecture fields, and evidence rules differ from OpenSiro's source-pinned first-party VSM assessment contract. Use this source for **discovery/recall and provenance only**: resolve canonical GitHub identities and redirects, deduplicate against the Index and frozen queues, inspect the actual executable system at an immutable revision, and apply the normal scope and assessment lifecycle. Paper-only systems, frameworks without an in-scope first-party runtime, auxiliary infrastructure, and renamed/duplicate versions must not be admitted just because they appear in the source. Do not import their labels, quotes, reliability statistics, or architecture coding as VSM judgments or change `data/catalog.psv`/assessment files as part of this source-registration change.
+
+
 ### OpenSiro-adjacent OSS discovery
 
 Discovery is intentionally broader than repositories that self-identify as `agent-harness`.
@@ -46,7 +57,7 @@ This broader recall policy does **not** relax intake boundaries. Product-only of
 
 ## Assessments
 
-Every `assessments/<harness_id>.md` file is independently reconstructed from the named project's primary sources at its pinned `review_ref`. The upstream discovery descriptions and rankings are not used as VSM evidence.
+Every `assessments/<harness_id[:2]>/<harness_id>.md` file is independently reconstructed from the named project's primary sources at its pinned `review_ref`. The upstream discovery descriptions and rankings are not used as VSM evidence.
 
 Assessment prose and `data/signatures.psv` are original VSM Harness Index analysis and follow the repository's Apache 2.0 license. Linked projects and quoted or referenced source material retain their own terms.
 

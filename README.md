@@ -2,7 +2,20 @@
 
 VSM Harness Index is the evidence-backed corpus of real agent-harness assessments in the OpenSiro VSM ecosystem.
 
-> **New to the OpenSiro VSM Harness ecosystem?** Start with the shared [`START_HERE.md`](https://github.com/opensiro/vsm-oss-organization/blob/main/START_HERE.md). It establishes the current public source-of-truth chain before you choose or execute work.
+## I'm human
+
+- **Web overview:** [opensiro.com](https://opensiro.com)
+- **Repository statistics:** [Corpus metrics](METRICS.md)
+- **GitHub stars histogram:** [Popularity snapshot](analytics/github-stars.md) (external, non-canonical)
+- **How do I contribute?** [Contribute to OpenSiro with AI](https://github.com/opensiro/vsm-oss-organization/blob/main/CONTRIBUTE_WITH_AI.md)
+
+You can browse assessments, corpus views, and provenance directly without first learning the OpenSiro control structure. The contribution guide gives you a copy-paste route for handing an idea, issue, or open-ended contribution to an AI agent.
+
+## I'm AI
+
+Treat this README as the public handoff surface, then continue with the current shared [`START_HERE.md`](https://github.com/opensiro/vsm-oss-organization/blob/main/START_HERE.md). For already tracked work use the shared [`TODO.md`](https://github.com/opensiro/vsm-oss-organization/blob/main/TODO.md); for new, unclassified, cross-repository, or authority-sensitive work use [`CONTRIBUTOR_START.md`](https://github.com/opensiro/vsm-oss-organization/blob/main/CONTRIBUTOR_START.md).
+
+If the bootstrap resolves Index work to this repository, repository-local assessment instances, accepted corpus state, provenance, reassessment bookkeeping, generated views, validation, and admission remain authoritative here.
 
 ## Choosing work
 
@@ -30,7 +43,8 @@ The Index does **not** define VSM functions, publication-state semantics, or the
 - [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md) is authoritative for VSM semantics.
 - [`assess-vsm-harness`](https://github.com/opensiro/vsm-harness-skills/tree/main/skills/assess-vsm-harness) is authoritative for standalone assessment procedure, format, and classification.
 - [`vsm-harness-skills/SYNTHESIS.md`](https://github.com/opensiro/vsm-harness-skills/blob/main/SYNTHESIS.md) is authoritative for cohort-relative synthesis and deterministic ranking projection.
-- [`INDEXING.md`](INDEXING.md) defines only Index-local intake, provenance, reassessment bookkeeping, and publication/materialization rules.
+- [`docs/general-assessment.md`](docs/general-assessment.md) defines this repository's general-assessment scope and its boundary with future domain-specific indexes.
+- [`INDEXING.md`](INDEXING.md) defines Index-local intake, provenance, reassessment bookkeeping, and publication/materialization rules; [`docs/assessment-lifecycle.md`](docs/assessment-lifecycle.md) owns the publication lifecycle.
 
 The primary artifact flow is:
 
@@ -39,7 +53,7 @@ repository @ pinned revision
         ↓
 assessment produced under Profile + Methodology
         ↓
-assessments/<harness_id>.md
+assessments/<harness_id[:2]>/<harness_id>.md
         ↓
         ├── cohort synthesis → data/signatures.psv → TLDR.md
         └── deterministic projection → RANKINGS.md / derived views
@@ -52,18 +66,18 @@ assessments/<harness_id>.md
 
 | Included | Catalog | Reassessments | Full-A |
 | ---: | ---: | ---: | ---: |
-| **295** | 320 | 88 | 1 |
+| **682** | 734 | 88 | 2 |
 
-**Next corpus milestone:** 295/500 (59.0%).
+**Next corpus milestone:** 682/1000 (68.2%).
 
-Active semantic contract: **Profile 0.2.4 / Methodology 0.3.6**.
+Active semantic contract: **Profile 0.2.4 / Methodology 0.3.7**.
 
 [Full metrics](METRICS.md) · [Machine-readable metrics](data/metrics.json)
 <!-- VSM INDEX METRICS:END -->
 
 ## Assessments
 
-`assessments/<harness_id>.md` contains accepted repository-relative findings at a pinned revision.
+`assessments/<first-two-slug-characters>/<harness_id>.md` contains accepted repository-relative findings at a pinned revision.
 
 Adding another harness must not change an existing assessment merely because the comparison cohort changed.
 
@@ -80,6 +94,8 @@ A signature may change when an earlier comparison item is admitted or corrected.
 `TLDR.md` is the materialized public view of those signatures.
 
 ## Rankings and derived views
+
+For a non-canonical, date-inferred breakdown of ChatGPT Chat model eras used in assessment production, see [Assessment by model era](analytics/assessed-by-model.md). This is not per-run model attestation.
 
 `RANKINGS.md`, `FULL_A.md`, metrics, and analytics are deterministic materializations from canonical Index data under the active Methodology projection rules.
 
