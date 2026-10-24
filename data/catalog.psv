@@ -770,3 +770,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 755|routa|Routa|https://github.com/phodal/routa|2026-02-16T01:38:48Z|index-addition|9dc7b7be8fa92b760f6ebf0ac7f8b44db1b4dc34|2026-10-24
 756|edict|Edict|https://github.com/cft0808/edict|2026-02-23T14:35:04Z|index-addition|14a207557719c046af0f993a7bff1cc5a5015b33|2026-10-24
 757|ownpilot|OwnPilot|https://github.com/ownpilot/OwnPilot|2026-01-28T11:04:14Z|index-addition|eb4c27f29d4d12778621a83e49cd673cd8b62239|2026-10-24
+758|repository-harness|Repository Harness|https://github.com/hoangnb24/repository-harness|2026-05-05T10:02:30Z|index-addition|485fd4062be1c71b27c1c9e5585ac4cd2faa7e06|2026-10-24
