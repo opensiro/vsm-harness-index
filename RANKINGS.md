@@ -162,6 +162,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="sciencebuddy-simple-scibuddy"></a>[ScienceBuddy / Simple-SciBuddy](https://github.com/Gen-Verse/ScienceBuddy) | 2026-Q3 | 2/6 | 1/5 | 2 | 0 | 0 | `A — C C A —` |
 | 5 | <a id="myharness"></a>[MyHarness](https://github.com/woolcoxm/MyHarness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="axiom"></a>[Axiom](https://github.com/amuluze/axiom-agent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="codewhip"></a>[CodeWhip](https://github.com/hasitpbhatt/codewhip) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C — A — —` |
 | 5 | <a id="orgtree"></a>[Orgtree](https://github.com/Maurdekye/orgtree) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="multi-agent-orchestration"></a>[Multi-Agent Orchestration Engine](https://github.com/Vinay-veeragani/Multi-Agent-Orchestration) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="atlas-agent"></a>[Atlas Agent](https://github.com/Omerfaruk-aydn/Atlas-Agent) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C — A — —` |
