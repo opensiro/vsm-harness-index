@@ -351,6 +351,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="gyrfalcon"></a>[Gyrfalcon](https://github.com/cargopete/gyrfalcon) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="scout"></a>[Scout](https://github.com/dairycow/scout) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="few"></a>[Few](https://github.com/moloo4ni/few) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="drinky"></a>[Drinky](https://github.com/clebert/drinky) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="minicode"></a>[Minicode](https://github.com/startupmini/minicode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="labunbun-code"></a>[LaBunbun Code](https://github.com/zayokami/labunbun-code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="dsh-harness-one"></a>[Workflow One](https://github.com/chumingjun/dsh-harness-one) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
