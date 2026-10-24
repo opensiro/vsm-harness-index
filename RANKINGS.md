@@ -307,6 +307,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="swarms"></a>[Swarms](https://github.com/kyegomez/swarms) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
+| 6 | <a id="durable-harness"></a>[durable-harness](https://github.com/vercel-labs/durable-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="discoveryrsi"></a>[DiscoveryRSI](https://github.com/Gen-Verse/DiscoveryRSI) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarms-code"></a>[Swarms Code](https://github.com/The-Swarm-Corporation/swarms-code) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nanocoder-haoyuzhang0214"></a>[NanoCoder (HaoyuZhang0214)](https://github.com/HaoyuZhang0214/NanoCoder) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
