@@ -774,3 +774,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 759|pi-multi-agent|Pi-Multi-Agent|https://github.com/jwangkun/Pi-Multi-Agent|2026-05-30T05:59:11Z|index-addition|d2fef0f30a762ec04eff9d8dde6cd406648955bc|2026-10-25
 760|live-swe-agent|Live-SWE-agent|https://github.com/OpenAutoCoder/live-swe-agent|2025-11-13T23:31:03Z|index-addition|8d7dd8634580d1e09320b4c27d70380bc9ae74a8|2026-10-25
 761|kode-sdk|KODE SDK|https://github.com/shareAI-lab/kode-agent-sdk|2025-10-05T08:50:37Z|index-addition|2596118805d8968c7e33cc437e440721833e9689|2026-10-25
+762|langroid|Langroid|https://github.com/langroid/langroid|2023-04-16T20:47:28Z|index-addition|1e0f5ab7d9d589d79928c39ed147ca8a2bd6a590|2026-10-25
