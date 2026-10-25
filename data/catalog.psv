@@ -780,3 +780,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 765|argue|argue|https://github.com/onevcat/argue|2026-04-06T16:05:28Z|index-addition|7939e67c8479aa3b9f5d070f5e7feff8b90f876d|2026-10-25
 766|codemachine-cli|CodeMachine CLI|https://github.com/moazbuilds/CodeMachine-CLI|2025-09-28T15:28:47Z|index-addition|572def63eb808e95b18ccf6c69a13d7a13fe06fd|2026-10-25
 767|ai-coding-agents-orchestrator|AI Coding Agents Orchestrator|https://github.com/Open-Makers/ai-coding-agents-orchestrator|2026-02-09T10:47:16Z|index-addition|1c1185c6f323bf3475c3847e38245276852ebc5e|2026-10-25
+768|kimchi|Kimchi|https://github.com/getkimchi/kimchi|2026-04-07T16:44:41Z|index-addition|65dfefb12a177e60942dc8fde87eeabe02d006af|2026-10-25
