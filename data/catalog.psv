@@ -776,3 +776,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 761|kode-sdk|KODE SDK|https://github.com/shareAI-lab/kode-agent-sdk|2025-10-05T08:50:37Z|index-addition|2596118805d8968c7e33cc437e440721833e9689|2026-10-25
 762|langroid|Langroid|https://github.com/langroid/langroid|2023-04-16T20:47:28Z|index-addition|1e0f5ab7d9d589d79928c39ed147ca8a2bd6a590|2026-10-25
 763|bub|Bub|https://github.com/bubbuild/bub|2025-07-13T06:16:21Z|index-addition|71d7dbf82f9e7145aabf53ab562c1d376bb3e0e2|2026-10-25
+764|boop|Boop|https://github.com/raroque/boop-agent|2026-04-14T20:58:38Z|index-addition|31979130b1371acd9defbea115279a06c63c1fb4|2026-10-25
