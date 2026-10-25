@@ -10,7 +10,7 @@ profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
 status: proposed
 autonomy_s1: A
-autonomy_s2: —
+autonomy_s2: C
 autonomy_s3: —
 autonomy_s3_star: —
 autonomy_s4: —
@@ -35,7 +35,7 @@ autonomy_s5: —
 
 `executeHeadlessRun` composes the first-party `ArgueEngine`, a configured `AgentTaskDelegate`, session state and an event observer. `createTaskDelegate` dispatches participant tasks to selected provider runners and normalizes their outputs. The real API runner invokes `generateText` against the configured model, while CLI runners spawn installed provider executables. Thus the model's internal reasoning and external CLI agent loop are not credited to argue, but its participant-task construction, provider invocation, interactive feedback and returned debate report form the shipped system's operating loop. [headless wiring](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue-cli/src/headless-run.ts#L14-L68); [provider selection](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue-cli/src/runtime/delegate.ts#L126-L154); [real generation](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue-cli/src/runtime/api.ts#L12-L50).
 
-The engine dispatches initial contributions, subsequent debate and final votes to active model participants. Before subsequent rounds each participant receives bounded peer output and active shared claims; model participants may propose revisions or duplicate-claim merges. The engine implements those revisions and merges, computes threshold-based resolutions, chooses a representative by deterministic peer-derived scores, optionally asks that participant to compose a report, and optionally delegates an action after debate. These are largely **content aggregation and execution of the debate product**, not evidence by themselves of organization-wide metasystem control. [round phases](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L98-L285); [claim merging](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L1137-L1278); [voting](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L1296-L1351).
+The engine dispatches initial contributions, subsequent debate and final votes to active model participants. Before subsequent rounds each participant receives bounded peer output and active shared claims; model participants may propose revisions or duplicate-claim merges. The engine implements those revisions and merges, computes threshold-based resolutions, chooses a representative by deterministic peer-derived scores, optionally asks that participant to compose a report, and optionally delegates an action after debate. This supports a **narrow S2-specific reconciliation constructor** for conflicting contributions; scoring, representative selection and optional execution remain product/session mechanisms, not automatically organization-wide S3 or later metasystem control. [round phases](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L98-L285); [claim merging](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L1137-L1278); [voting](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L1296-L1351).
 
 ## Operational model
 
@@ -59,24 +59,24 @@ The primary S1 units are model-backed participants assigned roles and a common q
 
 ## S2 — Coordination
 
-- State: —
-- Function: No independently established regulation of interference among organizational S1 operations beyond the task's ordinary deliberate exchange and result aggregation.
-- Disturbance / variety regulated: Distinct participants can create duplicate or contradictory claims and finish at different times. The former are *the work product being debated*; the latter are bounded by static waiting/cancellation rules, not a shown discretionary cross-operation stabilization decision.
-- Decisive decision or feedback right: Model participant `mergesWith`, critique and vote judgments resolve argument *content*; they do not govern collisions over the participants' operational resources, incompatible parallel side effects or oscillating work commitments.
-- Decision owner: Participants own product-content judgments; deterministic engine resolves claim IDs and timeouts. No separate S2 cross-S1 coordination owner can be identified at the service recursion.
-- Supporting / enforcement mechanisms: `DefaultWaitCoordinator`, active participant set, timeout/cancel, bounded peer context, merged claim catalog and fixed early-stop threshold.
-- Closure path: Round outputs are forwarded to all participants, and duplicate arguments may merge into one claim; the result changes the next **debate** prompt, but the inspected source does not demonstrate a concrete inter-S1 operational interference mechanism and specific stabilization feedback distinct from producing the deliberation itself.
-- Why this is / is not agent-owned: Multiple simultaneous speakers, turn waits and a voting protocol do not establish S2 solely by moving or adjudicating debate content.
-- Evidence: [round dispatch/peer context](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L390-L584); [waiting/cancellation](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/wait-coordinator.ts#L1-L155); [claim content merging](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L1137-L1278).
-- Basis: Bounded functional-negative under the Profile S2 four-part interference witness.
-- Confidence: Medium; debate harmonization is real but is credited to product delivery rather than inter-operational stabilization.
-- Caveats: A higher-level system could use argue output to coordinate separate operating agents, but such use is not wired into the reviewed standard mode.
-
-### Absence scope
-
-- Surfaces inspected: Engine round dispatch, peer feedback, claim merging, threshold voting, wait/cancel, participant session mapping and post-report action.
-- Plausible first-party paths checked: Parallel participant interference, duplicate claims, disagreement persistence, timing of model rounds, failed participant elimination and representative selection.
-- Why no material first-party path remains: The demonstrated conflicts are the deliberate debate problem itself, not an evidenced collision of distinct S1 operational duties requiring an S2 relation. Other mechanisms are fixed protocol gates or result aggregation without an agent-owned or function-specific S2 construction path.
+- State: C
+- Function: A narrowly exposed deliberation-coordination constructor reconciles incompatible contributions from separately configured S1 participant work cells into a usable collective claim set.
+- Disturbance / variety regulated: Independent participant answers can contradict one another, duplicate factual claims or repeatedly reintroduce already-merged propositions, destabilizing the coherence of the group's shared response. This is a concrete cross-participant consistency conflict, not mere process concurrency.
+- Distinct S1 units: At least two separately configured and invoked model participants, each with a distinct `participantId`, role, sticky session, output and per-round model call; their generated answers supply the competing contributions.
+- Inter-S1 disturbance: An output's `judgements` may disagree with another participant's active claim or propose `mergesWith` for a duplicate; redundant claim IDs and inconsistent statements would otherwise persist into future rounds.
+- Attenuating coordination relation: The first-party `updateClaims` merges duplicates, remaps references to the surviving claim, accepts revision suggestions, limits visible claims to active items, and republishes bounded peer responses plus the shared revised catalog to every subsequent participant round. Final individual claim votes are reduced by a configured consensus threshold.
+- Feedback into subsequent S1 behaviour: `runRound` builds each later participant prompt with updated `claimCatalog` and opposing `peerRoundInputs`; previously merged claims are excluded from active catalog and debate prompts explicitly forbid reopening already merged claims. A model's next judgment therefore receives the resolved shared distinctions.
+- Decisive decision or feedback right: The first-party debate engine supplies the reconciliation and vote feedback path; model participants choose substantive critiques/merge proposals, while the host selects roles, number of rounds, policies and consensus threshold. It does not install an autonomous general-purpose inter-agent conflict manager.
+- Decision owner: A **function-specific first-party constructor**, closed for the bounded discussion mode but with coordination policy/authority still composed by the host. Content autonomy belongs to participant S1s; deterministic merge and threshold application do not transfer general S2 policy ownership to a model.
+- Supporting / enforcement mechanisms: Shared claim ID catalog, round feedback payload, `DefaultWaitCoordinator`, active participant set, timeout/cancel, bounded peer context, merged claim graph and fixed early-stop threshold.
+- Closure path: Two or more agents emit conflicting claims → S2-specific claim/judgment reducer normalizes revisions and merges → catalog plus peer objections return in next-round prompts → agents can revise and final-vote → bounded consensus/disagreements returned in the result.
+- Boundary reachability: Shipped `argue-cli` wires real provider delegates to `ArgueEngine.start`; its `runRound` repeatedly invokes `updateClaims` and repackages the new catalog/peer objections before final voting. This is active in the normal multi-participant deliberation path, not just a developer example or generic queue.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: The code specifically recognizes disagreement and semantic overlap as a conflict, transmits opposing arguments for revision and prevents merged claims from oscillating back into the active dispute. Mere parallel dispatch, timeout or participant identity would not establish this witness.
+- Why this is / is not agent-owned: Model actors choose substantive merge/critique proposals, but removing a hypothetical independent S2 agent leaves the same developer-defined reconciliation protocol, prompt cadence and threshold. The shipped construct is `C`, not fully autonomous S2 `A`.
+- Evidence: [distinct round task dispatch and peer input](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L390-L490); [claim merge and canonicalization](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L1137-L1293); [debate anti-reopening prompts](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L930-L958); [final resolution votes](https://github.com/onevcat/argue/blob/7939e67c8479aa3b9f5d070f5e7feff8b90f876d/packages/argue/src/core/engine.ts#L1296-L1351).
+- Basis: Structural first-party cross-participant disagreement/reconciliation witness; narrow exposed S2 constructor with real CLI wiring.
+- Confidence: Medium-high for the feedback path; no evidence that models reach factual correctness or agreement empirically.
+- Caveats: This S2 claim concerns contradictions *between discussion contributors*, not runtime tool/resource contention across unrelated agent work. The first-party method resolves claim identity/revisions mechanically; autonomous organizational conflict-policy ownership is not established.
 
 ## S3 — Inside-and-now control
 
@@ -181,7 +181,7 @@ Open-ended questions enter through model participants, peer output amplifies con
 ## Evidence gaps
 
 - No live model, provider, browser or external-agent quality tests were executed; the source proves an available first-party loop, not that a particular model reaches useful consensus.
-- `S2=—` is deliberately conservative and recursion-relative: candidate duplicate-claim merging and peer disagreements were inspected, but are the debate output itself, not concrete regulation of collisions among independently operating S1 work obligations.
+- `S2=C` is confined to the supported multi-participant discussion: the first-party catalog/peer-feedback protocol regulates a specific inter-participant contradiction/duplicate-claim disturbance. It does not establish autonomous S2 policy discretion or coordination of external tool/resource conflicts.
 - S3-like metrics, participant elimination and representative selection exist, but are session rules and product publication decisions rather than a whole-current S3 authority loop. No autonomous S3 right is inferred from deterministic scoring.
 - Source-supplied `AgentTaskDelegate` in library mode depends on a host; the shipped CLI demonstrates actual reachable API/SDK/CLI model connectors. Third-party tools' internal agent machinery is not attributed to argue.
 - Operator behavior and external institutional uses of the result are not observed, and no parent mode is inferred from static CLI options.
