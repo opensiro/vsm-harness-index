@@ -600,6 +600,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="cascadeflow"></a>[cascadeflow](https://github.com/lemony-ai/cascadeflow) | 2025-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="go-agent"></a>[go-agent](https://github.com/Protocol-Lattice/go-agent) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kode-sdk"></a>[KODE SDK](https://github.com/shareAI-lab/kode-agent-sdk) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="codemachine-cli"></a>[CodeMachine CLI](https://github.com/moazbuilds/CodeMachine-CLI) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="blades"></a>[Blades](https://github.com/go-kratos/blades) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="jazz"></a>[Jazz](https://github.com/lvndry/jazz) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentrl"></a>[AgentRL](https://github.com/THUDM/AgentRL) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
