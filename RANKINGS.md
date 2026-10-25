@@ -521,6 +521,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="caveman-code"></a>[Caveman Code](https://github.com/JuliusBrussee/caveman-code) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="phoenix-agent-harness"></a>[Phoenix Agent Harness](https://github.com/Phoenixrr2113/agent-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="lyrie"></a>[Lyrie](https://github.com/OTT-Cybersecurity-LLC/lyrie-ai) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="argue"></a>[argue](https://github.com/onevcat/argue) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="auto-harness"></a>[Auto Harness](https://github.com/neosigmaai/auto-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="urbanbreach-harness"></a>[urbanbreach Harness](https://github.com/urbanbreach/agent-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="xin-code"></a>[Xin Code](https://github.com/xincode-ai/xin-code) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
