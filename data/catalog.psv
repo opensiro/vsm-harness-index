@@ -797,3 +797,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 782|macos-harness|macOS Harness|https://github.com/browser-use/macos-harness|2026-08-17T00:22:20Z|index-addition|43d9edf8286153482348b15f7d8c22d9e38f6c6b|2026-10-26
 783|codely-agent-harness|Codely Agent Harness|https://github.com/CodelyTV/agent-harness|2026-04-07T12:59:16Z|index-addition|57090a7301d15722b8885570e239bdd3e719a835|2026-10-26
 784|crewctl|CrewCtl|https://github.com/omergocmen/CrewCtl|2026-07-09T14:57:08Z|index-addition|834c399cf28a9e83e7e47f81544ed52dfbeb92cc|2026-10-26
+785|deepresearch-agent-harness|DeepResearch Agent Harness|https://github.com/SichengLong26/deepresearch_agent_harness|2026-08-15T17:01:20Z|index-addition|4c98d6e144fde5bc28c821e6ee2c3b980eecc9a0|2026-10-26
