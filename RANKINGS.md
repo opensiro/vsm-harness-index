@@ -729,6 +729,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="khoj"></a>[Khoj](https://github.com/khoj-ai/khoj) | 2021-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="haystack"></a>[Haystack](https://github.com/deepset-ai/haystack) | 2019-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="n8n"></a>[n8n](https://github.com/n8n-io/n8n) | 2019-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="teaql-agent-kit"></a>[TeaQL Agent Kit](https://github.com/teaql/teaql-agent-kit) | 2018-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="babyai"></a>[BabyAI](https://github.com/mila-iqia/babyai) | 2018-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="botsharp"></a>[BotSharp](https://github.com/SciSharp/BotSharp) | 2017-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="botpress"></a>[Botpress](https://github.com/botpress/botpress) | 2016-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
