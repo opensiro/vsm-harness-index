@@ -785,3 +785,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 770|karimo|KARIMO|https://github.com/opensesh/KARIMO|2026-02-15T21:07:33Z|index-addition|305abbe8d7a86d01023913cd12072cd83e937f52|2026-10-26
 771|veritas-kanban|Veritas Kanban|https://github.com/BradGroux/veritas-kanban|2026-01-26T08:35:20Z|index-addition|1d2d45e770690046f934ec0cb038bf117a37d233|2026-10-26
 772|agetor|Agetor|https://github.com/alamops/agetor|2026-05-16T06:16:02Z|index-addition|c5cf1a2d431f2891506a26010695289a1b6c46ae|2026-10-26
+773|harness-for-codex|Harness for Codex|https://github.com/revfactory/codex-harness|2026-09-07T03:32:55Z|index-addition|80f8217b5b6d3f220a31f05f9c0adaf09dac40f4|2026-10-26
