@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 30108)
-Total output lines: 798
-
 catalog_position|harness_id|project_name|repository|repository_created_at|source_membership|review_ref|pinned_at
 1|rasa|Rasa|https://github.com/RasaHQ/rasa|2016-10-14T12:27:49Z|adapted-source|60a3cff9c08183760355b07bd60f5223d8916d6b|2026-09-13
 2|botpress|Botpress|https://github.com/botpress/botpress|2016-11-16T21:57:59Z|adapted-source|7bf2906580ab86fe647d4fb109b8c3bdcaef9c57|2026-09-13
@@ -250,7 +247,324 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 232|cascaide-ts|cascaide-ts|https://github.com/Airavat-Research/cascaide-ts|2026-05-15T12:46:57Z|index-addition|08fc10fcd58ecf729b9b0c5c1f0c135f7bb723f7|2026-09-24
 233|leviath|Leviath|https://github.com/GEMISIS/leviath|2026-06-27T01:55:01Z|index-addition|0d519eec063876c53e83bb94c7942df0f67f2701|2026-09-24
 234|wasp|WASP|https://github.com/agentwasp/agentwasp|2026-03-11T13:20:53Z|index-addition|8282a76f57aa4d0b7f2071321f064b26be942024|2026-09-24
-…12108 tokens truncated…abs/aevum|2026-04-22T23:15:13Z|index-addition|72a31ba909be20f41cf4ac9d587de30b5dda13f8|2026-10-06
+235|continual-harness|Continual Harness|https://github.com/sethkarten/continual-harness|2025-07-08T00:55:50Z|index-addition|bbab97ad73e460b7cd7c08527d10ced30cc03fbe|2026-09-24
+236|argus-agent|Argus|https://github.com/microsoft/ArgusAgent|2026-08-05T02:20:20Z|index-addition|746f76b7a74a1217507c9ee348eecd3b782f7c92|2026-09-24
+237|agentos|AgentOS|https://github.com/framerslab/agentos|2025-10-28T04:35:14Z|index-addition|fa3ec4a47f8521026e8c10aa876d082152b289d8|2026-09-29
+238|go-agent|go-agent|https://github.com/Protocol-Lattice/go-agent|2025-10-13T08:28:36Z|index-addition|ddfec8630783306b4ecb5ffd37519595384f8d15|2026-09-25
+239|cadis|C.A.D.I.S.|https://github.com/Growth-Circle/cadis|2026-04-26T13:12:25Z|index-addition|52c55854b1abbcda82839b7a934cbdb16a69b635|2026-09-25
+240|awaken|Awaken|https://github.com/awakenworks/awaken|2026-02-04T09:29:19Z|index-addition|2b0d375004ec8723cf40d8a59c0bb486ebce57e0|2026-09-25
+241|ares|ARES|https://github.com/Timwood0x10/ARES|2026-03-13T02:48:23Z|index-addition|f03153acace190c555c3721019407a7df47c139f|2026-09-25
+242|nanoharness|NanoHarness|https://github.com/semi-hollow/NanoHarness|2026-04-29T08:59:15Z|index-addition|70a0285383630e78c31ea65023fe5e1e48b6f7dd|2026-09-25
+243|bumblehive|BumbleHive|https://github.com/wxhcore/bumblehive|2026-02-24T10:16:20Z|index-addition|fabc24443319f56c4ea49b5e8ba4227a8d091105|2026-09-29
+244|synapse|Synapse|https://github.com/nshkrdotcom/synapse|2024-12-07T12:06:09Z|index-addition|bc43df9671b1e4974054e1ce0109f3e37733e9f4|2026-09-25
+245|s18share|S18Share|https://github.com/riteshverma/s18|2026-02-10T18:36:30Z|index-addition|139495d15f237dc819265cac913c12ff5cdbeab7|2026-09-25
+246|axocoatl|Axocoatl|https://github.com/axocoatl/axocoatl|2026-06-04T05:24:13Z|index-addition|edfe5031463686dc782cf3539e5aabae4e8eb9ab|2026-09-25
+247|sagamind|SagaMind|https://github.com/BlurredBox/SagaMind|2026-06-04T17:40:04Z|index-addition|647fdcfd6b2c8def3775a3a2068aa27223bc1066|2026-09-25
+248|shep|Shep|https://github.com/shep-ai/shep|2026-02-01T22:23:54Z|index-addition|a874b3238fd01ebdbafc11015cccd9a63ed6e2f2|2026-09-25
+249|loushang|Loushang|https://github.com/zhnt/loushang|2026-05-29T17:25:11Z|index-addition|3970a791ba277ecc686df7e5477c86ec71915687|2026-09-25
+250|inferoa|Inferoa|https://github.com/agentic-in/inferoa|2026-06-08T06:29:56Z|index-addition|1fd9ec4518b26b60cc78cf67c4faf337fe9bb2cd|2026-09-25
+251|san|San|https://github.com/genai-io/san|2024-09-05T16:16:25Z|index-addition|dd1b41882472fb76ce38dc3f88107deffc2e73bc|2026-09-25
+252|hx|hx|https://github.com/phantomic12/hx-harness|2026-09-15T04:03:15Z|index-addition|6afe2291a5bc750903eae1e9266ace8cdeb2eaef|2026-09-25
+253|hypha|Hypha|https://github.com/CodeSoul-co/Hypha|2026-07-01T06:51:59Z|index-addition|ac77fa9b4a1b1da2815adf7d5582dbc27cd9373f|2026-09-25
+254|lime|Lime|https://github.com/limecloud/lime|2025-12-13T17:23:15Z|index-addition|3823e9092d4106c877ae08a1d19d593b647cf27d|2026-09-25
+255|jazz|Jazz|https://github.com/lvndry/jazz|2025-09-13T20:50:28Z|index-addition|957ad8ef522f9137f690c8acc319553f56e5bdb9|2026-09-25
+256|abhed|Abhed|https://github.com/zybuu-ai/abhed|2026-09-14T11:14:09Z|index-addition|151b8ddceee7ae232e526b3c237356151dde780e|2026-09-26
+257|mingbird|Mingbird|https://github.com/Mingbird/Mingbird-agent|2026-09-17T12:00:14Z|index-addition|2e62a735b212aee3c72bce83134042c9ca885237|2026-09-26
+258|soothe|Soothe|https://github.com/mirasoth/soothe|2026-03-12T03:52:53Z|index-addition|be4fa14c0aa53203b8861dbff367eccb0df77668|2026-09-26
+259|haorui-agent-harness|Agent Harness|https://github.com/haorui-harry/agent-harness|2026-04-01T03:36:49Z|index-addition|109dde248cb44227a9ed3a204790432a6da843da|2026-09-26
+260|taixu|TaiXu|https://github.com/wkbin/taixu|2026-08-20T09:49:57Z|index-addition|037880a898ad503128dee7b2991dd6d351ad8cb3|2026-09-26
+261|company-brain|Company Brain|https://github.com/supermemoryai/company-brain|2026-09-25T22:48:14Z|index-addition|0071d6164991ce5dccddbd645bcac631ee477572|2026-09-26
+262|caelis|Caelis|https://github.com/caelis-labs/caelis|2026-08-14T12:09:51Z|index-addition|5aebbc6a750b8b2d472a0987fbf2e0942062c6d9|2026-09-26
+263|bamboo|Bamboo|https://github.com/bigduu/Bamboo-agent|2026-02-23T13:29:34Z|index-addition|eb1151378d513e820f80513c387056fb14f5c664|2026-09-26
+264|agentharness-oklahomawhore|AgentHarness|https://github.com/Oklahomawhore/AgentHarness|2026-09-23T08:52:11Z|index-addition|6bedcf45fad75e21df5e5cac827a898ef5c7d228|2026-09-26
+265|kot|KOT|https://github.com/Loqira-Labs/agentkot|2026-08-20T23:55:35Z|index-addition|7cf18c4b8389a81ea2f15ab70d1b0bb31b44b6ab|2026-09-26
+266|rsih|RSIH|https://github.com/CosmosMind-ai/RSI-Harness|2026-09-03T08:45:37Z|index-addition|737bf1f5a5a56f0c49bbd5180e71d651113038ac|2026-09-26
+267|agentharness-alexandrmotologa|AgentHarness|https://github.com/alexandrmotologa/agent-harness|2026-09-11T15:22:24Z|index-addition|725ceee14b65bd95365e8e1c2394ac1b245e3b98|2026-09-26
+268|pi-go|pi (Go)|https://github.com/sky-valley/pi|2026-06-09T10:05:50Z|index-addition|1c1b674f7b7bf18885082e3cf39c29fc56858107|2026-09-26
+269|trace-spec|TRACE Specification|https://github.com/agentrust-io/trace-spec|2026-06-03T19:32:21Z|index-addition|5222ed4e238627590fb21e801e0acdf7c9d78cbc|2026-09-26
+270|scion-gcp|Scion (Google Cloud)|https://github.com/GoogleCloudPlatform/scion|2026-03-10T00:19:58Z|index-addition|bdf5b6d135bb7585e242d2f08f4c54b3de2c2940|2026-09-26
+271|autoresearchclaw|AutoResearchClaw|https://github.com/aiming-lab/AutoResearchClaw|2026-03-15T03:38:49Z|index-addition|be4ba4755bf1b52220f25e13b2293b5956590070|2026-09-26
+272|os-copilot|OS-Copilot / FRIDAY|https://github.com/OS-Copilot/OS-Copilot|2024-02-02T01:55:49Z|index-addition|f720af8807e49a92dda64572d2c6bc6c0ac7ee7e|2026-09-26
+273|llamar|LLaMAR|https://github.com/nsidn98/LLaMAR|2024-07-09T01:41:04Z|index-addition|d2b74cac79a0f070d87a150712f8e2ae174920be|2026-09-26
+274|cedar|CEDAR|https://github.com/Fraunhofer-IIS/cedar|2026-01-17T14:09:25Z|index-addition|ab5820b360eab75a84320f551642fe6386513bab|2026-09-26
+275|webthinker|WebThinker|https://github.com/RUC-NLPIR/WebThinker|2025-03-28T04:34:22Z|index-addition|db387eb3261de9b5e2db7d2d7fb20af2aceb7882|2026-09-26
+276|worldgui|WorldGUI-Agent|https://github.com/showlab/WorldGUI|2025-02-12T00:01:31Z|index-addition|2117f0a87bcd3b1f330d3727a7ec0643930e7d90|2026-09-26
+277|mlr-agent|MLR-Agent|https://github.com/chchenhui/mlrbench|2025-05-14T13:56:07Z|index-addition|f728d571a992d71c8b526eeb4d9ab6bb5c8cc824|2026-09-27
+278|replicator-agent|ReplicatorAgent|https://github.com/CenterForOpenScience/llm-benchmarking|2025-06-16T20:34:45Z|index-addition|fb6a804fd710764f3ad3c8b84e1323c2804c4776|2026-09-27
+279|toolgen|ToolGen|https://github.com/Reason-Wang/ToolGen|2024-10-04T13:10:23Z|index-addition|6839374a255810efe69deea4056eec5c55e25802|2026-09-27
+280|boundflow|BoundFlow|https://github.com/boundflow/boundflow|2026-03-22T05:02:02Z|index-addition|15c0b20a3a98d3413956cab7fba2fd77c1fa32e2|2026-09-27
+281|waggle|Waggle|https://github.com/CrewBeeLab/Waggle|2026-05-13T14:26:58Z|index-addition|db9e3d3aed66714d665fd1c5c40d66534bf44ed7|2026-09-27
+282|surogates|Surogates|https://github.com/invergent-ai/surogates|2026-04-09T10:41:06Z|index-addition|4069e5ad736f1b21584543f734c9481193bcde65|2026-09-27
+283|chump|Chump|https://github.com/repairman29/chump|2026-03-10T20:57:54Z|index-addition|724c8ebe1911e986cc8af6883b6f05acd096d437|2026-09-27
+284|tandem|Tandem|https://github.com/frumu-ai/tandem|2026-01-17T16:27:57Z|index-addition|3ee2d83d76497565680538ef00f1616f55650524|2026-09-27
+285|grit|Grit|https://github.com/rtk-ai/grit|2026-03-17T13:29:09Z|index-addition|0f3c9d04abe9525b1884f3a0ade890e54a6d9ffe|2026-09-27
+286|gh-aw|GitHub Agentic Workflows|https://github.com/github/gh-aw|2025-08-12T17:40:41Z|index-addition|ff2eccd10a30d6a7bfaf0da449194e907a206555|2026-09-27
+287|ascension|Ascension|https://github.com/AI-Ascension/sts2-harness|2026-09-02T05:59:59Z|index-addition|53312ddbb074f7c187e5f59d88b6585da797fe17|2026-09-28
+288|openrig|OpenRig|https://github.com/mvschwarz/openrig|2026-04-01T06:22:40Z|index-addition|c8fca9d5c436e5357807e05254bf6735613eea3f|2026-09-28
+289|polyphemus|Polyphemus|https://github.com/polyphemus-ai/release-rehearsal|2026-09-24T00:04:36Z|index-addition|02020f3bc2829c350fd726273a7721254068925f|2026-09-28
+290|hugagentos|HugAgentOS|https://github.com/ZJU-REAL/HugAgentOS|2026-07-19T08:41:07Z|index-addition|9436fcb77261bc995e6e7a45cdc5e192eae9bc74|2026-09-28
+291|superharness|superharness|https://github.com/artificemachine/superharness|2026-06-25T14:30:35Z|index-addition|8bd54bc1ea7db2391190de25087bc638d503e549|2026-09-28
+292|waku-agent|Waku Agent|https://github.com/ShenSeanChen/waku-agent|2026-07-10T12:20:50Z|index-addition|b8310c08029732475b68076df02a6cc44e3e41e7|2026-09-28
+293|dotcraft|DotCraft|https://github.com/DotHarness/dotcraft|2026-05-28T12:24:06Z|index-addition|a08c8b35497f6ba9148f6ede80839835dcc8812a|2026-09-28
+294|aesop|Aesop|https://github.com/matt82198/aesop|2026-07-11T20:57:51Z|index-addition|2a661c12007c5484f964176da3d5532c6bdf070d|2026-09-28
+295|platypus|Platypus|https://github.com/willdady/platypus|2025-06-15T08:08:10Z|index-addition|5dda4dcdb92c209c8c8df953f0e9261cd018c2d7|2026-09-28
+296|octos|Octos|https://github.com/octos-org/octos|2026-03-15T23:56:24Z|index-addition|9f6311afd4e00324cdb89d957461cf861f4f2630|2026-09-28
+297|conductor|Conductor|https://github.com/microsoft/conductor|2026-02-02T14:29:41Z|index-addition|87f7788e60c7cbb8895832b9edfb4e63f3924590|2026-09-28
+298|roast|Roast|https://github.com/Shopify/roast|2025-04-09T21:05:31Z|index-addition|0cd5406ea02ac8f64b8b7a697270fd4d84a57b2c|2026-09-28
+299|sandcastle|Sandcastle|https://github.com/mattpocock/sandcastle|2026-03-17T14:49:05Z|index-addition|e99f832f26dc9d245c019a9ddd19fa5dee792427|2026-09-28
+300|bernstein|Bernstein|https://github.com/sipyourdrink-ltd/bernstein|2026-03-22T14:52:26Z|index-addition|c3d317385a058ae2b5f478399373d09d84d80962|2026-09-29
+301|harmonist|Harmonist|https://github.com/GammaLabTechnologies/harmonist|2026-04-23T05:42:29Z|index-addition|6fd5941cce8c3f6f411fd14cde0daa663ccffa8f|2026-09-29
+302|harnessrouter|HarnessRouter|https://github.com/HarnessRouter/harnessrouter|2026-08-09T20:19:14Z|index-addition|9ae33e77a92f240853e6d67a374c545d736c0f2d|2026-09-29
+303|longhorizon-harness|LongHorizon-Harness|https://github.com/AMAP-ML/LongHorizon-Harness|2026-08-04T04:30:58Z|index-addition|a1dd930614972b92361c1b9cd6aac441a6db5a65|2026-09-29
+304|synth-agent-runtime|Synth Agent Runtime|https://github.com/taituo/synth-agent-runtime|2026-09-19T17:50:13Z|index-addition|0ca8075281039d934fce8751ddd8b006ddc7de8d|2026-09-29
+305|atmosphere|Atmosphere|https://github.com/Atmosphere/atmosphere|2010-06-30T14:26:23Z|index-addition|5eaac40919357742ac0d67c59840d0b6eb909d53|2026-09-29
+306|harness|Harness|https://github.com/sausheong/harness|2026-05-08T06:03:49Z|index-addition|1e5b6599bbc68519e83d156150d70f793653ca7d|2026-09-29
+307|researchharness|ResearchHarness|https://github.com/InternScience/ResearchHarness|2026-03-31T06:57:51Z|index-addition|72e8a44737aadabc8c3f9e5c7ea76883b9c7032f|2026-09-29
+308|gptme|gptme|https://github.com/gptme/gptme|2023-03-24T16:25:01Z|index-addition|0e4ef82bd6a6090bf9cefd357acc8f1dbebf2662|2026-09-29
+309|agent-runtime|agent-runtime|https://github.com/tsharp/agent-runtime|2026-01-26T22:40:25Z|index-addition|07ebca8ec36d15eae2d264d4998fa6857f9e0b51|2026-09-29
+310|tangle-agent-runtime|Tangle Agent Runtime|https://github.com/tangle-network/agent-runtime|2026-05-03T18:44:42Z|index-addition|ed008c7623362720c47b1e628dbc19073e196b91|2026-09-29
+311|blackbox|Blackbox|https://github.com/tyxter-dev/blackbox|2026-04-30T17:46:56Z|index-addition|d5be68e03ca7750920569578710a2ee25d25530c|2026-09-29
+312|easylink-agent-runtime|Easylink Agent Runtime|https://github.com/easylink-ai-open/agent-runtime|2026-07-01T06:57:21Z|index-addition|a9447bb5d9f3ab3b258fd399e9a1619c97e621fd|2026-09-29
+313|crewlet|Crewlet|https://github.com/crewlet/crewlet|2026-08-11T21:33:54Z|index-addition|346d58ee3f3627a7f1213e441c6b0e330ab48030|2026-09-29
+314|cheetahclaws|CheetahClaws|https://github.com/SAIL-Research-Lab/cheetahclaws|2026-04-01T15:23:36Z|index-addition|ec5d091b53c70f6685f1330f509b11c3a51aa214|2026-09-29
+315|nexent|Nexent|https://github.com/ModelEngine-Group/nexent|2025-04-28T10:44:33Z|index-addition|9713e7823eb2b11410776acf40d2633eef425af7|2026-09-29
+316|raven|Raven|https://github.com/EverMind-AI/Raven|2026-05-21T08:45:07Z|index-addition|e6c0344cb7ce00db25d554e4bb671ec1909a8f9f|2026-09-29
+317|qwen-audio-agent|Qwen Audio Agent|https://github.com/QwenAudio/qwen-audio-agent|2026-07-27T05:04:26Z|index-addition|7b5913a05666a6cab9681c301807206ffa66c106|2026-09-29
+318|metaharness|MetaHarness|https://github.com/ruvnet/metaharness|2026-06-13T18:29:11Z|index-addition|d5833dc6512ac1adeeef91a331c29055cd8a4dbb|2026-09-29
+319|pipecat|Pipecat|https://github.com/pipecat-ai/pipecat|2023-12-27T12:59:00Z|index-addition|dbdf21a017f86624fb7768e35730417169524e0d|2026-09-29
+320|ahe|Agentic Harness Engineering|https://github.com/china-qijizhifeng/agentic-harness-engineering|2026-04-23T07:01:18Z|index-addition|8b2a55d97590363fe50c3cc6b5e833b020a4bb4c|2026-09-29
+321|oh-my-claudecode|oh-my-claudecode|https://github.com/Yeachan-Heo/oh-my-claudecode|2026-01-09T03:36:29Z|index-addition|5281b19e0d64f8e6dc6767f2130299a88af2dc71|2026-09-29
+322|openclaw-dotnet|OpenClaw.NET|https://github.com/clawdotnet/openclaw.net|2026-02-22T03:21:36Z|index-addition|a5d1b7ee689967baf4097c5bf8b578f00e2da87e|2026-09-20
+323|frontieragent|FrontierAgent|https://github.com/ApodexAI/FrontierAgent|2026-08-22T05:07:35Z|index-addition|9e533db6f6c34d16037ee5ec964c479d0eb51cde|2026-09-20
+324|sandbase-harness|SandBase Harness|https://github.com/sandbaseai/sandbase-harness|2026-07-11T08:48:07Z|index-addition|f4534553352bc22baf226367ab987a611cc30eca|2026-09-20
+325|agentlas-os|Agentlas OS|https://github.com/agentlas-ai/Agentlas-OS|2026-06-04T04:33:26Z|index-addition|7032c0b0a660983dcdfdb14cb215d8e93af97d4b|2026-09-20
+326|orkas|Orkas|https://github.com/Orkas-AI/Orkas|2026-04-29T12:19:08Z|index-addition|bc21869913e30b72f83998d79c030b290d10f140|2026-09-20
+327|rust-norion|rust-norion|https://github.com/yanghao1143/rust-norion|2026-06-20T10:51:04Z|index-addition|386363fac8db39a40bd5940b2016aecf26c095d1|2026-09-20
+328|clear-ideas-agent-runtime|Clear Ideas Agent Runtime|https://github.com/clearideas/agent-runtime|2026-07-27T14:49:17Z|index-addition|6abb6fa1ae2455dfe3eb86414b617e1fa84a47b1|2026-09-20
+329|harness-cgast|Harness|https://github.com/cgast/harness|2026-02-18T09:20:39Z|index-addition|b3a9edde79f332f86189da742c5313f25f210b79|2026-09-20
+330|agent-runtime-mattbusel|agent-runtime|https://github.com/Mattbusel/agent-runtime|2026-03-09T20:33:35Z|index-addition|c398a209d0e503c4d47ce6e27888e13e83790ed1|2026-09-20
+331|zhizhi-agent-runtime|Zhizhi Agent Runtime|https://github.com/cocoyes/zhizhi-agent-runtime|2026-08-31T10:23:49Z|index-addition|02465df2afbe6d511d20fa275ccffe0c40b1b31c|2026-09-20
+332|codex-autorunner|codex-autorunner (CAR)|https://github.com/Git-on-my-level/codex-autorunner|2025-12-09T15:57:56Z|index-addition|065f435d6120f95135425d8cc2df52760872a2d3|2026-09-20
+333|beagle|Beagle|https://github.com/SalesforceAIResearch/Beagle|2026-08-20T22:15:18Z|index-addition|165343b46a85b5d28c6370e6197ac665c7eda871|2026-09-29
+334|commons|Commons|https://github.com/t54-labs/agent-commons|2026-07-26T16:24:27Z|index-addition|6e911236127dc6cf0d231add87e302974151a7f4|2026-09-20
+335|life-harness|Life-Harness|https://github.com/Tianshi-Xu/Life-Harness|2026-05-21T05:49:33Z|index-addition|22c299b83d888405d34d2c7efc0fcf4d2ccfdcef|2026-09-29
+336|agentspex|AgentSPEX|https://github.com/ScaleML/AgentSPEX|2026-04-14T21:24:46Z|index-addition|db99b7b6802fe15ef2997c82ec1d49e5228128f6|2026-09-29
+337|harnessdesk|HarnessDesk|https://github.com/HarnessDesk/HarnessDesk|2026-09-08T01:14:39Z|index-addition|24add77185eebe321b0aa0b578933acf4a8e05d3|2026-09-20
+338|swarm-code|swarm-code|https://github.com/skyblanket/swarm-code|2026-05-15T12:39:55Z|index-addition|53007abac1d521e32c2508af5328412bd6bbb67b|2026-09-28
+339|labunbun-code|LaBunbun Code|https://github.com/zayokami/labunbun-code|2026-08-21T09:41:38Z|index-addition|1470556287af8325a2c7971f7858f42c0d8241a2|2026-09-28
+340|agent-os|Agent OS|https://github.com/andrewgolovanov/agent-os|2026-08-15T12:23:51Z|index-addition|9f45e60058b51bc69ea746876b798f995d8bebc2|2026-09-20
+341|minagent|MinAgent|https://github.com/Nichonauta/MinAgent|2026-09-24T23:08:17Z|index-addition|02880e3c981ba57cd95d2266d6c0ea07b1abe44c|2026-09-28
+342|rex-harness|rex-harness|https://github.com/rexleimo/rex-harness|2026-07-16T02:49:30Z|index-addition|beee2b4e1d25ef03a87b4b0d8b57c815ff6828b5|2026-09-20
+343|agentic-stack|agentic-stack|https://github.com/codejunkie99/agentic-stack|2026-04-15T13:45:41Z|index-addition|8fd5726aaebbd421b835ad1c71f2c66064b74caf|2026-09-20
+344|suisuicode|SuisuiCode|https://github.com/Yangtianspike/suisui-code|2026-09-21T17:50:36Z|index-addition|c9017b0613b22151325a5904a521aefe4c62abbc|2026-09-28
+345|zigent|Zigent|https://github.com/chhuax/Zigent|2026-09-20T17:33:01Z|index-addition|f6252e65dc28b202b71f54a9a5d70424cc7010b5|2026-09-28
+346|truecoder|TrueCoder|https://github.com/Shivam583-hue/TrueCoder|2026-07-18T22:52:12Z|index-addition|0db47102068596eccaf26d16a6c4eb0f24936a8a|2026-09-29
+347|agent-harness-core|Agent Harness Core|https://github.com/phenomenoner/agent-harness-core|2026-06-10T09:48:39Z|index-addition|1e247e064061e4427f4b78e8afd8671e6e7f06f0|2026-09-20
+348|codeagent|CodeAgent|https://github.com/WSH-4380/CodeAgent|2026-09-21T14:10:08Z|index-addition|0ca84f16e5c4c09675d9d91be334a203bb672bb2|2026-09-29
+349|cloud-coding-agent-node|Cloud Coding Agent Node|https://github.com/fred1433/cloud-coding-agent-node|2026-09-29T13:44:31Z|index-addition|a6758498055b54d765f6ca3423c58c67e0ead18e|2026-09-29
+350|railwarden|RailWarden|https://github.com/advaith-1212/railwarden|2026-06-27T10:36:14Z|index-addition|9e63f75baced5b1e246ed2470d59bc092905c1ad|2026-09-20
+351|agent-orchestrator-mohamedwaleed|Agent Orchestrator (waves)|https://github.com/mohamedwaleed/agent-orchestrator|2026-08-08T11:37:00Z|index-addition|5445af144773374450d933f05851d2018724ae25|2026-09-20
+352|carbon|Carbon|https://github.com/thecarbonlayer/carbon|2026-06-29T06:27:26Z|index-addition|8fafacd56f10a6eeb6f3b095fa6af3dfb5681aaf|2026-09-29
+353|agent-orchestrator-stefan1294|Agent Orchestrator (tracks)|https://github.com/stefan1294/agent-orchestrator|2026-02-16T12:58:11Z|index-addition|f78e1b06d80ed43803029a14f14df69908782fee|2026-09-20
+354|ferrum|Ferrum|https://github.com/ominiverdi/ferrum|2026-05-28T16:55:50Z|index-addition|f31151d34fade3ef88104a33ba2a4042e689be35|2026-09-29
+355|recursive|Recursive|https://github.com/jeffkit/recursive|2026-05-25T04:19:51Z|index-addition|d693ff98ae9d3f47896994c55b2d8f494b4cca3d|2026-09-29
+356|yode|Yode|https://github.com/anYuJia/yode|2026-03-23T06:58:15Z|index-addition|964d6230afb5e779e3157a452dac1c0ac0d24f16|2026-09-29
+357|laudacode|Laudacode|https://github.com/Anon4You/Laudacode|2026-08-23T02:56:46Z|index-addition|f8906ce9da3b11c83fca4b296e0a90f5c7d39110|2026-09-29
+358|nemocode|NemoCode|https://github.com/SampleBias/nemocode|2026-07-16T14:17:40Z|index-addition|6f5489f289d0963cf0c6b7562c9491670000ccd2|2026-09-29
+359|neo|Neo|https://github.com/matrixheaven/neo|2026-06-07T12:33:23Z|index-addition|2828e253852a98cace95dc404caf3ac8a3e45bce|2026-09-29
+360|litecode|LiteCode|https://github.com/itissika/litecode|2026-08-15T23:57:54Z|index-addition|146a9feff9edee2204138f18473b9bef83c41c5a|2026-09-29
+361|crabot|Crabot|https://github.com/J-F-Liu/crabot|2026-06-17T12:26:05Z|index-addition|09324dba3036f9033bb8a7dc5b88cc62959db8a2|2026-09-29
+362|ogcode|Ogcode|https://github.com/prasenjeet-symon/ogcode|2026-05-01T10:24:31Z|index-addition|b9077a0fcca60195da4426b3f733933b533be705|2026-09-29
+363|rho|rho|https://github.com/crustyrustacean/rho-coding-agent|2026-04-25T02:34:55Z|index-addition|172700e7dbfd6b11dc3b86177e2927cd1eeb4d1c|2026-09-29
+364|sponsio|Sponsio|https://github.com/SponsioLabs/Sponsio|2026-04-04T18:05:47Z|index-addition|dfbdca2a224cdcdd56710283c60f48a45cdbbb17|2026-09-20
+365|multica|Multica|https://github.com/multica-ai/multica|2026-01-13T17:59:46Z|index-addition|8c4f4328f6e3baff08394b309034463b5db9d7af|2026-09-20
+366|paseo|Paseo|https://github.com/getpaseo/paseo|2025-10-13T12:27:02Z|index-addition|d636abd7a4ce302e7ccb9eb6074f637c6dd4d83b|2026-09-20
+367|superset|Superset|https://github.com/superset-sh/superset|2025-10-21T09:16:51Z|index-addition|e60856bd825b1fca5d47ffff289db0830a4f6820|2026-09-20
+368|tyrion|Tyrion|https://github.com/Xtejasveer/tyrion|2026-08-12T23:23:19Z|index-addition|35806697ba873e069b6ec6346216baea8b94a72f|2026-09-29
+369|froe|Froe|https://github.com/dcoldeira/froe|2026-09-23T18:24:22Z|index-addition|f23a0e5c31fe6c05c8d284750802f344e4a702f1|2026-09-29
+370|axiom|Axiom|https://github.com/amuluze/axiom-agent|2026-09-12T14:08:39Z|index-addition|da7b98b739a824713d230b2635edb56868553696|2026-09-29
+371|zeron|Zeron|https://github.com/zeronsh/zeron|2026-07-20T15:04:04Z|index-addition|6ecea055877e1f560adbc4545b8d8fd7dffa6d75|2026-09-20
+372|github-copilot-sdk|GitHub Copilot SDK|https://github.com/github/copilot-sdk|2026-01-14T00:23:22Z|index-addition|8045fb74c7d8684fd388b09e324c00b02e9347a5|2026-09-20
+373|diodide-harness|Harness|https://github.com/DIodide/Harness|2026-02-13T04:39:01Z|index-addition|471b22a2214dc0e4d056ecb05cf2ca48801384ac|2026-09-20
+374|1code|1Code|https://github.com/21st-dev/1code|2026-01-14T02:12:40Z|index-addition|9f1bc76fa4372c18c565b5a4f8daf38ae3595f0e|2026-09-20
+375|aidlc-workflows|AI-DLC Workflows|https://github.com/awslabs/aidlc-workflows|2025-11-13T22:05:08Z|index-addition|59105b319c344ff51183667727ddca942748d135|2026-09-20
+376|open-claude-cowork|Open Claude Cowork|https://github.com/DevAgentForge/Open-Claude-Cowork|2026-01-13T09:34:40Z|index-addition|7a9f99f32431115008c95ccce9da5bfbda5115f3|2026-09-20
+377|ally|Ally|https://github.com/Bronya0/ally-agent|2026-07-12T07:12:31Z|index-addition|dafc35cdc2ff1bae6b89b0f9398448f752fc418d|2026-09-29
+378|orca-agent|Orca Agent|https://github.com/echoVic/orca-agent|2026-06-05T07:19:56Z|index-addition|5838259b5f9622021db04d6fdda4d80963f17de3|2026-09-29
+379|raincode|RainCode|https://github.com/Rainmemery/RainCode|2026-09-29T01:08:15Z|index-addition|1fc73183d396e4935dd96dbeaf288be87a0d6f66|2026-09-29
+380|operandi|Operandi|https://github.com/modus-lisp/operandi|2026-07-16T09:02:49Z|index-addition|1d1c6b5c28ff4f5cb80a31aed709145527c1a78f|2026-09-29
+381|mindweave|Mindweave|https://github.com/mindweave-cli/mindweave|2026-09-16T20:07:43Z|index-addition|7a108f043dbfca273dd420d193803f41040a64b7|2026-09-29
+382|autonomous-swe-platform|Autonomous SWE Platform|https://github.com/SurjitW/Autonomous-Software-Engineering-and-Coding-Agent-Platform|2026-09-27T02:23:36Z|index-addition|057045d8c107417358416c8b97c0249d1359f18d|2026-09-29
+383|easy-agent|Easy Agent|https://github.com/vietor/easy-agent|2026-06-24T14:35:41Z|index-addition|f13207671ad142fb89d1c36d413f7e42d60b18a6|2026-09-29
+384|genesis-agent|Genesis Agent|https://github.com/me7ko-dev/genesis-agent|2026-07-27T22:25:37Z|index-addition|0e24818a9fd0788c6fe68b2e51ba3a3083f6d2fc|2026-09-29
+385|lca-code-agent|LCA Code Agent|https://github.com/Kandog/lca-code-agent|2026-09-17T22:42:25Z|index-addition|3049426ad46a0a4eab2ed896a8f87160f76689e4|2026-09-29
+386|pasclaude|PasClaude|https://github.com/seanrobertwright/PasClaude|2026-08-07T01:28:41Z|index-addition|9ea5295a10fcdd6343e2a0e2012aab4790136488|2026-09-28
+387|cycode|CYCode|https://github.com/ChaoYue0307/CYCode|2026-06-11T07:35:09Z|index-addition|8b09d0a8cbca739a8d5598127b00edd3e5955fb5|2026-09-28
+388|codey|Codey|https://github.com/codesbyjit/codey|2026-08-13T16:48:42Z|index-addition|b1cad86d649263a5b87be782cf4ee28c8916dff5|2026-09-28
+389|archon|Archon|https://github.com/coleam00/Archon|2025-02-07T21:04:12Z|index-addition|e237584d9c332fc492125bf9e0cb4756895f4da2|2026-09-20
+390|cascadeflow|cascadeflow|https://github.com/lemony-ai/cascadeflow|2025-10-24T11:08:44Z|index-addition|d8251001a51c22dc3d3ea596d89f89c4a5d74f8b|2026-09-20
+391|sandbox-agent|Sandbox Agent|https://github.com/rivet-dev/sandbox-agent|2026-01-25T10:03:02Z|index-addition|bbc195cc3fb5a1dd9cb05d8437442768c511e17e|2026-09-20
+392|sandboxed-sh|sandboxed.sh|https://github.com/Th0rgal/sandboxed.sh|2025-12-15T10:15:26Z|index-addition|8595836b5f7d23102d1b89b9ac3b59b0842b11a7|2026-09-20
+393|clawmanager|ClawManager|https://github.com/Yuan-lab-LLM/ClawManager|2026-03-20T10:43:22Z|index-addition|576e4bb5440d453fd25300586e57ce81cb616f31|2026-09-20
+394|haft|Haft|https://github.com/m0n0x41d/haft|2025-12-10T19:16:51Z|index-addition|8a5f0384a10003bda7b2b65edc86f0f1a656a345|2026-09-20
+395|clawkeeper|ClawKeeper|https://github.com/SafeAI-Lab-X/ClawKeeper|2026-03-20T08:26:54Z|index-addition|69db077317bd8a89777c7670295539ed93145f46|2026-09-20
+396|defenseclaw|DefenseClaw|https://github.com/cisco-ai-defense/defenseclaw|2026-03-23T00:51:19Z|index-addition|85029e57e9094debd9366a7d5a9f7e6d5c3ef6fc|2026-09-20
+397|dashclaw|DashClaw|https://github.com/ucsandman/DashClaw|2026-02-08T02:34:15Z|index-addition|c6754674f98b73bba73046687c683e9bf685851c|2026-09-20
+398|cordum|Cordum|https://github.com/cordum-io/cordum|2026-01-11T16:56:02Z|index-addition|5f58ad4e0efd309956310ec27a11ce455226268b|2026-09-20
+399|soloncode|SolonCode|https://github.com/opensolon/soloncode|2026-02-10T07:31:57Z|index-addition|123e7a2d19e33b0fff72b5518062b020b3c96bc3|2026-09-28
+400|openseek|OpenSeek|https://github.com/moonbitlang/openseek|2026-05-19T07:04:13Z|index-addition|3999e3c1a804651f7d59b2f69dad6c6dae48de71|2026-09-28
+401|aivo-code|Aivo Code|https://github.com/yuanchuan/aivo|2026-02-26T05:08:24Z|index-addition|b26438571e80ae28fa489f07c2c22fd595e10269|2026-09-28
+402|shadow|Shadow|https://github.com/ishaan1013/shadow|2025-07-12T20:45:46Z|index-addition|96e7b187951d66740dcd7d0bf3d5f94f5d09ed41|2026-09-28
+403|dscode|DSCode|https://github.com/thinkany-ai/dscode|2026-07-31T13:33:13Z|index-addition|1ce0328cfa856700f6c955f5429ca00b08d99ea5|2026-09-28
+404|pooled|Pooled|https://github.com/Nehanth/pooled|2026-09-01T00:05:54Z|index-addition|b749f99c524f7a7c51f9e8c539e6b001dfdcdcd4|2026-09-28
+405|oh-my-cli|oh-my-cli|https://github.com/qwen-code-dev-bot/oh-my-cli|2026-07-13T11:43:52Z|index-addition|8dce0123dabfdae34093088281aaeb890e62d4fd|2026-09-28
+406|minicode|Minicode|https://github.com/startupmini/minicode|2026-08-21T20:17:38Z|index-addition|aa76dfbea2c3d262b7ff4951e532277135793487|2026-09-28
+407|zhi|Zhi|https://github.com/mikemikimike/zhi|2026-09-07T14:20:15Z|index-addition|f7a0b5ebabdc4afd299f7ba3cac1ece39af39a56|2026-09-28
+408|puny|Puny|https://github.com/christianhelle/puny|2026-07-05T12:36:24Z|index-addition|dcdecb253b81415152aac4d3590d2186adfa0c81|2026-09-28
+409|foxagent|FoxAgent|https://github.com/douzifox/foxagent|2026-08-13T09:01:17Z|index-addition|321f5eae7bd996b6b80502a50f3987f77f9a80cb|2026-09-28
+410|loopex|Loopex|https://github.com/lexlapax/loopex|2026-08-14T16:00:05Z|index-addition|3f81b04828901a6fb05b29e8b6bed211eed2d376|2026-09-28
+411|wtsup-code|wtsup-code|https://github.com/Shrit1401/wtsup-code|2026-08-13T06:03:59Z|index-addition|abff97e3a6bce94cb7fc115d95f13e60acf650e1|2026-09-28
+412|grinta|Grinta|https://github.com/josephsenior/Grinta-Coding-Agent|2026-01-27T19:53:14Z|index-addition|98112110dc30e983f22982a9891aadd18fdfb189|2026-09-28
+413|dodo|Dodo|https://github.com/jonnyparris/dodo|2026-03-28T23:23:20Z|index-addition|156d60ca2f743ad4177b0ed781e61ecbd1af508f|2026-09-28
+414|forja|Forja|https://github.com/lex0c/forja|2026-04-27T14:00:48Z|index-addition|db34341cfacbca3a50029530d2e95a3ae3e5072e|2026-09-28
+415|autonomous-coding-agent|Autonomous Coding Agent|https://github.com/Quality-Max/autonomous-coding-agent|2026-06-11T10:53:44Z|index-addition|eda302b5a93c877a4138855ea712000971c3abcf|2026-09-28
+416|marspi-cli|Marspi CLI|https://github.com/mars01pi/marspi-cli|2026-07-03T03:51:02Z|index-addition|e8e46a39e9da2dac1444c175ad241f2cfa71c7dc|2026-09-28
+417|autonomouscodingagent|AutonomousCodingAgent|https://github.com/robertnathe/AutonomousCodingAgent|2026-03-18T01:02:12Z|index-addition|5054511c80659281747e2d2530b772bed0ca8b18|2026-09-28
+418|primusclaw|PrimusClaw|https://github.com/AMD-AGI/PrimusClaw|2026-08-28T11:19:31Z|index-addition|bbd925a5b12b4ffe425c5ff01f00e9bc93863dfc|2026-09-28
+419|sema-coder|Sema Coder|https://github.com/sema-lisp/sema-coder|2026-07-10T10:18:41Z|index-addition|284cffba02090f996da2d60524bcbb26651b4ed3|2026-09-28
+420|autohand-code-cli|Autohand Code CLI|https://github.com/autohandai/code-cli|2025-12-12T01:01:40Z|index-addition|feaa8df7dcc5ee0152bc0d961bc271759fced45a|2026-09-28
+421|codebot|Codebot|https://github.com/voocel/codebot|2026-02-17T07:33:22Z|index-addition|098c5f3cf3e8708bd87138d666b08cd7888ec3b1|2026-09-28
+422|shai|SHAI|https://github.com/ovh/shai|2025-07-16T13:31:16Z|index-addition|f076f6128a826a96a28e47d0d674284b1552905e|2026-09-28
+423|riffer-rig|riffer-rig|https://github.com/bottrall/riffer-rig|2026-05-25T03:10:14Z|index-addition|e2e914195f7c15c75ee2ae6bb55d772d754a2f37|2026-09-28
+424|llm|llm|https://github.com/imjiaoyuan/llm|2026-08-15T14:28:51Z|index-addition|fa532244bc543a02850151a692feca74b15f713c|2026-09-28
+425|helpofai|HelpOfAi|https://github.com/helpofai/HelpOfAi-Cli|2026-06-20T14:47:52Z|index-addition|a102dfbd043b41688b155135fb9bd48ebb7a3113|2026-09-28
+426|deep-code|deep-code|https://github.com/liwenka1/deep-code|2026-05-17T11:32:04Z|index-addition|94199de128d259ad513275db3e84433299a58a9a|2026-09-28
+427|myharness|MyHarness|https://github.com/woolcoxm/MyHarness|2026-09-13T04:54:19Z|index-addition|801082b90e182badb93ad3aca1946e4ff9ccfae6|2026-09-28
+428|golum|Golum|https://github.com/Vignesh-Rajarajan/golum|2026-08-11T16:36:49Z|index-addition|ca9a01c67e16b8093ef1abc4ed93d2407b5ef7af|2026-09-28
+429|horse-code|Horse Code|https://github.com/hizliemre/horse-code|2026-08-27T10:07:50Z|index-addition|8e134ac3b2745477940bda5867313d07ae535900|2026-09-28
+430|gyrfalcon|Gyrfalcon|https://github.com/cargopete/gyrfalcon|2026-08-23T08:13:18Z|index-addition|090615a2f13a062fd91896950106aeb505376c55|2026-09-28
+431|nabd|Nabd|https://github.com/amiraq1/Nabd|2026-09-01T09:50:09Z|index-addition|1b7c36a5d79a20c055e688474b0ebc9fd916b7b3|2026-09-28
+432|muonroi-cli|muonroi-cli|https://github.com/muonroi/muonroi-cli|2026-04-29T09:21:07Z|index-addition|0e263b8c8ff142b1d643e64a6b0825fdf477c626|2026-09-28
+433|relaycli|RelayCLI|https://github.com/joshuasetiawann/relaycli|2026-07-02T04:34:15Z|index-addition|2102796a136f996cbc48402cfb00304f5614e03e|2026-09-28
+434|maki|Maki|https://github.com/tontinton/maki|2026-02-13T17:04:13Z|index-addition|eb2274751272ffbc618a8d103041da3f4a96e8d0|2026-09-28
+435|zerostack|zerostack|https://github.com/gi-dellav/zerostack|2026-05-12T19:31:49Z|index-addition|16fadb3b8f29238a5716eaf937ecf9d41a42f946|2026-09-28
+436|vix|Vix|https://github.com/get-vix/vix|2026-04-07T12:02:47Z|index-addition|e68a25c7df685335f5a202844988d492fe3c1b16|2026-09-28
+437|shelley|Shelley|https://github.com/boldsoftware/shelley|2026-01-02T22:41:34Z|index-addition|3fa4e71b10469495800c33843b9ff162735320f2|2026-09-28
+438|codehamr|codehamr|https://github.com/plaxtoris/codehamr|2026-04-29T10:56:17Z|index-addition|24482811592f44c4e3b7e28561b8faa74cb3f1b1|2026-09-28
+439|peezy|Peezy|https://github.com/p0systems/peezy-cli|2026-05-17T19:42:31Z|index-addition|4abb65bb3e8c9f6c4cdd42c22d29b61531bffad3|2026-09-28
+440|acc|acc|https://github.com/Xuxyyy/terminal-coding-agent|2026-08-11T12:17:36Z|index-addition|47dba4bd00f4eef7450961d4623861bbb335e96d|2026-09-28
+441|otherside|Otherside|https://github.com/daanielcruz/otherside-cli|2026-04-18T03:39:46Z|index-addition|202aa86c9d182c63f8ba9c0facf2718618de02eb|2026-09-28
+442|ava|AVA|https://github.com/Artificial-Source/AVA|2026-01-30T23:00:58Z|index-addition|1b886dc5b80c6bf459cfe47550aa197537d5916d|2026-09-28
+443|synth|synth|https://github.com/aw1875/synth|2026-08-24T22:09:19Z|index-addition|545f1c2dbef396a2a693fd3a6c7f11ea4d00ce19|2026-09-28
+444|sudo-code|Sudo Code|https://github.com/sudoprivacy/sudocode|2026-04-22T18:35:30Z|index-addition|dad7da543b53db4a4946156c9d60187a088539c2|2026-09-28
+445|smelt|Smelt|https://github.com/leonardcser/smelt|2026-02-25T21:37:53Z|index-addition|bc44da1696a74fde792c26cdb1dca3e5a42e3e28|2026-09-28
+446|termide|TermIDE|https://github.com/termide/termide|2025-11-20T14:30:41Z|index-addition|351a551ad234ea5071a8a4fe226e172dcb5d76ee|2026-09-28
+447|alphacode|AlphaCode|https://github.com/dragonked2/alphacode|2026-09-01T09:57:03Z|index-addition|a28db8978a5b336e244973c8db01f625dfcc0983|2026-09-28
+448|blade-code|Blade Code|https://github.com/echoVic/blade-code|2025-05-30T10:08:27Z|index-addition|30f868411df4f7da095aadb7a2a8ca3310315613|2026-09-28
+449|chad|chad|https://github.com/nathansutton/chad|2026-06-29T20:24:29Z|index-addition|a5f7a47166005ef9aa3a3ddc2c035479b75911cb|2026-09-28
+450|klaat-code|Klaat Code|https://github.com/KlaatAI/klaatcode|2026-07-17T11:38:10Z|index-addition|b988be7cf6ffe7878e87ed3e720759e0f7247c33|2026-09-28
+451|metis|Metis|https://github.com/Wholiver/metis|2026-07-11T07:02:59Z|index-addition|8dc0d6da31e878b620ef3c3a412a5c7dff8164a2|2026-09-28
+452|sharpcoder|SharpCoder|https://github.com/robkaandorp/SharpCoder|2026-03-20T09:04:00Z|index-addition|f35e4003b41020204897aa8f6da3ba9bc1cdf590|2026-09-28
+453|marvis|Marvis|https://github.com/meloer101/Marvis-codingAgent|2026-09-07T07:42:13Z|index-addition|3363617c15bdd2f773ef169fc5a44dd321e631a5|2026-09-28
+454|openclaw-enterprise|OpenClaw Enterprise|https://github.com/openclaw/openclaw-enterprise|2026-08-29T02:32:55Z|index-addition|b601b1c6061b356620117979506109c54eea8730|2026-10-06
+455|einoclaw|Einoclaw|https://github.com/YellowDusk04/einoclaw|2026-06-22T09:06:56Z|index-addition|f7b790f966487e7b9f8202c9d024f714b3030afb|2026-09-28
+456|waveloom|Waveloom|https://github.com/Menfre01/waveloom|2026-06-24T07:16:26Z|index-addition|daccab5d4816803a82eb6eabfe44a68c75bc1f58|2026-09-28
+457|pi-rs|pi-rs|https://github.com/CCherry07/pi-rs|2026-08-21T16:12:59Z|index-addition|efb6925e248ea801448fd09e60623d109852d3c9|2026-09-28
+458|ndx|ndx|https://github.com/hikaMaeng/ndx|2026-04-26T06:02:56Z|index-addition|b1cb16e9b3b3fcd514c9b71a199e10490b7900d7|2026-09-28
+459|dendrophis|Dendrophis|https://github.com/sp1d3rx/dendrophis|2026-04-28T16:26:43Z|index-addition|dbc8e7883e7473f9450865d511d91e30c58724e2|2026-09-28
+460|monomind|Monomind|https://github.com/monoes/monomind|2026-04-26T21:57:29Z|index-addition|4e875ea1b957a8715cef59be7b0bf1684208577a|2026-09-21
+461|commonly|Commonly|https://github.com/Team-Commonly/commonly|2025-02-03T02:13:30Z|index-addition|669889886a9436b8349e4e60e5197bab504909e8|2026-09-21
+462|octo|Octo|https://github.com/open-octo/octo-agent|2026-05-25T03:09:29Z|index-addition|d68cd81aed46c999e1d413ac8c0b4c3f7b324b23|2026-09-28
+463|garcon|Garcon|https://github.com/cfal/garcon|2026-02-23T13:42:57Z|index-addition|c278477494960465fe5aab71004588a46f6539ce|2026-09-22
+464|miii|miii|https://github.com/maruakshay/miii-cli|2026-05-06T06:35:00Z|index-addition|f84c629c91cd0ff096ff1f0a1231519cf6ea51b5|2026-09-28
+465|polter|Polter|https://github.com/Lugia123/polter|2026-08-18T03:07:04Z|index-addition|c2fe7ed9233ce5e36cb8fd86f4d2d2530c57b771|2026-09-22
+466|seek|Seek|https://github.com/whyiyhw/seek|2026-05-22T11:45:18Z|index-addition|52e90e68b9b1f266f7eff952426eb996ec7f87f9|2026-09-28
+467|hashcortx|HashCortX|https://github.com/Hash-7777/HashCortX|2026-05-16T01:25:46Z|index-addition|ab3fb74a61928dfb98985eac5ec3eeac8c85afe7|2026-09-28
+468|harness-remote|Harness Remote|https://github.com/giuliastro/harness-remote|2026-02-07T11:36:02Z|index-addition|ee9d315c7a3329ab6ef5588d1565210167d47a9d|2026-09-23
+469|gnosis|Gnosis|https://github.com/DOMCHURCH/Gnosis|2026-08-20T10:37:00Z|index-addition|e94a861bda5e35ee3a1e7df5afcc6a93a9162fbc|2026-09-28
+470|bbarit-oss|bbarit-oss|https://github.com/bbarit/bbarit-agent-oss|2026-07-16T04:00:27Z|index-addition|2cb8b723f2787aa587ef063d366b7cb408ead4aa|2026-09-28
+471|radiant|Radiant|https://github.com/templetongroup/radiant|2026-08-19T02:51:36Z|index-addition|1186d16d2c08bb45a7fa489dcce8dc74e73e7eba|2026-09-28
+472|jive|Jive|https://github.com/merijjeyn/jive|2026-09-21T15:07:55Z|index-addition|7b12a061ac77aca94851a0c2f53e6140fae95e74|2026-09-28
+473|prismor|Prismor|https://github.com/PrismorSec/prismor|2026-02-20T16:43:19Z|index-addition|4cdcfb62197e01da280e21b3f3534bb791109065|2026-09-23
+474|hazzel|Hazzel|https://github.com/mukundzha/hazzel|2026-09-07T10:19:08Z|index-addition|86f15f052d7a0314fb28dca5592b4aada95a7db9|2026-09-28
+475|orgtree|Orgtree|https://github.com/Maurdekye/orgtree|2026-09-07T19:51:28Z|index-addition|0008ccb94edfb986396c49ced3e2d2c885e1fb16|2026-09-23
+476|plank|Plank|https://github.com/aovestdipaperino/plank|2026-07-18T11:47:24Z|index-addition|7b69b23341e3500959fd39f43a7d395b6cdd2255|2026-09-28
+477|nasiko|Nasiko|https://github.com/Nasiko-Labs/nasiko|2026-02-12T10:45:29Z|index-addition|58cfe600559c67d58100ec2856d7b29838e2859f|2026-09-23
+478|ghostycode|GhostyCode|https://github.com/blissito/ghostycode|2026-06-08T04:37:07Z|index-addition|c025ba29f3a55734ac05ff16ba677765a2845cfb|2026-09-28
+479|agency-os|Agency-OS|https://github.com/swarm-ai-research/agency-os|2026-03-22T02:22:42Z|index-addition|010d216b10cb6f504de27312de0112dc7782e4ee|2026-09-23
+480|kloop|Kloop|https://github.com/lizc2003/kloop|2026-09-21T05:33:02Z|index-addition|5dbff2148f30a14737b8f661533b3c921470374e|2026-09-28
+481|animaworks|AnimaWorks|https://github.com/xuiltul/animaworks|2026-02-18T09:43:25Z|index-addition|82f7caa3793f302cfdc74fe460e191d44959a189|2026-09-23
+482|few|Few|https://github.com/moloo4ni/few|2026-08-21T21:58:19Z|index-addition|c7dd1b9f6eeec1c4af7e3a0ee7c80132cf2b06be|2026-09-28
+483|michin|MichiN|https://github.com/rohaquinlop/michin|2026-05-26T18:21:49Z|index-addition|ff001031aad8486583055455989e02d2a88c8518|2026-09-28
+484|asi-code|ASI Code|https://github.com/AloneMath/ASI-Code|2026-04-29T08:41:22Z|index-addition|e16084df095aa4687236984c9ee7f5bfbe8bf34d|2026-09-28
+485|smolcode|Smolcode|https://github.com/seanpoyner/smolcode|2026-06-15T22:48:12Z|index-addition|e28e550ca985ff3bbbc99ca2f39e7a85955e5bd3|2026-09-28
+486|micro|Micro|https://github.com/rmonvfer/micro|2026-08-14T11:39:50Z|index-addition|563dc1e6a6957cefbcfdd503fc5c4b754dfc5240|2026-09-28
+487|cassady|Cassady|https://github.com/owenqwenstarsky/cassady|2026-06-21T19:58:54Z|index-addition|1d3c354b8b92a7c3020a414ab510679459431556|2026-09-28
+488|rum|Rum|https://github.com/KAJdev/rum|2026-03-12T21:33:49Z|index-addition|9c00bdb35f2a55959d6e56bd0d27b9573aac6fdd|2026-09-28
+489|fuse|Fuse|https://github.com/ethanhinson/fuse|2026-08-04T00:34:30Z|index-addition|5991a3366e44b0a4587cf1ab6ce00daf70b9742b|2026-09-28
+490|ashcode|AshCode|https://github.com/AuthRan/AshCode|2026-07-29T06:32:41Z|index-addition|74f30ddac455175d4a18cb105a00ae1bde42cd69|2026-09-28
+491|agnostic-agent|agnostic-agent|https://github.com/ucsandman/agnostic-agent|2026-09-06T16:14:20Z|index-addition|8b1f4d85c9220822aacea3921a78c4c2f0c58491|2026-09-28
+492|self-improving-agent|self-improving-agent|https://github.com/xmaks82/self-improving-agent|2026-01-29T19:35:58Z|index-addition|fd59417b91292b48711410a91d2cbf3eaeb0c060|2026-09-28
+493|sjmun09-harness|Harness|https://github.com/sjMun09/Harness|2026-04-20T13:44:37Z|index-addition|c1bc066f5608167790d229f818d989a15a265ad4|2026-09-28
+494|impulse|Impulse|https://github.com/spenceriam/impulse|2026-01-20T03:17:38Z|index-addition|87f7019be3d73768baae8a1e330be436e1f167d4|2026-09-28
+495|oblivion-ai|Oblivion AI|https://github.com/Rohith-s-hub/Oblivion-agent|2026-06-23T16:20:38Z|index-addition|7c57fd23ddd9abb5a2795788364f5dcdf3ec87cb|2026-09-28
+496|rocinante|Rocinante|https://github.com/djynnius/rocinante|2026-07-08T04:33:15Z|index-addition|86aa7369bc775c583d46f8c3bb286c76d0401220|2026-09-28
+497|astro-code|Astro Code|https://github.com/Aliivihu786/astro-code|2026-05-11T09:23:18Z|index-addition|5aae2bddfc364bc492a8cae509b20eb94455560c|2026-09-28
+498|rabbit-code|rabbit-code|https://github.com/2456868764/rabbit-code|2026-04-01T05:34:09Z|index-addition|c49562fc92b7d6d6930e3ae5e49de8737c580b4f|2026-09-28
+499|deimos|Deimos|https://github.com/dxiv/dxa-deimos|2026-04-05T20:29:51Z|index-addition|933a20c064294cb84dafaae2fe0dae617eb44c48|2026-09-28
+500|luckycli|LuckyCLI|https://github.com/Fenix46/LuckyCLI|2026-05-28T15:45:10Z|index-addition|496c89124c9a349c36337df35df6581533e26581|2026-09-28
+501|aether|Aether|https://github.com/Aetherdz/aether|2026-08-09T07:46:49Z|index-addition|7476a0336bd47fa01dc2feb03d9572155395da47|2026-09-28
+502|atlas-agent|Atlas Agent|https://github.com/Omerfaruk-aydn/Atlas-Agent|2026-08-29T09:56:54Z|index-addition|3d0d63e20d9d2221be9a6e6ab4fc0350df5237f5|2026-09-28
+503|octopus|Octopus|https://github.com/zwpdbh/octopus-in-rust|2026-05-21T07:58:58Z|index-addition|88695f8e9209c76522d5943a2207751fd382dd43|2026-09-28
+504|bharatcode|BharatCode|https://github.com/arbazkhan971/bharatcode-cli|2026-06-20T14:46:45Z|index-addition|430e3047c705aa84762a8a46be4ff838cb159451|2026-09-28
+505|alysis-code|Alysis Code|https://github.com/AlysisAi/alysis-code|2026-05-08T20:02:23Z|index-addition|ff6682acb4a339dbbf9ce687c46374ce536ad641|2026-09-28
+506|sica|SICA|https://github.com/MaximeRobeyns/self_improving_coding_agent|2025-04-11T20:44:12Z|index-addition|ed8275dca4d3c5dbf77229964351fe9b424797dc|2026-09-28
+507|venux-code|Venux Code|https://github.com/venux/venux-code|2026-06-22T19:40:41Z|index-addition|598ef18a3f3372be0178693af69748f0049058ca|2026-09-28
+508|moss-agent|moss-agent|https://github.com/peterxiemin/moss-agent|2026-08-02T02:50:07Z|index-addition|82fe64446e88af07b5ed397f365be721fca4da49|2026-09-28
+509|visvoai|VisvoAI|https://github.com/VisvoAI/visvoai|2026-06-21T23:33:01Z|index-addition|25602903497dfeca8a4d7e654467ab046e32071c|2026-09-28
+510|termcoder|Termcoder|https://github.com/nattergabriel/termcoder|2026-05-15T22:35:17Z|index-addition|c642c36e8d65ca42a8ae05172c527f73cb2017d7|2026-09-28
+511|deepseekfathom|DeepSeekFathom|https://github.com/ffffff233/DeepSeekFathom|2026-06-02T02:08:21Z|index-addition|2c68eff7bb7ae2eabf4d36a0331386f06af2d356|2026-09-28
+512|bareagent|BareAgent|https://github.com/525300887039/BareAgent|2026-04-01T16:27:34Z|index-addition|1dfd1057d372e872f54c0a666f375dce2bc11a26|2026-09-28
+513|travis234|Travis234|https://github.com/taikkyithar/travis234|2026-08-07T07:56:50Z|index-addition|97aff8b174fe95064b390f30da07093b33de3c0b|2026-09-28
+514|forcecode|ForceCode|https://github.com/samansarmasik-alt/forcecode|2026-07-17T10:00:51Z|index-addition|518672e170f570f59c2d2abdeb4b5cf148e1603b|2026-09-28
+515|lean-coder|lean-coder|https://github.com/codemonkeying/lean-coder|2026-07-04T01:42:37Z|index-addition|f143f85344c0b0e5b3dcb68b5a1f884ac1c5ec63|2026-09-28
+516|stcode|stcode|https://github.com/Ming-doan/stcode|2026-08-14T02:47:33Z|index-addition|c8ea59204776d6ed1a4bbe395872f32027833905|2026-09-28
+517|skyvern|Skyvern|https://github.com/Skyvern-AI/skyvern|2024-02-28T15:45:19Z|index-addition|f5f3f28a9ce0021a1db24286928a7bff6582a1eb|2026-10-11
+518|superagi|SuperAGI|https://github.com/TransformerOptimus/SuperAGI|2023-05-13T08:55:24Z|index-addition|c3c1982e7bd6a11cfed53c5a193ea502f924b1b6|2026-10-11
+519|cli-agent-orchestrator|CLI Agent Orchestrator|https://github.com/awslabs/cli-agent-orchestrator|2025-07-29T14:16:56Z|index-addition|ffa9fc742c7d47ce038d3d951ccc5527ba0c0218|2026-10-11
+520|openhuman|OpenHuman|https://github.com/tinyhumansai/openhuman|2026-02-18T20:01:27Z|index-addition|eb4fdc0f4f4a036d8ab7c12bd52f16128e4a6b5d|2026-09-21
+521|shelracode|ShelraCode|https://github.com/Shelra/ShelraCode|2026-08-25T03:08:20Z|index-addition|45f87d1f7f71d5f6bba07405167893fa74d7c2a4|2026-09-28
+522|agentscope-2-0|AgentScope 2.0|https://github.com/agentscope-ai/agentscope|2024-01-12T03:41:59Z|index-addition|5ff52f877de12d66a30d55af279dd4f42b1590f3|2026-09-19
+523|grok-build|Grok Build|https://github.com/xai-org/grok-build|2026-07-14T20:04:23Z|index-addition|4247f661689354b831191f11eeeac8424993fe3d|2026-09-20
+524|zcode|ZCode|https://github.com/zai-org/ZCode|2026-09-20T12:01:16Z|index-addition|872ad960de7ec172591f7e1952f7849229f94521|2026-09-22
+525|swarms|Swarms|https://github.com/kyegomez/swarms|2023-05-11T01:09:00Z|index-addition|3009364a7e44dc3e55fec238b56b3a4fa6949a05|2026-09-21
+526|claw-code|Claw Code|https://github.com/ultraworkers/claw-code|2026-03-31T08:58:08Z|index-addition|08106b0c3771ef5b4a5aa176acccd460e88b7325|2026-09-20
+527|devika|Devika|https://github.com/stitionai/devika|2024-03-21T03:03:21Z|index-addition|80bb343cbe4a4e5f5a0ba08d2524920139baceb6|2026-09-20
+528|deepcode|DeepCode|https://github.com/HKUDS/DeepCode|2025-05-14T05:23:02Z|index-addition|2b223c13fd36a574157751e3812c1cdebd8921c6|2026-09-20
+529|open-swe|Open SWE|https://github.com/langchain-ai/open-swe|2025-05-21T21:44:24Z|index-addition|d0e0fe3ef76f2d84f49ac222f5274be6e60eb7b5|2026-09-20
+530|mini-swe-agent|mini-swe-agent|https://github.com/SWE-agent/mini-swe-agent|2025-06-28T20:18:15Z|index-addition|04d809ceab9df28f9adaed044884180159172930|2026-09-20
+531|earthwalker17-agent-os|Agent OS (earthwalker17)|https://github.com/earthwalker17/agent-os|2026-04-30T18:42:11Z|index-addition|59833d3f436bd1fd842860af2aa1c081d4b20363|2026-09-20
+532|capstan|Capstan|https://github.com/theStrangeAdventurer/capstan|2026-07-24T05:22:27Z|index-addition|60f284fc94ce96d05e72b52d2ffe55b4096b0177|2026-09-28
+533|kai-linux-agent-os|Agent-OS (kai-linux)|https://github.com/kai-linux/agent-os|2026-03-16T18:56:37Z|index-addition|d7330ebc5e117f06df1fdf23118af8da2c327507|2026-09-20
+534|agent-harness|Agent Harness|https://github.com/0xenzyme/agent-harness|2026-06-21T08:25:12Z|index-addition|0c30ff12476898543246912a3d49d653ae86b874|2026-09-20
+535|orchestra|Orchestra|https://github.com/DrSeedon/orchestra|2026-04-30T09:35:17Z|index-addition|72d48a93210c3cf12da91f7e693a4a6aae0e40f2|2026-09-20
+536|xoder|Xoder|https://github.com/BANGHlxbackout/Xoder|2026-08-06T08:33:10Z|index-addition|5a13d1cd4471cf95bb89befe2ac7634d93a610a7|2026-09-28
+537|cxagent|CXAgent|https://github.com/nickprotop/cxagent|2026-08-07T08:48:01Z|index-addition|e2b2551fc8897d5be5833441e9ec6e3c4e63cdf1|2026-09-28
+538|kairocode|KairoCode|https://github.com/yangf-Veda/KairoCode|2026-06-23T09:25:32Z|index-addition|018c74035de1354f69a92eda626ddbb210fbebcc|2026-09-28
+539|atomcode|AtomCode|https://github.com/karlorz/atomcode|2026-07-04T13:45:09Z|index-addition|152b2cc132dda9b177c3a030e21cfacd95494ea3|2026-09-28
+540|fx|FX|https://github.com/vercel-labs/fx|2026-08-11T08:57:04Z|index-addition|b8ca67ac4531e63be57520ccfb313626d9b17f2f|2026-09-28
+541|opencursor|OpenCursor|https://github.com/PawanOsman/OpenCursor|2022-12-06T16:39:11Z|index-addition|b4528f95ca5ab4cddf22bef3e19431fad00feb01|2026-09-28
+542|liumengxuan04-minicode|MiniCode|https://github.com/LiuMengxuan04/MiniCode|2026-03-31T16:13:54Z|index-addition|55dca55e13b7f34364893f3190914406be860b70|2026-09-28
+543|tianshu-harness|Tianshu Harness|https://github.com/huiliyi37/Tianshu-harness|2026-06-09T13:40:47Z|index-addition|6dbf1e0482cf5338b7587d029cbfadc3306b05f5|2026-09-28
+544|hax|Hax|https://github.com/OleksandrChekhovskyi/hax|2026-04-24T12:12:50Z|index-addition|6753f30e5f79c01b47925f690b90daaa4630b409|2026-09-28
+545|tura|Tura|https://github.com/Tura-AI/tura|2026-07-06T13:58:44Z|index-addition|81fc96729115c85bd5be3e6f6b6a13893d4065c5|2026-09-28
+546|zero|Zero|https://github.com/Gitlawb/zero|2026-05-28T14:11:35Z|index-addition|99721c762f37cd43ac511007a5f51d1846df959e|2026-09-28
+547|agent-code|Agent Code|https://github.com/avala-ai/agent-code|2026-03-31T17:51:18Z|index-addition|2734ab5f18939b20c774b39c4406788383e35255|2026-09-28
+548|zap|Zap|https://github.com/zap-coding-agent/zap-coding-agent|2026-05-16T09:23:50Z|index-addition|9812a142b1d12c894c98a6f5d08cc776ecc760da|2026-09-28
+549|whycodes|WhyCodes|https://github.com/whycorporation/whycodes|2026-07-09T20:50:07Z|index-addition|ef5126824739673d93815b29456ba3e5bdddf87c|2026-09-28
+550|agent-mission-control|Agent Mission Control|https://github.com/ipanalytics/Agent-Mission-Control|2026-07-02T07:07:30Z|index-addition|0fe9acd4807b149a5c9c07390d195b95ffa87780|2026-10-06
+551|ekuelkpodar-agent-control-plane|Agent Control Plane|https://github.com/ekuelkpodar/agent-control-plane|2026-09-14T18:19:20Z|index-addition|895283b28a2a7a69d5c7078002e5613720e1c97f|2026-10-06
+552|aevum|Aevum|https://github.com/aevum-labs/aevum|2026-04-22T23:15:13Z|index-addition|72a31ba909be20f41cf4ac9d587de30b5dda13f8|2026-10-06
 553|postal|Postal|https://github.com/andrefetch/postal|2026-06-26T02:37:41Z|index-addition|8631e85f01cd42d72470289c29ecb3c738a87f0d|2026-09-29
 554|openzot|OpenZot|https://github.com/openzot/openzot|2026-06-15T23:31:04Z|index-addition|d33ccbe444f25b45c708120d22f42eab961f6b9e|2026-09-29
 555|wrongstack|WrongStack|https://github.com/WrongStack/WrongStack|2026-05-12T23:57:23Z|index-addition|42d410f938ba644e70771e200f39903117507a72|2026-09-29
