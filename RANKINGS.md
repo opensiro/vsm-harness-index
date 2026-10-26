@@ -470,6 +470,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="pi-go"></a>[pi (Go)](https://github.com/sky-valley/pi) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ghostycode"></a>[GhostyCode](https://github.com/blissito/ghostycode) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 2 | `A C ? ? — —` |
 | 6 | <a id="agentyou"></a>[AgentYou](https://github.com/shreyasic77/agentyou) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
+| 6 | <a id="apodex-agentharness"></a>[Apodex AgentHarness](https://github.com/ApodexAI/AgentHarness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="forgedock"></a>[ForgeDock](https://github.com/RapierCraftStudios/ForgeDock) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deepseekfathom"></a>[DeepSeekFathom](https://github.com/ffffff233/DeepSeekFathom) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="maref"></a>[MAREF (Multi-Agent Recursive Evolution Framework)](https://github.com/maref-org/maref) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
