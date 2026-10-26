@@ -800,3 +800,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 785|deepresearch-agent-harness|DeepResearch Agent Harness|https://github.com/SichengLong26/deepresearch_agent_harness|2026-08-15T17:01:20Z|index-addition|4c98d6e144fde5bc28c821e6ee2c3b980eecc9a0|2026-10-26
 786|savant-code|Savant-Code|https://github.com/savant0x/savant-code|2026-07-17T18:28:38Z|index-addition|dbe8b40559e7a455db21b904e512f96b454bdab3|2026-10-26
 787|hrn|hrn|https://github.com/cristiangirlea/harness|2026-09-18T22:32:16Z|index-addition|16d27aea0d7276d411fa1e93d2208b66f4fa39e0|2026-10-26
+788|dtadpole-heddle|Heddle|https://github.com/dtadpole/heddle|2026-10-11T09:03:56Z|index-addition|6ae7e8dd80931c69946b3f1d75d523c77a99252d|2026-10-26
