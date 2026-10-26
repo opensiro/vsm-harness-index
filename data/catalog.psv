@@ -782,3 +782,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 767|ai-coding-agents-orchestrator|AI Coding Agents Orchestrator|https://github.com/Open-Makers/ai-coding-agents-orchestrator|2026-02-09T10:47:16Z|index-addition|1c1185c6f323bf3475c3847e38245276852ebc5e|2026-10-25
 768|kimchi|Kimchi|https://github.com/getkimchi/kimchi|2026-04-07T16:44:41Z|index-addition|65dfefb12a177e60942dc8fde87eeabe02d006af|2026-10-25
 769|opencode-agent-orchestration-kit|OpenCode Agent Orchestration Kit|https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit|2026-04-30T09:01:47Z|index-addition|a0b1b7869368576803c58b834707c907d62d273a|2026-10-26
+770|karimo|KARIMO|https://github.com/opensesh/KARIMO|2026-02-15T21:07:33Z|index-addition|305abbe8d7a86d01023913cd12072cd83e937f52|2026-10-26
