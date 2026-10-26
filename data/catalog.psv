@@ -808,3 +808,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 793|masfactory|MASFactory|https://github.com/BUPT-GAMMA/MASFactory|2026-02-14T14:39:04Z|index-addition|7e5beb2e5a2093963ee9a5babfffc2cc22784f45|2026-10-26
 794|teaql-agent-kit|TeaQL Agent Kit|https://github.com/teaql/teaql-agent-kit|2018-12-17T18:07:12Z|index-addition|270baae75b4482ed51c45d44b5777930451cda03|2026-10-26
 795|trellis|Trellis|https://github.com/mindfold-ai/Trellis|2026-01-26T11:49:10Z|index-addition|f089cb3286071199e84118dee86b6d76aab032f1|2026-10-26
+796|pi-desktop|PI-Desktop|https://github.com/vastsa/PI-Desktop|2023-03-22T14:23:39Z|index-addition|5aa253883c4e34fd65d31c434256d424c352bf0b|2026-10-26
