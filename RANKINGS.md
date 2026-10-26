@@ -92,6 +92,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="strike"></a>[Strike](https://github.com/jonathanung/strike) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
 | 4 | <a id="hugagentos"></a>[HugAgentOS](https://github.com/ZJU-REAL/HugAgentOS) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A C — A — A(P)` |
 | 4 | <a id="git-meta-harness"></a>[git-meta-harness](https://github.com/brenonaraujo/git-meta-harness) | 2026-Q3 | 3/6 | 2/5 | 2 | 0 | 0 | `A C A A C —` |
+| 4 | <a id="savant-code"></a>[Savant-Code](https://github.com/savant0x/savant-code) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A A P —` |
 | 4 | <a id="forcecode"></a>[ForceCode](https://github.com/samansarmasik-alt/forcecode) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="atman"></a>[Atman](https://github.com/W-Mai/atman) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="agent-fleet-chankov"></a>[Agent Fleet](https://github.com/chankov/agent-fleet) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A A P —` |
