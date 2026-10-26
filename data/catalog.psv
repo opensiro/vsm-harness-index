@@ -787,3 +787,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 772|agetor|Agetor|https://github.com/alamops/agetor|2026-05-16T06:16:02Z|index-addition|c5cf1a2d431f2891506a26010695289a1b6c46ae|2026-10-26
 773|harness-for-codex|Harness for Codex|https://github.com/revfactory/codex-harness|2026-09-07T03:32:55Z|index-addition|80f8217b5b6d3f220a31f05f9c0adaf09dac40f4|2026-10-26
 774|rustcode|RustCode|https://github.com/LHagfoss/rustcode|2026-07-06T08:53:35Z|index-addition|5906f5c870c979a3d710dde5b7d2748aaff5d442|2026-10-26
+775|agent-harness-ar27111994|Agent Harness (ar27111994)|https://github.com/ar27111994/agent-harness|2026-04-10T20:10:49Z|index-addition|79e4db95dcf54e7c74a41b070f08843b760ac10a|2026-10-26
