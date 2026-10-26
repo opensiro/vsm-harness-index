@@ -14,6 +14,8 @@ This file is a routing surface for coding/research agents working in `opensiro/v
 
 ## Assessment task rule
 
+For **new standard** assessment batches, freeze **exactly five candidates** before creating the execution controller; the only alternate count is one explicitly specified by the maintainer. If five eligible, distinct, source-pinned candidates cannot be verified, stop without freezing a shorter batch. See [INDEXING.md — New assessment batch cardinality](INDEXING.md#new-assessment-batch-cardinality). This rule is prospective and does not resize existing frozen batches.
+
 For sequential assessment batches, the default contribution unit is the row marked `NEXT` in the issue's Manual assessment board.
 
 Before semantic work, assemble the current task envelope mechanically:

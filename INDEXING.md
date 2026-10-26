@@ -88,6 +88,14 @@ The responsibilities are deliberately split:
 - general assessment meaning and artifact requirements come from Skills;
 - VSM semantics and independent Profile versions come from Profile.
 
+## New assessment batch cardinality
+
+For an unqualified maintainer command such as `start a batch assessment`, `оформи новый batch assessment`, or `continue` after a completed batch when a **new** intake is explicitly authorized, freeze **exactly five distinct candidate repositories** in one new discovery intake. Five is the required candidate count, **not** a target for five included assessments. Each identity must be source-verified, pinned to an exact revision, deduplicated against the catalog and overlapping frozen issues/PRs, and plausible for an Index general assessment; its eventual inclusion/exclusion remains source-first.
+
+An agent may not reduce the intake to two, three, or four merely for convenience, tool/context budget, concurrency, or a thematic shortlist. A different positive integer is allowed only when the maintainer **explicitly specifies that number for the new batch**. Continuing an already-frozen assessment controller uses its existing immutable row count regardless of this prospective rule.
+
+If fewer than five eligible distinct candidates can be verified after a bounded fresh search, **do not** freeze a partial standard intake or create its execution controller. Report `BLOCKED_INSUFFICIENT_ELIGIBLE_CANDIDATES`, the search and deduplication evidence, and the missing count; offer broader discovery or ask for an explicit alternate count. Do not pad the five with duplicates, speculative filler, or unverified repositories. Once a batch is frozen, do not append, repin, resize, or rewrite it to satisfy this rule. Existing historical and currently frozen batches are unaffected.
+
 ## Admission lifecycle
 
 Assessment intake can temporarily use `status: proposed` as an Index-local workflow state. Proposed artifacts are review surfaces, not admitted general corpus facts.

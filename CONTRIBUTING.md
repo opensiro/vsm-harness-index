@@ -14,6 +14,8 @@ See [`INDEXING.md`](INDEXING.md) for the Index-local data/lifecycle contract.
 
 Assessment queues are normally tracked in issues titled `[Assessment batch] ...`.
 
+For a **new standard batch**, first freeze exactly **five distinct source-verified candidate repositories**, unless the maintainer explicitly requests another positive integer. Do not substitute a two- or three-row batch for tool/time convenience. If five eligible candidates are not available, report the evidence and stop before opening a partial intake/controller. Continue existing frozen batches at their original sizes. The authoritative prospective rule is [INDEXING.md — New assessment batch cardinality](INDEXING.md#new-assessment-batch-cardinality).
+
 For the sequential workflow:
 
 1. open a frozen assessment batch;
