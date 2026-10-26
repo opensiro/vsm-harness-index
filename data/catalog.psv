@@ -791,3 +791,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 776|learn-claude-code-rs|learn-claude-code-rs|https://github.com/wulawulu/learn-claude-code-rs|2026-04-08T12:45:05Z|index-addition|2981fc1b6ec3c45843d89412292b6b15505665e3|2026-10-26
 777|onecli|OneCLI|https://github.com/onecli/onecli|2026-03-08T10:38:52Z|index-addition|6eaf8780f6310587ae86906eb9573ab531e92c12|2026-10-26
 778|learnharness|LearnHarness|https://github.com/amosblomqvist/learnharness|2026-10-16T19:35:33Z|index-addition|3dc88472eea41eed0d5e5f29c2f16f8d063c415b|2026-10-26
+779|bridle|Bridle|https://github.com/neiii/bridle|2025-12-27T19:02:08Z|index-addition|b46d66828b7c5fdb45698283baecbd7d6dcc13d3|2026-10-26
