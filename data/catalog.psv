@@ -783,3 +783,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 768|kimchi|Kimchi|https://github.com/getkimchi/kimchi|2026-04-07T16:44:41Z|index-addition|65dfefb12a177e60942dc8fde87eeabe02d006af|2026-10-25
 769|opencode-agent-orchestration-kit|OpenCode Agent Orchestration Kit|https://github.com/jcarlosrodicio/opencode-agent-orchestration-kit|2026-04-30T09:01:47Z|index-addition|a0b1b7869368576803c58b834707c907d62d273a|2026-10-26
 770|karimo|KARIMO|https://github.com/opensesh/KARIMO|2026-02-15T21:07:33Z|index-addition|305abbe8d7a86d01023913cd12072cd83e937f52|2026-10-26
+771|veritas-kanban|Veritas Kanban|https://github.com/BradGroux/veritas-kanban|2026-01-26T08:35:20Z|index-addition|1d2d45e770690046f934ec0cb038bf117a37d233|2026-10-26
