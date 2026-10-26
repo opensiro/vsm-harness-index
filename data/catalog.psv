@@ -795,3 +795,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 780|apodex-agentharness|Apodex AgentHarness|https://github.com/ApodexAI/AgentHarness|2026-06-07T13:39:42Z|index-addition|7cc9e3bfca12ec44930073f20ee3f0732a7950da|2026-10-26
 781|harness-zero|Harness-Zero|https://github.com/metaevo-ai/harness-zero|2026-09-20T15:56:50Z|index-addition|8697d54462e45caaa239b0a999acacd36399435b|2026-10-26
 782|macos-harness|macOS Harness|https://github.com/browser-use/macos-harness|2026-08-17T00:22:20Z|index-addition|43d9edf8286153482348b15f7d8c22d9e38f6c6b|2026-10-26
+783|codely-agent-harness|Codely Agent Harness|https://github.com/CodelyTV/agent-harness|2026-04-07T12:59:16Z|index-addition|57090a7301d15722b8885570e239bdd3e719a835|2026-10-26
