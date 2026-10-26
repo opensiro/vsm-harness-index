@@ -209,6 +209,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="grok-build"></a>[Grok Build](https://github.com/xai-org/grok-build) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 4 | `A ? A ? ? ?` |
 | 5 | <a id="evidence-bench"></a>[Evidence Bench](https://github.com/kstawiski/evidence-gated-scientific-agent) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
 | 5 | <a id="whycodes"></a>[WhyCodes](https://github.com/whycorporation/whycodes) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
+| 5 | <a id="crewctl"></a>[CrewCtl](https://github.com/omergocmen/CrewCtl) | 2026-Q3 | 2/6 | 1/5 | 2 | 0 | 0 | `A C A C — —` |
 | 5 | <a id="cyber-ai-team"></a>[Cyber AI Team](https://github.com/Hyper-AI-Lab/cyber-ai-team) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P — A —` |
 | 5 | <a id="puny"></a>[Puny](https://github.com/christianhelle/puny) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="tevarn"></a>[Tevarn](https://github.com/wu1w/tevarn) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — A — — P` |
