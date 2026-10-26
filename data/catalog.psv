@@ -790,3 +790,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 775|agent-harness-ar27111994|Agent Harness (ar27111994)|https://github.com/ar27111994/agent-harness|2026-04-10T20:10:49Z|index-addition|79e4db95dcf54e7c74a41b070f08843b760ac10a|2026-10-26
 776|learn-claude-code-rs|learn-claude-code-rs|https://github.com/wulawulu/learn-claude-code-rs|2026-04-08T12:45:05Z|index-addition|2981fc1b6ec3c45843d89412292b6b15505665e3|2026-10-26
 777|onecli|OneCLI|https://github.com/onecli/onecli|2026-03-08T10:38:52Z|index-addition|6eaf8780f6310587ae86906eb9573ab531e92c12|2026-10-26
+778|learnharness|LearnHarness|https://github.com/amosblomqvist/learnharness|2026-10-16T19:35:33Z|index-addition|3dc88472eea41eed0d5e5f29c2f16f8d063c415b|2026-10-26
