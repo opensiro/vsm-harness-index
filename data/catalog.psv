@@ -793,3 +793,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 778|learnharness|LearnHarness|https://github.com/amosblomqvist/learnharness|2026-10-16T19:35:33Z|index-addition|3dc88472eea41eed0d5e5f29c2f16f8d063c415b|2026-10-26
 779|bridle|Bridle|https://github.com/neiii/bridle|2025-12-27T19:02:08Z|index-addition|b46d66828b7c5fdb45698283baecbd7d6dcc13d3|2026-10-26
 780|apodex-agentharness|Apodex AgentHarness|https://github.com/ApodexAI/AgentHarness|2026-06-07T13:39:42Z|index-addition|7cc9e3bfca12ec44930073f20ee3f0732a7950da|2026-10-26
+781|harness-zero|Harness-Zero|https://github.com/metaevo-ai/harness-zero|2026-09-20T15:56:50Z|index-addition|8697d54462e45caaa239b0a999acacd36399435b|2026-10-26
