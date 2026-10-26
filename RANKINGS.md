@@ -586,6 +586,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="harness-cgast"></a>[Harness](https://github.com/cgast/harness) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="keen-code"></a>[Keen Code](https://github.com/mochow13/keen-code) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openjarvis"></a>[OpenJarvis](https://github.com/open-jarvis/OpenJarvis) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="masfactory"></a>[MASFactory](https://github.com/BUPT-GAMMA/MASFactory) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentoven"></a>[AgentOven](https://github.com/agentoven/agentoven) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="maki"></a>[Maki](https://github.com/tontinton/maki) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="diodide-harness"></a>[Harness](https://github.com/DIodide/Harness) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |

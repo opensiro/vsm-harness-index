@@ -805,3 +805,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 790|sci-harness|Sci-Harness|https://github.com/Nag681/sci-harness|2026-10-26T14:55:49Z|index-addition|e241a6e930788498d87e7cc3172fe63cf6dd486c|2026-10-26
 791|setup-ai-core|setup-ai-core|https://github.com/kartalbas/setup-ai-core|2026-09-19T00:12:40Z|index-addition|9c78c081d8d49745ef0566f850e6cc3f83677574|2026-10-26
 792|agentflow-venkatapgummadi|AgentFlow (venkatapgummadi)|https://github.com/venkatapgummadi/agentflow|2026-04-11T16:28:29Z|index-addition|81c07248082130f6528e335b24be0f1d85c8a1f6|2026-10-26
+793|masfactory|MASFactory|https://github.com/BUPT-GAMMA/MASFactory|2026-02-14T14:39:04Z|index-addition|7e5beb2e5a2093963ee9a5babfffc2cc22784f45|2026-10-26
