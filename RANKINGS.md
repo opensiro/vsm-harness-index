@@ -523,6 +523,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="ui-harness"></a>[UI Harness](https://github.com/awizemann/harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pyflue"></a>[PyFlue](https://github.com/SuperagenticAI/pyflue) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="blackbox"></a>[Blackbox](https://github.com/tyxter-dev/blackbox) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="anima-sdk"></a>[anima_sdk](https://github.com/Rai220/anima_sdk) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rune"></a>[Rune](https://github.com/khang859/rune) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="codehamr"></a>[codehamr](https://github.com/plaxtoris/codehamr) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="asi-code"></a>[ASI Code](https://github.com/AloneMath/ASI-Code) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 2 | `A ? ? — — —` |
