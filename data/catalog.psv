@@ -812,3 +812,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 797|manyhands|Manyhands|https://github.com/mjoneill/manyhands|2026-07-26T13:32:36Z|manual-discovery|94010f1227d03152f6d745f7da2fd89ef06d0a96|2026-10-27
 798|ylva|Ylva|https://github.com/manuel-koch/ylva|2026-08-07T10:37:36Z|manual-discovery|f1275d3dbb4e055798b53033f483e59d34c978d8|2026-10-27
 799|pi-rust|pi-rust|https://github.com/yannelli/pi-rust|2026-10-12T19:05:01Z|manual-discovery|965fdef64353849da37ad7b9e419cdb5fe8bfacd|2026-10-27
+800|ferrule|Ferrule|https://github.com/maximarhipkin/ferrule|2026-09-23T14:51:17Z|manual-discovery|24023deffa325405db3f260a5a03d736976fa1b0|2026-10-27
