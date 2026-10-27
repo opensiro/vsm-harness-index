@@ -810,3 +810,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 795|trellis|Trellis|https://github.com/mindfold-ai/Trellis|2026-01-26T11:49:10Z|index-addition|f089cb3286071199e84118dee86b6d76aab032f1|2026-10-26
 796|pi-desktop|PI-Desktop|https://github.com/vastsa/PI-Desktop|2023-03-22T14:23:39Z|index-addition|5aa253883c4e34fd65d31c434256d424c352bf0b|2026-10-26
 797|manyhands|Manyhands|https://github.com/mjoneill/manyhands|2026-07-26T13:32:36Z|manual-discovery|94010f1227d03152f6d745f7da2fd89ef06d0a96|2026-10-27
+798|ylva|Ylva|https://github.com/manuel-koch/ylva|2026-08-07T10:37:36Z|manual-discovery|f1275d3dbb4e055798b53033f483e59d34c978d8|2026-10-27
