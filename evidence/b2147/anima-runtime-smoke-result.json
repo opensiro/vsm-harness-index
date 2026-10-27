@@ -1,0 +1,21 @@
+{
+  "source_repository": "Rai220/anima_sdk",
+  "review_ref": "b6451ef44d2f97959fe7bfaab32c27907c9ddd77",
+  "observed_at": "2026-10-27",
+  "model_execution": false,
+  "checks": [
+    {
+      "bash_syntax_files": 10,
+      "exit": 0
+    },
+    {
+      "loop_fixture": "one custom stub step then STOP",
+      "exit": 0
+    },
+    {
+      "meta_fixture": "STOP creates generation_2; modified agent instructions persist; goal restored from root; deliberate stub exit 23 stops loop",
+      "exit": 23,
+      "expected_exit": 23
+    }
+  ]
+}
