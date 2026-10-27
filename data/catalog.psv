@@ -827,3 +827,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 826|linear-coding-agent-harness|Linear Coding Agent Harness|https://github.com/coleam00/Linear-Coding-Agent-Harness|2025-12-07T16:58:04Z|manual-discovery|c37dc096993011cb0cc48a0afab176cd9c8f2375|2026-10-27
 827|agent-harness-kit|Agent Harness Kit|https://github.com/enmanuelmag/agent-harness-kit|2026-05-04T20:26:43Z|manual-discovery|25edd77efd4e046bfc8fd232c406759f2b48caef|2026-10-27
 828|kimi-code-cli|Kimi Code CLI|https://github.com/MoonshotAI/kimi-code|2026-05-22T08:02:03Z|manual-discovery|68a283894163204e93b072cef20db164015a5cad|2026-10-27
+829|agent-cli|Agent CLI|https://github.com/basnijholt/agent-cli|2025-06-25T16:35:10Z|manual-discovery|554344e6ed5266bcc2a7b1461d4c84744ff5e0af|2026-10-27
