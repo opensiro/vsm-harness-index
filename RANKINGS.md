@@ -548,6 +548,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agentflow-venkatapgummadi"></a>[AgentFlow (venkatapgummadi)](https://github.com/venkatapgummadi/agentflow) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="bash-agent"></a>[bash-agent](https://github.com/lloydzhou/bash-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="politik"></a>[Politik](https://github.com/cordfuse/politik) | 2026-Q2 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
+| 6 | <a id="mini-ai-harness"></a>[mini-ai-harness](https://github.com/TejasQ/basically-ai-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="caveman-code"></a>[Caveman Code](https://github.com/JuliusBrussee/caveman-code) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="learn-claude-code-rs"></a>[learn-claude-code-rs](https://github.com/wulawulu/learn-claude-code-rs) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="phoenix-agent-harness"></a>[Phoenix Agent Harness](https://github.com/Phoenixrr2113/agent-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
