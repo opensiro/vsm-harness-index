@@ -816,3 +816,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 801|braid|Braid|https://github.com/Epsirom/braid|2026-09-14T05:51:06Z|manual-discovery|993b3a61941401695698eff8ccc64d4da61c350a|2026-10-27
 802|kandev|Kandev|https://github.com/kdlbs/kandev|2026-01-09T23:26:53Z|manual-discovery|a2e13dcf5584e3462ea995791e245177249a9845|2026-10-27
 803|meldwork|Meldwork|https://github.com/Ryder-Sun/Meldwork|2026-07-29T13:58:20Z|manual-discovery|4c522c0997035af8b931e5420f48b3edc3177a05|2026-10-27
+804|agenticx|AgenticX|https://github.com/DemonDamon/AgenticX|2024-03-15T06:11:32Z|manual-discovery|582c9d00bfb23efe6f7e588c3a5edfce570729bf|2026-10-27
