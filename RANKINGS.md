@@ -669,6 +669,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="bub"></a>[Bub](https://github.com/bubbuild/bub) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="shadow"></a>[Shadow](https://github.com/ishaan1013/shadow) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mini-swe-agent"></a>[mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="agent-cli"></a>[Agent CLI](https://github.com/basnijholt/agent-cli) | 2025-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="replicator-agent"></a>[ReplicatorAgent](https://github.com/CenterForOpenScience/llm-benchmarking) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="platypus"></a>[Platypus](https://github.com/willdady/platypus) | 2025-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C — — — P` |
 | 6 | <a id="vibe-kanban"></a>[Vibe Kanban](https://github.com/BloopAI/vibe-kanban) | 2025-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
