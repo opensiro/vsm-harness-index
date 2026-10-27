@@ -821,3 +821,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 820|snow|Snow|https://github.com/elmissouri16/snow-core|2026-08-09T21:50:04Z|manual-discovery|631586d013897a85c0c1f79830204af7822e60b0|2026-10-27
 821|fiber|Fiber|https://github.com/aakshintala/fiber|2026-09-20T23:30:14Z|manual-discovery|61af2a84f70a2ece2b6cf8f73a8fa70116360da7|2026-10-27
 822|taurus-ai-shell|Taurus AI Shell|https://github.com/Lukeus/taurus|2026-08-10T18:58:15Z|manual-discovery|b643754200a241299bb6c3bac7e9dd8237e1da8d|2026-10-27
+823|swarms-rust|Swarms Rust|https://github.com/The-Swarm-Corporation/swarms-rs|2024-08-29T03:05:39Z|manual-discovery|ee1e74cb6e2c94775db88dddb311f2235e3fe9e3|2026-10-27
