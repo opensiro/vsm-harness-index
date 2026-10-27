@@ -819,3 +819,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 818|mi|mi|https://github.com/pegov/mi|2026-09-15T20:19:48Z|manual-discovery|858f24223a194f6a1709e821a63eb72a3e716f32|2026-10-27
 819|agent-rokartur|agent (rokartur)|https://github.com/rokartur/agent|2026-10-14T16:57:22Z|manual-discovery|f02a473edd8a08368876e45a641f8ed8c2a4c85d|2026-10-27
 820|snow|Snow|https://github.com/elmissouri16/snow-core|2026-08-09T21:50:04Z|manual-discovery|631586d013897a85c0c1f79830204af7822e60b0|2026-10-27
+821|fiber|Fiber|https://github.com/aakshintala/fiber|2026-09-20T23:30:14Z|manual-discovery|61af2a84f70a2ece2b6cf8f73a8fa70116360da7|2026-10-27
