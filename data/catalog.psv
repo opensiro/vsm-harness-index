@@ -815,3 +815,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 800|ferrule|Ferrule|https://github.com/maximarhipkin/ferrule|2026-09-23T14:51:17Z|manual-discovery|24023deffa325405db3f260a5a03d736976fa1b0|2026-10-27
 801|braid|Braid|https://github.com/Epsirom/braid|2026-09-14T05:51:06Z|manual-discovery|993b3a61941401695698eff8ccc64d4da61c350a|2026-10-27
 802|kandev|Kandev|https://github.com/kdlbs/kandev|2026-01-09T23:26:53Z|manual-discovery|a2e13dcf5584e3462ea995791e245177249a9845|2026-10-27
+803|meldwork|Meldwork|https://github.com/Ryder-Sun/Meldwork|2026-07-29T13:58:20Z|manual-discovery|4c522c0997035af8b931e5420f48b3edc3177a05|2026-10-27
