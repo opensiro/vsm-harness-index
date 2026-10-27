@@ -692,6 +692,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="ag2"></a>[AG2](https://github.com/ag2ai/ag2) | 2024-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="roo-code"></a>[Roo Code](https://github.com/RooCodeInc/Roo-Code) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="browser-use"></a>[Browser Use](https://github.com/browser-use/browser-use) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="autono"></a>[Autono](https://github.com/vortezwohl/Autono) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="superagentx"></a>[SuperAgentX](https://github.com/superagentxai/superagentx) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="humanlayer-agent-control-plane"></a>[Agent Control Plane](https://github.com/humanlayer/agentcontrolplane) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-s"></a>[Agent S](https://github.com/simular-ai/Agent-S) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
