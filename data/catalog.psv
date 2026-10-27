@@ -830,3 +830,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 815|oh-my-hermes|Oh My Hermes|https://github.com/witt3rd/oh-my-hermes|2026-04-07T15:33:04Z|manual-discovery|3b06e33ae67b202b342989b484f08143e65e250d|2026-10-27
 816|agent-starter-kit|Agent Starter Kit|https://github.com/ntorga/agent-starter-kit|2026-03-04T15:05:37Z|manual-discovery|851e942ad94f98819cfe550da99c033444c10397|2026-10-27
 817|autono|Autono|https://github.com/vortezwohl/Autono|2024-10-25T04:18:55Z|manual-discovery|ebc66d3d9cd5c2a802af8b531af67a1b70c56a63|2026-10-27
+818|swarms-rust|Swarms Rust|https://github.com/The-Swarm-Corporation/swarms-rs|2024-08-29T03:05:39Z|manual-discovery|ee1e74cb6e2c94775db88dddb311f2235e3fe9e3|2026-10-27
