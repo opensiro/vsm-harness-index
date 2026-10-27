@@ -824,3 +824,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 823|swarms-rust|Swarms Rust|https://github.com/The-Swarm-Corporation/swarms-rs|2024-08-29T03:05:39Z|manual-discovery|ee1e74cb6e2c94775db88dddb311f2235e3fe9e3|2026-10-27
 824|agent-of-empires|Agent of Empires|https://github.com/agent-of-empires/agent-of-empires|2026-01-09T17:23:31Z|manual-discovery|81d4672a846798d0a9b02183d9dce83ea6bf6917|2026-10-27
 825|coderrr|Coderrr|https://github.com/Akash-nath29/Coderrr|2025-10-29T20:34:32Z|manual-discovery|933dd35a6f35fbb54f3e8a80a75356af9c0ff7f1|2026-10-27
+826|linear-coding-agent-harness|Linear Coding Agent Harness|https://github.com/coleam00/Linear-Coding-Agent-Harness|2025-12-07T16:58:04Z|manual-discovery|c37dc096993011cb0cc48a0afab176cd9c8f2375|2026-10-27
