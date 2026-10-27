@@ -146,6 +146,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="jcode"></a>[jcode](https://github.com/1jehuang/jcode) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="ante"></a>[Ante](https://github.com/AntigmaLabs/ante) | 2025-Q4 | 3/6 | 2/5 | 2 | 0 | 0 | `A C A C A —` |
+| 4 | <a id="linear-coding-agent-harness"></a>[Linear Coding Agent Harness](https://github.com/coleam00/Linear-Coding-Agent-Harness) | 2025-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="oh-my-openagent"></a>[oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | 2025-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="xcientist"></a>[Xcientist](https://github.com/OpenDFM/Xcientist) | 2025-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="agentos"></a>[AgentOS](https://github.com/framerslab/agentos) | 2025-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A A C — A P` |
