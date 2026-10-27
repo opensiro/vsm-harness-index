@@ -38,7 +38,7 @@ autonomy_s5: —
 
 ## Repository architecture
 
-The entry point opens a BrowserSession, creates session-bound tools and initial messages, runs a model-driven loop and closes the session in finally. The loop calls OpenRouter via the OpenAI SDK; model tool calls navigate/read/fill/click/inspect the page, with result or error messages fed back. A model stop ends the run. Trace entries record iterations. At this frozen ref, MAX_CONTEXT_MESSAGES is declared but unused; there is no agent/4-guardrails.ts or agent/6-harness.ts, and the entry point does not run a final verifier. The separate eval runner scores fixed expected answers and does not return findings into agent operations. No persistence, scheduler or maintainer-governance runtime is wired.
+The entry point opens a BrowserSession, creates session-bound tools and initial messages, runs a model-driven loop and closes the session in finally. The loop calls OpenRouter via the OpenAI SDK; model tool calls navigate/read/fill/click/inspect the page, with result or error messages fed back. A model stop ends the run. Trace entries record iterations. At this frozen ref, MAX_CONTEXT_MESSAGES is declared but unused; agent/4-guardrails.ts and agent/6-harness.ts are empty placeholders, and the entry point does not run a final verifier. The separate eval runner scores fixed expected answers and does not return findings into agent operations. No persistence, scheduler or maintainer-governance runtime is wired.
 
 ## Operational model
 
@@ -99,7 +99,7 @@ One agent chooses browser actions from changing DOM observations. Tool execution
 ### Absence scope
 
 - Surfaces inspected: [agent/5-loop.ts](https://github.com/TejasQ/basically-ai-harness/blob/ea40e4dec975e6a0c56412bf8217581a1761329c/agent/5-loop.ts); [agent/7-index.ts](https://github.com/TejasQ/basically-ai-harness/blob/ea40e4dec975e6a0c56412bf8217581a1761329c/agent/7-index.ts); [agent/3-context.ts](https://github.com/TejasQ/basically-ai-harness/blob/ea40e4dec975e6a0c56412bf8217581a1761329c/agent/3-context.ts); [README.md](https://github.com/TejasQ/basically-ai-harness/blob/ea40e4dec975e6a0c56412bf8217581a1761329c/README.md)
-- Plausible first-party paths checked: Loop termination, unused MAX_CONTEXT_MESSAGES, browser lifecycle, documented guardrail/harness paths and any operator mode.
+- Plausible first-party paths checked: Loop termination, unused MAX_CONTEXT_MESSAGES, browser lifecycle, empty guardrail/harness placeholders and any operator mode.
 - Why no material first-party path remains: README's guardrail/final-verification description is not implemented by the frozen entry or files. No whole-current decision owner and returned constraint path remains; hypothetical additions are not C.
 
 ## S3* — Complementary audit
