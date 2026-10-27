@@ -156,6 +156,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="ai-scientist-v2"></a>[The AI Scientist-v2](https://github.com/SakanaAI/AI-Scientist-v2) | 2025-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
 | 4 | <a id="ai-scientist"></a>[The AI Scientist](https://github.com/SakanaAI/AI-Scientist) | 2024-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="llamar"></a>[LLaMAR](https://github.com/nsidn98/LLaMAR) | 2024-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 4 | <a id="agenticx"></a>[AgenticX](https://github.com/DemonDamon/AgenticX) | 2024-Q1 | 3/6 | 2/5 | 0 | 1 | 0 | `A — A — A(P) —` |
 | 4 | <a id="pipecat"></a>[Pipecat](https://github.com/pipecat-ai/pipecat) | 2023-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="autogen-agentchat"></a>[Microsoft AutoGen AgentChat](https://github.com/microsoft/autogen) | 2023-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="data-to-paper"></a>[data-to-paper](https://github.com/Technion-Kishony-lab/data-to-paper) | 2023-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A — — A A(P) —` |
