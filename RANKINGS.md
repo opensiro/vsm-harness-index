@@ -133,6 +133,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="clawkeeper"></a>[ClawKeeper](https://github.com/SafeAI-Lab-X/ClawKeeper) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
 | 4 | <a id="citadel"></a>[Citadel](https://github.com/SethGammon/Citadel) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 1 | `A C A ? A —` |
 | 4 | <a id="scion-gcp"></a>[Scion (Google Cloud)](https://github.com/GoogleCloudPlatform/scion) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
+| 4 | <a id="agent-starter-kit"></a>[Agent Starter Kit](https://github.com/ntorga/agent-starter-kit) | 2026-Q1 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
 | 4 | <a id="rust-harness"></a>[Rust Harness](https://github.com/majiayu000/harness) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C — A A —` |
 | 4 | <a id="aivo-code"></a>[Aivo Code](https://github.com/yuanchuan/aivo) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="edict"></a>[Edict](https://github.com/cft0808/edict) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
