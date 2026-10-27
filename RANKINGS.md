@@ -518,6 +518,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="cubeloop"></a>[CubeLoop](https://github.com/cubeplexai/cubeloop) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="harness"></a>[Harness](https://github.com/sausheong/harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
 | 6 | <a id="miii"></a>[miii](https://github.com/maruakshay/miii-cli) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="macher-agent"></a>[macher-agent](https://github.com/elij/macher-agent) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="ui-harness"></a>[UI Harness](https://github.com/awizemann/harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pyflue"></a>[PyFlue](https://github.com/SuperagenticAI/pyflue) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="blackbox"></a>[Blackbox](https://github.com/tyxter-dev/blackbox) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
