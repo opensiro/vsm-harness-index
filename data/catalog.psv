@@ -826,3 +826,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 811|anima-sdk|anima_sdk|https://github.com/Rai220/anima_sdk|2026-04-29T15:25:54Z|manual-discovery|b6451ef44d2f97959fe7bfaab32c27907c9ddd77|2026-10-27
 812|cc-mini|cc-mini|https://github.com/e10nMa2k/cc-mini|2026-03-31T10:52:39Z|manual-discovery|73c5bc563093b650ea8754bf9101a7507d8328a8|2026-10-27
 813|mini-ai-harness|mini-ai-harness|https://github.com/TejasQ/basically-ai-harness|2026-04-09T10:14:41Z|manual-discovery|ea40e4dec975e6a0c56412bf8217581a1761329c|2026-10-27
+814|q-agent-harness|q-agent-harness|https://github.com/kju4q/q-agent-harness|2026-05-29T18:20:29Z|manual-discovery|37903fc742420f56e9568c6b45c9b89035a49139|2026-10-27
