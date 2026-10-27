@@ -824,3 +824,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 809|meerkat|Meerkat|https://github.com/lukacf/meerkat|2026-01-22T12:38:43Z|manual-discovery|ae0517cc7721377c2cf0a58972bdd29cb7f4fbdc|2026-10-27
 810|kuafu|Kuafu|https://github.com/DoSomeForFun/kuafu|2026-02-17T08:54:18Z|manual-discovery|0628a879bb2ca24be9142ef32c49ab7aab8520bf|2026-10-27
 811|anima-sdk|anima_sdk|https://github.com/Rai220/anima_sdk|2026-04-29T15:25:54Z|manual-discovery|b6451ef44d2f97959fe7bfaab32c27907c9ddd77|2026-10-27
+812|cc-mini|cc-mini|https://github.com/e10nMa2k/cc-mini|2026-03-31T10:52:39Z|manual-discovery|73c5bc563093b650ea8754bf9101a7507d8328a8|2026-10-27
