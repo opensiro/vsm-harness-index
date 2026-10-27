@@ -36,6 +36,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="loushang"></a>[Loushang](https://github.com/zhnt/loushang) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="recursive"></a>[Recursive](https://github.com/jeffkit/recursive) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="octo"></a>[Octo](https://github.com/open-octo/octo-agent) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 1 | `A A A A ? —` |
+| 3 | <a id="kimi-code-cli"></a>[Kimi Code CLI](https://github.com/MoonshotAI/kimi-code) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="zerostack"></a>[zerostack](https://github.com/gi-dellav/zerostack) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="muonroi-cli"></a>[muonroi-cli](https://github.com/muonroi/muonroi-cli) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="monomind"></a>[Monomind](https://github.com/monoes/monomind) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 2 | `A A A A ? ?` |
@@ -263,6 +264,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="alysis-code"></a>[Alysis Code](https://github.com/AlysisAi/alysis-code) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="clai"></a>[clai](https://github.com/pentoshi007/clai) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="agent-harness-kit"></a>[Agent Harness Kit](https://github.com/enmanuelmag/agent-harness-kit) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="tangle-agent-runtime"></a>[Tangle Agent Runtime](https://github.com/tangle-network/agent-runtime) | 2026-Q2 | 2/6 | 1/5 | 3 | 0 | 0 | `A C A C C —` |
 | 5 | <a id="henrik-agent-harness"></a>[Henrik Agent Harness](https://github.com/henrik-me/agent-harness) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="ogcode"></a>[Ogcode](https://github.com/prasenjeet-symon/ogcode) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |
