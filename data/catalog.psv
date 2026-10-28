@@ -835,3 +835,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 834|agentaps|Agentaps|https://github.com/cachix/agentaps|2026-09-24T17:55:34Z|manual-discovery|1dbaeeea88f446a2fdaf633dc00e7a344351d05a|2026-10-28
 835|deepseek-bot|deepseek-bot|https://github.com/rlaope/deepseek-bot|2026-10-06T08:44:20Z|manual-discovery|d247b0c9e8c4c7c07a7e8b113077fdc0353e5247|2026-10-28
 836|oswald|OSWALD|https://github.com/Oswald-Agent/Oswald|2026-10-07T11:31:23Z|manual-discovery|5a2d6103c4c48735a909fd5ee78b0362fcbee993|2026-10-28
+837|agentforeman|AgentForeman|https://github.com/kumizeod/AgentForeman|2026-10-19T13:39:42Z|manual-discovery|634f9c0906f133fc577d6291c29b8f8cfd6af02a|2026-10-28
