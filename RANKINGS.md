@@ -353,6 +353,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="gopi"></a>[Gopi](https://github.com/cgund98/gopi) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="arkex"></a>[arkex](https://github.com/attrition-tech/arkex) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="froe"></a>[Froe](https://github.com/dcoldeira/froe) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="agnes-harness"></a>[Agnes Harness](https://github.com/AgnesAI-Labs/agnes-harness) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="atlias"></a>[atlias](https://github.com/ridelink0/atlias) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="unreal-agent"></a>[Unreal Agent](https://github.com/unreallabsai/unreal-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="jive"></a>[Jive](https://github.com/merijjeyn/jive) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 2 | `A — ? ? — —` |
