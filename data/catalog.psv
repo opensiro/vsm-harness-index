@@ -840,3 +840,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 839|openorc|OpenOrc|https://github.com/davejj1530/openorc|2026-09-28T04:09:07Z|manual-discovery|85bf1c5e4c81000911d8a5a90e23dbb7cf869283|2026-10-28
 840|bruw-conductor|Conductor|https://github.com/bruw/workflow-conductor|2026-10-12T12:24:27Z|manual-discovery|16076f7517bf13b3c5b7e492c3f6c5df800be871|2026-10-28
 841|pi-herdsman|Pi Herdsman|https://github.com/boadij/pi-herdsman|2026-09-07T10:28:10Z|manual-discovery|2b78e1b7b4a62240f7be881ab066be4cefbee612|2026-10-28
+842|pragmatic-orchestration|Pragmatic Orchestration|https://github.com/CodeAlive-AI/pragmatic-orchestration|2026-09-17T12:44:49Z|manual-discovery|cc829d908822978fe7fce4670967525ea3a9a267|2026-10-28
