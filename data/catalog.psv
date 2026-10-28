@@ -847,3 +847,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 846|raw-cli|Raw CLI|https://github.com/lploc94/raw-cli|2026-09-25T16:18:09Z|manual-discovery|378610653e2ab369f78c4de24d4828de795bfae8|2026-10-28
 847|agent-foundation|Agent Foundation|https://github.com/converge-ai-labs/agent-foundation|2026-08-18T12:44:56Z|manual-discovery|19bef266e239bf42adf258159b6f52195daa4d01|2026-10-28
 848|jevagentharness|JevAgentHarness|https://github.com/JevAgentHarness/JevAgentHarness|2026-10-15T06:46:31Z|manual-discovery|f2932199e1ef1d9f089b51d39430c87be0f560b5|2026-10-28
+849|dsh-flow|dsh-flow|https://github.com/rootkiller6788/dsh-flow|2026-09-12T15:08:16Z|manual-discovery|d11ad4f04400fda9c58cf2b9b5a11fa971818eed|2026-10-28
