@@ -843,3 +843,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 842|pragmatic-orchestration|Pragmatic Orchestration|https://github.com/CodeAlive-AI/pragmatic-orchestration|2026-09-17T12:44:49Z|manual-discovery|cc829d908822978fe7fce4670967525ea3a9a267|2026-10-28
 843|coding-orchestrator|Coding Orchestrator|https://github.com/davesheffer/coding-orchestrator|2026-09-22T02:56:09Z|manual-discovery|dca682d7a1bc99c6b83508ad03186b2015085e8a|2026-10-28
 844|metamorph|Metamorph|https://github.com/yohanvillarp/metamorph|2026-09-04T20:55:22Z|manual-discovery|8871b937a4e6d0f6f5f9f08b4ca1e801fd98196c|2026-10-28
+845|steepy-apex|Steepy Apex|https://github.com/steepy-it/steepy-apex|2026-09-17T07:39:36Z|manual-discovery|7283b7940e6ec97ec739a28b6de1525d2891bdb4|2026-10-28
