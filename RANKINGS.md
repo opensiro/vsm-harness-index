@@ -170,6 +170,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 5 | <a id="harness-cli"></a>[Harness² CLI](https://github.com/3ae3ae/harness2-cli) | 2026-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — — — A(P) —` |
 | 5 | <a id="learnharness"></a>[LearnHarness](https://github.com/amosblomqvist/learnharness) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A — A C — —` |
+| 5 | <a id="oswald"></a>[OSWALD](https://github.com/Oswald-Agent/Oswald) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harness2"></a>[Harness²](https://github.com/google-research/harness2) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="codeagent-harvil1"></a>[CodeAgent (Harvil1)](https://github.com/Harvil1/codeAgent) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="ambient-cli"></a>[Ambient CLI](https://github.com/AmbientCrypto/ambient-cli) | 2026-Q3 | 2/6 | 1/5 | 2 | 1 | 0 | `A C — A C P` |
