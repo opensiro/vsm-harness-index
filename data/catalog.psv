@@ -829,3 +829,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 828|kimi-code-cli|Kimi Code CLI|https://github.com/MoonshotAI/kimi-code|2026-05-22T08:02:03Z|manual-discovery|68a283894163204e93b072cef20db164015a5cad|2026-10-27
 829|agent-cli|Agent CLI|https://github.com/basnijholt/agent-cli|2025-06-25T16:35:10Z|manual-discovery|554344e6ed5266bcc2a7b1461d4c84744ff5e0af|2026-10-27
 830|pan-agent|Pan Agent|https://github.com/pym96/Pan-agent|2026-08-11T11:26:58Z|manual-discovery|6040fcadde20e2628ba18550848f3bb2c725e68e|2026-10-27
+831|show-harness|Show-Harness|https://github.com/showlab/Show-Harness|2026-09-07T08:58:08Z|manual-discovery|6ad77dbc6180e973dff8148ffcca6c085580cea2|2026-10-28
