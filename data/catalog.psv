@@ -833,3 +833,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 832|agnes-harness|Agnes Harness|https://github.com/AgnesAI-Labs/agnes-harness|2026-09-22T17:18:54Z|manual-discovery|98bc11572ba162bcdf6ce2b29612a44508faf951|2026-10-28
 833|codemowers-agent|Codemowers Agent|https://github.com/codemowers/agent|2026-10-12T15:00:42Z|manual-discovery|d056e1414b3e2e6f0f2c387bdab2c540bd26730d|2026-10-28
 834|agentaps|Agentaps|https://github.com/cachix/agentaps|2026-09-24T17:55:34Z|manual-discovery|1dbaeeea88f446a2fdaf633dc00e7a344351d05a|2026-10-28
+835|deepseek-bot|deepseek-bot|https://github.com/rlaope/deepseek-bot|2026-10-06T08:44:20Z|manual-discovery|d247b0c9e8c4c7c07a7e8b113077fdc0353e5247|2026-10-28
