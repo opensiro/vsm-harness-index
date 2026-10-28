@@ -81,6 +81,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="agentharness-oklahomawhore"></a>[AgentHarness](https://github.com/Oklahomawhore/AgentHarness) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="suisuicode"></a>[SuisuiCode](https://github.com/Yangtianspike/suisui-code) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="abhed"></a>[Abhed](https://github.com/zybuu-ai/abhed) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
+| 4 | <a id="dsh-flow"></a>[dsh-flow](https://github.com/rootkiller6788/dsh-flow) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="harnessdesk"></a>[HarnessDesk](https://github.com/HarnessDesk/HarnessDesk) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A C(P) A — —` |
 | 4 | <a id="xeyo"></a>[XEYO](https://github.com/Gurp-S/XEYO) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="pi-herdsman"></a>[Pi Herdsman](https://github.com/boadij/pi-herdsman) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
