@@ -20,6 +20,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="ferrule"></a>[Ferrule](https://github.com/maximarhipkin/ferrule) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="coding-orchestrator"></a>[Coding Orchestrator](https://github.com/davesheffer/coding-orchestrator) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="pragmatic-orchestration"></a>[Pragmatic Orchestration](https://github.com/CodeAlive-AI/pragmatic-orchestration) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="steepy-apex"></a>[Steepy Apex](https://github.com/steepy-it/steepy-apex) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A A P P` |
 | 3 | <a id="harness-for-codex"></a>[Harness for Codex](https://github.com/revfactory/codex-harness) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="alphacode"></a>[AlphaCode](https://github.com/dragonked2/alphacode) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="horse-code"></a>[Horse Code](https://github.com/hizliemre/horse-code) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A P A A P` |
