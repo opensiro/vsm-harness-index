@@ -831,3 +831,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 830|pan-agent|Pan Agent|https://github.com/pym96/Pan-agent|2026-08-11T11:26:58Z|manual-discovery|6040fcadde20e2628ba18550848f3bb2c725e68e|2026-10-27
 831|show-harness|Show-Harness|https://github.com/showlab/Show-Harness|2026-09-07T08:58:08Z|manual-discovery|6ad77dbc6180e973dff8148ffcca6c085580cea2|2026-10-28
 832|agnes-harness|Agnes Harness|https://github.com/AgnesAI-Labs/agnes-harness|2026-09-22T17:18:54Z|manual-discovery|98bc11572ba162bcdf6ce2b29612a44508faf951|2026-10-28
+833|codemowers-agent|Codemowers Agent|https://github.com/codemowers/agent|2026-10-12T15:00:42Z|manual-discovery|d056e1414b3e2e6f0f2c387bdab2c540bd26730d|2026-10-28
