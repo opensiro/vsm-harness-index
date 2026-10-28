@@ -837,3 +837,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 836|oswald|OSWALD|https://github.com/Oswald-Agent/Oswald|2026-10-07T11:31:23Z|manual-discovery|5a2d6103c4c48735a909fd5ee78b0362fcbee993|2026-10-28
 837|agentforeman|AgentForeman|https://github.com/kumizeod/AgentForeman|2026-10-19T13:39:42Z|manual-discovery|634f9c0906f133fc577d6291c29b8f8cfd6af02a|2026-10-28
 838|octop-harness|Octop Harness|https://github.com/TencentCloud/octop-harness|2026-09-24T03:56:58Z|manual-discovery|68b5423bb80ecef7fca57ba5a37d9a2bdcbf12d2|2026-10-28
+839|openorc|OpenOrc|https://github.com/davejj1530/openorc|2026-09-28T04:09:07Z|manual-discovery|85bf1c5e4c81000911d8a5a90e23dbb7cf869283|2026-10-28
