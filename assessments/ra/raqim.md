@@ -27,7 +27,7 @@ autonomy_s5: —
 - Relevant environment: external LLM agents, their tools and side effects, operators setting policies, network clients and storage/replay consumers.
 - Standard-distribution boundary: `raqim-core` binary and libraries, `raqim-py/raqim/client.py`, `raqim-mcp`, `raqim-cli` and optional console; Python showcases are integration examples, not a default autonomous actor.
 - Credited operating / distribution surfaces: daemon ingress and `PolicyEngine`, WAL/Merkle/effect storage, SDK `trace`/replay/requests, MCP tool dispatch, CLI/admin APIs and console.
-- Adjacent first-party surfaces excluded from operational ownership: scripted quickstart/AML examples, load/siege tools, build scripts, tests and release workflow. These illustrate use but do not supply a general autonomous agent runtime.
+- Adjacent first-party surfaces excluded from ownership: scripted quickstart/AML examples, load/siege tools, build scripts, tests and release workflow. These illustrate use but do not supply a general autonomous agent runtime.
 - First-party modes considered: core daemon service, instrumented record/replay mode, A2A capability call, MCP bridge, console, demonstrations with either heuristic or optional Gemini inference.
 - Recursion level: one support/control substrate beneath independently operated agents. Multiple registered agent identities or namespaces are not evidence that Raqim itself owns their task decisions.
 - Reviewed revision: `b795d9630d298408868429ae4bd2dd6c8ec1f541`.
