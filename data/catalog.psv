@@ -883,3 +883,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 882|synapscli|SynapsCLI|https://github.com/HaseebKhalid1507/SynapsCLI|2026-04-10T05:11:13Z|manual-discovery|62853b06777fcc16db4b142d535a99e23da4b207|2026-10-29
 883|ori-runtime|Ori Runtime|https://github.com/ori-platform/ori-runtime|2026-03-27T17:05:07Z|manual-discovery|64d95bad6c5d173e249f31ed4b0d6c8e9df83c99|2026-10-29
 884|agentlane|AgentLane|https://github.com/yasik/agentlane|2026-03-05T20:04:59Z|manual-discovery|66ff002432a41cd2b952d8963e1a4fbe6650d183|2026-10-29
+885|raqim|Raqim|https://github.com/raqim-ai/raqim|2026-02-28T10:38:53Z|manual-discovery|b795d9630d298408868429ae4bd2dd6c8ec1f541|2026-10-29
