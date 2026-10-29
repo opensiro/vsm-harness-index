@@ -66,9 +66,9 @@ assessments/<harness_id[:2]>/<harness_id>.md
 
 | Included | Catalog | Reassessments | Full-A |
 | ---: | ---: | ---: | ---: |
-| **800** | 866 | 88 | 2 |
+| **801** | 867 | 88 | 2 |
 
-**Next corpus milestone:** 800/1000 (80.0%).
+**Next corpus milestone:** 801/1000 (80.1%).
 
 Active semantic contract: **Profile 0.2.4 / Methodology 0.3.7**.
 
