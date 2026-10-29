@@ -639,6 +639,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="heddle"></a>[Heddle](https://github.com/roackb2/heddle) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 1 | `A ? — — — —` |
 | 6 | <a id="buzz"></a>[Buzz](https://github.com/block/buzz) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="bitrouter"></a>[BitRouter](https://github.com/bitrouter/bitrouter) | 2026-Q1 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
+| 6 | <a id="agentlane"></a>[AgentLane](https://github.com/yasik/agentlane) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="airecon"></a>[AIRecon](https://github.com/pikpikcu/airecon) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A — — C C —` |
 | 6 | <a id="rust-code"></a>[rust-code](https://github.com/fortunto2/rust-code) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="looptroop"></a>[LoopTroop](https://github.com/looptroop-ai/LoopTroop) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
