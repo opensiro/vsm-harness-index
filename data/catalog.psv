@@ -852,3 +852,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 851|pwshharness|PwshHarness|https://github.com/josh-j/pwsh-harness|2026-10-09T13:53:50Z|manual-discovery|e56e989bbd68d1e6a1138c3755d6c76266700a78|2026-10-29
 852|tantra|tantra|https://github.com/malayh/tantra|2026-08-08T06:12:48Z|manual-discovery|779bf82b073bc5121bb70f45b36dab1ae1c05fd8|2026-10-29
 853|ralph-orchestrator|Ralph Orchestrator|https://github.com/mikeyobrien/ralph-orchestrator|2025-09-07T18:17:13Z|manual-discovery|b5789dfbb25bd4aa65ce565c756d95acc8c42f76|2026-10-29
+854|evot|Evot|https://github.com/evotai/evot|2026-03-09T02:44:24Z|manual-discovery|011af29261930f1589c1ded6f8ca5793e271b83a|2026-10-29
