@@ -856,3 +856,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 855|kata-symphony|Kata Symphony|https://github.com/gannonh/kata-symphony|2026-02-26T13:41:23Z|manual-discovery|e7c160f5e4d485fdfb6d79296f56d36c8872b2a9|2026-10-29
 856|histh|Histh|https://github.com/ayandexyz/Honey-I-Shrunk-the-Harness|2026-09-17T06:06:32Z|manual-discovery|f2aff641e55c2e6bb8c55a8fb82b67bdf2addd1a|2026-10-29
 857|20x|20x|https://github.com/peakflo/20x|2026-02-07T08:48:56Z|manual-discovery|168693be23965f2e5cc8f15c32093544234c6d01|2026-10-29
+858|opencode-orchestrator|OpenCode Orchestrator|https://github.com/agnusdei1207/opencode-orchestrator|2026-01-13T01:25:07Z|manual-discovery|fdba1b1eea1e78d27aa733a421beaa61ad0bb8a2|2026-10-29
