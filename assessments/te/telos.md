@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -189,15 +189,16 @@ Telos protects external agent processes and can itself be a supporting mechanism
 
 ## Variety and escalation
 
-The guard attenuates a wide range of process/network/security variety via deterministic scoring, taint, locks, policy, model escalation and eBPF. The noteworthy decision-owner split is that external agents propose actions, an optional model supplies narrow domain relevance, operators determine policy, and Telos enforces. `ESCALATE` in a security score is a local policy classification/LLM fallback, not proof of a VSM S3/S4/S5 path or algedonic organizational signal. No live/offensive execution was performed for this review.
+The guard attenuates a wide range of process/network/security variety via deterministic scoring, taint, locks, policy, model escalation and eBPF. The noteworthy decision-owner split is that external agents propose actions, an optional model supplies narrow domain relevance, operators determine policy, and Telos enforces. `ESCALATE` in [IntentVerifier](https://github.com/nevinshine/telos-runtime/blob/d430d61c9005f2ab5523ba2d41bdab574fcc314e/cortex/verifier.py) is a local policy classification/LLM fallback, not proof of a VSM S3/S4/S5 path or algedonic organizational signal. No live/offensive execution was performed for this review.
 
 ## Evidence gaps
 
-- No full protected-agent deployment is included in the declared repository-relative boundary; external agents' cognitive control would need an independently pinned assessment.
-- TinyLlama relevance inference was assessed from source only; no model weights were downloaded or inference run. Its documented input/output is sufficiently narrow to distinguish it from an autonomous task/action loop.
-- The red-team and demo source is adjacent and cannot donate task autonomy to production Telos; test results are not treated as organizational S3* evidence.
+- No first-party protected-agent deployment or action/observation loop is included in the declared repository-relative boundary; external agents' cognitive control would need an independently pinned assessment.
+- TinyLlama relevance inference was assessed from source only; no model weights were downloaded or inference run, and no accuracy or runtime-determinism claim is made. Its documented input/output is sufficiently narrow to distinguish it from an autonomous task/action loop.
+- The [red-team fixture](https://github.com/nevinshine/telos-runtime/blob/d430d61c9005f2ab5523ba2d41bdab574fcc314e/deploy/vulnerable_agent/redteam_suite.py) and demo source are adjacent and cannot donate task autonomy to production Telos; test results are not treated as organizational S3* evidence.
+- The deployed [Cortex gRPC request path](https://github.com/nevinshine/telos-runtime/blob/d430d61c9005f2ab5523ba2d41bdab574fcc314e/cortex/main.py) consumes `natural_language_goal` and `planned_actions` supplied by its caller; it does not generate those actions or own the caller's observation-to-next-action loop.
 - Negative states are bounded to shipped first-party operating paths inspected, not a claim that integration with Telos can never support a viable agent organization.
 
 ## Assessment summary
 
-Telos is a security enforcement substrate *for* autonomous agents. It does not ship the first-party autonomous operational agent loop required for Index inclusion. Its optional model judges domain relevance on security escalation; the only bundled agent loop is a human-input simulator. Under Profile 0.2.4 / Methodology 0.3.7, the proposed outcome is `excluded-no-agentic-vsm` with `S1=— / S2=— / S3=— / S3*=— / S4=— / S5=—`.
+Telos is a security enforcement substrate *for* autonomous agents. It does not ship the first-party autonomous operational agent loop required for Index inclusion. Its [optional model](https://github.com/nevinshine/telos-runtime/blob/d430d61c9005f2ab5523ba2d41bdab574fcc314e/cortex/llm_verifier.py) judges domain relevance on security escalation; the only bundled agent loop is a [human-input simulator](https://github.com/nevinshine/telos-runtime/blob/d430d61c9005f2ab5523ba2d41bdab574fcc314e/deploy/vulnerable_agent/agent_sim.py). Under Profile 0.2.4 / Methodology 0.3.7, the canonical disposition is `excluded-no-agentic-vsm` with `S1=— / S2=— / S3=— / S3*=— / S4=— / S5=—`.
