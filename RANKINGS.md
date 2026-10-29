@@ -308,6 +308,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="kata-symphony"></a>[Kata Symphony](https://github.com/gannonh/kata-symphony) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C — A — —` |
 | 5 | <a id="openfang"></a>[OpenFang](https://github.com/RightNow-AI/openfang) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="qwenpaw"></a>[QwenPaw](https://github.com/agentscope-ai/QwenPaw) | 2026-Q1 | 2/6 | 1/5 | 2 | 2 | 0 | `A C P C A P` |
+| 5 | <a id="ironcurtain"></a>[IronCurtain](https://github.com/provos/ironcurtain) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="a-evolve"></a>[A-Evolve](https://github.com/A-EVO-Lab/a-evolve) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
 | 5 | <a id="openhuman"></a>[OpenHuman](https://github.com/tinyhumansai/openhuman) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="utah"></a>[Utah](https://github.com/inngest/utah) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
