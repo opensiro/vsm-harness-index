@@ -892,3 +892,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 891|swarmx|SwarmX|https://github.com/tcztzy/swarmx|2024-10-15T12:22:48Z|manual-discovery|a171e0da84c7a4d667d2c314cfbed66847f3040b|2026-10-29
 892|kheish|Kheish|https://github.com/graniet/kheish|2024-12-11T07:30:19Z|manual-discovery|df50433f8d577f832c6812b9e67be8ddb766059d|2026-10-29
 893|ralphify|Ralphify|https://github.com/computerlovetech/ralphify|2026-03-08T14:35:13Z|manual-discovery|3734146c6bb8e97b97e6e26c473d44eabd2b67f7|2026-10-29
+894|wanman|wanman|https://github.com/chekusu/wanman|2026-04-22T14:17:57Z|manual-discovery|d3a8138de6c21981a4f1449a7b3f201e724c55c9|2026-10-29
