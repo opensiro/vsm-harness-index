@@ -201,4 +201,6 @@ The guard attenuates a wide range of process/network/security variety via determ
 
 ## Assessment summary
 
-Telos is a security enforcement substrate *for* autonomous agents. It does not ship the first-party autonomous operational agent loop required for Index inclusion. Its [optional model](https://github.com/nevinshine/telos-runtime/blob/d430d61c9005f2ab5523ba2d41bdab574fcc314e/cortex/llm_verifier.py) judges domain relevance on security escalation; the only bundled agent loop is a [human-input simulator](https://github.com/nevinshine/telos-runtime/blob/d430d61c9005f2ab5523ba2d41bdab574fcc314e/deploy/vulnerable_agent/agent_sim.py). Under Profile 0.2.4 / Methodology 0.3.7, the canonical disposition is `excluded-no-agentic-vsm` with `S1=— / S2=— / S3=— / S3*=— / S4=— / S5=—`.
+Telos is a security enforcement substrate *for* autonomous agents. It does not ship the first-party autonomous operational agent loop required for Index inclusion.
+
+Its [optional model](https://github.com/nevinshine/telos-runtime/blob/d430d61c9005f2ab5523ba2d41bdab574fcc314e/cortex/llm_verifier.py) judges domain relevance on security escalation; the only bundled agent loop is a [human-input simulator](https://github.com/nevinshine/telos-runtime/blob/d430d61c9005f2ab5523ba2d41bdab574fcc314e/deploy/vulnerable_agent/agent_sim.py). Under Profile 0.2.4 / Methodology 0.3.7, the canonical disposition is `excluded-no-agentic-vsm` with `S1=— / S2=— / S3=— / S3*=— / S4=— / S5=—`.
