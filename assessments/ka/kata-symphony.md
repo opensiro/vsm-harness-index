@@ -25,8 +25,8 @@ autonomy_s5: —
 - Purpose and identity: turn accepted tracker issues into source changes, pull requests and evidence-based review outcomes while preserving project-isolated workspace and publication controls.
 - Relevant environment: source and tests, changing GitHub/Linear issue states, independent edits by parallel workers, PR diffs, review findings, stalled tool calls and operator interventions.
 - Standard distribution: Rust `apps/symphony` orchestrator, Pi/Codex worker adapters, shipped workflow/prompt assets, first-party factory stage coordinators, optional event-driven supervisor, and supported tracker/project routing. The surrounding Kata planning CLI is adjacent, not automatically a Symphony controller.
-- First-party operating modes considered: tracker-driven headless workers, concurrent workspaces, optional `supervisor.enabled`, optional factory A4 review in preview or automatic mode, optional A5 verification preview; these toggles default disabled where the shipped config says so.
-- Adjacent first-party surfaces excluded: repo maintainers' product governance, demo scripts, CI workflows, the Kata Skills authoring workflow, fake-worker fixtures, the Pi/Codex provider model internals and human project decisions outside the packaged runtime.
+- Credited operating / distribution surfaces: headless issue workers, optional supervisor shared-context collision path, optional A4/A5 isolated review/verification stages.\n- First-party operating modes considered: tracker-driven headless workers, concurrent workspaces, optional `supervisor.enabled`, optional factory A4 review in preview or automatic mode, optional A5 verification preview; these toggles default disabled where the shipped config says so.
+- Adjacent first-party surfaces excluded from ownership: repo maintainers' product governance, demo scripts, CI workflows, the Kata Skills authoring workflow, fake-worker fixtures, the Pi/Codex provider model internals and human project decisions outside the packaged runtime.
 - Recursion: independently bounded issue workers are operating S1 cells; a shared project orchestrator supplies cross-worker interfaces and lifecycle machinery. A worker process or staged model role is not by itself a full recursive viable system.
 - Reviewed revision: `gannonh/kata-symphony@e7c160f5e4d485fdfb6d79296f56d36c8872b2a9`; source checkout exactly pinned, `apps/symphony/Cargo.toml` MIT.
 - Observation date: 2026-10-29; Profile 0.2.4, released Methodology 0.3.7.
@@ -58,6 +58,9 @@ The issue worker chooses which code, command and test to run and reacts to obser
 - Basis: shipped supported model invocation and work-loop structure; no paid provider E2E run.
 - Confidence: high for reachable decision owner, unmeasured quality.
 
+- Why this is / is not agent-owned: The model chooses substantive code-specific edits from live project context; fixed issue routing does not reproduce that choice.
+- Caveats: The operator can constrain tasks and tools, and no external model correctness was measured in this source-only assessment.
+
 ## S2 — Coordination
 
 - State: C
@@ -76,6 +79,18 @@ The issue worker chooses which code, command and test to run and reacts to obser
 - Evidence: [supervisor file-conflict branch](https://github.com/gannonh/kata-symphony/blob/e7c160f5e4d485fdfb6d79296f56d36c8872b2a9/apps/symphony/src/supervisor.rs), [shared context returned to workers](https://github.com/gannonh/kata-symphony/blob/e7c160f5e4d485fdfb6d79296f56d36c8872b2a9/apps/symphony/src/orchestrator.rs), [two-worker integration test](https://github.com/gannonh/kata-symphony/blob/e7c160f5e4d485fdfb6d79296f56d36c8872b2a9/apps/symphony/tests/supervisor_tests.rs), [future-model config comment](https://github.com/gannonh/kata-symphony/blob/e7c160f5e4d485fdfb6d79296f56d36c8872b2a9/apps/symphony/src/domain.rs).
 - Confidence: high for deterministic selected-mode channel; end-to-end worker semantic resolution unmeasured.
 
+- Decisive decision or feedback right: Decide whether file-overlap events warrant coordination guidance; this is encoded by a fixed Rust predicate and cooldown.
+- Supporting / enforcement mechanisms: EventHub, shared context TTL, prompt renderer, conflict detection window, and operator escalation registry transport the preprogrammed response.
+- Closure path: An overlap event publishes project-wide context that is injected when a subsequent worker prompt is composed, allowing its model to adjust task work.
+- Why this is / is not agent-owned: Detection and guidance selection stay fixed by Rust code; the optional model field supplies no inference call.
+- Basis: Implemented source path and checked two-worker conflict test; source structure rather than a live parallel provider run.
+- Caveats: Supervisor is opt-in and default disabled; future worker prompt injection is supported, but immediate interruption of an active worker is not shown.
+- Inter-S1 disturbance: Distinct issues can edit the same file simultaneously; actual `tool_start` overlapping path events produce a concrete detected conflict.
+- Attenuating coordination relation: Supervisor emits the conflict, stores both issue IDs and path in project context, and conditionally posts steering guidance.
+- Feedback into subsequent S1 behaviour: Worker prompt includes shared context before the model's next turn; change to actual source is left to the local worker.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: It detects a particular conflicting file-edit pattern between independently assigned workers and returns a targeted overlap warning, not merely arbitrary messages.
+- Boundary reachability: Public `supervisor.enabled` mode starts the event consumer and uses shared context in ordinary worker prompts.
+
 ## S3 — Inside-and-now control
 
 - State: —
@@ -90,9 +105,18 @@ The issue worker chooses which code, command and test to run and reacts to obser
 
 ### Absence scope
 
-- Surfaces: tracker poll/dispatch/slots, task lifecycle, dashboard, optional supervisor stuck/systemic detection, reviewer/verification stages and escalation registry.
-- Plausible paths: supervisor named as an agent, optional `model` field, operator steering, stage review gates and human PR approval.
-- Why no material path remains: the shipped supervisor is rule-driven, status/approval channels concern local work, and no evidenced returned whole-system discretionary resource/commitment control occurs.
+- Surfaces inspected: tracker poll/dispatch/slots, task lifecycle, dashboard, optional supervisor stuck/systemic detection, reviewer/verification stages and escalation registry.
+- Plausible first-party paths checked: supervisor named as an agent, optional `model` field, operator steering, stage review gates and human PR approval.
+- Why no material first-party path remains: the shipped supervisor is rule-driven, status/approval channels concern local work, and no evidenced returned whole-system discretionary resource/commitment control occurs.
+
+- Disturbance / variety regulated: Simultaneous current resource contention, repeated failures, unhealthy worker set and competing issue priorities would need a project-level response.
+- Decisive decision or feedback right: The operator selects current slots and labels; rules enforce retry and escalate, but no packaged whole-project discretionary revision right is evidenced.
+- Decision owner: Installation operator owns settings and any manual reallocation; local worker model only owns its own issue choices.
+- Supporting / enforcement mechanisms: Configuration, event stream, retry scheduler, concurrency caps, status snapshot and escalation registry.
+- Closure path: Stuck/failure events can alert or steer by preselected thresholds, but do not return a project-wide revised budget or commitment.
+- Why this is / is not agent-owned: A model-like name or dashboard does not substitute for an acting, discretionary current-system controller.
+- Basis: Bounded negative review of orchestrator, supervisor, configuration, telemetry and staged factory coordinators.
+- Caveats: A separate deployment manager could supply S3 externally; that organization is outside the evaluated package.
 
 ## S3* — Complementary audit
 
@@ -110,6 +134,19 @@ The issue worker chooses which code, command and test to run and reacts to obser
 - Basis: shipped mode and typed corrective feedback contract; not an observed paid live independent challenge.
 - Confidence: medium-high for configured A4 automatic mode; A5 is evidence strengthening, not independent proof of outcome quality.
 
+- Disturbance / variety regulated: Unsupported implementation claims, code regression, incorrect accepted criteria and tests that fail despite an implementer's success report.
+- Decisive decision or feedback right: Isolated A4 reviewer model selects fault findings and severity; A5 verifier model judges evidence against each approved criterion.
+- Decision owner: Read-only review/verifier worker model, separated from implementation role; deterministic schema and gate code only validates/adjudicates mechanical invariants.
+- Supporting / enforcement mechanisms: Fresh clone/diff, exact head/base anchoring, spec artifact IDs, findings schemas, stored command evidence, credential isolation and publication routes.
+- Closure path: New reviewer inspects real source and emits findings; automatic review routes can return requested changes, while evidence gate prevents an unproven pass.
+- Why this is / is not agent-owned: Distinct model invocations choose specific code/evidence judgments, whereas validators enforce reference integrity and cannot generate diagnoses.
+- Caveats: Configured A4 stage defaults off; preview publication alone does not guarantee an automatic repair loop, and no live auditor outcome was observed.
+- Claim being audited: Implementer A3's asserted PR changes satisfy approved A2 specification with no blocking defects.
+- Ordinary reporting path: Implementation manifest, draft PR and implementer-reported test outcome.
+- Complementary access path: A4 read-only model inspects actual cloned code and exact PR diff; A5 also sees independently recorded commands and evidence file hashes.
+- Independence boundary: Reviewer/verifier have separate launch contexts and lack mutation/forge credentials; not an external auditor or independent institution.
+- Boundary reachability: First-party optional `review.enabled` and `verification.enabled` configurations dispatch these model roles on ordinary factory stages.
+
 ## S4 — Outside-and-then intelligence
 
 - State: —
@@ -122,9 +159,18 @@ The issue worker chooses which code, command and test to run and reacts to obser
 
 ### Absence scope
 
-- Surfaces: intake/triage, spec draft/revise, stage prompts, dashboard, runtime config, review and verification.
-- Plausible paths: advanced task/spec planning, tracker reprioritization and model configuration.
-- Why no material path remains: they operate on current tickets/config; there is no independently evidenced external-and-prospective alternative evaluation returned into present whole-project capability control.
+- Surfaces inspected: intake/triage, spec draft/revise, stage prompts, dashboard, runtime config, review and verification.
+- Plausible first-party paths checked: advanced task/spec planning, tracker reprioritization and model configuration.
+- Why no material first-party path remains: they operate on current tickets/config; there is no independently evidenced external-and-prospective alternative evaluation returned into present whole-project capability control.
+
+- Disturbance / variety regulated: Future dependency/tool shifts and changing external stakeholder needs are relevant environmental variety but lack a packaged prospective response loop.
+- Decisive decision or feedback right: Ticket authors and local models set task designs; no first-party right to choose future-facing capability adaptation is shown.
+- Decision owner: External human project leadership may decide strategy; no qualifying packaged S4 decision actor.
+- Supporting / enforcement mechanisms: Tracker labels, task/spec prompts and dashboard carry present work context.
+- Closure path: The reviewed code lacks an external forecast/options exchange with whole-system S3 and returned revised operating capability.
+- Why this is / is not agent-owned: A specification draft concerns current accepted work, not sustained anticipation and adaptation.
+- Basis: Structural negative after spec/triage, supervisor, workspace, prompt and review source inspection.
+- Caveats: External project managers might run prospective strategy outside Symphony.
 
 ## S5 — Policy and identity
 
@@ -138,9 +184,18 @@ The issue worker chooses which code, command and test to run and reacts to obser
 
 ### Absence scope
 
-- Surfaces: human approvals/escalations, PR publication, stages, config, supervisor, project prompts and Kata CLI integration.
-- Plausible paths: human publication approval, escalation timeout fallback, policy-like workflow metadata and repository maintainers.
-- Why no material path remains: reviewed human intervention concerns task/PR execution, not an identity-level exception with legitimate ultimate-authority decision returned into project operation; maintainers sit outside this deployment boundary.
+- Surfaces inspected: human approvals/escalations, PR publication, stages, config, supervisor, project prompts and Kata CLI integration.
+- Plausible first-party paths checked: human publication approval, escalation timeout fallback, policy-like workflow metadata and repository maintainers.
+- Why no material first-party path remains: reviewed human intervention concerns task/PR execution, not an identity-level exception with legitimate ultimate-authority decision returned into project operation; maintainers sit outside this deployment boundary.
+
+- Disturbance / variety regulated: Project identity conflicts and ultimate-policy exceptions are possible but not shown as a special runtime governance loop.
+- Decisive decision or feedback right: Installation policy and approvals are selected by project owners; worker prompts and PR gates enforce or request ordinary work choices.
+- Decision owner: Human project/deployment authority external to assessed orchestrator; no first-party S5 issue/ruling channel.
+- Supporting / enforcement mechanisms: Workflow configuration, escalation registry, approval gate and credential isolation.
+- Closure path: Operational human responses may unblock tasks, but no identity-level ruling is transported into standing project policy and subsequent operation.
+- Why this is / is not agent-owned: Rules and approvals alone do not own ultimate purpose or adjudicate S3–S4 tensions.
+- Basis: Bounded structural negative on runtime escalation, review, policy-like prompts and publication controls.
+- Caveats: Parent governance could exist in a deployment but its identity decisions are not evidenced by this source.
 
 ## Distributed OSS parent arrangement
 
