@@ -149,6 +149,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="bamboo"></a>[Bamboo](https://github.com/bigduu/Bamboo-agent) | 2026-Q1 | 3/6 | 2/5 | 2 | 0 | 0 | `A A A C C —` |
 | 4 | <a id="karimo"></a>[KARIMO](https://github.com/opensesh/KARIMO) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="zeroclaw"></a>[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
+| 4 | <a id="20x"></a>[20x](https://github.com/peakflo/20x) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="chorus"></a>[Chorus](https://github.com/Chorus-AIDLC/Chorus) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="ecc"></a>[Everything Claude Code (ECC)](https://github.com/affaan-m/ECC) | 2026-Q1 | 3/6 | 2/5 | 2 | 2 | 0 | `A C C(P) A A(P) —` |
 | 4 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
