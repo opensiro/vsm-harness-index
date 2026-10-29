@@ -876,4 +876,17 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 875|telos|Telos|https://github.com/nevinshine/telos-runtime|2026-01-29T18:48:06Z|manual-discovery|d430d61c9005f2ab5523ba2d41bdab574fcc314e|2026-10-29
 876|tardigrade|Tardigrade|https://github.com/clavia-labs/tardigrade|2026-08-13T16:52:14Z|manual-discovery|9ba13979e251f338a0f6c7baaf29f4f2d67a34d5|2026-10-29
 877|psai|PSAI|https://github.com/dfinke/PSAI|2024-04-14T12:16:09Z|manual-discovery|018a3304dc7d09ac90e78525f5181bee17edb5a1|2026-10-29
-878|swarmx|SwarmX|https://github.com/tcztzy/swarmx|2024-10-15T12:22:48Z|manual-discovery|a171e0da84c7a4d667d2c314cfbed66847f3040b|2026-10-29
+878|ironcurtain|IronCurtain|https://github.com/provos/ironcurtain|2026-02-21T23:34:31Z|manual-discovery|d51a3467cbda6a2e94cf04e885e8ae1abdd0f6be|2026-10-29
+879|debroid|Debroid|https://github.com/PatilShreyas/debroid|2026-08-02T15:58:29Z|manual-discovery|b87f489bd02dcfb5c8c37fa2a4340847c9e48adb|2026-10-29
+880|optio|Optio|https://github.com/jonwiggins/optio|2026-03-19T19:50:11Z|manual-discovery|3163761c3a0974bbb290afea8d09ddc1a8e8ac7c|2026-10-29
+881|ever-works|Ever Works|https://github.com/ever-works/ever-works|2025-01-06T16:50:16Z|manual-discovery|e159e7c6ff34fdacbd8967ad92ae42e3311b444b|2026-10-29
+882|synapscli|SynapsCLI|https://github.com/HaseebKhalid1507/SynapsCLI|2026-04-10T05:11:13Z|manual-discovery|62853b06777fcc16db4b142d535a99e23da4b207|2026-10-29
+883|ori-runtime|Ori Runtime|https://github.com/ori-platform/ori-runtime|2026-03-27T17:05:07Z|manual-discovery|64d95bad6c5d173e249f31ed4b0d6c8e9df83c99|2026-10-29
+884|agentlane|AgentLane|https://github.com/yasik/agentlane|2026-03-05T20:04:59Z|manual-discovery|66ff002432a41cd2b952d8963e1a4fbe6650d183|2026-10-29
+885|raqim|Raqim|https://github.com/raqim-ai/raqim|2026-02-28T10:38:53Z|manual-discovery|b795d9630d298408868429ae4bd2dd6c8ec1f541|2026-10-29
+886|kube-agents|kube-agents|https://github.com/gke-labs/kube-agents|2026-05-07T15:51:52Z|manual-discovery|c20297fccc667bec06b5d78f89ee4e368fd29f3d|2026-10-29
+887|openstinger|OpenStinger|https://github.com/srikanthbellary/openstinger|2026-02-24T06:04:07Z|manual-discovery|73ea429d4eec4e900cb364e6ffc1982ef3f75b47|2026-10-29
+888|gruai|gruAI|https://github.com/andrew-yangy/gru-ai|2026-02-22T12:22:12Z|manual-discovery|8fba47928a0fe3fdfda7a31d22b73625c78cbfc4|2026-10-29
+889|epic-harness|Epic Harness|https://github.com/epicsagas/epic-harness|2026-04-09T10:54:42Z|manual-discovery|1f3823af536b1f56b3cb8af90cc8ea77ef71c4bd|2026-10-29
+890|senweavercoding|SenWeaverCoding|https://github.com/senweaver/SenWeaverCoding|2026-04-07T04:35:08Z|manual-discovery|8ba81d595ba154f300428dd554d2065b9a268432|2026-10-29
+891|swarmx|SwarmX|https://github.com/tcztzy/swarmx|2024-10-15T12:22:48Z|manual-discovery|a171e0da84c7a4d667d2c314cfbed66847f3040b|2026-10-29

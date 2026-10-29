@@ -133,6 +133,8 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="nanoharness"></a>[NanoHarness](https://github.com/semi-hollow/NanoHarness) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
 | 4 | <a id="dendrophis"></a>[Dendrophis](https://github.com/sp1d3rx/dendrophis) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="ahe"></a>[Agentic Harness Engineering](https://github.com/china-qijizhifeng/agentic-harness-engineering) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
+| 4 | <a id="synapscli"></a>[SynapsCLI](https://github.com/HaseebKhalid1507/SynapsCLI) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 4 | <a id="epic-harness"></a>[Epic Harness](https://github.com/epicsagas/epic-harness) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="kimchi"></a>[Kimchi](https://github.com/getkimchi/kimchi) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="cheetahclaws"></a>[CheetahClaws](https://github.com/SAIL-Research-Lab/cheetahclaws) | 2026-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A A — A P —` |
 | 4 | <a id="cc-mini"></a>[cc-mini](https://github.com/e10nMa2k/cc-mini) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
@@ -148,6 +150,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="aivo-code"></a>[Aivo Code](https://github.com/yuanchuan/aivo) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="edict"></a>[Edict](https://github.com/cft0808/edict) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="bamboo"></a>[Bamboo](https://github.com/bigduu/Bamboo-agent) | 2026-Q1 | 3/6 | 2/5 | 2 | 0 | 0 | `A A A C C —` |
+| 4 | <a id="gruai"></a>[gruAI](https://github.com/andrew-yangy/gru-ai) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="karimo"></a>[KARIMO](https://github.com/opensesh/KARIMO) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="zeroclaw"></a>[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
 | 4 | <a id="20x"></a>[20x](https://github.com/peakflo/20x) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
@@ -280,6 +283,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="gentle-shell"></a>[gentle-shell](https://github.com/Gentleman-Programming/gentle-shell) | 2026-Q2 | 2/6 | 1/5 | 2 | 3 | 0 | `A C A(P) — C(P) P` |
 | 5 | <a id="alysis-code"></a>[Alysis Code](https://github.com/AlysisAi/alysis-code) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="kube-agents"></a>[kube-agents](https://github.com/gke-labs/kube-agents) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="clai"></a>[clai](https://github.com/pentoshi007/clai) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="agent-harness-kit"></a>[Agent Harness Kit](https://github.com/enmanuelmag/agent-harness-kit) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="tangle-agent-runtime"></a>[Tangle Agent Runtime](https://github.com/tangle-network/agent-runtime) | 2026-Q2 | 2/6 | 1/5 | 3 | 0 | 0 | `A C A C C —` |
@@ -293,6 +297,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="oh-my-hermes"></a>[Oh My Hermes](https://github.com/witt3rd/oh-my-hermes) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="vix"></a>[Vix](https://github.com/get-vix/vix) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — A C —` |
 | 5 | <a id="clawgui"></a>[ClawGUI](https://github.com/ZJU-REAL/ClawGUI) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="senweavercoding"></a>[SenWeaverCoding](https://github.com/senweaver/SenWeaverCoding) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="deimos"></a>[Deimos](https://github.com/dxiv/dxa-deimos) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="bareagent"></a>[BareAgent](https://github.com/525300887039/BareAgent) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="haorui-agent-harness"></a>[Agent Harness](https://github.com/haorui-harry/agent-harness) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
@@ -308,6 +313,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="kata-symphony"></a>[Kata Symphony](https://github.com/gannonh/kata-symphony) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C — A — —` |
 | 5 | <a id="openfang"></a>[OpenFang](https://github.com/RightNow-AI/openfang) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="qwenpaw"></a>[QwenPaw](https://github.com/agentscope-ai/QwenPaw) | 2026-Q1 | 2/6 | 1/5 | 2 | 2 | 0 | `A C P C A P` |
+| 5 | <a id="ironcurtain"></a>[IronCurtain](https://github.com/provos/ironcurtain) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="a-evolve"></a>[A-Evolve](https://github.com/A-EVO-Lab/a-evolve) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
 | 5 | <a id="openhuman"></a>[OpenHuman](https://github.com/tinyhumansai/openhuman) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="utah"></a>[Utah](https://github.com/inngest/utah) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
@@ -618,10 +624,12 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="researchharness"></a>[ResearchHarness](https://github.com/InternScience/ResearchHarness) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="harness-evolver"></a>[Harness Evolver](https://github.com/raphaelchristi/harness-evolver) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="herdr"></a>[Herdr](https://github.com/herdrdev/herdr) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="ori-runtime"></a>[Ori Runtime](https://github.com/ori-platform/ori-runtime) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="wedow-harness"></a>[wedow Harness](https://github.com/wedow/harness) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="boundflow"></a>[BoundFlow](https://github.com/boundflow/boundflow) | 2026-Q1 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="agency-os"></a>[Agency-OS](https://github.com/swarm-ai-research/agency-os) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
 | 6 | <a id="sharpcoder"></a>[SharpCoder](https://github.com/robkaandorp/SharpCoder) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="optio"></a>[Optio](https://github.com/jonwiggins/optio) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="autonomouscodingagent"></a>[AutonomousCodingAgent](https://github.com/robertnathe/AutonomousCodingAgent) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="orca-stablyai"></a>[Orca](https://github.com/stablyai/orca) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="talon"></a>[Talon](https://github.com/dylanneve1/talon) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
@@ -636,6 +644,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="heddle"></a>[Heddle](https://github.com/roackb2/heddle) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 1 | `A ? — — — —` |
 | 6 | <a id="buzz"></a>[Buzz](https://github.com/block/buzz) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="bitrouter"></a>[BitRouter](https://github.com/bitrouter/bitrouter) | 2026-Q1 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
+| 6 | <a id="agentlane"></a>[AgentLane](https://github.com/yasik/agentlane) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="airecon"></a>[AIRecon](https://github.com/pikpikcu/airecon) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A — — C C —` |
 | 6 | <a id="rust-code"></a>[rust-code](https://github.com/fortunto2/rust-code) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="looptroop"></a>[LoopTroop](https://github.com/looptroop-ai/LoopTroop) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
@@ -742,6 +751,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="langgraph-bigtool"></a>[LangGraph BigTool](https://github.com/langchain-ai/langgraph-bigtool) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="commonly"></a>[Commonly](https://github.com/Team-Commonly/commonly) | 2025-Q1 | 1/6 | 0/5 | 1 | 1 | 3 | `A C P ? ? ?` |
 | 6 | <a id="cloudflare-agents"></a>[Cloudflare Agents](https://github.com/cloudflare/agents) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="ever-works"></a>[Ever Works](https://github.com/ever-works/ever-works) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="smolagents"></a>[smolagents](https://github.com/huggingface/smolagents) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="balrog"></a>[BALROG](https://github.com/balrog-ai/BALROG) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ag2"></a>[AG2](https://github.com/ag2ai/ag2) | 2024-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
