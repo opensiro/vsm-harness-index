@@ -577,6 +577,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="reasonix"></a>[Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="sjmun09-harness"></a>[Harness](https://github.com/sjMun09/Harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gemba"></a>[Gemba](https://github.com/GembaCore/gemba-core) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="twaldin-harness"></a>[twaldin/harness](https://github.com/twaldin/harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="zot"></a>[Zot](https://github.com/patriceckhart/zot) | 2026-Q2 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="zaly"></a>[zaly](https://github.com/folke/zaly) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="browser-harness"></a>[Browser Harness](https://github.com/browser-use/browser-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
