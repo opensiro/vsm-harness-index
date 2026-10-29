@@ -763,6 +763,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agent-zero"></a>[Agent Zero](https://github.com/agent0ai/agent-zero) | 2024-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="coder"></a>[CodeR](https://github.com/NL2Code/CodeR) | 2024-Q2 | 1/6 | 0/5 | 0 | 0 | 5 | `A ? ? ? ? ?` |
 | 6 | <a id="agentuniverse"></a>[agentUniverse](https://github.com/agentuniverse-ai/agentUniverse) | 2024-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="psai"></a>[PSAI](https://github.com/dfinke/PSAI) | 2024-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swe-agent"></a>[SWE-agent](https://github.com/SWE-agent/SWE-agent) | 2024-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="stagehand"></a>[Stagehand](https://github.com/browserbase/stagehand) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="devika"></a>[Devika](https://github.com/stitionai/devika) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
