@@ -854,3 +854,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 853|ralph-orchestrator|Ralph Orchestrator|https://github.com/mikeyobrien/ralph-orchestrator|2025-09-07T18:17:13Z|manual-discovery|b5789dfbb25bd4aa65ce565c756d95acc8c42f76|2026-10-29
 854|evot|Evot|https://github.com/evotai/evot|2026-03-09T02:44:24Z|manual-discovery|011af29261930f1589c1ded6f8ca5793e271b83a|2026-10-29
 855|kata-symphony|Kata Symphony|https://github.com/gannonh/kata-symphony|2026-02-26T13:41:23Z|manual-discovery|e7c160f5e4d485fdfb6d79296f56d36c8872b2a9|2026-10-29
+856|histh|Histh|https://github.com/ayandexyz/Honey-I-Shrunk-the-Harness|2026-09-17T06:06:32Z|manual-discovery|f2aff641e55c2e6bb8c55a8fb82b67bdf2addd1a|2026-10-29
