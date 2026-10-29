@@ -866,3 +866,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 865|twaldin-harness|twaldin/harness|https://github.com/twaldin/harness|2026-04-18T08:23:16Z|manual-discovery|f75dee4fd8f64d9357fb2862741f87ddb313250d|2026-10-29
 866|techjarves-mobile-harness|techjarves/Mobile-Harness|https://github.com/techjarves/Mobile-Harness|2026-08-20T11:55:29Z|manual-discovery|96b1da08d03af4f2d63970a3794c7fda068948c4|2026-10-29
 867|thinharness|ThinHarness|https://github.com/ryanbbrown/thinharness|2026-05-01T15:32:17Z|manual-discovery|b1d82f05567097e335f88dd974f207189c06db57|2026-10-29
+868|pi-agent-core-python|pi-agent-core (Python)|https://github.com/Huvinesh-Rajendran-12/pi-agent-core|2026-02-15T11:22:10Z|manual-discovery|f541b859d4a8e6d1f7415a671024bd4e22b1025d|2026-10-29
