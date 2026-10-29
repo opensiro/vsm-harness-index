@@ -869,3 +869,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 868|pi-agent-core-python|pi-agent-core (Python)|https://github.com/Huvinesh-Rajendran-12/pi-agent-core|2026-02-15T11:22:10Z|manual-discovery|f541b859d4a8e6d1f7415a671024bd4e22b1025d|2026-10-29
 869|agent-harness-from-scratch|agent-harness-from-scratch|https://github.com/sudhanshu-shivam-dev/agent-harness-from-scratch|2026-06-16T08:13:11Z|manual-discovery|2b5e810d1605fe416118bca88d9fcc006813a7a6|2026-10-29
 870|harnessclaw-harnessclaw|harnessclaw/harnessclaw|https://github.com/harnessclaw/harnessclaw|2026-04-12T13:52:01Z|manual-discovery|44d01c1fa2193d1d4f479327cc15cf1bec09851c|2026-10-29
+871|hamroh|Hamroh|https://github.com/Rustam-Z/hamroh|2026-04-11T18:22:10Z|manual-discovery|0970d3a3dc8ff50970998515afe4ef79510f397e|2026-10-29
