@@ -885,3 +885,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 884|agentlane|AgentLane|https://github.com/yasik/agentlane|2026-03-05T20:04:59Z|manual-discovery|66ff002432a41cd2b952d8963e1a4fbe6650d183|2026-10-29
 885|raqim|Raqim|https://github.com/raqim-ai/raqim|2026-02-28T10:38:53Z|manual-discovery|b795d9630d298408868429ae4bd2dd6c8ec1f541|2026-10-29
 886|kube-agents|kube-agents|https://github.com/gke-labs/kube-agents|2026-05-07T15:51:52Z|manual-discovery|c20297fccc667bec06b5d78f89ee4e368fd29f3d|2026-10-29
+887|openstinger|OpenStinger|https://github.com/srikanthbellary/openstinger|2026-02-24T06:04:07Z|manual-discovery|73ea429d4eec4e900cb364e6ffc1982ef3f75b47|2026-10-29
