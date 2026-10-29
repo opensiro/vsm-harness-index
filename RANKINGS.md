@@ -531,6 +531,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agent-loop"></a>[agent-loop](https://github.com/Onipounds/agent-loop) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pi-multi-agent"></a>[Pi-Multi-Agent](https://github.com/jwangkun/Pi-Multi-Agent) | 2026-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="q-agent-harness"></a>[q-agent-harness](https://github.com/kju4q/q-agent-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="qujck-agent-harness"></a>[agent-harness](https://github.com/qujck/harness) | 2026-Q2 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
 | 6 | <a id="ferrum"></a>[Ferrum](https://github.com/ominiverdi/ferrum) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="luckycli"></a>[LuckyCLI](https://github.com/Fenix46/LuckyCLI) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="reflex"></a>[Reflex](https://github.com/reflex-agent/reflex-agent) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
