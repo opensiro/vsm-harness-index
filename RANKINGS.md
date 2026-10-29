@@ -659,6 +659,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="fractale"></a>[fractale](https://github.com/converged-computing/fractale) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="s18share"></a>[S18Share](https://github.com/riteshverma/s18) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A — C(P) — — —` |
 | 6 | <a id="soloncode"></a>[SolonCode](https://github.com/opensolon/soloncode) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="victrola"></a>[Victrola](https://github.com/haileyok/victrola) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 1 | `A C — — — ?` |
 | 6 | <a id="dashclaw"></a>[DashClaw](https://github.com/ucsandman/DashClaw) | 2026-Q1 | 1/6 | 0/5 | 2 | 1 | 0 | `A — C — C(P) —` |
 | 6 | <a id="flue"></a>[Flue](https://github.com/withastro/flue) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="harness-remote"></a>[Harness Remote](https://github.com/giuliastro/harness-remote) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
