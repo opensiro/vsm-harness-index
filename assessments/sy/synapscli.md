@@ -26,8 +26,8 @@ autonomy_s5: —
 - Purpose and identity: conduct open-ended user/automated tasks with an LLM choosing tools and follow-on actions, optionally through multiple model-driven subagents.
 - Relevant environment: user workspaces, local files/processes, configured model endpoints, tools/plugins/MCP servers, daemon clients and task feedback.
 - Standard-distribution boundary: `synaps` chat/TUI/RPC/daemon/watcher plus first-party `agent-engine`, `agent-core`, tool and subagent implementations. Actual model service and task content are runtime inputs, not separately owned organizational units.
-- Credited operating / deployment surfaces: provider-round/tool-result engine, foreground model actor, independently driven subagents, scope-aware orchestration registry, model-visible subagent tools and host-enforced write/completion gates; watcher mode is considered without inheriting its external configuration.
-- Adjacent surfaces excluded from ownership: upstream models' internal training/policy organizations, plugin implementations authored by downstream users, developer CI/benchmarks, repository release workflow and test agents.
+- Credited operating / distribution surfaces: provider-round/tool-result engine, foreground model actor, independently driven subagents, scope-aware orchestration registry, model-visible subagent tools and host-enforced write/completion gates; watcher mode is considered without inheriting its external configuration.
+- Adjacent first-party surfaces excluded from ownership: upstream models' internal training/policy organizations, plugin implementations authored by downstream users, developer CI/benchmarks, repository release workflow and test agents.
 - Modes considered: direct interactive and headless chat, daemon/RPC clients, model-driven parallel delegation with read-only/isolated/nonoverlapping write scopes, unattended watcher and autonomous session driver, optional user steering.
 - Recursion level: one SynapsCLI agent session with an optional multi-agent workgroup; watcher manages sessions at a wider operations boundary, not an automatic S3/S4/S5 owner.
 - Reviewed revision: `62853b06777fcc16db4b142d535a99e23da4b207`.
@@ -63,11 +63,12 @@ User or watcher supplies a goal. The foreground LLM reads observations and choos
 - Decision owner: model-driven foreground/worker agent inside the shipped runtime; an external model endpoint supplies inference but the tool-action loop is first-party wired.
 - Supporting / enforcement mechanisms: provider adapters, tool registry, stream events, sessions, budgets, daemon, context checkpointing and cancellation.
 - Closure path: goal/history → LLM tool choice → first-party tool execution → tool result added to history → next provider round / final response.
-- Why this is agent-owned: tool choice and next action are not prewritten as a deterministic workflow; the model acts on feedback, including inside subagent runtime.
+- Why this is / is not agent-owned: tool choice and next action are not prewritten as a deterministic workflow; the model acts on feedback, including inside subagent runtime.
 - Evidence: `crates/agent-engine/src/runtime/stream.rs`, `tools/subagent/start.rs` and README (pinned links above).
 - Basis: direct source-first control-flow inspection.
 - Confidence: high.
 - Caveats: task correctness depends on the selected model, tools and user permissions; a model-less session does not exercise S1.
+- Boundary reachability: shipped chat/TUI/RPC foreground stream and spawned subagent stream, using the standard bundled tool registry.
 
 ### Boundary reachability
 
@@ -84,11 +85,17 @@ User or watcher supplies a goal. The foreground LLM reads observations and choos
 - Decision owner: foreground LLM when it selects `write_policy` for `subagent_start`, steers/rescopes work and decides what to reconcile; host registry enforces matching scopes and returns a refusal. This does **not** credit deterministic scope matching itself as autonomous judgment.
 - Supporting / enforcement mechanisms: `WorkerWritePolicy`, `check_foreground_write`, overlap predicate, `write`/`edit` rejection and subagent completion gate.
 - Closure path: foreground chooses nonoverlapping scopes → concurrent agent work → overlapping foreground write is rejected with a concrete error → model receives that result and must avoid/reconcile the collision before continuing; terminal worker result is collected and reconciled before completion.
-- Why this is agent-owned: unlike mere subagent delegation, the scope choice and handling of a concrete collision remain in the model's next-action loop; host rejection is evidence of an actual structurally implemented inter-S1 interference path.
+- Why this is / is not agent-owned: unlike mere subagent delegation, the scope choice and handling of a concrete collision remain in the model's next-action loop; host rejection is evidence of an actual structurally implemented inter-S1 interference path.
 - Evidence: `tools/subagent/start.rs`, `agent-core/src/orchestration.rs`, `tools/write.rs`, `tools/edit.rs`, `tools/subagent/collect.rs` (pinned links above).
 - Basis: source-structural coordination witness, without an observed live multi-agent collision.
 - Confidence: medium-high.
 - Caveats: isolated worktree/read-only modes avoid the collision structurally, and incorrect agent scope declarations may fail to protect files outside their scope.
+- Distinct S1 units: an autonomous foreground model loop and an independently streamed subagent model loop share a task workspace; further workers may run concurrently.
+- Inter-S1 disturbance: foreground `write`/`edit` can target paths that a still-running worker declares writable, risking simultaneous edits to one work product.
+- Attenuating coordination relation: model-chosen `write_policy` scope/isolation and registry's active-worker overlap check block a colliding foreground write.
+- Feedback into subsequent S1 behaviour: the foreground receives the failed write as a tool result and can steer, collect or reconcile worker work before retrying or rescoping.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the exact overlap predicate and file-write rejection regulate concurrent operational interference, beyond mere messaging or dispatch.
+- Boundary reachability: bundled subagent dispatch and file-write tools use the same orchestration policy at runtime, without a plugin or downstream workflow definition.
 
 ### Boundary reachability
 
@@ -105,11 +112,14 @@ User or watcher supplies a goal. The foreground LLM reads observations and choos
 - Decision owner: foreground model exercising bundled `subagent_status`/`steer`/`collect`/`resume` tools; user may intervene, while the registry only tracks/enforces quotas and completion.
 - Supporting / enforcement mechanisms: model catalog/authorization, typed worker roles, worker status telemetry, runtime handle registry, budget/worker-count gates and prompt supervision guidance.
 - Closure path: model dispatches several current commitments → reads status/progress/completion → chooses steering/resumption or integration → collected result updates current task context and explicit reconciliation releases completion gate.
-- Why this is agent-owned: host logic does not choose which task is off-track or how to revise it; the foreground actor observes all subagents and has real steer/dispatch/collect authority over their current work.
+- Why this is / is not agent-owned: host logic does not choose which task is off-track or how to revise it; the foreground actor observes all subagents and has real steer/dispatch/collect authority over their current work.
 - Evidence: `tools/subagent/start.rs`, `tools/subagent/collect.rs`, `agent-engine/src/orchestration.rs`, `agent-core/src/orchestration.rs`, bundled supervision prompt and stream completion gate (pinned links above).
 - Basis: reachable first-party orchestration tools and feedback path.
 - Confidence: medium-high.
 - Caveats: foreground supervision is prompt-guided and optional in single-agent mode; watcher restart/budget enforcement alone is not S3 agent ownership.
+- Whole-system current view: foreground can inspect all of its active worker handles, states, partial outputs and collected results through the shipped orchestration tools.
+- Current-control decision scope: model can dispatch, set role/write policy, steer, resume and reconcile current work against the foreground outcome; host applies hard budget/limit gates.
+- Boundary reachability: standard foreground tool registry wires subagent supervision and orchestration, and feedback returns into the same model stream.
 
 ### Boundary reachability
 
@@ -126,7 +136,7 @@ User or watcher supplies a goal. The foreground LLM reads observations and choos
 - Decision owner: not supplied by the standard distribution; a foreground agent/user may request an optional reviewer, without a guaranteed independent challenge channel.
 - Supporting / enforcement mechanisms: subagent `reviewer` role, partial-output/status reads, telemetry, tool events and debug logs.
 - Closure path: ordinary worker report → foreground inspection or optional prompted review; no dedicated independent audit access and controlled corrective return is evidenced.
-- Why this is not agent-owned: typed reviewer capability and logs do not establish S3* independence or a different view of operational reality.
+- Why this is / is not agent-owned: typed reviewer capability and logs do not establish S3* independence or a different view of operational reality.
 - Evidence: `tools/subagent/start.rs`, `tools/subagent/collect.rs`, `agent-engine/src/orchestration.rs`, README.
 - Basis: bounded structural negative review.
 - Confidence: medium-high.
@@ -147,7 +157,7 @@ User or watcher supplies a goal. The foreground LLM reads observations and choos
 - Decision owner: user/operator/plugin author or downstream agent application; not a first-party S4 role.
 - Supporting / enforcement mechanisms: provider catalog, plugins/extensions, MCP, watcher config reload, memory/compaction and project prompts.
 - Closure path: tools/model/config can change on external instruction, but the repository does not ship a prospective model of environment and a dedicated adaptation option-to-present-control return.
-- Why this is not agent-owned: context persistence, plugin extensibility, task planning and deterministic config reload are not prospective organizational intelligence by themselves.
+- Why this is / is not agent-owned: context persistence, plugin extensibility, task planning and deterministic config reload are not prospective organizational intelligence by themselves.
 - Evidence: README, `src/watcher/supervisor.rs`, `crates/agent-engine/src/runtime/stream.rs`.
 - Basis: bounded structural negative review.
 - Confidence: medium-high.
@@ -168,7 +178,7 @@ User or watcher supplies a goal. The foreground LLM reads observations and choos
 - Decision owner: user/operator/configurator at a wider boundary; runtime enforces predefined limits and explicit session grants.
 - Supporting / enforcement mechanisms: `DelegationPolicy`, `CrossProviderGrant`, `EnforcementMode`, credential broker, user approval, prompt and role budgets.
 - Closure path: user-supplied settings/grants → deterministic enforcement → agent operation; no identity-level issue is routed to ultimate authority and returned as a revised policy decision in the shipped workflow.
-- Why this is not agent-owned: policy text and runtime authorization cannot be promoted to S5 merely because they constrain agent autonomy.
+- Why this is / is not agent-owned: policy text and runtime authorization cannot be promoted to S5 merely because they constrain agent autonomy.
 - Evidence: `agent-core/src/orchestration.rs`, README, `src/watcher_session.rs`.
 - Basis: bounded structural negative review.
 - Confidence: high.
