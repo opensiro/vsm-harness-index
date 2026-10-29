@@ -350,6 +350,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="archon"></a>[Archon](https://github.com/coleam00/Archon) | 2025-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="autoagent-hkuds"></a>[AutoAgent (HKUDS)](https://github.com/HKUDS/AutoAgent) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="agent-laboratory"></a>[Agent Laboratory](https://github.com/SamuelSchmidgall/AgentLaboratory) | 2025-Q1 | 2/6 | 1/5 | 0 | 1 | 1 | `A — — ? A(P) —` |
+| 5 | <a id="swarmx"></a>[SwarmX](https://github.com/tcztzy/swarmx) | 2024-Q4 | 2/6 | 1/5 | 0 | 2 | 0 | `A — P — A(P) —` |
 | 5 | <a id="san"></a>[San](https://github.com/genai-io/san) | 2024-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="goose"></a>[Goose](https://github.com/aaif-goose/goose) | 2024-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="flock"></a>[Flock](https://github.com/Onelevenvy/flock) | 2024-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
