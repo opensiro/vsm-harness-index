@@ -297,6 +297,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="oh-my-hermes"></a>[Oh My Hermes](https://github.com/witt3rd/oh-my-hermes) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="vix"></a>[Vix](https://github.com/get-vix/vix) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — A C —` |
 | 5 | <a id="clawgui"></a>[ClawGUI](https://github.com/ZJU-REAL/ClawGUI) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="senweavercoding"></a>[SenWeaverCoding](https://github.com/senweaver/SenWeaverCoding) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="deimos"></a>[Deimos](https://github.com/dxiv/dxa-deimos) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="bareagent"></a>[BareAgent](https://github.com/525300887039/BareAgent) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="haorui-agent-harness"></a>[Agent Harness](https://github.com/haorui-harry/agent-harness) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
