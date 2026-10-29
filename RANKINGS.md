@@ -281,6 +281,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="gentle-shell"></a>[gentle-shell](https://github.com/Gentleman-Programming/gentle-shell) | 2026-Q2 | 2/6 | 1/5 | 2 | 3 | 0 | `A C A(P) — C(P) P` |
 | 5 | <a id="alysis-code"></a>[Alysis Code](https://github.com/AlysisAi/alysis-code) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="prime-agent"></a>[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="kube-agents"></a>[kube-agents](https://github.com/gke-labs/kube-agents) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="clai"></a>[clai](https://github.com/pentoshi007/clai) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="agent-harness-kit"></a>[Agent Harness Kit](https://github.com/enmanuelmag/agent-harness-kit) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="tangle-agent-runtime"></a>[Tangle Agent Runtime](https://github.com/tangle-network/agent-runtime) | 2026-Q2 | 2/6 | 1/5 | 3 | 0 | 0 | `A C A C C —` |
