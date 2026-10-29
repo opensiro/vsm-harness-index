@@ -863,3 +863,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 862|cire-harness|cire-harness|https://github.com/fathdemr/cire-harness|2026-10-22T14:18:51Z|manual-discovery|e9fa8adc673ea32783e84ad84769f57bac6ff3fa|2026-10-29
 863|carry|Carry|https://github.com/wiggzz/carry|2026-08-14T04:02:15Z|manual-discovery|fd293547416818edd90a9667c31bd05498889569|2026-10-29
 864|super-pi-beam|Super-Pi-BEAM|https://github.com/oleksandr/super-pi-beam|2026-10-29T08:37:24Z|manual-discovery|03c6afd6d8250eaeb4ebca039290f95a9ab73227|2026-10-29
+865|twaldin-harness|twaldin/harness|https://github.com/twaldin/harness|2026-04-18T08:23:16Z|manual-discovery|f75dee4fd8f64d9357fb2862741f87ddb313250d|2026-10-29
