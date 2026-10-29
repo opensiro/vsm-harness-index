@@ -851,3 +851,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 850|agent-harness-csharp|Agent Harness CSharp|https://github.com/jackhuclan/harness_demo|2026-10-29T00:45:28Z|manual-discovery|a56e1f8230ed8415d079306602962bb90a79fa03|2026-10-29
 851|pwshharness|PwshHarness|https://github.com/josh-j/pwsh-harness|2026-10-09T13:53:50Z|manual-discovery|e56e989bbd68d1e6a1138c3755d6c76266700a78|2026-10-29
 852|tantra|tantra|https://github.com/malayh/tantra|2026-08-08T06:12:48Z|manual-discovery|779bf82b073bc5121bb70f45b36dab1ae1c05fd8|2026-10-29
+853|ralph-orchestrator|Ralph Orchestrator|https://github.com/mikeyobrien/ralph-orchestrator|2025-09-07T18:17:13Z|manual-discovery|b5789dfbb25bd4aa65ce565c756d95acc8c42f76|2026-10-29
