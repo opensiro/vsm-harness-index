@@ -149,6 +149,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="aivo-code"></a>[Aivo Code](https://github.com/yuanchuan/aivo) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="edict"></a>[Edict](https://github.com/cft0808/edict) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="bamboo"></a>[Bamboo](https://github.com/bigduu/Bamboo-agent) | 2026-Q1 | 3/6 | 2/5 | 2 | 0 | 0 | `A A A C C —` |
+| 4 | <a id="gruai"></a>[gruAI](https://github.com/andrew-yangy/gru-ai) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="karimo"></a>[KARIMO](https://github.com/opensesh/KARIMO) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="zeroclaw"></a>[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
 | 4 | <a id="20x"></a>[20x](https://github.com/peakflo/20x) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
