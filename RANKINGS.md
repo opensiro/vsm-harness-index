@@ -124,6 +124,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="raven"></a>[Raven](https://github.com/EverMind-AI/Raven) | 2026-Q2 | 3/6 | 2/5 | 2 | 2 | 0 | `A C A(P) C A P` |
 | 4 | <a id="exo"></a>[Exo](https://github.com/exoharness/exo) | 2026-Q2 | 3/6 | 2/5 | 0 | 3 | 0 | `A — P — A(P) A(P)` |
 | 4 | <a id="firstcoder"></a>[FirstCoder](https://github.com/KomorGiaoGiao/FirstCoder) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 1 | `A ? A A — —` |
+| 4 | <a id="chainreactors-cyber-harness"></a>[chainreactors/cyber-harness](https://github.com/chainreactors/cyber-harness) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="omniharness"></a>[omniHarness](https://github.com/archimedes-run/omniHarness) | 2026-Q2 | 3/6 | 2/5 | 0 | 2 | 0 | `A — A — A(P) P` |
 | 4 | <a id="earthwalker17-agent-os"></a>[Agent OS (earthwalker17)](https://github.com/earthwalker17/agent-os) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 2 | `A C A A ? ?` |
 | 4 | <a id="orchestra"></a>[Orchestra](https://github.com/DrSeedon/orchestra) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 2 | `A C A A ? ?` |

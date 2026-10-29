@@ -872,3 +872,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 871|hamroh|Hamroh|https://github.com/Rustam-Z/hamroh|2026-04-11T18:22:10Z|manual-discovery|0970d3a3dc8ff50970998515afe4ef79510f397e|2026-10-29
 872|s1n6h-pentest-harness|S1N6H/pentest-harness|https://github.com/S1N6H/pentest-harness|2026-08-26T04:57:19Z|manual-discovery|4638f38082bdf37cea03ad151905c4bb8662f6e9|2026-10-29
 873|victrola|Victrola|https://github.com/haileyok/victrola|2026-02-08T05:51:58Z|manual-discovery|2bc6262cc7d12a61b6d8de68f3a16ceaec3ba5d7|2026-10-29
+874|chainreactors-cyber-harness|chainreactors/cyber-harness|https://github.com/chainreactors/cyber-harness|2026-05-07T13:46:47Z|manual-discovery|89f8af5ea2f478bf96eedc8f1b6ba8401ce28853|2026-10-29
