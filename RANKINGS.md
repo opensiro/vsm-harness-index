@@ -641,6 +641,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="chump"></a>[Chump](https://github.com/repairman29/chump) | 2026-Q1 | 1/6 | 0/5 | 3 | 2 | 0 | `A C C(P) C — P` |
 | 6 | <a id="agent-runtime-mattbusel"></a>[agent-runtime](https://github.com/Mattbusel/agent-runtime) | 2026-Q1 | 1/6 | 0/5 | 3 | 0 | 0 | `A C C C — —` |
 | 6 | <a id="evot"></a>[Evot](https://github.com/evotai/evot) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="ralphify"></a>[Ralphify](https://github.com/computerlovetech/ralphify) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="onecli"></a>[OneCLI](https://github.com/onecli/onecli) | 2026-Q1 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="heddle"></a>[Heddle](https://github.com/roackb2/heddle) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 1 | `A ? — — — —` |
 | 6 | <a id="buzz"></a>[Buzz](https://github.com/block/buzz) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
