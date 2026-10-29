@@ -857,3 +857,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 856|histh|Histh|https://github.com/ayandexyz/Honey-I-Shrunk-the-Harness|2026-09-17T06:06:32Z|manual-discovery|f2aff641e55c2e6bb8c55a8fb82b67bdf2addd1a|2026-10-29
 857|20x|20x|https://github.com/peakflo/20x|2026-02-07T08:48:56Z|manual-discovery|168693be23965f2e5cc8f15c32093544234c6d01|2026-10-29
 858|opencode-orchestrator|OpenCode Orchestrator|https://github.com/agnusdei1207/opencode-orchestrator|2026-01-13T01:25:07Z|manual-discovery|fdba1b1eea1e78d27aa733a421beaa61ad0bb8a2|2026-10-29
+859|ai-maestro|AI Maestro|https://github.com/23blocks-OS/ai-maestro|2025-10-10T00:17:03Z|manual-discovery|6c8a5927d66637855c2a31d1b54f92abc9b9e165|2026-10-29
