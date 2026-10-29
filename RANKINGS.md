@@ -441,6 +441,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="fx"></a>[FX](https://github.com/vercel-labs/fx) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="aether"></a>[Aether](https://github.com/Aetherdz/aether) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-orchestrator-mohamedwaleed"></a>[Agent Orchestrator (waves)](https://github.com/mohamedwaleed/agent-orchestrator) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="tantra"></a>[tantra](https://github.com/malayh/tantra) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="phone-harness"></a>[Phone Harness](https://github.com/ShawnPana/phone-harness) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="ylva"></a>[Ylva](https://github.com/manuel-koch/ylva) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="pasclaude"></a>[PasClaude](https://github.com/seanrobertwright/PasClaude) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
