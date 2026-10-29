@@ -876,4 +876,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 875|telos|Telos|https://github.com/nevinshine/telos-runtime|2026-01-29T18:48:06Z|manual-discovery|d430d61c9005f2ab5523ba2d41bdab574fcc314e|2026-10-29
 876|tardigrade|Tardigrade|https://github.com/clavia-labs/tardigrade|2026-08-13T16:52:14Z|manual-discovery|9ba13979e251f338a0f6c7baaf29f4f2d67a34d5|2026-10-29
 877|psai|PSAI|https://github.com/dfinke/PSAI|2024-04-14T12:16:09Z|manual-discovery|018a3304dc7d09ac90e78525f5181bee17edb5a1|2026-10-29
-878|debroid|Debroid|https://github.com/PatilShreyas/debroid|2026-08-02T15:58:29Z|manual-discovery|b87f489bd02dcfb5c8c37fa2a4340847c9e48adb|2026-10-29
+878|ironcurtain|IronCurtain|https://github.com/provos/ironcurtain|2026-02-21T23:34:31Z|manual-discovery|d51a3467cbda6a2e94cf04e885e8ae1abdd0f6be|2026-10-29
+879|debroid|Debroid|https://github.com/PatilShreyas/debroid|2026-08-02T15:58:29Z|manual-discovery|b87f489bd02dcfb5c8c37fa2a4340847c9e48adb|2026-10-29
