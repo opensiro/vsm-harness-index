@@ -887,3 +887,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 886|kube-agents|kube-agents|https://github.com/gke-labs/kube-agents|2026-05-07T15:51:52Z|manual-discovery|c20297fccc667bec06b5d78f89ee4e368fd29f3d|2026-10-29
 887|openstinger|OpenStinger|https://github.com/srikanthbellary/openstinger|2026-02-24T06:04:07Z|manual-discovery|73ea429d4eec4e900cb364e6ffc1982ef3f75b47|2026-10-29
 888|gruai|gruAI|https://github.com/andrew-yangy/gru-ai|2026-02-22T12:22:12Z|manual-discovery|8fba47928a0fe3fdfda7a31d22b73625c78cbfc4|2026-10-29
+889|epic-harness|Epic Harness|https://github.com/epicsagas/epic-harness|2026-04-09T10:54:42Z|manual-discovery|1f3823af536b1f56b3cb8af90cc8ea77ef71c4bd|2026-10-29
