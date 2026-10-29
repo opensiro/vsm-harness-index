@@ -861,3 +861,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 860|ax-ecosystem|AX ecosystem|https://github.com/3-lines-studio/ax|2026-08-19T22:23:21Z|manual-discovery|166905e4953f011a2c930abb18ca420d6340e4d1|2026-10-29
 861|qujck-agent-harness|agent-harness|https://github.com/qujck/harness|2026-05-29T09:17:08Z|manual-discovery|9a2fc16d1cc26070114ae6e908107cf211e0c99e|2026-10-29
 862|cire-harness|cire-harness|https://github.com/fathdemr/cire-harness|2026-10-22T14:18:51Z|manual-discovery|e9fa8adc673ea32783e84ad84769f57bac6ff3fa|2026-10-29
+863|carry|Carry|https://github.com/wiggzz/carry|2026-08-14T04:02:15Z|manual-discovery|fd293547416818edd90a9667c31bd05498889569|2026-10-29
