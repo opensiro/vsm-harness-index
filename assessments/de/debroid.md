@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
 assessment_changed_at: 2026-10-29
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -195,4 +195,4 @@ Typed debugger commands attenuate API/Android runtime complexity into JSON. Debu
 
 ## Assessment summary
 
-**Proposed disposition: `excluded-no-agentic-vsm`.** Debroid is an Apache-2.0 headless Android debugger and external-agent tool integration, not a first-party autonomous AI agent harness at the pinned standard-distribution boundary. The external agent owns task interpretation, adaptive tool choice and next-action feedback. No shipped first-party agentic S1 closure is established, so the six-function vector is bounded negative (`— · — · — · — · — · —`).
+**Canonical disposition: `excluded-no-agentic-vsm`.** Debroid is an Apache-2.0 headless Android debugger and external-agent tool integration, not a first-party autonomous AI agent harness at the pinned standard-distribution boundary. The external agent owns task interpretation, adaptive tool choice and next-action feedback. No shipped first-party agentic S1 closure is established, so the six-function vector is bounded negative (`— · — · — · — · — · —`).
