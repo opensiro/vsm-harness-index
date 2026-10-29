@@ -874,3 +874,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 873|victrola|Victrola|https://github.com/haileyok/victrola|2026-02-08T05:51:58Z|manual-discovery|2bc6262cc7d12a61b6d8de68f3a16ceaec3ba5d7|2026-10-29
 874|chainreactors-cyber-harness|chainreactors/cyber-harness|https://github.com/chainreactors/cyber-harness|2026-05-07T13:46:47Z|manual-discovery|89f8af5ea2f478bf96eedc8f1b6ba8401ce28853|2026-10-29
 875|telos|Telos|https://github.com/nevinshine/telos-runtime|2026-01-29T18:48:06Z|manual-discovery|d430d61c9005f2ab5523ba2d41bdab574fcc314e|2026-10-29
+876|tardigrade|Tardigrade|https://github.com/clavia-labs/tardigrade|2026-08-13T16:52:14Z|manual-discovery|9ba13979e251f338a0f6c7baaf29f4f2d67a34d5|2026-10-29

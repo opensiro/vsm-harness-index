@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -202,4 +202,4 @@ Durable journal replay, `ToolReturned` feedback, permission gates, per-turn tool
 
 ## Assessment summary
 
-The shipped Tardigrade actor actually owns a model/tool/observation loop with durable local state: `S1=A`. Delegation, parent notifications, permission controls, budget caps, compaction and formal runtime tests are important supporting machinery, but do not meet the specific evidence/ownership/closure requirements for S2, S3, S3*, S4 or S5 at the declared default-runtime boundary. The proposed included vector is **`A / — / — / — / — / —`**.
+The shipped Tardigrade actor actually owns a model/tool/observation loop with durable local state: `S1=A`. Delegation, parent notifications, permission controls, budget caps, compaction and formal runtime tests are important supporting machinery, but do not meet the specific evidence/ownership/closure requirements for S2, S3, S3*, S4 or S5 at the declared default-runtime boundary. The canonical included vector is **`A / — / — / — / — / —`**.
