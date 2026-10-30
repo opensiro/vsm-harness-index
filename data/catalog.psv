@@ -905,3 +905,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 904|beecork|beecork|https://github.com/beecork/beecork|2026-06-26T13:40:37Z|continuous-discovery|fabecb4e8690f2fa347cc750dd0d2dc71ee493dc|2026-10-30
 905|limina|Limina|https://github.com/theam/limina|2026-03-08T17:13:31Z|manual-discovery|56a4e2f3c9c613c7bc61f6a260ade379b21cd782|2026-10-27
 906|symphlo|Symphlo|https://github.com/huisezhiyin/symphlo|2026-07-22T04:09:24Z|manual-discovery|47c4975f1689c18334ad99252a0eb575e05c7958|2026-10-27
+907|hermes-loops|Hermes Loops|https://github.com/AtlasOmnia/hermes-loops|2026-08-13T17:39:13Z|manual-discovery|dc4a16fb3614b9f5dc2d3b42c9f28bd24191bc5c|2026-10-27
