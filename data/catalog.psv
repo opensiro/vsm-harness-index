@@ -900,3 +900,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 899|agent-from-scratch|Agent From Scratch|https://github.com/liiiiiiiiil/coding-agent-from-scratch|2026-08-26T13:23:32Z|manual-discovery|cd7ec0ee2031d1723e1d38593d43385778fd5d30|2026-09-29
 900|novacode|NovaCode|https://github.com/gczhuang-cmd/NovaCode|2026-08-15T10:16:29Z|continuous-discovery|34a2d555a530120fd6241f7065d49390e52f3573|2026-10-30
 901|codeforge|CodeForge|https://github.com/Asem-Saber/CodeForge|2026-06-19T06:59:04Z|continuous-discovery|30027de1de2831ffceac830129df5ccb9d664881|2026-10-30
+902|codinggirl|CodingGirl|https://github.com/WEP-56/Coding_agent-Implementation-from-Scratch|2026-03-08T02:58:07Z|continuous-discovery|4b4d32706b56697007e362ed9f257c0610a99e8b|2026-10-30
