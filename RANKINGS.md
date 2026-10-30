@@ -458,6 +458,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="micro"></a>[Micro](https://github.com/rmonvfer/micro) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="carry"></a>[Carry](https://github.com/wiggzz/carry) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="stcode"></a>[stcode](https://github.com/Ming-doan/stcode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="hermes-loops"></a>[Hermes Loops](https://github.com/AtlasOmnia/hermes-loops) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="tardigrade"></a>[Tardigrade](https://github.com/clavia-labs/tardigrade) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarm"></a>[SWARM](https://github.com/KhanUzeb/SWARM) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="foxagent"></a>[FoxAgent](https://github.com/douzifox/foxagent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
