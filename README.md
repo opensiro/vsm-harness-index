@@ -66,7 +66,7 @@ assessments/<harness_id[:2]>/<harness_id>.md
 
 | Included | Catalog | Reassessments | Full-A |
 | ---: | ---: | ---: | ---: |
-| **846** | 918 | 88 | 2 |
+| **846** | 919 | 88 | 2 |
 
 **Next corpus milestone:** 846/1000 (84.6%).
 

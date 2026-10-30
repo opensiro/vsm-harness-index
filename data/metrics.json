@@ -3,11 +3,11 @@
   "snapshot_date": "2026-10-30",
   "corpus": {
     "included_assessments": 846,
-    "canonical_assessments": 918,
-    "excluded_assessments": 72,
-    "proposed_assessments": 10,
-    "catalog_entries": 918,
-    "catalog_entries_without_included_assessment": 72,
+    "canonical_assessments": 919,
+    "excluded_assessments": 73,
+    "proposed_assessments": 9,
+    "catalog_entries": 919,
+    "catalog_entries_without_included_assessment": 73,
     "reassessment_events": 88,
     "full_a_assessments": 2
   },
