@@ -168,6 +168,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="tale"></a>[Tale](https://github.com/tale-project/tale) | 2025-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A C A(P) A — P` |
 | 4 | <a id="xcientist"></a>[Xcientist](https://github.com/OpenDFM/Xcientist) | 2025-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="agentos"></a>[AgentOS](https://github.com/framerslab/agentos) | 2025-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A A C — A P` |
+| 4 | <a id="agentscope-java-2-0"></a>[AgentScope Java 2.0](https://github.com/agentscope-ai/agentscope-java) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="ralph-orchestrator"></a>[Ralph Orchestrator](https://github.com/mikeyobrien/ralph-orchestrator) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="ursa"></a>[URSA](https://github.com/lanl/ursa) | 2025-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="aionui"></a>[AionUi](https://github.com/iOfficeAI/AionUi) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
