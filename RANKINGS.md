@@ -447,6 +447,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="dsh-harness-one"></a>[Workflow One](https://github.com/chumingjun/dsh-harness-one) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ax-ecosystem"></a>[AX ecosystem](https://github.com/3-lines-studio/ax) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="motifcode"></a>[Motifcode](https://github.com/TaewoooPark/Motifcode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
+| 6 | <a id="gear"></a>[Gear](https://github.com/rsi-gear/gear) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="kram"></a>[Kram](https://github.com/codexmark/kram) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deepresearch-agent-harness"></a>[DeepResearch Agent Harness](https://github.com/SichengLong26/deepresearch_agent_harness) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C — — C(P) —` |
 | 6 | <a id="llm"></a>[llm](https://github.com/imjiaoyuan/llm) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
