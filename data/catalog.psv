@@ -895,3 +895,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 894|wanman|wanman|https://github.com/chekusu/wanman|2026-04-22T14:17:57Z|manual-discovery|d3a8138de6c21981a4f1449a7b3f201e724c55c9|2026-10-29
 895|feather|Feather|https://github.com/paper-instruments/feather-train|2026-09-29T20:49:28Z|manual-discovery|cdb5f34bad11c0c75ca4124b25a3e5da86bb62e2|2026-10-27
 896|s1code|S1Code|https://github.com/mertcicekci0/S1Code|2026-09-18T22:35:13Z|manual-discovery|3aeb8baa16f556e15bf550ba8debdcbfcfc366bd|2026-09-29
+897|zleap-agent|Zleap-Agent|https://github.com/Zleap-AI/Zleap-Agent|2026-05-31T09:47:27Z|manual-discovery|8aa5f07a20c535687ee39c6dccade7869ae27fad|2026-10-27
