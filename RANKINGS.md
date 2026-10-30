@@ -168,6 +168,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="tale"></a>[Tale](https://github.com/tale-project/tale) | 2025-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A C A(P) A — P` |
 | 4 | <a id="xcientist"></a>[Xcientist](https://github.com/OpenDFM/Xcientist) | 2025-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="agentos"></a>[AgentOS](https://github.com/framerslab/agentos) | 2025-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A A C — A P` |
+| 4 | <a id="agentscope-java-2-0"></a>[AgentScope Java 2.0](https://github.com/agentscope-ai/agentscope-java) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="ralph-orchestrator"></a>[Ralph Orchestrator](https://github.com/mikeyobrien/ralph-orchestrator) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="ursa"></a>[URSA](https://github.com/lanl/ursa) | 2025-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="aionui"></a>[AionUi](https://github.com/iOfficeAI/AionUi) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
@@ -407,6 +408,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agent0"></a>[agent0](https://github.com/xudafeng/agent0) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="lca-code-agent"></a>[LCA Code Agent](https://github.com/Kandog/lca-code-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="mingbird"></a>[Mingbird](https://github.com/Mingbird/Mingbird-agent) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="agent-harness-now-model-citizen"></a>[Agent Harness (now Model Citizen)](https://github.com/JakeSelby/model-citizen) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C — C P —` |
 | 6 | <a id="orca-code"></a>[Orca Code](https://github.com/Nethyric/orca-code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mi"></a>[mi](https://github.com/pegov/mi) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hx"></a>[hx](https://github.com/phantomic12/hx-harness) | 2026-Q3 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
@@ -590,6 +592,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="multi-agent-orchestrator-rs"></a>[multi-agent-orchestrator-rs](https://github.com/formiat/multi-agent-orchestrator-rs) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cubeloop"></a>[CubeLoop](https://github.com/cubeplexai/cubeloop) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="harness"></a>[Harness](https://github.com/sausheong/harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
+| 6 | <a id="opensquilla"></a>[OpenSquilla](https://github.com/TokenRhythm/opensquilla) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 1 | `A — ? — — —` |
 | 6 | <a id="miii"></a>[miii](https://github.com/maruakshay/miii-cli) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="macher-agent"></a>[macher-agent](https://github.com/elij/macher-agent) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="ui-harness"></a>[UI Harness](https://github.com/awizemann/harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
