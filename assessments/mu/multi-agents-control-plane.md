@@ -8,16 +8,18 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
-autonomy_s1: C
+status: excluded-no-agentic-vsm
+autonomy_s1: —
 autonomy_s2: —
-autonomy_s3: P
-autonomy_s3_star: C
+autonomy_s3: —
+autonomy_s3_star: —
 autonomy_s4: —
-autonomy_s5: P
+autonomy_s5: —
 ---
 
 # Multi-Agents Control Plane
+
+**Canonical disposition:** `excluded-no-agentic-vsm` for frozen Index batch #2393, row 4. The standalone proposal documented a first-party **constructor** for externally run agents (`S1=C`) and read-only review prompts (`S3*=C`), but the Index inclusion gate requires a first-party **autonomous operational S1 (`S1=A`)**. The canonical no-agentic-VSM vector does not deny the utility of this deterministic control plane; it excludes external coding tools, human review and their unverified autonomy from the system's own decision owners. No model/provider-backed execution was performed.
 
 ## Review boundary
 
@@ -52,19 +54,25 @@ The decisive rights must be separated: the external model owns local code choice
 
 ## S1 — Operations
 
-- State: C
+- State: —
 - Function: a contract-bounded AI coding task is an operational cell when connected to an actual external coding agent.
 - Disturbance / variety regulated: implementation details, changing repository code, failing tests, scope requirements and tool feedback.
 - Decisive decision or feedback right: choose which code and tests to create/change within the authorized task area, and return an implementation result.
 - Decision owner: configured external model coding agent in the composed run; no first-party model execution loop in this repository.
 - Supporting / enforcement mechanisms: generated executor prompt and adapter, tool-assignment taxonomy, opt-in subprocess/deeplink launcher, task contract and receipt schema.
-- Closure path: owner task contract → `ai dispatch` prompt → external agent tool executes under composed authority → changed repository files and executor receipt → later QA and project decision.
-- Boundary reachability: first-party `cmd_dispatch` builds a concrete per-tool prompt, and opt-in `perform_auto_dispatch` can launch a declared executable or deeplink. Default settings do not launch; developer/owner must compose an actual model tool and delegation authority.
-- Why this is / is not agent-owned: the installed control plane has no autonomous model task loop; first-party S1-specific adapter construction is real, but ownership only closes through an external agent/tool configuration, hence C rather than A.
+- Closure path: owner task contract → `ai dispatch` prompt → optionally configured **external** agent tool runs → changed product files/executor receipt → QA and parent decision. The first-party code does not execute an autonomous decision loop itself.
+- Boundary reachability: no positive first-party autonomous state claimed. `cmd_dispatch` builds a prompt and opt-in `perform_auto_dispatch` launches an externally supplied tool, which is excluded as an independent operational decision owner.
+- Why this is / is not agent-owned: installed control plane has no model-controlled task-turn/tool-result loop. Constructor support, including optional external-tool launch, does not by itself satisfy the canonical included `S1=A` threshold.
 - Evidence: [dispatch/render code](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/prompts.py), [auto dispatch](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/auto_dispatch.py), [CLI commands](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_cli.py).
-- Basis: bounded S1 constructor, not autonomous default runtime.
+- Basis: source-bound absence of an autonomous first-party S1; constructor potential was described in the integrated proposal #2400.
 - Confidence: high for constructor status; no live external-agent evidence.
 - Caveats: task-state commands and static docs alone are not an autonomous agent. Installation, configured external tool and project intent are necessary for a real S1 unit.
+
+### Absence scope
+
+- Surfaces inspected: stdlib CLI, `cmd_dispatch`, auto-launch/deeplink, adapter generation, external-tool descriptors, task events and integration/unit tests.
+- Plausible first-party paths checked: manual dispatch, configured auto-exec, generated executor prompts and QA receipts, CLI task transitions, and external coding-host integrations.
+- Why no material first-party path remains: the only model-agent decision loop belongs to an external Codex/Claude/Gemini-like executable or its human operator; first-party Python code creates artifacts or invokes that tool and never owns autonomous task/tool decisions. At this defined boundary there is no S1=A capable of admission.
 
 ## S2 — Coordination
 
@@ -89,25 +97,31 @@ The decisive rights must be separated: the external model owns local code choice
 
 ## S3 — Inside-and-now control
 
-- State: P
-- Function: whole-project parent control of current task scope, model assignment, risk gate and merge readiness.
+- State: —
+- Function: parent task/risk choices and merge-readiness checks exist, but no whole-system S3 regulation of **first-party autonomous S1 operations** closes at the included-harness boundary.
 - Disturbance / variety regulated: active task priorities, unauthorized diff expansion, incompatible risk/evidence decisions and execution-resource allocation.
-- Whole-system current view: repository `.ai/tasks` states, current task assignments, dependency graph, accepted or rejected QA receipts and evidence/verification status.
-- Current-control decision scope: parent sets task contracts, allowed scopes, assigned tool/reviewer, risk and explicit approval for high-risk merge.
+- Whole-system current view: the local inventory of *externally delegated* tasks, assignments, dependency graph and receipts is a useful control record, not evidence of an internally operating autonomous agent fleet.
+- Current-control decision scope: human parent sets task scopes and merge approvals for its external repository work.
 - Decisive decision or feedback right: choose what may execute and what may proceed to repository merge under current constraints.
-- Decision owner: legitimate project maintainer/operator in standard mode, with CLI validators enforcing fixed selected constraints; no first-party agent exercises whole-project S3 current control autonomously.
+- Decision owner: external project maintainer, not an agentic owner within a qualifying first-party VSM organization.
 - Supporting / enforcement mechanisms: `cmd_task_show`, task routing taxonomy, scope verification, QA/closeout gates, immutable receipts and risk rules.
-- Closure path: parent defines task/risk/assignments → handoff prompt and verifier use the contract → QA acceptance plus owner `--approved` where required → parent executes normal Git merge or returns revision to executor.
-- Boundary reachability: installed CLI reads persisted task contracts and QA receipts, gates merge readiness and generates executable handoff prompts; a human is needed to make the actual authority choice/merge.
-- Why this is / is not agent-owned: deterministic tool recommendation and checkers do not own the chosen priority/risk/merge decision; parent explicitly retains it.
+- Closure path: operator decisions and deterministic gates condition external agents and external Git merge, but no first-party autonomous S1 receives an internally owned project-wide current-control decision.
+- Boundary reachability: no positive first-party S3 state claimed; installed CLI gates external work and reports merge readiness without owning the coding operations.
+- Why this is / is not agent-owned: deterministic routing and QA parsing are not a project-wide agent S3 decision; the owner remains external.
 - Evidence: [task merge gate](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/tasks.py), [routing and conflict reporting](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/route.py), [verification contract](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/verify_contract.py).
-- Basis: real parent decision right and return to bounded execution.
+- Basis: external parent management is described but not promoted to S3 publication for an excluded no-S1 boundary.
 - Confidence: high for parent-owned mode.
-- Caveats: a task manager or human final click alone does not prove S3; the whole-project contract/priority/risk surface and returned gate are the credited path.
+- Caveats: an integrating project can obtain human-owned current management over external agents, but that does not change the first-party S1 absence finding.
+
+### Absence scope
+
+- Surfaces inspected: task inventory, routing/assignment rules, contract parser, scope checker, QA gate and merge command.
+- Plausible first-party paths checked: autonomous agent-manager interventions over current operational work, budget/commitment arbitration and returned changes to internal S1 cells.
+- Why no material first-party path remains: current-control decisions are supplied by external owner; code merely applies preselected task/risk settings to externally executed agents, with no qualifying first-party autonomous operations to govern.
 
 ## S3* — Complementary audit
 
-- State: C
+- State: —
 - Function: construct a separate read-only reviewer path to challenge executor claims against actual repository diff, task acceptance and supporting evidence.
 - Disturbance / variety regulated: executor may claim completion without source/test evidence, mutate forbidden files or omit regressions.
 - Claim being audited: executor's assertion that its bounded implementation satisfies task contract and acceptance tests.
@@ -115,16 +129,22 @@ The decisive rights must be separated: the external model owns local code choice
 - Complementary access path: reviewer prompt explicitly requests the *exact diff/revision*, contract and separate read-only inspection, then typed QA decision and evidence references.
 - Independence boundary: reviewer role has no implementation authority and is a distinct configured tool identity; for high risk routing can recommend cross-model-family independence, but an actual independent reviewer is external/manual and not verified merely by a receipt string.
 - Who acts on findings: human owner and subsequent executor; `ai merge` refuses non-accepting QA receipts and `task-closeout`/evidence violations.
-- Decisive decision or feedback right: independently judge accept/revise/reject against source evidence, not merely replay the executor's routine status.
-- Decision owner: separate externally executed reviewer, to be composed and verified by the project owner; first-party CLI does not autonomously render the audit verdict.
+- Decisive decision or feedback right: an external reviewer could judge accept/revise/reject; no first-party independent reviewer is instantiated.
+- Decision owner: separate external reviewer/human if the owner actually invokes one; no first-party autonomous audit owner.
 - Supporting / enforcement mechanisms: `ai review` prompt, `receipt.qa.yaml` schema, revision/diff fingerprint, model family metadata, `ai merge` QA gate and immutable-round policy.
-- Closure path: separate reviewer reads diff → writes QA receipt → owner/gate accepts or routes `revise`/`reject` to next executor attempt; actual reviewer execution must be supplied.
-- Boundary reachability: the CLI ships `cmd_review` and versioned QA schema/merge gate for installed projects; this is an S3*-specific constructor, not only an example or README assertion.
-- Why this is / is not agent-owned: independent reviewer agent could own the audit judgment after composition, but no out-of-box autonomous reviewer execution or guaranteed separation is proved; classify C, not A.
+- Closure path: if an external reviewer supplies an actual verdict, the CLI can consume its QA receipt; without that external reviewer the schema and gate cannot inspect and judge artifacts independently.
+- Boundary reachability: no positive first-party audit state claimed. `cmd_review` writes a prompt and QA schema; actual independent source access/judgment remains outside the shipped boundary.
+- Why this is / is not agent-owned: independent reviewer agent could own judgment after user composition, but receipt labels and read-only prompts do not establish that reviewer as a first-party autonomous auditor.
 - Evidence: [review prompt generation](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/prompts.py), [versioned QA schema](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/task_evidence.py), [merge gate](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/tasks.py), [cross-family routing](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/route.py).
-- Basis: source-bound distinct audit constructor and return, not generic unit tests.
-- Confidence: moderate-high for C.
+- Basis: evidence of an audit *constructor* but absence of first-party independent audit decision closure.
+- Confidence: high for external-review dependence.
 - Caveats: QA receipt parsing cannot independently attest that a claimed reviewer or model family truly ran; human owner must execute and verify the separate actor.
+
+### Absence scope
+
+- Surfaces inspected: reviewer prompt builder, immutable QA receipt schema, merge gate, cross-family recommendation and tests.
+- Plausible first-party paths checked: automatic model reviewer launch, independent access to checked diff, reviewer judgment and closed audit verdict returned to operations.
+- Why no material first-party path remains: standard `ai review` generates a handoff file but does not execute a reviewer; a supplied receipt is not proof of independently observed reality, and the required judge/return remains composed outside the first-party runtime.
 
 ## S4 — Outside-and-then intelligence
 
@@ -149,22 +169,28 @@ The decisive rights must be separated: the external model owns local code choice
 
 ## S5 — Policy and identity
 
-- State: P
-- Function: project owner preserves ultimate work-policy identity through canonical `.ai/` configuration, immutable task contracts and generated agent instructions.
+- State: —
+- Function: deterministic project policy/instruction propagation exists, but no first-party organizational identity/ultimate-policy decision loop for an internally autonomous operating system is established.
 - Disturbance / variety regulated: incompatible goals, scope expansion, tool policy changes and threats to project identity or risk tolerance.
 - Identity / ultimate-policy issue: which canonical project rules and task authority limits all future AI contributors must respect, and who may legitimately amend those rules.
-- Ultimate authority in each claimed mode: legitimate repository/project maintainer; deterministic `.ai` policy registry and generated adapters transmit that choice but have no independent ultimate-policy discretion.
-- Return-to-operation path: parent changes canonical `.ai/` project policy/skills/config → `ai sync` creates guarded adapters/manifests → future external agent prompts use those instructions and contract gates constrain subsequent work.
+- Ultimate authority in each claimed mode: external repository/project maintainer; no S5 positive first-party mode is claimed in this excluded boundary.
+- Return-to-operation path: parent changes canonical `.ai/` policy/config → `ai sync` renders instructions for external agent tools. This is a useful outward policy-support mechanism, not internally closed S5 over first-party autonomous operations.
 - Decisive decision or feedback right: define/revise ultimate project operating policy, not just approve an implementation diff.
-- Decision owner: human/project parent with repository modification/merge authority.
+- Decision owner: external human/project parent.
 - Supporting / enforcement mechanisms: `.ai/config.yaml`, canonical skills/rules registry, generated adapter synchronization, hash manifest, task contract and risk gate.
-- Closure path: legitimate parent policy update → canonical registry → deterministic rendering → next agent handoff and verification; parent still owns actual project Git changes.
-- Boundary reachability: the installed `ai sync` and prompt assembly consume canonical `.ai` sources for supported external tool adapters, not merely docs or CI.
-- Why this is / is not agent-owned: a static policy file alone would not prove S5; here an operational parent edit/propagation path exists, while no agent owns the ultimate identity decision.
+- Closure path: parent change reaches deterministic adapter files, then requires an external agent/parent workflow to exercise and close the governing decision.
+- Boundary reachability: no positive first-party S5 state claimed; canonical `.ai/` rules reach external tools only through rendered instructions.
+- Why this is / is not agent-owned: no internally autonomous agent owns ultimate identity and the parent policy loop is external to the no-S1 control-plane boundary.
 - Evidence: [adapter sync](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/sync.py), [config loader](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/config.py), [prompt construction](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/scripts/ai_plane/prompts.py), [README authority](https://github.com/QiQi14/multi-agents-control-plane/blob/4483c54037ed04c8b5f7f2ac65aca7604d6c58e8/README.md).
-- Basis: bounded parent policy-to-next-run return.
+- Basis: bounded parent instruction propagation without qualifying first-party agentic closure.
 - Confidence: moderate.
 - Caveats: normal high-risk merge approval is S3 current control, not the sole basis for S5.
+
+### Absence scope
+
+- Surfaces inspected: canonical configuration, policy registry, `ai sync`, generated adapters, task contracts and merge-risk controls.
+- Plausible first-party paths checked: ultimate policy proposal/decision owner, legitimate return of changed purpose to an internally executing S1 organization and closure after S3/S4 tension.
+- Why no material first-party path remains: the CLI renders owner-written instructions for externally executed agents but does not host an autonomous operating organization whose identity-level decisions close inside this first-party system; task risk approval is routine external control.
 
 ## Distributed OSS parent arrangement
 
@@ -172,7 +198,7 @@ The public repository distributes an installable tool. Its upstream maintainers 
 
 ## Self-hosted and non-human modes
 
-No daemon/provider backed autonomous executor is bundled. An operator can use manual handoff or opt into a configured external executable/deeplink; this keeps S1 constructor-level in the general distribution. Separate QA is also an active constructor path but requires an actually independent external reviewer. An entirely agent-governed project may be composed using these tools, but it is not shipped as an autonomous S3/S4/S5 mode.
+No daemon/provider-backed autonomous executor is bundled. An operator can use manual handoff or opt into a configured external executable/deeplink; neither alone establishes first-party S1=A. Separate QA is an audit construction affordance, not a deployed independent reviewer. An entirely agent-governed project could be composed externally using these tools, but is not shipped as a complete first-party agentic operating mode.
 
 ## Recursion
 
@@ -188,4 +214,5 @@ Task scope and evidence gates attenuate implementation and proof variety before 
 - The `--auto` path executes a user-provided descriptor; no preconfigured default launch or provider-backed live run is credited.
 - Review prompts and QA receipts support a complementary audit constructor; they do not independently prove a different model family, actor isolation or actual source-first review occurred.
 - No demonstrated cross-task S2 conflict dampening beyond generic scope/dependencies/verification locks; no S4 environmental futures loop.
-- A parent-maintained `.ai/` policy and generated adapter return were observed; this is not an autonomous S5 claim or a human-approval-means-S5 shortcut.
+- Parent-maintained `.ai/` policy and generated adapter return were observed; these do not substitute for an autonomous first-party S1 or close S5 over such a unit.
+- Canonical exclusion has all six `—` by the active Index admission boundary. The proposed vector C/—/P/C/—/P remains available in PR #2400 as analysis of constructor and external parent affordances, not as an included autonomy profile.
