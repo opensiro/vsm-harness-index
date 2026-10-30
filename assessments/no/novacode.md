@@ -182,4 +182,4 @@ Tool observations, mailboxes and idle notifications carry local variety. Permiss
 
 ## Evidence gaps
 
-Static frozen-source review only; no live model/provider tasks or performance experiments. Team semantics depend on enabled features, available Git and backend. No claim of hard reviewer isolation, conflict-free semantic integration or guaranteed response to findings. S2 C deliberately bounds deterministic isolation support rather than assuming an autonomous coordination actor from Team labels.
+Frozen source compileall and 34 native worktree slug/create/lifecycle tests pass; pytest warned that its installed configuration does not recognize asyncio_mode. No live model/provider tasks or performance experiments. Team semantics depend on enabled features, available Git and backend. No claim of hard reviewer isolation, conflict-free semantic integration or guaranteed response to findings. S2 C deliberately bounds deterministic isolation support rather than assuming an autonomous coordination actor from Team labels.
