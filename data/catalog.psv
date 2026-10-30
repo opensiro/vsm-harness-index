@@ -922,3 +922,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 921|agent-harness-now-model-citizen|Agent Harness (now Model Citizen)|https://github.com/JakeSelby/model-citizen|2026-09-16T17:43:54Z|manual-discovery|af9693b97480c7b801c57c43863b116f4116808c|2026-10-30
 922|opensquilla|OpenSquilla|https://github.com/TokenRhythm/opensquilla|2026-05-06T17:43:05Z|manual-discovery|71888b1fab67010770684ced0beffc4e91677cde|2026-10-30
 923|agentscope-java-2-0|AgentScope Java 2.0|https://github.com/agentscope-ai/agentscope-java|2025-09-23T04:37:43Z|manual-discovery|3d1b998d7c1c0aa6d9697a85b59c205a4c7c2a0f|2026-10-30
+924|eve|Eve|https://github.com/vercel/eve|2026-06-16T10:51:20Z|manual-discovery|d004e6d47e9d25d0380c24b5a47b65a18f8b2784|2026-10-30
