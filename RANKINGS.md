@@ -407,6 +407,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agent0"></a>[agent0](https://github.com/xudafeng/agent0) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="lca-code-agent"></a>[LCA Code Agent](https://github.com/Kandog/lca-code-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="mingbird"></a>[Mingbird](https://github.com/Mingbird/Mingbird-agent) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="agent-harness-now-model-citizen"></a>[Agent Harness (now Model Citizen)](https://github.com/JakeSelby/model-citizen) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C — C P —` |
 | 6 | <a id="orca-code"></a>[Orca Code](https://github.com/Nethyric/orca-code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mi"></a>[mi](https://github.com/pegov/mi) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hx"></a>[hx](https://github.com/phantomic12/hx-harness) | 2026-Q3 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
