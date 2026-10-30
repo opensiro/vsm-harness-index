@@ -925,3 +925,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 924|eve|Eve|https://github.com/vercel/eve|2026-06-16T10:51:20Z|manual-discovery|d004e6d47e9d25d0380c24b5a47b65a18f8b2784|2026-10-30
 925|meta-agent|Meta-Agent|https://github.com/canvas-org/meta-agent|2026-04-06T17:42:45Z|manual-discovery|28e18519eba79e0e97217989390704167c43a5c8|2026-10-30
 926|webvoyager|WebVoyager|https://github.com/MinorJerry/WebVoyager|2024-01-24T04:16:42Z|manual-discovery|5a7896738c10bfb8b9edccce6bb0e0411f8ae569|2026-10-30
+927|khanuzeb-axiom|AXIOM|https://github.com/KhanUzeb/AXIOM|2026-07-16T12:53:42Z|manual-discovery|ba3a9bddce05990593035eab635eee9f45c46ff5|2026-10-30
