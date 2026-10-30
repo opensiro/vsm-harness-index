@@ -714,6 +714,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="yylo"></a>[YYLO](https://github.com/yylo-dev/yylo) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="shelley"></a>[Shelley](https://github.com/boldsoftware/shelley) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="infiagent"></a>[infiAgent](https://github.com/polyuiislab/infiAgent) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — — ? —` |
+| 6 | <a id="wee-orchestrator"></a>[Wee-Orchestrator](https://github.com/leprachuan/Wee-Orchestrator) | 2025-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="cleo"></a>[CLEO](https://github.com/kryptobaseddev/cleo) | 2025-Q4 | 1/6 | 0/5 | 2 | 2 | 0 | `A C P — C(P) —` |
 | 6 | <a id="openclaw"></a>[OpenClaw](https://github.com/openclaw/openclaw) | 2025-Q4 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="coderrr"></a>[Coderrr](https://github.com/Akash-nath29/Coderrr) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
