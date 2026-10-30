@@ -153,7 +153,7 @@ The parent and enabled editing/full children are coding S1 cells; research child
 - Supporting / enforcement mechanisms: generic tools, configuration, persistence and event transport do not inherit this function.
 - Closure path: operational result feedback exists, without the distinct function-specific loop.
 - Why this is / is not agent-owned: absence concerns the organizational relation before ownership grading.
-- Evidence: [README_EN.md](https://github.com/hsghcop/ForestCode/blob/406c792be7d365878113a70d2f1feff7aef94e1e/README_EN.md), [src/forestcode/subagents/types.py](https://github.com/hsghcop/ForestCode/blob/406c792be7d365878113a70d2f1feff7aef94e1e/src/forestcode/subagents/types.py#L279-L310), [src/forestcode/runtime/factory.py](https://github.com/hsghcop/ForestCode/blob/406c792be7d365878113a70d2f1feff7aef94e1e/src/forestcode/runtime/factory.py#L373-L395).
+- Evidence: [README_EN.md](https://github.com/hsghcop/ForestCode/blob/406c792be7d365878113a70d2f1feff7aef94e1e/README_EN.md), [src/forestcode/subagents/types.py](https://github.com/hsghcop/ForestCode/blob/406c792be7d365878113a70d2f1feff7aef94e1e/src/forestcode/subagents/types.py#L279-L301), [src/forestcode/runtime/factory.py](https://github.com/hsghcop/ForestCode/blob/406c792be7d365878113a70d2f1feff7aef94e1e/src/forestcode/runtime/factory.py#L373-L395).
 - Basis: structural.
 - Confidence: medium.
 - Caveats: bounded absence, not a claim that an external/custom organization could never add the function.
