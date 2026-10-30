@@ -248,6 +248,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="foreman"></a>[Foreman](https://github.com/marcelsud/claude-foreman) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — A(P) C — —` |
 | 5 | <a id="penguin-harness"></a>[PenguinHarness](https://github.com/Prism-Shadow/penguin-harness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="klaat-code"></a>[Klaat Code](https://github.com/KlaatAI/klaatcode) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="khanuzeb-axiom"></a>[AXIOM](https://github.com/KhanUzeb/AXIOM) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C — A — —` |
 | 5 | <a id="grok-build"></a>[Grok Build](https://github.com/xai-org/grok-build) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 4 | `A ? A ? ? ?` |
 | 5 | <a id="evidence-bench"></a>[Evidence Bench](https://github.com/kstawiski/evidence-gated-scientific-agent) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
 | 5 | <a id="whycodes"></a>[WhyCodes](https://github.com/whycorporation/whycodes) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
