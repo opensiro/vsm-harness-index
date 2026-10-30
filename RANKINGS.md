@@ -395,6 +395,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="kloop"></a>[Kloop](https://github.com/lizc2003/kloop) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 2 | `A C ? ? — —` |
 | 6 | <a id="errander"></a>[errander](https://github.com/EVAE-AL/errander) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="setup-ai-core"></a>[setup-ai-core](https://github.com/kartalbas/setup-ai-core) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="s1code"></a>[S1Code](https://github.com/mertcicekci0/S1Code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hrn"></a>[hrn](https://github.com/cristiangirlea/harness) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C — C P —` |
 | 6 | <a id="agent0"></a>[agent0](https://github.com/xudafeng/agent0) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="lca-code-agent"></a>[LCA Code Agent](https://github.com/Kandog/lca-code-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
