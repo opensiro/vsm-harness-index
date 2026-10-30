@@ -917,3 +917,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 916|agentik|Agentik|https://github.com/jaredpalmer/agentik|2026-02-03T21:16:19Z|manual-discovery|5a57da25d2c58ff9b783e51fce8879563f26f7aa|2026-10-30
 917|gear|Gear|https://github.com/rsi-gear/gear|2026-08-18T05:35:54Z|manual-discovery|74b8ff873a831930611dd0f0dfd680d91d5212a9|2026-10-30
 918|ace|ACE|https://github.com/ace-agent/ace|2025-11-16T12:21:11Z|manual-discovery|82709de050e1db6e6ef2f07bcb0393560b94992a|2026-10-30
+919|weco|Weco|https://github.com/WecoAI/weco-cli|2025-04-03T11:32:04Z|manual-discovery|edd8859cb3d15831e119ad6daef1aaa6baeca58a|2026-10-30
