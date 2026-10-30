@@ -915,3 +915,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 914|anytool|AnyTool|https://github.com/dyabel/AnyTool|2024-02-05T03:46:55Z|manual-discovery|6202212ce45329282cf812ae48427f8765cf164c|2026-10-30
 915|agentharness-ruby|AgentHarness (Ruby)|https://github.com/viamin/agent-harness|2026-01-24T20:12:22Z|manual-discovery|cda07ca157db1e51b6e7687820a96601432f8fb1|2026-10-30
 916|agentik|Agentik|https://github.com/jaredpalmer/agentik|2026-02-03T21:16:19Z|manual-discovery|5a57da25d2c58ff9b783e51fce8879563f26f7aa|2026-10-30
+917|gear|Gear|https://github.com/rsi-gear/gear|2026-08-18T05:35:54Z|manual-discovery|74b8ff873a831930611dd0f0dfd680d91d5212a9|2026-10-30
