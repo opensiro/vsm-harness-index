@@ -920,3 +920,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 919|weco|Weco|https://github.com/WecoAI/weco-cli|2025-04-03T11:32:04Z|manual-discovery|edd8859cb3d15831e119ad6daef1aaa6baeca58a|2026-10-30
 920|codeact|CodeAct|https://github.com/xingyaoww/code-act|2024-01-13T08:06:04Z|manual-discovery|d607f56c9cfe9e8632ebaf65dcaf2b4b7fe1c6f8|2026-10-30
 921|agent-harness-now-model-citizen|Agent Harness (now Model Citizen)|https://github.com/JakeSelby/model-citizen|2026-09-16T17:43:54Z|manual-discovery|af9693b97480c7b801c57c43863b116f4116808c|2026-10-30
+922|opensquilla|OpenSquilla|https://github.com/TokenRhythm/opensquilla|2026-05-06T17:43:05Z|manual-discovery|71888b1fab67010770684ced0beffc4e91677cde|2026-10-30
