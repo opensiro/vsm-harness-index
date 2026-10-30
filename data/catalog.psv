@@ -912,3 +912,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 911|multi-agents-control-plane|Multi-Agents Control Plane|https://github.com/QiQi14/multi-agents-control-plane|2026-07-30T19:12:03Z|manual-discovery|4483c54037ed04c8b5f7f2ac65aca7604d6c58e8|2026-10-30
 912|wee-orchestrator|Wee-Orchestrator|https://github.com/leprachuan/Wee-Orchestrator|2025-12-14T21:06:20Z|manual-discovery|4f34d5737910098c79f2ee42d0f3f383cfca830f|2026-10-27
 913|restgpt|RestGPT|https://github.com/Yifan-Song793/RestGPT|2023-08-26T09:46:40Z|manual-discovery|d99012860cb45323975bf5780152d7aa44f390f5|2026-10-30
+914|anytool|AnyTool|https://github.com/dyabel/AnyTool|2024-02-05T03:46:55Z|manual-discovery|6202212ce45329282cf812ae48427f8765cf164c|2026-10-30
