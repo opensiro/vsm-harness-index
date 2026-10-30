@@ -533,6 +533,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="cassady"></a>[Cassady](https://github.com/owenqwenstarsky/cassady) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="clutch"></a>[Clutch](https://github.com/fancy1108/Clutch) | 2026-Q2 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="rust-norion"></a>[rust-norion](https://github.com/yanghao1143/rust-norion) | 2026-Q2 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C — C(P) —` |
+| 6 | <a id="codeforge"></a>[CodeForge](https://github.com/Asem-Saber/CodeForge) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="temporal-agent-harness"></a>[Temporal Agent Harness](https://github.com/temporal-community/temporal-agent-harness) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A — C(P) — — —` |
 | 6 | <a id="bough"></a>[Bough](https://github.com/andreylukin/bough) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="wardayacode"></a>[WardayaCode](https://github.com/fawwazmw/wardayacode) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
