@@ -829,4 +829,78 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 828|kimi-code-cli|Kimi Code CLI|https://github.com/MoonshotAI/kimi-code|2026-05-22T08:02:03Z|manual-discovery|68a283894163204e93b072cef20db164015a5cad|2026-10-27
 829|agent-cli|Agent CLI|https://github.com/basnijholt/agent-cli|2025-06-25T16:35:10Z|manual-discovery|554344e6ed5266bcc2a7b1461d4c84744ff5e0af|2026-10-27
 830|pan-agent|Pan Agent|https://github.com/pym96/Pan-agent|2026-08-11T11:26:58Z|manual-discovery|6040fcadde20e2628ba18550848f3bb2c725e68e|2026-10-27
-831|limina|Limina|https://github.com/theam/limina|2026-03-08T17:13:31Z|manual-discovery|56a4e2f3c9c613c7bc61f6a260ade379b21cd782|2026-10-27
+831|show-harness|Show-Harness|https://github.com/showlab/Show-Harness|2026-09-07T08:58:08Z|manual-discovery|6ad77dbc6180e973dff8148ffcca6c085580cea2|2026-10-28
+832|agnes-harness|Agnes Harness|https://github.com/AgnesAI-Labs/agnes-harness|2026-09-22T17:18:54Z|manual-discovery|98bc11572ba162bcdf6ce2b29612a44508faf951|2026-10-28
+833|codemowers-agent|Codemowers Agent|https://github.com/codemowers/agent|2026-10-12T15:00:42Z|manual-discovery|d056e1414b3e2e6f0f2c387bdab2c540bd26730d|2026-10-28
+834|agentaps|Agentaps|https://github.com/cachix/agentaps|2026-09-24T17:55:34Z|manual-discovery|1dbaeeea88f446a2fdaf633dc00e7a344351d05a|2026-10-28
+835|deepseek-bot|deepseek-bot|https://github.com/rlaope/deepseek-bot|2026-10-06T08:44:20Z|manual-discovery|d247b0c9e8c4c7c07a7e8b113077fdc0353e5247|2026-10-28
+836|oswald|OSWALD|https://github.com/Oswald-Agent/Oswald|2026-10-07T11:31:23Z|manual-discovery|5a2d6103c4c48735a909fd5ee78b0362fcbee993|2026-10-28
+837|agentforeman|AgentForeman|https://github.com/kumizeod/AgentForeman|2026-10-19T13:39:42Z|manual-discovery|634f9c0906f133fc577d6291c29b8f8cfd6af02a|2026-10-28
+838|octop-harness|Octop Harness|https://github.com/TencentCloud/octop-harness|2026-09-24T03:56:58Z|manual-discovery|68b5423bb80ecef7fca57ba5a37d9a2bdcbf12d2|2026-10-28
+839|openorc|OpenOrc|https://github.com/davejj1530/openorc|2026-09-28T04:09:07Z|manual-discovery|85bf1c5e4c81000911d8a5a90e23dbb7cf869283|2026-10-28
+840|bruw-conductor|Conductor|https://github.com/bruw/workflow-conductor|2026-10-12T12:24:27Z|manual-discovery|16076f7517bf13b3c5b7e492c3f6c5df800be871|2026-10-28
+841|pi-herdsman|Pi Herdsman|https://github.com/boadij/pi-herdsman|2026-09-07T10:28:10Z|manual-discovery|2b78e1b7b4a62240f7be881ab066be4cefbee612|2026-10-28
+842|pragmatic-orchestration|Pragmatic Orchestration|https://github.com/CodeAlive-AI/pragmatic-orchestration|2026-09-17T12:44:49Z|manual-discovery|cc829d908822978fe7fce4670967525ea3a9a267|2026-10-28
+843|coding-orchestrator|Coding Orchestrator|https://github.com/davesheffer/coding-orchestrator|2026-09-22T02:56:09Z|manual-discovery|dca682d7a1bc99c6b83508ad03186b2015085e8a|2026-10-28
+844|metamorph|Metamorph|https://github.com/yohanvillarp/metamorph|2026-09-04T20:55:22Z|manual-discovery|8871b937a4e6d0f6f5f9f08b4ca1e801fd98196c|2026-10-28
+845|steepy-apex|Steepy Apex|https://github.com/steepy-it/steepy-apex|2026-09-17T07:39:36Z|manual-discovery|7283b7940e6ec97ec739a28b6de1525d2891bdb4|2026-10-28
+846|raw-cli|Raw CLI|https://github.com/lploc94/raw-cli|2026-09-25T16:18:09Z|manual-discovery|378610653e2ab369f78c4de24d4828de795bfae8|2026-10-28
+847|agent-foundation|Agent Foundation|https://github.com/converge-ai-labs/agent-foundation|2026-08-18T12:44:56Z|manual-discovery|19bef266e239bf42adf258159b6f52195daa4d01|2026-10-28
+848|jevagentharness|JevAgentHarness|https://github.com/JevAgentHarness/JevAgentHarness|2026-10-15T06:46:31Z|manual-discovery|f2932199e1ef1d9f089b51d39430c87be0f560b5|2026-10-28
+849|dsh-flow|dsh-flow|https://github.com/rootkiller6788/dsh-flow|2026-09-12T15:08:16Z|manual-discovery|d11ad4f04400fda9c58cf2b9b5a11fa971818eed|2026-10-28
+850|agent-harness-csharp|Agent Harness CSharp|https://github.com/jackhuclan/harness_demo|2026-10-29T00:45:28Z|manual-discovery|a56e1f8230ed8415d079306602962bb90a79fa03|2026-10-29
+851|pwshharness|PwshHarness|https://github.com/josh-j/pwsh-harness|2026-10-09T13:53:50Z|manual-discovery|e56e989bbd68d1e6a1138c3755d6c76266700a78|2026-10-29
+852|tantra|tantra|https://github.com/malayh/tantra|2026-08-08T06:12:48Z|manual-discovery|779bf82b073bc5121bb70f45b36dab1ae1c05fd8|2026-10-29
+853|ralph-orchestrator|Ralph Orchestrator|https://github.com/mikeyobrien/ralph-orchestrator|2025-09-07T18:17:13Z|manual-discovery|b5789dfbb25bd4aa65ce565c756d95acc8c42f76|2026-10-29
+854|evot|Evot|https://github.com/evotai/evot|2026-03-09T02:44:24Z|manual-discovery|011af29261930f1589c1ded6f8ca5793e271b83a|2026-10-29
+855|kata-symphony|Kata Symphony|https://github.com/gannonh/kata-symphony|2026-02-26T13:41:23Z|manual-discovery|e7c160f5e4d485fdfb6d79296f56d36c8872b2a9|2026-10-29
+856|histh|Histh|https://github.com/ayandexyz/Honey-I-Shrunk-the-Harness|2026-09-17T06:06:32Z|manual-discovery|f2aff641e55c2e6bb8c55a8fb82b67bdf2addd1a|2026-10-29
+857|20x|20x|https://github.com/peakflo/20x|2026-02-07T08:48:56Z|manual-discovery|168693be23965f2e5cc8f15c32093544234c6d01|2026-10-29
+858|opencode-orchestrator|OpenCode Orchestrator|https://github.com/agnusdei1207/opencode-orchestrator|2026-01-13T01:25:07Z|manual-discovery|fdba1b1eea1e78d27aa733a421beaa61ad0bb8a2|2026-10-29
+859|ai-maestro|AI Maestro|https://github.com/23blocks-OS/ai-maestro|2025-10-10T00:17:03Z|manual-discovery|6c8a5927d66637855c2a31d1b54f92abc9b9e165|2026-10-29
+860|ax-ecosystem|AX ecosystem|https://github.com/3-lines-studio/ax|2026-08-19T22:23:21Z|manual-discovery|166905e4953f011a2c930abb18ca420d6340e4d1|2026-10-29
+861|qujck-agent-harness|agent-harness|https://github.com/qujck/harness|2026-05-29T09:17:08Z|manual-discovery|9a2fc16d1cc26070114ae6e908107cf211e0c99e|2026-10-29
+862|cire-harness|cire-harness|https://github.com/fathdemr/cire-harness|2026-10-22T14:18:51Z|manual-discovery|e9fa8adc673ea32783e84ad84769f57bac6ff3fa|2026-10-29
+863|carry|Carry|https://github.com/wiggzz/carry|2026-08-14T04:02:15Z|manual-discovery|fd293547416818edd90a9667c31bd05498889569|2026-10-29
+864|super-pi-beam|Super-Pi-BEAM|https://github.com/oleksandr/super-pi-beam|2026-10-29T08:37:24Z|manual-discovery|03c6afd6d8250eaeb4ebca039290f95a9ab73227|2026-10-29
+865|twaldin-harness|twaldin/harness|https://github.com/twaldin/harness|2026-04-18T08:23:16Z|manual-discovery|f75dee4fd8f64d9357fb2862741f87ddb313250d|2026-10-29
+866|techjarves-mobile-harness|techjarves/Mobile-Harness|https://github.com/techjarves/Mobile-Harness|2026-08-20T11:55:29Z|manual-discovery|96b1da08d03af4f2d63970a3794c7fda068948c4|2026-10-29
+867|thinharness|ThinHarness|https://github.com/ryanbbrown/thinharness|2026-05-01T15:32:17Z|manual-discovery|b1d82f05567097e335f88dd974f207189c06db57|2026-10-29
+868|pi-agent-core-python|pi-agent-core (Python)|https://github.com/Huvinesh-Rajendran-12/pi-agent-core|2026-02-15T11:22:10Z|manual-discovery|f541b859d4a8e6d1f7415a671024bd4e22b1025d|2026-10-29
+869|agent-harness-from-scratch|agent-harness-from-scratch|https://github.com/sudhanshu-shivam-dev/agent-harness-from-scratch|2026-06-16T08:13:11Z|manual-discovery|2b5e810d1605fe416118bca88d9fcc006813a7a6|2026-10-29
+870|harnessclaw-harnessclaw|harnessclaw/harnessclaw|https://github.com/harnessclaw/harnessclaw|2026-04-12T13:52:01Z|manual-discovery|44d01c1fa2193d1d4f479327cc15cf1bec09851c|2026-10-29
+871|hamroh|Hamroh|https://github.com/Rustam-Z/hamroh|2026-04-11T18:22:10Z|manual-discovery|0970d3a3dc8ff50970998515afe4ef79510f397e|2026-10-29
+872|s1n6h-pentest-harness|S1N6H/pentest-harness|https://github.com/S1N6H/pentest-harness|2026-08-26T04:57:19Z|manual-discovery|4638f38082bdf37cea03ad151905c4bb8662f6e9|2026-10-29
+873|victrola|Victrola|https://github.com/haileyok/victrola|2026-02-08T05:51:58Z|manual-discovery|2bc6262cc7d12a61b6d8de68f3a16ceaec3ba5d7|2026-10-29
+874|chainreactors-cyber-harness|chainreactors/cyber-harness|https://github.com/chainreactors/cyber-harness|2026-05-07T13:46:47Z|manual-discovery|89f8af5ea2f478bf96eedc8f1b6ba8401ce28853|2026-10-29
+875|telos|Telos|https://github.com/nevinshine/telos-runtime|2026-01-29T18:48:06Z|manual-discovery|d430d61c9005f2ab5523ba2d41bdab574fcc314e|2026-10-29
+876|tardigrade|Tardigrade|https://github.com/clavia-labs/tardigrade|2026-08-13T16:52:14Z|manual-discovery|9ba13979e251f338a0f6c7baaf29f4f2d67a34d5|2026-10-29
+877|psai|PSAI|https://github.com/dfinke/PSAI|2024-04-14T12:16:09Z|manual-discovery|018a3304dc7d09ac90e78525f5181bee17edb5a1|2026-10-29
+878|ironcurtain|IronCurtain|https://github.com/provos/ironcurtain|2026-02-21T23:34:31Z|manual-discovery|d51a3467cbda6a2e94cf04e885e8ae1abdd0f6be|2026-10-29
+879|debroid|Debroid|https://github.com/PatilShreyas/debroid|2026-08-02T15:58:29Z|manual-discovery|b87f489bd02dcfb5c8c37fa2a4340847c9e48adb|2026-10-29
+880|optio|Optio|https://github.com/jonwiggins/optio|2026-03-19T19:50:11Z|manual-discovery|3163761c3a0974bbb290afea8d09ddc1a8e8ac7c|2026-10-29
+881|ever-works|Ever Works|https://github.com/ever-works/ever-works|2025-01-06T16:50:16Z|manual-discovery|e159e7c6ff34fdacbd8967ad92ae42e3311b444b|2026-10-29
+882|synapscli|SynapsCLI|https://github.com/HaseebKhalid1507/SynapsCLI|2026-04-10T05:11:13Z|manual-discovery|62853b06777fcc16db4b142d535a99e23da4b207|2026-10-29
+883|ori-runtime|Ori Runtime|https://github.com/ori-platform/ori-runtime|2026-03-27T17:05:07Z|manual-discovery|64d95bad6c5d173e249f31ed4b0d6c8e9df83c99|2026-10-29
+884|agentlane|AgentLane|https://github.com/yasik/agentlane|2026-03-05T20:04:59Z|manual-discovery|66ff002432a41cd2b952d8963e1a4fbe6650d183|2026-10-29
+885|raqim|Raqim|https://github.com/raqim-ai/raqim|2026-02-28T10:38:53Z|manual-discovery|b795d9630d298408868429ae4bd2dd6c8ec1f541|2026-10-29
+886|kube-agents|kube-agents|https://github.com/gke-labs/kube-agents|2026-05-07T15:51:52Z|manual-discovery|c20297fccc667bec06b5d78f89ee4e368fd29f3d|2026-10-29
+887|openstinger|OpenStinger|https://github.com/srikanthbellary/openstinger|2026-02-24T06:04:07Z|manual-discovery|73ea429d4eec4e900cb364e6ffc1982ef3f75b47|2026-10-29
+888|gruai|gruAI|https://github.com/andrew-yangy/gru-ai|2026-02-22T12:22:12Z|manual-discovery|8fba47928a0fe3fdfda7a31d22b73625c78cbfc4|2026-10-29
+889|epic-harness|Epic Harness|https://github.com/epicsagas/epic-harness|2026-04-09T10:54:42Z|manual-discovery|1f3823af536b1f56b3cb8af90cc8ea77ef71c4bd|2026-10-29
+890|senweavercoding|SenWeaverCoding|https://github.com/senweaver/SenWeaverCoding|2026-04-07T04:35:08Z|manual-discovery|8ba81d595ba154f300428dd554d2065b9a268432|2026-10-29
+891|swarmx|SwarmX|https://github.com/tcztzy/swarmx|2024-10-15T12:22:48Z|manual-discovery|a171e0da84c7a4d667d2c314cfbed66847f3040b|2026-10-29
+892|kheish|Kheish|https://github.com/graniet/kheish|2024-12-11T07:30:19Z|manual-discovery|df50433f8d577f832c6812b9e67be8ddb766059d|2026-10-29
+893|ralphify|Ralphify|https://github.com/computerlovetech/ralphify|2026-03-08T14:35:13Z|manual-discovery|3734146c6bb8e97b97e6e26c473d44eabd2b67f7|2026-10-29
+894|wanman|wanman|https://github.com/chekusu/wanman|2026-04-22T14:17:57Z|manual-discovery|d3a8138de6c21981a4f1449a7b3f201e724c55c9|2026-10-29
+895|feather|Feather|https://github.com/paper-instruments/feather-train|2026-09-29T20:49:28Z|manual-discovery|cdb5f34bad11c0c75ca4124b25a3e5da86bb62e2|2026-10-27
+896|s1code|S1Code|https://github.com/mertcicekci0/S1Code|2026-09-18T22:35:13Z|manual-discovery|3aeb8baa16f556e15bf550ba8debdcbfcfc366bd|2026-09-29
+897|zleap-agent|Zleap-Agent|https://github.com/Zleap-AI/Zleap-Agent|2026-05-31T09:47:27Z|manual-discovery|8aa5f07a20c535687ee39c6dccade7869ae27fad|2026-10-27
+898|djcode|DJcode|https://github.com/darshjme/djcode|2026-04-06T17:12:03Z|manual-discovery|d915b89db1b04cca88c2a495de355e4917a34b1a|2026-09-29
+899|agent-from-scratch|Agent From Scratch|https://github.com/liiiiiiiiil/coding-agent-from-scratch|2026-08-26T13:23:32Z|manual-discovery|cd7ec0ee2031d1723e1d38593d43385778fd5d30|2026-09-29
+900|novacode|NovaCode|https://github.com/gczhuang-cmd/NovaCode|2026-08-15T10:16:29Z|continuous-discovery|34a2d555a530120fd6241f7065d49390e52f3573|2026-10-30
+901|codeforge|CodeForge|https://github.com/Asem-Saber/CodeForge|2026-06-19T06:59:04Z|continuous-discovery|30027de1de2831ffceac830129df5ccb9d664881|2026-10-30
+902|codinggirl|CodingGirl|https://github.com/WEP-56/Coding_agent-Implementation-from-Scratch|2026-03-08T02:58:07Z|continuous-discovery|4b4d32706b56697007e362ed9f257c0610a99e8b|2026-10-30
+903|forestcode|ForestCode|https://github.com/hsghcop/ForestCode|2026-08-05T08:59:51Z|continuous-discovery|406c792be7d365878113a70d2f1feff7aef94e1e|2026-10-30
+904|beecork|beecork|https://github.com/beecork/beecork|2026-06-26T13:40:37Z|continuous-discovery|fabecb4e8690f2fa347cc750dd0d2dc71ee493dc|2026-10-30
+905|limina|Limina|https://github.com/theam/limina|2026-03-08T17:13:31Z|manual-discovery|56a4e2f3c9c613c7bc61f6a260ade379b21cd782|2026-10-27
