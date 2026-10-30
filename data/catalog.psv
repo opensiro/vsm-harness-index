@@ -908,3 +908,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 907|hermes-loops|Hermes Loops|https://github.com/AtlasOmnia/hermes-loops|2026-08-13T17:39:13Z|manual-discovery|dc4a16fb3614b9f5dc2d3b42c9f28bd24191bc5c|2026-10-27
 908|tale|Tale|https://github.com/tale-project/tale|2025-11-30T10:41:32Z|manual-discovery|b2560c2d7d3294993e66129c891be4a059f3d6c4|2026-10-30
 909|openshift-agent-control-plane|OpenShift Agent Control Plane|https://github.com/openshift-online/agent-control-plane|2026-06-10T19:01:23Z|manual-discovery|9d7246cb467b3e4d4060bff760b6256f6a368a50|2026-10-30
+910|agentarea|AgentArea|https://github.com/agentarea/agentarea|2025-02-09T08:17:42Z|manual-discovery|6e610c4ffffdf6b6ba8e45cba27b3ba577e8476c|2026-10-30
