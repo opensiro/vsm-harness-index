@@ -814,6 +814,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="r2r"></a>[R2R](https://github.com/SciPhi-AI/R2R) | 2024-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="agentlite"></a>[AgentLite](https://github.com/SalesforceAIResearch/AgentLite) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="anytool"></a>[AnyTool](https://github.com/dyabel/AnyTool) | 2024-Q1 | 1/6 | 0/5 | 1 | 0 | 1 | `A C — ? — —` |
+| 6 | <a id="webvoyager"></a>[WebVoyager](https://github.com/MinorJerry/WebVoyager) | 2024-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="codeact"></a>[CodeAct](https://github.com/xingyaoww/code-act) | 2024-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="concordia"></a>[Concordia](https://github.com/google-deepmind/concordia) | 2023-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="agency-swarm"></a>[Agency Swarm](https://github.com/VRSEN/agency-swarm) | 2023-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
