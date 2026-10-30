@@ -811,6 +811,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="crewai"></a>[CrewAI](https://github.com/crewAIInc/crewAI) | 2023-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ailice"></a>[AIlice](https://github.com/myshell-ai/AIlice) | 2023-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chatdev"></a>[ChatDev](https://github.com/OpenBMB/ChatDev) | 2023-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="restgpt"></a>[RestGPT](https://github.com/Yifan-Song793/RestGPT) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="autoagents"></a>[AutoAgents](https://github.com/OWD-AI/AutoAgents) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="moatless-tools"></a>[Moatless Tools](https://github.com/aorwall/moatless-tools) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="langgraph"></a>[LangGraph](https://github.com/langchain-ai/langgraph) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
