@@ -412,6 +412,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="pi-rust"></a>[pi-rust](https://github.com/yannelli/pi-rust) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="codemowers-agent"></a>[Codemowers Agent](https://github.com/codemowers/agent) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="nanocoder-haoyuzhang0214"></a>[NanoCoder (HaoyuZhang0214)](https://github.com/HaoyuZhang0214/NanoCoder) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="psgoagent"></a>[PSGoAgent](https://github.com/nakasyou/power-agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deepseek-bot"></a>[deepseek-bot](https://github.com/rlaope/deepseek-bot) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="cloud-coding-agent-node"></a>[Cloud Coding Agent Node](https://github.com/fred1433/cloud-coding-agent-node) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="raincode"></a>[RainCode](https://github.com/Rainmemery/RainCode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
