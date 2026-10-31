@@ -942,3 +942,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 941|controlkeel|ControlKeel|https://github.com/aryaminus/controlkeel|2026-03-18T22:56:30Z|manual-discovery|1815d3ca7fd9bfdf944f30150aa8179b6f8eef6d|2026-10-31
 942|alexi5000-clawkeeper|ClawKeeper|https://github.com/Alexi5000/ClawKeeper|2026-02-02T22:25:21Z|manual-discovery|7b3ccd64550ac69a99a59603a11ffd6753bb81e0|2026-10-31
 943|govruntime|GovRuntime|https://github.com/obmakesomething/govruntime|2026-05-24T05:54:32Z|manual-discovery|96bd0e1d34822c9e599734d37d00d8c307c058df|2026-10-31
+944|agf|AGF|https://github.com/dcnl1980/agf|2026-08-20T10:19:35Z|manual-discovery|56088db39b66954e8d81e138c16d1e098d6470b6|2026-10-31
