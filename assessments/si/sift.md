@@ -26,6 +26,8 @@ autonomy_s5: —
 - Purpose and identity: answer an operator-submitted question from fresh searched/read pages, return a synthesized response with page-level citations and persist a note/trace.
 - Relevant environment: unpredictable search results, stale model knowledge, inaccessible pages, rate limits, malformed tool calls, incomplete grounding and untrusted public web content.
 - Standard-distribution boundary: `app/agent.py`, `llm.py`, `tools.py`, search/read/summarize/memory helpers, FastAPI `/research` route and the Streamlit client. Future roadmap features are not shipped capabilities.
+- Credited operating / distribution surfaces: configured model-backed `agent.run` tool selection, first-party dispatcher and source observation return, constructor-owned run termination/evidence guard and post-run synthesis.
+- Adjacent first-party surfaces excluded from ownership: Streamlit presentation, JSON note read endpoints, fixed system prompt, static provider configuration, retry metrics and future roadmap do not independently confer S2/S3*/S4/S5 rights.
 - Credited operating mode: configured OpenAI-compatible model dynamically calls research tools; a deterministic heuristic mode is a degradation fallback, not evidence of model decision rights when providers fail.
 - Recursion level: one research assistant/one question run; external search providers and websites are dependencies, not independently managed child business units.
 - Reviewed revision: `c0ec1ec04a44cffc43c8d843b073b33f6a7b784d`.
