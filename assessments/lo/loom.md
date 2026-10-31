@@ -86,6 +86,11 @@ The caller supplies a coding goal, actor roster and limits. The orchestrator age
 - Closure path: rival lease/file path collision → held task with named holder/conflicting paths → orchestrator's new overlap/scope/dependency decision → hub re-admission or continuing wait → peer work resumes under enforced scope.
 - Boundary reachability: the team-linked `OrchestraCoordinator` is asked before `runTask`; `admitAndRun` saves rejected holds, `maybeReview` returns `decide` holds to orchestrator, `addTask` revises pending task scope and overlap.
 - Why this is / is not agent-owned: adaptive overlap response is a model decision, but the actual hub lease, hard-zone prohibition and capacity limit are constructed enforcement; routine worktree isolation alone is not the reason for S2.
+- Distinct S1 units: independent teammate goals and concurrent task-level worker agents with their own source-editing scope and implementation feedback.
+- Inter-S1 disturbance: two viable goals may claim overlapping repository paths or a protected hard zone, and one worker's changes can invalidate or block another's intended work.
+- Attenuating coordination relation: the team hub records actual rival leases; model orchestrator can narrow declared paths, wait on another goal or explicitly justify a soft-overlap proceed, while hard zones and caps remain binding.
+- Feedback into subsequent S1 behaviour: held workers do not start; revised work scopes are re-admitted, waiters rebase after another PR merges, and resumed task agents work under updated boundaries.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the reviewed path detects and regulates destructive inter-peer file interference across independent continuing teammate goals, with return to operational schedules, not merely passing work to another agent.
 - Evidence: pinned `team-coordinator.ts`, `team-leases.ts`, `orchestra.ts`, `baton.ts`.
 - Basis: first-party opt-in Teams conflict-decision return path.
 - Confidence: medium-high.
@@ -120,6 +125,11 @@ The caller supplies a coding goal, actor roster and limits. The orchestrator age
 - Closure path: completed integrated PR/plan → independent raw diff inspection → high-severity findings and status → S3 owner/Orchestra reopening for fixes or human `needsHuman` → revised head re-reviewed; owner may override with public reason.
 - Boundary reachability: `landing.review` calls `askAgent(reviewer,tmp,readOnlyPrompt)`, posts findings and commit status, and invokes `orchestra.reopen` on unoverridden high findings; Teams review is enabled by default in parsed team policy but opt-in via team-linked delivery.
 - Why this is / is not agent-owned: reviewer has alternative primary evidence (diff and PLAN.md) relative to task reports, different-vendor execution and a returned corrective path; this exceeds a routine same-agent QA label or passive telemetry.
+- Claim being audited: integrated producer code and orchestrator completion state are adequate to meet the declared goal without high-severity regressions.
+- Ordinary reporting path: worker task status/merge results and Orchestra's aggregate completion report to the goal controller.
+- Complementary access path: different-vendor reviewer receives actual GitHub PR diff plus plan in a separate read-only temporary workspace and generates severity-labelled findings.
+- Independence boundary: the selected reviewer's vendor must differ from all author agent kinds; it cannot modify the producer's working tree and posts its own PR comment/status; absent eligible vendor is explicitly reported as skipped.
+- Who acts on findings: the landing controller blocks with `loom/review` failure and reopens Orchestra's owner goal for fixes; if the budget is exhausted it asks a human, who alone can log an override reason.
 - Ordinary report vs audit view: producer reports task completion and integrated branch; auditor reads the actual PR patch and goal plan independently, not only the producer summary.
 - Independence / access: different installed vendor, isolated temporary work directory and read-only instruction; GitHub status and human override preserve separation from normal producer authority.
 - Findings / return: severity-labelled PR comment and `loom/review` check signal trigger fix/reopen or explicit owner override before landing.
