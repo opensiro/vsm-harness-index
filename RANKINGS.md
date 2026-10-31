@@ -10,6 +10,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="cluxmate"></a>[CluxMate](https://github.com/r1c7/CluxMate) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="pi-rs"></a>[pi-rs](https://github.com/CCherry07/pi-rs) | 2026-Q3 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="argus-agent"></a>[Argus](https://github.com/microsoft/ArgusAgent) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
+| 2 | <a id="dao-code"></a>[Dao Code](https://github.com/tigicion/dao-code) | 2026-Q2 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="octos"></a>[Octos](https://github.com/octos-org/octos) | 2026-Q1 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="oh-my-agent"></a>[oh-my-agent](https://github.com/first-fluke/oh-my-agent) | 2026-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="oh-my-claudecode"></a>[oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | 2026-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
@@ -162,6 +163,8 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="20x"></a>[20x](https://github.com/peakflo/20x) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="agenthub"></a>[AgentHub](https://github.com/hawkingrei/agenthub) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="chorus"></a>[Chorus](https://github.com/Chorus-AIDLC/Chorus) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
+| 4 | <a id="sd0x-dev-flow"></a>[sd0x-dev-flow](https://github.com/sd0xdev/sd0x-harness) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
+| 4 | <a id="your-claude-engineer"></a>[Your Claude Engineer](https://github.com/coleam00/your-claude-engineer) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="ecc"></a>[Everything Claude Code (ECC)](https://github.com/affaan-m/ECC) | 2026-Q1 | 3/6 | 2/5 | 2 | 2 | 0 | `A C C(P) A A(P) —` |
 | 4 | <a id="opencode-orchestrator"></a>[OpenCode Orchestrator](https://github.com/agnusdei1207/opencode-orchestrator) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
@@ -350,6 +353,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="lime"></a>[Lime](https://github.com/limecloud/lime) | 2025-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="haft"></a>[Haft](https://github.com/m0n0x41d/haft) | 2025-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P A — —` |
 | 5 | <a id="codex-autorunner"></a>[codex-autorunner (CAR)](https://github.com/Git-on-my-level/codex-autorunner) | 2025-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
+| 5 | <a id="aperant"></a>[Aperant](https://github.com/AndyMik90/Aperant) | 2025-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="maestro"></a>[Maestro](https://github.com/RunMaestro/Maestro) | 2025-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="termide"></a>[TermIDE](https://github.com/termide/termide) | 2025-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="ace"></a>[ACE](https://github.com/ace-agent/ace) | 2025-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A A C — — —` |
@@ -715,6 +719,8 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agentik"></a>[Agentik](https://github.com/jaredpalmer/agentik) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ai-native-developer-experience-join-the-team"></a>[AI-Native Developer Experience / join-the-team](https://github.com/jpantsjoha/ai-native-developer-experience) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="onit"></a>[OnIt](https://github.com/sibyl-oracles/onit) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="alexi5000-clawkeeper"></a>[ClawKeeper](https://github.com/Alexi5000/ClawKeeper) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="azure-agents-control-plane"></a>[Azure Agents Control Plane](https://github.com/microsoft/azure-agents-control-plane) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="conductor"></a>[Conductor](https://github.com/microsoft/conductor) | 2026-Q1 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="shep"></a>[Shep](https://github.com/shep-ai/shep) | 2026-Q1 | 1/6 | 0/5 | 2 | 2 | 0 | `A C C(P) — — P` |
 | 6 | <a id="nanobot"></a>[nanobot](https://github.com/HKUDS/nanobot) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |

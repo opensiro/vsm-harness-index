@@ -938,3 +938,12 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 937|loom|Loom|https://github.com/nickthelegend/loom|2026-07-14T21:42:46Z|manual-discovery|01682c8736a130f52e600ef8d351da46a66175a5|2026-10-31
 938|gitterm|GitTerm|https://github.com/OpeOginni/gitterm|2025-11-27T18:26:30Z|manual-discovery|1465ca1b3683a24966ce0815129742460b16c13e|2026-10-31
 939|smallcode|SmallCode|https://github.com/Doorman11991/smallcode|2026-05-18T06:19:44Z|manual-discovery|624970cce81657fd2751ee7f11ba85f35f2bb5c3|2026-10-31
+940|azure-agents-control-plane|Azure Agents Control Plane|https://github.com/microsoft/azure-agents-control-plane|2026-02-02T16:37:18Z|manual-discovery|91e8ef1e4711e87395dd1d0733c8204e6058265b|2026-10-31
+941|controlkeel|ControlKeel|https://github.com/aryaminus/controlkeel|2026-03-18T22:56:30Z|manual-discovery|1815d3ca7fd9bfdf944f30150aa8179b6f8eef6d|2026-10-31
+942|alexi5000-clawkeeper|ClawKeeper|https://github.com/Alexi5000/ClawKeeper|2026-02-02T22:25:21Z|manual-discovery|7b3ccd64550ac69a99a59603a11ffd6753bb81e0|2026-10-31
+943|govruntime|GovRuntime|https://github.com/obmakesomething/govruntime|2026-05-24T05:54:32Z|manual-discovery|96bd0e1d34822c9e599734d37d00d8c307c058df|2026-10-31
+944|agf|AGF|https://github.com/dcnl1980/agf|2026-08-20T10:19:35Z|manual-discovery|56088db39b66954e8d81e138c16d1e098d6470b6|2026-10-31
+945|sd0x-dev-flow|sd0x-dev-flow|https://github.com/sd0xdev/sd0x-harness|2026-01-30T16:19:10Z|manual-discovery|04e8a5e3f5d9c482937c2ad2170fab5fbd02b630|2026-10-31
+946|aperant|Aperant|https://github.com/AndyMik90/Aperant|2025-12-04T22:10:37Z|manual-discovery|20250db069a849ab001ac6ab9e3e9779886ab9e2|2026-10-31
+947|your-claude-engineer|Your Claude Engineer|https://github.com/coleam00/your-claude-engineer|2026-01-28T20:04:45Z|manual-discovery|e7c064ac915cfeb29496c558795efa125a121863|2026-10-31
+948|dao-code|Dao Code|https://github.com/tigicion/dao-code|2026-06-08T08:10:42Z|manual-discovery|2b50e82c3de751c071e1610b39b3c95956853498|2026-10-31
