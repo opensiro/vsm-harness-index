@@ -351,6 +351,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="self-improving-agent"></a>[self-improving-agent](https://github.com/xmaks82/self-improving-agent) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 1 | `A — — ? A —` |
 | 5 | <a id="ownpilot"></a>[OwnPilot](https://github.com/ownpilot/OwnPilot) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="meerkat"></a>[Meerkat](https://github.com/lukacf/meerkat) | 2026-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
+| 5 | <a id="codewhale"></a>[Codewhale](https://github.com/codewhale-hq/Codewhale) | 2026-Q1 | 2/6 | 1/5 | 2 | 0 | 0 | `A C A C — —` |
 | 5 | <a id="superqode"></a>[SuperQode](https://github.com/SuperagenticAI/superqode) | 2026-Q1 | 2/6 | 1/5 | 1 | 2 | 0 | `A C P A P —` |
 | 5 | <a id="preloop"></a>[Preloop](https://github.com/preloop/preloop) | 2026-Q1 | 2/6 | 1/5 | 1 | 2 | 0 | `A — C(P) A P —` |
 | 5 | <a id="ankaloop"></a>[AnkaLoop](https://github.com/tao12345666333/ankaloop) | 2025-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — — — — A(P)` |
