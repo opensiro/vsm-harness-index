@@ -927,3 +927,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 926|webvoyager|WebVoyager|https://github.com/MinorJerry/WebVoyager|2024-01-24T04:16:42Z|manual-discovery|5a7896738c10bfb8b9edccce6bb0e0411f8ae569|2026-10-30
 927|khanuzeb-axiom|AXIOM|https://github.com/KhanUzeb/AXIOM|2026-07-16T12:53:42Z|manual-discovery|ba3a9bddce05990593035eab635eee9f45c46ff5|2026-10-30
 928|mcp-agent|mcp-agent|https://github.com/lastmile-ai/mcp-agent|2024-12-18T01:55:10Z|manual-discovery|f62d849350816588b1c6294e7914bbe4d8b84072|2026-10-30
+929|loopplane|LoopPlane|https://github.com/LJC-FVNR/LoopPlane|2026-06-19T06:56:41Z|manual-discovery|0798233a1d1e3d9058c491aaeffb32575966004d|2026-09-20
