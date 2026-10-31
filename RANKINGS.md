@@ -279,6 +279,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="metaharness"></a>[MetaHarness](https://github.com/ruvnet/metaharness) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A — C C A —` |
 | 5 | <a id="agent-harness-core"></a>[Agent Harness Core](https://github.com/phenomenoner/agent-harness-core) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="redteam"></a>[redteam](https://github.com/AscendyProject/redteam) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="retro-harness-rho"></a>[retro-harness / RHO](https://github.com/wbopan/retro-harness) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C — A —` |
 | 5 | <a id="axocoatl"></a>[Axocoatl](https://github.com/axocoatl/axocoatl) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="covalo"></a>[Covalo](https://github.com/bzcsk2/covalo) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="dotcraft"></a>[DotCraft](https://github.com/DotHarness/dotcraft) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
