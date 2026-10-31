@@ -10,6 +10,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="cluxmate"></a>[CluxMate](https://github.com/r1c7/CluxMate) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="pi-rs"></a>[pi-rs](https://github.com/CCherry07/pi-rs) | 2026-Q3 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="argus-agent"></a>[Argus](https://github.com/microsoft/ArgusAgent) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
+| 2 | <a id="dao-code"></a>[Dao Code](https://github.com/tigicion/dao-code) | 2026-Q2 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="octos"></a>[Octos](https://github.com/octos-org/octos) | 2026-Q1 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="oh-my-agent"></a>[oh-my-agent](https://github.com/first-fluke/oh-my-agent) | 2026-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="oh-my-claudecode"></a>[oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | 2026-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
