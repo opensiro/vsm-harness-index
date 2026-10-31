@@ -259,6 +259,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="tevarn"></a>[Tevarn](https://github.com/wu1w/tevarn) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — A — — P` |
 | 5 | <a id="atomcode"></a>[AtomCode](https://github.com/karlorz/atomcode) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="lean-coder"></a>[lean-coder](https://github.com/codemonkeying/lean-coder) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
+| 5 | <a id="voly"></a>[VOLY](https://github.com/voly-codes/voly) | 2026-Q3 | 2/6 | 1/5 | 2 | 0 | 0 | `A C — A C —` |
 | 5 | <a id="marspi-cli"></a>[Marspi CLI](https://github.com/mars01pi/marspi-cli) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 1 | `A — ? A — —` |
 | 5 | <a id="aipoch-open-science"></a>[AIPOCH Open-Science](https://github.com/aipoch/open-science) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — C(P) A — —` |
 | 5 | <a id="holt"></a>[Holt](https://github.com/holt-os/holt) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — P C A —` |
