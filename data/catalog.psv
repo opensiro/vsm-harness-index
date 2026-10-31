@@ -958,3 +958,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 957|pydromon|pydromon|https://github.com/sgeos/pydromon|2026-10-25T01:31:23Z|manual-discovery|65671672b812b1d4c88f8e7633fdd3a1e50bb5f0|2026-10-31
 958|codewhale|Codewhale|https://github.com/codewhale-hq/Codewhale|2026-01-19T18:21:01Z|manual-discovery|327c15df976601ca3114ea40ac3dc88cea9f152a|2026-10-31
 959|zeroshot|zeroshot|https://github.com/the-open-engine/zeroshot|2025-12-25T17:12:45Z|manual-discovery|4c2ed7d5cf3dce968ef7634a2bb49f4382226637|2026-10-31
+960|pipaya|pipaya|https://github.com/dohwi/pipaya|2026-10-15T11:42:19Z|manual-discovery|dd5cdfd560c1499301a1f2fe4c07f9173a12d53a|2026-10-31
