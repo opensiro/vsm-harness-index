@@ -959,3 +959,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 958|codewhale|Codewhale|https://github.com/codewhale-hq/Codewhale|2026-01-19T18:21:01Z|manual-discovery|327c15df976601ca3114ea40ac3dc88cea9f152a|2026-10-31
 959|zeroshot|zeroshot|https://github.com/the-open-engine/zeroshot|2025-12-25T17:12:45Z|manual-discovery|4c2ed7d5cf3dce968ef7634a2bb49f4382226637|2026-10-31
 960|pipaya|pipaya|https://github.com/dohwi/pipaya|2026-10-15T11:42:19Z|manual-discovery|dd5cdfd560c1499301a1f2fe4c07f9173a12d53a|2026-10-31
+961|suga|Suga|https://github.com/inhere/suga|2026-10-06T10:58:30Z|manual-discovery|88916d5d23e974f7c02c9dd37f6d02f05b681a31|2026-10-31
