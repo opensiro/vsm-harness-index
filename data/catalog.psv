@@ -953,3 +953,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 952|agentworks|AgentWorks|https://github.com/manishiitg/agentworks|2025-10-14T06:38:32Z|manual-discovery|5d53bfbb1541567fe3cb40b6a1a54197f2676fdc|2026-10-31
 953|orka|Orka|https://github.com/orka-agents/orka|2026-02-05T02:13:27Z|manual-discovery|7cffe130efa74f505d66dce561ade6c18901ba6e|2026-10-31
 954|mola-harness|mola-harness|https://github.com/Mola-maker/mola-harness|2026-10-31T18:14:56Z|manual-discovery|3329d2fb4e878e5058263d345c7f7aa4880a73e0|2026-10-31
+955|openjiuwen-agent-runtime|openJiuwen Agent Runtime|https://github.com/openJiuwen-ai/agent-runtime|2026-06-29T10:14:58Z|manual-discovery|34ed6e86b99fab9b3f07d9f063efc1692ab365d2|2026-10-31
