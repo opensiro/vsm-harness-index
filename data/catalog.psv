@@ -939,3 +939,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 938|gitterm|GitTerm|https://github.com/OpeOginni/gitterm|2025-11-27T18:26:30Z|manual-discovery|1465ca1b3683a24966ce0815129742460b16c13e|2026-10-31
 939|smallcode|SmallCode|https://github.com/Doorman11991/smallcode|2026-05-18T06:19:44Z|manual-discovery|624970cce81657fd2751ee7f11ba85f35f2bb5c3|2026-10-31
 940|azure-agents-control-plane|Azure Agents Control Plane|https://github.com/microsoft/azure-agents-control-plane|2026-02-02T16:37:18Z|manual-discovery|91e8ef1e4711e87395dd1d0733c8204e6058265b|2026-10-31
+941|controlkeel|ControlKeel|https://github.com/aryaminus/controlkeel|2026-03-18T22:56:30Z|manual-discovery|1815d3ca7fd9bfdf944f30150aa8179b6f8eef6d|2026-10-31
