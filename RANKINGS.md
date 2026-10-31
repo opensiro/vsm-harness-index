@@ -400,6 +400,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 6 | <a id="mola-harness"></a>[mola-harness](https://github.com/Mola-maker/mola-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="super-pi-beam"></a>[Super-Pi-BEAM](https://github.com/oleksandr/super-pi-beam) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="minecraft-agent-harness"></a>[minecraft-agent-harness](https://github.com/yc-software/minecraft-agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-harness-csharp"></a>[Agent Harness CSharp](https://github.com/jackhuclan/harness_demo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cire-harness"></a>[cire-harness](https://github.com/fathdemr/cire-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="knowwork"></a>[KnowWork](https://github.com/knowflow-ai/KnowWork) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
