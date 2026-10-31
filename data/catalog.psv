@@ -929,3 +929,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 928|mcp-agent|mcp-agent|https://github.com/lastmile-ai/mcp-agent|2024-12-18T01:55:10Z|manual-discovery|f62d849350816588b1c6294e7914bbe4d8b84072|2026-10-30
 929|loopplane|LoopPlane|https://github.com/LJC-FVNR/LoopPlane|2026-06-19T06:56:41Z|manual-discovery|0798233a1d1e3d9058c491aaeffb32575966004d|2026-09-20
 930|codex-mate|Codex Mate|https://github.com/SakuraByteCore/codexmate|2026-01-08T13:44:49Z|manual-discovery|2374786924999d1c0d9f823971b4d88606d2142c|2026-09-20
+931|agenthub|AgentHub|https://github.com/hawkingrei/agenthub|2026-02-04T15:18:29Z|manual-discovery|7f1f0450ebb58b3cb77b75c9669b4ad1ab8309f7|2026-09-20
