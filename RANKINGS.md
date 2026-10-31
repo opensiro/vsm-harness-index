@@ -206,6 +206,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="pwshharness"></a>[PwshHarness](https://github.com/josh-j/pwsh-harness) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="oswald"></a>[OSWALD](https://github.com/Oswald-Agent/Oswald) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harness2"></a>[Harness²](https://github.com/google-research/harness2) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
+| 5 | <a id="suga"></a>[Suga](https://github.com/inhere/suga) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="codeagent-harvil1"></a>[CodeAgent (Harvil1)](https://github.com/Harvil1/codeAgent) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="ambient-cli"></a>[Ambient CLI](https://github.com/AmbientCrypto/ambient-cli) | 2026-Q3 | 2/6 | 1/5 | 2 | 1 | 0 | `A C — A C P` |
 | 5 | <a id="alisio"></a>[Alisio](https://github.com/GustavoGutierrez/alisio) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
