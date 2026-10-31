@@ -946,3 +946,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 945|sd0x-dev-flow|sd0x-dev-flow|https://github.com/sd0xdev/sd0x-harness|2026-01-30T16:19:10Z|manual-discovery|04e8a5e3f5d9c482937c2ad2170fab5fbd02b630|2026-10-31
 946|aperant|Aperant|https://github.com/AndyMik90/Aperant|2025-12-04T22:10:37Z|manual-discovery|20250db069a849ab001ac6ab9e3e9779886ab9e2|2026-10-31
 947|your-claude-engineer|Your Claude Engineer|https://github.com/coleam00/your-claude-engineer|2026-01-28T20:04:45Z|manual-discovery|e7c064ac915cfeb29496c558795efa125a121863|2026-10-31
+948|dao-code|Dao Code|https://github.com/tigicion/dao-code|2026-06-08T08:10:42Z|manual-discovery|2b50e82c3de751c071e1610b39b3c95956853498|2026-10-31
