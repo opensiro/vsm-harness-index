@@ -407,6 +407,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="deepseek-bot"></a>[deepseek-bot](https://github.com/rlaope/deepseek-bot) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="cloud-coding-agent-node"></a>[Cloud Coding Agent Node](https://github.com/fred1433/cloud-coding-agent-node) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="raincode"></a>[RainCode](https://github.com/Rainmemery/RainCode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="reinloop"></a>[reinloop](https://github.com/aantenore/reinloop) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="autonomous-swe-platform"></a>[Autonomous SWE Platform](https://github.com/SurjitW/Autonomous-Software-Engineering-and-Coding-Agent-Platform) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="company-brain"></a>[Company Brain](https://github.com/supermemoryai/company-brain) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="raw-cli"></a>[Raw CLI](https://github.com/lploc94/raw-cli) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
