@@ -162,6 +162,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="20x"></a>[20x](https://github.com/peakflo/20x) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="agenthub"></a>[AgentHub](https://github.com/hawkingrei/agenthub) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="chorus"></a>[Chorus](https://github.com/Chorus-AIDLC/Chorus) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
+| 4 | <a id="sd0x-dev-flow"></a>[sd0x-dev-flow](https://github.com/sd0xdev/sd0x-harness) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="ecc"></a>[Everything Claude Code (ECC)](https://github.com/affaan-m/ECC) | 2026-Q1 | 3/6 | 2/5 | 2 | 2 | 0 | `A C C(P) A A(P) —` |
 | 4 | <a id="opencode-orchestrator"></a>[OpenCode Orchestrator](https://github.com/agnusdei1207/opencode-orchestrator) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="hive"></a>[Hive](https://github.com/aden-hive/hive) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
