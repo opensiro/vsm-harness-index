@@ -935,3 +935,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 934|aiworkhub|AIWorkHub|https://github.com/shrec/AIWorkHub|2026-07-20T13:09:58Z|manual-discovery|77bd873460b36df3312090948079d7158ad65081|2026-09-20
 935|retro-harness-rho|retro-harness / RHO|https://github.com/wbopan/retro-harness|2026-06-07T03:22:10Z|manual-discovery|e5f2d1a8a06ab3523ab42e0042d2fa13d9acb701|2026-10-31
 936|sift|SIFT|https://github.com/KhanUzeb/SIFT|2026-07-04T12:59:21Z|manual-discovery|c0ec1ec04a44cffc43c8d843b073b33f6a7b784d|2026-10-31
+937|loom|Loom|https://github.com/nickthelegend/loom|2026-07-14T21:42:46Z|manual-discovery|01682c8736a130f52e600ef8d351da46a66175a5|2026-10-31
