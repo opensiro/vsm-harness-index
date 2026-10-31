@@ -69,6 +69,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="ai-coding-agents-orchestrator"></a>[AI Coding Agents Orchestrator](https://github.com/Open-Makers/ai-coding-agents-orchestrator) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="squad"></a>[Squad](https://github.com/bradygaster/squad) | 2026-Q1 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="oh-my-pi"></a>[oh-my-pi](https://github.com/can1357/oh-my-pi) | 2025-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
+| 3 | <a id="zeroshot"></a>[zeroshot](https://github.com/the-open-engine/zeroshot) | 2025-Q4 | 4/6 | 3/5 | 1 | 0 | 0 | `A C A A A —` |
 | 3 | <a id="agent-swarm"></a>[Agent Swarm](https://github.com/desplega-ai/agent-swarm) | 2025-Q4 | 4/6 | 3/5 | 1 | 0 | 0 | `A A A A C —` |
 | 3 | <a id="gastown"></a>[Gas Town](https://github.com/gastownhall/gastown) | 2025-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="octomind"></a>[Octomind](https://github.com/Muvon/octomind) | 2025-Q2 | 4/6 | 3/5 | 0 | 1 | 0 | `A — A A A(P) —` |
