@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
 assessment_changed_at: 2026-10-31
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: C
@@ -190,4 +190,4 @@ Role proposals amplify the repertoire of candidate strategies. Tournament/gate t
 
 ## Assessment summary
 
-**Proposed** `included`: first-party model-led S1; constructed cross-worker S2 and current S3; opt-in independently routed corrective audit S3*; model-origin prospective scenario/harness adaptation S4; no first-party S5 identity closure. Vector: **A · C · C · A · A · —**.
+**Canonical** `included`: first-party model-led S1; constructed cross-worker S2 and current S3; opt-in independently routed corrective audit S3*; model-origin prospective scenario/harness adaptation S4; no first-party S5 identity closure. Vector: **A · C · C · A · A · —**.
