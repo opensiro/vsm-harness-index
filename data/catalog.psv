@@ -932,3 +932,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 931|agenthub|AgentHub|https://github.com/hawkingrei/agenthub|2026-02-04T15:18:29Z|manual-discovery|7f1f0450ebb58b3cb77b75c9669b4ad1ab8309f7|2026-09-20
 932|voly|VOLY|https://github.com/voly-codes/voly|2026-07-03T21:09:16Z|manual-discovery|d21dab640647ca5a0a096e12b01a9a3a4f7432af|2026-09-20
 933|autocontext|autocontext|https://github.com/greyhaven-ai/autocontext|2026-02-11T22:23:23Z|manual-discovery|7ccca4681fa113e495c07b0b5b44d28d1181033c|2026-10-31
+934|aiworkhub|AIWorkHub|https://github.com/shrec/AIWorkHub|2026-07-20T13:09:58Z|manual-discovery|77bd873460b36df3312090948079d7158ad65081|2026-09-20
