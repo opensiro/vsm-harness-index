@@ -963,3 +963,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 962|minecraft-agent-harness|minecraft-agent-harness|https://github.com/yc-software/minecraft-agent-harness|2026-10-29T05:21:45Z|manual-discovery|775d558689f5e4eaa0f1d0d7a320035190b1fce6|2026-10-31
 963|rsi-flow|RSI-Flow|https://github.com/quqxui/RSI-Flow|2026-10-19T16:57:29Z|manual-discovery|0f87c2b198f22e5697853cfc6d0bf2d002e48ca7|2026-10-31
 964|pi-forge|pi-Forge|https://github.com/djtoon/pi-forge|2026-10-04T08:26:21Z|manual-discovery|3af0d73a0f45701a4b1324d3b3bb272bc312ef2e|2026-10-31
+965|psgoagent|PSGoAgent|https://github.com/nakasyou/power-agent|2026-10-08T01:36:04Z|manual-discovery|a258539983e3ffbcb04f7762d73f98b67940e5b8|2026-10-31
