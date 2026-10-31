@@ -952,3 +952,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 951|agent-swarm|Agent Swarm|https://github.com/desplega-ai/agent-swarm|2025-12-19T18:59:13Z|manual-discovery|65e0ab6bb1f50f796b9c226e2bb34b5041cbaa66|2026-10-31
 952|agentworks|AgentWorks|https://github.com/manishiitg/agentworks|2025-10-14T06:38:32Z|manual-discovery|5d53bfbb1541567fe3cb40b6a1a54197f2676fdc|2026-10-31
 953|orka|Orka|https://github.com/orka-agents/orka|2026-02-05T02:13:27Z|manual-discovery|7cffe130efa74f505d66dce561ade6c18901ba6e|2026-10-31
+954|mola-harness|mola-harness|https://github.com/Mola-maker/mola-harness|2026-10-31T18:14:56Z|manual-discovery|3329d2fb4e878e5058263d345c7f7aa4880a73e0|2026-10-31
