@@ -715,6 +715,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agentik"></a>[Agentik](https://github.com/jaredpalmer/agentik) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ai-native-developer-experience-join-the-team"></a>[AI-Native Developer Experience / join-the-team](https://github.com/jpantsjoha/ai-native-developer-experience) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="onit"></a>[OnIt](https://github.com/sibyl-oracles/onit) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="alexi5000-clawkeeper"></a>[ClawKeeper](https://github.com/Alexi5000/ClawKeeper) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="azure-agents-control-plane"></a>[Azure Agents Control Plane](https://github.com/microsoft/azure-agents-control-plane) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="conductor"></a>[Conductor](https://github.com/microsoft/conductor) | 2026-Q1 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="shep"></a>[Shep](https://github.com/shep-ai/shep) | 2026-Q1 | 1/6 | 0/5 | 2 | 2 | 0 | `A C C(P) — — P` |
