@@ -29,6 +29,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="litecode"></a>[LiteCode](https://github.com/itissika/litecode) | 2026-Q3 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
 | 3 | <a id="crewlet"></a>[Crewlet](https://github.com/crewlet/crewlet) | 2026-Q3 | 4/6 | 3/5 | 1 | 3 | 0 | `A C A(P) A A(P) P` |
 | 3 | <a id="codeaf"></a>[CodeAF](https://github.com/Agent-Field/CodeAF) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) — A P` |
+| 3 | <a id="aiworkhub"></a>[AIWorkHub](https://github.com/shrec/AIWorkHub) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="aura-code"></a>[Aura Code](https://github.com/DusanCar-sudo/aura-code) | 2026-Q3 | 4/6 | 3/5 | 1 | 1 | 0 | `A A A(P) A C —` |
 | 3 | <a id="metis"></a>[Metis](https://github.com/Wholiver/metis) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="sanook-cli"></a>[Sanook CLI](https://github.com/Sir-chawakorn/sanook-cli) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
