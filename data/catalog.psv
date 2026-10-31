@@ -950,3 +950,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 949|confucius-code-agent|Confucius Code Agent|https://github.com/facebookresearch/cca-swebench|2025-12-22T02:12:09Z|manual-discovery|bdeb74b3d828bfbb2c61030c6201fa9da44e69d0|2026-10-31
 950|jiuwenswarm|JiuwenSwarm|https://github.com/openJiuwen-ai/jiuwenswarm|2026-03-05T06:28:11Z|manual-discovery|02b37f47fbefe80a58e4ed88606120818ca44ac3|2026-10-31
 951|agent-swarm|Agent Swarm|https://github.com/desplega-ai/agent-swarm|2025-12-19T18:59:13Z|manual-discovery|65e0ab6bb1f50f796b9c226e2bb34b5041cbaa66|2026-10-31
+952|agentworks|AgentWorks|https://github.com/manishiitg/agentworks|2025-10-14T06:38:32Z|manual-discovery|5d53bfbb1541567fe3cb40b6a1a54197f2676fdc|2026-10-31
