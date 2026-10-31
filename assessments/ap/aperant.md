@@ -26,8 +26,8 @@ autonomy_s5: —
 - Purpose and identity: user-directed autonomous software planning, implementation, validation and integration for git projects, with concurrent task lanes supervised from a desktop interface.
 - Relevant environment: selected user repositories, git branches/worktrees, model providers/Claude Code dependencies, tests, development services, user approval, desktop operating system and optional integrations.
 - Standard-distribution boundary: the public 2.x desktop app/source, not the separately developed, unreviewable 3.0 rewrite. The README explicitly states that the 2.x app is in maintenance mode and the 3.0 work is in a separate repository.
-- Credited operating surfaces: desktop task start/stop/review, worker-backed phase sessions, task-default isolated worktrees, model-directed coding/QA, optional post-task merge, local memory and user-invoked feature roadmap.
-- Adjacent surfaces excluded from ownership: upstream model inference quality, provider account authorization, user repositories' release pipelines, externally installed MCP/Claude Code agents and the unreleased 3.0 code. A test-only parallel-executor helper without a production callsite is not credited as a deployed coordination loop.
+- Credited operating / distribution surfaces: desktop task start/stop/review, worker-backed phase sessions, task-default isolated worktrees, model-directed coding/QA, optional post-task merge, local memory and user-invoked feature roadmap.
+- Adjacent first-party surfaces excluded from ownership: upstream model inference quality, provider account authorization, user repositories' release pipelines, externally installed MCP/Claude Code agents and the unreleased 3.0 code. A test-only parallel-executor helper without a production callsite is not credited as a deployed coordination loop.
 - First-party modes considered: normal default worktree-backed task execution, user-selected no-worktree/fallback mode, desktop operator stop/review, separate QA review/fixer sessions, optional merge and roadmap.
 - Recursion level: one desktop workspace/project and its multiple task/spec agent runs, not the development company or every independent organization using Aperant.
 - Reviewed revision: 20250db069a849ab001ac6ab9e3e9779886ab9e2.
@@ -66,6 +66,11 @@ Each coding/QA worker is a bounded operational cell executing a user-specified d
 - State: C
 - Function: mechanically dampen shared-file interference among independently executing coding task cells by giving them separate branches/worktrees and a bounded later integration path.
 - Disturbance / variety regulated: two live task workers writing incompatible paths in the same user repository, followed by textual/semantic merge conflicts at integration.
+- Distinct S1 units: independently model-driven task/spec coding workers, each performing its own development assignment for the same project.
+- Inter-S1 disturbance: concurrent edits and changed-file collisions would overwrite one another if both workers used the project's shared checkout.
+- Attenuating coordination relation: the first-party launcher assigns a separate branch/worktree per task, and the integration path detects/contains later conflicting edits.
+- Feedback into subsequent S1 behaviour: each launched worker receives its allocated worktree as effective cwd/projectDir and performs subsequent source/tool actions inside it; merge feedback reports conflicts for post-task resolution.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: distinct viable coding cells contend for the same mutable codebase; filesystem partition directly attenuates that interference rather than merely transferring messages.
 - Decisive decision or feedback right: first-party constructor selects a per-task git worktree/branch by default before starting the worker; merge tools detect conflicts and can request AI text resolution after a user initiates integration.
 - Decision owner: constructor-owned static worktree policy (C), not an autonomous S2 manager deciding live task ownership or negotiated revised commitments; the model resolver selects a merge text only on the post hoc path.
 - Supporting / enforcement mechanisms: unique spec branch/worktree mapping, git branch isolation, conflict detector, merge report and optional AI resolver.
@@ -82,6 +87,8 @@ Each coding/QA worker is a bounded operational cell executing a user-specified d
 - State: P
 - Function: let a human desktop operator see ongoing task/agent status, stop or review current work and decide task continuation across a project workspace.
 - Disturbance / variety regulated: stuck, misdirected, unsafe or unwanted concurrent task execution and acceptance decisions.
+- Whole-system current view: desktop Kanban board/task progress, agent terminals and active worker/task lifecycle for the selected project are presented to the operator.
+- Current-control decision scope: operator selects which whole-workspace tasks are allowed to run, stopped or accepted; the app applies that choice through live worker kill and state updates.
 - Decisive decision or feedback right: the operator chooses which task to start/stop and approves/rejects a review result using IPC connected to active worker lifecycle and task-state manager.
 - Decision owner: parent/operator (P); App/AgentManager provides a shared current status/command surface but no autonomous whole-portfolio executive deciding priorities and allocations.
 - Supporting / enforcement mechanisms: Kanban task board and multiple agent terminals, process registry, task-state transitions and stop/restart tracking.
