@@ -937,3 +937,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 936|sift|SIFT|https://github.com/KhanUzeb/SIFT|2026-07-04T12:59:21Z|manual-discovery|c0ec1ec04a44cffc43c8d843b073b33f6a7b784d|2026-10-31
 937|loom|Loom|https://github.com/nickthelegend/loom|2026-07-14T21:42:46Z|manual-discovery|01682c8736a130f52e600ef8d351da46a66175a5|2026-10-31
 938|gitterm|GitTerm|https://github.com/OpeOginni/gitterm|2025-11-27T18:26:30Z|manual-discovery|1465ca1b3683a24966ce0815129742460b16c13e|2026-10-31
+939|smallcode|SmallCode|https://github.com/Doorman11991/smallcode|2026-05-18T06:19:44Z|manual-discovery|624970cce81657fd2751ee7f11ba85f35f2bb5c3|2026-10-31
