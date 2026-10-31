@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: A
 autonomy_s3: A
@@ -20,6 +20,12 @@ autonomy_s5: —
 # Agent Swarm
 
 ## Review boundary
+
+- Purpose and identity: A persistent model-driven team that delivers delegated coding, research and related business work for its operator.
+- Relevant environment: User requests, repository/CI state, concurrent ingress, provider availability, and the optional configured campaign discovery/search environment.
+- Standard-distribution boundary: Supported self-hosted service plus official deployment templates; provider sessions are credited only for explicitly wired operational decisions.
+- First-party operating / deployment modes considered: Official lead/worker Docker composition; separate coder/reviewer workflow; periodic heartbeat recovery; optional configured weekly GTM schedule. Generic operator administration and extension activation were tested as parent alternatives without assuming function closure.
+- Recursion level: One deployed team of lead and distinct operational workers. A provider session is a lower operational implementation; upstream project governance is adjacent.
 
 - System in focus: A self-hosted multi-agent work organization: one lead routes and controls persistent operational workers over the shared task service. Recursion is this deployed team, not one provider's internal tool loop or the upstream OSS institution.
 - Credited operating / distribution surfaces: The official lead/coder/reviewer templates and docker-compose.example.yml, task API/runner/provider adapters, heartbeat, sibling awareness, review feedback, and explicitly optional first-party schedule templates. The GTM template is credited only as a function-specific construction path for a team's own GTM campaign after operator configuration.
@@ -162,6 +168,18 @@ A request becomes a task; lead chooses assignment and dependencies, worker choos
 
 Upstream contribution/PR governance is outside this deployed-team recursion. The operator legitimately supplies access and repository operating constraints; no function is credited simply from that authority.
 
+## Self-hosted and non-human modes
+
+The official self-hosted lead controls current work while human permissions, repository checks and approval constrain integration. These controls do not independently establish complete parent S3/S4/S5 loops. Optional GTM sensing exposes only a constructor. No non-human ultimate-policy mode is established.
+
+## Recursion
+
+Workers are distinct operational units at the deployed-team recursion. A lead supervising workers does not by itself prove nested viable systems, and external provider internals are not inherited.
+
+## Variety and escalation
+
+Sibling awareness attenuates duplicate concurrent work; heartbeat preflight and deterministic triage absorb routine faults before lead escalation. Exceptional recovery and failed tasks return to lead judgment. Review findings return to coders; integration awaits the explicitly configured checks and human approval. Provider limits and budgets remain enforcement machinery.
+
 ## Synthesis
 
 A / A / A / A / C / — for S1 / S2 / S3 / S3* / S4 / S5. S4 is only an optional, specifically exposed GTM intelligence construction path; the default team is not claimed to close prospective adaptation automatically. No maturity score or weights are implied.
@@ -176,4 +194,4 @@ Source reviewed at the exact frozen ref above. Generated under Profile 0.2.4 / M
 
 ## Review / admission status
 
-Proposed source assessment for ordinary PR integration. Canonical inclusion, catalog allocation and derived outputs require a distinct subsequent admission transaction. No independent reviewer or autonomy grade is claimed.
+Proposal #2500 was merged after actual CI checks. Canonical admission preserves the frozen ref and generation provenance; no cohort-relative rank is part of this assessment. No independent reviewer or autonomy grade is claimed.
