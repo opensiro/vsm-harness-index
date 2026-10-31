@@ -944,3 +944,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 943|govruntime|GovRuntime|https://github.com/obmakesomething/govruntime|2026-05-24T05:54:32Z|manual-discovery|96bd0e1d34822c9e599734d37d00d8c307c058df|2026-10-31
 944|agf|AGF|https://github.com/dcnl1980/agf|2026-08-20T10:19:35Z|manual-discovery|56088db39b66954e8d81e138c16d1e098d6470b6|2026-10-31
 945|sd0x-dev-flow|sd0x-dev-flow|https://github.com/sd0xdev/sd0x-harness|2026-01-30T16:19:10Z|manual-discovery|04e8a5e3f5d9c482937c2ad2170fab5fbd02b630|2026-10-31
+946|aperant|Aperant|https://github.com/AndyMik90/Aperant|2025-12-04T22:10:37Z|manual-discovery|20250db069a849ab001ac6ab9e3e9779886ab9e2|2026-10-31
