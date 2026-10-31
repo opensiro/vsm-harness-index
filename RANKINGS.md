@@ -197,6 +197,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="data-to-paper"></a>[data-to-paper](https://github.com/Technion-Kishony-lab/data-to-paper) | 2023-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A — — A A(P) —` |
 | 4 | <a id="cowagent"></a>[CowAgent](https://github.com/zhayujie/CowAgent) | 2022-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A C P — A A(P)` |
 | 4 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 5 | <a id="pydromon"></a>[pydromon](https://github.com/sgeos/pydromon) | 2026-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A A P — — —` |
 | 5 | <a id="agentforeman"></a>[AgentForeman](https://github.com/kumizeod/AgentForeman) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harness-cli"></a>[Harness² CLI](https://github.com/3ae3ae/harness2-cli) | 2026-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — — — A(P) —` |
 | 5 | <a id="learnharness"></a>[LearnHarness](https://github.com/amosblomqvist/learnharness) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A — A C — —` |
