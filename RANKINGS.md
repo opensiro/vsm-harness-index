@@ -414,6 +414,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="super-pi-beam"></a>[Super-Pi-BEAM](https://github.com/oleksandr/super-pi-beam) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="minecraft-agent-harness"></a>[minecraft-agent-harness](https://github.com/yc-software/minecraft-agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-harness-csharp"></a>[Agent Harness CSharp](https://github.com/jackhuclan/harness_demo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="stiracore"></a>[StiraCore](https://github.com/Resolver-TNG/StiraCore) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="cire-harness"></a>[cire-harness](https://github.com/fathdemr/cire-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="android-agent-runtime"></a>[Android Agent Runtime](https://github.com/NoHarry/android-agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="knowwork"></a>[KnowWork](https://github.com/knowflow-ai/KnowWork) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
