@@ -971,3 +971,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 970|bread-companion|Bread Companion|https://github.com/ZJUZhiyuCai/bread-companion|2026-10-31T04:54:53Z|manual-discovery|058ad153e27bd6470a7e5ef4cab778a93d659a6d|2026-11-01
 971|runapps-agent|RunApps Agent|https://github.com/runapps/agent|2026-10-30T05:44:13Z|manual-discovery|ccbe5ba7b7ea7d8f3957e4785b47341decbd1192|2026-11-01
 972|moissanite-labs-exo|exo|https://github.com/Moissanite-Labs/exo|2026-10-11T22:26:20Z|manual-discovery|e9ad895d2c59e998f0358b982a9b8a4ac0ad2aea|2026-11-01
+973|peristyle-harness|Peristyle Harness|https://github.com/peristyle-ai/harness|2026-11-01T00:13:54Z|manual-discovery|cfa54f2c808058d2372521c53019f6f3e4b5a52c|2026-11-01
