@@ -965,3 +965,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 964|pi-forge|pi-Forge|https://github.com/djtoon/pi-forge|2026-10-04T08:26:21Z|manual-discovery|3af0d73a0f45701a4b1324d3b3bb272bc312ef2e|2026-10-31
 965|psgoagent|PSGoAgent|https://github.com/nakasyou/power-agent|2026-10-08T01:36:04Z|manual-discovery|a258539983e3ffbcb04f7762d73f98b67940e5b8|2026-10-31
 966|harneloop|Harneloop|https://github.com/OpenRootdev/Harneloop|2026-06-24T21:37:19Z|manual-discovery|d46e1d5d4aa0bbb77d1bcf355c9848cb89455c31|2026-10-31
+967|pi-native|pi-native|https://github.com/nurmdrafi/pi-native|2026-08-28T18:01:27Z|manual-discovery|b4e99cf3d2f60a1fd5e810bdfcbcbf47b3692e8f|2026-11-01
