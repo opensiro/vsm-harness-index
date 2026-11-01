@@ -976,3 +976,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 975|tripolskypetr-agent-runtime|Agent Runtime|https://github.com/tripolskypetr/agent-runtime|2026-10-29T16:21:31Z|github-topic-agent-harness|b7150aacb08333a75c7a53510007dc11df2e2446|2026-11-01
 976|asktravel-agent-harness|AskTravel Agent Harness|https://github.com/stoicdataguy/asktravel-agent-harness|2026-10-28T03:32:43Z|github-topic-agent-harness|9204095f29720ba70cdd90c9ccd6d214cda36c72|2026-11-01
 977|android-agent-runtime|Android Agent Runtime|https://github.com/NoHarry/android-agent-runtime|2026-10-22T08:26:28Z|github-topic-agent-harness|57267123cf43ed832f50f65de89023adf84578db|2026-11-01
+978|sora-harness|Sora Harness|https://github.com/S0ra233/Sora-Harness|2026-10-23T08:53:43Z|github-topic-agent-harness|cbfddafca44ff18f80181943ce17ba1d271ed7a6|2026-11-01
