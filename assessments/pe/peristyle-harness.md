@@ -147,6 +147,9 @@ Operational value is produced by the named agents' model-selected tool use, with
 ## S5 — Policy and identity
 
 - State: P
+- Identity / ultimate-policy issue: whether the installed agent's core SOUL.md behavioral constitution may be changed during unattended maintenance.
+- Ultimate authority in each claimed mode: the legitimate human operator alone in the configured reverie parent-governed mode; no autonomous S5 mode is claimed.
+- Return-to-operation path: operator-approved protected identity edit is reread by BootstrapRegistry before the next agent turn and injected into the model's bootstrap policy.
 - Function: reserve ultimate agent identity and protected policy changes to the human operator while allowing the running agent to surface a proposal.
 - Disturbance / variety regulated: pressure to let a self-maintaining agent rewrite its own core behavioral boundaries during an unattended nightly turn.
 - Decisive decision or feedback right: approve/reject or make the authoritative change to the protected SOUL.md core rules; the agent must propose rather than execute that change in reverie.
