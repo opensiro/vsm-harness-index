@@ -408,6 +408,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="peristyle-harness"></a>[Peristyle Harness](https://github.com/peristyle-ai/harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="mola-harness"></a>[mola-harness](https://github.com/Mola-maker/mola-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="runapps-agent"></a>[RunApps Agent](https://github.com/runapps/agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="tripolskypetr-agent-runtime"></a>[Agent Runtime](https://github.com/tripolskypetr/agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="super-pi-beam"></a>[Super-Pi-BEAM](https://github.com/oleksandr/super-pi-beam) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="minecraft-agent-harness"></a>[minecraft-agent-harness](https://github.com/yc-software/minecraft-agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-harness-csharp"></a>[Agent Harness CSharp](https://github.com/jackhuclan/harness_demo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
