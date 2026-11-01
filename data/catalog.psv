@@ -968,3 +968,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 967|pi-native|pi-native|https://github.com/nurmdrafi/pi-native|2026-08-28T18:01:27Z|manual-discovery|b4e99cf3d2f60a1fd5e810bdfcbcbf47b3692e8f|2026-11-01
 968|grapes|grapes|https://github.com/im6ix/grapes|2026-07-14T16:55:10Z|manual-discovery|ce0c56414827fb10d395a2f2d4176e8da2a29b49|2026-11-01
 969|certo|Certo|https://github.com/alessioricco/Certo|2026-09-14T19:03:23Z|manual-discovery|d4b58e5113809a82f2fe6a42dbc76306663b4241|2026-11-01
+970|bread-companion|Bread Companion|https://github.com/ZJUZhiyuCai/bread-companion|2026-10-31T04:54:53Z|manual-discovery|058ad153e27bd6470a7e5ef4cab778a93d659a6d|2026-11-01
