@@ -966,3 +966,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 965|psgoagent|PSGoAgent|https://github.com/nakasyou/power-agent|2026-10-08T01:36:04Z|manual-discovery|a258539983e3ffbcb04f7762d73f98b67940e5b8|2026-10-31
 966|harneloop|Harneloop|https://github.com/OpenRootdev/Harneloop|2026-06-24T21:37:19Z|manual-discovery|d46e1d5d4aa0bbb77d1bcf355c9848cb89455c31|2026-10-31
 967|pi-native|pi-native|https://github.com/nurmdrafi/pi-native|2026-08-28T18:01:27Z|manual-discovery|b4e99cf3d2f60a1fd5e810bdfcbcbf47b3692e8f|2026-11-01
+968|grapes|grapes|https://github.com/im6ix/grapes|2026-07-14T16:55:10Z|manual-discovery|ce0c56414827fb10d395a2f2d4176e8da2a29b49|2026-11-01
