@@ -972,3 +972,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 971|runapps-agent|RunApps Agent|https://github.com/runapps/agent|2026-10-30T05:44:13Z|manual-discovery|ccbe5ba7b7ea7d8f3957e4785b47341decbd1192|2026-11-01
 972|moissanite-labs-exo|exo|https://github.com/Moissanite-Labs/exo|2026-10-11T22:26:20Z|manual-discovery|e9ad895d2c59e998f0358b982a9b8a4ac0ad2aea|2026-11-01
 973|peristyle-harness|Peristyle Harness|https://github.com/peristyle-ai/harness|2026-11-01T00:13:54Z|manual-discovery|cfa54f2c808058d2372521c53019f6f3e4b5a52c|2026-11-01
+974|neopanic-harness|Harness³|https://github.com/NeoPanic/harness3|2026-10-21T09:49:35Z|manual-discovery|cb6c8e57eb0adac3f2ec1f4da1a98e52e2967063|2026-11-01
