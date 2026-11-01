@@ -206,6 +206,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="agentforeman"></a>[AgentForeman](https://github.com/kumizeod/AgentForeman) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harness-cli"></a>[Harness² CLI](https://github.com/3ae3ae/harness2-cli) | 2026-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — — — A(P) —` |
 | 5 | <a id="learnharness"></a>[LearnHarness](https://github.com/amosblomqvist/learnharness) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A — A C — —` |
+| 5 | <a id="moissanite-labs-exo"></a>[exo](https://github.com/Moissanite-Labs/exo) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 0 | `A — — — A(P) P` |
 | 5 | <a id="pwshharness"></a>[PwshHarness](https://github.com/josh-j/pwsh-harness) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="oswald"></a>[OSWALD](https://github.com/Oswald-Agent/Oswald) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harness2"></a>[Harness²](https://github.com/google-research/harness2) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
