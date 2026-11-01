@@ -979,3 +979,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 978|sora-harness|Sora Harness|https://github.com/S0ra233/Sora-Harness|2026-10-23T08:53:43Z|github-topic-agent-harness|cbfddafca44ff18f80181943ce17ba1d271ed7a6|2026-11-01
 979|stiracore|StiraCore|https://github.com/Resolver-TNG/StiraCore|2026-10-26T15:06:05Z|github-topic-agent-harness|2dee27f3c99c4f63b1ef2a7e377482d40c527996|2026-11-01
 980|leadkit|Leadkit|https://github.com/MattGrundy/leadkit|2026-10-27T16:37:49Z|manual-discovery|3efcde576a5f687b0013fad902fe9cff8be11766|2026-11-01
+981|opengeniemaster|OpenGenieMaster|https://github.com/eust-w/opengeniemaster|2026-10-27T11:27:29Z|manual-discovery|8f6dab22a54a318bf8afa221269a6f9c00fa860c|2026-11-01
