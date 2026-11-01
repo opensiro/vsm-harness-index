@@ -4,6 +4,7 @@ Cohort-relative signatures derived from standalone assessments. Display order is
 
 | Harness | Period | S1 | S2 | S3 | S3* | S4 | S5 | Signature |
 | --- | ---: | --- | --- | --- | --- | --- | --- | --- |
+| <a id="peristyle-harness"></a>[Peristyle Harness](https://github.com/peristyle-ai/harness) | 2026-Q4 | A | — | — | — | — | P | Named model/tool agents use isolated Postgres memory and mention-driven serial group transcripts; nightly reverie maintains context while SOUL identity-policy changes return through an operator decision and next-turn reload. |
 | <a id="mola-harness"></a>[mola-harness](https://github.com/Mola-maker/mola-harness) | 2026-Q4 | A | — | — | — | — | — | A single real-provider loop turns workspace reads and allowlisted subprocess observations into answers; scripted mock, static tool gates, per-run JSONL and step limits support S1 without a shipped metasystem. |
 | <a id="bread-companion"></a>[Bread Companion](https://github.com/ZJUZhiyuCai/bread-companion) | 2026-Q4 | A | — | — | A | — | — | User-controlled evidence conversation with bounded candidate repair and fresh-context semantic rejection audit returning retry or extractive fallback. |
 | <a id="runapps-agent"></a>[RunApps Agent](https://github.com/runapps/agent) | 2026-Q4 | A | — | — | — | — | — | One model/tool agent selects and executes workspace and sandbox actions with session feedback; local turn guards, permissions, context summaries and file validation support S1 without a first-party higher-function closure. |

@@ -907,3 +907,4 @@ catalog_position|harness_id|signature
 970|bread-companion|User-controlled evidence conversation with bounded candidate repair and fresh-context semantic rejection audit returning retry or extractive fallback.
 971|runapps-agent|One model/tool agent selects and executes workspace and sandbox actions with session feedback; local turn guards, permissions, context summaries and file validation support S1 without a first-party higher-function closure.
 972|moissanite-labs-exo|Standalone persistent agent with beyond-instance principal-feedback adaptation, explicit proposal review and live-principal adoption of changed gate policy.
+973|peristyle-harness|Named model/tool agents use isolated Postgres memory and mention-driven serial group transcripts; nightly reverie maintains context while SOUL identity-policy changes return through an operator decision and next-turn reload.
