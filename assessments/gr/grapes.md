@@ -38,7 +38,7 @@ autonomy_s5: —
 
 ## Repository architecture
 
-main.py mounts the calculator, Llm service and API model adapter, then creates a durable Chat. run_agent repeatedly calls the model with available tool schemas, dispatches the chosen tool, appends results/errors and returns a final answer within a step cap. Context tracks reversible effects; Registry creates a Fiber per mounted plugin. Provider-ticket changes unload/reload dependent fibers, with one transition at a time and teardown against the committed dependency snapshot. Reflect is service-provider selection, not model reflection. Chat appends new messages to JSONL sessions. Generic plugin lifecycle, dependency reactivity and event subscription are not by themselves VSM metasystem functions.
+main.py mounts the calculator, Llm service and API model adapter, then creates a durable Chat. run_agent repeatedly calls the model with available tool schemas, dispatches the chosen tool, appends results/errors and returns a final answer within a step cap. Context tracks reversible effects; Registry creates a Fiber per mounted plugin. Provider-ticket changes unload/reload dependent fibers, with one transition at a time and teardown against the committed dependency snapshot. Reflect is service-provider selection, not model reflection. Chat appends new messages to JSONL sessions. The model adapter selects only the first tool call from a response; run_agent executes that one call before requesting the next completion. This serial task-action path does not create distinct S1 units. Generic plugin lifecycle, dependency reactivity and event subscription are not by themselves VSM metasystem functions.
 
 ## Operational model
 
