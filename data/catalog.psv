@@ -997,3 +997,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 996|lacp|LACP|https://github.com/0xNyk/lacp|2026-02-20T07:42:31Z|github-repository-discovery|e31f134b689afd6a71d94b0420682d1f528d6fa1|2026-11-02
 997|cc10x|cc10x|https://github.com/romiluz13/cc10x|2025-10-22T11:54:14Z|github-repository-discovery|36c7b06a7c846d18cfbf33969ee0a7a2483985af|2026-11-02
 998|devbox|DevBox|https://github.com/rudderlabs/devbox|2026-10-27T06:17:39Z|github-repository-discovery|fc2b4270eb803404281e352bb79394a54d28c723|2026-11-02
+999|init-agent|INIT-Agent|https://github.com/nagisanzenin/INIT-Agent|2026-10-23T18:55:45Z|github-topic-agent-harness|1b8b407d2716739a4cfaff6a1751c2f968425edb|2026-11-02
