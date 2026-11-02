@@ -420,6 +420,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="cire-harness"></a>[cire-harness](https://github.com/fathdemr/cire-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="android-agent-runtime"></a>[Android Agent Runtime](https://github.com/NoHarry/android-agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="knowwork"></a>[KnowWork](https://github.com/knowflow-ai/KnowWork) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="judgment-pack-agent"></a>[Judgment Pack Agent](https://github.com/Judgment-Pack/judgment-pack-agent) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="durable-harness"></a>[durable-harness](https://github.com/vercel-labs/durable-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="discoveryrsi"></a>[DiscoveryRSI](https://github.com/Gen-Verse/DiscoveryRSI) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarms-code"></a>[Swarms Code](https://github.com/The-Swarm-Corporation/swarms-code) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
