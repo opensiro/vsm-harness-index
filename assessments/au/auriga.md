@@ -107,6 +107,11 @@ The model-driven actor is one operational S1 cell and controls robot task execut
 ## S3* — Complementary audit
 
 - State: A
+- Claim being audited: the primary robot actor's local claim that a selected grasp/lift/transfer/place/release or retreat phase achieved its expected visible result, as distinct from a native worker's narrower `completed` execution receipt.
+- Ordinary reporting path: `Harness.execute` returns a native action receipt and current measured observation to the primary actor, which can then report success on the strength of its own readings; a tool response alone does not prove object retention or task completion.
+- Complementary access path: the separately launched Sol reviewer is given the raw linked BEFORE/AFTER permitted RGB images, measured robot state, immutable action IDs/receipts and the actor's intended outcome *as a hypothesis*; it checks visual identity/relation independently and returns a structured met/not_met/uncertain verdict with gaps.
+- Independence boundary: `CodexEvidenceAgent` creates a fresh ephemeral thread, empty workspace and isolated home, disables memories/tools/hooks, and rejects observed helper tool activity; it is not forked from the acting Codex history and cannot issue motion commands. The actor chooses checkpoint and evidence, limiting scope but not transferring visual judgment to the actor.
+- Who acts on findings: the primary Astra actor receives `vision_review` results in its ordinary tool stream and is instructed to resolve unmet/uncertain evidence with fresh observations or changed recovery; the reviewer itself cannot execute or compel a trajectory and the operating loop retains physical action ownership.
 - Function: provide an independent, evidence-limited second opinion on a manipulation operation's claimed visible outcome and send discrepancies or uncertainty back to the acting agent.
 - Disturbance / variety regulated: optimistic success interpretations of completed motion receipts, wrong target identity, occlusion, unsupported grasp/placement/release claims and partial execution.
 - Decisive decision or feedback right: judge `met`, `not_met` or `uncertain` for a claimed phase by comparing independent before/after RGB, execution receipts and measured robot state, and specify evidence gaps/recovery feedback.
