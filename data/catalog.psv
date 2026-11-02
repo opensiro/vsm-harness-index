@@ -985,3 +985,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 984|opentandem|OpenTandem|https://github.com/opentandem/opentandem|2026-10-27T03:30:52Z|github-repository-discovery|01335e7c313861bf7134d33f363eb2c079009788|2026-11-02
 985|bubblepaw-core|BubblePaw Core|https://github.com/BubbleBuffer/BubblePaw-Core|2026-10-21T13:23:55Z|github-topic-agent-harness|2f98827beda9f2c988368c99ee9fa69120899dff|2026-11-02
 986|paddock|Paddock|https://github.com/vakovalskii/paddock|2026-10-29T05:22:00Z|github-repository-discovery|96e9b43cd194012599b0608faeb9cd2befa9fee1|2026-11-02
+987|aeven|Aeven|https://github.com/Aeven-AI/Aeven|2026-09-17T08:00:47Z|github-topic-agent-harness|50e27b33594b7f0400fc666668fc1026c3fe7ca1|2026-11-02
