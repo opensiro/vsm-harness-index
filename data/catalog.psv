@@ -992,3 +992,13 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 991|recurse|Recurse|https://github.com/ebetica/recurse|2026-10-27T05:51:53Z|github-repository-discovery|6e4d231e299a14f19fe6eee9d9f7f43781780c2a|2026-11-02
 992|looplet|Looplet|https://github.com/hsaghir/looplet|2026-04-18T08:13:15Z|github-repository-discovery|7a7e1a296cb5d1d61a3cd4fcfc9eafbecab9a4d2|2026-11-02
 993|phax|phax|https://github.com/lbdremy/phax|2026-05-11T09:19:07Z|github-repository-discovery|3a9457a63ad8e2b6e6cd6ba63ce38366450c1499|2026-11-02
+994|uncut|UNCUT|https://github.com/Balanov/uncut|2026-11-01T17:19:30Z|github-repository-discovery|e1512a702de846eb701e0383d9ae031bad528c0f|2026-11-02
+995|zenith|Zenith|https://github.com/Intelligent-Internet/zenith|2026-05-08T10:28:50Z|github-repository-discovery|a8d9b5786f81e70e73cce7bb164f5f83da84a4b5|2026-11-02
+996|lacp|LACP|https://github.com/0xNyk/lacp|2026-02-20T07:42:31Z|github-repository-discovery|e31f134b689afd6a71d94b0420682d1f528d6fa1|2026-11-02
+997|cc10x|cc10x|https://github.com/romiluz13/cc10x|2025-10-22T11:54:14Z|github-repository-discovery|36c7b06a7c846d18cfbf33969ee0a7a2483985af|2026-11-02
+998|devbox|DevBox|https://github.com/rudderlabs/devbox|2026-10-27T06:17:39Z|github-repository-discovery|fc2b4270eb803404281e352bb79394a54d28c723|2026-11-02
+999|init-agent|INIT-Agent|https://github.com/nagisanzenin/INIT-Agent|2026-10-23T18:55:45Z|github-topic-agent-harness|1b8b407d2716739a4cfaff6a1751c2f968425edb|2026-11-02
+1000|pengy|Pengy|https://github.com/patw/Pengy|2026-05-16T01:19:52Z|github-topic-agent-harness|99b22849176c98ba8f5414edd8817b87cb2fea78|2026-11-02
+1001|rigging|rigging|https://github.com/glaborie/rigging|2026-10-29T13:34:52Z|github-topic-agent-harness|7b04ad9064a655d74a2c0566ac25c9bd7444df12|2026-11-02
+1002|velloc-runtime|Velloc Runtime|https://github.com/VellocLabs/velloc-runtime|2026-10-15T20:44:46Z|github-topic-agent-harness|28bccb9a03b696efc1890c4b12cb1366646d975c|2026-11-02
+1003|operant|Operant|https://github.com/ishan-parihar/operant|2026-05-11T04:45:39Z|github-topic-agent-harness|fb1777e9b5510448e5680011f8992281af422ff2|2026-11-02

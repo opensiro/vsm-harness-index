@@ -67,7 +67,7 @@ The user supplies a goal and retains specific side-effect authorization. Inside 
 ## S2 — Coordination
 
 - State: —
-- Function: Coordination at the declared delivery-system recursion.
+- Function: Coordination at the declared local-application recursion.
 - Disturbance / variety regulated: Candidate regulatory paths are inspected below.
 - Decisive decision or feedback right: No material function-specific path established.
 - Decision owner: No credited first-party owner for this function.
@@ -89,7 +89,7 @@ The user supplies a goal and retains specific side-effect authorization. Inside 
 ## S3 — Inside-and-now control
 
 - State: —
-- Function: Inside-and-now control at the declared delivery-system recursion.
+- Function: Inside-and-now control at the declared local-application recursion.
 - Disturbance / variety regulated: Candidate regulatory paths are inspected below.
 - Decisive decision or feedback right: No material function-specific path established.
 - Decision owner: No credited first-party owner for this function.
@@ -111,7 +111,7 @@ The user supplies a goal and retains specific side-effect authorization. Inside 
 ## S3* — Complementary audit
 
 - State: —
-- Function: Complementary audit at the declared delivery-system recursion.
+- Function: Complementary audit at the declared local-application recursion.
 - Disturbance / variety regulated: Candidate regulatory paths are inspected below.
 - Decisive decision or feedback right: No material function-specific path established.
 - Decision owner: No credited first-party owner for this function.
@@ -133,7 +133,7 @@ The user supplies a goal and retains specific side-effect authorization. Inside 
 ## S4 — Outside-and-then intelligence
 
 - State: —
-- Function: Outside-and-then intelligence at the declared delivery-system recursion.
+- Function: Outside-and-then intelligence at the declared local-application recursion.
 - Disturbance / variety regulated: Candidate regulatory paths are inspected below.
 - Decisive decision or feedback right: No material function-specific path established.
 - Decision owner: No credited first-party owner for this function.
@@ -155,7 +155,7 @@ The user supplies a goal and retains specific side-effect authorization. Inside 
 ## S5 — Policy and identity
 
 - State: —
-- Function: Policy and identity at the declared delivery-system recursion.
+- Function: Policy and identity at the declared local-application recursion.
 - Disturbance / variety regulated: Candidate regulatory paths are inspected below.
 - Decisive decision or feedback right: No material function-specific path established.
 - Decision owner: No credited first-party owner for this function.
