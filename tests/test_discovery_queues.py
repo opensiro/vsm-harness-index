@@ -172,6 +172,48 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
         self.assertTrue(module.is_frozen_queue("Manual assessment queue. Batch frozen at 10/10."))
         self.assertFalse(module.is_frozen_queue("Candidate intake. Batch occupancy: 7/10."))
 
+    def test_title_frozen_controller_keeps_only_unprocessed_rows_active(self) -> None:
+        body = """## Frozen candidate map
+
+| # | Project | Canonical repository | Frozen review ref |
+| ---: | --- | --- | --- |
+| 1 | Done | `owner/done` | `1111111111111111111111111111111111111111` |
+| 2 | Pending | `owner/pending` | `2222222222222222222222222222222222222222` |
+"""
+        api = mock.Mock()
+        api.open_issues.return_value = [{
+            "number": 2579,
+            "title": "[Assessment batch] Done, Pending — frozen #2578",
+            "body": body,
+        }]
+        entries, occupancy, parse_errors = module.active_queue_entries(api, "owner/index")
+        active, errors, _warnings = module.classify_queue_entries(
+            entries,
+            included={"owner/done": "owner/done"},
+            proposed={},
+            catalog_names={"owner/done": "owner/done"},
+        )
+        self.assertEqual(parse_errors, [])
+        self.assertEqual(occupancy, {})
+        self.assertEqual(errors, [])
+        self.assertEqual([entry.repository for entry in active], ["owner/pending"])
+
+    def test_unfrozen_title_does_not_hide_canonical_queue_overlap(self) -> None:
+        api = mock.Mock()
+        api.open_issues.return_value = [{
+            "number": 20,
+            "title": "[Candidate batch] Active intake",
+            "body": "| Project | Repository | Review ref |\n"
+                    "| --- | --- | --- |\n"
+                    "| Done | `owner/done` | `1111111111111111111111111111111111111111` |\n",
+        }]
+        entries, _occupancy, _parse_errors = module.active_queue_entries(api, "owner/index")
+        active, errors, _warnings = module.classify_queue_entries(
+            entries, included={"owner/done": "owner/done"}, proposed={}, catalog_names={}
+        )
+        self.assertEqual(len(active), 1)
+        self.assertIn("#20: owner/done is already canonical status=included", errors)
+
     def test_frozen_completed_rows_become_historical(self) -> None:
         entries = [module.QueueEntry(10, "[Candidate batch] X", "owner/done", frozen=True)]
         active, errors, warnings = module.classify_queue_entries(
