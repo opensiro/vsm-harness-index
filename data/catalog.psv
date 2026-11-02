@@ -984,3 +984,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 983|inkpi|InkPi|https://github.com/MeiSiristhebest/inkpi|2026-08-31T17:28:35Z|github-topic-agent-harness|4d231366a1c7b08d1d5ade7fd7c105d4a49557c4|2026-11-02
 984|opentandem|OpenTandem|https://github.com/opentandem/opentandem|2026-10-27T03:30:52Z|github-repository-discovery|01335e7c313861bf7134d33f363eb2c079009788|2026-11-02
 985|bubblepaw-core|BubblePaw Core|https://github.com/BubbleBuffer/BubblePaw-Core|2026-10-21T13:23:55Z|github-topic-agent-harness|2f98827beda9f2c988368c99ee9fa69120899dff|2026-11-02
+986|paddock|Paddock|https://github.com/vakovalskii/paddock|2026-10-29T05:22:00Z|github-repository-discovery|96e9b43cd194012599b0608faeb9cd2befa9fee1|2026-11-02
