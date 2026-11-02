@@ -647,6 +647,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agetor"></a>[Agetor](https://github.com/alamops/agetor) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="active-graph"></a>[Active Graph](https://github.com/yoheinakajima/activegraph) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hashcortx"></a>[HashCortX](https://github.com/Hash-7777/HashCortX) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="pengy"></a>[Pengy](https://github.com/patw/Pengy) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="termcoder"></a>[Termcoder](https://github.com/nattergabriel/termcoder) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cascaide-ts"></a>[cascaide-ts](https://github.com/Airavat-Research/cascaide-ts) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarm-code"></a>[swarm-code](https://github.com/skyblanket/swarm-code) | 2026-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
