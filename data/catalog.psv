@@ -1003,3 +1003,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1002|velloc-runtime|Velloc Runtime|https://github.com/VellocLabs/velloc-runtime|2026-10-15T20:44:46Z|github-topic-agent-harness|28bccb9a03b696efc1890c4b12cb1366646d975c|2026-11-02
 1003|operant|Operant|https://github.com/ishan-parihar/operant|2026-05-11T04:45:39Z|github-topic-agent-harness|fb1777e9b5510448e5680011f8992281af422ff2|2026-11-02
 1004|agent-harness-happiness-cheng|Agent Harness (happiness-cheng)|https://github.com/happiness-cheng/agent-harness|2026-10-21T02:11:04Z|github-repository-discovery|50b27bfab099e7e4b3f085a9468d0b8bc6b44c4b|2026-11-02
+1005|nodecode|Nodecode|https://github.com/nodecode-ai/nodecode|2025-08-21T19:24:33Z|github-repository-discovery|314476ddee650954f32695500be308276243f28b|2026-11-02
