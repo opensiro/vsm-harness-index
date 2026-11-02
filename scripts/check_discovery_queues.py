@@ -295,7 +295,9 @@ def active_queue_entries(
             occupancy = declared_active_occupancy(body)
             if occupancy is not None and occupancy != len(candidate_rows):
                 errors.append(f"#{number}: declared occupancy {occupancy}/10 != {len(candidate_rows)}/10 table rows")
-        frozen = is_frozen_control_queue(body)
+        # Assessment controllers can declare their immutable intake in the
+        # title ("... — frozen #123") without repeating that phrase in the body.
+        frozen = is_frozen_control_queue(f"{title}\n{body}")
         for repository, review_ref in candidate_rows:
             entries.append(
                 QueueEntry(
