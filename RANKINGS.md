@@ -19,6 +19,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="gptme"></a>[gptme](https://github.com/gptme/gptme) | 2023-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 3 | <a id="devbox"></a>[DevBox](https://github.com/rudderlabs/devbox) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="autoresearchlab"></a>[AutoResearchLab](https://github.com/TaewiKim/autoresearchlab) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 1 | `A ? A A A(P) —` |
+| 3 | <a id="velloc-runtime"></a>[Velloc Runtime](https://github.com/VellocLabs/velloc-runtime) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="halo-harness"></a>[Halo Harness](https://github.com/roloVibes/Halo-Harness) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A P —` |
 | 3 | <a id="openorc"></a>[OpenOrc](https://github.com/davejj1530/openorc) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A P A — A(P)` |
 | 3 | <a id="ferrule"></a>[Ferrule](https://github.com/maximarhipkin/ferrule) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
