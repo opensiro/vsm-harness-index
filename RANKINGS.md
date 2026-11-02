@@ -193,6 +193,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="cc10x"></a>[cc10x](https://github.com/romiluz13/cc10x) | 2025-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="agentscope-java-2-0"></a>[AgentScope Java 2.0](https://github.com/agentscope-ai/agentscope-java) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="ralph-orchestrator"></a>[Ralph Orchestrator](https://github.com/mikeyobrien/ralph-orchestrator) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
+| 4 | <a id="nodecode"></a>[Nodecode](https://github.com/nodecode-ai/nodecode) | 2025-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A P A — —` |
 | 4 | <a id="ursa"></a>[URSA](https://github.com/lanl/ursa) | 2025-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="aionui"></a>[AionUi](https://github.com/iOfficeAI/AionUi) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="eigent"></a>[Eigent](https://github.com/eigent-ai/eigent) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
