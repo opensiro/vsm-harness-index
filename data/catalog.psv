@@ -981,4 +981,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 980|leadkit|Leadkit|https://github.com/MattGrundy/leadkit|2026-10-27T16:37:49Z|manual-discovery|3efcde576a5f687b0013fad902fe9cff8be11766|2026-11-01
 981|opengeniemaster|OpenGenieMaster|https://github.com/eust-w/opengeniemaster|2026-10-27T11:27:29Z|manual-discovery|8f6dab22a54a318bf8afa221269a6f9c00fa860c|2026-11-01
 982|judgment-pack-agent|Judgment Pack Agent|https://github.com/Judgment-Pack/judgment-pack-agent|2026-10-19T00:41:27Z|github-topic-agent-harness|f16686d7956ce4f80434da537e8ef53ccaa4c514|2026-11-02
-983|opentandem|OpenTandem|https://github.com/opentandem/opentandem|2026-10-27T03:30:52Z|github-repository-discovery|01335e7c313861bf7134d33f363eb2c079009788|2026-11-02
+983|inkpi|InkPi|https://github.com/MeiSiristhebest/inkpi|2026-08-31T17:28:35Z|github-topic-agent-harness|4d231366a1c7b08d1d5ade7fd7c105d4a49557c4|2026-11-02
+984|opentandem|OpenTandem|https://github.com/opentandem/opentandem|2026-10-27T03:30:52Z|github-repository-discovery|01335e7c313861bf7134d33f363eb2c079009788|2026-11-02
