@@ -424,6 +424,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 6 | <a id="opengent"></a>[OpenGent](https://github.com/samkerrcode/opengent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="uncut"></a>[UNCUT](https://github.com/Balanov/uncut) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="astra-harness"></a>[Astra Harness](https://github.com/ytinyx/astra-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="peristyle-harness"></a>[Peristyle Harness](https://github.com/peristyle-ai/harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="mola-harness"></a>[mola-harness](https://github.com/Mola-maker/mola-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mini-agent"></a>[Mini-Agent](https://github.com/lizaixi01/Mini-Agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
