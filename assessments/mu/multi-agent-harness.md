@@ -65,6 +65,11 @@ Seven distinct model-decision roles operate against a shared task, with the gate
 ## S2 — Coordination
 
 - State: A
+- Distinct S1 units: analyzer, planner, coder, verifier, router, debugger and finalizer each make model-directed role choices over the same task within `Team.run`.
+- Inter-S1 disturbance: coder may act on stale/incomplete planner context; verifier's corrective diagnosis can be lost or ignored by router/planner; mismatched producer/consumer handoffs can perpetuate failed work cycles.
+- Attenuating coordination relation: `proposal_b` model editor targets one diagnosed handoff or feedback route and its producer/consumer contract, probes the change in a separate team run, and the composer/selector adopts a tested version.
+- Feedback into subsequent S1 behaviour: selected `coordination` routes and contracts alter future `Team.ask` handoff fields and instructions; the next round runs the selected harness rather than a mere logged proposal.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the editor identifies an actual role-interference mechanism from event evidence and changes *both ends* of a concrete coordination contract; a generic mailbox or static ordered role call would not do so.
 - Function: diagnostic handoff repair regulates erroneous or lost information between planning, coding, verification, routing and later corrective work.
 - Disturbance / variety regulated: stale/omitted verifier diagnosis, mismatched producer-consumer requirements, coder missing task context and repeated failed plan/execution handoffs among distinct role S1 cells.
 - Decisive decision or feedback right: propose or reject a one-route coordination change from actual public execution events and apply selected shared contracts/diagnostic routes to later role interactions.
@@ -81,6 +86,8 @@ Seven distinct model-decision roles operate against a shared task, with the gate
 ## S3 — Inside-and-now control
 
 - State: A
+- Whole-system current view: the router receives the team's current plan and execution feedback, optional verifier diagnosis and bounded public interaction history across the seven-role task unit.
+- Current-control decision scope: accept/finalize the team's current work or commit remaining execution steps to another planning/coding cycle; error events can route current resources to debugger recovery.
 - Function: current task-team progress supervision decides whether to continue work or seek final completion, with bounded present-run intervention on errors.
 - Disturbance / variety regulated: unfinished task state, coding errors, contradictory/incomplete verification and scarce team execution steps.
 - Decisive decision or feedback right: select `continue` versus `finalize` based on team execution state and verifier diagnosis; select whether finalizer proceeds or planner/coder receives another work cycle.
@@ -118,6 +125,10 @@ Seven distinct model-decision roles operate against a shared task, with the gate
 ## S4 — Outside-and-then intelligence
 
 - State: A
+- External distinction: observed AppWorld public API responses, task demands, failure traces and execution outcomes reveal environmental requirements rather than merely internal source-code intentions.
+- Future / prospective distinction: diagnosis targets the *next* execution of the team, via alternate role/coordination instructions in new candidate worlds and the subsequent outer round, not only repairing the current API call.
+- Adaptation option generated: model role and coordination editors propose bounded harness variants; composer selects/revises a successor based on independent candidate probes and observed public evidence.
+- Path back into current capability / S3: current-round selector commits `selected_harness.json`; `run_recursive` uses that configuration as the next reference team, changing role and handoff capability while the router retains present execution control.
 - Function: adapt future team operating capability to observed public task/environment failures and potential coordination changes rather than merely repairing the current line of code.
 - Disturbance / variety regulated: mismatch between role procedures/handoffs and evolving public task requirements, recurring mistakes, and unsuitable coordination for subsequent rounds.
 - Decisive decision or feedback right: choose evidence-linked role/procedure options, test alternatives, compose a successor harness and choose the next-round configuration.
