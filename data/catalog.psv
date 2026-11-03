@@ -1017,3 +1017,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1016|binny|BINNY|https://github.com/openbin-ai/binny|2026-10-10T05:03:07Z|github-repository-search|d0c2ae4c61d222421d1505986ac6e63b7ed799fa|2026-11-03
 1017|swarmos|SwarmOS|https://github.com/supernovae/SwarmOS|2026-10-20T16:20:14Z|github-repository-search|c85010787b001981beb84e60502c1eaca3c6f812|2026-11-03
 1018|cyber-frost-harness|Cyber-Frost Harness|https://github.com/Blackfrost-AI/Cyber-Frost-Harness|2026-10-05T13:53:31Z|github-repository-search|54a7e28baac28f740601dd576e21674a513cd844|2026-11-03
+1019|friday|Friday|https://github.com/splashxmoon/friday|2026-10-26T04:31:26Z|github-repository-search|7db025c6513eae1c05a93f6e7ba58fd5ffad2a2a|2026-11-03
