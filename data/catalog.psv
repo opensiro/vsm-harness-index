@@ -1008,3 +1008,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1007|harnessos|HarnessOS|https://github.com/JankinLee/harness-os|2026-10-31T10:07:02Z|github-topic-agent-harness|7f576f5614a066e0bd5797553b0923665aaaefc1|2026-11-03
 1008|opengent|OpenGent|https://github.com/samkerrcode/opengent|2026-11-02T00:32:54Z|github-topic-agent-harness|f981d42614d49bda064c474587095a49a0c2bb28|2026-11-03
 1009|mini-agent|Mini-Agent|https://github.com/lizaixi01/Mini-Agent|2026-10-31T16:14:05Z|github-topic-agent-harness|221827fd2524d3574bdfb7dcbb888464d75ad95d|2026-11-03
+1010|sentra|Sentra|https://github.com/dewhush/sentra|2026-10-27T15:16:28Z|github-topic-agent-harness|d3736e0eb87aa7747ae18201f41c9abc6c584526|2026-11-03
