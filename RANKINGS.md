@@ -95,6 +95,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="pipaya"></a>[pipaya](https://github.com/dohwi/pipaya) | 2026-Q4 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="agent-rokartur"></a>[agent (rokartur)](https://github.com/rokartur/agent) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="dtadpole-heddle"></a>[Heddle](https://github.com/dtadpole/heddle) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 4 | <a id="dori-superagent"></a>[Dori Superagent](https://github.com/sisyphuslabs/dori-superagent) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="davecode"></a>[DaveCode](https://github.com/DMRLZZ/DaveCode) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="feather"></a>[Feather](https://github.com/paper-instruments/feather-train) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="termagent"></a>[TermAgent](https://github.com/whoops-1/termagent) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
