@@ -27,7 +27,7 @@ autonomy_s5: —
 - Relevant environment: Repository code, overlapping edits, tasks/dependencies, peer claims and failures, shared branch, developer-specified goal, tests and usage limits.
 - Standard-distribution boundary: `colony` binary starts workers with a common goal and first-party protocol, implements board/claim/propose/reopen tools and a serializable hub; number of workers and a verification command are operator-configured.
 - Credited operating / distribution surfaces: [prompts.rs](https://github.com/yusa-imit/colony/blob/b1a7679ac299bf4be2e278cfb25616fac52b3365/src/prompts.rs), [mcp.rs](https://github.com/yusa-imit/colony/blob/b1a7679ac299bf4be2e278cfb25616fac52b3365/src/mcp.rs), [board.rs](https://github.com/yusa-imit/colony/blob/b1a7679ac299bf4be2e278cfb25616fac52b3365/src/board.rs), [hub.rs](https://github.com/yusa-imit/colony/blob/b1a7679ac299bf4be2e278cfb25616fac52b3365/src/hub.rs), [supervisor.rs](https://github.com/yusa-imit/colony/blob/b1a7679ac299bf4be2e278cfb25616fac52b3365/src/supervisor.rs), [inbox.rs](https://github.com/yusa-imit/colony/blob/b1a7679ac299bf4be2e278cfb25616fac52b3365/src/inbox.rs).
-- Adjacent surfaces excluded from ownership: Underlying external Claude Code's general tool intelligence, human-set goal/budget/deadline, Git's mechanical conflict checks, deterministic atomic claims, verify command/test suite and human evaluation of final work.
+- Adjacent first-party surfaces excluded from ownership: Underlying external Claude Code's general tool intelligence, human-set goal/budget/deadline, Git's mechanical conflict checks, deterministic atomic claims, verify command/test suite and human evaluation of final work.
 - First-party operating modes considered: Several model-bearing workers, shared board with no director, inter-worker chat/notes, local clone and hub, usage-limited supervisor; optional `--verify` command.
 - Recursion level: One colony of operational worker units, with distributed current coordination and whole-goal closure; not each spawned shell command as an additional viable recursion.
 - Reviewed revision: `b1a7679ac299bf4be2e278cfb25616fac52b3365`.
@@ -64,6 +64,11 @@ Peer agents independently select task and code actions while sharing a goal. The
 ## S2 — Coordination
 
 - State: A
+- Distinct S1 units: Separate code-writing Claude Code worker processes, each owning a different claimed task and isolated clone.
+- Inter-S1 disturbance: Competing task claims, duplicate work, conflicting changes to shared files and unmet task dependencies.
+- Attenuating coordination relation: Workers observe atomic claim feedback and peer messages, change their commitments, reserve dependency-blocked work, negotiate overlap and integrate only after a non-force Git rebase.
+- Feedback into subsequent S1 behaviour: A refused claim makes the worker choose another item; a peer mention or rejected push leads to coordination, rebase and retesting before completing its own task.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: The first-party protocol connects a named inter-worker collision to its observed refusal or conflict, then instructs the model worker to change its plan and return a non-conflicting commitment. The mechanical lock alone would not suffice.
 - Function: Attenuate interference between parallel workers changing the same goal/repository and return conflict signals to those workers.
 - Disturbance / variety regulated: Competing claims, duplicate task proposals, overlapping edits, unmet dependencies and stale peer assumptions can destabilize otherwise productive S1 workers.
 - Decisive decision or feedback right: Re-select work after a rejected claim, renegotiate task boundaries via peer chat, revise after conflicting Git changes, or reserve/release an interdependent task.
@@ -80,6 +85,8 @@ Peer agents independently select task and code actions while sharing a goal. The
 ## S3 — Inside-and-now control
 
 - State: A
+- Whole-system current view: Every worker reads the shared board with all open/claimed/done tasks and the common goal, rather than merely its own tool log.
+- Current-control decision scope: Any worker can propose missing goal work, amend present task dependencies and commitments, reopen failed completion, or close the whole goal after all current tasks finish and configured checks pass.
 - Function: Distribute current whole-goal task commitments and regulate unresolved work across the shared colony.
 - Disturbance / variety regulated: Missing goal subtasks, blocked critical paths, stale completed work, all-done-but-goal-incomplete conditions and changed availability.
 - Decisive decision or feedback right: From a whole-board current view, propose a 5–15-task plan, add missing work, pick/reassign one's commitment, reopen a flawed completed task, and finally declare goal completion.
