@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
 assessment_changed_at: 2026-11-03
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: C
 autonomy_s3: C
@@ -192,6 +192,7 @@ Task partition and worktrees attenuate repository/file interference; individual 
 ## Evidence gaps
 
 - Source and first-party operational docs were inspected at the frozen SHA; no live Claude/Codex worker was launched in this assessment. `docs/STATUS.md` explicitly distinguishes 405 automated fake-agent tests from partially verified real-tool flows.
+- An additional reviewer-side `python3 -m unittest discover -s tests -t . -q` attempt on Linux/Python 3.12 ran 396 tests and exited nonzero (17 failures, 3 errors), including demo wait, supervisor/worker and terminal-takeover assertions. This is **not** a passing local E2E receipt and is not used as positive evidence. The repository's documented passing matrix is macOS; the failure causes and platform-specific reproduction were not exhaustively diagnosed here.
 - The S2 positive result is scoped to declared costly-tool classes and PATH shims; it is not proof of universal cross-worker file conflict prevention.
 - The model-facing lobby is termed an orchestrator, but current scheduling is deliberately deterministic; this analysis credits actual constructor-owned S3 decision/feedback, not the model's title.
 - Human owner inspection and approval are observed authority constraints; no standard autonomous S3* audit role or S5 parent return is inferred from them.

@@ -135,6 +135,12 @@ An external client/agent or human chooses a command, optional task and template.
 - Confidence: high.
 - Caveats: External agents may conduct excellent reviews; they are not Core's first-party audit decision owner.
 
+### Absence scope
+
+- Surfaces inspected: Template parser/first-message submission, reviewer example documentation, program status, child-parent notification, headless terminal lifecycle and CLI command references.
+- Plausible first-party paths checked: User-written reviewer role, parent-led independent second agent, terminal isolation, per-program statuses and typed child report notes.
+- Why no material first-party path remains: No shipped first-party review decision actor is invoked as a standard obligation, and no independent reviewer verdict is connected to an enforced remediation or admission gate; external users and agent models must compose the review themselves.
+
 ## S4 — Outside-and-then intelligence
 
 - State: —
