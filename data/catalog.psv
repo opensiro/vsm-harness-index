@@ -1021,3 +1021,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1020|dynaflow|DynaFlow|https://github.com/amiya-special/Dynaflow|2026-10-22T15:37:33Z|github-repository-search|7451639d197ef844b4157cf40eadac68e9eba8ca|2026-11-03
 1021|dori-superagent|Dori Superagent|https://github.com/sisyphuslabs/dori-superagent|2026-10-07T03:32:07Z|github-repository-search|06c4600b77f6e81ed9bd5b706d736bec07cf27b1|2026-11-03
 1022|onethread|onethread|https://github.com/RogyMD/onethread|2026-10-22T22:32:27Z|github-repository-search|27779473556ec490a03f07aaccca9ca3c1834316|2026-11-03
+1023|herdr-core|herdr-core|https://github.com/herdrdev/herdr-core|2026-10-16T20:36:32Z|github-repository-search|b63ecbd1e6b6a7d63fb7bcf40f268930417723ba|2026-11-03
