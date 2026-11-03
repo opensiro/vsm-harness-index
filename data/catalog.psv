@@ -1005,3 +1005,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1004|agent-harness-happiness-cheng|Agent Harness (happiness-cheng)|https://github.com/happiness-cheng/agent-harness|2026-10-21T02:11:04Z|github-repository-discovery|50b27bfab099e7e4b3f085a9468d0b8bc6b44c4b|2026-11-02
 1005|nodecode|Nodecode|https://github.com/nodecode-ai/nodecode|2025-08-21T19:24:33Z|github-repository-discovery|314476ddee650954f32695500be308276243f28b|2026-11-02
 1006|kinu|Kinu|https://github.com/AshishKumar4/kinu|2026-04-14T15:01:22Z|github-repository-discovery|64e48f2bcb08d8a9a7a26b27552f79dcd361d16b|2026-11-02
+1007|harnessos|HarnessOS|https://github.com/JankinLee/harness-os|2026-10-31T10:07:02Z|github-topic-agent-harness|7f576f5614a066e0bd5797553b0923665aaaefc1|2026-11-03
