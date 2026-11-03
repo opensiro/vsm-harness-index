@@ -83,6 +83,22 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
             [("owner/alpha", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")],
         )
 
+    def test_parse_five_row_controller_with_immutable_ref_header(self) -> None:
+        body = """## Frozen source map
+
+| # | Candidate | Canonical repo | Immutable review_ref |
+| ---: | --- | --- | --- |
+| 1 | Alpha | `owner/alpha` | `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa` |
+| 2 | Beta | `owner/beta` | `bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb` |
+"""
+        self.assertEqual(
+            module.parse_candidate_rows(body),
+            [
+                ("owner/alpha", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"),
+                ("owner/beta", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"),
+            ],
+        )
+
     def test_source_candidate_batch_routes_assessment_control(self) -> None:
         body = "Source candidate batch: #918\nFrozen refs: copied unchanged from #918"
         self.assertEqual(module.source_candidate_batch(body), 918)
