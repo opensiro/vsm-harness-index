@@ -84,6 +84,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="megaagent"></a>[MegaAgent](https://github.com/Xtra-Computing/MegaAgent) | 2024-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="opencursor"></a>[OpenCursor](https://github.com/PawanOsman/OpenCursor) | 2022-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 4 | <a id="darkdvr-synapse"></a>[Synapse](https://github.com/DarkDvr/Synapse) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 1 | `A — A A ? —` |
 | 4 | <a id="leadkit"></a>[Leadkit](https://github.com/MattGrundy/leadkit) | 2026-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A A C(P) A — P` |
 | 4 | <a id="recurse"></a>[Recurse](https://github.com/ebetica/recurse) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="bubblepaw-core"></a>[BubblePaw Core](https://github.com/BubbleBuffer/BubblePaw-Core) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
