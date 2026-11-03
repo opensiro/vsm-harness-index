@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
 assessment_changed_at: 2026-11-03
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -20,7 +20,7 @@ autonomy_s5: —
 
 # Doclify
 
-**Proposed disposition:** `excluded-no-agentic-vsm` after first-party operating-boundary inspection. This is not a claim that its session capture, evidence extraction, review-gated documentation or future-agent context do not work. Its delivered outcome is a supervised documentation memory overlay for *externally run* coding agents, with no own autonomous operational agent S1.
+**Canonical disposition:** `excluded-no-agentic-vsm` after first-party operating-boundary inspection. This is not a claim that its session capture, evidence extraction, review-gated documentation or future-agent context do not work. Its delivered outcome is a supervised documentation memory overlay for *externally run* coding agents, with no own autonomous operational agent S1.
 
 ## Review boundary
 
