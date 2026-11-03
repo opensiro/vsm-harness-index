@@ -1011,3 +1011,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1010|sentra|Sentra|https://github.com/dewhush/sentra|2026-10-27T15:16:28Z|github-topic-agent-harness|d3736e0eb87aa7747ae18201f41c9abc6c584526|2026-11-03
 1011|astra-harness|Astra Harness|https://github.com/ytinyx/astra-harness|2026-11-01T03:10:52Z|github-topic-agent-harness|0c24783eaef9d3b00f7176eb86b75410f42231a2|2026-11-03
 1012|darkdvr-synapse|Synapse|https://github.com/DarkDvr/Synapse|2026-10-29T10:54:35Z|github-topic-agent-harness|b91345750a7d8ec1fca1557cdf33613762794223|2026-11-03
+1013|jorgitobg-agent-harness|agent-harness|https://github.com/jorgitobg/agent-harness|2026-11-01T18:48:16Z|github-topic-agent-harness|cc06ca7d9684d7d720b0e40062538a033010c5b7|2026-11-03
