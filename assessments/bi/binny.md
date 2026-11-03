@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: —
@@ -187,4 +187,4 @@ Structural source assessment only; no provider-backed proof of report accuracy, 
 
 ## Verdict
 
-**Propose inclusion.** BINNY ships an autonomous model/tool investigation loop with an optional source-grounded skeptical audit mode. No distinct inter-agent coordination, whole-current control, future-capability adaptation or ultimate-policy closure was established at the declared sample-session boundary.
+**Include.** BINNY ships an autonomous model/tool investigation loop with an optional source-grounded skeptical audit mode. No distinct inter-agent coordination, whole-current control, future-capability adaptation or ultimate-policy closure was established at the declared sample-session boundary.
