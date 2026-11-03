@@ -9,7 +9,7 @@ generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
 assessment_changed_at: 2026-11-03
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -20,7 +20,7 @@ autonomy_s5: —
 
 # AgentFleet
 
-**Proposed disposition:** `excluded-no-agentic-vsm`. This is a first-party autonomous S1 eligibility finding, not a denial of AgentFleet's substantial cross-device task lifecycle, routing, failover, memory ledger, or ability to execute *externally installed* coding agents.
+**Canonical disposition:** `excluded-no-agentic-vsm`. This is a first-party autonomous S1 eligibility finding, not a denial of AgentFleet's substantial cross-device task lifecycle, routing, failover, memory ledger, or ability to execute *externally installed* coding agents.
 
 ## Review boundary
 
