@@ -1025,3 +1025,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1024|luma-harness|Luma Harness|https://github.com/Gavriel-lab/luma-harness|2026-10-20T13:26:28Z|github-repository-search|24dbf80a75a4bce048739bd2f149c5d447569b77|2026-11-03
 1025|nonaut|Nonaut|https://github.com/nolabs-ai/nonaut|2026-10-18T02:58:33Z|github-repository-search|72811854a6e33e3b316ec0013d1534f85e3fd858|2026-11-03
 1026|aliquot|Aliquot|https://github.com/oneirum/aliquot|2026-10-28T14:54:13Z|github-repository-search|7ddf55990998cd33a76d181c24fd5727d4788bec|2026-11-03
+1027|miniharness|miniharness|https://github.com/ZeleMate/miniharness|2026-10-28T17:32:55Z|github-repository-search|2eb01d8eda873bcf9087d329540e808298587cf0|2026-11-03
