@@ -156,11 +156,17 @@ def parse_candidate_rows(body: str) -> list[tuple[str, str | None]]:
     for index, line in enumerate(lines):
         if not line.lstrip().startswith("|"):
             continue
-        header = [cell.lower() for cell in table_cells(line)]
-        if "project" not in header or not any("review ref" in cell for cell in header):
+        header = [cell.lower().replace("_", " ") for cell in table_cells(line)]
+        if not ({"project", "candidate"} & set(header)) or not any(
+            "review ref" in cell for cell in header
+        ):
             continue
         repo_index = next(
-            (i for i, cell in enumerate(header) if cell in {"repository", "canonical repository"}),
+            (
+                i
+                for i, cell in enumerate(header)
+                if cell in {"repository", "canonical repository", "canonical repo"}
+            ),
             None,
         )
         ref_index = next((i for i, cell in enumerate(header) if "review ref" in cell), None)
