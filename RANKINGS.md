@@ -426,6 +426,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="uncut"></a>[UNCUT](https://github.com/Balanov/uncut) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="peristyle-harness"></a>[Peristyle Harness](https://github.com/peristyle-ai/harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="mola-harness"></a>[mola-harness](https://github.com/Mola-maker/mola-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="mini-agent"></a>[Mini-Agent](https://github.com/lizaixi01/Mini-Agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="runapps-agent"></a>[RunApps Agent](https://github.com/runapps/agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="tripolskypetr-agent-runtime"></a>[Agent Runtime](https://github.com/tripolskypetr/agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="rigging"></a>[rigging](https://github.com/glaborie/rigging) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
