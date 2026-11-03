@@ -1015,3 +1015,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1014|multi-agent-harness|Multi-Agent Harness²|https://github.com/WeiminWu2000/Multi-Agent-Harness-2|2026-11-03T00:46:03Z|github-topic-agent-harness|1ac2ad1c2793805c72623a6086bb80c91063c532|2026-11-03
 1015|oasis|OASIS|https://github.com/FAHTHIZ/oasis|2026-10-27T02:36:19Z|github-topic-agent-harness|b03a4207c6969a71d570cedf4db2651245b4a822|2026-11-03
 1016|binny|BINNY|https://github.com/openbin-ai/binny|2026-10-10T05:03:07Z|github-repository-search|d0c2ae4c61d222421d1505986ac6e63b7ed799fa|2026-11-03
+1017|swarmos|SwarmOS|https://github.com/supernovae/SwarmOS|2026-10-20T16:20:14Z|github-repository-search|c85010787b001981beb84e60502c1eaca3c6f812|2026-11-03
