@@ -63,6 +63,11 @@ Separate model-driven lane agents handle concrete coding tasks, while the model-
 ## S2 — Coordination
 
 - State: C
+- Distinct S1 units: Two or more independently briefed worker lanes are separate omo sessions in separate herdr tabs, identified by unique lane keys, and can send messages to each other with `dori send <key> --text ...`; the lead is a separate receiving/forwarding role.
+- Inter-S1 disturbance: A message or handoff emitted while another lane is actively executing a tool/model turn can interrupt that S1's own evidence-to-action closure, especially with several concurrently operating workers and multiple queued requests.
+- Attenuating coordination relation: First-party per-pane mailbox stores every message, checks destination agent readiness through herdr and the screen guard, and defers/batches cross-lane deliveries until the target returns to idle; the duty loop retries delivery and watches lost worker panes.
+- Feedback into subsequent S1 behaviour: On the next idle observation, `flushInbox()` injects a queued bundle into the recipient lane's model input; the recipient then incorporates the sender's reports/instructions on its next coding turn. A stalled/lost worker additionally triggers lead intervention rather than blind repeated prompting.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: The readiness-dependent non-interruption relation explicitly regulates timing interference between simultaneous independent S1 sessions and returns deferred information only when each S1 can integrate it; ordinary address routing alone would deliver immediately without checking the working/blocked agent state.
 - Function: Regulate interference from cross-lane/lead/duty messages arriving when a particular agent pane is busy, plus stale or vanished lane liveness.
 - Disturbance / variety regulated: Interruption of working agents by asynchronous messages, competing pane readiness, delayed event reports and unobserved lost lanes.
 - Decisive decision or feedback right: First-party constructor chooses whether to deliver immediately, queue until idle, batch, nudge or escalate based on explicit pane feedback and fixed policies; the duty model can additionally unblock WAITING cases but is not automatically summoned for every such decision.
@@ -79,6 +84,8 @@ Separate model-driven lane agents handle concrete coding tasks, while the model-
 ## S3 — Inside-and-now control
 
 - State: A
+- Whole-system current view: The lead receives `[START]`, `[REPORT]`, `[READY]`, `[LOST]`, `[ESCALATE]` per independent worker lane, plus `[LOOP]` summaries with open lane count, backlog status, host capacity and stale-work findings; persistent lane/store records support a whole-current operational picture.
+- Current-control decision scope: The configured lead model can create new briefs and assign them to separate lanes, redirect existing workers, decide whether to rebrief/restart lost work, judge READY evidence and authorize exact-head reviewed merges/closures while escalating product/irreversible choices to the human.
 - Function: Lead-level current task and resource control of the whole multi-lane delivery operation.
 - Disturbance / variety regulated: Simultaneous task commitments, user changes, blocked worker lanes, uncertain progress, failed reviews, stale ready tasks and host capacity limits.
 - Decisive decision or feedback right: Model-driven lead assigns a brief to a new lane, examines ready evidence, decides next correction/restart/rebrief/escalation, and determines when to merge/close; human reserves irreversible/product decisions.
