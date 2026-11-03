@@ -1023,3 +1023,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1022|onethread|onethread|https://github.com/RogyMD/onethread|2026-10-22T22:32:27Z|github-repository-search|27779473556ec490a03f07aaccca9ca3c1834316|2026-11-03
 1023|herdr-core|herdr-core|https://github.com/herdrdev/herdr-core|2026-10-16T20:36:32Z|github-repository-search|b63ecbd1e6b6a7d63fb7bcf40f268930417723ba|2026-11-03
 1024|luma-harness|Luma Harness|https://github.com/Gavriel-lab/luma-harness|2026-10-20T13:26:28Z|github-repository-search|24dbf80a75a4bce048739bd2f149c5d447569b77|2026-11-03
+1025|nonaut|Nonaut|https://github.com/nolabs-ai/nonaut|2026-10-18T02:58:33Z|github-repository-search|72811854a6e33e3b316ec0013d1534f85e3fd858|2026-11-03
