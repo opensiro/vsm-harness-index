@@ -1054,3 +1054,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1053|theater|Theater|https://github.com/mana-byte/theater|2026-08-20T18:14:43Z|github-repository-discovery|405d8b914e588e91befba6f8a82eb56ff563fd6e|2026-11-04
 1054|better-harness|Better Harness|https://github.com/QoderAI/better-harness|2026-07-21T12:30:35Z|github-repository-search|b605532fcf1014bcb48d3e6940a5bc64e80cddd5|2026-11-04
 1055|orca-trace-delange|Orca (Trace DeLange)|https://github.com/tracedelange/orca|2026-10-05T23:02:52Z|github-repository-discovery|bfdff98bdcc5e3bee5eecd790f00eb8f1104776f|2026-11-04
+1056|corum-harness|Corum Harness|https://github.com/kukucaiCndy/Corum-Harness|2026-08-18T14:51:14Z|github-repository-discovery|1c40d29f933786660fd18b0bc0bf9b55f46ee6cf|2026-11-04
