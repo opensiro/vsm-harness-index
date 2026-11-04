@@ -1065,3 +1065,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1064|maxwell|Maxwell|https://github.com/AshyIsMe/maxwell|2026-10-18T08:00:25Z|github-repository-discovery|9d8a04976d24b0c706fb1c8f8c8b290e5a4e9acc|2026-11-04
 1065|argusai|ArgusAI|https://github.com/HG-ha/Argusai|2026-10-29T06:53:19Z|github-repository-search|5f7aa0844ae0341f3563da2a4d171e3fb797d3ac|2026-11-04
 1066|kehai|Kehai|https://github.com/sh1ny/kehai|2026-10-28T15:02:00Z|github-repository-discovery|170d97ae4f89ccda16e513abc4d9a531f8558c38|2026-11-04
+1067|must-company-ax-booster-open-agent-harness|Open Agent Harness|https://github.com/MUST-Company-AX-Booster/Open-Agent-Harness|2026-10-22T03:08:19Z|github-repository-search|2b17fda4b5f0fe55dd577913aad8bd5febd4ba92|2026-11-04
