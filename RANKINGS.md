@@ -97,6 +97,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="bubblepaw-core"></a>[BubblePaw Core](https://github.com/BubbleBuffer/BubblePaw-Core) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="neopanic-harness"></a>[Harness³](https://github.com/NeoPanic/harness3) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="luma-harness"></a>[Luma Harness](https://github.com/Gavriel-lab/luma-harness) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
+| 4 | <a id="tkcode"></a>[TKCode](https://github.com/AtomUICommunity/TKCode) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="pipaya"></a>[pipaya](https://github.com/dohwi/pipaya) | 2026-Q4 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="agent-rokartur"></a>[agent (rokartur)](https://github.com/rokartur/agent) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="dtadpole-heddle"></a>[Heddle](https://github.com/dtadpole/heddle) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
