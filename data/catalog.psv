@@ -1032,3 +1032,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1031|faden|faden|https://github.com/nogo/faden|2026-11-01T22:12:30Z|github-repository-search|e59833d32c775b86c7b35b2ca1b3cd1b042b5886|2026-11-03
 1032|doclify|Doclify|https://github.com/shreyas-dhakal/doclify-harness|2026-11-02T13:08:42Z|github-repository-search|67714ce9c24adf726f3d30ea35ce7afe9c249b4f|2026-11-03
 1033|agentfleet|AgentFleet|https://github.com/narkco-kang/agent-fleet|2026-11-01T13:33:48Z|github-repository-search|f2fd46afbebdc1df520dec7f5862edd1e0047e23|2026-11-03
+1034|gray|gray|https://github.com/vstaln/gray|2026-08-24T06:05:16Z|manual-discovery|06aced40a388051a2b42ce23303adfe98ad7d14e|2026-11-04
+1035|nexo|nexo|https://github.com/Locotir/nexo|2026-11-03T23:17:36Z|github-repository-search|a9643683250aeff6050d0b77adfed0fe9392e53c|2026-11-04

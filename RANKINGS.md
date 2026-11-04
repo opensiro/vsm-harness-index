@@ -433,6 +433,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="swarms"></a>[Swarms](https://github.com/kyegomez/swarms) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
+| 6 | <a id="nexo"></a>[nexo](https://github.com/Locotir/nexo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="opengent"></a>[OpenGent](https://github.com/samkerrcode/opengent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="faden"></a>[faden](https://github.com/nogo/faden) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="uncut"></a>[UNCUT](https://github.com/Balanov/uncut) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
@@ -524,6 +525,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="synth"></a>[synth](https://github.com/aw1875/synth) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kit"></a>[Kit](https://github.com/speakeasy-api/kit) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="orch"></a>[orch](https://github.com/fbrubacher/orch) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="gray"></a>[gray](https://github.com/vstaln/gray) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kori"></a>[Kori](https://github.com/FacileStudio/kori) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gyrfalcon"></a>[Gyrfalcon](https://github.com/cargopete/gyrfalcon) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="scout"></a>[Scout](https://github.com/dairycow/scout) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
