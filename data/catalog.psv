@@ -1035,4 +1035,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1034|gray|gray|https://github.com/vstaln/gray|2026-08-24T06:05:16Z|manual-discovery|06aced40a388051a2b42ce23303adfe98ad7d14e|2026-11-04
 1035|nexo|nexo|https://github.com/Locotir/nexo|2026-11-03T23:17:36Z|github-repository-search|a9643683250aeff6050d0b77adfed0fe9392e53c|2026-11-04
 1036|hip-agent|hip-agent|https://github.com/changjonathanc/hip-agent|2026-09-06T19:12:11Z|manual-discovery|0c022719ebcf4894f932c1ab5d2c309e06528c2f|2026-11-04
-1037|northcua|NorthCUA|https://github.com/beipo-ai/NorthCUA|2026-11-02T14:34:20Z|github-repository-discovery|fb5f9e2725c7cfe268fa0c2dc40f44cc132c12f4|2026-11-04
+1037|local-model-agent-harness|local-model-agent-harness|https://github.com/eli-herman/local-model-agent-harness|2026-06-17T19:42:20Z|manual-discovery|9dd27c717695337faab70d13ad50f090b7c1d1d7|2026-11-04
+1038|northcua|NorthCUA|https://github.com/beipo-ai/NorthCUA|2026-11-02T14:34:20Z|github-repository-discovery|fb5f9e2725c7cfe268fa0c2dc40f44cc132c12f4|2026-11-04
