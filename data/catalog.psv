@@ -1060,3 +1060,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1059|chassis|Chassis|https://github.com/theo-kirby/chassis|2026-03-14T22:45:54Z|github-repository-discovery|b9350031580d58328849184974e1368d082f4892|2026-11-04
 1060|aris-agent|aris-agent|https://github.com/tauhb/aris-agent|2026-10-27T02:36:56Z|github-repository-search|067695907ffa776afdf42595b08a7587e0c00424|2026-11-04
 1061|agent-harness-cmabery|agent-harness (CMABERY)|https://github.com/CMABERY/agent-harness|2026-10-26T07:50:30Z|github-repository-discovery|170d4c69a0c4b92c7de76ef8b362c5c4025a1786|2026-11-04
+1062|mariomagdy-foreman|foreman|https://github.com/MarioMagdy/foreman|2026-10-28T17:52:58Z|github-repository-search|219bf0961fa4c67caaa4e371fae63e497092d9b2|2026-11-04
