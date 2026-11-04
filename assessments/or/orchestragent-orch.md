@@ -26,8 +26,8 @@ autonomy_s5: —
 - Purpose and identity: Coordinate model-generated plans, test design, parallel code generation, reviews and integration into a demonstrably test-passing branch.
 - Relevant environment: A local Git repository, model providers or coding CLIs, frozen tests, dependency and file conflicts, sandbox/pytest execution, provider rate limits and failures.
 - Standard-distribution boundary: The shipped `orchestragent` Python package, planner, task builder, deterministic scheduler, review and rule stores, integration worktrees, and supported provider adapters. External models answer bounded calls; they are not themselves first-party orchestration.
-- Credited operating surfaces: [orchestrator](https://github.com/Orchestragent/orchestragent/blob/533d06b440654e0f9c9654c80945a751796747e5/src/orchestragent/orch_run.py), [model decisions](https://github.com/Orchestragent/orchestragent/blob/533d06b440654e0f9c9654c80945a751796747e5/src/orchestragent/orch_ladder.py), [rules](https://github.com/Orchestragent/orchestragent/blob/533d06b440654e0f9c9654c80945a751796747e5/src/orchestragent/orch_rules.py), [reviews](https://github.com/Orchestragent/orchestragent/blob/533d06b440654e0f9c9654c80945a751796747e5/src/orchestragent/orch_review.py).
-- Adjacent surfaces excluded: Maintainers' development, test fixtures and benchmark outcomes, user-authored policy, provider internals, externally deployed organizational supervisors.
+- Credited operating / distribution surfaces: [orchestrator](https://github.com/Orchestragent/orchestragent/blob/533d06b440654e0f9c9654c80945a751796747e5/src/orchestragent/orch_run.py), [model decisions](https://github.com/Orchestragent/orchestragent/blob/533d06b440654e0f9c9654c80945a751796747e5/src/orchestragent/orch_ladder.py), [rules](https://github.com/Orchestragent/orchestragent/blob/533d06b440654e0f9c9654c80945a751796747e5/src/orchestragent/orch_rules.py), [reviews](https://github.com/Orchestragent/orchestragent/blob/533d06b440654e0f9c9654c80945a751796747e5/src/orchestragent/orch_review.py).
+- Adjacent first-party surfaces excluded from ownership: Maintainers' development, test fixtures and benchmark outcomes, user-authored policy, provider internals, externally deployed organizational supervisors.
 - Modes considered: Standard plan/execute, concurrent generation, distributed/resumable planning, model-mediated exception review, learned-rule trial; frozen policy mode restricts some automatic adaptation and does not substitute for an S5 parent.
 - Recursion level: A complete `orch` specification run containing multiple bounded code-building S1 tasks; no claim that every task is an independently viable organizational recursion.
 - Reviewed revision: `533d06b440654e0f9c9654c80945a751796747e5` on 2026-11-04; generated and current Profile 0.2.4 / Methodology 0.3.7.
@@ -59,6 +59,11 @@ One planner and a team of temporary task-building model calls operate within a s
 ## S2 — Coordination
 
 - State: C
+- Distinct S1 units: Parallel independently model-backed task builders, each operating in its own task-specific worktree against the same shared integration branch.
+- Inter-S1 disturbance: A builder's code or contract can overlap another builder's changed files, produce a Git conflict, or invalidate a frozen test already passed by another task.
+- Attenuating coordination relation: Planned file ownership/dependencies, serialized merge lock, affected-tests integration gate and explicit capped rebasing of collided tasks.
+- Feedback into subsequent S1 behaviour: Conflict or affected-test failure returns the named task to READY/rebase or retry with updated branch state rather than silently accepting both edits.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: The implemented merge-collision-to-task-retry and cross-task test-interference gate regulate actual interaction failures between distinct coding units.
 - Function: Attenuate interference between parallel code-building units in a shared integration branch.
 - Disturbance / variety regulated: File ownership overlap, incompatible dependency interfaces, parallel Git conflicts and tests broken by another worker's merge.
 - Decisive decision or feedback right: Coordinate dependency/ownership and merge order, reject a conflicting commit and route the affected task back for a refreshed build.
@@ -75,6 +80,8 @@ One planner and a team of temporary task-building model calls operate within a s
 ## S3 — Inside-and-now control
 
 - State: C
+- Whole-system current view: The run's persisted task table, DONE/READY/RUNNING/PARKED statuses, worker occupancy, rate/spend counters and outstanding dependency graph.
+- Current-control decision scope: Adjust current concurrency and admissions, reorder ready work by dependency criticality, or stop a module with repeated parked tasks; all are currently code-controlled rather than model-owned decisions.
 - Function: Control the complete current spec-run portfolio's admissions, throughput, resource limits and stalled tasks.
 - Disturbance / variety regulated: Provider rate-limit pressure, too many active model calls, spend caps, blocked dependencies and repeating module failures.
 - Decisive decision or feedback right: Change current concurrency, dispatch priority and task admissions or park a failed module based on observed whole-run state.
@@ -91,6 +98,11 @@ One planner and a team of temporary task-building model calls operate within a s
 ## S3* — Complementary audit
 
 - State: A
+- Claim being audited: The planner's frozen test contract correctly expresses the original user requirements, notwithstanding a builder's failing implementation or allegation of wrong tests.
+- Ordinary reporting path: The builder's candidate code and sandbox failure result are reported to the retry ladder and orchestration state.
+- Complementary access path: A separately prompted Claude reviewer receives original specification, requirement mapping, frozen test sources and explicit dispute, not just the builder's success report.
+- Independence boundary: Separate persistent review ID, pinned input hash and validated `tests_correct`/`tests_wrong` verdict; the builder cannot directly rewrite frozen tests.
+- Who acts on findings: `_review` closes a correct-test dispute or `_fix_tests` commits guarded test corrections and re-verifies affected candidate and prior merges.
 - Function: Independently challenge the frozen test contract against the original user specification when task failures indicate a test dispute.
 - Disturbance / variety regulated: Wrong or over-constraining tests drafted before implementation, misleading failure attribution and builder attempts to relax constraints.
 - Decisive decision or feedback right: An exception-review model independently returns `tests_correct` or `tests_wrong`, with an explanation and guarded test edits; a wrong-test verdict can authorize corrective test revision.
@@ -107,6 +119,10 @@ One planner and a team of temporary task-building model calls operate within a s
 ## S4 — Outside-and-then intelligence
 
 - State: A
+- External distinction: Past external project specifications, sandbox/test outcomes and model-builder failures vary between runs; rule candidates are grounded in these encountered environmental distinctions, not only an internal heartbeat.
+- Future / prospective distinction: The A/B and replay checks compare candidate rules against distinct past specifications to select instructions expected to improve subsequent planning/building runs.
+- Adaptation option generated: Model-authored, cross-task reusable planner or builder lessons become candidate rules, tested with/without them and potentially activated at later checkpoints.
+- Path back into current capability / S3: Promoted rules enter the planner or builder prompt layer in a subsequent run, changing the model's future action repertoire, while harmful rules are retired.
 - Function: Learn prospective planning/building-rule changes from accumulated cross-run failures and outcomes, and return successful changes into future model prompts.
 - Disturbance / variety regulated: Repeating planning defects, weak tests, recurring builder mistakes and the possibility that a proxy for eventual success becomes misleading.
 - Decisive decision or feedback right: Model review/replanning/build attempts formulate generalizable lessons; A/B evidence evaluates whether a candidate helps, with checkpoint promotion and subsequent prompt influence.
