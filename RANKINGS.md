@@ -269,6 +269,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="minagent"></a>[MinAgent](https://github.com/Nichonauta/MinAgent) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="polyphemus"></a>[Polyphemus](https://github.com/polyphemus-ai/release-rehearsal) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C — A — P` |
 | 5 | <a id="aadixc0de-rune"></a>[Rune](https://github.com/AadiXC0DE/Rune) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A — — P` |
+| 5 | <a id="turri"></a>[turri](https://github.com/turri-oss/turri) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="sangxia-ai"></a>[Sangxia.ai](https://github.com/EthanYin-0701/sangxia-ai) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="likecc"></a>[LikeCC](https://github.com/KNIGHT15235/likecc) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
 | 5 | <a id="agentdock-mcp-harness"></a>[AgentDock MCP Harness](https://github.com/gabyic/agentdock-mcp-harness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
