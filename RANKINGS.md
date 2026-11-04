@@ -569,6 +569,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="orch"></a>[orch](https://github.com/fbrubacher/orch) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gray"></a>[gray](https://github.com/vstaln/gray) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kori"></a>[Kori](https://github.com/FacileStudio/kori) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="posse"></a>[posse](https://github.com/ranger360ai/posse) | 2026-Q3 | 1/6 | 0/5 | 3 | 3 | 0 | `A C C(P) C P P` |
 | 6 | <a id="gyrfalcon"></a>[Gyrfalcon](https://github.com/cargopete/gyrfalcon) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="scout"></a>[Scout](https://github.com/dairycow/scout) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="few"></a>[Few](https://github.com/moloo4ni/few) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
