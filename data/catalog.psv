@@ -1070,3 +1070,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1069|plumb|Plumb|https://github.com/Inception3D/Plumb|2026-10-21T03:13:28Z|github-repository-search|02ea0be7f4a17cd04e8569dbc9749c3ebf18faf4|2026-11-04
 1070|opencode-jarvis|OpenCode Jarvis|https://github.com/yizhi0107-bot/opencode-jarvis|2026-10-26T13:43:02Z|github-repository-discovery|fb8e47dc6525ec4ff4b4ef333ae7a8d8420c49d7|2026-11-04
 1071|inhuman|inhuman|https://github.com/here-build/inhuman-harness|2026-10-29T15:15:31Z|github-repository-search|01a9ceafbb17eb98ef16c0ea863d97cdf2b58f67|2026-11-04
+1072|orco|Orco|https://github.com/CJVigil/Orco|2026-10-26T20:55:58Z|github-repository-discovery|148f21d5a4dcf4f833e87d9fa38d3a1bfbe9df59|2026-11-04
