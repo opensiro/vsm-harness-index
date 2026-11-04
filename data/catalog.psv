@@ -1049,3 +1049,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1048|lightspeed|Lightspeed|https://github.com/smartcomputer-ai/lightspeed|2026-02-09T09:09:53Z|github-repository-discovery|2873e77dca4325aac116b81db2b520502c037ac4|2026-11-04
 1049|localharness|LocalHarness|https://github.com/ahwurm/localharness|2026-05-24T02:30:59Z|github-repository-discovery|d0859f71d1bb4b99cae78e72ddf459d105c47f93|2026-11-04
 1050|ork|Ork|https://github.com/mimshins/ork|2026-10-30T10:12:01Z|github-repository-discovery|e97d75c554095ff41d79ef91fafbbdc8bcfc8b64|2026-11-04
+1051|agentorg|AgentOrg|https://github.com/uniac-ai/AgentOrg|2026-10-26T21:47:05Z|github-repository-discovery|25e116cb719989ce568b272016b1936668efbf5f|2026-11-04
