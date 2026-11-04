@@ -487,6 +487,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="cire-harness"></a>[cire-harness](https://github.com/fathdemr/cire-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="android-agent-runtime"></a>[Android Agent Runtime](https://github.com/NoHarry/android-agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="knowwork"></a>[KnowWork](https://github.com/knowflow-ai/KnowWork) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="plumb"></a>[Plumb](https://github.com/Inception3D/Plumb) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-harness-happiness-cheng"></a>[Agent Harness (happiness-cheng)](https://github.com/happiness-cheng/agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="judgment-pack-agent"></a>[Judgment Pack Agent](https://github.com/Judgment-Pack/judgment-pack-agent) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="maxwell"></a>[Maxwell](https://github.com/AshyIsMe/maxwell) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
