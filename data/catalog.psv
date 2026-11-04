@@ -1078,3 +1078,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1077|contemplative-agent|Contemplative Agent|https://github.com/shimo4228/contemplative-agent|2026-03-08T07:57:12Z|github-repository-discovery|46ab9fc09ce62ce1a73364e055f82fc7b13043c7|2026-11-04
 1078|hildi|Hildi|https://github.com/one-king-studio/hildi|2026-10-24T18:15:23Z|github-repository-search|d5fb376ab918e02facdbdcc0fbf00dabb3f6a806|2026-11-04
 1079|posse|posse|https://github.com/ranger360ai/posse|2026-08-23T12:21:30Z|github-repository-discovery|bdd3954bb86adc2d0fac14175abe9443ba439794|2026-11-04
+1080|turri|turri|https://github.com/turri-oss/turri|2026-09-22T13:41:35Z|github-repository-search|47b578cafcab669a0ed3c02b9d0f1d5e17fcd8fa|2026-11-04
