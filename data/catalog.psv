@@ -1056,3 +1056,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1055|orca-trace-delange|Orca (Trace DeLange)|https://github.com/tracedelange/orca|2026-10-05T23:02:52Z|github-repository-discovery|bfdff98bdcc5e3bee5eecd790f00eb8f1104776f|2026-11-04
 1056|corum-harness|Corum Harness|https://github.com/kukucaiCndy/Corum-Harness|2026-08-18T14:51:14Z|github-repository-discovery|1c40d29f933786660fd18b0bc0bf9b55f46ee6cf|2026-11-04
 1057|agentdock-mcp-harness|AgentDock MCP Harness|https://github.com/gabyic/agentdock-mcp-harness|2026-09-21T14:03:00Z|github-repository-discovery|d5f06ba7c712be032ff7788175cb04d322bead7b|2026-11-04
+1058|metaorcha|Metaorcha|https://github.com/solvent-labs-org/metaorcha|2026-07-25T16:52:26Z|github-repository-discovery|8dd8bb23b95339bb32bb2c12d23d03fb94ad1c6d|2026-11-04
