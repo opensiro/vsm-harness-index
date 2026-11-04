@@ -385,6 +385,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="revfactory-harness"></a>[Revfactory Harness](https://github.com/revfactory/harness) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="defenseclaw"></a>[DefenseClaw](https://github.com/cisco-ai-defense/defenseclaw) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="kai-linux-agent-os"></a>[Agent-OS (kai-linux)](https://github.com/kai-linux/agent-os) | 2026-Q1 | 2/6 | 1/5 | 2 | 1 | 1 | `A C C A P ?` |
+| 5 | <a id="chassis"></a>[Chassis](https://github.com/theo-kirby/chassis) | 2026-Q1 | 2/6 | 1/5 | 0 | 1 | 0 | `A — A(P) — — —` |
 | 5 | <a id="wasp"></a>[WASP](https://github.com/agentwasp/agentwasp) | 2026-Q1 | 2/6 | 1/5 | 4 | 2 | 0 | `A C C(P) C A C(P)` |
 | 5 | <a id="agentflow"></a>[AgentFlow](https://github.com/agentenv/agentflow) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="reef"></a>[Reef](https://github.com/Coral-Bricks-AI/reef) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
