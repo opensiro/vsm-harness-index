@@ -479,6 +479,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="kehai"></a>[Kehai](https://github.com/sh1ny/kehai) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="aliquot"></a>[Aliquot](https://github.com/oneirum/aliquot) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-harness-talktorana"></a>[Agent Harness (talktorana)](https://github.com/talktorana/agent-harness) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="sceneevolve-code"></a>[SceneEvolve Code](https://github.com/haoyu-agent/SceneEvolve_Code) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="gogo-agent"></a>[gogo-agent](https://github.com/DAgogo04/gogo-agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="opentandem"></a>[OpenTandem](https://github.com/opentandem/opentandem) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pico"></a>[pico](https://github.com/Picom-code/pico) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
