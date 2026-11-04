@@ -457,6 +457,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="opentandem"></a>[OpenTandem](https://github.com/opentandem/opentandem) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pico"></a>[pico](https://github.com/Picom-code/pico) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="stiracore"></a>[StiraCore](https://github.com/Resolver-TNG/StiraCore) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="hyperflow-infinity"></a>[HyperFlow-Infinity](https://github.com/Video-Rebirth/hyperflow-infinity) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="onethread"></a>[onethread](https://github.com/RogyMD/onethread) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="cire-harness"></a>[cire-harness](https://github.com/fathdemr/cire-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="android-agent-runtime"></a>[Android Agent Runtime](https://github.com/NoHarry/android-agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
