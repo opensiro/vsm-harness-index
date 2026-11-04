@@ -1036,3 +1036,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1035|nexo|nexo|https://github.com/Locotir/nexo|2026-11-03T23:17:36Z|github-repository-search|a9643683250aeff6050d0b77adfed0fe9392e53c|2026-11-04
 1036|hip-agent|hip-agent|https://github.com/changjonathanc/hip-agent|2026-09-06T19:12:11Z|manual-discovery|0c022719ebcf4894f932c1ab5d2c309e06528c2f|2026-11-04
 1037|local-model-agent-harness|local-model-agent-harness|https://github.com/eli-herman/local-model-agent-harness|2026-06-17T19:42:20Z|manual-discovery|9dd27c717695337faab70d13ad50f090b7c1d1d7|2026-11-04
+1038|orchestragent-orch|orch|https://github.com/Orchestragent/orchestragent|2026-11-02T01:05:32Z|github-repository-search|533d06b440654e0f9c9654c80945a751796747e5|2026-11-04
