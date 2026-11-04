@@ -288,6 +288,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="pi-harness"></a>[Pi-Harness](https://github.com/wangmiaozero/pi-harness) | 2026-Q3 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
 | 5 | <a id="gnosis"></a>[Gnosis](https://github.com/DOMCHURCH/Gnosis) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 1 | `A C ? A — —` |
 | 5 | <a id="radiant"></a>[Radiant](https://github.com/templetongroup/radiant) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 2 | `A C ? A ? —` |
+| 5 | <a id="corum-harness"></a>[Corum Harness](https://github.com/kukucaiCndy/Corum-Harness) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="agent-foundation"></a>[Agent Foundation](https://github.com/converge-ai-labs/agent-foundation) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="polter"></a>[Polter](https://github.com/Lugia123/polter) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="swe-mux"></a>[swe-mux](https://github.com/jatoran/swe-mux) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C A(P) C P —` |
