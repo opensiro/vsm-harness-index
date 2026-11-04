@@ -1081,3 +1081,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1080|agentic-factory|Agentic Factory|https://github.com/bussard76/agentic-factory|2026-10-31T12:07:02Z|github-repository-discovery|7059e8bf028584045ce1274672eca7d50d185e9f|2026-11-04
 1081|kushagrathisside-bridle|Bridle|https://github.com/kushagrathisside/bridle|2026-10-22T18:34:53Z|github-repository-search|9b9b9f868c18958a921b6967fcd7d64acde877fc|2026-11-04
 1082|turri|turri|https://github.com/turri-oss/turri|2026-09-22T13:41:35Z|github-repository-search|47b578cafcab669a0ed3c02b9d0f1d5e17fcd8fa|2026-11-04
+1083|tirith|Tirith|https://github.com/andreseloysv/Tirith|2026-10-28T18:34:16Z|github-repository-search|be358146324a8a9c98e6649938205328160c79cf|2026-11-04
