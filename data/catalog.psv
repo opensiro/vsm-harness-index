@@ -1044,3 +1044,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1043|mark2|mark2|https://github.com/dream-x/mark2|2026-11-02T21:43:22Z|github-repository-discovery|535ffc4710e4583b5657dea94bc970d9d2c05bc3|2026-11-04
 1044|agent-harness-talktorana|Agent Harness (talktorana)|https://github.com/talktorana/agent-harness|2026-10-28T02:28:44Z|github-repository-discovery|4d5e11d16e4e9755c4282634778f112c44e21d12|2026-11-04
 1045|baldric|Baldric|https://github.com/Ember452/baldric|2026-11-03T12:04:56Z|github-repository-search|fa92656923649291a52de1e05d77d5c72a4976e6|2026-11-04
+1046|northcua|NorthCUA|https://github.com/beipo-ai/NorthCUA|2026-11-02T14:34:20Z|github-repository-search|fb5f9e2725c7cfe268fa0c2dc40f44cc132c12f4|2026-11-04
