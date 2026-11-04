@@ -19,6 +19,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="gptme"></a>[gptme](https://github.com/gptme/gptme) | 2023-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 3 | <a id="coworkos"></a>[CoworkOS](https://github.com/RUC-NLPIR/CoworkOS) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
 | 3 | <a id="multi-agent-harness"></a>[Multi-Agent Harness²](https://github.com/WeiminWu2000/Multi-Agent-Harness-2) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
+| 3 | <a id="mariomagdy-foreman"></a>[foreman](https://github.com/MarioMagdy/foreman) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="devbox"></a>[DevBox](https://github.com/rudderlabs/devbox) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="aris-agent"></a>[aris-agent](https://github.com/tauhb/aris-agent) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A — A(P) P` |
 | 3 | <a id="oasis"></a>[OASIS](https://github.com/FAHTHIZ/oasis) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
@@ -476,6 +477,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="opentandem"></a>[OpenTandem](https://github.com/opentandem/opentandem) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pico"></a>[pico](https://github.com/Picom-code/pico) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="stiracore"></a>[StiraCore](https://github.com/Resolver-TNG/StiraCore) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="agent-harness-cmabery"></a>[agent-harness (CMABERY)](https://github.com/CMABERY/agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hyperflow-infinity"></a>[HyperFlow-Infinity](https://github.com/Video-Rebirth/hyperflow-infinity) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="onethread"></a>[onethread](https://github.com/RogyMD/onethread) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="cire-harness"></a>[cire-harness](https://github.com/fathdemr/cire-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
