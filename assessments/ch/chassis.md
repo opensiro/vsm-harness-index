@@ -101,10 +101,10 @@ A configured model agent carries out its task using the registered tools and sys
 
 ### S3 ownership mode matrix
 
-| Mode | Decisive owner | Trigger | Closure / return | Evidence |
+| Mode | Decisive owner | Trigger | Closure | Evidence |
 | --- | --- | --- | --- | --- |
-| Autonomous driver (`A`) | Invoked seeded driver model | Operator starts `chassis run driver`, model sees fleet logs/agent definitions | Agent judges and edits agent/task definitions directly; later operational agents load changed instructions | [`driver/SYSTEM.md`](https://github.com/theo-kirby/chassis/blob/b9350031580d58328849184974e1368d082f4892/harness/agent-template/driver/SYSTEM.md), [`run-agent`](https://github.com/theo-kirby/chassis/blob/b9350031580d58328849184974e1368d082f4892/harness/run-agent) |
-| Parent-governed direct fleet mode (`P`) | Legitimate host operator | Human inspects current runs/dashboard and decides intervention | `chassis run/kill/install-agent`, protected tool update or cron reload changes the next task operations | [`chassis` CLI](https://github.com/theo-kirby/chassis/blob/b9350031580d58328849184974e1368d082f4892/chassis), [README operator workflow](https://github.com/theo-kirby/chassis/blob/b9350031580d58328849184974e1368d082f4892/README.md) |
+| Base (`A`) | Invoked seeded driver model | Operator starts `chassis run driver`, model sees fleet logs/agent definitions | Agent judges and edits agent/task definitions directly; later operational agents load changed instructions | [`driver/SYSTEM.md`](https://github.com/theo-kirby/chassis/blob/b9350031580d58328849184974e1368d082f4892/harness/agent-template/driver/SYSTEM.md), [`run-agent`](https://github.com/theo-kirby/chassis/blob/b9350031580d58328849184974e1368d082f4892/harness/run-agent) |
+| Parent (`P`) | Legitimate host operator | Human inspects current runs/dashboard and decides intervention | `chassis run/kill/install-agent`, protected tool update or cron reload changes the next task operations | [`chassis` CLI](https://github.com/theo-kirby/chassis/blob/b9350031580d58328849184974e1368d082f4892/chassis), [README operator workflow](https://github.com/theo-kirby/chassis/blob/b9350031580d58328849184974e1368d082f4892/README.md) |
 
 ## S3* — Complementary audit
 
