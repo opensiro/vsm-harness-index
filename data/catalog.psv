@@ -1062,4 +1062,5 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1061|agent-harness-cmabery|agent-harness (CMABERY)|https://github.com/CMABERY/agent-harness|2026-10-26T07:50:30Z|github-repository-discovery|170d4c69a0c4b92c7de76ef8b362c5c4025a1786|2026-11-04
 1062|mariomagdy-foreman|foreman|https://github.com/MarioMagdy/foreman|2026-10-28T17:52:58Z|github-repository-search|219bf0961fa4c67caaa4e371fae63e497092d9b2|2026-11-04
 1063|deepseek-super-agent|DeepSeek Super Agent|https://github.com/LofiSu/deepseek-super-agent|2026-10-31T15:22:14Z|github-repository-discovery|a1985c06b2c1520f14b54817e22f73542f9e2d7d|2026-11-04
-1064|argusai|ArgusAI|https://github.com/HG-ha/Argusai|2026-10-29T06:53:19Z|github-repository-search|5f7aa0844ae0341f3563da2a4d171e3fb797d3ac|2026-11-04
+1064|maxwell|Maxwell|https://github.com/AshyIsMe/maxwell|2026-10-18T08:00:25Z|github-repository-discovery|9d8a04976d24b0c706fb1c8f8c8b290e5a4e9acc|2026-11-04
+1065|argusai|ArgusAI|https://github.com/HG-ha/Argusai|2026-10-29T06:53:19Z|github-repository-search|5f7aa0844ae0341f3563da2a4d171e3fb797d3ac|2026-11-04
