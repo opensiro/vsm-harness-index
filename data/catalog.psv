@@ -1058,3 +1058,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1057|agentdock-mcp-harness|AgentDock MCP Harness|https://github.com/gabyic/agentdock-mcp-harness|2026-09-21T14:03:00Z|github-repository-discovery|d5f06ba7c712be032ff7788175cb04d322bead7b|2026-11-04
 1058|metaorcha|Metaorcha|https://github.com/solvent-labs-org/metaorcha|2026-07-25T16:52:26Z|github-repository-discovery|8dd8bb23b95339bb32bb2c12d23d03fb94ad1c6d|2026-11-04
 1059|chassis|Chassis|https://github.com/theo-kirby/chassis|2026-03-14T22:45:54Z|github-repository-discovery|b9350031580d58328849184974e1368d082f4892|2026-11-04
+1060|aris-agent|aris-agent|https://github.com/tauhb/aris-agent|2026-10-27T02:36:56Z|github-repository-search|067695907ffa776afdf42595b08a7587e0c00424|2026-11-04
