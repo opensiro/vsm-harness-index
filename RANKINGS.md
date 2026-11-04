@@ -186,6 +186,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="karimo"></a>[KARIMO](https://github.com/opensesh/KARIMO) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="zeroclaw"></a>[ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
 | 4 | <a id="autocontext"></a>[autocontext](https://github.com/greyhaven-ai/autocontext) | 2026-Q1 | 3/6 | 2/5 | 2 | 0 | 0 | `A C C A A —` |
+| 4 | <a id="lightspeed"></a>[Lightspeed](https://github.com/smartcomputer-ai/lightspeed) | 2026-Q1 | 3/6 | 2/5 | 0 | 2 | 0 | `A — A(P) — A P` |
 | 4 | <a id="20x"></a>[20x](https://github.com/peakflo/20x) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="orka"></a>[Orka](https://github.com/orka-agents/orka) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="agenthub"></a>[AgentHub](https://github.com/hawkingrei/agenthub) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
