@@ -473,6 +473,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="minecraft-agent-harness"></a>[minecraft-agent-harness](https://github.com/yc-software/minecraft-agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-harness-csharp"></a>[Agent Harness CSharp](https://github.com/jackhuclan/harness_demo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="miniharness"></a>[miniharness](https://github.com/ZeleMate/miniharness) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="kehai"></a>[Kehai](https://github.com/sh1ny/kehai) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="aliquot"></a>[Aliquot](https://github.com/oneirum/aliquot) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-harness-talktorana"></a>[Agent Harness (talktorana)](https://github.com/talktorana/agent-harness) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="gogo-agent"></a>[gogo-agent](https://github.com/DAgogo04/gogo-agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
