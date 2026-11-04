@@ -1059,3 +1059,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1058|metaorcha|Metaorcha|https://github.com/solvent-labs-org/metaorcha|2026-07-25T16:52:26Z|github-repository-discovery|8dd8bb23b95339bb32bb2c12d23d03fb94ad1c6d|2026-11-04
 1059|chassis|Chassis|https://github.com/theo-kirby/chassis|2026-03-14T22:45:54Z|github-repository-discovery|b9350031580d58328849184974e1368d082f4892|2026-11-04
 1060|aris-agent|aris-agent|https://github.com/tauhb/aris-agent|2026-10-27T02:36:56Z|github-repository-search|067695907ffa776afdf42595b08a7587e0c00424|2026-11-04
+1061|deepseek-super-agent|DeepSeek Super Agent|https://github.com/LofiSu/deepseek-super-agent|2026-10-31T15:22:14Z|github-repository-discovery|a1985c06b2c1520f14b54817e22f73542f9e2d7d|2026-11-04
