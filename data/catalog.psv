@@ -1074,3 +1074,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1073|sceneevolve-code|SceneEvolve Code|https://github.com/haoyu-agent/SceneEvolve_Code|2026-10-27T13:51:55Z|github-repository-search|e6727f248eae77af31902b9c7e6a3fc46449f79f|2026-11-04
 1074|orco|Orco|https://github.com/CJVigil/Orco|2026-10-26T20:55:58Z|github-repository-discovery|148f21d5a4dcf4f833e87d9fa38d3a1bfbe9df59|2026-11-04
 1075|rexmod|rexmod|https://github.com/alpcanaydin/rexmod|2026-10-31T22:04:07Z|github-repository-search|fd0580e6a8648f7b62b4da81cb16be6b32835d52|2026-11-04
+1076|dougong|Dougong|https://github.com/zhanghaojie513/Dougong|2026-10-23T01:27:08Z|github-repository-search|5d7ff991baa0da919c580f418ed5415b50ba3a94|2026-11-04
