@@ -230,6 +230,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="init-agent"></a>[INIT-Agent](https://github.com/nagisanzenin/INIT-Agent) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 1 | `A — P ? A P` |
 | 5 | <a id="sora-harness"></a>[Sora Harness](https://github.com/S0ra233/Sora-Harness) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="dynaflow"></a>[DynaFlow](https://github.com/amiya-special/Dynaflow) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="opal"></a>[OPAL](https://github.com/xingjian-bai/opal) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
 | 5 | <a id="swarmos"></a>[SwarmOS](https://github.com/supernovae/SwarmOS) | 2026-Q4 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="rsi-flow"></a>[RSI-Flow](https://github.com/quqxui/RSI-Flow) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="agentforeman"></a>[AgentForeman](https://github.com/kumizeod/AgentForeman) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
