@@ -19,6 +19,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 2 | <a id="gptme"></a>[gptme](https://github.com/gptme/gptme) | 2023-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 3 | <a id="coworkos"></a>[CoworkOS](https://github.com/RUC-NLPIR/CoworkOS) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
 | 3 | <a id="multi-agent-harness"></a>[Multi-Agent Harness²](https://github.com/WeiminWu2000/Multi-Agent-Harness-2) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
+| 3 | <a id="agentic-factory"></a>[Agentic Factory](https://github.com/bussard76/agentic-factory) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="mariomagdy-foreman"></a>[foreman](https://github.com/MarioMagdy/foreman) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="devbox"></a>[DevBox](https://github.com/rudderlabs/devbox) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="aris-agent"></a>[aris-agent](https://github.com/tauhb/aris-agent) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A — A(P) P` |
