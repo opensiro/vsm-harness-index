@@ -1072,3 +1072,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1071|inhuman|inhuman|https://github.com/here-build/inhuman-harness|2026-10-29T15:15:31Z|github-repository-search|01a9ceafbb17eb98ef16c0ea863d97cdf2b58f67|2026-11-04
 1072|gsh|gsh|https://github.com/kuangxing6367/gsh|2026-11-03T08:09:48Z|github-repository-search|d5d1c6160b24430b80d78f7e135bc28040faa287|2026-11-04
 1073|sceneevolve-code|SceneEvolve Code|https://github.com/haoyu-agent/SceneEvolve_Code|2026-10-27T13:51:55Z|github-repository-search|e6727f248eae77af31902b9c7e6a3fc46449f79f|2026-11-04
+1074|orco|Orco|https://github.com/CJVigil/Orco|2026-10-26T20:55:58Z|github-repository-discovery|148f21d5a4dcf4f833e87d9fa38d3a1bfbe9df59|2026-11-04
