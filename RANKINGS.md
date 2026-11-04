@@ -98,6 +98,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="ork"></a>[Ork](https://github.com/mimshins/ork) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
 | 4 | <a id="darkdvr-synapse"></a>[Synapse](https://github.com/DarkDvr/Synapse) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 1 | `A — A A ? —` |
 | 4 | <a id="argusai"></a>[ArgusAI](https://github.com/HG-ha/Argusai) | 2026-Q4 | 3/6 | 2/5 | 0 | 2 | 2 | `A A A(P) ? ? P` |
+| 4 | <a id="tirith"></a>[Tirith](https://github.com/andreseloysv/Tirith) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="colony"></a>[colony](https://github.com/yusa-imit/colony) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A A A C — —` |
 | 4 | <a id="leadkit"></a>[Leadkit](https://github.com/MattGrundy/leadkit) | 2026-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A A C(P) A — P` |
 | 4 | <a id="recurse"></a>[Recurse](https://github.com/ebetica/recurse) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
