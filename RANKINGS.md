@@ -241,6 +241,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="northcua"></a>[NorthCUA](https://github.com/beipo-ai/NorthCUA) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="auriga"></a>[Auriga](https://github.com/lose4578/Auriga) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="bread-companion"></a>[Bread Companion](https://github.com/ZJUZhiyuCai/bread-companion) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="herdsman"></a>[herdsman](https://github.com/jirathip-dev/herdsman) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="7ar-harness"></a>[7ar harness](https://github.com/7ar-chat/harness) | 2026-Q4 | 2/6 | 1/5 | 1 | 2 | 0 | `A C P A — P` |
 | 5 | <a id="asktravel-agent-harness"></a>[AskTravel Agent Harness](https://github.com/stoicdataguy/asktravel-agent-harness) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="opengeniemaster"></a>[OpenGenieMaster](https://github.com/eust-w/opengeniemaster) | 2026-Q4 | 2/6 | 1/5 | 3 | 0 | 0 | `A A C C C —` |
