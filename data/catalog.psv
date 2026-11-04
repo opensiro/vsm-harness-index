@@ -1051,3 +1051,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1050|ork|Ork|https://github.com/mimshins/ork|2026-10-30T10:12:01Z|github-repository-discovery|e97d75c554095ff41d79ef91fafbbdc8bcfc8b64|2026-11-04
 1051|agentorg|AgentOrg|https://github.com/uniac-ai/AgentOrg|2026-10-26T21:47:05Z|github-repository-discovery|25e116cb719989ce568b272016b1936668efbf5f|2026-11-04
 1052|pi-foreman|pi-foreman|https://github.com/Shredi/pi-foreman|2026-10-03T11:39:26Z|github-repository-discovery|8f8c473cc2332602373d03850d4826eea2f79f51|2026-11-04
+1053|theater|Theater|https://github.com/mana-byte/theater|2026-08-20T18:14:43Z|github-repository-discovery|405d8b914e588e91befba6f8a82eb56ff563fd6e|2026-11-04

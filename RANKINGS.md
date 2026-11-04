@@ -36,6 +36,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="horse-code"></a>[Horse Code](https://github.com/hizliemre/horse-code) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A P A A P` |
 | 3 | <a id="frontieragent"></a>[FrontierAgent](https://github.com/ApodexAI/FrontierAgent) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="kot"></a>[KOT](https://github.com/Loqira-Labs/agentkot) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="theater"></a>[Theater](https://github.com/mana-byte/theater) | 2026-Q3 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="litecode"></a>[LiteCode](https://github.com/itissika/litecode) | 2026-Q3 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
 | 3 | <a id="crewlet"></a>[Crewlet](https://github.com/crewlet/crewlet) | 2026-Q3 | 4/6 | 3/5 | 1 | 3 | 0 | `A C A(P) A A(P) P` |
 | 3 | <a id="codeaf"></a>[CodeAF](https://github.com/Agent-Field/CodeAF) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) — A P` |
