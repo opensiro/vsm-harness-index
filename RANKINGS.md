@@ -24,6 +24,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="aris-agent"></a>[aris-agent](https://github.com/tauhb/aris-agent) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A — A(P) P` |
 | 3 | <a id="oasis"></a>[OASIS](https://github.com/FAHTHIZ/oasis) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="pi-house"></a>[pi-house](https://github.com/Jero110/pi-house) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A P —` |
+| 3 | <a id="opencode-jarvis"></a>[OpenCode Jarvis](https://github.com/yizhi0107-bot/opencode-jarvis) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="autoresearchlab"></a>[AutoResearchLab](https://github.com/TaewiKim/autoresearchlab) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 1 | `A ? A A A(P) —` |
 | 3 | <a id="velloc-runtime"></a>[Velloc Runtime](https://github.com/VellocLabs/velloc-runtime) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="halo-harness"></a>[Halo Harness](https://github.com/roloVibes/Halo-Harness) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A P —` |
