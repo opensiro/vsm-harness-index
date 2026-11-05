@@ -6,11 +6,11 @@ Deterministic numerical snapshot generated from canonical Index artifacts. Do no
 
 | Metric | Value | Definition |
 | --- | ---: | --- |
-| Included standalone assessments | 1028 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
-| Canonical assessment records | 1114 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
+| Included standalone assessments | 1029 | Canonical assessments with `status: included`; this is the public corpus-size milestone counter. |
+| Canonical assessment records | 1115 | Included plus canonical `excluded-no-agentic-vsm` assessment records. |
 | Canonical exclusions | 86 | Completed assessments with `status: excluded-no-agentic-vsm`. |
-| Proposed intake assessments | 11 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
-| Catalog entries | 1114 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
+| Proposed intake assessments | 10 | Assessment files still in `status: proposed`; not counted in the canonical corpus. |
+| Catalog entries | 1115 | Rows in `data/catalog.psv`; this is discovery/order/provenance infrastructure, not a second assessment database. |
 | Catalog entries without an included assessment | 86 | `catalog entries - included assessments`; this includes canonical exclusions and is not automatically equivalent to pending work. |
 | Reassessment events | 88 | Recorded events in `data/reassessment-history.psv`. |
 | Full-A assessments | 2 | Included assessments whose base state is autonomous across S1, S2, S3, S3*, S4 and S5. `A(P)` counts as autonomous coverage. |
@@ -25,10 +25,10 @@ Milestones count included completed standalone assessments only. They are corpus
 
 | Target | Status | Progress |
 | ---: | --- | ---: |
-| 100 | Achieved | Achieved (current corpus: 1028) |
-| 250 | Achieved | Achieved (current corpus: 1028) |
-| 500 | Achieved | Achieved (current corpus: 1028) |
-| 1000 | Achieved | Achieved (current corpus: 1028) |
+| 100 | Achieved | Achieved (current corpus: 1029) |
+| 250 | Achieved | Achieved (current corpus: 1029) |
+| 500 | Achieved | Achieved (current corpus: 1029) |
+| 1000 | Achieved | Achieved (current corpus: 1029) |
 
 ## Machine-readable view
 
