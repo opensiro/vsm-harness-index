@@ -480,6 +480,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="mola-harness"></a>[mola-harness](https://github.com/Mola-maker/mola-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mini-agent"></a>[Mini-Agent](https://github.com/lizaixi01/Mini-Agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deepseek-super-agent"></a>[DeepSeek Super Agent](https://github.com/LofiSu/deepseek-super-agent) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="conductor-sdlc"></a>[Conductor SDLC](https://github.com/xpressabhi/agentic-sdlc-control-plane) | 2026-Q4 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
 | 6 | <a id="runapps-agent"></a>[RunApps Agent](https://github.com/runapps/agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="tripolskypetr-agent-runtime"></a>[Agent Runtime](https://github.com/tripolskypetr/agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="inhuman"></a>[inhuman](https://github.com/here-build/inhuman-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 2 | 0 | `A — P — — P` |
