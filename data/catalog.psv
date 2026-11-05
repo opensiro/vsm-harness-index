@@ -1104,3 +1104,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1103|dark-factory|Dark factory|https://github.com/ruslantrachuk/dark-factory|2026-10-22T14:02:19Z|github-repository-search|a56142f7e79efdfa9aa8acee7596974b4efea174|2026-11-05
 1104|agentheim|Agentheim|https://github.com/heimeshoff/Agentheim|2026-04-24T16:13:56Z|github-repository-search|6af21c1cb11ee51d6cbe2305fc537f927b37a2d4|2026-11-05
 1105|blank|Blank|https://github.com/purplemacaron/blank|2026-11-03T13:41:35Z|github-repository-search|e7a48c0445599217f8fa2b7320dee6b446735345|2026-11-05
+1106|durable-agent-harness|Durable Agent Harness|https://github.com/Eldergenix/Durable-agent-harness|2026-07-01T23:46:43Z|github-repository-search|c4af97c1636127ae577491f8c2b6935207076062|2026-11-05
