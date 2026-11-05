@@ -1114,3 +1114,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1113|proagent-os|ProAgent OS|https://github.com/jahonn/ProAgent-OS|2026-10-28T06:12:47Z|github-repository-search|543433e933e115a825d77a553067c1d22d9cec45|2026-11-05
 1114|quickmaths|QuickMaths|https://github.com/genproof/QuickMaths|2026-11-02T17:19:42Z|github-repository-search|c2dbb59e13b3cce451b86e600345361b34e8c5ba|2026-11-05
 1115|local-agent-broker|Local Agent Broker|https://github.com/BlackJaxDev/local-agent-broker|2026-11-02T23:35:06Z|github-repository-search|86b09380e3393126d6c540787a7576a61d21565b|2026-11-05
+1116|pandita-agent-harness|Pandita Agent Harness|https://github.com/bhandiwad/agent-harness|2026-11-05T16:14:24Z|github-repository-search|0827a48d5131537216e74cabd2acf78f0138686b|2026-11-05
