@@ -239,6 +239,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="data-to-paper"></a>[data-to-paper](https://github.com/Technion-Kishony-lab/data-to-paper) | 2023-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A — — A A(P) —` |
 | 4 | <a id="cowagent"></a>[CowAgent](https://github.com/zhayujie/CowAgent) | 2022-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A C P — A A(P)` |
 | 4 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 5 | <a id="uni-robot-agent"></a>[Uni Robot Agent](https://github.com/Open-RUA/uni-robot-agent) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="northcua"></a>[NorthCUA](https://github.com/beipo-ai/NorthCUA) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="auriga"></a>[Auriga](https://github.com/lose4578/Auriga) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="bread-companion"></a>[Bread Companion](https://github.com/ZJUZhiyuCai/bread-companion) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
