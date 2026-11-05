@@ -1087,3 +1087,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1086|tram|Tram|https://github.com/taewooyo/tram|2026-11-01T07:54:17Z|github-repository-search|cf676742728b4d85020b210c8f0e6aa922f51fd0|2026-11-05
 1087|mantel|Mantel|https://github.com/RealNarcissus/mantel|2026-10-24T15:50:00Z|github-repository-search|0b8d577e9401f3fcdf1349b7c72288de82eff792|2026-11-05
 1088|uni-robot-agent|Uni Robot Agent|https://github.com/Open-RUA/uni-robot-agent|2026-11-02T17:50:44Z|github-repository-search|2590ab48b7c24a72123597f2d5b04c9524e4329c|2026-11-05
+1089|beyon-control-plane|Beyon Control Plane|https://github.com/Beyon-Digital/control-plane|2026-10-29T11:32:10Z|github-repository-search|9dbe4012bdf8b2d2ee333402912b408aadd35e6d|2026-11-05
