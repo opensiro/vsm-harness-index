@@ -1108,3 +1108,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1107|durable-agent-harness|Durable Agent Harness|https://github.com/Eldergenix/Durable-agent-harness|2026-07-01T23:46:43Z|github-repository-search|c4af97c1636127ae577491f8c2b6935207076062|2026-11-05
 1108|incidentops-ai|IncidentOps AI|https://github.com/Maherimtiyaz/triage-agent|2026-10-21T11:59:42Z|github-repository-search|e4c32e06756a546bb2c61cca22e8d184dbf56c17|2026-11-05
 1109|ditto-harness|Ditto Harness|https://github.com/ditto-assistant/ditto-harness|2026-06-05T11:25:35Z|github-repository-search|8785d38b4aa64f7167860132204ec60c9cfece1b|2026-11-05
+1110|rubin-johnson-maestro|Maestro|https://github.com/rubin-johnson/maestro|2026-11-05T01:02:29Z|github-repository-search|0589ff3b2b0d25baabff196a1dd64c2147048b8e|2026-11-05
