@@ -413,6 +413,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="wasp"></a>[WASP](https://github.com/agentwasp/agentwasp) | 2026-Q1 | 2/6 | 1/5 | 4 | 2 | 0 | `A C C(P) C A C(P)` |
 | 5 | <a id="agentflow"></a>[AgentFlow](https://github.com/agentenv/agentflow) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="reef"></a>[Reef](https://github.com/Coral-Bricks-AI/reef) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
+| 5 | <a id="meka"></a>[meka](https://github.com/k4yt3x/meka) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="herd"></a>[Herd](https://github.com/NickGuAI/Herd) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 2 | `A C A ? ? —` |
 | 5 | <a id="kata-symphony"></a>[Kata Symphony](https://github.com/gannonh/kata-symphony) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C — A — —` |
 | 5 | <a id="openfang"></a>[OpenFang](https://github.com/RightNow-AI/openfang) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
