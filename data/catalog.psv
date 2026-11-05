@@ -1092,3 +1092,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1091|agent-harness-lab|Agent Harness Lab|https://github.com/mihazs/agent-harness-lab|2026-10-31T06:39:47Z|github-repository-search|1b165594818bab9f92605fb4bd5ec0c6f943c2fc|2026-11-05
 1092|safeagents|SafeAgents|https://github.com/huggingface/safeagents|2026-10-28T13:52:42Z|github-repository-search|0de8e22d2345b2379779161abbbffa72738a78a2|2026-11-05
 1093|harnessmm|HarnessMM|https://github.com/YuhuaJiang2002/HarnessMM|2026-10-26T07:04:06Z|github-repository-search|8c4ff0f98332fab2dca5916dee63970d87c554e6|2026-11-05
+1094|namidsh|NamiDSH|https://github.com/aa1143/NamiDSH|2026-11-05T06:10:10Z|github-repository-search|629e9efcb121b2805a2f3c48565144b732c0ff7f|2026-11-05
