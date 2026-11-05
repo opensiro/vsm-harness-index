@@ -1111,3 +1111,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1110|rubin-johnson-maestro|Maestro|https://github.com/rubin-johnson/maestro|2026-11-05T01:02:29Z|github-repository-search|0589ff3b2b0d25baabff196a1dd64c2147048b8e|2026-11-05
 1111|meka|meka|https://github.com/k4yt3x/meka|2026-03-04T14:29:20Z|github-repository-search|b7c188a831f888e8accecc1bbe7bd95a7a0112c8|2026-11-05
 1112|yoke|Yoke|https://github.com/sinabs/spring-agent-scope|2026-10-29T12:38:26Z|github-repository-search|9af73c2683773c5b4c08eca0ef79044f3aef2f3c|2026-11-05
+1113|proagent-os|ProAgent OS|https://github.com/jahonn/ProAgent-OS|2026-10-28T06:12:47Z|github-repository-search|543433e933e115a825d77a553067c1d22d9cec45|2026-11-05
