@@ -243,6 +243,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="rubin-johnson-maestro"></a>[Maestro](https://github.com/rubin-johnson/maestro) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="uni-robot-agent"></a>[Uni Robot Agent](https://github.com/Open-RUA/uni-robot-agent) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="phuryn-mini-harness"></a>[Mini Harness](https://github.com/phuryn/mini-harness) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="quickmaths"></a>[QuickMaths](https://github.com/genproof/QuickMaths) | 2026-Q4 | 2/6 | 1/5 | 2 | 2 | 0 | `A A C(P) C P —` |
 | 5 | <a id="northcua"></a>[NorthCUA](https://github.com/beipo-ai/NorthCUA) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="halay"></a>[halay](https://github.com/halayhq/halay) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="auriga"></a>[Auriga](https://github.com/lose4578/Auriga) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
