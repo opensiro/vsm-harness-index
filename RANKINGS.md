@@ -474,10 +474,12 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="swarms"></a>[Swarms](https://github.com/kyegomez/swarms) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
+| 6 | <a id="nipus-harness"></a>[nipus-harness](https://github.com/cUDGk/nipus-harness) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="namidsh"></a>[NamiDSH](https://github.com/aa1143/NamiDSH) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mint"></a>[mint](https://github.com/ketiyohannes/mint) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nexo"></a>[nexo](https://github.com/Locotir/nexo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mta"></a>[MTA (Minimal Terminal Agent)](https://github.com/Eric2i/minimal-terminal-agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="blank"></a>[Blank](https://github.com/purplemacaron/blank) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A — — C P —` |
 | 6 | <a id="baldric"></a>[Baldric](https://github.com/Ember452/baldric) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gsh"></a>[gsh](https://github.com/kuangxing6367/gsh) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="atoll"></a>[Atoll](https://github.com/Teraverse-AI/atoll) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
@@ -517,6 +519,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="onethread"></a>[onethread](https://github.com/RogyMD/onethread) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="cire-harness"></a>[cire-harness](https://github.com/fathdemr/cire-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="android-agent-runtime"></a>[Android Agent Runtime](https://github.com/NoHarry/android-agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="incidentops-ai"></a>[IncidentOps AI](https://github.com/Maherimtiyaz/triage-agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="knowwork"></a>[KnowWork](https://github.com/knowflow-ai/KnowWork) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="plumb"></a>[Plumb](https://github.com/Inception3D/Plumb) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-harness-happiness-cheng"></a>[Agent Harness (happiness-cheng)](https://github.com/happiness-cheng/agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
@@ -681,6 +684,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="chief"></a>[Chief](https://github.com/SmileLikeYe/agent-chief) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="sift"></a>[SIFT](https://github.com/KhanUzeb/SIFT) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="rook"></a>[Rook](https://github.com/martian56/rook) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="durable-agent-harness"></a>[Durable Agent Harness](https://github.com/Eldergenix/Durable-agent-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="easylink-agent-runtime"></a>[Easylink Agent Runtime](https://github.com/easylink-ai-open/agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="hypha"></a>[Hypha](https://github.com/CodeSoul-co/Hypha) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chad"></a>[chad](https://github.com/nathansutton/chad) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
@@ -716,6 +720,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="ghostycode"></a>[GhostyCode](https://github.com/blissito/ghostycode) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 2 | `A C ? ? — —` |
 | 6 | <a id="agentyou"></a>[AgentYou](https://github.com/shreyasic77/agentyou) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
 | 6 | <a id="apodex-agentharness"></a>[Apodex AgentHarness](https://github.com/ApodexAI/AgentHarness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="ditto-harness"></a>[Ditto Harness](https://github.com/ditto-assistant/ditto-harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="forgedock"></a>[ForgeDock](https://github.com/RapierCraftStudios/ForgeDock) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deepseekfathom"></a>[DeepSeekFathom](https://github.com/ffffff233/DeepSeekFathom) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="maref"></a>[MAREF (Multi-Agent Recursive Evolution Framework)](https://github.com/maref-org/maref) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
