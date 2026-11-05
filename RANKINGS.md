@@ -96,6 +96,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 3 | <a id="megaagent"></a>[MegaAgent](https://github.com/Xtra-Computing/MegaAgent) | 2024-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="openags"></a>[OpenAGS](https://github.com/openags/auto-researcher) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="opencursor"></a>[OpenCursor](https://github.com/PawanOsman/OpenCursor) | 2022-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 4 | <a id="agentic-harness"></a>[Agentic Harness](https://github.com/skrvidz/agentic-harness) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="orchestragent-orch"></a>[orch](https://github.com/Orchestragent/orchestragent) | 2026-Q4 | 3/6 | 2/5 | 2 | 0 | 0 | `A C C A A —` |
 | 4 | <a id="ork"></a>[Ork](https://github.com/mimshins/ork) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
 | 4 | <a id="darkdvr-synapse"></a>[Synapse](https://github.com/DarkDvr/Synapse) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 1 | `A — A A ? —` |
