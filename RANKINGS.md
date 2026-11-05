@@ -242,6 +242,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 4 | <a id="cowagent"></a>[CowAgent](https://github.com/zhayujie/CowAgent) | 2022-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A C P — A A(P)` |
 | 4 | <a id="agno"></a>[Agno](https://github.com/agno-agi/agno) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 5 | <a id="agent-harness-ticket-team"></a>[Agent Harness (ticket team)](https://github.com/bondie/agent-harness) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="jarvis-ai-council"></a>[JARVIS AI Council](https://github.com/berkesecicii/free-multi-agent-ai-council) | 2026-Q4 | 2/6 | 1/5 | 2 | 1 | 0 | `A C A(P) C — —` |
 | 5 | <a id="loopsmith"></a>[LoopSmith](https://github.com/Mohamed-jarboui/agent-runtime-harness) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="rubin-johnson-maestro"></a>[Maestro](https://github.com/rubin-johnson/maestro) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="local-agent-broker"></a>[Local Agent Broker](https://github.com/BlackJaxDev/local-agent-broker) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
