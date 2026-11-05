@@ -477,6 +477,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="mint"></a>[mint](https://github.com/ketiyohannes/mint) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nexo"></a>[nexo](https://github.com/Locotir/nexo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mta"></a>[MTA (Minimal Terminal Agent)](https://github.com/Eric2i/minimal-terminal-agent) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="blank"></a>[Blank](https://github.com/purplemacaron/blank) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A — — C P —` |
 | 6 | <a id="baldric"></a>[Baldric](https://github.com/Ember452/baldric) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gsh"></a>[gsh](https://github.com/kuangxing6367/gsh) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="atoll"></a>[Atoll](https://github.com/Teraverse-AI/atoll) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
