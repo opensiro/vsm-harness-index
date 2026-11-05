@@ -1102,3 +1102,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1101|mint|mint|https://github.com/ketiyohannes/mint|2026-11-04T19:30:37Z|github-repository-search|0f98e1b4a17f9b73aabc6f8789e604d5902d648d|2026-11-05
 1102|mta|MTA (Minimal Terminal Agent)|https://github.com/Eric2i/minimal-terminal-agent|2026-11-03T22:45:23Z|github-repository-search|14147f6bbad6365a78b8112889958d109276c38b|2026-11-05
 1103|dark-factory|Dark factory|https://github.com/ruslantrachuk/dark-factory|2026-10-22T14:02:19Z|github-repository-search|a56142f7e79efdfa9aa8acee7596974b4efea174|2026-11-05
+1104|rubin-johnson-maestro|Maestro|https://github.com/rubin-johnson/maestro|2026-11-05T01:02:29Z|github-repository-search|0589ff3b2b0d25baabff196a1dd64c2147048b8e|2026-11-05
