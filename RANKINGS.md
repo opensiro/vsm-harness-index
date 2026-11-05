@@ -500,6 +500,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="tripolskypetr-agent-runtime"></a>[Agent Runtime](https://github.com/tripolskypetr/agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="inhuman"></a>[inhuman](https://github.com/here-build/inhuman-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 2 | 0 | `A — P — — P` |
 | 6 | <a id="rigging"></a>[rigging](https://github.com/glaborie/rigging) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="yoke"></a>[Yoke](https://github.com/sinabs/spring-agent-scope) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="super-pi-beam"></a>[Super-Pi-BEAM](https://github.com/oleksandr/super-pi-beam) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="paddock"></a>[Paddock](https://github.com/vakovalskii/paddock) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="minecraft-agent-harness"></a>[minecraft-agent-harness](https://github.com/yc-software/minecraft-agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
