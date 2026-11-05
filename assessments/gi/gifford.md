@@ -90,6 +90,7 @@ Participating external agent sessions decide whether to initiate messages, read/
 - Decision owner: human responsible for this installed fabric; model delivery preferences and deterministic guards are lower-level constrained operations, not ultimate portfolio control.
 - Supporting / enforcement mechanisms: `gifford panel`, `gifford ctl`, six-scope versioned channel controls, pending approval list, event/status store and resumed queue.
 - Closure path: current pending/incident view → human changes a control or grants one-shot approval → channel decision is recalculated → subsequent delivery obeys the revised restriction with all other safety guards still enforced.
+- Boundary reachability: shipped panel and CLI commands call the installed channel controller; the recorded local live check observed the panel and one-shot human approval changing real queued delivery state.
 - Whole-system current view: panel includes the delivery queue, agents and recorded incidents spanning the node, rather than the sender's single reply.
 - Current-control decision scope: channel-wide, per-agent, directional link, thread and loop delivery authority, plus selected one-shot exceptions.
 - Why this is / is not agent-owned: current commitments are governed by human choice; encoded guard policies do not make S3 autonomous.
