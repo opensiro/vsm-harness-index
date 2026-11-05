@@ -1106,3 +1106,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1105|blank|Blank|https://github.com/purplemacaron/blank|2026-11-03T13:41:35Z|github-repository-search|e7a48c0445599217f8fa2b7320dee6b446735345|2026-11-05
 1106|nipus-harness|nipus-harness|https://github.com/cUDGk/nipus-harness|2026-11-05T15:44:03Z|github-repository-search|0c0349ee7f37d9bc0334c1d5ea7802c49f8e950b|2026-11-05
 1107|durable-agent-harness|Durable Agent Harness|https://github.com/Eldergenix/Durable-agent-harness|2026-07-01T23:46:43Z|github-repository-search|c4af97c1636127ae577491f8c2b6935207076062|2026-11-05
+1108|incidentops-ai|IncidentOps AI|https://github.com/Maherimtiyaz/triage-agent|2026-10-21T11:59:42Z|github-repository-search|e4c32e06756a546bb2c61cca22e8d184dbf56c17|2026-11-05
