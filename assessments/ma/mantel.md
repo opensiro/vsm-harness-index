@@ -8,11 +8,11 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: included
 autonomy_s1: A
 autonomy_s2: —
 autonomy_s3: P
-autonomy_s3_star: P
+autonomy_s3_star: C
 autonomy_s4: —
 autonomy_s5: —
 ---
@@ -102,22 +102,22 @@ The Gemini engine's dispatched model chooses between reading files, proposing wr
 
 ## S3* — Complementary audit
 
-- State: P
+- State: C
 - Function: the user can independently inspect actual Git filesystem changes and measured weekly task evidence instead of relying on the agent's own tool/work report.
 - Disturbance / variety regulated: an agent could state that a file was edited or test passed when the working tree says otherwise, or paint a misleading picture of weekly progress.
 - Decisive decision or feedback right: open a file-level `git diff` from the independent Changes panel and compare to the conversation/work claim; use steering or a new corrective request to change work; user can additionally compare local completed/overdue/focus counts to narrative.
-- Decision owner: human auditor, supported by a deterministic independent Git/statistics read path; the same model cannot forge or re-label the Git query output that the UI requests.
+- Decision owner: first-party independent Git/statistics observation constructor provides alternative evidence; a human chooses whether to inspect and send a corrective instruction. No independent auditing model owns that judgment.
 - Supporting / enforcement mechanisms: `changes.collect` calls `git status --porcelain` and `git diff --numstat` independently, `changes.diff` shows raw unified diff, Window opens a read-only dialog, weekly review derives counts from local store separately from model-written prose.
 - Closure path: model claims and work panel → user opens actual Git diff/weekly data → notices mismatch or missing work → sends steering/new instruction or denies unsafe follow-up; next model turn receives the correction.
 - Boundary reachability: `Window._update_changes` reads Git independently of tool events, `_show_diff` opens the actual diff, and `Window.steer` queues a human correction through the active engine when supported.
-- Why this is / is not agent-owned: audit judgment and corrective choice belong to the human (`P`); raw Git inspection is a complementary source of operational reality, not a second model, ordinary work log or standalone automated QA gate.
+- Why this is / is not agent-owned: the shipped alternative reality-access path is a deterministic constructor (`C`); a human can examine it and steer, but Methodology parent-mode `P` does not apply to S3*. It is neither an autonomous reviewer nor merely another model-authored progress log.
 - Claim being audited: the agent's reported changed files/progress reflect actual workspace state and task record.
 - Ordinary reporting path: model prose and streamed tool events feeding `Session.work_items()`/work panel.
 - Complementary access path: direct Git working-tree diff and locally calculated finished/overdue/focus counters, separate from the agent's natural-language claim.
 - Independence boundary: raw Git subprocess and local store are independent of the agent's narrative but share the user's mutable workspace; a malicious agent could tamper with the repository itself, and no external forensic auditor is claimed.
 - Who acts on findings: human user issues a new instruction or steers a supported active Pi turn; there is no automatic blocking review verdict.
 - Evidence: [Git audit source](https://github.com/RealNarcissus/mantel/blob/0b8d577e9401f3fcdf1349b7c72288de82eff792/app/changes.py), [live diff/steer UI wiring](https://github.com/RealNarcissus/mantel/blob/0b8d577e9401f3fcdf1349b7c72288de82eff792/app/window.py), [weekly evidence separation](https://github.com/RealNarcissus/mantel/blob/0b8d577e9401f3fcdf1349b7c72288de82eff792/app/pages/review.py).
-- Basis: implemented complementary observation and human correction route, not an observed logged independent review incident.
+- Basis: implemented complementary observation and optional human correction route; Methodology 0.3.7's canonical `C` ownership class, not a logged independent review incident.
 - Confidence: medium for S3* closure because follow-up is discretionary and operator-driven rather than an enforced review step.
 - Caveats: the changes panel is best-effort, can omit external/untracked detail and cannot prove test success from Git alone; optional human review does not imply continuous monitoring or formal assurance.
 
