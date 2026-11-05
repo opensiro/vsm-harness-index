@@ -480,6 +480,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 6 | <a id="pandita-agent-harness"></a>[Pandita Agent Harness](https://github.com/bhandiwad/agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nipus-harness"></a>[nipus-harness](https://github.com/cUDGk/nipus-harness) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="crewdeck"></a>[CrewDeck](https://github.com/mnbresearch/crewdeck) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="namidsh"></a>[NamiDSH](https://github.com/aa1143/NamiDSH) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mint"></a>[mint](https://github.com/ketiyohannes/mint) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nexo"></a>[nexo](https://github.com/Locotir/nexo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
