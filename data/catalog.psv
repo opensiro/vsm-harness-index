@@ -1085,3 +1085,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1084|herdsman|herdsman|https://github.com/jirathip-dev/herdsman|2026-10-30T11:43:07Z|github-repository-search|efd970e817c2021439c5415739e695f4af119b1d|2026-11-04
 1085|gifford|Gifford|https://github.com/smellak/gifford|2026-10-28T11:34:44Z|github-repository-search|b618cff69f3f83a4513304c55ef34fd13bfd50f5|2026-11-05
 1086|tram|Tram|https://github.com/taewooyo/tram|2026-11-01T07:54:17Z|github-repository-search|cf676742728b4d85020b210c8f0e6aa922f51fd0|2026-11-05
+1087|mantel|Mantel|https://github.com/RealNarcissus/mantel|2026-10-24T15:50:00Z|github-repository-search|0b8d577e9401f3fcdf1349b7c72288de82eff792|2026-11-05
