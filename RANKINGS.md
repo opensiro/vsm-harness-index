@@ -472,6 +472,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 6 | <a id="namidsh"></a>[NamiDSH](https://github.com/aa1143/NamiDSH) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="mint"></a>[mint](https://github.com/ketiyohannes/mint) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nexo"></a>[nexo](https://github.com/Locotir/nexo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="baldric"></a>[Baldric](https://github.com/Ember452/baldric) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gsh"></a>[gsh](https://github.com/kuangxing6367/gsh) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
