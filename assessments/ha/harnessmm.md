@@ -8,16 +8,18 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
-autonomy_s1: C
+status: excluded-no-agentic-vsm
+autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
 autonomy_s3_star: —
-autonomy_s4: C
+autonomy_s4: —
 autonomy_s5: —
 ---
 
 # HarnessMM
+
+**Canonical disposition: EXCLUDED — no independently closed first-party agentic S1.** This repository provides meaningful, source-backed *constructor* affordances around an external harness, but Methodology 0.3.7 does not admit an unassembled `S1=C` as an autonomous harness. An integrated Codex/DeepSeek host may be assessed at its own system boundary; importing its S1 ownership would conflate different repositories. The proposed review-stage `C / — / — / — / C / —` expressed the opt-in construction affordances, not an already operating S1 or a canonical ownership vector.
 
 ## Review boundary
 
@@ -46,19 +48,25 @@ The actual task-solving agent is the externally integrated model/host loop, whic
 
 ## S1 — Operations
 
-- State: C
-- Function: A first-party reusable agent action-decision constructor at the model/tool boundary of an integrated operational run.
+- State: —
+- Function: No standalone first-party autonomous operational S1 loop is supplied by the published HarnessMM package; the decision-boundary constructor is not an included operational cell.
 - Disturbance / variety regulated: New screenshot/tool outcomes, tool argument uncertainty, unexpected receipts and exhaustion of stored eligible actions.
-- Decisive decision or feedback right: A model-backed actor chooses literal actions; `VisualBaseline.decide` requests and parses the decision, while the graph contract can reuse previously authored actions only when the current receipt justifies them.
+- Decisive decision or feedback right: A model-backed *external host actor* chooses literal actions; `VisualBaseline.decide` requests and parses it, while the graph contract can reuse previously authored actions only when the current receipt justifies them.
 - Decision owner: The host-injected reasoning actor owns discretionary task action selection; HarnessMM supplies the first-party specific callback interfaces and guard/reuse path but no autonomous actor/native dispatcher as a standalone default.
 - Supporting / enforcement mechanisms: Action schema validation, guarded-decision graph, native receipt checking, callback substitution certificates, fallback and metered event log.
 - Closure path: Host observation/current screenshot → supplied model decision or receipt-supported saved decision → host native tool dispatch → native receipt returned to next guarded boundary/slow actor.
-- Boundary reachability: The documented `VisualBaseline(actor=..., audit=...)` and `ExecutableSubdag(...).observeTool(...)` APIs are shipped and exercised through local examples; completing an autonomous task requires an explicit host provider, native executor and episode loop, so constructor `C` is not inflated to fully autonomous installed `A`.
+- Boundary reachability: The documented `VisualBaseline(actor=..., audit=...)` and `ExecutableSubdag(...).observeTool(...)` APIs are shipped and exercised through local examples; completing an autonomous task requires an explicit host provider, native executor and episode loop, so these constructor affordances are not an installed first-party S1.
 - Why this is / is not agent-owned: An integrated model actor can own S1 choices, but neither the deterministic reuse guard nor a host-supplied callback automatically makes that agent a first-party owned and wired HarnessMM standard-distribution S1.
 - Evidence: [Baseline readme](https://github.com/YuhuaJiang2002/HarnessMM/blob/8c4ff0f98332fab2dca5916dee63970d87c554e6/integrations/baseline_harness/README.md), [visual adapter](https://github.com/YuhuaJiang2002/HarnessMM/blob/8c4ff0f98332fab2dca5916dee63970d87c554e6/integrations/baseline_harness/visual.py), [integration guide](https://github.com/YuhuaJiang2002/HarnessMM/blob/8c4ff0f98332fab2dca5916dee63970d87c554e6/docs/INTEGRATION.md).
-- Basis: Explicit first-party composable operational interface, not an autonomous deployment witness.
+- Basis: Bounded exclusion after explicit review of first-party construction and the missing autonomous deployment witness.
 - Confidence: High for constructor boundary; medium on whether a narrower integrated-host framing could be admitted as autonomous S1.
-- Caveats: Codex and DeepSeek's separate native loops cannot be donated to HarnessMM without changing the declared boundary; no provider-backed E2E run conducted.
+- Caveats: Codex and DeepSeek's separate native loops cannot be donated to HarnessMM without changing the declared boundary; no provider-backed E2E run conducted. The noncanonical proposal recorded S1 constructor C, but the accepted inclusion gate requires actual S1 A.
+
+### Absence scope
+
+- Surfaces inspected: Released baseline adapter, callback/graph integration, native Codex/DeepSeek adapters, CHISEL runner contracts, synthetic examples and first-party tests.
+- Plausible first-party paths checked: `VisualBaseline.decide` as task loop, callback substitution as autonomous action, CHISEL's execute/optimize hooks as in-repository agent, DeepSeek SDK runner as packaged agent.
+- Why no material first-party path remains: These all require the external slow actor, host SDK/runtime, native tool dispatcher, task episode owner or experiment callbacks to complete S1; none is shipped as a self-contained HarnessMM task-operating agent loop at the declared boundary.
 
 ## S2 — Coordination
 
@@ -125,23 +133,29 @@ The actual task-solving agent is the externally integrated model/host loop, whic
 
 ## S4 — Outside-and-then intelligence
 
-- State: C
-- Function: Specific opt-in constructor for prospective improvement of the harness's future task-execution policy from earlier environment/task feedback.
+- State: —
+- Function: No installed HarnessMM-owned strategic S4 loop jointly regulating current task operations; the opt-in CHISEL train/validation/freeze constructor belongs to external host/experiment composition.
 - Disturbance / variety regulated: Changing future task mix, inefficient repeated model callbacks and performance/cost tradeoffs beyond the current task.
 - Decisive decision or feedback right: An injected optimizer proposes reusable residual instructions from TRAIN evidence; held-out VALIDATION selects eligible improvement and freezes a policy before a later TEST/deployment run.
-- Decision owner: Developer-provided optimizer actor and executor callbacks perform autonomous proposal/action, while first-party CHISEL constructs partition-safe feedback, routing/selection/freeze; fully autonomous provider/optimizer ownership is not packaged by default.
+- Decision owner: Developer-provided optimizer actor and executor callbacks own the decisive behavioral proposal and external host owns deployment; first-party CHISEL provides partition-safe selection/freeze machinery without its own S3–S4 closure.
 - Supporting / enforcement mechanisms: Split seals, cross-fit residual routing, score/usage ledgers, source/policy hashes and no-validation-leak guards.
 - Closure path: Prior native execution and task feedback → optimizer proposes future behavior option → independent validation selects or abstains → source/policy freeze → subsequent executor receives selected instruction in native task prompt/AGENTS.md.
-- Boundary reachability: Public `CodexChiselController(train, select_validation, freeze, evaluate_test)` with explicit `execute` and `optimize` callbacks is shipped as a future-configuration constructor, rather than only a roadmap; no claim that the missing external optimizer and executor are installed.
-- Why this is / is not agent-owned: The optimization candidate is model-authored, but the first-party release delegates model invocation and task runner to host callbacks; hence specifically composable S4 `C`, not deployed self-owned `A`.
+- Boundary reachability: Public `CodexChiselController(train, select_validation, freeze, evaluate_test)` is shipped, but explicit externally supplied `execute` and `optimize` callbacks and host policy are indispensable; this is a research adaptation constructor, not installed autonomous S4 of the assessed standalone package.
+- Why this is / is not agent-owned: The potential optimization candidate is model-authored by a supplied optimizer, but the published package does not itself own the external actor or operational S3 which would adopt a future strategy.
 - Evidence: [CHISEL docstring and implementation](https://github.com/YuhuaJiang2002/HarnessMM/blob/8c4ff0f98332fab2dca5916dee63970d87c554e6/harnessmm/harness/codex_chisel.py), [README future-configuration description](https://github.com/YuhuaJiang2002/HarnessMM/blob/8c4ff0f98332fab2dca5916dee63970d87c554e6/README.md), [integration contract](https://github.com/YuhuaJiang2002/HarnessMM/blob/8c4ff0f98332fab2dca5916dee63970d87c554e6/docs/INTEGRATION.md).
 - External distinction: Native task feedback and out-of-sample task distribution distinguish behavioral weaknesses not visible in one callback.
 - Future / prospective distinction: Trained residual options are selected and frozen *before* future holdout/deployment tasks; validation/test evidence must not return to the optimizer.
 - Adaptation option generated: A bounded residual task instruction/router configuration chosen against actual quality and token cost.
 - Path back into current capability / S3: The selected frozen instruction is injected into the next run's native agent prompt/AGENTS.md, preserving the host's current tool loop and scoring contract; external host operational control remains separately owned.
-- Basis: Explicit first-party opt-in future policy selection constructor.
+- Basis: Bounded negative for standalone organizational S4, while preserving the concrete first-party prospective constructor witness.
 - Confidence: Medium: evidence supports future adaptation constructor, while whether a deployed host would establish a fully separated S3–S4 organizational conversation depends on composition.
-- Caveats: Experimental optimization of a fixed benchmark alone must not be misreported as autonomous external market sensing; this grade is limited to the exposed specific prospective configuration feedback path.
+- Caveats: Experimental optimization of a fixed benchmark alone must not be misreported as autonomous external sensing or current-product S4; a separately composed host may create that organization.
+
+### Absence scope
+
+- Surfaces inspected: CHISEL train/validation/freeze/test contract, integration/README docs, configured native host/optimizer boundaries and baseline callback mode.
+- Plausible first-party paths checked: Residual optimizer as future strategic agent, validation-selected instruction as capability policy, experiment `freeze` as return to S3, paper's recursive self-improvement claims.
+- Why no material first-party path remains: Future-policy selection is available only through externally supplied optimizer/executor and benchmark/host ownership; no packaged own S3 operations and externally prospective S4 actor exchanging options and closing them in subsequent HarnessMM-owned operations.
 
 ## S5 — Policy and identity
 
@@ -175,5 +189,5 @@ Eligibility predicates attenuate action variety by reusing only current-receipt-
 ## Evidence gaps
 
 - The first-party distribution provides no one-command, credential-free full native Codex/DeepSeek episode; synthetic tests establish interface behavior rather than deployed autonomous S1 ownership.
-- S1 constructor `C` and S4 constructor `C` are bounded publication claims; a later host-integrated source-first review may move the operational system boundary, but may not silently borrow external host functions here.
+- S1/S4 constructor affordances were explicitly considered at the proposal stage; canonical exclusion does not claim they are useless. A later host-integrated source-first review may move the boundary but cannot silently borrow external host functions here.
 - No live paid-model benchmark run was attempted; published paper outcome and cost numbers were not used as proof of VSM ownership.
