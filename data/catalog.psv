@@ -1089,3 +1089,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1088|uni-robot-agent|Uni Robot Agent|https://github.com/Open-RUA/uni-robot-agent|2026-11-02T17:50:44Z|github-repository-search|2590ab48b7c24a72123597f2d5b04c9524e4329c|2026-11-05
 1089|beyon-control-plane|Beyon Control Plane|https://github.com/Beyon-Digital/control-plane|2026-10-29T11:32:10Z|github-repository-search|9dbe4012bdf8b2d2ee333402912b408aadd35e6d|2026-11-05
 1090|conductor-sdlc|Conductor SDLC|https://github.com/xpressabhi/agentic-sdlc-control-plane|2026-10-30T10:15:03Z|github-repository-search|60da52f1806dc5b2fe3297493224fe243d653d7f|2026-11-05
+1091|agent-harness-lab|Agent Harness Lab|https://github.com/mihazs/agent-harness-lab|2026-10-31T06:39:47Z|github-repository-search|1b165594818bab9f92605fb4bd5ec0c6f943c2fc|2026-11-05
