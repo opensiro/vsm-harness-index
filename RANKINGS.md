@@ -604,6 +604,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="zhizhi-agent-runtime"></a>[Zhizhi Agent Runtime](https://github.com/cocoyes/zhizhi-agent-runtime) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ranapriyansh-agent-loop"></a>[agent-loop](https://github.com/RanaPriyansh/agent-loop) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kite"></a>[Kite](https://github.com/KhanUzeb/kite) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
+| 6 | <a id="minicode-agent"></a>[MiniCode Agent](https://github.com/BlairCode/minicode-agent) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="quikagent"></a>[QuikAgent](https://github.com/shaneburrell/quikagent) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="s1n6h-pentest-harness"></a>[S1N6H/pentest-harness](https://github.com/S1N6H/pentest-harness) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="synth"></a>[synth](https://github.com/aw1875/synth) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
