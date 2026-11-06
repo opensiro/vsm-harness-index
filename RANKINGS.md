@@ -814,6 +814,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="boop"></a>[Boop](https://github.com/raroque/boop-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="threatclaw"></a>[ThreatClaw](https://github.com/threatclaw/threatclaw) | 2026-Q2 | 1/6 | 0/5 | 3 | 0 | 0 | `A C C C — —` |
 | 6 | <a id="harnessclaw-harnessclaw"></a>[harnessclaw/harnessclaw](https://github.com/harnessclaw/harnessclaw) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="oxi"></a>[Oxi](https://github.com/maziluiosif/oxi) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hamroh"></a>[Hamroh](https://github.com/Rustam-Z/hamroh) | 2026-Q2 | 1/6 | 0/5 | 0 | 3 | 0 | `A — P — P P` |
 | 6 | <a id="agentflow-venkatapgummadi"></a>[AgentFlow (venkatapgummadi)](https://github.com/venkatapgummadi/agentflow) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="bash-agent"></a>[bash-agent](https://github.com/lloydzhou/bash-agent) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
