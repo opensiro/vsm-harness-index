@@ -581,6 +581,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="mi"></a>[mi](https://github.com/pegov/mi) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hx"></a>[hx](https://github.com/phantomic12/hx-harness) | 2026-Q3 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
 | 6 | <a id="glm-code"></a>[GLM Code](https://github.com/MikuBlog/glm-code) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="agent01"></a>[Agent01](https://github.com/Babe153/Agent01-from-Scratch) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentharness-alexandrmotologa"></a>[AgentHarness](https://github.com/alexandrmotologa/agent-harness) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="pi-loop-studio-orchestra"></a>[pi-loop-studio-orchestra](https://github.com/LEO001020/pi-loop-studio-orchestra) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="zhi"></a>[Zhi](https://github.com/mikemikimike/zhi) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
