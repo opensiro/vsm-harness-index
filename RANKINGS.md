@@ -655,6 +655,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="pasclaude"></a>[PasClaude](https://github.com/seanrobertwright/PasClaude) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="xoder"></a>[Xoder](https://github.com/BANGHlxbackout/Xoder) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="no-human"></a>[no_human](https://github.com/no-human-ai/no_human) | 2026-Q3 | 1/6 | 0/5 | 2 | 3 | 0 | `A C P — C(P) P` |
+| 6 | <a id="suncode"></a>[SunCode](https://github.com/costanzo/suncode) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="openharness"></a>[OpenHarness](https://github.com/autonomous-ai/openharness) | 2026-Q3 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
 | 6 | <a id="fuse"></a>[Fuse](https://github.com/ethanhinson/fuse) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="oniroute-swarmagents"></a>[OniRoute SwarmAgents](https://github.com/AniruddhaDas1/OniRoute_SwarmAgents) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
