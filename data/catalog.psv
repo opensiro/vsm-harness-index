@@ -1127,3 +1127,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1126|runloop|runloop|https://github.com/murilo-bassan/durable-agent-runtime|2026-10-28T18:09:12Z|github-repository-search|1d68208d017d27d1b21805753b51a3872c888a52|2026-11-05
 1127|orinos|Orinos|https://github.com/batin-sahin/orinos|2026-10-28T15:48:03Z|github-repository-search|fc0cf654ae8e53a41a6072cf410a9e6c1a8cb066|2026-11-03
 1128|darrenbuckner-agent-runtime|agent-runtime (darrenbuckner)|https://github.com/darrenbuckner/agent-runtime|2026-10-27T22:40:52Z|github-repository-search|cf9e59b2175c4f6a57cc3368bf61568d00d43d16|2026-11-05
+1129|harniqo|Harniqo|https://github.com/StateKnot/Harniqo|2026-10-29T07:09:45Z|github-repository-search|456f0f92786bd5753b08ec8a3c2db08c69e284dd|2026-11-03

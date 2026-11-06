@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.7
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.7
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +19,7 @@ autonomy_s5: —
 
 # Harniqo
 
-**Proposed canonical disposition:** `excluded-no-agentic-vsm` at this frozen revision. This is a scope finding, not a judgment that its real VM isolation, resource-broker, transport, event-spool, native qualification or desktop engineering work is ineffective. The stated product is a future control center for external agent harnesses; the shipped desktop does not yet connect to one, and the standalone host Modules and qualification harnesses do not constitute a first-party agent-owned operational loop.
+**Canonical disposition:** `excluded-no-agentic-vsm` at this frozen revision. This is a scope finding, not a judgment that its real VM isolation, resource-broker, transport, event-spool, native qualification or desktop engineering work is ineffective. The stated product is a future control center for external agent harnesses; the shipped desktop does not yet connect to one, and the standalone host Modules and qualification harnesses do not constitute a first-party agent-owned operational loop.
 
 ## Review boundary
 
