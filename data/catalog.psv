@@ -1141,3 +1141,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1140|oxi|Oxi|https://github.com/maziluiosif/oxi|2026-04-11T19:41:07Z|manual-discovery|da693ad021667ce2a2360182f572bb73b6812add|2026-09-29
 1141|picocode|PicoCode|https://github.com/shijizhi/picocode|2026-05-15T02:29:13Z|manual-discovery|c016d4ff9a84c6584f4c09706b05a364b2a5b5dd|2026-09-29
 1142|minidsh|MiniDSH|https://github.com/earthwalker17/MiniDSH|2026-08-21T12:04:05Z|manual-discovery|827c87e9f9785c4283f8b992126bd0413320152e|2026-09-29
+1143|paddles|Paddles|https://github.com/spoke-sh/paddles|2026-03-16T03:35:55Z|manual-discovery|eb7a03bfe0ba33123debd8cd8c0c97d073f55e33|2026-09-29

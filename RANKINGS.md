@@ -848,6 +848,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="optio"></a>[Optio](https://github.com/jonwiggins/optio) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="autonomouscodingagent"></a>[AutonomousCodingAgent](https://github.com/robertnathe/AutonomousCodingAgent) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="orca-stablyai"></a>[Orca](https://github.com/stablyai/orca) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="paddles"></a>[Paddles](https://github.com/spoke-sh/paddles) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="talon"></a>[Talon](https://github.com/dylanneve1/talon) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ares"></a>[ARES](https://github.com/Timwood0x10/ARES) | 2026-Q1 | 1/6 | 0/5 | 3 | 2 | 0 | `A C C(P) — C(P) —` |
 | 6 | <a id="rum"></a>[Rum](https://github.com/KAJdev/rum) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
