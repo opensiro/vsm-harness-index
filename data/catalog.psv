@@ -1133,3 +1133,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1132|suncode|SunCode|https://github.com/costanzo/suncode|2026-08-04T12:15:56Z|manual-discovery|623eb4c2d8b98546148e5b7294d1a0423ffea7b5|2026-09-29
 1133|quickcode|QuickCode|https://github.com/devincii-io/QuickCode|2026-07-26T20:43:52Z|manual-discovery|ac776f76b0243e248ff389c4b2dbdfc70475cce2|2026-09-29
 1134|vibe-coder|vibe-coder|https://github.com/jonathanhecl/vibe-coder|2026-04-19T05:49:28Z|manual-discovery|49f6598b756b3ec9440c80f16bdd556624a152f1|2026-09-29
+1135|agent01|Agent01|https://github.com/Babe153/Agent01-from-Scratch|2026-09-12T11:27:58Z|manual-discovery|7e4f5f82a1008d6276dfe1d6a97e68484665ecdd|2026-09-29
