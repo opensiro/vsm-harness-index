@@ -1125,3 +1125,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1124|ai-chassis|ai-chassis|https://github.com/sergeiwallace/ai-chassis|2026-11-03T20:39:10Z|github-repository-search|ea39de12db1308c2a46ac7ffab38ead14ce39aaf|2026-11-05
 1125|durable-agent-runtime-faleovad|Durable Agent Runtime|https://github.com/Faleovad/durable-agent-runtime|2026-11-04T00:22:50Z|github-repository-search|fd75463b6c33f9b32aa1de4c3d8d0b75297bf589|2026-11-05
 1126|runloop|runloop|https://github.com/murilo-bassan/durable-agent-runtime|2026-10-28T18:09:12Z|github-repository-search|1d68208d017d27d1b21805753b51a3872c888a52|2026-11-05
+1127|orinos|Orinos|https://github.com/batin-sahin/orinos|2026-10-28T15:48:03Z|github-repository-search|fc0cf654ae8e53a41a6072cf410a9e6c1a8cb066|2026-11-03
