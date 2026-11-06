@@ -1131,3 +1131,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1130|minicode-agent|MiniCode Agent|https://github.com/BlairCode/minicode-agent|2026-08-29T02:36:29Z|manual-discovery|0c8bf466f2c1163403906253f2dc8be862fb828c|2026-09-29
 1131|patchpilot|PatchPilot|https://github.com/jx-grxf/PatchPilot|2026-04-22T17:12:58Z|manual-discovery|79eed49aa6c8daf7dd939047031c942424782abc|2026-09-29
 1132|suncode|SunCode|https://github.com/costanzo/suncode|2026-08-04T12:15:56Z|manual-discovery|623eb4c2d8b98546148e5b7294d1a0423ffea7b5|2026-09-29
+1133|quickcode|QuickCode|https://github.com/devincii-io/QuickCode|2026-07-26T20:43:52Z|manual-discovery|ac776f76b0243e248ff389c4b2dbdfc70475cce2|2026-09-29
