@@ -796,6 +796,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="patchpilot"></a>[PatchPilot](https://github.com/jx-grxf/PatchPilot) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="reasonix"></a>[Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="sjmun09-harness"></a>[Harness](https://github.com/sjMun09/Harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="vibe-coder"></a>[vibe-coder](https://github.com/jonathanhecl/vibe-coder) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="gemba"></a>[Gemba](https://github.com/GembaCore/gemba-core) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="twaldin-harness"></a>[twaldin/harness](https://github.com/twaldin/harness) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="looplet"></a>[Looplet](https://github.com/hsaghir/looplet) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
