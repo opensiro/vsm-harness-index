@@ -518,6 +518,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 6 | <a id="agent-harness-csharp"></a>[Agent Harness CSharp](https://github.com/jackhuclan/harness_demo) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="runloop"></a>[runloop](https://github.com/murilo-bassan/durable-agent-runtime) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="miniharness"></a>[miniharness](https://github.com/ZeleMate/miniharness) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="orinos"></a>[Orinos](https://github.com/batin-sahin/orinos) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kehai"></a>[Kehai](https://github.com/sh1ny/kehai) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="aliquot"></a>[Aliquot](https://github.com/oneirum/aliquot) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gifford"></a>[Gifford](https://github.com/smellak/gifford) | 2026-Q4 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
