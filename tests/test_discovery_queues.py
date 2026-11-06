@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
-from io import BytesIO
+from contextlib import redirect_stderr, redirect_stdout
+from io import BytesIO, StringIO
 from pathlib import Path
 import sys
 import unittest
@@ -102,6 +103,42 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
     def test_source_candidate_batch_routes_assessment_control(self) -> None:
         body = "Source candidate batch: #918\nFrozen refs: copied unchanged from #918"
         self.assertEqual(module.source_candidate_batch(body), 918)
+
+    def test_immutable_discovery_owner_links_route_serial_controllers(self) -> None:
+        for owner, body in (
+            (2896, "Immutable discovery owner [#2896](https://github.com/opensiro/vsm-harness-index/issues/2896)."),
+            (2899, "Immutable discovery owner: [#2899](https://github.com/opensiro/vsm-harness-index/issues/2899)."),
+        ):
+            with self.subTest(owner=owner):
+                self.assertEqual(module.source_candidate_batch(body), owner)
+                self.assertTrue(module.is_frozen_control_queue(body))
+
+        self.assertIsNone(module.source_candidate_batch("Related sibling intake #2896 is not the owner"))
+
+    def test_completed_immutable_owner_controllers_are_not_active_collisions(self) -> None:
+        issues = []
+        for number, owner, repository, ref, heading in (
+            (2897, 2896, "phuryn/mini-harness", "7ae9fca8221c55bd3c38697a61075357e1a94c26", "Immutable discovery owner"),
+            (2900, 2899, "agentjido/jido_harness", "20fe00f7e954b8634b5ca73fc8cb7ee55230de24", "Immutable discovery owner:"),
+        ):
+            body = (
+                f"{heading} [#{owner}](https://github.com/opensiro/vsm-harness-index/issues/{owner}).\n\n"
+                "| # | Candidate | Repository | Frozen review_ref |\n"
+                "| ---: | --- | --- | --- |\n"
+                f"| 1 | Completed | `{repository}` | `{ref}` |\n"
+            )
+            issues.append({"number": number, "title": "[Assessment batch] Serial five", "body": body})
+
+        api = mock.Mock()
+        api.open_issues.return_value = issues
+        entries, occupancies, parse_errors = module.active_queue_entries(api, "opensiro/vsm-harness-index")
+        self.assertEqual(parse_errors, [])
+        self.assertEqual(occupancies, {})
+        self.assertEqual([entry.logical_queue_number for entry in entries], [2896, 2899])
+        self.assertTrue(all(entry.frozen for entry in entries))
+        included = {entry.repository.lower(): entry.repository for entry in entries}
+        active, errors, warnings = module.classify_queue_entries(entries, included, {}, included)
+        self.assertEqual((active, errors, warnings), ([], [], []))
 
 
     def test_assessment_control_is_frozen_by_source_routing(self) -> None:
@@ -289,6 +326,44 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
 
 
 class DiscoveryQueueGitHubAPITests(unittest.TestCase):
+    def test_genuine_duplicate_frozen_repo_id_fails_closed(self) -> None:
+        # #2730: two distinct immutable intakes may freeze the same stable repo
+        # ID/SHA. Neither is a controller of the other, so this must fail.
+        frozen_sha = "fb5f9e2725c7cfe268fa0c2dc40f44cc132c12f4"
+        issues = [
+            {
+                "number": number,
+                "title": "[Candidate batch] Frozen five",
+                "body": (
+                    "Batch frozen at 5/5.\n"
+                    "| # | Candidate | Repository | Frozen review_ref |\n"
+                    "| ---: | --- | --- | --- |\n"
+                    f"| 1 | NorthCUA | `{repository}` | `{frozen_sha}` |\n"
+                ),
+            }
+            for number, repository in (
+                (2708, "beipo-ai/NorthCUA"),
+                (2710, "mirror/NorthCUA"),
+            )
+        ]
+        stderr, stdout = StringIO(), StringIO()
+        with (
+            mock.patch.object(sys, "argv", ["check_discovery_queues.py"]),
+            mock.patch.object(module, "load_assessments", return_value={"included": [], "proposed": []}),
+            mock.patch.object(module, "load_catalog", return_value=[]),
+            mock.patch.object(module.GitHubAPI, "open_issues", return_value=issues),
+            mock.patch.object(module.GitHubAPI, "repository_identities", return_value=[
+                (1443075589, "beipo-ai/NorthCUA"),
+                (1443075589, "beipo-ai/NorthCUA"),
+            ]),
+            redirect_stderr(stderr),
+            redirect_stdout(stdout),
+        ):
+            result = module.main()
+        self.assertEqual(result, 1)
+        self.assertIn("GitHub repository id 1443075589", stderr.getvalue())
+        self.assertIn("active batches [2708, 2710]", stderr.getvalue())
+
     def test_get_retries_transient_timeout(self) -> None:
         api = module.GitHubAPI("token")
         response = BytesIO(b'{"ok": true}')

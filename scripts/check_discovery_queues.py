@@ -48,6 +48,9 @@ REMAINING_OCCUPANCY_RE = re.compile(
 BATCH_OCCUPANCY_RE = re.compile(r"Batch occupancy:\s*\*{0,2}(\d+)/10", re.IGNORECASE)
 FROZEN_QUEUE_RE = re.compile(r"\bbatch\b[^\n]{0,120}\bfrozen\b", re.IGNORECASE)
 SOURCE_CANDIDATE_RE = re.compile(r"Source candidate batch:\s*#(\d+)", re.IGNORECASE)
+IMMUTABLE_DISCOVERY_OWNER_RE = re.compile(
+    r"\bImmutable discovery owner\s*:?\s*\[?#(\d+)\]?", re.IGNORECASE
+)
 GITHUB_URL_RE = re.compile(r"(?:https://github\.com/)?([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
 REVIEW_REF_RE = re.compile(r"\b[0-9a-fA-F]{40}\b")
 
@@ -105,7 +108,10 @@ def declared_remaining_active_occupancy(body: str) -> int | None:
 
 
 def source_candidate_batch(body: str) -> int | None:
-    match = SOURCE_CANDIDATE_RE.search(body)
+    # Recent serial controllers link their immutable intake under this explicit
+    # heading instead of the older "Source candidate batch" marker.  Do not
+    # infer an owner from arbitrary links to other batches in the issue body.
+    match = SOURCE_CANDIDATE_RE.search(body) or IMMUTABLE_DISCOVERY_OWNER_RE.search(body)
     return int(match.group(1)) if match else None
 
 
@@ -410,9 +416,9 @@ def main() -> int:
         queue_numbers = logical_queue_numbers(matches)
         if len(queue_numbers) > 1:
             if is_exact_snapshot_duplicate(matches):
-                warnings.append(
+                errors.append(
                     f"{repository}: same immutable snapshot {matches[0].review_ref} is duplicated across "
-                    f"active candidate batches {queue_numbers}; reconcile queue ownership before assessment"
+                    f"active candidate batches {queue_numbers}; resolve competing ownership before assessment"
                 )
             else:
                 errors.append(f"{repository}: queued in multiple active candidate batches {queue_numbers}")
@@ -443,10 +449,10 @@ def main() -> int:
             if len(queue_numbers) > 1:
                 names = sorted({entry.repository for entry in matches})
                 if is_exact_snapshot_duplicate(matches):
-                    warnings.append(
+                    errors.append(
                         f"GitHub repository id {repo_id} ({names}) is the same immutable snapshot "
                         f"{matches[0].review_ref} across active batches {queue_numbers}; "
-                        "reconcile queue ownership before assessment"
+                        "resolve competing ownership before assessment"
                     )
                 else:
                     errors.append(
