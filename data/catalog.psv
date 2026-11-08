@@ -1146,3 +1146,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1145|orchestrator-harness|Orchestrator Harness|https://github.com/dhoelzer/AgentOrchestrator|2026-11-07T11:43:45Z|github-repository-search|33fce2cc0d0b3dd4dcd0e7267391b45a2d4edded|2026-11-08
 1146|markov-harness|markov-harness|https://github.com/vokramd/markov-harness|2026-11-06T18:07:18Z|github-repository-search|6ffac34f74e6ee9c1e93cdff145c8d7656a0d769|2026-11-08
 1147|openprogram|OpenProgram|https://github.com/FuzzyKuji/OpenProgram|2026-11-06T08:14:58Z|github-repository-search|447264865e871e30e7f638b42cccfe25d826f8d0|2026-11-08
+1148|go-sre-harness|go-sre-harness|https://github.com/rainyZhou2/SreAgentHarness|2026-11-06T00:47:25Z|github-repository-search|218c2ce880cbbda33df6464b78aef96d201be913|2026-11-08
