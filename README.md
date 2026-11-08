@@ -12,10 +12,15 @@ VSM Harness Index is the evidence-backed corpus of real agent-harness assessment
 - **Autonomy rankings:** [RANKINGS.md](RANKINGS.md)
 - **Full-A assessments:** [FULL_A.md](FULL_A.md)
 - **Repository statistics:** [Corpus metrics](METRICS.md)
+- **Data provenance and licenses:** [Sources and attribution](SOURCES.md)
 - **GitHub stars histogram:** [Popularity snapshot](analytics/github-stars.md) (external, non-canonical)
 - **How do I contribute?** [Contribute to OpenSiro with AI](https://github.com/opensiro/vsm-oss-organization/blob/main/CONTRIBUTE_WITH_AI.md)
 
 Browse assessments, compare autonomy signatures, and inspect evidence without first learning the OpenSiro control structure. The contribution guide provides a copy-paste route for working with an AI agent.
+
+The [VSM Harness Profile](https://github.com/opensiro/vsm-harness-profile/blob/main/PROFILE.md) defines **S1** (operations), **S2** (coordination), **S3** (current control), **S3*** (direct audit), **S4** (adaptation), and **S5** (identity and policy). The [assessment Methodology](https://github.com/opensiro/vsm-harness-skills/blob/main/SYNTHESIS.md) explains the ownership states: `A` (agent-owned), `C` (constructor-composable), `P` (parent-assisted), optional parent paths `A(P)` / `C(P)`, `—` (no supplied path), and `?` (insufficient evidence). These are not product-quality or safety ratings.
+
+**Follow the evidence:** [Henterprise](assessments/he/henterprise.md) illustrates Full-A coverage; [Onion Harness](assessments/on/onion-harness.md) illustrates mixed ownership. Each assessment records a pinned upstream `review_ref`, implementation evidence, and limitations. **Full-A** means agent-owned coverage across all six functions, not a certification of organizational viability.
 
 ## I'm AI
 
