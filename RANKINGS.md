@@ -488,6 +488,7 @@ This ranks out-of-box agent ownership of VSM functions, not product quality or o
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](https://github.com/camel-ai/camel) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](https://github.com/micro/go-micro) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 6 | <a id="markov-harness"></a>[markov-harness](https://github.com/vokramd/markov-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="openprogram"></a>[OpenProgram](https://github.com/FuzzyKuji/OpenProgram) | 2026-Q4 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C C — P` |
 | 6 | <a id="pandita-agent-harness"></a>[Pandita Agent Harness](https://github.com/bhandiwad/agent-harness) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nipus-harness"></a>[nipus-harness](https://github.com/cUDGk/nipus-harness) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="crewdeck"></a>[CrewDeck](https://github.com/mnbresearch/crewdeck) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
