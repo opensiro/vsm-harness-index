@@ -24,6 +24,17 @@ class FullAViewTests(unittest.TestCase):
             "repository": f"https://github.com/example/{harness_id}",
         }
 
+    def test_harness_label_links_canonical_assessment_and_source(self):
+        label = render_full_a.anchored_label(
+            self.catalog("parent-option", "Parent Option")
+        )
+        self.assertEqual(
+            label,
+            '<a id="parent-option"></a>'
+            '[Parent Option](assessments/pa/parent-option.md) '
+            '([source](https://github.com/example/parent-option))',
+        )
+
     def test_a_parent_counts_as_autonomous_coverage(self):
         assessment = self.assessment(
             "parent-option",

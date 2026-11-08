@@ -41,9 +41,14 @@ def display_name(catalog: dict[str, str]) -> str:
 
 
 def anchored_label(catalog: dict[str, str]) -> str:
-    """Render a project link with a stable per-harness HTML anchor."""
-    anchor = f'<a id="{catalog["harness_id"]}"></a>'
-    return f"{anchor}[{escape(display_name(catalog))}]({catalog['repository']})"
+    """Link the canonical Index assessment, retaining an explicit upstream link."""
+    harness_id = catalog["harness_id"]
+    anchor = f'<a id="{harness_id}"></a>'
+    assessment = f"assessments/{harness_id[:2]}/{harness_id}.md"
+    return (
+        f"{anchor}[{escape(display_name(catalog))}]({assessment}) "
+        f"([source]({catalog['repository']}))"
+    )
 
 
 def year(catalog: dict[str, str]) -> str:
@@ -91,6 +96,8 @@ def render_tldr(repo: Path) -> str:
         "",
         "Cohort-relative signatures derived from standalone assessments. Display order is newest-first by GitHub repository creation time; Period is the repository creation quarter derived from `repository_created_at` as `YYYY-QN`. Signature synthesis still follows ascending catalog order.",
         "",
+        "Harness names link to canonical Index assessments; **source** links open the upstream repository.",
+        "",
         "| Harness | Period | S1 | S2 | S3 | S3* | S4 | S5 | Signature |",
         "| --- | ---: | --- | --- | --- | --- | --- | --- | --- |",
     ]
@@ -125,6 +132,8 @@ def render_rankings(repo: Path) -> str:
         "# VSM Harness Autonomy Rankings",
         "",
         "This ranks out-of-box agent ownership of VSM functions, not product quality or organizational viability. Equal agent-owned coverage receives the same rank; C, P, and ? are reported but never used as weighted scores. Within the same rank, newer repositories are displayed first. Period is the GitHub repository creation quarter and does not affect rank.",
+        "",
+        "Harness names link to canonical Index assessments; **source** links open the upstream repository.",
         "",
         "| Rank | Harness | Period | Agent-owned | Metasystem A | C | P | ? | Vector |",
         "| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
