@@ -69,6 +69,14 @@ Changing the active pair does not retroactively rewrite:
 
 The active pair may advance only to released upstream contracts that the Index consumer implementation can materialize and validate.
 
+### New releases and active selection
+
+The newest published Methodology release is **not automatically** the Index-active Methodology. A floating `latest` or `main` reference may be used to discover release updates, but must not replace the selected, version-pinned release used to generate and validate assessments: otherwise concurrent or resumed work could silently change its assessment procedure.
+
+To adopt a newer release, confirm its published tag and GitHub Release, verify Index consumer compatibility, change `data/active-contract.psv` in a reviewable PR, regenerate derived metrics and run Index validation. After Index adoption, the Organization-owned `UPSTREAM_CONTRACT.json` must be reconciled through its own cross-repository checks. Frozen batches and existing per-assessment provenance retain their actual versions; no automatic revalidation or rewrite is implied by activation.
+
+When documenting a difference between Skills and Index, say **published but not yet activated** if the release exists. Do not describe a version as *unreleased* merely because Index has not selected it.
+
 ## Historical assessment provenance
 
 Each assessment distinguishes generation provenance from current accepted validation provenance.
