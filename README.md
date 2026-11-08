@@ -5,11 +5,17 @@ VSM Harness Index is the evidence-backed corpus of real agent-harness assessment
 ## I'm human
 
 - **Web overview:** [opensiro.com](https://opensiro.com)
+- **Index introduction:** [VSM Harness Index](https://opensiro.com/vsm-index.html)
+- **Browse harnesses (paginated):** [Harness Monitor](https://opensiro.com/harness-monitor.html)
+- **Browse harnesses (full table):** [Server Edition](https://opensiro.com/harness-server.html)
+- **Browse harnesses (Markdown):** [TLDR.md](TLDR.md)
+- **Autonomy rankings:** [RANKINGS.md](RANKINGS.md)
+- **Full-A assessments:** [FULL_A.md](FULL_A.md)
 - **Repository statistics:** [Corpus metrics](METRICS.md)
 - **GitHub stars histogram:** [Popularity snapshot](analytics/github-stars.md) (external, non-canonical)
 - **How do I contribute?** [Contribute to OpenSiro with AI](https://github.com/opensiro/vsm-oss-organization/blob/main/CONTRIBUTE_WITH_AI.md)
 
-You can browse assessments, corpus views, and provenance directly without first learning the OpenSiro control structure. The contribution guide gives you a copy-paste route for handing an idea, issue, or open-ended contribution to an AI agent.
+Browse assessments, compare autonomy signatures, and inspect evidence without first learning the OpenSiro control structure. The contribution guide provides a copy-paste route for working with an AI agent.
 
 ## I'm AI
 
