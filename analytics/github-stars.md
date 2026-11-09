@@ -7,36 +7,36 @@ rating, VSM ownership measurement, or admission criterion. GitHub stars change,
 and GitHub popularity is neither an assessment criterion nor evidence of S1–S5.
 
 - Included-cohort boundary: `data/catalog.psv` joined to `data/signatures.psv`
-  at commit `a7c59ff1e31797fecb7230dc6eb2292f5df1029d`. Proposed and excluded rows are not counted.
-- GitHub observation window (UTC): 2026-10-11T18:13:11Z to 2026-10-11T18:15:03Z.
-- Included: **453**; observed: **452**;
-  unavailable: **1** (shown as missing, *not* zero).
-- Median: **281.0** stars; mean: **13 414** stars.
-- Under 10: **125** (27.7%);
-  under 100: **181** (40.0%);
-  at least 10,000: **98** (21.7%).
-- Unavailable repository: [korus](https://github.com/surefire-ai/korus).
+  at commit `46219bf103b0b122d86abc3ca70ae3d8bc820e2c`. Proposed and excluded rows are not counted.
+- GitHub observation window (UTC): 2026-11-09T13:51:48Z to 2026-11-09T13:52:32Z.
+- Included: **1 060**; observed: **1 050**;
+  unavailable: **10** (shown as missing, *not* zero).
+- Median: **54.0** stars; mean: **6 762** stars.
+- Under 10: **370** (35.2%);
+  under 100: **574** (54.7%);
+  at least 10,000: **115** (11.0%).
+- Unavailable repository: [headcount](https://github.com/cbrock84/headcount), [veritas](https://github.com/matiasrodlo/veritas), [korus](https://github.com/surefire-ai/korus), [visvoai](https://github.com/VisvoAI/visvoai), [shelracode](https://github.com/Shelra/ShelraCode), [qcode](https://github.com/fwtllh-png/QCode), [gopi](https://github.com/cgund98/gopi), [setup-ai-core](https://github.com/kartalbas/setup-ai-core), [agent-harness-cmabery](https://github.com/CMABERY/agent-harness), [rubin-johnson-maestro](https://github.com/rubin-johnson/maestro).
 
 ## Histogram
 
 | GitHub stars (bin) | Harnesses | Share of observed |
 | --- | ---: | ---: |
-| 0 | 38 | 8.4% |
-| 1–4 | 56 | 12.4% |
-| 5–9 | 31 | 6.9% |
-| 10–24 | 22 | 4.9% |
-| 25–49 | 13 | 2.9% |
-| 50–99 | 21 | 4.6% |
-| 100–249 | 37 | 8.2% |
-| 250–499 | 26 | 5.8% |
-| 500–999 | 33 | 7.3% |
-| 1k–2.5k | 41 | 9.1% |
-| 2.5k–5k | 12 | 2.7% |
-| 5k–10k | 24 | 5.3% |
-| 10k–25k | 34 | 7.5% |
-| 25k–50k | 32 | 7.1% |
-| 50k–100k | 16 | 3.5% |
-| 100k+ | 16 | 3.5% |
+| 0 | 136 | 13.0% |
+| 1–4 | 153 | 14.6% |
+| 5–9 | 81 | 7.7% |
+| 10–24 | 85 | 8.1% |
+| 25–49 | 64 | 6.1% |
+| 50–99 | 55 | 5.2% |
+| 100–249 | 105 | 10.0% |
+| 250–499 | 62 | 5.9% |
+| 500–999 | 60 | 5.7% |
+| 1k–2.5k | 68 | 6.5% |
+| 2.5k–5k | 25 | 2.4% |
+| 5k–10k | 41 | 3.9% |
+| 10k–25k | 45 | 4.3% |
+| 25k–50k | 36 | 3.4% |
+| 50k–100k | 16 | 1.5% |
+| 100k+ | 18 | 1.7% |
 
 Bins are **unequal-width categories**; bars show the number of projects in
 each category, not a density and not a continuous linear-scale histogram.
