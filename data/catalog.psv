@@ -1149,3 +1149,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1148|go-sre-harness|go-sre-harness|https://github.com/rainyZhou2/SreAgentHarness|2026-11-06T00:47:25Z|github-repository-search|218c2ce880cbbda33df6464b78aef96d201be913|2026-11-08
 1149|agentling|Agentling|https://github.com/lunarstack-co/agentling|2026-07-04T06:41:41Z|github-repository-search|6673e5833d7d9ba69ec33653b7cfed4e8ae9096a|2026-11-10
 1150|open-agent-sdk-python|Open Agent SDK Python|https://github.com/codeany-ai/open-agent-sdk-python|2026-04-01T17:27:39Z|github-repository-search|ab068156bf7db79cd23a883e8264a12803e23966|2026-11-10
+1151|yoagent|yoagent|https://github.com/yologdev/yoagent|2026-02-16T02:06:51Z|github-repository-search|f1495e7f5746445a269ec6a9d14fa8ac346b359d|2026-11-10
