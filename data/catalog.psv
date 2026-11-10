@@ -1157,3 +1157,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1156|cloudroom|Cloudroom|https://github.com/davidondrej/cloudroom|2026-09-17T18:56:56Z|github-repository-search|112f097c8a38c771d233270047f541761a81530a|2026-11-10
 1157|hexashell|HexaShell|https://github.com/HexaFuture/HexaShell|2026-10-09T12:33:05Z|github-repository-search|e0190ddb757955131578e9f9071f4ee8e7113f7a|2026-11-10
 1158|taskquay|TaskQuay|https://github.com/wrfgup/taskquay|2026-09-06T10:51:26Z|github-repository-search|d1e2850b5a35968be88ae6db22e5742cffd27679|2026-11-10
+1159|claw-empire|Claw-Empire|https://github.com/GreenSheep01201/claw-empire|2026-02-18T13:42:25Z|github-repository-search|66a24ea7df2435ef897c48c147deb7ec572c01c2|2026-11-10

@@ -893,6 +893,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="prismor"></a>[Prismor](assessments/pr/prismor.md) ([source](https://github.com/PrismorSec/prismor)) | 2026-Q1 | 1/6 | 0/5 | 0 | 1 | 4 | `A ? ? ? P ?` |
 | 6 | <a id="lacp"></a>[LACP](assessments/la/lacp.md) ([source](https://github.com/0xNyk/lacp)) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="swarmclaw"></a>[SwarmClaw](assessments/sw/swarmclaw.md) ([source](https://github.com/swarmclawai/swarmclaw)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="claw-empire"></a>[Claw-Empire](assessments/cl/claw-empire.md) ([source](https://github.com/GreenSheep01201/claw-empire)) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="harness-cgast"></a>[Harness](assessments/ha/harness-cgast.md) ([source](https://github.com/cgast/harness)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kuafu"></a>[Kuafu](assessments/ku/kuafu.md) ([source](https://github.com/DoSomeForFun/kuafu)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="yoagent"></a>[yoagent](assessments/yo/yoagent.md) ([source](https://github.com/yologdev/yoagent)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
