@@ -165,6 +165,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="agent-fleet-chankov"></a>[Agent Fleet](assessments/ag/agent-fleet-chankov.md) ([source](https://github.com/chankov/agent-fleet)) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A A P —` |
 | 4 | <a id="aesop"></a>[Aesop](assessments/ae/aesop.md) ([source](https://github.com/matt82198/aesop)) | 2026-Q3 | 3/6 | 2/5 | 2 | 1 | 0 | `A C A C — A(P)` |
 | 4 | <a id="spartan"></a>[Spartan](assessments/sp/spartan.md) ([source](https://github.com/CorticalComputer/Spartan)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — — A A` |
+| 4 | <a id="homerail"></a>[HomeRail](assessments/ho/homerail.md) ([source](https://github.com/xiaotianfotos/homerail)) | 2026-Q3 | 3/6 | 2/5 | 2 | 0 | 0 | `A C A A C —` |
 | 4 | <a id="relaycli"></a>[RelayCLI](assessments/re/relaycli.md) ([source](https://github.com/joshuasetiawann/relaycli)) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A P A — —` |
 | 4 | <a id="cast"></a>[cast](assessments/ca/cast.md) ([source](https://github.com/aa-blinov/cast)) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A C P A A —` |
 | 4 | <a id="ada"></a>[Ada](assessments/ad/ada.md) ([source](https://github.com/black141312/ada)) | 2026-Q2 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) — A —` |
