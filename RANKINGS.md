@@ -347,6 +347,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="agentdescent"></a>[AgentDescent](assessments/ag/agentdescent.md) ([source](https://github.com/Birfy/agentdescent)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="capstan"></a>[Capstan](assessments/ca/capstan.md) ([source](https://github.com/theStrangeAdventurer/capstan)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 1 | `A — — ? A —` |
 | 5 | <a id="mini-code-agent"></a>[Mini-Code-Agent](assessments/mi/mini-code-agent.md) ([source](https://github.com/ccxxxyy/mini-code-agent)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A A P C — —` |
+| 5 | <a id="axisagentic"></a>[AxisAgentic](assessments/ax/axisagentic.md) ([source](https://github.com/XYZ-AI-Lab/AxisAgentic)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="better-harness"></a>[Better Harness](assessments/be/better-harness.md) ([source](https://github.com/QoderAI/better-harness)) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 1 | `A — A ? P —` |
 | 5 | <a id="bossconsole"></a>[BossConsole](assessments/bo/bossconsole.md) ([source](https://github.com/risa-labs-inc/BossConsole)) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C C(P) — A(P) —` |
 | 5 | <a id="foreman"></a>[Foreman](assessments/fo/foreman.md) ([source](https://github.com/marcelsud/claude-foreman)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — A(P) C — —` |
