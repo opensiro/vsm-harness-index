@@ -890,6 +890,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="swarmclaw"></a>[SwarmClaw](assessments/sw/swarmclaw.md) ([source](https://github.com/swarmclawai/swarmclaw)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="harness-cgast"></a>[Harness](assessments/ha/harness-cgast.md) ([source](https://github.com/cgast/harness)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kuafu"></a>[Kuafu](assessments/ku/kuafu.md) ([source](https://github.com/DoSomeForFun/kuafu)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="yoagent"></a>[yoagent](assessments/yo/yoagent.md) ([source](https://github.com/yologdev/yoagent)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="keen-code"></a>[Keen Code](assessments/ke/keen-code.md) ([source](https://github.com/mochow13/keen-code)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pi-agent-core-python"></a>[pi-agent-core (Python)](assessments/pi/pi-agent-core-python.md) ([source](https://github.com/Huvinesh-Rajendran-12/pi-agent-core)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openjarvis"></a>[OpenJarvis](assessments/op/openjarvis.md) ([source](https://github.com/open-jarvis/OpenJarvis)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
