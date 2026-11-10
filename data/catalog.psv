@@ -1155,3 +1155,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1154|frognano|FrogNano|https://github.com/microsoft/FrogNano|2026-08-25T15:56:06Z|github-repository-search|880dc674c075d7425908757b334eaca7c9e3185f|2026-11-10
 1155|androidharness|AndroidHarness|https://github.com/Sanuu7/AndroidHarness|2026-08-23T23:49:01Z|github-repository-search|341bc6252364d298b18bd9f1ab6592e3a67fe514|2026-11-10
 1156|cloudroom|Cloudroom|https://github.com/davidondrej/cloudroom|2026-09-17T18:56:56Z|github-repository-search|112f097c8a38c771d233270047f541761a81530a|2026-11-10
+1157|hexashell|HexaShell|https://github.com/HexaFuture/HexaShell|2026-10-09T12:33:05Z|github-repository-search|e0190ddb757955131578e9f9071f4ee8e7113f7a|2026-11-10
