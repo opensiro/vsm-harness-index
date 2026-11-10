@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.8
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.8
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: C
 autonomy_s2: C
 autonomy_s3: —
@@ -18,6 +18,8 @@ autonomy_s5: —
 ---
 
 # TaskQuay
+
+**Canonical disposition:** `excluded-no-agentic-vsm` under the Index included-harness S1=A gate. This does not erase the documented `S1=C` and `S2=C` function-specific constructors: TaskQuay supplies both, but it deliberately leaves decisive autonomous host behavior outside its first-party installed runtime. The first-party standard distribution cannot be admitted as an autonomously closed S1 harness.
 
 ## Review boundary
 
