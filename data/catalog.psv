@@ -1159,3 +1159,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1158|taskquay|TaskQuay|https://github.com/wrfgup/taskquay|2026-09-06T10:51:26Z|github-repository-search|d1e2850b5a35968be88ae6db22e5742cffd27679|2026-11-10
 1159|claw-empire|Claw-Empire|https://github.com/GreenSheep01201/claw-empire|2026-02-18T13:42:25Z|github-repository-search|66a24ea7df2435ef897c48c147deb7ec572c01c2|2026-11-10
 1160|axisagentic|AxisAgentic|https://github.com/XYZ-AI-Lab/AxisAgentic|2026-07-23T04:03:31Z|github-repository-search|0aa54b14307942edc4401831110d8e7f726ec738|2026-11-10
+1161|agentdock|AgentDock|https://github.com/uvwt/agentdock|2026-05-25T13:05:50Z|github-repository-search|43b80c72fbd6b3952e7b46b311aa4eeaededdbde|2026-11-10
