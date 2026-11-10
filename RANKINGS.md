@@ -625,6 +625,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="kit"></a>[Kit](assessments/ki/kit.md) ([source](https://github.com/speakeasy-api/kit)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="orch"></a>[orch](assessments/or/orch.md) ([source](https://github.com/fbrubacher/orch)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gray"></a>[gray](assessments/gr/gray.md) ([source](https://github.com/vstaln/gray)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="androidharness"></a>[AndroidHarness](assessments/an/androidharness.md) ([source](https://github.com/Sanuu7/AndroidHarness)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kori"></a>[Kori](assessments/ko/kori.md) ([source](https://github.com/FacileStudio/kori)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="posse"></a>[posse](assessments/po/posse.md) ([source](https://github.com/ranger360ai/posse)) | 2026-Q3 | 1/6 | 0/5 | 3 | 3 | 0 | `A C C(P) C P P` |
 | 6 | <a id="gyrfalcon"></a>[Gyrfalcon](assessments/gy/gyrfalcon.md) ([source](https://github.com/cargopete/gyrfalcon)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
