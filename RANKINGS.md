@@ -937,6 +937,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="agent-of-empires"></a>[Agent of Empires](assessments/ag/agent-of-empires.md) ([source](https://github.com/agent-of-empires/agent-of-empires)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="yylo"></a>[YYLO](assessments/yy/yylo.md) ([source](https://github.com/yylo-dev/yylo)) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="shelley"></a>[Shelley](assessments/sh/shelley.md) ([source](https://github.com/boldsoftware/shelley)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="nonstop-agent"></a>[Nonstop Agent](assessments/no/nonstop-agent.md) ([source](https://github.com/seolcoding/nonstop-agent)) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="infiagent"></a>[infiAgent](assessments/in/infiagent.md) ([source](https://github.com/polyuiislab/infiAgent)) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — — ? —` |
 | 6 | <a id="confucius-code-agent"></a>[Confucius Code Agent](assessments/co/confucius-code-agent.md) ([source](https://github.com/facebookresearch/cca-swebench)) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="wee-orchestrator"></a>[Wee-Orchestrator](assessments/we/wee-orchestrator.md) ([source](https://github.com/leprachuan/Wee-Orchestrator)) | 2025-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
