@@ -235,6 +235,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="aionui"></a>[AionUi](assessments/ai/aionui.md) ([source](https://github.com/iOfficeAI/AionUi)) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="eigent"></a>[Eigent](assessments/ei/eigent.md) ([source](https://github.com/eigent-ai/eigent)) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="cli-agent-orchestrator"></a>[CLI Agent Orchestrator](assessments/cl/cli-agent-orchestrator.md) ([source](https://github.com/awslabs/cli-agent-orchestrator)) | 2025-Q3 | 3/6 | 2/5 | 1 | 0 | 2 | `A C A A ? ?` |
+| 4 | <a id="srchd"></a>[srchd](assessments/sr/srchd.md) ([source](https://github.com/dust-tt/srchd)) | 2025-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A A — A C —` |
 | 4 | <a id="deepagents"></a>[Deep Agents](assessments/de/deepagents.md) ([source](https://github.com/langchain-ai/deepagents)) | 2025-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="qwen-code"></a>[Qwen Code](assessments/qw/qwen-code.md) ([source](https://github.com/QwenLM/qwen-code)) | 2025-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="microsoft-agent-framework"></a>[Microsoft Agent Framework](assessments/mi/microsoft-agent-framework.md) ([source](https://github.com/microsoft/agent-framework)) | 2025-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |

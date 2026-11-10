@@ -1150,3 +1150,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1149|agentling|Agentling|https://github.com/lunarstack-co/agentling|2026-07-04T06:41:41Z|github-repository-search|6673e5833d7d9ba69ec33653b7cfed4e8ae9096a|2026-11-10
 1150|open-agent-sdk-python|Open Agent SDK Python|https://github.com/codeany-ai/open-agent-sdk-python|2026-04-01T17:27:39Z|github-repository-search|ab068156bf7db79cd23a883e8264a12803e23966|2026-11-10
 1151|yoagent|yoagent|https://github.com/yologdev/yoagent|2026-02-16T02:06:51Z|github-repository-search|f1495e7f5746445a269ec6a9d14fa8ac346b359d|2026-11-10
+1152|srchd|srchd|https://github.com/dust-tt/srchd|2025-07-28T20:04:44Z|github-repository-search|4b5ffb44bdc6bb1d2181d746ec951dd30f89ed08|2026-11-10
