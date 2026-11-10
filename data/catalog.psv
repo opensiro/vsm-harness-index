@@ -1152,3 +1152,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1151|yoagent|yoagent|https://github.com/yologdev/yoagent|2026-02-16T02:06:51Z|github-repository-search|f1495e7f5746445a269ec6a9d14fa8ac346b359d|2026-11-10
 1152|srchd|srchd|https://github.com/dust-tt/srchd|2025-07-28T20:04:44Z|github-repository-search|4b5ffb44bdc6bb1d2181d746ec951dd30f89ed08|2026-11-10
 1153|homerail|HomeRail|https://github.com/xiaotianfotos/homerail|2026-07-07T12:11:18Z|github-repository-search|7b734a06c712b454aad17b36ae385f120cfeb7bb|2026-11-10
+1154|frognano|FrogNano|https://github.com/microsoft/FrogNano|2026-08-25T15:56:06Z|github-repository-search|880dc674c075d7425908757b334eaca7c9e3185f|2026-11-10
