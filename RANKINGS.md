@@ -842,6 +842,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="reachai-enterpriseagentframework"></a>[ReachAI / EnterpriseAgentFramework](assessments/re/reachai-enterpriseagentframework.md) ([source](https://github.com/w8123/EnterpriseAgentFramework)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 2 | `A — — ? ? —` |
 | 6 | <a id="autoharness"></a>[AutoHarness](assessments/au/autoharness.md) ([source](https://github.com/aiming-lab/AutoHarness)) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="claw-code-agent"></a>[claw-code-agent](assessments/cl/claw-code-agent.md) ([source](https://github.com/HarnessLab/claw-code-agent)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="open-agent-sdk-python"></a>[Open Agent SDK Python](assessments/op/open-agent-sdk-python.md) ([source](https://github.com/codeany-ai/open-agent-sdk-python)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-code"></a>[Agent Code](assessments/ag/agent-code.md) ([source](https://github.com/avala-ai/agent-code)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="liumengxuan04-minicode"></a>[MiniCode](assessments/li/liumengxuan04-minicode.md) ([source](https://github.com/LiuMengxuan04/MiniCode)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="claw-code"></a>[Claw Code](assessments/cl/claw-code.md) ([source](https://github.com/ultraworkers/claw-code)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
