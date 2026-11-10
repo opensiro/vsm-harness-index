@@ -423,6 +423,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="haorui-agent-harness"></a>[Agent Harness](assessments/ha/haorui-agent-harness.md) ([source](https://github.com/haorui-harry/agent-harness)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="open-multi-agent"></a>[OMA / Open Multi-Agent](assessments/op/open-multi-agent.md) ([source](https://github.com/open-multi-agent/open-multi-agent)) | 2026-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
 | 5 | <a id="dodo"></a>[Dodo](assessments/do/dodo.md) ([source](https://github.com/jonnyparris/dodo)) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="salazar"></a>[Salazar](assessments/sa/salazar.md) ([source](https://github.com/shawnpetros/salazar)) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="revfactory-harness"></a>[Revfactory Harness](assessments/re/revfactory-harness.md) ([source](https://github.com/revfactory/harness)) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="defenseclaw"></a>[DefenseClaw](assessments/de/defenseclaw.md) ([source](https://github.com/cisco-ai-defense/defenseclaw)) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="kai-linux-agent-os"></a>[Agent-OS (kai-linux)](assessments/ka/kai-linux-agent-os.md) ([source](https://github.com/kai-linux/agent-os)) | 2026-Q1 | 2/6 | 1/5 | 2 | 1 | 1 | `A C C A P ?` |
