@@ -715,6 +715,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="rustcode"></a>[RustCode](assessments/ru/rustcode.md) ([source](https://github.com/LHagfoss/rustcode)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chief"></a>[Chief](assessments/ch/chief.md) ([source](https://github.com/SmileLikeYe/agent-chief)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="sift"></a>[SIFT](assessments/si/sift.md) ([source](https://github.com/KhanUzeb/SIFT)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
+| 6 | <a id="agentling"></a>[Agentling](assessments/ag/agentling.md) ([source](https://github.com/lunarstack-co/agentling)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rook"></a>[Rook](assessments/ro/rook.md) ([source](https://github.com/martian56/rook)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="durable-agent-harness"></a>[Durable Agent Harness](assessments/du/durable-agent-harness.md) ([source](https://github.com/Eldergenix/Durable-agent-harness)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="easylink-agent-runtime"></a>[Easylink Agent Runtime](assessments/ea/easylink-agent-runtime.md) ([source](https://github.com/easylink-ai-open/agent-runtime)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
