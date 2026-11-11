@@ -1183,3 +1183,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1182|sailry|Sailry|https://github.com/sailry/sailry-harness|2026-09-30T10:17:01Z|github-repository-search|eaad1b7f18e448c8c4e9e9286e19560c8a351ae1|2026-11-11
 1183|mist|mist|https://github.com/mist-agent-harness/mist-agent|2026-08-13T09:09:29Z|github-repository-search|4e87b332140ce3d2eabeff7b4e16532c2c56a6be|2026-11-11
 1184|wittycode|WittyCode|https://github.com/WittyRyuji/WittyCode|2026-11-11T08:25:53Z|github-repository-search|67af7d8fb0851cd4623c7b94993deddcb766ec1f|2026-11-11
+1185|endo|Endo|https://github.com/longsurf-ai/endo|2026-10-14T22:42:46Z|github-repository-search|bd7ec037f63d52766af5c80c82b8e185dd8b5380|2026-11-11
