@@ -1165,3 +1165,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1164|ruhui-agent|RuHui Agent|https://github.com/Andy1890/ruhui-agent|2026-11-08T11:31:18Z|github-repository-search|4bbff9f3094f5024edb7e25ba36b4c31d55df7d6|2026-11-11
 1165|codeden|CodeDen|https://github.com/leonvanzyl/codeden|2026-11-07T08:24:26Z|github-repository-search|8a05e5c2117b8ee5794f75538953a92e8f51b1ae|2026-11-11
 1166|borg|Borg|https://github.com/joydle/borg|2026-11-07T17:34:02Z|github-repository-search|be9d9cf613a16ef13772c3fc4ddcfae27321579d|2026-11-11
+1167|slack-agent-runtime|Slack Agent Runtime|https://github.com/sakomws/slack-agent-runtime|2026-11-06T09:10:36Z|github-repository-search|16bb262715b7bacb64c7466cf106063c2fdf6c93|2026-11-11
