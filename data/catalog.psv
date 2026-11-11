@@ -1176,3 +1176,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1175|gamai-trust-layer-rush|gamAI Trust Layer / rush|https://github.com/gamai-io/evidence-first-agent-runtime|2026-10-22T11:20:12Z|github-repository-search|0e02276df1c99c572949bec59fb8e7d20609a109|2026-11-11
 1176|cuijiejie-open-agent-harness|Open Agent Harness|https://github.com/cuijiejie/open-agent-harness|2026-11-04T05:53:33Z|github-repository-search|9673ebb1ab77e89042a95e6c64cf19e2e2794943|2026-11-11
 1177|heaw|heaw|https://github.com/DaDozlov/harness-agent|2026-11-03T09:17:15Z|github-repository-search|dfff7b2bfbd6fb08cb754461124ac8dab2053622|2026-11-11
+1178|hyperscale-agent-meta-harness|Hyperscale Agent Meta Harness|https://github.com/aws-samples/sample-hyperscale-agent-meta-harness|2026-10-27T13:33:20Z|github-repository-search|3f80c19d2007415b97dd446f7b55d00349dc714d|2026-11-11
