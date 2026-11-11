@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.8
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.8
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +19,7 @@ autonomy_s5: —
 
 # TIRx Harness
 
-**Proposed disposition:** `excluded-no-agentic-vsm`. TIRx is a substantive open-source GPU programming/compilation and benchmark *tool harness* useful to agents, not a first-party autonomous agent-runner distribution at this revision. The distinction concerns the Index's autonomous agent-harness inclusion boundary, not its engineering merit.
+**Canonical disposition:** `excluded-no-agentic-vsm`. TIRx is a substantive open-source GPU programming/compilation and benchmark *tool harness* useful to agents, not a first-party autonomous agent-runner distribution at this revision. The distinction concerns the Index's autonomous agent-harness inclusion boundary, not its engineering merit.
 
 ## Review boundary
 

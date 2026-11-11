@@ -1178,3 +1178,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1177|heaw|heaw|https://github.com/DaDozlov/harness-agent|2026-11-03T09:17:15Z|github-repository-search|dfff7b2bfbd6fb08cb754461124ac8dab2053622|2026-11-11
 1178|hyperscale-agent-meta-harness|Hyperscale Agent Meta Harness|https://github.com/aws-samples/sample-hyperscale-agent-meta-harness|2026-10-27T13:33:20Z|github-repository-search|3f80c19d2007415b97dd446f7b55d00349dc714d|2026-11-11
 1179|tiny-agent|tiny-agent|https://github.com/HowProgrammingWorks/Agent|2026-08-28T13:50:08Z|github-repository-search|d4822a9de234ff5dd7a2c7e40f1e2333b10c7827|2026-11-11
+1180|tirx-harness|TIRx Harness|https://github.com/mlc-ai/TIRx-harness|2026-09-29T16:30:57Z|github-repository-search|370b7461a4424edbd22238f6e6882b2a71e0ad5d|2026-11-11
