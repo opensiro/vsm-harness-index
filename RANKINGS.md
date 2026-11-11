@@ -559,6 +559,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="hyperflow-infinity"></a>[HyperFlow-Infinity](assessments/hy/hyperflow-infinity.md) ([source](https://github.com/Video-Rebirth/hyperflow-infinity)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="onethread"></a>[onethread](assessments/on/onethread.md) ([source](https://github.com/RogyMD/onethread)) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="cire-harness"></a>[cire-harness](assessments/ci/cire-harness.md) ([source](https://github.com/fathdemr/cire-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="gamai-trust-layer-rush"></a>[gamAI Trust Layer / rush](assessments/ga/gamai-trust-layer-rush.md) ([source](https://github.com/gamai-io/evidence-first-agent-runtime)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="android-agent-runtime"></a>[Android Agent Runtime](assessments/an/android-agent-runtime.md) ([source](https://github.com/NoHarry/android-agent-runtime)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="incidentops-ai"></a>[IncidentOps AI](assessments/in/incidentops-ai.md) ([source](https://github.com/Maherimtiyaz/triage-agent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="knowwork"></a>[KnowWork](assessments/kn/knowwork.md) ([source](https://github.com/knowflow-ai/KnowWork)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
