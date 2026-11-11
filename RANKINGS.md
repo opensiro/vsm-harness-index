@@ -21,6 +21,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 2 | <a id="autohand-code-cli"></a>[Autohand Code CLI](assessments/au/autohand-code-cli.md) ([source](https://github.com/autohandai/code-cli)) | 2025-Q4 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A A A(P) —` |
 | 2 | <a id="gptme"></a>[gptme](assessments/gp/gptme.md) ([source](https://github.com/gptme/gptme)) | 2023-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 3 | <a id="openrecoding"></a>[OpenRecoding](assessments/op/openrecoding.md) ([source](https://github.com/jiaxz/open-recoding)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
+| 3 | <a id="orchi"></a>[Orchi](assessments/or/orchi.md) ([source](https://github.com/adamentwistle/orchi-build)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
 | 3 | <a id="coworkos"></a>[CoworkOS](assessments/co/coworkos.md) ([source](https://github.com/RUC-NLPIR/CoworkOS)) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
 | 3 | <a id="multi-agent-harness"></a>[Multi-Agent Harness²](assessments/mu/multi-agent-harness.md) ([source](https://github.com/WeiminWu2000/Multi-Agent-Harness-2)) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
 | 3 | <a id="tram"></a>[Tram](assessments/tr/tram.md) ([source](https://github.com/taewooyo/tram)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |

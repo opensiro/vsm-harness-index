@@ -1169,3 +1169,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1168|lumak|LumaK|https://github.com/kuLm1Fs/lumak-ts|2026-11-08T05:48:35Z|github-repository-search|ef1d2ddb16630e537c205fadb11031ba7bae6131|2026-11-11
 1169|openrecoding|OpenRecoding|https://github.com/jiaxz/open-recoding|2026-11-07T11:37:41Z|github-repository-search|4d726930706bd24ff1f99803cf8e1678cae8c61b|2026-11-11
 1170|slack-agent-runtime|Slack Agent Runtime|https://github.com/sakomws/slack-agent-runtime|2026-11-06T09:10:36Z|github-repository-search|16bb262715b7bacb64c7466cf106063c2fdf6c93|2026-11-11
+1171|orchi|Orchi|https://github.com/adamentwistle/orchi-build|2026-11-04T13:04:06Z|github-repository-search|db5a720ad7cccfd579e26b7ced7a1bbdcf586306|2026-11-11
