@@ -26,7 +26,9 @@ autonomy_s5: —
 - Relevant environment: user requests, model providers, MCP/tool outcomes, individual OpenShell sandboxes, persisted conversations, cross-user resource and permission constraints, and administrator intervention.
 - Standard-distribution boundary: `src/agent/main_agent.py`, `src/chat/stream.py`, `src/web/routers`, `src/infra` and bundled web application. DeepAgents/LangGraph are imported execution dependencies rather than credited as separately operated first-party organizations.
 - Credited operating modes: configured model-backed multi-turn chat; administrator-governed operational monitoring and role/tool intervention across users; first-party tool dispatch, trace and audit recording.
+- Credited operating / distribution surfaces: shipped authenticated chat stream and agent graph, admin metrics/RBAC APIs, live per-user tool filtering and platform skill publication; external model and database services are deployment dependencies.
 - Adjacent surfaces excluded: developer tests, examples, external maintainers, independently deployed model or MCP servers, and any imagined audit actor not implemented in the shipped app.
+- Adjacent first-party surfaces excluded from ownership: repository developer CI and test suites, benchmark/demo paths, OSS maintainer processes and the installed third-party DeepAgents library's separate governance features.
 - Recursion level: each user/session model agent is an operational S1; the shared deployed platform and administrator constitute the current parent control boundary. Disabled-by-default general-purpose subagents are not counted as established additional S1 organizations.
 - Reviewed revision: `9673ebb1ab77e89042a95e6c64cf19e2e2794943` (source-static), 2026-11-11.
 - Generated Profile version: 0.2.4; Methodology version: 0.3.8.
@@ -83,6 +85,8 @@ Individual model agents select tools and subsequent actions from user instructio
 - Function: current whole-platform supervision of user/session operations and shared action/tool entitlements, with administrator intervention.
 - Disturbance / variety regulated: aggregate activity, failure/error conditions, excessive or disallowed actions, competing user access to privileged tool capabilities.
 - Decisive decision or feedback right: a legitimate administrator sees all-site recent per-turn metrics and cross-user activity and may disable a user, revise assigned roles or revise role-to-tool allocation for affected users.
+- Whole-system current view: administrator-only aggregated turn outcomes for all served users and accessible cross-user audit/users/traces, rather than just one model's chat narration.
+- Current-control decision scope: platform-wide role-to-tool entitlement revision and user-level disable/role adjustment, affecting future independently running agents rather than only a single current tool call.
 - Decision owner: authenticated human administrator (`is_admin`), not the ordinary agent, metrics service or RBAC cache.
 - Supporting / enforcement mechanisms: `/api/metrics/summary` global aggregates, cross-user user management, RBAC database, role-to-tool APIs, cache invalidation and `AgentManager.create_agent` tool filtering.
 - Closure path: active multi-user tasks emit metric/audit status → admin reviews site-wide operating constraints → admin changes user or role tool entitlements → `evict_all_agents` or per-user eviction and RBAC refresh → subsequent user agent instances receive revised accessible tools.
