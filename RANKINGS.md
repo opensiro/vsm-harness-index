@@ -260,6 +260,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="jarvis-ai-council"></a>[JARVIS AI Council](assessments/ja/jarvis-ai-council.md) ([source](https://github.com/berkesecicii/free-multi-agent-ai-council)) | 2026-Q4 | 2/6 | 1/5 | 2 | 1 | 0 | `A C A(P) C — —` |
 | 5 | <a id="loopsmith"></a>[LoopSmith](assessments/lo/loopsmith.md) ([source](https://github.com/Mohamed-jarboui/agent-runtime-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="rubin-johnson-maestro"></a>[Maestro](assessments/ru/rubin-johnson-maestro.md) ([source](https://github.com/rubin-johnson/maestro)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="heaw"></a>[heaw](assessments/he/heaw.md) ([source](https://github.com/DaDozlov/harness-agent)) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A A — C — —` |
 | 5 | <a id="local-agent-broker"></a>[Local Agent Broker](assessments/lo/local-agent-broker.md) ([source](https://github.com/BlackJaxDev/local-agent-broker)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="uni-robot-agent"></a>[Uni Robot Agent](assessments/un/uni-robot-agent.md) ([source](https://github.com/Open-RUA/uni-robot-agent)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="phuryn-mini-harness"></a>[Mini Harness](assessments/ph/phuryn-mini-harness.md) ([source](https://github.com/phuryn/mini-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
