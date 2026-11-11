@@ -576,6 +576,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="nonaut"></a>[Nonaut](assessments/no/nonaut.md) ([source](https://github.com/nolabs-ai/nonaut)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="durable-harness"></a>[durable-harness](assessments/du/durable-harness.md) ([source](https://github.com/vercel-labs/durable-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="discoveryrsi"></a>[DiscoveryRSI](assessments/di/discoveryrsi.md) ([source](https://github.com/Gen-Verse/DiscoveryRSI)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="endo"></a>[Endo](assessments/en/endo.md) ([source](https://github.com/longsurf-ai/endo)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="swarms-code"></a>[Swarms Code](assessments/sw/swarms-code.md) ([source](https://github.com/The-Swarm-Corporation/swarms-code)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pi-rust"></a>[pi-rust](assessments/pi/pi-rust.md) ([source](https://github.com/yannelli/pi-rust)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="codemowers-agent"></a>[Codemowers Agent](assessments/co/codemowers-agent.md) ([source](https://github.com/codemowers/agent)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
