@@ -511,6 +511,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="namidsh"></a>[NamiDSH](assessments/na/namidsh.md) ([source](https://github.com/aa1143/NamiDSH)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mint"></a>[mint](assessments/mi/mint.md) ([source](https://github.com/ketiyohannes/mint)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-control-tower"></a>[agent-control-tower](assessments/ag/agent-control-tower.md) ([source](https://github.com/evolution301/agent-control-tower)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A — P C — —` |
+| 6 | <a id="cuijiejie-open-agent-harness"></a>[Open Agent Harness](assessments/cu/cuijiejie-open-agent-harness.md) ([source](https://github.com/cuijiejie/open-agent-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="nexo"></a>[nexo](assessments/ne/nexo.md) ([source](https://github.com/Locotir/nexo)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mta"></a>[MTA (Minimal Terminal Agent)](assessments/mt/mta.md) ([source](https://github.com/Eric2i/minimal-terminal-agent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ai-chassis"></a>[ai-chassis](assessments/ai/ai-chassis.md) ([source](https://github.com/sergeiwallace/ai-chassis)) | 2026-Q4 | 1/6 | 0/5 | 3 | 0 | 0 | `A C C C — —` |
