@@ -1167,3 +1167,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1166|borg|Borg|https://github.com/joydle/borg|2026-11-07T17:34:02Z|github-repository-search|be9d9cf613a16ef13772c3fc4ddcfae27321579d|2026-11-11
 1167|axi|Axi|https://github.com/devsohm/axi|2026-11-09T09:31:32Z|github-repository-search|b1d0fe007535f1c59d08c1f06e014c4558a4862d|2026-11-11
 1168|lumak|LumaK|https://github.com/kuLm1Fs/lumak-ts|2026-11-08T05:48:35Z|github-repository-search|ef1d2ddb16630e537c205fadb11031ba7bae6131|2026-11-11
+1169|openrecoding|OpenRecoding|https://github.com/jiaxz/open-recoding|2026-11-07T11:37:41Z|github-repository-search|4d726930706bd24ff1f99803cf8e1678cae8c61b|2026-11-11
