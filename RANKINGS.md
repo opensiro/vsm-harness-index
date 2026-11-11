@@ -655,6 +655,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="labunbun-code"></a>[LaBunbun Code](assessments/la/labunbun-code.md) ([source](https://github.com/zayokami/labunbun-code)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="techjarves-mobile-harness"></a>[techjarves/Mobile-Harness](assessments/te/techjarves-mobile-harness.md) ([source](https://github.com/techjarves/Mobile-Harness)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="dsh-harness-one"></a>[Workflow One](assessments/ds/dsh-harness-one.md) ([source](https://github.com/chumingjun/dsh-harness-one)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="botler-agent"></a>[botler-agent](assessments/bo/botler-agent.md) ([source](https://github.com/crossoverJie/botler-agent)) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="ax-ecosystem"></a>[AX ecosystem](assessments/ax/ax-ecosystem.md) ([source](https://github.com/3-lines-studio/ax)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="motifcode"></a>[Motifcode](assessments/mo/motifcode.md) ([source](https://github.com/TaewoooPark/Motifcode)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="gear"></a>[Gear](assessments/ge/gear.md) ([source](https://github.com/rsi-gear/gear)) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
