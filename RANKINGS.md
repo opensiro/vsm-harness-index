@@ -552,6 +552,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="agent-harness-talktorana"></a>[Agent Harness (talktorana)](assessments/ag/agent-harness-talktorana.md) ([source](https://github.com/talktorana/agent-harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="darrenbuckner-agent-runtime"></a>[agent-runtime (darrenbuckner)](assessments/da/darrenbuckner-agent-runtime.md) ([source](https://github.com/darrenbuckner/agent-runtime)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="sceneevolve-code"></a>[SceneEvolve Code](assessments/sc/sceneevolve-code.md) ([source](https://github.com/haoyu-agent/SceneEvolve_Code)) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
+| 6 | <a id="hyperscale-agent-meta-harness"></a>[Hyperscale Agent Meta Harness](assessments/hy/hyperscale-agent-meta-harness.md) ([source](https://github.com/aws-samples/sample-hyperscale-agent-meta-harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A — P C — —` |
 | 6 | <a id="gogo-agent"></a>[gogo-agent](assessments/go/gogo-agent.md) ([source](https://github.com/DAgogo04/gogo-agent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="opentandem"></a>[OpenTandem](assessments/op/opentandem.md) ([source](https://github.com/opentandem/opentandem)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pico"></a>[pico](assessments/pi/pico.md) ([source](https://github.com/Picom-code/pico)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
