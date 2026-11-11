@@ -516,6 +516,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="blank"></a>[Blank](assessments/bl/blank.md) ([source](https://github.com/purplemacaron/blank)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A — — C P —` |
 | 6 | <a id="baldric"></a>[Baldric](assessments/ba/baldric.md) ([source](https://github.com/Ember452/baldric)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="gsh"></a>[gsh](assessments/gs/gsh.md) ([source](https://github.com/kuangxing6367/gsh)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="personal-agent-runtime"></a>[Personal Agent Runtime](assessments/pe/personal-agent-runtime.md) ([source](https://github.com/Sweetienite/personal-agent-runtime)) | 2026-Q4 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
 | 6 | <a id="atoll"></a>[Atoll](assessments/at/atoll.md) ([source](https://github.com/Teraverse-AI/atoll)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mark2"></a>[mark2](assessments/ma/mark2.md) ([source](https://github.com/dream-x/mark2)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="shim"></a>[Shim](assessments/sh/shim.md) ([source](https://github.com/Balanov/shim)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
