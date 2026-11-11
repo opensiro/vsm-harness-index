@@ -63,6 +63,11 @@ An agent receives a task brief and workspace, performs model-directed work using
 ## S2 — Coordination
 
 - State: C
+- Distinct S1 units: separate concurrently dispatched agent task executions, each owning its local model-directed implementation work on a registered Runner.
+- Inter-S1 disturbance: two or more independent task executions compete for bounded Runner capacity; a new dispatch can receive `RUNNER_AT_CAPACITY` while another S1 holds execution slots.
+- Attenuating coordination relation: Hub's Runner-capability and tag routing, explicit capacity-busy classification and persisted outbox retry defer the displaced task instead of falsely marking it executed or corrupting the incumbent.
+- Feedback into subsequent S1 behaviour: after backoff and renewed admission the displaced S1 is actually started, processes the original task context and returns a real receipt; failure/busy is visible to the orchestration state meanwhile.
+- Why this is S2-specific rather than generic communication / routing / sequencing / shared state / delegation: the source handles a named, observable interference among distinct operational task units over a finite common execution resource, and uses the returned capacity signal to alter when the next unit may act.
 - Function: attenuate runner-execution interference between separate agent tasks competing for bounded Runner capacity, allowing later S1 work to proceed without pretending a rejected dispatch succeeded.
 - Disturbance / variety regulated: simultaneous AI nodes requiring the same finite Runner slots, `RUNNER_AT_CAPACITY`, unavailable/incompatible machines and delayed remote acknowledgements.
 - Decisive decision or feedback right: first-party constructor-defined capacity routing, busy classification and scheduled requeue; there is no demonstrated model-owned arbitration of shared capacity.
@@ -79,6 +84,8 @@ An agent receives a task brief and workspace, performs model-directed work using
 ## S3 — Inside-and-now control
 
 - State: P
+- Whole-system current view: the Hub's multi-task issue/assignment/status board and live workflow state expose ongoing team commitments, failed work and available owner routes across issues rather than just one agent turn.
+- Current-control decision scope: a legitimate human team operator can reassign current work, change priority and decide which stopped/ready issue to resume within the workspace's common operational capacity; the updates return through task state and assignment notifications.
 - Function: maintain team-wide current issue commitments, ownership and priority, and return human portfolio intervention to the working operational cells.
 - Disturbance / variety regulated: multiple simultaneous team requests, unassigned work, failed or blocked workflows, changing priorities and responsibilities.
 - Decisive decision or feedback right: a human team operator edits issue priority/assignment or chooses the next start/rework; Hub enforces authorization and pushes the changed assignment into the relevant task/agent dispatch path.
@@ -95,6 +102,11 @@ An agent receives a task brief and workspace, performs model-directed work using
 ## S3* — Complementary audit
 
 - State: A
+- Claim being audited: an implementation agent's delivered commit is correct, secure, maintainable and satisfies the task's acceptance criteria.
+- Ordinary reporting path: the implementer returns a git revision/receipt and its own status through the Runner to the workflow engine; that result is not treated as sufficient audit evidence.
+- Complementary access path: the independent `ai_review` node is dispatched with the immutable commit and a separate isolated worktree, and instructed to read that repository reality directly and produce a fresh `code-review.json` rather than reuse an upstream completion summary.
+- Independence boundary: a distinct review-node attempt with its own workspace, code read rights, pinned target, read-only/no-merge instruction and fresh structured findings; runtime configuration may still use the same vendor/model, so the claim is operational independence of evidence and action, not guaranteed model diversity.
+- Who acts on findings: `workflow_engine` validates the review report, records attestation on approval or fails the node and returns change requests to implementation rework, subject to bounded retry/acceptance gates.
 - Function: independently examine an implementation's fixed code artifact against task acceptance and code quality requirements, and issue corrective findings to current execution control.
 - Disturbance / variety regulated: incorrect, insecure or unmaintainable implementations and false completion claims from the original executing agent.
 - Decisive decision or feedback right: a separately dispatched reviewer agent reads the pinned code revision, forms an AI-authored structured verdict and findings; the Hub validates evidence shape and deterministically initiates rework on `changes_requested`.
