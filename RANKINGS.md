@@ -251,6 +251,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="data-to-paper"></a>[data-to-paper](assessments/da/data-to-paper.md) ([source](https://github.com/Technion-Kishony-lab/data-to-paper)) | 2023-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A — — A A(P) —` |
 | 4 | <a id="cowagent"></a>[CowAgent](assessments/co/cowagent.md) ([source](https://github.com/zhayujie/CowAgent)) | 2022-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A C P — A A(P)` |
 | 4 | <a id="agno"></a>[Agno](assessments/ag/agno.md) ([source](https://github.com/agno-agi/agno)) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 5 | <a id="lumak"></a>[LumaK](assessments/lu/lumak.md) ([source](https://github.com/kuLm1Fs/lumak-ts)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="onion-harness"></a>[Onion Harness](assessments/on/onion-harness.md) ([source](https://github.com/chenofchina/onion-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 3 | 0 | `A A P — P P` |
 | 5 | <a id="agent-harness-ticket-team"></a>[Agent Harness (ticket team)](assessments/ag/agent-harness-ticket-team.md) ([source](https://github.com/bondie/agent-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="jarvis-ai-council"></a>[JARVIS AI Council](assessments/ja/jarvis-ai-council.md) ([source](https://github.com/berkesecicii/free-multi-agent-ai-council)) | 2026-Q4 | 2/6 | 1/5 | 2 | 1 | 0 | `A C A(P) C — —` |
