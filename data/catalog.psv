@@ -1162,3 +1162,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1161|agentdock|AgentDock|https://github.com/uvwt/agentdock|2026-05-25T13:05:50Z|github-repository-search|43b80c72fbd6b3952e7b46b311aa4eeaededdbde|2026-11-10
 1162|nonstop-agent|Nonstop Agent|https://github.com/seolcoding/nonstop-agent|2025-12-30T13:33:59Z|github-repository-search|bc950dcc36cb3fbe92388bd3616e0da53a3ed265|2026-11-10
 1163|salazar|Salazar|https://github.com/shawnpetros/salazar|2026-03-27T15:20:42Z|github-repository-search|e16841146e2ef2d71aa99117334939037e9804ff|2026-11-10
+1164|codeden|CodeDen|https://github.com/leonvanzyl/codeden|2026-11-07T08:24:26Z|github-repository-search|8a05e5c2117b8ee5794f75538953a92e8f51b1ae|2026-11-11
