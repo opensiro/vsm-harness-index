@@ -4,6 +4,7 @@ VSM Harness Index is the evidence-backed corpus of real agent-harness assessment
 
 ## I'm human
 
+- **I don't understand any of this:** [Show me the visual map](https://opensiro.com/vsm.html) — a direct, illustrated introduction to the VSM approach.
 - **Web overview:** [opensiro.com](https://opensiro.com)
 - **Index introduction:** [VSM Harness Index](https://opensiro.com/vsm-index.html)
 - **Browse harnesses (paginated):** [Harness Monitor](https://opensiro.com/harness-monitor.html)
