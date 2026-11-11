@@ -1180,3 +1180,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1179|tiny-agent|tiny-agent|https://github.com/HowProgrammingWorks/Agent|2026-08-28T13:50:08Z|github-repository-search|d4822a9de234ff5dd7a2c7e40f1e2333b10c7827|2026-11-11
 1180|tirx-harness|TIRx Harness|https://github.com/mlc-ai/TIRx-harness|2026-09-29T16:30:57Z|github-repository-search|370b7461a4424edbd22238f6e6882b2a71e0ad5d|2026-11-11
 1181|botler-agent|botler-agent|https://github.com/crossoverJie/botler-agent|2026-08-20T01:55:18Z|github-repository-search|6dd4986fd236f75053f15905f66adcb0df9a8431|2026-11-11
+1182|sailry|Sailry|https://github.com/sailry/sailry-harness|2026-09-30T10:17:01Z|github-repository-search|eaad1b7f18e448c8c4e9e9286e19560c8a351ae1|2026-11-11

@@ -128,6 +128,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="davecode"></a>[DaveCode](assessments/da/davecode.md) ([source](https://github.com/DMRLZZ/DaveCode)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="orca-trace-delange"></a>[Orca (Trace DeLange)](assessments/or/orca-trace-delange.md) ([source](https://github.com/tracedelange/orca)) | 2026-Q4 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="pi-foreman"></a>[pi-foreman](assessments/pi/pi-foreman.md) ([source](https://github.com/Shredi/pi-foreman)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
+| 4 | <a id="sailry"></a>[Sailry](assessments/sa/sailry.md) ([source](https://github.com/sailry/sailry-harness)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="feather"></a>[Feather](assessments/fe/feather.md) ([source](https://github.com/paper-instruments/feather-train)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="termagent"></a>[TermAgent](assessments/te/termagent.md) ([source](https://github.com/whoops-1/termagent)) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="bise"></a>[bise](assessments/bi/bise.md) ([source](https://github.com/gvergnaud/bise)) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
