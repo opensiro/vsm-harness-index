@@ -9,6 +9,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 1 | <a id="henterprise"></a>[Henterprise](assessments/he/henterprise.md) ([source](https://github.com/humbertobellor/henterprise)) | 2026-Q3 | 6/6 | 5/5 | 0 | 0 | 0 | `A A A A A A` |
 | 1 | <a id="ouroboros"></a>[Ouroboros](assessments/ou/ouroboros.md) ([source](https://github.com/razzant/ouroboros)) | 2026-Q1 | 6/6 | 5/5 | 0 | 2 | 0 | `A A A A A(P) A(P)` |
 | 2 | <a id="codeden"></a>[CodeDen](assessments/co/codeden.md) ([source](https://github.com/leonvanzyl/codeden)) | 2026-Q4 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A A A P` |
+| 2 | <a id="sapper-v2"></a>[sapper-v2](assessments/sa/sapper-v2.md) ([source](https://github.com/N1nEmAn/sapper-v2)) | 2026-Q4 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="headcount"></a>[Headcount](assessments/he/headcount.md) ([source](https://github.com/cbrock84/headcount)) | 2026-Q3 | 5/6 | 4/5 | 1 | 0 | 0 | `A A A C A A` |
 | 2 | <a id="cluxmate"></a>[CluxMate](assessments/cl/cluxmate.md) ([source](https://github.com/r1c7/CluxMate)) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="pi-rs"></a>[pi-rs](assessments/pi/pi-rs.md) ([source](https://github.com/CCherry07/pi-rs)) | 2026-Q3 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |

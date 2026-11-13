@@ -1191,3 +1191,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1190|helixharness|HelixHarness|https://github.com/didi/helixharness|2026-10-27T08:14:08Z|github-repository-search|8b23069fb464104ce556798ec69737f7eba469b3|2026-11-13
 1191|agent-autoloop|Agent Autoloop|https://github.com/KKKKhazix/agent-autoloop|2026-11-03T08:02:11Z|github-repository-search|55189165943bcdd39b113faceb97b8e1eeacabbd|2026-11-13
 1192|happyhands|HappyHands|https://github.com/ShuaiMXu/happyhands|2026-10-25T14:10:24Z|github-repository-search|d469a02cb9b98c5f1a85b05201f5401bbec20ebf|2026-11-13
+1193|sapper-v2|sapper-v2|https://github.com/N1nEmAn/sapper-v2|2026-10-30T15:12:35Z|github-repository-search|7b75e6f1f5d5b4ae0c55878b0dd0994d9b08f1fb|2026-11-13
