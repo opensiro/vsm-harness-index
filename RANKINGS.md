@@ -282,6 +282,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="asktravel-agent-harness"></a>[AskTravel Agent Harness](assessments/as/asktravel-agent-harness.md) ([source](https://github.com/stoicdataguy/asktravel-agent-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="opengeniemaster"></a>[OpenGenieMaster](assessments/op/opengeniemaster.md) ([source](https://github.com/eust-w/opengeniemaster)) | 2026-Q4 | 2/6 | 1/5 | 3 | 0 | 0 | `A A C C C —` |
 | 5 | <a id="agentorg"></a>[AgentOrg](assessments/ag/agentorg.md) ([source](https://github.com/uniac-ai/AgentOrg)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
+| 5 | <a id="happyhands"></a>[HappyHands](assessments/ha/happyhands.md) ([source](https://github.com/ShuaiMXu/happyhands)) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 1 | `A — P A ? P` |
 | 5 | <a id="pydromon"></a>[pydromon](assessments/py/pydromon.md) ([source](https://github.com/sgeos/pydromon)) | 2026-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A A P — — —` |
 | 5 | <a id="init-agent"></a>[INIT-Agent](assessments/in/init-agent.md) ([source](https://github.com/nagisanzenin/INIT-Agent)) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 1 | `A — P ? A P` |
 | 5 | <a id="sora-harness"></a>[Sora Harness](assessments/so/sora-harness.md) ([source](https://github.com/S0ra233/Sora-Harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
