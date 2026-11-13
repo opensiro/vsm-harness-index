@@ -1187,3 +1187,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1186|soduwork|SoduWork|https://github.com/mdiri-ai/SoduWork|2026-10-29T02:43:14Z|github-repository-search|97b9c2118a966869a862ef3aa3181ccb77c3dd3b|2026-11-11
 1187|roboharness|RoboHarness|https://github.com/BinceQu/RoboHarness|2026-10-07T04:39:45Z|github-repository-search|69b811646beaf6409194fc505ee70fb45e12da44|2026-11-11
 1188|line-harness|Line Harness|https://github.com/LineLuLan/line-harness|2026-11-07T09:53:17Z|github-repository-search|63c98c60b18cfe603381890e104a043627b35ccf|2026-11-11
+1189|dsh-superagent|dsh-superagent|https://github.com/deepseek-ai/dsh-superagent-prototype|2026-10-31T09:32:46Z|github-repository-search|8c32a9dc5d72c033816c6a8110b37f40cf94fba4|2026-11-13
