@@ -1185,3 +1185,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1184|wittycode|WittyCode|https://github.com/WittyRyuji/WittyCode|2026-11-11T08:25:53Z|github-repository-search|67af7d8fb0851cd4623c7b94993deddcb766ec1f|2026-11-11
 1185|endo|Endo|https://github.com/longsurf-ai/endo|2026-10-14T22:42:46Z|github-repository-search|bd7ec037f63d52766af5c80c82b8e185dd8b5380|2026-11-11
 1186|soduwork|SoduWork|https://github.com/mdiri-ai/SoduWork|2026-10-29T02:43:14Z|github-repository-search|97b9c2118a966869a862ef3aa3181ccb77c3dd3b|2026-11-11
+1187|roboharness|RoboHarness|https://github.com/BinceQu/RoboHarness|2026-10-07T04:39:45Z|github-repository-search|69b811646beaf6409194fc505ee70fb45e12da44|2026-11-11
