@@ -113,6 +113,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="tirith"></a>[Tirith](assessments/ti/tirith.md) ([source](https://github.com/andreseloysv/Tirith)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="colony"></a>[colony](assessments/co/colony.md) ([source](https://github.com/yusa-imit/colony)) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A A A C — —` |
 | 4 | <a id="leadkit"></a>[Leadkit](assessments/le/leadkit.md) ([source](https://github.com/MattGrundy/leadkit)) | 2026-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A A C(P) A — P` |
+| 4 | <a id="helixharness"></a>[HelixHarness](assessments/he/helixharness.md) ([source](https://github.com/didi/helixharness)) | 2026-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A A P A C P` |
 | 4 | <a id="recurse"></a>[Recurse](assessments/re/recurse.md) ([source](https://github.com/ebetica/recurse)) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="orco"></a>[Orco](assessments/or/orco.md) ([source](https://github.com/CJVigil/Orco)) | 2026-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A A C(P) A — P` |
 | 4 | <a id="friday"></a>[Friday](assessments/fr/friday.md) ([source](https://github.com/splashxmoon/friday)) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
