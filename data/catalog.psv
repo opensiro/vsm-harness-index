@@ -1193,3 +1193,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1192|happyhands|HappyHands|https://github.com/ShuaiMXu/happyhands|2026-10-25T14:10:24Z|github-repository-search|d469a02cb9b98c5f1a85b05201f5401bbec20ebf|2026-11-13
 1193|sapper-v2|sapper-v2|https://github.com/N1nEmAn/sapper-v2|2026-10-30T15:12:35Z|github-repository-search|7b75e6f1f5d5b4ae0c55878b0dd0994d9b08f1fb|2026-11-13
 1194|ai-scientist-v3|AI-Scientist-v3|https://github.com/SakanaAI/AI-Scientist-v3|2026-10-11T13:20:48Z|manual-discovery|df8313889a004f8a44a472e19a833cd547bb828a|2026-11-14
+1195|akmatori|Akmatori|https://github.com/akmatori/akmatori|2025-12-29T22:53:58Z|manual-discovery|be62d926fe6d92dceb5cf12e9a95cb587433cdf1|2026-11-14
