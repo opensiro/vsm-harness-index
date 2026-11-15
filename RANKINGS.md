@@ -817,6 +817,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="gagans-agent-os"></a>[agent-os](assessments/ga/gagans-agent-os.md) ([source](https://github.com/gagans23/agent-os)) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C — — P —` |
 | 6 | <a id="aohp"></a>[AOHP](assessments/ao/aohp.md) ([source](https://github.com/aohp-os/aohp)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="octopus"></a>[Octopus](assessments/oc/octopus.md) ([source](https://github.com/zwpdbh/octopus-in-rust)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="agenticos"></a>[AgenticOS](assessments/ag/agenticos.md) ([source](https://github.com/patil-shubham-dev/AgenticOS)) | 2026-Q2 | 1/6 | 0/5 | 2 | 1 | 1 | `A C P C — ?` |
 | 6 | <a id="smallcode"></a>[SmallCode](assessments/sm/smallcode.md) ([source](https://github.com/Doorman11991/smallcode)) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A — — C P —` |
 | 6 | <a id="open-code-review"></a>[OpenCodeReview](assessments/op/open-code-review.md) ([source](https://github.com/alibaba/open-code-review)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="peezy"></a>[Peezy](assessments/pe/peezy.md) ([source](https://github.com/p0systems/peezy-cli)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
