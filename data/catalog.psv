@@ -1203,3 +1203,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1202|intentd|Intentd|https://github.com/intent-hq/intentd|2026-06-17T13:26:39Z|github-repository-search|1d20c2aefafe69395e1a2ec5a82fee988743a564|2026-11-15
 1203|sovereign|Sovereign|https://github.com/HexaField/sovereign|2026-03-11T10:05:19Z|github-repository-search|a485bb260556b11140606f6de194459902a9977c|2026-11-15
 1204|houston|Houston|https://github.com/theogmiguel/houston|2026-09-19T02:43:31Z|github-repository-search|ade380fd1a4696c232c4f1fc671331b9a1ee08f3|2026-11-15
+1205|agenticos|AgenticOS|https://github.com/patil-shubham-dev/AgenticOS|2026-05-18T17:50:45Z|github-repository-search|d9c91c66cc3d32f78074ffc96cfd365f6368a80b|2026-11-15
