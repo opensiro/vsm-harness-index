@@ -1202,3 +1202,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1201|agentrove|Agentrove|https://github.com/Mng-dev-ai/agentrove|2025-12-15T00:46:56Z|github-repository-search|a1cfe4999f50646b00dcab696483d1526071291b|2026-11-15
 1202|intentd|Intentd|https://github.com/intent-hq/intentd|2026-06-17T13:26:39Z|github-repository-search|1d20c2aefafe69395e1a2ec5a82fee988743a564|2026-11-15
 1203|sovereign|Sovereign|https://github.com/HexaField/sovereign|2026-03-11T10:05:19Z|github-repository-search|a485bb260556b11140606f6de194459902a9977c|2026-11-15
+1204|houston|Houston|https://github.com/theogmiguel/houston|2026-09-19T02:43:31Z|github-repository-search|ade380fd1a4696c232c4f1fc671331b9a1ee08f3|2026-11-15
