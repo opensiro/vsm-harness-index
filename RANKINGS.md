@@ -784,6 +784,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="agent-harness-from-scratch"></a>[agent-harness-from-scratch](assessments/ag/agent-harness-from-scratch.md) ([source](https://github.com/sudhanshu-shivam-dev/agent-harness-from-scratch)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openzot"></a>[OpenZot](assessments/op/openzot.md) ([source](https://github.com/openzot/openzot)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="smolcode"></a>[Smolcode](assessments/sm/smolcode.md) ([source](https://github.com/seanpoyner/smolcode)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 3 | `A ? ? ? — —` |
+| 6 | <a id="devspace"></a>[DevSpace](assessments/de/devspace.md) ([source](https://github.com/Waishnav/devspace)) | 2026-Q2 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="tau"></a>[Tau](assessments/ta/tau.md) ([source](https://github.com/huggingface/tau)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="autonomous-coding-agent"></a>[Autonomous Coding Agent](assessments/au/autonomous-coding-agent.md) ([source](https://github.com/Quality-Max/autonomous-coding-agent)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cycode"></a>[CYCode](assessments/cy/cycode.md) ([source](https://github.com/ChaoYue0307/CYCode)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
