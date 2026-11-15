@@ -767,6 +767,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="beecork"></a>[beecork](assessments/be/beecork.md) ([source](https://github.com/beecork/beecork)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mocode"></a>[MoCode](assessments/mo/mocode.md) ([source](https://github.com/wanxunyang/mocode)) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="oblivion-ai"></a>[Oblivion AI](assessments/ob/oblivion-ai.md) ([source](https://github.com/Rohith-s-hub/Oblivion-agent)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="lemma"></a>[Lemma](assessments/le/lemma.md) ([source](https://github.com/lemma-work/lemma-platform)) | 2026-Q2 | 1/6 | 0/5 | 1 | 2 | 1 | `A C ? — P P` |
 | 6 | <a id="venux-code"></a>[Venux Code](assessments/ve/venux-code.md) ([source](https://github.com/venux/venux-code)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="apogee"></a>[Apogee](assessments/ap/apogee.md) ([source](https://github.com/airiclenz/apogee)) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="einoclaw"></a>[Einoclaw](assessments/ei/einoclaw.md) ([source](https://github.com/YellowDusk04/einoclaw)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
