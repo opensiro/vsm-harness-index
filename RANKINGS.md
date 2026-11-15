@@ -489,6 +489,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="trpc-agent-go"></a>[tRPC-Agent-Go](assessments/tr/trpc-agent-go.md) ([source](https://github.com/trpc-group/trpc-agent-go)) | 2025-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C — — A(P) —` |
 | 5 | <a id="deepcode"></a>[DeepCode](assessments/de/deepcode.md) ([source](https://github.com/HKUDS/DeepCode)) | 2025-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="kilo-code"></a>[Kilo Code](assessments/ki/kilo-code.md) ([source](https://github.com/Kilo-Org/kilocode)) | 2025-Q1 | 2/6 | 1/5 | 2 | 1 | 0 | `A A C(P) C — —` |
+| 5 | <a id="flujo"></a>[FLUJO](assessments/fl/flujo.md) ([source](https://github.com/mario-andreschak/FLUJO)) | 2025-Q1 | 2/6 | 1/5 | 0 | 3 | 0 | `A — P — A(P) P` |
 | 5 | <a id="claude-code"></a>[Claude Code](assessments/cl/claude-code.md) ([source](https://github.com/anthropics/claude-code)) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="agenticseek"></a>[AgenticSeek](assessments/ag/agenticseek.md) ([source](https://github.com/Fosowl/agenticSeek)) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="worldgui"></a>[WorldGUI-Agent](assessments/wo/worldgui.md) ([source](https://github.com/showlab/WorldGUI)) | 2025-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
