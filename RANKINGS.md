@@ -57,6 +57,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="loom"></a>[Loom](assessments/lo/loom.md) ([source](https://github.com/nickthelegend/loom)) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="aura-code"></a>[Aura Code](assessments/au/aura-code.md) ([source](https://github.com/DusanCar-sudo/aura-code)) | 2026-Q3 | 4/6 | 3/5 | 1 | 1 | 0 | `A A A(P) A C —` |
 | 3 | <a id="metis"></a>[Metis](assessments/me/metis.md) ([source](https://github.com/Wholiver/metis)) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="intentd"></a>[Intentd](assessments/in/intentd.md) ([source](https://github.com/intent-hq/intentd)) | 2026-Q2 | 4/6 | 3/5 | 0 | 1 | 1 | `A A A A ? P` |
 | 3 | <a id="sanook-cli"></a>[Sanook CLI](assessments/sa/sanook-cli.md) ([source](https://github.com/Sir-chawakorn/sanook-cli)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
 | 3 | <a id="omnigent"></a>[Omnigent](assessments/om/omnigent.md) ([source](https://github.com/omnigent-ai/omnigent)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="neo"></a>[Neo](assessments/ne/neo.md) ([source](https://github.com/matrixheaven/neo)) | 2026-Q2 | 4/6 | 3/5 | 1 | 2 | 0 | `A C A(P) A — A(P)` |
