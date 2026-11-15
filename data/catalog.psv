@@ -1196,3 +1196,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1195|akmatori|Akmatori|https://github.com/akmatori/akmatori|2025-12-29T22:53:58Z|manual-discovery|be62d926fe6d92dceb5cf12e9a95cb587433cdf1|2026-11-14
 1196|mu|mu|https://github.com/qybaihe/mu|2026-09-22T11:56:05Z|github-repository-search|ba0aeb2d2a6f6caa5809f7bb314642827bc11a96|2026-11-15
 1197|comet|Comet|https://github.com/rpamis/comet|2026-05-14T09:22:35Z|github-repository-search|78b1b11ae75648c6f387e01d889f2ef097d6e8df|2026-11-15
+1198|flujo|FLUJO|https://github.com/mario-andreschak/FLUJO|2025-02-26T20:23:56Z|github-repository-search|968a495afe85ae93f078738812a0985f615dae71|2026-11-15
