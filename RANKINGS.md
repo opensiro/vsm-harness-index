@@ -209,6 +209,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="pydantic-ai-harness"></a>[Pydantic AI Harness](assessments/py/pydantic-ai-harness.md) ([source](https://github.com/pydantic/pydantic-ai-harness)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A — A A C —` |
 | 4 | <a id="clawkeeper"></a>[ClawKeeper](assessments/cl/clawkeeper.md) ([source](https://github.com/SafeAI-Lab-X/ClawKeeper)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
 | 4 | <a id="citadel"></a>[Citadel](assessments/ci/citadel.md) ([source](https://github.com/SethGammon/Citadel)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 1 | `A C A ? A —` |
+| 4 | <a id="sovereign"></a>[Sovereign](assessments/so/sovereign.md) ([source](https://github.com/HexaField/sovereign)) | 2026-Q1 | 3/6 | 2/5 | 0 | 2 | 2 | `A A A(P) ? ? P` |
 | 4 | <a id="scion-gcp"></a>[Scion (Google Cloud)](assessments/sc/scion-gcp.md) ([source](https://github.com/GoogleCloudPlatform/scion)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="limina"></a>[Limina](assessments/li/limina.md) ([source](https://github.com/theam/limina)) | 2026-Q1 | 3/6 | 2/5 | 1 | 3 | 0 | `A C A(P) — A(P) P` |
 | 4 | <a id="agent-starter-kit"></a>[Agent Starter Kit](assessments/ag/agent-starter-kit.md) ([source](https://github.com/ntorga/agent-starter-kit)) | 2026-Q1 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |

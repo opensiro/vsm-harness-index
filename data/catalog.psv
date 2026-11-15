@@ -1201,3 +1201,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1200|devspace|DevSpace|https://github.com/Waishnav/devspace|2026-06-14T16:57:27Z|github-repository-search|559781284677e5b128aa44a2c95f8bdb0c72b7c0|2026-11-15
 1201|agentrove|Agentrove|https://github.com/Mng-dev-ai/agentrove|2025-12-15T00:46:56Z|github-repository-search|a1cfe4999f50646b00dcab696483d1526071291b|2026-11-15
 1202|intentd|Intentd|https://github.com/intent-hq/intentd|2026-06-17T13:26:39Z|github-repository-search|1d20c2aefafe69395e1a2ec5a82fee988743a564|2026-11-15
+1203|sovereign|Sovereign|https://github.com/HexaField/sovereign|2026-03-11T10:05:19Z|github-repository-search|a485bb260556b11140606f6de194459902a9977c|2026-11-15
