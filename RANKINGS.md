@@ -39,6 +39,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="halo-harness"></a>[Halo Harness](assessments/ha/halo-harness.md) ([source](https://github.com/roloVibes/Halo-Harness)) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A P —` |
 | 3 | <a id="openorc"></a>[OpenOrc](assessments/op/openorc.md) ([source](https://github.com/davejj1530/openorc)) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A P A — A(P)` |
 | 3 | <a id="ferrule"></a>[Ferrule](assessments/fe/ferrule.md) ([source](https://github.com/maximarhipkin/ferrule)) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
+| 3 | <a id="mu"></a>[mu](assessments/mu/mu.md) ([source](https://github.com/qybaihe/mu)) | 2026-Q3 | 4/6 | 3/5 | 0 | 3 | 0 | `A A A(P) A P P` |
 | 3 | <a id="coding-orchestrator"></a>[Coding Orchestrator](assessments/co/coding-orchestrator.md) ([source](https://github.com/davesheffer/coding-orchestrator)) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="pragmatic-orchestration"></a>[Pragmatic Orchestration](assessments/pr/pragmatic-orchestration.md) ([source](https://github.com/CodeAlive-AI/pragmatic-orchestration)) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="aeven"></a>[Aeven](assessments/ae/aeven.md) ([source](https://github.com/Aeven-AI/Aeven)) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
