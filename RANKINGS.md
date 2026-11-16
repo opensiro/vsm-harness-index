@@ -443,6 +443,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="senweavercoding"></a>[SenWeaverCoding](assessments/se/senweavercoding.md) ([source](https://github.com/senweaver/SenWeaverCoding)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="meta-agent"></a>[Meta-Agent](assessments/me/meta-agent.md) ([source](https://github.com/canvas-org/meta-agent)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C — A —` |
 | 5 | <a id="djcode"></a>[DJcode](assessments/dj/djcode.md) ([source](https://github.com/darshjme/djcode)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="librecode"></a>[LibreCode](assessments/li/librecode.md) ([source](https://github.com/omarluq/librecode)) | 2026-Q2 | 2/6 | 1/5 | 0 | 1 | 0 | `A — A(P) — — —` |
 | 5 | <a id="deimos"></a>[Deimos](assessments/de/deimos.md) ([source](https://github.com/dxiv/dxa-deimos)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="bareagent"></a>[BareAgent](assessments/ba/bareagent.md) ([source](https://github.com/525300887039/BareAgent)) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="haorui-agent-harness"></a>[Agent Harness](assessments/ha/haorui-agent-harness.md) ([source](https://github.com/haorui-harry/agent-harness)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
