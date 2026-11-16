@@ -1225,3 +1225,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1224|conardli-easy-agent|Easy Agent|https://github.com/ConardLi/easy-agent|2026-04-10T14:25:59Z|github-repository-search|48314ccec4b3bbbd119ceebb4c62eebc90bc8d3c|2026-11-16
 1225|gocode|gocode|https://github.com/AlleyBo55/gocode|2026-04-01T09:21:38Z|github-repository-search|d941b2af44f4c71fcf279e815fcfb785eab51c2a|2026-11-16
 1226|fetch|Fetch|https://github.com/Traves-Theberge/Fetch|2026-02-01T20:25:27Z|github-repository-search|efb6e0b4a8b72e436929b44a355a29d02e72a221|2026-11-16
+1227|openvlharness|OpenVLHarness|https://github.com/uclanlp/OpenVLHarness|2026-10-15T06:01:30Z|github-repository-search|c080224d31774fcf1b3c0f55abb71d143f7f3501|2026-11-16
