@@ -1213,3 +1213,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1212|samizdat|Samizdat|https://github.com/samizdat-code/samizdat|2026-08-21T20:22:35Z|github-repository-search|6202b4fc4ce7b6d67025ef321b49d86d178f15a0|2026-11-16
 1213|uh-universal-harness|UH — Universal Harness|https://github.com/Antoine-Thomas/UH-Universal-Harness|2026-11-11T18:00:19Z|github-repository-search|5b63113bc6096779500bb1c99e624919bcf48fc0|2026-11-16
 1214|librecode|LibreCode|https://github.com/omarluq/librecode|2026-04-06T00:41:00Z|github-repository-search|1e7ba321306bc5e01a58f4ee9c53f18178f2cb96|2026-11-16
+1215|openevolve|OpenEvolve|https://github.com/algorithmicsuperintelligence/openevolve|2025-05-15T11:46:52Z|github-repository-search|88efea9ea1c5698bb4a5db037bf3cd78644802d5|2026-11-16
