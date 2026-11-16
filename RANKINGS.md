@@ -754,6 +754,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="sandbase-harness"></a>[SandBase Harness](assessments/sa/sandbase-harness.md) ([source](https://github.com/sandbaseai/sandbase-harness)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="waku-agent"></a>[Waku Agent](assessments/wa/waku-agent.md) ([source](https://github.com/ShenSeanChen/waku-agent)) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="sema-coder"></a>[Sema Coder](assessments/se/sema-coder.md) ([source](https://github.com/sema-lisp/sema-coder)) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
+| 6 | <a id="docatlas-harness"></a>[DocAtlas Harness](assessments/do/docatlas-harness.md) ([source](https://github.com/microsoft/DocAtlas-Harness)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rocinante"></a>[Rocinante](assessments/ro/rocinante.md) ([source](https://github.com/djynnius/rocinante)) | 2026-Q3 | 1/6 | 0/5 | 3 | 0 | 0 | `A C — C C —` |
 | 6 | <a id="paseka"></a>[Paseka](assessments/pa/paseka.md) ([source](https://github.com/russ-p/paseka)) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="tura"></a>[Tura](assessments/tu/tura.md) ([source](https://github.com/Tura-AI/tura)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
