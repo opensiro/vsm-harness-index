@@ -1134,3 +1134,4 @@ catalog_position|harness_id|signature
 1213|uh-universal-harness|UH closes a model-directed tool loop in each session. Its local operator can change default inference using the cockpit overview and governs remote free-router access. Dream returns proposals as plans for the operator.
 1214|librecode|LibreCode's root model can inspect and cancel durable coding subagents, while the operator can inspect and stop whole scripted workflows from the same session's terminal.
 1215|openevolve|OpenEvolve evolves code using model edits and fitness feedback. Optional coevolution stabilizes peer scoring through frozen opponent sets, and an injected island selector can reallocate the work of a live run.
+1216|byob|byob runs model-led desktop and browser chat turns. Its shared inference leases protect peer cache slots, while workspace operators decide which new tools to retain and which foreign plugins to trust.
