@@ -8,7 +8,7 @@ generated_profile_version: 0.2.4
 generated_assessment_procedure_version: 0.3.8
 profile_version: 0.2.4
 assessment_procedure_version: 0.3.8
-status: proposed
+status: excluded-no-agentic-vsm
 autonomy_s1: —
 autonomy_s2: —
 autonomy_s3: —
@@ -19,7 +19,7 @@ autonomy_s5: —
 
 # vigent
 
-**Proposed disposition:** `excluded-no-agentic-vsm`. Vigent ships substantial supervision, isolation and review of separately installed agent harnesses. The reviewed distribution does not close the agent-owned S1 loop required for inclusion in the general Index.
+**Canonical disposition:** `excluded-no-agentic-vsm`. Vigent ships substantial supervision, isolation and review of separately installed agent harnesses. The reviewed distribution does not close the agent-owned S1 loop required for inclusion in the general Index.
 
 ## Review boundary
 
