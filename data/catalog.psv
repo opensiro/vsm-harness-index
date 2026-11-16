@@ -1206,3 +1206,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1205|agenticos|AgenticOS|https://github.com/patil-shubham-dev/AgenticOS|2026-05-18T17:50:45Z|github-repository-search|d9c91c66cc3d32f78074ffc96cfd365f6368a80b|2026-11-15
 1206|swarm-agent-kit|Swarm Agent Kit|https://github.com/moseleydev/swarm-kit|2026-03-26T10:19:53Z|github-repository-search|56cc87688feaaa4ac9ded2e5ee65b7e7ceeb34cb|2026-11-16
 1207|praktor|Praktor|https://github.com/mtzanidakis/praktor|2026-02-13T13:59:23Z|github-repository-search|194025ff7f1451bb20d301bb8dc26818133eb450|2026-11-16
+1208|daytona-background-agents|Daytona Background Agents|https://github.com/jamesmurdza/background-agents|2026-03-02T08:51:12Z|github-repository-search|1b4d4d76be8e3e9bedec77ac0fc4f6124715d4e3|2026-11-16

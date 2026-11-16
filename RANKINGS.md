@@ -924,6 +924,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="airecon"></a>[AIRecon](assessments/ai/airecon.md) ([source](https://github.com/pikpikcu/airecon)) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A — — C C —` |
 | 6 | <a id="rust-code"></a>[rust-code](assessments/ru/rust-code.md) ([source](https://github.com/fortunto2/rust-code)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="looptroop"></a>[LoopTroop](assessments/lo/looptroop.md) ([source](https://github.com/looptroop-ai/LoopTroop)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="daytona-background-agents"></a>[Daytona Background Agents](assessments/da/daytona-background-agents.md) ([source](https://github.com/jamesmurdza/background-agents)) | 2026-Q1 | 1/6 | 0/5 | 1 | 2 | 0 | `A C P — P —` |
 | 6 | <a id="masters-of-ai-harness"></a>[Masters of AI Harness](assessments/ma/masters-of-ai-harness.md) ([source](https://github.com/mastersof-ai/harness)) | 2026-Q1 | 1/6 | 0/5 | 3 | 3 | 0 | `A — C(P) — C(P) C(P)` |
 | 6 | <a id="symphony"></a>[Symphony](assessments/sy/symphony.md) ([source](https://github.com/openai/symphony)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="smelt"></a>[Smelt](assessments/sm/smelt.md) ([source](https://github.com/leonardcser/smelt)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
