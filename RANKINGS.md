@@ -13,6 +13,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 2 | <a id="houston"></a>[Houston](assessments/ho/houston.md) ([source](https://github.com/theogmiguel/houston)) | 2026-Q3 | 5/6 | 4/5 | 0 | 3 | 0 | `A A A(P) A A(P) P` |
 | 2 | <a id="headcount"></a>[Headcount](assessments/he/headcount.md) ([source](https://github.com/cbrock84/headcount)) | 2026-Q3 | 5/6 | 4/5 | 1 | 0 | 0 | `A A A C A A` |
 | 2 | <a id="cluxmate"></a>[CluxMate](assessments/cl/cluxmate.md) ([source](https://github.com/r1c7/CluxMate)) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
+| 2 | <a id="samizdat"></a>[Samizdat](assessments/sa/samizdat.md) ([source](https://github.com/samizdat-code/samizdat)) | 2026-Q3 | 5/6 | 4/5 | 1 | 1 | 0 | `A C A(P) A A A` |
 | 2 | <a id="pi-rs"></a>[pi-rs](assessments/pi/pi-rs.md) ([source](https://github.com/CCherry07/pi-rs)) | 2026-Q3 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="argus-agent"></a>[Argus](assessments/ar/argus-agent.md) ([source](https://github.com/microsoft/ArgusAgent)) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="dao-code"></a>[Dao Code](assessments/da/dao-code.md) ([source](https://github.com/tigicion/dao-code)) | 2026-Q2 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
