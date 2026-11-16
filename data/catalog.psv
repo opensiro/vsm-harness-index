@@ -1217,3 +1217,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1216|byob|byob|https://github.com/Scronkfinkle/byob|2026-11-09T23:59:19Z|github-repository-search|f32aa7a31bdf696e8ab1dbb686db151ba402738b|2026-11-16
 1217|pine-trie|pine·trie|https://github.com/halecraft/pinetrie|2026-10-26T20:32:10Z|github-repository-search|0f4483f4aa86058347448f616848b475cb8c0fa5|2026-11-16
 1218|vigent|vigent|https://github.com/farming-labs/vigent|2026-11-07T00:59:11Z|github-repository-search|16a071f366c6507c7f275008e3af4009488884cc|2026-11-16
+1219|poco|Poco|https://github.com/poco-ai/poco-claw|2026-01-08T10:48:17Z|github-repository-search|f4055e64f66e547a687206bac6e1891a97409448|2026-11-16
