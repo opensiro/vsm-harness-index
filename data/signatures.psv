@@ -1139,3 +1139,4 @@ catalog_position|harness_id|signature
 1219|poco|Poco runs separate channel agents through a model-backed SDK executor, while server operators own team-wide task priorities and agent identity; stored task claims do not themselves resolve cross-agent conflicts.
 1220|orloj|A Go-native agent loop executes declarative AgentSystems; human operators set portfolio policies and system membership, while graph joins and separately scored EvalRuns have unverified S2 and S3* feedback closure.
 1221|legion|Legion owns model-selected Lua tool execution as S1, while task-owned child agents, pre-execution second-model code guards, and host-configured rate limits supply no proven organization-level S2-S5 closure.
+1222|pydantic-deep|A coding lead runs parallel isolated branches, intervenes in active commitments alongside an operator mode, and can use a separate artifact judge before adopting one branch; operator-selected guidance carries project lessons into later sessions.
