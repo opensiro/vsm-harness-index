@@ -896,6 +896,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="harness-evolver"></a>[Harness Evolver](assessments/ha/harness-evolver.md) ([source](https://github.com/raphaelchristi/harness-evolver)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="herdr"></a>[Herdr](assessments/he/herdr.md) ([source](https://github.com/herdrdev/herdr)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ori-runtime"></a>[Ori Runtime](assessments/or/ori-runtime.md) ([source](https://github.com/ori-platform/ori-runtime)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="swarm-agent-kit"></a>[Swarm Agent Kit](assessments/sw/swarm-agent-kit.md) ([source](https://github.com/moseleydev/swarm-kit)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="wedow-harness"></a>[wedow Harness](assessments/we/wedow-harness.md) ([source](https://github.com/wedow/harness)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="boundflow"></a>[BoundFlow](assessments/bo/boundflow.md) ([source](https://github.com/boundflow/boundflow)) | 2026-Q1 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="agency-os"></a>[Agency-OS](assessments/ag/agency-os.md) ([source](https://github.com/swarm-ai-research/agency-os)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
