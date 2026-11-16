@@ -1136,3 +1136,4 @@ catalog_position|harness_id|signature
 1215|openevolve|OpenEvolve evolves code using model edits and fitness feedback. Optional coevolution stabilizes peer scoring through frozen opponent sets, and an injected island selector can reallocate the work of a live run.
 1216|byob|byob runs model-led desktop and browser chat turns. Its shared inference leases protect peer cache slots, while workspace operators decide which new tools to retain and which foreign plugins to trust.
 1217|pine-trie|pine·trie runs model-backed coding in isolated thread lanes. A bundled round model can task a peer to resolve a conflict or dependency. Operators choose the accepted baseline, persistent setup and lane grants.
+1219|poco|Poco runs separate channel agents through a model-backed SDK executor, while server operators own team-wide task priorities and agent identity; stored task claims do not themselves resolve cross-agent conflicts.

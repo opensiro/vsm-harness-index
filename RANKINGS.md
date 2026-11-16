@@ -986,6 +986,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="opensre"></a>[OpenSRE](assessments/op/opensre.md) ([source](https://github.com/Tracer-Cloud/opensre)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="kandev"></a>[Kandev](assessments/ka/kandev.md) ([source](https://github.com/kdlbs/kandev)) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 1 | `A C P ? — —` |
 | 6 | <a id="agent-of-empires"></a>[Agent of Empires](assessments/ag/agent-of-empires.md) ([source](https://github.com/agent-of-empires/agent-of-empires)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="poco"></a>[Poco](assessments/po/poco.md) ([source](https://github.com/poco-ai/poco-claw)) | 2026-Q1 | 1/6 | 0/5 | 0 | 2 | 1 | `A — P — ? P` |
 | 6 | <a id="yylo"></a>[YYLO](assessments/yy/yylo.md) ([source](https://github.com/yylo-dev/yylo)) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="shelley"></a>[Shelley](assessments/sh/shelley.md) ([source](https://github.com/boldsoftware/shelley)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nonstop-agent"></a>[Nonstop Agent](assessments/no/nonstop-agent.md) ([source](https://github.com/seolcoding/nonstop-agent)) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
