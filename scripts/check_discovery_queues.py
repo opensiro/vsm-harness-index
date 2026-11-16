@@ -46,10 +46,18 @@ REMAINING_OCCUPANCY_RE = re.compile(
     re.IGNORECASE,
 )
 BATCH_OCCUPANCY_RE = re.compile(r"Batch occupancy:\s*\*{0,2}(\d+)/10", re.IGNORECASE)
-FROZEN_QUEUE_RE = re.compile(r"\bbatch\b[^\n]{0,120}\bfrozen\b", re.IGNORECASE)
+FROZEN_QUEUE_RE = re.compile(
+    r"(?:\bbatch\b[^\n]{0,120}\bfrozen\b"
+    r"|\bfrozen\s+candidates?(?:\s+map)?\b"
+    r"|\bimmutable\s+(?:five[- ]candidate\s+)?(?:discovery\s+)?intake\b)",
+    re.IGNORECASE,
+)
 SOURCE_CANDIDATE_RE = re.compile(r"Source candidate batch:\s*#(\d+)", re.IGNORECASE)
 IMMUTABLE_DISCOVERY_OWNER_RE = re.compile(
-    r"\bImmutable discovery owner\s*:?\s*\[?#(\d+)\]?", re.IGNORECASE
+    # The source intake may be named with Markdown bold punctuation.
+    r"\bImmutable\s+(?:discovery owner|source-discovery owner|candidate intake)"
+    r"\*{0,2}:?\*{0,2}\s*\[?#(\d+)\]?",
+    re.IGNORECASE,
 )
 GITHUB_URL_RE = re.compile(r"(?:https://github\.com/)?([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)")
 REVIEW_REF_RE = re.compile(r"\b[0-9a-fA-F]{40}\b")
@@ -171,7 +179,7 @@ def parse_candidate_rows(body: str) -> list[tuple[str, str | None]]:
             (
                 i
                 for i, cell in enumerate(header)
-                if cell in {"repository", "canonical repository", "canonical repo"}
+                if cell in {"repository", "canonical repository", "canonical repo", "canonical source", "original repository"}
             ),
             None,
         )
