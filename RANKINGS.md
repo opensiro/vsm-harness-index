@@ -1016,6 +1016,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="agentrl"></a>[AgentRL](assessments/ag/agentrl.md) ([source](https://github.com/THUDM/AgentRL)) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="shannon"></a>[Shannon](assessments/sh/shannon.md) ([source](https://github.com/Kocoro-lab/Shannon)) | 2025-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — C — — —` |
 | 6 | <a id="vtcode"></a>[VTCode](assessments/vt/vtcode.md) ([source](https://github.com/vinhnx/VTCode)) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="hivemind"></a>[Hivemind](assessments/hi/hivemind.md) ([source](https://github.com/Emiyaaaaa/HiveMind)) | 2025-Q3 | 1/6 | 0/5 | 0 | 2 | 2 | `A ? P ? — P` |
 | 6 | <a id="youtu-agent"></a>[Youtu-Agent](assessments/yo/youtu-agent.md) ([source](https://github.com/TencentCloudADP/youtu-agent)) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="repomaster"></a>[RepoMaster](assessments/re/repomaster.md) ([source](https://github.com/QuantaAlpha/RepoMaster)) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pi"></a>[Pi](assessments/pi/pi.md) ([source](https://github.com/earendil-works/pi)) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
