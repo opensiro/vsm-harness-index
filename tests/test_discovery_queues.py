@@ -100,6 +100,89 @@ class DiscoveryQueueParsingTests(unittest.TestCase):
             ],
         )
 
+    def test_parse_source_and_original_repository_header_variants(self) -> None:
+        # Actual frozen intake #3135 and serial controller #3201 use these aliases.
+        for header, cell in (
+            ("Canonical source", "[owner/alpha](https://github.com/owner/alpha)"),
+            ("Original repository", "`owner/alpha`"),
+        ):
+            with self.subTest(header=header):
+                body = (
+                    f"| # | Project | {header} | Frozen review_ref |\n"
+                    "| ---: | --- | --- | --- |\n"
+                    f"| 1 | Alpha | {cell} | `{'a' * 40}` |\n"
+                )
+                self.assertEqual(
+                    module.parse_candidate_rows(body),
+                    [("owner/alpha", "a" * 40)],
+                )
+
+    def test_immutable_intake_qualifies_as_historical_frozen_batch(self) -> None:
+        # These are explicit immutable/frozen intake markers, not incidental SHA pins.
+        for body in (
+            "## Immutable five-candidate intake\n",
+            "## Immutable five-candidate discovery intake\n",
+            "## Frozen candidate map\n",
+            "## Frozen candidates\n",
+        ):
+            with self.subTest(body=body):
+                self.assertTrue(module.is_frozen_control_queue(body))
+        self.assertFalse(module.is_frozen_control_queue("Review ref frozen at HEAD."))
+        self.assertFalse(module.is_frozen_control_queue("Candidate batch occupancy 3/10."))
+
+    def test_current_serial_controller_owner_link_forms(self) -> None:
+        for body, owner in (
+            ("**Immutable candidate intake:** [#3135](https://github.com/opensiro/vsm-harness-index/issues/3135)", 3135),
+            ("Immutable source-discovery owner: [#3200](https://github.com/opensiro/vsm-harness-index/issues/3200)", 3200),
+        ):
+            with self.subTest(owner=owner):
+                self.assertEqual(module.source_candidate_batch(body), owner)
+                self.assertTrue(module.is_frozen_control_queue(body))
+        self.assertIsNone(module.source_candidate_batch("Related candidate intake #3135 is not the owner"))
+
+    def test_immutable_intake_and_controller_ignore_only_completed_rows(self) -> None:
+        ref_a, ref_b = "a" * 40, "b" * 40
+        issues = [
+            {
+                "number": 3135,
+                "title": "[Candidate batch] Frozen candidates",
+                "body": (
+                    "## Immutable five-candidate intake\n"
+                    "| # | Project | Canonical source | Frozen review_ref |\n"
+                    "| ---: | --- | --- | --- |\n"
+                    f"| 1 | Done | [owner/done](https://github.com/owner/done) | `{ref_a}` |\n"
+                    f"| 2 | Pending | [owner/pending](https://github.com/owner/pending) | `{ref_b}` |\n"
+                ),
+            },
+            {
+                "number": 3136,
+                "title": "[Assessment batch] Serial controller",
+                "body": (
+                    "**Immutable candidate intake:** [#3135](https://github.com/opensiro/vsm-harness-index/issues/3135)\n"
+                    "| # | Candidate | Original repository | Pinned review_ref |\n"
+                    "| ---: | --- | --- | --- |\n"
+                    f"| 1 | Done | `owner/done` | `{ref_a}` |\n"
+                    f"| 2 | Pending | `owner/pending` | `{ref_b}` |\n"
+                ),
+            },
+        ]
+        api = mock.Mock()
+        api.open_issues.return_value = issues
+        entries, occupancies, errors = module.active_queue_entries(api, "owner/index")
+        self.assertEqual(errors, [])
+        self.assertEqual(len(entries), 4)
+        self.assertEqual(occupancies, {})
+        active, errors, warnings = module.classify_queue_entries(
+            entries,
+            included={"owner/done": "owner/done"},
+            proposed={},
+            catalog_names={"owner/done": "owner/done"},
+        )
+        self.assertEqual((errors, warnings), ([], []))
+        self.assertEqual(len(active), 2)
+        self.assertTrue(all(e.repository == "owner/pending" for e in active))
+        self.assertEqual(module.logical_queue_numbers(active), [3135])
+
     def test_source_candidate_batch_routes_assessment_control(self) -> None:
         body = "Source candidate batch: #918\nFrozen refs: copied unchanged from #918"
         self.assertEqual(module.source_candidate_batch(body), 918)
