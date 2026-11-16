@@ -913,6 +913,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="autonomouscodingagent"></a>[AutonomousCodingAgent](assessments/au/autonomouscodingagent.md) ([source](https://github.com/robertnathe/AutonomousCodingAgent)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="orca-stablyai"></a>[Orca](assessments/or/orca-stablyai.md) ([source](https://github.com/stablyai/orca)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="paddles"></a>[Paddles](assessments/pa/paddles.md) ([source](https://github.com/spoke-sh/paddles)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="orloj"></a>[Orloj](assessments/or/orloj.md) ([source](https://github.com/OrlojHQ/orloj)) | 2026-Q1 | 1/6 | 0/5 | 0 | 2 | 2 | `A ? P ? — P` |
 | 6 | <a id="talon"></a>[Talon](assessments/ta/talon.md) ([source](https://github.com/dylanneve1/talon)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ares"></a>[ARES](assessments/ar/ares.md) ([source](https://github.com/Timwood0x10/ARES)) | 2026-Q1 | 1/6 | 0/5 | 3 | 2 | 0 | `A C C(P) — C(P) —` |
 | 6 | <a id="rum"></a>[Rum](assessments/ru/rum.md) ([source](https://github.com/KAJdev/rum)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
