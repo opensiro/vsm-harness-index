@@ -80,6 +80,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="kinu"></a>[Kinu](assessments/ki/kinu.md) ([source](https://github.com/AshishKumar4/kinu)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="surogates"></a>[Surogates](assessments/su/surogates.md) ([source](https://github.com/invergent-ai/surogates)) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="marveen"></a>[Marveen](assessments/ma/marveen.md) ([source](https://github.com/Szotasz/marveen)) | 2026-Q2 | 4/6 | 3/5 | 1 | 3 | 0 | `A A A(P) A C(P) P` |
+| 3 | <a id="wuu"></a>[Wuu](assessments/wu/wuu.md) ([source](https://github.com/blueberrycongee/wuu)) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A A P P` |
 | 3 | <a id="mateclaw"></a>[MateClaw](assessments/ma/mateclaw.md) ([source](https://github.com/mateaix/mateclaw)) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) — A(P) —` |
 | 3 | <a id="openharness-hkuds"></a>[OpenHarness (HKUDS)](assessments/op/openharness-hkuds.md) ([source](https://github.com/HKUDS/OpenHarness)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="openrig"></a>[OpenRig](assessments/op/openrig.md) ([source](https://github.com/mvschwarz/openrig)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
