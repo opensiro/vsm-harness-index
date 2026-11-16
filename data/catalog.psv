@@ -1209,3 +1209,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1208|daytona-background-agents|Daytona Background Agents|https://github.com/jamesmurdza/background-agents|2026-03-02T08:51:12Z|github-repository-search|1b4d4d76be8e3e9bedec77ac0fc4f6124715d4e3|2026-11-16
 1209|wuu|Wuu|https://github.com/blueberrycongee/wuu|2026-04-06T18:59:44Z|github-repository-search|5ef7adcb8a967346ec98d2da693b92d8a4200fc9|2026-11-16
 1210|armada|Armada|https://github.com/jchristn/Armada|2026-03-09T06:13:50Z|github-repository-search|bc1114bc72dfb491793f02ddf9bb2fff381d1bb2|2026-11-16
+1211|docatlas-harness|DocAtlas Harness|https://github.com/microsoft/DocAtlas-Harness|2026-07-10T09:44:07Z|github-repository-search|183be5498432b0e911e6e74daa177f8b6fd2532f|2026-11-16
