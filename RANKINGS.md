@@ -232,6 +232,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="orka"></a>[Orka](assessments/or/orka.md) ([source](https://github.com/orka-agents/orka)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="agenthub"></a>[AgentHub](assessments/ag/agenthub.md) ([source](https://github.com/hawkingrei/agenthub)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="chorus"></a>[Chorus](assessments/ch/chorus.md) ([source](https://github.com/Chorus-AIDLC/Chorus)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
+| 4 | <a id="fetch"></a>[Fetch](assessments/fe/fetch.md) ([source](https://github.com/Traves-Theberge/Fetch)) | 2026-Q1 | 3/6 | 2/5 | 0 | 2 | 0 | `A A A(P) — — P` |
 | 4 | <a id="sd0x-dev-flow"></a>[sd0x-dev-flow](assessments/sd/sd0x-dev-flow.md) ([source](https://github.com/sd0xdev/sd0x-harness)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="your-claude-engineer"></a>[Your Claude Engineer](assessments/yo/your-claude-engineer.md) ([source](https://github.com/coleam00/your-claude-engineer)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="ecc"></a>[Everything Claude Code (ECC)](assessments/ec/ecc.md) ([source](https://github.com/affaan-m/ECC)) | 2026-Q1 | 3/6 | 2/5 | 2 | 2 | 0 | `A C C(P) A A(P) —` |
