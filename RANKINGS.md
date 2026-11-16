@@ -946,6 +946,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="masfactory"></a>[MASFactory](assessments/ma/masfactory.md) ([source](https://github.com/BUPT-GAMMA/MASFactory)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentoven"></a>[AgentOven](assessments/ag/agentoven.md) ([source](https://github.com/agentoven/agentoven)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="maki"></a>[Maki](assessments/ma/maki.md) ([source](https://github.com/tontinton/maki)) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="praktor"></a>[Praktor](assessments/pr/praktor.md) ([source](https://github.com/mtzanidakis/praktor)) | 2026-Q1 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="diodide-harness"></a>[Harness](assessments/di/diodide-harness.md) ([source](https://github.com/DIodide/Harness)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nasiko"></a>[Nasiko](assessments/na/nasiko.md) ([source](https://github.com/Nasiko-Labs/nasiko)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
 | 6 | <a id="fractale"></a>[fractale](assessments/fr/fractale.md) ([source](https://github.com/converged-computing/fractale)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
