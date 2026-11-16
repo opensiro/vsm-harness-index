@@ -202,6 +202,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="nanoharness"></a>[NanoHarness](assessments/na/nanoharness.md) ([source](https://github.com/semi-hollow/NanoHarness)) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
 | 4 | <a id="dendrophis"></a>[Dendrophis](assessments/de/dendrophis.md) ([source](https://github.com/sp1d3rx/dendrophis)) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="ahe"></a>[Agentic Harness Engineering](assessments/ah/ahe.md) ([source](https://github.com/china-qijizhifeng/agentic-harness-engineering)) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
+| 4 | <a id="conardli-easy-agent"></a>[Easy Agent](assessments/co/conardli-easy-agent.md) ([source](https://github.com/ConardLi/easy-agent)) | 2026-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="synapscli"></a>[SynapsCLI](assessments/sy/synapscli.md) ([source](https://github.com/HaseebKhalid1507/SynapsCLI)) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="epic-harness"></a>[Epic Harness](assessments/ep/epic-harness.md) ([source](https://github.com/epicsagas/epic-harness)) | 2026-Q2 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="kimchi"></a>[Kimchi](assessments/ki/kimchi.md) ([source](https://github.com/getkimchi/kimchi)) | 2026-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
