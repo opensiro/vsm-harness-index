@@ -102,6 +102,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="zeroshot"></a>[zeroshot](assessments/ze/zeroshot.md) ([source](https://github.com/the-open-engine/zeroshot)) | 2025-Q4 | 4/6 | 3/5 | 1 | 0 | 0 | `A C A A A —` |
 | 3 | <a id="agent-swarm"></a>[Agent Swarm](assessments/ag/agent-swarm.md) ([source](https://github.com/desplega-ai/agent-swarm)) | 2025-Q4 | 4/6 | 3/5 | 1 | 0 | 0 | `A A A A C —` |
 | 3 | <a id="gastown"></a>[Gas Town](assessments/ga/gastown.md) ([source](https://github.com/gastownhall/gastown)) | 2025-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="pydantic-deep"></a>[Pydantic Deep](assessments/py/pydantic-deep.md) ([source](https://github.com/vstorm-co/pydantic-deepagents)) | 2025-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A P —` |
 | 3 | <a id="octomind"></a>[Octomind](assessments/oc/octomind.md) ([source](https://github.com/Muvon/octomind)) | 2025-Q2 | 4/6 | 3/5 | 0 | 1 | 0 | `A — A A A(P) —` |
 | 3 | <a id="blade-code"></a>[Blade Code](assessments/bl/blade-code.md) ([source](https://github.com/echoVic/blade-code)) | 2025-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="sica"></a>[SICA](assessments/si/sica.md) ([source](https://github.com/MaximeRobeyns/self_improving_coding_agent)) | 2025-Q2 | 4/6 | 3/5 | 1 | 0 | 0 | `A C A A A —` |

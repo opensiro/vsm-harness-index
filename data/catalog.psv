@@ -1220,3 +1220,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1219|poco|Poco|https://github.com/poco-ai/poco-claw|2026-01-08T10:48:17Z|github-repository-search|f4055e64f66e547a687206bac6e1891a97409448|2026-11-16
 1220|orloj|Orloj|https://github.com/OrlojHQ/orloj|2026-03-14T23:50:50Z|github-repository-search|43173acfcf777e77c834f0cb87edee53d06f235a|2026-11-16
 1221|legion|Legion|https://github.com/software-mansion/legion|2025-12-29T21:50:17Z|github-repository-search|24322c80bf194fe392e3f282ac1a4434aecd5696|2026-11-16
+1222|pydantic-deep|Pydantic Deep|https://github.com/vstorm-co/pydantic-deepagents|2025-11-29T14:36:36Z|github-repository-search|650b592b6accd7dc994226abbaa0cf717527e457|2026-11-16
