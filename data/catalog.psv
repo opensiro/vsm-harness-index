@@ -1211,3 +1211,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1210|armada|Armada|https://github.com/jchristn/Armada|2026-03-09T06:13:50Z|github-repository-search|bc1114bc72dfb491793f02ddf9bb2fff381d1bb2|2026-11-16
 1211|docatlas-harness|DocAtlas Harness|https://github.com/microsoft/DocAtlas-Harness|2026-07-10T09:44:07Z|github-repository-search|183be5498432b0e911e6e74daa177f8b6fd2532f|2026-11-16
 1212|samizdat|Samizdat|https://github.com/samizdat-code/samizdat|2026-08-21T20:22:35Z|github-repository-search|6202b4fc4ce7b6d67025ef321b49d86d178f15a0|2026-11-16
+1213|uh-universal-harness|UH — Universal Harness|https://github.com/Antoine-Thomas/UH-Universal-Harness|2026-11-11T18:00:19Z|github-repository-search|5b63113bc6096779500bb1c99e624919bcf48fc0|2026-11-16
