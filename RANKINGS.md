@@ -741,6 +741,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="manyhands"></a>[Manyhands](assessments/ma/manyhands.md) ([source](https://github.com/mjoneill/manyhands)) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 1 | `A C P — — ?` |
 | 6 | <a id="purrcode"></a>[PurrCode](assessments/pu/purrcode.md) ([source](https://github.com/Weilin0723/PurrCode)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="actweave"></a>[ActWeave](assessments/ac/actweave.md) ([source](https://github.com/chenow9/act-weave)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="browsentic"></a>[Browsentic](assessments/br/browsentic.md) ([source](https://github.com/imshaikot/browsentic)) | 2026-Q3 | 1/6 | 0/5 | 1 | 3 | 0 | `A C P — P P` |
 | 6 | <a id="trueforge"></a>[TrueForge](assessments/tr/trueforge.md) ([source](https://github.com/truefoundry/trueforge)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent-context-lab"></a>[Agent Context Lab](assessments/ag/agent-context-lab.md) ([source](https://github.com/Qin-sor/agent-context-lab)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="evidenceloom"></a>[Evidence Loom](assessments/ev/evidenceloom.md) ([source](https://github.com/simonguo/evidenceloom)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |

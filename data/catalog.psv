@@ -1230,3 +1230,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1229|kybern|Kybern|https://github.com/Tresnanda/kybern|2026-09-03T05:00:25Z|github-repository-search|7489196e4d63cde31a97e705e57f0dcdab889338|2026-11-17
 1230|sloop|Sloop|https://github.com/hamish-mackie/sloop|2026-07-15T11:58:40Z|github-repository-search|0d86a9193e80e9527f6ad3b09904030d6a2877ed|2026-11-17
 1231|polar-prorl-agent-server|Polar (ProRL Agent Server)|https://github.com/NVIDIA-NeMo/ProRL-Agent-Server|2025-09-24T04:07:13Z|github-repository-search|ff9a83605ba0b44fed1331ec60cc9d9f31b1e1d1|2026-11-17
+1232|browsentic|Browsentic|https://github.com/imshaikot/browsentic|2026-07-24T23:02:32Z|github-repository-search|9c0892a457e86cf2a5c3d1f4a8eea7eeb0900632|2026-11-17
