@@ -38,6 +38,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="opencode-jarvis"></a>[OpenCode Jarvis](assessments/op/opencode-jarvis.md) ([source](https://github.com/yizhi0107-bot/opencode-jarvis)) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="autoresearchlab"></a>[AutoResearchLab](assessments/au/autoresearchlab.md) ([source](https://github.com/TaewiKim/autoresearchlab)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 1 | `A ? A A A(P) —` |
 | 3 | <a id="velloc-runtime"></a>[Velloc Runtime](assessments/ve/velloc-runtime.md) ([source](https://github.com/VellocLabs/velloc-runtime)) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="agt"></a>[agt](assessments/ag/agt.md) ([source](https://github.com/blacsheep/agt)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) — A —` |
 | 3 | <a id="halo-harness"></a>[Halo Harness](assessments/ha/halo-harness.md) ([source](https://github.com/roloVibes/Halo-Harness)) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A P —` |
 | 3 | <a id="openorc"></a>[OpenOrc](assessments/op/openorc.md) ([source](https://github.com/davejj1530/openorc)) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A P A — A(P)` |
 | 3 | <a id="ferrule"></a>[Ferrule](assessments/fe/ferrule.md) ([source](https://github.com/maximarhipkin/ferrule)) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
