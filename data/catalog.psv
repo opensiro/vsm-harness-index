@@ -1245,3 +1245,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1244|agensh|Agensh|https://github.com/microsoft/Agensh|2026-08-27T02:56:13Z|github-repository-search|2dae4e14a653da48549fd9aa093f834841475d6c|2026-11-18
 1245|rojak|Rojak|https://github.com/StreetLamb/rojak|2024-12-26T04:33:26Z|github-repository-search|51966e6b8b03e8908eed80aafe0f63cdfee80b5f|2026-11-18
 1246|codex-orchestrator|Codex Orchestrator|https://github.com/kingbootoshi/codex-orchestrator|2026-01-17T05:56:49Z|github-repository-search|035d5813a1d93c4d8385ee4d5ff09a9416f6a749|2026-11-18
+1247|omegacode|omegacode|https://github.com/SawyerHood/omegacode|2026-06-05T21:40:36Z|github-repository-search|748d686a7950b3466e8d7fd014db32c4fb9fccf5|2026-11-18
