@@ -1238,3 +1238,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1237|raxol-agent|Raxol Agent|https://github.com/DROOdotFOO/raxol-agent|2026-11-13T23:02:40Z|github-repository-search|e5b500988139674f39d957309b1db34988edc08a|2026-11-17
 1238|bowra|Bowra|https://github.com/Bowra/Bowra|2026-10-28T10:56:09Z|github-repository-search|c6f444b112c57f686ef7d0b7a0c814663e667293|2026-11-17
 1239|af4j|AF4J|https://github.com/datallmhub/agentflow4j|2026-04-29T12:38:27Z|github-repository-search|f9a7353f43f8a760d4f2d589f8d8eaf7e1c9a506|2026-11-17
+1240|eta|eta|https://github.com/0xfe-project/eta|2026-10-06T12:55:08Z|github-repository-search|6b62da886b225391a157c7486e93b85aef73a17c|2026-11-17
