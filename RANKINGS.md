@@ -463,6 +463,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="salazar"></a>[Salazar](assessments/sa/salazar.md) ([source](https://github.com/shawnpetros/salazar)) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="revfactory-harness"></a>[Revfactory Harness](assessments/re/revfactory-harness.md) ([source](https://github.com/revfactory/harness)) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="defenseclaw"></a>[DefenseClaw](assessments/de/defenseclaw.md) ([source](https://github.com/cisco-ai-defense/defenseclaw)) | 2026-Q1 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="fleet"></a>[Fleet](assessments/fl/fleet.md) ([source](https://github.com/sbluemin/fleet-harness)) | 2026-Q1 | 2/6 | 1/5 | 1 | 1 | 2 | `A C A ? ? P` |
 | 5 | <a id="kai-linux-agent-os"></a>[Agent-OS (kai-linux)](assessments/ka/kai-linux-agent-os.md) ([source](https://github.com/kai-linux/agent-os)) | 2026-Q1 | 2/6 | 1/5 | 2 | 1 | 1 | `A C C A P ?` |
 | 5 | <a id="chassis"></a>[Chassis](assessments/ch/chassis.md) ([source](https://github.com/theo-kirby/chassis)) | 2026-Q1 | 2/6 | 1/5 | 0 | 1 | 0 | `A — A(P) — — —` |
 | 5 | <a id="wasp"></a>[WASP](assessments/wa/wasp.md) ([source](https://github.com/agentwasp/agentwasp)) | 2026-Q1 | 2/6 | 1/5 | 4 | 2 | 0 | `A C C(P) C A C(P)` |

@@ -1240,3 +1240,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1239|af4j|AF4J|https://github.com/datallmhub/agentflow4j|2026-04-29T12:38:27Z|github-repository-search|f9a7353f43f8a760d4f2d589f8d8eaf7e1c9a506|2026-11-17
 1240|eta|eta|https://github.com/0xfe-project/eta|2026-10-06T12:55:08Z|github-repository-search|6b62da886b225391a157c7486e93b85aef73a17c|2026-11-17
 1241|runtime-ai-scientist|Runtime AI Scientist|https://github.com/systemind-team/Runtime-AI-Scientist|2026-09-14T17:28:16Z|github-repository-search|16dc9399b21ebe4deffac25e40129341cc1ecef1|2026-11-17
+1242|fleet|Fleet|https://github.com/sbluemin/fleet-harness|2026-03-17T13:12:17Z|github-repository-search|2d763d6f2ea831b19c6cbbcf345ace054348105d|2026-11-17
