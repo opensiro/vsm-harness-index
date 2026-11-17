@@ -1242,3 +1242,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1241|runtime-ai-scientist|Runtime AI Scientist|https://github.com/systemind-team/Runtime-AI-Scientist|2026-09-14T17:28:16Z|github-repository-search|16dc9399b21ebe4deffac25e40129341cc1ecef1|2026-11-17
 1242|fleet|Fleet|https://github.com/sbluemin/fleet-harness|2026-03-17T13:12:17Z|github-repository-search|2d763d6f2ea831b19c6cbbcf345ace054348105d|2026-11-17
 1243|hivegate|HiveGate|https://github.com/hivegate-ai/hivegate|2026-05-27T22:02:00Z|github-repository-search|96b918ba7834a2aaa914fbe3f0e1b40d4e6497f0|2026-11-17
+1244|agensh|Agensh|https://github.com/microsoft/Agensh|2026-08-27T02:56:13Z|github-repository-search|2dae4e14a653da48549fd9aa093f834841475d6c|2026-11-18
