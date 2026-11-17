@@ -1228,3 +1228,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1227|openvlharness|OpenVLHarness|https://github.com/uclanlp/OpenVLHarness|2026-10-15T06:01:30Z|github-repository-search|c080224d31774fcf1b3c0f55abb71d143f7f3501|2026-11-16
 1228|hivemind|Hivemind|https://github.com/Emiyaaaaa/HiveMind|2025-08-28T09:15:44Z|github-repository-search|05f7d3e79cd24f75b432bcddfe5aa0877eb5a64b|2026-11-16
 1229|kybern|Kybern|https://github.com/Tresnanda/kybern|2026-09-03T05:00:25Z|github-repository-search|7489196e4d63cde31a97e705e57f0dcdab889338|2026-11-17
+1230|sloop|Sloop|https://github.com/hamish-mackie/sloop|2026-07-15T11:58:40Z|github-repository-search|0d86a9193e80e9527f6ad3b09904030d6a2877ed|2026-11-17

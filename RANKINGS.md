@@ -384,6 +384,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="penguin-harness"></a>[PenguinHarness](assessments/pe/penguin-harness.md) ([source](https://github.com/Prism-Shadow/penguin-harness)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="klaat-code"></a>[Klaat Code](assessments/kl/klaat-code.md) ([source](https://github.com/KlaatAI/klaatcode)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="khanuzeb-axiom"></a>[AXIOM](assessments/kh/khanuzeb-axiom.md) ([source](https://github.com/KhanUzeb/AXIOM)) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C — A — —` |
+| 5 | <a id="sloop"></a>[Sloop](assessments/sl/sloop.md) ([source](https://github.com/hamish-mackie/sloop)) | 2026-Q3 | 2/6 | 1/5 | 1 | 2 | 0 | `A C P A — P` |
 | 5 | <a id="grok-build"></a>[Grok Build](assessments/gr/grok-build.md) ([source](https://github.com/xai-org/grok-build)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 4 | `A ? A ? ? ?` |
 | 5 | <a id="evidence-bench"></a>[Evidence Bench](assessments/ev/evidence-bench.md) ([source](https://github.com/kstawiski/evidence-gated-scientific-agent)) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C A — —` |
 | 5 | <a id="whycodes"></a>[WhyCodes](assessments/wh/whycodes.md) ([source](https://github.com/whycorporation/whycodes)) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
