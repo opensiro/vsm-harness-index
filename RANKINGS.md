@@ -752,6 +752,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="clear-ideas-agent-runtime"></a>[Clear Ideas Agent Runtime](assessments/cl/clear-ideas-agent-runtime.md) ([source](https://github.com/clearideas/agent-runtime)) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="quickcode"></a>[QuickCode](assessments/qu/quickcode.md) ([source](https://github.com/devincii-io/QuickCode)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="manyhands"></a>[Manyhands](assessments/ma/manyhands.md) ([source](https://github.com/mjoneill/manyhands)) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 1 | `A C P — — ?` |
+| 6 | <a id="phi-agent"></a>[phi-agent](assessments/ph/phi-agent.md) ([source](https://github.com/hibuka-labs/phi-agent)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="purrcode"></a>[PurrCode](assessments/pu/purrcode.md) ([source](https://github.com/Weilin0723/PurrCode)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="actweave"></a>[ActWeave](assessments/ac/actweave.md) ([source](https://github.com/chenow9/act-weave)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="browsentic"></a>[Browsentic](assessments/br/browsentic.md) ([source](https://github.com/imshaikot/browsentic)) | 2026-Q3 | 1/6 | 0/5 | 1 | 3 | 0 | `A C P — P P` |
