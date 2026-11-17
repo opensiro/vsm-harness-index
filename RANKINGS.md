@@ -649,6 +649,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="orca-code"></a>[Orca Code](assessments/or/orca-code.md) ([source](https://github.com/Nethyric/orca-code)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mi"></a>[mi](assessments/mi/mi.md) ([source](https://github.com/pegov/mi)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hx"></a>[hx](assessments/hx/hx.md) ([source](https://github.com/phantomic12/hx-harness)) | 2026-Q3 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
+| 6 | <a id="runtime-ai-scientist"></a>[Runtime AI Scientist](assessments/ru/runtime-ai-scientist.md) ([source](https://github.com/systemind-team/Runtime-AI-Scientist)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 1 | `A — C ? — —` |
 | 6 | <a id="glm-code"></a>[GLM Code](assessments/gl/glm-code.md) ([source](https://github.com/MikuBlog/glm-code)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agent01"></a>[Agent01](assessments/ag/agent01.md) ([source](https://github.com/Babe153/Agent01-from-Scratch)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentharness-alexandrmotologa"></a>[AgentHarness](assessments/ag/agentharness-alexandrmotologa.md) ([source](https://github.com/alexandrmotologa/agent-harness)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
