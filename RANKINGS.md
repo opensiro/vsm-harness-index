@@ -1013,6 +1013,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="ai-maestro"></a>[AI Maestro](assessments/ai/ai-maestro.md) ([source](https://github.com/23blocks-OS/ai-maestro)) | 2025-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="kode-sdk"></a>[KODE SDK](assessments/ko/kode-sdk.md) ([source](https://github.com/shareAI-lab/kode-agent-sdk)) | 2025-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="codemachine-cli"></a>[CodeMachine CLI](assessments/co/codemachine-cli.md) ([source](https://github.com/moazbuilds/CodeMachine-CLI)) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="polar-prorl-agent-server"></a>[Polar (ProRL Agent Server)](assessments/po/polar-prorl-agent-server.md) ([source](https://github.com/NVIDIA-NeMo/ProRL-Agent-Server)) | 2025-Q3 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="blades"></a>[Blades](assessments/bl/blades.md) ([source](https://github.com/go-kratos/blades)) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="jazz"></a>[Jazz](assessments/ja/jazz.md) ([source](https://github.com/lvndry/jazz)) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="agentrl"></a>[AgentRL](assessments/ag/agentrl.md) ([source](https://github.com/THUDM/AgentRL)) | 2025-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
