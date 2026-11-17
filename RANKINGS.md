@@ -833,6 +833,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="qujck-agent-harness"></a>[agent-harness](assessments/qu/qujck-agent-harness.md) ([source](https://github.com/qujck/harness)) | 2026-Q2 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
 | 6 | <a id="ferrum"></a>[Ferrum](assessments/fe/ferrum.md) ([source](https://github.com/ominiverdi/ferrum)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="luckycli"></a>[LuckyCLI](assessments/lu/luckycli.md) ([source](https://github.com/Fenix46/LuckyCLI)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="hivegate"></a>[HiveGate](assessments/hi/hivegate.md) ([source](https://github.com/hivegate-ai/hivegate)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 1 | `A — ? — — —` |
 | 6 | <a id="reflex"></a>[Reflex](assessments/re/reflex.md) ([source](https://github.com/reflex-agent/reflex-agent)) | 2026-Q2 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="michin"></a>[MichiN](assessments/mi/michin.md) ([source](https://github.com/rohaquinlop/michin)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="fennec-agent-runtime"></a>[Fennec Agent Runtime](assessments/fe/fennec-agent-runtime.md) ([source](https://github.com/Fennec-AI/agent-runtime)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
