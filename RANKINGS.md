@@ -441,6 +441,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="harnessx"></a>[HarnessX](assessments/ha/harnessx.md) ([source](https://github.com/Darwin-Agent/HarnessX)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="cadis"></a>[C.A.D.I.S.](assessments/ca/cadis.md) ([source](https://github.com/Growth-Circle/cadis)) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="ndx"></a>[ndx](assessments/nd/ndx.md) ([source](https://github.com/hikaMaeng/ndx)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="hive-workflow-engine"></a>[Hive (workflow engine)](assessments/hi/hive-workflow-engine.md) ([source](https://github.com/ivankuznetsov/hive)) | 2026-Q2 | 2/6 | 1/5 | 1 | 3 | 0 | `A C P A P P` |
 | 5 | <a id="wanman"></a>[wanman](assessments/wa/wanman.md) ([source](https://github.com/chekusu/wanman)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="stemcode"></a>[StemCode](assessments/st/stemcode.md) ([source](https://github.com/rizwan3d/StemCode)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A A — C — —` |
 | 5 | <a id="oh-my-hermes"></a>[Oh My Hermes](assessments/oh/oh-my-hermes.md) ([source](https://github.com/witt3rd/oh-my-hermes)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
