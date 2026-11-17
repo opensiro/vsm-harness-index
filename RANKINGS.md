@@ -867,6 +867,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="blackbox"></a>[Blackbox](assessments/bl/blackbox.md) ([source](https://github.com/tyxter-dev/blackbox)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="anima-sdk"></a>[anima_sdk](assessments/an/anima-sdk.md) ([source](https://github.com/Rai220/anima_sdk)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rune"></a>[Rune](assessments/ru/rune.md) ([source](https://github.com/khang859/rune)) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="af4j"></a>[AF4J](assessments/af/af4j.md) ([source](https://github.com/datallmhub/agentflow4j)) | 2026-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="codehamr"></a>[codehamr](assessments/co/codehamr.md) ([source](https://github.com/plaxtoris/codehamr)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="asi-code"></a>[ASI Code](assessments/as/asi-code.md) ([source](https://github.com/AloneMath/ASI-Code)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 2 | `A ? ? — — —` |
 | 6 | <a id="chord"></a>[Chord](assessments/ch/chord.md) ([source](https://github.com/keakon/chord)) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
