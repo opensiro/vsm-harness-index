@@ -100,6 +100,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="agent-orchestrator"></a>[Agent Orchestrator](assessments/ag/agent-orchestrator.md) ([source](https://github.com/Untrivial-ai/agent-orchestrator)) | 2026-Q1 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="ai-coding-agents-orchestrator"></a>[AI Coding Agents Orchestrator](assessments/ai/ai-coding-agents-orchestrator.md) ([source](https://github.com/Open-Makers/ai-coding-agents-orchestrator)) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="squad"></a>[Squad](assessments/sq/squad.md) ([source](https://github.com/bradygaster/squad)) | 2026-Q1 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
+| 3 | <a id="metaswarm"></a>[metaswarm](assessments/me/metaswarm.md) ([source](https://github.com/dsifry/metaswarm)) | 2026-Q1 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A P —` |
 | 3 | <a id="oh-my-pi"></a>[oh-my-pi](assessments/oh/oh-my-pi.md) ([source](https://github.com/can1357/oh-my-pi)) | 2025-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="zeroshot"></a>[zeroshot](assessments/ze/zeroshot.md) ([source](https://github.com/the-open-engine/zeroshot)) | 2025-Q4 | 4/6 | 3/5 | 1 | 0 | 0 | `A C A A A —` |
 | 3 | <a id="agent-swarm"></a>[Agent Swarm](assessments/ag/agent-swarm.md) ([source](https://github.com/desplega-ai/agent-swarm)) | 2025-Q4 | 4/6 | 3/5 | 1 | 0 | 0 | `A A A A C —` |
