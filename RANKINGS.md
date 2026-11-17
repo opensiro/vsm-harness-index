@@ -320,6 +320,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="pwshharness"></a>[PwshHarness](assessments/pw/pwshharness.md) ([source](https://github.com/josh-j/pwsh-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="oswald"></a>[OSWALD](assessments/os/oswald.md) ([source](https://github.com/Oswald-Agent/Oswald)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harness2"></a>[Harness²](assessments/ha/harness2.md) ([source](https://github.com/google-research/harness2)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
+| 5 | <a id="eta"></a>[eta](assessments/et/eta.md) ([source](https://github.com/0xfe-project/eta)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 1 | `A C A — ? P` |
 | 5 | <a id="suga"></a>[Suga](assessments/su/suga.md) ([source](https://github.com/inhere/suga)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="pi-forge"></a>[pi-Forge](assessments/pi/pi-forge.md) ([source](https://github.com/djtoon/pi-forge)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="codeagent-harvil1"></a>[CodeAgent (Harvil1)](assessments/co/codeagent-harvil1.md) ([source](https://github.com/Harvil1/codeAgent)) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
