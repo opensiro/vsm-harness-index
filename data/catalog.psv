@@ -1236,3 +1236,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1235|arestrix|Arestrix|https://github.com/frankalcantara/Arestrix|2026-10-03T03:30:58Z|github-repository-search|a8e1075f7303b977426565d0ae88707acdab6416|2026-11-17
 1236|agt|agt|https://github.com/blacsheep/agt|2026-10-13T03:39:26Z|github-repository-search|14ff89edc8f4f3c9e7be2c45ae11c903a794f5f0|2026-11-17
 1237|raxol-agent|Raxol Agent|https://github.com/DROOdotFOO/raxol-agent|2026-11-13T23:02:40Z|github-repository-search|e5b500988139674f39d957309b1db34988edc08a|2026-11-17
+1238|bowra|Bowra|https://github.com/Bowra/Bowra|2026-10-28T10:56:09Z|github-repository-search|c6f444b112c57f686ef7d0b7a0c814663e667293|2026-11-17

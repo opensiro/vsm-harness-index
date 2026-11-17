@@ -294,6 +294,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="beyon-control-plane"></a>[Beyon Control Plane](assessments/be/beyon-control-plane.md) ([source](https://github.com/Beyon-Digital/control-plane)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A — A(P) C — —` |
 | 5 | <a id="soduwork"></a>[SoduWork](assessments/so/soduwork.md) ([source](https://github.com/mdiri-ai/SoduWork)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="7ar-harness"></a>[7ar harness](assessments/7a/7ar-harness.md) ([source](https://github.com/7ar-chat/harness)) | 2026-Q4 | 2/6 | 1/5 | 1 | 2 | 0 | `A C P A — P` |
+| 5 | <a id="bowra"></a>[Bowra](assessments/bo/bowra.md) ([source](https://github.com/Bowra/Bowra)) | 2026-Q4 | 2/6 | 1/5 | 1 | 2 | 0 | `A C A(P) — P —` |
 | 5 | <a id="asktravel-agent-harness"></a>[AskTravel Agent Harness](assessments/as/asktravel-agent-harness.md) ([source](https://github.com/stoicdataguy/asktravel-agent-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="opengeniemaster"></a>[OpenGenieMaster](assessments/op/opengeniemaster.md) ([source](https://github.com/eust-w/opengeniemaster)) | 2026-Q4 | 2/6 | 1/5 | 3 | 0 | 0 | `A A C C C —` |
 | 5 | <a id="agentorg"></a>[AgentOrg](assessments/ag/agentorg.md) ([source](https://github.com/uniac-ai/AgentOrg)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
