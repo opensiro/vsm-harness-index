@@ -398,6 +398,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="marspi-cli"></a>[Marspi CLI](assessments/ma/marspi-cli.md) ([source](https://github.com/mars01pi/marspi-cli)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 1 | `A — ? A — —` |
 | 5 | <a id="aipoch-open-science"></a>[AIPOCH Open-Science](assessments/ai/aipoch-open-science.md) ([source](https://github.com/aipoch/open-science)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — C(P) A — —` |
 | 5 | <a id="holt"></a>[Holt](assessments/ho/holt.md) ([source](https://github.com/holt-os/holt)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — P C A —` |
+| 5 | <a id="conductor-agents-security-harness"></a>[Conductor Agents — Security Harness](assessments/co/conductor-agents-security-harness.md) ([source](https://github.com/conductor-oss/conductor-agents)) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="leviath"></a>[Leviath](assessments/le/leviath.md) ([source](https://github.com/GEMISIS/leviath)) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C(P) A — —` |
 | 5 | <a id="postal"></a>[Postal](assessments/po/postal.md) ([source](https://github.com/andrefetch/postal)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="superharness"></a>[superharness](assessments/su/superharness.md) ([source](https://github.com/artificemachine/superharness)) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
