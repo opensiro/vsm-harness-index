@@ -529,6 +529,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="swarms"></a>[Swarms](assessments/sw/swarms.md) ([source](https://github.com/kyegomez/swarms)) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](assessments/ca/camel-workforce.md) ([source](https://github.com/camel-ai/camel)) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](assessments/go/go-micro.md) ([source](https://github.com/micro/go-micro)) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
+| 6 | <a id="raxol-agent"></a>[Raxol Agent](assessments/ra/raxol-agent.md) ([source](https://github.com/DROOdotFOO/raxol-agent)) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C — C —` |
 | 6 | <a id="uh-universal-harness"></a>[UH — Universal Harness](assessments/uh/uh-universal-harness.md) ([source](https://github.com/Antoine-Thomas/UH-Universal-Harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 2 | 0 | `A — P — — P` |
 | 6 | <a id="wittycode"></a>[WittyCode](assessments/wi/wittycode.md) ([source](https://github.com/WittyRyuji/WittyCode)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="go-agent-harness"></a>[Go Agent Harness](assessments/go/go-agent-harness.md) ([source](https://github.com/shalyhinpavel/go-agent-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
