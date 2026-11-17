@@ -150,6 +150,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="xeyo"></a>[XEYO](assessments/xe/xeyo.md) ([source](https://github.com/Gurp-S/XEYO)) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="pi-herdsman"></a>[Pi Herdsman](assessments/pi/pi-herdsman.md) ([source](https://github.com/boadij/pi-herdsman)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="metamorph"></a>[Metamorph](assessments/me/metamorph.md) ([source](https://github.com/yohanvillarp/metamorph)) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
+| 4 | <a id="kybern"></a>[Kybern](assessments/ky/kybern.md) ([source](https://github.com/Tresnanda/kybern)) | 2026-Q3 | 3/6 | 2/5 | 1 | 2 | 1 | `A A A(P) C ? P` |
 | 4 | <a id="appliedscientist"></a>[TheAppliedScientist](assessments/ap/appliedscientist.md) ([source](https://github.com/TheAppliedScientist/TheAppliedScientist)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="cox"></a>[cox](assessments/co/cox.md) ([source](https://github.com/listepo/cox)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="pi-native"></a>[pi-native](assessments/pi/pi-native.md) ([source](https://github.com/nurmdrafi/pi-native)) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
