@@ -170,6 +170,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="reigen"></a>[Reigen / Conductor](assessments/re/reigen.md) ([source](https://github.com/zachary-wilde/reigen)) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
 | 4 | <a id="meldwork"></a>[Meldwork](assessments/me/meldwork.md) ([source](https://github.com/Ryder-Sun/Meldwork)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="genesis-agent"></a>[Genesis Agent](assessments/ge/genesis-agent.md) ([source](https://github.com/me7ko-dev/genesis-agent)) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C — A A —` |
+| 4 | <a id="nano-workforce"></a>[Nano Workforce](assessments/na/nano-workforce.md) ([source](https://github.com/nanobpm/nano-workforce)) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 1 | `A A P A ? —` |
 | 4 | <a id="codej"></a>[CodeJ](assessments/co/codej.md) ([source](https://github.com/liumaishenjian/codej)) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
 | 4 | <a id="qcode"></a>[QCode](assessments/qc/qcode.md) ([source](https://github.com/fwtllh-png/QCode)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 1 | `A A A ? — —` |
 | 4 | <a id="strike"></a>[Strike](assessments/st/strike.md) ([source](https://github.com/jonathanung/strike)) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
