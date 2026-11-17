@@ -112,6 +112,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="cocoplus"></a>[CocoPlus](assessments/co/cocoplus.md) ([source](https://github.com/Snowflake-Labs/cocoplus)) | 2024-Q4 | 4/6 | 3/5 | 1 | 1 | 0 | `A A A(P) A C —` |
 | 3 | <a id="megaagent"></a>[MegaAgent](assessments/me/megaagent.md) ([source](https://github.com/Xtra-Computing/MegaAgent)) | 2024-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="openags"></a>[OpenAGS](assessments/op/openags.md) ([source](https://github.com/openags/auto-researcher)) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
+| 3 | <a id="konductor"></a>[Konductor](assessments/ko/konductor.md) ([source](https://github.com/aws-solutions/konductor)) | 2023-Q1 | 4/6 | 3/5 | 0 | 0 | 1 | `A A A A ? —` |
 | 3 | <a id="opencursor"></a>[OpenCursor](assessments/op/opencursor.md) ([source](https://github.com/PawanOsman/OpenCursor)) | 2022-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 4 | <a id="orchestrator-harness"></a>[Orchestrator Harness](assessments/or/orchestrator-harness.md) ([source](https://github.com/dhoelzer/AgentOrchestrator)) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A A A C — —` |
 | 4 | <a id="agentic-harness"></a>[Agentic Harness](assessments/ag/agentic-harness.md) ([source](https://github.com/skrvidz/agentic-harness)) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |

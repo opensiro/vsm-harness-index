@@ -1251,3 +1251,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1250|phi-agent|phi-agent|https://github.com/hibuka-labs/phi-agent|2026-07-26T11:07:12Z|github-repository-search|7c9b17c40d0ecdc04f3e51ca3c5fe7be77b1421a|2026-11-18
 1251|metaswarm|metaswarm|https://github.com/dsifry/metaswarm|2026-02-02T07:13:32Z|github-repository-search|4bbb10abd301b9ec9d63371e296049cbc6043baa|2026-11-18
 1252|azure-agent-landing-zone-orchestrator|Azure Agent Landing Zone Orchestrator|https://github.com/Azure/agent-app-orchestrator|2023-06-27T14:29:47Z|github-repository-search|72909db145ca41b954e18261d89e50318bed592a|2026-11-18
+1253|konductor|Konductor|https://github.com/aws-solutions/konductor|2023-03-28T14:29:27Z|github-repository-search|09c34858ca2e704fb8572c91389a87255b1e1075|2026-11-18
