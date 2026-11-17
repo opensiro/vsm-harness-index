@@ -2,12 +2,12 @@
 harness_id: paperclip
 project_name: Paperclip
 repository: https://github.com/paperclipai/paperclip
-review_ref: 352153b5edf02ff4262210c7bd5bfa94bcf37c7c
-reviewed_at: 2026-09-18
+review_ref: 7f9867895c4e7e9589b233a93aa9efceb0c992d0
+reviewed_at: 2026-11-17
 generated_profile_version: 0.2.2
 generated_assessment_procedure_version: 0.3.4
-profile_version: 0.2.2
-assessment_procedure_version: 0.3.4
+profile_version: 0.2.4
+assessment_procedure_version: 0.3.8
 assessment_changed_at: 2026-09-18
 status: included
 autonomy_s1: A
@@ -26,18 +26,20 @@ autonomy_s5: P
 - Purpose and identity: operate a persistent AI-agent organization that decomposes company goals into accountable work while preserving budgets, reporting lines, review and board authority.
 - Relevant environment: company goals and board instructions, repositories/workspaces, external agent runtimes, provider/model services, integrations, customers/market context supplied through tasks and human oversight.
 - Standard-distribution boundary: Paperclip server/UI/CLI, bundled Paperclip agent skill, company/agent/task/goal state, execution-policy and budget/governance machinery; provider-native agents are hosts whose organizational rights count only through Paperclip's first-party contract.
+- Credited operating / distribution surfaces: first-party Paperclip server, UI, API, agent heartbeat skill, CEO/manager instructions, persistent tasks and blocker/checkout rules, optional runtime-enforced reviewer stages, board goals/strategy approvals and operator overrides.
+- Adjacent first-party surfaces excluded from ownership: maintainer CI/release/dogfood organization, documentation plans and roadmap items, test/benchmark/Storybook fixtures, unmerged source PRs, uninstalled third-party tools and the private Cloud routing plugin. A provider's external capabilities are not Paperclip company actors.
 - First-party operating / deployment modes considered: autonomous CEO/manager/report heartbeats, structured review stages, board strategy/hire approval, user overrides and self-hosted company operation.
 - Recursion level: one Paperclip company. Manager subtrees are internal organizational subdivisions; this assessment does not assume every reporting subtree independently satisfies a full viable recursion.
-- Reviewed revision: `352153b5edf02ff4262210c7bd5bfa94bcf37c7c`.
-- Observation date: 2026-09-18.
+- Reviewed revision: `7f9867895c4e7e9589b233a93aa9efceb0c992d0`.
+- Observation date: 2026-11-17.
 - Generated Profile version: `0.2.2`.
 - Generated Methodology version: `0.3.4`.
-- Current Profile version: `0.2.2`.
-- Current Methodology version: `0.3.4`.
+- Current Profile version: `0.2.4`.
+- Current Methodology version: `0.3.8`.
 
 ## Repository architecture
 
-Paperclip is a persistent control plane for heterogeneous agents. Agents wake in bounded heartbeats, inspect assigned work and organizational context, checkout issues, execute, report and exit. Goals, org charts and reporting lines provide purpose/context; tasks carry dependencies and atomic checkout; budgets cap spend; CEO/managers decompose and assign work; execution policies route completed work to distinct reviewers/approvers; board users retain strategy, hiring, override and company-goal authority.
+Paperclip is a first-party Node.js/React control plane for heterogeneous agents with runtime-registered plugin and connection interfaces. The current supported distribution additionally exposes evaluation/feedback, versioned skills, routines, optional external memory connections and opt-in model/account routing; these do not independently establish a future-oriented S4 adaptation decision loop. Paperclip is a persistent control plane for heterogeneous agents. Agents wake in bounded heartbeats, inspect assigned work and organizational context, checkout issues, execute, report and exit. Goals, org charts and reporting lines provide purpose/context; tasks carry dependencies and atomic checkout; budgets cap spend; CEO/managers decompose and assign work; execution policies route completed work to distinct reviewers/approvers; board users retain strategy, hiring, override and company-goal authority.
 
 ## Operational model
 
@@ -45,11 +47,16 @@ Operational S1 units are autonomous report agents working assigned company tasks
 
 ## Primary evidence
 
-- [`README.md`](https://github.com/paperclipai/paperclip/blob/352153b5edf02ff4262210c7bd5bfa94bcf37c7c/README.md) — company boundary, agents, goals, budgets, atomic task execution and governance.
-- [`docs/guides/board-operator/delegation.md`](https://github.com/paperclipai/paperclip/blob/352153b5edf02ff4262210c7bd5bfa94bcf37c7c/docs/guides/board-operator/delegation.md) — board/CEO lifecycle, autonomous decomposition/assignment/monitoring and parent approvals.
-- [`docs/guides/execution-policy.md`](https://github.com/paperclipai/paperclip/blob/352153b5edf02ff4262210c7bd5bfa94bcf37c7c/docs/guides/execution-policy.md) — enforced separate review/approval stages, executor exclusion, change requests and re-review.
-- [`skills/paperclip/SKILL.md`](https://github.com/paperclipai/paperclip/blob/352153b5edf02ff4262210c7bd5bfa94bcf37c7c/skills/paperclip/SKILL.md) — heartbeat work contract, task checkout, chain of command, delegation, dependencies and escalation.
-- [`doc/SPEC.md`](https://github.com/paperclipai/paperclip/blob/352153b5edf02ff4262210c7bd5bfa94bcf37c7c/doc/SPEC.md) — board override/current-control authority and management semantics.
+- [`README.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/README.md) — company boundary, agents, goals, budgets, atomic task execution and governance.
+- [`docs/guides/board-operator/delegation.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/docs/guides/board-operator/delegation.md) — board/CEO lifecycle, autonomous decomposition/assignment/monitoring and parent approvals.
+- [`docs/guides/execution-policy.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/docs/guides/execution-policy.md) — enforced separate review/approval stages, executor exclusion, change requests and re-review.
+- [`skills/paperclip/SKILL.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/skills/paperclip/SKILL.md) — heartbeat work contract, task checkout, chain of command, delegation, dependencies and escalation.
+- [`docs/start/core-concepts.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/docs/start/core-concepts.md) — company agents/checkout and board approvals/overrides.
+- [`server/src/services/issues.ts`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/server/src/services/issues.ts), [`server/src/services/heartbeat.ts`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/server/src/services/heartbeat.ts) — actual task/wake mechanisms.
+- [`server/src/services/issue-execution-policy.ts`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/server/src/services/issue-execution-policy.ts) — review-stage participant selection and return path.
+- [`server/src/routes/approvals.ts`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/server/src/routes/approvals.ts), [`docs/guides/board-operator/approvals.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/docs/guides/board-operator/approvals.md) — board approval decisions and return-to-work.
+- [`server/src/onboarding-assets/ceo/HEARTBEAT.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/server/src/onboarding-assets/ceo/HEARTBEAT.md), [`ROADMAP.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/ROADMAP.md) — shipped CEO work protocol versus planned organizational learning.
+- [`doc/connections/MEMORY.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/doc/connections/MEMORY.md), [`doc/connections/AI-CONNECTION-ROUTERS.md`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/doc/connections/AI-CONNECTION-ROUTERS.md), [`server/src/services/ai-connection-router.ts`](https://github.com/paperclipai/paperclip/blob/7f9867895c4e7e9589b233a93aa9efceb0c992d0/server/src/services/ai-connection-router.ts) — optional memory and resource routing, not automatic external adaptation.
 
 ## S1 — Operations
 
@@ -60,6 +67,7 @@ Operational S1 units are autonomous report agents working assigned company tasks
 - Decision owner: the assigned model-driven report/worker agent.
 - Supporting / enforcement mechanisms: issue checkout, run-scoped credentials, workspace resolution, skills/context injection, heartbeat scheduling, budget checks and durable comments/status.
 - Closure path: the agent checks out work, executes it, records progress/result and status, and later heartbeats/managers consume the updated task state.
+- Boundary reachability: The bundled agent heartbeat contract and real company issue checkout/update endpoints run in the supported server/agent mode, independent of contributor CI.
 - Why this is / is not agent-owned: the model-driven worker chooses the operational solution; Paperclip's runtime constrains execution but does not choose the substantive task outcome.
 - Evidence: `skills/paperclip/SKILL.md`, `README.md`.
 - Basis: explicit + structural
@@ -75,6 +83,7 @@ Operational S1 units are autonomous report agents working assigned company tasks
 - Decision owner: autonomous CEO and manager agents within their first-party management heartbeat contracts.
 - Supporting / enforcement mechanisms: atomic task checkout, blocker relationships, one-active-run constraints, org chart/reporting lines and assignment-triggered heartbeats.
 - Closure path: CEO/managers create and assign a non-overlapping/dependency-aware work structure; runtime prevents duplicate checkout and blocked work from proceeding; status/blocker feedback returns to managers, who reassign, unblock or escalate before subsequent S1 work.
+- Boundary reachability: Two or more report agents are active S1 units; CEO/manager task assignment and blocker feedback run through their bundled heartbeat contract and server checkout/dependency controls into later agent wakes.
 - Why this is / is not agent-owned: deterministic checkout enforces the selected coordination boundary, but model-driven CEO/managers own decomposition, assignee and unblock/reassignment judgments that change later worker behavior.
 - Evidence: `docs/guides/board-operator/delegation.md`, `skills/paperclip/SKILL.md`, `README.md`.
 - Basis: explicit + structural
@@ -95,8 +104,9 @@ Operational S1 units are autonomous report agents working assigned company tasks
 - Decision owner: base mode — autonomous CEO/manager agents; parent mode — legitimate board user/operator.
 - Supporting / enforcement mechanisms: dashboard/activity state, goal/task hierarchy, chain of command, budgets/hard stops, agent status, approvals and heartbeat scheduling.
 - Closure path: CEO/manager decisions rewrite assignments/priorities/subtasks or escalate; board decisions directly change current task/agent/budget state; later heartbeats execute under that returned state.
+- Boundary reachability: Agent managers have first-party company/issue/goal state and can change assignments; the distinct supported board/operator mode changes priorities, budgets, assignments or agent pause status that later runs obey.
 - Why this is / is not agent-owned: model-driven managers own current-control discretion in the base mode; deterministic budget/checkout enforcement only implements constraints. A distinct board mode can supersede those decisions.
-- Evidence: `docs/guides/board-operator/delegation.md`, `doc/SPEC.md`, `README.md`, `skills/paperclip/SKILL.md`.
+- Evidence: `docs/guides/board-operator/delegation.md`, `docs/start/core-concepts.md`, `README.md`, `skills/paperclip/SKILL.md`.
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: board strategy approval also participates in S5; S3 classification uses only current-operation rights such as priority, budget, reassignment and intervention.
@@ -106,7 +116,7 @@ Operational S1 units are autonomous report agents working assigned company tasks
 | Mode | Decisive owner | Trigger | Closure | Evidence |
 | --- | --- | --- | --- | --- |
 | Base (`A`) | CEO / manager agent | heartbeat sees current goals, reports, blockers, capacity or budget pressure | agent changes tasks, assignments, priorities/unblocking or escalates; reports wake and operate under the updated state | `docs/guides/board-operator/delegation.md`, `skills/paperclip/SKILL.md` |
-| Parent (`P`) | board user/operator | operator detects stalled/misaligned current operation or chooses an override | reassign/priority/budget/pause/terminate decision is persisted in Paperclip and governs later heartbeats | `doc/SPEC.md`, `README.md` |
+| Parent (`P`) | board user/operator | operator detects stalled/misaligned current operation or chooses an override | reassign/priority/budget/pause/terminate decision is persisted in Paperclip and governs later heartbeats | `docs/start/core-concepts.md`, `README.md` |
 
 ## S3* — Complementary audit
 
@@ -117,6 +127,7 @@ Operational S1 units are autonomous report agents working assigned company tasks
 - Decision owner: a distinct model-driven agent selected as the active review-stage participant.
 - Supporting / enforcement mechanisms: execution-policy stages, runtime participant routing, executor exclusion, decision audit records and return-assignee state.
 - Closure path: executor completion is intercepted into `in_review`; reviewer approval advances/finalizes, while change request returns the task to the executor and subsequent resubmission routes back to the same review stage.
+- Boundary reachability: Optional execution-policy review is an actual first-party task mode: the runtime excludes the executor from review participant selection, another agent judges the submitted work, and approval or change request changes the next task stage.
 - Why this is / is not agent-owned: the reviewer agent owns the review judgment; Paperclip enforces participant identity and stage transitions without deciding quality itself.
 - Evidence: `docs/guides/execution-policy.md`, `skills/paperclip/SKILL.md`.
 - Basis: explicit + structural
@@ -131,23 +142,23 @@ Operational S1 units are autonomous report agents working assigned company tasks
 ## S4 — Outside-and-then intelligence
 
 - State: —
-- Function: no shipped separate external/prospective adaptation function is established at the company boundary.
-- Disturbance / variety regulated: future market/model/environment change and organizational learning were inspected, but no qualifying standard-distribution S4 closure is established.
-- Decisive decision or feedback right: no material first-party owner was found that senses external/future distinctions, develops adaptation options and returns a chosen option into present company capability/S3.
-- Decision owner: none established for qualifying S4.
-- Supporting / enforcement mechanisms: skills/evals/training surfaces, task history, goals and strategy can support improvement but do not by themselves establish the required S4 loop.
-- Closure path: no qualifying external/future intelligence → adaptation option → present capability/S3 return path is established.
-- Why this is / is not agent-owned: organizational learning language and evaluation infrastructure are not enough without a shipped external/prospective adaptation closure.
-- Evidence: `README.md`, `docs/guides/board-operator/delegation.md` and reviewed agent/runtime documentation.
-- Basis: explicit + structural
-- Confidence: high
-- Caveats: README roadmap explicitly lists automatic organizational learning as future work, reinforcing the no-shipped-path conclusion rather than proving universal impossibility.
+- Function: no independently established first-party external-and-prospective organizational adaptation loop in the reviewed standard Paperclip company distribution.
+- Disturbance / variety regulated: future market/model/provider changes, new environment opportunities and evolving company capabilities; the runtime exposes current-work and learning support but no supported closed organization-level adaptation cycle.
+- Decisive decision or feedback right: no qualified first-party actor or function-specific constructor was evidenced that converts future-oriented external distinctions into adaptation options and returns an authorized selection to change future company capability.
+- Decision owner: none established for a qualifying S4 loop. A board user can direct future research or change company strategy, but company S5 authority or an ordinary assigned research task alone is not a separate first-party S4 function.
+- Supporting / enforcement mechanisms: saved agent evals and feedback, skill-version rollback, routines, memory/provider connectors, experimental account routing, goals/strategy, and generic research tasks.
+- Closure path: no evidenced supported external/future observation → contrasting adaptation options → qualified choice → first-party change of subsequent company capability/S3.
+- Why this is / is not agent-owned: agents may research or learn within task work, but optional memory, routing, versioned skills, planning and generic task/goal changes cannot be credited as a distinct organization-level future adaptation owner without that closed path.
+- Evidence: `ROADMAP.md`, `doc/connections/MEMORY.md`, `doc/connections/AI-CONNECTION-ROUTERS.md`, `server/src/services/ai-connection-router.ts`, `server/src/routes/routines.ts`, `server/src/onboarding-assets/ceo/HEARTBEAT.md`, `docs/start/core-concepts.md`, `doc/plugins/PLUGIN_SPEC.md`.
+- Basis: explicit + structural (bounded negative finding).
+- Confidence: medium-high.
+- Caveats: Paperclip marks Self-Organization and Automatic Organizational Learning as planned; the self-hosted connection router defaults off and substantive Cloud routing policy belongs to a private plugin. An installed specialized external plugin or future merged code could require another review, but is not credited as the default first-party company mode.
 
 ### Absence scope
 
-- Surfaces inspected: README pillars/roadmap, goals/strategy/delegation, skills/evals/training descriptions, heartbeat management and execution policy.
-- Plausible first-party paths checked: CEO strategy proposal, agent training/evals, skill updates, performance review language and roadmap organizational learning.
-- Why no material first-party path remains: the shipped evidence closes current goal execution and review, while future automatic organizational learning remains roadmap material and no standard external/future sensing-to-adaptation loop is established.
+- Surfaces inspected: pinned README/ROADMAP, CEO heartbeat/strategy, shipped issue/approval/review/routine service and API surfaces, first-party evaluation/skill and memory descriptions, plugin-spec boundary, experimental AI connection router host and runtime.
+- Plausible first-party paths checked: manager resource balancing, board strategy, generic agent research tasks, evals and skills, memory connectors, scheduled routines and AI account/model routing; related original issues/PRs remain proposals, not shipped S4 evidence.
+- Why no material first-party path remains: reviewed shipped mechanisms store, enforce, schedule, report or route the present work and may support future development, but no specifically evidenced external/future sensing and authorized adaptation-option decision feeds changed company capability back into ongoing operations. Planned automatic learning/self-organization and optional private or uninstalled plugin policy are outside the supported default closure.
 
 ## S5 — Policy and identity
 
@@ -158,8 +169,9 @@ Operational S1 units are autonomous report agents working assigned company tasks
 - Decision owner: legitimate board user/operator.
 - Supporting / enforcement mechanisms: company goals, strategy approval queue, hire approvals, org chart and persistent task/goal hierarchy.
 - Closure path: board sets the company goal; CEO proposes strategy; board authoritatively approves/rejects/revises; approved direction returns to Paperclip and the CEO decomposes it into tasks/assignments that govern later operation.
+- Boundary reachability: The Paperclip company goal and CEO strategy approval are first-party board controls; a submitted strategy reaches legitimate user authority and the returned decision gates subsequent company task/agent execution.
 - Why this is / is not agent-owned: the CEO proposes and operationalizes strategy, but the first-party lifecycle explicitly reserves ultimate company-goal/strategy acceptance to the board; no autonomous internal ultimate-authority mode is established.
-- Evidence: `docs/guides/board-operator/delegation.md`, `README.md`, `doc/SPEC.md`.
+- Evidence: `docs/guides/board-operator/delegation.md`, `README.md`, `docs/start/core-concepts.md`.
 - Basis: explicit + structural
 - Confidence: high
 - Caveats: ordinary task approvals are not counted as S5; the positive mapping uses company-goal and strategy-level authority.
@@ -177,4 +189,12 @@ Variety is attenuated through task decomposition, role-based assignment, blocker
 
 ## Evidence gaps
 
-The strongest uncertainty is whether every deployment exercises the autonomous S2 management path; the standard first-party lifecycle nevertheless explicitly couples multi-agent decomposition/assignment with duplicate/dependency controls and manager feedback. No qualifying shipped S4 loop was found.
+Source-only review, not a live agent integration benchmark. Manager delegation and optional reviewer stages are supported first-party paths, not necessarily exercised in every company. Installed third-party plugins may implement other modes but are not credited as default shipped S4. The pinned source demonstrates no sufficient outside-and-prospective adaptation closure; reopen this conclusion when a concrete supported S4-specific path ships.
+
+## New-ref reassessment disposition
+
+- Index task: https://github.com/opensiro/vsm-harness-index/issues/3230
+- Historical accepted review: `352153b5edf02ff4262210c7bd5bfa94bcf37c7c` on 2026-09-18 (Profile 0.2.2 / Methodology 0.3.4).
+- New inspected boundary: `7f9867895c4e7e9589b233a93aa9efceb0c992d0` on 2026-11-17; comparison: https://github.com/paperclipai/paperclip/compare/352153b5edf02ff4262210c7bd5bfa94bcf37c7c...7f9867895c4e7e9589b233a93aa9efceb0c992d0
+- Profile 0.2.4 / Methodology 0.3.8 conclusion: **S1=A, S2=A, S3=A(P), S3*=A, S4=—, S5=P**; function states unchanged while source pin, documentation and current semantic provenance are refreshed. Immutable generation provenance and original material classification-change date remain unchanged.
+- Evidence method: pinned public implementation plus first-party runtime/docs/issue-policy/approval/CEO and optional connection surfaces; no live runtime test or independent reviewer result is claimed. Roadmap proposals and external issues are not positive Index witnesses.
