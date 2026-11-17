@@ -35,6 +35,16 @@ status: excluded-no-agentic-vsm
 
 Canonical assessments must have a matching catalog row, and their accepted `project_name`, `repository`, and `review_ref` must match it. Included assessments participate in signatures and generated comparison views. Canonical assessments may enter longitudinal reassessment rounds.
 
+## Accepted single-target re-reviews
+
+An explicit source-pinned re-review of an existing canonical harness is accepted
+through normal Index PR/CI gates, catalog reconciliation and a source-linked
+`S<Index issue>` event in `data/reassessment-history.psv`. This does not introduce
+a new proposed assessment or an intake/longitudinal round. The current accepted
+source boundary is `review_ref`/`reviewed_at`; actual-round `last_checked_*` and
+`last_reassessment_round` fields are kept unchanged or absent. See
+[Index routing](../INDEXING.md#single-target-re-assessment-no-frozen-round).
+
 ## Generation provenance vs current semantic provenance
 
 For assessments newly created by `assess-vsm-harness` procedure v0.2.1 or later, preserve the original generation pair:
