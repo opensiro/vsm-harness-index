@@ -1243,3 +1243,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1242|fleet|Fleet|https://github.com/sbluemin/fleet-harness|2026-03-17T13:12:17Z|github-repository-search|2d763d6f2ea831b19c6cbbcf345ace054348105d|2026-11-17
 1243|hivegate|HiveGate|https://github.com/hivegate-ai/hivegate|2026-05-27T22:02:00Z|github-repository-search|96b918ba7834a2aaa914fbe3f0e1b40d4e6497f0|2026-11-17
 1244|agensh|Agensh|https://github.com/microsoft/Agensh|2026-08-27T02:56:13Z|github-repository-search|2dae4e14a653da48549fd9aa093f834841475d6c|2026-11-18
+1245|rojak|Rojak|https://github.com/StreetLamb/rojak|2024-12-26T04:33:26Z|github-repository-search|51966e6b8b03e8908eed80aafe0f63cdfee80b5f|2026-11-18

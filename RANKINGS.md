@@ -1077,6 +1077,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="commonly"></a>[Commonly](assessments/co/commonly.md) ([source](https://github.com/Team-Commonly/commonly)) | 2025-Q1 | 1/6 | 0/5 | 1 | 1 | 3 | `A C P ? ? ?` |
 | 6 | <a id="cloudflare-agents"></a>[Cloudflare Agents](assessments/cl/cloudflare-agents.md) ([source](https://github.com/cloudflare/agents)) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ever-works"></a>[Ever Works](assessments/ev/ever-works.md) ([source](https://github.com/ever-works/ever-works)) | 2025-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="rojak"></a>[Rojak](assessments/ro/rojak.md) ([source](https://github.com/StreetLamb/rojak)) | 2024-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="smolagents"></a>[smolagents](assessments/sm/smolagents.md) ([source](https://github.com/huggingface/smolagents)) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="balrog"></a>[BALROG](assessments/ba/balrog.md) ([source](https://github.com/balrog-ai/BALROG)) | 2024-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ag2"></a>[AG2](assessments/ag/ag2.md) ([source](https://github.com/ag2ai/ag2)) | 2024-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
