@@ -2,6 +2,7 @@
 """Validate registry, assessments, reassessment history, signatures, generated views, and active contracts."""
 from __future__ import annotations
 import csv
+import re
 from datetime import date
 from pathlib import Path
 from validate_tldr import SEMVER_RE, load_assessments, validate_assessment
@@ -36,6 +37,11 @@ REASSESSMENT_FIELDS = [
     "changed_functions",
     "evidence",
 ]
+
+# Compatibility: the PSV header remains round_id; accepted single-target
+# source reviews use S<Index issue number>, never an invented R<round>.
+SINGLE_TARGET_ID_RE = re.compile(r"^S[1-9][0-9]*$")
+SINGLE_TARGET_OUTCOMES = {"reassessed-unchanged", "reassessed-changed", "same-ref-correction"}
 
 REASSESSMENT_OUTCOMES = {
     "no-upstream-change",
@@ -86,6 +92,7 @@ def validate_reassessment_history(
     seen: set[tuple[str, str]] = set()
     latest_event: dict[str, dict[str, str]] = {}
     latest_successful: dict[str, dict[str, str]] = {}
+    latest_successful_round: dict[str, dict[str, str]] = {}
 
     for row in rows:
         harness_id = row["harness_id"]
@@ -99,8 +106,22 @@ def validate_reassessment_history(
             raise SystemExit(f"reassessment history references unknown or incomplete harness: {harness_id}")
         if assessments[harness_id]["status"] == "proposed":
             raise SystemExit(f"reassessment history cannot reference proposed assessment: {harness_id}")
-        if not round_id.startswith("R") or not round_id[1:].isdigit():
-            raise SystemExit(f"invalid reassessment round id: {round_id}")
+        is_round = round_id.startswith("R") and round_id[1:].isdigit()
+        is_single_target = bool(SINGLE_TARGET_ID_RE.fullmatch(round_id))
+        if not (is_round or is_single_target):
+            raise SystemExit(f"invalid reassessment review event id: {round_id}")
+        if is_single_target:
+            if row["outcome"] not in SINGLE_TARGET_OUTCOMES:
+                raise SystemExit(f"{round_id}/{harness_id}: single-target event requires an accepted review outcome")
+            if row["outcome"] == "reassessed-unchanged" and row["changed_functions"] != "—":
+                raise SystemExit(f"{round_id}/{harness_id}: unchanged result must record changed_functions=—")
+            if row["outcome"] == "reassessed-changed" and row["changed_functions"] == "—":
+                raise SystemExit(f"{round_id}/{harness_id}: changed result must name affected functions")
+            issue_link = f"https://github.com/opensiro/vsm-harness-index/issues/{round_id[1:]}"
+            if not re.search(re.escape(issue_link) + r"(?:\s|;|$)", row["evidence"]):
+                raise SystemExit(f"{round_id}/{harness_id}: missing exact Index issue evidence {issue_link}")
+            if not re.search(r"https://github[.]com/opensiro/vsm-harness-index/pull/[1-9][0-9]*\b", row["evidence"]):
+                raise SystemExit(f"{round_id}/{harness_id}: missing accepted Index PR evidence")
         if row["outcome"] not in REASSESSMENT_OUTCOMES:
             raise SystemExit(f"{round_id}/{harness_id}: invalid outcome {row['outcome']}")
         for ref_key in ("previous_review_ref", "checked_ref", "accepted_review_ref"):
@@ -129,6 +150,8 @@ def validate_reassessment_history(
                     f"{round_id}/{harness_id}: {outcome} cannot advance accepted_review_ref"
                 )
         elif outcome == "same-ref-correction":
+            if is_single_target and row["checked_ref"] != row["previous_review_ref"]:
+                raise SystemExit(f"{round_id}/{harness_id}: single-target same-ref correction cannot claim newer inspected freshness")
             # A same-ref correction fixes semantics at the previously accepted
             # boundary. A round may still inspect a newer ref for freshness.
             if row["accepted_review_ref"] != row["previous_review_ref"]:
@@ -148,15 +171,24 @@ def validate_reassessment_history(
         latest_event[harness_id] = row
         if outcome != "blocked":
             latest_successful[harness_id] = row
+            if is_round:
+                latest_successful_round[harness_id] = row
 
     for harness_id, event in latest_successful.items():
         assessment = assessments[harness_id]
-        if assessment.get("last_reassessment_round") != event["round_id"]:
-            raise SystemExit(f"{harness_id}: last_reassessment_round differs from latest successful history event")
-        if assessment.get("last_checked_ref") != event["checked_ref"]:
-            raise SystemExit(f"{harness_id}: last_checked_ref differs from latest successful history event")
-        if assessment.get("last_checked_at") != event["checked_at"]:
-            raise SystemExit(f"{harness_id}: last_checked_at differs from latest successful history event")
+        round_event = latest_successful_round.get(harness_id)
+        if round_event:
+            if assessment.get("last_reassessment_round") != round_event["round_id"]:
+                raise SystemExit(f"{harness_id}: last_reassessment_round differs from latest successful round")
+            if assessment.get("last_checked_ref") != round_event["checked_ref"]:
+                raise SystemExit(f"{harness_id}: last_checked_ref differs from latest successful round")
+            if assessment.get("last_checked_at") != round_event["checked_at"]:
+                raise SystemExit(f"{harness_id}: last_checked_at differs from latest successful round")
+        elif any(assessment.get(k) for k in ("last_reassessment_round", "last_checked_ref", "last_checked_at")):
+            raise SystemExit(f"{harness_id}: round freshness metadata exists without a successful round")
+        if SINGLE_TARGET_ID_RE.fullmatch(event["round_id"]) and event["outcome"] in {"reassessed-unchanged", "reassessed-changed"}:
+            if assessment.get("reviewed_at") != event["checked_at"]:
+                raise SystemExit(f"{harness_id}: accepted single-target new-ref reviewed_at differs from event date")
         if assessment["review_ref"] != event["accepted_review_ref"]:
             raise SystemExit(f"{harness_id}: canonical review_ref differs from latest successful reassessment ref")
         if assessment.get("profile_version") != event["profile_version"]:

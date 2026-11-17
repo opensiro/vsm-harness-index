@@ -194,6 +194,8 @@ Source-only review, not a live agent integration benchmark. Manager delegation a
 ## New-ref reassessment disposition
 
 - Index task: https://github.com/opensiro/vsm-harness-index/issues/3230
+- Accepted one-off review event: S3230 in data/reassessment-history.psv (Index PR #3235), distinct from frozen reassessment rounds; no synthetic round freshness is claimed.
+- Independent S4 source audit: [Index issue #3242](https://github.com/opensiro/vsm-harness-index/issues/3242), OPEN/PENDING. The 2026-11-17 review is source-based by one executor; its negative S4 classification has not yet received independently reproduced agreement.
 - Historical accepted review: `352153b5edf02ff4262210c7bd5bfa94bcf37c7c` on 2026-09-18 (Profile 0.2.2 / Methodology 0.3.4).
 - New inspected boundary: `7f9867895c4e7e9589b233a93aa9efceb0c992d0` on 2026-11-17; comparison: https://github.com/paperclipai/paperclip/compare/352153b5edf02ff4262210c7bd5bfa94bcf37c7c...7f9867895c4e7e9589b233a93aa9efceb0c992d0
 - Profile 0.2.4 / Methodology 0.3.8 conclusion: **S1=A, S2=A, S3=A(P), S3*=A, S4=—, S5=P**; function states unchanged while source pin, documentation and current semantic provenance are refreshed. Immutable generation provenance and original material classification-change date remain unchanged.

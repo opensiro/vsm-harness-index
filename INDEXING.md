@@ -132,6 +132,37 @@ Two repository-boundary cases are recorded:
 
 A newer upstream commit does not by itself force an assessment rewrite. First inspect whether it materially changes the evidence relevant to the current assessment under the applicable Methodology.
 
+### Single-target re-assessment (no frozen round)
+
+An explicitly requested re-review of **one already canonical harness** can be accepted
+without manufacturing a batch or longitudinal round. Apply the active Skills Methodology,
+pin the upstream revision, collect source-first six-function evidence, and submit a
+reviewable Index PR. Preserve the immutable `generated_*` origin pair and reconcile the
+accepted assessment, `data/catalog.psv` and dependent deterministic projections.
+
+Upon accepted new-ref re-review, append the outcome to the **existing append-only**
+`data/reassessment-history.psv` with the compatibility `round_id` value
+**`S<Index issue number>`**, for example `S3230`. The original field name is retained
+to avoid breaking the PSV schema: an `S` event is **not** a reassessment round
+and needs no `reassessments/R*.md` file. A single-target event must have a
+real owning Index issue, an accepted Index PR and a successful outcome
+(`reassessed-unchanged`, `reassessed-changed` or `same-ref-correction`).
+A blocked issue is not a successful ledger event and cannot advance canonical
+freshness; the same issue cannot produce two accepted `S` events.
+
+The validator checks previous → checked → accepted source-ref continuity,
+dates, active assessment Profile/Methodology pair and latest accepted `review_ref`
+for both `R` and `S` events. For an accepted **new ref**, `reviewed_at` equals the
+event `checked_at`. The `last_checked_ref`, `last_checked_at` and
+`last_reassessment_round` trio is deliberately **round-only**. Never write it
+just for `S`; if a harness had previous successful rounds, retain their last
+round values even when a later one-off review advances the canonical boundary.
+
+A re-review based on pinned documentation and source inspection does **not**
+claim live agent integration tests or **independent secondary** semantic agreement.
+Record the limitation; route a distinct fresh-context audit when independently
+reproducing a sensitive positive/negative claim is necessary.
+
 ### Deprecated universal Profile-impact routing
 
 Historical general-Index releases and frozen reassessment rounds may rely on the Profile's legacy `assessment_impact` / selector facade. Preserve that provenance and do not rewrite those historical contracts.
@@ -167,7 +198,7 @@ A round freezes:
 
 Harnesses admitted after the cutoff enter a later round rather than extending the frozen scope.
 
-Per-harness outcomes are stored in `data/reassessment-history.psv`. The currently supported outcome vocabulary is an Index-local workflow contract because it describes longitudinal bookkeeping, not VSM classification.
+Round outcomes and accepted single-target S<issue-number> events share the append-only `data/reassessment-history.psv` ledger. The outcome vocabulary is an Index-local workflow contract because it describes longitudinal bookkeeping, not VSM classification.
 
 A completed successful check records how far upstream was inspected, when it was inspected, under which Profile/Methodology pair it was judged, and whether the canonical general assessment changed.
 
@@ -194,7 +225,7 @@ Do not guess missing legacy generation provenance.
 
 `data/reassessment-history.psv` is append-only. Updating a canonical assessment must not erase earlier review events.
 
-The history connects each round event to its previous accepted boundary, inspected boundary, resulting accepted boundary, review contract, outcome, and evidence reference.
+The history connects each actual round or accepted single-target event to its previous accepted boundary, inspected boundary, resulting accepted boundary, review contract, outcome, and evidence reference. The legacy PSV header `round_id` accepts `R<number>` for real frozen rounds and `S<Index issue number>` for accepted one-off re-reviews; it does not imply every row has a round file.
 
 Round-level scope and progress live under `reassessments/`.
 

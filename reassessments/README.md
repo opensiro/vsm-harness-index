@@ -1,10 +1,43 @@
-# Reassessment rounds
+# Reassessment rounds and standalone re-reviews
 
-This directory tracks longitudinal passes over already assessed harnesses.
+This directory tracks frozen longitudinal rounds; the shared Index history also includes accepted single-target events without creating a round file.
 
 A **round** is the durable unit of longitudinal review. Batch issues and PRs may split the work operationally, but all harnesses in a round share the same frozen scope and upstream observation cutoff.
 
 A reassessment is also **specification-relative**. Every completed harness check records which VSM Harness Profile version and which `assess-vsm-harness` procedure version were used. This makes a semantic Profile update independently trackable from an upstream repository update.
+
+## Single-target review events (not rounds)
+
+An explicitly requested single-harness re-review is permitted by
+[Index routing](../INDEXING.md#single-target-re-assessment-no-frozen-round).
+It does **not** freeze a cohort, reuse/extend a previous round or invent
+a new `R4` or `reassessments/R*.md`. On acceptance through an Index PR,
+append a row to `data/reassessment-history.psv` with `round_id=S<Index issue number>`.
+The header is a retained compatibility field: `S` is a **single-target review event**,
+not a round ID.
+
+Record the previous, checked and accepted refs, accepted date, Profile/Methodology
+pair, outcome and stable evidence links to the actual Index issue, accepted PR and
+original source comparison. New-ref acceptance changes `review_ref`,
+`reviewed_at`, current semantic provenance and the matching catalog pin;
+immutable `generated_*` values remain unchanged, and `assessment_changed_at`
+only advances when a material canonical classification actually changes.
+
+**Never** add or advance `last_checked_ref`, `last_checked_at` and
+`last_reassessment_round` just for a standalone re-review. These remain a complete,
+round-only freshness trio; preserve earlier round values if present. Standalone
+review freshness is carried by canonical `review_ref` and `reviewed_at`.
+The Index validator checks continuity across both event types and keeps last
+successful *round* freshness separate from the latest accepted review boundary.
+
+An independent second semantic audit is not implicit in source-first review.
+Disclose whether it was performed. If pending, create an explicitly independent
+fresh-context review route without prematurely certifying the result.
+
+**Accepted single-target example:** Paperclip [issue #3230](https://github.com/opensiro/vsm-harness-index/issues/3230),
+[merged PR #3235](https://github.com/opensiro/vsm-harness-index/pull/3235),
+event `S3230` at 2026-11-17, six-function vector unchanged at newer upstream ref.
+Independent S4 verification is separately [pending #3242](https://github.com/opensiro/vsm-harness-index/issues/3242).
 
 ## File naming
 
