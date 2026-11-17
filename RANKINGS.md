@@ -239,6 +239,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="sd0x-dev-flow"></a>[sd0x-dev-flow](assessments/sd/sd0x-dev-flow.md) ([source](https://github.com/sd0xdev/sd0x-harness)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — — A A —` |
 | 4 | <a id="your-claude-engineer"></a>[Your Claude Engineer](assessments/yo/your-claude-engineer.md) ([source](https://github.com/coleam00/your-claude-engineer)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="ecc"></a>[Everything Claude Code (ECC)](assessments/ec/ecc.md) ([source](https://github.com/affaan-m/ECC)) | 2026-Q1 | 3/6 | 2/5 | 2 | 2 | 0 | `A C C(P) A A(P) —` |
+| 4 | <a id="codex-orchestrator"></a>[Codex Orchestrator](assessments/co/codex-orchestrator.md) ([source](https://github.com/kingbootoshi/codex-orchestrator)) | 2026-Q1 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="opencode-orchestrator"></a>[OpenCode Orchestrator](assessments/op/opencode-orchestrator.md) ([source](https://github.com/agnusdei1207/opencode-orchestrator)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="hive"></a>[Hive](assessments/hi/hive.md) ([source](https://github.com/aden-hive/hive)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="jcode"></a>[jcode](assessments/jc/jcode.md) ([source](https://github.com/1jehuang/jcode)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
