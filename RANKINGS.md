@@ -1133,6 +1133,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="project-oagents"></a>[Project OAgents](assessments/pr/project-oagents.md) ([source](https://github.com/microsoft/project-oagents)) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="open-interpreter"></a>[Open Interpreter](assessments/op/open-interpreter.md) ([source](https://github.com/openinterpreter/openinterpreter)) | 2023-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="besser-agentic-framework"></a>[BESSER Agentic Framework](assessments/be/besser-agentic-framework.md) ([source](https://github.com/BESSER-PEARL/BESSER-Agentic-Framework)) | 2023-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="azure-agent-landing-zone-orchestrator"></a>[Azure Agent Landing Zone Orchestrator](assessments/az/azure-agent-landing-zone-orchestrator.md) ([source](https://github.com/Azure/agent-app-orchestrator)) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="anythingllm"></a>[AnythingLLM](assessments/an/anythingllm.md) ([source](https://github.com/Mintplex-Labs/anything-llm)) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="continue"></a>[Continue](assessments/co/continue.md) ([source](https://github.com/continuedev/continue)) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="vercel-ai"></a>[Vercel AI SDK](assessments/ve/vercel-ai.md) ([source](https://github.com/vercel/ai)) | 2023-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
