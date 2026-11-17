@@ -1233,3 +1233,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1232|browsentic|Browsentic|https://github.com/imshaikot/browsentic|2026-07-24T23:02:32Z|github-repository-search|9c0892a457e86cf2a5c3d1f4a8eea7eeb0900632|2026-11-17
 1233|hive-workflow-engine|Hive (workflow engine)|https://github.com/ivankuznetsov/hive|2026-04-25T11:22:04Z|github-repository-search|9229e25af42398979a8b11ff923e98471f55f543|2026-11-17
 1234|conductor-agents-security-harness|Conductor Agents — Security Harness|https://github.com/conductor-oss/conductor-agents|2026-06-28T05:41:37Z|github-repository-search|f03f18a0e399d3613600ecb56b82afff66e417d6|2026-11-17
+1235|arestrix|Arestrix|https://github.com/frankalcantara/Arestrix|2026-10-03T03:30:58Z|github-repository-search|a8e1075f7303b977426565d0ae88707acdab6416|2026-11-17
