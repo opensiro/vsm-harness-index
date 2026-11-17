@@ -1163,3 +1163,4 @@ catalog_position|harness_id|signature
 1244|agensh|Agensh workers resolve overlapping work through expiring claims and mid-turn peer negotiation, then judge delivery readiness at team level through the root issue, whose closure may instead be reserved to a named product owner.
 1245|rojak|Rojak serializes model-role handoffs inside a durable Temporal session, whose managing client can read current state and change the session-wide turn limit and retained history.
 1246|codex-orchestrator|Codex Orchestrator gives a directing Claude session live visibility and steering over tmux-based Codex workers, while peer Claude cells claim project scope in a shared log and a direct CLI operator can supervise the same job controls.
+1247|omegacode|omegacode isolates parallel edits in preserved Git worktrees and supplies run-wide budget feedback for authored admission decisions, with CLI interruption and journaled continuation under operator control.

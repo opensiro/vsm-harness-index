@@ -824,6 +824,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="ghostycode"></a>[GhostyCode](assessments/gh/ghostycode.md) ([source](https://github.com/blissito/ghostycode)) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 2 | `A C ? ? — —` |
 | 6 | <a id="agentyou"></a>[AgentYou](assessments/ag/agentyou.md) ([source](https://github.com/shreyasic77/agentyou)) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — — C —` |
 | 6 | <a id="apodex-agentharness"></a>[Apodex AgentHarness](assessments/ap/apodex-agentharness.md) ([source](https://github.com/ApodexAI/AgentHarness)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="omegacode"></a>[omegacode](assessments/om/omegacode.md) ([source](https://github.com/SawyerHood/omegacode)) | 2026-Q2 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="ditto-harness"></a>[Ditto Harness](assessments/di/ditto-harness.md) ([source](https://github.com/ditto-assistant/ditto-harness)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="forgedock"></a>[ForgeDock](assessments/fo/forgedock.md) ([source](https://github.com/RapierCraftStudios/ForgeDock)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deepseekfathom"></a>[DeepSeekFathom](assessments/de/deepseekfathom.md) ([source](https://github.com/ffffff233/DeepSeekFathom)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
