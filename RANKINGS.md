@@ -88,6 +88,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="openrig"></a>[OpenRig](assessments/op/openrig.md) ([source](https://github.com/mvschwarz/openrig)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="cc-haha"></a>[cc-haha](assessments/cc/cc-haha.md) ([source](https://github.com/NanmiCoder/cc-haha)) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="nac"></a>[nac](assessments/na/nac.md) ([source](https://github.com/arcee-ai/nac)) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="frenzymath-archon"></a>[Archon](assessments/fr/frenzymath-archon.md) ([source](https://github.com/frenzymath/Archon)) | 2026-Q1 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="clawmanager"></a>[ClawManager](assessments/cl/clawmanager.md) ([source](https://github.com/Yuan-lab-LLM/ClawManager)) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="autoresearchclaw"></a>[AutoResearchClaw](assessments/au/autoresearchclaw.md) ([source](https://github.com/aiming-lab/AutoResearchClaw)) | 2026-Q1 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="clouds-coder"></a>[Clouds Coder](assessments/cl/clouds-coder.md) ([source](https://github.com/FonaTech/Clouds-Coder)) | 2026-Q1 | 4/6 | 3/5 | 1 | 1 | 0 | `A C A A A(P) —` |
