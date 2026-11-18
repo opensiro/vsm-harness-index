@@ -619,6 +619,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="stiracore"></a>[StiraCore](assessments/st/stiracore.md) ([source](https://github.com/Resolver-TNG/StiraCore)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="agent-harness-cmabery"></a>[agent-harness (CMABERY)](assessments/ag/agent-harness-cmabery.md) ([source](https://github.com/CMABERY/agent-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mantel"></a>[Mantel](assessments/ma/mantel.md) ([source](https://github.com/RealNarcissus/mantel)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A — P C — —` |
+| 6 | <a id="open-cloud-agents"></a>[Open Cloud Agents](assessments/op/open-cloud-agents.md) ([source](https://github.com/open-cloud-agents/ocagents)) | 2026-Q4 | 1/6 | 0/5 | 1 | 2 | 1 | `A — P C ? P` |
 | 6 | <a id="hyperflow-infinity"></a>[HyperFlow-Infinity](assessments/hy/hyperflow-infinity.md) ([source](https://github.com/Video-Rebirth/hyperflow-infinity)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="onethread"></a>[onethread](assessments/on/onethread.md) ([source](https://github.com/RogyMD/onethread)) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="cire-harness"></a>[cire-harness](assessments/ci/cire-harness.md) ([source](https://github.com/fathdemr/cire-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
