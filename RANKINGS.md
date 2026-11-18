@@ -334,6 +334,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="suga"></a>[Suga](assessments/su/suga.md) ([source](https://github.com/inhere/suga)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="pi-forge"></a>[pi-Forge](assessments/pi/pi-forge.md) ([source](https://github.com/djtoon/pi-forge)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="codeagent-harvil1"></a>[CodeAgent (Harvil1)](assessments/co/codeagent-harvil1.md) ([source](https://github.com/Harvil1/codeAgent)) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
+| 5 | <a id="ub-agents"></a>[ub-agents](assessments/ub/ub-agents.md) ([source](https://github.com/uberblick-ai/ub-agents)) | 2026-Q4 | 2/6 | 1/5 | 0 | 3 | 0 | `A — P A P P` |
 | 5 | <a id="ambient-cli"></a>[Ambient CLI](assessments/am/ambient-cli.md) ([source](https://github.com/AmbientCrypto/ambient-cli)) | 2026-Q3 | 2/6 | 1/5 | 2 | 1 | 0 | `A C — A C P` |
 | 5 | <a id="alisio"></a>[Alisio](assessments/al/alisio.md) ([source](https://github.com/GustavoGutierrez/alisio)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="minagent"></a>[MinAgent](assessments/mi/minagent.md) ([source](https://github.com/Nichonauta/MinAgent)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
