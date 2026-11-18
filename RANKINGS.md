@@ -348,6 +348,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="histh"></a>[Histh](assessments/hi/histh.md) ([source](https://github.com/ayandexyz/Honey-I-Shrunk-the-Harness)) | 2026-Q3 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="mindweave"></a>[Mindweave](assessments/mi/mindweave.md) ([source](https://github.com/mindweave-cli/mindweave)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="karmx"></a>[karmX](assessments/ka/karmx.md) ([source](https://github.com/KarmSakha/karmx-agent)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="self-evolving-agent-harness"></a>[Self-Evolving Agent Harness](assessments/se/self-evolving-agent-harness.md) ([source](https://github.com/tylerelyt/self-evolving-agent-harness)) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P — A —` |
 | 5 | <a id="certo"></a>[Certo](assessments/ce/certo.md) ([source](https://github.com/alessioricco/Certo)) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — — A P —` |
 | 5 | <a id="sciencebuddy-simple-scibuddy"></a>[ScienceBuddy / Simple-SciBuddy](assessments/sc/sciencebuddy-simple-scibuddy.md) ([source](https://github.com/Gen-Verse/ScienceBuddy)) | 2026-Q3 | 2/6 | 1/5 | 2 | 0 | 0 | `A — C C A —` |
 | 5 | <a id="braid"></a>[Braid](assessments/br/braid.md) ([source](https://github.com/Epsirom/braid)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A A C(P) — — —` |
