@@ -1277,3 +1277,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1276|happy-agent|Happy Agent|https://github.com/slopus/happy-agent|2026-07-04T16:23:33Z|index-addition|bd2bd009c30ca7202f793bd9189ecadc495aeae7|2026-11-18
 1277|pine|PINE|https://github.com/pmndre/pine|2026-11-10T23:18:48Z|index-addition|c9dbfd129a8574459e37cfa834662b0fa8ca8a1b|2026-11-18
 1278|open-cloud-agents|Open Cloud Agents|https://github.com/open-cloud-agents/ocagents|2026-10-23T10:01:47Z|index-addition|116f89171931e16cd7194122354815937b6ebef3|2026-11-18
+1279|octopus-si-os|Octopus SI OS|https://github.com/miuuyy/Octopus-SI-OS|2026-10-09T08:28:38Z|index-addition|68fd20dc7432909f964f9378b52b71b508e0185f|2026-11-18
