@@ -412,6 +412,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="cyber-ai-team"></a>[Cyber AI Team](assessments/cy/cyber-ai-team.md) ([source](https://github.com/Hyper-AI-Lab/cyber-ai-team)) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P — A —` |
 | 5 | <a id="autohelix"></a>[AutoHelix](assessments/au/autohelix.md) ([source](https://github.com/awslabs/AutoHelix)) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P A — —` |
 | 5 | <a id="puny"></a>[Puny](assessments/pu/puny.md) ([source](https://github.com/christianhelle/puny)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="happy-agent"></a>[Happy Agent](assessments/ha/happy-agent.md) ([source](https://github.com/slopus/happy-agent)) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P A — —` |
 | 5 | <a id="tevarn"></a>[Tevarn](assessments/te/tevarn.md) ([source](https://github.com/wu1w/tevarn)) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — A — — P` |
 | 5 | <a id="atomcode"></a>[AtomCode](assessments/at/atomcode.md) ([source](https://github.com/karlorz/atomcode)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="lean-coder"></a>[lean-coder](assessments/le/lean-coder.md) ([source](https://github.com/codemonkeying/lean-coder)) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
