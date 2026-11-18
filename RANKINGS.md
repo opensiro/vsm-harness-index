@@ -296,6 +296,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="quickmaths"></a>[QuickMaths](assessments/qu/quickmaths.md) ([source](https://github.com/genproof/QuickMaths)) | 2026-Q4 | 2/6 | 1/5 | 2 | 2 | 0 | `A A C(P) C P —` |
 | 5 | <a id="northcua"></a>[NorthCUA](assessments/no/northcua.md) ([source](https://github.com/beipo-ai/NorthCUA)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="halay"></a>[halay](assessments/ha/halay.md) ([source](https://github.com/halayhq/halay)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
+| 5 | <a id="rightcommit"></a>[rightcommit](assessments/ri/rightcommit.md) ([source](https://github.com/rightcommit/rightcommit)) | 2026-Q4 | 2/6 | 1/5 | 1 | 3 | 0 | `A — A(P) C P P` |
 | 5 | <a id="auriga"></a>[Auriga](assessments/au/auriga.md) ([source](https://github.com/lose4578/Auriga)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="dsh-superagent"></a>[dsh-superagent](assessments/ds/dsh-superagent.md) ([source](https://github.com/deepseek-ai/dsh-superagent-prototype)) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |
 | 5 | <a id="agent-harness-lab"></a>[Agent Harness Lab](assessments/ag/agent-harness-lab.md) ([source](https://github.com/mihazs/agent-harness-lab)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A — C(P) A — —` |
