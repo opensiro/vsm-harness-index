@@ -1253,3 +1253,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1252|azure-agent-landing-zone-orchestrator|Azure Agent Landing Zone Orchestrator|https://github.com/Azure/agent-app-orchestrator|2023-06-27T14:29:47Z|github-repository-search|72909db145ca41b954e18261d89e50318bed592a|2026-11-18
 1253|konductor|Konductor|https://github.com/aws-solutions/konductor|2023-03-28T14:29:27Z|github-repository-search|09c34858ca2e704fb8572c91389a87255b1e1075|2026-11-18
 1254|green-agent|Green Agent|https://github.com/w512/Green-Agent|2026-09-05T17:45:58Z|index-addition|c829587716280cda6f98417f4fbc878acf86418b|2026-11-18
+1255|ainz|Ainz|https://github.com/wess/ainz|2026-09-02T00:04:07Z|index-addition|26e02248344307679d510593138c9eb9601feb9e|2026-11-18
