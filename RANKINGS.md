@@ -345,6 +345,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="harness-zero"></a>[Harness-Zero](assessments/ha/harness-zero.md) ([source](https://github.com/metaevo-ai/harness-zero)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="zcode"></a>[ZCode](assessments/zc/zcode.md) ([source](https://github.com/zai-org/ZCode)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 4 | `A ? A ? ? ?` |
 | 5 | <a id="coding"></a>[CODING](assessments/co/coding.md) ([source](https://github.com/Guo-Yixin/coding-agent)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="k-brain"></a>[K-brain](assessments/k-/k-brain.md) ([source](https://github.com/Stack-Cairn/K-brain)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="histh"></a>[Histh](assessments/hi/histh.md) ([source](https://github.com/ayandexyz/Honey-I-Shrunk-the-Harness)) | 2026-Q3 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="mindweave"></a>[Mindweave](assessments/mi/mindweave.md) ([source](https://github.com/mindweave-cli/mindweave)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
 | 5 | <a id="karmx"></a>[karmX](assessments/ka/karmx.md) ([source](https://github.com/KarmSakha/karmx-agent)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
