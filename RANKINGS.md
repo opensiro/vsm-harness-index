@@ -676,6 +676,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="rsih"></a>[RSIH](assessments/rs/rsih.md) ([source](https://github.com/CosmosMind-ai/RSI-Harness)) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A — — — C C` |
 | 6 | <a id="lobstah"></a>[lobstah](assessments/lo/lobstah.md) ([source](https://github.com/aequitas-labs/lobstah)) | 2026-Q3 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
 | 6 | <a id="ascension"></a>[Ascension](assessments/as/ascension.md) ([source](https://github.com/AI-Ascension/sts2-harness)) | 2026-Q3 | 1/6 | 0/5 | 1 | 1 | 0 | `A — C(P) — — —` |
+| 6 | <a id="ainz"></a>[Ainz](assessments/ai/ainz.md) ([source](https://github.com/wess/ainz)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 1 | `A — — C ? —` |
 | 6 | <a id="picode"></a>[picode](assessments/pi/picode.md) ([source](https://github.com/n3sRan/picode)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nabd"></a>[Nabd](assessments/na/nabd.md) ([source](https://github.com/amiraq1/Nabd)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="pooled"></a>[Pooled](assessments/po/pooled.md) ([source](https://github.com/Nehanth/pooled)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
