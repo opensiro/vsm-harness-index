@@ -72,6 +72,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="octo"></a>[Octo](assessments/oc/octo.md) ([source](https://github.com/open-octo/octo-agent)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 1 | `A A A A ? —` |
 | 3 | <a id="localharness"></a>[LocalHarness](assessments/lo/localharness.md) ([source](https://github.com/ahwurm/localharness)) | 2026-Q2 | 4/6 | 3/5 | 0 | 2 | 0 | `A — A(P) A A(P) —` |
 | 3 | <a id="kimi-code-cli"></a>[Kimi Code CLI](assessments/ki/kimi-code-cli.md) ([source](https://github.com/MoonshotAI/kimi-code)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 3 | <a id="harness-jordi-mar-al"></a>[Harness (Jordi Marçal)](assessments/ha/harness-jordi-mar-al.md) ([source](https://github.com/jordimarsal/harness)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="zerostack"></a>[zerostack](assessments/ze/zerostack.md) ([source](https://github.com/gi-dellav/zerostack)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="muonroi-cli"></a>[muonroi-cli](assessments/mu/muonroi-cli.md) ([source](https://github.com/muonroi/muonroi-cli)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="monomind"></a>[Monomind](assessments/mo/monomind.md) ([source](https://github.com/monoes/monomind)) | 2026-Q2 | 4/6 | 3/5 | 0 | 0 | 2 | `A A A A ? ?` |
