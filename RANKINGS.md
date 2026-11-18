@@ -282,6 +282,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="cowagent"></a>[CowAgent](assessments/co/cowagent.md) ([source](https://github.com/zhayujie/CowAgent)) | 2022-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A C P — A A(P)` |
 | 4 | <a id="agno"></a>[Agno](assessments/ag/agno.md) ([source](https://github.com/agno-agi/agno)) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 5 | <a id="pine"></a>[PINE](assessments/pi/pine.md) ([source](https://github.com/pmndre/pine)) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |
+| 5 | <a id="weora"></a>[Weora](assessments/we/weora.md) ([source](https://github.com/yuzhiyang1/weora)) | 2026-Q4 | 2/6 | 1/5 | 2 | 2 | 1 | `A C A(P) C ? P` |
 | 5 | <a id="lumak"></a>[LumaK](assessments/lu/lumak.md) ([source](https://github.com/kuLm1Fs/lumak-ts)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="onion-harness"></a>[Onion Harness](assessments/on/onion-harness.md) ([source](https://github.com/chenofchina/onion-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 3 | 0 | `A A P — P P` |
 | 5 | <a id="slack-agent-runtime"></a>[Slack Agent Runtime](assessments/sl/slack-agent-runtime.md) ([source](https://github.com/sakomws/slack-agent-runtime)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
@@ -432,6 +433,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="bharatcode"></a>[BharatCode](assessments/bh/bharatcode.md) ([source](https://github.com/arbazkhan971/bharatcode-cli)) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C A C — —` |
 | 5 | <a id="loopplane"></a>[LoopPlane](assessments/lo/loopplane.md) ([source](https://github.com/LJC-FVNR/LoopPlane)) | 2026-Q2 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P A — —` |
 | 5 | <a id="crabot"></a>[Crabot](assessments/cr/crabot.md) ([source](https://github.com/J-F-Liu/crabot)) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A — P A — P` |
+| 5 | <a id="orcha"></a>[Orcha](assessments/or/orcha.md) ([source](https://github.com/open-orcha/orcha)) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A — P A — P` |
 | 5 | <a id="polycode"></a>[polycode](assessments/po/polycode.md) ([source](https://github.com/gasantiago16/polycode)) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C A(P) C — —` |
 | 5 | <a id="pyxis"></a>[Pyxis](assessments/py/pyxis.md) ([source](https://github.com/arthjean/pyxis)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="starnet"></a>[StarNet](assessments/st/starnet.md) ([source](https://github.com/androoAGI/starnet)) | 2026-Q2 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
@@ -642,6 +644,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="codemowers-agent"></a>[Codemowers Agent](assessments/co/codemowers-agent.md) ([source](https://github.com/codemowers/agent)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="nanocoder-haoyuzhang0214"></a>[NanoCoder (HaoyuZhang0214)](assessments/na/nanocoder-haoyuzhang0214.md) ([source](https://github.com/HaoyuZhang0214/NanoCoder)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="hexashell"></a>[HexaShell](assessments/he/hexashell.md) ([source](https://github.com/HexaFuture/HexaShell)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="octopus-si-os"></a>[Octopus SI OS](assessments/oc/octopus-si-os.md) ([source](https://github.com/miuuyy/Octopus-SI-OS)) | 2026-Q4 | 1/6 | 0/5 | 0 | 2 | 1 | `A — P — ? P` |
 | 6 | <a id="psgoagent"></a>[PSGoAgent](assessments/ps/psgoagent.md) ([source](https://github.com/nakasyou/power-agent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="roboharness"></a>[RoboHarness](assessments/ro/roboharness.md) ([source](https://github.com/BinceQu/RoboHarness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deepseek-bot"></a>[deepseek-bot](assessments/de/deepseek-bot.md) ([source](https://github.com/rlaope/deepseek-bot)) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
