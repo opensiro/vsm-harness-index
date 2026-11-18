@@ -420,6 +420,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="conductor-agents-security-harness"></a>[Conductor Agents — Security Harness](assessments/co/conductor-agents-security-harness.md) ([source](https://github.com/conductor-oss/conductor-agents)) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="leviath"></a>[Leviath](assessments/le/leviath.md) ([source](https://github.com/GEMISIS/leviath)) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C(P) A — —` |
 | 5 | <a id="postal"></a>[Postal](assessments/po/postal.md) ([source](https://github.com/andrefetch/postal)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
+| 5 | <a id="openagent"></a>[OpenAgent](assessments/op/openagent.md) ([source](https://github.com/openagt/openagent)) | 2026-Q2 | 2/6 | 1/5 | 0 | 1 | 0 | `A A P — — —` |
 | 5 | <a id="superharness"></a>[superharness](assessments/su/superharness.md) ([source](https://github.com/artificemachine/superharness)) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
 | 5 | <a id="easy-agent"></a>[Easy Agent](assessments/ea/easy-agent.md) ([source](https://github.com/vietor/easy-agent)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="kairocode"></a>[KairoCode](assessments/ka/kairocode.md) ([source](https://github.com/yangf-Veda/KairoCode)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 1 | `A — A ? — —` |
