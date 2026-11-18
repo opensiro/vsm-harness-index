@@ -463,6 +463,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="hive-workflow-engine"></a>[Hive (workflow engine)](assessments/hi/hive-workflow-engine.md) ([source](https://github.com/ivankuznetsov/hive)) | 2026-Q2 | 2/6 | 1/5 | 1 | 3 | 0 | `A C P A P P` |
 | 5 | <a id="wanman"></a>[wanman](assessments/wa/wanman.md) ([source](https://github.com/chekusu/wanman)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="stemcode"></a>[StemCode](assessments/st/stemcode.md) ([source](https://github.com/rizwan3d/StemCode)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A A — C — —` |
+| 5 | <a id="looper-nexu"></a>[Looper](assessments/lo/looper-nexu.md) ([source](https://github.com/nexu-io/looper)) | 2026-Q2 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P A — —` |
 | 5 | <a id="oh-my-hermes"></a>[Oh My Hermes](assessments/oh/oh-my-hermes.md) ([source](https://github.com/witt3rd/oh-my-hermes)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="vix"></a>[Vix](assessments/vi/vix.md) ([source](https://github.com/get-vix/vix)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — A C —` |
 | 5 | <a id="clawgui"></a>[ClawGUI](assessments/cl/clawgui.md) ([source](https://github.com/ZJU-REAL/ClawGUI)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
