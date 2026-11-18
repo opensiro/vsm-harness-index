@@ -746,6 +746,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="pasclaude"></a>[PasClaude](assessments/pa/pasclaude.md) ([source](https://github.com/seanrobertwright/PasClaude)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="xoder"></a>[Xoder](assessments/xo/xoder.md) ([source](https://github.com/BANGHlxbackout/Xoder)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="no-human"></a>[no_human](assessments/no/no-human.md) ([source](https://github.com/no-human-ai/no_human)) | 2026-Q3 | 1/6 | 0/5 | 2 | 3 | 0 | `A C P — C(P) P` |
+| 6 | <a id="oar"></a>[OAR](assessments/oa/oar.md) ([source](https://github.com/botiverse/oar)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="suncode"></a>[SunCode](assessments/su/suncode.md) ([source](https://github.com/costanzo/suncode)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="openharness"></a>[OpenHarness](assessments/op/openharness.md) ([source](https://github.com/autonomous-ai/openharness)) | 2026-Q3 | 1/6 | 0/5 | 2 | 2 | 0 | `A — C(P) — C(P) —` |
 | 6 | <a id="fuse"></a>[Fuse](assessments/fu/fuse.md) ([source](https://github.com/ethanhinson/fuse)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |

@@ -1178,3 +1178,4 @@ catalog_position|harness_id|signature
 1259|self-evolving-agent-harness|Two live-model Hermes patrols investigate service incidents while a local operator can roll back the shared Skill; the learning model proposes future Skill revisions, gated by fixed replay and verified adoption across both patrols.
 1260|k-brain|K-brain closes model-selected code work through native tool feedback and lets its root agent inspect, steer and cancel current child commitments; file locks, pre-action risk review and internal memory consolidation do not establish other VSM functions.
 1261|limen|A hosted coordinator separates overlapping worker scopes, acts on commit-bound fresh review and manages active tickets while the owner can amend the vision that governs the shared project.
+1262|oar|OAR ships a bundled Pi coding session behind a normalized runtime API, while downstream hosts own multi-session arbitration and policy.
