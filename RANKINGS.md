@@ -134,6 +134,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="friday"></a>[Friday](assessments/fr/friday.md) ([source](https://github.com/splashxmoon/friday)) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="hildi"></a>[Hildi](assessments/hi/hildi.md) ([source](https://github.com/one-king-studio/hildi)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A(P) C — —` |
 | 4 | <a id="kushagrathisside-bridle"></a>[Bridle](assessments/ku/kushagrathisside-bridle.md) ([source](https://github.com/kushagrathisside/bridle)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
+| 4 | <a id="opencode-team"></a>[OpenCode Team](assessments/op/opencode-team.md) ([source](https://github.com/sametcelikbicak/opencode-team)) | 2026-Q4 | 3/6 | 2/5 | 1 | 3 | 0 | `A A A(P) C P P` |
 | 4 | <a id="bubblepaw-core"></a>[BubblePaw Core](assessments/bu/bubblepaw-core.md) ([source](https://github.com/BubbleBuffer/BubblePaw-Core)) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="neopanic-harness"></a>[Harness³](assessments/ne/neopanic-harness.md) ([source](https://github.com/NeoPanic/harness3)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="luma-harness"></a>[Luma Harness](assessments/lu/luma-harness.md) ([source](https://github.com/Gavriel-lab/luma-harness)) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
