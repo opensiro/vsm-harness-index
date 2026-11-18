@@ -166,6 +166,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="pi-native"></a>[pi-native](assessments/pi/pi-native.md) ([source](https://github.com/nurmdrafi/pi-native)) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="agensh"></a>[Agensh](assessments/ag/agensh.md) ([source](https://github.com/microsoft/Agensh)) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="clarvis"></a>[Clarvis](assessments/cl/clarvis.md) ([source](https://github.com/getclarvis/clarvis)) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
+| 4 | <a id="maat"></a>[Maat](assessments/ma/maat.md) ([source](https://github.com/mohannadrabie/maat)) | 2026-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A A A(P) C — P` |
 | 4 | <a id="laudacode"></a>[Laudacode](assessments/la/laudacode.md) ([source](https://github.com/Anon4You/Laudacode)) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A — — A — A(P)` |
 | 4 | <a id="foe"></a>[Foe](assessments/fo/foe.md) ([source](https://github.com/pedapudi/foe)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="whipcode"></a>[WhipCode](assessments/wh/whipcode.md) ([source](https://github.com/context-labs/whip)) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
