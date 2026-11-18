@@ -1255,3 +1255,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1254|green-agent|Green Agent|https://github.com/w512/Green-Agent|2026-09-05T17:45:58Z|index-addition|c829587716280cda6f98417f4fbc878acf86418b|2026-11-18
 1255|ainz|Ainz|https://github.com/wess/ainz|2026-09-02T00:04:07Z|index-addition|26e02248344307679d510593138c9eb9601feb9e|2026-11-18
 1256|pyxis|Pyxis|https://github.com/arthjean/pyxis|2026-06-15T13:02:55Z|index-addition|690665d686a1f6a44d4281b360a965ac338deffb|2026-11-18
+1257|harness-jordi-mar-al|Harness (Jordi Marçal)|https://github.com/jordimarsal/harness|2026-05-14T13:52:35Z|index-addition|2aa8ffde95ebe78f4f99f991b262530d5acc02a3|2026-11-18
