@@ -645,6 +645,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="cloud-coding-agent-node"></a>[Cloud Coding Agent Node](assessments/cl/cloud-coding-agent-node.md) ([source](https://github.com/fred1433/cloud-coding-agent-node)) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="raincode"></a>[RainCode](assessments/ra/raincode.md) ([source](https://github.com/Rainmemery/RainCode)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="reinloop"></a>[reinloop](assessments/re/reinloop.md) ([source](https://github.com/aantenore/reinloop)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
+| 6 | <a id="openoutbound"></a>[OpenOutbound](assessments/op/openoutbound.md) ([source](https://github.com/xyluxx/openoutbound)) | 2026-Q3 | 1/6 | 0/5 | 4 | 3 | 0 | `A C C(P) C C(P) P` |
 | 6 | <a id="autonomous-swe-platform"></a>[Autonomous SWE Platform](assessments/au/autonomous-swe-platform.md) ([source](https://github.com/SurjitW/Autonomous-Software-Engineering-and-Coding-Agent-Platform)) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="company-brain"></a>[Company Brain](assessments/co/company-brain.md) ([source](https://github.com/supermemoryai/company-brain)) | 2026-Q3 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="raw-cli"></a>[Raw CLI](assessments/ra/raw-cli.md) ([source](https://github.com/lploc94/raw-cli)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
