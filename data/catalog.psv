@@ -1262,3 +1262,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1261|limen|Limen|https://github.com/overment/limen|2026-08-14T06:24:37Z|index-addition|f1e3a54a6cd9c2baa4cf3d2acd2d1e640b1d5a75|2026-11-18
 1262|oar|OAR|https://github.com/botiverse/oar|2026-08-05T06:55:45Z|index-addition|a58672d52acb25f286c67831e114c1738588064c|2026-11-18
 1263|pi-fabric|Pi Fabric|https://github.com/fabric-runtime/pi-fabric|2026-07-13T14:35:18Z|index-addition|b166b4c72c58c74c7aa8c81aeda46e344d89eb68|2026-11-18
+1264|smart|SMART|https://github.com/awslabs/social-messaging-agent-runtime-toolkit|2026-10-01T02:59:03Z|index-addition|2068968416fffc891d6d7ea42c641ff636c90f64|2026-11-18
