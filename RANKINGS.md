@@ -337,6 +337,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="ambient-cli"></a>[Ambient CLI](assessments/am/ambient-cli.md) ([source](https://github.com/AmbientCrypto/ambient-cli)) | 2026-Q3 | 2/6 | 1/5 | 2 | 1 | 0 | `A C — A C P` |
 | 5 | <a id="alisio"></a>[Alisio](assessments/al/alisio.md) ([source](https://github.com/GustavoGutierrez/alisio)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="minagent"></a>[MinAgent](assessments/mi/minagent.md) ([source](https://github.com/Nichonauta/MinAgent)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
+| 5 | <a id="mini-dsh"></a>[mini-DSH](assessments/mi/mini-dsh.md) ([source](https://github.com/BeforeLanding/mini-DSH)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="polyphemus"></a>[Polyphemus](assessments/po/polyphemus.md) ([source](https://github.com/polyphemus-ai/release-rehearsal)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C — A — P` |
 | 5 | <a id="aadixc0de-rune"></a>[Rune](assessments/aa/aadixc0de-rune.md) ([source](https://github.com/AadiXC0DE/Rune)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A — — P` |
 | 5 | <a id="turri"></a>[turri](assessments/tu/turri.md) ([source](https://github.com/turri-oss/turri)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
