@@ -814,6 +814,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="hypha"></a>[Hypha](assessments/hy/hypha.md) ([source](https://github.com/CodeSoul-co/Hypha)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="chad"></a>[chad](assessments/ch/chad.md) ([source](https://github.com/nathansutton/chad)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="openjiuwen-agent-runtime"></a>[openJiuwen Agent Runtime](assessments/op/openjiuwen-agent-runtime.md) ([source](https://github.com/openJiuwen-ai/agent-runtime)) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="miniclaude"></a>[MiniClaude](assessments/mi/miniclaude.md) ([source](https://github.com/zmylol/MiniClaude)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="carbon"></a>[Carbon](assessments/ca/carbon.md) ([source](https://github.com/thecarbonlayer/carbon)) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="tinyagents"></a>[TinyAgents](assessments/ti/tinyagents.md) ([source](https://github.com/tinyhumansai/tinyagents)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="railwarden"></a>[RailWarden](assessments/ra/railwarden.md) ([source](https://github.com/advaith-1212/railwarden)) | 2026-Q2 | 1/6 | 0/5 | 2 | 1 | 0 | `A C C(P) — — —` |
