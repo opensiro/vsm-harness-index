@@ -157,6 +157,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="abhed"></a>[Abhed](assessments/ab/abhed.md) ([source](https://github.com/zybuu-ai/abhed)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A — A — —` |
 | 4 | <a id="dsh-flow"></a>[dsh-flow](assessments/ds/dsh-flow.md) ([source](https://github.com/rootkiller6788/dsh-flow)) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="harnessdesk"></a>[HarnessDesk](assessments/ha/harnessdesk.md) ([source](https://github.com/HarnessDesk/HarnessDesk)) | 2026-Q3 | 3/6 | 2/5 | 1 | 1 | 0 | `A A C(P) A — —` |
+| 4 | <a id="agystack"></a>[agystack](assessments/ag/agystack.md) ([source](https://github.com/jtaroreh/agystack)) | 2026-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A A A(P) C — P` |
 | 4 | <a id="xeyo"></a>[XEYO](assessments/xe/xeyo.md) ([source](https://github.com/Gurp-S/XEYO)) | 2026-Q3 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="pi-herdsman"></a>[Pi Herdsman](assessments/pi/pi-herdsman.md) ([source](https://github.com/boadij/pi-herdsman)) | 2026-Q3 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="metamorph"></a>[Metamorph](assessments/me/metamorph.md) ([source](https://github.com/yohanvillarp/metamorph)) | 2026-Q3 | 3/6 | 2/5 | 1 | 0 | 0 | `A A C A — —` |
