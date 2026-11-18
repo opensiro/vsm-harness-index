@@ -369,6 +369,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="recuris"></a>[Recuris](assessments/re/recuris.md) ([source](https://github.com/Gen-Verse/Recuris)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
 | 5 | <a id="shelracode"></a>[ShelraCode](assessments/sh/shelracode.md) ([source](https://github.com/Shelra/ShelraCode)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="mission-control"></a>[Mission Control](assessments/mi/mission-control.md) ([source](https://github.com/CosmonautJones/mission-control)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — C(P) A — —` |
+| 5 | <a id="doompi"></a>[DoomPi](assessments/do/doompi.md) ([source](https://github.com/AgiFlow/doompi)) | 2026-Q3 | 2/6 | 1/5 | 0 | 1 | 0 | `A — A(P) — — —` |
 | 5 | <a id="beagle"></a>[Beagle](assessments/be/beagle.md) ([source](https://github.com/SalesforceAIResearch/Beagle)) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
 | 5 | <a id="pi-harness"></a>[Pi-Harness](assessments/pi/pi-harness.md) ([source](https://github.com/wangmiaozero/pi-harness)) | 2026-Q3 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
 | 5 | <a id="gnosis"></a>[Gnosis](assessments/gn/gnosis.md) ([source](https://github.com/DOMCHURCH/Gnosis)) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 1 | `A C ? A — —` |
