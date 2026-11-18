@@ -385,6 +385,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="polter"></a>[Polter](assessments/po/polter.md) ([source](https://github.com/Lugia123/polter)) | 2026-Q3 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="swe-mux"></a>[swe-mux](assessments/sw/swe-mux.md) ([source](https://github.com/jatoran/swe-mux)) | 2026-Q3 | 2/6 | 1/5 | 2 | 2 | 0 | `A C A(P) C P —` |
 | 5 | <a id="omniscientist"></a>[OmniScientist](assessments/om/omniscientist.md) ([source](https://github.com/Omni-Scientist/OmniScientist)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
+| 5 | <a id="dsh-visual-workflow"></a>[dsh Visual Workflow](assessments/ds/dsh-visual-workflow.md) ([source](https://github.com/GZX2211/dsh-Visual-Workflow)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="codey"></a>[Codey](assessments/co/codey.md) ([source](https://github.com/codesbyjit/codey)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="mist"></a>[mist](assessments/mi/mist.md) ([source](https://github.com/mist-agent-harness/mist-agent)) | 2026-Q3 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — — A` |
 | 5 | <a id="yagent"></a>[Yagent](assessments/ya/yagent.md) ([source](https://github.com/Mechres/Yagent)) | 2026-Q3 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
