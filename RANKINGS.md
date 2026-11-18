@@ -17,6 +17,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 2 | <a id="pi-rs"></a>[pi-rs](assessments/pi/pi-rs.md) ([source](https://github.com/CCherry07/pi-rs)) | 2026-Q3 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="argus-agent"></a>[Argus](assessments/ar/argus-agent.md) ([source](https://github.com/microsoft/ArgusAgent)) | 2026-Q3 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="dao-code"></a>[Dao Code](assessments/da/dao-code.md) ([source](https://github.com/tigicion/dao-code)) | 2026-Q2 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
+| 2 | <a id="tigrimosr"></a>[TigrimOSR](assessments/ti/tigrimosr.md) ([source](https://github.com/Sompote/TigrimOSR)) | 2026-Q2 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A A A(P) —` |
 | 2 | <a id="octos"></a>[Octos](assessments/oc/octos.md) ([source](https://github.com/octos-org/octos)) | 2026-Q1 | 5/6 | 4/5 | 0 | 2 | 0 | `A A A(P) A A P` |
 | 2 | <a id="jiuwenswarm"></a>[JiuwenSwarm](assessments/ji/jiuwenswarm.md) ([source](https://github.com/openJiuwen-ai/jiuwenswarm)) | 2026-Q1 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A A A(P) —` |
 | 2 | <a id="oh-my-agent"></a>[oh-my-agent](assessments/oh/oh-my-agent.md) ([source](https://github.com/first-fluke/oh-my-agent)) | 2026-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
