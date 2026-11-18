@@ -1001,6 +1001,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="open-harness"></a>[open-harness](assessments/op/open-harness.md) ([source](https://github.com/MaxGfeller/open-harness)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="garcon"></a>[Garcon](assessments/ga/garcon.md) ([source](https://github.com/cfal/garcon)) | 2026-Q1 | 1/6 | 0/5 | 1 | 1 | 3 | `A C P ? ? ?` |
 | 6 | <a id="openclaw-dotnet"></a>[OpenClaw.NET](assessments/op/openclaw-dotnet.md) ([source](https://github.com/clawdotnet/openclaw.net)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="gascity"></a>[Gas City](assessments/ga/gascity.md) ([source](https://github.com/gastownhall/gascity)) | 2026-Q1 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="g-rump"></a>[G-Rump](assessments/g-/g-rump.md) ([source](https://github.com/Aphrodine-wq/G-Rump)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="prismor"></a>[Prismor](assessments/pr/prismor.md) ([source](https://github.com/PrismorSec/prismor)) | 2026-Q1 | 1/6 | 0/5 | 0 | 1 | 4 | `A ? ? ? P ?` |
 | 6 | <a id="lacp"></a>[LACP](assessments/la/lacp.md) ([source](https://github.com/0xNyk/lacp)) | 2026-Q1 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
