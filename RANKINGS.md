@@ -669,6 +669,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="agnostic-agent"></a>[agnostic-agent](assessments/ag/agnostic-agent.md) ([source](https://github.com/ucsandman/agnostic-agent)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="scoot"></a>[scoot](assessments/sc/scoot.md) ([source](https://github.com/sergenes/scootcli)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mini-harness"></a>[mini-harness](assessments/mi/mini-harness.md) ([source](https://github.com/mini-harness/mini-harness)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="green-agent"></a>[Green Agent](assessments/gr/green-agent.md) ([source](https://github.com/w512/Green-Agent)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cortexterm"></a>[CortexTerm](assessments/co/cortexterm.md) ([source](https://github.com/Toge-1/CortexTerm)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rohanasudani-termagent"></a>[TermAgent](assessments/ro/rohanasudani-termagent.md) ([source](https://github.com/Rohanasudani/terminal-coding-agent)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="earshot"></a>[earshot](assessments/ea/earshot.md) ([source](https://github.com/rishabhguptajs/earshot)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
