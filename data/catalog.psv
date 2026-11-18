@@ -1270,3 +1270,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1269|ub-agents|ub-agents|https://github.com/uberblick-ai/ub-agents|2026-10-01T12:17:03Z|index-addition|883bc1e4a241a573facaeb025489be59e7cb3428|2026-11-18
 1270|openagent|OpenAgent|https://github.com/openagt/openagent|2026-06-25T15:51:24Z|index-addition|f1461867acb5161efe5293b28dcb0dfb13c2f1af|2026-11-18
 1271|openoutbound|OpenOutbound|https://github.com/xyluxx/openoutbound|2026-09-27T08:16:07Z|index-addition|bc158cac6548ab54699442d159cc2130570b9a78|2026-11-18
+1272|miniclaude|MiniClaude|https://github.com/zmylol/MiniClaude|2026-06-29T10:05:39Z|index-addition|186ccb09f485aab9c5b60c8b7cc92351898de363|2026-11-18
