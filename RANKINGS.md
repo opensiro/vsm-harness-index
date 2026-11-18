@@ -55,6 +55,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="kot"></a>[KOT](assessments/ko/kot.md) ([source](https://github.com/Loqira-Labs/agentkot)) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="theater"></a>[Theater](assessments/th/theater.md) ([source](https://github.com/mana-byte/theater)) | 2026-Q3 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="litecode"></a>[LiteCode](assessments/li/litecode.md) ([source](https://github.com/itissika/litecode)) | 2026-Q3 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
+| 3 | <a id="limen"></a>[Limen](assessments/li/limen.md) ([source](https://github.com/overment/limen)) | 2026-Q3 | 4/6 | 3/5 | 1 | 2 | 0 | `A A A(P) A C P` |
 | 3 | <a id="crewlet"></a>[Crewlet](assessments/cr/crewlet.md) ([source](https://github.com/crewlet/crewlet)) | 2026-Q3 | 4/6 | 3/5 | 1 | 3 | 0 | `A C A(P) A A(P) P` |
 | 3 | <a id="codeaf"></a>[CodeAF](assessments/co/codeaf.md) ([source](https://github.com/Agent-Field/CodeAF)) | 2026-Q3 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) — A P` |
 | 3 | <a id="aiworkhub"></a>[AIWorkHub](assessments/ai/aiworkhub.md) ([source](https://github.com/shrec/AIWorkHub)) | 2026-Q3 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
