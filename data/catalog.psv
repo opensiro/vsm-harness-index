@@ -1254,3 +1254,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1253|konductor|Konductor|https://github.com/aws-solutions/konductor|2023-03-28T14:29:27Z|github-repository-search|09c34858ca2e704fb8572c91389a87255b1e1075|2026-11-18
 1254|green-agent|Green Agent|https://github.com/w512/Green-Agent|2026-09-05T17:45:58Z|index-addition|c829587716280cda6f98417f4fbc878acf86418b|2026-11-18
 1255|ainz|Ainz|https://github.com/wess/ainz|2026-09-02T00:04:07Z|index-addition|26e02248344307679d510593138c9eb9601feb9e|2026-11-18
+1256|pyxis|Pyxis|https://github.com/arthjean/pyxis|2026-06-15T13:02:55Z|index-addition|690665d686a1f6a44d4281b360a965ac338deffb|2026-11-18

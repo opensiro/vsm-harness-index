@@ -418,6 +418,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="loopplane"></a>[LoopPlane](assessments/lo/loopplane.md) ([source](https://github.com/LJC-FVNR/LoopPlane)) | 2026-Q2 | 2/6 | 1/5 | 0 | 1 | 0 | `A — P A — —` |
 | 5 | <a id="crabot"></a>[Crabot](assessments/cr/crabot.md) ([source](https://github.com/J-F-Liu/crabot)) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A — P A — P` |
 | 5 | <a id="polycode"></a>[polycode](assessments/po/polycode.md) ([source](https://github.com/gasantiago16/polycode)) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C A(P) C — —` |
+| 5 | <a id="pyxis"></a>[Pyxis](assessments/py/pyxis.md) ([source](https://github.com/arthjean/pyxis)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="starnet"></a>[StarNet](assessments/st/starnet.md) ([source](https://github.com/androoAGI/starnet)) | 2026-Q2 | 2/6 | 1/5 | 3 | 2 | 0 | `A C C(P) A C(P) —` |
 | 5 | <a id="metaharness"></a>[MetaHarness](assessments/me/metaharness.md) ([source](https://github.com/ruvnet/metaharness)) | 2026-Q2 | 2/6 | 1/5 | 2 | 0 | 0 | `A — C C A —` |
 | 5 | <a id="agent-harness-core"></a>[Agent Harness Core](assessments/ag/agent-harness-core.md) ([source](https://github.com/phenomenoner/agent-harness-core)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
