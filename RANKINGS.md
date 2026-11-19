@@ -969,6 +969,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="wedow-harness"></a>[wedow Harness](assessments/we/wedow-harness.md) ([source](https://github.com/wedow/harness)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="boundflow"></a>[BoundFlow](assessments/bo/boundflow.md) ([source](https://github.com/boundflow/boundflow)) | 2026-Q1 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="agency-os"></a>[Agency-OS](assessments/ag/agency-os.md) ([source](https://github.com/swarm-ai-research/agency-os)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 4 | `A C ? ? ? ?` |
+| 6 | <a id="mumei-agent"></a>[Mumei Agent](assessments/mu/mumei-agent.md) ([source](https://github.com/mumei-lang/mumei-agent)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 1 | `A C — ? — —` |
 | 6 | <a id="sharpcoder"></a>[SharpCoder](assessments/sh/sharpcoder.md) ([source](https://github.com/robkaandorp/SharpCoder)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="optio"></a>[Optio](assessments/op/optio.md) ([source](https://github.com/jonwiggins/optio)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="autonomouscodingagent"></a>[AutonomousCodingAgent](assessments/au/autonomouscodingagent.md) ([source](https://github.com/robertnathe/AutonomousCodingAgent)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
