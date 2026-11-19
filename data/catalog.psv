@@ -1286,3 +1286,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1285|maat|Maat|https://github.com/mohannadrabie/maat|2026-08-23T03:19:16Z|index-addition|bf57b4b5013960b2aa34eb8c707f77d587f5b93e|2026-11-18
 1286|agystack|agystack|https://github.com/jtaroreh/agystack|2026-09-08T00:59:45Z|index-addition|93f43a58ade41ca8271499d3497154b2c6c3619d|2026-11-18
 1287|gascity|Gas City|https://github.com/gastownhall/gascity|2026-02-22T01:40:16Z|index-addition|03f6fe825cf0a54c677c241e4aaa7e76dade28a5|2026-11-18
+1288|llmcore|llmcore|https://github.com/araray/llmcore|2025-05-08T00:16:14Z|manual-discovery|1bd7540267a0a6cc26a069bf6211ea4824f20321|2026-11-19
