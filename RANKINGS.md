@@ -242,6 +242,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="gruai"></a>[gruAI](assessments/gr/gruai.md) ([source](https://github.com/andrew-yangy/gru-ai)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="karimo"></a>[KARIMO](assessments/ka/karimo.md) ([source](https://github.com/opensesh/KARIMO)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="zeroclaw"></a>[ZeroClaw](assessments/ze/zeroclaw.md) ([source](https://github.com/zeroclaw-labs/zeroclaw)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
+| 4 | <a id="metaforge"></a>[MetaForge](assessments/me/metaforge.md) ([source](https://github.com/FidelOdok/MetaForge)) | 2026-Q1 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="autocontext"></a>[autocontext](assessments/au/autocontext.md) ([source](https://github.com/greyhaven-ai/autocontext)) | 2026-Q1 | 3/6 | 2/5 | 2 | 0 | 0 | `A C C A A —` |
 | 4 | <a id="lightspeed"></a>[Lightspeed](assessments/li/lightspeed.md) ([source](https://github.com/smartcomputer-ai/lightspeed)) | 2026-Q1 | 3/6 | 2/5 | 0 | 2 | 0 | `A — A(P) — A P` |
 | 4 | <a id="20x"></a>[20x](assessments/20/20x.md) ([source](https://github.com/peakflo/20x)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
