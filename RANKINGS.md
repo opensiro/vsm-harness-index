@@ -802,6 +802,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="pxx"></a>[pxx](assessments/px/pxx.md) ([source](https://github.com/cdnwetzel/pxx)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 1 | `A — — ? — —` |
 | 6 | <a id="truecoder"></a>[TrueCoder](assessments/tr/truecoder.md) ([source](https://github.com/Shivam583-hue/TrueCoder)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="plank"></a>[Plank](assessments/pl/plank.md) ([source](https://github.com/aovestdipaperino/plank)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 2 | `A C ? ? — —` |
+| 6 | <a id="emrg"></a>[EMRG](assessments/em/emrg.md) ([source](https://github.com/argszero/emrg)) | 2026-Q3 | 1/6 | 0/5 | 1 | 2 | 1 | `A — P C P ?` |
 | 6 | <a id="nemocode"></a>[NemoCode](assessments/ne/nemocode.md) ([source](https://github.com/SampleBias/nemocode)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="operandi"></a>[Operandi](assessments/op/operandi.md) ([source](https://github.com/modus-lisp/operandi)) | 2026-Q3 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
 | 6 | <a id="matterloop"></a>[MatterLoop](assessments/ma/matterloop.md) ([source](https://github.com/huleidada/matterloop)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
