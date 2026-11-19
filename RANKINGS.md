@@ -564,6 +564,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="swarms"></a>[Swarms](assessments/sw/swarms.md) ([source](https://github.com/kyegomez/swarms)) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](assessments/ca/camel-workforce.md) ([source](https://github.com/camel-ai/camel)) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](assessments/go/go-micro.md) ([source](https://github.com/micro/go-micro)) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
+| 6 | <a id="forceharness"></a>[ForceHarness](assessments/fo/forceharness.md) ([source](https://github.com/showlab/ForceHarness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="raxol-agent"></a>[Raxol Agent](assessments/ra/raxol-agent.md) ([source](https://github.com/DROOdotFOO/raxol-agent)) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C — C —` |
 | 6 | <a id="runvil-harness"></a>[runvil-harness](assessments/ru/runvil-harness.md) ([source](https://github.com/cppalliance/runvil-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="uh-universal-harness"></a>[UH — Universal Harness](assessments/uh/uh-universal-harness.md) ([source](https://github.com/Antoine-Thomas/UH-Universal-Harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 2 | 0 | `A — P — — P` |
