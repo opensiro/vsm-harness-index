@@ -1098,6 +1098,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="openevolve"></a>[OpenEvolve](assessments/op/openevolve.md) ([source](https://github.com/algorithmicsuperintelligence/openevolve)) | 2025-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C C — — —` |
 | 6 | <a id="strands-agents"></a>[Strands Agents](assessments/st/strands-agents.md) ([source](https://github.com/strands-agents/harness-sdk)) | 2025-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="mlr-agent"></a>[MLR-Agent](assessments/ml/mlr-agent.md) ([source](https://github.com/chchenhui/mlrbench)) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="llmcore"></a>[llmcore](assessments/ll/llmcore.md) ([source](https://github.com/araray/llmcore)) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deerflow"></a>[DeerFlow](assessments/de/deerflow.md) ([source](https://github.com/bytedance/deer-flow)) | 2025-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="cloi"></a>[Cloi](assessments/cl/cloi.md) ([source](https://github.com/gabrielchasukjin/cloi)) | 2025-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="agentsilex"></a>[AgentSilex](assessments/ag/agentsilex.md) ([source](https://github.com/howl-anderson/agentsilex)) | 2025-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
