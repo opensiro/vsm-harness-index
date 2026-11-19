@@ -1293,3 +1293,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1292|mybot|MyBot|https://github.com/yexi-by/MyBot|2025-12-28T20:13:00Z|manual-discovery|9449bed56bb9ae34ec0646111046a2d69001f6ab|2026-11-19
 1293|the-harness|the-harness|https://github.com/EvolvingLMMs-Lab/the-harness|2026-11-07T04:36:33Z|index-addition|2aa4105ce8c8ab143be95969fb1cc5944248e8fd|2026-11-19
 1294|metaforge|MetaForge|https://github.com/FidelOdok/MetaForge|2026-02-12T07:51:29Z|manual-discovery|6f39fdcfec4599e2cd68780432c26e6a4c14af96|2026-11-19
+1295|forceharness|ForceHarness|https://github.com/showlab/ForceHarness|2026-11-16T14:03:00Z|index-addition|733407c1ea90d8b474dff7809d9349d0f5f0b1d5|2026-11-19
