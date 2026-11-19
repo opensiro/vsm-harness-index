@@ -599,6 +599,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="mola-harness"></a>[mola-harness](assessments/mo/mola-harness.md) ([source](https://github.com/Mola-maker/mola-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mini-agent"></a>[Mini-Agent](assessments/mi/mini-agent.md) ([source](https://github.com/lizaixi01/Mini-Agent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deepseek-super-agent"></a>[DeepSeek Super Agent](assessments/de/deepseek-super-agent.md) ([source](https://github.com/LofiSu/deepseek-super-agent)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="namiagent"></a>[NamiAgent](assessments/na/namiagent.md) ([source](https://github.com/aa1143/NamiAgent)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="conductor-sdlc"></a>[Conductor SDLC](assessments/co/conductor-sdlc.md) ([source](https://github.com/xpressabhi/agentic-sdlc-control-plane)) | 2026-Q4 | 1/6 | 0/5 | 3 | 1 | 0 | `A C C(P) C — —` |
 | 6 | <a id="runapps-agent"></a>[RunApps Agent](assessments/ru/runapps-agent.md) ([source](https://github.com/runapps/agent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="tripolskypetr-agent-runtime"></a>[Agent Runtime](assessments/tr/tripolskypetr-agent-runtime.md) ([source](https://github.com/tripolskypetr/agent-runtime)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
