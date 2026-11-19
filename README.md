@@ -78,7 +78,7 @@ assessments/<harness_id[:2]>/<harness_id>.md
 
 | Included | Catalog | Reassessments | Full-A |
 | ---: | ---: | ---: | ---: |
-| **1194** | 1290 | 89 | 2 |
+| **1195** | 1291 | 89 | 2 |
 
 Active semantic contract: **Profile 0.2.4 / Methodology 0.3.8**.
 
