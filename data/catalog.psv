@@ -1288,3 +1288,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1287|gascity|Gas City|https://github.com/gastownhall/gascity|2026-02-22T01:40:16Z|index-addition|03f6fe825cf0a54c677c241e4aaa7e76dade28a5|2026-11-18
 1288|llmcore|llmcore|https://github.com/araray/llmcore|2025-05-08T00:16:14Z|manual-discovery|1bd7540267a0a6cc26a069bf6211ea4824f20321|2026-11-19
 1289|namiagent|NamiAgent|https://github.com/aa1143/NamiAgent|2026-10-30T11:03:30Z|index-addition|13cdae0ac62571fc4e6e320d31651a01353de489|2026-11-19
+1290|mumei-agent|Mumei Agent|https://github.com/mumei-lang/mumei-agent|2026-03-20T11:56:01Z|manual-discovery|c9fc09cd22302ab5590ca2b2d664b8423bf7949d|2026-11-19
