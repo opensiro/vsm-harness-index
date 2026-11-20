@@ -653,6 +653,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="judgment-pack-agent"></a>[Judgment Pack Agent](assessments/ju/judgment-pack-agent.md) ([source](https://github.com/Judgment-Pack/judgment-pack-agent)) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C C — —` |
 | 6 | <a id="maxwell"></a>[Maxwell](assessments/ma/maxwell.md) ([source](https://github.com/AshyIsMe/maxwell)) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — P — — —` |
 | 6 | <a id="nonaut"></a>[Nonaut](assessments/no/nonaut.md) ([source](https://github.com/nolabs-ai/nonaut)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="iphone-agent-harness"></a>[iPhone Agent Harness](assessments/ip/iphone-agent-harness.md) ([source](https://github.com/cccat6/iphone-agent-harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="durable-harness"></a>[durable-harness](assessments/du/durable-harness.md) ([source](https://github.com/vercel-labs/durable-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="tetriz-harness"></a>[Tetriz Harness](assessments/te/tetriz-harness.md) ([source](https://github.com/tetriz-ai/tetriz-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 3 | 0 | `A — P — P P` |
 | 6 | <a id="openvlharness"></a>[OpenVLHarness](assessments/op/openvlharness.md) ([source](https://github.com/uclanlp/OpenVLHarness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
