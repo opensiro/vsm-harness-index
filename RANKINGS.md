@@ -929,6 +929,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="asi-code"></a>[ASI Code](assessments/as/asi-code.md) ([source](https://github.com/AloneMath/ASI-Code)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 2 | `A ? ? — — —` |
 | 6 | <a id="chord"></a>[Chord](assessments/ch/chord.md) ([source](https://github.com/keakon/chord)) | 2026-Q2 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="forja"></a>[Forja](assessments/fo/forja.md) ([source](https://github.com/lex0c/forja)) | 2026-Q2 | 1/6 | 0/5 | 2 | 0 | 0 | `A C — C — —` |
+| 6 | <a id="coven"></a>[Coven](assessments/co/coven.md) ([source](https://github.com/OpenCoven/coven)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="rho"></a>[rho](assessments/rh/rho.md) ([source](https://github.com/crustyrustacean/rho-coding-agent)) | 2026-Q2 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="hax"></a>[Hax](assessments/ha/hax.md) ([source](https://github.com/OleksandrChekhovskyi/hax)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="revka"></a>[Revka](assessments/re/revka.md) ([source](https://github.com/KumihoIO/Revka)) | 2026-Q2 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
