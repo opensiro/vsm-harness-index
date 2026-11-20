@@ -674,6 +674,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="hexashell"></a>[HexaShell](assessments/he/hexashell.md) ([source](https://github.com/HexaFuture/HexaShell)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="octopus-si-os"></a>[Octopus SI OS](assessments/oc/octopus-si-os.md) ([source](https://github.com/miuuyy/Octopus-SI-OS)) | 2026-Q4 | 1/6 | 0/5 | 0 | 2 | 1 | `A — P — ? P` |
 | 6 | <a id="psgoagent"></a>[PSGoAgent](assessments/ps/psgoagent.md) ([source](https://github.com/nakasyou/power-agent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="phimint"></a>[phimint](assessments/ph/phimint.md) ([source](https://github.com/hibuka-labs/phimint)) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 1 | `A — — ? P —` |
 | 6 | <a id="roboharness"></a>[RoboHarness](assessments/ro/roboharness.md) ([source](https://github.com/BinceQu/RoboHarness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="deepseek-bot"></a>[deepseek-bot](assessments/de/deepseek-bot.md) ([source](https://github.com/rlaope/deepseek-bot)) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="cyber-frost-harness"></a>[Cyber-Frost Harness](assessments/cy/cyber-frost-harness.md) ([source](https://github.com/Blackfrost-AI/Cyber-Frost-Harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
