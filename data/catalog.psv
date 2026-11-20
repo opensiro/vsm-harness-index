@@ -1305,3 +1305,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1304|marius-agent-harness|agent-harness (Marius-Juston)|https://github.com/Marius-Juston/agent-harness|2026-10-11T07:31:57Z|index-addition|2c07a9c07da73bc8c981680a5c08fe9d8ed25f8c|2026-11-20
 1305|nemo-relay|NeMo Relay|https://github.com/NVIDIA/NeMo-Relay|2026-03-31T23:22:24Z|index-addition|e65fbbf5455014430feeaf5f25090af979df4779|2026-11-20
 1306|piglet|Piglet|https://github.com/mcpcpc/piglet|2026-11-15T17:41:21Z|index-addition|5d3179c06a7a3f1e541f5012884d98c7fddd41f1|2026-11-20
+1307|orchestrix|Orchestrix|https://github.com/aswin-kevin/orchestrix|2026-11-18T18:53:49Z|index-addition|34447e81f54a605cb780d534d8557573add273a3|2026-11-20
