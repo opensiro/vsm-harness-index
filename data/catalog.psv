@@ -1308,3 +1308,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1307|orchestrix|Orchestrix|https://github.com/aswin-kevin/orchestrix|2026-11-18T18:53:49Z|index-addition|34447e81f54a605cb780d534d8557573add273a3|2026-11-20
 1308|iphone-agent-harness|iPhone Agent Harness|https://github.com/cccat6/iphone-agent-harness|2026-10-17T16:57:20Z|index-addition|b6e8ec900ce3eb902ad3dff3553a5adf3efc2e2f|2026-11-20
 1309|keel|Keel|https://github.com/agent-sh/keel|2026-11-20T13:44:01Z|index-addition|a7981c9d6d022d3086e6ac09dc9358f0aba4727b|2026-11-20
+1310|theseus|Theseus|https://github.com/zeroaltitude/theseus|2026-09-25T23:19:37Z|index-addition|58196a8655dc3fedcbb771c5be51a5944c28d9bf|2026-11-20
