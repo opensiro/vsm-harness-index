@@ -147,6 +147,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="agent-rokartur"></a>[agent (rokartur)](assessments/ag/agent-rokartur.md) ([source](https://github.com/rokartur/agent)) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="auto-research-agent"></a>[Auto-research agent](assessments/au/auto-research-agent.md) ([source](https://github.com/rohanarun/Auto-research-agent)) | 2026-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A A A(P) C — P` |
 | 4 | <a id="dtadpole-heddle"></a>[Heddle](assessments/dt/dtadpole-heddle.md) ([source](https://github.com/dtadpole/heddle)) | 2026-Q4 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 4 | <a id="marius-agent-harness"></a>[agent-harness (Marius-Juston)](assessments/ma/marius-agent-harness.md) ([source](https://github.com/Marius-Juston/agent-harness)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="dori-superagent"></a>[Dori Superagent](assessments/do/dori-superagent.md) ([source](https://github.com/sisyphuslabs/dori-superagent)) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
 | 4 | <a id="davecode"></a>[DaveCode](assessments/da/davecode.md) ([source](https://github.com/DMRLZZ/DaveCode)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="orca-trace-delange"></a>[Orca (Trace DeLange)](assessments/or/orca-trace-delange.md) ([source](https://github.com/tracedelange/orca)) | 2026-Q4 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
