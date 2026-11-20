@@ -1296,3 +1296,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1295|forceharness|ForceHarness|https://github.com/showlab/ForceHarness|2026-11-16T14:03:00Z|index-addition|733407c1ea90d8b474dff7809d9349d0f5f0b1d5|2026-11-19
 1296|emrg|EMRG|https://github.com/argszero/emrg|2026-07-18T00:42:17Z|manual-discovery|cd30b38e33c0b12765df5d1bf5e0ec5228d1d9b8|2026-11-19
 1297|penharness|PenHarness|https://github.com/morphllm/PenHarness|2026-11-11T23:38:12Z|index-addition|83c540fa9fe9f65b75d949b44e9199f02eb2bea6|2026-11-19
+1298|box-agent|Box Agent|https://github.com/Raccoon-Office/Box-Agent|2026-03-23T10:46:50Z|index-addition|060edcd2b551a05cd3c68b2c861f97b67a63a653|2026-11-20
