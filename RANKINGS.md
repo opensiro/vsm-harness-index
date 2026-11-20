@@ -478,6 +478,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="ogcode"></a>[Ogcode](assessments/og/ogcode.md) ([source](https://github.com/prasenjeet-symon/ogcode)) | 2026-Q2 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |
 | 5 | <a id="proliferate"></a>[Proliferate](assessments/pr/proliferate.md) ([source](https://github.com/proliferate-ai/proliferate)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harnessx"></a>[HarnessX](assessments/ha/harnessx.md) ([source](https://github.com/Darwin-Agent/HarnessX)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |
+| 5 | <a id="garudust-agent"></a>[Garudust Agent](assessments/ga/garudust-agent.md) ([source](https://github.com/garudust-org/garudust-agent)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="cadis"></a>[C.A.D.I.S.](assessments/ca/cadis.md) ([source](https://github.com/Growth-Circle/cadis)) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C A(P) — — —` |
 | 5 | <a id="ndx"></a>[ndx](assessments/nd/ndx.md) ([source](https://github.com/hikaMaeng/ndx)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="hive-workflow-engine"></a>[Hive (workflow engine)](assessments/hi/hive-workflow-engine.md) ([source](https://github.com/ivankuznetsov/hive)) | 2026-Q2 | 2/6 | 1/5 | 1 | 3 | 0 | `A C P A P P` |

@@ -1299,3 +1299,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1298|box-agent|Box Agent|https://github.com/Raccoon-Office/Box-Agent|2026-03-23T10:46:50Z|index-addition|060edcd2b551a05cd3c68b2c861f97b67a63a653|2026-11-20
 1299|timon|Timon|https://github.com/ai-timon/timon|2026-11-06T17:30:24Z|index-addition|15794bf8db23cb620a40645f273c9b18d7a4b030|2026-11-20
 1300|cogitator|Cogitator|https://github.com/cogitator-ai/Cogitator-AI|2025-12-29T22:04:18Z|index-addition|67b4fde644f648bc1df02a1ab38b211cf2171fbd|2026-11-20
+1301|garudust-agent|Garudust Agent|https://github.com/garudust-org/garudust-agent|2026-04-26T15:47:17Z|index-addition|905e7797fc1f71782c88e3af0ff7dfb7b9aca61a|2026-11-20
