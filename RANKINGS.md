@@ -579,6 +579,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="coding-agent-harness"></a>[Coding Agent Harness](assessments/co/coding-agent-harness.md) ([source](https://github.com/Breno-J-Oliveira/coding_agent_harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 2 | 0 | `A — P C P —` |
 | 6 | <a id="featherweight"></a>[featherweight](assessments/fe/featherweight.md) ([source](https://github.com/aadhithya/featherweight)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="forceharness"></a>[ForceHarness](assessments/fo/forceharness.md) ([source](https://github.com/showlab/ForceHarness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
+| 6 | <a id="prometadev-ui-harness"></a>[UI Harness](assessments/pr/prometadev-ui-harness.md) ([source](https://github.com/ProMetaDev/ui-harness)) | 2026-Q4 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
 | 6 | <a id="piglet"></a>[Piglet](assessments/pi/piglet.md) ([source](https://github.com/mcpcpc/piglet)) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="raxol-agent"></a>[Raxol Agent](assessments/ra/raxol-agent.md) ([source](https://github.com/DROOdotFOO/raxol-agent)) | 2026-Q4 | 1/6 | 0/5 | 2 | 0 | 0 | `A — C — C —` |
 | 6 | <a id="runvil-harness"></a>[runvil-harness](assessments/ru/runvil-harness.md) ([source](https://github.com/cppalliance/runvil-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |

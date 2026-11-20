@@ -1314,3 +1314,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1313|owner-operator|Owner Operator|https://github.com/lhotwll217/owner-operator|2026-06-04T04:58:41Z|index-addition|430e152441af7e2d72fdd392feab627ab2a36f8d|2026-11-20
 1314|coding-agent-harness|Coding Agent Harness|https://github.com/Breno-J-Oliveira/coding_agent_harness|2026-11-20T15:05:25Z|index-addition|7289baab4ada4e8b7d4ff5ba6e81d7bd0f99a05a|2026-11-20
 1315|codercraft|CoderCraft|https://github.com/sandraschi/codercraft|2026-11-05T11:49:56Z|index-addition|37a3b81ab052213c93a974f68e2264c28dc3b134|2026-11-20
+1316|prometadev-ui-harness|UI Harness|https://github.com/ProMetaDev/ui-harness|2026-11-16T13:12:18Z|index-addition|a20efcec26292af8457cb372b4f657f53574eda2|2026-11-20
