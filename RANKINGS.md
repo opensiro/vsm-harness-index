@@ -261,6 +261,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="hive"></a>[Hive](assessments/hi/hive.md) ([source](https://github.com/aden-hive/hive)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="jcode"></a>[jcode](assessments/jc/jcode.md) ([source](https://github.com/1jehuang/jcode)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="akmatori"></a>[Akmatori](assessments/ak/akmatori.md) ([source](https://github.com/akmatori/akmatori)) | 2025-Q4 | 3/6 | 2/5 | 0 | 1 | 0 | `A A — A P —` |
+| 4 | <a id="cogitator"></a>[Cogitator](assessments/co/cogitator.md) ([source](https://github.com/cogitator-ai/Cogitator-AI)) | 2025-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A A A C — —` |
 | 4 | <a id="ante"></a>[Ante](assessments/an/ante.md) ([source](https://github.com/AntigmaLabs/ante)) | 2025-Q4 | 3/6 | 2/5 | 2 | 0 | 0 | `A C A C A —` |
 | 4 | <a id="agentrove"></a>[Agentrove](assessments/ag/agentrove.md) ([source](https://github.com/Mng-dev-ai/agentrove)) | 2025-Q4 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A(P) — — —` |
 | 4 | <a id="linear-coding-agent-harness"></a>[Linear Coding Agent Harness](assessments/li/linear-coding-agent-harness.md) ([source](https://github.com/coleam00/Linear-Coding-Agent-Harness)) | 2025-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
