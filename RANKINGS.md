@@ -336,6 +336,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="dynaflow"></a>[DynaFlow](assessments/dy/dynaflow.md) ([source](https://github.com/amiya-special/Dynaflow)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="dark-factory"></a>[Dark factory](assessments/da/dark-factory.md) ([source](https://github.com/ruslantrachuk/dark-factory)) | 2026-Q4 | 2/6 | 1/5 | 1 | 3 | 0 | `A C P A P P` |
 | 5 | <a id="must-company-ax-booster-open-agent-harness"></a>[Open Agent Harness](assessments/mu/must-company-ax-booster-open-agent-harness.md) ([source](https://github.com/MUST-Company-AX-Booster/Open-Agent-Harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — A — — P` |
+| 5 | <a id="ompdeck"></a>[OmpDeck](assessments/om/ompdeck.md) ([source](https://github.com/lavinhoque33/omp-deck)) | 2026-Q4 | 2/6 | 1/5 | 1 | 2 | 0 | `A A P C P —` |
 | 5 | <a id="opal"></a>[OPAL](assessments/op/opal.md) ([source](https://github.com/xingjian-bai/opal)) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A — — C A —` |
 | 5 | <a id="swarmos"></a>[SwarmOS](assessments/sw/swarmos.md) ([source](https://github.com/supernovae/SwarmOS)) | 2026-Q4 | 2/6 | 1/5 | 2 | 0 | 0 | `A C C A — —` |
 | 5 | <a id="rsi-flow"></a>[RSI-Flow](assessments/rs/rsi-flow.md) ([source](https://github.com/quqxui/RSI-Flow)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — — A —` |

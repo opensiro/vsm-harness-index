@@ -1234,3 +1234,4 @@ catalog_position|harness_id|signature
 1316|prometadev-ui-harness|UI Harness runs journaled model/tool sessions and isolated workers; a shared-output conflict gate exposes competing edits for reconciliation, the operator decides which outputs land, and a composed acceptance check can reject a claimed completion.
 1317|phimint|A terminal coding loop delegates read-only investigations or explicitly approved writes, while a standalone operator can adopt an externally announced runtime release using the packaged replacement command.
 1318|shob|Shob gives native model sessions their own Git worktrees through a pane-level constructor, while the workspace operator can stop chosen current commitments and adopt a surfaced stable runtime update.
+1319|ompdeck|In OmpDeck, a model can fan parallel work out into distinct checkouts, an operator can end selected live commitments, and a separate Git diff review returns line-anchored findings to a coding session.
