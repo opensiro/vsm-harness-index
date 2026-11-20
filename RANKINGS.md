@@ -226,6 +226,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="cheetahclaws"></a>[CheetahClaws](assessments/ch/cheetahclaws.md) ([source](https://github.com/SAIL-Research-Lab/cheetahclaws)) | 2026-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A A — A P —` |
 | 4 | <a id="cc-mini"></a>[cc-mini](assessments/cc/cc-mini.md) ([source](https://github.com/e10nMa2k/cc-mini)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
 | 4 | <a id="cafleet"></a>[CAFleet](assessments/ca/cafleet.md) ([source](https://github.com/himkt/cafleet)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A A — —` |
+| 4 | <a id="box-agent"></a>[Box Agent](assessments/bo/box-agent.md) ([source](https://github.com/Raccoon-Office/Box-Agent)) | 2026-Q1 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A C — P` |
 | 4 | <a id="yode"></a>[Yode](assessments/yo/yode.md) ([source](https://github.com/anYuJia/yode)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A A — —` |
 | 4 | <a id="bernstein"></a>[Bernstein](assessments/be/bernstein.md) ([source](https://github.com/sipyourdrink-ltd/bernstein)) | 2026-Q1 | 3/6 | 2/5 | 2 | 1 | 0 | `A C A A C P` |
 | 4 | <a id="pydantic-ai-harness"></a>[Pydantic AI Harness](assessments/py/pydantic-ai-harness.md) ([source](https://github.com/pydantic/pydantic-ai-harness)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A — A A C —` |
