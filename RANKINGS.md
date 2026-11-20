@@ -614,6 +614,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="opengent"></a>[OpenGent](assessments/op/opengent.md) ([source](https://github.com/samkerrcode/opengent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="faden"></a>[faden](assessments/fa/faden.md) ([source](https://github.com/nogo/faden)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="uncut"></a>[UNCUT](assessments/un/uncut.md) ([source](https://github.com/Balanov/uncut)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="shob"></a>[Shob](assessments/sh/shob.md) ([source](https://github.com/olovalabs/shob)) | 2026-Q4 | 1/6 | 0/5 | 1 | 2 | 0 | `A C P — P —` |
 | 6 | <a id="astra-harness"></a>[Astra Harness](assessments/as/astra-harness.md) ([source](https://github.com/ytinyx/astra-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="peristyle-harness"></a>[Peristyle Harness](assessments/pe/peristyle-harness.md) ([source](https://github.com/peristyle-ai/harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — — P` |
 | 6 | <a id="rexmod"></a>[rexmod](assessments/re/rexmod.md) ([source](https://github.com/alpcanaydin/rexmod)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A — P C — —` |

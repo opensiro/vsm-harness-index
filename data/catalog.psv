@@ -1316,3 +1316,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1315|codercraft|CoderCraft|https://github.com/sandraschi/codercraft|2026-11-05T11:49:56Z|index-addition|37a3b81ab052213c93a974f68e2264c28dc3b134|2026-11-20
 1316|prometadev-ui-harness|UI Harness|https://github.com/ProMetaDev/ui-harness|2026-11-16T13:12:18Z|index-addition|a20efcec26292af8457cb372b4f657f53574eda2|2026-11-20
 1317|phimint|phimint|https://github.com/hibuka-labs/phimint|2026-10-07T06:44:01Z|index-addition|5db119c9338f7f5844e927a36455fbdddf5f03a4|2026-11-20
+1318|shob|Shob|https://github.com/olovalabs/shob|2026-11-01T05:09:39Z|index-addition|381989bb4491d84e3053973df7ef97dbd67aed76|2026-11-20
