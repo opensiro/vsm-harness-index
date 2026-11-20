@@ -594,6 +594,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="go-sre-harness"></a>[go-sre-harness](assessments/go/go-sre-harness.md) ([source](https://github.com/rainyZhou2/SreAgentHarness)) | 2026-Q4 | 1/6 | 0/5 | 3 | 2 | 0 | `A C C C P P` |
 | 6 | <a id="pandita-agent-harness"></a>[Pandita Agent Harness](assessments/pa/pandita-agent-harness.md) ([source](https://github.com/bhandiwad/agent-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="nipus-harness"></a>[nipus-harness](assessments/ni/nipus-harness.md) ([source](https://github.com/cUDGk/nipus-harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
+| 6 | <a id="codercraft"></a>[CoderCraft](assessments/co/codercraft.md) ([source](https://github.com/sandraschi/codercraft)) | 2026-Q4 | 1/6 | 0/5 | 0 | 1 | 0 | `A — — — P —` |
 | 6 | <a id="crewdeck"></a>[CrewDeck](assessments/cr/crewdeck.md) ([source](https://github.com/mnbresearch/crewdeck)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="namidsh"></a>[NamiDSH](assessments/na/namidsh.md) ([source](https://github.com/aa1143/NamiDSH)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="mint"></a>[mint](assessments/mi/mint.md) ([source](https://github.com/ketiyohannes/mint)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
