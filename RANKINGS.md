@@ -459,6 +459,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="redteam"></a>[redteam](assessments/re/redteam.md) ([source](https://github.com/AscendyProject/redteam)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="retro-harness-rho"></a>[retro-harness / RHO](assessments/re/retro-harness-rho.md) ([source](https://github.com/wbopan/retro-harness)) | 2026-Q2 | 2/6 | 1/5 | 1 | 0 | 0 | `A — C — A —` |
 | 5 | <a id="axocoatl"></a>[Axocoatl](assessments/ax/axocoatl.md) ([source](https://github.com/axocoatl/axocoatl)) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P A — —` |
+| 5 | <a id="owner-operator"></a>[Owner Operator](assessments/ow/owner-operator.md) ([source](https://github.com/lhotwll217/owner-operator)) | 2026-Q2 | 2/6 | 1/5 | 0 | 3 | 0 | `A — A(P) — P P` |
 | 5 | <a id="covalo"></a>[Covalo](assessments/co/covalo.md) ([source](https://github.com/bzcsk2/covalo)) | 2026-Q2 | 2/6 | 1/5 | 0 | 0 | 0 | `A — A — — —` |
 | 5 | <a id="dotcraft"></a>[DotCraft](assessments/do/dotcraft.md) ([source](https://github.com/DotHarness/dotcraft)) | 2026-Q2 | 2/6 | 1/5 | 2 | 1 | 0 | `A C C A — P` |
 | 5 | <a id="super-agent"></a>[super-agent](assessments/su/super-agent.md) ([source](https://github.com/FedericoCasarella/super-agent)) | 2026-Q2 | 2/6 | 1/5 | 1 | 1 | 0 | `A C P — A —` |
