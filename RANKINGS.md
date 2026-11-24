@@ -579,6 +579,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="swarms"></a>[Swarms](assessments/sw/swarms.md) ([source](https://github.com/kyegomez/swarms)) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](assessments/ca/camel-workforce.md) ([source](https://github.com/camel-ai/camel)) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](assessments/go/go-micro.md) ([source](https://github.com/micro/go-micro)) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
+| 6 | <a id="provable-harness"></a>[provable-harness](assessments/pr/provable-harness.md) ([source](https://github.com/0x471/provable-harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="coding-agent-harness"></a>[Coding Agent Harness](assessments/co/coding-agent-harness.md) ([source](https://github.com/Breno-J-Oliveira/coding_agent_harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 2 | 0 | `A — P C P —` |
 | 6 | <a id="featherweight"></a>[featherweight](assessments/fe/featherweight.md) ([source](https://github.com/aadhithya/featherweight)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="forceharness"></a>[ForceHarness](assessments/fo/forceharness.md) ([source](https://github.com/showlab/ForceHarness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
