@@ -13,9 +13,9 @@ Autonomous coverage follows the existing base-state projection: `A(P)` counts as
 | Agent-owned functions | Harnesses | Corpus share |
 | ---: | ---: | ---: |
 | 0/6 | 0 | 0.0% |
-| 1/6 | 654 | 53.2% |
+| 1/6 | 653 | 53.1% |
 | 2/6 | 283 | 23.0% |
-| 3/6 | 177 | 14.4% |
+| 3/6 | 178 | 14.5% |
 | 4/6 | 96 | 7.8% |
 | 5/6 | 17 | 1.4% |
 | 6/6 | 2 | 0.2% |
@@ -32,7 +32,7 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | Ownership vector (S1 S2 S3 S3* S4 S5) | Harnesses | Corpus share |
 | --- | ---: | ---: |
 | `A — — — — —` | 367 | 29.9% |
-| `A C — — — —` | 49 | 4.0% |
+| `A C — — — —` | 48 | 3.9% |
 | `A — — A — —` | 40 | 3.3% |
 | `A A A A — —` | 35 | 2.8% |
 | `A — A — — —` | 31 | 2.5% |
@@ -80,6 +80,7 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A — C(P) — — —` | 4 | 0.3% |
 | `A — — C A —` | 4 | 0.3% |
 | `A A A A A(P) —` | 3 | 0.2% |
+| `A A A C — P` | 3 | 0.2% |
 | `A A A — A —` | 3 | 0.2% |
 | `A A A(P) A A P` | 3 | 0.2% |
 | `A A A(P) A P —` | 3 | 0.2% |
@@ -105,7 +106,6 @@ These are descriptive coverage incidences, not maturity tiers or quality labels.
 | `A A A A ? —` | 2 | 0.2% |
 | `A A A A P P` | 2 | 0.2% |
 | `A A A A P —` | 2 | 0.2% |
-| `A A A C — P` | 2 | 0.2% |
 | `A A A(P) ? ? P` | 2 | 0.2% |
 | `A A A(P) A C —` | 2 | 0.2% |
 | `A A C(P) A — P` | 2 | 0.2% |

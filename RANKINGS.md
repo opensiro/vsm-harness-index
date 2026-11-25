@@ -240,6 +240,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="pydantic-ai-harness"></a>[Pydantic AI Harness](assessments/py/pydantic-ai-harness.md) ([source](https://github.com/pydantic/pydantic-ai-harness)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A — A A C —` |
 | 4 | <a id="clawkeeper"></a>[ClawKeeper](assessments/cl/clawkeeper.md) ([source](https://github.com/SafeAI-Lab-X/ClawKeeper)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
 | 4 | <a id="citadel"></a>[Citadel](assessments/ci/citadel.md) ([source](https://github.com/SethGammon/Citadel)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 1 | `A C A ? A —` |
+| 4 | <a id="orca-stablyai"></a>[Orca](assessments/or/orca-stablyai.md) ([source](https://github.com/stablyai/orca)) | 2026-Q1 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A C — P` |
 | 4 | <a id="sovereign"></a>[Sovereign](assessments/so/sovereign.md) ([source](https://github.com/HexaField/sovereign)) | 2026-Q1 | 3/6 | 2/5 | 0 | 2 | 2 | `A A A(P) ? ? P` |
 | 4 | <a id="scion-gcp"></a>[Scion (Google Cloud)](assessments/sc/scion-gcp.md) ([source](https://github.com/GoogleCloudPlatform/scion)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="armada"></a>[Armada](assessments/ar/armada.md) ([source](https://github.com/jchristn/Armada)) | 2026-Q1 | 3/6 | 2/5 | 1 | 3 | 0 | `A C A(P) A P P` |
@@ -1007,7 +1008,6 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="sharpcoder"></a>[SharpCoder](assessments/sh/sharpcoder.md) ([source](https://github.com/robkaandorp/SharpCoder)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="optio"></a>[Optio](assessments/op/optio.md) ([source](https://github.com/jonwiggins/optio)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="autonomouscodingagent"></a>[AutonomousCodingAgent](assessments/au/autonomouscodingagent.md) ([source](https://github.com/robertnathe/AutonomousCodingAgent)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 6 | <a id="orca-stablyai"></a>[Orca](assessments/or/orca-stablyai.md) ([source](https://github.com/stablyai/orca)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="paddles"></a>[Paddles](assessments/pa/paddles.md) ([source](https://github.com/spoke-sh/paddles)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="orloj"></a>[Orloj](assessments/or/orloj.md) ([source](https://github.com/OrlojHQ/orloj)) | 2026-Q1 | 1/6 | 0/5 | 0 | 2 | 2 | `A ? P ? — P` |
 | 6 | <a id="talon"></a>[Talon](assessments/ta/talon.md) ([source](https://github.com/dylanneve1/talon)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
