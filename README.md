@@ -80,7 +80,7 @@ assessments/<harness_id[:2]>/<harness_id>.md
 | ---: | ---: | ---: | ---: |
 | **1230** | 1327 | 90 | 2 |
 
-Active semantic contract: **Profile 0.2.4 / Methodology 0.3.8**.
+Active semantic contract: **Profile 0.2.4 / Methodology 0.3.9**.
 
 [Full metrics](METRICS.md) · [Machine-readable metrics](data/metrics.json)
 <!-- VSM INDEX METRICS:END -->
