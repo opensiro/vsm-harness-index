@@ -814,6 +814,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="fuse"></a>[Fuse](assessments/fu/fuse.md) ([source](https://github.com/ethanhinson/fuse)) | 2026-Q3 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="oniroute-swarmagents"></a>[OniRoute SwarmAgents](assessments/on/oniroute-swarmagents.md) ([source](https://github.com/AniruddhaDas1/OniRoute_SwarmAgents)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="phi"></a>[Phi](assessments/ph/phi.md) ([source](https://github.com/pulseaiclub/phi)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="bluecollar"></a>[bluecollar](assessments/bl/bluecollar.md) ([source](https://github.com/yeomyeonggeori/bluecollar)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="soket-loop"></a>[Soket Loop](assessments/so/soket-loop.md) ([source](https://github.com/soketlabs/loop)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ti"></a>[ti](assessments/ti/ti.md) ([source](https://github.com/tmjwjx/ti)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="moss-agent"></a>[moss-agent](assessments/mo/moss-agent.md) ([source](https://github.com/peterxiemin/moss-agent)) | 2026-Q3 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
