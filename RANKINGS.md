@@ -25,6 +25,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 2 | <a id="oh-my-claudecode"></a>[oh-my-claudecode](assessments/oh/oh-my-claudecode.md) ([source](https://github.com/Yeachan-Heo/oh-my-claudecode)) | 2026-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 2 | <a id="autohand-code-cli"></a>[Autohand Code CLI](assessments/au/autohand-code-cli.md) ([source](https://github.com/autohandai/code-cli)) | 2025-Q4 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A A A(P) —` |
 | 2 | <a id="gptme"></a>[gptme](assessments/gp/gptme.md) ([source](https://github.com/gptme/gptme)) | 2023-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
+| 3 | <a id="filament"></a>[Filament](assessments/fi/filament.md) ([source](https://github.com/invertibleMatrix/filament)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 1 | `A A A(P) A ? —` |
 | 3 | <a id="keel"></a>[Keel](assessments/ke/keel.md) ([source](https://github.com/agent-sh/keel)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
 | 3 | <a id="openrecoding"></a>[OpenRecoding](assessments/op/openrecoding.md) ([source](https://github.com/jiaxz/open-recoding)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="line-harness"></a>[Line Harness](assessments/li/line-harness.md) ([source](https://github.com/LineLuLan/line-harness)) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
@@ -240,6 +241,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="pydantic-ai-harness"></a>[Pydantic AI Harness](assessments/py/pydantic-ai-harness.md) ([source](https://github.com/pydantic/pydantic-ai-harness)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A — A A C —` |
 | 4 | <a id="clawkeeper"></a>[ClawKeeper](assessments/cl/clawkeeper.md) ([source](https://github.com/SafeAI-Lab-X/ClawKeeper)) | 2026-Q1 | 3/6 | 2/5 | 0 | 0 | 0 | `A — A — A —` |
 | 4 | <a id="citadel"></a>[Citadel](assessments/ci/citadel.md) ([source](https://github.com/SethGammon/Citadel)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 1 | `A C A ? A —` |
+| 4 | <a id="orca-stablyai"></a>[Orca](assessments/or/orca-stablyai.md) ([source](https://github.com/stablyai/orca)) | 2026-Q1 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A C — P` |
 | 4 | <a id="sovereign"></a>[Sovereign](assessments/so/sovereign.md) ([source](https://github.com/HexaField/sovereign)) | 2026-Q1 | 3/6 | 2/5 | 0 | 2 | 2 | `A A A(P) ? ? P` |
 | 4 | <a id="scion-gcp"></a>[Scion (Google Cloud)](assessments/sc/scion-gcp.md) ([source](https://github.com/GoogleCloudPlatform/scion)) | 2026-Q1 | 3/6 | 2/5 | 1 | 0 | 0 | `A C A — A —` |
 | 4 | <a id="armada"></a>[Armada](assessments/ar/armada.md) ([source](https://github.com/jchristn/Armada)) | 2026-Q1 | 3/6 | 2/5 | 1 | 3 | 0 | `A C A(P) A P P` |
@@ -298,6 +300,8 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="data-to-paper"></a>[data-to-paper](assessments/da/data-to-paper.md) ([source](https://github.com/Technion-Kishony-lab/data-to-paper)) | 2023-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A — — A A(P) —` |
 | 4 | <a id="cowagent"></a>[CowAgent](assessments/co/cowagent.md) ([source](https://github.com/zhayujie/CowAgent)) | 2022-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A C P — A A(P)` |
 | 4 | <a id="agno"></a>[Agno](assessments/ag/agno.md) ([source](https://github.com/agno-agi/agno)) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 5 | <a id="h"></a>[H](assessments/h/h.md) ([source](https://github.com/parlant/harness)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A A P C — —` |
+| 5 | <a id="dmoka-mini-harness"></a>[mini-harness](assessments/dm/dmoka-mini-harness.md) ([source](https://github.com/dmoka/mini-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="pine"></a>[PINE](assessments/pi/pine.md) ([source](https://github.com/pmndre/pine)) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |
 | 5 | <a id="weora"></a>[Weora](assessments/we/weora.md) ([source](https://github.com/yuzhiyang1/weora)) | 2026-Q4 | 2/6 | 1/5 | 2 | 2 | 1 | `A C A(P) C ? P` |
 | 5 | <a id="lumak"></a>[LumaK](assessments/lu/lumak.md) ([source](https://github.com/kuLm1Fs/lumak-ts)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
@@ -579,7 +583,9 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="swarms"></a>[Swarms](assessments/sw/swarms.md) ([source](https://github.com/kyegomez/swarms)) | 2023-Q2 | 2/6 | 1/5 | 1 | 0 | 3 | `A C A ? ? ?` |
 | 5 | <a id="camel-workforce"></a>[CAMEL Workforce](assessments/ca/camel-workforce.md) ([source](https://github.com/camel-ai/camel)) | 2023-Q1 | 2/6 | 1/5 | 1 | 0 | 0 | `A C A — — —` |
 | 5 | <a id="go-micro"></a>[Go Micro](assessments/go/go-micro.md) ([source](https://github.com/micro/go-micro)) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
+| 6 | <a id="provable-harness"></a>[provable-harness](assessments/pr/provable-harness.md) ([source](https://github.com/0x471/provable-harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="coding-agent-harness"></a>[Coding Agent Harness](assessments/co/coding-agent-harness.md) ([source](https://github.com/Breno-J-Oliveira/coding_agent_harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 2 | 0 | `A — P C P —` |
+| 6 | <a id="hexagon"></a>[Hexagon](assessments/he/hexagon.md) ([source](https://github.com/NexusFox88/Hexagon)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A — P C — —` |
 | 6 | <a id="featherweight"></a>[featherweight](assessments/fe/featherweight.md) ([source](https://github.com/aadhithya/featherweight)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="forceharness"></a>[ForceHarness](assessments/fo/forceharness.md) ([source](https://github.com/showlab/ForceHarness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="prometadev-ui-harness"></a>[UI Harness](assessments/pr/prometadev-ui-harness.md) ([source](https://github.com/ProMetaDev/ui-harness)) | 2026-Q4 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
@@ -1003,7 +1009,6 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="sharpcoder"></a>[SharpCoder](assessments/sh/sharpcoder.md) ([source](https://github.com/robkaandorp/SharpCoder)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="optio"></a>[Optio](assessments/op/optio.md) ([source](https://github.com/jonwiggins/optio)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="autonomouscodingagent"></a>[AutonomousCodingAgent](assessments/au/autonomouscodingagent.md) ([source](https://github.com/robertnathe/AutonomousCodingAgent)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
-| 6 | <a id="orca-stablyai"></a>[Orca](assessments/or/orca-stablyai.md) ([source](https://github.com/stablyai/orca)) | 2026-Q1 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="paddles"></a>[Paddles](assessments/pa/paddles.md) ([source](https://github.com/spoke-sh/paddles)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="orloj"></a>[Orloj](assessments/or/orloj.md) ([source](https://github.com/OrlojHQ/orloj)) | 2026-Q1 | 1/6 | 0/5 | 0 | 2 | 2 | `A ? P ? — P` |
 | 6 | <a id="talon"></a>[Talon](assessments/ta/talon.md) ([source](https://github.com/dylanneve1/talon)) | 2026-Q1 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
