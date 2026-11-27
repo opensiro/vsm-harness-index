@@ -129,6 +129,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="duo"></a>[Duo](assessments/du/duo.md) ([source](https://github.com/kkkarthik6/duo-agents-harness)) | 2026-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A C A(P) A P —` |
 | 4 | <a id="forgeline"></a>[Forgeline](assessments/fo/forgeline.md) ([source](https://github.com/Nabwinsaud/forgeline)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="anvil"></a>[Anvil](assessments/an/anvil.md) ([source](https://github.com/deeeeone/Anvil)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
+| 4 | <a id="zeroburn"></a>[ZeroBurn](assessments/ze/zeroburn.md) ([source](https://github.com/thoufeeque22/zeroburn)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 1 | `A C A(P) A ? —` |
 | 4 | <a id="argentgo"></a>[argentgo](assessments/ar/argentgo.md) ([source](https://github.com/2118505078xyh1/argentgo)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A C — P` |
 | 4 | <a id="orchestrix"></a>[Orchestrix](assessments/or/orchestrix.md) ([source](https://github.com/aswin-kevin/orchestrix)) | 2026-Q4 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A — — P` |
 | 4 | <a id="hadal"></a>[Hadal](assessments/ha/hadal.md) ([source](https://github.com/T-Crypt/hadal)) | 2026-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A C A(P) A P —` |
