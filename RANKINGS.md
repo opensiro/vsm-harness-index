@@ -312,6 +312,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="mare"></a>[mare](assessments/ma/mare.md) ([source](https://github.com/signalridge/mare)) | 2026-Q4 | 2/6 | 1/5 | 2 | 1 | 0 | `A C A C P —` |
 | 5 | <a id="h"></a>[H](assessments/h/h.md) ([source](https://github.com/parlant/harness)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A A P C — —` |
 | 5 | <a id="dmoka-mini-harness"></a>[mini-harness](assessments/dm/dmoka-mini-harness.md) ([source](https://github.com/dmoka/mini-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
+| 5 | <a id="serra"></a>[Serra](assessments/se/serra.md) ([source](https://github.com/isacssw/serra)) | 2026-Q4 | 2/6 | 1/5 | 1 | 3 | 0 | `A C P A P P` |
 | 5 | <a id="pine"></a>[PINE](assessments/pi/pine.md) ([source](https://github.com/pmndre/pine)) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |
 | 5 | <a id="weora"></a>[Weora](assessments/we/weora.md) ([source](https://github.com/yuzhiyang1/weora)) | 2026-Q4 | 2/6 | 1/5 | 2 | 2 | 1 | `A C A(P) C ? P` |
 | 5 | <a id="lumak"></a>[LumaK](assessments/lu/lumak.md) ([source](https://github.com/kuLm1Fs/lumak-ts)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
