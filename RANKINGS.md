@@ -353,6 +353,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="agentforeman"></a>[AgentForeman](assessments/ag/agentforeman.md) ([source](https://github.com/kumizeod/AgentForeman)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="harness-cli"></a>[Harness² CLI](assessments/ha/harness-cli.md) ([source](https://github.com/3ae3ae/harness2-cli)) | 2026-Q4 | 2/6 | 1/5 | 0 | 1 | 0 | `A — — — A(P) —` |
 | 5 | <a id="learnharness"></a>[LearnHarness](assessments/le/learnharness.md) ([source](https://github.com/amosblomqvist/learnharness)) | 2026-Q4 | 2/6 | 1/5 | 1 | 0 | 0 | `A — A C — —` |
+| 5 | <a id="zhiming"></a>[ZhiMing](assessments/zh/zhiming.md) ([source](https://github.com/stanGSA/ZhiMing)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="moissanite-labs-exo"></a>[exo](assessments/mo/moissanite-labs-exo.md) ([source](https://github.com/Moissanite-Labs/exo)) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 0 | `A — — — A(P) P` |
 | 5 | <a id="ai-scientist-v3"></a>[AI-Scientist-v3](assessments/ai/ai-scientist-v3.md) ([source](https://github.com/SakanaAI/AI-Scientist-v3)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
 | 5 | <a id="binny"></a>[BINNY](assessments/bi/binny.md) ([source](https://github.com/openbin-ai/binny)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A — — A — —` |
