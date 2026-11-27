@@ -1259,3 +1259,4 @@ catalog_position|harness_id|signature
 1341|beastron|Beastron runs a local-model-oriented coding loop that feeds test and coverage evidence back into the same agent and can refuse completion when a claimed improvement lacks the required proof.
 1342|dolly|Dolly's standing chief routes work to isolated or existing sessions, while a fresh read-only reviewer checks the exact PR head and returns its findings to the original coding session for bounded repair.
 1343|ple-harness|PLE Harness feeds direct file checks and a second numerical computation route into bounded repairs by the same task agent after it reports completion.
+1344|duo|Duo sends a fresh critic a diff against the build baseline, routes defects into revision, and lets the owner apply reviewed local core changes for future runs.
