@@ -121,6 +121,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="openags"></a>[OpenAGS](assessments/op/openags.md) ([source](https://github.com/openags/auto-researcher)) | 2024-Q2 | 4/6 | 3/5 | 0 | 0 | 0 | `A — A A A —` |
 | 3 | <a id="konductor"></a>[Konductor](assessments/ko/konductor.md) ([source](https://github.com/aws-solutions/konductor)) | 2023-Q1 | 4/6 | 3/5 | 0 | 0 | 1 | `A A A A ? —` |
 | 3 | <a id="opencursor"></a>[OpenCursor](assessments/op/opencursor.md) ([source](https://github.com/PawanOsman/OpenCursor)) | 2022-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
+| 4 | <a id="forgeline"></a>[Forgeline](assessments/fo/forgeline.md) ([source](https://github.com/Nabwinsaud/forgeline)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="anvil"></a>[Anvil](assessments/an/anvil.md) ([source](https://github.com/deeeeone/Anvil)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="argentgo"></a>[argentgo](assessments/ar/argentgo.md) ([source](https://github.com/2118505078xyh1/argentgo)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A C — P` |
 | 4 | <a id="orchestrix"></a>[Orchestrix](assessments/or/orchestrix.md) ([source](https://github.com/aswin-kevin/orchestrix)) | 2026-Q4 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A — — P` |
