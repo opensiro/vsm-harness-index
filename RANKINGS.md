@@ -8,6 +8,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | 1 | <a id="henterprise"></a>[Henterprise](assessments/he/henterprise.md) ([source](https://github.com/humbertobellor/henterprise)) | 2026-Q3 | 6/6 | 5/5 | 0 | 0 | 0 | `A A A A A A` |
 | 1 | <a id="ouroboros"></a>[Ouroboros](assessments/ou/ouroboros.md) ([source](https://github.com/razzant/ouroboros)) | 2026-Q1 | 6/6 | 5/5 | 0 | 2 | 0 | `A A A A A(P) A(P)` |
+| 2 | <a id="penelope"></a>[Penelope](assessments/pe/penelope.md) ([source](https://github.com/LaertesAI/Penelope)) | 2026-Q4 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A(P) A A —` |
 | 2 | <a id="codeden"></a>[CodeDen](assessments/co/codeden.md) ([source](https://github.com/leonvanzyl/codeden)) | 2026-Q4 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A A A P` |
 | 2 | <a id="the-harness"></a>[the-harness](assessments/th/the-harness.md) ([source](https://github.com/EvolvingLMMs-Lab/the-harness)) | 2026-Q4 | 5/6 | 4/5 | 0 | 1 | 0 | `A A A(P) A A —` |
 | 2 | <a id="sapper-v2"></a>[sapper-v2](assessments/sa/sapper-v2.md) ([source](https://github.com/N1nEmAn/sapper-v2)) | 2026-Q4 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
