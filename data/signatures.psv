@@ -1256,3 +1256,4 @@ catalog_position|harness_id|signature
 1338|ulei|ulei combines a journaled assistant with an optional task hive whose separate panel heads feed a synthesis agent, whose reviewer can inspect work directly, and whose daily model steward can cancel eligible commitments through version-checked board updates.
 1339|penelope|Penelope resolves conflicting cluster answers through a blind second run and decider, checks work through a separate model validator, and can persist new tool contracts for future lead and worker turns.
 1340|clara-code|Clara Code coordinates delegated sessions sharing one checkout by providing targeted steering and lifetime control, with a separate read-only reviewer available to verify workspace outcomes.
+1341|beastron|Beastron runs a local-model-oriented coding loop that feeds test and coverage evidence back into the same agent and can refuse completion when a claimed improvement lacks the required proof.
