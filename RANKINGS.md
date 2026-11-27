@@ -301,6 +301,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="data-to-paper"></a>[data-to-paper](assessments/da/data-to-paper.md) ([source](https://github.com/Technion-Kishony-lab/data-to-paper)) | 2023-Q2 | 3/6 | 2/5 | 0 | 1 | 0 | `A — — A A(P) —` |
 | 4 | <a id="cowagent"></a>[CowAgent](assessments/co/cowagent.md) ([source](https://github.com/zhayujie/CowAgent)) | 2022-Q3 | 3/6 | 2/5 | 1 | 2 | 0 | `A C P — A A(P)` |
 | 4 | <a id="agno"></a>[Agno](assessments/ag/agno.md) ([source](https://github.com/agno-agi/agno)) | 2022-Q2 | 3/6 | 2/5 | 0 | 0 | 0 | `A A A — — —` |
+| 5 | <a id="mare"></a>[mare](assessments/ma/mare.md) ([source](https://github.com/signalridge/mare)) | 2026-Q4 | 2/6 | 1/5 | 2 | 1 | 0 | `A C A C P —` |
 | 5 | <a id="h"></a>[H](assessments/h/h.md) ([source](https://github.com/parlant/harness)) | 2026-Q4 | 2/6 | 1/5 | 1 | 1 | 0 | `A A P C — —` |
 | 5 | <a id="dmoka-mini-harness"></a>[mini-harness](assessments/dm/dmoka-mini-harness.md) ([source](https://github.com/dmoka/mini-harness)) | 2026-Q4 | 2/6 | 1/5 | 0 | 0 | 0 | `A A — — — —` |
 | 5 | <a id="pine"></a>[PINE](assessments/pi/pine.md) ([source](https://github.com/pmndre/pine)) | 2026-Q4 | 2/6 | 1/5 | 0 | 2 | 0 | `A A P — — P` |

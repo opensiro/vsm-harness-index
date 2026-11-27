@@ -1330,3 +1330,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1329|anvil|Anvil|https://github.com/deeeeone/Anvil|2026-11-21T19:09:55Z|index-addition|276aa0fcf2bb4bf31dd1940b1b71935d9e0c7754|2026-11-27
 1330|zhifox|ZhiFox|https://github.com/Akxan/zhifox-agent-harness|2026-11-20T10:36:30Z|index-addition|0111a8477e4e199b9579d3e0c65b4505fb2eebe9|2026-11-27
 1331|byo-agent|byo-agent|https://github.com/lambeta/byo-agent|2026-11-19T05:56:47Z|index-addition|fde01bea33e93b31ecace32e5f1d656ce454ac25|2026-11-27
+1332|mare|mare|https://github.com/signalridge/mare|2026-11-24T13:13:47Z|index-addition|d126cc1f508f44e05e5e6f7e27d4f019d84dd2d9|2026-11-27
