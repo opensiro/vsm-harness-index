@@ -6,6 +6,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 
 | Harness | Period | S1 | S2 | S3 | S3* | S4 | S5 | Signature |
 | --- | ---: | --- | --- | --- | --- | --- | --- | --- |
+| <a id="ple-harness"></a>[PLE Harness](assessments/pl/ple-harness.md) ([source](https://github.com/afei8732-hub/ple-harness)) | 2026-Q4 | A | — | — | C | — | — | PLE Harness feeds direct file checks and a second numerical computation route into bounded repairs by the same task agent after it reports completion. |
 | <a id="penelope"></a>[Penelope](assessments/pe/penelope.md) ([source](https://github.com/LaertesAI/Penelope)) | 2026-Q4 | A | A | A(P) | A | A | — | Penelope resolves conflicting cluster answers through a blind second run and decider, checks work through a separate model validator, and can persist new tool contracts for future lead and worker turns. |
 | <a id="mare"></a>[mare](assessments/ma/mare.md) ([source](https://github.com/signalridge/mare)) | 2026-Q4 | A | C | A | C | P | — | mare gives a model current steering and cancellation over its budget-sharing child tree, exposes a separate read-only Git reviewer with a typed return, and lets the operator adopt external plugin capability through a reload. |
 | <a id="h"></a>[H](assessments/h/h.md) ([source](https://github.com/parlant/harness)) | 2026-Q4 | A | A | P | C | — | — | A model selects isolated or read-only children; workspace leases serialize shared writes, the daemon owner can stop a competing holder, and separate revision-bound Git review returns findings to coding sessions. |
