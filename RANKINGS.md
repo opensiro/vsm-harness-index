@@ -589,6 +589,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="coding-agent-harness"></a>[Coding Agent Harness](assessments/co/coding-agent-harness.md) ([source](https://github.com/Breno-J-Oliveira/coding_agent_harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 2 | 0 | `A — P C P —` |
 | 6 | <a id="zhifox"></a>[ZhiFox](assessments/zh/zhifox.md) ([source](https://github.com/Akxan/zhifox-agent-harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 2 | 0 | `A C P — P —` |
 | 6 | <a id="hexagon"></a>[Hexagon](assessments/he/hexagon.md) ([source](https://github.com/NexusFox88/Hexagon)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A — P C — —` |
+| 6 | <a id="byo-agent"></a>[byo-agent](assessments/by/byo-agent.md) ([source](https://github.com/lambeta/byo-agent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="featherweight"></a>[featherweight](assessments/fe/featherweight.md) ([source](https://github.com/aadhithya/featherweight)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="forceharness"></a>[ForceHarness](assessments/fo/forceharness.md) ([source](https://github.com/showlab/ForceHarness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="prometadev-ui-harness"></a>[UI Harness](assessments/pr/prometadev-ui-harness.md) ([source](https://github.com/ProMetaDev/ui-harness)) | 2026-Q4 | 1/6 | 0/5 | 2 | 1 | 0 | `A C P C — —` |
