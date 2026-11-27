@@ -1257,3 +1257,4 @@ catalog_position|harness_id|signature
 1339|penelope|Penelope resolves conflicting cluster answers through a blind second run and decider, checks work through a separate model validator, and can persist new tool contracts for future lead and worker turns.
 1340|clara-code|Clara Code coordinates delegated sessions sharing one checkout by providing targeted steering and lifetime control, with a separate read-only reviewer available to verify workspace outcomes.
 1341|beastron|Beastron runs a local-model-oriented coding loop that feeds test and coverage evidence back into the same agent and can refuse completion when a claimed improvement lacks the required proof.
+1342|dolly|Dolly's standing chief routes work to isolated or existing sessions, while a fresh read-only reviewer checks the exact PR head and returns its findings to the original coding session for bounded repair.
