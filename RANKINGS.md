@@ -131,6 +131,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 4 | <a id="anvil"></a>[Anvil](assessments/an/anvil.md) ([source](https://github.com/deeeeone/Anvil)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
 | 4 | <a id="argentgo"></a>[argentgo](assessments/ar/argentgo.md) ([source](https://github.com/2118505078xyh1/argentgo)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A A A C — P` |
 | 4 | <a id="orchestrix"></a>[Orchestrix](assessments/or/orchestrix.md) ([source](https://github.com/aswin-kevin/orchestrix)) | 2026-Q4 | 3/6 | 2/5 | 0 | 1 | 0 | `A A A — — P` |
+| 4 | <a id="hadal"></a>[Hadal](assessments/ha/hadal.md) ([source](https://github.com/T-Crypt/hadal)) | 2026-Q4 | 3/6 | 2/5 | 1 | 2 | 0 | `A C A(P) A P —` |
 | 4 | <a id="penharness"></a>[PenHarness](assessments/pe/penharness.md) ([source](https://github.com/morphllm/PenHarness)) | 2026-Q4 | 3/6 | 2/5 | 0 | 1 | 1 | `A A A(P) ? — —` |
 | 4 | <a id="orchestrator-harness"></a>[Orchestrator Harness](assessments/or/orchestrator-harness.md) ([source](https://github.com/dhoelzer/AgentOrchestrator)) | 2026-Q4 | 3/6 | 2/5 | 1 | 0 | 0 | `A A A C — —` |
 | 4 | <a id="mas-office"></a>[MAS Office](assessments/ma/mas-office.md) ([source](https://github.com/weixijia/mas-office)) | 2026-Q4 | 3/6 | 2/5 | 1 | 1 | 0 | `A C A(P) A — —` |
