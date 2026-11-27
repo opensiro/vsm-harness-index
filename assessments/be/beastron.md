@@ -154,7 +154,7 @@ The conversational model drives individual coding or investigation turns. It sel
 - Supporting / enforcement mechanisms: Auto/ask modes, project briefing and action-level approval callbacks.
 - Closure path: The next action is allowed or denied under the selected mode and a denial returns control to the user.
 - Why this is / is not agent-owned: The permission menu and task policy preserve the installed project's authority structure rather than adjudicating its ultimate purpose or authority.
-- Evidence: [src/beastron/permissions.py](https://github.com/baokhang83/beastron/blob/6fc36dcef46ee2b000e7c1fee07ad1d2b24b7561/src/beastron/permissions.py#L6-L24), [src/beastron/ui.py](https://github.com/baokhang83/beastron/blob/6fc36dcef46ee2b000e7c1fee07ad1d2b24b7561/src/beastron/ui.py#L436-L465), [src/beastron/agent.py](https://github.com/baokhang83/beastron/blob/6fc36dcef46ee2b000e7c1fee07ad1d2b24b7561/src/beastron/agent.py#L510-L520), [README.md](https://github.com/baokhang83/beastron/blob/6fc36dcef46ee2b000e7c1fee07ad1d2b24b7561/README.md#L39-L47)
+- Evidence: [src/beastron/permissions.py](https://github.com/baokhang83/beastron/blob/6fc36dcef46ee2b000e7c1fee07ad1d2b24b7561/src/beastron/permissions.py#L6-L15), [src/beastron/ui.py](https://github.com/baokhang83/beastron/blob/6fc36dcef46ee2b000e7c1fee07ad1d2b24b7561/src/beastron/ui.py#L436-L465), [src/beastron/agent.py](https://github.com/baokhang83/beastron/blob/6fc36dcef46ee2b000e7c1fee07ad1d2b24b7561/src/beastron/agent.py#L510-L520), [README.md](https://github.com/baokhang83/beastron/blob/6fc36dcef46ee2b000e7c1fee07ad1d2b24b7561/README.md#L39-L47)
 - Basis: Structural evidence from the pinned first-party source.
 - Confidence: high
 - Caveats: Ordinary per-action approval is outside this finding.
