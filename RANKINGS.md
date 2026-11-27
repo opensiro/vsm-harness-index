@@ -602,6 +602,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 6 | <a id="wittycode"></a>[WittyCode](assessments/wi/wittycode.md) ([source](https://github.com/WittyRyuji/WittyCode)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="go-agent-harness"></a>[Go Agent Harness](assessments/go/go-agent-harness.md) ([source](https://github.com/shalyhinpavel/go-agent-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="milletcode"></a>[MilletCode](assessments/mi/milletcode.md) ([source](https://github.com/milletcode/milletcode)) | 2026-Q4 | 1/6 | 0/5 | 0 | 2 | 0 | `A — P — P —` |
+| 6 | <a id="vesper"></a>[Vesper](assessments/ve/vesper.md) ([source](https://github.com/Kernel-Hunter/vesper)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="byob"></a>[byob](assessments/by/byob.md) ([source](https://github.com/Scronkfinkle/byob)) | 2026-Q4 | 1/6 | 0/5 | 1 | 2 | 0 | `A C — — P P` |
 | 6 | <a id="axi"></a>[Axi](assessments/ax/axi.md) ([source](https://github.com/devsohm/axi)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
 | 6 | <a id="ruhui-agent"></a>[RuHui Agent](assessments/ru/ruhui-agent.md) ([source](https://github.com/Andy1890/ruhui-agent)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
