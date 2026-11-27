@@ -1328,3 +1328,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1327|mas-office|MAS Office|https://github.com/weixijia/mas-office|2026-11-06T18:51:25Z|index-addition|5a768ecac2260ba4cb21c5450593ad1b7d190041|2026-11-20
 1328|pipkin|Pipkin|https://github.com/garywu000/pipkin|2026-11-22T01:20:16Z|index-addition|46f759914189847d24cece8f1f42cb8de647a1ff|2026-11-27
 1329|anvil|Anvil|https://github.com/deeeeone/Anvil|2026-11-21T19:09:55Z|index-addition|276aa0fcf2bb4bf31dd1940b1b71935d9e0c7754|2026-11-27
+1330|zhifox|ZhiFox|https://github.com/Akxan/zhifox-agent-harness|2026-11-20T10:36:30Z|index-addition|0111a8477e4e199b9579d3e0c65b4505fb2eebe9|2026-11-27
