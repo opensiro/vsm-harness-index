@@ -28,6 +28,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 2 | <a id="gptme"></a>[gptme](assessments/gp/gptme.md) ([source](https://github.com/gptme/gptme)) | 2023-Q1 | 5/6 | 4/5 | 0 | 0 | 0 | `A A A A A —` |
 | 3 | <a id="filament"></a>[Filament](assessments/fi/filament.md) ([source](https://github.com/invertibleMatrix/filament)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 1 | `A A A(P) A ? —` |
 | 3 | <a id="keel"></a>[Keel](assessments/ke/keel.md) ([source](https://github.com/agent-sh/keel)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
+| 3 | <a id="alpacawork"></a>[AlpacaWork](assessments/al/alpacawork.md) ([source](https://github.com/alpacakit/alpacawork)) | 2026-Q4 | 4/6 | 3/5 | 0 | 3 | 0 | `A A A(P) A P P` |
 | 3 | <a id="ulei"></a>[ulei](assessments/ul/ulei.md) ([source](https://github.com/pasekahq/ulei)) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
 | 3 | <a id="rigger"></a>[Rigger](assessments/ri/rigger.md) ([source](https://github.com/Borcioo/rigger-claude-code)) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A A P P` |
 | 3 | <a id="clara-code"></a>[Clara Code](assessments/cl/clara-code.md) ([source](https://github.com/ClarkQAQ/clara-code)) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A A — —` |
