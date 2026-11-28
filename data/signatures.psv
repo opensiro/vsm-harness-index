@@ -1271,3 +1271,4 @@ catalog_position|harness_id|signature
 1353|avalon-harness|Avalon assigns exclusive control of competing environment actions to one specialist. Its CEO can reallocate live roles and sample raw specialist tool traces to challenge reports before intervening.
 1354|thread|thread places parallel edits in separate Git worktrees, lets main and the operator redirect live workers, and turns selected run traces into reusable procedures supplied to later task contexts.
 1355|wenninghan-omniharness|OmniHarness schedules model tasks by dependency and write scope, returns host-recorded tool evidence to a distinct review stage and can feed supported findings into bounded revision.
+1356|towa|towa's ACP agent owns the tool-feedback loop and lets a model order sibling agents that share a workspace. The dispatcher serializes executing child calls before returning their results.
