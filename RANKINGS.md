@@ -39,6 +39,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 3 | <a id="orchi"></a>[Orchi](assessments/or/orchi.md) ([source](https://github.com/adamentwistle/orchi-build)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A A — P` |
 | 3 | <a id="coworkos"></a>[CoworkOS](assessments/co/coworkos.md) ([source](https://github.com/RUC-NLPIR/CoworkOS)) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
 | 3 | <a id="multi-agent-harness"></a>[Multi-Agent Harness²](assessments/mu/multi-agent-harness.md) ([source](https://github.com/WeiminWu2000/Multi-Agent-Harness-2)) | 2026-Q4 | 4/6 | 3/5 | 0 | 0 | 0 | `A A A — A —` |
+| 3 | <a id="thread"></a>[thread](assessments/th/thread.md) ([source](https://github.com/Phytonking/thread)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) — A —` |
 | 3 | <a id="tram"></a>[Tram](assessments/tr/tram.md) ([source](https://github.com/taewooyo/tram)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
 | 3 | <a id="agentic-factory"></a>[Agentic Factory](assessments/ag/agentic-factory.md) ([source](https://github.com/bussard76/agentic-factory)) | 2026-Q4 | 4/6 | 3/5 | 0 | 2 | 0 | `A A A(P) A — P` |
 | 3 | <a id="mariomagdy-foreman"></a>[foreman](assessments/ma/mariomagdy-foreman.md) ([source](https://github.com/MarioMagdy/foreman)) | 2026-Q4 | 4/6 | 3/5 | 0 | 1 | 0 | `A A A(P) A — —` |
