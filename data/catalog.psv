@@ -1350,3 +1350,4 @@ catalog_position|harness_id|project_name|repository|repository_created_at|source
 1349|jucode-cli|JuCode CLI|https://github.com/luo-ca/JuCode-CLI-OSS|2026-11-22T10:39:55Z|index-addition|c012eb09d7ebee3fd0d7536330052e86c2c2193e|2026-11-28
 1350|ai-agent-harness|AI Agent Harness|https://github.com/RameshKatla/ai-agent-harness|2026-11-26T16:00:23Z|index-addition|691f09f7659fa9e0c3741f93e4e8e69293ac7aa5|2026-11-28
 1351|atlas-ade|Atlas ADE|https://github.com/The-Anthropocene/ade|2026-11-16T13:53:07Z|index-addition|b719450d92b86e546b0bd8b8ddc4d66d050e0064|2026-11-28
+1352|alpacawork|AlpacaWork|https://github.com/alpacakit/alpacawork|2026-11-19T06:11:24Z|index-addition|6bebae6f24cba458a27514a36d301a116486223f|2026-11-28
