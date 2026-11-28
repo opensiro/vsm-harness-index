@@ -605,6 +605,7 @@ Harness names link to canonical Index assessments; **source** links open the ups
 | 5 | <a id="go-micro"></a>[Go Micro](assessments/go/go-micro.md) ([source](https://github.com/micro/go-micro)) | 2015-Q1 | 2/6 | 1/5 | 1 | 1 | 0 | `A — — C A(P) —` |
 | 6 | <a id="ple-harness"></a>[PLE Harness](assessments/pl/ple-harness.md) ([source](https://github.com/afei8732-hub/ple-harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="ai-agent-harness"></a>[AI Agent Harness](assessments/ai/ai-agent-harness.md) ([source](https://github.com/RameshKatla/ai-agent-harness)) | 2026-Q4 | 1/6 | 0/5 | 0 | 0 | 0 | `A — — — — —` |
+| 6 | <a id="vieforge"></a>[VieForge](assessments/vi/vieforge.md) ([source](https://github.com/vieforge/vieforge)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A C — — — —` |
 | 6 | <a id="pipkin"></a>[Pipkin](assessments/pi/pipkin.md) ([source](https://github.com/garywu000/pipkin)) | 2026-Q4 | 1/6 | 0/5 | 1 | 1 | 0 | `A C P — — —` |
 | 6 | <a id="provable-harness"></a>[provable-harness](assessments/pr/provable-harness.md) ([source](https://github.com/0x471/provable-harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 0 | 0 | `A — — C — —` |
 | 6 | <a id="coding-agent-harness"></a>[Coding Agent Harness](assessments/co/coding-agent-harness.md) ([source](https://github.com/Breno-J-Oliveira/coding_agent_harness)) | 2026-Q4 | 1/6 | 0/5 | 1 | 2 | 0 | `A — P C P —` |
